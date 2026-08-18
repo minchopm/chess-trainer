@@ -41,6 +41,13 @@ struct TacticsScreen: View {
                     Text(why).font(.footnote).foregroundStyle(.secondary)
                 }
 
+                if model.isReplying {
+                    HStack(spacing: 6) {
+                        ProgressView().controlSize(.small)
+                        Text("Opponent replies…").font(.footnote).foregroundStyle(.secondary)
+                    }
+                }
+
                 TagRow(tags: [
                     "Rating \(puzzle.rating)",
                     "\(puzzle.solverMoveCount) move\(puzzle.solverMoveCount == 1 ? "" : "s")",
@@ -81,8 +88,10 @@ struct TacticsScreen: View {
     }
 
     private func handleMove(from: Square, to: Square, promotion: PieceKind?) {
-        record(model.play(from: from, to: to, promotion: promotion))
-        Task { await values.refresh(fen: model.position.fen, engine: app.engine) }
+        Task {
+            record(await model.play(from: from, to: to, promotion: promotion))
+            await values.refresh(fen: model.position.fen, engine: app.engine)
+        }
     }
 
     private func record(_ outcome: (solved: Bool, usedHint: Bool)?) {

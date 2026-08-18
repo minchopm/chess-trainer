@@ -14,6 +14,8 @@ final class TacticsModel {
     private(set) var shapes: [BoardShape] = []
     private(set) var feedback: Feedback?
     private(set) var isFinished = false
+    /// True while the opponent's reply is on its way, so the view can say so.
+    private(set) var isReplying = false
 
     private var step = 0
     private var mistakes = 0
@@ -52,7 +54,10 @@ final class TacticsModel {
         }
         if themes.contains("crushing") { return "Find the crushing blow." }
         if themes.contains("winsMaterial") || themes.contains("hangingPiece") { return "Win material." }
-        if themes.contains("advantage") { return "Find the move that wins a clear advantage." }
+        // Lichess' "advantage" tag describes how much better the solution is
+        // than the alternatives, not how good the position becomes. Calling a
+        // +0.5 position "a clear advantage" is simply untrue.
+        if themes.contains("advantage") { return "One move is clearly better than the rest." }
         return "Find the strongest continuation."
     }
 
@@ -68,13 +73,21 @@ final class TacticsModel {
         mistakes = 0
         hintLevel = 0
         isFinished = false
+        isReplying = false
         feedback = nil
         shapes = []
         lastMove = nil
         refreshDestinations()
     }
 
-    func play(from: Square, to: Square, promotion: PieceKind?) -> (solved: Bool, usedHint: Bool)? {
+    /// Async because the opponent's reply must be *seen*.
+    ///
+    /// Applying both moves in one synchronous block leaves SwiftUI rendering
+    /// only the final state: the board jumps two plies at once and it reads as
+    /// though the opponent never moved. The pause between them is not polish —
+    /// without it the reply is invisible, and a puzzle line you cannot watch is
+    /// a puzzle line you cannot learn from.
+    func play(from: Square, to: Square, promotion: PieceKind?) async -> (solved: Bool, usedHint: Bool)? {
         guard let puzzle, !isFinished, step < puzzle.solution.count else { return nil }
 
         let expected = puzzle.solution[step]
@@ -92,7 +105,14 @@ final class TacticsModel {
 
         if step >= puzzle.solution.count { return finish(solved: true) }
 
-        // The opponent's reply is part of the puzzle.
+        // The opponent's reply is part of the puzzle. Let the first move land
+        // and animate before the answer arrives.
+        isReplying = true
+        legalDestinations = [:]
+        try? await Task.sleep(for: .milliseconds(420))
+        isReplying = false
+
+        guard let puzzle = self.puzzle, step < puzzle.solution.count else { return nil }
         apply(uci: puzzle.solution[step])
         step += 1
 
