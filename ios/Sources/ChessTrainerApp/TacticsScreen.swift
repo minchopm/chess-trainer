@@ -24,16 +24,32 @@ struct TacticsScreen: View {
     }
 
     private var content: some View {
-        TrainingLayout {
-            BoardView(
-                position: model.position,
-                orientation: model.orientation,
-                legalDestinations: model.legalDestinations,
-                lastMove: model.lastMove,
-                shapes: model.shapes,
-                moveValues: values.values,
-                onMove: handleMove
-            )
+        TrainingLayout { width in
+            BoardStage(
+                width: width,
+                top: PlayerBar(
+                    name: "Puzzle",
+                    rating: model.puzzle?.rating,
+                    color: model.orientation.opponent,
+                    material: material
+                ),
+                bottom: PlayerBar(
+                    name: "You",
+                    rating: app.progress.rating(.tactics),
+                    color: model.orientation,
+                    material: material
+                )
+            ) {
+                BoardView(
+                    position: model.position,
+                    orientation: model.orientation,
+                    legalDestinations: model.legalDestinations,
+                    lastMove: model.lastMove,
+                    shapes: model.shapes,
+                    moveValues: values.values,
+                    onMove: handleMove
+                )
+            }
         } panel: {
             if model.puzzle == nil {
                 EmptyLibraryNotice()
@@ -64,8 +80,8 @@ struct TacticsScreen: View {
                     }
                 }
 
+                // The rating already stands in the row above the board.
                 TagRow(tags: [
-                    "Rating \(puzzle.rating)",
                     "\(puzzle.solverMoveCount) move\(puzzle.solverMoveCount == 1 ? "" : "s")",
                 ])
             }
@@ -105,6 +121,8 @@ struct TacticsScreen: View {
             },
         ])
     }
+
+    private var material: MaterialBalance { MaterialBalance(model.position) }
 
     private func handleMove(from: Square, to: Square, promotion: PieceKind?) {
         Task {

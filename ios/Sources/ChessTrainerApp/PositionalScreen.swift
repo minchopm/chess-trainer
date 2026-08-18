@@ -166,17 +166,35 @@ struct PositionalScreen: View {
     @Environment(AppModel.self) private var app
     @State private var model = PositionalModel()
 
+    private var material: MaterialBalance { MaterialBalance(model.position) }
+
     var body: some View {
-        TrainingLayout {
-            BoardView(
-                position: model.position,
-                orientation: model.orientation,
-                legalDestinations: model.legalDestinations,
-                shapes: model.shapes,
-                onMove: { from, to, promotion in
-                    Task { await choose(from, to, promotion) }
-                }
-            )
+        TrainingLayout { width in
+            BoardStage(
+                width: width,
+                top: PlayerBar(
+                    name: "Exercise",
+                    rating: model.exercise?.rating,
+                    color: model.orientation.opponent,
+                    material: material
+                ),
+                bottom: PlayerBar(
+                    name: "You",
+                    rating: app.progress.rating(.positional),
+                    color: model.orientation,
+                    material: material
+                )
+            ) {
+                BoardView(
+                    position: model.position,
+                    orientation: model.orientation,
+                    legalDestinations: model.legalDestinations,
+                    shapes: model.shapes,
+                    onMove: { from, to, promotion in
+                        Task { await choose(from, to, promotion) }
+                    }
+                )
+            }
         } panel: {
             if model.exercise == nil {
                 Card {

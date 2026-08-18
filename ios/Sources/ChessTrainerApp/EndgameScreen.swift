@@ -169,10 +169,28 @@ struct EndgameScreen: View {
     @State private var model = EndgameModel()
     @State private var values = MoveValueController()
 
+    private var material: MaterialBalance { MaterialBalance(model.position) }
+
     var body: some View {
-        TrainingLayout {
-            HStack(spacing: 8) {
-                EvaluationBar(score: model.evaluation)
+        TrainingLayout { width in
+            BoardStage(
+                width: width,
+                top: PlayerBar(
+                    name: "Drill",
+                    rating: model.drill?.rating,
+                    color: model.orientation.opponent,
+                    material: material
+                ),
+                bottom: PlayerBar(
+                    name: "You",
+                    rating: app.progress.rating(.endgame),
+                    color: model.orientation,
+                    material: material
+                ),
+                evaluation: model.evaluation,
+                showsEvaluation: true,
+                orientation: model.orientation
+            ) {
                 BoardView(
                     position: model.position,
                     orientation: model.orientation,
@@ -194,7 +212,6 @@ struct EndgameScreen: View {
                     Text(drill.name).font(.headline)
                     Text(model.goalText).font(.subheadline).foregroundStyle(.secondary)
                     TagRow(tags: [
-                        "Rating \(drill.rating)",
                         drill.goal == .win ? "Must win" : "Must draw",
                         "\((model.plies + 1) / 2) move\((model.plies + 1) / 2 == 1 ? "" : "s")",
                     ])
@@ -273,10 +290,14 @@ struct EndgameScreen: View {
 /// The familiar bar beside the board: white's share of the evaluation.
 struct EvaluationBar: View {
     let score: EngineScore?
+    /// Which colour is at the bottom of the board. White's share has to grow
+    /// from the side White is playing on, or the bar contradicts the board it
+    /// stands beside.
+    var orientation: PieceColor = .white
 
     var body: some View {
         GeometryReader { geometry in
-            ZStack(alignment: .bottom) {
+            ZStack(alignment: orientation == .white ? .bottom : .top) {
                 Color(white: 0.18)
                 Color(white: 0.93).frame(height: geometry.size.height * share)
             }

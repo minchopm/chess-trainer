@@ -171,6 +171,8 @@ struct RushScreen: View {
     @Environment(ActivityGuard.self) private var activity
     @State private var model = RushModel()
 
+    private var material: MaterialBalance { MaterialBalance(model.position) }
+
     var body: some View {
         Group {
             switch model.phase {
@@ -253,16 +255,32 @@ struct RushScreen: View {
     }
 
     private var playing: some View {
-        TrainingLayout {
-            BoardView(
-                position: model.position,
-                orientation: model.orientation,
-                legalDestinations: model.legalDestinations,
-                lastMove: model.lastMove,
-                onMove: { from, to, promotion in
-                    Task { _ = await model.play(from: from, to: to, promotion: promotion) }
-                }
-            )
+        TrainingLayout { width in
+            BoardStage(
+                width: width,
+                top: PlayerBar(
+                    name: "Puzzle",
+                    rating: model.puzzle?.rating,
+                    color: model.orientation.opponent,
+                    material: material
+                ),
+                bottom: PlayerBar(
+                    name: "You",
+                    rating: app.progress.rating(.tactics),
+                    color: model.orientation,
+                    material: material
+                )
+            ) {
+                BoardView(
+                    position: model.position,
+                    orientation: model.orientation,
+                    legalDestinations: model.legalDestinations,
+                    lastMove: model.lastMove,
+                    onMove: { from, to, promotion in
+                        Task { _ = await model.play(from: from, to: to, promotion: promotion) }
+                    }
+                )
+            }
         } panel: {
             scoreboard
         } controls: {

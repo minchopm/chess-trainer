@@ -202,10 +202,28 @@ struct PlayScreen: View {
     @State private var values = MoveValueController()
     @State private var recorded = false
 
+    private var material: MaterialBalance { MaterialBalance(model.position) }
+
     var body: some View {
-        TrainingLayout {
-            HStack(spacing: 8) {
-                EvaluationBar(score: model.evaluation)
+        TrainingLayout { width in
+            BoardStage(
+                width: width,
+                top: PlayerBar(
+                    name: model.level.name,
+                    rating: model.level.elo,
+                    color: model.side.opponent,
+                    material: material
+                ),
+                bottom: PlayerBar(
+                    name: "You",
+                    rating: app.progress.overallRating,
+                    color: model.side,
+                    material: material
+                ),
+                evaluation: model.evaluation,
+                showsEvaluation: true,
+                orientation: model.side
+            ) {
                 BoardView(
                     position: model.position,
                     orientation: model.side,

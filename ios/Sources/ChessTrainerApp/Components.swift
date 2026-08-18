@@ -6,7 +6,11 @@ import SwiftUI
 /// an iPad the panel moves beside it, because a board squeezed into half the
 /// height of a landscape screen is unusable.
 struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
-    @ViewBuilder var board: Board
+    /// Handed the width the board may use. A board is the one part of the
+    /// screen whose size must be decided rather than negotiated: left to a
+    /// stack it comes out as tall as its share of the column, which on a phone
+    /// is a good deal less than the screen is wide.
+    @ViewBuilder var board: (CGFloat) -> Board
     @ViewBuilder var panel: Panel
     @ViewBuilder var controls: Controls
 
@@ -15,8 +19,12 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
             let isWide = geometry.size.width > geometry.size.height
 
             if isWide {
+                let width = min(
+                    geometry.size.width * 0.54,
+                    geometry.size.height - 24 - BoardStage<EmptyView>.chromeHeight
+                )
                 HStack(alignment: .top, spacing: 16) {
-                    board.padding(.leading, 12).padding(.vertical, 12)
+                    board(width).padding(.leading, 12).padding(.vertical, 12)
                     VStack(spacing: 12) {
                         ScrollView { VStack(spacing: 12) { panel }.padding(.trailing, 12) }
                         controls.padding(.trailing, 12)
@@ -24,13 +32,20 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
                     .padding(.vertical, 12)
                 }
             } else {
+                // The cap only bites on a short screen; on a phone in portrait
+                // the board is limited by the width, as it should be.
+                let width = min(
+                    geometry.size.width - 20,
+                    geometry.size.height * 0.66 - BoardStage<EmptyView>.chromeHeight
+                )
                 VStack(spacing: 8) {
-                    board.padding(.horizontal, 10).padding(.top, 4)
+                    board(width).padding(.top, 4)
                     ScrollView { VStack(spacing: 10) { panel }.padding(.horizontal, 10) }
                     // Clear of the tab bar: buttons that touch it read as part
                     // of it, and the wrong one gets tapped.
                     controls.padding(.horizontal, 10).padding(.bottom, 10)
                 }
+                .frame(maxWidth: .infinity)
             }
         }
     }
