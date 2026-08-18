@@ -320,20 +320,22 @@ struct PlayScreen: View {
     }
 
     private var gameControls: some View {
-        HStack {
-            Button("Takeback") { model.takeBack() }
-                .disabled(model.isThinking || model.moves.count < 2)
-            Button("Hint") { Task { await model.hint(engine: app.engine) } }
-                .disabled(model.isThinking)
-            Button(values.isEnabled ? "Hide values" : "Values") {
+        ActionBar(items: [
+            ActionItem(title: "Takeback", systemImage: "arrow.uturn.backward",
+                       isEnabled: !model.isThinking && model.moves.count >= 2) {
+                model.takeBack()
+            },
+            ActionItem(title: "Hint", systemImage: "lightbulb", isEnabled: !model.isThinking) {
+                Task { await model.hint(engine: app.engine) }
+            },
+            ActionItem(title: values.isEnabled ? "Hide" : "Values",
+                       systemImage: "number.square", isEnabled: !model.isThinking) {
                 Task { await values.toggle(fen: model.position.fen, engine: app.engine) }
-            }
-            .disabled(model.isThinking)
-            Spacer()
-            Button("New game") { model = PlayModel() }
-                .buttonStyle(.borderedProminent)
-        }
-        .buttonStyle(.bordered)
+            },
+            ActionItem(title: "New game", systemImage: "plus.circle", emphasis: .primary) {
+                model = PlayModel()
+            },
+        ])
     }
 
     static func resultHeadline(_ result: String) -> String {

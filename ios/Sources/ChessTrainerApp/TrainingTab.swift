@@ -19,14 +19,27 @@ struct TrainingTab: View {
             }
             .pickerStyle(.segmented)
             .padding(.horizontal, 12)
-            .padding(.bottom, 4)
+            .padding(.top, 6)
+            .padding(.bottom, 2)
 
             switch mode {
             case .practice: TacticsScreen()
             case .rush: RushScreen()
             }
         }
-        .navigationTitle(mode == .practice ? "Tactics" : "Rush")
+    }
+}
+
+extension View {
+    /// Drops the navigation bar entirely. Used on the training screens, where
+    /// the tab bar already says which one you are on and a title would only
+    /// take height away from the board.
+    func hideNavigationBar() -> some View {
+        #if os(iOS)
+        self.toolbar(.hidden, for: .navigationBar)
+        #else
+        self
+        #endif
     }
 }
 

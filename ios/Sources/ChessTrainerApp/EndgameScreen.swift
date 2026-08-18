@@ -233,16 +233,20 @@ struct EndgameScreen: View {
                 Card { Text("No endgame drills bundled").font(.headline) }
             }
         } controls: {
-            HStack {
-                Button("Restart") { values.reset(); model.load(model.drill) }.disabled(model.isThinking)
-                Button(values.isEnabled ? "Hide values" : "Values") {
+            ActionBar(items: [
+                ActionItem(title: "Restart", systemImage: "arrow.counterclockwise",
+                           isEnabled: !model.isThinking) {
+                    values.reset()
+                    model.load(model.drill)
+                },
+                ActionItem(title: values.isEnabled ? "Hide" : "Values",
+                           systemImage: "number.square", isEnabled: !model.isThinking) {
                     Task { await values.toggle(fen: model.position.fen, engine: app.engine) }
-                }
-                .disabled(model.isThinking)
-                Spacer()
-                Button("Next drill") { next() }.buttonStyle(.borderedProminent)
-            }
-            .buttonStyle(.bordered)
+                },
+                ActionItem(title: "Next", systemImage: "forward.end", emphasis: .primary) {
+                    next()
+                },
+            ])
         }
         .task { if model.drill == nil { next() } }
     }

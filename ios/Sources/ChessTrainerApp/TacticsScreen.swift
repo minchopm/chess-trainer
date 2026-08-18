@@ -86,24 +86,24 @@ struct TacticsScreen: View {
     }
 
     private var controls: some View {
-        HStack(spacing: 8) {
-            Button("Hint") { model.requestHint() }
-                .disabled(model.isFinished)
-            Button(values.isEnabled ? "Hide values" : "Values") {
-                // Seeing every move's value is a stronger hint than the hint
-                // button, so it is scored the same way.
+        ActionBar(items: [
+            ActionItem(title: "Hint", systemImage: "lightbulb", isEnabled: !model.isFinished) {
+                model.requestHint()
+            },
+            ActionItem(title: values.isEnabled ? "Hide" : "Values",
+                       systemImage: "number.square", isEnabled: !model.isFinished) {
                 model.noteAidUsed()
                 Task { await values.toggle(fen: model.position.fen, engine: app.engine) }
-            }
-            .disabled(model.isFinished)
-            Button("Solution") { record(model.revealSolution()) }
-                .disabled(model.isFinished)
-            Spacer()
-            if !model.isFinished {
-                Button("Skip") { next() }.buttonStyle(.borderedProminent)
-            }
-        }
-        .buttonStyle(.bordered)
+            },
+            ActionItem(title: "Solution", systemImage: "eye", isEnabled: !model.isFinished) {
+                record(model.revealSolution())
+            },
+            ActionItem(title: "Skip", systemImage: "forward.end",
+                       emphasis: model.isFinished ? .normal : .primary,
+                       isEnabled: !model.isFinished) {
+                next()
+            },
+        ])
     }
 
     private func handleMove(from: Square, to: Square, promotion: PieceKind?) {

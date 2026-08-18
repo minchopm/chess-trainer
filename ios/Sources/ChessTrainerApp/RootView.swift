@@ -16,23 +16,27 @@ public struct RootView: View {
         // needs iOS 18, and there is no reason to exclude iOS 17 devices from a
         // trainer that asks nothing of the OS.
         TabView(selection: tabSelection) {
-            NavigationStack { TrainingTab() }
+            NavigationStack { TrainingTab().hideNavigationBar() }
                 .tabItem { Label("Tactics", systemImage: "target") }
                 .tag(Tab.tactics)
 
-            NavigationStack { PositionalScreen().navigationTitle("Positional") }
+            NavigationStack { PositionalScreen().hideNavigationBar() }
                 .tabItem { Label("Positional", systemImage: "square.grid.3x3.middle.filled") }
                 .tag(Tab.positional)
 
-            NavigationStack { EndgameScreen().navigationTitle("Endgames") }
+            NavigationStack { EndgameScreen().hideNavigationBar() }
                 .tabItem { Label("Endgames", systemImage: "flag.checkered") }
                 .tag(Tab.endgames)
 
-            NavigationStack { PlayScreen().navigationTitle("Play") }
+            NavigationStack { PlayScreen().hideNavigationBar() }
                 .tabItem { Label("Play", systemImage: "person.2") }
                 .tag(Tab.play)
 
-            NavigationStack { ProgressScreen().navigationTitle("Progress") }
+            NavigationStack {
+                // Progress keeps its bar: it pushes to the About screen, and a
+                // pushed view needs somewhere to put its back button.
+                ProgressScreen().navigationTitle("Progress")
+            }
                 .tabItem { Label("Progress", systemImage: "chart.line.uptrend.xyaxis") }
                 .tag(Tab.progress)
         }

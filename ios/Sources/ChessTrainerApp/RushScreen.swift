@@ -266,11 +266,11 @@ struct RushScreen: View {
         } panel: {
             scoreboard
         } controls: {
-            HStack {
-                Spacer()
-                Button("End run", role: .destructive) { model.stop() }
-                    .buttonStyle(.bordered)
-            }
+            ActionBar(items: [
+                ActionItem(title: "End run", systemImage: "stop.circle", emphasis: .destructive) {
+                    model.stop()
+                },
+            ])
         }
     }
 

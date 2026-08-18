@@ -24,10 +24,12 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
                     .padding(.vertical, 12)
                 }
             } else {
-                VStack(spacing: 12) {
-                    board.padding(.horizontal, 12).padding(.top, 8)
-                    ScrollView { VStack(spacing: 12) { panel }.padding(.horizontal, 12) }
-                    controls.padding(.horizontal, 12).padding(.bottom, 8)
+                VStack(spacing: 8) {
+                    board.padding(.horizontal, 10).padding(.top, 4)
+                    ScrollView { VStack(spacing: 10) { panel }.padding(.horizontal, 10) }
+                    // Clear of the tab bar: buttons that touch it read as part
+                    // of it, and the wrong one gets tapped.
+                    controls.padding(.horizontal, 10).padding(.bottom, 10)
                 }
             }
         }

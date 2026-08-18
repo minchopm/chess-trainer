@@ -188,11 +188,12 @@ struct PositionalScreen: View {
                 content
             }
         } controls: {
-            HStack {
-                Spacer()
-                Button(model.phase == .done ? "Next position" : "Skip") { next() }
-                    .buttonStyle(.borderedProminent)
-            }
+            ActionBar(items: [
+                ActionItem(title: model.phase == .done ? "Next" : "Skip",
+                           systemImage: "forward.end", emphasis: .primary) {
+                    next()
+                },
+            ])
         }
         .task { if model.exercise == nil { next() } }
     }
