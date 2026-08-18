@@ -35,7 +35,14 @@ public struct BoardView: View {
     /// Score after each legal move, keyed by UCI, from the mover's point of
     /// view. When present, the hint dots become labelled values.
     public let moveValues: MoveValues?
+    /// Where each piece could go if it were your turn. Used only when there are
+    /// no legal destinations — that is, when the opponent is to move — so that
+    /// a move can be queued rather than refused.
+    public let premoveDestinations: [Square: [Square]]
+    /// Squares taking part in a queued move, to be marked on the board.
+    public let premove: [Square]?
     public let onMove: (Square, Square, PieceKind?) -> Void
+    public let onPremove: (Square, Square, PieceKind?) -> Void
 
     var theme: BoardTheme = .standard
 
@@ -50,7 +57,10 @@ public struct BoardView: View {
         lastMove: (from: Square, to: Square)? = nil,
         shapes: [BoardShape] = [],
         moveValues: MoveValues? = nil,
-        onMove: @escaping (Square, Square, PieceKind?) -> Void = { _, _, _ in }
+        premoveDestinations: [Square: [Square]] = [:],
+        premove: [Square]? = nil,
+        onMove: @escaping (Square, Square, PieceKind?) -> Void = { _, _, _ in },
+        onPremove: @escaping (Square, Square, PieceKind?) -> Void = { _, _, _ in }
     ) {
         self.position = position
         self.orientation = orientation
@@ -58,8 +68,14 @@ public struct BoardView: View {
         self.lastMove = lastMove
         self.shapes = shapes
         self.moveValues = moveValues
+        self.premoveDestinations = premoveDestinations
+        self.premove = premove
         self.onMove = onMove
+        self.onPremove = onPremove
     }
+
+    /// True when the board is taking moves for later rather than for now.
+    private var isQueueing: Bool { legalDestinations.isEmpty && !premoveDestinations.isEmpty }
 
     public var body: some View {
         GeometryReader { geometry in
@@ -67,9 +83,9 @@ public struct BoardView: View {
             let squareSize = side / 8
 
             ZStack(alignment: .topLeading) {
-                squares(squareSize: squareSize)
+                squares(squareSize: squareSize, side: side)
                 overlay(squareSize: squareSize, side: side)
-                pieces(squareSize: squareSize)
+                pieces(squareSize: squareSize, side: side)
                 // Painted after the pieces: a badge on an occupied square is a
                 // capture, and those are the values worth reading.
                 hints(squareSize: squareSize)
@@ -89,7 +105,7 @@ public struct BoardView: View {
                         position: point(for: promotion.to, squareSize: squareSize),
                         pointsDown: displayRank(of: promotion.to) == 0,
                         onPick: { kind in
-                            onMove(promotion.from, promotion.to, kind)
+                            deliver(promotion.from, promotion.to, kind)
                             self.promotion = nil
                         },
                         onCancel: { self.promotion = nil }
@@ -105,30 +121,41 @@ public struct BoardView: View {
 
     // MARK: - Layers
 
-    private func squares(squareSize: CGFloat) -> some View {
-        ForEach(0..<64, id: \.self) { index in
-            let square = Square(index)
-            let isLight = (square.file + square.rank) % 2 == 1
-            Rectangle()
-                .fill(isLight ? theme.lightSquare : theme.darkSquare)
-                .overlay { squareHighlight(square) }
-                .frame(width: squareSize, height: squareSize)
-                .offset(offset(for: square, squareSize: squareSize))
-        }
-    }
+    /// One Canvas rather than 64 views.
+    ///
+    /// Selecting a piece changes state that every square depends on, and
+    /// sixty-four views each re-evaluated, laid out and composited is enough
+    /// work to be felt as a delay between the tap and the highlight. A canvas
+    /// redraw is one pass with no view identity to reconcile.
+    private func squares(squareSize: CGFloat, side: CGFloat) -> some View {
+        Canvas { context, _ in
+            for index in 0..<64 {
+                let square = Square(index)
+                let origin = point(for: square, squareSize: squareSize)
+                let rect = CGRect(x: origin.x, y: origin.y, width: squareSize, height: squareSize)
+                let isLight = (square.file + square.rank) % 2 == 1
+                context.fill(Path(rect), with: .color(isLight ? theme.lightSquare : theme.darkSquare))
 
-    @ViewBuilder
-    private func squareHighlight(_ square: Square) -> some View {
-        if isInCheck(square) {
-            RadialGradient(
-                colors: [theme.check.opacity(0.95), theme.check.opacity(0)],
-                center: .center, startRadius: 0, endRadius: 30
-            )
-        } else if selected == square {
-            theme.selection
-        } else if let lastMove, lastMove.from == square || lastMove.to == square {
-            theme.lastMove
+                if isInCheck(square) {
+                    context.fill(
+                        Path(rect),
+                        with: .radialGradient(
+                            Gradient(colors: [theme.check.opacity(0.95), theme.check.opacity(0)]),
+                            center: CGPoint(x: rect.midX, y: rect.midY),
+                            startRadius: 0, endRadius: squareSize * 0.62
+                        )
+                    )
+                } else if selected == square {
+                    context.fill(Path(rect), with: .color(theme.selection))
+                } else if let lastMove, lastMove.from == square || lastMove.to == square {
+                    context.fill(Path(rect), with: .color(theme.lastMove))
+                } else if let premove, premove.contains(square) {
+                    context.fill(Path(rect), with: .color(theme.premove))
+                }
+            }
         }
+        .frame(width: side, height: side)
+        .allowsHitTesting(false)
     }
 
     private func hints(squareSize: CGFloat) -> some View {
@@ -159,7 +186,7 @@ public struct BoardView: View {
     /// thinking, while "−0.3 worse than best" only makes sense next to a best
     /// move you have not been told.
     private func value(moving from: Square?, to square: Square) -> Int? {
-        guard let from, let values = moveValues else { return nil }
+        guard let from, !isQueueing, let values = moveValues else { return nil }
         return matchingScore(from: from, to: square, in: values)
     }
 
@@ -216,18 +243,64 @@ public struct BoardView: View {
         }
     }
 
-    private func pieces(squareSize: CGFloat) -> some View {
-        ForEach(0..<64, id: \.self) { index in
-            let square = Square(index)
-            if let piece = position[square] {
-                PieceView(piece: piece, size: squareSize)
-                    .offset(offset(for: square, squareSize: squareSize))
-                    .offset(dragging?.from == square ? dragging!.translation : .zero)
-                    .zIndex(dragging?.from == square ? 2 : 1)
-                    .animation(dragging == nil ? .easeOut(duration: 0.13) : nil, value: position.fen)
-                    .allowsHitTesting(false)
+    /// Also one Canvas, and for the same reason: a piece is nine glyph draws —
+    /// eight for the rim and one for the fill — so a full board is nearly three
+    /// hundred text views to keep alive between taps.
+    ///
+    /// Each glyph is resolved once per colour and reused for every piece of it,
+    /// and the whole layer casts its shadow in a single offscreen pass instead
+    /// of one per piece.
+    private func pieces(squareSize: CGFloat, side: CGFloat) -> some View {
+        Canvas { context, _ in
+            let fontSize = squareSize * 0.78
+            let width = max(0.7, squareSize * 0.022)
+
+            var resolved: [Piece: GraphicsContext.ResolvedText] = [:]
+            var rims: [Piece: GraphicsContext.ResolvedText] = [:]
+            for color in PieceColor.allCases {
+                for kind in PieceKind.allCases {
+                    let piece = Piece(color, kind)
+                    let glyph = Text(PieceGlyph.text(for: kind)).font(.system(size: fontSize))
+                    resolved[piece] = context.resolve(glyph.foregroundStyle(PieceView.fill(for: color)))
+                    rims[piece] = context.resolve(glyph.foregroundStyle(PieceView.rim(for: color)))
+                }
+            }
+
+            context.drawLayer { layer in
+                layer.addFilter(.shadow(
+                    color: .black.opacity(0.3),
+                    radius: squareSize * 0.03, x: 0, y: squareSize * 0.02
+                ))
+
+                func draw(_ piece: Piece, at centre: CGPoint) {
+                    guard let fill = resolved[piece], let rim = rims[piece] else { return }
+                    for direction in PieceView.rimOffsets {
+                        layer.draw(rim, at: CGPoint(
+                            x: centre.x + direction.x * width,
+                            y: centre.y + direction.y * width
+                        ))
+                    }
+                    layer.draw(fill, at: centre)
+                }
+
+                for index in 0..<64 {
+                    let square = Square(index)
+                    guard let piece = position[square], dragging?.from != square else { continue }
+                    draw(piece, at: centre(of: square, squareSize: squareSize))
+                }
+
+                // The piece under the finger goes last, so it is over the rest.
+                if let dragging, let piece = position[dragging.from] {
+                    let origin = centre(of: dragging.from, squareSize: squareSize)
+                    draw(piece, at: CGPoint(
+                        x: origin.x + dragging.translation.width,
+                        y: origin.y + dragging.translation.height
+                    ))
+                }
             }
         }
+        .frame(width: side, height: side)
+        .allowsHitTesting(false)
     }
 
     private func overlay(squareSize: CGFloat, side: CGFloat) -> some View {
@@ -339,16 +412,20 @@ public struct BoardView: View {
             promotion = (from: from, to: to)
             return
         }
-        onMove(from, to, nil)
+        deliver(from, to, nil)
+    }
+
+    private func deliver(_ from: Square, _ to: Square, _ kind: PieceKind?) {
+        if isQueueing { onPremove(from, to, kind) } else { onMove(from, to, kind) }
     }
 
     private func canMove(from square: Square) -> Bool {
-        !(legalDestinations[square] ?? []).isEmpty
+        !destinations(from: square).isEmpty
     }
 
     private func destinations(from square: Square?) -> [Square] {
         guard let square else { return [] }
-        return legalDestinations[square] ?? []
+        return (isQueueing ? premoveDestinations[square] : legalDestinations[square]) ?? []
     }
 
     private func isInCheck(_ square: Square) -> Bool {
@@ -407,13 +484,16 @@ struct PieceView: View {
     let piece: Piece
     let size: CGFloat
 
-    private var fill: Color {
-        piece.color == .white ? Color(white: 0.98) : Color(white: 0.10)
+    static func fill(for color: PieceColor) -> Color {
+        color == .white ? Color(white: 0.98) : Color(white: 0.10)
     }
 
-    private var rim: Color {
-        piece.color == .white ? Color(white: 0.10) : Color(white: 0.95)
+    static func rim(for color: PieceColor) -> Color {
+        color == .white ? Color(white: 0.10) : Color(white: 0.95)
     }
+
+    private var fill: Color { Self.fill(for: piece.color) }
+    private var rim: Color { Self.rim(for: piece.color) }
 
     var body: some View {
         let glyph = PieceGlyph.text(for: piece)
@@ -436,7 +516,7 @@ struct PieceView: View {
     }
 
     /// Eight directions, so the outline is even rather than cross-shaped.
-    private static let rimOffsets: [(x: CGFloat, y: CGFloat)] = [
+    static let rimOffsets: [(x: CGFloat, y: CGFloat)] = [
         (1, 0), (-1, 0), (0, 1), (0, -1),
         (0.7, 0.7), (-0.7, 0.7), (0.7, -0.7), (-0.7, -0.7),
     ]

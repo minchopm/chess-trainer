@@ -11,6 +11,8 @@ public struct BoardTheme: Sendable {
     public var check: Color
     public var hint: Color
     public var coachArrow: Color
+    /// Moves you have queued while it is not your turn.
+    public var premove: Color
 
     public static let standard = BoardTheme(
         lightSquare: Color(red: 0.922, green: 0.894, blue: 0.827),
@@ -19,7 +21,8 @@ public struct BoardTheme: Sendable {
         selection: Color(red: 0.357, green: 0.608, blue: 0.835).opacity(0.5),
         check: Color(red: 0.851, green: 0.439, blue: 0.373),
         hint: Color.black.opacity(0.28),
-        coachArrow: Color(red: 0.424, green: 0.749, blue: 0.451)
+        coachArrow: Color(red: 0.424, green: 0.749, blue: 0.451),
+        premove: Color(red: 0.357, green: 0.608, blue: 0.835).opacity(0.42)
     )
 }
 

@@ -52,14 +52,14 @@ struct TacticsScreen: View {
             }
         } panel: {
             if model.puzzle == nil {
-                EmptyLibraryNotice()
+                LibraryNotice(isLoaded: app.isLibraryLoaded, what: "puzzles", file: "tactics.json")
             } else {
                 puzzleDetails
             }
         } controls: {
             controls
         }
-        .task { if model.puzzle == nil { next() } }
+        .task(id: app.library.puzzles.count) { if model.puzzle == nil { next() } }
     }
 
     @ViewBuilder

@@ -197,11 +197,7 @@ struct PositionalScreen: View {
             }
         } panel: {
             if model.exercise == nil {
-                Card {
-                    Text("No positional exercises bundled").font(.headline)
-                    Text("Generate them with scripts/generate-positions.mjs in the web project, then copy positions.json into Resources/Data.")
-                        .font(.footnote).foregroundStyle(.secondary)
-                }
+                LibraryNotice(isLoaded: app.isLibraryLoaded, what: "positional exercises", file: "positions.json")
             } else {
                 content
             }
@@ -213,7 +209,7 @@ struct PositionalScreen: View {
                 },
             ])
         }
-        .task { if model.exercise == nil { next() } }
+        .task(id: app.library.exercises.count) { if model.exercise == nil { next() } }
     }
 
     @ViewBuilder

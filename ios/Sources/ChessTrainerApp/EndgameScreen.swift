@@ -265,7 +265,7 @@ struct EndgameScreen: View {
                 },
             ])
         }
-        .task { if model.drill == nil { next() } }
+        .task(id: app.library.drills.count) { if model.drill == nil { next() } }
     }
 
     private func play(_ from: Square, _ to: Square, _ promotion: PieceKind?) async {

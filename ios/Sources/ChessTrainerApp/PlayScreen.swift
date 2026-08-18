@@ -40,6 +40,15 @@ final class PlayModel {
     var level = OpponentLevel.all[1]
     var coachingEnabled = true
 
+    /// Moves given while the engine is thinking. The rules of the thing live in
+    /// PremoveQueue; this holds one and reports what the screen needs.
+    private(set) var premoves = PremoveQueue()
+    private(set) var premoveDestinations: [Square: [Square]] = [:]
+
+    var premoveCount: Int { premoves.count }
+    var premoveWasDropped: Bool { premoves.wasDropped }
+    var premoveSquares: [Square] { premoves.squares }
+
     struct GameSummary {
         let result: String
         let accuracy: Int
@@ -71,6 +80,9 @@ final class PlayModel {
         evaluation = .centipawns(20)
         hasStarted = true
 
+        premoves.clear()
+        premoveDestinations = [:]
+
         await engine.newGame()
         if side == .black { await playEngineMove(engine: engine) }
         refreshDestinations()
@@ -82,24 +94,8 @@ final class PlayModel {
             $0.matchesNotation(of: Move(from: from, to: to, promotion: promotion))
         }) else { return }
 
-        let before = position
-        let san = position.san(for: move)
-        position.make(move)
-        lastMove = (from: move.from, to: move.to)
-        moves.append((san: san, grade: nil))
-        legalDestinations = [:]
-        shapes = []
         isThinking = true
-
-        if coachingEnabled {
-            let coach = CoachService(engine: engine)
-            if let review = try? await coach.review(position: before, move: move) {
-                latestReview = review
-                moves[moves.count - 1].grade = review.assessment.grade
-                losses.append(review.assessment.centipawnsLost)
-                evaluation = review.scoreAfter
-            }
-        }
+        await apply(move, engine: engine)
 
         if position.isGameOver {
             isThinking = false
@@ -108,12 +104,67 @@ final class PlayModel {
         }
 
         await playEngineMove(engine: engine)
+
+        // Whatever was queued now gets its turn, one move at a time, each
+        // checked against the board the engine actually left behind.
+        while !position.isGameOver, let queued = premoves.next(in: position) {
+            refreshPremoveDestinations()
+            // Long enough to be seen. A move that appears in the same frame as
+            // the engine's reply reads as one event, and you lose track of who
+            // played what.
+            try? await Task.sleep(for: .milliseconds(280))
+            await apply(queued, engine: engine)
+            if position.isGameOver { break }
+            await playEngineMove(engine: engine)
+        }
+
         isThinking = false
+        refreshPremoveDestinations()
 
         if position.isGameOver { finish() } else { refreshDestinations() }
     }
 
+    /// Play one of your moves and grade it. A queued move is still your move,
+    /// so it goes through the same coaching as one played by hand.
+    private func apply(_ move: Move, engine: StockfishEngine) async {
+        let before = position
+        let san = position.san(for: move)
+        position.make(move)
+        lastMove = (from: move.from, to: move.to)
+        moves.append((san: san, grade: nil))
+        legalDestinations = [:]
+        shapes = []
+        // Straight away, not after the coaching search: the whole point of a
+        // queued move is that it can be given while the engine is busy.
+        refreshPremoveDestinations()
+
+        guard coachingEnabled else { return }
+        let coach = CoachService(engine: engine)
+        if let review = try? await coach.review(position: before, move: move) {
+            latestReview = review
+            moves[moves.count - 1].grade = review.assessment.grade
+            losses.append(review.assessment.centipawnsLost)
+            evaluation = review.scoreAfter
+        }
+    }
+
+    func queuePremove(from: Square, to: Square, promotion: PieceKind?) {
+        guard hasStarted else { return }
+        premoves.queue(from: from, to: to, promotion: promotion, in: position, for: side)
+        refreshPremoveDestinations()
+    }
+
+    func cancelPremoves() {
+        premoves.clear()
+        refreshPremoveDestinations()
+    }
+
+    private func refreshPremoveDestinations() {
+        premoveDestinations = hasStarted ? premoves.destinations(in: position, for: side) : [:]
+    }
+
     func takeBack() {
+        cancelPremoves()
         // Undo is a position rebuild rather than a move stack: replaying from
         // the start is instant at these lengths and cannot drift out of step
         // with the board the way an undo stack can.
@@ -231,12 +282,17 @@ struct PlayScreen: View {
                     lastMove: model.lastMove,
                     shapes: model.shapes,
                     moveValues: values.values,
+                    premoveDestinations: model.premoveDestinations,
+                    premove: model.premoveSquares,
                     onMove: { from, to, promotion in
                         Task {
                             await model.play(from: from, to: to, promotion: promotion, engine: app.engine)
                             values.invalidate(unless: model.position.fen)
                             await values.refresh(fen: model.position.fen, engine: app.engine)
                         }
+                    },
+                    onPremove: { from, to, promotion in
+                        model.queuePremove(from: from, to: to, promotion: promotion)
                     }
                 )
             }
@@ -303,6 +359,22 @@ struct PlayScreen: View {
         Card {
             Text(model.statusText).font(.headline)
             Text("Opponent: \(model.level.label)").font(.footnote).foregroundStyle(.secondary)
+
+            if model.premoveCount > 0 {
+                Label(
+                    model.premoveCount == 1
+                        ? "1 move queued — it plays as soon as the engine has moved."
+                        : "\(model.premoveCount) moves queued — they play in order, and stop if one becomes impossible.",
+                    systemImage: "bolt.horizontal.circle"
+                )
+                .font(.footnote)
+                .foregroundStyle(.tint)
+            } else if model.premoveWasDropped {
+                Label("The queue was dropped — the engine's move made it impossible.",
+                      systemImage: "exclamationmark.triangle")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
         }
 
         if let review = model.latestReview, model.summary == nil {
@@ -339,10 +411,18 @@ struct PlayScreen: View {
 
     private var gameControls: some View {
         ActionBar(items: [
-            ActionItem(title: "Takeback", systemImage: "arrow.uturn.backward",
-                       isEnabled: !model.isThinking && model.moves.count >= 2) {
-                model.takeBack()
-            },
+            // Takeback and Cancel never apply at the same moment — one is for
+            // your turn, the other for the engine's — so they share a slot
+            // rather than each keeping one it cannot use.
+            model.premoveCount == 0
+                ? ActionItem(title: "Takeback", systemImage: "arrow.uturn.backward",
+                             isEnabled: !model.isThinking && model.moves.count >= 2) {
+                    model.takeBack()
+                }
+                : ActionItem(title: "Cancel \(model.premoveCount)", systemImage: "xmark.circle",
+                             emphasis: .destructive) {
+                    model.cancelPremoves()
+                },
             ActionItem(title: "Hint", systemImage: "lightbulb", isEnabled: !model.isThinking) {
                 Task { await model.hint(engine: app.engine) }
             },

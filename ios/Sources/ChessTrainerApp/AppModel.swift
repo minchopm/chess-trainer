@@ -13,6 +13,10 @@ import Observation
 @Observable
 public final class AppModel {
     public private(set) var library = ContentLibrary()
+    /// False until the data files have been read. Screens need it to tell "no
+    /// puzzles in this build" from "the puzzles have not arrived yet", which
+    /// look identical from an empty array.
+    public private(set) var isLibraryLoaded = false
     public private(set) var progress = TrainingProgress()
     public private(set) var engineState: EngineState = .starting
 
@@ -31,8 +35,14 @@ public final class AppModel {
     }
 
     public func start() async {
-        library = (try? ContentLibrary.load(from: Bundle.main.resourceURL ?? URL(fileURLWithPath: ".")))
-            ?? ContentLibrary()
+        // Off the main actor: the library is a few megabytes of JSON, and
+        // decoding it where the UI runs is the difference between the first
+        // screen appearing at once and appearing after a blank pause.
+        let resources = Bundle.main.resourceURL ?? URL(fileURLWithPath: ".")
+        library = await Task.detached(priority: .userInitiated) {
+            (try? ContentLibrary.load(from: resources)) ?? ContentLibrary()
+        }.value
+        isLibraryLoaded = true
 
         // The big network is the one over 50 MB; the small one is a few MB.
         // Sizes rather than names, because the names are pinned to the engine
@@ -46,8 +56,14 @@ public final class AppModel {
 
         do {
             try await engine.loadNetworks(big: big, small: small)
-            await engine.setOption("Threads", "1")
-            await engine.setOption("Hash", "64")
+
+            // Search on several cores, but not on all of them. Two are left for
+            // the app itself — a search that starves the UI thread makes the
+            // board feel broken, which costs more than the extra depth buys —
+            // and the cap keeps a long analysis from cooking the phone.
+            let cores = ProcessInfo.processInfo.activeProcessorCount
+            await engine.setOption("Threads", String(max(1, min(4, cores - 2))))
+            await engine.setOption("Hash", "128")
             engineState = .ready
         } catch {
             engineState = .failed(error.localizedDescription)

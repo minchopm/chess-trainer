@@ -130,6 +130,24 @@ public struct Position: Sendable {
 
     public subscript(square: Square) -> Piece? { squares[square.index] }
 
+    /// The same position, but with `color` to move.
+    ///
+    /// For planning a move before it is your turn. Deliberately unchecked: the
+    /// result can be a position no game could reach — both kings attacked, an
+    /// en passant square that no longer means anything — because it stands for
+    /// an intention rather than for a game. `legalMoves()` on it answers "what
+    /// could this piece do if it were my turn", which is exactly what a premove
+    /// is guessing at.
+    public func speculating(with color: PieceColor) -> Position {
+        var copy = self
+        copy.sideToMove = color
+        copy.enPassant = nil
+        copy.hash = copy.computeHash()
+        // The repetition history belongs to the real game, not to a sketch.
+        copy.history = [copy.hash]
+        return copy
+    }
+
     public func king(of color: PieceColor) -> Square? {
         for index in 0..<64 where squares[index] == Piece(color, .king) {
             return Square(index)

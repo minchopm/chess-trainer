@@ -153,13 +153,30 @@ struct FeedbackCard: View {
     }
 }
 
-struct EmptyLibraryNotice: View {
+/// Nothing to show yet — and which of the two reasons it is.
+///
+/// The data is read off the main actor so the first screen appears at once,
+/// which means every mode has a moment where its library is legitimately empty.
+/// Announcing "nothing was bundled" during that moment accuses the build of a
+/// fault it does not have.
+struct LibraryNotice: View {
+    let isLoaded: Bool
+    let what: String
+    let file: String
+
     var body: some View {
         Card {
-            Text("No puzzles bundled").font(.headline)
-            Text("The data files did not make it into the app bundle. Check that data/tactics.json is listed in the Xcode target's resources.")
-                .font(.footnote)
-                .foregroundStyle(.secondary)
+            if isLoaded {
+                Text("No \(what) bundled").font(.headline)
+                Text("The data did not make it into the app bundle. Check that data/\(file) is listed in the Xcode target's resources.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            } else {
+                HStack(spacing: 8) {
+                    ProgressView().controlSize(.small)
+                    Text("Loading \(what)…").font(.subheadline).foregroundStyle(.secondary)
+                }
+            }
         }
     }
 }

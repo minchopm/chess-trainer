@@ -164,22 +164,14 @@ struct GuessTheEloScreen: View {
     var body: some View {
         Group {
             if app.library.games.isEmpty {
-                emptyNotice
+                LibraryNotice(isLoaded: app.isLibraryLoaded, what: "games", file: "games.json")
+                    .padding(12)
             } else {
                 content
             }
         }
-        .task { if model.game == nil { next() } }
+        .task(id: app.library.games.count) { if model.game == nil { next() } }
         .onDisappear { model.stop() }
-    }
-
-    private var emptyNotice: some View {
-        Card {
-            Text("No games bundled").font(.headline)
-            Text("Guess the Elo needs data/games.json in the app bundle. Build it with scripts/import-games.mjs from a Lichess archive.")
-                .font(.footnote).foregroundStyle(.secondary)
-        }
-        .padding(12)
     }
 
     private var content: some View {

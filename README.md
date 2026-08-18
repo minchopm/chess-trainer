@@ -192,6 +192,11 @@ but none of its code; the rules engine, coaching layer and training logic are
 reimplemented in Swift and covered by their own tests, including a perft suite
 that proves the move generator correct.
 
+It also takes moves before your turn: while the engine thinks you can queue a
+short plan — take, recapture, castle — and it plays out move by move as the
+board allows, or is dropped whole the moment the engine makes its first step
+impossible.
+
 It also has two modes the web version does not: **Rush**, a timed run against
 the clock, and **Guess the Elo**, which plays a real rated game out move by move
 and asks you to say how strong the players were. The second is not a quiz for
