@@ -32,8 +32,17 @@ public struct BoardTheme: Sendable {
 /// piece. Using one set and colouring it gives both sides identical shapes and
 /// weight; a rim behind each glyph keeps them legible on either square.
 enum PieceGlyph {
+    /// Text presentation selector, U+FE0E.
+    ///
+    /// Without it the pawn is drawn by the colour emoji font. U+265F has an
+    /// emoji presentation, and an emoji glyph ignores foregroundStyle entirely
+    /// — so every white pawn rendered solid black no matter what colour it was
+    /// asked for, while the other pieces, which have no emoji form, obeyed.
+    /// The result looked like a position with sixteen black pawns.
+    private static let textPresentation = "\u{FE0E}"
+
     static func text(for kind: PieceKind) -> String {
-        switch kind {
+        let glyph: String = switch kind {
         case .king: "♚"
         case .queen: "♛"
         case .rook: "♜"
@@ -41,6 +50,7 @@ enum PieceGlyph {
         case .knight: "♞"
         case .pawn: "♟"
         }
+        return glyph + textPresentation
     }
 
     static func text(for piece: Piece) -> String { text(for: piece.kind) }

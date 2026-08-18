@@ -83,9 +83,9 @@ The app is GPLv3, because Stockfish is. That is not a formality:
 - [x] Licence text and attribution reachable from inside the app — Progress →
       About & licence, which carries the full GPL, the third-party notices and a
       link to the source.
-- [ ] Set the development team in `project.yml` for signing. The bundle
-      identifier is `com.arte-soft.chesstrainer`; the target is currently
-      unsigned, which is fine for the simulator and not for submission.
+- [x] Signing configured: team `8293TNMX6S` (ARTE SOFT EOOD), bundle identifier
+      `com.arte-soft.chesstrainer`, automatic signing. A device build produces a
+      signed app.
 - [x] `AboutScreen.sourceURL` points at https://github.com/minchopm/chess-trainer
       — under GPL that link is an obligation, not a courtesy, so it has to stay
       public and current.
