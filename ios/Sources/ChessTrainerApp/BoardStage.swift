@@ -66,16 +66,20 @@ struct PlayerBar: View {
         let taken = material.capturedBy(color)
         let lead = material.lead(of: color)
         let glyphs = taken.count <= Self.glyphLimit ? taken : []
-        // Eight glyphs at full width crowd a phone; a tighter overlap still
-        // reads, because the pieces are grouped by kind.
-        let overlap: CGFloat = glyphs.count > 5 ? -5 : -3
 
-        return HStack(spacing: 4) {
-            HStack(spacing: overlap) {
-                ForEach(Array(glyphs.enumerated()), id: \.offset) { _, kind in
-                    Text(PieceGlyph.text(for: kind))
-                        .font(.system(size: 15))
-                        .foregroundStyle(glyphColor)
+        // Grouped by kind, with a wider gap between groups than inside one.
+        // Evenly spaced, the row reads as a single smear of pieces; grouped,
+        // "rook, two pawns" is countable at a glance without reading it.
+        return HStack(spacing: 6) {
+            HStack(spacing: 5) {
+                ForEach(Array(Self.grouped(glyphs).enumerated()), id: \.offset) { _, group in
+                    HStack(spacing: 1.5) {
+                        ForEach(0..<group.count, id: \.self) { _ in
+                            Text(PieceGlyph.text(for: group.kind))
+                                .font(.system(size: 15))
+                                .foregroundStyle(glyphColor)
+                        }
+                    }
                 }
             }
             if lead > 0 {
@@ -86,6 +90,17 @@ struct PlayerBar: View {
             }
         }
         .lineLimit(1)
+    }
+
+    /// Runs of the same kind. `capturedBy` already returns them heaviest first,
+    /// so equal pieces are always adjacent.
+    private static func grouped(_ kinds: [PieceKind]) -> [(kind: PieceKind, count: Int)] {
+        var groups: [(kind: PieceKind, count: Int)] = []
+        for kind in kinds {
+            if groups.last?.kind == kind { groups[groups.count - 1].count += 1 }
+            else { groups.append((kind, 1)) }
+        }
+        return groups
     }
 
     /// Captured pieces are the opponent's colour. Black glyphs are lifted well
