@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chess Trainer</title>
+  <link rel="stylesheet" href="/css/app.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>♞</text></svg>">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <span class="brand">Chess Trainer</span>
+      <nav class="modes" id="modes"></nav>
+      <span class="spacer"></span>
+      <span class="rating-chip" id="rating-chip">—</span>
+      <span class="engine-status" id="engine-status" data-state="booting">engine loading</span>
+    </header>
+
+    <main class="workspace">
+      <div class="board-column">
+        <div class="board-wrap">
+          <div class="evalbar" id="evalbar" data-lead="white">
+            <div class="evalbar-white" id="evalbar-white"></div>
+            <span class="evalbar-text" id="evalbar-text">0.00</span>
+          </div>
+          <div id="board"></div>
+        </div>
+        <div class="controls" id="board-controls"></div>
+      </div>
+
+      <aside id="panel"><div class="loading">Loading…</div></aside>
+    </main>
+  </div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+import ChessCore
+import ChessEngine
+import ChessTraining
+import Observation
+import SwiftUI
+
+@MainActor
+@Observable
+final class EndgameModel {
+    private(set) var drill: EndgameDrill?
+    private(set) var position = Position()
+    private(set) var legalDestinations: [Square: [Square]] = [:]
+    private(set) var lastMove: (from: Square, to: Square)?
+    private(set) var evaluation: EngineScore?
+    private(set) var isThinking = false
+    private(set) var isFinished = false
+    private(set) var plies = 0
+    private(set) var lostAt: (move: String, reason: String)?
+    private(set) var outcome: Outcome?
+
+    struct Outcome {
+        let success: Bool
+        let title: String
+        let lines: [String]
+    }
+
+    /// You play whichever side starts the drill.
+    private(set) var side: PieceColor = .white
+
+    var orientation: PieceColor { side }
+
+    var goalText: String {
+        guard let drill else { return "" }
+        let colour = side == .white ? "White" : "Black"
+        return drill.goal == .win ? "Win as \(colour)." : "Hold the draw as \(colour)."
+    }
+
+    func load(_ next: EndgameDrill?) {
+        guard let next, let start = Position(fen: next.fen) else {
+            drill = nil
+            return
+        }
+        drill = next
+        position = start
+        side = start.sideToMove
+        plies = 0
+        isFinished = false
+        lostAt = nil
+        outcome = nil
+        lastMove = nil
+        evaluation = nil
+        refreshDestinations()
+    }
+
+    /// Score from your point of view, with mate flattened to a large number.
+    private func yourScore(_ score: EngineScore?, toMove: PieceColor) -> Int {
+        guard let score else { return 0 }
+        return CoachService.score(score, for: side, toMove: toMove)
+    }
+
+    func play(from: Square, to: Square, promotion: PieceKind?, engine: StockfishEngine) async -> Bool? {
+        guard !isFinished, !isThinking, position.sideToMove == side else { return nil }
+        // Notation has to be taken before the move is made: afterwards the
+        // position no longer contains the piece that moved, and disambiguation
+        // would be computed against the wrong board.
+        guard let move = position.legalMoves().first(where: {
+            $0.matchesNotation(of: Move(from: from, to: to, promotion: promotion))
+        }) else { return nil }
+        let played = position.san(for: move)
+        position.make(move)
+        lastMove = (from: move.from, to: move.to)
+        plies += 1
+        legalDestinations = [:]
+
+        if let finished = checkOutcome() { return finished }
+
+        isThinking = true
+        defer { isThinking = false }
+
+        await updateEvaluation(engine: engine)
+
+        // Has the required result just slipped away?
+        if lostAt == nil {
+            let cp = yourScore(evaluation, toMove: position.sideToMove)
+            if drill?.goal == .win, cp < 180 {
+                lostAt = (move: played, reason: "the win is gone")
+            } else if drill?.goal == .draw, cp < -300 {
+                lostAt = (move: played, reason: "the draw is gone")
+            }
+        }
+
+        if let reply = try? await engine.chooseMove(fen: position.fen, depth: 16),
+           let parsed = Move(uci: reply),
+           let made = position.make(parsed) {
+            lastMove = (from: made.from, to: made.to)
+            plies += 1
+        }
+
+        await updateEvaluation(engine: engine)
+
+        if let finished = checkOutcome() { return finished }
+
+        // 80 moves is generous for any of these; past that the drill is a draw
+        // by exhaustion rather than by technique.
+        if plies > 160 {
+            return conclude(success: drill?.goal == .draw, how: "The 80-move limit ran out.")
+        }
+
+        refreshDestinations()
+        return nil
+    }
+
+    private func updateEvaluation(engine: StockfishEngine) async {
+        guard !position.isGameOver else {
+            evaluation = position.isCheckmate
+                ? .mate(position.sideToMove == side ? -1 : 1)
+                : .centipawns(0)
+            return
+        }
+        if let analysis = try? await engine.analyse(fen: position.fen, depth: 12, multiPV: 1) {
+            evaluation = analysis.lines.first?.score
+        }
+    }
+
+    private func checkOutcome() -> Bool? {
+        guard position.isGameOver else { return nil }
+
+        if position.isCheckmate {
+            let winner = position.sideToMove.opponent
+            return conclude(
+                success: winner == side && drill?.goal == .win,
+                how: winner == side ? "Checkmate — you delivered it." : "You were checkmated."
+            )
+        }
+
+        let how = position.isStalemate ? "Stalemate."
+            : position.isInsufficientMaterial ? "Insufficient material."
+            : position.isThreefoldRepetition ? "Threefold repetition."
+            : "Fifty-move rule."
+        return conclude(success: drill?.goal == .draw, how: how)
+    }
+
+    @discardableResult
+    private func conclude(success: Bool, how: String) -> Bool {
+        isFinished = true
+        legalDestinations = [:]
+        var lines = [how + " " + (success
+            ? "That is the result you needed."
+            : "You needed to \(drill?.goal == .win ? "win" : "draw") this.")]
+        if let lostAt, !success { lines.append("It went wrong at \(lostAt.move).") }
+        if let drill { lines.append(drill.idea) }
+        outcome = Outcome(success: success, title: success ? "Drill passed" : "Drill failed", lines: lines)
+        return success
+    }
+
+    private func refreshDestinations() {
+        guard position.sideToMove == side, !isFinished else {
+            legalDestinations = [:]
+            return
+        }
+        var map: [Square: [Square]] = [:]
+        for move in position.legalMoves() { map[move.from, default: []].append(move.to) }
+        legalDestinations = map
+    }
+}
+
+struct EndgameScreen: View {
+    @Environment(AppModel.self) private var app
+    @State private var model = EndgameModel()
+    @State private var values = MoveValueController()
+
+    var body: some View {
+        TrainingLayout {
+            HStack(spacing: 8) {
+                EvaluationBar(score: model.evaluation)
+                BoardView(
+                    position: model.position,
+                    orientation: model.orientation,
+                    legalDestinations: model.legalDestinations,
+                    lastMove: model.lastMove,
+                    moveValues: values.values,
+                    onMove: { from, to, promotion in
+                        Task {
+                            await play(from, to, promotion)
+                            values.invalidate(unless: model.position.fen)
+                            await values.refresh(fen: model.position.fen, engine: app.engine)
+                        }
+                    }
+                )
+            }
+        } panel: {
+            if let drill = model.drill {
+                Card {
+                    Text(drill.name).font(.headline)
+                    Text(model.goalText).font(.subheadline).foregroundStyle(.secondary)
+                    TagRow(tags: [
+                        "Rating \(drill.rating)",
+                        drill.goal == .win ? "Must win" : "Must draw",
+                        "\((model.plies + 1) / 2) move\((model.plies + 1) / 2 == 1 ? "" : "s")",
+                    ])
+                }
+
+                if model.isThinking {
+                    HStack(spacing: 6) {
+                        ProgressView()
+                        Text("Engine is thinking…").font(.footnote).foregroundStyle(.secondary)
+                    }
+                }
+
+                if let lostAt = model.lostAt, model.outcome == nil {
+                    Card {
+                        Text("\(lostAt.move) threw it away").font(.subheadline.weight(.semibold))
+                        Text("After that move \(lostAt.reason). Play on if you like, or restart and try the correct plan.")
+                            .font(.footnote).foregroundStyle(.secondary)
+                    }
+                }
+
+                if let outcome = model.outcome {
+                    Card {
+                        Text(outcome.title).font(.subheadline.weight(.semibold))
+                            .foregroundStyle(outcome.success ? Color.green : Color.red)
+                        ForEach(outcome.lines, id: \.self) { line in
+                            Text(line).font(.footnote).foregroundStyle(.secondary)
+                        }
+                    }
+                }
+
+                Card {
+                    Text("The idea").font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
+                    Text(drill.idea).font(.footnote)
+                }
+            } else {
+                Card { Text("No endgame drills bundled").font(.headline) }
+            }
+        } controls: {
+            HStack {
+                Button("Restart") { values.reset(); model.load(model.drill) }.disabled(model.isThinking)
+                Button(values.isEnabled ? "Hide values" : "Values") {
+                    Task { await values.toggle(fen: model.position.fen, engine: app.engine) }
+                }
+                .disabled(model.isThinking)
+                Spacer()
+                Button("Next drill") { next() }.buttonStyle(.borderedProminent)
+            }
+            .buttonStyle(.bordered)
+        }
+        .task { if model.drill == nil { next() } }
+    }
+
+    private func play(_ from: Square, _ to: Square, _ promotion: PieceKind?) async {
+        guard let success = await model.play(
+            from: from, to: to, promotion: promotion, engine: app.engine
+        ), let drill = model.drill else { return }
+
+        app.update { progress in
+            progress.record(
+                mode: .endgame, itemID: drill.id, itemRating: drill.rating,
+                correct: success, themes: drill.themes
+            )
+        }
+    }
+
+    private func next() {
+        values.reset()
+        model.load(ItemSelector.nextDrill(from: app.library.drills, progress: app.progress))
+    }
+}
+
+/// The familiar bar beside the board: white's share of the evaluation.
+struct EvaluationBar: View {
+    let score: EngineScore?
+
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack(alignment: .bottom) {
+                Color(white: 0.18)
+                Color(white: 0.93).frame(height: geometry.size.height * share)
+            }
+        }
+        .frame(width: 14)
+        .clipShape(RoundedRectangle(cornerRadius: 4))
+        .accessibilityLabel("Evaluation \(score?.text ?? "unknown")")
+    }
+
+    /// Squashed through a logistic curve so the bar moves meaningfully near
+    /// equality instead of slamming to one end at the first pawn.
+    private var share: Double {
+        guard let score else { return 0.5 }
+        switch score {
+        case .mate(let moves): return moves > 0 ? 1 : 0
+        case .centipawns(let cp): return 1 / (1 + exp(-Double(cp) / 320))
+        }
+    }
+}

@@ -1,0 +1,225 @@
+import ChessCore
+import ChessTraining
+import Observation
+import SwiftUI
+
+@MainActor
+@Observable
+final class TacticsModel {
+    private(set) var puzzle: Puzzle?
+    private(set) var reason: SelectionReason = .level
+    private(set) var position = Position()
+    private(set) var legalDestinations: [Square: [Square]] = [:]
+    private(set) var lastMove: (from: Square, to: Square)?
+    private(set) var shapes: [BoardShape] = []
+    private(set) var feedback: Feedback?
+    private(set) var isFinished = false
+
+    private var step = 0
+    private var mistakes = 0
+    private var hintLevel = 0
+
+    struct Feedback: Identifiable {
+        let id = UUID()
+        let tone: Tone
+        let title: String
+        let lines: [String]
+
+        enum Tone { case correct, partial, wrong, neutral }
+    }
+
+    var orientation: PieceColor { puzzle?.sideToMove ?? .white }
+
+    var prompt: String {
+        guard let puzzle else { return "" }
+        let side = puzzle.sideToMove == .white ? "White" : "Black"
+        return isFinished ? "\(side) to play — solution" : "\(side) to play"
+    }
+
+    /// What the puzzle is asking for, reading both the miner's theme vocabulary
+    /// and Lichess', since a merged library contains both.
+    var objective: String {
+        guard let puzzle else { return "" }
+        let themes = Set(puzzle.themes)
+        if puzzle.mate || themes.contains("mate") {
+            if let inN = puzzle.themes.first(where: { $0.hasPrefix("mateIn") }) {
+                return "Mate in \(inN.dropFirst("mateIn".count))."
+            }
+            return "Find the forced mate."
+        }
+        if themes.contains("defensiveMove") || themes.contains("equality") {
+            return "Find the move that saves the position."
+        }
+        if themes.contains("crushing") { return "Find the crushing blow." }
+        if themes.contains("winsMaterial") || themes.contains("hangingPiece") { return "Win material." }
+        if themes.contains("advantage") { return "Find the move that wins a clear advantage." }
+        return "Find the strongest continuation."
+    }
+
+    func load(_ selection: Selection<Puzzle>?) {
+        guard let selection, let start = Position(fen: selection.item.fen) else {
+            puzzle = nil
+            return
+        }
+        puzzle = selection.item
+        reason = selection.reason
+        position = start
+        step = 0
+        mistakes = 0
+        hintLevel = 0
+        isFinished = false
+        feedback = nil
+        shapes = []
+        lastMove = nil
+        refreshDestinations()
+    }
+
+    func play(from: Square, to: Square, promotion: PieceKind?) -> (solved: Bool, usedHint: Bool)? {
+        guard let puzzle, !isFinished, step < puzzle.solution.count else { return nil }
+
+        let expected = puzzle.solution[step]
+        let attempted = "\(from)\(to)\(promotion?.letter.description ?? "")"
+
+        // Tolerate a missing promotion suffix: the board only asks for one when
+        // the move actually promotes.
+        guard attempted == expected || "\(from)\(to)" == String(expected.prefix(4)) else {
+            registerWrongMove(from: from, to: to, promotion: promotion)
+            return nil
+        }
+
+        apply(uci: expected)
+        step += 1
+
+        if step >= puzzle.solution.count { return finish(solved: true) }
+
+        // The opponent's reply is part of the puzzle.
+        apply(uci: puzzle.solution[step])
+        step += 1
+
+        if step >= puzzle.solution.count { return finish(solved: true) }
+
+        refreshDestinations()
+        feedback = Feedback(tone: .neutral, title: "Good — keep going.", lines: [])
+        return nil
+    }
+
+    func revealSolution() -> (solved: Bool, usedHint: Bool)? {
+        guard !isFinished else { return nil }
+        return finish(solved: false, revealed: true)
+    }
+
+    /// Record that the solver was helped, without showing a hint. Used by the
+    /// move-value overlay, which helps at least as much as a hint does.
+    func noteAidUsed() {
+        guard !isFinished else { return }
+        hintLevel = max(hintLevel, 1)
+    }
+
+    func requestHint() {
+        guard let puzzle, !isFinished, step < puzzle.solution.count else { return }
+        hintLevel += 1
+        let uci = puzzle.solution[step]
+        guard let from = Square(uci.prefix(2)), let to = Square(uci.dropFirst(2).prefix(2)) else { return }
+
+        if hintLevel == 1 {
+            shapes = [.circle(from)]
+            let piece = position[from].map { MoveDescription.name(of: $0.kind) } ?? "piece"
+            feedback = Feedback(tone: .neutral, title: "Move the \(piece) on \(from).", lines: [])
+        } else {
+            shapes = [.arrow(from, to, .suggestion)]
+            feedback = Feedback(tone: .neutral, title: "That is the move — play it on the board.", lines: [])
+        }
+    }
+
+    // MARK: - Internals
+
+    private func registerWrongMove(from: Square, to: Square, promotion: PieceKind?) {
+        mistakes += 1
+        var probe = position
+        let played = probe.make(Move(from: from, to: to, promotion: promotion))
+        let name = played.map { position.san(for: $0) } ?? "That move"
+        feedback = Feedback(
+            tone: .wrong,
+            title: "\(name) is not the one",
+            lines: [mistakes == 1
+                ? "There is a stronger move here. Look at the most forcing options first — checks, captures, threats."
+                : "Still not it. Try a hint, or reveal the solution and study the idea."]
+        )
+    }
+
+    private func apply(uci: String) {
+        guard let move = Move(uci: uci), let made = position.make(move) else { return }
+        lastMove = (from: made.from, to: made.to)
+        shapes = []
+    }
+
+    private func finish(solved: Bool, revealed: Bool = false) -> (solved: Bool, usedHint: Bool) {
+        guard let puzzle else { return (false, false) }
+        isFinished = true
+        legalDestinations = [:]
+        shapes = []
+
+        // Play out the rest so the whole idea is visible on the board.
+        while step < puzzle.solution.count {
+            apply(uci: puzzle.solution[step])
+            step += 1
+        }
+
+        let counted = solved && !revealed && mistakes == 0
+        feedback = Feedback(
+            tone: counted ? .correct : (revealed ? .wrong : .partial),
+            title: revealed ? "Solution" : (mistakes == 0 ? "Solved" : "Solved, but not first time"),
+            lines: [notation()] + explanation()
+        )
+        return (counted, hintLevel > 0)
+    }
+
+    private func refreshDestinations() {
+        var map: [Square: [Square]] = [:]
+        for move in position.legalMoves() { map[move.from, default: []].append(move.to) }
+        legalDestinations = map
+    }
+
+    /// The whole line in readable notation.
+    private func notation() -> String {
+        guard let puzzle, var replay = Position(fen: puzzle.fen) else { return "" }
+        var text = ""
+        for uci in puzzle.solution {
+            guard let move = Move(uci: uci),
+                  let legal = replay.legalMoves().first(where: { $0.matchesNotation(of: move) })
+            else { break }
+            let number = replay.fullmoveNumber
+            let san = replay.san(for: legal)
+            if replay.sideToMove == .white {
+                text += "\(number).\(san) "
+            } else {
+                text += text.isEmpty ? "\(number)...\(san) " : "\(san) "
+            }
+            replay.make(legal)
+        }
+        return text.trimmingCharacters(in: .whitespaces)
+    }
+
+    /// Narrate the solver's moves through the feature layer.
+    private func explanation() -> [String] {
+        guard let puzzle, var replay = Position(fen: puzzle.fen) else { return [] }
+        var lines: [String] = []
+        for (index, uci) in puzzle.solution.enumerated() {
+            guard let parsed = Move(uci: uci),
+                  let move = replay.legalMoves().first(where: { $0.matchesNotation(of: parsed) })
+            else { break }
+            let before = PositionFeatures(replay)
+            let san = replay.san(for: move)
+            let source = replay
+            replay.make(move)
+            guard index % 2 == 0 else { continue }
+            if let sentence = MoveDescription.sentence(
+                san: san, before: before, after: PositionFeatures(replay),
+                move: move, position: source, resulting: replay
+            ) {
+                lines.append(sentence)
+            }
+        }
+        return lines
+    }
+}

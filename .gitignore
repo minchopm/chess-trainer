@@ -1,0 +1,20 @@
+# Build output
+node_modules/
+ios/.build/
+ios/ChessTrainer.xcodeproj/
+ios/Tools/*/.build/
+DerivedData/
+*.xcuserdatad
+*.xcuserstate
+
+# Engine networks: ~107 MB, fetched by ios/scripts/fetch-networks.sh using the
+# names pinned in the vendored engine. Committing them would bloat every clone
+# for no gain — they are build inputs with a canonical source.
+ios/Resources/Networks/*.nnue
+
+# The Lichess puzzle database dump: ~290 MB, downloaded on demand by
+# scripts/import-lichess.mjs. The filtered slice it produces *is* committed.
+lichess_db_puzzle.csv.zst
+lichess_db_puzzle.csv
+
+.DS_Store

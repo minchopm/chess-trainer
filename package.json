@@ -1,0 +1,19 @@
+{
+  "name": "chess-trainer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A local chess training system: tactics, positional judgement, endgame technique and coached play against Stockfish.",
+  "scripts": {
+    "start": "node server.mjs",
+    "generate": "node scripts/generate-puzzles.mjs",
+    "generate:positions": "node scripts/generate-positions.mjs",
+    "verify": "node scripts/verify-puzzles.mjs",
+    "import-lichess": "node scripts/import-lichess.mjs",
+    "spotcheck": "node scripts/spotcheck-puzzles.mjs"
+  },
+  "dependencies": {
+    "chess.js": "1.0.0-beta.8",
+    "stockfish": "^18.0.8"
+  }
+}
