@@ -68,9 +68,11 @@ public struct BoardView: View {
 
             ZStack(alignment: .topLeading) {
                 squares(squareSize: squareSize)
-                hints(squareSize: squareSize)
                 overlay(squareSize: squareSize, side: side)
                 pieces(squareSize: squareSize)
+                // Painted after the pieces: a badge on an occupied square is a
+                // capture, and those are the values worth reading.
+                hints(squareSize: squareSize)
 
                 // One transparent layer over the whole board carries the
                 // gesture. Attaching it to the pieces instead puts a separate
@@ -190,7 +192,13 @@ public struct BoardView: View {
     }
 
     static func pawns(_ centipawns: Int) -> String {
-        if abs(centipawns) >= 9000 { return centipawns > 0 ? "#" : "−#" }
+        // Mate is stored flattened as ±(10000 − moves), so the distance can be
+        // read back out. "#3" says far more than a bare "#".
+        if abs(centipawns) >= 9000 {
+            let moves = 10_000 - abs(centipawns)
+            let distance = moves > 0 ? "\(moves)" : ""
+            return centipawns > 0 ? "#\(distance)" : "−#\(distance)"
+        }
         let value = Double(centipawns) / 100
         return String(format: "%@%.1f", value >= 0 ? "+" : "−", abs(value))
     }
