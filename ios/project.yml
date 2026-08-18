@@ -25,6 +25,8 @@ targets:
         buildPhase: resources
       - path: ../data/endgames.json
         buildPhase: resources
+      - path: ../data/games.json
+        buildPhase: resources
       - path: Resources/Legal
         buildPhase: resources
       - path: Resources/Networks

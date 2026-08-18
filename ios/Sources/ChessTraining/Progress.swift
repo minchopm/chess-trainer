@@ -85,11 +85,44 @@ public struct TrainingProgress: Codable, Sendable {
     public var history: [AttemptRecord] = []
     public var games: [GameRecord] = []
     public var rushRecords: [RushRecord] = []
+    public var eloGuesses: [EloGuessRecord] = []
     public var currentStreak = 0
     public var bestStreak = 0
     public var lastActiveDay: Date?
 
     public init() {}
+
+    /// Decoded key by key, so a file written by an older build still loads.
+    ///
+    /// The synthesized initialiser treats every non-optional property as
+    /// required, which means adding one field throws away everything the file
+    /// held: ratings, streak, review schedule. Silently, because the caller
+    /// only sees `nil` and starts fresh. A missing key here means the feature
+    /// did not exist yet, which is exactly what a default value is for.
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        ratings = try container.decodeIfPresent([TrainingMode: Int].self, forKey: .ratings)
+            ?? [.tactics: 1200, .positional: 1200, .endgame: 1200]
+        cards = try container.decodeIfPresent([String: ReviewCard].self, forKey: .cards) ?? [:]
+        themes = try container.decodeIfPresent([String: ThemeRecord].self, forKey: .themes) ?? [:]
+        history = try container.decodeIfPresent([AttemptRecord].self, forKey: .history) ?? []
+        games = try container.decodeIfPresent([GameRecord].self, forKey: .games) ?? []
+        rushRecords = try container.decodeIfPresent([RushRecord].self, forKey: .rushRecords) ?? []
+        eloGuesses = try container.decodeIfPresent([EloGuessRecord].self, forKey: .eloGuesses) ?? []
+        currentStreak = try container.decodeIfPresent(Int.self, forKey: .currentStreak) ?? 0
+        bestStreak = try container.decodeIfPresent(Int.self, forKey: .bestStreak) ?? 0
+        lastActiveDay = try container.decodeIfPresent(Date.self, forKey: .lastActiveDay)
+    }
+
+    /// Records a judged game and returns the verdict, so the caller does not
+    /// have to score it a second time to show it.
+    @discardableResult
+    public mutating func record(guess: Int, on game: String, actual: Int, at now: Date = Date()) -> EloGuess {
+        eloGuesses.append(EloGuessRecord(at: now, gameID: game, guess: guess, actual: actual))
+        return EloGuess(guess: guess, actual: actual)
+    }
+
+    public var eloGuessStats: EloGuessStats { EloGuessStats(eloGuesses) }
 
     public func rating(_ mode: TrainingMode) -> Int { ratings[mode] ?? 1200 }
 

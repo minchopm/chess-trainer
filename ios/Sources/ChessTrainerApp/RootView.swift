@@ -28,7 +28,7 @@ public struct RootView: View {
                 .tabItem { Label("Endgames", systemImage: "flag.checkered") }
                 .tag(Tab.endgames)
 
-            NavigationStack { PlayScreen().hideNavigationBar() }
+            NavigationStack { PlayTab().hideNavigationBar() }
                 .tabItem { Label("Play", systemImage: "person.2") }
                 .tag(Tab.play)
 
@@ -135,10 +135,24 @@ struct ProgressScreen: View {
                 }
             }
 
+            let guesses = app.progress.eloGuessStats
+            if guesses.judged > 0 {
+                Section("Guess the Elo") {
+                    LabeledContent("Games judged", value: "\(guesses.judged)")
+                    LabeledContent("Average miss", value: "\(guesses.averageError) points")
+                    LabeledContent("Closest", value: "\(guesses.bestError) points")
+                    if abs(guesses.bias) >= 40 {
+                        Text("You read games as \(guesses.bias > 0 ? "stronger" : "weaker") than they are, by \(abs(guesses.bias)) points on average.")
+                            .font(.footnote).foregroundStyle(.secondary)
+                    }
+                }
+            }
+
             Section("Library") {
                 LabeledContent("Tactics puzzles", value: "\(app.library.puzzles.count)")
                 LabeledContent("Positional", value: "\(app.library.exercises.count)")
                 LabeledContent("Endgames", value: "\(app.library.drills.count)")
+                LabeledContent("Games", value: "\(app.library.games.count)")
                 LabeledContent("Engine", value: engineText)
             }
 

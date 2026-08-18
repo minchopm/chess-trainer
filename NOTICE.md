@@ -23,14 +23,17 @@ distributed under the same licence. They are not committed to this repository;
 `ios/scripts/fetch-networks.sh` downloads the exact versions the bundled engine
 expects.
 
-## Lichess puzzle database
+## Lichess databases
 
-Most of the bundled tactics puzzles come from the Lichess puzzle database,
+Most of the bundled tactics puzzles come from the Lichess puzzle database, and
+the games behind Guess the Elo come from the Lichess game archives. Both are
 released into the public domain under **CC0 1.0**.
 
 - Source: https://database.lichess.org/
 - No attribution is required by the licence; it is given here because it is
   deserved.
+- The games keep the players' Lichess usernames out of the bundled file: the
+  mode needs the ratings, not the people.
 
 ## chess.js
 

@@ -35,7 +35,7 @@ Sources/
   sfprobe/                 CLI driver for diagnosing engine problems
 Vendor/Stockfish/          upstream engine (GPLv3, unmodified) + a C bridge
 Resources/
-  Data/                    puzzles, positional exercises, endgame drills
+  Data/                    puzzles, positional exercises, endgame drills, games
   Networks/                NNUE files (not committed — see scripts/fetch-networks.sh)
 App/                       the @main entry point
 project.yml                XcodeGen spec — the .xcodeproj is generated, not edited

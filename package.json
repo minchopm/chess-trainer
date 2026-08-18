@@ -10,6 +10,7 @@
     "generate:positions": "node scripts/generate-positions.mjs",
     "verify": "node scripts/verify-puzzles.mjs",
     "import-lichess": "node scripts/import-lichess.mjs",
+    "import-games": "node scripts/import-games.mjs",
     "spotcheck": "node scripts/spotcheck-puzzles.mjs"
   },
   "dependencies": {

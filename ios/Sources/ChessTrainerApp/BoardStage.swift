@@ -14,6 +14,10 @@ struct PlayerBar: View {
     /// Nil where there is no number to show. Stockfish at full strength has no
     /// meaningful Elo, and inventing one would be worse than leaving it out.
     var rating: Int?
+    /// Draws "?" in place of the rating. Guess the Elo hides both ratings until
+    /// the guess is in, and an empty space there reads as a bug rather than as
+    /// something deliberately withheld.
+    var mysteryRating = false
     let color: PieceColor
     let material: MaterialBalance
 
@@ -41,6 +45,10 @@ struct PlayerBar: View {
                 Text(verbatim: String(rating))
                     .font(.footnote.weight(.semibold))
                     .monospacedDigit()
+                    .foregroundStyle(.secondary)
+            } else if mysteryRating {
+                Text(verbatim: "?")
+                    .font(.footnote.weight(.semibold))
                     .foregroundStyle(.secondary)
             }
         }

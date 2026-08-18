@@ -60,22 +60,71 @@ public struct EndgameDrill: Codable, Identifiable, Hashable, Sendable {
     public let themes: [String]
 }
 
+/// A complete rated game between two humans, for Guess the Elo.
+///
+/// The two ratings are kept apart rather than averaged in the file: the guess
+/// is scored against the average, but the reveal is more interesting when it
+/// can show what each player was actually rated.
+public struct AnnotatedGame: Codable, Identifiable, Hashable, Sendable {
+    public let id: String
+    public let white: Int
+    public let black: Int
+    public let result: String
+    public let speed: String?
+    public let timeControl: String?
+    public let termination: String?
+    public let eco: String?
+    public let opening: String?
+    public let date: String?
+    /// UCI moves, space separated — one string rather than an array because a
+    /// few thousand games of quoted four-character strings is mostly quotes.
+    public let moves: String
+
+    public var uciMoves: [String] { moves.split(separator: " ").map(String.init) }
+
+    public var averageRating: Int { (white + black) / 2 }
+
+    /// "Blitz · 5+0 · Sicilian Defense" — everything about the game that is not
+    /// a clue to the players' strength.
+    public var subtitle: String {
+        [speed, timeControl.map(Self.readableClock), opening]
+            .compactMap { $0 }
+            .joined(separator: " · ")
+    }
+
+    /// "300+3" is how the archive writes it; "5+3" is how players say it.
+    static func readableClock(_ control: String) -> String {
+        let parts = control.split(separator: "+")
+        guard let seconds = Int(parts.first ?? "") else { return control }
+        let increment = parts.count > 1 ? String(parts[1]) : "0"
+        return seconds % 60 == 0 ? "\(seconds / 60)+\(increment)" : "\(seconds)s+\(increment)"
+    }
+}
+
 // MARK: - Loading
 
 public struct ContentLibrary: Sendable {
     public let puzzles: [Puzzle]
     public let exercises: [PositionalExercise]
     public let drills: [EndgameDrill]
+    public let games: [AnnotatedGame]
 
-    public init(puzzles: [Puzzle] = [], exercises: [PositionalExercise] = [], drills: [EndgameDrill] = []) {
+    public init(
+        puzzles: [Puzzle] = [],
+        exercises: [PositionalExercise] = [],
+        drills: [EndgameDrill] = [],
+        games: [AnnotatedGame] = []
+    ) {
         self.puzzles = puzzles
         self.exercises = exercises
         self.drills = drills
+        self.games = games
     }
 
     private struct PuzzleFile: Codable { let puzzles: [Puzzle] }
     private struct ExerciseFile: Codable { let exercises: [PositionalExercise] }
     private struct DrillFile: Codable { let drills: [EndgameDrill] }
+    private struct GameFile: Codable { let games: [AnnotatedGame] }
 
     /// Load the three data files from a directory, tolerating any of them being
     /// absent — a build without the generated tactics should still run the
@@ -90,7 +139,8 @@ public struct ContentLibrary: Sendable {
         return ContentLibrary(
             puzzles: decode(PuzzleFile.self, "tactics.json")?.puzzles ?? [],
             exercises: decode(ExerciseFile.self, "positions.json")?.exercises ?? [],
-            drills: decode(DrillFile.self, "endgames.json")?.drills ?? []
+            drills: decode(DrillFile.self, "endgames.json")?.drills ?? [],
+            games: decode(GameFile.self, "games.json")?.games ?? []
         )
     }
 }

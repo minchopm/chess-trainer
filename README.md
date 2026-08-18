@@ -136,6 +136,32 @@ starts, with the opponent's blunder as the first listed move. The importer
 replays that ply so the stored position has the solver to move, and validates
 every move in the line before keeping the puzzle.
 
+### Whole games, for Guess the Elo
+
+The iOS app has a mode that plays a real game out move by move and asks you to
+judge how strong the players were. It needs games rather than positions, so
+there is a second importer:
+
+```bash
+curl -O https://database.lichess.org/standard/lichess_db_standard_rated_2014-07.pgn.zst
+npm run import-games -- --files lichess_db_standard_rated_2014-07.pgn.zst
+```
+
+It samples per rating band, like the puzzle importer and for the same reason,
+and it applies filters the mode depends on:
+
+- **Both players within 150 points of each other.** A guess about "the players"
+  only means something when there is one level to guess. A 1500 being taken
+  apart by a 1900 produces a game that belongs to neither rating.
+- **Blitz and classical only.** Bullet moves are a product of the clock as much
+  as of the player, which is exactly the thing being judged.
+- **18 to 70 moves.** Shorter is not a game, longer is not a film.
+- **Every move replayed and validated**, so the app never has to defend itself
+  against a line that stops halfway.
+
+The bundled slice is 1,624 games from 800 to 2,599, taken from the January 2013
+and July 2014 archives. Usernames are not kept — the mode needs the ratings.
+
 ### Checking an imported set
 
 Full verification of 14,000 puzzles would take over a day, so imports get a
@@ -166,6 +192,13 @@ but none of its code; the rules engine, coaching layer and training logic are
 reimplemented in Swift and covered by their own tests, including a perft suite
 that proves the move generator correct.
 
+It also has two modes the web version does not: **Rush**, a timed run against
+the clock, and **Guess the Elo**, which plays a real rated game out move by move
+and asks you to say how strong the players were. The second is not a quiz for
+its own sake — reading a game's level is the same skill as judging your own
+moves, since both come down to noticing which mistakes are being made and which
+are not.
+
 See [ios/README.md](ios/README.md) to build it.
 
 ---
@@ -180,12 +213,14 @@ data/
   tactics-mined.json        the locally mined set on its own
   positions.json            quiet positions for judgement training
   endgames.json             hand-written drills, engine-verified labels
+  games.json                whole rated games for the iOS Guess the Elo mode
 scripts/
   generate-puzzles.mjs      the tactics miner
   generate-positions.mjs    the quiet-position miner
   verify-puzzles.mjs        independent soundness check (every puzzle)
   spotcheck-puzzles.mjs     sampled check, for sets too large to verify fully
-  import-lichess.mjs        optional Lichess importer
+  import-lichess.mjs        optional Lichess puzzle importer
+  import-games.mjs          optional Lichess game importer (Guess the Elo)
   engine-node.mjs           Stockfish wrapper for Node
   themes.mjs                motif detection and rating estimation
 public/js/
