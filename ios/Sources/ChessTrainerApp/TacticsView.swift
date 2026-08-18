@@ -13,6 +13,8 @@ final class TacticsModel {
     private(set) var lastMove: (from: Square, to: Square)?
     private(set) var shapes: [BoardShape] = []
     private(set) var feedback: Feedback?
+    /// Set when the puzzle ends, for the completion overlay.
+    private(set) var completion: CompletionResult?
     private(set) var isFinished = false
     /// True while the opponent's reply is on its way, so the view can say so.
     private(set) var isReplying = false
@@ -75,6 +77,7 @@ final class TacticsModel {
         isFinished = false
         isReplying = false
         feedback = nil
+        completion = nil
         shapes = []
         lastMove = nil
         refreshDestinations()
@@ -121,6 +124,23 @@ final class TacticsModel {
         refreshDestinations()
         feedback = Feedback(tone: .neutral, title: "Good — keep going.", lines: [])
         return nil
+    }
+
+    /// Replay the same puzzle. The attempt has already been recorded, so this
+    /// is practice rather than a second chance at the rating.
+    func retry() {
+        guard let puzzle, let start = Position(fen: puzzle.fen) else { return }
+        position = start
+        step = 0
+        mistakes = 0
+        hintLevel = 0
+        isFinished = false
+        isReplying = false
+        feedback = nil
+        completion = nil
+        shapes = []
+        lastMove = nil
+        refreshDestinations()
     }
 
     func revealSolution() -> (solved: Bool, usedHint: Bool)? {
@@ -186,10 +206,17 @@ final class TacticsModel {
         }
 
         let counted = solved && !revealed && mistakes == 0
+        let reasons = explanation()
         feedback = Feedback(
             tone: counted ? .correct : (revealed ? .wrong : .partial),
             title: revealed ? "Solution" : (mistakes == 0 ? "Solved" : "Solved, but not first time"),
-            lines: [notation()] + explanation()
+            lines: [notation()] + reasons
+        )
+        completion = CompletionResult(
+            verdict: counted ? .success : (revealed ? .failure : .partial),
+            title: revealed ? "Solution shown" : (mistakes == 0 ? "Solved" : "Solved on the second try"),
+            detail: reasons.first ?? (revealed ? "Study the idea — it will come back for review." : nil),
+            line: notation()
         )
         return (counted, hintLevel > 0)
     }

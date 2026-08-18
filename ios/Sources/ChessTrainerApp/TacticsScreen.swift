@@ -8,6 +8,22 @@ struct TacticsScreen: View {
     @State private var values = MoveValueController()
 
     var body: some View {
+        content
+            .overlay(alignment: .bottom) {
+                if let completion = model.completion {
+                    CompletionOverlay(
+                        result: completion,
+                        primaryTitle: "Next puzzle",
+                        onPrimary: next,
+                        onRetry: { model.retry() }
+                    )
+                    .padding(.bottom, 8)
+                }
+            }
+            .animation(.spring(duration: 0.35), value: model.completion)
+    }
+
+    private var content: some View {
         TrainingLayout {
             BoardView(
                 position: model.position,
@@ -54,7 +70,9 @@ struct TacticsScreen: View {
                 ])
             }
 
-            if let feedback = model.feedback {
+            // The completion overlay carries the verdict once the puzzle ends,
+            // so the inline card would just repeat it behind the overlay.
+            if let feedback = model.feedback, model.completion == nil {
                 FeedbackCard(feedback: feedback)
             }
 
@@ -81,8 +99,9 @@ struct TacticsScreen: View {
             Button("Solution") { record(model.revealSolution()) }
                 .disabled(model.isFinished)
             Spacer()
-            Button(model.isFinished ? "Next puzzle" : "Skip") { next() }
-                .buttonStyle(.borderedProminent)
+            if !model.isFinished {
+                Button("Skip") { next() }.buttonStyle(.borderedProminent)
+            }
         }
         .buttonStyle(.bordered)
     }

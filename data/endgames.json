@@ -8,7 +8,10 @@
    "goal": "win",
    "rating": 800,
    "idea": "Shrink the box. Keep the queen a knight's move from the enemy king to avoid stalemate, walk your own king up, then mate on the edge.",
-   "themes": ["basicMate", "technique"]
+   "themes": [
+    "basicMate",
+    "technique"
+   ]
   },
   {
    "id": "eg-mate-rook",
@@ -17,34 +20,24 @@
    "goal": "win",
    "rating": 900,
    "idea": "Cut the king off with the rook, then use your king to take the opposition and squeeze it one rank at a time.",
-   "themes": ["basicMate", "technique"]
+   "themes": [
+    "basicMate",
+    "technique"
+   ]
   },
   {
-   "id": "eg-mate-two-bishops",
-   "name": "Two bishops versus lone king",
-   "fen": "8/8/8/4k3/8/8/8/2B1KB2 w - - 0 1",
+   "id": "eg-promote-and-mate",
+   "name": "Queen the pawn, then finish",
+   "fen": "3k4/1P6/1K6/8/8/8/8/8 w - - 0 1",
    "goal": "win",
-   "rating": 1400,
-   "idea": "Build a wall of two diagonals, march the king in, and drive the enemy king into a corner. Fifty moves is plenty — but only if the wall never breaks.",
-   "themes": ["basicMate", "technique"]
-  },
-  {
-   "id": "eg-kp-king-in-front",
-   "name": "King and pawn: king in front on the sixth",
-   "fen": "3k4/8/3K4/3P4/8/8/8/8 w - - 0 1",
-   "goal": "win",
-   "rating": 1200,
-   "idea": "Your king is ahead of the pawn on the sixth rank. Sidestep with the king to take the opposition before pushing — pushing first only draws.",
-   "themes": ["pawnEndgame", "opposition"]
-  },
-  {
-   "id": "eg-kp-opposition-draw",
-   "name": "King and pawn: holding the opposition",
-   "fen": "8/8/8/3k4/8/3K4/3P4/8 w - - 0 1",
-   "goal": "draw",
-   "rating": 1350,
-   "idea": "Kings facing each other with the pawn behind: whoever has to move gives ground, and here that is you. Even an extra pawn is not enough.",
-   "themes": ["pawnEndgame", "opposition"]
+   "rating": 1000,
+   "idea": "Promoting is the easy half. The hard half is the mate that follows: keep the queen a knight's move from the enemy king so you never stalemate it, walk your own king up, and finish on the edge.",
+   "themes": [
+    "pawnEndgame",
+    "promotion",
+    "basicMate",
+    "technique"
+   ]
   },
   {
    "id": "eg-kp-rook-pawn-corner",
@@ -53,25 +46,22 @@
    "goal": "draw",
    "rating": 1150,
    "idea": "A rook pawn is the great exception: the defending king cannot be pushed out of the corner, so the extra pawn is worth nothing.",
-   "themes": ["pawnEndgame", "fortress"]
+   "themes": [
+    "pawnEndgame",
+    "fortress"
+   ]
   },
   {
-   "id": "eg-kp-outside-passer",
-   "name": "Outside passed pawn",
-   "fen": "8/5ppp/4k3/8/P7/4K3/5PPP/8 w - - 0 1",
+   "id": "eg-kp-king-in-front",
+   "name": "King and pawn: king in front on the sixth",
+   "fen": "3k4/8/3K4/3P4/8/8/8/8 w - - 0 1",
    "goal": "win",
-   "rating": 1550,
-   "idea": "The far-away passer is a decoy. Run it, force the enemy king to chase it across the board, then walk in and eat the pawns it abandoned.",
-   "themes": ["pawnEndgame", "passedPawn"]
-  },
-  {
-   "id": "eg-kp-breakthrough",
-   "name": "Three-pawn breakthrough",
-   "fen": "k7/5ppp/8/5PPP/8/8/8/K7 w - - 0 1",
-   "goal": "win",
-   "rating": 1650,
-   "idea": "Three pawns against three, one rank apart, and the kings too far away to help. One sacrifice on the right square clears a path to promotion.",
-   "themes": ["pawnEndgame", "breakthrough"]
+   "rating": 1200,
+   "idea": "Your king is ahead of the pawn on the sixth rank. Sidestep with the king to take the opposition before pushing — pushing first only draws.",
+   "themes": [
+    "pawnEndgame",
+    "opposition"
+   ]
   },
   {
    "id": "eg-kp-blocked-draw",
@@ -80,43 +70,34 @@
    "goal": "draw",
    "rating": 1300,
    "idea": "The a-pawns are locked. Neither king can win the other pawn without losing its own, so the whole game is about who runs out of useful moves.",
-   "themes": ["pawnEndgame", "zugzwang"]
+   "themes": [
+    "pawnEndgame",
+    "zugzwang"
+   ]
   },
   {
-   "id": "eg-rook-king-in-front",
-   "name": "Rook and pawn: king in front of the pawn",
-   "fen": "r7/4k3/8/4PK2/8/8/8/7R b - - 0 1",
+   "id": "eg-kp-opposition-draw",
+   "name": "King and pawn: holding the opposition",
+   "fen": "8/8/8/3k4/8/3K4/3P4/8 w - - 0 1",
    "goal": "draw",
-   "rating": 1700,
-   "idea": "The defending king sits directly in front of the pawn. Keep it there, check from the side or from behind, and the extra pawn never counts.",
-   "themes": ["rookEndgame", "defence"]
+   "rating": 1350,
+   "idea": "Kings facing each other with the pawn behind: whoever has to move gives ground, and here that is you. Even an extra pawn is not enough.",
+   "themes": [
+    "pawnEndgame",
+    "opposition"
+   ]
   },
   {
-   "id": "eg-queen-vs-bishop-pawn",
-   "name": "Queen versus pawn on the seventh",
-   "fen": "Q7/8/8/6K1/8/8/1kp5/8 w - - 0 1",
-   "goal": "draw",
-   "rating": 1800,
-   "idea": "A centre pawn loses to the queen, but a bishop or rook pawn is different — the defender gets a stalemate every time the queen closes in.",
-   "themes": ["queenEndgame", "defence"]
-  },
-  {
-   "id": "eg-opposite-bishops",
-   "name": "Opposite-coloured bishops",
-   "fen": "8/8/4k3/8/2PP4/8/5b2/3K1B2 b - - 0 1",
-   "goal": "draw",
-   "rating": 1850,
-   "idea": "Two extra pawns is often not enough with opposite bishops. Blockade both on squares your own bishop controls and the position is a fortress.",
-   "themes": ["bishopEndgame", "fortress"]
-  },
-  {
-   "id": "eg-knight-vs-connected-pawns",
-   "name": "Knight against connected pawns",
-   "fen": "8/8/8/8/3pp3/8/4N3/4K2k w - - 0 1",
-   "goal": "draw",
-   "rating": 1700,
-   "idea": "A knight struggles against connected passers because it cannot lose a tempo. Attack from in front and bring the king.",
-   "themes": ["knightEndgame", "defence"]
+   "id": "eg-mate-two-bishops",
+   "name": "Two bishops versus lone king",
+   "fen": "8/8/8/4k3/8/8/8/2B1KB2 w - - 0 1",
+   "goal": "win",
+   "rating": 1400,
+   "idea": "Build a wall of two diagonals, march the king in, and drive the enemy king into a corner. Fifty moves is plenty — but only if the wall never breaks.",
+   "themes": [
+    "basicMate",
+    "technique"
+   ]
   },
   {
    "id": "eg-bishop-wrong-rook-pawn",
@@ -125,7 +106,82 @@
    "goal": "draw",
    "rating": 1400,
    "idea": "The bishop does not control the promotion square, so the defending king simply sits in the corner. Knowing this saves you two hours of playing on.",
-   "themes": ["bishopEndgame", "fortress"]
+   "themes": [
+    "bishopEndgame",
+    "fortress"
+   ]
+  },
+  {
+   "id": "eg-kp-outside-passer",
+   "name": "Outside passed pawn",
+   "fen": "8/5ppp/4k3/8/P7/4K3/5PPP/8 w - - 0 1",
+   "goal": "win",
+   "rating": 1550,
+   "idea": "The far-away passer is a decoy. Run it, force the enemy king to chase it across the board, then walk in and eat the pawns it abandoned.",
+   "themes": [
+    "pawnEndgame",
+    "passedPawn"
+   ]
+  },
+  {
+   "id": "eg-kp-breakthrough",
+   "name": "Three-pawn breakthrough",
+   "fen": "k7/5ppp/8/5PPP/8/8/8/K7 w - - 0 1",
+   "goal": "win",
+   "rating": 1650,
+   "idea": "Three pawns against three, one rank apart, and the kings too far away to help. One sacrifice on the right square clears a path to promotion.",
+   "themes": [
+    "pawnEndgame",
+    "breakthrough"
+   ]
+  },
+  {
+   "id": "eg-rook-king-in-front",
+   "name": "Rook and pawn: king in front of the pawn",
+   "fen": "r7/4k3/8/4PK2/8/8/8/7R b - - 0 1",
+   "goal": "draw",
+   "rating": 1700,
+   "idea": "The defending king sits directly in front of the pawn. Keep it there, check from the side or from behind, and the extra pawn never counts.",
+   "themes": [
+    "rookEndgame",
+    "defence"
+   ]
+  },
+  {
+   "id": "eg-knight-vs-connected-pawns",
+   "name": "Knight against connected pawns",
+   "fen": "8/8/8/8/3pp3/8/4N3/4K2k w - - 0 1",
+   "goal": "draw",
+   "rating": 1700,
+   "idea": "A knight struggles against connected passers because it cannot lose a tempo. Attack from in front and bring the king.",
+   "themes": [
+    "knightEndgame",
+    "defence"
+   ]
+  },
+  {
+   "id": "eg-queen-vs-bishop-pawn",
+   "name": "Queen versus pawn on the seventh",
+   "fen": "Q7/8/8/6K1/8/8/1kp5/8 w - - 0 1",
+   "goal": "draw",
+   "rating": 1800,
+   "idea": "A centre pawn loses to the queen, but a bishop or rook pawn is different — the defender gets a stalemate every time the queen closes in.",
+   "themes": [
+    "queenEndgame",
+    "defence"
+   ]
+  },
+  {
+   "id": "eg-opposite-bishops",
+   "name": "Opposite-coloured bishops",
+   "fen": "8/8/4k3/8/2PP4/8/5b2/3K1B2 b - - 0 1",
+   "goal": "draw",
+   "rating": 1850,
+   "idea": "Two extra pawns is often not enough with opposite bishops. Blockade both on squares your own bishop controls and the position is a fortress.",
+   "themes": [
+    "bishopEndgame",
+    "fortress"
+   ]
   }
  ]
 }

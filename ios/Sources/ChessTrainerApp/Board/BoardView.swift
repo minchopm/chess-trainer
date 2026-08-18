@@ -398,38 +398,48 @@ public struct BoardView: View {
 
 /// One piece.
 ///
-/// Drawn twice: a slightly larger copy in the contrasting colour sits behind the
-/// fill, which gives a clean rim without needing a stroked-text API SwiftUI does
-/// not have. White pieces get a dark rim, black pieces a light one, so neither
-/// disappears into the square beneath it.
+/// The rim is four offset copies rather than one enlarged copy behind the fill.
+/// Scaling a glyph up to peek out from behind it sounds equivalent and is not:
+/// it thickens by a percentage, so a dense glyph like the queen gets a hairline
+/// while a slender one like the bishop or knight is swallowed and reads as the
+/// opposite colour. An offset outline is the same width whatever the shape.
 struct PieceView: View {
     let piece: Piece
     let size: CGFloat
 
     private var fill: Color {
-        piece.color == .white ? Color(white: 0.97) : Color(white: 0.11)
+        piece.color == .white ? Color(white: 0.98) : Color(white: 0.10)
     }
 
     private var rim: Color {
-        piece.color == .white ? Color(white: 0.11) : Color(white: 0.93)
+        piece.color == .white ? Color(white: 0.10) : Color(white: 0.95)
     }
 
     var body: some View {
         let glyph = PieceGlyph.text(for: piece)
         let fontSize = size * 0.78
+        let width = max(0.7, size * 0.022)
 
         ZStack {
-            Text(glyph)
-                .font(.system(size: fontSize))
-                .foregroundStyle(rim)
-                .scaleEffect(1.075)
+            ForEach(Array(Self.rimOffsets.enumerated()), id: \.offset) { _, direction in
+                Text(glyph)
+                    .font(.system(size: fontSize))
+                    .foregroundStyle(rim)
+                    .offset(x: direction.x * width, y: direction.y * width)
+            }
             Text(glyph)
                 .font(.system(size: fontSize))
                 .foregroundStyle(fill)
         }
         .frame(width: size, height: size)
-        .shadow(color: .black.opacity(0.25), radius: size * 0.02, y: size * 0.015)
+        .shadow(color: .black.opacity(0.3), radius: size * 0.03, y: size * 0.02)
     }
+
+    /// Eight directions, so the outline is even rather than cross-shaped.
+    private static let rimOffsets: [(x: CGFloat, y: CGFloat)] = [
+        (1, 0), (-1, 0), (0, 1), (0, -1),
+        (0.7, 0.7), (-0.7, 0.7), (0.7, -0.7), (-0.7, -0.7),
+    ]
 }
 
 struct PromotionPicker: View {
@@ -444,20 +454,27 @@ struct PromotionPicker: View {
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            Color.black.opacity(0.25)
+            Color.black.opacity(0.45)
+                .contentShape(Rectangle())
                 .onTapGesture(perform: onCancel)
 
             VStack(spacing: 0) {
                 ForEach(pointsDown ? choices : choices.reversed(), id: \.rawValue) { kind in
                     Button { onPick(kind) } label: {
                         PieceView(piece: Piece(color, kind), size: squareSize)
-                            .background(Color(white: 0.16))
+                            .frame(width: squareSize, height: squareSize)
+                            .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
                 }
             }
-            .clipShape(RoundedRectangle(cornerRadius: 6))
-            .shadow(radius: 8)
+            .background(Color(white: 0.14))
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .strokeBorder(Color.white.opacity(0.25), lineWidth: 1)
+            )
+            .shadow(color: .black.opacity(0.6), radius: 10, y: 3)
             .offset(
                 x: position.x,
                 y: pointsDown ? position.y : position.y - squareSize * 3

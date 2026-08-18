@@ -197,6 +197,7 @@ final class PlayModel {
 
 struct PlayScreen: View {
     @Environment(AppModel.self) private var app
+    @Environment(ActivityGuard.self) private var activity
     @State private var model = PlayModel()
     @State private var values = MoveValueController()
     @State private var recorded = false
@@ -226,7 +227,23 @@ struct PlayScreen: View {
         } controls: {
             if model.hasStarted { gameControls } else { EmptyView() }
         }
-        .onChange(of: model.summary?.result) { _, _ in recordGame() }
+        .onChange(of: model.summary?.result) { _, _ in
+            recordGame()
+            activity.release()
+        }
+        .onChange(of: model.moves.count) { _, count in
+            // Only once moves exist and the game is still going: an untouched
+            // board or a finished game has nothing to lose.
+            if count > 0, model.summary == nil {
+                activity.hold(
+                    title: "Abandon this game?",
+                    reason: "You are \(count / 2 + 1) moves in. Leaving now loses the game and it will not be recorded."
+                )
+            } else {
+                activity.release()
+            }
+        }
+        .onDisappear { activity.release() }
     }
 
     @ViewBuilder

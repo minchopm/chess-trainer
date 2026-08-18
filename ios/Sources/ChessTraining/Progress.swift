@@ -84,6 +84,7 @@ public struct TrainingProgress: Codable, Sendable {
     public var themes: [String: ThemeRecord] = [:]
     public var history: [AttemptRecord] = []
     public var games: [GameRecord] = []
+    public var rushRecords: [RushRecord] = []
     public var currentStreak = 0
     public var bestStreak = 0
     public var lastActiveDay: Date?
@@ -249,5 +250,26 @@ public struct LadderRung: Sendable, Identifiable {
 
     public static func current(for rating: Int) -> LadderRung {
         all.last { rating >= $0.minimum } ?? all[0]
+    }
+}
+
+extension TrainingProgress {
+    /// Best timed run per duration, so a three-minute record is not compared
+    /// against a ten-minute one.
+    public var rushRecordsByDuration: [Int: RushRecord] {
+        get {
+            var result: [Int: RushRecord] = [:]
+            for record in rushRecords { 
+                let key = Int(record.duration)
+                if let existing = result[key], existing.solved >= record.solved { continue }
+                result[key] = record
+            }
+            return result
+        }
+    }
+
+    public mutating func record(rush: RushRecord) {
+        rushRecords.append(rush)
+        if rushRecords.count > 100 { rushRecords.removeFirst(rushRecords.count - 100) }
     }
 }

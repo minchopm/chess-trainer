@@ -3,6 +3,11 @@ import SwiftUI
 
 public struct RootView: View {
     @State private var app = AppModel()
+    @State private var activity = ActivityGuard()
+    @State private var selection = Tab.tactics
+    @State private var pending: Tab?
+
+    enum Tab: Hashable { case tactics, positional, endgames, play, progress }
 
     public init() {}
 
@@ -10,23 +15,45 @@ public struct RootView: View {
         // The classic tabItem API rather than the newer Tab builder: that one
         // needs iOS 18, and there is no reason to exclude iOS 17 devices from a
         // trainer that asks nothing of the OS.
-        TabView {
-            NavigationStack { TacticsScreen().navigationTitle("Tactics") }
+        TabView(selection: tabSelection) {
+            NavigationStack { TrainingTab() }
                 .tabItem { Label("Tactics", systemImage: "target") }
+                .tag(Tab.tactics)
 
             NavigationStack { PositionalScreen().navigationTitle("Positional") }
                 .tabItem { Label("Positional", systemImage: "square.grid.3x3.middle.filled") }
+                .tag(Tab.positional)
 
             NavigationStack { EndgameScreen().navigationTitle("Endgames") }
                 .tabItem { Label("Endgames", systemImage: "flag.checkered") }
+                .tag(Tab.endgames)
 
             NavigationStack { PlayScreen().navigationTitle("Play") }
                 .tabItem { Label("Play", systemImage: "person.2") }
+                .tag(Tab.play)
 
             NavigationStack { ProgressScreen().navigationTitle("Progress") }
                 .tabItem { Label("Progress", systemImage: "chart.line.uptrend.xyaxis") }
+                .tag(Tab.progress)
         }
         .environment(app)
+        .environment(activity)
+        .confirmationDialog(
+            activity.title ?? "Leave?",
+            isPresented: Binding(get: { pending != nil }, set: { if !$0 { pending = nil } }),
+            titleVisibility: .visible
+        ) {
+            Button("Leave", role: .destructive) {
+                if let pending {
+                    activity.release()
+                    selection = pending
+                }
+                pending = nil
+            }
+            Button("Stay", role: .cancel) { pending = nil }
+        } message: {
+            Text(activity.reason ?? "")
+        }
         .task { await app.start() }
         .overlay(alignment: .top) {
             if case .failed(let message) = app.engineState {
@@ -38,6 +65,24 @@ public struct RootView: View {
                     .padding(.top, 4)
             }
         }
+    }
+}
+
+extension RootView {
+    /// Intercepts tab changes so an active run or game can ask first. When
+    /// nothing is at stake the change goes straight through.
+    var tabSelection: Binding<Tab> {
+        Binding(
+            get: { selection },
+            set: { requested in
+                guard requested != selection else { return }
+                if activity.isActive {
+                    pending = requested
+                } else {
+                    selection = requested
+                }
+            }
+        )
     }
 }
 
