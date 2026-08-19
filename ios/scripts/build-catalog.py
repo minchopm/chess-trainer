@@ -24,6 +24,11 @@ def main():
         path = ROOT / f"Localization/{locale}.json"
         tables[locale] = json.loads(path.read_text()) if path.exists() else {}
 
+    # The English variants are English. Filling them in rather than leaving them
+    # empty is what makes the app advertise them as supported languages.
+    for locale in ("en-US", "en-CA"):
+        tables[locale] = dict(english)
+
     strings = {}
     for key in sorted(english):
         localizations = {
