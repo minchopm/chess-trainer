@@ -46,11 +46,6 @@ public struct RootView: View {
         }
         .tint(Theatre.brass)
         .background(Theatre.ink.ignoresSafeArea())
-        // Nothing above the board but the game. The time of day, the battery
-        // and the signal bars are answers to questions nobody has while a clock
-        // is running, and on a screen this deliberately dark they are the only
-        // thing on it the app did not draw.
-        .statusBarHidden(activity.isActive)
         .overlay(FilmGrain())
         .environment(app)
         .environment(activity)

@@ -94,6 +94,14 @@ targets:
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
         ITSAppUsesNonExemptEncryption: false
+        # Hidden everywhere, from the launch screen on. A game does not show
+        # the time of day, the battery or the signal bars, and this one is a
+        # board on a dark ground: the status bar was the only thing on the
+        # screen the app had not drawn. Set in the plist rather than per view so
+        # it never appears at all — and with the view-controller override off,
+        # so no screen can put it back by accident.
+        UIStatusBarHidden: true
+        UIViewControllerBasedStatusBarAppearance: false
         UIAppFonts:
           - CormorantGaramond.ttf
           - CormorantGaramond-Italic.ttf
