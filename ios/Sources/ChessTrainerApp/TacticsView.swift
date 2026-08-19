@@ -36,8 +36,10 @@ final class TacticsModel {
 
     var prompt: String {
         guard let puzzle else { return "" }
-        let side = puzzle.sideToMove == .white ? "White" : "Black"
-        return isFinished ? "\(side) to play — solution" : "\(side) to play"
+        let side = L.color(puzzle.sideToMove)
+        return isFinished
+            ? L.t("tactics.sideToPlaySolution", "%@ to play — solution", side)
+            : L.t("common.sideToPlay", "%@ to play", side)
     }
 
     /// What the puzzle is asking for, reading both the miner's theme vocabulary
@@ -47,20 +49,24 @@ final class TacticsModel {
         let themes = Set(puzzle.themes)
         if puzzle.mate || themes.contains("mate") {
             if let inN = puzzle.themes.first(where: { $0.hasPrefix("mateIn") }) {
-                return "Mate in \(inN.dropFirst("mateIn".count))."
+                return L.t("tactics.mateIn", "Mate in %@.", String(inN.dropFirst("mateIn".count)))
             }
-            return "Find the forced mate."
+            return L.t("tactics.findForcedMate", "Find the forced mate.")
         }
         if themes.contains("defensiveMove") || themes.contains("equality") {
-            return "Find the move that saves the position."
+            return L.t("tactics.findTheSave", "Find the move that saves the position.")
         }
-        if themes.contains("crushing") { return "Find the crushing blow." }
-        if themes.contains("winsMaterial") || themes.contains("hangingPiece") { return "Win material." }
+        if themes.contains("crushing") { return L.t("tactics.crushingBlow", "Find the crushing blow.") }
+        if themes.contains("winsMaterial") || themes.contains("hangingPiece") {
+            return L.t("tactics.winMaterial", "Win material.")
+        }
         // Lichess' "advantage" tag describes how much better the solution is
         // than the alternatives, not how good the position becomes. Calling a
         // +0.5 position "a clear advantage" is simply untrue.
-        if themes.contains("advantage") { return "One move is clearly better than the rest." }
-        return "Find the strongest continuation."
+        if themes.contains("advantage") {
+            return L.t("tactics.oneMoveBetter", "One move is clearly better than the rest.")
+        }
+        return L.t("tactics.strongestContinuation", "Find the strongest continuation.")
     }
 
     func load(_ selection: Selection<Puzzle>?) {
@@ -122,7 +128,7 @@ final class TacticsModel {
         if step >= puzzle.solution.count { return finish(solved: true) }
 
         refreshDestinations()
-        feedback = Feedback(tone: .neutral, title: "Good — keep going.", lines: [])
+        feedback = Feedback(tone: .neutral, title: L.t("tactics.goodKeepGoing", "Good — keep going."), lines: [])
         return nil
     }
 
@@ -164,10 +170,10 @@ final class TacticsModel {
         if hintLevel == 1 {
             shapes = [.circle(from)]
             let piece = position[from].map { MoveDescription.name(of: $0.kind) } ?? "piece"
-            feedback = Feedback(tone: .neutral, title: "Move the \(piece) on \(from).", lines: [])
+            feedback = Feedback(tone: .neutral, title: L.t("tactics.moveThePiece", "Move the %@ on %@.", piece, "\(from)"), lines: [])
         } else {
             shapes = [.arrow(from, to, .suggestion)]
-            feedback = Feedback(tone: .neutral, title: "That is the move — play it on the board.", lines: [])
+            feedback = Feedback(tone: .neutral, title: L.t("tactics.thatIsTheMovePlay", "That is the move — play it on the board."), lines: [])
         }
     }
 
@@ -180,10 +186,10 @@ final class TacticsModel {
         let name = played.map { position.san(for: $0) } ?? "That move"
         feedback = Feedback(
             tone: .wrong,
-            title: "\(name) is not the one",
+            title: L.t("tactics.notTheOne", "%@ is not the one", name),
             lines: [mistakes == 1
-                ? "There is a stronger move here. Look at the most forcing options first — checks, captures, threats."
-                : "Still not it. Try a hint, or reveal the solution and study the idea."]
+                ? L.t("tactics.tryForcing", "There is a stronger move here. Look at the most forcing options first — checks, captures, threats.")
+                : L.t("tactics.stillNotIt", "Still not it. Try a hint, or reveal the solution and study the idea.")]
         )
     }
 
@@ -209,13 +215,17 @@ final class TacticsModel {
         let reasons = explanation()
         feedback = Feedback(
             tone: counted ? .correct : (revealed ? .wrong : .partial),
-            title: revealed ? "Solution" : (mistakes == 0 ? "Solved" : "Solved, but not first time"),
+            title: revealed
+                ? L.t("tactics.solutionTitle", "Solution")
+                : (mistakes == 0 ? L.t("tactics.solved", "Solved") : L.t("tactics.solvedNotFirst", "Solved, but not first time")),
             lines: [notation()] + reasons
         )
         completion = CompletionResult(
             verdict: counted ? .success : (revealed ? .failure : .partial),
-            title: revealed ? "Solution shown" : (mistakes == 0 ? "Solved" : "Solved on the second try"),
-            detail: reasons.first ?? (revealed ? "Study the idea — it will come back for review." : nil),
+            title: revealed
+                ? L.t("tactics.solutionShown", "Solution shown")
+                : (mistakes == 0 ? L.t("tactics.solved", "Solved") : L.t("tactics.solvedSecondTry", "Solved on the second try")),
+            detail: reasons.first ?? (revealed ? L.t("tactics.studyTheIdea", "Study the idea — it will come back for review.") : nil),
             line: notation()
         )
         return (counted, hintLevel > 0)

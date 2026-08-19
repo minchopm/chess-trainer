@@ -56,21 +56,21 @@ struct OnlineScreen: View {
         ScrollView {
             VStack(spacing: 12) {
                 Card {
-                    Text("Play online").font(.headline)
-                    Text("A real opponent over Game Center, on the clock. No hints, no engine, no take-backs.")
+                    Text(L.t("online.playOnline", "Play online")).font(.headline)
+                    Text(L.t("online.aRealOpponentOverGame", "A real opponent over Game Center, on the clock. No hints, no engine, no take-backs."))
                         .font(.footnote).foregroundStyle(.secondary)
                 }
 
                 Card {
-                    Text("Clock").font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
-                    Picker("Clock", selection: $timeControl) {
+                    Text(L.t("online.clock", "Clock")).font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
+                    Picker(L.t("online.clock", "Clock"), selection: $timeControl) {
                         ForEach(TimeControl.allCases) { control in
                             Text(verbatim: "\(control.minutes)").tag(control)
                         }
                     }
                     .pickerStyle(.segmented)
                     .disabled(isSearching)
-                    Text("\(timeControl.label) each — \(timeControl.name.lowercased()). You are only paired with players who chose the same clock.")
+                    Text(L.t("online.clockExplanation", "%@ each — %@. You are only paired with players who chose the same clock.", timeControl.label, timeControl.name.lowercased()))
                         .font(.footnote).foregroundStyle(.secondary)
                 }
 
@@ -83,7 +83,7 @@ struct OnlineScreen: View {
                         }
                         Spacer()
                         VStack(alignment: .trailing, spacing: 2) {
-                            Text("Record").font(.caption2).textCase(.uppercase).foregroundStyle(.secondary)
+                            Text(L.t("online.record", "Record")).font(.caption2).textCase(.uppercase).foregroundStyle(.secondary)
                             Text(verbatim: "\(app.progress.onlineWins)–\(app.progress.onlineLosses)–\(app.progress.onlineDraws)")
                                 .font(.subheadline).monospacedDigit().foregroundStyle(.secondary)
                         }
@@ -95,7 +95,7 @@ struct OnlineScreen: View {
                     Button(role: .destructive) { matchmaker.cancelSearch() } label: {
                         HStack(spacing: 8) {
                             ProgressView().controlSize(.small)
-                            Text("Searching — tap to cancel")
+                            Text(L.t("online.searchingTapToCancel", "Searching — tap to cancel"))
                         }
                         .frame(maxWidth: .infinity)
                     }
@@ -117,7 +117,7 @@ struct OnlineScreen: View {
                 }
 
 #if DEBUG
-                Button("Local test game") {
+                Button(L.t("online.localTestGame", "Local test game")) {
                     matchmaker.startLoopbackMatch(
                         timeControl: timeControl,
                         rating: app.progress.onlineRating,
@@ -173,7 +173,7 @@ struct OnlineScreen: View {
         } panel: {
             statusCard(session)
             Card {
-                Text("Moves").font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
+                Text(L.t("online.moves", "Moves")).font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
                 MoveList(moves: session.moves.map { (san: $0, grade: nil) })
             }
         } controls: {
@@ -183,7 +183,7 @@ struct OnlineScreen: View {
             if case .finished(let result) = session.phase {
                 CompletionOverlay(
                     result: completion(for: settled ?? result),
-                    primaryTitle: "Back to the lobby",
+                    primaryTitle: L.t("online.backToTheLobby", "Back to the lobby"),
                     onPrimary: { matchmaker.leaveMatch(); settled = nil },
                     onRetry: nil
                 )
@@ -193,8 +193,8 @@ struct OnlineScreen: View {
         .onChange(of: isPlaying(session)) { _, playing in
             if playing {
                 activity.hold(
-                    title: "Leave the game?",
-                    reason: "Leaving an online game loses it and costs you rating."
+                    title: L.t("online.leaveTheGame", "Leave the game?"),
+                    reason: L.t("online.leavingAnOnlineGameLoses", "Leaving an online game loses it and costs you rating.")
                 )
             } else {
                 activity.release()
@@ -206,19 +206,19 @@ struct OnlineScreen: View {
     private func statusCard(_ session: MatchSession) -> some View {
         Card {
             Text(statusText(session)).font(.headline)
-            Text("\(session.timeControl.label) · \(session.timeControl.name) · you are \(session.myColor == .white ? "White" : "Black")")
+            Text(L.t("online.gameSummary", "%@ · %@ · you are %@", session.timeControl.label, session.timeControl.name, L.color(session.myColor)))
                 .font(.footnote).foregroundStyle(.secondary)
 
             if session.drawOffered {
                 HStack(spacing: 10) {
-                    Text("Draw offered.").font(.subheadline)
-                    Button("Accept") { session.respondToDraw(accept: true) }
+                    Text(L.t("online.drawOffered", "Draw offered.")).font(.subheadline)
+                    Button(L.t("online.accept", "Accept")) { session.respondToDraw(accept: true) }
                         .buttonStyle(.borderedProminent).controlSize(.small)
-                    Button("Decline") { session.respondToDraw(accept: false) }
+                    Button(L.t("online.decline", "Decline")) { session.respondToDraw(accept: false) }
                         .buttonStyle(.bordered).controlSize(.small)
                 }
             } else if session.drawOfferSent {
-                Text("Draw offered — waiting for an answer.")
+                Text(L.t("online.drawOfferedWaitingForAn", "Draw offered — waiting for an answer."))
                     .font(.footnote).foregroundStyle(.secondary)
             }
         }
@@ -235,16 +235,16 @@ struct OnlineScreen: View {
     private func controls(_ session: MatchSession) -> some View {
         ActionBar(items: isPlaying(session)
             ? [
-                ActionItem(title: "Resign", systemImage: "flag.fill", emphasis: .destructive) {
+                ActionItem(title: L.t("online.resign", "Resign"), systemImage: "flag.fill", emphasis: .destructive) {
                     session.resign()
                 },
-                ActionItem(title: "Offer draw", systemImage: "equal.circle",
+                ActionItem(title: L.t("online.offerDraw", "Offer draw"), systemImage: "equal.circle",
                            isEnabled: !session.drawOfferSent) {
                     session.offerDraw()
                 },
             ]
             : [
-                ActionItem(title: "Lobby", systemImage: "chevron.backward", emphasis: .primary) {
+                ActionItem(title: L.t("online.lobby", "Lobby"), systemImage: "chevron.backward", emphasis: .primary) {
                     matchmaker.leaveMatch()
                     settled = nil
                 },

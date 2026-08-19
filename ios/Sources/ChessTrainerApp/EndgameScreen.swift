@@ -31,8 +31,10 @@ final class EndgameModel {
 
     var goalText: String {
         guard let drill else { return "" }
-        let colour = side == .white ? "White" : "Black"
-        return drill.goal == .win ? "Win as \(colour)." : "Hold the draw as \(colour)."
+        let colour = L.color(side)
+        return drill.goal == .win
+            ? L.t("endgame.winAs", "Win as %@.", colour)
+            : L.t("endgame.holdAs", "Hold the draw as %@.", colour)
     }
 
     func load(_ next: EndgameDrill?) {
@@ -83,9 +85,9 @@ final class EndgameModel {
         if lostAt == nil {
             let cp = yourScore(evaluation, toMove: position.sideToMove)
             if drill?.goal == .win, cp < 180 {
-                lostAt = (move: played, reason: "the win is gone")
+                lostAt = (move: played, reason: L.t("endgame.theWinIsGone", "the win is gone"))
             } else if drill?.goal == .draw, cp < -300 {
-                lostAt = (move: played, reason: "the draw is gone")
+                lostAt = (move: played, reason: L.t("endgame.theDrawIsGone", "the draw is gone"))
             }
         }
 
@@ -103,7 +105,7 @@ final class EndgameModel {
         // 80 moves is generous for any of these; past that the drill is a draw
         // by exhaustion rather than by technique.
         if plies > 160 {
-            return conclude(success: drill?.goal == .draw, how: "The 80-move limit ran out.")
+            return conclude(success: drill?.goal == .draw, how: L.t("endgame.moveLimit", "The 80-move limit ran out."))
         }
 
         refreshDestinations()
@@ -129,14 +131,14 @@ final class EndgameModel {
             let winner = position.sideToMove.opponent
             return conclude(
                 success: winner == side && drill?.goal == .win,
-                how: winner == side ? "Checkmate — you delivered it." : "You were checkmated."
+                how: winner == side ? L.t("endgame.youMated", "Checkmate — you delivered it.") : L.t("endgame.youWereMated", "You were checkmated.")
             )
         }
 
-        let how = position.isStalemate ? "Stalemate."
-            : position.isInsufficientMaterial ? "Insufficient material."
-            : position.isThreefoldRepetition ? "Threefold repetition."
-            : "Fifty-move rule."
+        let how = position.isStalemate ? L.t("endgame.stalemate", "Stalemate.")
+            : position.isInsufficientMaterial ? L.t("endgame.insufficient", "Insufficient material.")
+            : position.isThreefoldRepetition ? L.t("endgame.repetition", "Threefold repetition.")
+            : L.t("endgame.fiftyMove", "Fifty-move rule.")
         return conclude(success: drill?.goal == .draw, how: how)
     }
 
@@ -147,9 +149,13 @@ final class EndgameModel {
         var lines = [how + " " + (success
             ? "That is the result you needed."
             : "You needed to \(drill?.goal == .win ? "win" : "draw") this.")]
-        if let lostAt, !success { lines.append("It went wrong at \(lostAt.move).") }
+        if let lostAt, !success { lines.append(L.t("endgame.wentWrongAt", "It went wrong at %@.", lostAt.move)) }
         if let drill { lines.append(drill.idea) }
-        outcome = Outcome(success: success, title: success ? "Drill passed" : "Drill failed", lines: lines)
+        outcome = Outcome(
+            success: success,
+            title: success ? L.t("endgame.drillPassed", "Drill passed") : L.t("endgame.drillFailed", "Drill failed"),
+            lines: lines
+        )
         return success
     }
 
@@ -176,13 +182,13 @@ struct EndgameScreen: View {
             BoardStage(
                 width: width,
                 top: PlayerBar(
-                    name: "Drill",
+                    name: L.t("endgame.drill", "Drill"),
                     rating: model.drill?.rating,
                     color: model.orientation.opponent,
                     material: material
                 ),
                 bottom: PlayerBar(
-                    name: "You",
+                    name: L.t("endgame.you", "You"),
                     rating: app.progress.rating(.endgame),
                     color: model.orientation,
                     material: material
@@ -212,22 +218,24 @@ struct EndgameScreen: View {
                     Text(drill.name).font(.headline)
                     Text(model.goalText).font(.subheadline).foregroundStyle(.secondary)
                     TagRow(tags: [
-                        drill.goal == .win ? "Must win" : "Must draw",
-                        "\((model.plies + 1) / 2) move\((model.plies + 1) / 2 == 1 ? "" : "s")",
+                        drill.goal == .win ? L.t("endgame.mustWin", "Must win") : L.t("endgame.mustDraw", "Must draw"),
+                        (model.plies + 1) / 2 == 1
+                            ? L.t("common.oneMove", "1 move")
+                            : L.t("common.moveCount", "%lld moves", (model.plies + 1) / 2),
                     ])
                 }
 
                 if model.isThinking {
                     HStack(spacing: 6) {
                         ProgressView()
-                        Text("Engine is thinking…").font(.footnote).foregroundStyle(.secondary)
+                        Text(L.t("endgame.engineIsThinking", "Engine is thinking…")).font(.footnote).foregroundStyle(.secondary)
                     }
                 }
 
                 if let lostAt = model.lostAt, model.outcome == nil {
                     Card {
-                        Text("\(lostAt.move) threw it away").font(.subheadline.weight(.semibold))
-                        Text("After that move \(lostAt.reason). Play on if you like, or restart and try the correct plan.")
+                        Text(L.t("endgame.threwItAway", "%@ threw it away", lostAt.move)).font(.subheadline.weight(.semibold))
+                        Text(L.t("endgame.afterThatMove", "After that move %@. Play on if you like, or restart and try the correct plan.", lostAt.reason))
                             .font(.footnote).foregroundStyle(.secondary)
                     }
                 }
@@ -243,24 +251,24 @@ struct EndgameScreen: View {
                 }
 
                 Card {
-                    Text("The idea").font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
+                    Text(L.t("endgame.theIdea", "The idea")).font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
                     Text(drill.idea).font(.footnote)
                 }
             } else {
-                Card { Text("No endgame drills bundled").font(.headline) }
+                Card { Text(L.t("endgame.noEndgameDrillsBundled", "No endgame drills bundled")).font(.headline) }
             }
         } controls: {
             ActionBar(items: [
-                ActionItem(title: "Restart", systemImage: "arrow.counterclockwise",
+                ActionItem(title: L.t("endgame.restart", "Restart"), systemImage: "arrow.counterclockwise",
                            isEnabled: !model.isThinking) {
                     values.reset()
                     model.load(model.drill)
                 },
-                ActionItem(title: values.isEnabled ? "Hide" : "Values",
+                ActionItem(title: values.isEnabled ? L.t("common.hide", "Hide") : L.t("common.values", "Values"),
                            systemImage: "number.square", isEnabled: !model.isThinking) {
                     Task { await values.toggle(fen: model.position.fen, engine: app.engine) }
                 },
-                ActionItem(title: "Next", systemImage: "forward.end", emphasis: .primary) {
+                ActionItem(title: L.t("endgame.next", "Next"), systemImage: "forward.end", emphasis: .primary) {
                     next()
                 },
             ])
@@ -304,7 +312,7 @@ struct EvaluationBar: View {
         }
         .frame(width: 14)
         .clipShape(RoundedRectangle(cornerRadius: 4))
-        .accessibilityLabel("Evaluation \(score?.text ?? "unknown")")
+        .accessibilityLabel(L.t("endgame.evaluation", "Evaluation %@", score?.text ?? L.t("endgame.unknown", "unknown")))
     }
 
     /// Squashed through a logistic curve so the bar moves meaningfully near

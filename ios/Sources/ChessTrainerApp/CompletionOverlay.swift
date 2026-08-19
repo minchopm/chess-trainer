@@ -1,4 +1,5 @@
 import SwiftUI
+import ChessTraining
 
 /// The moment a puzzle, drill or game ends.
 struct CompletionResult: Equatable {
@@ -68,7 +69,7 @@ struct CompletionOverlay: View {
 
             HStack(spacing: 10) {
                 if let onRetry {
-                    Button("Try again", action: onRetry)
+                    Button(L.t("common.tryAgain", "Try again"), action: onRetry)
                         .buttonStyle(.bordered)
                 }
                 Button(primaryTitle, action: onPrimary)

@@ -12,15 +12,15 @@ public enum TimeControl: Int, CaseIterable, Identifiable, Codable, Sendable {
     public var id: Int { rawValue }
     public var minutes: Int { rawValue }
     public var seconds: TimeInterval { TimeInterval(rawValue * 60) }
-    public var label: String { "\(rawValue) min" }
+    public var label: String { L.t("clock.minutes", "%lld min", rawValue) }
 
     /// What the clock is called at the board. Worth showing: a player who knows
     /// they are bad at blitz should be able to see it before they queue.
     public var name: String {
         switch self {
-        case .three, .five: "Blitz"
-        case .ten, .fifteen: "Rapid"
-        case .thirty: "Classical"
+        case .three, .five: L.t("clock.blitz", "Blitz")
+        case .ten, .fifteen: L.t("clock.rapid", "Rapid")
+        case .thirty: L.t("clock.classical", "Classical")
         }
     }
 

@@ -53,7 +53,7 @@ final class GuessTheEloModel {
 
     /// The last full move, written the way it would be on a scoresheet.
     var latestMoveText: String {
-        guard ply > 0, ply <= notation.count else { return "The game is about to start." }
+        guard ply > 0, ply <= notation.count else { return L.t("guess.aboutToStart", "The game is about to start.") }
         let number = (ply + 1) / 2
         let white = notation[ply - (ply.isMultiple(of: 2) ? 2 : 1)]
         if ply.isMultiple(of: 2) {
@@ -179,14 +179,14 @@ struct GuessTheEloScreen: View {
             BoardStage(
                 width: width,
                 top: PlayerBar(
-                    name: "Black",
+                    name: L.t("guess.black", "Black"),
                     rating: model.isRevealed ? model.game?.black : nil,
                     mysteryRating: !model.isRevealed,
                     color: .black,
                     material: MaterialBalance(model.position)
                 ),
                 bottom: PlayerBar(
-                    name: "White",
+                    name: L.t("guess.white", "White"),
                     rating: model.isRevealed ? model.game?.white : nil,
                     mysteryRating: !model.isRevealed,
                     color: .white,
@@ -233,7 +233,7 @@ struct GuessTheEloScreen: View {
                 Text(game.subtitle).font(.footnote).foregroundStyle(.secondary)
             }
 
-            Picker("Speed", selection: Binding(get: { model.speed }, set: { model.speed = $0 })) {
+            Picker(L.t("guess.speed", "Speed"), selection: Binding(get: { model.speed }, set: { model.speed = $0 })) {
                 ForEach(GuessTheEloModel.Speed.allCases) { Text($0.label).tag($0) }
             }
             .pickerStyle(.segmented)
@@ -248,7 +248,7 @@ struct GuessTheEloScreen: View {
                     .font(.system(size: 34, weight: .semibold, design: .rounded))
                     .monospacedDigit()
                     .contentTransition(.numericText())
-                Text("your guess, Lichess rating").font(.caption).foregroundStyle(.secondary)
+                Text(L.t("guess.yourGuessLichessRating", "your guess, Lichess rating")).font(.caption).foregroundStyle(.secondary)
                 Spacer(minLength: 0)
             }
 
@@ -274,9 +274,9 @@ struct GuessTheEloScreen: View {
             Text(verdict.summary).font(.subheadline).foregroundStyle(.secondary)
 
             HStack(spacing: 18) {
-                revealValue("You said", verdict.guess)
-                revealValue("White", game.white)
-                revealValue("Black", game.black)
+                revealValue(L.t("guess.youSaid", "You said"), verdict.guess)
+                revealValue(L.color(.white), game.white)
+                revealValue(L.color(.black), game.black)
             }
             .padding(.top, 2)
 
@@ -286,7 +286,7 @@ struct GuessTheEloScreen: View {
 
             let stats = app.progress.eloGuessStats
             if stats.judged > 1 {
-                Text("\(stats.judged) games judged · average miss \(stats.averageError) points")
+                Text(L.t("guess.judgedSummary", "%lld games judged · average miss %lld points", stats.judged, stats.averageError))
                     .font(.caption).foregroundStyle(.secondary)
             }
         }
@@ -301,33 +301,33 @@ struct GuessTheEloScreen: View {
 
     private func resultText(_ result: String) -> String {
         switch result {
-        case "1-0": "White won"
-        case "0-1": "Black won"
-        case "1/2-1/2": "Drawn"
+        case "1-0": L.t("result.whiteWon", "White won")
+        case "0-1": L.t("result.blackWon", "Black won")
+        case "1/2-1/2": L.t("result.drawn", "Drawn")
         default: result
         }
     }
 
     private func terminationText(_ game: AnnotatedGame) -> String? {
-        game.termination == "Time forfeit" ? "on time" : nil
+        game.termination == "Time forfeit" ? L.t("result.onTime", "on time") : nil
     }
 
     private var controls: some View {
         ActionBar(items: [
-            ActionItem(title: "Back", systemImage: "backward.frame", isEnabled: model.ply > 0) {
+            ActionItem(title: L.t("guess.back", "Back"), systemImage: "backward.frame", isEnabled: model.ply > 0) {
                 model.stepManually(by: -1)
             },
-            ActionItem(title: model.isPlaying ? "Pause" : "Play",
+            ActionItem(title: model.isPlaying ? L.t("guess.pause", "Pause") : L.t("guess.play", "Play"),
                        systemImage: model.isPlaying ? "pause.fill" : "play.fill",
                        isEnabled: !model.isFinished) {
                 model.toggle()
             },
-            ActionItem(title: "Forward", systemImage: "forward.frame", isEnabled: !model.isFinished) {
+            ActionItem(title: L.t("guess.forward", "Forward"), systemImage: "forward.frame", isEnabled: !model.isFinished) {
                 model.stepManually(by: 1)
             },
             model.isRevealed
-                ? ActionItem(title: "Next game", systemImage: "forward.end", emphasis: .primary) { next() }
-                : ActionItem(title: "Lock in", systemImage: "checkmark.circle", emphasis: .primary) { lockIn() },
+                ? ActionItem(title: L.t("guess.nextGame", "Next game"), systemImage: "forward.end", emphasis: .primary) { next() }
+                : ActionItem(title: L.t("guess.lockIn", "Lock in"), systemImage: "checkmark.circle", emphasis: .primary) { lockIn() },
         ])
     }
 

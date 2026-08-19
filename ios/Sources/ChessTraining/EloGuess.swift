@@ -28,10 +28,10 @@ public struct EloGuess: Equatable, Sendable {
 
         public var title: String {
             switch self {
-            case .spot: "Spot on"
-            case .close: "Close"
-            case .fair: "In the right area"
-            case .off: "Not this time"
+            case .spot: L.t("guess.spotOn", "Spot on")
+            case .close: L.t("guess.close", "Close")
+            case .fair: L.t("guess.rightArea", "In the right area")
+            case .off: L.t("guess.notThisTime", "Not this time")
             }
         }
     }
@@ -52,8 +52,10 @@ public struct EloGuess: Equatable, Sendable {
     public var points: Int { max(0, 100 - error / 5) }
 
     public var summary: String {
-        if error < 15 { return "Dead on." }
-        return "\(error) points too \(isHigh ? "high" : "low")."
+        if error < 15 { return L.t("guess.deadOn", "Dead on.") }
+        return isHigh
+            ? L.t("guess.tooHigh", "%lld points too high.", error)
+            : L.t("guess.tooLow", "%lld points too low.", error)
     }
 }
 

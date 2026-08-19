@@ -1,6 +1,7 @@
 name: ChessTrainer
 options:
   bundleIdPrefix: com.arte-soft
+  developmentLanguage: en
   deploymentTarget:
     iOS: "17.0"
   createIntermediateGroups: true
@@ -8,6 +9,42 @@ options:
 packages:
   ChessTrainer:
     path: .
+
+settingGroups: {}
+
+knownRegions:
+  - en
+  - ar-SA
+  - cs
+  - da
+  - de-DE
+  - el
+  - en-CA
+  - en-US
+  - es-ES
+  - fi
+  - fr-CA
+  - fr-FR
+  - he
+  - hi
+  - hu
+  - id
+  - it
+  - ja
+  - ko
+  - ms
+  - nl-NL
+  - no
+  - pl
+  - pt-BR
+  - ro
+  - ru
+  - sv
+  - th
+  - tr
+  - vi
+  - zh-Hans
+  - zh-Hant
 
 targets:
   ChessTrainer:
@@ -32,6 +69,8 @@ targets:
       - path: Resources/Networks
         buildPhase: resources
       - path: Resources/Assets.xcassets
+        buildPhase: resources
+      - path: App/Localizable.xcstrings
         buildPhase: resources
     dependencies:
       - package: ChessTrainer

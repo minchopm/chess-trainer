@@ -103,15 +103,15 @@ public struct MatchResult: Equatable, Sendable {
 
         public var text: String {
             switch self {
-            case .checkmate: "checkmate"
-            case .resignation: "resignation"
-            case .timeout: "time"
-            case .stalemate: "stalemate"
-            case .insufficientMaterial: "insufficient material"
-            case .repetition: "repetition"
-            case .fiftyMoveRule: "the fifty-move rule"
-            case .agreement: "agreement"
-            case .disconnected: "the opponent leaving"
+            case .checkmate: L.t("result.checkmate", "checkmate")
+            case .resignation: L.t("result.resignation", "resignation")
+            case .timeout: L.t("result.time", "time")
+            case .stalemate: L.t("result.stalemate", "stalemate")
+            case .insufficientMaterial: L.t("result.insufficientMaterial", "insufficient material")
+            case .repetition: L.t("result.repetition", "repetition")
+            case .fiftyMoveRule: L.t("result.fiftyMoveRule", "the fifty-move rule")
+            case .agreement: L.t("result.agreement", "agreement")
+            case .disconnected: L.t("result.disconnected", "the opponent leaving")
             }
         }
     }
@@ -129,9 +129,9 @@ public struct MatchResult: Equatable, Sendable {
 
     public var headline: String {
         switch outcome {
-        case .win: "You won by \(reason.text)"
-        case .loss: "You lost by \(reason.text)"
-        case .draw: "Drawn by \(reason.text)"
+        case .win: L.t("result.youWonBy", "You won by %@", reason.text)
+        case .loss: L.t("result.youLostBy", "You lost by %@", reason.text)
+        case .draw: L.t("result.drawnBy", "Drawn by %@", reason.text)
         }
     }
 

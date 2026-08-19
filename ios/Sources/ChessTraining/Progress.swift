@@ -298,13 +298,13 @@ public struct LadderRung: Sendable, Identifiable {
     public let focus: String
 
     public static let all: [LadderRung] = [
-        LadderRung(id: 0, minimum: 0, name: "Beginner", focus: "Piece safety, one-move threats, basic mates"),
-        LadderRung(id: 1, minimum: 1000, name: "Club player", focus: "Forks, pins, back rank, king-and-pawn endings"),
-        LadderRung(id: 2, minimum: 1400, name: "Strong club", focus: "Two-move combinations, rook activity, opposition"),
-        LadderRung(id: 3, minimum: 1750, name: "Expert", focus: "Deflection, interference, prophylaxis, Lucena and Philidor"),
-        LadderRung(id: 4, minimum: 2050, name: "Candidate master", focus: "Quiet moves, long forcing lines, minor-piece endings"),
-        LadderRung(id: 5, minimum: 2300, name: "Master", focus: "Positional sacrifices, defensive resources, technique"),
-        LadderRung(id: 6, minimum: 2500, name: "Grandmaster range", focus: "Deep calculation, imbalance evaluation, endgame precision"),
+        LadderRung(id: 0, minimum: 0, name: L.t("ladder.name0", "Beginner"), focus: L.t("ladder.focus0", "Piece safety, one-move threats, basic mates")),
+        LadderRung(id: 1, minimum: 1000, name: L.t("ladder.name1", "Club player"), focus: L.t("ladder.focus1", "Forks, pins, back rank, king-and-pawn endings")),
+        LadderRung(id: 2, minimum: 1400, name: L.t("ladder.name2", "Strong club"), focus: L.t("ladder.focus2", "Two-move combinations, rook activity, opposition")),
+        LadderRung(id: 3, minimum: 1750, name: L.t("ladder.name3", "Expert"), focus: L.t("ladder.focus3", "Deflection, interference, prophylaxis, Lucena and Philidor")),
+        LadderRung(id: 4, minimum: 2050, name: L.t("ladder.name4", "Candidate master"), focus: L.t("ladder.focus4", "Quiet moves, long forcing lines, minor-piece endings")),
+        LadderRung(id: 5, minimum: 2300, name: L.t("ladder.name5", "Master"), focus: L.t("ladder.focus5", "Positional sacrifices, defensive resources, technique")),
+        LadderRung(id: 6, minimum: 2500, name: L.t("ladder.name6", "Grandmaster range"), focus: L.t("ladder.focus6", "Deep calculation, imbalance evaluation, endgame precision")),
     ]
 
     public static func current(for rating: Int) -> LadderRung {

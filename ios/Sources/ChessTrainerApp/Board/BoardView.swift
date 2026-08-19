@@ -113,6 +113,10 @@ public struct BoardView: View {
                 }
             }
             .frame(width: side, height: side)
+            // A chessboard is not mirrored in Arabic or Hebrew: a1 is at the
+            // bottom left of every board in the world, and flipping it would
+            // turn the coordinates the pieces are named by into a lie.
+            .environment(\.layoutDirection, .leftToRight)
             .clipShape(RoundedRectangle(cornerRadius: 6))
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         }

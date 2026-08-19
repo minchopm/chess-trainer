@@ -6,12 +6,12 @@ public enum MoveGrade: String, Sendable, CaseIterable {
 
     public var label: String {
         switch self {
-        case .best: "Best move"
-        case .excellent: "Excellent"
-        case .good: "Good"
-        case .inaccuracy: "Inaccuracy"
-        case .mistake: "Mistake"
-        case .blunder: "Blunder"
+        case .best: L.t("grade.best", "Best move")
+        case .excellent: L.t("grade.excellent", "Excellent")
+        case .good: L.t("grade.good", "Good")
+        case .inaccuracy: L.t("grade.inaccuracy", "Inaccuracy")
+        case .mistake: L.t("grade.mistake", "Mistake")
+        case .blunder: L.t("grade.blunder", "Blunder")
         }
     }
 

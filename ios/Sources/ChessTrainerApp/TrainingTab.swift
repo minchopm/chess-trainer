@@ -1,21 +1,27 @@
 import Observation
 import SwiftUI
+import ChessTraining
 
 /// Practice and Rush share the same puzzles and differ only in what they ask of
 /// you, so they belong in one tab rather than competing for a slot in the bar.
 struct TrainingTab: View {
     enum Mode: String, CaseIterable, Identifiable {
-        case practice = "Practice"
-        case rush = "Rush"
+        case practice, rush
         var id: String { rawValue }
+        var label: String {
+            switch self {
+            case .practice: L.t("common.practice", "Practice")
+            case .rush: L.t("rush.rush", "Rush")
+            }
+        }
     }
 
     @State private var mode = Mode.practice
 
     var body: some View {
         VStack(spacing: 0) {
-            Picker("Mode", selection: $mode) {
-                ForEach(Mode.allCases) { Text($0.rawValue).tag($0) }
+            Picker(L.t("common.mode", "Mode"), selection: $mode) {
+                ForEach(Mode.allCases) { Text($0.label).tag($0) }
             }
             .pickerStyle(.segmented)
             .padding(.horizontal, 12)

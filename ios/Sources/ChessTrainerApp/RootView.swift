@@ -17,27 +17,27 @@ public struct RootView: View {
         // trainer that asks nothing of the OS.
         TabView(selection: tabSelection) {
             NavigationStack { TrainingTab().hideNavigationBar() }
-                .tabItem { Label("Tactics", systemImage: "target") }
+                .tabItem { Label(L.t("progress.tactics", "Tactics"), systemImage: "target") }
                 .tag(Tab.tactics)
 
             NavigationStack { PositionalScreen().hideNavigationBar() }
-                .tabItem { Label("Positional", systemImage: "square.grid.3x3.middle.filled") }
+                .tabItem { Label(L.t("progress.positional", "Positional"), systemImage: "square.grid.3x3.middle.filled") }
                 .tag(Tab.positional)
 
             NavigationStack { EndgameScreen().hideNavigationBar() }
-                .tabItem { Label("Endgames", systemImage: "flag.checkered") }
+                .tabItem { Label(L.t("progress.endgames", "Endgames"), systemImage: "flag.checkered") }
                 .tag(Tab.endgames)
 
             NavigationStack { PlayTab().hideNavigationBar() }
-                .tabItem { Label("Play", systemImage: "person.2") }
+                .tabItem { Label(L.t("progress.play", "Play"), systemImage: "person.2") }
                 .tag(Tab.play)
 
             NavigationStack {
                 // Progress keeps its bar: it pushes to the About screen, and a
                 // pushed view needs somewhere to put its back button.
-                ProgressScreen().navigationTitle("Progress")
+                ProgressScreen().navigationTitle(L.t("progress.progress", "Progress"))
             }
-                .tabItem { Label("Progress", systemImage: "chart.line.uptrend.xyaxis") }
+                .tabItem { Label(L.t("progress.progress", "Progress"), systemImage: "chart.line.uptrend.xyaxis") }
                 .tag(Tab.progress)
         }
         .environment(app)
@@ -47,14 +47,14 @@ public struct RootView: View {
             isPresented: Binding(get: { pending != nil }, set: { if !$0 { pending = nil } }),
             titleVisibility: .visible
         ) {
-            Button("Leave", role: .destructive) {
+            Button(L.t("progress.leave", "Leave"), role: .destructive) {
                 if let pending {
                     activity.release()
                     selection = pending
                 }
                 pending = nil
             }
-            Button("Stay", role: .cancel) { pending = nil }
+            Button(L.t("progress.stay", "Stay"), role: .cancel) { pending = nil }
         } message: {
             Text(activity.reason ?? "")
         }
@@ -95,27 +95,27 @@ struct ProgressScreen: View {
 
     var body: some View {
         List {
-            Section("Where you are") {
-                LabeledContent("Overall", value: "\(app.progress.overallRating)")
+            Section(L.t("progress.whereYouAre", "Where you are")) {
+                LabeledContent(L.t("progress.overall", "Overall"), value: "\(app.progress.overallRating)")
                 ForEach(TrainingMode.allCases, id: \.self) { mode in
                     LabeledContent(mode.rawValue.capitalized, value: "\(app.progress.rating(mode))")
                 }
-                Text("Puzzle ratings run a few hundred points above over-the-board ratings — treat them as a measure of progress against yourself.")
+                Text(L.t("progress.puzzleRatingsRunAFew", "Puzzle ratings run a few hundred points above over-the-board ratings — treat them as a measure of progress against yourself."))
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
 
-            Section("Today") {
+            Section(L.t("progress.today", "Today")) {
                 let stats = app.progress.sessionStats()
-                LabeledContent("Attempted", value: "\(stats.attempted)")
-                LabeledContent("Solved", value: "\(stats.solved)")
-                LabeledContent("Accuracy", value: "\(Int(stats.accuracy * 100))%")
-                LabeledContent("Day streak", value: "\(app.progress.currentStreak)")
+                LabeledContent(L.t("progress.attempted", "Attempted"), value: "\(stats.attempted)")
+                LabeledContent(L.t("progress.solved", "Solved"), value: "\(stats.solved)")
+                LabeledContent(L.t("progress.accuracy", "Accuracy"), value: "\(Int(stats.accuracy * 100))%")
+                LabeledContent(L.t("progress.dayStreak", "Day streak"), value: "\(app.progress.currentStreak)")
             }
 
             let weak = app.progress.weakestThemes()
             if !weak.isEmpty {
-                Section("Weak spots") {
+                Section(L.t("progress.weakSpots", "Weak spots")) {
                     let targeted = Set(app.progress.trainingTargets().map(\.name))
                     ForEach(weak, id: \.name) { theme in
                         HStack {
@@ -127,7 +127,7 @@ struct ProgressScreen: View {
                                     .background(.tint.opacity(0.2), in: Capsule())
                             }
                             Spacer()
-                            Text("\(Int(theme.record.accuracy * 100))% of \(theme.record.seen)")
+                            Text(L.t("progress.themeAccuracy", "%lld%% of %lld", Int(theme.record.accuracy * 100), theme.record.seen))
                                 .foregroundStyle(.secondary)
                                 .monospacedDigit()
                         }
@@ -136,33 +136,35 @@ struct ProgressScreen: View {
             }
 
             if app.progress.onlineGames > 0 {
-                Section("Online") {
-                    LabeledContent("Rating", value: "\(app.progress.onlineRating)")
-                    LabeledContent("Record", value: "\(app.progress.onlineWins)W · \(app.progress.onlineLosses)L · \(app.progress.onlineDraws)D")
-                    Text("Online rating is kept apart from the training ratings: it measures you against the people you play, not against a library.")
+                Section(L.t("progress.online", "Online")) {
+                    LabeledContent(L.t("progress.rating", "Rating"), value: "\(app.progress.onlineRating)")
+                    LabeledContent(L.t("progress.record", "Record"), value: "\(app.progress.onlineWins)W · \(app.progress.onlineLosses)L · \(app.progress.onlineDraws)D")
+                    Text(L.t("progress.onlineRatingIsKeptApart", "Online rating is kept apart from the training ratings: it measures you against the people you play, not against a library."))
                         .font(.footnote).foregroundStyle(.secondary)
                 }
             }
 
             let guesses = app.progress.eloGuessStats
             if guesses.judged > 0 {
-                Section("Guess the Elo") {
-                    LabeledContent("Games judged", value: "\(guesses.judged)")
-                    LabeledContent("Average miss", value: "\(guesses.averageError) points")
-                    LabeledContent("Closest", value: "\(guesses.bestError) points")
+                Section(L.t("progress.guessTheElo", "Guess the Elo")) {
+                    LabeledContent(L.t("progress.gamesJudged", "Games judged"), value: "\(guesses.judged)")
+                    LabeledContent(L.t("progress.averageMiss", "Average miss"), value: "\(guesses.averageError) points")
+                    LabeledContent(L.t("progress.closest", "Closest"), value: "\(guesses.bestError) points")
                     if abs(guesses.bias) >= 40 {
-                        Text("You read games as \(guesses.bias > 0 ? "stronger" : "weaker") than they are, by \(abs(guesses.bias)) points on average.")
+                        Text(guesses.bias > 0
+                            ? L.t("progress.biasHigh", "You read games as stronger than they are, by %lld points on average.", abs(guesses.bias))
+                            : L.t("progress.biasLow", "You read games as weaker than they are, by %lld points on average.", abs(guesses.bias)))
                             .font(.footnote).foregroundStyle(.secondary)
                     }
                 }
             }
 
-            Section("Library") {
-                LabeledContent("Tactics puzzles", value: "\(app.library.puzzles.count)")
-                LabeledContent("Positional", value: "\(app.library.exercises.count)")
-                LabeledContent("Endgames", value: "\(app.library.drills.count)")
-                LabeledContent("Games", value: "\(app.library.games.count)")
-                LabeledContent("Engine", value: engineText)
+            Section(L.t("progress.library", "Library")) {
+                LabeledContent(L.t("progress.tacticsPuzzles", "Tactics puzzles"), value: "\(app.library.puzzles.count)")
+                LabeledContent(L.t("progress.positional", "Positional"), value: "\(app.library.exercises.count)")
+                LabeledContent(L.t("progress.endgames", "Endgames"), value: "\(app.library.drills.count)")
+                LabeledContent(L.t("progress.games", "Games"), value: "\(app.library.games.count)")
+                LabeledContent(L.t("progress.engine", "Engine"), value: engineText)
             }
 
             Section {
@@ -170,7 +172,7 @@ struct ProgressScreen: View {
             }
 
             Section {
-                Button("Reset all progress", role: .destructive) { app.resetProgress() }
+                Button(L.t("progress.resetAllProgress", "Reset all progress"), role: .destructive) { app.resetProgress() }
             }
         }
     }

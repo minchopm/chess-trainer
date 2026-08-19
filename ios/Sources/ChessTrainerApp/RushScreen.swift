@@ -115,8 +115,10 @@ final class RushModel {
         flash = Flash(
             solved: solved,
             text: solved
-                ? (current.streak >= 3 ? "\(current.streak) in a row" : "Solved")
-                : "Missed — \(RushRun.allowedMisses - current.missed) left"
+                ? (current.streak >= 3
+                    ? L.t("rush.inARow", "%lld in a row", current.streak)
+                    : L.t("tactics.solved", "Solved"))
+                : L.t("rush.missedLeft", "Missed — %lld left", RushRun.allowedMisses - current.missed)
         )
 
         if current.isOver || !current.hasTimeLeft() {
@@ -190,8 +192,8 @@ struct RushScreen: View {
         .onChange(of: model.isRunning) { _, running in
             if running {
                 activity.hold(
-                    title: "End your run?",
-                    reason: "The clock is still going. Leaving now ends the run and keeps the score so far."
+                    title: L.t("rush.endYourRun", "End your run?"),
+                    reason: L.t("rush.theClockIsStillGoing", "The clock is still going. Leaving now ends the run and keeps the score so far.")
                 )
             } else {
                 activity.release()
@@ -203,11 +205,11 @@ struct RushScreen: View {
         ScrollView {
             VStack(spacing: 14) {
                 Card {
-                    Text("Rush").font(.headline)
-                    Text("Solve as many as you can before the clock runs out. Puzzles start easy and get harder as you go. Three misses ends the run.")
+                    Text(L.t("rush.rush", "Rush")).font(.headline)
+                    Text(L.t("rush.solveAsManyAsYou", "Solve as many as you can before the clock runs out. Puzzles start easy and get harder as you go. Three misses ends the run."))
                         .font(.footnote).foregroundStyle(.secondary)
 
-                    Picker("Time", selection: Binding(
+                    Picker(L.t("rush.time", "Time"), selection: Binding(
                         get: { model.settings.duration },
                         set: { model.settings.duration = $0 }
                     )) {
@@ -218,7 +220,7 @@ struct RushScreen: View {
                     .pickerStyle(.segmented)
                     .padding(.top, 4)
 
-                    Button("Start run") {
+                    Button(L.t("rush.startRun", "Start run")) {
                         model.start(
                             library: app.library.puzzles,
                             practiceRating: app.progress.rating(.tactics)
@@ -232,12 +234,12 @@ struct RushScreen: View {
 
                 if !records.isEmpty {
                     Card {
-                        Text("Your best").font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
+                        Text(L.t("rush.yourBest", "Your best")).font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
                         ForEach(records, id: \.key) { entry in
                             HStack {
                                 Text(RushSettings.label(for: TimeInterval(entry.key)))
                                 Spacer()
-                                Text("\(entry.value.solved) solved · best streak \(entry.value.bestStreak)")
+                                Text(L.t("rush.recordLine", "%lld solved · best streak %lld", entry.value.solved, entry.value.bestStreak))
                                     .foregroundStyle(.secondary)
                                     .monospacedDigit()
                             }
@@ -259,13 +261,13 @@ struct RushScreen: View {
             BoardStage(
                 width: width,
                 top: PlayerBar(
-                    name: "Puzzle",
+                    name: L.t("rush.puzzle", "Puzzle"),
                     rating: model.puzzle?.rating,
                     color: model.orientation.opponent,
                     material: material
                 ),
                 bottom: PlayerBar(
-                    name: "You",
+                    name: L.t("rush.you", "You"),
                     rating: app.progress.rating(.tactics),
                     color: model.orientation,
                     material: material
@@ -285,7 +287,7 @@ struct RushScreen: View {
             scoreboard
         } controls: {
             ActionBar(items: [
-                ActionItem(title: "End run", systemImage: "stop.circle", emphasis: .destructive) {
+                ActionItem(title: L.t("rush.endRun", "End run"), systemImage: "stop.circle", emphasis: .destructive) {
                     model.stop()
                 },
             ])
@@ -319,7 +321,7 @@ struct RushScreen: View {
             }
 
             if let puzzle = model.puzzle {
-                Text("\(puzzle.sideToMove == .white ? "White" : "Black") to play")
+                Text(L.t("common.sideToPlay", "%@ to play", L.color(puzzle.sideToMove)))
                     .font(.subheadline.weight(.medium))
             }
         }
@@ -357,7 +359,7 @@ struct RushSummary: View {
 
             if let best = app.progress.rushRecordsByDuration[Int(run.settings.duration)],
                run.solved >= best.solved {
-                Label("New personal best", systemImage: "sparkles")
+                Label(L.t("rush.newPersonalBest", "New personal best"), systemImage: "sparkles")
                     .font(.footnote.weight(.medium))
                     .foregroundStyle(.yellow)
             }
@@ -365,14 +367,14 @@ struct RushSummary: View {
             Spacer()
 
             VStack(spacing: 10) {
-                Button("Run again") {
+                Button(L.t("rush.runAgain", "Run again")) {
                     model.start(library: app.library.puzzles, practiceRating: app.progress.rating(.tactics))
                 }
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .frame(maxWidth: .infinity)
 
-                Button("Done") { model.reset() }
+                Button(L.t("rush.done", "Done")) { model.reset() }
                     .buttonStyle(.bordered)
                     .controlSize(.large)
                     .frame(maxWidth: .infinity)
@@ -395,8 +397,8 @@ struct RushSummary: View {
     }
 
     private var headline: String {
-        if run.completedTarget { return "All \(run.settings.target) done" }
-        if run.endedByMisses { return "Three misses" }
+        if run.completedTarget { return L.t("rush.allDone", "All %lld done", run.settings.target) }
+        if run.endedByMisses { return L.t("rush.threeMisses", "Three misses") }
         return "Time"
     }
 

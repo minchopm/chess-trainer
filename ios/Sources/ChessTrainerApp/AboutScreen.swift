@@ -1,4 +1,5 @@
 import SwiftUI
+import ChessTraining
 
 /// Licence and attribution, reachable from inside the app.
 ///
@@ -12,9 +13,9 @@ struct AboutScreen: View {
         List {
             Section {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("Chess Trainer").font(.title2.weight(.semibold))
-                    Text("Version \(Self.version)").font(.footnote).foregroundStyle(.secondary)
-                    Text("Tactics, positional judgement, endgame technique and coached play, with Stockfish running on the device. Nothing leaves the phone.")
+                    Text(L.t("about.chessTrainer", "Chess Trainer")).font(.title2.weight(.semibold))
+                    Text(L.t("about.version", "Version %@", Self.version)).font(.footnote).foregroundStyle(.secondary)
+                    Text(L.t("about.tacticsPositionalJudgementEndgameTechnique", "Tactics, positional judgement, endgame technique and coached play, with Stockfish running on the device. Nothing leaves the phone."))
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                         .padding(.top, 2)
@@ -22,23 +23,23 @@ struct AboutScreen: View {
                 .padding(.vertical, 4)
             }
 
-            Section("Licence") {
-                Text("This application is free software, licensed under the GNU General Public License version 3 or later.")
+            Section(L.t("about.licence", "Licence")) {
+                Text(L.t("about.thisApplicationIsFreeSoftware", "This application is free software, licensed under the GNU General Public License version 3 or later."))
                     .font(.footnote)
-                Text("It includes Stockfish, which is GPLv3. Because Stockfish is linked into the app, the whole application carries the same licence — and its complete source is published.")
+                Text(L.t("about.itIncludesStockfishWhichIs", "It includes Stockfish, which is GPLv3. Because Stockfish is linked into the app, the whole application carries the same licence — and its complete source is published."))
                     .font(.footnote)
                     .foregroundStyle(.secondary)
 
                 NavigationLink("Read the full licence") {
-                    BundledTextView(resource: "LICENSE", title: "GNU GPL v3")
+                    BundledTextView(resource: "LICENSE", title: L.t("about.gnuGplV3", "GNU GPL v3"))
                 }
                 NavigationLink("Third-party components") {
-                    BundledTextView(resource: "NOTICE", title: "Attribution")
+                    BundledTextView(resource: "NOTICE", title: L.t("about.attribution", "Attribution"))
                 }
                 Link("Source code", destination: URL(string: Self.sourceURL)!)
             }
 
-            Section("Credits") {
+            Section(L.t("about.credits", "Credits")) {
                 credit(
                     "Stockfish",
                     "The chess engine. Copyright © 2004–2026 the Stockfish developers. GPLv3.",
@@ -51,13 +52,13 @@ struct AboutScreen: View {
                 )
             }
 
-            Section("Privacy") {
-                Text("The app collects nothing, sends nothing and makes no network requests. Your ratings and history are stored only on this device, and deleting the app deletes them.")
+            Section(L.t("about.privacy", "Privacy")) {
+                Text(L.t("about.theAppCollectsNothingSends", "The app collects nothing, sends nothing and makes no network requests. Your ratings and history are stored only on this device, and deleting the app deletes them."))
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
         }
-        .navigationTitle("About")
+        .navigationTitle(L.t("about.about", "About"))
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
         #endif

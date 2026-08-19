@@ -1,3 +1,4 @@
+import ChessTraining
 import SwiftUI
 
 /// The shape every training mode takes: board, then a panel, then controls.
@@ -167,14 +168,14 @@ struct LibraryNotice: View {
     var body: some View {
         Card {
             if isLoaded {
-                Text("No \(what) bundled").font(.headline)
-                Text("The data did not make it into the app bundle. Check that data/\(file) is listed in the Xcode target's resources.")
+                Text(L.t("common.nothingBundled", "No %@ bundled", what)).font(.headline)
+                Text(L.t("common.dataMissing", "The data did not make it into the app bundle. Check that data/%@ is listed in the Xcode target's resources.", file))
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             } else {
                 HStack(spacing: 8) {
                     ProgressView().controlSize(.small)
-                    Text("Loading \(what)…").font(.subheadline).foregroundStyle(.secondary)
+                    Text(L.t("common.loading", "Loading %@…", what)).font(.subheadline).foregroundStyle(.secondary)
                 }
             }
         }

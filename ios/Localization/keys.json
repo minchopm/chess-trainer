@@ -1,0 +1,2697 @@
+[
+ {
+  "key": "about.about",
+  "english": "About",
+  "files": [
+   "AboutScreen.swift"
+  ]
+ },
+ {
+  "key": "about.attribution",
+  "english": "Attribution",
+  "files": [
+   "AboutScreen.swift"
+  ]
+ },
+ {
+  "key": "about.chessTrainer",
+  "english": "Chess Trainer",
+  "files": [
+   "AboutScreen.swift"
+  ]
+ },
+ {
+  "key": "about.credits",
+  "english": "Credits",
+  "files": [
+   "AboutScreen.swift"
+  ]
+ },
+ {
+  "key": "about.gnuGplV3",
+  "english": "GNU GPL v3",
+  "files": [
+   "AboutScreen.swift"
+  ]
+ },
+ {
+  "key": "about.itIncludesStockfishWhichIs",
+  "english": "It includes Stockfish, which is GPLv3. Because Stockfish is linked into the app, the whole application carries the same licence — and its complete source is published.",
+  "files": [
+   "AboutScreen.swift"
+  ]
+ },
+ {
+  "key": "about.licence",
+  "english": "Licence",
+  "files": [
+   "AboutScreen.swift"
+  ]
+ },
+ {
+  "key": "about.privacy",
+  "english": "Privacy",
+  "files": [
+   "AboutScreen.swift"
+  ]
+ },
+ {
+  "key": "about.tacticsPositionalJudgementEndgameTechnique",
+  "english": "Tactics, positional judgement, endgame technique and coached play, with Stockfish running on the device. Nothing leaves the phone.",
+  "files": [
+   "AboutScreen.swift"
+  ]
+ },
+ {
+  "key": "about.theAppCollectsNothingSends",
+  "english": "The app collects nothing, sends nothing and makes no network requests. Your ratings and history are stored only on this device, and deleting the app deletes them.",
+  "files": [
+   "AboutScreen.swift"
+  ]
+ },
+ {
+  "key": "about.thisApplicationIsFreeSoftware",
+  "english": "This application is free software, licensed under the GNU General Public License version 3 or later.",
+  "files": [
+   "AboutScreen.swift"
+  ]
+ },
+ {
+  "key": "about.version",
+  "english": "Version %@",
+  "files": [
+   "AboutScreen.swift"
+  ]
+ },
+ {
+  "key": "clock.blitz",
+  "english": "Blitz",
+  "files": [
+   "Clock.swift"
+  ]
+ },
+ {
+  "key": "clock.classical",
+  "english": "Classical",
+  "files": [
+   "Clock.swift"
+  ]
+ },
+ {
+  "key": "clock.minutes",
+  "english": "%lld min",
+  "files": [
+   "Clock.swift"
+  ]
+ },
+ {
+  "key": "clock.rapid",
+  "english": "Rapid",
+  "files": [
+   "Clock.swift"
+  ]
+ },
+ {
+  "key": "coach.breaksBishopPair",
+  "english": "breaks up the enemy bishop pair",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.captures",
+  "english": "captures the %@",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.castlesKingside",
+  "english": "castles kingside, tucking the king away",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.castlesQueenside",
+  "english": "castles queenside",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.doublesRooks",
+  "english": "doubles the rooks",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.givesCheck",
+  "english": "gives check",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.halfOpenFile",
+  "english": "puts the rook on the half-open %@-file",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.isolatesOpponent",
+  "english": "leaves the opponent with an isolated pawn",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.joinClauses",
+  "english": "%@ and %@",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.mate",
+  "english": "delivers checkmate",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.mateCapturing",
+  "english": "delivers checkmate, capturing the %@",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.moreActivity",
+  "english": "sharply increases the activity of the pieces",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.opensFile",
+  "english": "opens the %@-file",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.opensKingLines",
+  "english": "pries open lines toward the enemy king",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.outpost",
+  "english": "plants the knight on the %@ outpost, where no pawn can dislodge it",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.passedPawn",
+  "english": "creates a passed pawn",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.promotes",
+  "english": "promotes to a %@",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.seventhRank",
+  "english": "lands the rook on the seventh rank",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.takesOpenFile",
+  "english": "takes the open %@-file",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.winsMaterial",
+  "english": "wins material — takes the %@",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "color.black",
+  "english": "Black",
+  "files": [
+   "Localized.swift"
+  ]
+ },
+ {
+  "key": "color.white",
+  "english": "White",
+  "files": [
+   "Localized.swift"
+  ]
+ },
+ {
+  "key": "common.dataMissing",
+  "english": "The data did not make it into the app bundle. Check that data/%@ is listed in the Xcode target's resources.",
+  "files": [
+   "Components.swift"
+  ]
+ },
+ {
+  "key": "common.hide",
+  "english": "Hide",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "common.loading",
+  "english": "Loading %@…",
+  "files": [
+   "Components.swift"
+  ]
+ },
+ {
+  "key": "common.mode",
+  "english": "Mode",
+  "files": [
+   "TrainingTab.swift"
+  ]
+ },
+ {
+  "key": "common.moveCount",
+  "english": "%lld moves",
+  "files": [
+   "ChessTrainerApp/TacticsScreen.swift"
+  ]
+ },
+ {
+  "key": "common.next",
+  "english": "Next",
+  "files": [
+   "PositionalScreen.swift"
+  ]
+ },
+ {
+  "key": "common.nothingBundled",
+  "english": "No %@ bundled",
+  "files": [
+   "Components.swift"
+  ]
+ },
+ {
+  "key": "common.oneMove",
+  "english": "1 move",
+  "files": [
+   "ChessTrainerApp/TacticsScreen.swift"
+  ]
+ },
+ {
+  "key": "common.practice",
+  "english": "Practice",
+  "files": [
+   "ChessTrainerApp/TrainingTab.swift"
+  ]
+ },
+ {
+  "key": "common.sideToPlay",
+  "english": "%@ to play",
+  "files": [
+   "RushScreen.swift"
+  ]
+ },
+ {
+  "key": "common.skip",
+  "english": "Skip",
+  "files": [
+   "PositionalScreen.swift"
+  ]
+ },
+ {
+  "key": "common.sparringBot",
+  "english": "Sparring bot",
+  "files": [
+   "GameCenterMatchmaker.swift"
+  ]
+ },
+ {
+  "key": "common.tryAgain",
+  "english": "Try again",
+  "files": [
+   "CompletionOverlay.swift"
+  ]
+ },
+ {
+  "key": "common.values",
+  "english": "Values",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "common.you",
+  "english": "You",
+  "files": [
+   "GameCenterMatchmaker.swift"
+  ]
+ },
+ {
+  "key": "endgame.afterThatMove",
+  "english": "After that move %@. Play on if you like, or restart and try the correct plan.",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.drill",
+  "english": "Drill",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.drillFailed",
+  "english": "Drill failed",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.drillPassed",
+  "english": "Drill passed",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.engineIsThinking",
+  "english": "Engine is thinking…",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.evaluation",
+  "english": "Evaluation %@",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.fiftyMove",
+  "english": "Fifty-move rule.",
+  "files": [
+   "ChessTrainerApp/EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.holdAs",
+  "english": "Hold the draw as %@.",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.insufficient",
+  "english": "Insufficient material.",
+  "files": [
+   "ChessTrainerApp/EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.moveLimit",
+  "english": "The 80-move limit ran out.",
+  "files": [
+   "ChessTrainerApp/EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.mustDraw",
+  "english": "Must draw",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.mustWin",
+  "english": "Must win",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.next",
+  "english": "Next",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.noEndgameDrillsBundled",
+  "english": "No endgame drills bundled",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.repetition",
+  "english": "Threefold repetition.",
+  "files": [
+   "ChessTrainerApp/EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.restart",
+  "english": "Restart",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.stalemate",
+  "english": "Stalemate.",
+  "files": [
+   "ChessTrainerApp/EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.theDrawIsGone",
+  "english": "the draw is gone",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.theIdea",
+  "english": "The idea",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.theWinIsGone",
+  "english": "the win is gone",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.threwItAway",
+  "english": "%@ threw it away",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.wentWrongAt",
+  "english": "It went wrong at %@.",
+  "files": [
+   "ChessTrainerApp/EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.winAs",
+  "english": "Win as %@.",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.you",
+  "english": "You",
+  "files": [
+   "EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.youMated",
+  "english": "Checkmate — you delivered it.",
+  "files": [
+   "ChessTrainerApp/EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "endgame.youWereMated",
+  "english": "You were checkmated.",
+  "files": [
+   "ChessTrainerApp/EndgameScreen.swift"
+  ]
+ },
+ {
+  "key": "grade.best",
+  "english": "Best move",
+  "files": [
+   "Grading.swift"
+  ]
+ },
+ {
+  "key": "grade.blunder",
+  "english": "Blunder",
+  "files": [
+   "Grading.swift"
+  ]
+ },
+ {
+  "key": "grade.excellent",
+  "english": "Excellent",
+  "files": [
+   "Grading.swift"
+  ]
+ },
+ {
+  "key": "grade.good",
+  "english": "Good",
+  "files": [
+   "Grading.swift"
+  ]
+ },
+ {
+  "key": "grade.inaccuracy",
+  "english": "Inaccuracy",
+  "files": [
+   "Grading.swift"
+  ]
+ },
+ {
+  "key": "grade.mistake",
+  "english": "Mistake",
+  "files": [
+   "Grading.swift"
+  ]
+ },
+ {
+  "key": "guess.aboutToStart",
+  "english": "The game is about to start.",
+  "files": [
+   "ChessTrainerApp/GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "guess.back",
+  "english": "Back",
+  "files": [
+   "GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "guess.black",
+  "english": "Black",
+  "files": [
+   "GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "guess.close",
+  "english": "Close",
+  "files": [
+   "EloGuess.swift"
+  ]
+ },
+ {
+  "key": "guess.deadOn",
+  "english": "Dead on.",
+  "files": [
+   "EloGuess.swift"
+  ]
+ },
+ {
+  "key": "guess.forward",
+  "english": "Forward",
+  "files": [
+   "GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "guess.judgedSummary",
+  "english": "%lld games judged · average miss %lld points",
+  "files": [
+   "GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "guess.lockIn",
+  "english": "Lock in",
+  "files": [
+   "GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "guess.nextGame",
+  "english": "Next game",
+  "files": [
+   "GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "guess.notThisTime",
+  "english": "Not this time",
+  "files": [
+   "EloGuess.swift"
+  ]
+ },
+ {
+  "key": "guess.pause",
+  "english": "Pause",
+  "files": [
+   "ChessTrainerApp/GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "guess.play",
+  "english": "Play",
+  "files": [
+   "ChessTrainerApp/GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "guess.rightArea",
+  "english": "In the right area",
+  "files": [
+   "EloGuess.swift"
+  ]
+ },
+ {
+  "key": "guess.speed",
+  "english": "Speed",
+  "files": [
+   "GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "guess.spotOn",
+  "english": "Spot on",
+  "files": [
+   "EloGuess.swift"
+  ]
+ },
+ {
+  "key": "guess.tooHigh",
+  "english": "%lld points too high.",
+  "files": [
+   "EloGuess.swift"
+  ]
+ },
+ {
+  "key": "guess.tooLow",
+  "english": "%lld points too low.",
+  "files": [
+   "EloGuess.swift"
+  ]
+ },
+ {
+  "key": "guess.white",
+  "english": "White",
+  "files": [
+   "GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "guess.youSaid",
+  "english": "You said",
+  "files": [
+   "ChessTrainerApp/GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "guess.yourGuessLichessRating",
+  "english": "your guess, Lichess rating",
+  "files": [
+   "GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "ladder.focus0",
+  "english": "Piece safety, one-move threats, basic mates",
+  "files": [
+   "Progress.swift"
+  ]
+ },
+ {
+  "key": "ladder.focus1",
+  "english": "Forks, pins, back rank, king-and-pawn endings",
+  "files": [
+   "Progress.swift"
+  ]
+ },
+ {
+  "key": "ladder.focus2",
+  "english": "Two-move combinations, rook activity, opposition",
+  "files": [
+   "Progress.swift"
+  ]
+ },
+ {
+  "key": "ladder.focus3",
+  "english": "Deflection, interference, prophylaxis, Lucena and Philidor",
+  "files": [
+   "Progress.swift"
+  ]
+ },
+ {
+  "key": "ladder.focus4",
+  "english": "Quiet moves, long forcing lines, minor-piece endings",
+  "files": [
+   "Progress.swift"
+  ]
+ },
+ {
+  "key": "ladder.focus5",
+  "english": "Positional sacrifices, defensive resources, technique",
+  "files": [
+   "Progress.swift"
+  ]
+ },
+ {
+  "key": "ladder.focus6",
+  "english": "Deep calculation, imbalance evaluation, endgame precision",
+  "files": [
+   "Progress.swift"
+  ]
+ },
+ {
+  "key": "ladder.name0",
+  "english": "Beginner",
+  "files": [
+   "Progress.swift"
+  ]
+ },
+ {
+  "key": "ladder.name1",
+  "english": "Club player",
+  "files": [
+   "Progress.swift"
+  ]
+ },
+ {
+  "key": "ladder.name2",
+  "english": "Strong club",
+  "files": [
+   "Progress.swift"
+  ]
+ },
+ {
+  "key": "ladder.name3",
+  "english": "Expert",
+  "files": [
+   "Progress.swift"
+  ]
+ },
+ {
+  "key": "ladder.name4",
+  "english": "Candidate master",
+  "files": [
+   "Progress.swift"
+  ]
+ },
+ {
+  "key": "ladder.name5",
+  "english": "Master",
+  "files": [
+   "Progress.swift"
+  ]
+ },
+ {
+  "key": "ladder.name6",
+  "english": "Grandmaster range",
+  "files": [
+   "Progress.swift"
+  ]
+ },
+ {
+  "key": "online.aRealOpponentOverGame",
+  "english": "A real opponent over Game Center, on the clock. No hints, no engine, no take-backs.",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.accept",
+  "english": "Accept",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.backToTheLobby",
+  "english": "Back to the lobby",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.clock",
+  "english": "Clock",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.clockExplanation",
+  "english": "%@ each — %@. You are only paired with players who chose the same clock.",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.decline",
+  "english": "Decline",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.drawOffered",
+  "english": "Draw offered.",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.drawOfferedWaitingForAn",
+  "english": "Draw offered — waiting for an answer.",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.gameSummary",
+  "english": "%@ · %@ · you are %@",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.leaveTheGame",
+  "english": "Leave the game?",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.leavingAnOnlineGameLoses",
+  "english": "Leaving an online game loses it and costs you rating.",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.lobby",
+  "english": "Lobby",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.localTestGame",
+  "english": "Local test game",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.moves",
+  "english": "Moves",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.offerDraw",
+  "english": "Offer draw",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.playOnline",
+  "english": "Play online",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.record",
+  "english": "Record",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.resign",
+  "english": "Resign",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "online.searchingTapToCancel",
+  "english": "Searching — tap to cancel",
+  "files": [
+   "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "piece.bishop",
+  "english": "bishop",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "piece.king",
+  "english": "king",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "piece.knight",
+  "english": "knight",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "piece.pawn",
+  "english": "pawn",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "piece.queen",
+  "english": "queen",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "piece.rook",
+  "english": "rook",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "play.abandonReason",
+  "english": "You are %lld moves in. Leaving now loses the game and it will not be recorded.",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.abandonThisGame",
+  "english": "Abandon this game?",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.black",
+  "english": "Black",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.cancelPremoves",
+  "english": "Cancel %lld",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.casual",
+  "english": "Casual",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.checkmateLost",
+  "english": "Checkmate — you lost.",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.checkmateWon",
+  "english": "Checkmate — you won.",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.club",
+  "english": "Club",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.coach",
+  "english": "Coach",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.draw",
+  "english": "Draw.",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.engineThinking",
+  "english": "Engine is thinking…",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.engineToMove",
+  "english": "Engine to move.",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.expert",
+  "english": "Expert",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.fullStrength",
+  "english": "Full strength",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.gameOverDraw",
+  "english": "Game over — draw",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.gameOverLost",
+  "english": "Game over — you lost",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.gameOverWon",
+  "english": "Game over — you won",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.hint",
+  "english": "Hint",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.mainLine",
+  "english": "Main line: %@",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.master",
+  "english": "Master",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.mode",
+  "english": "Mode",
+  "files": [
+   "PlayTab.swift"
+  ]
+ },
+ {
+  "key": "play.moves",
+  "english": "Moves",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.newGame",
+  "english": "New game",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.opponentIs",
+  "english": "Opponent: %@",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.startGame",
+  "english": "Start game",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.strength",
+  "english": "Strength",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.strongClub",
+  "english": "Strong club",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.takeback",
+  "english": "Takeback",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.theEnginePlaysAtThe",
+  "english": "The engine plays at the strength you choose. Coaching grades each of your moves as you make it.",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.theQueueWasDroppedThe",
+  "english": "The queue was dropped — the engine's move made it impossible.",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.white",
+  "english": "White",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.you",
+  "english": "You",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.youPlay",
+  "english": "You play",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.yourMove",
+  "english": "Your move.",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "positional.assessPrompt",
+  "english": "%@ to move — how do you assess this?",
+  "files": [
+   "PositionalScreen.swift"
+  ]
+ },
+ {
+  "key": "positional.balanced",
+  "english": "Balanced",
+  "files": [
+   "PositionalScreen.swift"
+  ]
+ },
+ {
+  "key": "positional.blackClear",
+  "english": "Black is clearly better",
+  "files": [
+   "PositionalScreen.swift"
+  ]
+ },
+ {
+  "key": "positional.blackSlight",
+  "english": "Black is slightly better",
+  "files": [
+   "PositionalScreen.swift"
+  ]
+ },
+ {
+  "key": "positional.checkingYourMoveWithThe",
+  "english": "Checking your move with the engine…",
+  "files": [
+   "PositionalScreen.swift"
+  ]
+ },
+ {
+  "key": "positional.exercise",
+  "english": "Exercise",
+  "files": [
+   "PositionalScreen.swift"
+  ]
+ },
+ {
+  "key": "positional.moveCost",
+  "english": "Your move: %.2f · best: %.2f · cost: %.1f%% win probability.",
+  "files": [
+   "PositionalScreen.swift"
+  ]
+ },
+ {
+  "key": "positional.noTacticsHereWeighStructure",
+  "english": "No tactics here. Weigh structure, activity, king safety and space.",
+  "files": [
+   "PositionalScreen.swift"
+  ]
+ },
+ {
+  "key": "positional.nowPlayTheMoveYou",
+  "english": "Now play the move you would choose.",
+  "files": [
+   "PositionalScreen.swift"
+  ]
+ },
+ {
+  "key": "positional.positionalExercises",
+  "english": "positional exercises",
+  "files": [
+   "PositionalScreen.swift"
+  ]
+ },
+ {
+  "key": "positional.whiteClear",
+  "english": "White is clearly better",
+  "files": [
+   "PositionalScreen.swift"
+  ]
+ },
+ {
+  "key": "positional.whiteSlight",
+  "english": "White is slightly better",
+  "files": [
+   "PositionalScreen.swift"
+  ]
+ },
+ {
+  "key": "positional.you",
+  "english": "You",
+  "files": [
+   "PositionalScreen.swift"
+  ]
+ },
+ {
+  "key": "progress.accuracy",
+  "english": "Accuracy",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.attempted",
+  "english": "Attempted",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.averageMiss",
+  "english": "Average miss",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.biasHigh",
+  "english": "You read games as stronger than they are, by %lld points on average.",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.biasLow",
+  "english": "You read games as weaker than they are, by %lld points on average.",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.closest",
+  "english": "Closest",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.dayStreak",
+  "english": "Day streak",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.endgames",
+  "english": "Endgames",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.engine",
+  "english": "Engine",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.games",
+  "english": "Games",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.gamesJudged",
+  "english": "Games judged",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.guessTheElo",
+  "english": "Guess the Elo",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.leave",
+  "english": "Leave",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.library",
+  "english": "Library",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.online",
+  "english": "Online",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.onlineRatingIsKeptApart",
+  "english": "Online rating is kept apart from the training ratings: it measures you against the people you play, not against a library.",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.overall",
+  "english": "Overall",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.play",
+  "english": "Play",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.positional",
+  "english": "Positional",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.progress",
+  "english": "Progress",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.puzzleRatingsRunAFew",
+  "english": "Puzzle ratings run a few hundred points above over-the-board ratings — treat them as a measure of progress against yourself.",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.rating",
+  "english": "Rating",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.record",
+  "english": "Record",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.resetAllProgress",
+  "english": "Reset all progress",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.solved",
+  "english": "Solved",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.stay",
+  "english": "Stay",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.tactics",
+  "english": "Tactics",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.tacticsPuzzles",
+  "english": "Tactics puzzles",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.themeAccuracy",
+  "english": "%lld%% of %lld",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.today",
+  "english": "Today",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.weakSpots",
+  "english": "Weak spots",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.whereYouAre",
+  "english": "Where you are",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "result.agreement",
+  "english": "agreement",
+  "files": [
+   "MatchProtocol.swift"
+  ]
+ },
+ {
+  "key": "result.blackWon",
+  "english": "Black won",
+  "files": [
+   "ChessTrainerApp/GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "result.checkmate",
+  "english": "checkmate",
+  "files": [
+   "MatchProtocol.swift"
+  ]
+ },
+ {
+  "key": "result.disconnected",
+  "english": "the opponent leaving",
+  "files": [
+   "MatchProtocol.swift"
+  ]
+ },
+ {
+  "key": "result.drawn",
+  "english": "Drawn",
+  "files": [
+   "ChessTrainerApp/GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "result.drawnBy",
+  "english": "Drawn by %@",
+  "files": [
+   "MatchProtocol.swift"
+  ]
+ },
+ {
+  "key": "result.fiftyMoveRule",
+  "english": "the fifty-move rule",
+  "files": [
+   "MatchProtocol.swift"
+  ]
+ },
+ {
+  "key": "result.insufficientMaterial",
+  "english": "insufficient material",
+  "files": [
+   "MatchProtocol.swift"
+  ]
+ },
+ {
+  "key": "result.onTime",
+  "english": "on time",
+  "files": [
+   "ChessTrainerApp/GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "result.repetition",
+  "english": "repetition",
+  "files": [
+   "MatchProtocol.swift"
+  ]
+ },
+ {
+  "key": "result.resignation",
+  "english": "resignation",
+  "files": [
+   "MatchProtocol.swift"
+  ]
+ },
+ {
+  "key": "result.stalemate",
+  "english": "stalemate",
+  "files": [
+   "MatchProtocol.swift"
+  ]
+ },
+ {
+  "key": "result.time",
+  "english": "time",
+  "files": [
+   "MatchProtocol.swift"
+  ]
+ },
+ {
+  "key": "result.whiteWon",
+  "english": "White won",
+  "files": [
+   "ChessTrainerApp/GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "result.youLostBy",
+  "english": "You lost by %@",
+  "files": [
+   "MatchProtocol.swift"
+  ]
+ },
+ {
+  "key": "result.youWonBy",
+  "english": "You won by %@",
+  "files": [
+   "MatchProtocol.swift"
+  ]
+ },
+ {
+  "key": "rush.allDone",
+  "english": "All %lld done",
+  "files": [
+   "ChessTrainerApp/RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.done",
+  "english": "Done",
+  "files": [
+   "RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.endRun",
+  "english": "End run",
+  "files": [
+   "RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.endYourRun",
+  "english": "End your run?",
+  "files": [
+   "RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.inARow",
+  "english": "%lld in a row",
+  "files": [
+   "ChessTrainerApp/RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.missedLeft",
+  "english": "Missed — %lld left",
+  "files": [
+   "ChessTrainerApp/RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.newPersonalBest",
+  "english": "New personal best",
+  "files": [
+   "RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.puzzle",
+  "english": "Puzzle",
+  "files": [
+   "RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.recordLine",
+  "english": "%lld solved · best streak %lld",
+  "files": [
+   "RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.runAgain",
+  "english": "Run again",
+  "files": [
+   "RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.rush",
+  "english": "Rush",
+  "files": [
+   "RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.solveAsManyAsYou",
+  "english": "Solve as many as you can before the clock runs out. Puzzles start easy and get harder as you go. Three misses ends the run.",
+  "files": [
+   "RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.startRun",
+  "english": "Start run",
+  "files": [
+   "RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.theClockIsStillGoing",
+  "english": "The clock is still going. Leaving now ends the run and keeps the score so far.",
+  "files": [
+   "RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.threeMisses",
+  "english": "Three misses",
+  "files": [
+   "ChessTrainerApp/RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.time",
+  "english": "Time",
+  "files": [
+   "RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.you",
+  "english": "You",
+  "files": [
+   "RushScreen.swift"
+  ]
+ },
+ {
+  "key": "rush.yourBest",
+  "english": "Your best",
+  "files": [
+   "RushScreen.swift"
+  ]
+ },
+ {
+  "key": "selection.chosenForYou",
+  "english": "Chosen for you: %@ — %lld%% of %lld so far.",
+  "files": [
+   "Selection.swift"
+  ]
+ },
+ {
+  "key": "selection.review",
+  "english": "Review — you have seen this one before.",
+  "files": [
+   "Selection.swift"
+  ]
+ },
+ {
+  "key": "summary.backwardPawn",
+  "english": "%@ has a backward pawn on %@.",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "summary.bishopPair",
+  "english": "%@ holds the bishop pair.",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "summary.isolatedPawn",
+  "english": "%@'s pawn on %@ is isolated.",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "summary.isolatedPawns",
+  "english": "%@'s pawns on %@ are isolated.",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "summary.material",
+  "english": "Material: %@ is up roughly %@ points.",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "summary.materialLevel",
+  "english": "Material is level.",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "summary.moreActive",
+  "english": "%@ has noticeably more active pieces (%lld versus %lld legal moves).",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "summary.openFile",
+  "english": "Open file: %@.",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "summary.openFiles",
+  "english": "Open files: %@.",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "summary.passedPawn",
+  "english": "%@ has a passed pawn on %@.",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "summary.rookOpenLines",
+  "english": "%@ rook on %@ controls open lines.",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "summary.rooksOpenLines",
+  "english": "%@ rooks on %@ control open lines.",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "summary.secureKnight",
+  "english": "%@ has a secure knight on %@.",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "tactics.crushingBlow",
+  "english": "Find the crushing blow.",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.findForcedMate",
+  "english": "Find the forced mate.",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.findTheSave",
+  "english": "Find the move that saves the position.",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.goodKeepGoing",
+  "english": "Good — keep going.",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.hint",
+  "english": "Hint",
+  "files": [
+   "TacticsScreen.swift"
+  ]
+ },
+ {
+  "key": "tactics.keepGoing",
+  "english": "Good — keep going.",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.mateIn",
+  "english": "Mate in %@.",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.moveThePiece",
+  "english": "Move the %@ on %@.",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.nextPuzzle",
+  "english": "Next puzzle",
+  "files": [
+   "TacticsScreen.swift"
+  ]
+ },
+ {
+  "key": "tactics.notTheOne",
+  "english": "%@ is not the one",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.oneMoveBetter",
+  "english": "One move is clearly better than the rest.",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.opponentReplies",
+  "english": "Opponent replies…",
+  "files": [
+   "TacticsScreen.swift"
+  ]
+ },
+ {
+  "key": "tactics.puzzle",
+  "english": "Puzzle",
+  "files": [
+   "TacticsScreen.swift"
+  ]
+ },
+ {
+  "key": "tactics.sideToPlaySolution",
+  "english": "%@ to play — solution",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.skip",
+  "english": "Skip",
+  "files": [
+   "TacticsScreen.swift"
+  ]
+ },
+ {
+  "key": "tactics.solution",
+  "english": "Solution",
+  "files": [
+   "TacticsScreen.swift"
+  ]
+ },
+ {
+  "key": "tactics.solutionShown",
+  "english": "Solution shown",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.solutionTitle",
+  "english": "Solution",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.solved",
+  "english": "Solved",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.solvedNotFirst",
+  "english": "Solved, but not first time",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.solvedSecondTry",
+  "english": "Solved on the second try",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.stillNotIt",
+  "english": "Still not it. Try a hint, or reveal the solution and study the idea.",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.strongestContinuation",
+  "english": "Find the strongest continuation.",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.studyTheIdea",
+  "english": "Study the idea — it will come back for review.",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.thatIsTheMove",
+  "english": "That is the move — play it on the board.",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.thatIsTheMovePlay",
+  "english": "That is the move — play it on the board.",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.themes",
+  "english": "Themes",
+  "files": [
+   "TacticsScreen.swift"
+  ]
+ },
+ {
+  "key": "tactics.tryForcing",
+  "english": "There is a stronger move here. Look at the most forcing options first — checks, captures, threats.",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.winMaterial",
+  "english": "Win material.",
+  "files": [
+   "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.you",
+  "english": "You",
+  "files": [
+   "TacticsScreen.swift"
+  ]
+ },
+ {
+  "key": "theme.advancedPawn",
+  "english": "Advanced pawn",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.advantage",
+  "english": "Advantage",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.anastasiaMate",
+  "english": "Anastasia mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.arabianMate",
+  "english": "Arabian mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.attackingF2F7",
+  "english": "Attacking f2/f7",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.attraction",
+  "english": "Attraction",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.backRankMate",
+  "english": "Back rank mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.balestraMate",
+  "english": "Balestra mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.basicMate",
+  "english": "Basic mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.bishopEndgame",
+  "english": "Bishop endgame",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.blindSwineMate",
+  "english": "Blind swine mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.bodenMate",
+  "english": "Boden mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.breakthrough",
+  "english": "Breakthrough",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.capturingDefender",
+  "english": "Capturing defender",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.castling",
+  "english": "Castling",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.clearance",
+  "english": "Clearance",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.collinearMove",
+  "english": "Collinear move",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.cornerMate",
+  "english": "Corner mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.crushing",
+  "english": "Crushing",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.defence",
+  "english": "Defence",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.defensiveMove",
+  "english": "Defensive move",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.deflection",
+  "english": "Deflection",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.discoveredAttack",
+  "english": "Discovered attack",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.discoveredCheck",
+  "english": "Discovered check",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.doubleBishopMate",
+  "english": "Double bishop mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.doubleCheck",
+  "english": "Double check",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.dovetailMate",
+  "english": "Dovetail mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.enPassant",
+  "english": "En passant",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.endgame",
+  "english": "Endgame",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.epauletteMate",
+  "english": "Epaulette mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.equality",
+  "english": "Equality",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.exposedKing",
+  "english": "Exposed king",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.fork",
+  "english": "Fork",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.fortress",
+  "english": "Fortress",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.hangingPiece",
+  "english": "Hanging piece",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.hookMate",
+  "english": "Hook mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.interference",
+  "english": "Interference",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.intermezzo",
+  "english": "Intermezzo",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.judgement",
+  "english": "Judgement",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.killBoxMate",
+  "english": "Kill box mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.kingsideAttack",
+  "english": "Kingside attack",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.knightEndgame",
+  "english": "Knight endgame",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.knightFork",
+  "english": "Knight fork",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.long",
+  "english": "Long",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.master",
+  "english": "Master",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.masterVsMaster",
+  "english": "Master vs master",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.mate",
+  "english": "Mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.mateIn1",
+  "english": "Mate in 1",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.mateIn2",
+  "english": "Mate in 2",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.mateIn3",
+  "english": "Mate in 3",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.mateIn4",
+  "english": "Mate in 4",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.mateIn5",
+  "english": "Mate in 5",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.middlegame",
+  "english": "Middlegame",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.morphysMate",
+  "english": "Morphy's mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.oneMove",
+  "english": "One move",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.opening",
+  "english": "Opening",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.operaMate",
+  "english": "Opera mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.opposition",
+  "english": "Opposition",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.passedPawn",
+  "english": "Passed pawn",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.pawnEndgame",
+  "english": "Pawn endgame",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.pillsburysMate",
+  "english": "Pillsbury's mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.pin",
+  "english": "Pin",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.promotion",
+  "english": "Promotion",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.queenEndgame",
+  "english": "Queen endgame",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.queenRookEndgame",
+  "english": "Queen and rook endgame",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.queensideAttack",
+  "english": "Queenside attack",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.quietMove",
+  "english": "Quiet move",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.rookEndgame",
+  "english": "Rook endgame",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.sacrifice",
+  "english": "Sacrifice",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.short",
+  "english": "Short",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.skewer",
+  "english": "Skewer",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.smotheredMate",
+  "english": "Smothered mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.superGM",
+  "english": "Super GM",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.swallowstailMate",
+  "english": "Swallowtail mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.technique",
+  "english": "Technique",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.trappedPiece",
+  "english": "Trapped piece",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.triangleMate",
+  "english": "Triangle mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.underPromotion",
+  "english": "Underpromotion",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.veryLong",
+  "english": "Very long",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.vukovicMate",
+  "english": "Vukovic mate",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.winsMaterial",
+  "english": "Wins material",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.xRayAttack",
+  "english": "X-ray attack",
+  "files": [
+   "Content.swift"
+  ]
+ },
+ {
+  "key": "theme.zugzwang",
+  "english": "Zugzwang",
+  "files": [
+   "Content.swift"
+  ]
+ }
+]

@@ -11,10 +11,11 @@ public enum SelectionReason: Equatable, Sendable {
     public var explanation: String? {
         switch self {
         case .review:
-            return "Review — you have seen this one before."
+            return L.t("selection.review", "Review — you have seen this one before.")
         case .weakness(let motif, let accuracy, let seen):
             let percent = Int((accuracy * 100).rounded())
-            return "Chosen for you: \(Themes.readable(motif).lowercased()) — \(percent)% of \(seen) so far."
+            return L.t("selection.chosenForYou", "Chosen for you: %@ — %lld%% of %lld so far.",
+                       Themes.readable(motif).lowercased(), percent, seen)
         case .level:
             return nil
         }

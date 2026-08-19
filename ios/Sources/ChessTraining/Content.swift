@@ -161,8 +161,15 @@ public enum Themes {
 
     public static func isMotif(_ theme: String) -> Bool { !descriptive.contains(theme) }
 
-    /// "mateIn2" -> "Mate in 2", "knightFork" -> "Knight fork".
+    /// "mateIn2" -> "Mate in 2", "knightFork" -> "Knight fork" — or whatever a
+    /// translator called it. Splitting the camel case is the fallback for a
+    /// theme the catalogue has never seen, which is what a fresh Lichess import
+    /// brings in.
     public static func readable(_ theme: String) -> String {
+        L.t("theme.\(theme)", spaced(theme))
+    }
+
+    private static func spaced(_ theme: String) -> String {
         var spaced = ""
         for character in theme {
             if character.isUppercase || character.isNumber, !spaced.isEmpty, spaced.last != " " {

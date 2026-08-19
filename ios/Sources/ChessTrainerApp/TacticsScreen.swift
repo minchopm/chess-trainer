@@ -13,7 +13,7 @@ struct TacticsScreen: View {
                 if let completion = model.completion {
                     CompletionOverlay(
                         result: completion,
-                        primaryTitle: "Next puzzle",
+                        primaryTitle: L.t("tactics.nextPuzzle", "Next puzzle"),
                         onPrimary: next,
                         onRetry: { model.retry() }
                     )
@@ -28,13 +28,13 @@ struct TacticsScreen: View {
             BoardStage(
                 width: width,
                 top: PlayerBar(
-                    name: "Puzzle",
+                    name: L.t("tactics.puzzle", "Puzzle"),
                     rating: model.puzzle?.rating,
                     color: model.orientation.opponent,
                     material: material
                 ),
                 bottom: PlayerBar(
-                    name: "You",
+                    name: L.t("tactics.you", "You"),
                     rating: app.progress.rating(.tactics),
                     color: model.orientation,
                     material: material
@@ -76,13 +76,15 @@ struct TacticsScreen: View {
                 if model.isReplying {
                     HStack(spacing: 6) {
                         ProgressView().controlSize(.small)
-                        Text("Opponent replies…").font(.footnote).foregroundStyle(.secondary)
+                        Text(L.t("tactics.opponentReplies", "Opponent replies…")).font(.footnote).foregroundStyle(.secondary)
                     }
                 }
 
                 // The rating already stands in the row above the board.
                 TagRow(tags: [
-                    "\(puzzle.solverMoveCount) move\(puzzle.solverMoveCount == 1 ? "" : "s")",
+                    puzzle.solverMoveCount == 1
+                        ? L.t("common.oneMove", "1 move")
+                        : L.t("common.moveCount", "%lld moves", puzzle.solverMoveCount),
                 ])
             }
 
@@ -94,7 +96,7 @@ struct TacticsScreen: View {
 
             if model.isFinished {
                 Card {
-                    Text("Themes").font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
+                    Text(L.t("tactics.themes", "Themes")).font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
                     TagRow(tags: motifsFirst(puzzle.themes).map(Themes.readable))
                 }
             }
@@ -103,18 +105,18 @@ struct TacticsScreen: View {
 
     private var controls: some View {
         ActionBar(items: [
-            ActionItem(title: "Hint", systemImage: "lightbulb", isEnabled: !model.isFinished) {
+            ActionItem(title: L.t("tactics.hint", "Hint"), systemImage: "lightbulb", isEnabled: !model.isFinished) {
                 model.requestHint()
             },
-            ActionItem(title: values.isEnabled ? "Hide" : "Values",
+            ActionItem(title: values.isEnabled ? L.t("common.hide", "Hide") : L.t("common.values", "Values"),
                        systemImage: "number.square", isEnabled: !model.isFinished) {
                 model.noteAidUsed()
                 Task { await values.toggle(fen: model.position.fen, engine: app.engine) }
             },
-            ActionItem(title: "Solution", systemImage: "eye", isEnabled: !model.isFinished) {
+            ActionItem(title: L.t("tactics.solution", "Solution"), systemImage: "eye", isEnabled: !model.isFinished) {
                 record(model.revealSolution())
             },
-            ActionItem(title: "Skip", systemImage: "forward.end",
+            ActionItem(title: L.t("tactics.skip", "Skip"), systemImage: "forward.end",
                        emphasis: model.isFinished ? .normal : .primary,
                        isEnabled: !model.isFinished) {
                 next()

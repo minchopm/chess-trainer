@@ -13,12 +13,12 @@ struct OpponentLevel: Identifiable, Hashable {
     var label: String { elo.map { "\(name) (\($0))" } ?? name }
 
     static let all: [OpponentLevel] = [
-        OpponentLevel(id: 0, name: "Casual", elo: 1400),
-        OpponentLevel(id: 1, name: "Club", elo: 1800),
-        OpponentLevel(id: 2, name: "Strong club", elo: 2100),
-        OpponentLevel(id: 3, name: "Expert", elo: 2400),
-        OpponentLevel(id: 4, name: "Master", elo: 2700),
-        OpponentLevel(id: 5, name: "Full strength", elo: nil),
+        OpponentLevel(id: 0, name: L.t("play.casual", "Casual"), elo: 1400),
+        OpponentLevel(id: 1, name: L.t("play.club", "Club"), elo: 1800),
+        OpponentLevel(id: 2, name: L.t("play.strongClub", "Strong club"), elo: 2100),
+        OpponentLevel(id: 3, name: L.t("play.expert", "Expert"), elo: 2400),
+        OpponentLevel(id: 4, name: L.t("play.master", "Master"), elo: 2700),
+        OpponentLevel(id: 5, name: L.t("play.fullStrength", "Full strength"), elo: nil),
     ]
 }
 
@@ -62,11 +62,15 @@ final class PlayModel {
 
     var statusText: String {
         if position.isCheckmate {
-            return position.sideToMove == side ? "Checkmate — you lost." : "Checkmate — you won."
+            return position.sideToMove == side
+                ? L.t("play.checkmateLost", "Checkmate — you lost.")
+                : L.t("play.checkmateWon", "Checkmate — you won.")
         }
-        if position.isDraw { return "Draw." }
-        if isThinking { return "Engine is thinking…" }
-        return position.sideToMove == side ? "Your move." : "Engine to move."
+        if position.isDraw { return L.t("play.draw", "Draw.") }
+        if isThinking { return L.t("play.engineThinking", "Engine is thinking…") }
+        return position.sideToMove == side
+            ? L.t("play.yourMove", "Your move.")
+            : L.t("play.engineToMove", "Engine to move.")
     }
 
     func start(engine: StockfishEngine) async {
@@ -266,7 +270,7 @@ struct PlayScreen: View {
                     material: material
                 ),
                 bottom: PlayerBar(
-                    name: "You",
+                    name: L.t("play.you", "You"),
                     rating: app.progress.overallRating,
                     color: model.side,
                     material: material
@@ -310,8 +314,8 @@ struct PlayScreen: View {
             // board or a finished game has nothing to lose.
             if count > 0, model.summary == nil {
                 activity.hold(
-                    title: "Abandon this game?",
-                    reason: "You are \(count / 2 + 1) moves in. Leaving now loses the game and it will not be recorded."
+                    title: L.t("play.abandonThisGame", "Abandon this game?"),
+                    reason: L.t("play.abandonReason", "You are %lld moves in. Leaving now loses the game and it will not be recorded.", count / 2 + 1)
                 )
             } else {
                 activity.release()
@@ -323,21 +327,21 @@ struct PlayScreen: View {
     @ViewBuilder
     private var setupPanel: some View {
         Card {
-            Text("New game").font(.headline)
-            Text("The engine plays at the strength you choose. Coaching grades each of your moves as you make it.")
+            Text(L.t("play.newGame", "New game")).font(.headline)
+            Text(L.t("play.theEnginePlaysAtThe", "The engine plays at the strength you choose. Coaching grades each of your moves as you make it."))
                 .font(.footnote).foregroundStyle(.secondary)
 
-            Picker("Strength", selection: Binding(
+            Picker(L.t("play.strength", "Strength"), selection: Binding(
                 get: { model.level }, set: { model.level = $0 }
             )) {
                 ForEach(OpponentLevel.all) { level in Text(level.label).tag(level) }
             }
 
-            Picker("You play", selection: Binding(
+            Picker(L.t("play.youPlay", "You play"), selection: Binding(
                 get: { model.side }, set: { model.side = $0 }
             )) {
-                Text("White").tag(PieceColor.white)
-                Text("Black").tag(PieceColor.black)
+                Text(L.t("play.white", "White")).tag(PieceColor.white)
+                Text(L.t("play.black", "Black")).tag(PieceColor.black)
             }
             .pickerStyle(.segmented)
 
@@ -345,7 +349,7 @@ struct PlayScreen: View {
                 get: { model.coachingEnabled }, set: { model.coachingEnabled = $0 }
             ))
 
-            Button("Start game") {
+            Button(L.t("play.startGame", "Start game")) {
                 recorded = false
                 Task { await model.start(engine: app.engine) }
             }
@@ -358,7 +362,7 @@ struct PlayScreen: View {
     private var gamePanel: some View {
         Card {
             Text(model.statusText).font(.headline)
-            Text("Opponent: \(model.level.label)").font(.footnote).foregroundStyle(.secondary)
+            Text(L.t("play.opponentIs", "Opponent: %@", model.level.label)).font(.footnote).foregroundStyle(.secondary)
 
             if model.premoveCount > 0 {
                 Label(
@@ -370,7 +374,7 @@ struct PlayScreen: View {
                 .font(.footnote)
                 .foregroundStyle(.tint)
             } else if model.premoveWasDropped {
-                Label("The queue was dropped — the engine's move made it impossible.",
+                Label(L.t("play.theQueueWasDroppedThe", "The queue was dropped — the engine's move made it impossible."),
                       systemImage: "exclamationmark.triangle")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
@@ -379,13 +383,13 @@ struct PlayScreen: View {
 
         if let review = model.latestReview, model.summary == nil {
             Card {
-                Text("Coach").font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
+                Text(L.t("play.coach", "Coach")).font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
                 Text("\(review.playedSAN) — \(review.assessment.grade.label)")
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(gradeColor(review.assessment.grade))
                 Text(review.sentence).font(.footnote).foregroundStyle(.secondary)
                 if !review.principalVariation.isEmpty, review.assessment.grade != .best {
-                    Text("Main line: \(review.principalVariation)")
+                    Text(L.t("play.mainLine", "Main line: %@", review.principalVariation))
                         .font(.caption).foregroundStyle(.tertiary)
                 }
             }
@@ -404,7 +408,7 @@ struct PlayScreen: View {
         }
 
         Card {
-            Text("Moves").font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
+            Text(L.t("play.moves", "Moves")).font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
             MoveList(moves: model.moves)
         }
     }
@@ -415,22 +419,22 @@ struct PlayScreen: View {
             // your turn, the other for the engine's — so they share a slot
             // rather than each keeping one it cannot use.
             model.premoveCount == 0
-                ? ActionItem(title: "Takeback", systemImage: "arrow.uturn.backward",
+                ? ActionItem(title: L.t("play.takeback", "Takeback"), systemImage: "arrow.uturn.backward",
                              isEnabled: !model.isThinking && model.moves.count >= 2) {
                     model.takeBack()
                 }
-                : ActionItem(title: "Cancel \(model.premoveCount)", systemImage: "xmark.circle",
+                : ActionItem(title: L.t("play.cancelPremoves", "Cancel %lld", model.premoveCount), systemImage: "xmark.circle",
                              emphasis: .destructive) {
                     model.cancelPremoves()
                 },
-            ActionItem(title: "Hint", systemImage: "lightbulb", isEnabled: !model.isThinking) {
+            ActionItem(title: L.t("play.hint", "Hint"), systemImage: "lightbulb", isEnabled: !model.isThinking) {
                 Task { await model.hint(engine: app.engine) }
             },
-            ActionItem(title: values.isEnabled ? "Hide" : "Values",
+            ActionItem(title: values.isEnabled ? L.t("common.hide", "Hide") : L.t("common.values", "Values"),
                        systemImage: "number.square", isEnabled: !model.isThinking) {
                 Task { await values.toggle(fen: model.position.fen, engine: app.engine) }
             },
-            ActionItem(title: "New game", systemImage: "plus.circle", emphasis: .primary) {
+            ActionItem(title: L.t("play.newGame", "New game"), systemImage: "plus.circle", emphasis: .primary) {
                 model = PlayModel()
             },
         ])
@@ -438,9 +442,9 @@ struct PlayScreen: View {
 
     static func resultHeadline(_ result: String) -> String {
         switch result {
-        case "win": "Game over — you won"
-        case "draw": "Game over — draw"
-        default: "Game over — you lost"
+        case "win": L.t("play.gameOverWon", "Game over — you won")
+        case "draw": L.t("play.gameOverDraw", "Game over — draw")
+        default: L.t("play.gameOverLost", "Game over — you lost")
         }
     }
 

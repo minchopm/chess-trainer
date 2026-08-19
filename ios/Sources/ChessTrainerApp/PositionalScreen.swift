@@ -13,11 +13,11 @@ enum Judgement: String, CaseIterable, Identifiable {
 
     var label: String {
         switch self {
-        case .whiteClear: "White is clearly better"
-        case .whiteSlight: "White is slightly better"
-        case .balanced: "Balanced"
-        case .blackSlight: "Black is slightly better"
-        case .blackClear: "Black is clearly better"
+        case .whiteClear: L.t("positional.whiteClear", "White is clearly better")
+        case .whiteSlight: L.t("positional.whiteSlight", "White is slightly better")
+        case .balanced: L.t("positional.balanced", "Balanced")
+        case .blackSlight: L.t("positional.blackSlight", "Black is slightly better")
+        case .blackClear: L.t("positional.blackClear", "Black is clearly better")
         }
     }
 
@@ -140,7 +140,7 @@ final class PositionalModel {
             lines.append("The engine prefers \(position.san(for: bestMove))\(why).")
         }
         lines.append(String(
-            format: "Your move: %.2f · best: %.2f · cost: %.1f%% win probability.",
+            format: L.t("positional.moveCost", "Your move: %.2f · best: %.2f · cost: %.1f%% win probability."),
             Double(playedCp) / 100, Double(exercise.best.cp) / 100, lost * 100
         ))
         if let pv = exercise.best.pv {
@@ -173,13 +173,13 @@ struct PositionalScreen: View {
             BoardStage(
                 width: width,
                 top: PlayerBar(
-                    name: "Exercise",
+                    name: L.t("positional.exercise", "Exercise"),
                     rating: model.exercise?.rating,
                     color: model.orientation.opponent,
                     material: material
                 ),
                 bottom: PlayerBar(
-                    name: "You",
+                    name: L.t("positional.you", "You"),
                     rating: app.progress.rating(.positional),
                     color: model.orientation,
                     material: material
@@ -197,13 +197,13 @@ struct PositionalScreen: View {
             }
         } panel: {
             if model.exercise == nil {
-                LibraryNotice(isLoaded: app.isLibraryLoaded, what: "positional exercises", file: "positions.json")
+                LibraryNotice(isLoaded: app.isLibraryLoaded, what: L.t("positional.positionalExercises", "positional exercises"), file: "positions.json")
             } else {
                 content
             }
         } controls: {
             ActionBar(items: [
-                ActionItem(title: model.phase == .done ? "Next" : "Skip",
+                ActionItem(title: model.phase == .done ? L.t("common.next", "Next") : L.t("common.skip", "Skip"),
                            systemImage: "forward.end", emphasis: .primary) {
                     next()
                 },
@@ -215,9 +215,9 @@ struct PositionalScreen: View {
     @ViewBuilder
     private var content: some View {
         Card {
-            Text("\(model.orientation == .white ? "White" : "Black") to move — how do you assess this?")
+            Text(L.t("positional.assessPrompt", "%@ to move — how do you assess this?", L.color(model.orientation)))
                 .font(.headline)
-            Text("No tactics here. Weigh structure, activity, king safety and space.")
+            Text(L.t("positional.noTacticsHereWeighStructure", "No tactics here. Weigh structure, activity, king safety and space."))
                 .font(.subheadline).foregroundStyle(.secondary)
         }
 
@@ -238,7 +238,7 @@ struct PositionalScreen: View {
         if model.isThinking {
             HStack(spacing: 6) {
                 ProgressView()
-                Text("Checking your move with the engine…").font(.footnote).foregroundStyle(.secondary)
+                Text(L.t("positional.checkingYourMoveWithThe", "Checking your move with the engine…")).font(.footnote).foregroundStyle(.secondary)
             }
         }
 
@@ -273,7 +273,7 @@ struct PositionalScreen: View {
                             Text(line).font(.footnote).foregroundStyle(.secondary)
                         }
                         if model.phase == .choosing {
-                            Text("Now play the move you would choose.")
+                            Text(L.t("positional.nowPlayTheMoveYou", "Now play the move you would choose."))
                                 .font(.subheadline.weight(.semibold))
                                 .padding(.top, 2)
                         }

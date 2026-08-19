@@ -335,12 +335,12 @@ final class LoopbackMatch {
     init(timeControl: TimeControl, rating: Int, games: Int) {
         mine = MatchSession(
             transport: myLink,
-            me: .init(playerID: "local", name: "You", rating: rating, games: games),
+            me: .init(playerID: "local", name: L.t("common.you", "You"), rating: rating, games: games),
             isHost: true, timeControl: timeControl
         )
         theirs = MatchSession(
             transport: theirLink,
-            me: .init(playerID: "sparring", name: "Sparring bot", rating: 1200, games: 40),
+            me: .init(playerID: "sparring", name: L.t("common.sparringBot", "Sparring bot"), rating: 1200, games: 40),
             isHost: false, timeControl: timeControl
         )
         myLink.peer = theirs
