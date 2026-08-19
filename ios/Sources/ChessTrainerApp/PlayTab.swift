@@ -21,13 +21,12 @@ struct PlayTab: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            Picker(L.t("play.mode", "Mode"), selection: $mode) {
-                ForEach(Mode.allCases) { Text($0.label).tag($0) }
+            TopBar {
+                Picker(L.t("play.mode", "Mode"), selection: $mode) {
+                    ForEach(Mode.allCases) { Text($0.label).tag($0) }
+                }
+                .pickerStyle(.segmented)
             }
-            .pickerStyle(.segmented)
-            .padding(.horizontal, 12)
-            .padding(.top, 6)
-            .padding(.bottom, 2)
 
             switch mode {
             case .play: PlayScreen()

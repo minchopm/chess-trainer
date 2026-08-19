@@ -94,9 +94,13 @@ struct PlayerBar: View {
                 ForEach(Array(Self.grouped(glyphs).enumerated()), id: \.offset) { _, group in
                     HStack(spacing: 1.5) {
                         ForEach(0..<group.count, id: \.self) { _ in
-                            Text(PieceGlyph.text(for: group.kind))
-                                .font(.system(size: 15))
-                                .foregroundStyle(glyphColor)
+                            // The same art as the board, small: a captured
+                            // knight should look like the knight that was on
+                            // the square a moment ago.
+                            Image(PieceArt.name(for: color.opponent, group.kind))
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 17, height: 17)
                         }
                     }
                 }
@@ -122,12 +126,6 @@ struct PlayerBar: View {
         return groups
     }
 
-    /// Captured pieces are the opponent's colour. Black glyphs are lifted well
-    /// off pure black: on this background a true black piece is a silhouette of
-    /// nothing.
-    private var glyphColor: Color {
-        color == .white ? Color(white: 0.45) : Color(white: 0.92)
-    }
 }
 
 /// The board with a player row above and below it, and optionally the

@@ -68,6 +68,8 @@ targets:
         buildPhase: resources
       - path: Resources/Networks
         buildPhase: resources
+      - path: Resources/Sounds
+        buildPhase: resources
       - path: Resources/Assets.xcassets
         buildPhase: resources
       - path: App/Localizable.xcstrings
@@ -80,8 +82,13 @@ targets:
       properties:
         CFBundleDisplayName: Chess Trainer
         UILaunchScreen: {}
+        # A phone holds one board and one panel; turning it sideways leaves
+        # room for neither. An iPad has room for both side by side, so it turns.
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
         ITSAppUsesNonExemptEncryption: false

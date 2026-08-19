@@ -1,4 +1,5 @@
 import ChessCore
+import ChessTraining
 import ChessEngine
 import SwiftUI
 
@@ -44,7 +45,8 @@ public struct BoardView: View {
     public let onMove: (Square, Square, PieceKind?) -> Void
     public let onPremove: (Square, Square, PieceKind?) -> Void
 
-    var theme: BoardTheme = .standard
+    @Environment(\.boardTheme) private var theme
+    @Environment(\.pieceSet) private var pieceSet
 
     @State private var selected: Square?
     @State private var dragging: (from: Square, translation: CGSize)?
@@ -133,12 +135,20 @@ public struct BoardView: View {
     /// redraw is one pass with no view identity to reconcile.
     private func squares(squareSize: CGFloat, side: CGFloat) -> some View {
         Canvas { context, _ in
+            // Resolved once per redraw rather than per square: sixty-four
+            // resolves of the same two images is sixty-two too many.
+            let tiles: [GraphicsContext.ResolvedImage]? = theme.textures.map {
+                [context.resolve(Image($0.light)), context.resolve(Image($0.dark))]
+            }
             for index in 0..<64 {
                 let square = Square(index)
                 let origin = point(for: square, squareSize: squareSize)
                 let rect = CGRect(x: origin.x, y: origin.y, width: squareSize, height: squareSize)
                 let isLight = (square.file + square.rank) % 2 == 1
                 context.fill(Path(rect), with: .color(isLight ? theme.lightSquare : theme.darkSquare))
+                if let tile = tiles?[isLight ? 0 : 1] {
+                    context.draw(tile, in: rect)
+                }
 
                 if isInCheck(square) {
                     context.fill(
@@ -247,55 +257,69 @@ public struct BoardView: View {
         }
     }
 
-    /// Also one Canvas, and for the same reason: a piece is nine glyph draws —
-    /// eight for the rim and one for the fill — so a full board is nearly three
-    /// hundred text views to keep alive between taps.
+    /// One Canvas for all thirty-two pieces.
     ///
-    /// Each glyph is resolved once per colour and reused for every piece of it,
-    /// and the whole layer casts its shadow in a single offscreen pass instead
-    /// of one per piece.
+    /// Each image is resolved once per kind and colour and then drawn wherever
+    /// that piece stands, so a full board costs twelve resolves rather than
+    /// thirty-two, and the shadow is a single offscreen pass for the whole
+    /// layer instead of one per piece.
     private func pieces(squareSize: CGFloat, side: CGFloat) -> some View {
         Canvas { context, _ in
+            var art: [Piece: GraphicsContext.ResolvedImage] = [:]
+            var glyphs: [Piece: (fill: GraphicsContext.ResolvedText, rim: GraphicsContext.ResolvedText)] = [:]
             let fontSize = squareSize * 0.78
-            let width = max(0.7, squareSize * 0.022)
+            let rimWidth = max(0.7, squareSize * 0.022)
 
-            var resolved: [Piece: GraphicsContext.ResolvedText] = [:]
-            var rims: [Piece: GraphicsContext.ResolvedText] = [:]
             for color in PieceColor.allCases {
                 for kind in PieceKind.allCases {
                     let piece = Piece(color, kind)
-                    let glyph = Text(PieceGlyph.text(for: kind)).font(.system(size: fontSize))
-                    resolved[piece] = context.resolve(glyph.foregroundStyle(PieceView.fill(for: color)))
-                    rims[piece] = context.resolve(glyph.foregroundStyle(PieceView.rim(for: color)))
+                    switch pieceSet {
+                    case .carved:
+                        art[piece] = context.resolve(Image(PieceArt.name(for: piece)))
+                    case .glyph:
+                        let text = Text(PieceGlyph.text(for: kind)).font(.system(size: fontSize))
+                        glyphs[piece] = (
+                            fill: context.resolve(text.foregroundStyle(PieceGlyph.fill(for: color))),
+                            rim: context.resolve(text.foregroundStyle(PieceGlyph.rim(for: color)))
+                        )
+                    }
                 }
             }
 
             context.drawLayer { layer in
                 layer.addFilter(.shadow(
-                    color: .black.opacity(0.3),
-                    radius: squareSize * 0.03, x: 0, y: squareSize * 0.02
+                    color: .black.opacity(pieceSet == .carved ? 0.35 : 0.3),
+                    radius: squareSize * 0.045, x: 0, y: squareSize * 0.03
                 ))
 
-                func draw(_ piece: Piece, at centre: CGPoint) {
-                    guard let fill = resolved[piece], let rim = rims[piece] else { return }
-                    for direction in PieceView.rimOffsets {
-                        layer.draw(rim, at: CGPoint(
-                            x: centre.x + direction.x * width,
-                            y: centre.y + direction.y * width
+                func draw(_ piece: Piece, at origin: CGPoint) {
+                    let square = CGRect(x: origin.x, y: origin.y, width: squareSize, height: squareSize)
+                    if let image = art[piece] {
+                        // The art is centred on its own square canvas, so the
+                        // board square is the frame and nothing is nudged.
+                        layer.draw(image, in: square)
+                        return
+                    }
+                    guard let glyph = glyphs[piece] else { return }
+                    let centre = CGPoint(x: square.midX, y: square.midY)
+                    for direction in PieceGlyph.rimOffsets {
+                        layer.draw(glyph.rim, at: CGPoint(
+                            x: centre.x + direction.x * rimWidth,
+                            y: centre.y + direction.y * rimWidth
                         ))
                     }
-                    layer.draw(fill, at: centre)
+                    layer.draw(glyph.fill, at: centre)
                 }
 
                 for index in 0..<64 {
                     let square = Square(index)
                     guard let piece = position[square], dragging?.from != square else { continue }
-                    draw(piece, at: centre(of: square, squareSize: squareSize))
+                    draw(piece, at: point(for: square, squareSize: squareSize))
                 }
 
                 // The piece under the finger goes last, so it is over the rest.
                 if let dragging, let piece = position[dragging.from] {
-                    let origin = centre(of: dragging.from, squareSize: squareSize)
+                    let origin = point(for: dragging.from, squareSize: squareSize)
                     draw(piece, at: CGPoint(
                         x: origin.x + dragging.translation.width,
                         y: origin.y + dragging.translation.height
@@ -477,53 +501,58 @@ public struct BoardView: View {
     }
 }
 
-/// One piece.
-///
-/// The rim is four offset copies rather than one enlarged copy behind the fill.
-/// Scaling a glyph up to peek out from behind it sounds equivalent and is not:
-/// it thickens by a percentage, so a dense glyph like the queen gets a hairline
-/// while a slender one like the bishop or knight is swallowed and reads as the
-/// opposite colour. An offset outline is the same width whatever the shape.
+/// One piece, for the places that are not the board itself — the promotion
+/// picker and anything else that wants a single piece at a given size.
 struct PieceView: View {
     let piece: Piece
     let size: CGFloat
-
-    static func fill(for color: PieceColor) -> Color {
-        color == .white ? Color(white: 0.98) : Color(white: 0.10)
-    }
-
-    static func rim(for color: PieceColor) -> Color {
-        color == .white ? Color(white: 0.10) : Color(white: 0.95)
-    }
-
-    private var fill: Color { Self.fill(for: piece.color) }
-    private var rim: Color { Self.rim(for: piece.color) }
+    @Environment(\.pieceSet) private var pieceSet
 
     var body: some View {
-        let glyph = PieceGlyph.text(for: piece)
-        let fontSize = size * 0.78
-        let width = max(0.7, size * 0.022)
-
-        ZStack {
-            ForEach(Array(Self.rimOffsets.enumerated()), id: \.offset) { _, direction in
-                Text(glyph)
-                    .font(.system(size: fontSize))
-                    .foregroundStyle(rim)
-                    .offset(x: direction.x * width, y: direction.y * width)
+        Group {
+            switch pieceSet {
+            case .carved:
+                Image(PieceArt.name(for: piece))
+                    .resizable()
+                    .scaledToFit()
+            case .glyph:
+                ZStack {
+                    ForEach(Array(PieceGlyph.rimOffsets.enumerated()), id: \.offset) { _, direction in
+                        Text(PieceGlyph.text(for: piece.kind))
+                            .font(.system(size: size * 0.78))
+                            .foregroundStyle(PieceGlyph.rim(for: piece.color))
+                            .offset(x: direction.x * max(0.7, size * 0.022),
+                                    y: direction.y * max(0.7, size * 0.022))
+                    }
+                    Text(PieceGlyph.text(for: piece.kind))
+                        .font(.system(size: size * 0.78))
+                        .foregroundStyle(PieceGlyph.fill(for: piece.color))
+                }
             }
-            Text(glyph)
-                .font(.system(size: fontSize))
-                .foregroundStyle(fill)
         }
         .frame(width: size, height: size)
-        .shadow(color: .black.opacity(0.3), radius: size * 0.03, y: size * 0.02)
+        .shadow(color: .black.opacity(0.35), radius: size * 0.045, y: size * 0.03)
+    }
+}
+
+private struct BoardThemeKey: EnvironmentKey {
+    static var defaultValue: BoardTheme { .standard }
+}
+
+private struct PieceSetKey: EnvironmentKey {
+    static var defaultValue: PieceSet { .carved }
+}
+
+extension EnvironmentValues {
+    var boardTheme: BoardTheme {
+        get { self[BoardThemeKey.self] }
+        set { self[BoardThemeKey.self] = newValue }
     }
 
-    /// Eight directions, so the outline is even rather than cross-shaped.
-    static let rimOffsets: [(x: CGFloat, y: CGFloat)] = [
-        (1, 0), (-1, 0), (0, 1), (0, -1),
-        (0.7, 0.7), (-0.7, 0.7), (0.7, -0.7), (-0.7, -0.7),
-    ]
+    var pieceSet: PieceSet {
+        get { self[PieceSetKey.self] }
+        set { self[PieceSetKey.self] = newValue }
+    }
 }
 
 struct PromotionPicker: View {

@@ -31,6 +31,9 @@ public final class AppModel {
     /// rather than each keeping its own idea of whether the training is paid
     /// for.
     public let store = SubscriptionStore()
+    /// Game Center, for the profile as much as for matchmaking: the avatar in
+    /// the corner is the same identity people play online with.
+    public let matchmaker = GameCenterMatchmaker()
     private let storage: ProgressStorage
 
     public init(storage: ProgressStorage = .documents()) {

@@ -4,8 +4,16 @@
     {
       "name": "trainer",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["server.mjs"],
+      "runtimeArgs": [
+        "server.mjs"
+      ],
       "port": 5173
+    },
+    {
+      "name": "site",
+      "runtimeExecutable": "/Users/minchomilev/work/chess trainer/serve.sh",
+      "runtimeArgs": [],
+      "port": 4400
     }
   ]
 }

@@ -84,6 +84,55 @@
   ]
  },
  {
+  "key": "appearance.board.classic",
+  "english": "Amber",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "appearance.board.forest",
+  "english": "Forest",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "appearance.board.ocean",
+  "english": "Ocean",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "appearance.board.slate",
+  "english": "Slate",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "appearance.board.wood",
+  "english": "Walnut",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "appearance.pieces.carved",
+  "english": "Carved",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "appearance.pieces.glyph",
+  "english": "Classic",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
   "key": "clock.blitz",
   "english": "Blitz",
   "files": [
@@ -1810,6 +1859,69 @@
   "english": "Review — you have seen this one before.",
   "files": [
    "Selection.swift"
+  ]
+ },
+ {
+  "key": "settings.about",
+  "english": "About & licence",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.board",
+  "english": "Board",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.done",
+  "english": "Done",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.onlineRating",
+  "english": "Online rating %lld",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.pieces",
+  "english": "Pieces",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.profile",
+  "english": "Profile and settings",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.signIn",
+  "english": "Sign in to Game Center",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.sounds",
+  "english": "Move sounds",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.title",
+  "english": "Profile",
+  "files": [
+   "SettingsScreen.swift"
   ]
  },
  {

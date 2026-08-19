@@ -91,7 +91,10 @@ final class EndgameModel {
             }
         }
 
-        if let reply = try? await engine.chooseMove(fen: position.fen, depth: 16),
+        if let reply = try? await engine.chooseMove(
+            fen: position.fen, depth: SearchBudget.fullStrength.depth,
+            movetimeMs: SearchBudget.fullStrength.movetimeMs
+           ),
            let parsed = Move(uci: reply),
            let made = position.make(parsed) {
             lastMove = (from: made.from, to: made.to)
@@ -119,7 +122,10 @@ final class EndgameModel {
                 : .centipawns(0)
             return
         }
-        if let analysis = try? await engine.analyse(fen: position.fen, depth: 12, multiPV: 1) {
+        if let analysis = try? await engine.analyse(
+            fen: position.fen, depth: SearchBudget.verdict.depth,
+            movetimeMs: SearchBudget.verdict.movetimeMs, multiPV: 1
+           ) {
             evaluation = analysis.lines.first?.score
         }
     }
@@ -180,6 +186,13 @@ struct EndgameScreen: View {
     private var material: MaterialBalance { MaterialBalance(model.position) }
 
     var body: some View {
+        VStack(spacing: 0) {
+            TopBar { Spacer() }
+            board
+        }
+    }
+
+    private var board: some View {
         TrainingLayout { width in
             BoardStage(
                 width: width,

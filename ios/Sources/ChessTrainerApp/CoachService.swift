@@ -32,12 +32,14 @@ struct CoachService {
     func review(
         position: Position,
         move: Move,
-        depth: Int = 14
+        budget: SearchBudget = .coaching
     ) async throws -> MoveReview {
         let mover = position.sideToMove
         let playedSAN = position.san(for: move)
 
-        let before = try await engine.analyse(fen: position.fen, depth: depth, multiPV: 2)
+        let before = try await engine.analyse(
+            fen: position.fen, depth: budget.depth, movetimeMs: budget.movetimeMs, multiPV: 2
+        )
         let bestUCI = before.lines.first?.bestMove ?? before.bestMove
         let bestMove = bestUCI.flatMap { Move(uci: $0) }
             .flatMap { candidate in position.legalMoves().first { $0.matchesNotation(of: candidate) } }
@@ -60,7 +62,9 @@ struct CoachService {
                 scoreAfterValue = 0
                 scoreAfter = .centipawns(0)
             } else {
-                let result = try await engine.analyse(fen: after.fen, depth: depth, multiPV: 1)
+                let result = try await engine.analyse(
+                    fen: after.fen, depth: budget.depth, movetimeMs: budget.movetimeMs, multiPV: 1
+                )
                 if let line = result.lines.first {
                     scoreAfterValue = Self.score(line.score, for: mover, toMove: after.sideToMove)
                     scoreAfter = line.score.pointOfView(sideToMove: after.sideToMove == mover)

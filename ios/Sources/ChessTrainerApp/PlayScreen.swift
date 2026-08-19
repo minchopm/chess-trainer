@@ -133,9 +133,11 @@ final class PlayModel {
     private func apply(_ move: Move, engine: StockfishEngine) async {
         let before = position
         let san = position.san(for: move)
+        let captured = position[move.to] != nil
         position.make(move)
         lastMove = (from: move.from, to: move.to)
         moves.append((san: san, grade: nil))
+        SoundBoard.shared.play(move: move, captured: captured, resulting: position)
         legalDestinations = [:]
         shapes = []
         // Straight away, not after the coaching search: the whole point of a
@@ -190,7 +192,10 @@ final class PlayModel {
         guard !isThinking, position.sideToMove == side else { return }
         isThinking = true
         defer { isThinking = false }
-        guard let analysis = try? await engine.analyse(fen: position.fen, depth: 13, multiPV: 1),
+        guard let analysis = try? await engine.analyse(
+            fen: position.fen, depth: SearchBudget.hint.depth,
+            movetimeMs: SearchBudget.hint.movetimeMs, multiPV: 1
+          ),
               let uci = analysis.lines.first?.bestMove,
               let parsed = Move(uci: uci),
               let move = position.legalMoves().first(where: { $0.matchesNotation(of: parsed) })
@@ -198,18 +203,24 @@ final class PlayModel {
         shapes = [.arrow(move.from, move.to, .suggestion)]
     }
 
+    /// A limited engine gets its strength from UCI_Elo, so it has no reason to
+    /// think for long; full strength is the only setting that needs the time.
+    private var budget: SearchBudget { level.elo == nil ? .fullStrength : .limited }
+
     private func playEngineMove(engine: StockfishEngine) async {
         guard let uci = try? await engine.chooseMove(
             fen: position.fen,
             elo: level.elo,
-            depth: level.elo == nil ? 16 : 12,
-            movetimeMs: level.elo == nil ? 0 : 300
+            depth: budget.depth,
+            movetimeMs: budget.movetimeMs
         ), let parsed = Move(uci: uci) else { return }
 
         let san = position.san(for: position.legalMoves().first { $0.matchesNotation(of: parsed) } ?? parsed)
+        let captured = position[parsed.to] != nil
         guard let made = position.make(parsed) else { return }
         lastMove = (from: made.from, to: made.to)
         moves.append((san: san, grade: nil))
+        SoundBoard.shared.play(move: made, captured: captured, resulting: position)
     }
 
     private func finish() {

@@ -15,6 +15,13 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
     @ViewBuilder var panel: Panel
     @ViewBuilder var controls: Controls
 
+    /// A board wider than this stops being easier to read and starts being a
+    /// reason to move your head. An iPad Pro in landscape has room for far
+    /// more; that does not make more an improvement.
+    static var maximumBoard: CGFloat { 560 }
+    /// Sixty-ish characters a line. Text set across a full iPad is a wall.
+    static var maximumText: CGFloat { 620 }
+
     var body: some View {
         GeometryReader { geometry in
             let isWide = geometry.size.width > geometry.size.height
@@ -22,29 +29,42 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
             if isWide {
                 let width = min(
                     geometry.size.width * 0.54,
-                    geometry.size.height - 24 - BoardStage<EmptyView>.chromeHeight
+                    geometry.size.height - 24 - BoardStage<EmptyView>.chromeHeight,
+                    Self.maximumBoard
                 )
                 HStack(alignment: .top, spacing: 16) {
                     board(width).padding(.leading, 12).padding(.vertical, 12)
                     VStack(spacing: 12) {
-                        ScrollView { VStack(spacing: 12) { panel }.padding(.trailing, 12) }
-                        controls.padding(.trailing, 12)
+                        ScrollView { VStack(spacing: 12) { panel }.frame(maxWidth: Self.maximumText) }
+                        controls.frame(maxWidth: Self.maximumText)
                     }
+                    .frame(maxWidth: .infinity)
+                    .padding(.trailing, 12)
                     .padding(.vertical, 12)
                 }
             } else {
-                // The cap only bites on a short screen; on a phone in portrait
-                // the board is limited by the width, as it should be.
+                // The caps only bite on a tablet. On a phone in portrait the
+                // board is limited by the width, as it should be.
                 let width = min(
                     geometry.size.width - 20,
-                    geometry.size.height * 0.66 - BoardStage<EmptyView>.chromeHeight
+                    geometry.size.height * 0.66 - BoardStage<EmptyView>.chromeHeight,
+                    Self.maximumBoard
                 )
                 VStack(spacing: 8) {
                     board(width).padding(.top, 4)
-                    ScrollView { VStack(spacing: 10) { panel }.padding(.horizontal, 10) }
+                    ScrollView {
+                        VStack(spacing: 10) { panel }
+                            .padding(.horizontal, 10)
+                            .frame(maxWidth: Self.maximumText)
+                            .frame(maxWidth: .infinity)
+                    }
                     // Clear of the tab bar: buttons that touch it read as part
                     // of it, and the wrong one gets tapped.
-                    controls.padding(.horizontal, 10).padding(.bottom, 10)
+                    controls
+                        .padding(.horizontal, 10)
+                        .padding(.bottom, 10)
+                        .frame(maxWidth: Self.maximumText)
+                        .frame(maxWidth: .infinity)
                 }
                 .frame(maxWidth: .infinity)
             }

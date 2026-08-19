@@ -112,7 +112,10 @@ final class PositionalModel {
             playedCp = 10_000
         } else if probe.isDraw {
             playedCp = 0
-        } else if let analysis = try? await engine.analyse(fen: probe.fen, depth: 14, multiPV: 1),
+        } else if let analysis = try? await engine.analyse(
+            fen: probe.fen, depth: SearchBudget.assessment.depth,
+            movetimeMs: SearchBudget.assessment.movetimeMs, multiPV: 1
+          ),
                   let line = analysis.lines.first {
             playedCp = CoachService.score(line.score, for: position.sideToMove, toMove: probe.sideToMove)
         } else {
@@ -171,6 +174,13 @@ struct PositionalScreen: View {
     private var material: MaterialBalance { MaterialBalance(model.position) }
 
     var body: some View {
+        VStack(spacing: 0) {
+            TopBar { Spacer() }
+            board
+        }
+    }
+
+    private var board: some View {
         TrainingLayout { width in
             BoardStage(
                 width: width,

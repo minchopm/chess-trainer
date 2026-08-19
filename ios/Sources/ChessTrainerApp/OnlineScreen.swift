@@ -10,7 +10,7 @@ import SwiftUI
 struct OnlineScreen: View {
     @Environment(AppModel.self) private var app
     @Environment(ActivityGuard.self) private var activity
-    @State private var matchmaker = GameCenterMatchmaker()
+    private var matchmaker: GameCenterMatchmaker { app.matchmaker }
     @State private var timeControl = TimeControl.five
     @State private var now = Date()
     @State private var settled: MatchResult?
@@ -189,6 +189,9 @@ struct OnlineScreen: View {
                 )
                 .padding(.bottom, 8)
             }
+        }
+        .onChange(of: session.moves.count) { _, _ in
+            SoundBoard.shared.play(.move)
         }
         .onChange(of: isPlaying(session)) { _, playing in
             if playing {

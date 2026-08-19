@@ -194,9 +194,12 @@ final class TacticsModel {
     }
 
     private func apply(uci: String) {
-        guard let move = Move(uci: uci), let made = position.make(move) else { return }
+        guard let move = Move(uci: uci) else { return }
+        let captured = position[Move(uci: uci)?.to ?? move.to] != nil
+        guard let made = position.make(move) else { return }
         lastMove = (from: made.from, to: made.to)
         shapes = []
+        SoundBoard.shared.play(move: made, captured: captured, resulting: position)
     }
 
     private func finish(solved: Bool, revealed: Bool = false) -> (solved: Bool, usedHint: Bool) {

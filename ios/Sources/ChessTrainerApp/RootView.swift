@@ -42,6 +42,8 @@ public struct RootView: View {
         }
         .environment(app)
         .environment(activity)
+        .environment(\.boardTheme, BoardTheme(style: app.progress.appearance.board))
+        .environment(\.pieceSet, app.progress.appearance.pieces)
         .confirmationDialog(
             activity.title ?? "Leave?",
             isPresented: Binding(get: { pending != nil }, set: { if !$0 { pending = nil } }),
@@ -59,6 +61,10 @@ public struct RootView: View {
             Text(activity.reason ?? "")
         }
         .task { await app.start() }
+        .onAppear { SoundBoard.shared.isEnabled = app.progress.appearance.soundsOn }
+        .onChange(of: app.progress.appearance.soundsOn) { _, on in
+            SoundBoard.shared.isEnabled = on
+        }
         .overlay(alignment: .top) {
             if case .failed(let message) = app.engineState {
                 Text(message)

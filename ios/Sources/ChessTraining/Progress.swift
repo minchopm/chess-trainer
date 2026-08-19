@@ -92,6 +92,7 @@ public struct TrainingProgress: Codable, Sendable {
     /// What the free tier has spent today. Absent for anyone who has paid,
     /// because nothing counts it.
     public var dailyUsage = DailyUsage()
+    public var appearance = Appearance()
     public var onlineRating = OnlineElo.starting
     public var onlineGames = 0
     public var onlineWins = 0
@@ -121,6 +122,7 @@ public struct TrainingProgress: Codable, Sendable {
         rushRecords = try container.decodeIfPresent([RushRecord].self, forKey: .rushRecords) ?? []
         eloGuesses = try container.decodeIfPresent([EloGuessRecord].self, forKey: .eloGuesses) ?? []
         dailyUsage = try container.decodeIfPresent(DailyUsage.self, forKey: .dailyUsage) ?? DailyUsage()
+        appearance = try container.decodeIfPresent(Appearance.self, forKey: .appearance) ?? Appearance()
         onlineRating = try container.decodeIfPresent(Int.self, forKey: .onlineRating) ?? OnlineElo.starting
         onlineGames = try container.decodeIfPresent(Int.self, forKey: .onlineGames) ?? 0
         onlineWins = try container.decodeIfPresent(Int.self, forKey: .onlineWins) ?? 0
