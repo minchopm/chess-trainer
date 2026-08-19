@@ -42,6 +42,26 @@ project.yml                XcodeGen spec — the .xcodeproj is generated, not ed
 Tools/IconMaker/           draws the app icon
 ```
 
+## Localization
+
+Thirty-one locales, all complete. Nothing in `App/Localizable.xcstrings` is
+hand-edited — it is built from `Localization/keys.json` (the English source) plus
+one file per language:
+
+```bash
+python3 ios/scripts/build-catalog.py
+```
+
+The script prints how many of the 385 keys each language has, so a partial
+translation is visible rather than silent. Adding a string means adding it to
+`keys.json` and to whichever languages you can; the rest fall back to English.
+
+Two things are deliberate. The board is pinned to left-to-right even in Arabic
+and Hebrew, where the rest of the interface mirrors correctly — a1 is at the
+bottom left of every board in the world. And the coach's sentences are whole
+strings with numbered arguments rather than English fragments glued together,
+because word order is not a detail other languages agree with us about.
+
 ## Online play
 
 The Online mode uses Game Center. To run it on your own build:

@@ -192,6 +192,32 @@ but none of its code; the rules engine, coaching layer and training logic are
 reimplemented in Swift and covered by their own tests, including a perft suite
 that proves the move generator correct.
 
+### Languages
+
+The iOS app is translated into 31 locales: Arabic, Czech, Danish, German, Greek,
+English (US and Canada), Spanish, Finnish, French (France and Canada), Hebrew,
+Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Malay, Dutch,
+Norwegian, Polish, Portuguese (Brazil), Romanian, Russian, Swedish, Thai,
+Turkish, Vietnamese, and Chinese in both scripts.
+
+The catalogue is generated rather than edited by hand:
+
+```bash
+python3 ios/scripts/build-catalog.py     # Localization/*.json → App/Localizable.xcstrings
+```
+
+`ios/Localization/keys.json` holds the English source for all 385 strings, one
+file per language holds that language, and the script assembles the String
+Catalog. A key with no translation falls back to English rather than showing the
+key, so a half-finished language is merely half-English.
+
+The chess vocabulary is the part worth being careful about, because it is the
+part a player notices being wrong. A fork is a *horquilla* in Spanish, a
+*fourchette* in French, 捉双 — "catching two" — in Chinese and 両取り in Japanese;
+a skewer is an *enfilada*, a *шампур*, a 串擊. Translating those from the English
+word rather than from the position they name is how a chess app ends up sounding
+machine-made.
+
 ### Online
 
 Two players over Game Center, on a clock: 3, 5, 10, 15 or 30 minutes each,
