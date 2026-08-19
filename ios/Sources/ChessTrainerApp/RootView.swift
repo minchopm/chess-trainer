@@ -46,6 +46,7 @@ public struct RootView: View {
         }
         .tint(Theatre.brass)
         .background(Theatre.ink.ignoresSafeArea())
+        .overlay(FilmGrain())
         .environment(app)
         .environment(activity)
         .environment(\.boardTheme, BoardTheme(style: app.progress.appearance.board))

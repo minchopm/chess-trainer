@@ -107,6 +107,7 @@ public struct Panel<Content: View>: View {
                     .clipShape(UnevenRoundedRectangle(topLeadingRadius: 14, topTrailingRadius: 14))
                     .allowsHitTesting(false)
             }
+            .reveal()
     }
 }
 
@@ -155,4 +156,72 @@ public struct PillButtonStyle: ButtonStyle {
         case .quiet: Theatre.ruleSoft
         }
     }
+}
+
+/// The projector never quite stops flickering.
+///
+/// The site draws this with an SVG noise filter and shifts it four times a
+/// second; here it is one tiled texture moved the same way, which costs a
+/// texture rather than a filter per frame. It sits above everything and takes
+/// no touches, and it holds still for anyone who has asked the system for less
+/// motion — a grain that crawls is exactly the kind of movement that setting
+/// exists to stop.
+public struct FilmGrain: View {
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private static let steps: [CGSize] = [
+        CGSize(width: 0, height: 0),
+        CGSize(width: -8, height: 4),
+        CGSize(width: 4, height: -8),
+        CGSize(width: -4, height: -4),
+    ]
+
+    public init() {}
+
+    public var body: some View {
+        TimelineView(.periodic(from: .now, by: 0.2)) { context in
+            let step = reduceMotion
+                ? 0
+                : Int(context.date.timeIntervalSinceReferenceDate / 0.2) % Self.steps.count
+            Image("grain")
+                .resizable(resizingMode: .tile)
+                .offset(Self.steps[step])
+                // Plain compositing, like the site. An overlay blend does
+                // nothing against a ground this dark — it scales the base
+                // towards itself, and almost-black scaled towards anything is
+                // still almost-black. Measured: zero variance on the
+                // background. Laid over at low opacity, the tile lifts the ink
+                // a few per cent and the texture is there.
+                .opacity(0.045)
+        }
+        .ignoresSafeArea()
+        .allowsHitTesting(false)
+    }
+}
+
+/// The site's reveal: a panel does not appear, it rises into place.
+///
+/// The easing is the site's own — a curve that arrives fast and settles — and
+/// the distance is small on purpose. Anything further reads as a screen being
+/// assembled in front of you rather than as one that was already there.
+public struct Reveal: ViewModifier {
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var shown = false
+    var delay: Double = 0
+
+    public func body(content: Content) -> some View {
+        content
+            .opacity(shown || reduceMotion ? 1 : 0)
+            .offset(y: shown || reduceMotion ? 0 : 14)
+            .onAppear {
+                guard !reduceMotion else { return }
+                withAnimation(.timingCurve(0.16, 1, 0.3, 1, duration: 0.55).delay(delay)) {
+                    shown = true
+                }
+            }
+    }
+}
+
+public extension View {
+    func reveal(delay: Double = 0) -> some View { modifier(Reveal(delay: delay)) }
 }
