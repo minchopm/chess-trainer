@@ -71,7 +71,7 @@ struct TacticsScreen: View {
     private var puzzleDetails: some View {
         if let puzzle = model.puzzle {
             Card {
-                Text(model.prompt).font(.headline)
+                Text(model.prompt).font(Face.display(22))
                 Text(model.objective).font(.subheadline).foregroundStyle(.secondary)
 
                 if let why = model.reason.explanation {

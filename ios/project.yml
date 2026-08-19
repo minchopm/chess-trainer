@@ -70,6 +70,8 @@ targets:
         buildPhase: resources
       - path: Resources/Sounds
         buildPhase: resources
+      - path: Resources/Fonts
+        buildPhase: resources
       - path: Resources/Assets.xcassets
         buildPhase: resources
       - path: App/Localizable.xcstrings
@@ -92,6 +94,11 @@ targets:
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
         ITSAppUsesNonExemptEncryption: false
+        UIAppFonts:
+          - CormorantGaramond.ttf
+          - CormorantGaramond-Italic.ttf
+          - JetBrainsMono.ttf
+        UIUserInterfaceStyle: Dark
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.arte-soft.chesstrainer

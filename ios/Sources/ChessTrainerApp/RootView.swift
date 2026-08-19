@@ -44,6 +44,8 @@ public struct RootView: View {
                 .tabItem { Label(L.t("progress.progress", "Progress"), systemImage: "chart.line.uptrend.xyaxis") }
                 .tag(Tab.progress)
         }
+        .tint(Theatre.brass)
+        .background(Theatre.ink.ignoresSafeArea())
         .environment(app)
         .environment(activity)
         .environment(\.boardTheme, BoardTheme(style: app.progress.appearance.board))
@@ -68,9 +70,15 @@ public struct RootView: View {
             Text(activity.reason ?? "")
         }
         .task { await app.start() }
-        .onAppear { SoundBoard.shared.isEnabled = app.progress.appearance.soundsOn }
+        .onAppear {
+            SoundBoard.shared.isEnabled = app.progress.appearance.soundsOn
+            SoundBoard.shared.volume = app.progress.appearance.volume
+        }
         .onChange(of: app.progress.appearance.soundsOn) { _, on in
             SoundBoard.shared.isEnabled = on
+        }
+        .onChange(of: app.progress.appearance.volume) { _, level in
+            SoundBoard.shared.volume = level
         }
         .overlay(alignment: .top) {
             if case .failed(let message) = app.engineState {

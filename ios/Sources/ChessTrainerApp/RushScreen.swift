@@ -207,7 +207,7 @@ struct RushScreen: View {
         ScrollView {
             VStack(spacing: 14) {
                 Card {
-                    Text(L.t("rush.rush", "Rush")).font(.headline)
+                    Text(L.t("rush.rush", "Rush")).font(Face.display(22))
                     Text(L.t("rush.solveAsManyAsYou", "Solve as many as you can before the clock runs out. Puzzles start easy and get harder as you go. Three misses ends the run."))
                         .font(.footnote).foregroundStyle(.secondary)
 
@@ -315,7 +315,7 @@ struct RushScreen: View {
 
                 VStack(alignment: .trailing, spacing: 2) {
                     Text("\(model.run?.solved ?? 0) / \(model.settings.target)")
-                        .font(.title3.weight(.semibold)).monospacedDigit()
+                        .font(Face.display(22)).monospacedDigit()
                     Text(missesText).font(.caption).foregroundStyle(.secondary)
                 }
             }

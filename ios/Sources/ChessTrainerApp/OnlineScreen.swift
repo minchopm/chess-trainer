@@ -56,7 +56,7 @@ struct OnlineScreen: View {
         ScrollView {
             VStack(spacing: 12) {
                 Card {
-                    Text(L.t("online.playOnline", "Play online")).font(.headline)
+                    Text(L.t("online.playOnline", "Play online")).font(Face.display(22))
                     Text(L.t("online.aRealOpponentOverGame", "A real opponent over Game Center, on the clock. No hints, no engine, no take-backs."))
                         .font(.footnote).foregroundStyle(.secondary)
                 }
@@ -79,7 +79,7 @@ struct OnlineScreen: View {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(matchmaker.localName).font(.subheadline.weight(.semibold))
                             Text(verbatim: "\(app.progress.onlineRating)")
-                                .font(.title3.weight(.semibold)).monospacedDigit()
+                                .font(Face.display(22)).monospacedDigit()
                         }
                         Spacer()
                         VStack(alignment: .trailing, spacing: 2) {
@@ -209,7 +209,7 @@ struct OnlineScreen: View {
 
     private func statusCard(_ session: MatchSession) -> some View {
         Card {
-            Text(statusText(session)).font(.headline)
+            Text(statusText(session)).font(Face.display(22))
             Text(L.t("online.gameSummary", "%@ · %@ · you are %@", session.timeControl.label, session.timeControl.name, L.color(session.myColor)))
                 .font(.footnote).foregroundStyle(.secondary)
 

@@ -98,8 +98,29 @@
   ]
  },
  {
+  "key": "appearance.board.ivory",
+  "english": "Porcelain",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
   "key": "appearance.board.ocean",
   "english": "Ocean",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "appearance.board.rose",
+  "english": "Rosewater",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "appearance.board.sand",
+  "english": "Sand",
   "files": [
    "SettingsScreen.swift"
   ]
@@ -119,8 +140,22 @@
   ]
  },
  {
-  "key": "appearance.pieces.carved",
-  "english": "Carved",
+  "key": "appearance.pieces.claret",
+  "english": "Ivory & claret",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "appearance.pieces.ebony",
+  "english": "Ivory & ebony",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "appearance.pieces.emerald",
+  "english": "Ivory & emerald",
   "files": [
    "SettingsScreen.swift"
   ]
@@ -128,6 +163,13 @@
  {
   "key": "appearance.pieces.glyph",
   "english": "Classic",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "appearance.pieces.sapphire",
+  "english": "Ivory & sapphire",
   "files": [
    "SettingsScreen.swift"
   ]
@@ -1897,6 +1939,13 @@
   ]
  },
  {
+  "key": "settings.more",
+  "english": "More",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
   "key": "settings.onlineRating",
   "english": "Online rating %lld",
   "files": [
@@ -1927,6 +1976,13 @@
  {
   "key": "settings.sounds",
   "english": "Move sounds",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.soundsOn",
+  "english": "Play sounds",
   "files": [
    "SettingsScreen.swift"
   ]

@@ -76,10 +76,7 @@ struct Card<Content: View>: View {
     @ViewBuilder var content: Content
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) { content }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(14)
-            .background(.quaternary.opacity(0.4), in: RoundedRectangle(cornerRadius: 12))
+        Panel(padding: 15) { content }
     }
 }
 
@@ -90,12 +87,14 @@ struct TagRow: View {
         FlowLayout(spacing: 6) {
             ForEach(tags, id: \.self) { tag in
                 Text(tag)
-                    .font(.caption2)
+                    .font(Face.mono(9, weight: .medium))
+                    .tracking(1.4)
                     .textCase(.uppercase)
-                    .padding(.horizontal, 7)
-                    .padding(.vertical, 3)
-                    .background(.quaternary, in: RoundedRectangle(cornerRadius: 5))
-                    .foregroundStyle(.secondary)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .foregroundStyle(Theatre.brass.opacity(0.9))
+                    .background(Theatre.brass.opacity(0.08), in: Capsule())
+                    .overlay(Capsule().strokeBorder(Theatre.brass.opacity(0.22), lineWidth: 0.5))
             }
         }
     }
@@ -154,7 +153,7 @@ struct FeedbackCard: View {
             HStack(spacing: 8) {
                 Rectangle().fill(tone).frame(width: 3)
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(feedback.title).font(.subheadline.weight(.semibold))
+                    Text(feedback.title).font(Face.display(21))
                     ForEach(feedback.lines, id: \.self) { line in
                         Text(line).font(.footnote).foregroundStyle(.secondary)
                     }
@@ -166,10 +165,10 @@ struct FeedbackCard: View {
 
     private var tone: Color {
         switch feedback.tone {
-        case .correct: Color(red: 0.424, green: 0.749, blue: 0.451)
-        case .partial: Color(red: 0.867, green: 0.706, blue: 0.353)
-        case .wrong: Color(red: 0.851, green: 0.439, blue: 0.373)
-        case .neutral: Color.secondary
+        case .correct: Theatre.good
+        case .partial: Theatre.warn
+        case .wrong: Theatre.bad
+        case .neutral: Theatre.ivoryFaint
         }
     }
 }
@@ -188,7 +187,7 @@ struct LibraryNotice: View {
     var body: some View {
         Card {
             if isLoaded {
-                Text(L.t("common.nothingBundled", "No %@ bundled", what)).font(.headline)
+                Text(L.t("common.nothingBundled", "No %@ bundled", what)).font(Face.display(22))
                 Text(L.t("common.dataMissing", "The data did not make it into the app bundle. Check that data/%@ is listed in the Xcode target's resources.", file))
                     .font(.footnote)
                     .foregroundStyle(.secondary)
@@ -213,7 +212,7 @@ struct AllowanceNotice: View {
 
     var body: some View {
         Card {
-            Text(L.t("store.doneForToday", "That is today's free training")).font(.headline)
+            Text(L.t("store.doneForToday", "That is today's free training")).font(Face.display(22))
             Text(L.t("store.comeBackTomorrow", "The allowance resets at midnight. Playing — against the engine or against a person — has no limit and needs nothing."))
                 .font(.footnote).foregroundStyle(.secondary)
             Button(L.t("store.unlockNow", "Unlock unlimited training")) { showsPaywall = true }

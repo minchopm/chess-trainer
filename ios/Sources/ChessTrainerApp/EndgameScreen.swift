@@ -232,7 +232,7 @@ struct EndgameScreen: View {
                 AllowanceNotice(activity: .endgame)
             } else if let drill = model.drill {
                 Card {
-                    Text(drill.name).font(.headline)
+                    Text(drill.name).font(Face.display(22))
                     Text(model.goalText).font(.subheadline).foregroundStyle(.secondary)
                     TagRow(tags: [
                         drill.goal == .win ? L.t("endgame.mustWin", "Must win") : L.t("endgame.mustDraw", "Must draw"),
@@ -272,7 +272,7 @@ struct EndgameScreen: View {
                     Text(drill.idea).font(.footnote)
                 }
             } else {
-                Card { Text(L.t("endgame.noEndgameDrillsBundled", "No endgame drills bundled")).font(.headline) }
+                Card { Text(L.t("endgame.noEndgameDrillsBundled", "No endgame drills bundled")).font(Face.display(22)) }
             }
         } controls: {
             ActionBar(items: [

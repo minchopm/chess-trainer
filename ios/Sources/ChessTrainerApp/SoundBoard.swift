@@ -21,6 +21,11 @@ public final class SoundBoard {
     /// Kept here rather than passed to every call site: a view model deep in a
     /// puzzle should not have to know where the preference lives.
     public var isEnabled = true
+    /// 0...1, applied on top of each cue's own level so a capture stays louder
+    /// than a move however far the slider is turned down.
+    public var volume: Double = 0.7 {
+        didSet { applyVolume() }
+    }
 
     private var players: [Cue: AVAudioPlayer] = [:]
     private var configured = false
@@ -42,14 +47,20 @@ public final class SoundBoard {
                   let player = try? AVAudioPlayer(contentsOf: url)
             else { continue }
             player.prepareToPlay()
-            player.volume = cue == .move ? 0.5 : 0.6
             players[cue] = player
         }
     }
 
+    private func applyVolume() {
+        for (cue, player) in players {
+            player.volume = Float(volume) * (cue == .move ? 0.7 : 0.85)
+        }
+    }
+
     public func play(_ cue: Cue) {
-        guard isEnabled else { return }
+        guard isEnabled, volume > 0 else { return }
         configure()
+        applyVolume()
         guard let player = players[cue] else { return }
         player.currentTime = 0
         player.play()

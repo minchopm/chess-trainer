@@ -342,7 +342,7 @@ struct PlayScreen: View {
     @ViewBuilder
     private var setupPanel: some View {
         Card {
-            Text(L.t("play.newGame", "New game")).font(.headline)
+            Text(L.t("play.newGame", "New game")).font(Face.display(22))
             Text(L.t("play.theEnginePlaysAtThe", "The engine plays at the strength you choose. Coaching grades each of your moves as you make it."))
                 .font(.footnote).foregroundStyle(.secondary)
 
@@ -376,7 +376,7 @@ struct PlayScreen: View {
     @ViewBuilder
     private var gamePanel: some View {
         Card {
-            Text(model.statusText).font(.headline)
+            Text(model.statusText).font(Face.display(22))
             Text(L.t("play.opponentIs", "Opponent: %@", model.level.label)).font(.footnote).foregroundStyle(.secondary)
 
             if model.premoveCount > 0 {

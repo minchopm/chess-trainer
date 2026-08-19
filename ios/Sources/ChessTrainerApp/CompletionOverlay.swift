@@ -21,9 +21,9 @@ struct CompletionResult: Equatable {
 
     var tint: Color {
         switch verdict {
-        case .success: Color(red: 0.29, green: 0.70, blue: 0.36)
-        case .partial: Color(red: 0.87, green: 0.68, blue: 0.25)
-        case .failure: Color(red: 0.85, green: 0.36, blue: 0.31)
+        case .success: Theatre.good
+        case .partial: Theatre.warn
+        case .failure: Theatre.bad
         }
     }
 }
@@ -51,7 +51,7 @@ struct CompletionOverlay: View {
                     .symbolEffect(.bounce, value: hasAppeared)
 
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(result.title).font(.headline)
+                    Text(result.title).font(Face.display(24))
                     if let detail = result.detail {
                         Text(detail).font(.footnote).foregroundStyle(.secondary)
                     }
@@ -70,16 +70,16 @@ struct CompletionOverlay: View {
             HStack(spacing: 10) {
                 if let onRetry {
                     Button(L.t("common.tryAgain", "Try again"), action: onRetry)
-                        .buttonStyle(.bordered)
+                        .buttonStyle(PillButtonStyle(emphasis: .ghost))
                 }
                 Button(primaryTitle, action: onPrimary)
-                    .buttonStyle(.borderedProminent)
+                    .buttonStyle(PillButtonStyle(emphasis: .solid))
                     .frame(maxWidth: .infinity)
             }
-            .controlSize(.large)
         }
         .padding(16)
-        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 18))
+        .background(Theatre.ink2.opacity(0.98), in: RoundedRectangle(cornerRadius: 18))
+        .overlay(RoundedRectangle(cornerRadius: 18).strokeBorder(Theatre.rule, lineWidth: 0.5))
         .overlay(alignment: .top) {
             Rectangle().fill(result.tint).frame(height: 3)
                 .clipShape(UnevenRoundedRectangle(topLeadingRadius: 18, topTrailingRadius: 18))

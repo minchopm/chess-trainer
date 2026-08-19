@@ -273,22 +273,21 @@ public struct BoardView: View {
             for color in PieceColor.allCases {
                 for kind in PieceKind.allCases {
                     let piece = Piece(color, kind)
-                    switch pieceSet {
-                    case .carved:
-                        art[piece] = context.resolve(Image(PieceArt.name(for: piece)))
-                    case .glyph:
+                    if pieceSet.usesGlyphs {
                         let text = Text(PieceGlyph.text(for: kind)).font(.system(size: fontSize))
                         glyphs[piece] = (
                             fill: context.resolve(text.foregroundStyle(PieceGlyph.fill(for: color))),
                             rim: context.resolve(text.foregroundStyle(PieceGlyph.rim(for: color)))
                         )
+                    } else {
+                        art[piece] = context.resolve(Image(PieceArt.name(for: piece, set: pieceSet)))
                     }
                 }
             }
 
             context.drawLayer { layer in
                 layer.addFilter(.shadow(
-                    color: .black.opacity(pieceSet == .carved ? 0.35 : 0.3),
+                    color: .black.opacity(!pieceSet.usesGlyphs ? 0.35 : 0.3),
                     radius: squareSize * 0.045, x: 0, y: squareSize * 0.03
                 ))
 
@@ -510,12 +509,11 @@ struct PieceView: View {
 
     var body: some View {
         Group {
-            switch pieceSet {
-            case .carved:
-                Image(PieceArt.name(for: piece))
+            if !pieceSet.usesGlyphs {
+                Image(PieceArt.name(for: piece, set: pieceSet))
                     .resizable()
                     .scaledToFit()
-            case .glyph:
+            } else {
                 ZStack {
                     ForEach(Array(PieceGlyph.rimOffsets.enumerated()), id: \.offset) { _, direction in
                         Text(PieceGlyph.text(for: piece.kind))
@@ -540,7 +538,7 @@ private struct BoardThemeKey: EnvironmentKey {
 }
 
 private struct PieceSetKey: EnvironmentKey {
-    static var defaultValue: PieceSet { .carved }
+    static var defaultValue: PieceSet { .ebony }
 }
 
 extension EnvironmentValues {

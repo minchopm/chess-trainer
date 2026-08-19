@@ -89,151 +89,279 @@ struct SettingsScreen: View {
 
     var body: some View {
         NavigationStack {
-            List {
-                Section {
-                    HStack(spacing: 12) {
-                        ZStack {
-                            Circle().fill(.quaternary)
-                            if let photo = app.matchmaker.localPhoto {
-                                photo.resizable().scaledToFill().clipShape(Circle())
-                            } else {
-                                Image(systemName: "person.fill").foregroundStyle(.secondary)
-                            }
-                        }
-                        .frame(width: 52, height: 52)
-
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(app.matchmaker.localName).font(.headline)
-                            Text(L.t("settings.onlineRating", "Online rating %lld", app.progress.onlineRating))
-                                .font(.footnote).foregroundStyle(.secondary)
-                        }
-                        Spacer()
-                    }
-                    .padding(.vertical, 4)
-
-                    if !app.matchmaker.isAuthenticated {
-                        Button(L.t("settings.signIn", "Sign in to Game Center")) {
-                            app.matchmaker.authenticate()
-                        }
-                    }
+            ScrollView {
+                VStack(alignment: .leading, spacing: 22) {
+                    identity
+                    section(L.t("settings.pieces", "Pieces")) { PieceSetGallery() }
+                    section(L.t("settings.board", "Board")) { BoardGallery() }
+                    section(L.t("settings.sounds", "Move sounds")) { sound }
+                    section(L.t("settings.more", "More")) { more }
                 }
-
-                Section(L.t("settings.pieces", "Pieces")) {
-                    PieceSetPicker()
-                }
-
-                Section(L.t("settings.board", "Board")) {
-                    BoardStylePicker()
-                }
-
-                Section {
-                    Toggle(L.t("settings.sounds", "Move sounds"), isOn: Binding(
-                        get: { app.progress.appearance.soundsOn },
-                        set: { on in app.update { $0.appearance.soundsOn = on } }
-                    ))
-                }
-
-                Section {
-                    ProUpsellRow()
-                    NavigationLink(L.t("settings.about", "About & licence")) { AboutScreen() }
-                }
+                .padding(16)
+                .padding(.bottom, 30)
             }
-            .navigationTitle(L.t("settings.title", "Profile"))
+            .background(Theatre.ink.ignoresSafeArea())
+            .navigationTitle("")
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
             #endif
             .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text(L.t("settings.title", "Profile"))
+                        .font(Face.display(20))
+                        .foregroundStyle(Theatre.ivory)
+                }
                 ToolbarItem(placement: .confirmationAction) {
                     Button(L.t("settings.done", "Done")) { dismiss() }
+                        .font(Face.mono(11, weight: .medium))
+                        .tracking(1.4)
+                        .textCase(.uppercase)
+                        .foregroundStyle(Theatre.brass)
                 }
             }
         }
     }
-}
 
-/// Both sets, shown as themselves. A list of names would make somebody guess.
-private struct PieceSetPicker: View {
-    @Environment(AppModel.self) private var app
+    private func section<Content: View>(
+        _ title: String, @ViewBuilder content: () -> Content
+    ) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Slug(text: title)
+            content()
+        }
+    }
 
-    var body: some View {
-        ForEach(PieceSet.allCases) { set in
-            Button {
-                app.update { $0.appearance.pieces = set }
-            } label: {
-                HStack(spacing: 12) {
-                    HStack(spacing: 2) {
-                        ForEach([PieceKind.king, .queen, .knight], id: \.rawValue) { kind in
-                            PieceView(piece: Piece(.white, kind), size: 30)
-                        }
-                        ForEach([PieceKind.knight, .queen, .king], id: \.rawValue) { kind in
-                            PieceView(piece: Piece(.black, kind), size: 30)
-                        }
-                    }
-                    .environment(\.pieceSet, set)
-                    .padding(.vertical, 4)
-                    .padding(.horizontal, 6)
-                    .background(Color(red: 0.784, green: 0.580, blue: 0.365).opacity(0.35),
-                                in: RoundedRectangle(cornerRadius: 6))
-
-                    Text(set.name)
-                    Spacer()
-                    if app.progress.appearance.pieces == set {
-                        Image(systemName: "checkmark").foregroundStyle(.tint)
+    private var identity: some View {
+        Panel {
+            HStack(spacing: 14) {
+                ZStack {
+                    Circle().fill(Theatre.ink4)
+                    Circle().strokeBorder(Theatre.brass.opacity(0.35), lineWidth: 1)
+                    if let photo = app.matchmaker.localPhoto {
+                        photo.resizable().scaledToFill().clipShape(Circle())
+                    } else {
+                        Image(systemName: "person.fill").foregroundStyle(Theatre.brass.opacity(0.7))
                     }
                 }
+                .frame(width: 54, height: 54)
+                .shadow(color: Theatre.brassGlow, radius: 12)
+
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(app.matchmaker.localName)
+                        .font(Face.display(24))
+                        .foregroundStyle(Theatre.ivory)
+                    Text(L.t("settings.onlineRating", "Online rating %lld", app.progress.onlineRating))
+                        .font(Face.mono(10))
+                        .tracking(1.2)
+                        .textCase(.uppercase)
+                        .foregroundStyle(Theatre.ivoryFaint)
+                }
+                Spacer(minLength: 0)
+            }
+
+            if !app.matchmaker.isAuthenticated {
+                Button(L.t("settings.signIn", "Sign in to Game Center")) {
+                    app.matchmaker.authenticate()
+                }
+                .buttonStyle(PillButtonStyle(emphasis: .ghost))
+                .padding(.top, 4)
+            }
+        }
+    }
+
+    private var sound: some View {
+        Panel {
+            Toggle(isOn: Binding(
+                get: { app.progress.appearance.soundsOn },
+                set: { on in app.update { $0.appearance.soundsOn = on } }
+            )) {
+                Text(L.t("settings.soundsOn", "Play sounds"))
+                    .font(.subheadline)
+                    .foregroundStyle(Theatre.ivory)
+            }
+            .tint(Theatre.brass)
+
+            HStack(spacing: 12) {
+                Image(systemName: "speaker.fill")
+                    .font(.caption2).foregroundStyle(Theatre.ivoryFaint)
+                Slider(
+                    value: Binding(
+                        get: { app.progress.appearance.volume },
+                        set: { level in app.update { $0.appearance.volume = level } }
+                    ),
+                    in: 0...1
+                ) { editing in
+                    // A sample on release, so the slider can be judged by ear
+                    // rather than by the number next to it.
+                    if !editing { SoundBoard.shared.play(.move) }
+                }
+                .tint(Theatre.brass)
+                Image(systemName: "speaker.wave.3.fill")
+                    .font(.caption2).foregroundStyle(Theatre.ivoryFaint)
+            }
+            .opacity(app.progress.appearance.soundsOn ? 1 : 0.35)
+            .disabled(!app.progress.appearance.soundsOn)
+        }
+    }
+
+    private var more: some View {
+        Panel(padding: 4) {
+            ProUpsellRow()
+                .padding(.horizontal, 12).padding(.vertical, 10)
+            Divider().overlay(Theatre.ruleSoft)
+            NavigationLink {
+                AboutScreen()
+            } label: {
+                HStack {
+                    Text(L.t("settings.about", "About & licence"))
+                        .font(.subheadline).foregroundStyle(Theatre.ivory)
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .font(.caption2).foregroundStyle(Theatre.ivoryFaint)
+                }
+                .padding(.horizontal, 12).padding(.vertical, 10)
+                .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
         }
     }
 }
 
-private struct BoardStylePicker: View {
+/// The sets, shown as themselves on a real square. Nobody picks "Ivory &
+/// sapphire" from a word.
+private struct PieceSetGallery: View {
     @Environment(AppModel.self) private var app
 
+    private let columns = [GridItem(.adaptive(minimum: 150), spacing: 10)]
+
     var body: some View {
-        ForEach(BoardStyle.allCases) { style in
-            Button {
-                app.update { $0.appearance.board = style }
-            } label: {
-                HStack(spacing: 12) {
-                    MiniBoard(style: style)
-                    Text(style.name)
-                    Spacer()
-                    if app.progress.appearance.board == style {
-                        Image(systemName: "checkmark").foregroundStyle(.tint)
+        LazyVGrid(columns: columns, spacing: 10) {
+            ForEach(PieceSet.allCases) { set in
+                let chosen = app.progress.appearance.pieces == set
+                Button {
+                    app.update { $0.appearance.pieces = set }
+                    SoundBoard.shared.play(.move)
+                } label: {
+                    VStack(spacing: 8) {
+                        HStack(spacing: 0) {
+                            ForEach([PieceKind.king, .knight], id: \.rawValue) { kind in
+                                PieceView(piece: Piece(.white, kind), size: 30)
+                            }
+                            ForEach([PieceKind.knight, .king], id: \.rawValue) { kind in
+                                PieceView(piece: Piece(.black, kind), size: 30)
+                            }
+                        }
+                        .environment(\.pieceSet, set)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 5)
+                        .background {
+                            previewBoard.clipShape(RoundedRectangle(cornerRadius: 8))
+                        }
+
+                        Text(set.name)
+                            .font(Face.mono(9, weight: .medium))
+                            .tracking(1.2)
+                            .textCase(.uppercase)
+                            .foregroundStyle(chosen ? Theatre.brass : Theatre.ivoryDim)
+                    }
+                    .padding(9)
+                    .frame(maxWidth: .infinity)
+                    .background(Theatre.ink3, in: RoundedRectangle(cornerRadius: 12))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .strokeBorder(chosen ? Theatre.brass : Theatre.rule, lineWidth: chosen ? 1 : 0.5)
+                    )
+                    .shadow(color: chosen ? Theatre.brassGlow : .clear, radius: 10)
+                }
+                .buttonStyle(.plain)
+            }
+        }
+    }
+
+    /// The chosen board, so the pieces are judged where they will be seen.
+    private var previewBoard: some View {
+        let theme = BoardTheme(style: app.progress.appearance.board)
+        return HStack(spacing: 0) {
+            ForEach(0..<4, id: \.self) { column in
+                ZStack {
+                    (column % 2 == 0 ? theme.lightSquare : theme.darkSquare)
+                    if let textures = theme.textures {
+                        Image(column % 2 == 0 ? textures.light : textures.dark)
+                            .resizable().scaledToFill()
                     }
                 }
             }
-            .buttonStyle(.plain)
         }
     }
 }
 
-/// Four squares of the real thing, textures and all.
+private struct BoardGallery: View {
+    @Environment(AppModel.self) private var app
+
+    private let columns = [GridItem(.adaptive(minimum: 96), spacing: 10)]
+
+    var body: some View {
+        LazyVGrid(columns: columns, spacing: 10) {
+            ForEach(BoardStyle.allCases) { style in
+                let chosen = app.progress.appearance.board == style
+                Button {
+                    app.update { $0.appearance.board = style }
+                } label: {
+                    VStack(spacing: 7) {
+                        MiniBoard(style: style)
+                        Text(style.name)
+                            .font(Face.mono(9, weight: .medium))
+                            .tracking(1.2)
+                            .textCase(.uppercase)
+                            .foregroundStyle(chosen ? Theatre.brass : Theatre.ivoryDim)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.8)
+                    }
+                    .padding(8)
+                    .frame(maxWidth: .infinity)
+                    .background(Theatre.ink3, in: RoundedRectangle(cornerRadius: 12))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .strokeBorder(chosen ? Theatre.brass : Theatre.rule, lineWidth: chosen ? 1 : 0.5)
+                    )
+                    .shadow(color: chosen ? Theatre.brassGlow : .clear, radius: 10)
+                }
+                .buttonStyle(.plain)
+            }
+        }
+    }
+}
+
+/// Four squares of the real thing, textures and all, with a piece standing on
+/// it — a board is judged by what a piece looks like on it.
 private struct MiniBoard: View {
+    @Environment(\.pieceSet) private var pieceSet
     let style: BoardStyle
 
     var body: some View {
         let theme = BoardTheme(style: style)
-        VStack(spacing: 0) {
-            ForEach(0..<2, id: \.self) { row in
-                HStack(spacing: 0) {
-                    ForEach(0..<2, id: \.self) { column in
-                        let isLight = (row + column) % 2 == 0
-                        ZStack {
-                            (isLight ? theme.lightSquare : theme.darkSquare)
-                            if let textures = theme.textures {
-                                Image(isLight ? textures.light : textures.dark)
-                                    .resizable()
-                                    .scaledToFill()
+        ZStack {
+            VStack(spacing: 0) {
+                ForEach(0..<2, id: \.self) { row in
+                    HStack(spacing: 0) {
+                        ForEach(0..<2, id: \.self) { column in
+                            let isLight = (row + column) % 2 == 0
+                            ZStack {
+                                (isLight ? theme.lightSquare : theme.darkSquare)
+                                if let textures = theme.textures {
+                                    Image(isLight ? textures.light : textures.dark)
+                                        .resizable().scaledToFill()
+                                }
                             }
+                            .frame(width: 34, height: 34)
                         }
-                        .frame(width: 21, height: 21)
                     }
                 }
             }
+            PieceView(piece: Piece(.black, .knight), size: 34)
+                .offset(x: -17, y: 17)
         }
-        .clipShape(RoundedRectangle(cornerRadius: 4))
-        .overlay(RoundedRectangle(cornerRadius: 4).strokeBorder(.quaternary, lineWidth: 0.5))
+        .clipShape(RoundedRectangle(cornerRadius: 7))
+        .overlay(RoundedRectangle(cornerRadius: 7).strokeBorder(Theatre.rule, lineWidth: 0.5))
     }
 }

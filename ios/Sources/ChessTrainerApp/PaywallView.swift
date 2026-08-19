@@ -118,9 +118,9 @@ struct PaywallView: View {
         } label: {
             VStack(alignment: .leading, spacing: 3) {
                 HStack {
-                    Text(title).font(.headline)
+                    Text(title).font(Face.display(22))
                     Spacer()
-                    Text(product.displayPrice).font(.headline).monospacedDigit()
+                    Text(product.displayPrice).font(Face.display(22)).monospacedDigit()
                 }
                 Text(detail).font(.caption).foregroundStyle(prominent ? .white.opacity(0.85) : .secondary)
             }

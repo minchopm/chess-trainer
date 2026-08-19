@@ -231,7 +231,7 @@ struct PositionalScreen: View {
     private var content: some View {
         Card {
             Text(L.t("positional.assessPrompt", "%@ to move — how do you assess this?", L.color(model.orientation)))
-                .font(.headline)
+                .font(Face.display(22))
             Text(L.t("positional.noTacticsHereWeighStructure", "No tactics here. Weigh structure, activity, king safety and space."))
                 .font(.subheadline).foregroundStyle(.secondary)
         }

@@ -10,6 +10,7 @@ import SwiftUI
 /// the black row fills with white pieces and the white row with black ones, the
 /// way a scoresheet reads.
 struct PlayerBar: View {
+    @Environment(\.pieceSet) private var pieceSet
     let name: String
     /// Nil where there is no number to show. Stockfish at full strength has no
     /// meaningful Elo, and inventing one would be worse than leaving it out.
@@ -97,7 +98,7 @@ struct PlayerBar: View {
                             // The same art as the board, small: a captured
                             // knight should look like the knight that was on
                             // the square a moment ago.
-                            Image(PieceArt.name(for: color.opponent, group.kind))
+                            Image(PieceArt.name(for: color.opponent, group.kind, set: pieceSet))
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 17, height: 17)

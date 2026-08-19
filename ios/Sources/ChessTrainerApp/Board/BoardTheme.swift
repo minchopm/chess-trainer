@@ -34,16 +34,22 @@ public struct BoardTheme: Sendable {
         darkSquare = Color(red: dark.0, green: dark.1, blue: dark.2)
         textures = style.textures.map { Textures(light: $0.light, dark: $0.dark) }
 
+        // Highlights are chosen per board, not once: the yellow that reads as
+        // "last move" on maple disappears on the green board, and the blue
+        // that reads as "selected" on slate is invisible on ocean.
         switch style {
-        case .wood, .classic:
-            lastMove = Color(red: 1.0, green: 0.839, blue: 0.361).opacity(0.45)
-            selection = Color(red: 0.357, green: 0.608, blue: 0.835).opacity(0.5)
+        case .wood, .amber, .sand:
+            lastMove = Color(red: 1.0, green: 0.839, blue: 0.361).opacity(0.5)
+            selection = Color(red: 0.20, green: 0.48, blue: 0.85).opacity(0.42)
         case .forest:
-            lastMove = Color(red: 0.99, green: 0.93, blue: 0.35).opacity(0.5)
-            selection = Color(red: 0.20, green: 0.45, blue: 0.85).opacity(0.42)
-        case .ocean, .slate:
-            lastMove = Color(red: 0.99, green: 0.78, blue: 0.25).opacity(0.5)
-            selection = Color(red: 0.10, green: 0.40, blue: 0.75).opacity(0.45)
+            lastMove = Color(red: 0.99, green: 0.93, blue: 0.35).opacity(0.55)
+            selection = Color(red: 0.16, green: 0.42, blue: 0.82).opacity(0.42)
+        case .ocean, .slate, .ivory:
+            lastMove = Color(red: 0.99, green: 0.72, blue: 0.20).opacity(0.5)
+            selection = Color(red: 0.10, green: 0.40, blue: 0.78).opacity(0.42)
+        case .rose:
+            lastMove = Color(red: 0.98, green: 0.80, blue: 0.30).opacity(0.55)
+            selection = Color(red: 0.40, green: 0.30, blue: 0.75).opacity(0.40)
         }
         check = Color(red: 0.851, green: 0.439, blue: 0.373)
         hint = Color.black.opacity(0.28)
@@ -62,13 +68,15 @@ public struct BoardTheme: Sendable {
 enum PieceArt {
     /// Every piece is drawn on the same square canvas with the same baseline,
     /// so a king comes out taller than a pawn without anything here scaling
-    /// them relative to each other.
-    static func name(for piece: Piece) -> String {
-        "\(piece.color == .white ? "white" : "black")-\(kindName(piece.kind))"
+    /// them relative to each other. The light side is boxwood whichever set is
+    /// chosen; only the dark side is stained.
+    static func name(for piece: Piece, set: PieceSet) -> String {
+        name(for: piece.color, piece.kind, set: set)
     }
 
-    static func name(for color: PieceColor, _ kind: PieceKind) -> String {
-        "\(color == .white ? "white" : "black")-\(kindName(kind))"
+    static func name(for color: PieceColor, _ kind: PieceKind, set: PieceSet) -> String {
+        let side = color == .white ? "white" : set.darkArtPrefix
+        return "\(side)-\(kindName(kind))"
     }
 
     private static func kindName(_ kind: PieceKind) -> String {
@@ -82,7 +90,6 @@ enum PieceArt {
         }
     }
 }
-
 
 /// The flat Unicode set, kept as an alternative to the photographs.
 ///

@@ -269,7 +269,7 @@ struct GuessTheEloScreen: View {
     private func revealCard(verdict: EloGuess, game: AnnotatedGame) -> some View {
         Card {
             HStack(spacing: 8) {
-                Text(verdict.verdict.title).font(.headline)
+                Text(verdict.verdict.title).font(Face.display(22))
                 Spacer()
                 Text(verbatim: "+\(verdict.points)")
                     .font(.subheadline.weight(.semibold)).monospacedDigit()
@@ -299,7 +299,7 @@ struct GuessTheEloScreen: View {
     private func revealValue(_ label: String, _ value: Int) -> some View {
         VStack(alignment: .leading, spacing: 1) {
             Text(label).font(.caption2).textCase(.uppercase).foregroundStyle(.secondary)
-            Text(verbatim: "\(value)").font(.title3.weight(.semibold)).monospacedDigit()
+            Text(verbatim: "\(value)").font(Face.display(22)).monospacedDigit()
         }
     }
 
