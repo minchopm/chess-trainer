@@ -63,8 +63,8 @@ public enum BoardStyle: String, Codable, CaseIterable, Identifiable, Sendable {
     /// leaves a board rather than a hole.
     public var squares: (light: (Double, Double, Double), dark: (Double, Double, Double)) {
         switch self {
-        case .wood: ((0.784, 0.580, 0.365), (0.314, 0.184, 0.114))
-        case .classic: ((0.922, 0.894, 0.827), (0.604, 0.498, 0.373))
+        case .wood: ((0.796, 0.608, 0.400), (0.424, 0.263, 0.173))
+        case .classic: ((0.933, 0.910, 0.855), (0.663, 0.561, 0.435))
         case .forest: ((0.922, 0.925, 0.816), (0.467, 0.584, 0.337))
         case .ocean: ((0.871, 0.890, 0.902), (0.549, 0.635, 0.678))
         case .slate: ((0.804, 0.804, 0.816), (0.353, 0.376, 0.420))

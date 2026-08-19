@@ -320,19 +320,23 @@ struct PlayScreen: View {
             recordGame()
             activity.release()
         }
-        .onChange(of: model.moves.count) { _, count in
-            // Only once moves exist and the game is still going: an untouched
-            // board or a finished game has nothing to lose.
-            if count > 0, model.summary == nil {
-                activity.hold(
-                    title: L.t("play.abandonThisGame", "Abandon this game?"),
-                    reason: L.t("play.abandonReason", "You are %lld moves in. Leaving now loses the game and it will not be recorded.", count / 2 + 1)
-                )
-            } else {
-                activity.release()
-            }
-        }
+        .onChange(of: model.hasStarted) { _, _ in holdWhilePlaying() }
+        .onChange(of: model.moves.count) { _, _ in holdWhilePlaying() }
         .onDisappear { activity.release() }
+    }
+
+    /// The game is at stake from the moment it starts, not from the first move.
+    /// Pressing Start and then wandering off through a tab bar is exactly the
+    /// accident this is here to prevent.
+    private func holdWhilePlaying() {
+        guard model.hasStarted, model.summary == nil else {
+            activity.release()
+            return
+        }
+        activity.hold(
+            title: L.t("play.abandonThisGame", "Abandon this game?"),
+            reason: L.t("play.abandonReason", "You are %lld moves in. Leaving now loses the game and it will not be recorded.", model.moves.count / 2 + 1)
+        )
     }
 
     @ViewBuilder

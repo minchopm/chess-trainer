@@ -193,6 +193,7 @@ struct OnlineScreen: View {
         .onChange(of: session.moves.count) { _, _ in
             SoundBoard.shared.play(.move)
         }
+        .onAppear { if isPlaying(session) { holdWhilePlaying() } }
         .onChange(of: isPlaying(session)) { _, playing in
             if playing {
                 activity.hold(
@@ -252,6 +253,13 @@ struct OnlineScreen: View {
                     settled = nil
                 },
             ]
+        )
+    }
+
+    private func holdWhilePlaying() {
+        activity.hold(
+            title: L.t("online.leaveTheGame", "Leave the game?"),
+            reason: L.t("online.leavingAnOnlineGameLoses", "Leaving an online game loses it and costs you rating.")
         )
     }
 

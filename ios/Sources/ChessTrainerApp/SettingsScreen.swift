@@ -9,27 +9,46 @@ import SwiftUI
 /// for.
 struct ProfileButton: View {
     @Environment(AppModel.self) private var app
+    @Environment(ActivityGuard.self) private var activity
     @State private var showsSettings = false
 
     var body: some View {
-        Button { showsSettings = true } label: {
-            ZStack {
-                Circle().fill(.quaternary)
-                if let photo = app.matchmaker.localPhoto {
-                    photo.resizable().scaledToFill().clipShape(Circle())
-                } else {
-                    Text(initials)
-                        .font(.system(size: 13, weight: .semibold, design: .rounded))
-                        .foregroundStyle(.secondary)
+        Menu {
+            Button {
+                showsSettings = true
+            } label: {
+                Label(L.t("menu.profile", "Profile & settings"), systemImage: "person.crop.circle")
+            }
+
+            if activity.isActive {
+                Divider()
+                Button(role: .destructive) {
+                    activity.requestExit()
+                } label: {
+                    Label(L.t("menu.leave", "Leave and go back"), systemImage: "rectangle.portrait.and.arrow.right")
                 }
             }
-            .frame(width: 30, height: 30)
-            .overlay(Circle().strokeBorder(.quaternary, lineWidth: 0.5))
-            .contentShape(Circle())
+        } label: {
+            avatar
         }
-        .buttonStyle(.plain)
         .accessibilityLabel(L.t("settings.profile", "Profile and settings"))
         .sheet(isPresented: $showsSettings) { SettingsScreen() }
+    }
+
+    private var avatar: some View {
+        ZStack {
+            Circle().fill(.quaternary)
+            if let photo = app.matchmaker.localPhoto {
+                photo.resizable().scaledToFill().clipShape(Circle())
+            } else {
+                Text(initials)
+                    .font(.system(size: 13, weight: .semibold, design: .rounded))
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .frame(width: 30, height: 30)
+        .overlay(Circle().strokeBorder(.quaternary, lineWidth: 0.5))
+        .contentShape(Circle())
     }
 
     private var initials: String {
@@ -43,11 +62,19 @@ struct ProfileButton: View {
 /// A slim row at the top of every training screen: whatever the screen wants on
 /// the left, the profile on the right.
 struct TopBar<Content: View>: View {
+    @Environment(ActivityGuard.self) private var activity
     @ViewBuilder var content: Content
 
     var body: some View {
         HStack(spacing: 10) {
-            content
+            // Whatever the screen puts here — a mode picker, usually — is a way
+            // out of the game as much as the tab bar is, so it goes away for
+            // the same reason and comes back at the same moment.
+            if activity.isActive {
+                Spacer()
+            } else {
+                content
+            }
             ProfileButton()
         }
         .padding(.horizontal, 12)

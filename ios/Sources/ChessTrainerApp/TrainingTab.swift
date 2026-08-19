@@ -36,6 +36,17 @@ struct TrainingTab: View {
 }
 
 extension View {
+    /// Hides the tab bar while something is at stake. A tab bar is an
+    /// invitation to leave, and there is a whole game on the screen that being
+    /// invited away from is the last thing anybody needs.
+    func hideTabBar(while active: Bool) -> some View {
+        #if os(iOS)
+        self.toolbar(active ? .hidden : .visible, for: .tabBar)
+        #else
+        self
+        #endif
+    }
+
     /// Drops the navigation bar entirely. Used on the training screens, where
     /// the tab bar already says which one you are on and a title would only
     /// take height away from the board.
@@ -70,5 +81,18 @@ final class ActivityGuard {
     func release() {
         title = nil
         reason = nil
+        wantsExit = false
     }
+
+    /// Set when the menu asks to leave. RootView turns it into the same
+    /// confirmation a tab tap used to raise — the question is worth asking
+    /// however it was reached.
+    var wantsExit = false
+
+    func requestExit() {
+        guard isActive else { return }
+        wantsExit = true
+    }
+
+    func cancelExit() { wantsExit = false }
 }

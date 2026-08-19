@@ -17,18 +17,22 @@ public struct RootView: View {
         // trainer that asks nothing of the OS.
         TabView(selection: tabSelection) {
             NavigationStack { TrainingTab().hideNavigationBar() }
+                .hideTabBar(while: activity.isActive)
                 .tabItem { Label(L.t("progress.tactics", "Tactics"), systemImage: "target") }
                 .tag(Tab.tactics)
 
             NavigationStack { PositionalScreen().hideNavigationBar() }
+                .hideTabBar(while: activity.isActive)
                 .tabItem { Label(L.t("progress.positional", "Positional"), systemImage: "square.grid.3x3.middle.filled") }
                 .tag(Tab.positional)
 
             NavigationStack { EndgameScreen().hideNavigationBar() }
+                .hideTabBar(while: activity.isActive)
                 .tabItem { Label(L.t("progress.endgames", "Endgames"), systemImage: "flag.checkered") }
                 .tag(Tab.endgames)
 
             NavigationStack { PlayTab().hideNavigationBar() }
+                .hideTabBar(while: activity.isActive)
                 .tabItem { Label(L.t("progress.play", "Play"), systemImage: "person.2") }
                 .tag(Tab.play)
 
@@ -46,7 +50,10 @@ public struct RootView: View {
         .environment(\.pieceSet, app.progress.appearance.pieces)
         .confirmationDialog(
             activity.title ?? "Leave?",
-            isPresented: Binding(get: { pending != nil }, set: { if !$0 { pending = nil } }),
+            isPresented: Binding(
+                get: { pending != nil || activity.wantsExit },
+                set: { if !$0 { pending = nil; activity.cancelExit() } }
+            ),
             titleVisibility: .visible
         ) {
             Button(L.t("progress.leave", "Leave"), role: .destructive) {

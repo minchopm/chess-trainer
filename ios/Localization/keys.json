@@ -882,6 +882,20 @@
   ]
  },
  {
+  "key": "menu.leave",
+  "english": "Leave and go back",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "menu.profile",
+  "english": "Profile & settings",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
   "key": "online.aRealOpponentOverGame",
   "english": "A real opponent over Game Center, on the clock. No hints, no engine, no take-backs.",
   "files": [
