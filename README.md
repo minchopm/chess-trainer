@@ -192,6 +192,30 @@ but none of its code; the rules engine, coaching layer and training logic are
 reimplemented in Swift and covered by their own tests, including a perft suite
 that proves the move generator correct.
 
+### What it costs
+
+Playing is free and stays free: against the engine and against a person over
+Game Center, unlimited, with no advertising anywhere in the app. What is sold is
+the training.
+
+A free account gets five puzzles, one Rush run and three each of the positional
+exercises, endgame drills and games to judge, every day, resetting at midnight.
+Chess Trainer Pro removes the limits — $3.99 a month, or a one-off unlock. There
+is no annual plan in between, because a third price is a third decision to make
+at the moment somebody wants to solve a puzzle.
+
+Metered rather than locked, deliberately. Nobody pays for a trainer they have
+not used, and a mode that refuses to open teaches nothing about what is behind
+it. The paywall is never shown on launch: when the day's allowance is spent the
+screen says so and offers the unlock, and only a deliberate tap opens the
+purchase sheet.
+
+There are no adverts and there will not be, and the reason is worth writing
+down: the app links Stockfish, which is GPLv3, and a proprietary advertising SDK
+compiled into the same binary would make the combined work undistributable under
+that licence. Selling the app is fine — the GPL has never forbidden charging —
+but bolting a closed SDK onto it is not.
+
 ### Languages
 
 The iOS app is translated into 31 locales: Arabic, Czech, Danish, German, Greek,

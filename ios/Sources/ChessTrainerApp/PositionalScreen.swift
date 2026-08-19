@@ -165,6 +165,8 @@ enum FeedbackTone { case correct, partial, wrong, neutral }
 struct PositionalScreen: View {
     @Environment(AppModel.self) private var app
     @State private var model = PositionalModel()
+    @State private var showsPaywall = false
+    @State private var exhausted = false
 
     private var material: MaterialBalance { MaterialBalance(model.position) }
 
@@ -196,7 +198,9 @@ struct PositionalScreen: View {
                 )
             }
         } panel: {
-            if model.exercise == nil {
+            if exhausted {
+                AllowanceNotice(activity: .positional)
+            } else if model.exercise == nil {
                 LibraryNotice(isLoaded: app.isLibraryLoaded, what: L.t("positional.positionalExercises", "positional exercises"), file: "positions.json")
             } else {
                 content
@@ -209,7 +213,8 @@ struct PositionalScreen: View {
                 },
             ])
         }
-        .task(id: app.library.exercises.count) { if model.exercise == nil { next() } }
+        .task(id: app.library.exercises.count) { if model.exercise == nil { next(interactive: false) } }
+        .sheet(isPresented: $showsPaywall) { PaywallView(activity: .positional) }
     }
 
     @ViewBuilder
@@ -306,7 +311,13 @@ struct PositionalScreen: View {
         }
     }
 
-    private func next() {
+    private func next(interactive: Bool = true) {
+        guard app.canStart(.positional) else {
+            if interactive { showsPaywall = true } else { exhausted = true }
+            return
+        }
+        exhausted = false
+        app.consume(.positional)
         model.load(ItemSelector.nextExercise(from: app.library.exercises, progress: app.progress))
     }
 }

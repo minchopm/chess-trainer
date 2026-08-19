@@ -89,6 +89,9 @@ public struct TrainingProgress: Codable, Sendable {
     /// Online play keeps its own rating. It is the only one measured against
     /// other people rather than against a library, so mixing it into the
     /// training ratings would make both harder to read.
+    /// What the free tier has spent today. Absent for anyone who has paid,
+    /// because nothing counts it.
+    public var dailyUsage = DailyUsage()
     public var onlineRating = OnlineElo.starting
     public var onlineGames = 0
     public var onlineWins = 0
@@ -117,6 +120,7 @@ public struct TrainingProgress: Codable, Sendable {
         games = try container.decodeIfPresent([GameRecord].self, forKey: .games) ?? []
         rushRecords = try container.decodeIfPresent([RushRecord].self, forKey: .rushRecords) ?? []
         eloGuesses = try container.decodeIfPresent([EloGuessRecord].self, forKey: .eloGuesses) ?? []
+        dailyUsage = try container.decodeIfPresent(DailyUsage.self, forKey: .dailyUsage) ?? DailyUsage()
         onlineRating = try container.decodeIfPresent(Int.self, forKey: .onlineRating) ?? OnlineElo.starting
         onlineGames = try container.decodeIfPresent(Int.self, forKey: .onlineGames) ?? 0
         onlineWins = try container.decodeIfPresent(Int.self, forKey: .onlineWins) ?? 0
@@ -136,6 +140,19 @@ public struct TrainingProgress: Codable, Sendable {
     }
 
     public var eloGuessStats: EloGuessStats { EloGuessStats(eloGuesses) }
+
+    /// How many more of this a free account may have today.
+    public func freeRemaining(
+        _ activity: TrainingActivity, at now: Date = Date(), calendar: Calendar = .current
+    ) -> Int {
+        dailyUsage.remaining(activity, at: now, calendar: calendar)
+    }
+
+    public mutating func recordFreeUse(
+        of activity: TrainingActivity, at now: Date = Date(), calendar: Calendar = .current
+    ) {
+        dailyUsage.record(activity, at: now, calendar: calendar)
+    }
 
     /// Record a finished online game. The rating change is computed by the
     /// session, which is the only place that knows what the opponent was rated.

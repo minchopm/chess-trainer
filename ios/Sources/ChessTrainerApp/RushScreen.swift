@@ -172,6 +172,7 @@ struct RushScreen: View {
     @Environment(AppModel.self) private var app
     @Environment(ActivityGuard.self) private var activity
     @State private var model = RushModel()
+    @State private var showsPaywall = false
 
     private var material: MaterialBalance { MaterialBalance(model.position) }
 
@@ -182,8 +183,9 @@ struct RushScreen: View {
             case .running, .finished: playing
             }
         }
+        .sheet(isPresented: $showsPaywall) { PaywallView(activity: .rush) }
         .sheet(isPresented: .constant(model.phase == .finished)) {
-            if let summary = model.summary { RushSummary(run: summary, model: model, app: app) }
+            if let summary = model.summary { RushSummary(onRunAgain: startRun, run: summary, model: model, app: app) }
         }
         .onDisappear {
             model.stop()
@@ -220,12 +222,7 @@ struct RushScreen: View {
                     .pickerStyle(.segmented)
                     .padding(.top, 4)
 
-                    Button(L.t("rush.startRun", "Start run")) {
-                        model.start(
-                            library: app.library.puzzles,
-                            practiceRating: app.progress.rating(.tactics)
-                        )
-                    }
+                    Button(L.t("rush.startRun", "Start run")) { startRun() }
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .frame(maxWidth: .infinity)
@@ -250,6 +247,17 @@ struct RushScreen: View {
             }
             .padding(12)
         }
+    }
+
+    /// One run a day on the free tier. The clock is the whole point of Rush, so
+    /// the check happens before it starts rather than in the middle of one.
+    private func startRun() {
+        guard app.canStart(.rush) else {
+            showsPaywall = true
+            return
+        }
+        app.consume(.rush)
+        model.start(library: app.library.puzzles, practiceRating: app.progress.rating(.tactics))
     }
 
     private var records: [(key: Int, value: RushRecord)] {
@@ -336,6 +344,7 @@ struct RushScreen: View {
 }
 
 struct RushSummary: View {
+    let onRunAgain: () -> Void
     let run: RushRun
     let model: RushModel
     let app: AppModel
@@ -367,9 +376,9 @@ struct RushSummary: View {
             Spacer()
 
             VStack(spacing: 10) {
-                Button(L.t("rush.runAgain", "Run again")) {
-                    model.start(library: app.library.puzzles, practiceRating: app.progress.rating(.tactics))
-                }
+                // The summary sheet lives above the screen that owns the
+                // allowance, so it asks rather than starting the run itself.
+                Button(L.t("rush.runAgain", "Run again")) { onRunAgain() }
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .frame(maxWidth: .infinity)

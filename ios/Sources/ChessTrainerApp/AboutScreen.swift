@@ -9,6 +9,12 @@ import ChessTraining
 struct AboutScreen: View {
     private static let sourceURL = "https://github.com/minchopm/chess-trainer"
 
+    /// Apple's standard licence agreement, which applies unless a custom EULA
+    /// is filed in App Store Connect. Linked from the paywall because a price
+    /// shown without terms is a rejection waiting to happen.
+    static let termsURL = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
+    static let privacyURL = URL(string: "https://github.com/minchopm/chess-trainer/blob/main/PRIVACY.md")!
+
     var body: some View {
         List {
             Section {

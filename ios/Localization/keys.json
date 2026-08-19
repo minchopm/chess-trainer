@@ -1813,6 +1813,300 @@
   ]
  },
  {
+  "key": "store.active",
+  "english": "Active",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.appStoreUnreachable",
+  "english": "Could not reach the App Store: %@",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.checkingAccount",
+  "english": "Checking your Apple Account…",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.close",
+  "english": "Close",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.comeBackTomorrow",
+  "english": "The allowance resets at midnight. Playing — against the engine or against a person — has no limit and needs nothing.",
+  "files": [
+   "Components.swift"
+  ]
+ },
+ {
+  "key": "store.doneForToday",
+  "english": "That is today's free training",
+  "files": [
+   "Components.swift"
+  ]
+ },
+ {
+  "key": "store.freeForever",
+  "english": "Playing stays free — against the engine and against people, with no limit and no adverts. What Pro unlocks is the training.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.freeToday",
+  "english": "Free today: %lld puzzles, %lld Rush run, %lld of each other exercise.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.lifetime",
+  "english": "One-off unlock",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.loadingPrices",
+  "english": "Loading prices…",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.manage",
+  "english": "Manage subscription",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.manageFailed",
+  "english": "Could not open subscription management: %@",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.monthly",
+  "english": "Monthly",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.noAds",
+  "english": "No adverts, in any part of the app, ever",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.nothingToRestore",
+  "english": "No purchase was found on this Apple Account.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.onceOnly",
+  "english": "%@ once. No subscription, no renewal.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.outOfEndgames",
+  "english": "That is today's three endgame drills.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.outOfGuess",
+  "english": "That is today's three games to judge.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.outOfPositional",
+  "english": "That is today's three positional exercises.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.outOfPuzzles",
+  "english": "That is today's five puzzles.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.outOfRush",
+  "english": "That is today's Rush run.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.pending",
+  "english": "The purchase is waiting for approval.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.perMonth",
+  "english": "%@ per month, renews automatically",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.privacy",
+  "english": "Privacy Policy",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.purchaseFailed",
+  "english": "Purchase failed: %@",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.renewalTerms",
+  "english": "The monthly plan renews each month until you cancel it. Cancel any time in Settings › Apple Account › Subscriptions, at least a day before it renews. The one-off unlock is a single payment and never renews.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.restore",
+  "english": "Restore purchases",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.restoreFailed",
+  "english": "Restore failed: %@",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.restored",
+  "english": "Restored. The training is unlocked.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.terms",
+  "english": "Terms of Use",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.thankYou",
+  "english": "Thank you — the training is unlocked.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.title",
+  "english": "Chess Trainer Pro",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.tryAgain",
+  "english": "Try again",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.unavailable",
+  "english": "The store is unavailable right now. Please try again.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.unknownResult",
+  "english": "The App Store returned a result this app does not understand.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.unlimitedPuzzles",
+  "english": "Every one of the 14,351 puzzles, as many a day as you want",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.unlimitedRest",
+  "english": "Positional judgement, endgame drills and Guess the Elo, unlimited",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.unlimitedRush",
+  "english": "Rush runs without a daily limit",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.unlockNow",
+  "english": "Unlock unlimited training",
+  "files": [
+   "Components.swift"
+  ]
+ },
+ {
+  "key": "store.unlockTraining",
+  "english": "Unlock the training",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.unverified",
+  "english": "That purchase could not be verified.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.upsell",
+  "english": "Unlimited puzzles, drills and runs",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
   "key": "summary.backwardPawn",
   "english": "%@ has a backward pawn on %@.",
   "files": [

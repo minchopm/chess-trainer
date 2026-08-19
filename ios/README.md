@@ -42,6 +42,31 @@ project.yml                XcodeGen spec — the .xcodeproj is generated, not ed
 Tools/IconMaker/           draws the app icon
 ```
 
+## Purchases
+
+Two products, both optional; nothing about playing chess is behind them.
+
+| Product | Type | Price |
+| --- | --- | --- |
+| `com.arte-soft.chesstrainer.pro.monthly` | auto-renewable subscription, group `chesstrainer.pro` | $3.99 / month |
+| `com.arte-soft.chesstrainer.pro.lifetime` | non-consumable | $49.99 once |
+
+`Sources/ChessTraining/Entitlement.swift` holds the free allowance — what it
+covers and how much of it a day carries — and is covered by tests, because it is
+the part that decides whether somebody can use the app.
+`Sources/ChessTrainerApp/SubscriptionStore.swift` is StoreKit 2: entitlement
+check, purchase, restore, manage, and a listener for renewals and purchases made
+on another device.
+
+To exercise the paywall without an App Store account, run from Xcode: the scheme
+points at `App/ChessTrainer.storekit`, and StoreKit answers from that file. A run
+launched with `simctl` gets no store at all — the paywall will say so — because
+the test configuration is applied by Xcode, not by the app.
+
+Before release, both products have to exist in App Store Connect with these
+exact identifiers, and the app needs the Terms of Use and Privacy Policy URLs
+filled in there as well as in the paywall.
+
 ## Localization
 
 Thirty-one locales, all complete. Nothing in `App/Localizable.xcstrings` is

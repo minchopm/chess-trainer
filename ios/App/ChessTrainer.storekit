@@ -1,0 +1,59 @@
+{
+  "identifier" : "C4E55A10",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "49.99",
+      "familyShareable" : false,
+      "internalID" : "1000000001",
+      "localizations" : [
+        {
+          "description" : "Unlock every puzzle, drill and run, once and for all.",
+          "displayName" : "Chess Trainer Pro — one-off unlock",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.arte-soft.chesstrainer.pro.lifetime",
+      "referenceName" : "Chess Trainer Pro Lifetime",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_askToBuyEnabled" : false,
+    "_developerTeamID" : "8293TNMX6S",
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_timeRate" : 0
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "20000001",
+      "localizations" : [],
+      "name" : "chesstrainer.pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "3.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "1000000002",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlimited puzzles, drills and Rush runs.",
+              "displayName" : "Chess Trainer Pro — monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.arte-soft.chesstrainer.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Chess Trainer Pro Monthly",
+          "subscriptionGroupID" : "20000001",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : { "major" : 4, "minor" : 0 }
+}

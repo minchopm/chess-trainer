@@ -181,3 +181,25 @@ struct LibraryNotice: View {
         }
     }
 }
+
+
+/// Shown in place of the next exercise once a free day is spent.
+///
+/// Deliberately not a sheet: opening the app should never be answered with a
+/// demand for money. The offer sits on the screen and waits to be tapped.
+struct AllowanceNotice: View {
+    let activity: TrainingActivity
+    @State private var showsPaywall = false
+
+    var body: some View {
+        Card {
+            Text(L.t("store.doneForToday", "That is today's free training")).font(.headline)
+            Text(L.t("store.comeBackTomorrow", "The allowance resets at midnight. Playing — against the engine or against a person — has no limit and needs nothing."))
+                .font(.footnote).foregroundStyle(.secondary)
+            Button(L.t("store.unlockNow", "Unlock unlimited training")) { showsPaywall = true }
+                .buttonStyle(.borderedProminent)
+                .padding(.top, 4)
+        }
+        .sheet(isPresented: $showsPaywall) { PaywallView(activity: activity) }
+    }
+}

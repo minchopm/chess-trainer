@@ -168,6 +168,17 @@ struct ProgressScreen: View {
             }
 
             Section {
+                ProUpsellRow()
+            } footer: {
+                if !app.store.isPro {
+                    Text(L.t("store.freeToday", "Free today: %lld puzzles, %lld Rush run, %lld of each other exercise.",
+                             app.progress.freeRemaining(.tactics),
+                             app.progress.freeRemaining(.rush),
+                             app.progress.freeRemaining(.positional)))
+                }
+            }
+
+            Section {
                 NavigationLink("About & licence") { AboutScreen() }
             }
 

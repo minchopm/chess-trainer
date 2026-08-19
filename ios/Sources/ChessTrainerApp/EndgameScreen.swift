@@ -174,6 +174,8 @@ struct EndgameScreen: View {
     @Environment(AppModel.self) private var app
     @State private var model = EndgameModel()
     @State private var values = MoveValueController()
+    @State private var showsPaywall = false
+    @State private var exhausted = false
 
     private var material: MaterialBalance { MaterialBalance(model.position) }
 
@@ -213,7 +215,9 @@ struct EndgameScreen: View {
                 )
             }
         } panel: {
-            if let drill = model.drill {
+            if exhausted {
+                AllowanceNotice(activity: .endgame)
+            } else if let drill = model.drill {
                 Card {
                     Text(drill.name).font(.headline)
                     Text(model.goalText).font(.subheadline).foregroundStyle(.secondary)
@@ -273,7 +277,8 @@ struct EndgameScreen: View {
                 },
             ])
         }
-        .task(id: app.library.drills.count) { if model.drill == nil { next() } }
+        .task(id: app.library.drills.count) { if model.drill == nil { next(interactive: false) } }
+        .sheet(isPresented: $showsPaywall) { PaywallView(activity: .endgame) }
     }
 
     private func play(_ from: Square, _ to: Square, _ promotion: PieceKind?) async {
@@ -289,7 +294,13 @@ struct EndgameScreen: View {
         }
     }
 
-    private func next() {
+    private func next(interactive: Bool = true) {
+        guard app.canStart(.endgame) else {
+            if interactive { showsPaywall = true } else { exhausted = true }
+            return
+        }
+        exhausted = false
+        app.consume(.endgame)
         values.reset()
         model.load(ItemSelector.nextDrill(from: app.library.drills, progress: app.progress))
     }

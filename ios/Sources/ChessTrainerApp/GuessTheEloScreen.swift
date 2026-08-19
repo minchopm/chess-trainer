@@ -160,6 +160,8 @@ final class GuessTheEloModel {
 struct GuessTheEloScreen: View {
     @Environment(AppModel.self) private var app
     @State private var model = GuessTheEloModel()
+    @State private var showsPaywall = false
+    @State private var exhausted = false
 
     var body: some View {
         Group {
@@ -170,7 +172,8 @@ struct GuessTheEloScreen: View {
                 content
             }
         }
-        .task(id: app.library.games.count) { if model.game == nil { next() } }
+        .task(id: app.library.games.count) { if model.game == nil { next(interactive: false) } }
+        .sheet(isPresented: $showsPaywall) { PaywallView(activity: .guessTheElo) }
         .onDisappear { model.stop() }
     }
 
@@ -196,6 +199,7 @@ struct GuessTheEloScreen: View {
                 BoardView(position: model.position, lastMove: model.lastMove)
             }
         } panel: {
+            if exhausted { AllowanceNotice(activity: .guessTheElo) }
             // The guess comes first, directly under the board. It is the one
             // thing on this screen you actually do, and a slider that has to be
             // scrolled to is a slider you will not move.
@@ -340,7 +344,13 @@ struct GuessTheEloScreen: View {
         }
     }
 
-    private func next() {
+    private func next(interactive: Bool = true) {
+        guard app.canStart(.guessTheElo) else {
+            if interactive { showsPaywall = true } else { exhausted = true }
+            return
+        }
+        exhausted = false
+        app.consume(.guessTheElo)
         model.load(model.pick(from: app.library.games))
         model.play()
     }

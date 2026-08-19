@@ -27,11 +27,29 @@ public final class AppModel {
     }
 
     public let engine = StockfishEngine()
+    /// What has been bought. Held here so every screen asks the same object
+    /// rather than each keeping its own idea of whether the training is paid
+    /// for.
+    public let store = SubscriptionStore()
     private let storage: ProgressStorage
 
     public init(storage: ProgressStorage = .documents()) {
         self.storage = storage
         progress = storage.load() ?? TrainingProgress()
+    }
+
+    /// Whether this activity may be started right now: paid accounts always,
+    /// free accounts until the day's allowance is gone.
+    public func canStart(_ activity: TrainingActivity, at now: Date = Date()) -> Bool {
+        store.isPro || progress.freeRemaining(activity, at: now) > 0
+    }
+
+    /// Count one use against the free allowance. A paid account spends nothing,
+    /// so nothing is counted for it and the numbers stay meaningful if a
+    /// subscription later lapses.
+    public func consume(_ activity: TrainingActivity, at now: Date = Date()) {
+        guard !store.isPro else { return }
+        update { $0.recordFreeUse(of: activity, at: now) }
     }
 
     public func start() async {
@@ -53,6 +71,8 @@ public final class AppModel {
             engineState = .failed("The engine networks are missing from the app bundle.")
             return
         }
+
+        await store.prepare()
 
         do {
             try await engine.loadNetworks(big: big, small: small)

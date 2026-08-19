@@ -6,6 +6,8 @@ struct TacticsScreen: View {
     @Environment(AppModel.self) private var app
     @State private var model = TacticsModel()
     @State private var values = MoveValueController()
+    @State private var showsPaywall = false
+    @State private var exhausted = false
 
     var body: some View {
         content
@@ -14,13 +16,14 @@ struct TacticsScreen: View {
                     CompletionOverlay(
                         result: completion,
                         primaryTitle: L.t("tactics.nextPuzzle", "Next puzzle"),
-                        onPrimary: next,
+                        onPrimary: { next() },
                         onRetry: { model.retry() }
                     )
                     .padding(.bottom, 8)
                 }
             }
             .animation(.spring(duration: 0.35), value: model.completion)
+            .sheet(isPresented: $showsPaywall) { PaywallView(activity: .tactics) }
     }
 
     private var content: some View {
@@ -51,7 +54,9 @@ struct TacticsScreen: View {
                 )
             }
         } panel: {
-            if model.puzzle == nil {
+            if exhausted {
+                AllowanceNotice(activity: .tactics)
+            } else if model.puzzle == nil {
                 LibraryNotice(isLoaded: app.isLibraryLoaded, what: "puzzles", file: "tactics.json")
             } else {
                 puzzleDetails
@@ -59,7 +64,7 @@ struct TacticsScreen: View {
         } controls: {
             controls
         }
-        .task(id: app.library.puzzles.count) { if model.puzzle == nil { next() } }
+        .task(id: app.library.puzzles.count) { if model.puzzle == nil { next(interactive: false) } }
     }
 
     @ViewBuilder
@@ -147,7 +152,13 @@ struct TacticsScreen: View {
         }
     }
 
-    private func next() {
+    private func next(interactive: Bool = true) {
+        guard app.canStart(.tactics) else {
+            if interactive { showsPaywall = true } else { exhausted = true }
+            return
+        }
+        exhausted = false
+        app.consume(.tactics)
         values.reset()
         model.load(ItemSelector.nextPuzzle(from: app.library.puzzles, progress: app.progress))
     }
