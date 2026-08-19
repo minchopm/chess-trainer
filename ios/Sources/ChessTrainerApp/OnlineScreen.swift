@@ -12,12 +12,12 @@ struct OnlineScreen: View {
     @Environment(ActivityGuard.self) private var activity
     private var matchmaker: GameCenterMatchmaker { app.matchmaker }
     @State private var timeControl = TimeControl.five
-    @State private var now = Date()
     @State private var settled: MatchResult?
 
     /// Drives the clock display. The clock itself works from timestamps, so
     /// this only decides how often the numbers are redrawn — not how they are
-    /// counted.
+    /// counted. The instant it hands the matchmaker is the one every clock on
+    /// screen reads from.
     private let ticker = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
 
     var body: some View {
@@ -29,7 +29,6 @@ struct OnlineScreen: View {
             }
         }
         .onReceive(ticker) { instant in
-            now = instant
             matchmaker.tick(now: instant)
             settleIfFinished()
         }
@@ -147,17 +146,13 @@ struct OnlineScreen: View {
                     name: session.opponent?.name ?? "Opponent",
                     rating: session.opponent?.rating,
                     color: session.myColor.opponent,
-                    material: MaterialBalance(session.position),
-                    clock: ChessClock.text(session.clock.remaining(session.opponentClockKey, at: now)),
-                    clockIsRunning: session.clock.isRunning && !session.isMyTurn
+                    material: MaterialBalance(session.position)
                 ),
                 bottom: PlayerBar(
                     name: matchmaker.localName,
                     rating: app.progress.onlineRating,
                     color: session.myColor,
-                    material: MaterialBalance(session.position),
-                    clock: ChessClock.text(session.clock.remaining(session.myClockKey, at: now)),
-                    clockIsRunning: session.clock.isRunning && session.isMyTurn
+                    material: MaterialBalance(session.position)
                 )
             ) {
                 BoardView(

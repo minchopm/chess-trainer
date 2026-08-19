@@ -63,6 +63,10 @@ struct ProfileButton: View {
 /// the left, the profile on the right.
 struct TopBar<Content: View>: View {
     @Environment(ActivityGuard.self) private var activity
+    /// Set only by an online game. The row is empty during play anyway, and a
+    /// clock is the one thing that has to be readable without looking away
+    /// from the board.
+    var clocks: ClockStrip?
     @ViewBuilder var content: Content
 
     var body: some View {
@@ -71,7 +75,7 @@ struct TopBar<Content: View>: View {
             // out of the game as much as the tab bar is, so it goes away for
             // the same reason and comes back at the same moment.
             if activity.isActive {
-                Spacer()
+                if let clocks { clocks } else { Spacer() }
             } else {
                 content
             }

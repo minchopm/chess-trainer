@@ -176,9 +176,18 @@ public final class GameCenterMatchmaker: NSObject {
         #endif
     }
 
+    /// The instant the clocks are read at.
+    ///
+    /// Kept here rather than in the screen that shows the board, because the
+    /// clock is now drawn in the chrome at the top of the window as well, and
+    /// two tickers reading two slightly different instants would show two
+    /// slightly different times.
+    public private(set) var now = Date()
+
     /// Drive the clocks. Both sides of a debug loopback match need ticking;
     /// over a real network the opponent's device does its own.
     public func tick(now: Date) {
+        self.now = now
         session?.tick(now: now)
 #if DEBUG
         loopback?.theirs.tick(now: now)

@@ -21,33 +21,14 @@ struct PlayerBar: View {
     var mysteryRating = false
     let color: PieceColor
     let material: MaterialBalance
-    /// Set in online play. Nil everywhere else, where there is no clock and the
-    /// space belongs to the captures.
-    var clock: String?
-    var clockIsRunning = false
 
     var body: some View {
         HStack(spacing: 8) {
             identity
             Spacer(minLength: 6)
             captures
-            if let clock { clockPill(clock) }
         }
         .frame(maxWidth: .infinity)
-    }
-
-    private func clockPill(_ text: String) -> some View {
-        Text(verbatim: text)
-            .font(.system(size: 15, weight: .semibold, design: .rounded))
-            .monospacedDigit()
-            .foregroundStyle(clockIsRunning ? Color.primary : Color.secondary)
-            .padding(.horizontal, 8)
-            .padding(.vertical, 2)
-            .background(
-                clockIsRunning ? Color.primary.opacity(0.16) : Color.primary.opacity(0.07),
-                in: RoundedRectangle(cornerRadius: 6)
-            )
-            .layoutPriority(1)
     }
 
     private var identity: some View {
@@ -171,5 +152,73 @@ struct BoardStage<Board: View>: View {
             }
         }
         .frame(width: width)
+    }
+}
+
+
+/// A chess clock, drawn the way one stands on the table: two faces turned away
+/// from each other, the side to move lit.
+///
+/// It goes in the strip along the top of the window rather than in the player
+/// rows. Two numbers that have to be compared belong on one line — "he has
+/// forty seconds and I have two minutes" is a single glance here and two
+/// glances when they sit at opposite ends of the board — and the row it takes
+/// is one the game had already emptied.
+struct ClockStrip: View {
+    let session: MatchSession
+    let now: Date
+
+    var body: some View {
+        HStack(spacing: 8) {
+            face(
+                remaining: session.clock.remaining(session.opponentClockKey, at: now),
+                color: session.myColor.opponent,
+                live: session.clock.isRunning && !session.isMyTurn
+            )
+            Spacer(minLength: 8)
+            face(
+                remaining: session.clock.remaining(session.myClockKey, at: now),
+                color: session.myColor,
+                live: session.clock.isRunning && session.isMyTurn
+            )
+        }
+        .frame(maxWidth: .infinity)
+        .animation(.easeOut(duration: 0.2), value: session.isMyTurn)
+    }
+
+    private func face(remaining: TimeInterval, color: PieceColor, live: Bool) -> some View {
+        HStack(spacing: 7) {
+            // The black dot needs a rim to exist at all against a capsule
+            // this dark; the white one is already the brightest thing in it.
+            Circle()
+                .fill(color == .white ? Theatre.ivory : Color(hex: 0x14161C))
+                .overlay(Circle().strokeBorder(
+                    color == .white ? Theatre.rule : Theatre.ivory.opacity(0.45),
+                    lineWidth: 0.75
+                ))
+                .frame(width: 9, height: 9)
+            Text(verbatim: ChessClock.text(remaining))
+                .font(Face.mono(15, weight: live ? .semibold : .regular))
+                .foregroundStyle(tint(remaining))
+        }
+        // Idle is dimmed rather than recoloured, so the one number that is
+        // actually counting is the one the eye lands on.
+        .opacity(live ? 1 : 0.5)
+        .padding(.horizontal, 11)
+        .padding(.vertical, 4)
+        .background(live ? Theatre.brassGlow : Theatre.ink3, in: Capsule())
+        .overlay(
+            Capsule().strokeBorder(live ? Theatre.brass.opacity(0.55) : Theatre.rule, lineWidth: 0.5)
+        )
+        .shadow(color: live ? Theatre.brassGlow : .clear, radius: 8)
+    }
+
+    /// The last half-minute is the part of a blitz game people lose without
+    /// noticing, so the number changes colour before it runs out rather than
+    /// after.
+    private func tint(_ remaining: TimeInterval) -> Color {
+        if remaining <= 10 { return Theatre.bad }
+        if remaining <= 30 { return Theatre.warn }
+        return Theatre.ivory
     }
 }

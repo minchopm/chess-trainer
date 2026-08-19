@@ -17,11 +17,18 @@ struct PlayTab: View {
         }
     }
 
+    @Environment(AppModel.self) private var app
     @State private var mode = Mode.play
+
+    /// The clock, when there is one to show.
+    private var clocks: ClockStrip? {
+        guard mode == .online, let session = app.matchmaker.session else { return nil }
+        return ClockStrip(session: session, now: app.matchmaker.now)
+    }
 
     var body: some View {
         VStack(spacing: 0) {
-            TopBar {
+            TopBar(clocks: clocks) {
                 Picker(L.t("play.mode", "Mode"), selection: $mode) {
                     ForEach(Mode.allCases) { Text($0.label).tag($0) }
                 }
