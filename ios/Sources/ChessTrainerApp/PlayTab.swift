@@ -1,11 +1,12 @@
 import SwiftUI
 
-/// Playing a game and watching one are the same subject seen from two sides, so
-/// they share a tab rather than each taking a slot in a bar that only holds
-/// five.
+/// Playing the engine, playing a person, and watching two strangers play are
+/// the same subject seen from three sides, so they share a tab rather than each
+/// taking a slot in a bar that only holds five.
 struct PlayTab: View {
     enum Mode: String, CaseIterable, Identifiable {
         case play = "Play"
+        case online = "Online"
         case guessTheElo = "Guess the Elo"
         var id: String { rawValue }
     }
@@ -24,6 +25,7 @@ struct PlayTab: View {
 
             switch mode {
             case .play: PlayScreen()
+            case .online: OnlineScreen()
             case .guessTheElo: GuessTheEloScreen()
             }
         }

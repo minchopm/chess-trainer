@@ -192,6 +192,22 @@ but none of its code; the rules engine, coaching layer and training logic are
 reimplemented in Swift and covered by their own tests, including a perft suite
 that proves the move generator correct.
 
+### Online
+
+Two players over Game Center, on a clock: 3, 5, 10, 15 or 30 minutes each,
+paired only with somebody who chose the same one. It is the one mode with no
+engine in it — no hint, no move values, no coaching — because help that only
+one side gets is not a game. The board faces your colour, the two rows carry
+each player's Game Center name, rating, clock and captures, and the online
+rating is kept apart from the training ratings: it measures you against people
+rather than against a library.
+
+There is no server. The two devices talk to each other through Game Center, and
+both run the rules — a move is played only if it is legal in the position the
+receiving device already has, so a peer that lies produces a dropped packet
+rather than an illegal board. That also means the rating is honest rather than
+tamper-proof: a modified build could lie to it.
+
 It also takes moves before your turn: while the engine thinks you can queue a
 short plan — take, recapture, castle — and it plays out move by move as the
 board allows, or is dropped whole the moment the engine makes its first step

@@ -35,6 +35,11 @@ released into the public domain under **CC0 1.0**.
 - The games keep the players' Lichess usernames out of the bundled file: the
   mode needs the ratings, not the people.
 
+## GameKit
+
+Online play uses Apple's Game Center. No game data leaves the two devices
+playing: there is no server of ours in the middle, and nothing is collected.
+
 ## chess.js
 
 Used only by the web version's build tooling, not by the iOS app.

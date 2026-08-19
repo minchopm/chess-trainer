@@ -135,6 +135,15 @@ struct ProgressScreen: View {
                 }
             }
 
+            if app.progress.onlineGames > 0 {
+                Section("Online") {
+                    LabeledContent("Rating", value: "\(app.progress.onlineRating)")
+                    LabeledContent("Record", value: "\(app.progress.onlineWins)W · \(app.progress.onlineLosses)L · \(app.progress.onlineDraws)D")
+                    Text("Online rating is kept apart from the training ratings: it measures you against the people you play, not against a library.")
+                        .font(.footnote).foregroundStyle(.secondary)
+                }
+            }
+
             let guesses = app.progress.eloGuessStats
             if guesses.judged > 0 {
                 Section("Guess the Elo") {

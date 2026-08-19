@@ -86,6 +86,14 @@ public struct TrainingProgress: Codable, Sendable {
     public var games: [GameRecord] = []
     public var rushRecords: [RushRecord] = []
     public var eloGuesses: [EloGuessRecord] = []
+    /// Online play keeps its own rating. It is the only one measured against
+    /// other people rather than against a library, so mixing it into the
+    /// training ratings would make both harder to read.
+    public var onlineRating = OnlineElo.starting
+    public var onlineGames = 0
+    public var onlineWins = 0
+    public var onlineLosses = 0
+    public var onlineDraws = 0
     public var currentStreak = 0
     public var bestStreak = 0
     public var lastActiveDay: Date?
@@ -109,6 +117,11 @@ public struct TrainingProgress: Codable, Sendable {
         games = try container.decodeIfPresent([GameRecord].self, forKey: .games) ?? []
         rushRecords = try container.decodeIfPresent([RushRecord].self, forKey: .rushRecords) ?? []
         eloGuesses = try container.decodeIfPresent([EloGuessRecord].self, forKey: .eloGuesses) ?? []
+        onlineRating = try container.decodeIfPresent(Int.self, forKey: .onlineRating) ?? OnlineElo.starting
+        onlineGames = try container.decodeIfPresent(Int.self, forKey: .onlineGames) ?? 0
+        onlineWins = try container.decodeIfPresent(Int.self, forKey: .onlineWins) ?? 0
+        onlineLosses = try container.decodeIfPresent(Int.self, forKey: .onlineLosses) ?? 0
+        onlineDraws = try container.decodeIfPresent(Int.self, forKey: .onlineDraws) ?? 0
         currentStreak = try container.decodeIfPresent(Int.self, forKey: .currentStreak) ?? 0
         bestStreak = try container.decodeIfPresent(Int.self, forKey: .bestStreak) ?? 0
         lastActiveDay = try container.decodeIfPresent(Date.self, forKey: .lastActiveDay)
@@ -123,6 +136,19 @@ public struct TrainingProgress: Codable, Sendable {
     }
 
     public var eloGuessStats: EloGuessStats { EloGuessStats(eloGuesses) }
+
+    /// Record a finished online game. The rating change is computed by the
+    /// session, which is the only place that knows what the opponent was rated.
+    public mutating func record(online result: MatchResult) {
+        onlineRating = min(max(onlineRating + result.ratingDelta, OnlineElo.range.lowerBound),
+                           OnlineElo.range.upperBound)
+        onlineGames += 1
+        switch result.outcome {
+        case .win: onlineWins += 1
+        case .loss: onlineLosses += 1
+        case .draw: onlineDraws += 1
+        }
+    }
 
     public func rating(_ mode: TrainingMode) -> Int { ratings[mode] ?? 1200 }
 

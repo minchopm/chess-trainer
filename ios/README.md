@@ -42,6 +42,25 @@ project.yml                XcodeGen spec — the .xcodeproj is generated, not ed
 Tools/IconMaker/           draws the app icon
 ```
 
+## Online play
+
+The Online mode uses Game Center. To run it on your own build:
+
+1. Enable the **Game Center** capability for the App ID in the Apple Developer
+   portal (Certificates, IDs & Profiles → Identifiers).
+2. Build to two devices signed into two different Apple IDs. Game Center cannot
+   be signed into on a simulator, so a real match cannot be tested there.
+
+Debug builds carry a **Local test game** button in the online lobby. It wires a
+second session to the first inside the same process and plays random legal
+replies, which is how the clocks, the player rows and the result overlay can be
+exercised without two devices. It is compiled out of release builds.
+
+The match logic itself is covered by tests rather than by the network: the
+sessions talk through a `MatchTransport`, and the suite hands one session's
+packets straight to another to play whole games — moves, clock, resignation,
+draw offers, a peer sending an illegal move — with no Game Center involved.
+
 ## Testing
 
 ```bash

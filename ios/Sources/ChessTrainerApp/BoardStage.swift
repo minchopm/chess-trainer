@@ -20,14 +20,33 @@ struct PlayerBar: View {
     var mysteryRating = false
     let color: PieceColor
     let material: MaterialBalance
+    /// Set in online play. Nil everywhere else, where there is no clock and the
+    /// space belongs to the captures.
+    var clock: String?
+    var clockIsRunning = false
 
     var body: some View {
         HStack(spacing: 8) {
             identity
             Spacer(minLength: 6)
             captures
+            if let clock { clockPill(clock) }
         }
         .frame(maxWidth: .infinity)
+    }
+
+    private func clockPill(_ text: String) -> some View {
+        Text(verbatim: text)
+            .font(.system(size: 15, weight: .semibold, design: .rounded))
+            .monospacedDigit()
+            .foregroundStyle(clockIsRunning ? Color.primary : Color.secondary)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 2)
+            .background(
+                clockIsRunning ? Color.primary.opacity(0.16) : Color.primary.opacity(0.07),
+                in: RoundedRectangle(cornerRadius: 6)
+            )
+            .layoutPriority(1)
     }
 
     private var identity: some View {
