@@ -108,23 +108,27 @@ public struct ContentLibrary: Sendable {
     public let exercises: [PositionalExercise]
     public let drills: [EndgameDrill]
     public let games: [AnnotatedGame]
+    public let classics: [ClassicGame]
 
     public init(
         puzzles: [Puzzle] = [],
         exercises: [PositionalExercise] = [],
         drills: [EndgameDrill] = [],
-        games: [AnnotatedGame] = []
+        games: [AnnotatedGame] = [],
+        classics: [ClassicGame] = []
     ) {
         self.puzzles = puzzles
         self.exercises = exercises
         self.drills = drills
         self.games = games
+        self.classics = classics
     }
 
     private struct PuzzleFile: Codable { let puzzles: [Puzzle] }
     private struct ExerciseFile: Codable { let exercises: [PositionalExercise] }
     private struct DrillFile: Codable { let drills: [EndgameDrill] }
     private struct GameFile: Codable { let games: [AnnotatedGame] }
+    private struct ClassicFile: Codable { let games: [ClassicGame] }
 
     /// Load the three data files from a directory, tolerating any of them being
     /// absent — a build without the generated tactics should still run the
@@ -140,7 +144,8 @@ public struct ContentLibrary: Sendable {
             puzzles: decode(PuzzleFile.self, "tactics.json")?.puzzles ?? [],
             exercises: decode(ExerciseFile.self, "positions.json")?.exercises ?? [],
             drills: decode(DrillFile.self, "endgames.json")?.drills ?? [],
-            games: decode(GameFile.self, "games.json")?.games ?? []
+            games: decode(GameFile.self, "games.json")?.games ?? [],
+            classics: decode(ClassicFile.self, "classics.json")?.games ?? []
         )
     }
 }
@@ -178,5 +183,45 @@ public enum Themes {
             spaced.append(Character(character.lowercased()))
         }
         return spaced.prefix(1).uppercased() + spaced.dropFirst()
+    }
+}
+
+
+/// A game somebody played, kept to be watched.
+///
+/// Every one is a real game from a published collection of its players' own
+/// games, and the moves are the moves as recorded — in the notation a book
+/// prints, not pre-chewed into coordinates, so the app's own move generator has
+/// to agree with the record before anything can be shown.
+public struct ClassicGame: Codable, Identifiable, Hashable, Sendable {
+    public let id: String
+    public let white: String
+    public let black: String
+    public let event: String
+    public let site: String?
+    public let year: Int
+    public let result: String
+    public let eco: String?
+    /// True for the games named in the importer's own list — the ones nobody
+    /// needs a reason to watch.
+    public let notable: Bool
+    /// SAN, space separated.
+    public let moves: String
+
+    public var players: String { "\(white) — \(black)" }
+
+    /// "Hastings, 1895 · 1–0"
+    public var occasion: String {
+        [event.isEmpty ? nil : event, String(year)]
+            .compactMap { $0 }
+            .joined(separator: ", ") + " · " + result
+    }
+
+    public var plyCount: Int { moves.split(separator: " ").count }
+    public var moveCount: Int { (plyCount + 1) / 2 }
+
+    /// Everything a search box should match: the two players, where and when.
+    public var haystack: String {
+        "\(white) \(black) \(event) \(year) \(eco ?? "")".lowercased()
     }
 }

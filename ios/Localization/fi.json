@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "Taktiikkatehtävät",
  "progress.themeAccuracy": "%lld %% / %lld",
  "progress.today": "Tänään",
+ "progress.watch": "Katso",
  "progress.weakSpots": "Heikot kohdat",
  "progress.whereYouAre": "Missä olet",
  "result.agreement": "sopimukseen",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "Vukovicin matti",
  "theme.winsMaterial": "Voittaa materiaalia",
  "theme.xRayAttack": "Röntgenhyökkäys",
- "theme.zugzwang": "Siirtopakko"
+ "theme.zugzwang": "Siirtopakko",
+ "watch.everything": "Kaikki",
+ "watch.games": "pelejä",
+ "watch.moveCount": "%lld siirtoa",
+ "watch.named": "Nimetyt pelit",
+ "watch.nothingFound": "Yksikään peli ei vastaa hakua.",
+ "watch.search": "Pelaaja, turnaus tai vuosi"
 }

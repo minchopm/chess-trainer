@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "전술 문제",
  "progress.themeAccuracy": "%lld문제 중 %lld %%",
  "progress.today": "오늘",
+ "progress.watch": "관전",
  "progress.weakSpots": "약점",
  "progress.whereYouAre": "현재 위치",
  "result.agreement": "합의",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "부코비치 메이트",
  "theme.winsMaterial": "기물 획득",
  "theme.xRayAttack": "엑스레이 공격",
- "theme.zugzwang": "추크츠방"
+ "theme.zugzwang": "추크츠방",
+ "watch.everything": "전체",
+ "watch.games": "대국",
+ "watch.moveCount": "%lld수",
+ "watch.named": "이름 있는 대국",
+ "watch.nothingFound": "해당하는 대국이 없습니다.",
+ "watch.search": "선수, 대회 또는 연도"
 }

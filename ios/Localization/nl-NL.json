@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "Tactische puzzels",
  "progress.themeAccuracy": "%lld %% van %lld",
  "progress.today": "Vandaag",
+ "progress.watch": "Kijken",
  "progress.weakSpots": "Zwakke plekken",
  "progress.whereYouAre": "Waar je staat",
  "result.agreement": "onderling akkoord",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "Vukovic-mat",
  "theme.winsMaterial": "Wint materiaal",
  "theme.xRayAttack": "Röntgenaanval",
- "theme.zugzwang": "Zetdwang"
+ "theme.zugzwang": "Zetdwang",
+ "watch.everything": "Alles",
+ "watch.games": "partijen",
+ "watch.moveCount": "%lld zetten",
+ "watch.named": "Beroemde partijen",
+ "watch.nothingFound": "Geen partij komt overeen.",
+ "watch.search": "Speler, toernooi of jaar"
 }

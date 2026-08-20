@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "Exerciții tactice",
  "progress.themeAccuracy": "%lld %% din %lld",
  "progress.today": "Azi",
+ "progress.watch": "Privește",
  "progress.weakSpots": "Puncte slabe",
  "progress.whereYouAre": "Unde te afli",
  "result.agreement": "acord",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "Matul lui Vuković",
  "theme.winsMaterial": "Câștig de material",
  "theme.xRayAttack": "Atac cu raze X",
- "theme.zugzwang": "Zugzwang"
+ "theme.zugzwang": "Zugzwang",
+ "watch.everything": "Tot",
+ "watch.games": "partide",
+ "watch.moveCount": "%lld mutări",
+ "watch.named": "Partide celebre",
+ "watch.nothingFound": "Nicio partidă nu se potrivește.",
+ "watch.search": "Jucător, turneu sau an"
 }

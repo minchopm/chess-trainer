@@ -64,6 +64,8 @@ targets:
         buildPhase: resources
       - path: ../data/games.json
         buildPhase: resources
+      - path: ../data/classics.json
+        buildPhase: resources
       - path: Resources/Legal
         buildPhase: resources
       - path: Resources/Networks

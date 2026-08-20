@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "Тактические задачи",
  "progress.themeAccuracy": "%lld %% из %lld",
  "progress.today": "Сегодня",
+ "progress.watch": "Смотреть",
  "progress.weakSpots": "Слабые места",
  "progress.whereYouAre": "Где вы сейчас",
  "result.agreement": "соглашению",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "Мат Вуковича",
  "theme.winsMaterial": "Выигрыш материала",
  "theme.xRayAttack": "Рентген",
- "theme.zugzwang": "Цугцванг"
+ "theme.zugzwang": "Цугцванг",
+ "watch.everything": "Все",
+ "watch.games": "партии",
+ "watch.moveCount": "%lld ходов",
+ "watch.named": "Именные партии",
+ "watch.nothingFound": "Ничего не нашлось.",
+ "watch.search": "Игрок, турнир или год"
 }

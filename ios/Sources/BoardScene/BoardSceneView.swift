@@ -10,10 +10,10 @@ import UIKit
 /// safe way to get from there back to the scene's own actor either costs a
 /// frame or risks a trap; a display link is already where the scene lives.
 public struct BoardSceneView: UIViewRepresentable {
-    private let sequence: TitleSequence
+    private let sequence: any SceneDriver
     private let interactive: Bool
 
-    public init(sequence: TitleSequence, interactive: Bool = true) {
+    public init(sequence: any SceneDriver, interactive: Bool = true) {
         self.sequence = sequence
         self.interactive = interactive
     }
@@ -55,11 +55,11 @@ public struct BoardSceneView: UIViewRepresentable {
     @MainActor
     public final class Driver: NSObject {
         private var link: CADisplayLink?
-        private var sequence: TitleSequence?
+        private var sequence: (any SceneDriver)?
         private var last = CFTimeInterval(0)
         private var startDistance: Float = 0
 
-        func start(sequence: TitleSequence) {
+        func start(sequence: any SceneDriver) {
             self.sequence = sequence
             sequence.place()
             let link = CADisplayLink(target: self, selector: #selector(tick(_:)))

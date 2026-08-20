@@ -1,4 +1,5 @@
 import ChessCore
+import Foundation
 import Testing
 @testable import BoardScene
 
@@ -123,5 +124,52 @@ struct BoardTests {
         let white = try #require(board.occupied[Square("b1")!])
         let black = try #require(board.occupied[Square("b8")!])
         #expect(white.node.childNodes.first?.geometry !== black.node.childNodes.first?.geometry)
+    }
+}
+
+@Suite("The library of recorded games")
+struct LibraryTests {
+    /// Every game in the shipped file, played through the app's own move
+    /// generator.
+    ///
+    /// This is the check that makes the library trustworthy. The scores come
+    /// out of published collections and are parsed by a script that knows
+    /// nothing about chess; if the parser dropped a move, mangled a
+    /// disambiguation or lost a promotion, the expansion stops early and the
+    /// count here does not match. A game that cannot be played is not a game.
+    @Test("Every recorded game plays from beginning to end")
+    func everyGameExpands() throws {
+        let file = URL(fileURLWithPath: #filePath)
+            .deletingLastPathComponent()   // BoardSceneTests
+            .deletingLastPathComponent()   // Tests
+            .deletingLastPathComponent()   // ios
+            .deletingLastPathComponent()   // the repository
+            .appendingPathComponent("data/classics.json")
+
+        struct File: Decodable {
+            struct Game: Decodable {
+                let id: String
+                let white: String
+                let black: String
+                let year: Int
+                let moves: String
+            }
+            let games: [Game]
+        }
+
+        let data = try Data(contentsOf: file)
+        let library = try JSONDecoder().decode(File.self, from: data)
+        #expect(library.games.count > 500, "the library is suspiciously small")
+
+        var broken: [String] = []
+        for game in library.games {
+            let expected = game.moves.split(separator: " ").count
+            let plies = ShowGames.expand(game.moves)
+            if plies.count != expected {
+                broken.append("\(game.white)—\(game.black) \(game.year): \(plies.count)/\(expected)")
+            }
+        }
+
+        #expect(broken.isEmpty, "\(broken.count) games stop early: \(broken.prefix(5).joined(separator: "; "))")
     }
 }

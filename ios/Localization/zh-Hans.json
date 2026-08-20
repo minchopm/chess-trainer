@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "战术习题",
  "progress.themeAccuracy": "%lld 题中的 %lld %%",
  "progress.today": "今天",
+ "progress.watch": "观战",
  "progress.weakSpots": "薄弱环节",
  "progress.whereYouAre": "你的水平",
  "result.agreement": "协议",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "武科维奇杀法",
  "theme.winsMaterial": "赢得子力",
  "theme.xRayAttack": "透视攻击",
- "theme.zugzwang": "欠行"
+ "theme.zugzwang": "欠行",
+ "watch.everything": "全部",
+ "watch.games": "对局",
+ "watch.moveCount": "%lld 回合",
+ "watch.named": "名局",
+ "watch.nothingFound": "没有符合的对局。",
+ "watch.search": "棋手、赛事或年份"
 }

@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "Soal taktik",
  "progress.themeAccuracy": "%lld %% dari %lld",
  "progress.today": "Hari ini",
+ "progress.watch": "Tonton",
  "progress.weakSpots": "Titik lemah",
  "progress.whereYouAre": "Posisimu sekarang",
  "result.agreement": "kesepakatan",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "Sekakmat Vuković",
  "theme.winsMaterial": "Menang materi",
  "theme.xRayAttack": "Serangan sinar X",
- "theme.zugzwang": "Zugzwang"
+ "theme.zugzwang": "Zugzwang",
+ "watch.everything": "Semua",
+ "watch.games": "partai",
+ "watch.moveCount": "%lld langkah",
+ "watch.named": "Partai bernama",
+ "watch.nothingFound": "Tidak ada partai yang cocok.",
+ "watch.search": "Pemain, turnamen atau tahun"
 }

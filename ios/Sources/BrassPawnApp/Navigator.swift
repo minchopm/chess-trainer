@@ -8,6 +8,8 @@ import SwiftUI
 @MainActor
 final class Navigator {
     var showsMenu = true
+    /// Which of the Play tab's four things the menu asked for, if it asked.
+    var wants: PlayTab.Mode?
 
     func goToMenu() {
         withAnimation(.timingCurve(0.16, 1, 0.3, 1, duration: 0.5)) { showsMenu = true }

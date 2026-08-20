@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "Taktikuppgifter",
  "progress.themeAccuracy": "%lld %% av %lld",
  "progress.today": "I dag",
+ "progress.watch": "Se",
  "progress.weakSpots": "Svaga punkter",
  "progress.whereYouAre": "Var du står",
  "result.agreement": "överenskommelse",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "Vukovics matt",
  "theme.winsMaterial": "Vinner material",
  "theme.xRayAttack": "Röntgenangrepp",
- "theme.zugzwang": "Dragtvång"
+ "theme.zugzwang": "Dragtvång",
+ "watch.everything": "Allt",
+ "watch.games": "partier",
+ "watch.moveCount": "%lld drag",
+ "watch.named": "Kända partier",
+ "watch.nothingFound": "Inget parti matchar.",
+ "watch.search": "Spelare, turnering eller år"
 }

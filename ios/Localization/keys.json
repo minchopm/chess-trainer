@@ -1680,6 +1680,13 @@
   ]
  },
  {
+  "key": "progress.watch",
+  "english": "Watch",
+  "files": [
+   "MenuScreen.swift"
+  ]
+ },
+ {
   "key": "progress.weakSpots",
   "english": "Weak spots",
   "files": [
@@ -3266,6 +3273,48 @@
   "english": "Zugzwang",
   "files": [
    "Content.swift"
+  ]
+ },
+ {
+  "key": "watch.everything",
+  "english": "Everything",
+  "files": [
+   "ClassicsScreen.swift"
+  ]
+ },
+ {
+  "key": "watch.games",
+  "english": "games",
+  "files": [
+   "ClassicsScreen.swift"
+  ]
+ },
+ {
+  "key": "watch.moveCount",
+  "english": "%lld moves",
+  "files": [
+   "ClassicsScreen.swift"
+  ]
+ },
+ {
+  "key": "watch.named",
+  "english": "Named games",
+  "files": [
+   "ClassicsScreen.swift"
+  ]
+ },
+ {
+  "key": "watch.nothingFound",
+  "english": "No game matches that.",
+  "files": [
+   "ClassicsScreen.swift"
+  ]
+ },
+ {
+  "key": "watch.search",
+  "english": "Player, event or year",
+  "files": [
+   "ClassicsScreen.swift"
   ]
  }
 ]

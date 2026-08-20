@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "Taktikaufgaben",
  "progress.themeAccuracy": "%lld %% von %lld",
  "progress.today": "Heute",
+ "progress.watch": "Ansehen",
  "progress.weakSpots": "Schwachstellen",
  "progress.whereYouAre": "Wo du stehst",
  "result.agreement": "Übereinkunft",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "Vuković-Matt",
  "theme.winsMaterial": "Materialgewinn",
  "theme.xRayAttack": "Röntgenangriff",
- "theme.zugzwang": "Zugzwang"
+ "theme.zugzwang": "Zugzwang",
+ "watch.everything": "Alles",
+ "watch.games": "Partien",
+ "watch.moveCount": "%lld Züge",
+ "watch.named": "Benannte Partien",
+ "watch.nothingFound": "Dazu passt keine Partie.",
+ "watch.search": "Spieler, Turnier oder Jahr"
 }

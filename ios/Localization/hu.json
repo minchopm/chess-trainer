@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "Taktikai feladványok",
  "progress.themeAccuracy": "%lld %% / %lld",
  "progress.today": "Ma",
+ "progress.watch": "Nézés",
  "progress.weakSpots": "Gyenge pontok",
  "progress.whereYouAre": "Hol tartasz",
  "result.agreement": "megegyezés",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "Vuković-matt",
  "theme.winsMaterial": "Anyagnyerés",
  "theme.xRayAttack": "Röntgentámadás",
- "theme.zugzwang": "Lépéskényszer"
+ "theme.zugzwang": "Lépéskényszer",
+ "watch.everything": "Mind",
+ "watch.games": "játszmák",
+ "watch.moveCount": "%lld lépés",
+ "watch.named": "Nevezetes játszmák",
+ "watch.nothingFound": "Nincs ilyen játszma.",
+ "watch.search": "Játékos, verseny vagy év"
 }

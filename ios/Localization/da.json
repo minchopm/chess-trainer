@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "Taktikopgaver",
  "progress.themeAccuracy": "%lld %% af %lld",
  "progress.today": "I dag",
+ "progress.watch": "Se",
  "progress.weakSpots": "Svage punkter",
  "progress.whereYouAre": "Hvor du står",
  "result.agreement": "aftale",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "Vukovics mat",
  "theme.winsMaterial": "Vinder materiale",
  "theme.xRayAttack": "Røntgenangreb",
- "theme.zugzwang": "Træktvang"
+ "theme.zugzwang": "Træktvang",
+ "watch.everything": "Alt",
+ "watch.games": "partier",
+ "watch.moveCount": "%lld træk",
+ "watch.named": "Navngivne partier",
+ "watch.nothingFound": "Ingen partier passer.",
+ "watch.search": "Spiller, turnering eller år"
 }

@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "戦術問題",
  "progress.themeAccuracy": "%lld 問中 %lld %%",
  "progress.today": "今日",
+ "progress.watch": "観る",
  "progress.weakSpots": "弱点",
  "progress.whereYouAre": "現在地",
  "result.agreement": "合意",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "ヴコヴィッチのメイト",
  "theme.winsMaterial": "駒得",
  "theme.xRayAttack": "X線攻撃",
- "theme.zugzwang": "ツークツワンク"
+ "theme.zugzwang": "ツークツワンク",
+ "watch.everything": "すべて",
+ "watch.games": "対局",
+ "watch.moveCount": "%lld手",
+ "watch.named": "名局",
+ "watch.nothingFound": "該当する対局はありません。",
+ "watch.search": "棋士・大会・年"
 }

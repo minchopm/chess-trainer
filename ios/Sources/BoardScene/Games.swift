@@ -94,13 +94,32 @@ public enum ShowGames {
     /// than throwing: a board that plays a famous game two moves short is a
     /// smaller failure than a first screen that crashes, and the tests catch
     /// the short game long before anybody sees it.
-    static func expand(_ notation: String) -> [Ply] {
+    public static func expand(_ notation: String) -> [Ply] {
         expandFrom(position: Position(), notation: notation)
+    }
+
+    /// The plies and the position after each of them, `positions[0]` being the
+    /// start. `positions` is always one longer than `plies`.
+    public static func line(_ notation: String) -> (plies: [Ply], positions: [Position]) {
+        var position = Position()
+        var positions = [position]
+        var plies: [Ply] = []
+
+        for ply in expand(notation) {
+            guard let move = position.legalMoves().first(where: {
+                $0.from == ply.from && $0.to == ply.to && $0.promotion == ply.promotion
+            }) else { break }
+            _ = position.make(move)
+            positions.append(position)
+            plies.append(ply)
+        }
+
+        return (plies, positions)
     }
 
     /// The same, from a position that is not the starting one. Used by the
     /// tests to reach the rules these three games never exercise.
-    static func expandFrom(position start: Position, notation: String) -> [Ply] {
+    public static func expandFrom(position start: Position, notation: String) -> [Ply] {
         var position = start
         var plies: [Ply] = []
 

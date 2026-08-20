@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "תרגילי טקטיקה",
  "progress.themeAccuracy": "%lld %% מתוך %lld",
  "progress.today": "היום",
+ "progress.watch": "צפייה",
  "progress.weakSpots": "נקודות תורפה",
  "progress.whereYouAre": "איפה אתה עומד",
  "result.agreement": "הסכמה",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "מט ווקוביץ׳",
  "theme.winsMaterial": "זכייה בחומר",
  "theme.xRayAttack": "התקפת רנטגן",
- "theme.zugzwang": "צוגצוואנג"
+ "theme.zugzwang": "צוגצוואנג",
+ "watch.everything": "הכול",
+ "watch.games": "משחקים",
+ "watch.moveCount": "%lld מהלכים",
+ "watch.named": "משחקים בעלי שם",
+ "watch.nothingFound": "אין משחק שתואם.",
+ "watch.search": "שחקן, אירוע או שנה"
 }

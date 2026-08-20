@@ -26,6 +26,7 @@ public struct RootView: View {
                 }
                 .environment(app)
                 .environment(activity)
+                .environment(navigator)
                 .transition(.opacity)
                 .zIndex(1)
             }

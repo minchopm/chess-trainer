@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "ألغاز تكتيكية",
  "progress.themeAccuracy": "%lld %% من %lld",
  "progress.today": "اليوم",
+ "progress.watch": "مشاهدة",
  "progress.weakSpots": "نقاط الضعف",
  "progress.whereYouAre": "أين أنت الآن",
  "result.agreement": "الاتفاق",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "مات فوكوفيتش",
  "theme.winsMaterial": "كسب مادة",
  "theme.xRayAttack": "هجوم بالأشعة",
- "theme.zugzwang": "إجبار على النقل"
+ "theme.zugzwang": "إجبار على النقل",
+ "watch.everything": "الكل",
+ "watch.games": "مباريات",
+ "watch.moveCount": "%lld نقلة",
+ "watch.named": "مباريات لها اسم",
+ "watch.nothingFound": "لا توجد مباراة تطابق ذلك.",
+ "watch.search": "لاعب أو حدث أو سنة"
 }

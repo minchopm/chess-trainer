@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "แบบฝึกแทคติก",
  "progress.themeAccuracy": "%lld %% จาก %lld",
  "progress.today": "วันนี้",
+ "progress.watch": "ดู",
  "progress.weakSpots": "จุดอ่อน",
  "progress.whereYouAre": "คุณอยู่ตรงไหน",
  "result.agreement": "การตกลง",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "รุกจนแบบวูโควิช",
  "theme.winsMaterial": "ได้ตัวหมาก",
  "theme.xRayAttack": "บุกทะลุแนว",
- "theme.zugzwang": "ซุกซวัง"
+ "theme.zugzwang": "ซุกซวัง",
+ "watch.everything": "ทั้งหมด",
+ "watch.games": "เกม",
+ "watch.moveCount": "%lld ตา",
+ "watch.named": "เกมที่มีชื่อ",
+ "watch.nothingFound": "ไม่พบเกมที่ตรงกัน",
+ "watch.search": "ผู้เล่น รายการ หรือปี"
 }

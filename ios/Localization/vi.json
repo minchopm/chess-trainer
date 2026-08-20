@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "Bài tập chiến thuật",
  "progress.themeAccuracy": "%lld %% trên %lld",
  "progress.today": "Hôm nay",
+ "progress.watch": "Xem",
  "progress.weakSpots": "Điểm yếu",
  "progress.whereYouAre": "Bạn đang ở đâu",
  "result.agreement": "thỏa thuận",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "Chiếu hết Vuković",
  "theme.winsMaterial": "Ăn quân",
  "theme.xRayAttack": "Tấn công xuyên",
- "theme.zugzwang": "Bí nước"
+ "theme.zugzwang": "Bí nước",
+ "watch.everything": "Tất cả",
+ "watch.games": "ván cờ",
+ "watch.moveCount": "%lld nước",
+ "watch.named": "Ván cờ có tên",
+ "watch.nothingFound": "Không có ván nào khớp.",
+ "watch.search": "Kỳ thủ, giải đấu hoặc năm"
 }

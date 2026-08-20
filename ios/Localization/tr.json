@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "Taktik problemleri",
  "progress.themeAccuracy": "%lld problemin %% %lld'i",
  "progress.today": "Bugün",
+ "progress.watch": "İzle",
  "progress.weakSpots": "Zayıf noktalar",
  "progress.whereYouAre": "Nerede olduğun",
  "result.agreement": "anlaşma",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "Vuković matı",
  "theme.winsMaterial": "Materyal kazanır",
  "theme.xRayAttack": "Röntgen saldırısı",
- "theme.zugzwang": "Zugzwang"
+ "theme.zugzwang": "Zugzwang",
+ "watch.everything": "Tümü",
+ "watch.games": "partiler",
+ "watch.moveCount": "%lld hamle",
+ "watch.named": "Adı olan partiler",
+ "watch.nothingFound": "Eşleşen parti yok.",
+ "watch.search": "Oyuncu, turnuva veya yıl"
 }

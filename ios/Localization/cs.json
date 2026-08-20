@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "Taktické úlohy",
  "progress.themeAccuracy": "%lld %% z %lld",
  "progress.today": "Dnes",
+ "progress.watch": "Sledovat",
  "progress.weakSpots": "Slabá místa",
  "progress.whereYouAre": "Kde jsi",
  "result.agreement": "dohodu",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "Vukovičův mat",
  "theme.winsMaterial": "Zisk materiálu",
  "theme.xRayAttack": "Rentgenový útok",
- "theme.zugzwang": "Cugcvang"
+ "theme.zugzwang": "Cugcvang",
+ "watch.everything": "Vše",
+ "watch.games": "partie",
+ "watch.moveCount": "%lld tahů",
+ "watch.named": "Slavné partie",
+ "watch.nothingFound": "Žádná partie tomu neodpovídá.",
+ "watch.search": "Hráč, turnaj nebo rok"
 }

@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "रणनीति की पहेलियाँ",
  "progress.themeAccuracy": "%lld में से %lld %%",
  "progress.today": "आज",
+ "progress.watch": "देखें",
  "progress.weakSpots": "कमज़ोर कड़ियाँ",
  "progress.whereYouAre": "आप कहाँ हैं",
  "result.agreement": "सहमति",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "वुकोविच शहमात",
  "theme.winsMaterial": "मोहरा जीतना",
  "theme.xRayAttack": "एक्स-रे हमला",
- "theme.zugzwang": "त्सुगत्स्वांग"
+ "theme.zugzwang": "त्सुगत्स्वांग",
+ "watch.everything": "सब कुछ",
+ "watch.games": "बाज़ियाँ",
+ "watch.moveCount": "%lld चालें",
+ "watch.named": "नामी बाज़ियाँ",
+ "watch.nothingFound": "कोई बाज़ी मेल नहीं खाती।",
+ "watch.search": "खिलाड़ी, स्पर्धा या वर्ष"
 }

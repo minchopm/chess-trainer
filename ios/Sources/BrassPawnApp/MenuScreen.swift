@@ -12,6 +12,7 @@ struct MenuScreen: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.scenePhase) private var scenePhase
 
+    @Environment(Navigator.self) private var navigator
     let onChoose: (RootView.Tab) -> Void
 
     @State private var sequence = TitleSequence(quality: SceneQuality.forThisDevice)
@@ -72,20 +73,23 @@ struct MenuScreen: View {
         VStack(spacing: 9) {
             entry(.play, L.t("progress.play", "Play"), "person.2", solid: true)
             HStack(spacing: 9) {
+                entry(.play, L.t("progress.watch", "Watch"), "play.rectangle", wants: .watch)
                 entry(.tactics, L.t("progress.tactics", "Tactics"), "target")
-                entry(.positional, L.t("progress.positional", "Positional"), "square.grid.3x3.middle.filled")
             }
             HStack(spacing: 9) {
+                entry(.positional, L.t("progress.positional", "Positional"), "square.grid.3x3.middle.filled")
                 entry(.endgames, L.t("progress.endgames", "Endgames"), "flag.checkered")
-                entry(.progress, L.t("progress.progress", "Progress"), "chart.line.uptrend.xyaxis")
             }
+            entry(.progress, L.t("progress.progress", "Progress"), "chart.line.uptrend.xyaxis")
         }
         .frame(maxWidth: 460)
     }
 
-    private func entry(_ tab: RootView.Tab, _ title: String, _ symbol: String, solid: Bool = false) -> some View {
+    private func entry(_ tab: RootView.Tab, _ title: String, _ symbol: String,
+                       solid: Bool = false, wants: PlayTab.Mode? = nil) -> some View {
         Button {
             SoundBoard.shared.play(.move)
+            navigator.wants = wants
             onChoose(tab)
         } label: {
             HStack(spacing: 9) {

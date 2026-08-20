@@ -62,7 +62,7 @@ public struct OrbitCamera: Sendable {
 /// clock on the next — so a slow machine gets a slower game rather than a
 /// pile-up.
 @MainActor
-public final class TitleSequence {
+public final class TitleSequence: SceneDriver {
     public let stage: Stage
     public var camera = OrbitCamera()
 

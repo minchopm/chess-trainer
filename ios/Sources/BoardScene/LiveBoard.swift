@@ -8,7 +8,7 @@ import simd
 /// legal moves and hands both down; this decides what that looks like, what a
 /// tap on the wood means, and where the camera stands.
 @MainActor
-public final class LiveBoard {
+public final class LiveBoard: SceneDriver {
     public let stage: Stage
     public var camera: OrbitCamera
 
@@ -159,7 +159,7 @@ public final class LiveBoard {
         highlights.show(selected: selected, destinations: destinationsForSelection, lastMove: lastMove)
     }
 
-    private func place() {
+    public func place() {
         let eye = camera.eye(clock: clock)
         stage.cameraNode.position = SCNVector3(eye.x, eye.y, eye.z)
         stage.cameraNode.look(

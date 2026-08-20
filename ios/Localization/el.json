@@ -239,6 +239,7 @@
  "progress.tacticsPuzzles": "Ασκήσεις τακτικής",
  "progress.themeAccuracy": "%lld %% από %lld",
  "progress.today": "Σήμερα",
+ "progress.watch": "Παρακολούθηση",
  "progress.weakSpots": "Αδύναμα σημεία",
  "progress.whereYouAre": "Πού βρίσκεσαι",
  "result.agreement": "συμφωνία",
@@ -465,5 +466,11 @@
  "theme.vukovicMate": "Ματ Βούκοβιτς",
  "theme.winsMaterial": "Κέρδος υλικού",
  "theme.xRayAttack": "Επίθεση ακτίνων Χ",
- "theme.zugzwang": "Τσουγκτσβάνγκ"
+ "theme.zugzwang": "Τσουγκτσβάνγκ",
+ "watch.everything": "Όλα",
+ "watch.games": "παρτίδες",
+ "watch.moveCount": "%lld κινήσεις",
+ "watch.named": "Επώνυμες παρτίδες",
+ "watch.nothingFound": "Καμία παρτίδα δεν ταιριάζει.",
+ "watch.search": "Παίκτης, διοργάνωση ή έτος"
 }
