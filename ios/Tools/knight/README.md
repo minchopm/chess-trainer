@@ -1,52 +1,58 @@
 # The knight
 
-The one piece a lathe cannot turn, so the one piece that is modelled.
-
-```bash
-blender --background --python ios/Tools/knight/knight.py -- --out DIR --preview
-```
-
-Writes `knight.usdz` (which SceneKit reads directly) and, with `--preview`, a
-render to look at.
-
-## Why it is generated and not downloaded
-
-A bought or downloaded model is a licence to check, and most of the good ones
-are Creative Commons **NonCommercial** — which this app cannot use: it sells a
-subscription and a one-off unlock, and it is GPLv3 besides, which forbids
-adding a restriction like NC on top. The outline here is the app's own, the
-geometry is generated from it, and the piece carries no licence into the build.
+The one piece a lathe cannot turn, and so the one piece with a front, a back and
+a shape of its own.
 
 ## Where the shape lives
 
-The outline is a run of **measured anchors**, and the app carries the same run
-in `TurnedPieces.knightAnchors` — this script is where they are fitted and
-looked at, not a second source of truth. Change one, change the other.
+In the app: `TurnedPieces.knightAnchors` in `ios/Sources/BoardScene/Knight.swift`
+— the outline as measured anchors, plus the depth it is cut to at each height.
+Look at it with
 
-## How it is built
+```bash
+RENDER_KNIGHT=1 swift test --package-path ios --filter KnightAngles
+```
 
-A closed outline, traced as beziers and straight runs, filled and extruded as a
-**curve** rather than as a mesh. That matters: every hand-rolled version —
-sweeping the outline into rings, filling the faces with a triangle fan,
-subdividing and solidifying — either bridged straight across the throat notch
-or blew up into spikes. Blender's curve code tessellates a concave outline
-correctly and rolls the rim over in one step.
+which renders the geometry the app actually ships, from four angles. Use it for
+anything that changes the head: it read perfectly from the side for a long time
+while being flat from everywhere else, because the side was the only angle it
+was ever looked at.
 
-The mane is a second curve in brass, standing a little proud of the head. It is
-the crest's own anchors offset inwards, so it cannot drift off the edge when the
-head is reshaped, and it stops below the ears — carried further it breaks out
-through the back of the skull, because the outline turns in there and a strip
-offset sideways does not.
+This directory used to build the head as well, in Blender. That was a mistake
+worth recording: two builders of one shape drift apart the moment either is
+changed, and this one did.
 
-## Proportions
+## What is here
 
-Measured off the reference set's profile rather than guessed at, which is what
-the reference is for. Three readings that look obvious and are wrong:
+`reference.py` renders a downloaded model orthographically from the side, the
+front and three quarters. `measure.py` scans a render back into numbers — how
+far the piece reaches at each height and how wide it is, in head-heights, so
+they read straight into a piece of any size.
+
+```bash
+blender --background --python ios/Tools/knight/reference.py -- MODEL.glb --out /tmp/ref
+python3 ios/Tools/knight/measure.py /tmp/ref/reference-side.png
+python3 ios/Tools/knight/measure.py /tmp/ref/reference-front.png
+```
+
+## Why measure rather than copy
+
+Most good models are Creative Commons **NonCommercial**, which this app cannot
+use: it sells a subscription and a one-off unlock, and it is GPLv3 besides,
+which forbids adding a restriction like NC on top. Proportions are not the
+model. Nothing of it ships, and nothing of it is in this repository.
+
+## What the measuring found
+
+Three readings of a knight's head look obvious and are all wrong, and each cost
+a round of drawing before the numbers settled it:
 
 - The **ears** are not two tall triangles. What stands above the forehead is
-  mostly the mane, cut off square, with one small ear showing behind it and the
-  other hidden. Drawn as blades it comes out a rabbit.
-- The **muzzle** does not taper. Its front runs all but straight down, then
-  turns under. A taper makes a fox; a round makes a seal.
-- The **neck** is broad — arching back at half height and flaring to the collar,
-  not rising as a stalk.
+  mostly the mane, cut off square with sharp corners, with one small ear showing
+  behind it — a fortieth of the piece's height before the two merge. This is
+  what the `runs` column of `measure.py` is for: at one height it reported two
+  separate spans, which a min-and-max reading hides.
+- The **muzzle** does not taper. Its front runs all but straight down for a
+  tenth of the height before it turns under.
+- The **neck** is broad, arching back to its fullest at half height and flaring
+  to the collar — half again the width a knight is usually drawn with.
