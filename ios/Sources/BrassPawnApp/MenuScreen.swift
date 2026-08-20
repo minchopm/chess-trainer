@@ -15,8 +15,19 @@ struct MenuScreen: View {
     @Environment(Navigator.self) private var navigator
     let onChoose: (RootView.Tab) -> Void
 
-    @State private var sequence = TitleSequence(quality: SceneQuality.forThisDevice)
+    /// Built once, with whichever set the player has chosen. The set is part
+    /// of the geometry, so choosing another one builds another board — which is
+    /// what the `id` on this screen is for.
+    @State private var sequence: TitleSequence
     @State private var caption: ShowGame?
+
+    init(carving: Carving, onChoose: @escaping (RootView.Tab) -> Void) {
+        self.onChoose = onChoose
+        _sequence = State(initialValue: TitleSequence(
+            quality: SceneQuality.forThisDevice,
+            style: carving == .banded ? .banded : .plain
+        ))
+    }
 
     var body: some View {
         GeometryReader { geometry in

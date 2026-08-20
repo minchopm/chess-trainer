@@ -18,7 +18,7 @@ public struct RootView: View {
             if navigator.showsMenu {
                 // Over the tabs rather than instead of them, so choosing a
                 // destination does not rebuild every screen behind it.
-                MenuScreen { tab in
+                MenuScreen(carving: app.progress.appearance.carving) { tab in
                     selection = tab
                     withAnimation(.timingCurve(0.16, 1, 0.3, 1, duration: 0.6)) {
                         navigator.showsMenu = false
@@ -27,6 +27,7 @@ public struct RootView: View {
                 .environment(app)
                 .environment(activity)
                 .environment(navigator)
+                .id(app.progress.appearance.carving)
                 .transition(.opacity)
                 .zIndex(1)
             }

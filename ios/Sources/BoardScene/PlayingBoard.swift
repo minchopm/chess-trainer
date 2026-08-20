@@ -352,9 +352,15 @@ final class PieceMaterials {
 
         for material in [brass, brassLit] {
             material.lightingModel = .physicallyBased
-            material.diffuse.contents = Colour.make(0xD6A95F)
-            material.roughness.contents = 0.24
-            material.metalness.contents = 1.0
+            material.diffuse.contents = Colour.make(0xD9AC61)
+            material.roughness.contents = 0.28
+            // Not quite a mirror. At full metalness a surface has no colour of
+            // its own — it is only what it reflects — and in a room this dark
+            // that means the broad bands read as dark metal while the small
+            // rings, which happen to catch the key light, read as gold. Backing
+            // off the metalness lets the brass keep its colour where there is
+            // nothing bright to reflect.
+            material.metalness.contents = 0.78
         }
         brassLit.emission.contents = Colour.make(0xF0CD8E)
         brassLit.emission.intensity = 0.35

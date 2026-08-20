@@ -63,8 +63,8 @@ public enum TurnedPieces {
     /// out again into the stem. Shared, so a set looks like a set.
     private static func foot(_ s: Float) -> [Turn] {
         [
-            (0.0, 0.0), (0.34 * s, 0.0), (0.34 * s, 0.035 * s), (0.325 * s, 0.075 * s),
-            (0.27 * s, 0.1 * s), (0.23 * s, 0.13 * s), (0.2 * s, 0.19 * s), (0.165 * s, 0.28 * s),
+            (0.0, 0.0), (0.305 * s, 0.0), (0.305 * s, 0.035 * s), (0.292 * s, 0.075 * s),
+            (0.243 * s, 0.1 * s), (0.207 * s, 0.13 * s), (0.18 * s, 0.19 * s), (0.148 * s, 0.28 * s),
         ]
     }
 

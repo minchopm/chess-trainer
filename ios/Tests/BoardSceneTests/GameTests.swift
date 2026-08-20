@@ -318,3 +318,28 @@ struct FramingTests {
         return worst
     }
 }
+
+@Suite("The banded set")
+@MainActor
+struct BandedSetTests {
+    /// The brass has to be outside the wood it is wrapped around.
+    ///
+    /// The gilded foot is turned to nearly the same profile as the base it
+    /// sheathes, so a change to one and not the other buries it — and a buried
+    /// band does not look like a bug, it looks like a band that was never
+    /// added. Which is exactly how it went unnoticed while the piece profile
+    /// was being slimmed.
+    @Test("The gilding stands outside the piece it is wrapped around")
+    func giltIsVisible() throws {
+        for kind in PieceKind.allCases {
+            let node = TurnedPieces.node(for: kind, style: .banded)
+            let body = try #require(node.childNodes.first { $0.name == TurnedPieces.bodyName })
+            let trim = try #require(node.childNodes.first { $0.name == TurnedPieces.trimName })
+
+            let bodyWidth = Float(body.boundingBox.max.x)
+            let trimWidth = Float(trim.boundingBox.max.x)
+            #expect(trimWidth > bodyWidth,
+                    "\(kind): the brass reaches \(trimWidth) and the wood \(bodyWidth), so it is inside it")
+        }
+    }
+}
