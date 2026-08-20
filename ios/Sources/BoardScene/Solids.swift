@@ -57,17 +57,19 @@ extension Solid {
     /// Revolves a profile around the Y axis — the same operation that makes a
     /// real Staunton set on a real lathe, which is why the profiles below read
     /// like a turner's notes rather than like a mesh.
-    static func revolved(_ profile: [Turn], segments: Int = 48) -> Solid {
+    static func revolved(_ profile: [Turn], segments: Int = 48,
+                         from start: Float = 0, through sweep: Float = 2 * .pi) -> Solid {
         var solid = Solid()
         guard profile.count > 1 else { return solid }
 
         // Never exactly zero: a ring of radius zero collapses to a point and
         // takes its triangles' normals with it.
         let points = profile.map { Turn(r: max($0.r, 0.0001), y: $0.y) }
+        let partial = sweep < 2 * .pi - 0.0001
 
         for step in 0..<segments {
-            let a = Float(step) / Float(segments) * 2 * .pi
-            let b = Float(step + 1) / Float(segments) * 2 * .pi
+            let a = start + Float(step) / Float(segments) * sweep
+            let b = start + Float(step + 1) / Float(segments) * sweep
             let (sa, ca) = (sinf(a), cosf(a))
             let (sb, cb) = (sinf(b), cosf(b))
 
@@ -84,6 +86,26 @@ extension Solid {
                     SIMD3(lower.r * cb, lower.y, lower.r * sb),
                     SIMD3(lower.r * ca, lower.y, lower.r * sa)
                 )
+            }
+        }
+
+        // A partial sweep is an open shell, and an open shell seen from inside
+        // is a hole. The two radial faces close it.
+        if partial {
+            for (angle, flip) in [(start, false), (start + sweep, true)] {
+                let (sa, ca) = (sinf(angle), cosf(angle))
+                for i in 0..<(points.count - 1) {
+                    let lower = points[i], upper = points[i + 1]
+                    let outerLow = SIMD3(lower.r * ca, lower.y, lower.r * sa)
+                    let outerHigh = SIMD3(upper.r * ca, upper.y, upper.r * sa)
+                    let axisLow = SIMD3<Float>(0, lower.y, 0)
+                    let axisHigh = SIMD3<Float>(0, upper.y, 0)
+                    if flip {
+                        solid.quad(axisLow, outerLow, outerHigh, axisHigh)
+                    } else {
+                        solid.quad(axisHigh, outerHigh, outerLow, axisLow)
+                    }
+                }
             }
         }
 

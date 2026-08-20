@@ -93,21 +93,27 @@ public enum TurnedPieces {
             (0.185 * s, 0.4 * s), (0.18 * s, 0.58 * s),
         ] + collar(s, 0.6, 0.185) + [
             (0.2 * s, 0.72 * s), (0.235 * s, 0.78 * s), (0.245 * s, 0.86 * s),
-            (0.245 * s, 1.02 * s), (0.19 * s, 1.02 * s), (0.19 * s, 0.9 * s), (0.0, 0.9 * s),
+            (0.245 * s, 0.9 * s), (0.185 * s, 0.9 * s), (0.185 * s, 0.86 * s), (0.0, 0.86 * s),
         ], segments: segments)
 
-        // Battlements: six little towers left standing, which read as the gaps
-        // between them because the crown ring sits proud of the wall.
-        let merlons = 6
+        // Battlements cut rather than stacked.
+        //
+        // Five towers left standing out of a wall, each one a piece of the same
+        // turning swept through part of a circle instead of all of it — so the
+        // gaps between them are square-cut and go all the way down to the
+        // rampart. Little cylinders stood on the rim, which is the cheap way,
+        // read as pegs from every angle.
+        let merlons = 5
+        let wall: [Turn] = [
+            (0.185 * s, 0.9 * s), (0.245 * s, 0.9 * s),
+            (0.245 * s, 1.02 * s), (0.185 * s, 1.02 * s),
+        ]
         for i in 0..<merlons {
-            let angle = Float(i) / Float(merlons) * 2 * .pi
-            solid.append(.cylinder(
-                radius: 0.075 * s, height: 0.2 * s,
-                at: SIMD3(cosf(angle) * 0.245 * s, 0.99 * s, sinf(angle) * 0.245 * s),
-                segments: 10
-            ))
+            let centre = Float(i) / Float(merlons) * 2 * .pi
+            let width: Float = 2 * .pi / Float(merlons) * 0.56
+            solid.append(.revolved(wall, segments: 8, from: centre - width / 2, through: width))
         }
-        solid.append(.ring(radius: 0.235 * s, tube: 0.03 * s, at: SIMD3(0, 0.86 * s, 0)))
+
         return solid
     }
 
@@ -154,9 +160,10 @@ public enum TurnedPieces {
             (0.235 * s, 1.4 * s), (0.13 * s, 1.42 * s), (0.0, 1.4 * s),
         ], segments: segments)
 
-        solid.append(.cylinder(radius: 0.046 * s, height: 0.28 * s, at: SIMD3(0, 1.54 * s, 0)))
-        solid.append(.cylinder(radius: 0.036 * s, height: 0.19 * s, at: SIMD3(0, 1.58 * s, 0), axis: .x))
-        solid.append(.sphere(radius: 0.05 * s, at: SIMD3(0, 1.68 * s, 0), segments: 32, rings: 16))
+        // A Staunton cross is short and stands on the crown. Drawn tall it
+        // reads as a mast, and the piece stops being a king.
+        solid.append(.cylinder(radius: 0.05 * s, height: 0.2 * s, at: SIMD3(0, 1.5 * s, 0)))
+        solid.append(.cylinder(radius: 0.042 * s, height: 0.17 * s, at: SIMD3(0, 1.52 * s, 0), axis: .x))
         return solid
     }
 
@@ -254,8 +261,8 @@ public enum TurnedPieces {
         // horse with no head.
         path.flatness = 0.05
 
-        let shape = SCNShape(path: path, extrusionDepth: CGFloat(0.27 * s))
-        shape.chamferRadius = CGFloat(0.03 * s)
+        let shape = SCNShape(path: path, extrusionDepth: CGFloat(0.36 * s))
+        shape.chamferRadius = CGFloat(0.055 * s)
         shape.chamferMode = .both
         return shape
     }
@@ -263,17 +270,44 @@ public enum TurnedPieces {
     /// Where the brass sits on each piece, as (height, radius, tube) on the
     /// turning's own scale.
     ///
-    /// Chosen to land on the collar every piece already has rather than
-    /// anywhere new: a band that does not sit in a groove reads as a sticker.
+    /// Read off the photographed set the flat board uses: a wide band round the
+    /// very foot, a second where the base flares into the stem, and a collar
+    /// under whatever the piece carries on top. They land in grooves the
+    /// turning already has — a band that does not sit in one reads as a
+    /// sticker.
     private static func bands(_ kind: PieceKind, _ s: Float) -> [(y: Float, r: Float, tube: Float)] {
-        switch kind {
-        case .pawn: [(0.5 * s, 0.152 * s, 0.019 * s), (0.075 * s, 0.318 * s, 0.02 * s)]
-        case .rook: [(0.645 * s, 0.218 * s, 0.022 * s), (0.075 * s, 0.318 * s, 0.02 * s)]
-        case .bishop: [(0.565 * s, 0.158 * s, 0.02 * s), (0.075 * s, 0.318 * s, 0.02 * s)]
-        case .knight: [(0.485 * s, 0.198 * s, 0.021 * s), (0.075 * s, 0.318 * s, 0.02 * s)]
-        case .queen: [(0.625 * s, 0.178 * s, 0.022 * s), (0.075 * s, 0.318 * s, 0.02 * s)]
-        case .king: [(0.665 * s, 0.183 * s, 0.022 * s), (0.075 * s, 0.318 * s, 0.02 * s)]
+        let foot: [(y: Float, r: Float, tube: Float)] = [
+            (0.132 * s, 0.208 * s, 0.019 * s),   // where the base gathers in
+        ]
+
+        let collar: [(y: Float, r: Float, tube: Float)] = switch kind {
+        case .pawn: [(0.5 * s, 0.152 * s, 0.019 * s), (0.772 * s, 0.158 * s, 0.017 * s)]
+        case .rook: [(0.645 * s, 0.218 * s, 0.022 * s), (0.79 * s, 0.238 * s, 0.02 * s)]
+        case .bishop: [(0.565 * s, 0.158 * s, 0.02 * s), (0.715 * s, 0.181 * s, 0.019 * s)]
+        case .knight: [(0.485 * s, 0.198 * s, 0.021 * s)]
+        case .queen: [(0.625 * s, 0.178 * s, 0.022 * s), (1.285 * s, 0.238 * s, 0.021 * s)]
+        case .king: [(0.665 * s, 0.183 * s, 0.022 * s), (1.31 * s, 0.243 * s, 0.022 * s),
+                     (1.395 * s, 0.222 * s, 0.019 * s)]
         }
+
+        return foot + collar
+    }
+
+    /// The gilded step the piece stands on.
+    ///
+    /// On the photographed set this is not a ring laid against the base — it is
+    /// the bottom of the base itself, turned in gold, and it is the widest
+    /// piece of brass on the piece. A torus in its place either hides inside
+    /// the wood or stands off it like a bracelet.
+    private static func gildedFoot(_ s: Float) -> Solid {
+        // A hair proud of the wood it sheathes. Turned to exactly the same
+        // profile the two surfaces are coincident, and coincident surfaces
+        // fight for the same pixels — the gold flickers, or loses.
+        let out: Float = 1.03
+        return Solid.revolved([
+            (0.0, -0.002 * s), (0.305 * s * out, -0.002 * s), (0.305 * s * out, 0.035 * s),
+            (0.292 * s * out, 0.078 * s), (0.276 * s, 0.092 * s), (0.276 * s, 0.086 * s),
+        ], segments: segments)
     }
 
     /// The gilt on top: the finial the turning already ends in, in brass rather
@@ -302,11 +336,42 @@ public enum TurnedPieces {
             return crown
 
         case .king:
-            var cross = Solid.cylinder(radius: 0.048 * s, height: 0.28 * s, at: SIMD3(0, 1.54 * s, 0))
-            cross.append(.cylinder(radius: 0.038 * s, height: 0.19 * s, at: SIMD3(0, 1.58 * s, 0), axis: .x))
-            cross.append(.sphere(radius: 0.052 * s, at: SIMD3(0, 1.68 * s, 0), segments: 32, rings: 16))
+            var cross = Solid.cylinder(radius: 0.052 * s, height: 0.2 * s, at: SIMD3(0, 1.5 * s, 0))
+            cross.append(.cylinder(radius: 0.044 * s, height: 0.17 * s, at: SIMD3(0, 1.52 * s, 0), axis: .x))
             return cross
         }
+    }
+
+    /// The knight's mane, cut as its own piece and stood a little proud of the
+    /// head so the brass shows from either side.
+    ///
+    /// The photographed set has a gilded mane and the turned one had no gold on
+    /// the head at all, which left the knight the one piece that did not look
+    /// like it belonged to the set. It is the same seven scallops the head is
+    /// cut with, closed by a line running down inside the neck — a crescent
+    /// rather than a stripe, because a stripe of even width reads as paint.
+    private static func mane(_ s: Float) -> SCNGeometry {
+        let path = BezierPath()
+        func p(_ x: Float, _ y: Float) -> (CGFloat, CGFloat) { (CGFloat(x * s), CGFloat(y * s)) }
+
+        var v = p(-0.245, 0.925); path.start(v.0, v.1)
+        for point in [(-0.208, 0.945), (-0.232, 0.966), (-0.196, 0.982), (-0.22, 1.003),
+                      (-0.184, 1.019), (-0.208, 1.04), (-0.17, 1.056)] {
+            v = p(Float(point.0), Float(point.1)); path.straight(v.0, v.1)
+        }
+        let c1 = p(-0.15, 1.075), c2 = p(-0.115, 1.092), e1 = p(-0.078, 1.098)
+        path.curve(c1.0, c1.1, c2.0, c2.1, e1.0, e1.1)
+        v = p(-0.06, 1.06); path.straight(v.0, v.1)
+        // Back down the inside of the crest, a little in from the scallops.
+        let c3 = p(-0.13, 1.02), c4 = p(-0.16, 0.97), e2 = p(-0.172, 0.9)
+        path.curve(c3.0, c3.1, c4.0, c4.1, e2.0, e2.1)
+        path.close()
+        path.flatness = 0.05
+
+        let shape = SCNShape(path: path, extrusionDepth: CGFloat(0.39 * s))
+        shape.chamferRadius = CGFloat(0.014 * s)
+        shape.chamferMode = .both
+        return shape
     }
 
     private static let height: [PieceKind: Float] = [
@@ -344,7 +409,7 @@ public enum TurnedPieces {
         }
 
         if style.isBanded {
-            var brass = Solid()
+            var brass = gildedFoot(s)
             for band in bands(kind, s) {
                 brass.append(.ring(radius: band.r, tube: band.tube, at: SIMD3(0, band.y, 0)))
             }
@@ -352,6 +417,13 @@ public enum TurnedPieces {
             let trim = SCNNode(geometry: brass.geometry)
             trim.name = Self.trimName
             node.addChildNode(trim)
+
+            if kind == .knight {
+                let crest = SCNNode(geometry: mane(s))
+                crest.eulerAngles.y = -.pi / 2
+                crest.name = Self.trimName
+                node.addChildNode(crest)
+            }
         }
 
         return node
