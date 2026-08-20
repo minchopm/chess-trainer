@@ -28,12 +28,39 @@ public struct OrbitCamera: Sendable {
 
     /// Low enough to keep the board a board, high enough not to fall under it.
     public static let elevationRange: ClosedRange<Float> = 0.06...1.32
-    public static let distanceRange: ClosedRange<Float> = 7.5...20
+    public static let distanceRange: ClosedRange<Float> = 7.5...32
 
     public mutating func turn(by deltaAzimuth: Float, and deltaElevation: Float) {
         azimuth += deltaAzimuth
         elevation = min(max(elevation + deltaElevation, Self.elevationRange.lowerBound),
                         Self.elevationRange.upperBound)
+    }
+
+    /// Stands back far enough for the board to suit the shape of the view.
+    ///
+    /// The site widens its lens on a tall screen; here the lens stays put and
+    /// the camera moves, so a phone and an iPad see the same perspective rather
+    /// than the phone seeing a fish-eye.
+    ///
+    /// What has to fit is not the board's eight squares but its footprint as
+    /// the camera sees it — turned forty degrees, a nine-unit board is nearly
+    /// thirteen across — and not all of that: the far corners are allowed
+    /// outside the frame, because a board that fits entirely inside a tall
+    /// narrow screen is a board nobody can see. Past a point, standing further
+    /// back stops helping and only shrinks it, so the distance is capped and a
+    /// phone simply crops.
+    public mutating func fit(aspect: Float, fieldOfView: Float = 52, limit: Float = 20) {
+        let half = tanf(fieldOfView * .pi / 360)
+        // How much of the footprint has to be inside the frame. On a tall
+        // screen the far corners are allowed out — a board that fits entirely
+        // into a phone is a board nobody can see — but on a wide one there is
+        // room for all of it and something beside it, so it is given margin
+        // instead of being cropped.
+        let margin: Float = aspect > 1.15 ? 1.05 : 0.9
+        let spread = 4.55 * (abs(cosf(azimuth)) + abs(sinf(azimuth))) * margin
+        let horizontal = spread / (half * min(1, aspect))
+        let vertical = (spread * sinf(elevation) + 2.2) / half
+        zoom(to: min(max(horizontal, vertical), limit))
     }
 
     public mutating func zoom(to value: Float) {

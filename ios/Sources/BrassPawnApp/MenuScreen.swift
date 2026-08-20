@@ -19,36 +19,64 @@ struct MenuScreen: View {
     @State private var caption: ShowGame?
 
     var body: some View {
-        ZStack {
-            // The scene is iOS-only: the package still builds for macOS so
-            // the rules and the geometry can be tested from the command line,
-            // and there is no Mac app to host a view in.
-            #if canImport(UIKit)
-            BoardSceneView(sequence: sequence)
-                .ignoresSafeArea()
-                .accessibilityHidden(true)
-            #endif
+        GeometryReader { geometry in
+            // Wide enough to put the menu beside the board rather than on top
+            // of it. That is an iPad in landscape, and it is the shape this
+            // screen is worth looking at in: the board gets the room and the
+            // way in stops covering the game.
+            let wide = geometry.size.width > geometry.size.height * 1.15
+            let column: CGFloat = wide ? min(400, geometry.size.width * 0.34) : 0
+            let apron: CGFloat = wide ? 0 : 215
 
-            // The room is lit from the top left and the board sits low in the
-            // frame; the type needs its own ground or it competes with the
-            // brightest part of the picture.
-            LinearGradient(
-                colors: [Theatre.ink.opacity(0.92), Theatre.ink.opacity(0.15), .clear],
-                startPoint: .top, endPoint: .center
-            )
-            .ignoresSafeArea()
-            .allowsHitTesting(false)
+            ZStack {
+                // The scene is drawn larger than the screen and pushed away
+                // from the controls, so the board lands in the clear part of
+                // the frame. Moving the picture is cheaper and steadier than
+                // asking the camera to compose around a rectangle it cannot
+                // see, and the room is the same colour as the page, so the
+                // overhang has no edge.
+                #if canImport(UIKit)
+                BoardSceneView(sequence: sequence)
+                    .frame(
+                        width: geometry.size.width + column,
+                        height: geometry.size.height + apron
+                    )
+                    .offset(x: column / 2, y: -apron / 2)
+                    // Pinned back to the screen afterwards. Without this the
+                    // oversized scene is what the stack measures, everything
+                    // else is laid out inside a frame taller than the display,
+                    // and the title ends up above the top of it.
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .clipped()
+                    .accessibilityHidden(true)
+                #endif
 
-            VStack(spacing: 0) {
-                title
-                Spacer(minLength: 0)
-                choices
-                if let caption { self.caption(caption) }
+                if wide {
+                    HStack(spacing: 0) {
+                        VStack(spacing: 18) {
+                            title
+                            choices(compact: false)
+                            if let caption { self.caption(caption) }
+                        }
+                        .frame(width: column)
+                        .padding(.leading, 26)
+                        Spacer(minLength: 0)
+                    }
+                } else {
+                    VStack(spacing: 0) {
+                        title
+                        Spacer(minLength: 0)
+                        choices(compact: true)
+                        if let caption { self.caption(caption) }
+                    }
+                    .padding(.horizontal, 22)
+                    .padding(.top, 18)
+                    .padding(.bottom, 14)
+                }
             }
-            .padding(.horizontal, 22)
-            .padding(.top, 18)
-            .padding(.bottom, 14)
+            .frame(width: geometry.size.width, height: geometry.size.height)
         }
+        .ignoresSafeArea(edges: .horizontal)
         .background(Theatre.ink)
         .onAppear {
             caption = sequence.game
@@ -69,20 +97,65 @@ struct MenuScreen: View {
         .frame(maxWidth: .infinity)
     }
 
-    private var choices: some View {
-        VStack(spacing: 9) {
-            entry(.play, L.t("progress.play", "Play"), "person.2", solid: true)
-            HStack(spacing: 9) {
-                entry(.play, L.t("progress.watch", "Watch"), "play.rectangle", wants: .watch)
-                entry(.tactics, L.t("progress.tactics", "Tactics"), "target")
+    /// The way in.
+    ///
+    /// Compact on a phone, where five stacked rows of buttons take more than
+    /// half the screen and the board ends up behind them — which defeats a
+    /// first screen whose whole job is to be watched. Beside the board there is
+    /// room to stack them.
+    @ViewBuilder
+    private func choices(compact: Bool) -> some View {
+        if compact {
+            VStack(spacing: 9) {
+                entry(.play, L.t("progress.play", "Play"), "person.2", solid: true)
+                HStack(spacing: 7) {
+                    small(.play, L.t("progress.watch", "Watch"), "play.rectangle", wants: .watch)
+                    small(.tactics, L.t("progress.tactics", "Tactics"), "target")
+                    small(.positional, L.t("progress.positional", "Positional"), "square.grid.3x3.middle.filled")
+                    small(.endgames, L.t("progress.endgames", "Endgames"), "flag.checkered")
+                    small(.progress, L.t("progress.progress", "Progress"), "chart.line.uptrend.xyaxis")
+                }
             }
-            HStack(spacing: 9) {
-                entry(.positional, L.t("progress.positional", "Positional"), "square.grid.3x3.middle.filled")
-                entry(.endgames, L.t("progress.endgames", "Endgames"), "flag.checkered")
+            .frame(maxWidth: 460)
+        } else {
+            VStack(spacing: 9) {
+                entry(.play, L.t("progress.play", "Play"), "person.2", solid: true)
+                HStack(spacing: 9) {
+                    entry(.play, L.t("progress.watch", "Watch"), "play.rectangle", wants: .watch)
+                    entry(.tactics, L.t("progress.tactics", "Tactics"), "target")
+                }
+                HStack(spacing: 9) {
+                    entry(.positional, L.t("progress.positional", "Positional"), "square.grid.3x3.middle.filled")
+                    entry(.endgames, L.t("progress.endgames", "Endgames"), "flag.checkered")
+                }
+                entry(.progress, L.t("progress.progress", "Progress"), "chart.line.uptrend.xyaxis")
             }
-            entry(.progress, L.t("progress.progress", "Progress"), "chart.line.uptrend.xyaxis")
         }
-        .frame(maxWidth: 460)
+    }
+
+    /// An icon over a very small label — a whole row of them fits where two
+    /// full-width buttons would.
+    private func small(_ tab: RootView.Tab, _ title: String, _ symbol: String,
+                       wants: PlayTab.Mode? = nil) -> some View {
+        Button {
+            SoundBoard.shared.play(.move)
+            if let wants { navigator.playMode = wants }
+            onChoose(tab)
+        } label: {
+            VStack(spacing: 5) {
+                Image(systemName: symbol).font(.system(size: 15, weight: .light))
+                Text(title.uppercased())
+                    .font(Face.mono(7)).tracking(0.8)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+            }
+            .foregroundStyle(Theatre.ivoryDim)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 11)
+            .background(Theatre.ink3.opacity(0.85), in: RoundedRectangle(cornerRadius: 13))
+            .overlay(RoundedRectangle(cornerRadius: 13).strokeBorder(Theatre.rule, lineWidth: 0.75))
+        }
+        .buttonStyle(.plain)
     }
 
     private func entry(_ tab: RootView.Tab, _ title: String, _ symbol: String,

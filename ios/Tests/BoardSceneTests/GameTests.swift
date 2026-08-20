@@ -1,4 +1,6 @@
 import ChessCore
+import SceneKit
+import simd
 import Foundation
 import Testing
 @testable import BoardScene
@@ -171,5 +173,62 @@ struct LibraryTests {
         }
 
         #expect(broken.isEmpty, "\(broken.count) games stop early: \(broken.prefix(5).joined(separator: "; "))")
+    }
+}
+
+@Suite("The solids the pieces are made of")
+struct SolidTests {
+    /// Every triangle has to face out of the piece it belongs to.
+    ///
+    /// Wound the other way, SceneKit culls the faces you are meant to see and
+    /// draws the inside of the piece instead — and since the inside faces away
+    /// from every light, an ivory rook comes out looking like a glass one. It
+    /// is a whole-app visual bug that no amount of grading the lights can fix,
+    /// so it is checked here rather than looked at.
+    @Test("Every face of a lathed solid points away from its axis")
+    func lathe() {
+        // A plain cone: every side face must point outward and upward.
+        let solid = Solid.revolved([(0.0, 0.0), (0.5, 0.0), (0.0, 1.0)], segments: 24)
+        #expect(!solid.positions.isEmpty)
+        expectOutward(solid, from: SIMD3(0, 0.33, 0))
+    }
+
+    @Test("So does a sphere, a cylinder and a ring")
+    func others() {
+        expectOutward(Solid.sphere(radius: 0.4, at: .zero, segments: 24, rings: 12), from: .zero)
+        expectOutward(Solid.cylinder(radius: 0.3, height: 1, at: .zero, segments: 16), from: .zero)
+        // A ring is not star-shaped about its centre, so it is judged against
+        // the middle of its own tube rather than the middle of the hole.
+        let ring = Solid.ring(radius: 1, tube: 0.15, at: .zero, segments: 24, tubeSegments: 10)
+        expectRingOutward(ring, major: 1)
+    }
+
+    /// SCNVector3 is Float on iOS and CGFloat on macOS, and the tests run on
+    /// the Mac.
+    private func vector(_ value: SCNVector3) -> SIMD3<Float> {
+        SIMD3(Float(value.x), Float(value.y), Float(value.z))
+    }
+
+    private func expectOutward(_ solid: Solid, from centre: SIMD3<Float>, file: StaticString = #filePath) {
+        var wrong = 0
+        for triangle in stride(from: 0, to: solid.positions.count, by: 3) {
+            let point = vector(solid.positions[triangle])
+            let normal = vector(solid.normals[triangle])
+            if simd_dot(normal, point - centre) < 0 { wrong += 1 }
+        }
+        #expect(wrong == 0, "\(wrong) of \(solid.positions.count / 3) faces point inward")
+    }
+
+    private func expectRingOutward(_ solid: Solid, major: Float) {
+        var wrong = 0
+        for triangle in stride(from: 0, to: solid.positions.count, by: 3) {
+            let p = vector(solid.positions[triangle])
+            let n = vector(solid.normals[triangle])
+            // The nearest point on the ring's centre line.
+            let flat = SIMD3<Float>(p.x, 0, p.z)
+            let spine = simd_length(flat) > 1e-6 ? simd_normalize(flat) * major : SIMD3<Float>(major, 0, 0)
+            if simd_dot(n, p - spine) < 0 { wrong += 1 }
+        }
+        #expect(wrong == 0, "\(wrong) of \(solid.positions.count / 3) ring faces point inward")
     }
 }

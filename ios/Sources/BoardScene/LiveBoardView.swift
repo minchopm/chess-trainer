@@ -51,12 +51,14 @@ public struct LiveBoardView: UIViewRepresentable {
         view.addGestureRecognizer(drag)
 
         context.coordinator.start(board: board, orientation: orientation)
+        context.coordinator.view = view
         board.apply(position: position, legalDestinations: legalDestinations,
                     premoveDestinations: premoveDestinations, lastMove: lastMove)
         return view
     }
 
     public func updateUIView(_ view: SCNView, context: Context) {
+        context.coordinator.view = view
         context.coordinator.look(orientation)
         board.apply(position: position, legalDestinations: legalDestinations,
                     premoveDestinations: premoveDestinations, lastMove: lastMove)
@@ -75,6 +77,8 @@ public struct LiveBoardView: UIViewRepresentable {
         private var board: LiveBoard?
         private var last = CFTimeInterval(0)
         private var orientation: PieceColor?
+        private var framedFor: CGSize = .zero
+        weak var view: SCNView?
 
         func start(board: LiveBoard, orientation: PieceColor) {
             self.board = board
@@ -102,8 +106,17 @@ public struct LiveBoardView: UIViewRepresentable {
             link = nil
         }
 
+        /// Framed for the shape of the view, once per shape.
+        func fit(_ size: CGSize) {
+            guard size.width > 1, size.height > 1, size != framedFor else { return }
+            framedFor = size
+            board?.camera.fit(aspect: Float(size.width / size.height))
+            board?.place()
+        }
+
         @objc private func tick(_ link: CADisplayLink) {
             guard let board else { return }
+            fit(view?.bounds.size ?? .zero)
             if last == 0 { last = link.timestamp }
             let delta = Float(min(link.timestamp - last, 0.05))
             last = link.timestamp

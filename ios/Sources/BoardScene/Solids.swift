@@ -73,11 +73,16 @@ extension Solid {
 
             for i in 0..<(points.count - 1) {
                 let lower = points[i], upper = points[i + 1]
+                // Wound so the face normal points away from the axis. Taken the
+                // other way round the normals point inward, which is not a
+                // subtle error: the front faces are culled, the inside of the
+                // piece is what gets drawn, and a solid ivory rook renders as a
+                // glass one.
                 solid.quad(
-                    SIMD3(lower.r * ca, lower.y, lower.r * sa),
-                    SIMD3(lower.r * cb, lower.y, lower.r * sb),
+                    SIMD3(upper.r * ca, upper.y, upper.r * sa),
                     SIMD3(upper.r * cb, upper.y, upper.r * sb),
-                    SIMD3(upper.r * ca, upper.y, upper.r * sa)
+                    SIMD3(lower.r * cb, lower.y, lower.r * sb),
+                    SIMD3(lower.r * ca, lower.y, lower.r * sa)
                 )
             }
         }
@@ -123,9 +128,9 @@ extension Solid {
             let topB = axis.place(cb, half, sb) + centre
             let topA = axis.place(ca, half, sa) + centre
 
-            solid.quad(bottomA, bottomB, topB, topA)
-            solid.triangle(axis.place(0, half, 0) + centre, topA, topB)
-            solid.triangle(axis.place(0, -half, 0) + centre, bottomB, bottomA)
+            solid.quad(topA, topB, bottomB, bottomA)
+            solid.triangle(axis.place(0, half, 0) + centre, topB, topA)
+            solid.triangle(axis.place(0, -half, 0) + centre, bottomA, bottomB)
         }
 
         return solid
@@ -145,7 +150,7 @@ extension Solid {
             for j in 0..<tubeSegments {
                 let n0 = Float(j) / Float(tubeSegments) * 2 * .pi
                 let n1 = Float(j + 1) / Float(tubeSegments) * 2 * .pi
-                solid.quad(point(m0, n0), point(m1, n0), point(m1, n1), point(m0, n1))
+                solid.quad(point(m0, n1), point(m1, n1), point(m1, n0), point(m0, n0))
             }
         }
         return solid

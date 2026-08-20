@@ -39,10 +39,13 @@ public struct BoardSceneView: UIViewRepresentable {
         }
 
         context.coordinator.start(sequence: sequence)
+        context.coordinator.view = view
         return view
     }
 
-    public func updateUIView(_ view: SCNView, context: Context) {}
+    public func updateUIView(_ view: SCNView, context: Context) {
+        context.coordinator.view = view
+    }
 
     public static func dismantleUIView(_ view: SCNView, coordinator: Driver) {
         coordinator.stop()
@@ -58,6 +61,10 @@ public struct BoardSceneView: UIViewRepresentable {
         private var sequence: (any SceneDriver)?
         private var last = CFTimeInterval(0)
         private var startDistance: Float = 0
+        /// Only re-framed when the view actually changes shape; doing it every
+        /// frame would undo a pinch as fast as it was made.
+        private var framedFor: CGSize = .zero
+        weak var view: SCNView?
 
         func start(sequence: any SceneDriver) {
             self.sequence = sequence
@@ -72,8 +79,16 @@ public struct BoardSceneView: UIViewRepresentable {
             link = nil
         }
 
+        func fit(_ size: CGSize) {
+            guard size.width > 1, size.height > 1, size != framedFor else { return }
+            framedFor = size
+            sequence?.camera.fit(aspect: Float(size.width / size.height))
+            sequence?.place()
+        }
+
         @objc private func tick(_ link: CADisplayLink) {
             guard let sequence else { return }
+            fit(view?.bounds.size ?? .zero)
             if last == 0 { last = link.timestamp }
             // Clamped: a frame that took a second is an app coming back from
             // the background, and the pieces should not teleport to catch up.
@@ -81,6 +96,7 @@ public struct BoardSceneView: UIViewRepresentable {
             last = link.timestamp
             sequence.advance(delta: delta)
         }
+
 
         @objc func dragged(_ gesture: UIPanGestureRecognizer) {
             guard let sequence, let view = gesture.view else { return }

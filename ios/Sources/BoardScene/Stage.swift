@@ -276,6 +276,6 @@ enum Colour {
         )
     }
 
-    static let ink = make(0x04050C)
+    static let ink = make(0x05060A)
     static let shadow = make(0x000000, alpha: 0.72)
 }
