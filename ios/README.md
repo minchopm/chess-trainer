@@ -7,13 +7,20 @@ the device.
 ## Building
 
 ```bash
-brew install xcodegen                # once
 sh ios/scripts/fetch-networks.sh     # once — downloads ~107 MB of networks
-cd ios && xcodegen generate
-open BrassPawn.xcodeproj
+open ios/BrassPawn.xcodeproj
 ```
 
-Then pick a simulator or your own device and run.
+The Xcode project is committed, so XcodeGen is not required to open or build the
+app. Then pick a simulator or your own device and run.
+
+`project.yml` remains the source of truth for project structure. After changing
+it, regenerate and commit the updated project:
+
+```bash
+brew install xcodegen                # once
+cd ios && xcodegen generate
+```
 
 From the command line:
 
@@ -38,7 +45,8 @@ Resources/
   Data/                    puzzles, positional exercises, endgame drills, games
   Networks/                NNUE files (not committed — see scripts/fetch-networks.sh)
 App/                       the @main entry point
-project.yml                XcodeGen spec — the .xcodeproj is generated, not edited
+BrassPawn.xcodeproj/       Xcode project — open this directly
+project.yml                XcodeGen spec used to regenerate the project
 Tools/IconMaker/           draws the app icon
 ```
 

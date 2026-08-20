@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11EE77AA55207BE6C3C461F3 /* CormorantGaramond.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71024DE3B1F2677467FD3AF1 /* CormorantGaramond.ttf */; };
+		28537FBDA2F1974C28B41330 /* endgames.json in Resources */ = {isa = PBXBuildFile; fileRef = 26BE737C8D2E4D11376AD9C2 /* endgames.json */; };
+		33E601C5AA0D6A17F286975A /* nn-37f18f62d772.nnue in Resources */ = {isa = PBXBuildFile; fileRef = 61BFAD9ACF0E2C7BDFB98CBB /* nn-37f18f62d772.nnue */; };
+		3E6C9770357775F270CEA4E0 /* castle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E8CEB4BAEFDA2127CC91082 /* castle.wav */; };
+		48F44FCC87A5CBD8C989FC58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37CDE792836F404308CE33CC /* Assets.xcassets */; };
+		4B45459D78F19459C3154437 /* gameEnd.wav in Resources */ = {isa = PBXBuildFile; fileRef = 89D3D16127EFA72B35CD2DD3 /* gameEnd.wav */; };
+		4DB8B84E8E5AC99E59FBF9D5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 69DFD865B5FC73F4B5E8B02A /* Localizable.xcstrings */; };
+		58930B467B7C7BFE1740A6F5 /* OFL-cormorant.txt in Resources */ = {isa = PBXBuildFile; fileRef = 431629F05EDBF2F9D7E727E2 /* OFL-cormorant.txt */; };
+		60EBD40D8F7AB3A60C2BF2CE /* promote.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5D5FDCDEED067C6D223FD061 /* promote.wav */; };
+		737010EE9573D8FF256F8AAC /* BrassPawn.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 297D864E27EC18F9E47E8616 /* BrassPawn.storekit */; };
+		83BE1A4A26137A9677ED5169 /* BrassPawnApp in Frameworks */ = {isa = PBXBuildFile; productRef = F1D568D032352CB45927307F /* BrassPawnApp */; };
+		918D662224B6D7E85E0C69A0 /* move.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62F903D8F5C1FC70F0A8A9DE /* move.wav */; };
+		9EBB038DDFBCD023BF2FDDE9 /* NOTICE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5A15128F3C9F50C157350AF2 /* NOTICE.txt */; };
+		9F065A8354551432F095D3C4 /* capture.wav in Resources */ = {isa = PBXBuildFile; fileRef = AF9BA6F709402079BDD2BFC3 /* capture.wav */; };
+		A334A1237E3E6B595DA6924D /* classics.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DF2B11B968359DC4476B98E /* classics.json */; };
+		A46303EEF15D6805AE5A77BE /* tactics.json in Resources */ = {isa = PBXBuildFile; fileRef = DEE36589F61CE06EF6F39437 /* tactics.json */; };
+		B7B50BE51687AADFC6E6FCCE /* games.json in Resources */ = {isa = PBXBuildFile; fileRef = 077C213EB01CF2BC8D5536DA /* games.json */; };
+		BF26734421711480BFC510A4 /* check.wav in Resources */ = {isa = PBXBuildFile; fileRef = 542D1BF8796033B8E9639968 /* check.wav */; };
+		BFF748931E1E73C495CC3F4F /* positions.json in Resources */ = {isa = PBXBuildFile; fileRef = 3512F4FB8971E731B14BA6F0 /* positions.json */; };
+		C40143C2022EC79B9BC7E838 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2B24581FB2D0665C827FE2D5 /* LICENSE.txt */; };
+		D4F6C22B9A9E78DCC1AA03A9 /* CormorantGaramond-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0960A297E2DF71AAA153C624 /* CormorantGaramond-Italic.ttf */; };
+		D57C6D8CDA23277DE7B76C4C /* nn-c288c895ea92.nnue in Resources */ = {isa = PBXBuildFile; fileRef = 681AF0C7F282F8328C36A134 /* nn-c288c895ea92.nnue */; };
+		DB475CF5749FF6AE954EB6AE /* BrassPawnMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB1BBFBDC650A1425E50B4 /* BrassPawnMain.swift */; };
+		DEB30496F27B61E46C70A433 /* OFL-jetbrains.txt in Resources */ = {isa = PBXBuildFile; fileRef = B1291E8C6DEDA19EC5DCAA03 /* OFL-jetbrains.txt */; };
+		E072E1874AEB54C397C55234 /* JetBrainsMono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BC0FF8E35604CEAF336DFC9 /* JetBrainsMono.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		03FB1BBFBDC650A1425E50B4 /* BrassPawnMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrassPawnMain.swift; sourceTree = "<group>"; };
+		077C213EB01CF2BC8D5536DA /* games.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = games.json; sourceTree = "<group>"; };
+		0960A297E2DF71AAA153C624 /* CormorantGaramond-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantGaramond-Italic.ttf"; sourceTree = "<group>"; };
+		0DF2B11B968359DC4476B98E /* classics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = classics.json; sourceTree = "<group>"; };
+		1BC08B8C95E3F3F1B239C1A8 /* BrassPawn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrassPawn.entitlements; sourceTree = "<group>"; };
+		26BE737C8D2E4D11376AD9C2 /* endgames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = endgames.json; sourceTree = "<group>"; };
+		297D864E27EC18F9E47E8616 /* BrassPawn.storekit */ = {isa = PBXFileReference; path = BrassPawn.storekit; sourceTree = "<group>"; };
+		2B24581FB2D0665C827FE2D5 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		2B8BABBDAE968378B02ACD81 /* BrassPawn.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BrassPawn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3512F4FB8971E731B14BA6F0 /* positions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = positions.json; sourceTree = "<group>"; };
+		37CDE792836F404308CE33CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3BC0FF8E35604CEAF336DFC9 /* JetBrainsMono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JetBrainsMono.ttf; sourceTree = "<group>"; };
+		431629F05EDBF2F9D7E727E2 /* OFL-cormorant.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "OFL-cormorant.txt"; sourceTree = "<group>"; };
+		542D1BF8796033B8E9639968 /* check.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = check.wav; sourceTree = "<group>"; };
+		5A15128F3C9F50C157350AF2 /* NOTICE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NOTICE.txt; sourceTree = "<group>"; };
+		5D5FDCDEED067C6D223FD061 /* promote.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = promote.wav; sourceTree = "<group>"; };
+		5E8CEB4BAEFDA2127CC91082 /* castle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = castle.wav; sourceTree = "<group>"; };
+		61BFAD9ACF0E2C7BDFB98CBB /* nn-37f18f62d772.nnue */ = {isa = PBXFileReference; path = "nn-37f18f62d772.nnue"; sourceTree = "<group>"; };
+		62F903D8F5C1FC70F0A8A9DE /* move.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = move.wav; sourceTree = "<group>"; };
+		681AF0C7F282F8328C36A134 /* nn-c288c895ea92.nnue */ = {isa = PBXFileReference; path = "nn-c288c895ea92.nnue"; sourceTree = "<group>"; };
+		69DFD865B5FC73F4B5E8B02A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		71024DE3B1F2677467FD3AF1 /* CormorantGaramond.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CormorantGaramond.ttf; sourceTree = "<group>"; };
+		89D3D16127EFA72B35CD2DD3 /* gameEnd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameEnd.wav; sourceTree = "<group>"; };
+		AF9BA6F709402079BDD2BFC3 /* capture.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = capture.wav; sourceTree = "<group>"; };
+		B1291E8C6DEDA19EC5DCAA03 /* OFL-jetbrains.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "OFL-jetbrains.txt"; sourceTree = "<group>"; };
+		DEE36589F61CE06EF6F39437 /* tactics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tactics.json; sourceTree = "<group>"; };
+		E0F7348299FB29856924A9ED /* ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ios; path = .; sourceTree = SOURCE_ROOT; };
+		F755F151598E76064B9B539F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE5E9B9B97CCDB30EEF01335 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83BE1A4A26137A9677ED5169 /* BrassPawnApp in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A24D74F73D1E3DE2E770E48 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				E0F7348299FB29856924A9ED /* ios */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		32FA307B011F0EF1964DAF09 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				AF9BA6F709402079BDD2BFC3 /* capture.wav */,
+				5E8CEB4BAEFDA2127CC91082 /* castle.wav */,
+				542D1BF8796033B8E9639968 /* check.wav */,
+				89D3D16127EFA72B35CD2DD3 /* gameEnd.wav */,
+				62F903D8F5C1FC70F0A8A9DE /* move.wav */,
+				5D5FDCDEED067C6D223FD061 /* promote.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		49E8C6A505B82D5C23026FF0 /* Legal */ = {
+			isa = PBXGroup;
+			children = (
+				2B24581FB2D0665C827FE2D5 /* LICENSE.txt */,
+				5A15128F3C9F50C157350AF2 /* NOTICE.txt */,
+			);
+			path = Legal;
+			sourceTree = "<group>";
+		};
+		6DAE144F6BBE5FD0025660FB /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+				61BFAD9ACF0E2C7BDFB98CBB /* nn-37f18f62d772.nnue */,
+				681AF0C7F282F8328C36A134 /* nn-c288c895ea92.nnue */,
+			);
+			path = Networks;
+			sourceTree = "<group>";
+		};
+		74F3DD8E5C1F674981672D2D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B8BABBDAE968378B02ACD81 /* BrassPawn.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		766B6125DF8C0B94E431FB9C = {
+			isa = PBXGroup;
+			children = (
+				8FC8057AA478ABA9E9BFAB40 /* App */,
+				A6D9C5817222CF4431C64449 /* chess-trainer */,
+				2A24D74F73D1E3DE2E770E48 /* Packages */,
+				8687E52E8663C6A14CEE6A7D /* Resources */,
+				74F3DD8E5C1F674981672D2D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B86BA4A9E42D81ED48D9901 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0960A297E2DF71AAA153C624 /* CormorantGaramond-Italic.ttf */,
+				71024DE3B1F2677467FD3AF1 /* CormorantGaramond.ttf */,
+				3BC0FF8E35604CEAF336DFC9 /* JetBrainsMono.ttf */,
+				431629F05EDBF2F9D7E727E2 /* OFL-cormorant.txt */,
+				B1291E8C6DEDA19EC5DCAA03 /* OFL-jetbrains.txt */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8687E52E8663C6A14CEE6A7D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				37CDE792836F404308CE33CC /* Assets.xcassets */,
+				7B86BA4A9E42D81ED48D9901 /* Fonts */,
+				49E8C6A505B82D5C23026FF0 /* Legal */,
+				6DAE144F6BBE5FD0025660FB /* Networks */,
+				32FA307B011F0EF1964DAF09 /* Sounds */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8FC8057AA478ABA9E9BFAB40 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1BC08B8C95E3F3F1B239C1A8 /* BrassPawn.entitlements */,
+				297D864E27EC18F9E47E8616 /* BrassPawn.storekit */,
+				03FB1BBFBDC650A1425E50B4 /* BrassPawnMain.swift */,
+				F755F151598E76064B9B539F /* Info.plist */,
+				69DFD865B5FC73F4B5E8B02A /* Localizable.xcstrings */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A6D9C5817222CF4431C64449 /* chess-trainer */ = {
+			isa = PBXGroup;
+			children = (
+				AA015A14EC4820E1E9358955 /* data */,
+			);
+			name = "chess-trainer";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		AA015A14EC4820E1E9358955 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				0DF2B11B968359DC4476B98E /* classics.json */,
+				26BE737C8D2E4D11376AD9C2 /* endgames.json */,
+				077C213EB01CF2BC8D5536DA /* games.json */,
+				3512F4FB8971E731B14BA6F0 /* positions.json */,
+				DEE36589F61CE06EF6F39437 /* tactics.json */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E00C448F6B49474C0919D79 /* BrassPawn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E620E285E1D0DC218120A06 /* Build configuration list for PBXNativeTarget "BrassPawn" */;
+			buildPhases = (
+				026CA40498E1E61B3FB81251 /* Sources */,
+				F9031F2CA64EC37C9C45D860 /* Resources */,
+				AE5E9B9B97CCDB30EEF01335 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrassPawn;
+			packageProductDependencies = (
+				F1D568D032352CB45927307F /* BrassPawnApp */,
+			);
+			productName = BrassPawn;
+			productReference = 2B8BABBDAE968378B02ACD81 /* BrassPawn.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6420D9AB05D8646B55F437D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					6E00C448F6B49474C0919D79 = {
+						DevelopmentTeam = 8293TNMX6S;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B45A28B104320F1C3C8218DA /* Build configuration list for PBXProject "BrassPawn" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				"ar-SA",
+				cs,
+				da,
+				"de-DE",
+				el,
+				en,
+				"en-CA",
+				"en-US",
+				"es-ES",
+				fi,
+				"fr-CA",
+				"fr-FR",
+				he,
+				hi,
+				hu,
+				id,
+				it,
+				ja,
+				ko,
+				ms,
+				"nl-NL",
+				no,
+				pl,
+				"pt-BR",
+				ro,
+				ru,
+				sv,
+				th,
+				tr,
+				vi,
+				"zh-Hans",
+				"zh-Hant",
+			);
+			mainGroup = 766B6125DF8C0B94E431FB9C;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FFCB4D5FA18C209706028BD2 /* XCLocalSwiftPackageReference "." */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 74F3DD8E5C1F674981672D2D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E00C448F6B49474C0919D79 /* BrassPawn */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F9031F2CA64EC37C9C45D860 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48F44FCC87A5CBD8C989FC58 /* Assets.xcassets in Resources */,
+				737010EE9573D8FF256F8AAC /* BrassPawn.storekit in Resources */,
+				D4F6C22B9A9E78DCC1AA03A9 /* CormorantGaramond-Italic.ttf in Resources */,
+				11EE77AA55207BE6C3C461F3 /* CormorantGaramond.ttf in Resources */,
+				E072E1874AEB54C397C55234 /* JetBrainsMono.ttf in Resources */,
+				C40143C2022EC79B9BC7E838 /* LICENSE.txt in Resources */,
+				4DB8B84E8E5AC99E59FBF9D5 /* Localizable.xcstrings in Resources */,
+				9EBB038DDFBCD023BF2FDDE9 /* NOTICE.txt in Resources */,
+				58930B467B7C7BFE1740A6F5 /* OFL-cormorant.txt in Resources */,
+				DEB30496F27B61E46C70A433 /* OFL-jetbrains.txt in Resources */,
+				9F065A8354551432F095D3C4 /* capture.wav in Resources */,
+				3E6C9770357775F270CEA4E0 /* castle.wav in Resources */,
+				BF26734421711480BFC510A4 /* check.wav in Resources */,
+				A334A1237E3E6B595DA6924D /* classics.json in Resources */,
+				28537FBDA2F1974C28B41330 /* endgames.json in Resources */,
+				4B45459D78F19459C3154437 /* gameEnd.wav in Resources */,
+				B7B50BE51687AADFC6E6FCCE /* games.json in Resources */,
+				918D662224B6D7E85E0C69A0 /* move.wav in Resources */,
+				33E601C5AA0D6A17F286975A /* nn-37f18f62d772.nnue in Resources */,
+				D57C6D8CDA23277DE7B76C4C /* nn-c288c895ea92.nnue in Resources */,
+				BFF748931E1E73C495CC3F4F /* positions.json in Resources */,
+				60EBD40D8F7AB3A60C2BF2CE /* promote.wav in Resources */,
+				A46303EEF15D6805AE5A77BE /* tactics.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		026CA40498E1E61B3FB81251 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB475CF5749FF6AE954EB6AE /* BrassPawnMain.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		26CDD3364F1D584531874C4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/BrassPawn.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8293TNMX6S;
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arte-soft.brasspawn";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		35EE2E1668B900C9145D01B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/BrassPawn.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8293TNMX6S;
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arte-soft.brasspawn";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8E75467C73A010D7F1F09551 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		973F9F5BF5A19226411109B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E620E285E1D0DC218120A06 /* Build configuration list for PBXNativeTarget "BrassPawn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26CDD3364F1D584531874C4E /* Debug */,
+				35EE2E1668B900C9145D01B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B45A28B104320F1C3C8218DA /* Build configuration list for PBXProject "BrassPawn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E75467C73A010D7F1F09551 /* Debug */,
+				973F9F5BF5A19226411109B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		FFCB4D5FA18C209706028BD2 /* XCLocalSwiftPackageReference "." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = .;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F1D568D032352CB45927307F /* BrassPawnApp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BrassPawnApp;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = B6420D9AB05D8646B55F437D /* Project object */;
+}

@@ -1,7 +1,6 @@
 # Build output
 node_modules/
 ios/.build/
-ios/BrassPawn.xcodeproj/
 ios/Tools/*/.build/
 DerivedData/
 *.xcuserdatad
