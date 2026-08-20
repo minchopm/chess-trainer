@@ -232,3 +232,89 @@ struct SolidTests {
         #expect(wrong == 0, "\(wrong) of \(solid.positions.count / 3) ring faces point inward")
     }
 }
+
+@Suite("The knight")
+@MainActor
+struct KnightTests {
+    /// The one piece a lathe cannot turn, and so the one piece whose geometry
+    /// comes from somewhere else.
+    ///
+    /// Measured by its bounding box, because an SCNShape does not expose
+    /// vertices the way a geometry built by hand does — asking it for its
+    /// vertex sources returns nothing even for a plain square, which is a very
+    /// convincing way to be told a shape is missing when it is not.
+    @Test("stands as tall as the silhouette it is cut from")
+    func head() throws {
+        let node = TurnedPieces.node(for: .knight)
+        #expect(node.childNodes.count == 2, "the knight should be a base and a head")
+
+        let head = try #require(node.childNodes.last)
+        let (low, high) = head.boundingBox
+        let height = Float(high.y) - Float(low.y)
+        // The silhouette runs from the base of the neck to the ear tips: 0.658
+        // of the piece's own scale, which for a knight is 0.72.
+        #expect(height > 0.4, "the head came out \(height) tall, so it did not tessellate")
+        #expect(Float(low.y) < 0.4, "the head starts at \(low.y), above the neck it should meet")
+    }
+}
+
+@Suite("Framing the board")
+struct FramingTests {
+    /// Turning the board must not lose it.
+    ///
+    /// A board is nine units square on and thirteen across the diagonal, so a
+    /// camera parked at one distance either wastes the screen at one angle or
+    /// drops its corners at the other — and the corners are where the rooks
+    /// stand. Every angle is checked against the frustum it is actually being
+    /// drawn into.
+    @Test("Every angle keeps the board in the frame", arguments: [0.46, 0.62, 1.0, 1.72])
+    func turning(aspect: Float) {
+        for step in 0..<24 {
+            var camera = OrbitCamera()
+            camera.fit(aspect: aspect)
+            camera.turn(by: Float(step) * .pi / 12 - camera.azimuth, and: 0)
+
+            let worst = widestCorner(camera, aspect: aspect)
+            // The framing deliberately allows a tall screen to crop the far
+            // corners a little; past a fifth it is losing pieces.
+            #expect(worst < 1.15, "at \(camera.azimuth) rad the board reaches \(worst) of the frame")
+        }
+    }
+
+    @Test("The camera draws back into the diagonal and comes in square on")
+    func breathes() {
+        var square = OrbitCamera()
+        square.fit(aspect: 0.46)
+        square.turn(by: -square.azimuth, and: 0)          // straight on
+
+        var diagonal = OrbitCamera()
+        diagonal.fit(aspect: 0.46)
+        diagonal.turn(by: .pi / 4 - diagonal.azimuth, and: 0)
+
+        #expect(diagonal.distance > square.distance)
+    }
+
+    /// How far the outermost corner of the plinth reaches across the frame,
+    /// where 1 is the edge.
+    private func widestCorner(_ camera: OrbitCamera, aspect: Float) -> Float {
+        let eye = camera.eye(clock: 0)
+        let forward = simd_normalize(camera.target - eye)
+        let right = simd_normalize(simd_cross(forward, SIMD3<Float>(0, 1, 0)))
+        let up = simd_cross(right, forward)
+
+        let half = tanf(OrbitCamera.fieldOfView * .pi / 360)
+        let horizontal = half * aspect
+        var worst: Float = 0
+        for x in [Float(-4.55), 4.55] {
+            for z in [Float(-4.55), 4.55] {
+                let corner = SIMD3<Float>(x, 0, z)
+                let v = corner - eye
+                let depth = simd_dot(v, forward)
+                guard depth > 0.01 else { continue }
+                worst = max(worst, abs(simd_dot(v, right)) / (depth * horizontal))
+                worst = max(worst, abs(simd_dot(v, up)) / (depth * half))
+            }
+        }
+        return worst
+    }
+}

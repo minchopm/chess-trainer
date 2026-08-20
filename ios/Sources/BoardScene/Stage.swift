@@ -237,7 +237,7 @@ public final class Stage {
 
     private func buildCamera() {
         let camera = SCNCamera()
-        camera.fieldOfView = 52
+        camera.fieldOfView = CGFloat(OrbitCamera.fieldOfView)
         camera.projectionDirection = .vertical
         camera.zNear = 0.1
         camera.zFar = 120

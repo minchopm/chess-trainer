@@ -246,7 +246,13 @@ public enum TurnedPieces {
         #else
         path.windingRule = .evenOdd
         #endif
-        path.flatness = 0.0008
+        // Not smaller. Flatness is the error a curve may be flattened with,
+        // and asking for a thousandth of a unit on a path this small does not
+        // produce a smoother knight — it produces no knight: SCNShape's
+        // tessellation collapses and the head comes out as a sliver a
+        // thirty-fifth of its proper height, which on the board reads as a
+        // horse with no head.
+        path.flatness = 0.05
 
         let shape = SCNShape(path: path, extrusionDepth: CGFloat(0.27 * s))
         shape.chamferRadius = CGFloat(0.03 * s)

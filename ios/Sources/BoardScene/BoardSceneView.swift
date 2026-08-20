@@ -60,7 +60,7 @@ public struct BoardSceneView: UIViewRepresentable {
         private var link: CADisplayLink?
         private var sequence: (any SceneDriver)?
         private var last = CFTimeInterval(0)
-        private var startDistance: Float = 0
+        private var startZoom: Float = 1
         /// Only re-framed when the view actually changes shape; doing it every
         /// frame would undo a pinch as fast as it was made.
         private var framedFor: CGSize = .zero
@@ -113,8 +113,8 @@ public struct BoardSceneView: UIViewRepresentable {
 
         @objc func pinched(_ gesture: UIPinchGestureRecognizer) {
             guard let sequence else { return }
-            if gesture.state == .began { startDistance = sequence.camera.distance }
-            sequence.camera.zoom(to: startDistance / Float(gesture.scale))
+            if gesture.state == .began { startZoom = sequence.camera.zoom }
+            sequence.camera.pinch(to: startZoom / Float(gesture.scale))
             sequence.place()
         }
     }
