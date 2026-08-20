@@ -212,7 +212,7 @@ struct EndgameScreen: View {
                 showsEvaluation: true,
                 orientation: model.orientation
             ) {
-                BoardView(
+                GameBoard(
                     position: model.position,
                     orientation: model.orientation,
                     legalDestinations: model.legalDestinations,

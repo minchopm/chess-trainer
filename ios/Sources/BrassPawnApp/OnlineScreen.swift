@@ -155,7 +155,7 @@ struct OnlineScreen: View {
                     material: MaterialBalance(session.position)
                 )
             ) {
-                BoardView(
+                GameBoard(
                     position: session.position,
                     orientation: session.myColor,
                     legalDestinations: session.legalDestinations,

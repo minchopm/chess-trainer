@@ -64,3 +64,64 @@ struct GameTests {
         }
     }
 }
+
+@Suite("The board in the round")
+@MainActor
+struct BoardTests {
+    @Test("A tap anywhere on a square lands on that square")
+    func squareUnderPoint() throws {
+        // The corners and the middle of one square, plus the two far corners of
+        // the board, because an off-by-one in the rounding only shows at the
+        // edges.
+        #expect(LiveBoard.square(at: SIMD3(-3.5, 0, 3.5)) == Square("a1"))
+        #expect(LiveBoard.square(at: SIMD3(-3.99, 0, 3.99)) == Square("a1"))
+        #expect(LiveBoard.square(at: SIMD3(-3.01, 0, 3.01)) == Square("a1"))
+        #expect(LiveBoard.square(at: SIMD3(3.5, 0, -3.5)) == Square("h8"))
+        #expect(LiveBoard.square(at: SIMD3(0.5, 0, -0.5)) == Square("e5"))
+        // And off the board is nothing, not the nearest square.
+        #expect(LiveBoard.square(at: SIMD3(4.4, 0, 0)) == nil)
+        #expect(LiveBoard.square(at: SIMD3(0, 0, -4.4)) == nil)
+    }
+
+    @Test("The board takes a position it was not built from")
+    func arbitraryPosition() throws {
+        let board = PlayingBoard()
+        // Three queens a side: more of one piece than a set contains, which is
+        // what the pool has to survive.
+        let position = try #require(Position(fen: "qqq1k3/8/8/8/8/8/8/QQQ1K3 w - - 0 1"))
+        board.set(position)
+
+        #expect(board.occupied.count == 8)
+        #expect(board.occupied[Square("a8")!] != nil)
+        #expect(board.occupied[Square("d1")!] == nil)
+
+        // And back to the standard array without leaving anything behind.
+        board.set(Position())
+        #expect(board.occupied.count == 32)
+    }
+
+    @Test("The banded set is gilded and the plain one is not")
+    func sets() {
+        for kind in PieceKind.allCases {
+            let plain = TurnedPieces.node(for: kind, style: .plain)
+            #expect(!plain.childNodes.contains { $0.name == TurnedPieces.trimName })
+
+            let banded = TurnedPieces.node(for: kind, style: .banded)
+            #expect(
+                banded.childNodes.contains { $0.name == TurnedPieces.trimName },
+                "\(kind) came out of the banded set with no brass on it"
+            )
+        }
+    }
+
+    @Test("Two pieces of one kind can wear different colours")
+    func materialsAreNotShared() throws {
+        // The clones share their prototype's vertex data, and a material lives
+        // on the geometry rather than on the node — so without a copy, painting
+        // one knight ebony paints White's knight too.
+        let board = PlayingBoard()
+        let white = try #require(board.occupied[Square("b1")!])
+        let black = try #require(board.occupied[Square("b8")!])
+        #expect(white.node.childNodes.first?.geometry !== black.node.childNodes.first?.geometry)
+    }
+}

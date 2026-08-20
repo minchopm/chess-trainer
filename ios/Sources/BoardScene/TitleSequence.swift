@@ -18,6 +18,14 @@ public struct OrbitCamera: Sendable {
     public var distance: Float = 19.5
     public var target = SIMD3<Float>(0, 1.15, 0)
 
+    public init(azimuth: Float = -0.72, elevation: Float = 0.66,
+                distance: Float = 19.5, target: SIMD3<Float> = SIMD3(0, 1.15, 0)) {
+        self.azimuth = azimuth
+        self.elevation = elevation
+        self.distance = distance
+        self.target = target
+    }
+
     /// Low enough to keep the board a board, high enough not to fall under it.
     public static let elevationRange: ClosedRange<Float> = 0.06...1.32
     public static let distanceRange: ClosedRange<Float> = 7.5...20
@@ -75,8 +83,9 @@ public final class TitleSequence {
     private static let firstMoveDelay: Float = 2.4
     private static let afterMate: Float = 4.6
 
-    public init(quality: SceneQuality = .high, games: [ShowGame] = ShowGames.all) {
-        self.stage = Stage(quality: quality)
+    public init(quality: SceneQuality = .high, style: PieceStyle = .plain,
+                games: [ShowGame] = ShowGames.all) {
+        self.stage = Stage(quality: quality, style: style)
         self.games = games.isEmpty ? ShowGames.all : games
         self.game = self.games[0]
         self.wait = Self.firstMoveDelay

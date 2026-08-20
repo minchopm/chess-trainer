@@ -290,7 +290,7 @@ struct PlayScreen: View {
                 showsEvaluation: true,
                 orientation: model.side
             ) {
-                BoardView(
+                GameBoard(
                     position: model.position,
                     orientation: model.side,
                     legalDestinations: model.legalDestinations,

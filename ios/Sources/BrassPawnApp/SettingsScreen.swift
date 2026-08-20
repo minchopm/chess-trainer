@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileButton: View {
     @Environment(AppModel.self) private var app
     @Environment(ActivityGuard.self) private var activity
+    @Environment(Navigator.self) private var navigator
     @State private var showsSettings = false
 
     var body: some View {
@@ -20,8 +21,15 @@ struct ProfileButton: View {
                 Label(L.t("menu.profile", "Profile & settings"), systemImage: "person.crop.circle")
             }
 
+            Divider()
+            Button {
+                // A game in progress asks first, the same way the tab bar does.
+                if activity.isActive { activity.requestExit() } else { navigator.goToMenu() }
+            } label: {
+                Label(L.t("menu.mainMenu", "Main menu"), systemImage: "house")
+            }
+
             if activity.isActive {
-                Divider()
                 Button(role: .destructive) {
                     activity.requestExit()
                 } label: {
@@ -96,8 +104,9 @@ struct SettingsScreen: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 22) {
                     identity
+                    section(L.t("settings.dimension", "Board")) { DimensionChoice() }
                     section(L.t("settings.pieces", "Pieces")) { PieceSetGallery() }
-                    section(L.t("settings.board", "Board")) { BoardGallery() }
+                    section(L.t("settings.squares", "Squares")) { BoardGallery() }
                     section(L.t("settings.sounds", "Move sounds")) { sound }
                     section(L.t("settings.more", "More")) { more }
                 }
@@ -367,5 +376,95 @@ private struct MiniBoard: View {
         }
         .clipShape(RoundedRectangle(cornerRadius: 7))
         .overlay(RoundedRectangle(cornerRadius: 7).strokeBorder(Theatre.rule, lineWidth: 0.5))
+    }
+}
+
+
+/// Flat or in the round, and which set stands on the round one.
+///
+/// Two choices rather than one list, because they are not alternatives: the
+/// flat board's pieces and the turned board's pieces are different things made
+/// in different ways, and the sets offered for one have nothing to say about
+/// the other.
+struct DimensionChoice: View {
+    @Environment(AppModel.self) private var app
+
+    var body: some View {
+        @Bindable var model = app
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 9) {
+                choice(
+                    .flat,
+                    L.t("settings.flat", "Flat"),
+                    L.t("settings.flatNote", "Read from above. Arrows, hints and dragging a piece across the squares."),
+                    "square.grid.3x3"
+                )
+                choice(
+                    .dimensional,
+                    L.t("settings.dimensional", "In the round"),
+                    L.t("settings.dimensionalNote", "A turned set in a lit room. Drag to turn the board, tap to move."),
+                    "cube"
+                )
+            }
+
+            if app.progress.appearance.dimension.isDimensional {
+                Text(L.t("settings.carving", "Set").uppercased())
+                    .font(Face.mono(9)).tracking(2.2)
+                    .foregroundStyle(Theatre.ivoryFaint)
+                HStack(spacing: 9) {
+                    carving(.banded, L.t("settings.banded", "Brass banded"))
+                    carving(.plain, L.t("settings.plainSet", "Boxwood & ebony"))
+                }
+                Text(L.t("settings.dimensionalCaveat", "Arrows and move values are drawn on the flat board only."))
+                    .font(.footnote)
+                    .foregroundStyle(Theatre.ivoryFaint)
+            }
+        }
+    }
+
+    private func choice(_ value: BoardDimension, _ title: String, _ note: String, _ symbol: String) -> some View {
+        let chosen = app.progress.appearance.dimension == value
+        return Button {
+            app.update { $0.appearance.dimension = value }
+            SoundBoard.shared.play(.move)
+        } label: {
+            VStack(alignment: .leading, spacing: 7) {
+                Image(systemName: symbol)
+                    .font(.system(size: 17, weight: .light))
+                    .foregroundStyle(chosen ? Theatre.brass : Theatre.ivoryDim)
+                Text(title)
+                    .font(Face.mono(11, weight: .medium)).tracking(1.6)
+                    .foregroundStyle(chosen ? Theatre.ivory : Theatre.ivoryDim)
+                Text(note)
+                    .font(.caption2)
+                    .foregroundStyle(Theatre.ivoryFaint)
+                    .multilineTextAlignment(.leading)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(13)
+            .background(chosen ? Theatre.brassGlow : Theatre.ink3, in: RoundedRectangle(cornerRadius: 13))
+            .overlay(
+                RoundedRectangle(cornerRadius: 13)
+                    .strokeBorder(chosen ? Theatre.brass.opacity(0.5) : Theatre.rule, lineWidth: 0.75)
+            )
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func carving(_ value: Carving, _ title: String) -> some View {
+        let chosen = app.progress.appearance.carving == value
+        return Button {
+            app.update { $0.appearance.carving = value }
+        } label: {
+            Text(title)
+                .font(Face.mono(10, weight: .medium)).tracking(1.4)
+                .foregroundStyle(chosen ? Theatre.ivory : Theatre.ivoryDim)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 10)
+                .background(chosen ? Theatre.brassGlow : Theatre.ink3, in: Capsule())
+                .overlay(Capsule().strokeBorder(chosen ? Theatre.brass.opacity(0.5) : Theatre.rule, lineWidth: 0.75))
+        }
+        .buttonStyle(.plain)
     }
 }

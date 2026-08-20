@@ -196,7 +196,7 @@ struct GuessTheEloScreen: View {
                     material: MaterialBalance(model.position)
                 )
             ) {
-                BoardView(position: model.position, lastMove: model.lastMove)
+                GameBoard(position: model.position, lastMove: model.lastMove)
             }
         } panel: {
             if exhausted { AllowanceNotice(activity: .guessTheElo) }

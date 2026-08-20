@@ -43,7 +43,7 @@ struct TacticsScreen: View {
                     material: material
                 )
             ) {
-                BoardView(
+                GameBoard(
                     position: model.position,
                     orientation: model.orientation,
                     legalDestinations: model.legalDestinations,

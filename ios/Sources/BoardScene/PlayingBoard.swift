@@ -20,7 +20,7 @@ public final class PlayingBoard {
     /// Where the action is, for a light to follow. Eased, not snapped.
     public private(set) var focus = SIMD3<Float>(0, 0.4, 0)
 
-    private final class Piece {
+    final class Piece {
         let node: SCNNode
         let colour: PieceColor
         let home: Square
@@ -50,23 +50,25 @@ public final class PlayingBoard {
     }
 
     private var pool: [Piece] = []
-    private var occupied: [Square: Piece] = [:]
+    private(set) var occupied: [Square: Piece] = [:]
     private var travels: [Travel] = []
     private var taken: [Taken] = []
     private var focusTarget = SIMD3<Float>(0, 0.4, 0)
 
     private let materials: PieceMaterials
     private var prototypes: [PieceKind: SCNNode] = [:]
+    private let style: PieceStyle
 
     /// One square is one unit; a1 is the far corner for White.
     public static func position(of square: Square) -> SIMD3<Float> {
         SIMD3(Float(square.file) - 3.5, 0, 3.5 - Float(square.rank))
     }
 
-    public init(quality: SceneQuality = .high) {
-        self.materials = PieceMaterials()
+    public init(quality: SceneQuality = .high, style: PieceStyle = .plain) {
+        self.style = style
+        self.materials = PieceMaterials(style: style)
         for kind in PieceKind.allCases {
-            prototypes[kind] = TurnedPieces.node(for: kind)
+            prototypes[kind] = TurnedPieces.node(for: kind, style: style)
         }
 
         for placement in Self.startingPosition() {
@@ -186,6 +188,79 @@ public final class PlayingBoard {
         focus = simd_mix(focus, focusTarget, SIMD3(repeating: min(1, delta * 2.6)))
     }
 
+    /// Puts the board into an arbitrary position.
+    ///
+    /// The pool is sixteen pieces a side, which is every piece a legal position
+    /// can contain, and any of them will take any shape — so a position with
+    /// three queens in it is three pool pieces wearing a queen's geometry
+    /// rather than a piece that had to be made.
+    ///
+    /// Whatever is already standing on the right square in the right shape
+    /// stays where it is. Without that a redraw would reseat the whole set on
+    /// every move, and a board that reseats itself cannot be watched.
+    public func set(_ position: Position) {
+        travels.removeAll()
+        taken.removeAll()
+
+        var free: [PieceColor: [Piece]] = [.white: [], .black: []]
+        var next: [Square: Piece] = [:]
+
+        var wanted: [(square: Square, piece: ChessCore.Piece)] = []
+        for index in 0..<64 {
+            let square = Square(index)
+            if let piece = position[square] { wanted.append((square, piece)) }
+        }
+
+        // Anything already right keeps its node.
+        var kept = Set<ObjectIdentifier>()
+        for want in wanted {
+            if let sitting = occupied[want.square],
+               sitting.colour == want.piece.color, sitting.kind == want.piece.kind {
+                next[want.square] = sitting
+                kept.insert(ObjectIdentifier(sitting))
+            }
+        }
+        for piece in pool where !kept.contains(ObjectIdentifier(piece)) {
+            free[piece.colour]?.append(piece)
+        }
+
+        for want in wanted where next[want.square] == nil {
+            guard let piece = free[want.piece.color]?.popLast() else { continue }
+            if piece.kind != want.piece.kind {
+                replaceGeometry(of: piece, with: want.piece.kind)
+                piece.kind = want.piece.kind
+            }
+            apply(lit: false, to: piece)
+            piece.node.isHidden = false
+            piece.node.scale = SCNVector3(1, 1, 1)
+            piece.node.eulerAngles = SCNVector3(0, piece.colour == .white ? Float.pi : 0, 0)
+            let place = Self.position(of: want.square)
+            piece.node.position = SCNVector3(place.x, place.y, place.z)
+            next[want.square] = piece
+        }
+
+        for colour in [PieceColor.white, .black] {
+            for piece in free[colour] ?? [] { piece.node.isHidden = true }
+        }
+
+        occupied = next
+    }
+
+    /// Slides one piece, without asking whether the move is legal — the caller
+    /// has a position that says it is.
+    public func slide(from: Square, to: Square, hop: Bool, captured: Square?) {
+        if let captured, let victim = occupied[captured], captured != from {
+            occupied[captured] = nil
+            taken.append(Taken(piece: victim, span: 0.42, t: 0))
+        }
+        guard let mover = occupied[from] else { return }
+        occupied[from] = nil
+        occupied[to] = mover
+        start(mover, to: to, hop: hop, lit: true, promotion: nil)
+        focusTarget = Self.position(of: to)
+        focusTarget.y = 0.45
+    }
+
     // MARK: - Private
 
     private func start(_ piece: Piece, to square: Square, hop: Bool, lit: Bool, promotion: PieceKind?) {
@@ -204,9 +279,16 @@ public final class PlayingBoard {
     }
 
     private func clone(_ kind: PieceKind) -> SCNNode {
-        // A clone shares its geometry with the prototype, so thirty-two pieces
-        // are six meshes.
-        prototypes[kind]!.clone()
+        let node = prototypes[kind]!.clone()
+        // A clone shares the prototype's geometry *object*, and a material is
+        // set on the geometry rather than on the node — so setting the ebony on
+        // one knight would set it on every knight, including White's. Copying
+        // the geometry gives each piece its own material slot while the vertex
+        // data, which is all the memory there is, stays shared.
+        for child in node.childNodes {
+            child.geometry = child.geometry?.copy() as? SCNGeometry
+        }
+        return node
     }
 
     private func replaceGeometry(of piece: Piece, with kind: PieceKind) {
@@ -215,9 +297,9 @@ public final class PlayingBoard {
     }
 
     private func apply(lit: Bool, to piece: Piece) {
-        let material = materials.material(for: piece.colour, lit: lit)
         for child in piece.node.childNodes {
-            child.geometry?.materials = [material]
+            let gilt = child.name == TurnedPieces.trimName
+            child.geometry?.materials = [materials.material(for: piece.colour, lit: lit, gilt: gilt)]
         }
     }
 
@@ -256,11 +338,30 @@ final class PieceMaterials {
     private let ebony = SCNMaterial()
     private let ivoryLit = SCNMaterial()
     private let ebonyLit = SCNMaterial()
+    /// The bands and finials of the banded set. Brass rather than gold: the
+    /// same brass the rest of the app is lit by.
+    private let brass = SCNMaterial()
+    private let brassLit = SCNMaterial()
 
-    init() {
+    init(style: PieceStyle = .plain) {
+        // The banded set is a photographed Staunton: its light side is boxwood,
+        // warmer and creamier than the site's ivory, and its dark side is
+        // nearer to true black because the brass has to read against it.
+        let light: UInt32 = style.isBanded ? 0xE8DCC0 : 0xE6DFCD
+        let dark: UInt32 = style.isBanded ? 0x14161C : 0x11131A
+
+        for material in [brass, brassLit] {
+            material.lightingModel = .physicallyBased
+            material.diffuse.contents = Colour.make(0xD6A95F)
+            material.roughness.contents = 0.24
+            material.metalness.contents = 1.0
+        }
+        brassLit.emission.contents = Colour.make(0xF0CD8E)
+        brassLit.emission.intensity = 0.35
+
         for material in [ivory, ivoryLit] {
             material.lightingModel = .physicallyBased
-            material.diffuse.contents = Colour.make(0xE6DFCD)
+            material.diffuse.contents = Colour.make(light)
             material.roughness.contents = 0.36
             material.metalness.contents = 0.0
             material.clearCoat.contents = 0.55
@@ -268,7 +369,7 @@ final class PieceMaterials {
         }
         for material in [ebony, ebonyLit] {
             material.lightingModel = .physicallyBased
-            material.diffuse.contents = Colour.make(0x11131A)
+            material.diffuse.contents = Colour.make(dark)
             material.roughness.contents = 0.3
             material.metalness.contents = 0.08
             material.clearCoat.contents = 0.75
@@ -280,7 +381,8 @@ final class PieceMaterials {
         ebonyLit.emission.intensity = 0.55
     }
 
-    func material(for colour: PieceColor, lit: Bool) -> SCNMaterial {
+    func material(for colour: PieceColor, lit: Bool, gilt: Bool = false) -> SCNMaterial {
+        if gilt { return lit ? brassLit : brass }
         if colour == .white { return lit ? ivoryLit : ivory }
         return lit ? ebonyLit : ebony
     }

@@ -32,6 +32,19 @@ extension BezierPath {
     }
 }
 
+/// Which set is standing on the board.
+public enum PieceStyle: String, Sendable, CaseIterable, Codable {
+    /// The site's set: boxwood and ebony, nothing on them but the turning.
+    case plain
+    /// The same turning, banded and finialled in brass — the set the flat
+    /// board has been using, which is a photographed Staunton with gilt collars
+    /// and gilt finials. Not the photographs turned into meshes, which cannot
+    /// honestly be done: the same lathe, given the same jewellery.
+    case banded
+
+    public var isBanded: Bool { self == .banded }
+}
+
 /// Chess pieces, turned rather than modelled.
 ///
 /// Ported from the site profile for profile. A downloaded model set would look
@@ -241,6 +254,55 @@ public enum TurnedPieces {
         return shape
     }
 
+    /// Where the brass sits on each piece, as (height, radius, tube) on the
+    /// turning's own scale.
+    ///
+    /// Chosen to land on the collar every piece already has rather than
+    /// anywhere new: a band that does not sit in a groove reads as a sticker.
+    private static func bands(_ kind: PieceKind, _ s: Float) -> [(y: Float, r: Float, tube: Float)] {
+        switch kind {
+        case .pawn: [(0.5 * s, 0.152 * s, 0.019 * s), (0.075 * s, 0.318 * s, 0.02 * s)]
+        case .rook: [(0.645 * s, 0.218 * s, 0.022 * s), (0.075 * s, 0.318 * s, 0.02 * s)]
+        case .bishop: [(0.565 * s, 0.158 * s, 0.02 * s), (0.075 * s, 0.318 * s, 0.02 * s)]
+        case .knight: [(0.485 * s, 0.198 * s, 0.021 * s), (0.075 * s, 0.318 * s, 0.02 * s)]
+        case .queen: [(0.625 * s, 0.178 * s, 0.022 * s), (0.075 * s, 0.318 * s, 0.02 * s)]
+        case .king: [(0.665 * s, 0.183 * s, 0.022 * s), (0.075 * s, 0.318 * s, 0.02 * s)]
+        }
+    }
+
+    /// The gilt on top: the finial the turning already ends in, in brass rather
+    /// than in the body's own material.
+    private static func finial(_ kind: PieceKind, _ s: Float) -> Solid? {
+        switch kind {
+        case .pawn, .knight:
+            return nil
+
+        case .bishop:
+            return Solid.sphere(radius: 0.062 * s, at: SIMD3(0, 1.26 * s, 0), segments: 32, rings: 20)
+
+        case .rook:
+            return Solid.ring(radius: 0.237 * s, tube: 0.032 * s, at: SIMD3(0, 0.86 * s, 0))
+
+        case .queen:
+            var crown = Solid.sphere(radius: 0.077 * s, at: SIMD3(0, 1.36 * s, 0), segments: 32, rings: 16)
+            for i in 0..<9 {
+                let angle = Float(i) / 9 * 2 * .pi
+                crown.append(.sphere(
+                    radius: 0.05 * s,
+                    at: SIMD3(cosf(angle) * 0.215 * s, 1.34 * s, sinf(angle) * 0.215 * s),
+                    segments: 20, rings: 12
+                ))
+            }
+            return crown
+
+        case .king:
+            var cross = Solid.cylinder(radius: 0.048 * s, height: 0.28 * s, at: SIMD3(0, 1.54 * s, 0))
+            cross.append(.cylinder(radius: 0.038 * s, height: 0.19 * s, at: SIMD3(0, 1.58 * s, 0), axis: .x))
+            cross.append(.sphere(radius: 0.052 * s, at: SIMD3(0, 1.68 * s, 0), segments: 32, rings: 16))
+            return cross
+        }
+    }
+
     private static let height: [PieceKind: Float] = [
         .pawn: 0.62, .knight: 0.72, .bishop: 0.74, .rook: 0.66, .queen: 0.82, .king: 0.9,
     ]
@@ -250,7 +312,7 @@ public enum TurnedPieces {
     /// A node rather than a geometry because the knight is two pieces of
     /// geometry that cannot be one: a lathe and an extrusion, meeting at the
     /// neck.
-    public static func node(for kind: PieceKind) -> SCNNode {
+    public static func node(for kind: PieceKind, style: PieceStyle = .plain) -> SCNNode {
         let s = height[kind] ?? 0.7
         let node = SCNNode()
 
@@ -262,16 +324,34 @@ public enum TurnedPieces {
         case .king: king(s)
         case .knight: knightBase(s)
         }
-        node.addChildNode(SCNNode(geometry: turned.geometry))
+        let body = SCNNode(geometry: turned.geometry)
+        body.name = Self.bodyName
+        node.addChildNode(body)
 
         if kind == .knight {
             let head = SCNNode(geometry: knightHead(s))
             // The silhouette is drawn facing along +x and extruded through z;
             // a quarter turn stands it across the board, facing the opponent.
             head.eulerAngles.y = -.pi / 2
+            head.name = Self.bodyName
             node.addChildNode(head)
+        }
+
+        if style.isBanded {
+            var brass = Solid()
+            for band in bands(kind, s) {
+                brass.append(.ring(radius: band.r, tube: band.tube, at: SIMD3(0, band.y, 0)))
+            }
+            if let top = finial(kind, s) { brass.append(top) }
+            let trim = SCNNode(geometry: brass.geometry)
+            trim.name = Self.trimName
+            node.addChildNode(trim)
         }
 
         return node
     }
+
+    /// The two halves of a piece, so a set can be gilded without repainting it.
+    public static let bodyName = "body"
+    public static let trimName = "trim"
 }

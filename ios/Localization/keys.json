@@ -175,6 +175,13 @@
   ]
  },
  {
+  "key": "board.promoteTo",
+  "english": "Promote to",
+  "files": [
+   "GameBoard.swift"
+  ]
+ },
+ {
   "key": "clock.blitz",
   "english": "Blitz",
   "files": [
@@ -926,6 +933,13 @@
  {
   "key": "menu.leave",
   "english": "Leave and go back",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "menu.mainMenu",
+  "english": "Main menu",
   "files": [
    "SettingsScreen.swift"
   ]
@@ -1939,6 +1953,13 @@
   ]
  },
  {
+  "key": "settings.banded",
+  "english": "Brass banded",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
   "key": "settings.board",
   "english": "Board",
   "files": [
@@ -1946,8 +1967,57 @@
   ]
  },
  {
+  "key": "settings.carving",
+  "english": "Set",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.dimension",
+  "english": "Board",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.dimensional",
+  "english": "In the round",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.dimensionalCaveat",
+  "english": "Arrows and move values are drawn on the flat board only.",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.dimensionalNote",
+  "english": "A turned set in a lit room. Drag to turn the board, tap to move.",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
   "key": "settings.done",
   "english": "Done",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.flat",
+  "english": "Flat",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.flatNote",
+  "english": "Read from above. Arrows, hints and dragging a piece across the squares.",
   "files": [
    "SettingsScreen.swift"
   ]
@@ -1969,6 +2039,13 @@
  {
   "key": "settings.pieces",
   "english": "Pieces",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.plainSet",
+  "english": "Boxwood & ebony",
   "files": [
    "SettingsScreen.swift"
   ]
@@ -1997,6 +2074,13 @@
  {
   "key": "settings.soundsOn",
   "english": "Play sounds",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.squares",
+  "english": "Squares",
   "files": [
    "SettingsScreen.swift"
   ]

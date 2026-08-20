@@ -37,10 +37,19 @@ public final class Stage {
     /// board full of identical objects tell you where to look.
     private let practical = SCNNode()
     private let quality: SceneQuality
+    private let playable: Bool
 
-    public init(quality: SceneQuality = .high) {
+    /// `playable` is the same room with the theatrics turned down.
+    ///
+    /// A title sequence wants a hot specular on the wood and a light that
+    /// chases the move, because there is nothing to do but look at it. A board
+    /// somebody is playing on wants to be read: the same board, a wider and
+    /// softer highlight, and no light wandering across the squares while you
+    /// are trying to count them.
+    public init(quality: SceneQuality = .high, style: PieceStyle = .plain, playable: Bool = false) {
         self.quality = quality
-        self.board = PlayingBoard(quality: quality)
+        self.playable = playable
+        self.board = PlayingBoard(quality: quality, style: style)
 
         buildEnvironment()
         buildFloor()
@@ -58,6 +67,7 @@ public final class Stage {
 
         // The key light breathes, very slightly. A perfectly steady light reads
         // as a render; a moving one reads as a room.
+        guard !playable else { return }
         key.light?.intensity = 1150 + CGFloat(sin(clock * 0.7)) * 60
     }
 
@@ -95,6 +105,8 @@ public final class Stage {
         scene.rootNode.addChildNode(node)
     }
 
+    public static let surfaceName = "board-surface"
+
     private func buildBoard() {
         let top = SCNBox(width: 8, height: 0.02, length: 8, chamferRadius: 0)
         let surface = top.firstMaterial!
@@ -102,10 +114,11 @@ public final class Stage {
         surface.diffuse.contents = BoardSurface.texture(size: quality.textureSize) as Any
         surface.roughness.contents = BoardSurface.roughness() as Any
         surface.metalness.contents = 0.0
-        surface.clearCoat.contents = 0.55
-        surface.clearCoatRoughness.contents = 0.22
+        surface.clearCoat.contents = playable ? 0.22 : 0.55
+        surface.clearCoatRoughness.contents = playable ? 0.4 : 0.22
 
         let surfaceNode = SCNNode(geometry: top)
+        surfaceNode.name = Stage.surfaceName
         surfaceNode.position = SCNVector3(0, -0.014, 0)
         scene.rootNode.addChildNode(surfaceNode)
 
@@ -130,7 +143,7 @@ public final class Stage {
         let keyLight = SCNLight()
         keyLight.type = .spot
         keyLight.color = Colour.make(0xFFCF94)
-        keyLight.intensity = 1150
+        keyLight.intensity = playable ? 950 : 1150
         keyLight.spotInnerAngle = 22
         keyLight.spotOuterAngle = 52
         keyLight.castsShadow = true
@@ -174,7 +187,7 @@ public final class Stage {
         let ambientLight = SCNLight()
         ambientLight.type = .ambient
         ambientLight.color = Colour.make(0x141B2C)
-        ambientLight.intensity = 200
+        ambientLight.intensity = playable ? 300 : 200
         let ambient = SCNNode()
         ambient.light = ambientLight
         scene.rootNode.addChildNode(ambient)
@@ -182,7 +195,7 @@ public final class Stage {
         let travelling = SCNLight()
         travelling.type = .omni
         travelling.color = Colour.make(0xFFC27A)
-        travelling.intensity = 14
+        travelling.intensity = playable ? 0 : 14
         travelling.attenuationStartDistance = 0.4
         travelling.attenuationEndDistance = 1.9
         practical.light = travelling

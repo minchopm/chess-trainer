@@ -6,7 +6,7 @@ public struct RootView: View {
     @State private var activity = ActivityGuard()
     @State private var selection = Tab.tactics
     @State private var pending: Tab?
-    @State private var showsMenu = true
+    @State private var navigator = Navigator()
 
     public enum Tab: Hashable { case tactics, positional, endgames, play, progress }
 
@@ -15,14 +15,17 @@ public struct RootView: View {
     public var body: some View {
         ZStack {
             tabs
-            if showsMenu {
+            if navigator.showsMenu {
                 // Over the tabs rather than instead of them, so choosing a
                 // destination does not rebuild every screen behind it.
                 MenuScreen { tab in
                     selection = tab
-                    withAnimation(.timingCurve(0.16, 1, 0.3, 1, duration: 0.6)) { showsMenu = false }
+                    withAnimation(.timingCurve(0.16, 1, 0.3, 1, duration: 0.6)) {
+                        navigator.showsMenu = false
+                    }
                 }
                 .environment(app)
+                .environment(activity)
                 .transition(.opacity)
                 .zIndex(1)
             }
@@ -67,6 +70,7 @@ public struct RootView: View {
         .overlay(FilmGrain())
         .environment(app)
         .environment(activity)
+        .environment(navigator)
         .environment(\.boardTheme, BoardTheme(style: app.progress.appearance.board))
         .environment(\.pieceSet, app.progress.appearance.pieces)
         .confirmationDialog(

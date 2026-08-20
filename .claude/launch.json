@@ -11,7 +11,7 @@
     },
     {
       "name": "site",
-      "runtimeExecutable": "/Users/minchomilev/work/chess trainer/serve.sh",
+      "runtimeExecutable": "/Users/minchomilev/work/brass-pawn/serve.sh",
       "runtimeArgs": [],
       "port": 4400
     }

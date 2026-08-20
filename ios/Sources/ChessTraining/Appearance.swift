@@ -14,17 +14,27 @@ public struct Appearance: Codable, Equatable, Sendable {
     /// nothing and turning it off are different intentions, and a player who
     /// does the first should not lose their volume when they do the second.
     public var volume: Double
+    /// Flat or in the round. The flat board is the one to play a five-minute
+    /// game on and the round one is the one to look at, so this is a choice
+    /// rather than a migration: neither replaces the other.
+    public var dimension: BoardDimension
+    /// Which set stands on the round board.
+    public var carving: Carving
 
     public init(
         pieces: PieceSet = .ebony,
         board: BoardStyle = .wood,
         soundsOn: Bool = true,
-        volume: Double = 0.7
+        volume: Double = 0.7,
+        dimension: BoardDimension = .flat,
+        carving: Carving = .banded
     ) {
         self.pieces = pieces
         self.board = board
         self.soundsOn = soundsOn
         self.volume = volume
+        self.dimension = dimension
+        self.carving = carving
     }
 
     public init(from decoder: Decoder) throws {
@@ -33,7 +43,25 @@ public struct Appearance: Codable, Equatable, Sendable {
         board = try container.decodeIfPresent(BoardStyle.self, forKey: .board) ?? .wood
         soundsOn = try container.decodeIfPresent(Bool.self, forKey: .soundsOn) ?? true
         volume = try container.decodeIfPresent(Double.self, forKey: .volume) ?? 0.7
+        dimension = try container.decodeIfPresent(BoardDimension.self, forKey: .dimension) ?? .flat
+        carving = try container.decodeIfPresent(Carving.self, forKey: .carving) ?? .banded
     }
+}
+
+public enum BoardDimension: String, Codable, CaseIterable, Identifiable, Sendable {
+    case flat, dimensional
+    public var id: String { rawValue }
+    public var isDimensional: Bool { self == .dimensional }
+}
+
+/// The two turned sets.
+public enum Carving: String, Codable, CaseIterable, Identifiable, Sendable {
+    /// Boxwood and ebony, nothing on them but the turning.
+    case plain
+    /// The same turning with brass bands and brass finials — the set the flat
+    /// board uses, which is a photographed Staunton with gilt collars.
+    case banded
+    public var id: String { rawValue }
 }
 
 public enum PieceSet: String, Codable, CaseIterable, Identifiable, Sendable {
