@@ -89,7 +89,7 @@ struct MenuScreen: View {
                        solid: Bool = false, wants: PlayTab.Mode? = nil) -> some View {
         Button {
             SoundBoard.shared.play(.move)
-            navigator.wants = wants
+            if let wants { navigator.playMode = wants }
             onChoose(tab)
         } label: {
             HStack(spacing: 9) {

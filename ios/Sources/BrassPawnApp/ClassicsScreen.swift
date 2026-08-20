@@ -11,6 +11,7 @@ struct ClassicsScreen: View {
     @Environment(AppModel.self) private var app
     @State private var query = ""
     @State private var showsAll = false
+    @State private var watching: ClassicGame?
 
     private var games: [ClassicGame] {
         let all = app.library.classics
@@ -39,6 +40,14 @@ struct ClassicsScreen: View {
             }
         }
         .background(Theatre.ink.ignoresSafeArea())
+        // Full screen rather than pushed: a recording is not a page of the
+        // library, and the tab bar underneath a transport bar is two rows of
+        // controls that mean different things.
+        #if os(iOS)
+        .fullScreenCover(item: $watching) { game in
+            WatchScreen(game: game)
+        }
+        #endif
         .task(id: app.library.classics.count) {}
     }
 
@@ -78,7 +87,7 @@ struct ClassicsScreen: View {
                 }
 
                 ForEach(games) { game in
-                    NavigationLink { WatchScreen(game: game) } label: { row(game) }
+                    Button { watching = game } label: { row(game) }
                         .buttonStyle(.plain)
                 }
 

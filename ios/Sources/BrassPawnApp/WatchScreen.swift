@@ -34,14 +34,30 @@ struct WatchScreen: View {
             transport
         }
         .background(Theatre.ink.ignoresSafeArea())
-        // A recording is the whole screen while it is playing; the tab bar is
-        // a way out of it, and it comes back with the back button.
-        .hideTabBar(while: true)
         .onAppear(perform: build)
         .onDisappear { player?.pause() }
     }
 
     private var heading: some View {
+        ZStack(alignment: .topLeading) {
+            Button { dismiss() } label: {
+                Image(systemName: "chevron.down")
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundStyle(Theatre.ivoryDim)
+                    .frame(width: 34, height: 34)
+                    .background(Theatre.ink3, in: Circle())
+                    .overlay(Circle().strokeBorder(Theatre.rule, lineWidth: 0.5))
+            }
+            .buttonStyle(.plain)
+            .zIndex(1)
+
+            title
+        }
+        .padding(.top, 10)
+        .padding(.horizontal, 16)
+    }
+
+    private var title: some View {
         VStack(spacing: 3) {
             Text(game.players)
                 .font(Face.display(20))
@@ -52,8 +68,7 @@ struct WatchScreen: View {
                 .foregroundStyle(Theatre.ivoryFaint)
         }
         .frame(maxWidth: .infinity)
-        .padding(.top, 10)
-        .padding(.horizontal, 16)
+        .padding(.horizontal, 44)
     }
 
     /// The score, scrolling, with the move you are looking at lit — and every
