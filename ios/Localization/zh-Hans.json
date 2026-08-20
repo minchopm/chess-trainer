@@ -133,6 +133,8 @@
  "ladder.name6": "特级大师水平",
  "menu.leave": "离开并返回",
  "menu.profile": "个人资料与设置",
+ "menu.slug": "对弈 · 训练 · 观战",
+ "menu.title": "Brass Pawn",
  "online.aRealOpponentOverGame": "通过 Game Center 与真人对弈，带计时。没有提示，没有引擎，不能悔棋。",
  "online.accept": "接受",
  "online.backToTheLobby": "返回大厅",

@@ -6,12 +6,30 @@ public struct RootView: View {
     @State private var activity = ActivityGuard()
     @State private var selection = Tab.tactics
     @State private var pending: Tab?
+    @State private var showsMenu = true
 
-    enum Tab: Hashable { case tactics, positional, endgames, play, progress }
+    public enum Tab: Hashable { case tactics, positional, endgames, play, progress }
 
     public init() {}
 
     public var body: some View {
+        ZStack {
+            tabs
+            if showsMenu {
+                // Over the tabs rather than instead of them, so choosing a
+                // destination does not rebuild every screen behind it.
+                MenuScreen { tab in
+                    selection = tab
+                    withAnimation(.timingCurve(0.16, 1, 0.3, 1, duration: 0.6)) { showsMenu = false }
+                }
+                .environment(app)
+                .transition(.opacity)
+                .zIndex(1)
+            }
+        }
+    }
+
+    private var tabs: some View {
         // The classic tabItem API rather than the newer Tab builder: that one
         // needs iOS 18, and there is no reason to exclude iOS 17 devices from a
         // trainer that asks nothing of the OS.

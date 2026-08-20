@@ -133,6 +133,8 @@
  "ladder.name6": "Уровень гроссмейстера",
  "menu.leave": "Выйти и вернуться",
  "menu.profile": "Профиль и настройки",
+ "menu.slug": "Играть · Тренироваться · Смотреть",
+ "menu.title": "Brass Pawn",
  "online.aRealOpponentOverGame": "Живой соперник через Game Center, с часами. Без подсказок, без движка, без взятия ходов назад.",
  "online.accept": "Принять",
  "online.backToTheLobby": "Вернуться в лобби",

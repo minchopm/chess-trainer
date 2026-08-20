@@ -133,6 +133,8 @@
  "ladder.name6": "特級大師水準",
  "menu.leave": "離開並返回",
  "menu.profile": "個人資料與設定",
+ "menu.slug": "對弈 · 訓練 · 觀戰",
+ "menu.title": "Brass Pawn",
  "online.aRealOpponentOverGame": "透過 Game Center 與真人對弈，附計時。沒有提示，沒有引擎，不能悔棋。",
  "online.accept": "接受",
  "online.backToTheLobby": "返回大廳",

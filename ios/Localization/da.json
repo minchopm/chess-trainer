@@ -133,6 +133,8 @@
  "ladder.name6": "Stormesterniveau",
  "menu.leave": "Forlad og gå tilbage",
  "menu.profile": "Profil og indstillinger",
+ "menu.slug": "Spil · Træn · Se",
+ "menu.title": "Brass Pawn",
  "online.aRealOpponentOverGame": "En rigtig modstander via Game Center, på ur. Ingen hints, ingen motor, ingen fortrydelser.",
  "online.accept": "Accepter",
  "online.backToTheLobby": "Tilbage til lobbyen",

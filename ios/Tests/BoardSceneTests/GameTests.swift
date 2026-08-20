@@ -1,0 +1,66 @@
+import ChessCore
+import Testing
+@testable import BoardScene
+
+@Suite("The games the board plays")
+struct GameTests {
+    /// The expansion stops at the first move the generator will not accept, so
+    /// a short game is the symptom of a typo. These counts are the games as
+    /// they were actually played.
+    @Test("Every game expands to its full length", arguments: [
+        ("opera", 33), ("evergreen", 47), ("immortal", 45),
+    ])
+    func length(id: String, plies: Int) throws {
+        let game = try #require(ShowGames.all.first { $0.id == id })
+        #expect(game.plies.count == plies)
+    }
+
+    @Test("Every game ends in mate")
+    func mate() throws {
+        for game in ShowGames.all {
+            var position = Position()
+            for ply in game.plies {
+                let move = try #require(
+                    position.legalMoves().first {
+                        $0.from == ply.from && $0.to == ply.to && $0.promotion == ply.promotion
+                    },
+                    "\(game.id): \(ply.san) is not legal"
+                )
+                _ = position.make(move)
+            }
+            #expect(position.isCheckmate, "\(game.id) does not end in mate")
+        }
+    }
+
+    @Test("Castling carries its rook, and en passant takes off the right square")
+    func specialMoves() throws {
+        // The Opera Game castles long on move fifteen.
+        let opera = try #require(ShowGames.all.first { $0.id == "opera" })
+        let castle = try #require(opera.plies.first { $0.san == "O-O-O" })
+        let rook = try #require(castle.rook)
+        #expect(rook.from == Square("a1"))
+        #expect(rook.to == Square("d1"))
+
+        // Nothing in these three games is an en passant capture, so the rule
+        // that catches the board out — the taken piece is not on the square the
+        // taker lands on — is checked against a position built for it.
+        let passing = ShowGames.expandFrom(
+            position: try #require(Position(fen: "4k3/8/8/8/3pP3/8/8/4K3 b - e3 0 1")),
+            notation: "dxe3"
+        )
+        #expect(passing.count == 1)
+        #expect(passing.first?.to == Square("e3"))
+        #expect(passing.first?.capture == Square("e4"), "the pawn taken en passant stands on e4")
+    }
+
+    @Test("Every piece kind builds geometry with triangles in it")
+    @MainActor
+    func geometry() {
+        for kind in PieceKind.allCases {
+            let node = TurnedPieces.node(for: kind)
+            let sources = node.childNodes.compactMap(\.geometry).flatMap { $0.sources(for: .vertex) }
+            let vertices = sources.reduce(0) { $0 + $1.vectorCount }
+            #expect(vertices > 200, "\(kind) came out with \(vertices) vertices")
+        }
+    }
+}

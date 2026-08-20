@@ -8,6 +8,7 @@ let package = Package(
         .library(name: "ChessCore", targets: ["ChessCore"]),
         .library(name: "ChessEngine", targets: ["ChessEngine"]),
         .library(name: "ChessTraining", targets: ["ChessTraining"]),
+        .library(name: "BoardScene", targets: ["BoardScene"]),
         .library(name: "BrassPawnApp", targets: ["BrassPawnApp"]),
     ],
     targets: [
@@ -53,11 +54,17 @@ let package = Package(
         // Command-line driver for diagnosing engine problems.
         .executableTarget(name: "sfprobe", dependencies: ["ChessEngine"]),
 
+        // The board in three dimensions: SceneKit, and the turned pieces
+        // the site draws, ported profile for profile. Depends on the rules and
+        // on nothing else, so a game can be played out on it without the app.
+        .target(name: "BoardScene", dependencies: ["ChessCore"]),
+        .testTarget(name: "BoardSceneTests", dependencies: ["BoardScene"]),
+
         // The SwiftUI layer. Kept as a library rather than an app target so the
         // views can be compiled and previewed without the Xcode project.
         .target(
             name: "BrassPawnApp",
-            dependencies: ["ChessCore", "ChessEngine", "ChessTraining"]
+            dependencies: ["ChessCore", "ChessEngine", "ChessTraining", "BoardScene"]
         ),
     ],
     cxxLanguageStandard: .cxx17

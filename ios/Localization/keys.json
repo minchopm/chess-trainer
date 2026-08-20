@@ -938,6 +938,20 @@
   ]
  },
  {
+  "key": "menu.slug",
+  "english": "Play · Train · Watch",
+  "files": [
+   "MenuScreen.swift"
+  ]
+ },
+ {
+  "key": "menu.title",
+  "english": "Brass Pawn",
+  "files": [
+   "MenuScreen.swift"
+  ]
+ },
+ {
   "key": "online.aRealOpponentOverGame",
   "english": "A real opponent over Game Center, on the clock. No hints, no engine, no take-backs.",
   "files": [
