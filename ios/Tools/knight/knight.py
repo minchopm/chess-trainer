@@ -29,36 +29,120 @@ from mathutils import Vector
 # muzzle, back under the jaw, and down the throat. Beziers are given as
 # (control1, control2, end); straight runs as points.
 
-START = (-0.185, 0.5)
+# Anchors, anticlockwise from the base of the neck: up the crest, over the
+# poll, out along the ears, down the face, round the muzzle, back under the jaw
+# and down the throat into the chest. A `True` marks a corner the curve is not
+# allowed to round off — the two ear tips, the notch between them, the throat,
+# and where the neck meets the collar.
+#
+# The proportions are the reference set's, measured off its profile rather than
+# guessed at: the neck is broad and flares to the collar, the face is a long
+# straight fall forward and down, the muzzle is blunt, and the ears are small
+# and set close. The earlier head had a narrow neck, a pointed muzzle and a
+# sawtooth mane, which is a different horse entirely.
 
-OUTLINE = [
-    ("c", (-0.275, 0.63), (-0.285, 0.8), (-0.245, 0.925)),
-    ("l", (-0.208, 0.945)), ("l", (-0.232, 0.966)), ("l", (-0.196, 0.982)),
-    ("l", (-0.22, 1.003)), ("l", (-0.184, 1.019)), ("l", (-0.208, 1.04)),
-    ("l", (-0.17, 1.056)),
-    ("c", (-0.15, 1.075), (-0.115, 1.092), (-0.078, 1.098)),
-    ("l", (-0.088, 1.158)), ("l", (-0.03, 1.104)), ("l", (0.014, 1.156)),
-    ("l", (0.046, 1.092)),
-    ("c", (0.096, 1.07), (0.138, 1.028), (0.162, 0.972)),
-    ("c", (0.198, 0.906), (0.238, 0.858), (0.272, 0.828)),
-    ("l", (0.298, 0.812)), ("l", (0.302, 0.772)), ("l", (0.268, 0.76)),
-    ("l", (0.276, 0.734)), ("l", (0.226, 0.722)),
-    ("c", (0.17, 0.688), (0.09, 0.672), (0.036, 0.712)),
-    ("c", (-0.008, 0.746), (-0.028, 0.79), (-0.02, 0.822)),
-    ("c", (0.008, 0.76), (0.04, 0.64), (0.098, 0.52)),
+CREST = [
+    (-0.168, 0.500, True),   # tucked in where the neck meets the collar
+    (-0.192, 0.566, False), (-0.189, 0.632, False), (-0.189, 0.665, False),
+    (-0.193, 0.698, False), (-0.201, 0.731, False), (-0.207, 0.764, False),
+    (-0.214, 0.797, False), (-0.220, 0.830, False), (-0.224, 0.863, False),
+    (-0.225, 0.896, False),  # the crest at its fullest, halfway up
+    (-0.224, 0.929, False), (-0.218, 0.962, False), (-0.214, 0.978, False),
+    (-0.205, 1.004, False), (-0.191, 1.030, False), (-0.179, 1.047, False),
+    (-0.164, 1.065, False), (-0.149, 1.082, False), (-0.129, 1.099, False),
+    (-0.106, 1.116, False),
 ]
 
-# The mane: the seven scallops up the back of the crest, closed by a line
-# running down inside the neck.
-MANE_START = (-0.245, 0.925)
-MANE = [
-    ("l", (-0.208, 0.945)), ("l", (-0.232, 0.966)), ("l", (-0.196, 0.982)),
-    ("l", (-0.22, 1.003)), ("l", (-0.184, 1.019)), ("l", (-0.208, 1.04)),
-    ("l", (-0.17, 1.056)),
-    ("c", (-0.15, 1.075), (-0.115, 1.092), (-0.078, 1.098)),
-    ("l", (-0.055, 1.05)),
-    ("c", (-0.12, 1.01), (-0.155, 0.965), (-0.168, 0.9)),
+# What sits on top is mostly not ears. It is the mane, cut off square — a flat
+# block with sharp corners standing above the forehead — with one small ear
+# showing behind it and the other hidden entirely. Drawn as two tall triangles,
+# which is the obvious reading of a knight's head, it comes out a rabbit; and
+# rounding these corners loses the one thing that makes the top read as cut
+# rather than moulded.
+EARS = [
+    (-0.090, 1.134, False),  # up out of the skull
+    (-0.077, 1.143, True),   # the ear, barely clearing the mane in profile
+    (-0.068, 1.150, True),
+    (-0.059, 1.145, True),
+    (-0.046, 1.143, True),   # the notch behind the mane block
+    (-0.010, 1.151, True),   # the block's back corner
+    (0.056, 1.160, True),    # its front corner, and the highest point
 ]
+
+FACE = [
+    (0.058, 1.151, False), (0.059, 1.134, False), (0.059, 1.125, False),
+    (0.061, 1.116, False), (0.065, 1.099, False), (0.074, 1.091, False),
+    (0.092, 1.074, False), (0.114, 1.056, False), (0.135, 1.039, False),
+    (0.156, 1.021, False), (0.178, 1.004, False), (0.202, 0.987, False),
+    (0.215, 0.978, False), (0.266, 0.943, False),
+    # The muzzle: the front edge runs all but straight down before it turns
+    # under. A taper here makes a fox, and a round makes a seal.
+    (0.277, 0.926, False), (0.281, 0.909, False), (0.281, 0.900, False),
+    (0.276, 0.883, False), (0.261, 0.866, False), (0.253, 0.856, True),
+    # Under the jaw, back to the throat.
+    (0.180, 0.852, False), (0.100, 0.850, False),
+    (0.042, 0.848, True),    # the throat notch, tucked in behind the jaw
+]
+
+THROAT = [
+    (0.051, 0.839, False), (0.058, 0.831, False), (0.088, 0.797, False),
+    (0.117, 0.764, False), (0.143, 0.731, False), (0.166, 0.698, False),
+    (0.186, 0.665, False), (0.199, 0.632, False), (0.207, 0.599, False),
+    (0.209, 0.566, False),
+    (0.195, 0.500, True),
+]
+
+ANCHORS = CREST + EARS + FACE + THROAT
+
+
+def catmull(anchors, steps=8):
+    """A closed curve through every anchor, breaking at the corners.
+
+    Beziers with hand-placed handles were the first way this was written, and
+    every change to the shape meant moving four numbers to move one point.
+    These anchors are measurements, so the curve is fitted to them instead.
+    """
+    count = len(anchors)
+    points = []
+    for i in range(count):
+        x0, y0, _ = anchors[(i - 1) % count]
+        x1, y1, corner1 = anchors[i]
+        x2, y2, corner2 = anchors[(i + 1) % count]
+        x3, y3, _ = anchors[(i + 2) % count]
+        points.append((x1, y1))
+        if corner1 and corner2:
+            continue           # a straight run between two corners
+        for step in range(1, steps):
+            t = step / steps
+            t2, t3 = t * t, t * t * t
+            points.append((
+                0.5 * ((2 * x1) + (-x0 + x2) * t + (2 * x0 - 5 * x1 + 4 * x2 - x3) * t2
+                       + (-x0 + 3 * x1 - 3 * x2 + x3) * t3),
+                0.5 * ((2 * y1) + (-y0 + y2) * t + (2 * y0 - 5 * y1 + 4 * y2 - y3) * t2
+                       + (-y0 + 3 * y1 - 3 * y2 + y3) * t3),
+            ))
+    return points
+
+
+def crest_strip(inset=0.055, first=4, last=17):
+    """The mane: a raised strip down the back of the neck.
+
+    The reference has no sawtooth. What it has is a ridge running down the
+    crest, which is what a mane looks like on a piece that is turned rather
+    than carved. It stops below the ears — carried all the way up it breaks out
+    through the back of the skull, because the outline turns in there and a
+    strip offset sideways does not.
+    """
+    run = [(x, y) for x, y, _ in CREST[first:last + 1]]
+    inner = []
+    for i, (x, y) in enumerate(run):
+        ax, ay = run[max(0, i - 1)]
+        bx, by = run[min(len(run) - 1, i + 1)]
+        tx, ty = bx - ax, by - ay
+        length = math.hypot(tx, ty) or 1.0
+        # Inwards: the back edge is traced upwards, so that is to its right.
+        inner.append((x + ty / length * inset, y - tx / length * inset))
+    return run + list(reversed(inner))
 
 
 def bezier(p0, c1, c2, p3, steps):
@@ -284,18 +368,32 @@ def main():
 
     dark = surface("Eye", (0.05, 0.04, 0.035, 1), 0.1, 0.25)
 
-    outline = trace(START, OUTLINE)
-    crest = trace(MANE_START, MANE)
+    outline = catmull(ANCHORS)
+    crest = crest_strip()
     head = carve(slab("KnightHead", outline, full=0.150, material=ivory), 0.045, 0.15, outline)
     mane = carve(slab("KnightMane", crest, full=0.118, material=brass, bevel=0.016), 0.02, 0.05, crest)
     # The mane stands a little proud of the head on both faces.
     mane.scale = (1.0, 1.0, 1.28)
     eye((0.055, 0.985), dark)
 
+    # Photographed flat, before it is stood up: the preview looks straight down
+    # at the silhouette, and rotating first puts the piece edge-on to it.
+    if "--preview" in argv:
+        preview(os.path.join(out, "knight-preview.png"))
+
     # Stood the way the app wants it: the silhouette across the board, facing
     # the opponent, sitting on the neck the lathe turns for it.
     for obj in (head, mane):
         obj.rotation_euler = (math.radians(90), 0.0, math.radians(-90))
+
+    for obj in (head, mane):
+        vs = obj.data.vertices if obj.type == "MESH" else []
+        xs = [v.co.x for v in vs]; ys = [v.co.y for v in vs]; zs = [v.co.z for v in vs]
+        box = (min(xs), max(xs), min(ys), max(ys), min(zs), max(zs)) if xs else None
+        print(f"{obj.name} type {obj.type} verts {len(vs)} box {box}")
+    print(f"OUTLINE {len(outline)} pts  CREST {len(crest)} pts")
+
+
 
     target = os.path.join(out, "knight.usdz")
     bpy.ops.object.select_all(action="DESELECT")
@@ -304,11 +402,6 @@ def main():
     bpy.ops.wm.usd_export(filepath=target, selected_objects_only=True,
                           export_materials=True)
     print(f"EXPORTED {target}")
-
-    if "--preview" in argv:
-        preview(os.path.join(out, "knight-preview.png"))
-
-    print(f"HEAD {head.name}  MANE {mane.name}")
 
 
 main()

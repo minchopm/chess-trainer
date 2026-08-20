@@ -176,78 +176,102 @@ public enum TurnedPieces {
         ], segments: segments)
     }
 
-    /// The knight's silhouette, extruded and bevelled — the way a set is
-    /// actually stamped when it is not carved.
+    /// The knight's head, as a run of measured anchors rather than hand-placed
+    /// bezier handles.
     ///
-    /// Three things separate a horse from a rabbit, and all three are easy to
-    /// get wrong: the ears are **short** triangles set back over the poll
-    /// rather than long blades; the muzzle is **long** and travels forward
-    /// *and down*, so the nose finishes well below the top of the skull; and
-    /// the neck arches backwards instead of rising straight. The serrated edge
-    /// down the back is the mane, and it does more for the read than any
-    /// amount of detail on the face.
+    /// Three things separate a horse from a rabbit, and the obvious reading of
+    /// each one is wrong. The **ears** are not two tall triangles: what stands
+    /// above the forehead is mostly the mane, cut off square, with one small
+    /// ear showing behind it and the other hidden. The **muzzle** does not
+    /// taper — its front runs all but straight down, and a taper there makes a
+    /// fox. And the **neck** is broad, arching back at half height and flaring
+    /// out to the collar, rather than rising as a stalk.
     ///
-    /// Traced anticlockwise from the base of the neck: up the crest, over the
-    /// poll, out along the ears, down the forehead and the bridge of the nose,
-    /// round the muzzle, back under the jaw, and down the throat.
+    /// The proportions are the reference set's, measured off its profile: the
+    /// crest at its fullest halfway up, the face a long fall forward and down,
+    /// the throat notched in behind the jaw. `ios/Tools/knight` builds the same
+    /// outline in Blender and renders it, which is where they were fitted.
+    ///
+    /// Traced anticlockwise from the base of the neck. A `true` marks a corner
+    /// the curve may not round off.
+    static let knightAnchors: [(x: Float, y: Float, corner: Bool)] = [
+        // Up the crest of the neck, from the collar.
+        (-0.168, 0.500, true), (-0.192, 0.566, false), (-0.189, 0.632, false),
+        (-0.189, 0.665, false), (-0.193, 0.698, false), (-0.201, 0.731, false),
+        (-0.207, 0.764, false), (-0.214, 0.797, false), (-0.220, 0.830, false),
+        (-0.224, 0.863, false), (-0.225, 0.896, false), (-0.224, 0.929, false),
+        (-0.218, 0.962, false), (-0.214, 0.978, false), (-0.205, 1.004, false),
+        (-0.191, 1.030, false), (-0.179, 1.047, false), (-0.164, 1.065, false),
+        (-0.149, 1.082, false), (-0.129, 1.099, false), (-0.106, 1.116, false),
+        // Over the poll: the mane cut off square, one ear showing behind it.
+        (-0.090, 1.134, false), (-0.077, 1.143, true), (-0.068, 1.150, true),
+        (-0.059, 1.145, true), (-0.046, 1.143, true), (-0.010, 1.151, true),
+        (0.056, 1.160, true),
+        // Down the face, round the muzzle and back under the jaw.
+        (0.058, 1.151, false), (0.059, 1.134, false), (0.059, 1.125, false),
+        (0.061, 1.116, false), (0.065, 1.099, false), (0.074, 1.091, false),
+        (0.092, 1.074, false), (0.114, 1.056, false), (0.135, 1.039, false),
+        (0.156, 1.021, false), (0.178, 1.004, false), (0.202, 0.987, false),
+        (0.215, 0.978, false), (0.266, 0.943, false), (0.277, 0.926, false),
+        (0.281, 0.909, false), (0.281, 0.900, false), (0.276, 0.883, false),
+        (0.261, 0.866, false), (0.253, 0.856, true), (0.180, 0.852, false),
+        (0.100, 0.850, false), (0.042, 0.848, true),
+        // And down the throat into the chest.
+        (0.051, 0.839, false), (0.058, 0.831, false), (0.088, 0.797, false),
+        (0.117, 0.764, false), (0.143, 0.731, false), (0.166, 0.698, false),
+        (0.186, 0.665, false), (0.199, 0.632, false), (0.207, 0.599, false),
+        (0.209, 0.566, false), (0.195, 0.500, true),
+    ]
+
+    /// A closed curve through every anchor, breaking at the corners.
+    ///
+    /// Fitted to the anchors rather than steered by handles, because the
+    /// anchors are measurements: with beziers, moving one point of the outline
+    /// meant moving four numbers.
+    private static func through(
+        _ anchors: [(x: Float, y: Float, corner: Bool)], steps: Int = 8
+    ) -> [(Float, Float)] {
+        var points: [(Float, Float)] = []
+        for i in anchors.indices {
+            let a = anchors[(i - 1 + anchors.count) % anchors.count]
+            let b = anchors[i]
+            let c = anchors[(i + 1) % anchors.count]
+            let d = anchors[(i + 2) % anchors.count]
+            points.append((b.x, b.y))
+            if b.corner && c.corner { continue }   // a straight run between corners
+            for step in 1..<steps {
+                let t = Float(step) / Float(steps)
+                let t2 = t * t, t3 = t2 * t
+                points.append((
+                    0.5 * (2 * b.x + (c.x - a.x) * t
+                           + (2 * a.x - 5 * b.x + 4 * c.x - d.x) * t2
+                           + (-a.x + 3 * b.x - 3 * c.x + d.x) * t3),
+                    0.5 * (2 * b.y + (c.y - a.y) * t
+                           + (2 * a.y - 5 * b.y + 4 * c.y - d.y) * t2
+                           + (-a.y + 3 * b.y - 3 * c.y + d.y) * t3)
+                ))
+            }
+        }
+        return points
+    }
+
     private static func knightHead(_ s: Float) -> SCNGeometry {
         let path = BezierPath()
-        func p(_ x: Float, _ y: Float) -> (CGFloat, CGFloat) { (CGFloat(x * s), CGFloat(y * s)) }
-
-        var v = p(-0.185, 0.5); path.start(v.0, v.1)
-
-        // The crest of the neck, arching back before it rises.
-        let c1 = p(-0.275, 0.63), c2 = p(-0.285, 0.8), e1 = p(-0.245, 0.925)
-        path.curve(c1.0, c1.1, c2.0, c2.1, e1.0, e1.1)
-
-        // The mane: seven shallow scallops up the back of the neck. Shallow is
-        // the whole trick — deep ones read as spikes, and they must stop short
-        // of the poll so they do not merge with the ears into a crown.
-        for point in [(-0.208, 0.945), (-0.232, 0.966), (-0.196, 0.982), (-0.22, 1.003),
-                      (-0.184, 1.019), (-0.208, 1.04), (-0.17, 1.056)] {
-            v = p(Float(point.0), Float(point.1)); path.straight(v.0, v.1)
+        let points = through(knightAnchors)
+        path.start(CGFloat(points[0].0 * s), CGFloat(points[0].1 * s))
+        for point in points.dropFirst() {
+            path.straight(CGFloat(point.0 * s), CGFloat(point.1 * s))
         }
-        let c3 = p(-0.15, 1.075), c4 = p(-0.115, 1.092), e2 = p(-0.078, 1.098)
-        path.curve(c3.0, c3.1, c4.0, c4.1, e2.0, e2.1)
-
-        // Ears: two short nubs with one notch between them. Anything taller is
-        // a rabbit, and anything without the notch is a horn.
-        for point in [(-0.088, 1.158), (-0.03, 1.104), (0.014, 1.156), (0.046, 1.092)] {
-            v = p(Float(point.0), Float(point.1)); path.straight(v.0, v.1)
-        }
-
-        // Forehead, then the face falling forward and down.
-        let c5 = p(0.096, 1.07), c6 = p(0.138, 1.028), e3 = p(0.162, 0.972)
-        path.curve(c5.0, c5.1, c6.0, c6.1, e3.0, e3.1)
-        let c7 = p(0.198, 0.906), c8 = p(0.238, 0.858), e4 = p(0.272, 0.828)
-        path.curve(c7.0, c7.1, c8.0, c8.1, e4.0, e4.1)
-
-        // The muzzle, cut off square and short. A long tapering one makes a fox.
-        for point in [(0.298, 0.812), (0.302, 0.772), (0.268, 0.76), (0.276, 0.734), (0.226, 0.722)] {
-            v = p(Float(point.0), Float(point.1)); path.straight(v.0, v.1)
-        }
-
-        // The cheek: a heavy round mass hanging below and behind the mouth,
-        // with the throat notch tucked in behind it. This is the piece of
-        // anatomy that stops a horse's head looking like a greyhound's.
-        let c9 = p(0.17, 0.688), c10 = p(0.09, 0.672), e5 = p(0.036, 0.712)
-        path.curve(c9.0, c9.1, c10.0, c10.1, e5.0, e5.1)
-        let c11 = p(-0.008, 0.746), c12 = p(-0.028, 0.79), e6 = p(-0.02, 0.822)
-        path.curve(c11.0, c11.1, c12.0, c12.1, e6.0, e6.1)
-
-        // And down the throat into the chest.
-        let c13 = p(0.008, 0.76), c14 = p(0.04, 0.64), e7 = p(0.098, 0.52)
-        path.curve(c13.0, c13.1, c14.0, c14.1, e7.0, e7.1)
         path.close()
 
-        // The eye, cut clean through. It catches the key light and does more
-        // for the read than another thousand triangles would.
-        let centre = p(0.055, 0.985)
+        // The eye, cut clean through, set high and just behind the forehead
+        // where a horse's is. It catches the key light and does more for the
+        // read than another thousand triangles would.
         let radius = CGFloat(0.024 * s)
-        let eye = BezierPath(ovalIn: CGRect(
+        let centre = (CGFloat(0.045 * s), CGFloat(1.055 * s))
+        path.append(BezierPath(ovalIn: CGRect(
             x: centre.0 - radius, y: centre.1 - radius, width: radius * 2, height: radius * 2
-        ))
-        path.append(eye)
+        )))
         #if canImport(UIKit)
         path.usesEvenOddFillRule = true
         #else
@@ -347,24 +371,29 @@ public enum TurnedPieces {
     ///
     /// The photographed set has a gilded mane and the turned one had no gold on
     /// the head at all, which left the knight the one piece that did not look
-    /// like it belonged to the set. It is the same seven scallops the head is
-    /// cut with, closed by a line running down inside the neck — a crescent
-    /// rather than a stripe, because a stripe of even width reads as paint.
+    /// like it belonged to the set. It is the crest of the neck itself, offset
+    /// inwards — the same anchors the head is cut from, so it cannot drift off
+    /// the edge when the head is reshaped. It stops below the ears: carried all
+    /// the way up it breaks out through the back of the skull, because the
+    /// outline turns in there and a strip offset sideways does not.
     private static func mane(_ s: Float) -> SCNGeometry {
-        let path = BezierPath()
-        func p(_ x: Float, _ y: Float) -> (CGFloat, CGFloat) { (CGFloat(x * s), CGFloat(y * s)) }
-
-        var v = p(-0.245, 0.925); path.start(v.0, v.1)
-        for point in [(-0.208, 0.945), (-0.232, 0.966), (-0.196, 0.982), (-0.22, 1.003),
-                      (-0.184, 1.019), (-0.208, 1.04), (-0.17, 1.056)] {
-            v = p(Float(point.0), Float(point.1)); path.straight(v.0, v.1)
+        let inset: Float = 0.055
+        let run = Array(knightAnchors[4...17])
+        var inner: [(Float, Float)] = []
+        for i in run.indices {
+            let before = run[max(0, i - 1)], after = run[min(run.count - 1, i + 1)]
+            let tx = after.x - before.x, ty = after.y - before.y
+            let length = max(1e-6, (tx * tx + ty * ty).squareRoot())
+            // Inwards: the crest is traced upwards, so that is to its right.
+            inner.append((run[i].x + ty / length * inset, run[i].y - tx / length * inset))
         }
-        let c1 = p(-0.15, 1.075), c2 = p(-0.115, 1.092), e1 = p(-0.078, 1.098)
-        path.curve(c1.0, c1.1, c2.0, c2.1, e1.0, e1.1)
-        v = p(-0.06, 1.06); path.straight(v.0, v.1)
-        // Back down the inside of the crest, a little in from the scallops.
-        let c3 = p(-0.13, 1.02), c4 = p(-0.16, 0.97), e2 = p(-0.172, 0.9)
-        path.curve(c3.0, c3.1, c4.0, c4.1, e2.0, e2.1)
+
+        let outline = run.map { ($0.x, $0.y) } + inner.reversed()
+        let path = BezierPath()
+        path.start(CGFloat(outline[0].0 * s), CGFloat(outline[0].1 * s))
+        for point in outline.dropFirst() {
+            path.straight(CGFloat(point.0 * s), CGFloat(point.1 * s))
+        }
         path.close()
         path.flatness = 0.05
 
