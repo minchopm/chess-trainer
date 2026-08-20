@@ -1,7 +1,7 @@
 {
  "about.about": "Om appen",
  "about.attribution": "Takk til",
- "about.chessTrainer": "Chess Trainer",
+ "about.brassPawn": "Brass Pawn",
  "about.credits": "Medvirkende",
  "about.gnuGplV3": "GNU GPL v3",
  "about.itIncludesStockfishWhichIs": "Appen inneholder Stockfish, som er utgitt under GPLv3. Fordi Stockfish er lenket inn i appen, omfattes hele appen av samme lisens — og hele kildekoden er offentliggjort.",
@@ -315,7 +315,7 @@
  "store.restored": "Gjenopprettet. Treningen er låst opp.",
  "store.terms": "Bruksvilkår",
  "store.thankYou": "Takk — treningen er låst opp.",
- "store.title": "Chess Trainer Pro",
+ "store.title": "Brass Pawn Pro",
  "store.tryAgain": "Prøv igjen",
  "store.unavailable": "Butikken er ikke tilgjengelig nå. Prøv igjen.",
  "store.unknownResult": "App Store svarte med noe appen ikke kjenner igjen.",

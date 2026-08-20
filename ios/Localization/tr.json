@@ -1,7 +1,7 @@
 {
  "about.about": "Hakkında",
  "about.attribution": "Katkılar",
- "about.chessTrainer": "Chess Trainer",
+ "about.brassPawn": "Brass Pawn",
  "about.credits": "Emeği geçenler",
  "about.gnuGplV3": "GNU GPL v3",
  "about.itIncludesStockfishWhichIs": "Uygulama, GPLv3 ile dağıtılan Stockfish'i içerir. Stockfish uygulamaya bağlandığı için tüm uygulama aynı lisansı taşır — ve kaynak kodunun tamamı yayımlanmıştır.",
@@ -315,7 +315,7 @@
  "store.restored": "Geri yüklendi. Antrenman açık.",
  "store.terms": "Kullanım Koşulları",
  "store.thankYou": "Teşekkürler — antrenman açıldı.",
- "store.title": "Chess Trainer Pro",
+ "store.title": "Brass Pawn Pro",
  "store.tryAgain": "Tekrar dene",
  "store.unavailable": "Mağaza şu anda kullanılamıyor. Lütfen tekrar dene.",
  "store.unknownResult": "App Store, bu uygulamanın anlamadığı bir sonuç döndürdü.",

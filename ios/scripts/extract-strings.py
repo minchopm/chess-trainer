@@ -32,7 +32,7 @@ def slug(text, words=5):
 
 def main():
     keys = {}
-    for path in sorted((ROOT / 'Sources/ChessTrainerApp').rglob('*.swift')):
+    for path in sorted((ROOT / 'Sources/BrassPawnApp').rglob('*.swift')):
         source = path.read_text()
         prefix = PREFIX.get(path.name, 'common')
         changed = False

@@ -19,7 +19,7 @@ struct AboutScreen: View {
         List {
             Section {
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(L.t("about.chessTrainer", "Chess Trainer")).font(.title2.weight(.semibold))
+                    Text(L.t("about.brassPawn", "Brass Pawn")).font(.title2.weight(.semibold))
                     Text(L.t("about.version", "Version %@", Self.version)).font(.footnote).foregroundStyle(.secondary)
                     Text(L.t("about.tacticsPositionalJudgementEndgameTechnique", "Tactics, positional judgement, endgame technique and coached play, with Stockfish running on the device. Nothing leaves the phone."))
                         .font(.footnote)

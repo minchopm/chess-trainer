@@ -1,4 +1,4 @@
-name: ChessTrainer
+name: BrassPawn
 options:
   bundleIdPrefix: com.arte-soft
   developmentLanguage: en
@@ -7,7 +7,7 @@ options:
   createIntermediateGroups: true
 
 packages:
-  ChessTrainer:
+  BrassPawn:
     path: .
 
 settingGroups: {}
@@ -47,7 +47,7 @@ knownRegions:
   - zh-Hant
 
 targets:
-  ChessTrainer:
+  BrassPawn:
     type: application
     platform: iOS
     sources:
@@ -77,12 +77,12 @@ targets:
       - path: App/Localizable.xcstrings
         buildPhase: resources
     dependencies:
-      - package: ChessTrainer
-        product: ChessTrainerApp
+      - package: BrassPawn
+        product: BrassPawnApp
     info:
       path: App/Info.plist
       properties:
-        CFBundleDisplayName: Chess Trainer
+        CFBundleDisplayName: Brass Pawn
         UILaunchScreen: {}
         # A phone holds one board and one panel; turning it sideways leaves
         # room for neither. An iPad has room for both side by side, so it turns.
@@ -109,8 +109,8 @@ targets:
         UIUserInterfaceStyle: Dark
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.arte-soft.chesstrainer
-        CODE_SIGN_ENTITLEMENTS: App/ChessTrainer.entitlements
+        PRODUCT_BUNDLE_IDENTIFIER: com.arte-soft.brasspawn
+        CODE_SIGN_ENTITLEMENTS: App/BrassPawn.entitlements
         MARKETING_VERSION: "1.0"
         CURRENT_PROJECT_VERSION: "1"
         SWIFT_VERSION: "6.0"
@@ -120,15 +120,15 @@ targets:
         CODE_SIGN_STYLE: Automatic
 
 schemes:
-  ChessTrainer:
+  BrassPawn:
     build:
       targets:
-        ChessTrainer: all
+        BrassPawn: all
     run:
       config: Debug
       # Lets the paywall be exercised on a simulator with no App Store account:
-      # StoreKit answers from App/ChessTrainer.storekit instead.
-      storeKitConfiguration: App/ChessTrainer.storekit
+      # StoreKit answers from App/BrassPawn.storekit instead.
+      storeKitConfiguration: App/BrassPawn.storekit
     test:
       config: Debug
     profile:

@@ -1,7 +1,7 @@
 # Build output
 node_modules/
 ios/.build/
-ios/ChessTrainer.xcodeproj/
+ios/BrassPawn.xcodeproj/
 ios/Tools/*/.build/
 DerivedData/
 *.xcuserdatad

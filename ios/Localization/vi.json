@@ -1,7 +1,7 @@
 {
  "about.about": "Giới thiệu",
  "about.attribution": "Ghi công",
- "about.chessTrainer": "Chess Trainer",
+ "about.brassPawn": "Brass Pawn",
  "about.credits": "Đóng góp",
  "about.gnuGplV3": "GNU GPL v3",
  "about.itIncludesStockfishWhichIs": "Ứng dụng có kèm Stockfish, phát hành theo GPLv3. Vì Stockfish được liên kết vào ứng dụng nên toàn bộ ứng dụng mang cùng giấy phép — và mã nguồn đầy đủ đã được công bố.",
@@ -315,7 +315,7 @@
  "store.restored": "Đã khôi phục. Phần luyện tập đã mở khóa.",
  "store.terms": "Điều khoản sử dụng",
  "store.thankYou": "Cảm ơn — phần luyện tập đã mở khóa.",
- "store.title": "Chess Trainer Pro",
+ "store.title": "Brass Pawn Pro",
  "store.tryAgain": "Thử lại",
  "store.unavailable": "Cửa hàng hiện không khả dụng. Vui lòng thử lại.",
  "store.unknownResult": "App Store trả về kết quả mà ứng dụng không hiểu.",

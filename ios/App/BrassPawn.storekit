@@ -9,12 +9,12 @@
       "localizations" : [
         {
           "description" : "Unlock every puzzle, drill and run, once and for all.",
-          "displayName" : "Chess Trainer Pro — one-off unlock",
+          "displayName" : "Brass Pawn Pro — one-off unlock",
           "locale" : "en_US"
         }
       ],
-      "productID" : "com.arte-soft.chesstrainer.pro.lifetime",
-      "referenceName" : "Chess Trainer Pro Lifetime",
+      "productID" : "com.arte-soft.brasspawn.pro.lifetime",
+      "referenceName" : "Brass Pawn Pro Lifetime",
       "type" : "NonConsumable"
     }
   ],
@@ -29,7 +29,7 @@
     {
       "id" : "20000001",
       "localizations" : [],
-      "name" : "chesstrainer.pro",
+      "name" : "brasspawn.pro",
       "subscriptions" : [
         {
           "adHocOffers" : [],
@@ -42,13 +42,13 @@
           "localizations" : [
             {
               "description" : "Unlimited puzzles, drills and Rush runs.",
-              "displayName" : "Chess Trainer Pro — monthly",
+              "displayName" : "Brass Pawn Pro — monthly",
               "locale" : "en_US"
             }
           ],
-          "productID" : "com.arte-soft.chesstrainer.pro.monthly",
+          "productID" : "com.arte-soft.brasspawn.pro.monthly",
           "recurringSubscriptionPeriod" : "P1M",
-          "referenceName" : "Chess Trainer Pro Monthly",
+          "referenceName" : "Brass Pawn Pro Monthly",
           "subscriptionGroupID" : "20000001",
           "type" : "RecurringSubscription"
         }

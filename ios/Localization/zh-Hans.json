@@ -1,7 +1,7 @@
 {
  "about.about": "关于",
  "about.attribution": "致谢",
- "about.chessTrainer": "Chess Trainer",
+ "about.brassPawn": "Brass Pawn",
  "about.credits": "参与者",
  "about.gnuGplV3": "GNU GPL v3",
  "about.itIncludesStockfishWhichIs": "本应用包含以 GPLv3 发布的 Stockfish。由于 Stockfish 被链接进应用，整个应用采用同一许可协议，其完整源代码已经公开。",
@@ -315,7 +315,7 @@
  "store.restored": "已恢复，训练已解锁。",
  "store.terms": "使用条款",
  "store.thankYou": "谢谢——训练已解锁。",
- "store.title": "Chess Trainer Pro",
+ "store.title": "Brass Pawn Pro",
  "store.tryAgain": "重试",
  "store.unavailable": "商店暂时不可用，请再试一次。",
  "store.unknownResult": "App Store 返回了本应用无法识别的结果。",

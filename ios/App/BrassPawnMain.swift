@@ -1,8 +1,8 @@
-import ChessTrainerApp
+import BrassPawnApp
 import SwiftUI
 
 @main
-struct ChessTrainerMain: App {
+struct BrassPawnMain: App {
     var body: some Scene {
         WindowGroup {
             RootView()

@@ -1,4 +1,4 @@
-# Chess Trainer
+# Brass Pawn
 
 A local chess training system. Real board, real rules, Stockfish 18 as the coach.
 Four modes — tactics, positional judgement, endgame technique, and coached play —
@@ -200,7 +200,7 @@ the training.
 
 A free account gets five puzzles, one Rush run and three each of the positional
 exercises, endgame drills and games to judge, every day, resetting at midnight.
-Chess Trainer Pro removes the limits — $3.99 a month, or a one-off unlock. There
+Brass Pawn Pro removes the limits — $3.99 a month, or a one-off unlock. There
 is no annual plan in between, because a third price is a third decision to make
 at the moment somebody wants to solve a puzzle.
 

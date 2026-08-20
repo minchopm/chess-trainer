@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Chess Trainer** collects nothing.
+**Brass Pawn** collects nothing.
 
 The app makes no analytics calls, carries no advertising, and contains no
 third-party tracking of any kind. There is no account to create and no server of

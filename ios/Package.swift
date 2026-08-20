@@ -2,13 +2,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "ChessTrainer",
+    name: "BrassPawn",
     platforms: [.iOS(.v17), .macOS(.v14)],
     products: [
         .library(name: "ChessCore", targets: ["ChessCore"]),
         .library(name: "ChessEngine", targets: ["ChessEngine"]),
         .library(name: "ChessTraining", targets: ["ChessTraining"]),
-        .library(name: "ChessTrainerApp", targets: ["ChessTrainerApp"]),
+        .library(name: "BrassPawnApp", targets: ["BrassPawnApp"]),
     ],
     targets: [
         // Rules of chess. No dependencies, no I/O — so it can be exercised from
@@ -56,7 +56,7 @@ let package = Package(
         // The SwiftUI layer. Kept as a library rather than an app target so the
         // views can be compiled and previewed without the Xcode project.
         .target(
-            name: "ChessTrainerApp",
+            name: "BrassPawnApp",
             dependencies: ["ChessCore", "ChessEngine", "ChessTraining"]
         ),
     ],

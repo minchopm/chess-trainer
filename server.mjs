@@ -64,5 +64,5 @@ const server = createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Chess trainer running at http://localhost:${PORT}`);
+  console.log(`Brass Pawn running at http://localhost:${PORT}`);
 });

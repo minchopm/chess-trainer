@@ -1,7 +1,7 @@
 {
  "about.about": "Tietoja",
  "about.attribution": "Kiitokset",
- "about.chessTrainer": "Chess Trainer",
+ "about.brassPawn": "Brass Pawn",
  "about.credits": "Tekijät",
  "about.gnuGplV3": "GNU GPL v3",
  "about.itIncludesStockfishWhichIs": "Sovellus sisältää Stockfishin, joka julkaistaan GPLv3-lisenssillä. Koska Stockfish on linkitetty sovellukseen, koko sovellus on saman lisenssin alainen — ja sen täydellinen lähdekoodi on julkaistu.",
@@ -315,7 +315,7 @@
  "store.restored": "Palautettu. Harjoittelu on avattu.",
  "store.terms": "Käyttöehdot",
  "store.thankYou": "Kiitos — harjoittelu on avattu.",
- "store.title": "Chess Trainer Pro",
+ "store.title": "Brass Pawn Pro",
  "store.tryAgain": "Yritä uudelleen",
  "store.unavailable": "Kauppa ei ole juuri nyt käytettävissä. Yritä uudelleen.",
  "store.unknownResult": "App Store palautti tuloksen, jota tämä sovellus ei tunne.",

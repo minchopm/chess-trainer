@@ -1,7 +1,7 @@
 {
  "about.about": "Despre",
  "about.attribution": "Mulțumiri",
- "about.chessTrainer": "Chess Trainer",
+ "about.brassPawn": "Brass Pawn",
  "about.credits": "Colaboratori",
  "about.gnuGplV3": "GNU GPL v3",
  "about.itIncludesStockfishWhichIs": "Aplicația include Stockfish, publicat sub GPLv3. Fiindcă Stockfish este legat în aplicație, întreaga aplicație poartă aceeași licență — iar codul ei sursă complet este publicat.",
@@ -315,7 +315,7 @@
  "store.restored": "Restaurat. Antrenamentul este deblocat.",
  "store.terms": "Termeni de utilizare",
  "store.thankYou": "Mulțumim — antrenamentul este deblocat.",
- "store.title": "Chess Trainer Pro",
+ "store.title": "Brass Pawn Pro",
  "store.tryAgain": "Încearcă din nou",
  "store.unavailable": "Magazinul nu este disponibil acum. Încearcă din nou.",
  "store.unknownResult": "App Store a returnat un rezultat pe care aplicația nu îl înțelege.",

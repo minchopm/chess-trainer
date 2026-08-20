@@ -1,7 +1,7 @@
 {
  "about.about": "O aplikaci",
  "about.attribution": "Poděkování",
- "about.chessTrainer": "Chess Trainer",
+ "about.brassPawn": "Brass Pawn",
  "about.credits": "Autoři",
  "about.gnuGplV3": "GNU GPL v3",
  "about.itIncludesStockfishWhichIs": "Aplikace obsahuje Stockfish, který je pod licencí GPLv3. Protože je Stockfish do aplikace slinkován, podléhá stejné licenci celá aplikace — a její úplný zdrojový kód je zveřejněn.",
@@ -315,7 +315,7 @@
  "store.restored": "Obnoveno. Trénink je odemčený.",
  "store.terms": "Podmínky použití",
  "store.thankYou": "Díky — trénink je odemčený.",
- "store.title": "Chess Trainer Pro",
+ "store.title": "Brass Pawn Pro",
  "store.tryAgain": "Zkusit znovu",
  "store.unavailable": "Obchod teď není dostupný. Zkus to znovu.",
  "store.unknownResult": "App Store vrátil výsledek, kterému tahle aplikace nerozumí.",

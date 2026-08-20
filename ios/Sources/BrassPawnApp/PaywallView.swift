@@ -28,7 +28,7 @@ struct PaywallView: View {
                 }
                 .padding(18)
             }
-            .navigationTitle(L.t("store.title", "Chess Trainer Pro"))
+            .navigationTitle(L.t("store.title", "Brass Pawn Pro"))
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
             #endif
@@ -169,13 +169,13 @@ struct ProUpsellRow: View {
 
     var body: some View {
         if app.store.isPro {
-            LabeledContent(L.t("store.title", "Chess Trainer Pro"),
+            LabeledContent(L.t("store.title", "Brass Pawn Pro"),
                            value: L.t("store.active", "Active"))
         } else {
             Button { showsPaywall = true } label: {
                 HStack {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(L.t("store.title", "Chess Trainer Pro")).font(.body)
+                        Text(L.t("store.title", "Brass Pawn Pro")).font(.body)
                         Text(L.t("store.upsell", "Unlimited puzzles, drills and runs"))
                             .font(.caption).foregroundStyle(.secondary)
                     }

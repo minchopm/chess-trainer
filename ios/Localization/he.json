@@ -1,7 +1,7 @@
 {
  "about.about": "אודות",
  "about.attribution": "תודות",
- "about.chessTrainer": "Chess Trainer",
+ "about.brassPawn": "Brass Pawn",
  "about.credits": "קרדיטים",
  "about.gnuGplV3": "GNU GPL v3",
  "about.itIncludesStockfishWhichIs": "האפליקציה כוללת את Stockfish, המופץ ברישיון GPLv3. מכיוון ש-Stockfish מקושר לאפליקציה, כל האפליקציה כפופה לאותו רישיון — וקוד המקור המלא שלה פורסם.",
@@ -315,7 +315,7 @@
  "store.restored": "שוחזר. האימון פתוח.",
  "store.terms": "תנאי שימוש",
  "store.thankYou": "תודה — האימון נפתח.",
- "store.title": "Chess Trainer Pro",
+ "store.title": "Brass Pawn Pro",
  "store.tryAgain": "נסה שוב",
  "store.unavailable": "החנות אינה זמינה כרגע. נסה שוב.",
  "store.unknownResult": "ה-App Store החזיר תשובה שהאפליקציה לא מכירה.",

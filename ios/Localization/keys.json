@@ -14,8 +14,8 @@
   ]
  },
  {
-  "key": "about.chessTrainer",
-  "english": "Chess Trainer",
+  "key": "about.brassPawn",
+  "english": "Brass Pawn",
   "files": [
    "AboutScreen.swift"
   ]
@@ -388,7 +388,7 @@
   "key": "common.moveCount",
   "english": "%lld moves",
   "files": [
-   "ChessTrainerApp/TacticsScreen.swift"
+   "TacticsScreen.swift"
   ]
  },
  {
@@ -409,14 +409,14 @@
   "key": "common.oneMove",
   "english": "1 move",
   "files": [
-   "ChessTrainerApp/TacticsScreen.swift"
+   "TacticsScreen.swift"
   ]
  },
  {
   "key": "common.practice",
   "english": "Practice",
   "files": [
-   "ChessTrainerApp/TrainingTab.swift"
+   "TrainingTab.swift"
   ]
  },
  {
@@ -507,7 +507,7 @@
   "key": "endgame.fiftyMove",
   "english": "Fifty-move rule.",
   "files": [
-   "ChessTrainerApp/EndgameScreen.swift"
+   "EndgameScreen.swift"
   ]
  },
  {
@@ -521,14 +521,14 @@
   "key": "endgame.insufficient",
   "english": "Insufficient material.",
   "files": [
-   "ChessTrainerApp/EndgameScreen.swift"
+   "EndgameScreen.swift"
   ]
  },
  {
   "key": "endgame.moveLimit",
   "english": "The 80-move limit ran out.",
   "files": [
-   "ChessTrainerApp/EndgameScreen.swift"
+   "EndgameScreen.swift"
   ]
  },
  {
@@ -563,7 +563,7 @@
   "key": "endgame.repetition",
   "english": "Threefold repetition.",
   "files": [
-   "ChessTrainerApp/EndgameScreen.swift"
+   "EndgameScreen.swift"
   ]
  },
  {
@@ -577,7 +577,7 @@
   "key": "endgame.stalemate",
   "english": "Stalemate.",
   "files": [
-   "ChessTrainerApp/EndgameScreen.swift"
+   "EndgameScreen.swift"
   ]
  },
  {
@@ -612,7 +612,7 @@
   "key": "endgame.wentWrongAt",
   "english": "It went wrong at %@.",
   "files": [
-   "ChessTrainerApp/EndgameScreen.swift"
+   "EndgameScreen.swift"
   ]
  },
  {
@@ -633,14 +633,14 @@
   "key": "endgame.youMated",
   "english": "Checkmate — you delivered it.",
   "files": [
-   "ChessTrainerApp/EndgameScreen.swift"
+   "EndgameScreen.swift"
   ]
  },
  {
   "key": "endgame.youWereMated",
   "english": "You were checkmated.",
   "files": [
-   "ChessTrainerApp/EndgameScreen.swift"
+   "EndgameScreen.swift"
   ]
  },
  {
@@ -689,7 +689,7 @@
   "key": "guess.aboutToStart",
   "english": "The game is about to start.",
   "files": [
-   "ChessTrainerApp/GuessTheEloScreen.swift"
+   "GuessTheEloScreen.swift"
   ]
  },
  {
@@ -759,14 +759,14 @@
   "key": "guess.pause",
   "english": "Pause",
   "files": [
-   "ChessTrainerApp/GuessTheEloScreen.swift"
+   "GuessTheEloScreen.swift"
   ]
  },
  {
   "key": "guess.play",
   "english": "Play",
   "files": [
-   "ChessTrainerApp/GuessTheEloScreen.swift"
+   "GuessTheEloScreen.swift"
   ]
  },
  {
@@ -815,7 +815,7 @@
   "key": "guess.youSaid",
   "english": "You said",
   "files": [
-   "ChessTrainerApp/GuessTheEloScreen.swift"
+   "GuessTheEloScreen.swift"
   ]
  },
  {
@@ -1676,7 +1676,7 @@
   "key": "result.blackWon",
   "english": "Black won",
   "files": [
-   "ChessTrainerApp/GuessTheEloScreen.swift"
+   "GuessTheEloScreen.swift"
   ]
  },
  {
@@ -1697,7 +1697,7 @@
   "key": "result.drawn",
   "english": "Drawn",
   "files": [
-   "ChessTrainerApp/GuessTheEloScreen.swift"
+   "GuessTheEloScreen.swift"
   ]
  },
  {
@@ -1725,7 +1725,7 @@
   "key": "result.onTime",
   "english": "on time",
   "files": [
-   "ChessTrainerApp/GuessTheEloScreen.swift"
+   "GuessTheEloScreen.swift"
   ]
  },
  {
@@ -1760,7 +1760,7 @@
   "key": "result.whiteWon",
   "english": "White won",
   "files": [
-   "ChessTrainerApp/GuessTheEloScreen.swift"
+   "GuessTheEloScreen.swift"
   ]
  },
  {
@@ -1781,7 +1781,7 @@
   "key": "rush.allDone",
   "english": "All %lld done",
   "files": [
-   "ChessTrainerApp/RushScreen.swift"
+   "RushScreen.swift"
   ]
  },
  {
@@ -1809,14 +1809,14 @@
   "key": "rush.inARow",
   "english": "%lld in a row",
   "files": [
-   "ChessTrainerApp/RushScreen.swift"
+   "RushScreen.swift"
   ]
  },
  {
   "key": "rush.missedLeft",
   "english": "Missed — %lld left",
   "files": [
-   "ChessTrainerApp/RushScreen.swift"
+   "RushScreen.swift"
   ]
  },
  {
@@ -1879,7 +1879,7 @@
   "key": "rush.threeMisses",
   "english": "Three misses",
   "files": [
-   "ChessTrainerApp/RushScreen.swift"
+   "RushScreen.swift"
   ]
  },
  {
@@ -2213,7 +2213,7 @@
  },
  {
   "key": "store.title",
-  "english": "Chess Trainer Pro",
+  "english": "Brass Pawn Pro",
   "files": [
    "PaywallView.swift"
   ]

@@ -1,7 +1,7 @@
 {
  "about.about": "Tentang",
  "about.attribution": "Atribusi",
- "about.chessTrainer": "Chess Trainer",
+ "about.brassPawn": "Brass Pawn",
  "about.credits": "Kredit",
  "about.gnuGplV3": "GNU GPL v3",
  "about.itIncludesStockfishWhichIs": "Aplikasi ini menyertakan Stockfish yang dirilis dengan lisensi GPLv3. Karena Stockfish ditautkan ke dalam aplikasi, seluruh aplikasi memakai lisensi yang sama — dan kode sumbernya diterbitkan lengkap.",
@@ -315,7 +315,7 @@
  "store.restored": "Dipulihkan. Latihannya terbuka.",
  "store.terms": "Ketentuan Penggunaan",
  "store.thankYou": "Terima kasih — latihannya sudah terbuka.",
- "store.title": "Chess Trainer Pro",
+ "store.title": "Brass Pawn Pro",
  "store.tryAgain": "Coba lagi",
  "store.unavailable": "Toko sedang tidak tersedia. Coba lagi.",
  "store.unknownResult": "App Store mengembalikan hasil yang tidak dikenali aplikasi ini.",

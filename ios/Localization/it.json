@@ -1,7 +1,7 @@
 {
  "about.about": "Informazioni",
  "about.attribution": "Attribuzioni",
- "about.chessTrainer": "Chess Trainer",
+ "about.brassPawn": "Brass Pawn",
  "about.credits": "Riconoscimenti",
  "about.gnuGplV3": "GNU GPL v3",
  "about.itIncludesStockfishWhichIs": "Include Stockfish, distribuito con licenza GPLv3. Poiché Stockfish è collegato all'app, l'intera applicazione porta la stessa licenza — e il suo codice sorgente completo è pubblicato.",
@@ -315,7 +315,7 @@
  "store.restored": "Ripristinato. L'allenamento è sbloccato.",
  "store.terms": "Termini d'uso",
  "store.thankYou": "Grazie — l'allenamento è sbloccato.",
- "store.title": "Chess Trainer Pro",
+ "store.title": "Brass Pawn Pro",
  "store.tryAgain": "Riprova",
  "store.unavailable": "Lo store non è disponibile in questo momento. Riprova.",
  "store.unknownResult": "L'App Store ha restituito un esito che questa app non riconosce.",

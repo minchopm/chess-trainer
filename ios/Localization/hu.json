@@ -1,7 +1,7 @@
 {
  "about.about": "Névjegy",
  "about.attribution": "Köszönet",
- "about.chessTrainer": "Chess Trainer",
+ "about.brassPawn": "Brass Pawn",
  "about.credits": "Közreműködők",
  "about.gnuGplV3": "GNU GPL v3",
  "about.itIncludesStockfishWhichIs": "Az alkalmazás tartalmazza a Stockfisht, amely GPLv3 alatt jelenik meg. Mivel a Stockfish be van linkelve, az egész alkalmazásra ugyanaz a licenc vonatkozik — és a teljes forráskódja nyilvános.",
@@ -315,7 +315,7 @@
  "store.restored": "Visszaállítva. Az edzés fel van oldva.",
  "store.terms": "Felhasználási feltételek",
  "store.thankYou": "Köszönjük — az edzés fel van oldva.",
- "store.title": "Chess Trainer Pro",
+ "store.title": "Brass Pawn Pro",
  "store.tryAgain": "Újra",
  "store.unavailable": "A bolt most nem érhető el. Próbáld újra.",
  "store.unknownResult": "Az App Store olyan választ adott, amit ez az alkalmazás nem ismer.",

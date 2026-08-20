@@ -1,4 +1,4 @@
-# Chess Trainer for iOS
+# Brass Pawn for iOS
 
 A native iOS build of the trainer: SwiftUI, with Stockfish 18 compiled into the
 app and running in-process. No network, no account, no server — everything is on
@@ -10,7 +10,7 @@ the device.
 brew install xcodegen                # once
 sh ios/scripts/fetch-networks.sh     # once — downloads ~107 MB of networks
 cd ios && xcodegen generate
-open ChessTrainer.xcodeproj
+open BrassPawn.xcodeproj
 ```
 
 Then pick a simulator or your own device and run.
@@ -19,7 +19,7 @@ From the command line:
 
 ```bash
 cd ios
-xcodebuild -project ChessTrainer.xcodeproj -scheme ChessTrainer \
+xcodebuild -project BrassPawn.xcodeproj -scheme BrassPawn \
   -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build
 ```
 
@@ -31,7 +31,7 @@ Sources/
   ChessCore/               rules of chess — no I/O, proven by perft
   ChessEngine/             Swift wrapper over Stockfish
   ChessTraining/           features, grading, rating, spaced repetition, selection
-  ChessTrainerApp/         SwiftUI views and view models
+  BrassPawnApp/            SwiftUI views and view models
   sfprobe/                 CLI driver for diagnosing engine problems
 Vendor/Stockfish/          upstream engine (GPLv3, unmodified) + a C bridge
 Resources/
@@ -48,18 +48,18 @@ Two products, both optional; nothing about playing chess is behind them.
 
 | Product | Type | Price |
 | --- | --- | --- |
-| `com.arte-soft.chesstrainer.pro.monthly` | auto-renewable subscription, group `chesstrainer.pro` | $3.99 / month |
-| `com.arte-soft.chesstrainer.pro.lifetime` | non-consumable | $49.99 once |
+| `com.arte-soft.brasspawn.pro.monthly` | auto-renewable subscription, group `brasspawn.pro` | $3.99 / month |
+| `com.arte-soft.brasspawn.pro.lifetime` | non-consumable | $49.99 once |
 
 `Sources/ChessTraining/Entitlement.swift` holds the free allowance — what it
 covers and how much of it a day carries — and is covered by tests, because it is
 the part that decides whether somebody can use the app.
-`Sources/ChessTrainerApp/SubscriptionStore.swift` is StoreKit 2: entitlement
+`Sources/BrassPawnApp/SubscriptionStore.swift` is StoreKit 2: entitlement
 check, purchase, restore, manage, and a listener for renewals and purchases made
 on another device.
 
 To exercise the paywall without an App Store account, run from Xcode: the scheme
-points at `App/ChessTrainer.storekit`, and StoreKit answers from that file. A run
+points at `App/BrassPawn.storekit`, and StoreKit answers from that file. A run
 launched with `simctl` gets no store at all — the paywall will say so — because
 the test configuration is applied by Xcode, not by the app.
 
@@ -148,7 +148,7 @@ The app is GPLv3, because Stockfish is. That is not a formality:
       About & licence, which carries the full GPL, the third-party notices and a
       link to the source.
 - [x] Signing configured: team `8293TNMX6S` (ARTE SOFT EOOD), bundle identifier
-      `com.arte-soft.chesstrainer`, automatic signing. A device build produces a
+      `com.arte-soft.brasspawn`, automatic signing. A device build produces a
       signed app.
 - [x] `AboutScreen.sourceURL` points at https://github.com/minchopm/chess-trainer
       — under GPL that link is an obligation, not a courtesy, so it has to stay

@@ -1,7 +1,7 @@
 {
  "about.about": "앱 정보",
  "about.attribution": "출처",
- "about.chessTrainer": "Chess Trainer",
+ "about.brassPawn": "Brass Pawn",
  "about.credits": "만든 사람들",
  "about.gnuGplV3": "GNU GPL v3",
  "about.itIncludesStockfishWhichIs": "이 앱에는 GPLv3로 배포되는 Stockfish가 포함되어 있습니다. Stockfish가 앱에 링크되어 있으므로 앱 전체가 같은 라이선스를 따르며, 전체 소스 코드가 공개되어 있습니다.",
@@ -315,7 +315,7 @@
  "store.restored": "복원했습니다. 훈련이 열렸습니다.",
  "store.terms": "이용약관",
  "store.thankYou": "감사합니다 — 훈련이 열렸습니다.",
- "store.title": "Chess Trainer Pro",
+ "store.title": "Brass Pawn Pro",
  "store.tryAgain": "다시 시도",
  "store.unavailable": "지금은 스토어를 사용할 수 없습니다. 다시 시도해 주세요.",
  "store.unknownResult": "App Store가 이 앱이 모르는 결과를 반환했습니다.",
