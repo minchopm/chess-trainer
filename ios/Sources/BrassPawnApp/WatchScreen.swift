@@ -321,7 +321,7 @@ struct ReplayTransport: View {
                     .tracking(usesPlainLabels ? 0 : 0.8)
                     .textCase(.uppercase)
                     .lineLimit(1)
-                    .minimumScaleFactor(0.8)
+                    .minimumScaleFactor(0.85)
             }
             .foregroundStyle(Theatre.brassHot)
             .padding(.horizontal, controlHorizontalPadding)

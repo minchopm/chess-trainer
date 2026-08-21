@@ -51,7 +51,7 @@ struct BrassNavigationHeader: View {
                     .appFont(size: 20, weight: .semibold)
                     .foregroundStyle(Theatre.ivory)
                     .lineLimit(1)
-                    .minimumScaleFactor(0.7)
+                    .minimumScaleFactor(0.85)
 
                 if let subtitle {
                     Text(subtitle)
@@ -59,7 +59,7 @@ struct BrassNavigationHeader: View {
                         .tracking(1.6)
                         .foregroundStyle(Theatre.ivoryFaint)
                         .lineLimit(1)
-                        .minimumScaleFactor(0.7)
+                        .minimumScaleFactor(0.85)
                 }
             }
             .frame(maxWidth: .infinity, alignment: .center)
@@ -113,10 +113,14 @@ struct BrassSegmentedPicker<Value: Hashable, Label: View>: View {
                     withAnimation(.easeOut(duration: 0.18)) { selection = option }
                 } label: {
                     label(option)
-                        .appFont(size: 9, weight: selected ? .semibold : .medium)
-                        .tracking(usesPlainLabels ? 0 : 0.7)
+                        // A control this central is not a caption. It was set
+                        // at nine points and allowed to shrink to six, which is
+                        // where "VS AI" and "Multiplayer" became a pattern
+                        // rather than two words.
+                        .appFont(size: 12, weight: selected ? .semibold : .medium)
+                        .tracking(usesPlainLabels ? 0 : 0.5)
                         .lineLimit(1)
-                        .minimumScaleFactor(0.65)
+                        .minimumScaleFactor(0.85)
                         .foregroundStyle(selected ? Theatre.brassHot : Theatre.ivoryDim)
                         .frame(maxWidth: .infinity)
                         .padding(.horizontal, 7)
@@ -190,7 +194,7 @@ struct BrassCyclePicker<Value: Hashable>: View {
                     .appFont(.subheadline, weight: .medium)
                     .foregroundStyle(Theatre.ivory)
                     .lineLimit(1)
-                    .minimumScaleFactor(0.75)
+                    .minimumScaleFactor(0.85)
                     .frame(maxWidth: .infinity)
                 arrow("chevron.forward", offset: 1)
             }

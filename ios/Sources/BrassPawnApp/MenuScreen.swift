@@ -209,7 +209,7 @@ struct MenuScreen: View {
                 Text(title.uppercased())
                     .appFont(size: 7).tracking(1.1)
                     .lineLimit(1)
-                    .minimumScaleFactor(0.58)
+                    .minimumScaleFactor(0.85)
             }
             .foregroundStyle(Theatre.ivoryDim)
             .frame(maxWidth: .infinity)
@@ -248,7 +248,7 @@ struct MenuScreen: View {
                     .tracking(4.2)
                     .foregroundStyle(Theatre.ivory)
                     .lineLimit(1)
-                    .minimumScaleFactor(0.7)
+                    .minimumScaleFactor(0.85)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
 
                 HStack(spacing: 0) {

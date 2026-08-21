@@ -353,7 +353,7 @@ private struct PieceSetGallery: View {
                             .tracking(1.2)
                             .textCase(.uppercase)
                             .lineLimit(1)
-                            .minimumScaleFactor(0.72)
+                            .minimumScaleFactor(0.85)
                             .foregroundStyle(chosen ? Theatre.brass : Theatre.ivoryDim)
                     }
                     .padding(9)
@@ -412,7 +412,7 @@ private struct BoardGallery: View {
                             .textCase(.uppercase)
                             .foregroundStyle(chosen ? Theatre.brass : Theatre.ivoryDim)
                             .lineLimit(1)
-                            .minimumScaleFactor(0.8)
+                            .minimumScaleFactor(0.85)
                     }
                     .padding(8)
                     .frame(maxWidth: .infinity)
@@ -531,7 +531,7 @@ private struct LightToneGallery: View {
                             .textCase(.uppercase)
                             .foregroundStyle(chosen ? Theatre.brass : Theatre.ivoryDim)
                             .lineLimit(1)
-                            .minimumScaleFactor(0.8)
+                            .minimumScaleFactor(0.85)
                     }
                     .padding(8)
                     .frame(maxWidth: .infinity)

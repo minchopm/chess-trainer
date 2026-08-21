@@ -18,7 +18,12 @@ public enum Theatre {
     // Type
     public static let ivory = Color(hex: 0xE9E4D8)
     public static let ivoryDim = Color(hex: 0xE9E4D8).opacity(0.66)
-    public static let ivoryFaint = Color(hex: 0xE9E4D8).opacity(0.42)
+    /// The faintest ivory the app writes in.
+    ///
+    /// It was 0.42, which is fine behind a title and not fine under one: nearly
+    /// every small label in the app is set in this, and at nine points on near
+    /// black it was a grey smudge rather than a word.
+    public static let ivoryFaint = Color(hex: 0xE9E4D8).opacity(0.58)
 
     // The one light in the room
     public static let brass = Color(hex: 0xD6A95F)
@@ -93,26 +98,70 @@ enum AppTypography {
         return weight.map { base.weight($0) } ?? base
     }
 
+    /// The smallest type the app will set.
+    ///
+    /// Eleven points is where iOS's own scale stops — `.caption2` — and a good
+    /// deal of this app had been writing below it: nine points was the most
+    /// common size in the whole interface, with sevens and eights about. Small
+    /// on its own is survivable; small *and* letterspaced *and* at forty per
+    /// cent opacity is three strikes, and that combination was the house style
+    /// for every label on every screen.
+    static let floor: CGFloat = 11
+
+    /// A size in points, already scaled for the reader's text size.
+    ///
+    /// One scaling, applied here, for every typeface. The custom faces used to
+    /// scale themselves through `relativeTo:` while the system face — the
+    /// default — took a fixed size and ignored the setting entirely. Turning
+    /// text up in iOS Settings did nothing to fifty-five call sites.
     static func font(
         for typeface: AppTypeface,
         size: CGFloat,
         relativeTo style: Font.TextStyle = .body,
         weight: Font.Weight? = nil
     ) -> Font {
+        let point = scaled(max(floor, size), relativeTo: style)
         let base: Font = switch typeface {
         case .system:
-            .system(size: size)
+            .system(size: point)
         case .cormorantGaramond:
             cormorantScripts.contains(script)
-                ? .custom("CormorantGaramond-Regular", size: size, relativeTo: style)
-                : .system(size: size, design: .serif)
+                ? .custom("CormorantGaramond-Regular", fixedSize: point)
+                : .system(size: point, design: .serif)
         case .jetBrainsMono:
             jetBrainsScripts.contains(script)
-                ? .custom("JetBrainsMono-Regular", size: size, relativeTo: style)
-                : .system(size: size, design: .monospaced)
+                ? .custom("JetBrainsMono-Regular", fixedSize: point)
+                : .system(size: point, design: .monospaced)
         }
         return weight.map { base.weight($0) } ?? base
     }
+
+    /// Grows a fixed point size the way the reader has asked text to grow.
+    static func scaled(_ size: CGFloat, relativeTo style: Font.TextStyle) -> CGFloat {
+        #if canImport(UIKit)
+        return UIFontMetrics(forTextStyle: uiStyle(for: style)).scaledValue(for: size)
+        #else
+        return size
+        #endif
+    }
+
+    #if canImport(UIKit)
+    private static func uiStyle(for style: Font.TextStyle) -> UIFont.TextStyle {
+        switch style {
+        case .largeTitle: .largeTitle
+        case .title: .title1
+        case .title2: .title2
+        case .title3: .title3
+        case .headline: .headline
+        case .subheadline: .subheadline
+        case .callout: .callout
+        case .footnote: .footnote
+        case .caption: .caption1
+        case .caption2: .caption2
+        default: .body
+        }
+    }
+    #endif
 
     private static func baseSize(for style: Font.TextStyle) -> CGFloat {
         switch style {

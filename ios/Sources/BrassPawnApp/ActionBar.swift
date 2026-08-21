@@ -32,7 +32,7 @@ struct ActionBar: View {
                             .tracking(1.1)
                             .textCase(.uppercase)
                             .lineLimit(1)
-                            .minimumScaleFactor(0.75)
+                            .minimumScaleFactor(0.85)
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 11)

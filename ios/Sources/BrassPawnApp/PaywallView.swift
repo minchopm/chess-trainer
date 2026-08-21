@@ -98,7 +98,7 @@ struct PaywallView: View {
                         .appFont(.title2, weight: .semibold)
                         .monospacedDigit()
                         .lineLimit(1)
-                        .minimumScaleFactor(0.72)
+                        .minimumScaleFactor(0.85)
                         .layoutPriority(1)
                         .foregroundStyle(Theatre.brassHot)
                     Text(selectedOffer == .monthly
@@ -321,7 +321,7 @@ struct PaywallView: View {
                     .foregroundStyle(Theatre.brass)
                 Text(title)
                     .lineLimit(2)
-                    .minimumScaleFactor(0.75)
+                    .minimumScaleFactor(0.85)
                 Spacer(minLength: 0)
             }
             .appFont(.caption, weight: .medium)
