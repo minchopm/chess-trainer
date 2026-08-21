@@ -93964,6 +93964,29 @@
         }
       }
     },
+    "watch.savedOnly": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved games only"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved games only"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved games only"
+          }
+        }
+      }
+    },
     "watch.search": {
       "extractionState": "manual",
       "localizations": {

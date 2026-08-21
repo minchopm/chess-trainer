@@ -14,14 +14,13 @@ struct ClassicsScreen: View {
     /// The other three are the ones a person builds themselves: everything,
     /// what they have started, and what they have kept.
     private enum Shelf: Hashable, CaseIterable {
-        case named, all, watching, kept
+        case named, all, watching
 
         var name: String {
             switch self {
             case .named: L.t("watch.named", "Named games")
             case .all: L.t("watch.everything", "Everything")
             case .watching: L.t("watch.continue", "Continue")
-            case .kept: L.t("watch.saved", "Saved")
             }
         }
     }
@@ -44,12 +43,23 @@ struct ClassicsScreen: View {
     @State private var query = ""
     @State private var shelf = Shelf.named
     @State private var order = Order.shortest
+    /// Saved games only. Its own switch rather than a fourth shelf: it is the
+    /// one filter people reach for repeatedly, and a thing reached for often
+    /// should not be a quarter of a segmented row.
+    @State private var keptOnly = false
     @State private var watching: ClassicGame?
 
     private var games: [ClassicGame] {
         let all = app.library.classics
         let text = query.trimmingCharacters(in: .whitespaces).lowercased()
         var matching = text.isEmpty ? all : all.filter { $0.haystack.contains(text) }
+
+        // Saved overrides the shelf rather than narrowing it: somebody who has
+        // asked for their own games wants all of them, not the ones that also
+        // happen to be famous.
+        if keptOnly {
+            return sorted(matching.filter { app.progress.isFavourite($0.id) })
+        }
 
         // A search looks through the whole library; the shelves are what you
         // browse when you are not looking for anything in particular.
@@ -62,7 +72,6 @@ struct ClassicsScreen: View {
                     guard let mark = app.progress.watchMark(for: $0.id) else { return false }
                     return !mark.isFinished
                 }
-            case .kept: matching = matching.filter { app.progress.isFavourite($0.id) }
             }
         }
         return sorted(matching)
@@ -84,12 +93,7 @@ struct ClassicsScreen: View {
     var body: some View {
         VStack(spacing: 0) {
             if showsHeader {
-                TopBar {
-                    Text(L.t("progress.watch", "Watch"))
-                        .appFont(size: 20, weight: .semibold)
-                        .foregroundStyle(Theatre.ivory)
-                        .frame(maxWidth: .infinity)
-                }
+                TopBar(bare: true) { Color.clear }
             }
 
             search
@@ -102,7 +106,7 @@ struct ClassicsScreen: View {
                               what: L.t("watch.games", "games"), file: "classics.json")
                     .frame(maxHeight: .infinity)
             } else {
-                if query.isEmpty {
+                if query.isEmpty, !keptOnly {
                     gameFilter
                         .padding(.horizontal, 12)
                         .padding(.bottom, 4)
@@ -127,10 +131,36 @@ struct ClassicsScreen: View {
     }
 
     private var search: some View {
-        BrassSearchField(
-            placeholder: L.t("watch.search", "Player, event or year"),
-            text: $query
-        )
+        HStack(spacing: 8) {
+            BrassSearchField(
+                placeholder: L.t("watch.search", "Player, event or year"),
+                text: $query
+            )
+            keptSwitch
+        }
+    }
+
+    /// Saved games only, on a switch beside the search.
+    private var keptSwitch: some View {
+        Button {
+            withAnimation(.easeOut(duration: 0.18)) { keptOnly.toggle() }
+        } label: {
+            BrassIcon(keptOnly ? "star.fill" : "star", size: 15)
+                .foregroundStyle(keptOnly ? Theatre.brass : Theatre.ivoryDim)
+                .frame(width: 42, height: 38)
+                .background {
+                    BrassPlateShape(cut: 8)
+                        .fill(keptOnly ? Theatre.brassGlow : Theatre.ink2)
+                }
+                .overlay {
+                    BrassPlateShape(cut: 8).strokeBorder(
+                        keptOnly ? Theatre.brass : Theatre.brassDeep.opacity(0.45),
+                        lineWidth: keptOnly ? 1 : 0.65
+                    )
+                }
+        }
+        .buttonStyle(BrassPressStyle())
+        .accessibilityLabel(L.t("watch.savedOnly", "Saved games only"))
     }
 
     private var list: some View {

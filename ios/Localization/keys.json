@@ -3552,6 +3552,13 @@
   ]
  },
  {
+  "key": "watch.savedOnly",
+  "english": "Saved games only",
+  "files": [
+   "ClassicsScreen.swift"
+  ]
+ },
+ {
   "key": "watch.search",
   "english": "Player, event or year",
   "files": [

@@ -12,6 +12,12 @@ struct TopBar<Content: View>: View {
     /// clock is the one thing that has to be readable without looking away
     /// from the board.
     var clocks: ClockStrip?
+    /// No title row at all — just the way out, floating in the strip above.
+    ///
+    /// A screen reached by tapping "Watch" does not need to be headed "Watch":
+    /// nobody arrives there wondering where they are, and a row spent saying so
+    /// is a row the list could have had.
+    var bare = false
     @ViewBuilder var content: Content
 
     var body: some View {
@@ -30,7 +36,7 @@ struct TopBar<Content: View>: View {
         // content. Without an explicit height those flexible views consume
         // the remaining screen and push the board away.
         // Shorter than it was, and the way out no longer sits in it.
-        .frame(height: 30)
+        .frame(height: bare ? 0 : 30)
         .padding(.horizontal, 54)
         .overlay(alignment: .leading) {
             // Lifted into the strip above, which the app leaves empty — it
