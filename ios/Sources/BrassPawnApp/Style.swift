@@ -114,7 +114,7 @@ public struct Panel<Content: View>: View {
 /// The pill from the site: hairline ghost by default, brass when it is the
 /// thing to press.
 public struct PillButtonStyle: ButtonStyle {
-    public enum Emphasis { case ghost, solid, quiet }
+    public enum Emphasis { case ghost, solid, quiet, danger }
 
     var emphasis: Emphasis = .ghost
     var enabled = true
@@ -137,7 +137,7 @@ public struct PillButtonStyle: ButtonStyle {
     private var foreground: Color {
         switch emphasis {
         case .solid: Color(hex: 0x120E06)
-        case .ghost: Theatre.ivory
+        case .ghost, .danger: Theatre.ivory
         case .quiet: Theatre.ivoryDim
         }
     }
@@ -146,6 +146,7 @@ public struct PillButtonStyle: ButtonStyle {
         switch emphasis {
         case .solid: Theatre.brass
         case .ghost, .quiet: Color.white.opacity(0.03)
+        case .danger: Theatre.bad.opacity(0.18)
         }
     }
 
@@ -154,6 +155,7 @@ public struct PillButtonStyle: ButtonStyle {
         case .solid: Theatre.brass
         case .ghost: Theatre.rule
         case .quiet: Theatre.ruleSoft
+        case .danger: Theatre.bad.opacity(0.65)
         }
     }
 }

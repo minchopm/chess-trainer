@@ -244,7 +244,7 @@ struct EndgameScreen: View {
 
                 if model.isThinking {
                     HStack(spacing: 6) {
-                        ProgressView()
+                        BrassActivityIndicator()
                         Text(L.t("endgame.engineIsThinking", "Engine is thinking…")).font(.footnote).foregroundStyle(.secondary)
                     }
                 }
@@ -291,7 +291,7 @@ struct EndgameScreen: View {
             ])
         }
         .task(id: app.library.drills.count) { if model.drill == nil { next(interactive: false) } }
-        .sheet(isPresented: $showsPaywall) { PaywallView(activity: .endgame) }
+        .fullScreenCover(isPresented: $showsPaywall) { PaywallView(activity: .endgame) }
     }
 
     private func play(_ from: Square, _ to: Square, _ promotion: PieceKind?) async {

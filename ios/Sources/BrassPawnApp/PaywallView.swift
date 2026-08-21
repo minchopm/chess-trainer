@@ -12,13 +12,16 @@ import SwiftUI
 struct PaywallView: View {
     @Environment(AppModel.self) private var app
     @Environment(\.dismiss) private var dismiss
+    @State private var showsAbout = false
     /// What the player just ran out of, so the screen can say so.
     var activity: TrainingActivity?
 
     private var store: SubscriptionStore { app.store }
 
     var body: some View {
-        NavigationStack {
+        VStack(spacing: 0) {
+            BrassNavigationHeader(title: L.t("store.title", "Brass Pawn Pro")) { dismiss() }
+
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
                     header
@@ -28,18 +31,11 @@ struct PaywallView: View {
                 }
                 .padding(18)
             }
-            .navigationTitle(L.t("store.title", "Brass Pawn Pro"))
-            #if os(iOS)
-            .navigationBarTitleDisplayMode(.inline)
-            #endif
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button(L.t("store.close", "Close")) { dismiss() }
-                }
-            }
         }
+        .background(Theatre.ink.ignoresSafeArea())
         .task { await store.prepare() }
         .onChange(of: store.isPro) { _, isPro in if isPro { dismiss() } }
+        .fullScreenCover(isPresented: $showsAbout) { AboutScreen() }
     }
 
     private var header: some View {
@@ -82,10 +78,10 @@ struct PaywallView: View {
     private var products: some View {
         if store.monthly == nil, store.lifetime == nil, store.hasAttemptedLoad {
             Button(L.t("store.tryAgain", "Try again")) { Task { await store.loadProducts() } }
-                .buttonStyle(.bordered)
+                .buttonStyle(PillButtonStyle(emphasis: .ghost))
         } else if store.monthly == nil && store.lifetime == nil {
             HStack(spacing: 8) {
-                ProgressView().controlSize(.small)
+                BrassActivityIndicator(size: 15)
                 Text(L.t("store.loadingPrices", "Loading prices…")).font(.footnote).foregroundStyle(.secondary)
             }
         } else {
@@ -153,10 +149,23 @@ struct PaywallView: View {
             .disabled(store.isBusy)
 
             HStack(spacing: 14) {
-                Link(L.t("store.terms", "Terms of Use"), destination: AboutScreen.termsURL)
-                Link(L.t("store.privacy", "Privacy Policy"), destination: AboutScreen.privacyURL)
+                BrassLinkButton(title: L.t("store.terms", "Terms of Use"), destination: AboutScreen.termsURL)
+                BrassLinkButton(title: L.t("store.privacy", "Privacy Policy"), destination: AboutScreen.privacyURL)
             }
             .font(.footnote)
+
+            Button { showsAbout = true } label: {
+                HStack(spacing: 10) {
+                    Image(systemName: "doc.text")
+                    Text(L.t("settings.about", "About & licence"))
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                }
+                .font(.subheadline)
+                .foregroundStyle(Theatre.ivory)
+                .padding(.vertical, 12)
+            }
+            .buttonStyle(.plain)
         }
     }
 }
@@ -169,8 +178,13 @@ struct ProUpsellRow: View {
 
     var body: some View {
         if app.store.isPro {
-            LabeledContent(L.t("store.title", "Brass Pawn Pro"),
-                           value: L.t("store.active", "Active"))
+            HStack {
+                Text(L.t("store.title", "Brass Pawn Pro"))
+                Spacer()
+                Text(L.t("store.active", "Active"))
+                    .foregroundStyle(Theatre.brass)
+            }
+            .font(.subheadline)
         } else {
             Button { showsPaywall = true } label: {
                 HStack {
@@ -184,7 +198,7 @@ struct ProUpsellRow: View {
                 }
             }
             .buttonStyle(.plain)
-            .sheet(isPresented: $showsPaywall) { PaywallView() }
+            .fullScreenCover(isPresented: $showsPaywall) { PaywallView() }
         }
     }
 }

@@ -41,7 +41,7 @@ struct WatchScreen: View {
     private var heading: some View {
         ZStack(alignment: .topLeading) {
             Button { dismiss() } label: {
-                Image(systemName: "chevron.down")
+                Image(systemName: "chevron.left")
                     .font(.system(size: 13, weight: .semibold))
                     .foregroundStyle(Theatre.ivoryDim)
                     .frame(width: 34, height: 34)
@@ -113,7 +113,7 @@ struct WatchScreen: View {
 
     private var transport: some View {
         VStack(spacing: 10) {
-            Slider(
+            BrassSlider(
                 value: Binding(
                     get: { Double(index) },
                     set: { player?.seek(to: Int($0.rounded())) }
@@ -125,7 +125,6 @@ struct WatchScreen: View {
                     if editing { player?.pause() }
                 }
             )
-            .tint(Theatre.brass)
 
             HStack(spacing: 8) {
                 button("backward.end.fill") { player?.seek(to: 0) }

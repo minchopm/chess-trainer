@@ -21,10 +21,13 @@ struct TrainingTab: View {
     var body: some View {
         VStack(spacing: 0) {
             TopBar {
-                Picker(L.t("common.mode", "Mode"), selection: $mode) {
-                    ForEach(Mode.allCases) { Text($0.label).tag($0) }
+                BrassSegmentedPicker(
+                    L.t("common.mode", "Mode"),
+                    selection: $mode,
+                    options: Array(Mode.allCases)
+                ) { option in
+                    Text(option.label)
                 }
-                .pickerStyle(.segmented)
             }
 
             switch mode {
@@ -32,30 +35,6 @@ struct TrainingTab: View {
             case .rush: RushScreen()
             }
         }
-    }
-}
-
-extension View {
-    /// Hides the tab bar while something is at stake. A tab bar is an
-    /// invitation to leave, and there is a whole game on the screen that being
-    /// invited away from is the last thing anybody needs.
-    func hideTabBar(while active: Bool) -> some View {
-        #if os(iOS)
-        self.toolbar(active ? .hidden : .visible, for: .tabBar)
-        #else
-        self
-        #endif
-    }
-
-    /// Drops the navigation bar entirely. Used on the training screens, where
-    /// the tab bar already says which one you are on and a title would only
-    /// take height away from the board.
-    func hideNavigationBar() -> some View {
-        #if os(iOS)
-        self.toolbar(.hidden, for: .navigationBar)
-        #else
-        self
-        #endif
     }
 }
 

@@ -173,7 +173,7 @@ struct GuessTheEloScreen: View {
             }
         }
         .task(id: app.library.games.count) { if model.game == nil { next(interactive: false) } }
-        .sheet(isPresented: $showsPaywall) { PaywallView(activity: .guessTheElo) }
+        .fullScreenCover(isPresented: $showsPaywall) { PaywallView(activity: .guessTheElo) }
         .onDisappear { model.stop() }
     }
 
@@ -226,8 +226,10 @@ struct GuessTheEloScreen: View {
                     .foregroundStyle(.secondary)
             }
 
-            ProgressView(value: Double(model.ply), total: Double(max(1, model.positions.count - 1)))
-                .tint(.secondary)
+            BrassProgressBar(
+                value: Double(model.ply),
+                total: Double(max(1, model.positions.count - 1))
+            )
 
             // Everything about the game except what it is worth: naming the
             // opening and the clock is fair, naming the result is not — a game
@@ -237,10 +239,13 @@ struct GuessTheEloScreen: View {
                 Text(game.subtitle).font(.footnote).foregroundStyle(.secondary)
             }
 
-            Picker(L.t("guess.speed", "Speed"), selection: Binding(get: { model.speed }, set: { model.speed = $0 })) {
-                ForEach(GuessTheEloModel.Speed.allCases) { Text($0.label).tag($0) }
+            BrassSegmentedPicker(
+                L.t("guess.speed", "Speed"),
+                selection: Binding(get: { model.speed }, set: { model.speed = $0 }),
+                options: Array(GuessTheEloModel.Speed.allCases)
+            ) { speed in
+                Text(speed.label)
             }
-            .pickerStyle(.segmented)
             .padding(.top, 2)
         }
     }
@@ -256,12 +261,13 @@ struct GuessTheEloScreen: View {
                 Spacer(minLength: 0)
             }
 
-            Slider(
+            BrassSlider(
                 value: Binding(
                     get: { Double(model.guess) },
                     set: { model.guess = Int(($0 / Double(EloGuess.step)).rounded()) * EloGuess.step }
                 ),
-                in: Double(EloGuess.range.lowerBound)...Double(EloGuess.range.upperBound)
+                in: Double(EloGuess.range.lowerBound)...Double(EloGuess.range.upperBound),
+                step: Double(EloGuess.step)
             )
         }
     }

@@ -36,9 +36,6 @@ public final class GameCenterMatchmaker: NSObject {
 
     public private(set) var state: State = .signedOut
     public private(set) var localName = "You"
-    /// The Game Center avatar, once it has been fetched. Nil until then, and
-    /// nil forever for anyone not signed in — the button falls back to initials.
-    public private(set) var localPhoto: Image?
     public private(set) var localPlayerID = "local"
     public private(set) var status = "Sign in to Game Center to play online."
     /// The session for the match in progress, once one is connected.
@@ -109,22 +106,11 @@ public final class GameCenterMatchmaker: NSObject {
                 self.pendingAuthController = nil
                 self.state = .ready
                 self.status = "Signed in as \(self.localName)."
-                self.loadPhoto()
             }
         }
         #else
         state = .failed("Online play needs Game Center.")
         status = "Online play needs Game Center."
-        #endif
-    }
-
-    private func loadPhoto() {
-        #if canImport(GameKit) && canImport(UIKit)
-        GKLocalPlayer.local.loadPhoto(for: .small) { [weak self] image, _ in
-            guard let image else { return }
-            let carried = UncheckedBox(image)
-            Task { @MainActor in self?.localPhoto = Image(uiImage: carried.value) }
-        }
         #endif
     }
 
@@ -341,7 +327,7 @@ final class LoopbackMatch {
     let mine: MatchSession
     let theirs: MatchSession
 
-    private final class Link: MatchTransport {
+    private final class LoopbackLink: MatchTransport {
         weak var peer: MatchSession?
         func send(_ data: Data) {
             let peer = self.peer
@@ -351,8 +337,8 @@ final class LoopbackMatch {
         }
     }
 
-    private let myLink = Link()
-    private let theirLink = Link()
+    private let myLink = LoopbackLink()
+    private let theirLink = LoopbackLink()
     private var play: Task<Void, Never>?
 
     init(timeControl: TimeControl, rating: Int, games: Int) {

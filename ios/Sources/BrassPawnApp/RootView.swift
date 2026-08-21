@@ -5,7 +5,6 @@ public struct RootView: View {
     @State private var app = AppModel()
     @State private var activity = ActivityGuard()
     @State private var selection = Tab.tactics
-    @State private var pending: Tab?
     @State private var navigator = Navigator()
 
     public enum Tab: Hashable { case tactics, positional, endgames, play, progress }
@@ -14,9 +13,9 @@ public struct RootView: View {
 
     public var body: some View {
         ZStack {
-            tabs
+            content
             if navigator.showsMenu {
-                // Over the tabs rather than instead of them, so choosing a
+                // Over the current screen rather than instead of it, so choosing a
                 // destination does not rebuild every screen behind it.
                 MenuScreen(carving: app.progress.appearance.carving) { tab in
                     selection = tab
@@ -31,43 +30,25 @@ public struct RootView: View {
                 .transition(.opacity)
                 .zIndex(1)
             }
+
+            if activity.wantsExit {
+                BrassConfirmationOverlay(
+                    title: activity.title ?? "Leave?",
+                    message: activity.reason ?? "",
+                    confirmTitle: L.t("progress.leave", "Leave"),
+                    cancelTitle: L.t("progress.stay", "Stay"),
+                    onConfirm: confirmExit,
+                    onCancel: cancelExit
+                )
+                .zIndex(3)
+            }
         }
+        .animation(.easeOut(duration: 0.2), value: activity.wantsExit)
     }
 
-    private var tabs: some View {
-        // The classic tabItem API rather than the newer Tab builder: that one
-        // needs iOS 18, and there is no reason to exclude iOS 17 devices from a
-        // trainer that asks nothing of the OS.
-        TabView(selection: tabSelection) {
-            NavigationStack { TrainingTab().hideNavigationBar() }
-                .hideTabBar(while: activity.isActive)
-                .tabItem { Label(L.t("progress.tactics", "Tactics"), systemImage: "target") }
-                .tag(Tab.tactics)
-
-            NavigationStack { PositionalScreen().hideNavigationBar() }
-                .hideTabBar(while: activity.isActive)
-                .tabItem { Label(L.t("progress.positional", "Positional"), systemImage: "square.grid.3x3.middle.filled") }
-                .tag(Tab.positional)
-
-            NavigationStack { EndgameScreen().hideNavigationBar() }
-                .hideTabBar(while: activity.isActive)
-                .tabItem { Label(L.t("progress.endgames", "Endgames"), systemImage: "flag.checkered") }
-                .tag(Tab.endgames)
-
-            NavigationStack { PlayTab().hideNavigationBar() }
-                .hideTabBar(while: activity.isActive)
-                .tabItem { Label(L.t("progress.play", "Play"), systemImage: "person.2") }
-                .tag(Tab.play)
-
-            NavigationStack {
-                // Progress keeps its bar: it pushes to the About screen, and a
-                // pushed view needs somewhere to put its back button.
-                ProgressScreen().navigationTitle(L.t("progress.progress", "Progress"))
-            }
-                .tabItem { Label(L.t("progress.progress", "Progress"), systemImage: "chart.line.uptrend.xyaxis") }
-                .tag(Tab.progress)
-        }
-        .tint(Theatre.brass)
+    private var content: some View {
+        selectedScreen
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Theatre.ink.ignoresSafeArea())
         .overlay(FilmGrain())
         .environment(app)
@@ -75,25 +56,6 @@ public struct RootView: View {
         .environment(navigator)
         .environment(\.boardTheme, BoardTheme(style: app.progress.appearance.board))
         .environment(\.pieceSet, app.progress.appearance.pieces)
-        .confirmationDialog(
-            activity.title ?? "Leave?",
-            isPresented: Binding(
-                get: { pending != nil || activity.wantsExit },
-                set: { if !$0 { pending = nil; activity.cancelExit() } }
-            ),
-            titleVisibility: .visible
-        ) {
-            Button(L.t("progress.leave", "Leave"), role: .destructive) {
-                if let pending {
-                    activity.release()
-                    selection = pending
-                }
-                pending = nil
-            }
-            Button(L.t("progress.stay", "Stay"), role: .cancel) { pending = nil }
-        } message: {
-            Text(activity.reason ?? "")
-        }
         .task { await app.start() }
         .onAppear {
             SoundBoard.shared.isEnabled = app.progress.appearance.soundsOn
@@ -116,122 +78,206 @@ public struct RootView: View {
             }
         }
     }
-}
 
-extension RootView {
-    /// Intercepts tab changes so an active run or game can ask first. When
-    /// nothing is at stake the change goes straight through.
-    var tabSelection: Binding<Tab> {
-        Binding(
-            get: { selection },
-            set: { requested in
-                guard requested != selection else { return }
-                if activity.isActive {
-                    pending = requested
-                } else {
-                    selection = requested
-                }
-            }
-        )
+    @ViewBuilder
+    private var selectedScreen: some View {
+        switch selection {
+        case .tactics: TrainingTab()
+        case .positional: PositionalScreen()
+        case .endgames: EndgameScreen()
+        case .play: PlayTab()
+        case .progress: ProgressScreen()
+        }
+    }
+
+    private func confirmExit() {
+        if activity.wantsExit {
+            activity.release()
+            navigator.goToMenu()
+        }
+    }
+
+    private func cancelExit() {
+        activity.cancelExit()
     }
 }
 
 struct ProgressScreen: View {
     @Environment(AppModel.self) private var app
+    @State private var confirmsReset = false
 
     var body: some View {
-        List {
-            Section(L.t("progress.whereYouAre", "Where you are")) {
-                LabeledContent(L.t("progress.overall", "Overall"), value: "\(app.progress.overallRating)")
-                ForEach(TrainingMode.allCases, id: \.self) { mode in
-                    LabeledContent(mode.rawValue.capitalized, value: "\(app.progress.rating(mode))")
-                }
-                Text(L.t("progress.puzzleRatingsRunAFew", "Puzzle ratings run a few hundred points above over-the-board ratings — treat them as a measure of progress against yourself."))
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
+        VStack(spacing: 0) {
+            TopBar {
+                Text(L.t("progress.progress", "Progress"))
+                    .font(Face.display(20))
+                    .foregroundStyle(Theatre.ivory)
+                    .frame(maxWidth: .infinity)
             }
 
-            Section(L.t("progress.today", "Today")) {
-                let stats = app.progress.sessionStats()
-                LabeledContent(L.t("progress.attempted", "Attempted"), value: "\(stats.attempted)")
-                LabeledContent(L.t("progress.solved", "Solved"), value: "\(stats.solved)")
-                LabeledContent(L.t("progress.accuracy", "Accuracy"), value: "\(Int(stats.accuracy * 100))%")
-                LabeledContent(L.t("progress.dayStreak", "Day streak"), value: "\(app.progress.currentStreak)")
-            }
+            ScrollView {
+                VStack(alignment: .leading, spacing: 18) {
+                    ratingSection
+                    todaySection
+                    weakSection
+                    onlineSection
+                    guessSection
+                    librarySection
+                    proSection
 
-            let weak = app.progress.weakestThemes()
-            if !weak.isEmpty {
-                Section(L.t("progress.weakSpots", "Weak spots")) {
-                    let targeted = Set(app.progress.trainingTargets().map(\.name))
-                    ForEach(weak, id: \.name) { theme in
-                        HStack {
-                            Text(Themes.readable(theme.name))
-                            if targeted.contains(theme.name) {
-                                Text("targeting")
-                                    .font(.caption2)
-                                    .padding(.horizontal, 6).padding(.vertical, 2)
-                                    .background(.tint.opacity(0.2), in: Capsule())
-                            }
-                            Spacer()
-                            Text(L.t("progress.themeAccuracy", "%lld%% of %lld", Int(theme.record.accuracy * 100), theme.record.seen))
-                                .foregroundStyle(.secondary)
-                                .monospacedDigit()
-                        }
+                    Button { confirmsReset = true } label: {
+                        rowLabel(L.t("progress.resetAllProgress", "Reset all progress"), symbol: "trash")
+                            .foregroundStyle(Theatre.bad)
                     }
+                    .buttonStyle(.plain)
                 }
-            }
-
-            if app.progress.onlineGames > 0 {
-                Section(L.t("progress.online", "Online")) {
-                    LabeledContent(L.t("progress.rating", "Rating"), value: "\(app.progress.onlineRating)")
-                    LabeledContent(L.t("progress.record", "Record"), value: "\(app.progress.onlineWins)W · \(app.progress.onlineLosses)L · \(app.progress.onlineDraws)D")
-                    Text(L.t("progress.onlineRatingIsKeptApart", "Online rating is kept apart from the training ratings: it measures you against the people you play, not against a library."))
-                        .font(.footnote).foregroundStyle(.secondary)
-                }
-            }
-
-            let guesses = app.progress.eloGuessStats
-            if guesses.judged > 0 {
-                Section(L.t("progress.guessTheElo", "Guess the Elo")) {
-                    LabeledContent(L.t("progress.gamesJudged", "Games judged"), value: "\(guesses.judged)")
-                    LabeledContent(L.t("progress.averageMiss", "Average miss"), value: "\(guesses.averageError) points")
-                    LabeledContent(L.t("progress.closest", "Closest"), value: "\(guesses.bestError) points")
-                    if abs(guesses.bias) >= 40 {
-                        Text(guesses.bias > 0
-                            ? L.t("progress.biasHigh", "You read games as stronger than they are, by %lld points on average.", abs(guesses.bias))
-                            : L.t("progress.biasLow", "You read games as weaker than they are, by %lld points on average.", abs(guesses.bias)))
-                            .font(.footnote).foregroundStyle(.secondary)
-                    }
-                }
-            }
-
-            Section(L.t("progress.library", "Library")) {
-                LabeledContent(L.t("progress.tacticsPuzzles", "Tactics puzzles"), value: "\(app.library.puzzles.count)")
-                LabeledContent(L.t("progress.positional", "Positional"), value: "\(app.library.exercises.count)")
-                LabeledContent(L.t("progress.endgames", "Endgames"), value: "\(app.library.drills.count)")
-                LabeledContent(L.t("progress.games", "Games"), value: "\(app.library.games.count)")
-                LabeledContent(L.t("progress.engine", "Engine"), value: engineText)
-            }
-
-            Section {
-                ProUpsellRow()
-            } footer: {
-                if !app.store.isPro {
-                    Text(L.t("store.freeToday", "Free today: %lld puzzles, %lld Rush run, %lld of each other exercise.",
-                             app.progress.freeRemaining(.tactics),
-                             app.progress.freeRemaining(.rush),
-                             app.progress.freeRemaining(.positional)))
-                }
-            }
-
-            Section {
-                NavigationLink("About & licence") { AboutScreen() }
-            }
-
-            Section {
-                Button(L.t("progress.resetAllProgress", "Reset all progress"), role: .destructive) { app.resetProgress() }
+                .padding(14)
+                .padding(.bottom, 18)
             }
         }
+        .background(Theatre.ink.ignoresSafeArea())
+        .overlay {
+            if confirmsReset {
+                BrassConfirmationOverlay(
+                    title: L.t("progress.resetAllProgress", "Reset all progress"),
+                    message: "Your ratings, records and history will be cleared.",
+                    confirmTitle: L.t("progress.resetAllProgress", "Reset all progress"),
+                    cancelTitle: L.t("progress.stay", "Stay"),
+                    onConfirm: {
+                        app.resetProgress()
+                        confirmsReset = false
+                    },
+                    onCancel: { confirmsReset = false }
+                )
+            }
+        }
+        .animation(.easeOut(duration: 0.2), value: confirmsReset)
+    }
+
+    private var ratingSection: some View {
+        progressSection(L.t("progress.whereYouAre", "Where you are")) {
+            progressRow(L.t("progress.overall", "Overall"), "\(app.progress.overallRating)")
+            ForEach(TrainingMode.allCases, id: \.self) { mode in
+                progressRow(mode.rawValue.capitalized, "\(app.progress.rating(mode))")
+            }
+            note(L.t("progress.puzzleRatingsRunAFew", "Puzzle ratings run a few hundred points above over-the-board ratings — treat them as a measure of progress against yourself."))
+        }
+    }
+
+    private var todaySection: some View {
+        let stats = app.progress.sessionStats()
+        return progressSection(L.t("progress.today", "Today")) {
+            progressRow(L.t("progress.attempted", "Attempted"), "\(stats.attempted)")
+            progressRow(L.t("progress.solved", "Solved"), "\(stats.solved)")
+            progressRow(L.t("progress.accuracy", "Accuracy"), "\(Int(stats.accuracy * 100))%")
+            progressRow(L.t("progress.dayStreak", "Day streak"), "\(app.progress.currentStreak)")
+        }
+    }
+
+    @ViewBuilder private var weakSection: some View {
+        let weak = app.progress.weakestThemes()
+        if !weak.isEmpty {
+            progressSection(L.t("progress.weakSpots", "Weak spots")) {
+                let targeted = Set(app.progress.trainingTargets().map(\.name))
+                ForEach(weak, id: \.name) { theme in
+                    HStack {
+                        Text(Themes.readable(theme.name))
+                        if targeted.contains(theme.name) {
+                            Text("targeting")
+                                .font(Face.mono(7)).tracking(0.7)
+                                .padding(.horizontal, 6).padding(.vertical, 2)
+                                .background(Theatre.brassGlow, in: Capsule())
+                        }
+                        Spacer()
+                        Text(L.t("progress.themeAccuracy", "%lld%% of %lld", Int(theme.record.accuracy * 100), theme.record.seen))
+                            .foregroundStyle(Theatre.ivoryDim).monospacedDigit()
+                    }
+                    .font(.subheadline)
+                }
+            }
+        }
+    }
+
+    @ViewBuilder private var onlineSection: some View {
+        if app.progress.onlineGames > 0 {
+            progressSection(L.t("progress.online", "Online")) {
+                progressRow(L.t("progress.rating", "Rating"), "\(app.progress.onlineRating)")
+                progressRow(L.t("progress.record", "Record"), "\(app.progress.onlineWins)W · \(app.progress.onlineLosses)L · \(app.progress.onlineDraws)D")
+                note(L.t("progress.onlineRatingIsKeptApart", "Online rating is kept apart from the training ratings: it measures you against the people you play, not against a library."))
+            }
+        }
+    }
+
+    @ViewBuilder private var guessSection: some View {
+        let guesses = app.progress.eloGuessStats
+        if guesses.judged > 0 {
+            progressSection(L.t("progress.guessTheElo", "Guess the Elo")) {
+                progressRow(L.t("progress.gamesJudged", "Games judged"), "\(guesses.judged)")
+                progressRow(L.t("progress.averageMiss", "Average miss"), "\(guesses.averageError) points")
+                progressRow(L.t("progress.closest", "Closest"), "\(guesses.bestError) points")
+                if abs(guesses.bias) >= 40 {
+                    note(guesses.bias > 0
+                        ? L.t("progress.biasHigh", "You read games as stronger than they are, by %lld points on average.", abs(guesses.bias))
+                        : L.t("progress.biasLow", "You read games as weaker than they are, by %lld points on average.", abs(guesses.bias)))
+                }
+            }
+        }
+    }
+
+    private var librarySection: some View {
+        progressSection(L.t("progress.library", "Library")) {
+            progressRow(L.t("progress.tacticsPuzzles", "Tactics puzzles"), "\(app.library.puzzles.count)")
+            progressRow(L.t("progress.positional", "Positional"), "\(app.library.exercises.count)")
+            progressRow(L.t("progress.endgames", "Endgames"), "\(app.library.drills.count)")
+            progressRow(L.t("progress.games", "Games"), "\(app.library.games.count)")
+            progressRow(L.t("progress.engine", "Engine"), engineText)
+        }
+    }
+
+    private var proSection: some View {
+        progressSection(L.t("store.title", "Brass Pawn Pro")) {
+            ProUpsellRow()
+            if !app.store.isPro {
+                note(L.t("store.freeToday", "Free today: %lld puzzles, %lld Rush run, %lld of each other exercise.",
+                            app.progress.freeRemaining(.tactics),
+                            app.progress.freeRemaining(.rush),
+                            app.progress.freeRemaining(.positional)))
+            }
+        }
+    }
+
+    private func progressSection<Content: View>(
+        _ title: String, @ViewBuilder content: () -> Content
+    ) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Slug(text: title)
+            Panel { content() }
+        }
+    }
+
+    private func progressRow(_ title: String, _ value: String) -> some View {
+        HStack(alignment: .firstTextBaseline) {
+            Text(title).foregroundStyle(Theatre.ivory)
+            Spacer(minLength: 10)
+            Text(value).foregroundStyle(Theatre.ivoryDim).monospacedDigit()
+        }
+        .font(.subheadline)
+    }
+
+    private func note(_ text: String) -> some View {
+        Text(text).font(.footnote).foregroundStyle(Theatre.ivoryFaint)
+    }
+
+    private func rowLabel(_ title: String, symbol: String) -> some View {
+        HStack {
+            Text(title).font(.subheadline)
+            Spacer()
+            Image(systemName: symbol).font(.caption)
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity)
+        .background(Theatre.ink3, in: RoundedRectangle(cornerRadius: 13))
+        .overlay(RoundedRectangle(cornerRadius: 13).strokeBorder(Theatre.rule, lineWidth: 0.5))
     }
 
     private var engineText: String {

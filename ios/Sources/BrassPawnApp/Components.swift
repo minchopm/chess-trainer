@@ -193,7 +193,7 @@ struct LibraryNotice: View {
                     .foregroundStyle(.secondary)
             } else {
                 HStack(spacing: 8) {
-                    ProgressView().controlSize(.small)
+                    BrassActivityIndicator(size: 15)
                     Text(L.t("common.loading", "Loading %@…", what)).font(.subheadline).foregroundStyle(.secondary)
                 }
             }
@@ -216,9 +216,9 @@ struct AllowanceNotice: View {
             Text(L.t("store.comeBackTomorrow", "The allowance resets at midnight. Playing — against the engine or against a person — has no limit and needs nothing."))
                 .font(.footnote).foregroundStyle(.secondary)
             Button(L.t("store.unlockNow", "Unlock unlimited training")) { showsPaywall = true }
-                .buttonStyle(.borderedProminent)
+                .buttonStyle(PillButtonStyle(emphasis: .solid))
                 .padding(.top, 4)
         }
-        .sheet(isPresented: $showsPaywall) { PaywallView(activity: activity) }
+        .fullScreenCover(isPresented: $showsPaywall) { PaywallView(activity: activity) }
     }
 }

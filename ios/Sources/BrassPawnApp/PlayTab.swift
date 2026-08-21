@@ -33,10 +33,13 @@ struct PlayTab: View {
         @Bindable var navigator = navigator
         return VStack(spacing: 0) {
             TopBar(clocks: mode == .watch ? nil : clocks) {
-                Picker(L.t("play.mode", "Mode"), selection: $navigator.playMode) {
-                    ForEach(Mode.allCases) { Text($0.label).tag($0) }
+                BrassSegmentedPicker(
+                    L.t("play.mode", "Mode"),
+                    selection: $navigator.playMode,
+                    options: Array(Mode.allCases)
+                ) { option in
+                    Text(option.label)
                 }
-                .pickerStyle(.segmented)
             }
 
             switch mode {

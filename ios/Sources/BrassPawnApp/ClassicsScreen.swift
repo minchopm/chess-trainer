@@ -52,37 +52,25 @@ struct ClassicsScreen: View {
     }
 
     private var search: some View {
-        HStack(spacing: 7) {
-            Image(systemName: "magnifyingglass")
-                .font(.system(size: 12))
-                .foregroundStyle(Theatre.ivoryFaint)
-            TextField(L.t("watch.search", "Player, event or year"), text: $query)
-                .font(.subheadline)
-                .textFieldStyle(.plain)
-                .autocorrectionDisabled()
-            if !query.isEmpty {
-                Button { query = "" } label: {
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundStyle(Theatre.ivoryFaint)
-                }
-                .buttonStyle(.plain)
-            }
-        }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 8)
-        .background(Theatre.ink3, in: Capsule())
-        .overlay(Capsule().strokeBorder(Theatre.rule, lineWidth: 0.5))
+        BrassSearchField(
+            placeholder: L.t("watch.search", "Player, event or year"),
+            text: $query
+        )
     }
 
     private var list: some View {
         ScrollView {
             LazyVStack(spacing: 8) {
                 if query.isEmpty {
-                    Picker("", selection: $showsAll) {
-                        Text(L.t("watch.named", "Named games")).tag(false)
-                        Text(L.t("watch.everything", "Everything")).tag(true)
+                    BrassSegmentedPicker(
+                        L.t("watch.games", "Games"),
+                        selection: $showsAll,
+                        options: [false, true]
+                    ) { all in
+                        Text(all
+                            ? L.t("watch.everything", "Everything")
+                            : L.t("watch.named", "Named games"))
                     }
-                    .pickerStyle(.segmented)
                     .padding(.bottom, 4)
                 }
 

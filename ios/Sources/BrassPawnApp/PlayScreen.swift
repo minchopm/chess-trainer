@@ -346,21 +346,24 @@ struct PlayScreen: View {
             Text(L.t("play.theEnginePlaysAtThe", "The engine plays at the strength you choose. Coaching grades each of your moves as you make it."))
                 .font(.footnote).foregroundStyle(.secondary)
 
-            Picker(L.t("play.strength", "Strength"), selection: Binding(
-                get: { model.level }, set: { model.level = $0 }
-            )) {
-                ForEach(OpponentLevel.all) { level in Text(level.label).tag(level) }
+            BrassCyclePicker(
+                L.t("play.strength", "Strength"),
+                selection: Binding(get: { model.level }, set: { model.level = $0 }),
+                options: OpponentLevel.all,
+                label: \.label
+            )
+
+            BrassSegmentedPicker(
+                L.t("play.youPlay", "You play"),
+                selection: Binding(get: { model.side }, set: { model.side = $0 }),
+                options: [PieceColor.white, PieceColor.black]
+            ) { side in
+                Text(side == .white
+                    ? L.t("play.white", "White")
+                    : L.t("play.black", "Black"))
             }
 
-            Picker(L.t("play.youPlay", "You play"), selection: Binding(
-                get: { model.side }, set: { model.side = $0 }
-            )) {
-                Text(L.t("play.white", "White")).tag(PieceColor.white)
-                Text(L.t("play.black", "Black")).tag(PieceColor.black)
-            }
-            .pickerStyle(.segmented)
-
-            Toggle("Coach me after every move", isOn: Binding(
+            BrassToggle("Coach me after every move", isOn: Binding(
                 get: { model.coachingEnabled }, set: { model.coachingEnabled = $0 }
             ))
 
@@ -368,7 +371,7 @@ struct PlayScreen: View {
                 recorded = false
                 Task { await model.start(engine: app.engine) }
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(PillButtonStyle(emphasis: .solid))
             .padding(.top, 4)
         }
     }

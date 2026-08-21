@@ -1,4 +1,5 @@
 import BoardScene
+import ChessCore
 import ChessTraining
 import SwiftUI
 
@@ -20,6 +21,8 @@ struct MenuScreen: View {
     /// what the `id` on this screen is for.
     @State private var sequence: TitleSequence
     @State private var caption: ShowGame?
+    @State private var showsPurchases = false
+    @State private var showsSettings = false
 
     init(carving: Carving, onChoose: @escaping (RootView.Tab) -> Void) {
         self.onChoose = onChoose
@@ -66,8 +69,8 @@ struct MenuScreen: View {
                     HStack(spacing: 0) {
                         VStack(spacing: 18) {
                             title
-                            choices(compact: false)
                             if let caption { self.caption(caption) }
+                            choices(compact: false)
                         }
                         .frame(width: column)
                         .padding(.leading, 26)
@@ -77,13 +80,18 @@ struct MenuScreen: View {
                     VStack(spacing: 0) {
                         title
                         Spacer(minLength: 0)
-                        choices(compact: true)
                         if let caption { self.caption(caption) }
+                        choices(compact: true)
                     }
                     .padding(.horizontal, 22)
-                    .padding(.top, 18)
+                    // Leave a clear row for the two menu actions above the
+                    // title on a phone.
+                    .padding(.top, 40)
                     .padding(.bottom, 14)
                 }
+            }
+            .overlay(alignment: .top) {
+                menuActions
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
         }
@@ -95,6 +103,61 @@ struct MenuScreen: View {
                 withAnimation(.easeInOut(duration: 0.5)) { caption = game }
             }
         }
+        .fullScreenCover(isPresented: $showsPurchases) { PaywallView() }
+        .fullScreenCover(isPresented: $showsSettings) { SettingsScreen() }
+    }
+
+    /// Purchases and preferences sit together in the top-right corner, with
+    /// settings at the outside edge where it is quickest to find.
+    private var menuActions: some View {
+        HStack(spacing: 0) {
+            menuAction(
+                symbol: "creditcard",
+                label: L.t("store.title", "Brass Pawn Pro")
+            ) {
+                showsPurchases = true
+            }
+
+            Rectangle()
+                .fill(Theatre.brassDeep.opacity(0.65))
+                .frame(width: 1, height: 27)
+
+            menuAction(
+                symbol: "gearshape",
+                label: L.t("settings.settings", "Settings")
+            ) {
+                showsSettings = true
+            }
+        }
+        .padding(.horizontal, 4)
+        .padding(.vertical, 3)
+        .background {
+            MenuChamferedShape(cut: 11)
+                .fill(Theatre.ink3.opacity(0.94))
+        }
+        .overlay {
+            MenuChamferedShape(cut: 11)
+                .strokeBorder(Theatre.brassDeep.opacity(0.75), lineWidth: 0.8)
+        }
+        .shadow(color: .black.opacity(0.45), radius: 14, y: 5)
+        .frame(maxWidth: .infinity, alignment: .trailing)
+        .padding(.horizontal, 18)
+        .padding(.top, 8)
+    }
+
+    private func menuAction(
+        symbol: String,
+        label: String,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button(action: action) {
+            Image(systemName: symbol)
+                .font(.system(size: 18, weight: .medium))
+                .foregroundStyle(Theatre.brassHot.opacity(0.9))
+                .frame(width: 46, height: 42)
+        }
+        .buttonStyle(MenuPressStyle())
+        .accessibilityLabel(label)
     }
 
     private var title: some View {
@@ -116,32 +179,17 @@ struct MenuScreen: View {
     /// room to stack them.
     @ViewBuilder
     private func choices(compact: Bool) -> some View {
-        if compact {
-            VStack(spacing: 9) {
-                entry(.play, L.t("progress.play", "Play"), "person.2", solid: true)
-                HStack(spacing: 7) {
-                    small(.play, L.t("progress.watch", "Watch"), "play.rectangle", wants: .watch)
-                    small(.tactics, L.t("progress.tactics", "Tactics"), "target")
-                    small(.positional, L.t("progress.positional", "Positional"), "square.grid.3x3.middle.filled")
-                    small(.endgames, L.t("progress.endgames", "Endgames"), "flag.checkered")
-                    small(.progress, L.t("progress.progress", "Progress"), "chart.line.uptrend.xyaxis")
-                }
-            }
-            .frame(maxWidth: 460)
-        } else {
-            VStack(spacing: 9) {
-                entry(.play, L.t("progress.play", "Play"), "person.2", solid: true)
-                HStack(spacing: 9) {
-                    entry(.play, L.t("progress.watch", "Watch"), "play.rectangle", wants: .watch)
-                    entry(.tactics, L.t("progress.tactics", "Tactics"), "target")
-                }
-                HStack(spacing: 9) {
-                    entry(.positional, L.t("progress.positional", "Positional"), "square.grid.3x3.middle.filled")
-                    entry(.endgames, L.t("progress.endgames", "Endgames"), "flag.checkered")
-                }
-                entry(.progress, L.t("progress.progress", "Progress"), "chart.line.uptrend.xyaxis")
+        VStack(spacing: compact ? 9 : 12) {
+            playEntry
+            HStack(spacing: -1) {
+                small(.play, L.t("progress.watch", "Watch"), "play.rectangle", wants: .watch)
+                small(.tactics, L.t("progress.tactics", "Tactics"), "target")
+                small(.positional, L.t("progress.positional", "Positional"), "square.grid.3x3.middle.filled")
+                small(.endgames, L.t("progress.endgames", "Endgames"), "flag.checkered")
+                small(.progress, L.t("progress.progress", "Progress"), "chart.line.uptrend.xyaxis")
             }
         }
+        .frame(maxWidth: 460)
     }
 
     /// An icon over a very small label — a whole row of them fits where two
@@ -153,39 +201,89 @@ struct MenuScreen: View {
             if let wants { navigator.playMode = wants }
             onChoose(tab)
         } label: {
-            VStack(spacing: 5) {
-                Image(systemName: symbol).font(.system(size: 15, weight: .light))
+            VStack(spacing: 8) {
+                Image(systemName: symbol)
+                    .font(.system(size: 19, weight: .light))
                 Text(title.uppercased())
-                    .font(Face.mono(7)).tracking(0.8)
+                    .font(Face.mono(7)).tracking(1.1)
                     .lineLimit(1)
-                    .minimumScaleFactor(0.7)
+                    .minimumScaleFactor(0.58)
             }
             .foregroundStyle(Theatre.ivoryDim)
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 11)
-            .background(Theatre.ink3.opacity(0.85), in: RoundedRectangle(cornerRadius: 13))
-            .overlay(RoundedRectangle(cornerRadius: 13).strokeBorder(Theatre.rule, lineWidth: 0.75))
+            .frame(height: 78)
+            .background {
+                MenuChamferedShape(cut: 9)
+                    .fill(LinearGradient(
+                        colors: [Theatre.ink4.opacity(0.96), Theatre.ink2.opacity(0.96)],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ))
+            }
+            .overlay {
+                MenuChamferedShape(cut: 9)
+                    .strokeBorder(Theatre.brassDeep.opacity(0.48), lineWidth: 0.75)
+            }
         }
-        .buttonStyle(.plain)
+        .buttonStyle(MenuPressStyle())
     }
 
-    private func entry(_ tab: RootView.Tab, _ title: String, _ symbol: String,
-                       solid: Bool = false, wants: PlayTab.Mode? = nil) -> some View {
+    private var playEntry: some View {
         Button {
             SoundBoard.shared.play(.move)
-            if let wants { navigator.playMode = wants }
-            onChoose(tab)
+            onChoose(.play)
         } label: {
-            HStack(spacing: 9) {
-                Image(systemName: symbol).font(.system(size: 13, weight: .semibold))
-                Text(title.uppercased())
-                    .font(Face.mono(11, weight: .medium))
-                    .tracking(2.2)
+            ZStack {
+                MenuChamferedShape(cut: 12)
+                    .fill(LinearGradient(
+                        colors: [Theatre.ink3.opacity(0.97), Theatre.ink2.opacity(0.93)],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ))
+                    .padding(.vertical, 7)
+
+                HStack(spacing: 0) {
+                    playMedallion
+
+                    Text(L.t("progress.play", "Play").uppercased())
+                        .font(Face.display(29))
+                        .tracking(4.2)
+                        .foregroundStyle(Theatre.ivory)
+                        .frame(maxWidth: .infinity)
+
+                    Color.clear.frame(width: 78)
+                }
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 13)
+            .frame(height: 76)
+            .overlay {
+                MenuChamferedShape(cut: 12)
+                    .strokeBorder(Theatre.brassDeep.opacity(0.7), lineWidth: 0.8)
+                    .padding(.vertical, 7)
+            }
         }
-        .buttonStyle(PillButtonStyle(emphasis: solid ? .solid : .ghost))
+        .buttonStyle(MenuPressStyle())
+        .accessibilityLabel(L.t("progress.play", "Play"))
+    }
+
+    private var playMedallion: some View {
+        ZStack {
+            Circle()
+                .fill(RadialGradient(
+                    colors: [Theatre.brassDeep.opacity(0.4), Theatre.ink2],
+                    center: .center,
+                    startRadius: 2,
+                    endRadius: 36
+                ))
+            Circle().strokeBorder(Theatre.brassHot.opacity(0.9), lineWidth: 1.5)
+            Circle()
+                .strokeBorder(Theatre.brassDeep.opacity(0.9), lineWidth: 3)
+                .padding(5)
+            PieceView(piece: Piece(.white, .knight), size: 48)
+        }
+        .frame(width: 70, height: 70)
+        .padding(.leading, 8)
+        .shadow(color: .black.opacity(0.75), radius: 8, y: 4)
+        .shadow(color: Theatre.brassGlow, radius: 10)
     }
 
     private func caption(_ game: ShowGame) -> some View {
@@ -199,9 +297,46 @@ struct MenuScreen: View {
                 .foregroundStyle(Theatre.ivoryFaint)
         }
         .multilineTextAlignment(.center)
-        .padding(.top, 14)
+        .padding(.bottom, 14)
         .transition(.opacity)
         .id(game.id)
+    }
+}
+
+/// The clipped metal plate shared by the menu controls.
+private struct MenuChamferedShape: InsettableShape {
+    var cut: CGFloat
+    var insetAmount: CGFloat = 0
+
+    func path(in rect: CGRect) -> Path {
+        let bounds = rect.insetBy(dx: insetAmount, dy: insetAmount)
+        let corner = min(cut, min(bounds.width, bounds.height) / 2)
+        var path = Path()
+        path.move(to: CGPoint(x: bounds.minX + corner, y: bounds.minY))
+        path.addLine(to: CGPoint(x: bounds.maxX - corner, y: bounds.minY))
+        path.addLine(to: CGPoint(x: bounds.maxX, y: bounds.minY + corner))
+        path.addLine(to: CGPoint(x: bounds.maxX, y: bounds.maxY - corner))
+        path.addLine(to: CGPoint(x: bounds.maxX - corner, y: bounds.maxY))
+        path.addLine(to: CGPoint(x: bounds.minX + corner, y: bounds.maxY))
+        path.addLine(to: CGPoint(x: bounds.minX, y: bounds.maxY - corner))
+        path.addLine(to: CGPoint(x: bounds.minX, y: bounds.minY + corner))
+        path.closeSubpath()
+        return path
+    }
+
+    func inset(by amount: CGFloat) -> MenuChamferedShape {
+        var copy = self
+        copy.insetAmount += amount
+        return copy
+    }
+}
+
+private struct MenuPressStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .opacity(configuration.isPressed ? 0.72 : 1)
+            .scaleEffect(configuration.isPressed ? 0.985 : 1)
+            .animation(.easeOut(duration: 0.14), value: configuration.isPressed)
     }
 }
 

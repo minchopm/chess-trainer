@@ -23,7 +23,7 @@ struct TacticsScreen: View {
                 }
             }
             .animation(.spring(duration: 0.35), value: model.completion)
-            .sheet(isPresented: $showsPaywall) { PaywallView(activity: .tactics) }
+            .fullScreenCover(isPresented: $showsPaywall) { PaywallView(activity: .tactics) }
     }
 
     private var content: some View {
@@ -80,7 +80,7 @@ struct TacticsScreen: View {
 
                 if model.isReplying {
                     HStack(spacing: 6) {
-                        ProgressView().controlSize(.small)
+                        BrassActivityIndicator(size: 15)
                         Text(L.t("tactics.opponentReplies", "Opponent replies…")).font(.footnote).foregroundStyle(.secondary)
                     }
                 }

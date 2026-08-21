@@ -2,75 +2,11 @@ import ChessCore
 import ChessTraining
 import SwiftUI
 
-/// The avatar in the corner of every screen.
-///
-/// One place, the same place on a phone and on an iPad, because a control that
-/// moves depending on which tab you are in is a control people stop looking
-/// for.
-struct ProfileButton: View {
-    @Environment(AppModel.self) private var app
-    @Environment(ActivityGuard.self) private var activity
-    @Environment(Navigator.self) private var navigator
-    @State private var showsSettings = false
-
-    var body: some View {
-        Menu {
-            Button {
-                showsSettings = true
-            } label: {
-                Label(L.t("menu.profile", "Profile & settings"), systemImage: "person.crop.circle")
-            }
-
-            Divider()
-            Button {
-                // A game in progress asks first, the same way the tab bar does.
-                if activity.isActive { activity.requestExit() } else { navigator.goToMenu() }
-            } label: {
-                Label(L.t("menu.mainMenu", "Main menu"), systemImage: "house")
-            }
-
-            if activity.isActive {
-                Button(role: .destructive) {
-                    activity.requestExit()
-                } label: {
-                    Label(L.t("menu.leave", "Leave and go back"), systemImage: "rectangle.portrait.and.arrow.right")
-                }
-            }
-        } label: {
-            avatar
-        }
-        .accessibilityLabel(L.t("settings.profile", "Profile and settings"))
-        .sheet(isPresented: $showsSettings) { SettingsScreen() }
-    }
-
-    private var avatar: some View {
-        ZStack {
-            Circle().fill(.quaternary)
-            if let photo = app.matchmaker.localPhoto {
-                photo.resizable().scaledToFill().clipShape(Circle())
-            } else {
-                Text(initials)
-                    .font(.system(size: 13, weight: .semibold, design: .rounded))
-                    .foregroundStyle(.secondary)
-            }
-        }
-        .frame(width: 30, height: 30)
-        .overlay(Circle().strokeBorder(.quaternary, lineWidth: 0.5))
-        .contentShape(Circle())
-    }
-
-    private var initials: String {
-        let name = app.matchmaker.localName
-        let parts = name.split(separator: " ").prefix(2)
-        let letters = parts.compactMap { $0.first }.map(String.init).joined()
-        return letters.isEmpty ? "?" : letters.uppercased()
-    }
-}
-
 /// A slim row at the top of every training screen: whatever the screen wants on
-/// the left, the profile on the right.
+/// the right, and one predictable way back on the left.
 struct TopBar<Content: View>: View {
     @Environment(ActivityGuard.self) private var activity
+    @Environment(Navigator.self) private var navigator
     /// Set only by an online game. The row is empty during play anyway, and a
     /// clock is the one thing that has to be readable without looking away
     /// from the board.
@@ -79,6 +15,10 @@ struct TopBar<Content: View>: View {
 
     var body: some View {
         HStack(spacing: 10) {
+            BrassBackButton {
+                if activity.isActive { activity.requestExit() } else { navigator.goToMenu() }
+            }
+
             // Whatever the screen puts here — a mode picker, usually — is a way
             // out of the game as much as the tab bar is, so it goes away for
             // the same reason and comes back at the same moment.
@@ -87,7 +27,6 @@ struct TopBar<Content: View>: View {
             } else {
                 content
             }
-            ProfileButton()
         }
         .padding(.horizontal, 12)
         .padding(.top, 6)
@@ -100,38 +39,20 @@ struct SettingsScreen: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        NavigationStack {
+        VStack(spacing: 0) {
+            BrassNavigationHeader(title: L.t("settings.settings", "Settings")) { dismiss() }
+
             ScrollView {
                 VStack(alignment: .leading, spacing: 22) {
-                    identity
                     section(L.t("settings.dimension", "Board")) { DimensionChoice() }
                     section(L.t("settings.pieces", "Pieces")) { PieceSetGallery() }
                     section(L.t("settings.squares", "Squares")) { BoardGallery() }
                     section(L.t("settings.sounds", "Move sounds")) { sound }
-                    section(L.t("settings.more", "More")) { more }
                 }
                 .padding(16)
                 .padding(.bottom, 30)
             }
             .background(Theatre.ink.ignoresSafeArea())
-            .navigationTitle("")
-            #if os(iOS)
-            .navigationBarTitleDisplayMode(.inline)
-            #endif
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text(L.t("settings.title", "Profile"))
-                        .font(Face.display(20))
-                        .foregroundStyle(Theatre.ivory)
-                }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button(L.t("settings.done", "Done")) { dismiss() }
-                        .font(Face.mono(11, weight: .medium))
-                        .tracking(1.4)
-                        .textCase(.uppercase)
-                        .foregroundStyle(Theatre.brass)
-                }
-            }
         }
     }
 
@@ -144,60 +65,17 @@ struct SettingsScreen: View {
         }
     }
 
-    private var identity: some View {
-        Panel {
-            HStack(spacing: 14) {
-                ZStack {
-                    Circle().fill(Theatre.ink4)
-                    Circle().strokeBorder(Theatre.brass.opacity(0.35), lineWidth: 1)
-                    if let photo = app.matchmaker.localPhoto {
-                        photo.resizable().scaledToFill().clipShape(Circle())
-                    } else {
-                        Image(systemName: "person.fill").foregroundStyle(Theatre.brass.opacity(0.7))
-                    }
-                }
-                .frame(width: 54, height: 54)
-                .shadow(color: Theatre.brassGlow, radius: 12)
-
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(app.matchmaker.localName)
-                        .font(Face.display(24))
-                        .foregroundStyle(Theatre.ivory)
-                    Text(L.t("settings.onlineRating", "Online rating %lld", app.progress.onlineRating))
-                        .font(Face.mono(10))
-                        .tracking(1.2)
-                        .textCase(.uppercase)
-                        .foregroundStyle(Theatre.ivoryFaint)
-                }
-                Spacer(minLength: 0)
-            }
-
-            if !app.matchmaker.isAuthenticated {
-                Button(L.t("settings.signIn", "Sign in to Game Center")) {
-                    app.matchmaker.authenticate()
-                }
-                .buttonStyle(PillButtonStyle(emphasis: .ghost))
-                .padding(.top, 4)
-            }
-        }
-    }
-
     private var sound: some View {
         Panel {
-            Toggle(isOn: Binding(
+            BrassToggle(L.t("settings.soundsOn", "Play sounds"), isOn: Binding(
                 get: { app.progress.appearance.soundsOn },
                 set: { on in app.update { $0.appearance.soundsOn = on } }
-            )) {
-                Text(L.t("settings.soundsOn", "Play sounds"))
-                    .font(.subheadline)
-                    .foregroundStyle(Theatre.ivory)
-            }
-            .tint(Theatre.brass)
+            ))
 
             HStack(spacing: 12) {
                 Image(systemName: "speaker.fill")
                     .font(.caption2).foregroundStyle(Theatre.ivoryFaint)
-                Slider(
+                BrassSlider(
                     value: Binding(
                         get: { app.progress.appearance.volume },
                         set: { level in app.update { $0.appearance.volume = level } }
@@ -208,7 +86,6 @@ struct SettingsScreen: View {
                     // rather than by the number next to it.
                     if !editing { SoundBoard.shared.play(.move) }
                 }
-                .tint(Theatre.brass)
                 Image(systemName: "speaker.wave.3.fill")
                     .font(.caption2).foregroundStyle(Theatre.ivoryFaint)
             }
@@ -217,27 +94,6 @@ struct SettingsScreen: View {
         }
     }
 
-    private var more: some View {
-        Panel(padding: 4) {
-            ProUpsellRow()
-                .padding(.horizontal, 12).padding(.vertical, 10)
-            Divider().overlay(Theatre.ruleSoft)
-            NavigationLink {
-                AboutScreen()
-            } label: {
-                HStack {
-                    Text(L.t("settings.about", "About & licence"))
-                        .font(.subheadline).foregroundStyle(Theatre.ivory)
-                    Spacer()
-                    Image(systemName: "chevron.right")
-                        .font(.caption2).foregroundStyle(Theatre.ivoryFaint)
-                }
-                .padding(.horizontal, 12).padding(.vertical, 10)
-                .contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
-        }
-    }
 }
 
 /// The sets, shown as themselves on a real square. Nobody picks "Ivory &

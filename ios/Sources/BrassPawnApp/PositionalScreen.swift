@@ -224,7 +224,7 @@ struct PositionalScreen: View {
             ])
         }
         .task(id: app.library.exercises.count) { if model.exercise == nil { next(interactive: false) } }
-        .sheet(isPresented: $showsPaywall) { PaywallView(activity: .positional) }
+        .fullScreenCover(isPresented: $showsPaywall) { PaywallView(activity: .positional) }
     }
 
     @ViewBuilder
@@ -243,7 +243,7 @@ struct PositionalScreen: View {
                         Text(judgement.label)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    .buttonStyle(.bordered)
+                    .buttonStyle(PillButtonStyle(emphasis: .ghost))
                 }
             }
         } else {
@@ -252,7 +252,7 @@ struct PositionalScreen: View {
 
         if model.isThinking {
             HStack(spacing: 6) {
-                ProgressView()
+                BrassActivityIndicator()
                 Text(L.t("positional.checkingYourMoveWithThe", "Checking your move with the engine…")).font(.footnote).foregroundStyle(.secondary)
             }
         }

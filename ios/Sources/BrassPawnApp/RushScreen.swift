@@ -183,8 +183,8 @@ struct RushScreen: View {
             case .running, .finished: playing
             }
         }
-        .sheet(isPresented: $showsPaywall) { PaywallView(activity: .rush) }
-        .sheet(isPresented: .constant(model.phase == .finished)) {
+        .fullScreenCover(isPresented: $showsPaywall) { PaywallView(activity: .rush) }
+        .fullScreenCover(isPresented: .constant(model.phase == .finished)) {
             if let summary = model.summary { RushSummary(onRunAgain: startRun, run: summary, model: model, app: app) }
         }
         .onDisappear {
@@ -211,20 +211,20 @@ struct RushScreen: View {
                     Text(L.t("rush.solveAsManyAsYou", "Solve as many as you can before the clock runs out. Puzzles start easy and get harder as you go. Three misses ends the run."))
                         .font(.footnote).foregroundStyle(.secondary)
 
-                    Picker(L.t("rush.time", "Time"), selection: Binding(
-                        get: { model.settings.duration },
-                        set: { model.settings.duration = $0 }
-                    )) {
-                        ForEach(RushSettings.choices, id: \.self) { choice in
-                            Text(RushSettings.label(for: choice)).tag(choice)
-                        }
+                    BrassSegmentedPicker(
+                        L.t("rush.time", "Time"),
+                        selection: Binding(
+                            get: { model.settings.duration },
+                            set: { model.settings.duration = $0 }
+                        ),
+                        options: RushSettings.choices
+                    ) { choice in
+                        Text(RushSettings.label(for: choice))
                     }
-                    .pickerStyle(.segmented)
                     .padding(.top, 4)
 
                     Button(L.t("rush.startRun", "Start run")) { startRun() }
-                    .buttonStyle(.borderedProminent)
-                    .controlSize(.large)
+                    .buttonStyle(PillButtonStyle(emphasis: .solid))
                     .frame(maxWidth: .infinity)
                     .padding(.top, 6)
                 }
@@ -353,10 +353,16 @@ struct RushSummary: View {
 
     var body: some View {
         VStack(spacing: 18) {
+            HStack {
+                BrassBackButton { model.reset() }
+                Spacer()
+            }
+            .padding(.horizontal, 14)
+            .padding(.top, 8)
+
             Image(systemName: run.completedTarget ? "trophy.fill" : "flag.checkered")
                 .font(.system(size: 44))
                 .foregroundStyle(run.completedTarget ? Color.yellow : Color.accentColor)
-                .padding(.top, 28)
 
             Text(headline).font(.title2.weight(.semibold))
 
@@ -376,22 +382,19 @@ struct RushSummary: View {
             Spacer()
 
             VStack(spacing: 10) {
-                // The summary sheet lives above the screen that owns the
+                // The summary cover lives above the screen that owns the
                 // allowance, so it asks rather than starting the run itself.
                 Button(L.t("rush.runAgain", "Run again")) { onRunAgain() }
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
+                .buttonStyle(PillButtonStyle(emphasis: .solid))
                 .frame(maxWidth: .infinity)
 
                 Button(L.t("rush.done", "Done")) { model.reset() }
-                    .buttonStyle(.bordered)
-                    .controlSize(.large)
+                    .buttonStyle(PillButtonStyle(emphasis: .ghost))
                     .frame(maxWidth: .infinity)
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 24)
         }
-        .presentationDetents([.medium])
         .interactiveDismissDisabled()
         .onAppear {
             guard !recorded else { return }

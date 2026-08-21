@@ -40,7 +40,7 @@ struct OnlineScreen: View {
             activity.release()
         }
         #if canImport(UIKit)
-        .sheet(item: Binding(
+        .fullScreenCover(item: Binding(
             get: { matchmaker.pendingAuthController },
             set: { matchmaker.pendingAuthController = $0 }
         )) { item in
@@ -62,12 +62,13 @@ struct OnlineScreen: View {
 
                 Card {
                     Text(L.t("online.clock", "Clock")).font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
-                    Picker(L.t("online.clock", "Clock"), selection: $timeControl) {
-                        ForEach(TimeControl.allCases) { control in
-                            Text(verbatim: "\(control.minutes)").tag(control)
-                        }
+                    BrassSegmentedPicker(
+                        L.t("online.clock", "Clock"),
+                        selection: $timeControl,
+                        options: Array(TimeControl.allCases)
+                    ) { control in
+                        Text(verbatim: "\(control.minutes)")
                     }
-                    .pickerStyle(.segmented)
                     .disabled(isSearching)
                     Text(L.t("online.clockExplanation", "%@ each — %@. You are only paired with players who chose the same clock.", timeControl.label, timeControl.name.lowercased()))
                         .font(.footnote).foregroundStyle(.secondary)
@@ -93,13 +94,12 @@ struct OnlineScreen: View {
                 if isSearching {
                     Button(role: .destructive) { matchmaker.cancelSearch() } label: {
                         HStack(spacing: 8) {
-                            ProgressView().controlSize(.small)
+                            BrassActivityIndicator(size: 15)
                             Text(L.t("online.searchingTapToCancel", "Searching — tap to cancel"))
                         }
                         .frame(maxWidth: .infinity)
                     }
-                    .buttonStyle(.bordered)
-                    .controlSize(.large)
+                    .buttonStyle(PillButtonStyle(emphasis: .danger))
                 } else {
                     Button {
                         matchmaker.findOpponent(
@@ -111,8 +111,7 @@ struct OnlineScreen: View {
                         Text(matchmaker.isAuthenticated ? "Find opponent" : "Sign in to Game Center")
                             .frame(maxWidth: .infinity)
                     }
-                    .buttonStyle(.borderedProminent)
-                    .controlSize(.large)
+                    .buttonStyle(PillButtonStyle(emphasis: .solid))
                 }
 
 #if DEBUG
@@ -123,7 +122,7 @@ struct OnlineScreen: View {
                         games: app.progress.onlineGames
                     )
                 }
-                .buttonStyle(.bordered)
+                .buttonStyle(PillButtonStyle(emphasis: .ghost))
                 .font(.footnote)
 #endif
             }
@@ -212,9 +211,9 @@ struct OnlineScreen: View {
                 HStack(spacing: 10) {
                     Text(L.t("online.drawOffered", "Draw offered.")).font(.subheadline)
                     Button(L.t("online.accept", "Accept")) { session.respondToDraw(accept: true) }
-                        .buttonStyle(.borderedProminent).controlSize(.small)
+                        .buttonStyle(PillButtonStyle(emphasis: .solid))
                     Button(L.t("online.decline", "Decline")) { session.respondToDraw(accept: false) }
-                        .buttonStyle(.bordered).controlSize(.small)
+                        .buttonStyle(PillButtonStyle(emphasis: .ghost))
                 }
             } else if session.drawOfferSent {
                 Text(L.t("online.drawOfferedWaitingForAn", "Draw offered — waiting for an answer."))
