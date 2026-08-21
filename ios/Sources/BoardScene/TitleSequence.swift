@@ -26,8 +26,13 @@ public struct OrbitCamera: Sendable {
     /// board turns.
     private var aspect: Float = 0.5
 
-    /// Low enough to keep the board a board, high enough not to fall under it.
-    public static let elevationRange: ClosedRange<Float> = 0.06...1.32
+    /// Low enough to keep the board a board, and all the way to straight down.
+    ///
+    /// It used to stop at 1.32 — some seventy-six degrees — which is close
+    /// enough to overhead to look like a bug rather than a limit: the board
+    /// almost squares up and then refuses. The reason for stopping short is
+    /// real, but it belongs in `up(at:)` rather than here.
+    public static let elevationRange: ClosedRange<Float> = 0.06...(.pi / 2)
     public static let distanceRange: ClosedRange<Float> = 7.5...32
     public static let zoomRange: ClosedRange<Float> = 0.55...1.9
 
@@ -132,6 +137,24 @@ public struct OrbitCamera: Sendable {
     /// phone a fish-eye.
     static let fieldOfView: Float = 52
 
+    /// Which way is up for the camera, at this elevation.
+    ///
+    /// Not always `(0, 1, 0)`. Looking straight down, the view direction *is*
+    /// that vector, and a camera told to look along its own up has no
+    /// orientation to take — the maths divides by nothing and the board
+    /// arrives spinning or not at all. This is the up that stays square to the
+    /// view all the way round: it leans over as the camera climbs, and at
+    /// straight down it has become horizontal, pointing at the top of the
+    /// board. Which is exactly what "up" means on a board seen from above.
+    public func up(at clock: TimeInterval = 0) -> SIMD3<Float> {
+        _ = clock
+        return SIMD3(
+            -sinf(elevation) * sinf(azimuth),
+            cosf(elevation),
+            -sinf(elevation) * cosf(azimuth)
+        )
+    }
+
     /// The eye position, with a whisper of handheld float.
     public func eye(clock: TimeInterval) -> SIMD3<Float> {
         let sway: Float = 0.055
@@ -219,9 +242,10 @@ public final class TitleSequence: SceneDriver {
     public func place() {
         let eye = camera.eye(clock: clock)
         stage.cameraNode.position = SCNVector3(eye.x, eye.y, eye.z)
+        let up = camera.up()
         stage.cameraNode.look(
             at: SCNVector3(camera.target.x, camera.target.y, camera.target.z),
-            up: SCNVector3(0, 1, 0),
+            up: SCNVector3(up.x, up.y, up.z),
             localFront: SCNVector3(0, 0, -1)
         )
     }

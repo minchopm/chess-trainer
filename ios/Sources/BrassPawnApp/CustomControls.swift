@@ -1,3 +1,4 @@
+import ChessCore
 import SwiftUI
 
 /// Back, in whichever direction back is.
@@ -233,6 +234,19 @@ struct BrassCyclePicker<Value: Hashable>: View {
     }
 }
 
+/// A switch in the set's own language: a medallion that slides, with a pawn on
+/// it and the light coming on behind it.
+///
+/// It was a notched plate before — the same cut corners the buttons are drawn
+/// with, at forty-five points by twenty-five. At that size the notches are a
+/// quarter of the shape and it reads as a rounded rectangle somebody has taken
+/// bites out of. Corners cut on a button four times the size are a detail; on
+/// something this small they are the whole silhouette.
+///
+/// So: a capsule for the track, because a switch is a groove something runs
+/// along, and the knob is the play button's medallion made small — the same
+/// rings, the same brass, a pawn instead of the knight. The pawn is the app's
+/// own emblem, and the piece a switch should be: the smallest one on the board.
 struct BrassToggle: View {
     let title: String
     var symbol: String?
@@ -246,7 +260,7 @@ struct BrassToggle: View {
 
     var body: some View {
         Button {
-            withAnimation(.spring(response: 0.24, dampingFraction: 0.78)) { isOn.toggle() }
+            withAnimation(.spring(response: 0.28, dampingFraction: 0.72)) { isOn.toggle() }
         } label: {
             HStack(spacing: 12) {
                 Text(title)
@@ -259,19 +273,7 @@ struct BrassToggle: View {
                         .frame(width: 20, height: 25)
                         .contentTransition(.symbolEffect(.replace))
                 }
-                ZStack(alignment: isOn ? .trailing : .leading) {
-                    BrassPlateShape(cut: 6)
-                        .fill(isOn ? Theatre.brass : Theatre.ink4)
-                        .overlay(
-                            BrassPlateShape(cut: 6)
-                                .strokeBorder(isOn ? Theatre.brassHot : Theatre.brassDeep.opacity(0.55), lineWidth: 0.75)
-                        )
-                    Circle()
-                        .fill(isOn ? Theatre.ink : Theatre.ivoryDim)
-                        .padding(3)
-                        .shadow(color: Theatre.shadow.opacity(0.35), radius: 2, y: 1)
-                }
-                .frame(width: 45, height: 25)
+                track
             }
             .contentShape(Rectangle())
         }
@@ -279,6 +281,48 @@ struct BrassToggle: View {
         .accessibilityLabel(title)
         .accessibilityValue(isOn ? "On" : "Off")
         .accessibilityAddTraits(.isButton)
+    }
+
+    private var track: some View {
+        ZStack(alignment: isOn ? .trailing : .leading) {
+            Capsule()
+                .fill(isOn
+                      ? LinearGradient(colors: [Theatre.brassDeep, Theatre.brass],
+                                       startPoint: .leading, endPoint: .trailing)
+                      : LinearGradient(colors: [Theatre.ink2, Theatre.ink4],
+                                       startPoint: .leading, endPoint: .trailing))
+                .overlay(
+                    Capsule().strokeBorder(
+                        isOn ? Theatre.brassHot.opacity(0.9) : Theatre.brassDeep.opacity(0.5),
+                        lineWidth: 0.8
+                    )
+                )
+            medallion.padding(2.5)
+        }
+        .frame(width: 54, height: 29)
+        // Lit only when it is on, so the switch reads across a dark screen the
+        // way the play button does.
+        .shadow(color: isOn ? Theatre.brassGlow : .clear, radius: 7)
+    }
+
+    private var medallion: some View {
+        ZStack {
+            Circle()
+                .fill(RadialGradient(
+                    colors: [Theatre.brassDeep.opacity(isOn ? 0.55 : 0.28), Theatre.ink2],
+                    center: .center, startRadius: 1, endRadius: 13
+                ))
+            Circle()
+                .strokeBorder(isOn ? Theatre.brassHot.opacity(0.95) : Theatre.brassDeep.opacity(0.7),
+                              lineWidth: 1)
+            PieceView(piece: Piece(.white, .pawn), size: 18)
+                // The artwork stands on the baseline of its own square, which
+                // is below the middle of the circle it is being set into.
+                .offset(y: -1.5)
+                .opacity(isOn ? 1 : 0.42)
+        }
+        .frame(width: 24, height: 24)
+        .shadow(color: Theatre.shadow.opacity(0.45), radius: 2, y: 1)
     }
 }
 

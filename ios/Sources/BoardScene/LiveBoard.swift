@@ -162,9 +162,10 @@ public final class LiveBoard: SceneDriver {
     public func place() {
         let eye = camera.eye(clock: clock)
         stage.cameraNode.position = SCNVector3(eye.x, eye.y, eye.z)
+        let up = camera.up()
         stage.cameraNode.look(
             at: SCNVector3(camera.target.x, camera.target.y, camera.target.z),
-            up: SCNVector3(0, 1, 0),
+            up: SCNVector3(up.x, up.y, up.z),
             localFront: SCNVector3(0, 0, -1)
         )
     }

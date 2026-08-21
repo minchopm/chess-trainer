@@ -28,6 +28,11 @@ struct BoardLight {
             // The title sequence, which is lit for the shot rather than for
             // play — and still has to leave a dark square looking dark.
             ("title-near", -0.72, 0.46, false), ("title-turned", -1.20, 0.40, false),
+            // Straight down, which the camera is allowed to reach. Looking
+            // along its own up vector is where a camera loses its orientation,
+            // so this is the shot that says whether the board arrives square or
+            // arrives spinning.
+            ("overhead", -0.72, .pi / 2, true),
         ]
 
         for (index, shot) in shots.enumerated() {
@@ -40,10 +45,11 @@ struct BoardLight {
             camera.elevation = shot.elevation
             camera.fit(aspect: 0.62)
             let eye = camera.eye(clock: 0)
+            let up = camera.up()
             stage.cameraNode.position = SCNVector3(eye.x, eye.y, eye.z)
             stage.cameraNode.look(
                 at: SCNVector3(camera.target.x, camera.target.y, camera.target.z),
-                up: SCNVector3(0, 1, 0), localFront: SCNVector3(0, 0, -1)
+                up: SCNVector3(up.x, up.y, up.z), localFront: SCNVector3(0, 0, -1)
             )
 
             let renderer = SCNRenderer(device: device, options: nil)
