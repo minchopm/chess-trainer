@@ -40,20 +40,31 @@ public final class AppModel {
         progress = storage.load() ?? TrainingProgress()
     }
 
-    /// Claim one real attempt. Loading or browsing training content must never
-    /// call this; only the first move, answer or explicit run start does.
-    /// Paid accounts are always admitted and do not accumulate free usage.
+    /// Claim one allowance unit. Most modes call this on the first answer or
+    /// explicit run start; Tactics calls it on completion because its free unit
+    /// is a completed puzzle rather than an attempt. Loading and browsing never
+    /// count. Paid accounts are always admitted and accumulate no free usage.
     @discardableResult
     public func beginAttempt(_ activity: TrainingActivity, at now: Date = Date()) -> Bool {
-        guard canStart(activity, at: now) else { return false }
+        guard hasAllowance(for: activity, at: now) else { return false }
         consume(activity, at: now)
         return true
     }
 
     /// Whether this activity may be attempted right now: paid accounts always,
     /// free accounts until the day's allowance is gone.
-    private func canStart(_ activity: TrainingActivity, at now: Date) -> Bool {
+    public func hasAllowance(for activity: TrainingActivity, at now: Date = Date()) -> Bool {
         store.isPro || progress.freeRemaining(activity, at: now) > 0
+    }
+
+    /// Practice skips have their own daily allowance. They neither spend the
+    /// completed-puzzle allowance nor the separate Rush attempt.
+    @discardableResult
+    public func useTacticsSkip(at now: Date = Date()) -> Bool {
+        guard store.isPro || progress.freeTacticsSkipsRemaining(at: now) > 0 else { return false }
+        guard !store.isPro else { return true }
+        update { $0.recordFreeTacticsSkip(at: now) }
+        return true
     }
 
     /// Count one use against the free allowance. A paid account spends nothing,

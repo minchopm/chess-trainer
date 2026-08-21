@@ -26,10 +26,9 @@ struct ActionBar: View {
             ForEach(items) { item in
                 Button(action: item.action) {
                     VStack(spacing: 5) {
-                        Image(systemName: item.systemImage)
-                            .font(.system(size: 15, weight: .regular))
+                        BrassIcon(item.systemImage, size: 19)
                         Text(item.title)
-                            .font(Face.mono(9, weight: .medium))
+                            .appFont(size: 9, weight: .medium)
                             .tracking(1.1)
                             .textCase(.uppercase)
                             .lineLimit(1)

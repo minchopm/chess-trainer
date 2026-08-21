@@ -6,25 +6,50 @@ struct TacticsScreen: View {
     @Environment(AppModel.self) private var app
     @State private var model = TacticsModel()
     @State private var values = MoveValueController()
-    @State private var showsPaywall = false
     @State private var exhausted = false
     @State private var hasStartedAttempt = false
+    @State private var hasCountedCompletion = false
+    @State private var showsSolutionReplay = false
 
     var body: some View {
         content
-            .overlay(alignment: .bottom) {
-                if let completion = model.completion {
+            .allowanceGate(
+                activity: .tactics,
+                hasStartedAttempt: hasStartedAttempt,
+                wasDenied: exhausted
+            )
+            .fullScreenCover(item: wrongFeedbackBinding) { feedback in
+                WrongMoveOverlay(
+                    feedback: feedback,
+                    onDismiss: { model.dismissWrongFeedback() }
+                )
+                .presentationBackground(.clear)
+                .interactiveDismissDisabled()
+            }
+            .fullScreenCover(isPresented: completionIsPresented) {
+                if showsSolutionReplay,
+                   let puzzle = model.puzzle,
+                   let start = Position(fen: puzzle.fen) {
+                    ReplayViewer(
+                        title: L.t("tactics.solutionTitle", "Solution"),
+                        subtitle: L.t("common.sideToPlay", "%@ to play", L.color(puzzle.sideToMove)),
+                        startingPosition: start,
+                        notation: model.solutionReplayNotation,
+                        onDismiss: { showsSolutionReplay = false }
+                    )
+                } else if let completion = model.completion {
                     CompletionOverlay(
                         result: completion,
                         primaryTitle: L.t("tactics.nextPuzzle", "Next puzzle"),
                         onPrimary: { next() },
-                        onRetry: { model.retry() }
+                        onRetry: { model.retry() },
+                        replayTitle: L.t("tactics.watchSolution", "Watch solution"),
+                        onReplay: { showsSolutionReplay = true }
                     )
-                    .padding(.bottom, 8)
+                    .presentationBackground(.clear)
+                    .interactiveDismissDisabled()
                 }
             }
-            .animation(.spring(duration: 0.35), value: model.completion)
-            .fullScreenCover(isPresented: $showsPaywall) { PaywallView(activity: .tactics) }
     }
 
     private var content: some View {
@@ -50,14 +75,12 @@ struct TacticsScreen: View {
                     legalDestinations: model.legalDestinations,
                     lastMove: model.lastMove,
                     shapes: model.shapes,
-                    moveValues: values.values,
+                    moveValues: values.displayedValues,
                     onMove: handleMove
                 )
             }
         } panel: {
-            if exhausted {
-                AllowanceNotice(activity: .tactics)
-            } else if model.puzzle == nil {
+            if model.puzzle == nil {
                 LibraryNotice(isLoaded: app.isLibraryLoaded, what: "puzzles", file: "tactics.json")
             } else {
                 puzzleDetails
@@ -72,17 +95,17 @@ struct TacticsScreen: View {
     private var puzzleDetails: some View {
         if let puzzle = model.puzzle {
             Card {
-                Text(model.prompt).font(Face.display(22))
-                Text(model.objective).font(.subheadline).foregroundStyle(Theatre.ivoryDim)
+                Text(model.prompt).appFont(size: 22, weight: .semibold)
+                Text(model.objective).appFont(.subheadline).foregroundStyle(Theatre.ivoryDim)
 
                 if let why = model.reason.explanation {
-                    Text(why).font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                    Text(why).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                 }
 
                 if model.isReplying {
                     HStack(spacing: 6) {
                         BrassActivityIndicator(size: 15)
-                        Text(L.t("tactics.opponentReplies", "Opponent replies…")).font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                        Text(L.t("tactics.opponentReplies", "Opponent replies…")).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                     }
                 }
 
@@ -96,13 +119,15 @@ struct TacticsScreen: View {
 
             // The completion overlay carries the verdict once the puzzle ends,
             // so the inline card would just repeat it behind the overlay.
-            if let feedback = model.feedback, model.completion == nil {
+            if let feedback = model.feedback,
+               model.completion == nil,
+               model.wrongFeedback == nil {
                 FeedbackCard(feedback: feedback)
             }
 
             if model.isFinished {
                 Card {
-                    Text(L.t("tactics.themes", "Themes")).font(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
+                    Text(L.t("tactics.themes", "Themes")).appFont(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
                     TagRow(tags: motifsFirst(puzzle.themes).map(Themes.readable))
                 }
             }
@@ -117,23 +142,43 @@ struct TacticsScreen: View {
             },
             ActionItem(title: values.isEnabled ? L.t("common.hide", "Hide") : L.t("common.values", "Values"),
                        systemImage: "number.square", isEnabled: !model.isFinished) {
+                if values.isEnabled {
+                    values.toggle(fen: model.position.fen, engine: app.engine)
+                    return
+                }
                 guard beginAttempt() else { return }
                 model.noteAidUsed()
-                Task { await values.toggle(fen: model.position.fen, engine: app.engine) }
+                values.toggle(fen: model.position.fen, engine: app.engine)
             },
             ActionItem(title: L.t("tactics.solution", "Solution"), systemImage: "eye", isEnabled: !model.isFinished) {
                 guard beginAttempt() else { return }
                 record(model.revealSolution())
             },
-            ActionItem(title: L.t("tactics.skip", "Skip"), systemImage: "forward.end",
+            ActionItem(title: skipTitle, systemImage: "forward.end",
                        emphasis: model.isFinished ? .normal : .primary,
-                       isEnabled: !model.isFinished) {
-                next()
+                       isEnabled: canSkip) {
+                skipPuzzle()
             },
         ])
     }
 
     private var material: MaterialBalance { MaterialBalance(model.position) }
+
+    private var wrongFeedbackBinding: Binding<TacticsModel.Feedback?> {
+        Binding(
+            get: { model.wrongFeedback },
+            set: { feedback in
+                if feedback == nil { model.dismissWrongFeedback() }
+            }
+        )
+    }
+
+    private var completionIsPresented: Binding<Bool> {
+        Binding(
+            get: { model.completion != nil },
+            set: { _ in }
+        )
+    }
 
     private func handleMove(from: Square, to: Square, promotion: PieceKind?) {
         guard beginAttempt() else { return }
@@ -145,6 +190,12 @@ struct TacticsScreen: View {
 
     private func record(_ outcome: (solved: Bool, usedHint: Bool)?) {
         guard let outcome, let puzzle = model.puzzle else { return }
+        // Tactics grants one *completed puzzle*, not one attempt. Wrong moves,
+        // hints and skipping do not spend it. The first finish (solved or
+        // revealed) does; replaying that same puzzle afterwards remains free
+        // practice and is not recorded twice.
+        guard !hasCountedCompletion, app.beginAttempt(.tactics) else { return }
+        hasCountedCompletion = true
         app.update { progress in
             progress.record(
                 mode: .tactics,
@@ -158,18 +209,38 @@ struct TacticsScreen: View {
     }
 
     private func next() {
+        showsSolutionReplay = false
         exhausted = false
         hasStartedAttempt = false
+        hasCountedCompletion = false
         values.reset()
         model.load(ItemSelector.nextPuzzle(from: app.library.puzzles, progress: app.progress))
+    }
+
+    private func skipPuzzle() {
+        guard model.puzzle != nil, !model.isFinished, app.useTacticsSkip() else { return }
+        next()
+    }
+
+    private var canSkip: Bool {
+        guard model.puzzle != nil, !model.isFinished else { return false }
+        return app.store.isPro || app.progress.freeTacticsSkipsRemaining() > 0
+    }
+
+    private var skipTitle: String {
+        guard !app.store.isPro else { return L.t("tactics.skip", "Skip") }
+        return L.t(
+            "tactics.skipRemaining",
+            "Skip · %lld",
+            app.progress.freeTacticsSkipsRemaining()
+        )
     }
 
     private func beginAttempt() -> Bool {
         guard model.puzzle != nil, !model.isFinished else { return false }
         guard !hasStartedAttempt else { return true }
-        guard app.beginAttempt(.tactics) else {
+        guard app.hasAllowance(for: .tactics) else {
             exhausted = true
-            showsPaywall = true
             return false
         }
         exhausted = false
@@ -180,5 +251,31 @@ struct TacticsScreen: View {
     /// Show the skills first; the descriptive tags are filler beside them.
     private func motifsFirst(_ themes: [String]) -> [String] {
         (themes.filter(Themes.isMotif) + themes.filter { !Themes.isMotif($0) }).prefix(7).map { $0 }
+    }
+}
+
+private struct WrongMoveOverlay: View {
+    let feedback: TacticsModel.Feedback
+    let onDismiss: () -> Void
+
+    var body: some View {
+        BrassModalBackdrop(onBackdropTap: onDismiss) {
+            BrassModalPanel(tint: Theatre.bad) {
+                Text(feedback.title)
+                    .appFont(.title2, weight: .semibold)
+                    .foregroundStyle(Theatre.ivory)
+
+                ForEach(feedback.lines, id: \.self) { line in
+                    Text(line)
+                        .appFont(.subheadline)
+                        .foregroundStyle(Theatre.ivoryDim)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+
+                Button(L.t("common.tryAgain", "Try again"), action: onDismiss)
+                    .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
+                    .frame(maxWidth: .infinity)
+            }
+        }
     }
 }

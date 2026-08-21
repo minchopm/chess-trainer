@@ -13,6 +13,32 @@ struct EloGuessTests {
         #expect(guess.points == 90)
     }
 
+    @Test("White and black guesses are scored independently")
+    func pairScoring() {
+        let guess = EloPairGuess(
+            whiteGuess: 1700,
+            blackGuess: 1400,
+            whiteActual: 1600,
+            blackActual: 1600
+        )
+
+        #expect(guess.white.error == 100)
+        #expect(guess.black.error == 200)
+        #expect(guess.averageError == 150)
+        #expect(guess.verdict == .fair)
+        #expect(guess.points == 70)
+
+        let record = EloGuessRecord(
+            gameID: "pair",
+            whiteGuess: 1700,
+            whiteActual: 1600,
+            blackGuess: 1400,
+            blackActual: 1600
+        )
+        #expect(record.error == 150)
+        #expect(record.bias == -50)
+    }
+
     @Test("Verdicts widen in bands, not by a hair")
     func verdicts() {
         #expect(EloGuess(guess: 1500, actual: 1500).verdict == .spot)

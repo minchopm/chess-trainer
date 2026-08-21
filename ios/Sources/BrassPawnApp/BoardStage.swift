@@ -38,18 +38,18 @@ struct PlayerBar: View {
                 .overlay(Circle().strokeBorder(Theatre.light.opacity(0.35), lineWidth: 0.5))
                 .frame(width: 9, height: 9)
             Text(name)
-                .font(.footnote.weight(.medium))
+                .appFont(.footnote, weight: .medium)
                 .lineLimit(1)
             if let rating {
                 // Verbatim: a rating is an identifier, not a quantity, and the
                 // locale's thousands separator turns 1387 into "1,387".
                 Text(verbatim: String(rating))
-                    .font(.footnote.weight(.semibold))
+                    .appFont(.footnote, weight: .semibold)
                     .monospacedDigit()
                     .foregroundStyle(Theatre.ivoryDim)
             } else if mysteryRating {
                 Text(verbatim: "?")
-                    .font(.footnote.weight(.semibold))
+                    .appFont(.footnote, weight: .semibold)
                     .foregroundStyle(Theatre.ivoryDim)
             }
         }
@@ -89,7 +89,7 @@ struct PlayerBar: View {
             }
             if lead > 0 {
                 Text(verbatim: "+\(lead)")
-                    .font(.caption2.weight(.bold))
+                    .appFont(.caption2, weight: .bold)
                     .monospacedDigit()
                     .foregroundStyle(Theatre.ivoryDim)
             }
@@ -198,7 +198,7 @@ struct ClockStrip: View {
                 ))
                 .frame(width: 9, height: 9)
             Text(verbatim: ChessClock.text(remaining))
-                .font(Face.mono(15, weight: live ? .semibold : .regular))
+                .appFont(size: 15, weight: live ? .semibold : .regular)
                 .foregroundStyle(tint(remaining))
         }
         // Idle is dimmed rather than recoloured, so the one number that is

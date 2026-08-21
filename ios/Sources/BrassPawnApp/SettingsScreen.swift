@@ -59,6 +59,7 @@ struct SettingsScreen: View {
                         section(L.t("settings.pieces", "Pieces")) { PieceSetGallery() }
                         section(L.t("settings.squares", "Squares")) { BoardGallery() }
                     }
+                    section(L.t("settings.font", "Application font")) { TypefaceChoice() }
                 }
                 .padding(16)
                 .padding(.bottom, 30)
@@ -82,7 +83,7 @@ struct SettingsScreen: View {
 
         return Panel {
             Text(L.t("settings.soundsOn", "Play sounds"))
-                .font(.subheadline)
+                .appFont(.subheadline)
                 .foregroundStyle(Theatre.ivory)
 
             HStack(spacing: 10) {
@@ -102,25 +103,22 @@ struct SettingsScreen: View {
                         }
                     }
                 } label: {
-                    Image(systemName: soundIsOn
-                          ? "speaker.wave.2.fill"
-                          : "speaker.slash.fill")
-                        .font(.system(size: 15, weight: .semibold))
-                        .foregroundStyle(soundIsOn
-                                         ? Theatre.ink
-                                         : Theatre.ivoryDim)
+                    BrassIcon(soundIsOn
+                              ? "speaker.wave.2.fill"
+                              : "speaker.slash.fill", size: 22)
+                        .opacity(soundIsOn ? 1 : 0.55)
                         .frame(width: 44, height: 44)
                         .background {
                             Circle()
                                 .fill(soundIsOn
-                                      ? Theatre.brass
-                                      : Theatre.ink3)
+                                      ? Theatre.ink4
+                                      : Theatre.ink2)
                         }
                         .overlay {
                             Circle()
                                 .strokeBorder(soundIsOn
-                                              ? Theatre.brass
-                                              : Theatre.brassDeep,
+                                              ? Theatre.brassHot
+                                              : Theatre.brassDeep.opacity(0.65),
                                               lineWidth: 1)
                         }
                         .shadow(color: soundIsOn
@@ -166,6 +164,129 @@ struct SettingsScreen: View {
 
 }
 
+/// The family is applied live at RootView, so choosing from the compact menu
+/// immediately redraws this screen and every destination with the same face.
+private struct TypefaceChoice: View {
+    @Environment(AppModel.self) private var app
+    @State private var isExpanded = false
+
+    /// The picker is the last control in Settings. Expanding it in the normal
+    /// layout direction put the choices below the visible scroll area, which
+    /// made the tap appear to do nothing. Keep the menu floating above its
+    /// trigger instead, like a compact custom pop-up.
+    private let menuGap: CGFloat = 8
+    private let menuHeight: CGFloat = 135
+
+    var body: some View {
+        Button {
+            withAnimation(.spring(response: 0.26, dampingFraction: 0.82)) {
+                isExpanded.toggle()
+            }
+        } label: {
+            HStack(spacing: 12) {
+                Text(app.progress.appearance.typeface.name)
+                    .appFont(.subheadline, weight: .semibold)
+                    .foregroundStyle(Theatre.ivory)
+
+                Spacer(minLength: 8)
+
+                BrassIcon("chevron.down", size: 16)
+                    .foregroundStyle(Theatre.brassHot)
+                    .rotationEffect(.degrees(isExpanded ? 180 : 0))
+            }
+            .padding(.horizontal, 14)
+            .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
+            .background {
+                BrassPlateShape(cut: 10)
+                    .fill(isExpanded ? Theatre.ink4 : Theatre.ink3)
+            }
+            .overlay {
+                BrassPlateShape(cut: 10)
+                    .strokeBorder(
+                        isExpanded ? Theatre.brassHot : Theatre.brassDeep.opacity(0.62),
+                        lineWidth: isExpanded ? 1.2 : 0.8
+                    )
+            }
+            .shadow(color: isExpanded ? Theatre.brassGlow : .clear, radius: 8)
+        }
+        .buttonStyle(BrassPressStyle())
+        .accessibilityLabel(L.t("settings.font", "Application font"))
+        .accessibilityValue(app.progress.appearance.typeface.name)
+        .accessibilityHint(isExpanded ? "Close choices" : "Show choices")
+        .overlay(alignment: .top) {
+            if isExpanded {
+                optionsMenu
+                    .frame(height: menuHeight)
+                    .offset(y: -(menuHeight + menuGap))
+                    .transition(
+                        .move(edge: .bottom)
+                            .combined(with: .opacity)
+                            .combined(with: .scale(scale: 0.96, anchor: .bottom))
+                    )
+            }
+        }
+        .zIndex(isExpanded ? 10 : 0)
+    }
+
+    private var optionsMenu: some View {
+        VStack(spacing: 0) {
+            ForEach(AppTypeface.allCases) { typeface in
+                option(typeface)
+
+                if typeface != AppTypeface.allCases.last {
+                    Rectangle()
+                        .fill(Theatre.brassDeep.opacity(0.35))
+                        .frame(height: 0.5)
+                        .padding(.horizontal, 12)
+                }
+            }
+        }
+        .padding(.vertical, 4)
+        .background {
+            ZStack {
+                // Mask the section title underneath the floating menu,
+                // including behind its clipped decorative corners.
+                Theatre.ink
+                BrassPlateShape(cut: 10)
+                    .fill(Theatre.ink2)
+            }
+        }
+        .overlay {
+            BrassPlateShape(cut: 10)
+                .strokeBorder(Theatre.brassHot.opacity(0.8), lineWidth: 1)
+        }
+        .shadow(color: Theatre.shadow.opacity(0.72), radius: 18, y: 8)
+    }
+
+    private func option(_ typeface: AppTypeface) -> some View {
+        let chosen = app.progress.appearance.typeface == typeface
+
+        return Button {
+            app.update { $0.appearance.typeface = typeface }
+            withAnimation(.spring(response: 0.24, dampingFraction: 0.84)) {
+                isExpanded = false
+            }
+        } label: {
+            Text(typeface.name)
+                // Each name is also its own preview. This is intentionally the
+                // one place where rows do not inherit the active app family.
+                .font(
+                    AppTypography.font(
+                        for: typeface,
+                        style: .subheadline,
+                        weight: chosen ? .semibold : .regular
+                    )
+                )
+                .foregroundStyle(chosen ? Theatre.brassHot : Theatre.ivoryDim)
+                .padding(.horizontal, 14)
+                .frame(maxWidth: .infinity, minHeight: 42, alignment: .leading)
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(BrassPressStyle())
+        .accessibilityAddTraits(chosen ? .isSelected : [])
+    }
+}
+
 /// The sets, shown as themselves on a real square. Nobody picks "Ivory &
 /// sapphire" from a word.
 private struct PieceSetGallery: View {
@@ -193,7 +314,6 @@ private struct PieceSetGallery: View {
                 let chosen = app.progress.appearance.pieces == set
                 Button {
                     app.update { $0.appearance.pieces = set }
-                    SoundBoard.shared.play(.move)
                 } label: {
                     VStack(spacing: 8) {
                         HStack(spacing: 0) {
@@ -215,7 +335,7 @@ private struct PieceSetGallery: View {
                         }
 
                         Text(set.name)
-                            .font(Face.mono(9, weight: .medium))
+                            .appFont(size: 9, weight: .medium)
                             .tracking(1.2)
                             .textCase(.uppercase)
                             .lineLimit(1)
@@ -272,7 +392,7 @@ private struct BoardGallery: View {
                     VStack(spacing: 7) {
                         MiniBoard(style: style)
                         Text(style.name)
-                            .font(Face.mono(9, weight: .medium))
+                            .appFont(size: 9, weight: .medium)
                             .tracking(1.2)
                             .textCase(.uppercase)
                             .foregroundStyle(chosen ? Theatre.brass : Theatre.ivoryDim)
@@ -362,14 +482,14 @@ struct DimensionChoice: View {
 
             if app.progress.appearance.dimension.isDimensional {
                 Text(L.t("settings.carving", "Set").uppercased())
-                    .font(Face.mono(9)).tracking(2.2)
+                    .appFont(size: 9).tracking(2.2)
                     .foregroundStyle(Theatre.ivoryFaint)
                 HStack(spacing: 9) {
                     carving(.banded, L.t("settings.banded", "Brass banded"))
                     carving(.plain, L.t("settings.plainSet", "Boxwood & ebony"))
                 }
                 Text(L.t("settings.dimensionalCaveat", "Arrows and move values are drawn on the flat board only."))
-                    .font(.footnote)
+                    .appFont(.footnote)
                     .foregroundStyle(Theatre.ivoryFaint)
             }
         }
@@ -379,17 +499,15 @@ struct DimensionChoice: View {
         let chosen = app.progress.appearance.dimension == value
         return Button {
             app.update { $0.appearance.dimension = value }
-            SoundBoard.shared.play(.move)
         } label: {
             VStack(alignment: .leading, spacing: 7) {
-                Image(systemName: symbol)
-                    .font(.system(size: 17, weight: .light))
+                BrassIcon(symbol, size: 23)
                     .foregroundStyle(chosen ? Theatre.brass : Theatre.ivoryDim)
                 Text(title)
-                    .font(Face.mono(11, weight: .medium)).tracking(1.6)
+                    .appFont(size: 11, weight: .medium).tracking(1.6)
                     .foregroundStyle(chosen ? Theatre.ivory : Theatre.ivoryDim)
                 Text(note)
-                    .font(.caption2)
+                    .appFont(.caption2)
                     .foregroundStyle(Theatre.ivoryFaint)
                     .multilineTextAlignment(.leading)
                     .fixedSize(horizontal: false, vertical: true)
@@ -415,7 +533,7 @@ struct DimensionChoice: View {
             app.update { $0.appearance.carving = value }
         } label: {
             Text(title)
-                .font(Face.mono(10, weight: .medium)).tracking(1.4)
+                .appFont(size: 10, weight: .medium).tracking(1.4)
                 .foregroundStyle(chosen ? Theatre.ivory : Theatre.ivoryDim)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 10)

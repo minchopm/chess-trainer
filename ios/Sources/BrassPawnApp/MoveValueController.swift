@@ -15,43 +15,71 @@ final class MoveValueController {
     private(set) var isComputing = false
     private(set) var isEnabled = false
 
+    /// Only this value is handed to a board. A completed engine request may be
+    /// retained as a cache while hidden, but it must never make the overlay
+    /// visible again by itself.
+    var displayedValues: MoveValues? { isEnabled ? values : nil }
+
     /// The position the current values belong to. Values from an earlier move
     /// would be worse than none at all.
     private var computedFEN: String?
-
-    var isStale: Bool { values != nil && computedFEN != nil }
+    private var currentFEN: String?
+    /// Invalidates engine responses that finish after reset or a board change.
+    private var positionRevision = 0
 
     func reset() {
+        positionRevision &+= 1
         values = nil
         computedFEN = nil
+        currentFEN = nil
+        isComputing = false
         isEnabled = false
     }
 
     /// Drop values that no longer match the position on the board.
     func invalidate(unless fen: String) {
-        if computedFEN != fen {
-            values = nil
-            computedFEN = nil
-        }
+        adopt(fen: fen)
     }
 
-    func toggle(fen: String, engine: StockfishEngine) async {
+    /// Toggle visibility synchronously. Starting an engine request is detached
+    /// from the button action so a second tap can hide the overlay immediately.
+    func toggle(fen: String, engine: StockfishEngine) {
+        adopt(fen: fen)
+
         if isEnabled {
             isEnabled = false
             return
         }
+
         isEnabled = true
-        await refresh(fen: fen, engine: engine)
+        Task { [weak self] in
+            await self?.refresh(fen: fen, engine: engine)
+        }
     }
 
     func refresh(fen: String, engine: StockfishEngine) async {
+        adopt(fen: fen)
         guard isEnabled, !isComputing, computedFEN != fen else { return }
+
+        let revision = positionRevision
         isComputing = true
-        defer { isComputing = false }
+        defer {
+            if positionRevision == revision { isComputing = false }
+        }
 
         if let computed = try? await engine.valueEveryMove(fen: fen) {
+            guard positionRevision == revision, currentFEN == fen else { return }
             values = computed
             computedFEN = fen
         }
+    }
+
+    private func adopt(fen: String) {
+        guard currentFEN != fen else { return }
+        positionRevision &+= 1
+        currentFEN = fen
+        values = nil
+        computedFEN = nil
+        isComputing = false
     }
 }

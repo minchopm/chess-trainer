@@ -156,6 +156,18 @@ public struct TrainingProgress: Codable, Sendable {
         dailyUsage.record(activity, at: now, calendar: calendar)
     }
 
+    public func freeTacticsSkipsRemaining(
+        at now: Date = Date(), calendar: Calendar = .current
+    ) -> Int {
+        dailyUsage.remainingTacticsSkips(at: now, calendar: calendar)
+    }
+
+    public mutating func recordFreeTacticsSkip(
+        at now: Date = Date(), calendar: Calendar = .current
+    ) {
+        dailyUsage.recordTacticsSkip(at: now, calendar: calendar)
+    }
+
     /// Record a finished online game. The rating change is computed by the
     /// session, which is the only place that knows what the opponent was rated.
     public mutating func record(online result: MatchResult) {

@@ -172,7 +172,7 @@ struct RushScreen: View {
     @Environment(AppModel.self) private var app
     @Environment(ActivityGuard.self) private var activity
     @State private var model = RushModel()
-    @State private var showsPaywall = false
+    @State private var exhausted = false
 
     private var material: MaterialBalance { MaterialBalance(model.position) }
 
@@ -183,10 +183,18 @@ struct RushScreen: View {
             case .running, .finished: playing
             }
         }
-        .fullScreenCover(isPresented: $showsPaywall) { PaywallView(activity: .rush) }
-        .fullScreenCover(isPresented: .constant(model.phase == .finished)) {
-            if let summary = model.summary { RushSummary(onRunAgain: startRun, run: summary, model: model, app: app) }
+        .overlay {
+            if let summary = model.summary, model.phase == .finished {
+                RushSummary(onTryAgain: startRun, run: summary, app: app)
+                    .transition(.opacity.combined(with: .scale(scale: 0.97)))
+            }
         }
+        .allowanceGate(
+            activity: .rush,
+            hasStartedAttempt: model.phase != .setup,
+            wasDenied: exhausted
+        )
+        .animation(.easeOut(duration: 0.2), value: model.phase)
         .onDisappear {
             model.stop()
             activity.release()
@@ -207,9 +215,9 @@ struct RushScreen: View {
         ScrollView {
             VStack(spacing: 14) {
                 Card {
-                    Text(L.t("rush.rush", "Rush")).font(Face.display(22))
+                    Text(L.t("rush.rush", "Rush")).appFont(size: 22, weight: .semibold)
                     Text(L.t("rush.solveAsManyAsYou", "Solve as many as you can before the clock runs out. Puzzles start easy and get harder as you go. Three misses ends the run."))
-                        .font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                        .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
 
                     BrassSegmentedPicker(
                         L.t("rush.time", "Time"),
@@ -231,7 +239,7 @@ struct RushScreen: View {
 
                 if !records.isEmpty {
                     Card {
-                        Text(L.t("rush.yourBest", "Your best")).font(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
+                        Text(L.t("rush.yourBest", "Your best")).appFont(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
                         ForEach(records, id: \.key) { entry in
                             HStack {
                                 Text(RushSettings.label(for: TimeInterval(entry.key)))
@@ -240,7 +248,7 @@ struct RushScreen: View {
                                     .foregroundStyle(Theatre.ivoryDim)
                                     .monospacedDigit()
                             }
-                            .font(.footnote)
+                            .appFont(.footnote)
                         }
                     }
                 }
@@ -253,9 +261,14 @@ struct RushScreen: View {
     /// the check happens before it starts rather than in the middle of one.
     private func startRun() {
         guard app.beginAttempt(.rush) else {
-            showsPaywall = true
+            // A finished free run has already spent today's Rush allowance.
+            // Remove its result overlay so the shared allowance modal can take
+            // over; Pro accounts pass beginAttempt and start immediately.
+            model.reset()
+            exhausted = true
             return
         }
+        exhausted = false
         model.start(library: app.library.puzzles, practiceRating: app.progress.rating(.tactics))
     }
 
@@ -305,7 +318,7 @@ struct RushScreen: View {
         Card {
             HStack(alignment: .firstTextBaseline) {
                 Text(model.clockText)
-                    .font(.system(size: 34, weight: .semibold, design: .rounded))
+                    .appFont(size: 34, weight: .semibold)
                     .monospacedDigit()
                     .foregroundStyle(model.clockIsUrgent ? Theatre.bad : Theatre.ivory)
                     .contentTransition(.numericText(countsDown: true))
@@ -314,14 +327,18 @@ struct RushScreen: View {
 
                 VStack(alignment: .trailing, spacing: 2) {
                     Text("\(model.run?.solved ?? 0) / \(model.settings.target)")
-                        .font(Face.display(22)).monospacedDigit()
-                    Text(missesText).font(.caption).foregroundStyle(Theatre.ivoryDim)
+                        .appFont(size: 22, weight: .semibold).monospacedDigit()
+                    Text(missesText).appFont(.caption).foregroundStyle(Theatre.ivoryDim)
                 }
             }
 
             if let flash = model.flash {
-                Label(flash.text, systemImage: flash.solved ? "checkmark.circle.fill" : "xmark.circle.fill")
-                    .font(.footnote.weight(.medium))
+                Label {
+                    Text(flash.text)
+                } icon: {
+                    BrassIcon(flash.solved ? "checkmark.circle.fill" : "xmark.circle.fill", size: 18)
+                }
+                    .appFont(.footnote, weight: .medium)
                     .foregroundStyle(flash.solved ? Theatre.good : Theatre.bad)
                     .transition(.opacity)
                     .id(flash.text)
@@ -329,7 +346,7 @@ struct RushScreen: View {
 
             if let puzzle = model.puzzle {
                 Text(L.t("common.sideToPlay", "%@ to play", L.color(puzzle.sideToMove)))
-                    .font(.subheadline.weight(.medium))
+                    .appFont(.subheadline, weight: .medium)
             }
         }
         .animation(.easeOut(duration: 0.2), value: model.flash)
@@ -340,61 +357,49 @@ struct RushScreen: View {
         let left = RushRun.allowedMisses - missed
         return "\(left) miss\(left == 1 ? "" : "es") left"
     }
+
 }
 
 struct RushSummary: View {
-    let onRunAgain: () -> Void
+    let onTryAgain: () -> Void
     let run: RushRun
-    let model: RushModel
     let app: AppModel
 
     @State private var recorded = false
 
     var body: some View {
-        VStack(spacing: 18) {
-            HStack {
-                BrassBackButton { model.reset() }
-                Spacer()
-            }
-            .padding(.horizontal, 14)
-            .padding(.top, 8)
+        BrassModalBackdrop {
+            BrassModalPanel(tint: run.completedTarget ? Theatre.warn : Theatre.brass) {
+                HStack(spacing: 12) {
+                    BrassIcon(run.completedTarget ? "trophy.fill" : "flag.checkered", size: 34)
+                        .foregroundStyle(run.completedTarget ? Theatre.warn : Theatre.brass)
+                    Text(headline).appFont(.title2, weight: .semibold)
+                    Spacer(minLength: 0)
+                }
 
-            Image(systemName: run.completedTarget ? "trophy.fill" : "flag.checkered")
-                .font(.system(size: 44))
-                .foregroundStyle(run.completedTarget ? Theatre.warn : Theatre.brass)
-
-            Text(headline).font(.title2.weight(.semibold))
-
-            HStack(spacing: 28) {
-                stat("\(run.solved)", "solved")
-                stat("\(run.bestStreak)", "best streak")
-                stat("\(run.missed)", "missed")
-            }
-
-            if let best = app.progress.rushRecordsByDuration[Int(run.settings.duration)],
-               run.solved >= best.solved {
-                Label(L.t("rush.newPersonalBest", "New personal best"), systemImage: "sparkles")
-                    .font(.footnote.weight(.medium))
-                    .foregroundStyle(Theatre.warn)
-            }
-
-            Spacer()
-
-            VStack(spacing: 10) {
-                // The summary cover lives above the screen that owns the
-                // allowance, so it asks rather than starting the run itself.
-                Button(L.t("rush.runAgain", "Run again")) { onRunAgain() }
-                .buttonStyle(PillButtonStyle(emphasis: .solid))
+                HStack(spacing: 28) {
+                    stat("\(run.solved)", "solved")
+                    stat("\(run.bestStreak)", "best streak")
+                    stat("\(run.missed)", "missed")
+                }
                 .frame(maxWidth: .infinity)
 
-                Button(L.t("rush.done", "Done")) { model.reset() }
-                    .buttonStyle(PillButtonStyle(emphasis: .ghost))
+                if let best = app.progress.rushRecordsByDuration[Int(run.settings.duration)],
+                   run.solved >= best.solved {
+                    Label {
+                        Text(L.t("rush.newPersonalBest", "New personal best"))
+                    } icon: {
+                        BrassIcon("sparkles", size: 20)
+                    }
+                        .appFont(.footnote, weight: .medium)
+                        .foregroundStyle(Theatre.warn)
+                }
+
+                Button(L.t("common.tryAgain", "Try again"), action: onTryAgain)
+                    .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
                     .frame(maxWidth: .infinity)
             }
-            .padding(.horizontal, 20)
-            .padding(.bottom, 24)
         }
-        .interactiveDismissDisabled()
         .onAppear {
             guard !recorded else { return }
             recorded = true
@@ -415,8 +420,8 @@ struct RushSummary: View {
 
     private func stat(_ value: String, _ label: String) -> some View {
         VStack(spacing: 2) {
-            Text(value).font(.title.weight(.semibold)).monospacedDigit()
-            Text(label).font(.caption).foregroundStyle(Theatre.ivoryDim)
+            Text(value).appFont(.title, weight: .semibold).monospacedDigit()
+            Text(label).appFont(.caption).foregroundStyle(Theatre.ivoryDim)
         }
     }
 }

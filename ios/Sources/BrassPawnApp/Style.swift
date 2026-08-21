@@ -1,3 +1,4 @@
+import ChessTraining
 import SwiftUI
 
 /// The house style, carried over from the site.
@@ -45,21 +46,104 @@ public extension Color {
     }
 }
 
-/// Three faces, the same three the site uses: a Garamond for anything that is
-/// announcing something, the system face for prose because it is what the
-/// platform reads best, and a monospace for labels — the small-caps-and-
-/// tracking treatment that makes a caption look like a title card.
-public enum Face {
-    public static func display(_ size: CGFloat) -> Font {
-        .custom("CormorantGaramond-SemiBold", size: size)
+private struct AppTypefaceKey: EnvironmentKey {
+    static let defaultValue = AppTypeface.system
+}
+
+extension EnvironmentValues {
+    var appTypeface: AppTypeface {
+        get { self[AppTypefaceKey.self] }
+        set { self[AppTypefaceKey.self] = newValue }
+    }
+}
+
+/// Resolves the selected family while preserving the size and weight hierarchy
+/// of each screen. Every textual component goes through this resolver, so a
+/// family change cannot leave headings or compact labels behind.
+enum AppTypography {
+    static func font(
+        for typeface: AppTypeface,
+        style: Font.TextStyle,
+        weight: Font.Weight? = nil
+    ) -> Font {
+        let base: Font = switch typeface {
+        case .system:
+            .system(style)
+        case .cormorantGaramond:
+            .custom("CormorantGaramond-Regular", size: baseSize(for: style), relativeTo: style)
+        case .jetBrainsMono:
+            .custom("JetBrainsMono-Regular", size: baseSize(for: style), relativeTo: style)
+        }
+        return weight.map { base.weight($0) } ?? base
     }
 
-    public static func displayLight(_ size: CGFloat) -> Font {
-        .custom("CormorantGaramond-Light", size: size)
+    static func font(
+        for typeface: AppTypeface,
+        size: CGFloat,
+        relativeTo style: Font.TextStyle = .body,
+        weight: Font.Weight? = nil
+    ) -> Font {
+        let base: Font = switch typeface {
+        case .system:
+            .system(size: size)
+        case .cormorantGaramond:
+            .custom("CormorantGaramond-Regular", size: size, relativeTo: style)
+        case .jetBrainsMono:
+            .custom("JetBrainsMono-Regular", size: size, relativeTo: style)
+        }
+        return weight.map { base.weight($0) } ?? base
     }
 
-    public static func mono(_ size: CGFloat, weight: Font.Weight = .medium) -> Font {
-        .custom("JetBrainsMono-Regular", size: size).weight(weight)
+    private static func baseSize(for style: Font.TextStyle) -> CGFloat {
+        switch style {
+        case .largeTitle: 34
+        case .title: 28
+        case .title2: 22
+        case .title3: 20
+        case .headline: 17
+        case .subheadline: 15
+        case .callout: 16
+        case .footnote: 13
+        case .caption: 12
+        case .caption2: 11
+        default: 17
+        }
+    }
+}
+
+private struct AppFontModifier: ViewModifier {
+    @Environment(\.appTypeface) private var typeface
+    let style: Font.TextStyle
+    let size: CGFloat?
+    let weight: Font.Weight?
+
+    func body(content: Content) -> some View {
+        content.font(
+            size.map {
+                AppTypography.font(for: typeface, size: $0, relativeTo: style, weight: weight)
+            } ?? AppTypography.font(for: typeface, style: style, weight: weight)
+        )
+    }
+}
+
+extension View {
+    func appFont(_ style: Font.TextStyle, weight: Font.Weight? = nil) -> some View {
+        modifier(AppFontModifier(style: style, size: nil, weight: weight))
+    }
+
+    func appFont(
+        size: CGFloat,
+        weight: Font.Weight? = nil,
+        relativeTo style: Font.TextStyle = .body
+    ) -> some View {
+        modifier(AppFontModifier(style: style, size: size, weight: weight))
+    }
+
+    /// Installs the family for both explicitly styled text and any plain Text
+    /// that relies on the environment's default body font.
+    func appTypeface(_ typeface: AppTypeface) -> some View {
+        environment(\.appTypeface, typeface)
+            .font(AppTypography.font(for: typeface, style: .body))
     }
 }
 
@@ -72,7 +156,7 @@ public struct Slug: View {
     public var body: some View {
         HStack(spacing: 10) {
             Text(text.uppercased())
-                .font(Face.mono(10))
+                .appFont(size: 10)
                 .tracking(3.4)
                 .foregroundStyle(Theatre.brass)
             if trailingRule {
@@ -120,12 +204,17 @@ public struct PillButtonStyle: ButtonStyle {
 
     var emphasis: Emphasis = .ghost
     var enabled = true
+    var usesBodySize = false
 
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(Face.mono(11, weight: .medium))
-            .tracking(1.6)
-            .textCase(.uppercase)
+            .appFont(
+                size: usesBodySize ? 17 : 11,
+                weight: usesBodySize ? .semibold : .medium,
+                relativeTo: usesBodySize ? .body : .caption2
+            )
+            .tracking(usesBodySize ? 0 : 1.6)
+            .textCase(usesBodySize ? nil : .uppercase)
             .foregroundStyle(foreground)
             .padding(.horizontal, 18)
             .padding(.vertical, 12)

@@ -238,6 +238,62 @@
   ]
  },
  {
+  "key": "coach.detailedCapture",
+  "english": "%@ — %@ moves the %@ from %@ to %@, capturing the %@",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.detailedCastleKingside",
+  "english": "%@ — %@ castles kingside",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.detailedCastleQueenside",
+  "english": "%@ — %@ castles queenside",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.detailedCheck",
+  "english": ", giving check",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.detailedCheckmate",
+  "english": ", delivering checkmate",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.detailedEscape",
+  "english": ", escaping the check",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.detailedMove",
+  "english": "%@ — %@ moves the %@ from %@ to %@",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.detailedPromotion",
+  "english": ", promoting to a %@",
+  "files": [
+   "MoveDescription.swift"
+  ]
+ },
+ {
   "key": "coach.doublesRooks",
   "english": "doubles the rooks",
   "files": [
@@ -1281,8 +1337,15 @@
   ]
  },
  {
-  "key": "play.mode",
-  "english": "Mode",
+ "key": "play.mode",
+ "english": "Mode",
+ "files": [
+   "PlayTab.swift"
+  ]
+ },
+ {
+  "key": "play.multiplayer",
+  "english": "Multiplayer",
   "files": [
    "PlayTab.swift"
   ]
@@ -1344,10 +1407,17 @@
   ]
  },
  {
-  "key": "play.theQueueWasDroppedThe",
-  "english": "The queue was dropped — the engine's move made it impossible.",
-  "files": [
+ "key": "play.theQueueWasDroppedThe",
+ "english": "The queue was dropped — the engine's move made it impossible.",
+ "files": [
    "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.vsAI",
+  "english": "VS AI",
+  "files": [
+   "PlayTab.swift"
   ]
  },
  {
@@ -2149,6 +2219,22 @@
   ]
  },
  {
+  "key": "store.freePuzzleComplete",
+  "english": "You have completed today's free Tactics puzzle",
+  "files": [
+   "Components.swift",
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.freeRushAttemptUsed",
+  "english": "Today's free Rush attempt has been used",
+  "files": [
+   "Components.swift",
+   "PaywallView.swift"
+  ]
+ },
+ {
   "key": "store.freeToday",
   "english": "Free today: %lld puzzles, %lld Rush run, %lld of each other exercise.",
   "files": [
@@ -2303,6 +2389,20 @@
   ]
  },
  {
+  "key": "store.rushAllowance",
+  "english": "One Rush attempt is free each day. It is separate from the daily Tactics puzzle. This resets at 9:00 AM local time. Playing against AI or another person remains unlimited.",
+  "files": [
+   "Components.swift"
+  ]
+ },
+ {
+  "key": "store.tacticsAllowance",
+  "english": "One completed Tactics puzzle is free each day. Rush has its own separate daily attempt. This resets at 9:00 AM local time. Playing against AI or another person remains unlimited.",
+  "files": [
+   "Components.swift"
+  ]
+ },
+ {
   "key": "store.terms",
   "english": "Terms of Use",
   "files": [
@@ -2367,7 +2467,7 @@
  },
  {
   "key": "store.unlockNow",
-  "english": "Unlock unlimited training",
+  "english": "Upgrade now",
   "files": [
    "Components.swift"
   ]
@@ -2590,6 +2690,13 @@
   ]
  },
  {
+  "key": "tactics.skipRemaining",
+  "english": "Skip · %lld",
+  "files": [
+   "TacticsScreen.swift"
+  ]
+ },
+ {
   "key": "tactics.solution",
   "english": "Solution",
   "files": [
@@ -2607,6 +2714,7 @@
   "key": "tactics.solutionTitle",
   "english": "Solution",
   "files": [
+   "TacticsScreen.swift",
    "TacticsView.swift"
   ]
  },
@@ -2678,6 +2786,13 @@
   "english": "There is a stronger move here. Look at the most forcing options first — checks, captures, threats.",
   "files": [
    "TacticsView.swift"
+  ]
+ },
+ {
+  "key": "tactics.watchSolution",
+  "english": "Watch solution",
+  "files": [
+   "TacticsScreen.swift"
   ]
  },
  {

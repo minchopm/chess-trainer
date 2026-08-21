@@ -7,7 +7,7 @@ public struct RootView: View {
     @State private var selection = Tab.tactics
     @State private var navigator = Navigator()
 
-    public enum Tab: Hashable { case watch, tactics, positional, endgames, play, progress }
+    public enum Tab: Hashable { case watch, guessTheElo, tactics, positional, endgames, play, progress }
 
     public init() {}
 
@@ -42,6 +42,7 @@ public struct RootView: View {
                 .zIndex(3)
             }
         }
+        .appTypeface(app.progress.appearance.typeface)
         .animation(.easeOut(duration: 0.2), value: activity.wantsExit)
     }
 
@@ -69,7 +70,7 @@ public struct RootView: View {
         .overlay(alignment: .top) {
             if case .failed(let message) = app.engineState {
                 Text(message)
-                    .font(.footnote)
+                    .appFont(.footnote)
                     .padding(8)
                     .background(Theatre.bad.opacity(0.85), in: Capsule())
                     .foregroundStyle(Theatre.light)
@@ -81,7 +82,8 @@ public struct RootView: View {
     @ViewBuilder
     private var selectedScreen: some View {
         switch selection {
-        case .watch: WatchTab()
+        case .watch: ClassicsScreen()
+        case .guessTheElo: GuessTheEloTab()
         case .tactics: TrainingTab()
         case .positional: PositionalScreen()
         case .endgames: EndgameScreen()
@@ -102,6 +104,23 @@ public struct RootView: View {
     }
 }
 
+/// Guess the Elo is a first-class destination from the main menu, separate
+/// from the library of games that can simply be watched.
+private struct GuessTheEloTab: View {
+    var body: some View {
+        VStack(spacing: 0) {
+            TopBar {
+                Text(L.t("progress.guessTheElo", "Guess the Elo"))
+                    .appFont(size: 20, weight: .semibold)
+                    .foregroundStyle(Theatre.ivory)
+                    .frame(maxWidth: .infinity)
+            }
+            GuessTheEloScreen()
+        }
+        .background(Theatre.ink.ignoresSafeArea())
+    }
+}
+
 struct ProgressScreen: View {
     @Environment(AppModel.self) private var app
     @State private var confirmsReset = false
@@ -110,7 +129,7 @@ struct ProgressScreen: View {
         VStack(spacing: 0) {
             TopBar {
                 Text(L.t("progress.progress", "Progress"))
-                    .font(Face.display(20))
+                    .appFont(size: 20, weight: .semibold)
                     .foregroundStyle(Theatre.ivory)
                     .frame(maxWidth: .infinity)
             }
@@ -183,7 +202,7 @@ struct ProgressScreen: View {
                         Text(Themes.readable(theme.name))
                         if targeted.contains(theme.name) {
                             Text("targeting")
-                                .font(Face.mono(7)).tracking(0.7)
+                                .appFont(size: 7).tracking(0.7)
                                 .padding(.horizontal, 6).padding(.vertical, 2)
                                 .background(Theatre.brassGlow, in: Capsule())
                         }
@@ -191,7 +210,7 @@ struct ProgressScreen: View {
                         Text(L.t("progress.themeAccuracy", "%lld%% of %lld", Int(theme.record.accuracy * 100), theme.record.seen))
                             .foregroundStyle(Theatre.ivoryDim).monospacedDigit()
                     }
-                    .font(.subheadline)
+                    .appFont(.subheadline)
                 }
             }
         }
@@ -248,18 +267,18 @@ struct ProgressScreen: View {
             Spacer(minLength: 10)
             Text(value).foregroundStyle(Theatre.ivoryDim).monospacedDigit()
         }
-        .font(.subheadline)
+        .appFont(.subheadline)
     }
 
     private func note(_ text: String) -> some View {
-        Text(text).font(.footnote).foregroundStyle(Theatre.ivoryFaint)
+        Text(text).appFont(.footnote).foregroundStyle(Theatre.ivoryFaint)
     }
 
     private func rowLabel(_ title: String, symbol: String) -> some View {
         HStack {
-            Text(title).font(.subheadline)
+            Text(title).appFont(.subheadline)
             Spacer()
-            Image(systemName: symbol).font(.caption)
+            BrassIcon(symbol, size: 18)
         }
         .padding(14)
         .frame(maxWidth: .infinity)

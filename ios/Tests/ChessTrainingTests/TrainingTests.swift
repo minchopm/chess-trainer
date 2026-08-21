@@ -92,6 +92,21 @@ struct MoveDescriptionTests {
         #expect(clauses.contains { $0.contains("wins material") })
     }
 
+    @Test("Compact notation is expanded into a readable move")
+    func detailedNotation() throws {
+        let position = try #require(Position(fen: "3kq3/pQ6/8/3p4/3P2p1/2P5/PP4PP/4rNK1 b - - 2 37"))
+        let move = try #require(position.move(san: "Rxf1+"))
+        var resulting = position
+        resulting.make(move)
+        let sentence = try #require(MoveDescription.detailedSentence(
+            san: "Rxf1+", move: move, position: position, resulting: resulting
+        ))
+
+        #expect(sentence.contains("rook from e1 to f1"))
+        #expect(sentence.contains("capturing the knight"))
+        #expect(sentence.contains("giving check"))
+    }
+
     @Test("A summary reads the position")
     func summary() throws {
         let position = try #require(Position(fen: "4k3/pp4pp/8/4N3/3P4/8/PP4PP/3RK3 w - - 0 1"))

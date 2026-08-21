@@ -1,18 +1,43 @@
 import BoardScene
+import ChessCore
 import ChessTraining
 import SwiftUI
 
-/// Somebody else's game, on the round board, with the controls a recording
-/// ought to have.
+/// Somebody else's game, on the player's chosen board, with the controls a
+/// recording ought to have.
 ///
 /// The point of watching rather than replaying in your head is being able to
 /// stop: a move that looks like a blunder is worth a second look, and the way
 /// to give it one is to wind back two moves and let it happen again.
 struct WatchScreen: View {
-    @Environment(AppModel.self) private var app
     @Environment(\.dismiss) private var dismiss
 
     let game: ClassicGame
+
+    var body: some View {
+        ReplayViewer(
+            title: game.players,
+            subtitle: game.occasion,
+            startingPosition: Position(),
+            notation: game.moves,
+            onDismiss: { dismiss() }
+        )
+    }
+}
+
+/// The actual Watch player, shared by full games and short tactic solutions.
+/// Supplying the initial position is what lets a three-move combination use
+/// exactly the same board and transport as a complete classical game. Unlike
+/// the main menu's permanent title scene, this viewer honours the 2D/3D
+/// appearance preference.
+struct ReplayViewer: View {
+    @Environment(AppModel.self) private var app
+
+    let title: String
+    let subtitle: String
+    let startingPosition: Position
+    let notation: String
+    let onDismiss: () -> Void
 
     @State private var player: GamePlayer?
     @State private var index = 0
@@ -25,26 +50,52 @@ struct WatchScreen: View {
     var body: some View {
         VStack(spacing: 0) {
             heading
-            #if canImport(UIKit)
-            if let player {
-                BoardSceneView(sequence: player)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            }
-            #endif
+            replayBoard
             moves
             transport
         }
         .background(Theatre.ink.ignoresSafeArea())
         .onAppear(perform: build)
         .onDisappear { player?.pause() }
+        .onReceive(Timer.publish(every: 0.05, on: .main, in: .common).autoconnect()) { _ in
+            // BoardSceneView owns the display link while the board is 3D. A
+            // flat board has no renderer loop, so advance the same player here
+            // to keep autoplay and playback speed identical in both modes.
+            guard !app.progress.appearance.dimension.isDimensional else { return }
+            player?.advance(delta: 0.05)
+        }
+    }
+
+    @ViewBuilder
+    private var replayBoard: some View {
+        if let player {
+            #if canImport(UIKit)
+            if app.progress.appearance.dimension.isDimensional {
+                BoardSceneView(sequence: player)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else {
+                flatBoard(player)
+            }
+            #else
+            flatBoard(player)
+            #endif
+        }
+    }
+
+    private func flatBoard(_ player: GamePlayer) -> some View {
+        GameBoard(
+            position: player.currentPosition,
+            lastMove: player.lastMove
+        )
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
     private var heading: some View {
         BrassNavigationHeader(
-            title: game.players,
-            subtitle: game.occasion
+            title: title,
+            subtitle: subtitle
         ) {
-            dismiss()
+            onDismiss()
         }
     }
 
@@ -60,13 +111,13 @@ struct WatchScreen: View {
                             player?.seek(to: offset + 1)
                         } label: {
                             HStack(spacing: 3) {
-                                if offset % 2 == 0 {
-                                    Text(verbatim: "\(offset / 2 + 1).")
-                                        .font(Face.mono(9))
+                                if let prefix = moveNumberPrefix(for: offset) {
+                                    Text(verbatim: prefix)
+                                        .appFont(size: 9)
                                         .foregroundStyle(Theatre.ivoryFaint)
                                 }
                                 Text(ply.san)
-                                    .font(Face.mono(11, weight: current ? .semibold : .regular))
+                                    .appFont(size: 11, weight: current ? .semibold : .regular)
                                     .foregroundStyle(current ? Theatre.brassHot : Theatre.ivoryDim)
                             }
                             .padding(.horizontal, 7)
@@ -99,30 +150,30 @@ struct WatchScreen: View {
         }
     }
 
-    private var transport: some View {
-        VStack(spacing: 10) {
-            BrassSlider(
-                value: Binding(
-                    get: { Double(index) },
-                    set: { player?.seek(to: Int($0.rounded())) }
-                ),
-                in: 0...Double(max(plies.count, 1)),
-                step: 1,
-                onEditingChanged: { editing in
-                    scrubbing = editing
-                    if editing { player?.pause() }
-                }
-            )
+    /// Full games start with White on move one, but a tactic can start with
+    /// Black on move 37. Preserve the FEN's real numbering in the move strip.
+    private func moveNumberPrefix(for offset: Int) -> String? {
+        let startsWithBlack = startingPosition.sideToMove == .black
+        let absoluteOffset = offset + (startsWithBlack ? 1 : 0)
+        let moveNumber = startingPosition.fullmoveNumber + absoluteOffset / 2
+        if absoluteOffset.isMultiple(of: 2) { return "\(moveNumber)." }
+        return offset == 0 ? "\(moveNumber)..." : nil
+    }
 
-            HStack(spacing: 8) {
-                button("backward.end.fill") { player?.seek(to: 0) }
-                button("backward.fill") { player?.step(-1) }
-                button(isPlaying ? "pause.fill" : "play.fill", wide: true) { player?.toggle() }
-                button("forward.fill") { player?.step(1) }
-                button("forward.end.fill") { player?.seek(to: plies.count) }
-                speed
+    private var transport: some View {
+        ReplayTransport(
+            position: index,
+            count: plies.count,
+            isPlaying: isPlaying,
+            speedLabel: "\(playbackSpeed.formatted())×",
+            onSeek: { player?.seek(to: $0) },
+            onToggle: { player?.toggle() },
+            onCycleSpeed: cycleSpeed,
+            onEditingChanged: { editing in
+                scrubbing = editing
+                if editing { player?.pause() }
             }
-        }
+        )
         .padding(.horizontal, 16)
         .padding(.top, 6)
         .padding(.bottom, 12)
@@ -133,48 +184,6 @@ struct WatchScreen: View {
         }
     }
 
-    private var speed: some View {
-        Button(action: cycleSpeed) {
-            Text(verbatim: "\(playbackSpeed.formatted())×")
-                .font(Face.mono(11, weight: .medium))
-                .foregroundStyle(Theatre.ivoryDim)
-                .contentTransition(.numericText())
-                .frame(width: 46, height: 38)
-                .background {
-                    BrassPlateShape(cut: 8).fill(Theatre.ink3)
-                }
-                .overlay {
-                    BrassPlateShape(cut: 8)
-                        .strokeBorder(Theatre.brassDeep.opacity(0.5), lineWidth: 0.75)
-                }
-        }
-        .buttonStyle(BrassPressStyle())
-        .accessibilityLabel(L.t("guess.speed", "Speed"))
-        .accessibilityValue("\(playbackSpeed.formatted())×")
-    }
-
-    private func button(_ symbol: String, wide: Bool = false, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            Image(systemName: symbol)
-                .font(.system(size: wide ? 15 : 12, weight: .semibold))
-                .foregroundStyle(wide ? Theatre.brassHot : Theatre.ivory)
-                .frame(maxWidth: .infinity)
-                .frame(height: 38)
-                .background {
-                    BrassPlateShape(cut: 8).fill(LinearGradient(
-                        colors: wide ? [Theatre.ink4, Theatre.ink2] : [Theatre.ink3, Theatre.ink2],
-                        startPoint: .topLeading, endPoint: .bottomTrailing
-                    ))
-                }
-                .overlay {
-                    BrassPlateShape(cut: 8)
-                        .strokeBorder(wide ? Theatre.brassHot.opacity(0.8) : Theatre.brassDeep.opacity(0.5),
-                                      lineWidth: 0.75)
-                }
-        }
-        .buttonStyle(BrassPressStyle())
-    }
-
     private func cycleSpeed() {
         let rates = [0.5, 1.0, 1.5, 2.0, 3.0]
         let index = rates.firstIndex(of: playbackSpeed) ?? 1
@@ -183,7 +192,6 @@ struct WatchScreen: View {
             playbackSpeed = next
         }
         player?.speed = next
-        SoundBoard.shared.play(.move)
     }
 
     private func build() {
@@ -197,11 +205,145 @@ struct WatchScreen: View {
             index = value
             isPlaying = made.isPlaying
         }
-        made.load(notation: game.moves)
+        made.load(position: startingPosition, notation: notation)
         player = made
-        // Straight into it: nobody opens a recording in order to look at the
-        // starting position.
+        // Straight into it: both a watched game and a revealed combination
+        // are opened in order to see the moves happen.
         made.play()
         isPlaying = true
+    }
+}
+
+/// The playback control shared by watched classics and Guess the Elo. Keeping
+/// one transport means the same icons, slider and speed control behave the
+/// same way everywhere a recorded game is replayed.
+struct ReplayTransport: View {
+    private let controlHorizontalPadding: CGFloat = 6
+
+    let position: Int
+    let count: Int
+    let isPlaying: Bool
+    let speedLabel: String
+    var usesPlainLabels = false
+    var showsPositionSlider = true
+    var showsEndButtons = true
+    var primaryAction: ActionItem? = nil
+    let onSeek: (Int) -> Void
+    let onToggle: () -> Void
+    let onCycleSpeed: () -> Void
+    var onEditingChanged: (Bool) -> Void = { _ in }
+
+    var body: some View {
+        VStack(spacing: 10) {
+            if showsPositionSlider {
+                BrassSlider(
+                    value: Binding(
+                        get: { Double(position) },
+                        set: { onSeek(Int($0.rounded())) }
+                    ),
+                    in: 0...Double(max(count, 1)),
+                    step: 1,
+                    onEditingChanged: onEditingChanged
+                )
+            }
+
+            HStack(spacing: 6) {
+                if showsEndButtons {
+                    button("backward.end.fill") { onSeek(0) }
+                }
+                button("backward.fill") { onSeek(max(0, position - 1)) }
+                button(isPlaying ? "pause.fill" : "play.fill", wide: true, action: onToggle)
+                button("forward.fill") { onSeek(min(count, position + 1)) }
+                if showsEndButtons {
+                    button("forward.end.fill") { onSeek(count) }
+                }
+                speed
+                if let primaryAction {
+                    primaryButton(primaryAction)
+                }
+            }
+        }
+    }
+
+    private var speed: some View {
+        Button(action: onCycleSpeed) {
+            Text(speedLabel)
+                .appFont(size: usesPlainLabels ? 13 : 11, weight: .medium)
+                .foregroundStyle(Theatre.ivoryDim)
+                .contentTransition(.numericText())
+                .padding(.horizontal, controlHorizontalPadding)
+                .frame(maxWidth: .infinity)
+                .frame(height: 38)
+                .background {
+                    BrassPlateShape(cut: 8).fill(Theatre.ink3)
+                }
+                .overlay {
+                    BrassPlateShape(cut: 8)
+                        .strokeBorder(Theatre.brassDeep.opacity(0.5), lineWidth: 0.75)
+                }
+        }
+        .buttonStyle(BrassPressStyle())
+        .accessibilityLabel(L.t("guess.speed", "Speed"))
+        .accessibilityValue(speedLabel)
+    }
+
+    private func primaryButton(_ item: ActionItem) -> some View {
+        Button(action: item.action) {
+            HStack(spacing: 4) {
+                BrassIcon(item.systemImage, size: 16)
+                Text(item.title)
+                    .appFont(size: usesPlainLabels ? 10 : 9, weight: .semibold)
+                    .tracking(usesPlainLabels ? 0 : 0.8)
+                    .textCase(.uppercase)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+            }
+            .foregroundStyle(Theatre.brassHot)
+            .padding(.horizontal, controlHorizontalPadding)
+            .frame(maxWidth: .infinity)
+            .frame(height: 38)
+            .background {
+                BrassPlateShape(cut: 8).fill(LinearGradient(
+                    colors: [Theatre.ink4, Theatre.ink2],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                ))
+            }
+            .overlay {
+                BrassPlateShape(cut: 8)
+                    .strokeBorder(Theatre.brassHot.opacity(0.8), lineWidth: 0.75)
+            }
+        }
+        .buttonStyle(BrassPressStyle())
+        .disabled(!item.isEnabled)
+        .opacity(item.isEnabled ? 1 : 0.3)
+    }
+
+    private func button(
+        _ symbol: String,
+        wide: Bool = false,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button(action: action) {
+            BrassIcon(symbol, size: wide ? 19 : 16)
+                .foregroundStyle(wide ? Theatre.brassHot : Theatre.ivory)
+                .padding(.horizontal, controlHorizontalPadding)
+                .frame(maxWidth: .infinity)
+                .frame(height: 38)
+                .background {
+                    BrassPlateShape(cut: 8).fill(LinearGradient(
+                        colors: wide ? [Theatre.ink4, Theatre.ink2] : [Theatre.ink3, Theatre.ink2],
+                        startPoint: .topLeading, endPoint: .bottomTrailing
+                    ))
+                }
+                .overlay {
+                    BrassPlateShape(cut: 8)
+                        .strokeBorder(
+                            wide ? Theatre.brassHot.opacity(0.8) : Theatre.brassDeep.opacity(0.5),
+                            lineWidth: 0.75
+                        )
+                }
+        }
+        .buttonStyle(BrassPressStyle())
     }
 }

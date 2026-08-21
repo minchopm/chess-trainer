@@ -20,28 +20,28 @@ struct AboutScreen: View {
                 VStack(alignment: .leading, spacing: 18) {
                     Panel {
                         Text(L.t("about.brassPawn", "Brass Pawn"))
-                            .font(Face.display(25))
+                            .appFont(size: 25, weight: .semibold)
                             .foregroundStyle(Theatre.ivory)
                         Text(L.t("about.version", "Version %@", Self.version))
-                            .font(.footnote)
+                            .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryDim)
                         Text(L.t("about.tacticsPositionalJudgementEndgameTechnique", "Tactics, positional judgement, endgame technique and coached play, with Stockfish running on the device. Nothing leaves the phone."))
-                            .font(.footnote)
+                            .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryFaint)
                     }
 
                     aboutSection(L.t("about.licence", "Licence")) {
                         Text(L.t("about.thisApplicationIsFreeSoftware", "This application is free software, licensed under the GNU General Public License version 3 or later."))
-                            .font(.footnote)
+                            .appFont(.footnote)
                             .foregroundStyle(Theatre.ivory)
                         Text(L.t("about.itIncludesStockfishWhichIs", "It includes Stockfish, which is GPLv3. Because Stockfish is linked into the app, the whole application carries the same licence — and its complete source is published."))
-                            .font(.footnote)
+                            .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryFaint)
 
                         documentButton("Read the full licence", resource: "LICENSE", title: L.t("about.gnuGplV3", "GNU GPL v3"))
                         documentButton("Third-party components", resource: "NOTICE", title: L.t("about.attribution", "Attribution"))
                         BrassLinkButton(title: "Source code", destination: URL(string: Self.sourceURL)!)
-                            .font(.footnote)
+                            .appFont(.footnote)
                     }
 
                     aboutSection(L.t("about.credits", "Credits")) {
@@ -60,7 +60,7 @@ struct AboutScreen: View {
 
                     aboutSection(L.t("about.privacy", "Privacy")) {
                         Text(L.t("about.theAppCollectsNothingSends", "The app collects nothing, sends nothing and makes no network requests. Your ratings and history are stored only on this device, and deleting the app deletes them."))
-                            .font(.footnote)
+                            .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryFaint)
                     }
                 }
@@ -88,10 +88,9 @@ struct AboutScreen: View {
             document = LegalDocument(resource: resource, title: title)
         } label: {
             HStack {
-                Text(label).font(.subheadline).foregroundStyle(Theatre.ivory)
+                Text(label).appFont(.subheadline).foregroundStyle(Theatre.ivory)
                 Spacer()
-                Image(systemName: "chevron.right")
-                    .font(.caption2)
+                BrassIcon("chevron.right", size: 15)
                     .foregroundStyle(Theatre.ivoryFaint)
             }
             .padding(.horizontal, 10)
@@ -110,14 +109,14 @@ struct AboutScreen: View {
 
     private func credit(_ name: String, _ description: String, _ url: String) -> some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(name).font(.subheadline.weight(.medium)).foregroundStyle(Theatre.ivory)
-            Text(description).font(.footnote).foregroundStyle(Theatre.ivoryFaint)
+            Text(name).appFont(.subheadline, weight: .medium).foregroundStyle(Theatre.ivory)
+            Text(description).appFont(.footnote).foregroundStyle(Theatre.ivoryFaint)
             if let link = URL(string: url) {
                 BrassLinkButton(
                     title: url.replacingOccurrences(of: "https://", with: ""),
                     destination: link
                 )
-                .font(.footnote)
+                .appFont(.footnote)
             }
         }
         .padding(.vertical, 2)
@@ -150,7 +149,7 @@ struct BundledTextView: View {
             ScrollView {
                 if let text {
                     Text(text)
-                        .font(.system(size: 11, design: .monospaced))
+                        .appFont(size: 11)
                         .textSelection(.enabled)
                         .foregroundStyle(Theatre.ivoryDim)
                         .frame(maxWidth: .infinity, alignment: .leading)

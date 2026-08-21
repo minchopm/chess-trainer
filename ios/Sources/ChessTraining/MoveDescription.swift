@@ -113,6 +113,56 @@ public enum MoveDescription {
         return "\(san) \(join(parts))."
     }
 
+    /// Expands compact algebraic notation into a sentence that can be read by
+    /// someone who does not yet know that `Rxf1+` means a rook capture on f1
+    /// with check. SAN is retained first so the explanation also teaches the
+    /// notation rather than replacing it.
+    public static func detailedSentence(
+        san: String,
+        move: Move,
+        position: Position,
+        resulting: Position
+    ) -> String? {
+        guard let piece = position[move.from] else { return nil }
+
+        let side = L.color(piece.color)
+        var sentence: String
+        switch move.kind {
+        case .kingsideCastle:
+            sentence = L.t("coach.detailedCastleKingside", "%@ — %@ castles kingside", san, side)
+        case .queensideCastle:
+            sentence = L.t("coach.detailedCastleQueenside", "%@ — %@ castles queenside", san, side)
+        default:
+            if let captured = capturedPiece(move: move, position: position) {
+                sentence = L.t(
+                    "coach.detailedCapture",
+                    "%@ — %@ moves the %@ from %@ to %@, capturing the %@",
+                    san, side, name(of: piece.kind), "\(move.from)", "\(move.to)", name(of: captured.kind)
+                )
+            } else {
+                sentence = L.t(
+                    "coach.detailedMove",
+                    "%@ — %@ moves the %@ from %@ to %@",
+                    san, side, name(of: piece.kind), "\(move.from)", "\(move.to)"
+                )
+            }
+        }
+
+        if let promotion = move.promotion {
+            sentence += L.t("coach.detailedPromotion", ", promoting to a %@", name(of: promotion))
+        }
+
+        if resulting.isCheckmate {
+            sentence += L.t("coach.detailedCheckmate", ", delivering checkmate")
+        } else if resulting.isCheck {
+            sentence += L.t("coach.detailedCheck", ", giving check")
+        } else if position.isCheck {
+            sentence += L.t("coach.detailedEscape", ", escaping the check")
+        }
+
+        return sentence + "."
+    }
+
     /// A static read of a position, for the judgement exercises.
     public static func summary(_ features: PositionFeatures) -> [String] {
         var points: [String] = []

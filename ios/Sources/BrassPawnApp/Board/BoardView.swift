@@ -209,7 +209,7 @@ public struct BoardView: View {
         // Sized against the square and pinned to one line: at default sizing the
         // label wrapped to two lines and swallowed the piece underneath it.
         return Text(Self.pawns(score))
-            .font(.system(size: squareSize * 0.24, weight: .bold, design: .rounded))
+            .appFont(size: squareSize * 0.24, weight: .bold)
             .monospacedDigit()
             .lineLimit(1)
             .fixedSize()

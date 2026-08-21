@@ -16,8 +16,7 @@ public enum TrainingActivity: String, Codable, CaseIterable, Sendable {
     /// nobody what is behind it.
     public var dailyFreeLimit: Int {
         switch self {
-        case .tactics: 5
-        case .rush: 1
+        case .tactics, .rush: 1
         case .positional, .endgame, .guessTheElo: 3
         }
     }
@@ -25,31 +24,99 @@ public enum TrainingActivity: String, Codable, CaseIterable, Sendable {
 
 /// What a free account has used today.
 ///
-/// Counted against the local day rather than a rolling 24 hours: "come back
-/// tomorrow" is a promise a person can act on, while "come back in nine hours
-/// and twenty minutes" is a puzzle of its own.
+/// Counted against a local training day that starts at 09:00. This is a
+/// calendar boundary rather than a rolling 24 hours, so it remains 09:00 when
+/// the device changes time zone or daylight-saving time begins or ends.
 public struct DailyUsage: Codable, Equatable, Sendable {
+    public static let resetHour = 9
+    public static let freeTacticsSkips = 2
+
     public private(set) var day: Date
     public private(set) var counts: [TrainingActivity: Int]
+    public private(set) var tacticsSkips: Int
 
-    public init(day: Date = Date(), counts: [TrainingActivity: Int] = [:]) {
+    public init(
+        day: Date = Date(),
+        counts: [TrainingActivity: Int] = [:],
+        tacticsSkips: Int = 0
+    ) {
         self.day = day
         self.counts = counts
+        self.tacticsSkips = tacticsSkips
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case day, counts, tacticsSkips
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        day = try container.decodeIfPresent(Date.self, forKey: .day) ?? Date()
+        counts = try container.decodeIfPresent([TrainingActivity: Int].self, forKey: .counts) ?? [:]
+        tacticsSkips = try container.decodeIfPresent(Int.self, forKey: .tacticsSkips) ?? 0
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(day, forKey: .day)
+        try container.encode(counts, forKey: .counts)
+        try container.encode(tacticsSkips, forKey: .tacticsSkips)
     }
 
     public func used(_ activity: TrainingActivity, at now: Date, calendar: Calendar = .current) -> Int {
-        calendar.isDate(day, inSameDayAs: now) ? (counts[activity] ?? 0) : 0
+        Self.periodStart(containing: day, calendar: calendar)
+            == Self.periodStart(containing: now, calendar: calendar)
+            ? (counts[activity] ?? 0)
+            : 0
     }
 
     public func remaining(_ activity: TrainingActivity, at now: Date, calendar: Calendar = .current) -> Int {
         max(0, activity.dailyFreeLimit - used(activity, at: now, calendar: calendar))
     }
 
+    public func remainingTacticsSkips(
+        at now: Date,
+        calendar: Calendar = .current
+    ) -> Int {
+        let used = Self.periodStart(containing: day, calendar: calendar)
+            == Self.periodStart(containing: now, calendar: calendar)
+            ? tacticsSkips
+            : 0
+        return max(0, Self.freeTacticsSkips - used)
+    }
+
     public mutating func record(_ activity: TrainingActivity, at now: Date, calendar: Calendar = .current) {
-        if !calendar.isDate(day, inSameDayAs: now) {
-            day = now
-            counts = [:]
-        }
+        resetIfNeeded(at: now, calendar: calendar)
         counts[activity, default: 0] += 1
+    }
+
+    public mutating func recordTacticsSkip(at now: Date, calendar: Calendar = .current) {
+        resetIfNeeded(at: now, calendar: calendar)
+        tacticsSkips += 1
+    }
+
+    /// The next 09:00 boundary in the supplied local calendar.
+    public static func nextReset(after date: Date, calendar: Calendar = .current) -> Date {
+        let start = periodStart(containing: date, calendar: calendar)
+        return calendar.date(byAdding: .day, value: 1, to: start) ?? date.addingTimeInterval(86_400)
+    }
+
+    private mutating func resetIfNeeded(at now: Date, calendar: Calendar) {
+        guard Self.periodStart(containing: day, calendar: calendar)
+            != Self.periodStart(containing: now, calendar: calendar)
+        else { return }
+        day = now
+        counts = [:]
+        tacticsSkips = 0
+    }
+
+    private static func periodStart(containing date: Date, calendar: Calendar) -> Date {
+        let startOfDay = calendar.startOfDay(for: date)
+        let todayReset = calendar.date(bySettingHour: resetHour, minute: 0, second: 0, of: startOfDay)
+            ?? calendar.date(byAdding: .hour, value: resetHour, to: startOfDay)
+            ?? startOfDay
+        if date >= todayReset { return todayReset }
+        return calendar.date(byAdding: .day, value: -1, to: todayReset)
+            ?? todayReset.addingTimeInterval(-86_400)
     }
 }

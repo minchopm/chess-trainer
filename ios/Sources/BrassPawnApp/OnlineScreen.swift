@@ -55,13 +55,13 @@ struct OnlineScreen: View {
         ScrollView {
             VStack(spacing: 12) {
                 Card {
-                    Text(L.t("online.playOnline", "Play online")).font(Face.display(22))
+                    Text(L.t("online.playOnline", "Play online")).appFont(size: 22, weight: .semibold)
                     Text(L.t("online.aRealOpponentOverGame", "A real opponent over Game Center, on the clock. No hints, no engine, no take-backs."))
-                        .font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                        .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                 }
 
                 Card {
-                    Text(L.t("online.clock", "Clock")).font(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
+                    Text(L.t("online.clock", "Clock")).appFont(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
                     BrassSegmentedPicker(
                         L.t("online.clock", "Clock"),
                         selection: $timeControl,
@@ -71,24 +71,24 @@ struct OnlineScreen: View {
                     }
                     .disabled(isSearching)
                     Text(L.t("online.clockExplanation", "%@ each — %@. You are only paired with players who chose the same clock.", timeControl.label, timeControl.name.lowercased()))
-                        .font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                        .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                 }
 
                 Card {
                     HStack {
                         VStack(alignment: .leading, spacing: 2) {
-                            Text(matchmaker.localName).font(.subheadline.weight(.semibold))
+                            Text(matchmaker.localName).appFont(.subheadline, weight: .semibold)
                             Text(verbatim: "\(app.progress.onlineRating)")
-                                .font(Face.display(22)).monospacedDigit()
+                                .appFont(size: 22, weight: .semibold).monospacedDigit()
                         }
                         Spacer()
                         VStack(alignment: .trailing, spacing: 2) {
-                            Text(L.t("online.record", "Record")).font(.caption2).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
+                            Text(L.t("online.record", "Record")).appFont(.caption2).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
                             Text(verbatim: "\(app.progress.onlineWins)–\(app.progress.onlineLosses)–\(app.progress.onlineDraws)")
-                                .font(.subheadline).monospacedDigit().foregroundStyle(Theatre.ivoryDim)
+                                .appFont(.subheadline).monospacedDigit().foregroundStyle(Theatre.ivoryDim)
                         }
                     }
-                    Text(matchmaker.status).font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                    Text(matchmaker.status).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                 }
 
                 if isSearching {
@@ -156,13 +156,13 @@ struct OnlineScreen: View {
         } panel: {
             statusCard(session)
             Card {
-                Text(L.t("online.moves", "Moves")).font(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
+                Text(L.t("online.moves", "Moves")).appFont(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
                 MoveList(moves: session.moves.map { (san: $0, grade: nil) })
             }
         } controls: {
             controls(session)
         }
-        .overlay(alignment: .bottom) {
+        .fullScreenCover(isPresented: completionIsPresented(session)) {
             if case .finished(let result) = session.phase {
                 CompletionOverlay(
                     result: completion(for: settled ?? result),
@@ -170,7 +170,8 @@ struct OnlineScreen: View {
                     onPrimary: { matchmaker.leaveMatch(); settled = nil },
                     onRetry: nil
                 )
-                .padding(.bottom, 8)
+                .presentationBackground(.clear)
+                .interactiveDismissDisabled()
             }
         }
         .onChange(of: session.moves.count) { _, _ in
@@ -190,15 +191,25 @@ struct OnlineScreen: View {
         .animation(.spring(duration: 0.35), value: settled)
     }
 
+    private func completionIsPresented(_ session: MatchSession) -> Binding<Bool> {
+        Binding(
+            get: {
+                if case .finished = session.phase { return true }
+                return false
+            },
+            set: { _ in }
+        )
+    }
+
     private func statusCard(_ session: MatchSession) -> some View {
         Card {
-            Text(statusText(session)).font(Face.display(22))
+            Text(statusText(session)).appFont(size: 22, weight: .semibold)
             Text(L.t("online.gameSummary", "%@ · %@ · you are %@", session.timeControl.label, session.timeControl.name, L.color(session.myColor)))
-                .font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
 
             if session.drawOffered {
                 HStack(spacing: 10) {
-                    Text(L.t("online.drawOffered", "Draw offered.")).font(.subheadline)
+                    Text(L.t("online.drawOffered", "Draw offered.")).appFont(.subheadline)
                     Button(L.t("online.accept", "Accept")) { session.respondToDraw(accept: true) }
                         .buttonStyle(PillButtonStyle(emphasis: .solid))
                     Button(L.t("online.decline", "Decline")) { session.respondToDraw(accept: false) }
@@ -206,7 +217,7 @@ struct OnlineScreen: View {
                 }
             } else if session.drawOfferSent {
                 Text(L.t("online.drawOfferedWaitingForAn", "Draw offered — waiting for an answer."))
-                    .font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                    .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
             }
         }
     }

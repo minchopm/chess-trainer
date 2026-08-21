@@ -9,8 +9,8 @@ struct PlayTab: View {
         var id: String { String(describing: self) }
         var label: String {
             switch self {
-            case .play: L.t("progress.play", "Play")
-            case .online: L.t("progress.online", "Online")
+            case .play: L.t("play.vsAI", "VS AI")
+            case .online: L.t("play.multiplayer", "Multiplayer")
             }
         }
     }

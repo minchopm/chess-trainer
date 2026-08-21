@@ -180,7 +180,6 @@ struct EndgameScreen: View {
     @Environment(AppModel.self) private var app
     @State private var model = EndgameModel()
     @State private var values = MoveValueController()
-    @State private var showsPaywall = false
     @State private var exhausted = false
     @State private var hasStartedAttempt = false
 
@@ -218,7 +217,7 @@ struct EndgameScreen: View {
                     orientation: model.orientation,
                     legalDestinations: model.legalDestinations,
                     lastMove: model.lastMove,
-                    moveValues: values.values,
+                    moveValues: values.displayedValues,
                     onMove: { from, to, promotion in
                         Task {
                             await play(from, to, promotion)
@@ -229,12 +228,10 @@ struct EndgameScreen: View {
                 )
             }
         } panel: {
-            if exhausted {
-                AllowanceNotice(activity: .endgame)
-            } else if let drill = model.drill {
+            if let drill = model.drill {
                 Card {
-                    Text(drill.name).font(Face.display(22))
-                    Text(model.goalText).font(.subheadline).foregroundStyle(Theatre.ivoryDim)
+                    Text(drill.name).appFont(size: 22, weight: .semibold)
+                    Text(model.goalText).appFont(.subheadline).foregroundStyle(Theatre.ivoryDim)
                     TagRow(tags: [
                         drill.goal == .win ? L.t("endgame.mustWin", "Must win") : L.t("endgame.mustDraw", "Must draw"),
                         (model.plies + 1) / 2 == 1
@@ -246,34 +243,34 @@ struct EndgameScreen: View {
                 if model.isThinking {
                     HStack(spacing: 6) {
                         BrassActivityIndicator()
-                        Text(L.t("endgame.engineIsThinking", "Engine is thinking…")).font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                        Text(L.t("endgame.engineIsThinking", "Engine is thinking…")).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                     }
                 }
 
                 if let lostAt = model.lostAt, model.outcome == nil {
                     Card {
-                        Text(L.t("endgame.threwItAway", "%@ threw it away", lostAt.move)).font(.subheadline.weight(.semibold))
+                        Text(L.t("endgame.threwItAway", "%@ threw it away", lostAt.move)).appFont(.subheadline, weight: .semibold)
                         Text(L.t("endgame.afterThatMove", "After that move %@. Play on if you like, or restart and try the correct plan.", lostAt.reason))
-                            .font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                            .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                     }
                 }
 
                 if let outcome = model.outcome {
                     Card {
-                        Text(outcome.title).font(.subheadline.weight(.semibold))
+                        Text(outcome.title).appFont(.subheadline, weight: .semibold)
                             .foregroundStyle(outcome.success ? Theatre.good : Theatre.bad)
                         ForEach(outcome.lines, id: \.self) { line in
-                            Text(line).font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                            Text(line).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                         }
                     }
                 }
 
                 Card {
-                    Text(L.t("endgame.theIdea", "The idea")).font(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
-                    Text(drill.idea).font(.footnote)
+                    Text(L.t("endgame.theIdea", "The idea")).appFont(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
+                    Text(drill.idea).appFont(.footnote)
                 }
             } else {
-                Card { Text(L.t("endgame.noEndgameDrillsBundled", "No endgame drills bundled")).font(Face.display(22)) }
+                Card { Text(L.t("endgame.noEndgameDrillsBundled", "No endgame drills bundled")).appFont(size: 22, weight: .semibold) }
             }
         } controls: {
             ActionBar(items: [
@@ -282,9 +279,9 @@ struct EndgameScreen: View {
                     values.reset()
                     model.load(model.drill)
                 },
-                ActionItem(title: values.isEnabled ? L.t("common.hide", "Hide") : L.t("common.values", "Values"),
-                           systemImage: "number.square", isEnabled: !model.isThinking) {
-                    Task { await values.toggle(fen: model.position.fen, engine: app.engine) }
+            ActionItem(title: values.isEnabled ? L.t("common.hide", "Hide") : L.t("common.values", "Values"),
+                       systemImage: "number.square", isEnabled: !model.isThinking) {
+                    values.toggle(fen: model.position.fen, engine: app.engine)
                 },
                 ActionItem(title: L.t("endgame.next", "Next"), systemImage: "forward.end", emphasis: .primary) {
                     next()
@@ -292,7 +289,11 @@ struct EndgameScreen: View {
             ])
         }
         .task(id: app.library.drills.count) { if model.drill == nil { next() } }
-        .fullScreenCover(isPresented: $showsPaywall) { PaywallView(activity: .endgame) }
+        .allowanceGate(
+            activity: .endgame,
+            hasStartedAttempt: hasStartedAttempt,
+            wasDenied: exhausted
+        )
     }
 
     private func play(_ from: Square, _ to: Square, _ promotion: PieceKind?) async {
@@ -321,13 +322,13 @@ struct EndgameScreen: View {
         guard !hasStartedAttempt else { return true }
         guard app.beginAttempt(.endgame) else {
             exhausted = true
-            showsPaywall = true
             return false
         }
         exhausted = false
         hasStartedAttempt = true
         return true
     }
+
 }
 
 /// The familiar bar beside the board: white's share of the evaluation.

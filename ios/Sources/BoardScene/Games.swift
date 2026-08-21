@@ -101,11 +101,22 @@ public enum ShowGames {
     /// The plies and the position after each of them, `positions[0]` being the
     /// start. `positions` is always one longer than `plies`.
     public static func line(_ notation: String) -> (plies: [Ply], positions: [Position]) {
-        var position = Position()
+        line(from: Position(), notation: notation)
+    }
+
+    /// A replay line that starts from an arbitrary position. Tactics solutions
+    /// begin in the middle of a game, so resetting the scene to the standard
+    /// array before playing them would animate the right notation on the wrong
+    /// board.
+    public static func line(
+        from start: Position,
+        notation: String
+    ) -> (plies: [Ply], positions: [Position]) {
+        var position = start
         var positions = [position]
         var plies: [Ply] = []
 
-        for ply in expand(notation) {
+        for ply in expandFrom(position: start, notation: notation) {
             guard let move = position.legalMoves().first(where: {
                 $0.from == ply.from && $0.to == ply.to && $0.promotion == ply.promotion
             }) else { break }

@@ -5,8 +5,7 @@ struct BrassBackButton: View {
 
     var body: some View {
         Button(action: action) {
-            Image(systemName: "chevron.left")
-                .font(.system(size: 15, weight: .semibold))
+            BrassIcon("chevron.left", size: 19)
                 .foregroundStyle(Theatre.brassHot)
                 .frame(width: 44, height: 44)
                 .background {
@@ -41,14 +40,14 @@ struct BrassNavigationHeader: View {
         ZStack {
             VStack(spacing: 3) {
                 Text(title)
-                    .font(Face.display(20))
+                    .appFont(size: 20, weight: .semibold)
                     .foregroundStyle(Theatre.ivory)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
 
                 if let subtitle {
                     Text(subtitle)
-                        .font(Face.mono(9))
+                        .appFont(size: 9)
                         .tracking(1.6)
                         .foregroundStyle(Theatre.ivoryFaint)
                         .lineLimit(1)
@@ -81,17 +80,20 @@ struct BrassSegmentedPicker<Value: Hashable, Label: View>: View {
     let title: String
     @Binding var selection: Value
     let options: [Value]
+    let usesPlainLabels: Bool
     @ViewBuilder let label: (Value) -> Label
 
     init(
         _ title: String,
         selection: Binding<Value>,
         options: [Value],
+        usesPlainLabels: Bool = false,
         @ViewBuilder label: @escaping (Value) -> Label
     ) {
         self.title = title
         _selection = selection
         self.options = options
+        self.usesPlainLabels = usesPlainLabels
         self.label = label
     }
 
@@ -101,11 +103,10 @@ struct BrassSegmentedPicker<Value: Hashable, Label: View>: View {
                 let selected = selection == option
                 Button {
                     withAnimation(.easeOut(duration: 0.18)) { selection = option }
-                    SoundBoard.shared.play(.move)
                 } label: {
                     label(option)
-                        .font(Face.mono(9, weight: selected ? .semibold : .medium))
-                        .tracking(0.7)
+                        .appFont(size: 9, weight: selected ? .semibold : .medium)
+                        .tracking(usesPlainLabels ? 0 : 0.7)
                         .lineLimit(1)
                         .minimumScaleFactor(0.65)
                         .foregroundStyle(selected ? Theatre.brassHot : Theatre.ivoryDim)
@@ -171,14 +172,14 @@ struct BrassCyclePicker<Value: Hashable>: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 7) {
             Text(title.uppercased())
-                .font(Face.mono(9))
+                .appFont(size: 9)
                 .tracking(1.5)
                 .foregroundStyle(Theatre.ivoryFaint)
 
             HStack(spacing: 8) {
                 arrow("chevron.left", offset: -1)
                 Text(label(selection))
-                    .font(.subheadline.weight(.medium))
+                    .appFont(.subheadline, weight: .medium)
                     .foregroundStyle(Theatre.ivory)
                     .lineLimit(1)
                     .minimumScaleFactor(0.75)
@@ -204,8 +205,7 @@ struct BrassCyclePicker<Value: Hashable>: View {
 
     private func arrow(_ symbol: String, offset: Int) -> some View {
         Button { move(offset) } label: {
-            Image(systemName: symbol)
-                .font(.system(size: 12, weight: .semibold))
+            BrassIcon(symbol, size: 16)
                 .foregroundStyle(Theatre.brass)
                 .frame(width: 36, height: 34)
                 .background {
@@ -223,7 +223,6 @@ struct BrassCyclePicker<Value: Hashable>: View {
         guard !options.isEmpty else { return }
         let current = options.firstIndex(of: selection) ?? 0
         selection = options[(current + offset + options.count) % options.count]
-        SoundBoard.shared.play(.move)
     }
 }
 
@@ -241,16 +240,14 @@ struct BrassToggle: View {
     var body: some View {
         Button {
             withAnimation(.spring(response: 0.24, dampingFraction: 0.78)) { isOn.toggle() }
-            SoundBoard.shared.play(.move)
         } label: {
             HStack(spacing: 12) {
                 Text(title)
-                    .font(.subheadline)
+                    .appFont(.subheadline)
                     .foregroundStyle(Theatre.ivory)
                 Spacer(minLength: 8)
                 if let symbol {
-                    Image(systemName: symbol)
-                        .font(.system(size: 13, weight: .medium))
+                    BrassIcon(symbol, size: 17)
                         .foregroundStyle(isOn ? Theatre.brass : Theatre.ivoryFaint)
                         .frame(width: 20, height: 25)
                         .contentTransition(.symbolEffect(.replace))
@@ -399,16 +396,15 @@ struct BrassSearchField: View {
 
     var body: some View {
         HStack(spacing: 7) {
-            Image(systemName: "magnifyingglass")
-                .font(.system(size: 12))
+            BrassIcon("magnifyingglass", size: 17)
                 .foregroundStyle(Theatre.ivoryFaint)
             TextField(placeholder, text: $text)
-                .font(.subheadline)
+                .appFont(.subheadline)
                 .textFieldStyle(.plain)
                 .autocorrectionDisabled()
             if !text.isEmpty {
                 Button { text = "" } label: {
-                    Image(systemName: "xmark.circle.fill")
+                    BrassIcon("xmark.circle.fill", size: 18)
                         .foregroundStyle(Theatre.ivoryFaint)
                         .frame(width: 24, height: 22)
                         .background {
@@ -440,8 +436,7 @@ struct BrassLinkButton: View {
         Button { openURL(destination) } label: {
             HStack(spacing: 5) {
                 Text(title)
-                Image(systemName: "arrow.up.right")
-                    .font(.system(size: 9, weight: .semibold))
+                BrassIcon("arrow.up.right", size: 13)
             }
             .foregroundStyle(Theatre.brass)
             .padding(.horizontal, 9)
@@ -468,34 +463,30 @@ struct BrassConfirmationOverlay: View {
     let onCancel: () -> Void
 
     var body: some View {
-        ZStack {
-            Theatre.shadow.opacity(0.72)
-                .ignoresSafeArea()
-                .contentShape(Rectangle())
-                .onTapGesture(perform: onCancel)
-
-            Panel {
-                Text(title)
-                    .font(Face.display(25))
-                    .foregroundStyle(Theatre.ivory)
-                if !message.isEmpty {
-                    Text(message)
-                        .font(.subheadline)
-                        .foregroundStyle(Theatre.ivoryDim)
-                        .fixedSize(horizontal: false, vertical: true)
+        BrassModalBackdrop(onBackdropTap: onCancel) {
+            BrassModalPanel(tint: Theatre.bad) {
+                VStack(alignment: .leading, spacing: 14) {
+                    Text(title)
+                        .appFont(.title2, weight: .semibold)
+                        .foregroundStyle(Theatre.ivory)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .multilineTextAlignment(.center)
+                    if !message.isEmpty {
+                        Text(message)
+                            .appFont(.subheadline)
+                            .foregroundStyle(Theatre.ivoryDim)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    HStack(spacing: 9) {
+                        Button(cancelTitle, action: onCancel)
+                            .buttonStyle(PillButtonStyle(emphasis: .ghost, usesBodySize: true))
+                            .frame(maxWidth: .infinity)
+                        Button(confirmTitle, action: onConfirm)
+                            .buttonStyle(PillButtonStyle(emphasis: .danger, usesBodySize: true))
+                            .frame(maxWidth: .infinity)
+                    }
                 }
-                HStack(spacing: 9) {
-                    Button(cancelTitle, action: onCancel)
-                        .buttonStyle(PillButtonStyle(emphasis: .ghost))
-                    Button(confirmTitle, action: onConfirm)
-                        .buttonStyle(PillButtonStyle(emphasis: .danger))
-                }
-                .padding(.top, 6)
             }
-            .frame(maxWidth: 390)
-            .padding(24)
         }
-        .transition(.opacity.combined(with: .scale(scale: 0.96)))
-        .accessibilityAddTraits(.isModal)
     }
 }

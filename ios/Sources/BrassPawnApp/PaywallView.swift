@@ -27,7 +27,7 @@ struct PaywallView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            subscriptionHeader
+            purchasesHeader
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 14) {
@@ -45,14 +45,13 @@ struct PaywallView: View {
         .fullScreenCover(isPresented: $showsAbout) { AboutScreen() }
     }
 
-    private var subscriptionHeader: some View {
+    private var purchasesHeader: some View {
         VStack(spacing: 2) {
-            Text(L.t("store.subscription", "SUBSCRIPTION"))
-                .font(.system(size: 15, weight: .bold, design: .rounded))
-                .tracking(1.1)
+            Text(L.t("store.purchases", "Purchases"))
+                .appFont(size: 20, weight: .semibold)
                 .foregroundStyle(Theatre.ivory)
             Text(L.t("store.headerSubtitle", "Unlimited training"))
-                .font(.caption)
+                .appFont(.caption)
                 .foregroundStyle(Theatre.ivoryDim)
         }
         .frame(maxWidth: .infinity, alignment: .center)
@@ -70,8 +69,8 @@ struct PaywallView: View {
     private var runOutText: String {
         guard let activity else { return L.t("store.unlockTraining", "Unlock the training") }
         return switch activity {
-        case .tactics: L.t("store.outOfPuzzles", "That is today's five puzzles.")
-        case .rush: L.t("store.outOfRush", "That is today's Rush run.")
+        case .tactics: L.t("store.freePuzzleComplete", "You have completed today's free Tactics puzzle")
+        case .rush: L.t("store.freeRushAttemptUsed", "Today's free Rush attempt has been used")
         case .positional: L.t("store.outOfPositional", "That is today's three positional exercises.")
         case .endgame: L.t("store.outOfEndgames", "That is today's three endgame drills.")
         case .guessTheElo: L.t("store.outOfGuess", "That is today's three games to judge.")
@@ -83,12 +82,12 @@ struct PaywallView: View {
             HStack(alignment: .firstTextBaseline, spacing: 12) {
                 VStack(alignment: .leading, spacing: 3) {
                     Text(runOutText)
-                        .font(Face.display(22))
+                        .appFont(.title3, weight: .semibold)
                         .foregroundStyle(Theatre.ivory)
                     Text(selectedOffer == .monthly
                          ? L.t("store.monthlyPlan", "Monthly Pro plan")
                          : L.t("store.lifetimePlan", "One-off lifetime unlock"))
-                        .font(.caption)
+                        .appFont(.caption)
                         .foregroundStyle(Theatre.ivoryDim)
                 }
 
@@ -96,7 +95,7 @@ struct PaywallView: View {
 
                 VStack(alignment: .trailing, spacing: 1) {
                     Text(selectedProduct?.displayPrice ?? "—")
-                        .font(Face.display(25))
+                        .appFont(.title2, weight: .semibold)
                         .monospacedDigit()
                         .lineLimit(1)
                         .minimumScaleFactor(0.72)
@@ -105,7 +104,7 @@ struct PaywallView: View {
                     Text(selectedOffer == .monthly
                          ? L.t("store.perMonthShort", "per month")
                          : L.t("store.onceShort", "once"))
-                        .font(.caption2)
+                        .appFont(.caption2)
                         .foregroundStyle(Theatre.ivoryDim)
                 }
             }
@@ -136,9 +135,9 @@ struct PaywallView: View {
 
     private func row(_ symbol: String, _ text: String) -> some View {
         HStack(alignment: .top, spacing: 10) {
-            Image(systemName: symbol).frame(width: 22).foregroundStyle(Theatre.brass)
+            BrassIcon(symbol, size: 22).foregroundStyle(Theatre.brass)
             Text(text)
-                .font(.subheadline)
+                .appFont(.subheadline)
                 .foregroundStyle(Theatre.ivory)
             Spacer(minLength: 0)
         }
@@ -151,7 +150,7 @@ struct PaywallView: View {
         } else if store.monthly == nil && store.lifetime == nil {
             HStack(spacing: 8) {
                 BrassActivityIndicator(size: 15)
-                Text(L.t("store.loadingPrices", "Loading prices…")).font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                Text(L.t("store.loadingPrices", "Loading prices…")).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 8)
@@ -187,7 +186,7 @@ struct PaywallView: View {
                 Task { await store.loadProducts() }
             } label: {
                 Text(L.t("store.tryAgain", "Try again"))
-                    .font(.system(size: 12, weight: .semibold, design: .rounded))
+                    .appFont(size: 12, weight: .semibold)
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(SubscriptionActionButtonStyle(prominent: false))
@@ -205,7 +204,7 @@ struct PaywallView: View {
                     Spacer()
                     Text(product.displayPrice).monospacedDigit()
                 }
-                .font(.system(size: 12, weight: .semibold, design: .rounded))
+                .appFont(size: 12, weight: .semibold)
                 .frame(maxWidth: .infinity)
             }
             .buttonStyle(SubscriptionActionButtonStyle(prominent: true, enabled: !store.isBusy))
@@ -214,7 +213,7 @@ struct PaywallView: View {
 
         if let message = store.message {
             Text(message)
-                .font(.footnote)
+                .appFont(.footnote)
                 .foregroundStyle(store.messageIsError ? Theatre.bad : Theatre.ivoryDim)
         }
     }
@@ -226,13 +225,13 @@ struct PaywallView: View {
         } label: {
             VStack(alignment: .leading, spacing: 3) {
                 Text(title)
-                    .font(.system(size: 10, weight: .semibold, design: .monospaced))
+                    .appFont(size: 10, weight: .semibold)
                     .tracking(0.8)
                     .textCase(.uppercase)
                 Text(price)
-                    .font(.system(size: 18, weight: .semibold, design: .rounded))
+                    .appFont(size: 18, weight: .semibold)
                     .monospacedDigit()
-                Text(detail).font(.caption2).foregroundStyle(Theatre.ivoryDim)
+                Text(detail).appFont(.caption2).foregroundStyle(Theatre.ivoryDim)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(12)
@@ -257,7 +256,7 @@ struct PaywallView: View {
         VStack(alignment: .leading, spacing: 12) {
             // Required in the app itself, not only in the App Store listing.
             Text(L.t("store.renewalTerms", "The monthly plan renews each month until you cancel it. Cancel any time in Settings › Apple Account › Subscriptions, at least a day before it renews. The one-off unlock is a single payment and never renews."))
-                .font(.caption).foregroundStyle(Theatre.ivoryDim)
+                .appFont(.caption).foregroundStyle(Theatre.ivoryDim)
 
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 8) {
                 footerAction("arrow.counterclockwise", L.t("store.restore", "Restore purchases")) {
@@ -277,12 +276,12 @@ struct PaywallView: View {
 
             Button { showsAbout = true } label: {
                 HStack(spacing: 10) {
-                    Image(systemName: "doc.text")
+                    BrassIcon("doc.text", size: 19)
                     Text(L.t("settings.about", "About & licence"))
                     Spacer()
-                    Image(systemName: "chevron.right")
+                    BrassIcon("chevron.right", size: 15)
                 }
-                .font(.subheadline)
+                .appFont(.subheadline)
                 .foregroundStyle(Theatre.ivory)
                 .padding(.horizontal, 12)
                 .padding(.vertical, 11)
@@ -318,15 +317,14 @@ struct PaywallView: View {
     private func footerAction(_ symbol: String, _ title: String, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             HStack(spacing: 7) {
-                Image(systemName: symbol)
-                    .frame(width: 17)
+                BrassIcon(symbol, size: 18)
                     .foregroundStyle(Theatre.brass)
                 Text(title)
                     .lineLimit(2)
                     .minimumScaleFactor(0.75)
                 Spacer(minLength: 0)
             }
-            .font(.caption.weight(.medium))
+            .appFont(.caption, weight: .medium)
             .foregroundStyle(Theatre.ivoryDim)
             .frame(maxWidth: .infinity, minHeight: 34, alignment: .leading)
             .padding(.horizontal, 9)
@@ -352,7 +350,7 @@ private struct SubscriptionActionButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 12, weight: .semibold, design: .rounded))
+            .appFont(size: 12, weight: .semibold)
             .tracking(1.4)
             .textCase(.uppercase)
             .foregroundStyle(prominent ? Theatre.brassHot : Theatre.ivory)
@@ -396,17 +394,17 @@ struct ProUpsellRow: View {
                 Text(L.t("store.active", "Active"))
                     .foregroundStyle(Theatre.brass)
             }
-            .font(.subheadline)
+            .appFont(.subheadline)
         } else {
             Button { showsPaywall = true } label: {
                 HStack {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(L.t("store.title", "Brass Pawn Pro")).font(.body)
+                        Text(L.t("store.title", "Brass Pawn Pro")).appFont(.body)
                         Text(L.t("store.upsell", "Unlimited puzzles, drills and runs"))
-                            .font(.caption).foregroundStyle(Theatre.ivoryDim)
+                            .appFont(.caption).foregroundStyle(Theatre.ivoryDim)
                     }
                     Spacer()
-                    Image(systemName: "chevron.right").font(.caption).foregroundStyle(Theatre.ivoryFaint)
+                    BrassIcon("chevron.right", size: 15).foregroundStyle(Theatre.ivoryFaint)
                 }
                 .padding(.horizontal, 11)
                 .padding(.vertical, 9)

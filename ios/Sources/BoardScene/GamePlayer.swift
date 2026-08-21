@@ -34,6 +34,15 @@ public final class GamePlayer: SceneDriver {
     public var count: Int { plies.count }
     public var isAtEnd: Bool { index >= plies.count }
     public var isAtStart: Bool { index == 0 }
+    /// The array currently shown by the replay. The flat Watch board reads
+    /// this while the dimensional Watch board reads the same position through
+    /// the SceneKit stage, keeping both presentations on one transport.
+    public var currentPosition: Position { positions[index] }
+    public var lastMove: (from: Square, to: Square)? {
+        guard index > 0 else { return nil }
+        let ply = plies[index - 1]
+        return (ply.from, ply.to)
+    }
 
     public init(quality: SceneQuality = .high, style: PieceStyle = .plain) {
         self.stage = Stage(quality: quality, style: style)
@@ -43,7 +52,14 @@ public final class GamePlayer: SceneDriver {
     }
 
     public func load(notation: String) {
-        let line = ShowGames.line(notation)
+        load(position: Position(), notation: notation)
+    }
+
+    /// Load a recording that begins from a composed or mid-game position.
+    /// This gives tactic solutions the same player as Watch without pretending
+    /// their first move was played from the standard starting array.
+    public func load(position: Position, notation: String) {
+        let line = ShowGames.line(from: position, notation: notation)
         plies = line.plies
         positions = line.positions
         index = 0

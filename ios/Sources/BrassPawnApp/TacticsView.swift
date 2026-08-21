@@ -32,6 +32,14 @@ final class TacticsModel {
         enum Tone { case correct, partial, wrong, neutral }
     }
 
+    /// A wrong move needs an explicit interruption, while hints and the
+    /// "keep going" message can remain part of the supporting panel.
+    var wrongFeedback: Feedback? {
+        guard completion == nil, let feedback else { return nil }
+        if case .wrong = feedback.tone { return feedback }
+        return nil
+    }
+
     var orientation: PieceColor { puzzle?.sideToMove ?? .white }
 
     var prompt: String {
@@ -40,6 +48,24 @@ final class TacticsModel {
         return isFinished
             ? L.t("tactics.sideToPlaySolution", "%@ to play — solution", side)
             : L.t("common.sideToPlay", "%@ to play", side)
+    }
+
+    /// Bare SAN tokens for the shared Watch player. Move numbers are useful in
+    /// a written score, but the replay parser needs only the moves themselves
+    /// because the puzzle FEN already contains the correct move number.
+    var solutionReplayNotation: String {
+        guard let puzzle, var replay = Position(fen: puzzle.fen) else { return "" }
+        var moves: [String] = []
+
+        for uci in puzzle.solution {
+            guard let parsed = Move(uci: uci),
+                  let move = replay.legalMoves().first(where: { $0.matchesNotation(of: parsed) })
+            else { break }
+            moves.append(replay.san(for: move))
+            replay.make(move)
+        }
+
+        return moves.joined(separator: " ")
     }
 
     /// What the puzzle is asking for, reading both the miner's theme vocabulary
@@ -169,12 +195,17 @@ final class TacticsModel {
 
         if hintLevel == 1 {
             shapes = [.circle(from)]
-            let piece = position[from].map { MoveDescription.name(of: $0.kind) } ?? "piece"
-            feedback = Feedback(tone: .neutral, title: L.t("tactics.moveThePiece", "Move the %@ on %@.", piece, "\(from)"), lines: [])
         } else {
             shapes = [.arrow(from, to, .suggestion)]
-            feedback = Feedback(tone: .neutral, title: L.t("tactics.thatIsTheMovePlay", "That is the move — play it on the board."), lines: [])
         }
+        // The board marking is the hint. Repeating it in a card below the
+        // board adds height without adding information.
+        feedback = nil
+    }
+
+    func dismissWrongFeedback() {
+        guard wrongFeedback != nil else { return }
+        feedback = nil
     }
 
     // MARK: - Internals
@@ -184,12 +215,22 @@ final class TacticsModel {
         var probe = position
         let played = probe.make(Move(from: from, to: to, promotion: promotion))
         let name = played.map { position.san(for: $0) } ?? "That move"
+        let moveExplanation = played.flatMap {
+            MoveDescription.detailedSentence(
+                san: name,
+                move: $0,
+                position: position,
+                resulting: probe
+            )
+        }
+        var lines = moveExplanation.map { [$0] } ?? []
+        lines.append(mistakes == 1
+            ? L.t("tactics.tryForcing", "There is a stronger move here. Look at the most forcing options first — checks, captures, threats.")
+            : L.t("tactics.stillNotIt", "Still not it. Try a hint, or reveal the solution and study the idea."))
         feedback = Feedback(
             tone: .wrong,
             title: L.t("tactics.notTheOne", "%@ is not the one", name),
-            lines: [mistakes == 1
-                ? L.t("tactics.tryForcing", "There is a stronger move here. Look at the most forcing options first — checks, captures, threats.")
-                : L.t("tactics.stillNotIt", "Still not it. Try a hint, or reveal the solution and study the idea.")]
+            lines: lines
         )
     }
 
@@ -216,6 +257,7 @@ final class TacticsModel {
 
         let counted = solved && !revealed && mistakes == 0
         let reasons = explanation()
+        let describedMoves = detailedSolution()
         feedback = Feedback(
             tone: counted ? .correct : (revealed ? .wrong : .partial),
             title: revealed
@@ -228,8 +270,12 @@ final class TacticsModel {
             title: revealed
                 ? L.t("tactics.solutionShown", "Solution shown")
                 : (mistakes == 0 ? L.t("tactics.solved", "Solved") : L.t("tactics.solvedSecondTry", "Solved on the second try")),
-            detail: reasons.first ?? (revealed ? L.t("tactics.studyTheIdea", "Study the idea — it will come back for review.") : nil),
-            line: notation()
+            detail: describedMoves.first
+                ?? reasons.first
+                ?? (revealed ? L.t("tactics.studyTheIdea", "Study the idea — it will come back for review.") : nil),
+            line: describedMoves.count > 1
+                ? describedMoves.dropFirst().joined(separator: "\n")
+                : nil
         )
         return (counted, hintLevel > 0)
     }
@@ -258,6 +304,34 @@ final class TacticsModel {
             replay.make(legal)
         }
         return text.trimmingCharacters(in: .whitespaces)
+    }
+
+    /// Explain every ply, including the opponent's forced replies. Showing
+    /// only the solver's moves left lines such as `38.Kh1` unexplained and
+    /// assumed the player already understood algebraic notation.
+    private func detailedSolution() -> [String] {
+        guard let puzzle, var replay = Position(fen: puzzle.fen) else { return [] }
+        var lines: [String] = []
+
+        for uci in puzzle.solution {
+            guard let parsed = Move(uci: uci),
+                  let move = replay.legalMoves().first(where: { $0.matchesNotation(of: parsed) })
+            else { break }
+
+            let san = replay.san(for: move)
+            let source = replay
+            replay.make(move)
+            if let sentence = MoveDescription.detailedSentence(
+                san: san,
+                move: move,
+                position: source,
+                resulting: replay
+            ) {
+                lines.append(sentence)
+            }
+        }
+
+        return lines
     }
 
     /// Narrate the solver's moves through the feature layer.

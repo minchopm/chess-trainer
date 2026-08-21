@@ -1,11 +1,6 @@
 import Foundation
 
-/// Scoring for Guess the Elo.
-///
-/// The guess is judged against the average of the two players' ratings. Not
-/// against either player individually: the game you watched was played by both
-/// of them, and a 1500 who is being outplayed by a 1900 produces moves that
-/// belong to neither level.
+/// Scoring for one rating estimate in Guess the Elo.
 public struct EloGuess: Equatable, Sendable {
     public let guess: Int
     public let actual: Int
@@ -59,6 +54,40 @@ public struct EloGuess: Equatable, Sendable {
     }
 }
 
+/// A separate rating guess for each player in the watched game.
+///
+/// Each side is judged against that player's real rating. The overall result
+/// uses the mean of the two errors, so one accurate slider cannot hide a very
+/// inaccurate guess for the other player.
+public struct EloPairGuess: Equatable, Sendable {
+    public let white: EloGuess
+    public let black: EloGuess
+
+    public init(whiteGuess: Int, blackGuess: Int, whiteActual: Int, blackActual: Int) {
+        white = EloGuess(guess: whiteGuess, actual: whiteActual)
+        black = EloGuess(guess: blackGuess, actual: blackActual)
+    }
+
+    public var averageError: Int { (white.error + black.error) / 2 }
+
+    public var verdict: EloGuess.Verdict {
+        switch averageError {
+        case ..<75: .spot
+        case ..<150: .close
+        case ..<300: .fair
+        default: .off
+        }
+    }
+
+    public var points: Int { max(0, 100 - averageError / 5) }
+
+    public var summary: String {
+        averageError < 15
+            ? L.t("guess.bothSpotOn", "Both ratings were spot on.")
+            : L.t("guess.averageMiss", "Average miss: %lld points.", averageError)
+    }
+}
+
 /// One judged game, kept so the mode can report whether you are getting better
 /// at reading a game rather than just how the last one went.
 public struct EloGuessRecord: Codable, Sendable {
@@ -66,15 +95,53 @@ public struct EloGuessRecord: Codable, Sendable {
     public let gameID: String
     public let guess: Int
     public let actual: Int
+    public let whiteGuess: Int?
+    public let whiteActual: Int?
+    public let blackGuess: Int?
+    public let blackActual: Int?
 
     public init(at: Date = Date(), gameID: String, guess: Int, actual: Int) {
         self.at = at
         self.gameID = gameID
         self.guess = guess
         self.actual = actual
+        whiteGuess = nil
+        whiteActual = nil
+        blackGuess = nil
+        blackActual = nil
     }
 
-    public var error: Int { abs(guess - actual) }
+    public init(
+        at: Date = Date(),
+        gameID: String,
+        whiteGuess: Int,
+        whiteActual: Int,
+        blackGuess: Int,
+        blackActual: Int
+    ) {
+        self.at = at
+        self.gameID = gameID
+        guess = (whiteGuess + blackGuess) / 2
+        actual = (whiteActual + blackActual) / 2
+        self.whiteGuess = whiteGuess
+        self.whiteActual = whiteActual
+        self.blackGuess = blackGuess
+        self.blackActual = blackActual
+    }
+
+    public var error: Int {
+        guard let whiteGuess, let whiteActual, let blackGuess, let blackActual else {
+            return abs(guess - actual)
+        }
+        return (abs(whiteGuess - whiteActual) + abs(blackGuess - blackActual)) / 2
+    }
+
+    public var bias: Int {
+        guard let whiteGuess, let whiteActual, let blackGuess, let blackActual else {
+            return guess - actual
+        }
+        return ((whiteGuess - whiteActual) + (blackGuess - blackActual)) / 2
+    }
 }
 
 public struct EloGuessStats: Sendable {
@@ -95,6 +162,6 @@ public struct EloGuessStats: Sendable {
         }
         averageError = records.reduce(0) { $0 + $1.error } / records.count
         bestError = records.map(\.error).min() ?? 0
-        bias = records.reduce(0) { $0 + ($1.guess - $1.actual) } / records.count
+        bias = records.reduce(0) { $0 + $1.bias } / records.count
     }
 }

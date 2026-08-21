@@ -80,6 +80,97 @@ struct Card<Content: View>: View {
     }
 }
 
+/// The shared stage for modal moments. The darker veil separates the message
+/// from the position beneath it, while the restrained brass glow keeps it in
+/// the same visual world as the rest of the app.
+struct BrassModalBackdrop<Content: View>: View {
+    let onBackdropTap: (() -> Void)?
+    @ViewBuilder let content: Content
+
+    init(
+        onBackdropTap: (() -> Void)? = nil,
+        @ViewBuilder content: () -> Content
+    ) {
+        self.onBackdropTap = onBackdropTap
+        self.content = content()
+    }
+
+    var body: some View {
+        ZStack {
+            Theatre.shadow.opacity(0.84)
+                .ignoresSafeArea()
+                .contentShape(Rectangle())
+                .onTapGesture { onBackdropTap?() }
+
+            RadialGradient(
+                colors: [Theatre.brassGlow.opacity(0.55), .clear],
+                center: .center,
+                startRadius: 0,
+                endRadius: 330
+            )
+            .ignoresSafeArea()
+            .allowsHitTesting(false)
+
+            content
+                .frame(maxWidth: 400)
+                .padding(24)
+        }
+        .transition(.opacity.combined(with: .scale(scale: 0.97)))
+        .accessibilityAddTraits(.isModal)
+    }
+}
+
+/// A focused modal surface shared by results, confirmations and allowance
+/// notices. Status is communicated by the content and its accent colour; a
+/// floating symbol above the panel looked like an extra button and competed
+/// with the actual action below.
+struct BrassModalPanel<Content: View>: View {
+    let tint: Color
+    @ViewBuilder let content: Content
+
+    init(
+        tint: Color = Theatre.brassHot,
+        @ViewBuilder content: () -> Content
+    ) {
+        self.tint = tint
+        self.content = content()
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            content
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 20)
+        .padding(.vertical, 20)
+        .background {
+            ZStack {
+                BrassPlateShape(cut: 20).fill(LinearGradient(
+                    colors: [Theatre.ink4, Theatre.ink2],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                ))
+                RadialGradient(
+                    colors: [tint.opacity(0.11), .clear],
+                    center: .top,
+                    startRadius: 0,
+                    endRadius: 210
+                )
+                .clipShape(BrassPlateShape(cut: 20))
+            }
+        }
+        .overlay {
+            BrassPlateShape(cut: 20)
+                .strokeBorder(Theatre.brassDeep.opacity(0.72), lineWidth: 0.9)
+        }
+        .overlay {
+            BrassPlateShape(cut: 16, insetAmount: 5)
+                .strokeBorder(tint.opacity(0.12), lineWidth: 0.5)
+        }
+        .shadow(color: Theatre.shadow.opacity(0.72), radius: 28, y: 14)
+    }
+}
+
 struct TagRow: View {
     let tags: [String]
 
@@ -87,7 +178,7 @@ struct TagRow: View {
         FlowLayout(spacing: 6) {
             ForEach(tags, id: \.self) { tag in
                 Text(tag)
-                    .font(Face.mono(9, weight: .medium))
+                    .appFont(size: 9, weight: .medium)
                     .tracking(1.4)
                     .textCase(.uppercase)
                     .padding(.horizontal, 8)
@@ -153,9 +244,9 @@ struct FeedbackCard: View {
             HStack(spacing: 8) {
                 Rectangle().fill(tone).frame(width: 3)
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(feedback.title).font(Face.display(21))
+                    Text(feedback.title).appFont(size: 21, weight: .semibold)
                     ForEach(feedback.lines, id: \.self) { line in
-                        Text(line).font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                        Text(line).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                     }
                 }
             }
@@ -187,14 +278,14 @@ struct LibraryNotice: View {
     var body: some View {
         Card {
             if isLoaded {
-                Text(L.t("common.nothingBundled", "No %@ bundled", what)).font(Face.display(22))
+                Text(L.t("common.nothingBundled", "No %@ bundled", what)).appFont(size: 22, weight: .semibold)
                 Text(L.t("common.dataMissing", "The data did not make it into the app bundle. Check that data/%@ is listed in the Xcode target's resources.", file))
-                    .font(.footnote)
+                    .appFont(.footnote)
                     .foregroundStyle(Theatre.ivoryDim)
             } else {
                 HStack(spacing: 8) {
                     BrassActivityIndicator(size: 15)
-                    Text(L.t("common.loading", "Loading %@…", what)).font(.subheadline).foregroundStyle(Theatre.ivoryDim)
+                    Text(L.t("common.loading", "Loading %@…", what)).appFont(.subheadline).foregroundStyle(Theatre.ivoryDim)
                 }
             }
         }
@@ -211,14 +302,146 @@ struct AllowanceNotice: View {
     @State private var showsPaywall = false
 
     var body: some View {
-        Card {
-            Text(L.t("store.doneForToday", "That is today's free training")).font(Face.display(22))
-            Text(L.t("store.comeBackTomorrow", "The allowance resets at midnight. Playing — against the engine or against a person — has no limit and needs nothing."))
-                .font(.footnote).foregroundStyle(Theatre.ivoryDim)
-            Button(L.t("store.unlockNow", "Unlock unlimited training")) { showsPaywall = true }
-                .buttonStyle(PillButtonStyle(emphasis: .solid))
-                .padding(.top, 4)
+        BrassModalPanel(tint: Theatre.brassHot) {
+            VStack(alignment: .leading, spacing: 14) {
+                Text(allowanceTitle)
+                    .appFont(.title2, weight: .semibold)
+                    .foregroundStyle(Theatre.ivory)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .multilineTextAlignment(.center)
+
+                Text(allowanceExplanation)
+                    .appFont(.subheadline)
+                    .foregroundStyle(Theatre.ivoryDim)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                TimelineView(.periodic(from: .now, by: 1)) { timeline in
+                    let reset = DailyUsage.nextReset(after: timeline.date)
+                    HStack(spacing: 10) {
+                        BrassIcon("clock", size: 17)
+                            .foregroundStyle(Theatre.brass)
+                        Text(L.t("store.resetsIn", "Resets in %@", countdown(from: timeline.date, to: reset)))
+                            .appFont(.subheadline, weight: .semibold)
+                            .monospacedDigit()
+                            .foregroundStyle(Theatre.brassHot)
+                        Spacer(minLength: 0)
+                    }
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 10)
+                    .background {
+                        BrassPlateShape(cut: 9).fill(Theatre.ink2.opacity(0.82))
+                    }
+                    .overlay {
+                        BrassPlateShape(cut: 9)
+                            .strokeBorder(Theatre.brassDeep.opacity(0.46), lineWidth: 0.65)
+                    }
+                    .accessibilityLabel(L.t("store.resetsIn", "Resets in %@", countdown(from: timeline.date, to: reset)))
+                }
+
+                Button { showsPaywall = true } label: {
+                    Label {
+                        Text(L.t("store.unlockNow", "Upgrade now"))
+                    } icon: {
+                        BrassIcon("crown.fill", size: 18)
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
+            }
         }
         .fullScreenCover(isPresented: $showsPaywall) { PaywallView(activity: activity) }
+    }
+
+    private var allowanceTitle: String {
+        switch activity {
+        case .tactics:
+            L.t("store.freePuzzleComplete", "You have completed today's free Tactics puzzle")
+        case .rush:
+            L.t("store.freeRushAttemptUsed", "Today's free Rush attempt has been used")
+        default:
+            L.t("store.doneForToday", "That is today's free training")
+        }
+    }
+
+    private var allowanceExplanation: String {
+        switch activity {
+        case .tactics:
+            L.t(
+                "store.tacticsAllowance",
+                "One completed Tactics puzzle is free each day. Rush has its own separate daily attempt. This resets at 9:00 AM local time. Playing against AI or another person remains unlimited."
+            )
+        case .rush:
+            L.t(
+                "store.rushAllowance",
+                "One Rush attempt is free each day. It is separate from the daily Tactics puzzle. This resets at 9:00 AM local time. Playing against AI or another person remains unlimited."
+            )
+        default:
+            L.t("store.comeBackAtNine", "The allowance resets every day at 9:00 AM local time. Playing — against the engine or against a person — has no limit and needs nothing.")
+        }
+    }
+
+    private func countdown(from now: Date, to reset: Date) -> String {
+        let total = max(0, Int(reset.timeIntervalSince(now).rounded(.down)))
+        let hours = total / 3_600
+        let minutes = (total % 3_600) / 60
+        let seconds = total % 60
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    }
+}
+
+/// The same exhausted-state presentation is shared by every limited training
+/// mode. The dimming layer locks the exercise while the card itself remains
+/// interactive so the player can choose whether to open Purchases.
+struct AllowanceLockOverlay: View {
+    let activity: TrainingActivity
+
+    var body: some View {
+        BrassModalBackdrop {
+            AllowanceNotice(activity: activity)
+        }
+    }
+}
+
+private struct AllowanceGateModifier: ViewModifier {
+    @Environment(AppModel.self) private var app
+    let activity: TrainingActivity
+    let hasStartedAttempt: Bool
+    let wasDenied: Bool
+
+    func body(content: Content) -> some View {
+        TimelineView(.periodic(from: .now, by: 1)) { timeline in
+            let locked = isLocked(at: timeline.date)
+            ZStack {
+                content
+                    .allowsHitTesting(!locked)
+                    .accessibilityHidden(locked)
+
+                if locked {
+                    AllowanceLockOverlay(activity: activity)
+                }
+            }
+            .animation(.easeOut(duration: 0.2), value: locked)
+        }
+    }
+
+    private func isLocked(at now: Date) -> Bool {
+        guard !hasStartedAttempt, !app.store.isPro,
+              app.progress.freeRemaining(activity, at: now) == 0
+        else { return false }
+        return wasDenied || !app.store.isCheckingEntitlement
+    }
+}
+
+extension View {
+    func allowanceGate(
+        activity: TrainingActivity,
+        hasStartedAttempt: Bool,
+        wasDenied: Bool
+    ) -> some View {
+        modifier(AllowanceGateModifier(
+            activity: activity,
+            hasStartedAttempt: hasStartedAttempt,
+            wasDenied: wasDenied
+        ))
     }
 }

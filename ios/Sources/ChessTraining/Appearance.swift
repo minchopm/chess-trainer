@@ -1,5 +1,33 @@
 import Foundation
 
+/// The type family used by the application's interface text.
+///
+/// Sizes and weights still communicate hierarchy, but mixing an editorial
+/// heading with a monospaced button made individual screens feel assembled
+/// from different systems. The player now chooses one family for the whole
+/// application, with the platform face as the intentionally quiet default.
+/// The three branded text groups on the main menu deliberately keep their
+/// original families and are not controlled by this preference.
+public enum AppTypeface: String, Codable, CaseIterable, Identifiable, Sendable {
+    case system
+    case cormorantGaramond
+    case jetBrainsMono
+
+    public var id: String { rawValue }
+
+    public var name: String {
+        switch self {
+        case .system:
+            L.t("settings.font.system", "System")
+        case .cormorantGaramond:
+            "Cormorant Garamond"
+        case .jetBrainsMono:
+            "JetBrains Mono"
+        }
+    }
+
+}
+
 /// Which pieces and which board.
 ///
 /// Taste, not settings: nobody needs to be taught what a walnut board looks
@@ -7,6 +35,7 @@ import Foundation
 /// look. Kept with the rest of the player's data so it survives an update and
 /// travels with a device backup.
 public struct Appearance: Codable, Equatable, Sendable {
+    public var typeface: AppTypeface
     public var pieces: PieceSet
     public var board: BoardStyle
     public var soundsOn: Bool
@@ -21,6 +50,7 @@ public struct Appearance: Codable, Equatable, Sendable {
     public var carving: Carving
 
     public init(
+        typeface: AppTypeface = .system,
         pieces: PieceSet = .ebony,
         board: BoardStyle = .wood,
         soundsOn: Bool = true,
@@ -28,6 +58,7 @@ public struct Appearance: Codable, Equatable, Sendable {
         dimension: BoardDimension = .flat,
         carving: Carving = .banded
     ) {
+        self.typeface = typeface
         self.pieces = pieces
         self.board = board
         self.soundsOn = soundsOn
@@ -38,6 +69,7 @@ public struct Appearance: Codable, Equatable, Sendable {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        typeface = try container.decodeIfPresent(AppTypeface.self, forKey: .typeface) ?? .system
         pieces = try container.decodeIfPresent(PieceSet.self, forKey: .pieces) ?? .ebony
         board = try container.decodeIfPresent(BoardStyle.self, forKey: .board) ?? .wood
         soundsOn = try container.decodeIfPresent(Bool.self, forKey: .soundsOn) ?? true

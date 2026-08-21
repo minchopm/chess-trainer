@@ -6699,6 +6699,190 @@
         }
       }
     },
+    "coach.detailedCapture": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ — %@ moves the %@ from %@ to %@, capturing the %@"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ — %@ moves the %@ from %@ to %@, capturing the %@"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ — %@ moves the %@ from %@ to %@, capturing the %@"
+          }
+        }
+      }
+    },
+    "coach.detailedCastleKingside": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ — %@ castles kingside"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ — %@ castles kingside"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ — %@ castles kingside"
+          }
+        }
+      }
+    },
+    "coach.detailedCastleQueenside": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ — %@ castles queenside"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ — %@ castles queenside"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ — %@ castles queenside"
+          }
+        }
+      }
+    },
+    "coach.detailedCheck": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", giving check"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", giving check"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", giving check"
+          }
+        }
+      }
+    },
+    "coach.detailedCheckmate": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", delivering checkmate"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", delivering checkmate"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", delivering checkmate"
+          }
+        }
+      }
+    },
+    "coach.detailedEscape": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", escaping the check"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", escaping the check"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", escaping the check"
+          }
+        }
+      }
+    },
+    "coach.detailedMove": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ — %@ moves the %@ from %@ to %@"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ — %@ moves the %@ from %@ to %@"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ — %@ moves the %@ from %@ to %@"
+          }
+        }
+      }
+    },
+    "coach.detailedPromotion": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", promoting to a %@"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", promoting to a %@"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", promoting to a %@"
+          }
+        }
+      }
+    },
     "coach.doublesRooks": {
       "extractionState": "manual",
       "localizations": {
@@ -36446,6 +36630,29 @@
         }
       }
     },
+    "play.multiplayer": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Multiplayer"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Multiplayer"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Multiplayer"
+          }
+        }
+      }
+    },
     "play.newGame": {
       "extractionState": "manual",
       "localizations": {
@@ -38018,6 +38225,29 @@
           "stringUnit": {
             "state": "translated",
             "value": "預設著法已取消 — 引擎的一步讓它無法成立。"
+          }
+        }
+      }
+    },
+    "play.vsAI": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VS AI"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VS AI"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VS AI"
           }
         }
       }
@@ -60480,6 +60710,52 @@
         }
       }
     },
+    "store.freePuzzleComplete": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You have completed today's free Tactics puzzle"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You have completed today's free Tactics puzzle"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You have completed today's free Tactics puzzle"
+          }
+        }
+      }
+    },
+    "store.freeRushAttemptUsed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's free Rush attempt has been used"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's free Rush attempt has been used"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's free Rush attempt has been used"
+          }
+        }
+      }
+    },
     "store.freeToday": {
       "extractionState": "manual",
       "localizations": {
@@ -64814,6 +65090,52 @@
         }
       }
     },
+    "store.rushAllowance": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One Rush attempt is free each day. It is separate from the daily Tactics puzzle. This resets at 9:00 AM local time. Playing against AI or another person remains unlimited."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One Rush attempt is free each day. It is separate from the daily Tactics puzzle. This resets at 9:00 AM local time. Playing against AI or another person remains unlimited."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One Rush attempt is free each day. It is separate from the daily Tactics puzzle. This resets at 9:00 AM local time. Playing against AI or another person remains unlimited."
+          }
+        }
+      }
+    },
+    "store.tacticsAllowance": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One completed Tactics puzzle is free each day. Rush has its own separate daily attempt. This resets at 9:00 AM local time. Playing against AI or another person remains unlimited."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One completed Tactics puzzle is free each day. Rush has its own separate daily attempt. This resets at 9:00 AM local time. Playing against AI or another person remains unlimited."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One completed Tactics puzzle is free each day. Rush has its own separate daily attempt. This resets at 9:00 AM local time. Playing against AI or another person remains unlimited."
+          }
+        }
+      }
+    },
     "store.terms": {
       "extractionState": "manual",
       "localizations": {
@@ -66593,193 +66915,193 @@
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "افتح التدريب بلا حدود"
+            "value": "قم بالترقية الآن"
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Odemknout neomezený trénink"
+            "value": "Upgradovat nyní"
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lås op for ubegrænset træning"
+            "value": "Opgrader nu"
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unbegrenztes Training freischalten"
+            "value": "Jetzt upgraden"
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ξεκλείδωσε απεριόριστη προπόνηση"
+            "value": "Αναβάθμιση τώρα"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unlock unlimited training"
+            "value": "Upgrade now"
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unlock unlimited training"
+            "value": "Upgrade now"
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "Unlock unlimited training"
+            "value": "Upgrade now"
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "Desbloquear entrenamiento ilimitado"
+            "value": "Mejorar ahora"
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Avaa rajaton harjoittelu"
+            "value": "Päivitä nyt"
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Débloquer l'entraînement illimité"
+            "value": "Mettre à niveau"
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Débloquer l'entraînement illimité"
+            "value": "Mettre à niveau"
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "פתח אימון ללא הגבלה"
+            "value": "שדרוג עכשיו"
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "असीमित अभ्यास खोलें"
+            "value": "अभी अपग्रेड करें"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Korlátlan edzés feloldása"
+            "value": "Frissítés most"
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Buka latihan tanpa batas"
+            "value": "Upgrade sekarang"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sblocca l'allenamento illimitato"
+            "value": "Esegui l'upgrade ora"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "無制限のトレーニングを解放"
+            "value": "今すぐアップグレード"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "무제한 훈련 잠금 해제"
+            "value": "지금 업그레이드"
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Buka latihan tanpa had"
+            "value": "Naik taraf sekarang"
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Onbeperkt trainen ontgrendelen"
+            "value": "Nu upgraden"
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lås opp ubegrenset trening"
+            "value": "Oppgrader nå"
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Odblokuj trening bez limitu"
+            "value": "Ulepsz teraz"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Desbloquear treino ilimitado"
+            "value": "Fazer upgrade agora"
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Deblochează antrenament nelimitat"
+            "value": "Upgradează acum"
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Открыть тренировки без ограничений"
+            "value": "Перейти на Pro"
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lås upp obegränsad träning"
+            "value": "Uppgradera nu"
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "ปลดล็อกการฝึกไม่จำกัด"
+            "value": "อัปเกรดเลย"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sınırsız antrenmanı aç"
+            "value": "Şimdi yükselt"
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mở khóa luyện tập không giới hạn"
+            "value": "Nâng cấp ngay"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "解锁无限训练"
+            "value": "立即升级"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "解鎖無限訓練"
+            "value": "立即升級"
           }
         }
       }
@@ -72891,6 +73213,29 @@
         }
       }
     },
+    "tactics.skipRemaining": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip · %lld"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip · %lld"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip · %lld"
+          }
+        }
+      }
+    },
     "tactics.solution": {
       "extractionState": "manual",
       "localizations": {
@@ -75448,6 +75793,29 @@
           "stringUnit": {
             "state": "translated",
             "value": "這裡有更強的一步。先看最強制的選擇 — 將軍、吃子、威脅。"
+          }
+        }
+      }
+    },
+    "tactics.watchSolution": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Watch solution"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Watch solution"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Watch solution"
           }
         }
       }

@@ -296,7 +296,7 @@ struct PlayScreen: View {
                     legalDestinations: model.legalDestinations,
                     lastMove: model.lastMove,
                     shapes: model.shapes,
-                    moveValues: values.values,
+                    moveValues: values.displayedValues,
                     premoveDestinations: model.premoveDestinations,
                     premove: model.premoveSquares,
                     onMove: { from, to, promotion in
@@ -342,9 +342,9 @@ struct PlayScreen: View {
     @ViewBuilder
     private var setupPanel: some View {
         Card {
-            Text(L.t("play.newGame", "New game")).font(Face.display(22))
+            Text(L.t("play.newGame", "New game")).appFont(size: 22, weight: .semibold)
             Text(L.t("play.theEnginePlaysAtThe", "The engine plays at the strength you choose. Coaching grades each of your moves as you make it."))
-                .font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
 
             BrassCyclePicker(
                 L.t("play.strength", "Strength"),
@@ -379,36 +379,40 @@ struct PlayScreen: View {
     @ViewBuilder
     private var gamePanel: some View {
         Card {
-            Text(model.statusText).font(Face.display(22))
-            Text(L.t("play.opponentIs", "Opponent: %@", model.level.label)).font(.footnote).foregroundStyle(Theatre.ivoryDim)
+            Text(model.statusText).appFont(size: 22, weight: .semibold)
+            Text(L.t("play.opponentIs", "Opponent: %@", model.level.label)).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
 
             if model.premoveCount > 0 {
-                Label(
-                    model.premoveCount == 1
+                Label {
+                    Text(model.premoveCount == 1
                         ? "1 move queued — it plays as soon as the engine has moved."
-                        : "\(model.premoveCount) moves queued — they play in order, and stop if one becomes impossible.",
-                    systemImage: "bolt.horizontal.circle"
-                )
-                .font(.footnote)
+                        : "\(model.premoveCount) moves queued — they play in order, and stop if one becomes impossible.")
+                } icon: {
+                    BrassIcon("bolt.horizontal.circle", size: 18)
+                }
+                .appFont(.footnote)
                 .foregroundStyle(Theatre.brass)
             } else if model.premoveWasDropped {
-                Label(L.t("play.theQueueWasDroppedThe", "The queue was dropped — the engine's move made it impossible."),
-                      systemImage: "exclamationmark.triangle")
-                    .font(.footnote)
+                Label {
+                    Text(L.t("play.theQueueWasDroppedThe", "The queue was dropped — the engine's move made it impossible."))
+                } icon: {
+                    BrassIcon("exclamationmark.triangle", size: 18)
+                }
+                    .appFont(.footnote)
                     .foregroundStyle(Theatre.ivoryDim)
             }
         }
 
         if let review = model.latestReview, model.summary == nil {
             Card {
-                Text(L.t("play.coach", "Coach")).font(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
+                Text(L.t("play.coach", "Coach")).appFont(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
                 Text("\(review.playedSAN) — \(review.assessment.grade.label)")
-                    .font(.subheadline.weight(.semibold))
+                    .appFont(.subheadline, weight: .semibold)
                     .foregroundStyle(gradeColor(review.assessment.grade))
-                Text(review.sentence).font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                Text(review.sentence).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                 if !review.principalVariation.isEmpty, review.assessment.grade != .best {
                     Text(L.t("play.mainLine", "Main line: %@", review.principalVariation))
-                        .font(.caption).foregroundStyle(Theatre.ivoryFaint)
+                        .appFont(.caption).foregroundStyle(Theatre.ivoryFaint)
                 }
             }
         }
@@ -416,17 +420,17 @@ struct PlayScreen: View {
         if let summary = model.summary {
             Card {
                 Text(Self.resultHeadline(summary.result))
-                    .font(.subheadline.weight(.semibold))
+                    .appFont(.subheadline, weight: .semibold)
                 Text(Self.errorBreakdown(summary))
-                    .font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                    .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                 if let costliest = summary.costliest {
-                    Text(costliest).font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                    Text(costliest).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                 }
             }
         }
 
         Card {
-            Text(L.t("play.moves", "Moves")).font(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
+            Text(L.t("play.moves", "Moves")).appFont(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
             MoveList(moves: model.moves)
         }
     }
@@ -440,6 +444,8 @@ struct PlayScreen: View {
                 ? ActionItem(title: L.t("play.takeback", "Takeback"), systemImage: "arrow.uturn.backward",
                              isEnabled: !model.isThinking && model.moves.count >= 2) {
                     model.takeBack()
+                    values.invalidate(unless: model.position.fen)
+                    Task { await values.refresh(fen: model.position.fen, engine: app.engine) }
                 }
                 : ActionItem(title: L.t("play.cancelPremoves", "Cancel %lld", model.premoveCount), systemImage: "xmark.circle",
                              emphasis: .destructive) {
@@ -450,9 +456,10 @@ struct PlayScreen: View {
             },
             ActionItem(title: values.isEnabled ? L.t("common.hide", "Hide") : L.t("common.values", "Values"),
                        systemImage: "number.square", isEnabled: !model.isThinking) {
-                Task { await values.toggle(fen: model.position.fen, engine: app.engine) }
+                values.toggle(fen: model.position.fen, engine: app.engine)
             },
             ActionItem(title: L.t("play.newGame", "New game"), systemImage: "plus.circle", emphasis: .primary) {
+                values.reset()
                 model = PlayModel()
             },
         ])
@@ -542,7 +549,7 @@ struct MoveList: View {
                     }
                     Spacer()
                 }
-                .font(.system(.footnote, design: .monospaced))
+                .appFont(.footnote)
             }
         }
     }

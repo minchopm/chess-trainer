@@ -17,12 +17,10 @@ final class GuessTheEloModel {
     private(set) var notation: [String] = []
     private(set) var ply = 0
     private(set) var isPlaying = false
-    private(set) var verdict: EloGuess?
+    private(set) var verdict: EloPairGuess?
 
-    /// The same named strength ladder used when choosing an engine opponent.
-    /// Guess the Elo should speak the same language as Play, not make the
-    /// player click through dozens of 25-point values.
-    var guessLevel = OpponentLevel.all[1]
+    var whiteGuess = 1600
+    var blackGuess = 1600
     var speed: Speed = .normal
 
     private var ticker: Task<Void, Never>?
@@ -146,10 +144,26 @@ final class GuessTheEloModel {
         step(by: delta)
     }
 
-    func lockIn() -> EloGuess? {
+    func seekManually(to target: Int) {
+        pause()
+        ply = min(max(0, target), max(0, positions.count - 1))
+    }
+
+    func cycleSpeed() {
+        let speeds = Array(Speed.allCases)
+        let index = speeds.firstIndex(of: speed) ?? 1
+        speed = speeds[(index + 1) % speeds.count]
+    }
+
+    func lockIn() -> EloPairGuess? {
         guard let game, verdict == nil else { return nil }
-        let guessedElo = guessLevel.elo ?? EloGuess.range.upperBound
-        let result = EloGuess(guess: guessedElo, actual: game.averageRating)
+        pause()
+        let result = EloPairGuess(
+            whiteGuess: whiteGuess,
+            blackGuess: blackGuess,
+            whiteActual: game.white,
+            blackActual: game.black
+        )
         verdict = result
         return result
     }
@@ -162,7 +176,6 @@ final class GuessTheEloModel {
 struct GuessTheEloScreen: View {
     @Environment(AppModel.self) private var app
     @State private var model = GuessTheEloModel()
-    @State private var showsPaywall = false
     @State private var exhausted = false
     @State private var hasStartedAttempt = false
 
@@ -173,11 +186,21 @@ struct GuessTheEloScreen: View {
                     .padding(12)
             } else {
                 content
+                    .allowanceGate(
+                        activity: .guessTheElo,
+                        hasStartedAttempt: hasStartedAttempt,
+                        wasDenied: exhausted
+                    )
             }
         }
         .task(id: app.library.games.count) { if model.game == nil { next() } }
-        .fullScreenCover(isPresented: $showsPaywall) { PaywallView(activity: .guessTheElo) }
         .onDisappear { model.stop() }
+        .overlay {
+            if let verdict = model.verdict, let game = model.game {
+                resultOverlay(verdict: verdict, game: game)
+            }
+        }
+        .animation(.easeOut(duration: 0.2), value: model.isRevealed)
     }
 
     private var content: some View {
@@ -202,135 +225,183 @@ struct GuessTheEloScreen: View {
                 GameBoard(position: model.position, lastMove: model.lastMove)
             }
         } panel: {
-            if exhausted { AllowanceNotice(activity: .guessTheElo) }
-            // The guess comes first, directly under the board. It is the one
-            // thing on this screen you actually do, and a slider that has to be
-            // scrolled to is a slider you will not move.
-            if let verdict = model.verdict, let game = model.game {
-                revealCard(verdict: verdict, game: game)
-            } else {
-                guessCard
-            }
-            filmCard
+            // The guesses come first, directly under the board. They are the
+            // one thing on this screen the player actually changes.
+            guessCard
         } controls: {
             controls
         }
     }
 
-    private var filmCard: some View {
-        Card {
-            HStack(alignment: .firstTextBaseline) {
-                Text(model.latestMoveText)
-                    .font(.system(.headline, design: .monospaced))
-                    .contentTransition(.identity)
-                Spacer()
-                Text(verbatim: "\(model.moveNumber)/\(model.totalMoves)")
-                    .font(.subheadline).monospacedDigit()
-                    .foregroundStyle(Theatre.ivoryDim)
-            }
-
-            BrassProgressBar(
-                value: Double(model.ply),
-                total: Double(max(1, model.positions.count - 1))
-            )
-
-            // Everything about the game except what it is worth: naming the
-            // opening and the clock is fair, naming the result is not — a game
-            // that ends in a queen sacrifice reads very differently once you
-            // know it worked.
-            if let game = model.game, !model.isRevealed {
-                Text(game.subtitle).font(.footnote).foregroundStyle(Theatre.ivoryDim)
-            }
-
-            BrassSegmentedPicker(
-                L.t("guess.speed", "Speed"),
-                selection: Binding(get: { model.speed }, set: { model.speed = $0 }),
-                options: Array(GuessTheEloModel.Speed.allCases)
-            ) { speed in
-                Text(speed.label)
-            }
-            .padding(.top, 2)
-        }
-    }
-
     private var guessCard: some View {
         Card {
-            BrassCyclePicker(
-                L.t("guess.yourGuessLichessRating", "Your guess, Lichess rating"),
-                selection: Binding(get: { model.guessLevel }, set: { model.guessLevel = $0 }),
-                options: OpponentLevel.all,
-                label: \.label
+            Text(L.t("guess.yourGuessLichessRating", "Your guess, Lichess rating"))
+                .appFont(.caption, weight: .medium)
+                .textCase(.uppercase)
+                .foregroundStyle(Theatre.ivoryDim)
+
+            eloSlider(
+                L.color(.white),
+                value: Binding(get: { model.whiteGuess }, set: { model.whiteGuess = $0 })
+            )
+
+            Divider().overlay(Theatre.rule)
+
+            eloSlider(
+                L.color(.black),
+                value: Binding(get: { model.blackGuess }, set: { model.blackGuess = $0 })
             )
         }
     }
 
-    private func revealCard(verdict: EloGuess, game: AnnotatedGame) -> some View {
-        Card {
-            HStack(spacing: 8) {
-                Text(verdict.verdict.title).font(Face.display(22))
+    private func eloSlider(_ label: String, value: Binding<Int>) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack(alignment: .firstTextBaseline) {
+                Text(label)
+                    .appFont(.subheadline, weight: .medium)
                 Spacer()
-                Text(verbatim: "+\(verdict.points)")
-                    .font(.subheadline.weight(.semibold)).monospacedDigit()
-                    .foregroundStyle(Theatre.ivoryDim)
+                Text(verbatim: "\(value.wrappedValue)")
+                    .appFont(.title3, weight: .semibold)
             }
-            Text(verdict.summary).font(.subheadline).foregroundStyle(Theatre.ivoryDim)
 
-            HStack(spacing: 18) {
-                revealValue(L.t("guess.youSaid", "You said"), verdict.guess)
-                revealValue(L.color(.white), game.white)
-                revealValue(L.color(.black), game.black)
-            }
-            .padding(.top, 2)
+            BrassSlider(
+                value: Binding(
+                    get: { Double(value.wrappedValue) },
+                    set: { value.wrappedValue = Int(($0 / Double(EloGuess.step)).rounded()) * EloGuess.step }
+                ),
+                in: Double(EloGuess.range.lowerBound)...Double(EloGuess.range.upperBound),
+                step: Double(EloGuess.step)
+            )
+            .accessibilityLabel(label)
+            .accessibilityValue("\(value.wrappedValue) Elo")
+        }
+        .padding(.vertical, 2)
+    }
 
-            Text([game.subtitle, resultText(game.result), terminationText(game)]
-                .compactMap { $0 }.joined(separator: " · "))
-                .font(.footnote).foregroundStyle(Theatre.ivoryDim)
+    private func resultOverlay(verdict: EloPairGuess, game: AnnotatedGame) -> some View {
+        let tint = verdictTint(for: verdict.verdict)
 
-            let stats = app.progress.eloGuessStats
-            if stats.judged > 1 {
-                Text(L.t("guess.judgedSummary", "%lld games judged · average miss %lld points", stats.judged, stats.averageError))
-                    .font(.caption).foregroundStyle(Theatre.ivoryDim)
+        return BrassModalBackdrop {
+            BrassModalPanel(tint: tint) {
+                VStack(alignment: .leading, spacing: 14) {
+                    HStack(alignment: .top, spacing: 12) {
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text(verdict.verdict.title)
+                                .appFont(.title2, weight: .semibold)
+                                .foregroundStyle(Theatre.ivory)
+                            Text(verdict.summary)
+                                .appFont(.subheadline)
+                                .foregroundStyle(Theatre.ivoryDim)
+                        }
+                        Spacer(minLength: 8)
+                        Text(verbatim: "+\(verdict.points)")
+                            .appFont(.headline, weight: .bold)
+                            .monospacedDigit()
+                            .foregroundStyle(tint)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 6)
+                            .background(tint.opacity(0.10), in: Capsule())
+                            .overlay {
+                                Capsule().strokeBorder(tint.opacity(0.35), lineWidth: 0.65)
+                            }
+                    }
+
+                    VStack(spacing: 0) {
+                        ratingResult(
+                            L.color(.white),
+                            guessed: verdict.white.guess,
+                            actual: game.white
+                        )
+                        Divider().overlay(Theatre.rule)
+                        ratingResult(
+                            L.color(.black),
+                            guessed: verdict.black.guess,
+                            actual: game.black
+                        )
+                    }
+                    .padding(.horizontal, 12)
+                    .background {
+                        BrassPlateShape(cut: 10).fill(Theatre.ink2.opacity(0.72))
+                    }
+                    .overlay {
+                        BrassPlateShape(cut: 10)
+                            .strokeBorder(Theatre.brassDeep.opacity(0.40), lineWidth: 0.65)
+                    }
+
+                    let stats = app.progress.eloGuessStats
+                    if stats.judged > 1 {
+                        Text(L.t("guess.judgedSummary", "%lld games judged · average miss %lld points", stats.judged, stats.averageError))
+                            .appFont(.caption)
+                            .foregroundStyle(Theatre.ivoryDim)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .multilineTextAlignment(.center)
+                    }
+
+                    Button(action: next) {
+                        Label {
+                            Text(L.t("guess.newGame", "New game"))
+                        } icon: {
+                            BrassIcon("arrow.clockwise", size: 18)
+                        }
+                            .appFont(.body, weight: .semibold)
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
+                }
             }
         }
+    }
+
+    private func ratingResult(_ color: String, guessed: Int, actual: Int) -> some View {
+        HStack(spacing: 18) {
+            Text(color)
+                .appFont(.subheadline, weight: .medium)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            revealValue(L.t("guess.youSaid", "You said"), guessed)
+            revealValue(L.t("guess.actual", "Actual"), actual)
+        }
+        .padding(.vertical, 10)
     }
 
     private func revealValue(_ label: String, _ value: Int) -> some View {
         VStack(alignment: .leading, spacing: 1) {
-            Text(label).font(.caption2).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
-            Text(verbatim: "\(value)").font(Face.display(22)).monospacedDigit()
+            Text(label).appFont(.caption2).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
+            Text(verbatim: "\(value)").appFont(.title3, weight: .semibold)
         }
     }
 
-    private func resultText(_ result: String) -> String {
-        switch result {
-        case "1-0": L.t("result.whiteWon", "White won")
-        case "0-1": L.t("result.blackWon", "Black won")
-        case "1/2-1/2": L.t("result.drawn", "Drawn")
-        default: result
+    private func verdictTint(for verdict: EloGuess.Verdict) -> Color {
+        switch verdict {
+        case .spot:
+            Theatre.good
+        case .close:
+            Theatre.good
+        case .fair:
+            Theatre.warn
+        case .off:
+            Theatre.bad
         }
-    }
-
-    private func terminationText(_ game: AnnotatedGame) -> String? {
-        game.termination == "Time forfeit" ? L.t("result.onTime", "on time") : nil
     }
 
     private var controls: some View {
-        ActionBar(items: [
-            ActionItem(title: L.t("guess.back", "Back"), systemImage: "backward.frame", isEnabled: model.ply > 0) {
-                model.stepManually(by: -1)
-            },
-            ActionItem(title: model.isPlaying ? L.t("guess.pause", "Pause") : L.t("guess.play", "Play"),
-                       systemImage: model.isPlaying ? "pause.fill" : "play.fill",
-                       isEnabled: !model.isFinished) {
-                model.toggle()
-            },
-            ActionItem(title: L.t("guess.forward", "Forward"), systemImage: "forward.frame", isEnabled: !model.isFinished) {
-                model.stepManually(by: 1)
-            },
-            model.isRevealed
-                ? ActionItem(title: L.t("guess.nextGame", "Next game"), systemImage: "forward.end", emphasis: .primary) { next() }
-                : ActionItem(title: L.t("guess.lockIn", "Lock in"), systemImage: "checkmark.circle", emphasis: .primary) { lockIn() },
-        ])
+        ReplayTransport(
+            position: model.ply,
+            count: max(0, model.positions.count - 1),
+            isPlaying: model.isPlaying,
+            speedLabel: model.speed.label,
+            usesPlainLabels: true,
+            showsPositionSlider: false,
+            showsEndButtons: false,
+            primaryAction: ActionItem(
+                title: L.t("guess.lockIn", "Lock in"),
+                systemImage: "checkmark.circle",
+                emphasis: .primary,
+                action: lockIn
+            ),
+            onSeek: model.seekManually,
+            onToggle: model.toggle,
+            onCycleSpeed: model.cycleSpeed
+        )
     }
 
     private func lockIn() {
@@ -338,7 +409,13 @@ struct GuessTheEloScreen: View {
         guard let game = model.game, let verdict = model.lockIn() else { return }
         app.update { progress in
             progress.eloGuesses.append(
-                EloGuessRecord(gameID: game.id, guess: verdict.guess, actual: verdict.actual)
+                EloGuessRecord(
+                    gameID: game.id,
+                    whiteGuess: verdict.white.guess,
+                    whiteActual: verdict.white.actual,
+                    blackGuess: verdict.black.guess,
+                    blackActual: verdict.black.actual
+                )
             )
         }
     }
@@ -352,8 +429,8 @@ struct GuessTheEloScreen: View {
     private func beginAttempt() -> Bool {
         guard !hasStartedAttempt else { return true }
         guard app.beginAttempt(.guessTheElo) else {
+            model.pause()
             exhausted = true
-            showsPaywall = true
             return false
         }
         exhausted = false

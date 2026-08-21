@@ -145,8 +145,7 @@ struct MenuScreen: View {
         action: @escaping () -> Void
     ) -> some View {
         Button(action: action) {
-            Image(systemName: symbol)
-                .font(.system(size: 18, weight: .medium))
+            BrassIcon(symbol, size: 23)
                 .foregroundStyle(Theatre.brassHot.opacity(0.9))
                 .frame(width: 46, height: 42)
         }
@@ -157,10 +156,13 @@ struct MenuScreen: View {
     private var title: some View {
         VStack(spacing: 6) {
             Text(L.t("menu.title", "Brass Pawn"))
-                .font(Face.display(44))
+                .font(MenuTypography.display(44))
                 .foregroundStyle(Theatre.ivory)
                 .shadow(color: Theatre.ink.opacity(0.9), radius: 18, y: 4)
-            Slug(text: L.t("menu.slug", "Play · Train · Watch"), trailingRule: false)
+            Text(L.t("menu.slug", "Play · Train · Watch").uppercased())
+                .font(MenuTypography.mono(10))
+                .tracking(3.4)
+                .foregroundStyle(Theatre.brass)
         }
         .frame(maxWidth: .infinity)
     }
@@ -175,12 +177,17 @@ struct MenuScreen: View {
     private func choices(compact: Bool) -> some View {
         VStack(spacing: compact ? 9 : 12) {
             playEntry
-            HStack(spacing: -1) {
-                small(.watch, L.t("progress.watch", "Watch"), "play.rectangle")
-                small(.tactics, L.t("progress.tactics", "Tactics"), "target")
-                small(.positional, L.t("progress.positional", "Positional"), "square.grid.3x3.middle.filled")
-                small(.endgames, L.t("progress.endgames", "Endgames"), "flag.checkered")
-                small(.progress, L.t("progress.progress", "Progress"), "chart.line.uptrend.xyaxis")
+            VStack(spacing: -1) {
+                HStack(spacing: -1) {
+                    small(.watch, L.t("progress.watch", "Watch"), "play.rectangle", compact: compact)
+                    small(.guessTheElo, L.t("progress.guessTheElo", "Guess the Elo"), "questionmark.circle", compact: compact)
+                    small(.tactics, L.t("progress.tactics", "Tactics"), "target", compact: compact)
+                }
+                HStack(spacing: -1) {
+                    small(.positional, L.t("progress.positional", "Positional"), "square.grid.3x3.middle.filled", compact: compact)
+                    small(.endgames, L.t("progress.endgames", "Endgames"), "flag.checkered", compact: compact)
+                    small(.progress, L.t("progress.progress", "Progress"), "chart.line.uptrend.xyaxis", compact: compact)
+                }
             }
         }
         .frame(maxWidth: 460)
@@ -188,22 +195,25 @@ struct MenuScreen: View {
 
     /// An icon over a very small label — a whole row of them fits where two
     /// full-width buttons would.
-    private func small(_ tab: RootView.Tab, _ title: String, _ symbol: String) -> some View {
+    private func small(
+        _ tab: RootView.Tab,
+        _ title: String,
+        _ symbol: String,
+        compact: Bool
+    ) -> some View {
         Button {
-            SoundBoard.shared.play(.move)
             onChoose(tab)
         } label: {
             VStack(spacing: 8) {
-                Image(systemName: symbol)
-                    .font(.system(size: 19, weight: .light))
+                BrassIcon(symbol, size: 25)
                 Text(title.uppercased())
-                    .font(Face.mono(7)).tracking(1.1)
+                    .appFont(size: 7).tracking(1.1)
                     .lineLimit(1)
                     .minimumScaleFactor(0.58)
             }
             .foregroundStyle(Theatre.ivoryDim)
             .frame(maxWidth: .infinity)
-            .frame(height: 78)
+            .frame(height: compact ? 64 : 72)
             .background {
                 BrassPlateShape(cut: 9)
                     .fill(LinearGradient(
@@ -222,7 +232,6 @@ struct MenuScreen: View {
 
     private var playEntry: some View {
         Button {
-            SoundBoard.shared.play(.move)
             onChoose(.play)
         } label: {
             ZStack {
@@ -235,7 +244,7 @@ struct MenuScreen: View {
                     .padding(.vertical, 7)
 
                 Text(L.t("progress.play", "Play").uppercased())
-                    .font(Face.display(29))
+                    .appFont(size: 29, weight: .semibold)
                     .tracking(4.2)
                     .foregroundStyle(Theatre.ivory)
                     .lineLimit(1)
@@ -289,10 +298,10 @@ struct MenuScreen: View {
     private func caption(_ game: ShowGame) -> some View {
         VStack(spacing: 3) {
             Text(game.caption)
-                .font(Face.display(17))
+                .font(MenuTypography.display(17))
                 .foregroundStyle(Theatre.ivoryDim)
             Text(game.occasion)
-                .font(Face.mono(9))
+                .font(MenuTypography.mono(9))
                 .tracking(1.6)
                 .foregroundStyle(Theatre.ivoryFaint)
         }
@@ -300,6 +309,19 @@ struct MenuScreen: View {
         .padding(.bottom, 14)
         .transition(.opacity)
         .id(game.id)
+    }
+}
+
+/// These three title-screen treatments are the brand lock-up, not application
+/// typography. They intentionally stay fixed when the player changes the font
+/// used by the rest of the interface.
+private enum MenuTypography {
+    static func display(_ size: CGFloat) -> Font {
+        .custom("CormorantGaramond-SemiBold", size: size)
+    }
+
+    static func mono(_ size: CGFloat) -> Font {
+        .custom("JetBrainsMono-Regular", size: size)
     }
 }
 

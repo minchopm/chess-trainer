@@ -1,45 +1,6 @@
 import ChessTraining
 import SwiftUI
 
-/// Everything whose main action is watching an existing game belongs here:
-/// either replay a classic or judge the level of an anonymous game.
-struct WatchTab: View {
-    private enum Mode: String, CaseIterable, Identifiable {
-        case classics
-        case guessTheElo
-
-        var id: String { rawValue }
-        var label: String {
-            switch self {
-            case .classics: L.t("progress.watch", "Watch")
-            case .guessTheElo: L.t("progress.guessTheElo", "Guess the Elo")
-            }
-        }
-    }
-
-    @State private var mode: Mode = .classics
-
-    var body: some View {
-        VStack(spacing: 0) {
-            TopBar {
-                BrassSegmentedPicker(
-                    L.t("watch.mode", "Watch mode"),
-                    selection: $mode,
-                    options: Array(Mode.allCases)
-                ) { option in
-                    Text(option.label)
-                }
-            }
-
-            switch mode {
-            case .classics: ClassicsScreen(showsHeader: false)
-            case .guessTheElo: GuessTheEloScreen()
-            }
-        }
-        .background(Theatre.ink.ignoresSafeArea())
-    }
-}
-
 /// The games on offer.
 ///
 /// Nine hundred of them, and none of them a grind: every one is decisive,
@@ -66,7 +27,7 @@ struct ClassicsScreen: View {
             if showsHeader {
                 TopBar {
                     Text(L.t("progress.watch", "Watch"))
-                        .font(Face.display(20))
+                        .appFont(size: 20, weight: .semibold)
                         .foregroundStyle(Theatre.ivory)
                         .frame(maxWidth: .infinity)
                 }
@@ -113,14 +74,20 @@ struct ClassicsScreen: View {
     private var list: some View {
         ScrollView {
             LazyVStack(spacing: 8) {
-                ForEach(games) { game in
+                // The imported collection can contain different games with
+                // the same players, year and move count.  Its legacy `id`
+                // does not distinguish those scores, which makes LazyVStack
+                // merge two rows and leave a large blank placeholder behind.
+                // The complete value includes the moves, so every real score
+                // has a stable, distinct identity in this list.
+                ForEach(games, id: \.self) { game in
                     Button { watching = game } label: { row(game) }
                         .buttonStyle(BrassPressStyle())
                 }
 
                 if games.isEmpty {
                     Text(L.t("watch.nothingFound", "No game matches that."))
-                        .font(.footnote)
+                        .appFont(.footnote)
                         .foregroundStyle(Theatre.ivoryFaint)
                         .padding(.top, 30)
                 }
@@ -134,7 +101,8 @@ struct ClassicsScreen: View {
         BrassSegmentedPicker(
             L.t("watch.games", "Games"),
             selection: $showsAll,
-            options: [false, true]
+            options: [false, true],
+            usesPlainLabels: true
         ) { all in
             Text(all
                 ? L.t("watch.everything", "Everything")
@@ -146,17 +114,17 @@ struct ClassicsScreen: View {
         HStack(spacing: 10) {
             VStack(alignment: .leading, spacing: 3) {
                 Text(game.players)
-                    .font(Face.display(17))
+                    .appFont(size: 17, weight: .semibold)
                     .foregroundStyle(Theatre.ivory)
                     .lineLimit(1)
                 Text(game.occasion)
-                    .font(Face.mono(9)).tracking(1.3)
+                    .appFont(size: 9).tracking(1.3)
                     .foregroundStyle(Theatre.ivoryFaint)
                     .lineLimit(1)
             }
             Spacer(minLength: 6)
             Text(L.t("watch.moveCount", "%lld moves", game.moveCount))
-                .font(Face.mono(9)).tracking(1.2)
+                .appFont(size: 9).tracking(1.2)
                 .foregroundStyle(Theatre.ivoryDim)
         }
         .padding(13)

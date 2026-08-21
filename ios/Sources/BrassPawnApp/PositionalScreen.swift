@@ -168,7 +168,6 @@ enum FeedbackTone { case correct, partial, wrong, neutral }
 struct PositionalScreen: View {
     @Environment(AppModel.self) private var app
     @State private var model = PositionalModel()
-    @State private var showsPaywall = false
     @State private var exhausted = false
     @State private var hasStartedAttempt = false
 
@@ -209,9 +208,7 @@ struct PositionalScreen: View {
                 )
             }
         } panel: {
-            if exhausted {
-                AllowanceNotice(activity: .positional)
-            } else if model.exercise == nil {
+            if model.exercise == nil {
                 LibraryNotice(isLoaded: app.isLibraryLoaded, what: L.t("positional.positionalExercises", "positional exercises"), file: "positions.json")
             } else {
                 content
@@ -225,16 +222,20 @@ struct PositionalScreen: View {
             ])
         }
         .task(id: app.library.exercises.count) { if model.exercise == nil { next() } }
-        .fullScreenCover(isPresented: $showsPaywall) { PaywallView(activity: .positional) }
+        .allowanceGate(
+            activity: .positional,
+            hasStartedAttempt: hasStartedAttempt,
+            wasDenied: exhausted
+        )
     }
 
     @ViewBuilder
     private var content: some View {
         Card {
             Text(L.t("positional.assessPrompt", "%@ to move — how do you assess this?", L.color(model.orientation)))
-                .font(Face.display(22))
+                .appFont(size: 22, weight: .semibold)
             Text(L.t("positional.noTacticsHereWeighStructure", "No tactics here. Weigh structure, activity, king safety and space."))
-                .font(.subheadline).foregroundStyle(Theatre.ivoryDim)
+                .appFont(.subheadline).foregroundStyle(Theatre.ivoryDim)
         }
 
         if model.phase == .judging {
@@ -254,7 +255,7 @@ struct PositionalScreen: View {
         if model.isThinking {
             HStack(spacing: 6) {
                 BrassActivityIndicator()
-                Text(L.t("positional.checkingYourMoveWithThe", "Checking your move with the engine…")).font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                Text(L.t("positional.checkingYourMoveWithThe", "Checking your move with the engine…")).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
             }
         }
 
@@ -263,9 +264,9 @@ struct PositionalScreen: View {
                 HStack(spacing: 8) {
                     Rectangle().fill(color(for: result.tone)).frame(width: 3)
                     VStack(alignment: .leading, spacing: 6) {
-                        Text(result.title).font(.subheadline.weight(.semibold))
+                        Text(result.title).appFont(.subheadline, weight: .semibold)
                         ForEach(result.lines, id: \.self) { line in
-                            Text(line).font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                            Text(line).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                         }
                     }
                 }
@@ -284,13 +285,13 @@ struct PositionalScreen: View {
                         Text(model.judgementWasRight
                              ? "Right read"
                              : "Engine says: \(correct.label.lowercased()) (\(EngineScore.centipawns(exercise.cp).text))")
-                            .font(.subheadline.weight(.semibold))
+                            .appFont(.subheadline, weight: .semibold)
                         ForEach(model.summary, id: \.self) { line in
-                            Text(line).font(.footnote).foregroundStyle(Theatre.ivoryDim)
+                            Text(line).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                         }
                         if model.phase == .choosing {
                             Text(L.t("positional.nowPlayTheMoveYou", "Now play the move you would choose."))
-                                .font(.subheadline.weight(.semibold))
+                                .appFont(.subheadline, weight: .semibold)
                                 .padding(.top, 2)
                         }
                     }
@@ -339,11 +340,11 @@ struct PositionalScreen: View {
         guard !hasStartedAttempt else { return true }
         guard app.beginAttempt(.positional) else {
             exhausted = true
-            showsPaywall = true
             return false
         }
         exhausted = false
         hasStartedAttempt = true
         return true
     }
+
 }

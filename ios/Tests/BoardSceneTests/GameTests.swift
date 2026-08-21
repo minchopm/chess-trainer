@@ -56,6 +56,38 @@ struct GameTests {
         #expect(passing.first?.capture == Square("e4"), "the pawn taken en passant stands on e4")
     }
 
+    @Test("A replay can begin from a tactics position")
+    func arbitraryReplayStart() throws {
+        let start = try #require(Position(fen: "3kq3/pQ6/8/3p4/3P2p1/2P5/PP4PP/4rNK1 b - - 2 37"))
+        let line = ShowGames.line(from: start, notation: "Rxf1+")
+
+        #expect(line.plies.count == 1)
+        #expect(line.plies.first?.from == Square("e1"))
+        #expect(line.plies.first?.to == Square("f1"))
+        #expect(line.positions.first?.fen == start.fen)
+        #expect(line.positions.count == 2)
+    }
+
+    @Test("The flat replay follows the same player position")
+    @MainActor
+    func replayPosition() throws {
+        let player = GamePlayer(quality: .low)
+        player.load(notation: "e4 e5")
+
+        #expect(player.currentPosition.fen == Position().fen)
+        #expect(player.lastMove?.from == nil)
+
+        player.seek(to: 1)
+        #expect(player.currentPosition[Square("e4")!] != nil)
+        #expect(player.lastMove?.from == Square("e2"))
+        #expect(player.lastMove?.to == Square("e4"))
+
+        player.seek(to: 2)
+        #expect(player.currentPosition[Square("e5")!] != nil)
+        #expect(player.lastMove?.from == Square("e7"))
+        #expect(player.lastMove?.to == Square("e5"))
+    }
+
     @Test("Every piece kind builds geometry with triangles in it")
     @MainActor
     func geometry() {
