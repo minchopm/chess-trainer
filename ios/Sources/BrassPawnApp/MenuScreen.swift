@@ -14,22 +14,16 @@ struct MenuScreen: View {
     @Environment(\.scenePhase) private var scenePhase
 
     @Environment(Navigator.self) private var navigator
+    let carving: Carving
     let onChoose: (RootView.Tab) -> Void
 
-    /// Built once, with whichever set the player has chosen. The set is part
-    /// of the geometry, so choosing another one builds another board — which is
-    /// what the `id` on this screen is for.
-    @State private var sequence: TitleSequence
     @State private var caption: ShowGame?
     @State private var showsPurchases = false
     @State private var showsSettings = false
 
     init(carving: Carving, onChoose: @escaping (RootView.Tab) -> Void) {
+        self.carving = carving
         self.onChoose = onChoose
-        _sequence = State(initialValue: TitleSequence(
-            quality: SceneQuality.forThisDevice,
-            style: carving == .banded ? .banded : .plain
-        ))
     }
 
     var body: some View {
@@ -50,7 +44,13 @@ struct MenuScreen: View {
                 // see, and the room is the same colour as the page, so the
                 // overhang has no edge.
                 #if canImport(UIKit)
-                BoardSceneView(sequence: sequence)
+                MenuBoardScene(carving: carving) { game in
+                    withAnimation(.easeInOut(duration: 0.5)) { caption = game }
+                }
+                    // The carved set is part of the SceneKit geometry. Give
+                    // only the scene a new identity so its geometry is rebuilt
+                    // without resetting MenuScreen's presentation state.
+                    .id(carving)
                     .frame(
                         width: geometry.size.width + column,
                         height: geometry.size.height + apron
@@ -97,12 +97,6 @@ struct MenuScreen: View {
         }
         .ignoresSafeArea(edges: .horizontal)
         .background(Theatre.ink)
-        .onAppear {
-            caption = sequence.game
-            sequence.onGame = { game in
-                withAnimation(.easeInOut(duration: 0.5)) { caption = game }
-            }
-        }
         .fullScreenCover(isPresented: $showsPurchases) { PaywallView() }
         .fullScreenCover(isPresented: $showsSettings) { SettingsScreen() }
     }
@@ -132,14 +126,14 @@ struct MenuScreen: View {
         .padding(.horizontal, 4)
         .padding(.vertical, 3)
         .background {
-            MenuChamferedShape(cut: 11)
+            BrassPlateShape(cut: 11)
                 .fill(Theatre.ink3.opacity(0.94))
         }
         .overlay {
-            MenuChamferedShape(cut: 11)
+            BrassPlateShape(cut: 11)
                 .strokeBorder(Theatre.brassDeep.opacity(0.75), lineWidth: 0.8)
         }
-        .shadow(color: .black.opacity(0.45), radius: 14, y: 5)
+        .shadow(color: Theatre.shadow.opacity(0.45), radius: 14, y: 5)
         .frame(maxWidth: .infinity, alignment: .trailing)
         .padding(.horizontal, 18)
         .padding(.top, 8)
@@ -156,7 +150,7 @@ struct MenuScreen: View {
                 .foregroundStyle(Theatre.brassHot.opacity(0.9))
                 .frame(width: 46, height: 42)
         }
-        .buttonStyle(MenuPressStyle())
+        .buttonStyle(BrassPressStyle())
         .accessibilityLabel(label)
     }
 
@@ -182,7 +176,7 @@ struct MenuScreen: View {
         VStack(spacing: compact ? 9 : 12) {
             playEntry
             HStack(spacing: -1) {
-                small(.play, L.t("progress.watch", "Watch"), "play.rectangle", wants: .watch)
+                small(.watch, L.t("progress.watch", "Watch"), "play.rectangle")
                 small(.tactics, L.t("progress.tactics", "Tactics"), "target")
                 small(.positional, L.t("progress.positional", "Positional"), "square.grid.3x3.middle.filled")
                 small(.endgames, L.t("progress.endgames", "Endgames"), "flag.checkered")
@@ -194,11 +188,9 @@ struct MenuScreen: View {
 
     /// An icon over a very small label — a whole row of them fits where two
     /// full-width buttons would.
-    private func small(_ tab: RootView.Tab, _ title: String, _ symbol: String,
-                       wants: PlayTab.Mode? = nil) -> some View {
+    private func small(_ tab: RootView.Tab, _ title: String, _ symbol: String) -> some View {
         Button {
             SoundBoard.shared.play(.move)
-            if let wants { navigator.playMode = wants }
             onChoose(tab)
         } label: {
             VStack(spacing: 8) {
@@ -213,7 +205,7 @@ struct MenuScreen: View {
             .frame(maxWidth: .infinity)
             .frame(height: 78)
             .background {
-                MenuChamferedShape(cut: 9)
+                BrassPlateShape(cut: 9)
                     .fill(LinearGradient(
                         colors: [Theatre.ink4.opacity(0.96), Theatre.ink2.opacity(0.96)],
                         startPoint: .topLeading,
@@ -221,11 +213,11 @@ struct MenuScreen: View {
                     ))
             }
             .overlay {
-                MenuChamferedShape(cut: 9)
+                BrassPlateShape(cut: 9)
                     .strokeBorder(Theatre.brassDeep.opacity(0.48), lineWidth: 0.75)
             }
         }
-        .buttonStyle(MenuPressStyle())
+        .buttonStyle(BrassPressStyle())
     }
 
     private var playEntry: some View {
@@ -234,7 +226,7 @@ struct MenuScreen: View {
             onChoose(.play)
         } label: {
             ZStack {
-                MenuChamferedShape(cut: 12)
+                BrassPlateShape(cut: 12)
                     .fill(LinearGradient(
                         colors: [Theatre.ink3.opacity(0.97), Theatre.ink2.opacity(0.93)],
                         startPoint: .topLeading,
@@ -242,26 +234,30 @@ struct MenuScreen: View {
                     ))
                     .padding(.vertical, 7)
 
+                Text(L.t("progress.play", "Play").uppercased())
+                    .font(Face.display(29))
+                    .tracking(4.2)
+                    .foregroundStyle(Theatre.ivory)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+
                 HStack(spacing: 0) {
                     playMedallion
-
-                    Text(L.t("progress.play", "Play").uppercased())
-                        .font(Face.display(29))
-                        .tracking(4.2)
-                        .foregroundStyle(Theatre.ivory)
-                        .frame(maxWidth: .infinity)
-
-                    Color.clear.frame(width: 78)
+                    Spacer(minLength: 0)
                 }
+                // The medallion remains before the centred label in the
+                // current writing direction: left in LTR, right in RTL.
+                .padding(.horizontal, 20)
             }
             .frame(height: 76)
             .overlay {
-                MenuChamferedShape(cut: 12)
+                BrassPlateShape(cut: 12)
                     .strokeBorder(Theatre.brassDeep.opacity(0.7), lineWidth: 0.8)
                     .padding(.vertical, 7)
             }
         }
-        .buttonStyle(MenuPressStyle())
+        .buttonStyle(BrassPressStyle())
         .accessibilityLabel(L.t("progress.play", "Play"))
     }
 
@@ -281,8 +277,7 @@ struct MenuScreen: View {
             PieceView(piece: Piece(.white, .knight), size: 48)
         }
         .frame(width: 70, height: 70)
-        .padding(.leading, 8)
-        .shadow(color: .black.opacity(0.75), radius: 8, y: 4)
+        .shadow(color: Theatre.shadow.opacity(0.75), radius: 8, y: 4)
         .shadow(color: Theatre.brassGlow, radius: 10)
     }
 
@@ -303,42 +298,31 @@ struct MenuScreen: View {
     }
 }
 
-/// The clipped metal plate shared by the menu controls.
-private struct MenuChamferedShape: InsettableShape {
-    var cut: CGFloat
-    var insetAmount: CGFloat = 0
+#if canImport(UIKit)
+/// Owns the title-screen SceneKit sequence so changing a carved set rebuilds
+/// this scene alone. The menu above it — including any presented full-screen
+/// Settings or Subscription view — keeps its identity and state.
+private struct MenuBoardScene: View {
+    @State private var sequence: TitleSequence
+    let onGame: (ShowGame) -> Void
 
-    func path(in rect: CGRect) -> Path {
-        let bounds = rect.insetBy(dx: insetAmount, dy: insetAmount)
-        let corner = min(cut, min(bounds.width, bounds.height) / 2)
-        var path = Path()
-        path.move(to: CGPoint(x: bounds.minX + corner, y: bounds.minY))
-        path.addLine(to: CGPoint(x: bounds.maxX - corner, y: bounds.minY))
-        path.addLine(to: CGPoint(x: bounds.maxX, y: bounds.minY + corner))
-        path.addLine(to: CGPoint(x: bounds.maxX, y: bounds.maxY - corner))
-        path.addLine(to: CGPoint(x: bounds.maxX - corner, y: bounds.maxY))
-        path.addLine(to: CGPoint(x: bounds.minX + corner, y: bounds.maxY))
-        path.addLine(to: CGPoint(x: bounds.minX, y: bounds.maxY - corner))
-        path.addLine(to: CGPoint(x: bounds.minX, y: bounds.minY + corner))
-        path.closeSubpath()
-        return path
+    init(carving: Carving, onGame: @escaping (ShowGame) -> Void) {
+        self.onGame = onGame
+        _sequence = State(initialValue: TitleSequence(
+            quality: SceneQuality.forThisDevice,
+            style: carving == .banded ? .banded : .plain
+        ))
     }
 
-    func inset(by amount: CGFloat) -> MenuChamferedShape {
-        var copy = self
-        copy.insetAmount += amount
-        return copy
+    var body: some View {
+        BoardSceneView(sequence: sequence)
+            .onAppear {
+                onGame(sequence.game)
+                sequence.onGame = onGame
+            }
     }
 }
-
-private struct MenuPressStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .opacity(configuration.isPressed ? 0.72 : 1)
-            .scaleEffect(configuration.isPressed ? 0.985 : 1)
-            .animation(.easeOut(duration: 0.14), value: configuration.isPressed)
-    }
-}
+#endif
 
 extension SceneQuality {
     /// Two settings, chosen once. The distinction that matters is not the model

@@ -11,6 +11,8 @@ public enum Theatre {
     public static let ink2 = Color(hex: 0x0A0C12)
     public static let ink3 = Color(hex: 0x10131B)
     public static let ink4 = Color(hex: 0x171B26)
+    public static let shadow = Color(hex: 0x000000)
+    public static let light = Color(hex: 0xFFFFFF)
 
     // Type
     public static let ivory = Color(hex: 0xE9E4D8)
@@ -101,7 +103,7 @@ public struct Panel<Content: View>: View {
                     .strokeBorder(Theatre.rule, lineWidth: 0.5)
             )
             .overlay(alignment: .top) {
-                LinearGradient(colors: [Color.white.opacity(0.06), .clear],
+                LinearGradient(colors: [Theatre.light.opacity(0.06), .clear],
                                startPoint: .top, endPoint: .bottom)
                     .frame(height: 22)
                     .clipShape(UnevenRoundedRectangle(topLeadingRadius: 14, topTrailingRadius: 14))
@@ -127,8 +129,16 @@ public struct PillButtonStyle: ButtonStyle {
             .foregroundStyle(foreground)
             .padding(.horizontal, 18)
             .padding(.vertical, 12)
-            .background(background, in: Capsule())
-            .overlay(Capsule().strokeBorder(border, lineWidth: 0.75))
+            .background {
+                BrassPlateShape(cut: 10).fill(background)
+            }
+            .overlay {
+                BrassPlateShape(cut: 10).strokeBorder(border, lineWidth: 0.8)
+            }
+            .shadow(color: glow, radius: 10, y: 3)
+            // A custom style can make the control look larger than its Text
+            // label. Keep the interactive area identical to the visible pill.
+            .contentShape(BrassPlateShape(cut: 10))
             .opacity(enabled ? (configuration.isPressed ? 0.75 : 1) : 0.35)
             .scaleEffect(configuration.isPressed ? 0.98 : 1)
             .animation(.easeOut(duration: 0.16), value: configuration.isPressed)
@@ -136,27 +146,98 @@ public struct PillButtonStyle: ButtonStyle {
 
     private var foreground: Color {
         switch emphasis {
-        case .solid: Color(hex: 0x120E06)
-        case .ghost, .danger: Theatre.ivory
+        case .solid: Theatre.brassHot
+        case .ghost: Theatre.ivory
+        case .danger: Theatre.bad
         case .quiet: Theatre.ivoryDim
         }
     }
 
-    private var background: Color {
+    private var background: AnyShapeStyle {
         switch emphasis {
-        case .solid: Theatre.brass
-        case .ghost, .quiet: Color.white.opacity(0.03)
-        case .danger: Theatre.bad.opacity(0.18)
+        case .solid:
+            AnyShapeStyle(LinearGradient(
+                colors: [Theatre.ink4, Theatre.ink2],
+                startPoint: .topLeading, endPoint: .bottomTrailing
+            ))
+        case .ghost:
+            AnyShapeStyle(LinearGradient(
+                colors: [Theatre.ink3, Theatre.ink2],
+                startPoint: .topLeading, endPoint: .bottomTrailing
+            ))
+        case .quiet:
+            AnyShapeStyle(Theatre.ink2)
+        case .danger:
+            AnyShapeStyle(LinearGradient(
+                colors: [Theatre.bad.opacity(0.18), Theatre.ink2],
+                startPoint: .topLeading, endPoint: .bottomTrailing
+            ))
         }
     }
 
     private var border: Color {
         switch emphasis {
-        case .solid: Theatre.brass
-        case .ghost: Theatre.rule
+        case .solid: Theatre.brassHot.opacity(0.82)
+        case .ghost: Theatre.brassDeep.opacity(0.55)
         case .quiet: Theatre.ruleSoft
-        case .danger: Theatre.bad.opacity(0.65)
+        case .danger: Theatre.bad.opacity(0.75)
         }
+    }
+
+    private var glow: Color {
+        switch emphasis {
+        case .solid: Theatre.brassGlow
+        case .danger: Theatre.bad.opacity(0.10)
+        case .ghost, .quiet: .clear
+        }
+    }
+}
+
+/// The clipped metal plate used by every interactive surface in the app.
+public struct BrassPlateShape: InsettableShape {
+    public var cut: CGFloat
+    public var insetAmount: CGFloat = 0
+
+    public init(cut: CGFloat, insetAmount: CGFloat = 0) {
+        self.cut = cut
+        self.insetAmount = insetAmount
+    }
+
+    public func path(in rect: CGRect) -> Path {
+        let bounds = rect.insetBy(dx: insetAmount, dy: insetAmount)
+        let corner = min(cut, min(bounds.width, bounds.height) / 2)
+        var path = Path()
+        path.move(to: CGPoint(x: bounds.minX + corner, y: bounds.minY))
+        path.addLine(to: CGPoint(x: bounds.maxX - corner, y: bounds.minY))
+        path.addLine(to: CGPoint(x: bounds.maxX, y: bounds.minY + corner))
+        path.addLine(to: CGPoint(x: bounds.maxX, y: bounds.maxY - corner))
+        path.addLine(to: CGPoint(x: bounds.maxX - corner, y: bounds.maxY))
+        path.addLine(to: CGPoint(x: bounds.minX + corner, y: bounds.maxY))
+        path.addLine(to: CGPoint(x: bounds.minX, y: bounds.maxY - corner))
+        path.addLine(to: CGPoint(x: bounds.minX, y: bounds.minY + corner))
+        path.closeSubpath()
+        return path
+    }
+
+    public func inset(by amount: CGFloat) -> BrassPlateShape {
+        var copy = self
+        copy.insetAmount += amount
+        return copy
+    }
+}
+
+public struct BrassPressStyle: ButtonStyle {
+    public init() {}
+
+    public func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            // Labels frequently contain a full-width plate around a small
+            // icon or word. The whole plate, not only the opaque glyphs, is
+            // the button.
+            .contentShape(Rectangle())
+            .opacity(configuration.isPressed ? 0.72 : 1)
+            .scaleEffect(configuration.isPressed ? 0.985 : 1)
+            .animation(.easeOut(duration: 0.14), value: configuration.isPressed)
     }
 }
 

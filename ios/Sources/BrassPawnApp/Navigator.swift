@@ -9,7 +9,7 @@ import SwiftUI
 final class Navigator {
     var showsMenu = true
 
-    /// Which of the Play tab's four things is showing.
+    /// Which of the Play section's modes is showing. Watch has its own route.
     ///
     /// Here rather than in the tab's own @State, because the menu sits over the
     /// tabs and dismissing it changes the shape of the view tree — which is

@@ -209,7 +209,7 @@ struct RushScreen: View {
                 Card {
                     Text(L.t("rush.rush", "Rush")).font(Face.display(22))
                     Text(L.t("rush.solveAsManyAsYou", "Solve as many as you can before the clock runs out. Puzzles start easy and get harder as you go. Three misses ends the run."))
-                        .font(.footnote).foregroundStyle(.secondary)
+                        .font(.footnote).foregroundStyle(Theatre.ivoryDim)
 
                     BrassSegmentedPicker(
                         L.t("rush.time", "Time"),
@@ -231,13 +231,13 @@ struct RushScreen: View {
 
                 if !records.isEmpty {
                     Card {
-                        Text(L.t("rush.yourBest", "Your best")).font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
+                        Text(L.t("rush.yourBest", "Your best")).font(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
                         ForEach(records, id: \.key) { entry in
                             HStack {
                                 Text(RushSettings.label(for: TimeInterval(entry.key)))
                                 Spacer()
                                 Text(L.t("rush.recordLine", "%lld solved · best streak %lld", entry.value.solved, entry.value.bestStreak))
-                                    .foregroundStyle(.secondary)
+                                    .foregroundStyle(Theatre.ivoryDim)
                                     .monospacedDigit()
                             }
                             .font(.footnote)
@@ -308,7 +308,7 @@ struct RushScreen: View {
                 Text(model.clockText)
                     .font(.system(size: 34, weight: .semibold, design: .rounded))
                     .monospacedDigit()
-                    .foregroundStyle(model.clockIsUrgent ? Color.red : Color.primary)
+                    .foregroundStyle(model.clockIsUrgent ? Theatre.bad : Theatre.ivory)
                     .contentTransition(.numericText(countsDown: true))
 
                 Spacer()
@@ -316,14 +316,14 @@ struct RushScreen: View {
                 VStack(alignment: .trailing, spacing: 2) {
                     Text("\(model.run?.solved ?? 0) / \(model.settings.target)")
                         .font(Face.display(22)).monospacedDigit()
-                    Text(missesText).font(.caption).foregroundStyle(.secondary)
+                    Text(missesText).font(.caption).foregroundStyle(Theatre.ivoryDim)
                 }
             }
 
             if let flash = model.flash {
                 Label(flash.text, systemImage: flash.solved ? "checkmark.circle.fill" : "xmark.circle.fill")
                     .font(.footnote.weight(.medium))
-                    .foregroundStyle(flash.solved ? Color.green : Color.red)
+                    .foregroundStyle(flash.solved ? Theatre.good : Theatre.bad)
                     .transition(.opacity)
                     .id(flash.text)
             }
@@ -362,7 +362,7 @@ struct RushSummary: View {
 
             Image(systemName: run.completedTarget ? "trophy.fill" : "flag.checkered")
                 .font(.system(size: 44))
-                .foregroundStyle(run.completedTarget ? Color.yellow : Color.accentColor)
+                .foregroundStyle(run.completedTarget ? Theatre.warn : Theatre.brass)
 
             Text(headline).font(.title2.weight(.semibold))
 
@@ -376,7 +376,7 @@ struct RushSummary: View {
                run.solved >= best.solved {
                 Label(L.t("rush.newPersonalBest", "New personal best"), systemImage: "sparkles")
                     .font(.footnote.weight(.medium))
-                    .foregroundStyle(.yellow)
+                    .foregroundStyle(Theatre.warn)
             }
 
             Spacer()
@@ -417,7 +417,7 @@ struct RushSummary: View {
     private func stat(_ value: String, _ label: String) -> some View {
         VStack(spacing: 2) {
             Text(value).font(.title.weight(.semibold)).monospacedDigit()
-            Text(label).font(.caption).foregroundStyle(.secondary)
+            Text(label).font(.caption).foregroundStyle(Theatre.ivoryDim)
         }
     }
 }

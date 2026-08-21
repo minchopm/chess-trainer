@@ -2,8 +2,9 @@ import ChessCore
 import ChessTraining
 import SwiftUI
 
-/// A slim row at the top of every training screen: whatever the screen wants on
-/// the right, and one predictable way back on the left.
+/// A slim row at the top of every training screen. The middle content is
+/// centred against the whole screen, not against the space left by the back
+/// button, so titles and mode pickers do not drift to the right.
 struct TopBar<Content: View>: View {
     @Environment(ActivityGuard.self) private var activity
     @Environment(Navigator.self) private var navigator
@@ -14,18 +15,25 @@ struct TopBar<Content: View>: View {
     @ViewBuilder var content: Content
 
     var body: some View {
-        HStack(spacing: 10) {
-            BrassBackButton {
-                if activity.isActive { activity.requestExit() } else { navigator.goToMenu() }
-            }
-
-            // Whatever the screen puts here — a mode picker, usually — is a way
-            // out of the game as much as the tab bar is, so it goes away for
-            // the same reason and comes back at the same moment.
+        // Whatever the screen puts here — a mode picker, usually — is a way
+        // out of the game as much as the tab bar is, so it goes away for
+        // the same reason and comes back at the same moment.
+        Group {
             if activity.isActive {
-                if let clocks { clocks } else { Spacer() }
+                if let clocks { clocks } else { Color.clear }
             } else {
                 content
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .center)
+        // Empty training headers use Spacer/Color.clear as their centre
+        // content. Without an explicit height those flexible views consume
+        // the remaining screen and push the board away.
+        .frame(height: 40)
+        .padding(.horizontal, 54)
+        .overlay(alignment: .leading) {
+            BrassBackButton {
+                if activity.isActive { activity.requestExit() } else { navigator.goToMenu() }
             }
         }
         .padding(.horizontal, 12)
@@ -44,10 +52,12 @@ struct SettingsScreen: View {
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 22) {
-                    section(L.t("settings.dimension", "Board")) { DimensionChoice() }
-                    section(L.t("settings.pieces", "Pieces")) { PieceSetGallery() }
-                    section(L.t("settings.squares", "Squares")) { BoardGallery() }
                     section(L.t("settings.sounds", "Move sounds")) { sound }
+                    section(L.t("settings.dimension", "Board")) { DimensionChoice() }
+                    if !app.progress.appearance.dimension.isDimensional {
+                        section(L.t("settings.pieces", "Pieces")) { PieceSetGallery() }
+                        section(L.t("settings.squares", "Squares")) { BoardGallery() }
+                    }
                 }
                 .padding(16)
                 .padding(.bottom, 30)
@@ -67,27 +77,27 @@ struct SettingsScreen: View {
 
     private var sound: some View {
         Panel {
-            BrassToggle(L.t("settings.soundsOn", "Play sounds"), isOn: Binding(
-                get: { app.progress.appearance.soundsOn },
-                set: { on in app.update { $0.appearance.soundsOn = on } }
-            ))
+            BrassToggle(
+                L.t("settings.soundsOn", "Play sounds"),
+                symbol: app.progress.appearance.soundsOn
+                    ? "speaker.wave.2.fill"
+                    : "speaker.slash.fill",
+                isOn: Binding(
+                    get: { app.progress.appearance.soundsOn },
+                    set: { on in app.update { $0.appearance.soundsOn = on } }
+                )
+            )
 
-            HStack(spacing: 12) {
-                Image(systemName: "speaker.fill")
-                    .font(.caption2).foregroundStyle(Theatre.ivoryFaint)
-                BrassSlider(
-                    value: Binding(
-                        get: { app.progress.appearance.volume },
-                        set: { level in app.update { $0.appearance.volume = level } }
-                    ),
-                    in: 0...1
-                ) { editing in
-                    // A sample on release, so the slider can be judged by ear
-                    // rather than by the number next to it.
-                    if !editing { SoundBoard.shared.play(.move) }
-                }
-                Image(systemName: "speaker.wave.3.fill")
-                    .font(.caption2).foregroundStyle(Theatre.ivoryFaint)
+            BrassSlider(
+                value: Binding(
+                    get: { app.progress.appearance.volume },
+                    set: { level in app.update { $0.appearance.volume = level } }
+                ),
+                in: 0...1
+            ) { editing in
+                // A sample on release, so the slider can be judged by ear
+                // rather than by the number next to it.
+                if !editing { SoundBoard.shared.play(.move) }
             }
             .opacity(app.progress.appearance.soundsOn ? 1 : 0.35)
             .disabled(!app.progress.appearance.soundsOn)
@@ -115,9 +125,11 @@ private struct PieceSetGallery: View {
                         HStack(spacing: 0) {
                             ForEach([PieceKind.king, .knight], id: \.rawValue) { kind in
                                 PieceView(piece: Piece(.white, kind), size: 30)
+                                    .frame(maxWidth: .infinity)
                             }
                             ForEach([PieceKind.knight, .king], id: \.rawValue) { kind in
                                 PieceView(piece: Piece(.black, kind), size: 30)
+                                    .frame(maxWidth: .infinity)
                             }
                         }
                         .environment(\.pieceSet, set)
@@ -135,14 +147,18 @@ private struct PieceSetGallery: View {
                     }
                     .padding(9)
                     .frame(maxWidth: .infinity)
-                    .background(Theatre.ink3, in: RoundedRectangle(cornerRadius: 12))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 12)
-                            .strokeBorder(chosen ? Theatre.brass : Theatre.rule, lineWidth: chosen ? 1 : 0.5)
-                    )
+                    .background {
+                        BrassPlateShape(cut: 10)
+                            .fill(chosen ? Theatre.brassGlow : Theatre.ink3)
+                    }
+                    .overlay {
+                        BrassPlateShape(cut: 10)
+                            .strokeBorder(chosen ? Theatre.brass : Theatre.brassDeep.opacity(0.45),
+                                          lineWidth: chosen ? 1 : 0.6)
+                    }
                     .shadow(color: chosen ? Theatre.brassGlow : .clear, radius: 10)
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(BrassPressStyle())
             }
         }
     }
@@ -188,14 +204,18 @@ private struct BoardGallery: View {
                     }
                     .padding(8)
                     .frame(maxWidth: .infinity)
-                    .background(Theatre.ink3, in: RoundedRectangle(cornerRadius: 12))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 12)
-                            .strokeBorder(chosen ? Theatre.brass : Theatre.rule, lineWidth: chosen ? 1 : 0.5)
-                    )
+                    .background {
+                        BrassPlateShape(cut: 10)
+                            .fill(chosen ? Theatre.brassGlow : Theatre.ink3)
+                    }
+                    .overlay {
+                        BrassPlateShape(cut: 10)
+                            .strokeBorder(chosen ? Theatre.brass : Theatre.brassDeep.opacity(0.45),
+                                          lineWidth: chosen ? 1 : 0.6)
+                    }
                     .shadow(color: chosen ? Theatre.brassGlow : .clear, radius: 10)
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(BrassPressStyle())
             }
         }
     }
@@ -299,13 +319,17 @@ struct DimensionChoice: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(13)
-            .background(chosen ? Theatre.brassGlow : Theatre.ink3, in: RoundedRectangle(cornerRadius: 13))
-            .overlay(
-                RoundedRectangle(cornerRadius: 13)
-                    .strokeBorder(chosen ? Theatre.brass.opacity(0.5) : Theatre.rule, lineWidth: 0.75)
-            )
+            .background {
+                BrassPlateShape(cut: 10)
+                    .fill(chosen ? Theatre.brassGlow : Theatre.ink3)
+            }
+            .overlay {
+                BrassPlateShape(cut: 10)
+                    .strokeBorder(chosen ? Theatre.brass.opacity(0.72) : Theatre.brassDeep.opacity(0.45),
+                                  lineWidth: 0.8)
+            }
         }
-        .buttonStyle(.plain)
+        .buttonStyle(BrassPressStyle())
     }
 
     private func carving(_ value: Carving, _ title: String) -> some View {
@@ -318,9 +342,16 @@ struct DimensionChoice: View {
                 .foregroundStyle(chosen ? Theatre.ivory : Theatre.ivoryDim)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 10)
-                .background(chosen ? Theatre.brassGlow : Theatre.ink3, in: Capsule())
-                .overlay(Capsule().strokeBorder(chosen ? Theatre.brass.opacity(0.5) : Theatre.rule, lineWidth: 0.75))
+                .background {
+                    BrassPlateShape(cut: 8)
+                        .fill(chosen ? Theatre.brassGlow : Theatre.ink3)
+                }
+                .overlay {
+                    BrassPlateShape(cut: 8)
+                        .strokeBorder(chosen ? Theatre.brass.opacity(0.72) : Theatre.brassDeep.opacity(0.45),
+                                      lineWidth: 0.8)
+                }
         }
-        .buttonStyle(.plain)
+        .buttonStyle(BrassPressStyle())
     }
 }

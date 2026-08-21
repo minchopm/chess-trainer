@@ -72,16 +72,16 @@ struct TacticsScreen: View {
         if let puzzle = model.puzzle {
             Card {
                 Text(model.prompt).font(Face.display(22))
-                Text(model.objective).font(.subheadline).foregroundStyle(.secondary)
+                Text(model.objective).font(.subheadline).foregroundStyle(Theatre.ivoryDim)
 
                 if let why = model.reason.explanation {
-                    Text(why).font(.footnote).foregroundStyle(.secondary)
+                    Text(why).font(.footnote).foregroundStyle(Theatre.ivoryDim)
                 }
 
                 if model.isReplying {
                     HStack(spacing: 6) {
                         BrassActivityIndicator(size: 15)
-                        Text(L.t("tactics.opponentReplies", "Opponent replies…")).font(.footnote).foregroundStyle(.secondary)
+                        Text(L.t("tactics.opponentReplies", "Opponent replies…")).font(.footnote).foregroundStyle(Theatre.ivoryDim)
                     }
                 }
 
@@ -101,7 +101,7 @@ struct TacticsScreen: View {
 
             if model.isFinished {
                 Card {
-                    Text(L.t("tactics.themes", "Themes")).font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
+                    Text(L.t("tactics.themes", "Themes")).font(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
                     TagRow(tags: motifsFirst(puzzle.themes).map(Themes.readable))
                 }
             }

@@ -52,7 +52,7 @@ public struct BoardTheme: Sendable {
             selection = Color(red: 0.40, green: 0.30, blue: 0.75).opacity(0.40)
         }
         check = Color(red: 0.851, green: 0.439, blue: 0.373)
-        hint = Color.black.opacity(0.28)
+        hint = Theatre.shadow.opacity(0.28)
         coachArrow = Color(red: 0.424, green: 0.749, blue: 0.451)
         premove = Color(red: 0.357, green: 0.608, blue: 0.835).opacity(0.42)
     }

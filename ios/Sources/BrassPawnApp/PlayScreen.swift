@@ -344,7 +344,7 @@ struct PlayScreen: View {
         Card {
             Text(L.t("play.newGame", "New game")).font(Face.display(22))
             Text(L.t("play.theEnginePlaysAtThe", "The engine plays at the strength you choose. Coaching grades each of your moves as you make it."))
-                .font(.footnote).foregroundStyle(.secondary)
+                .font(.footnote).foregroundStyle(Theatre.ivoryDim)
 
             BrassCyclePicker(
                 L.t("play.strength", "Strength"),
@@ -380,7 +380,7 @@ struct PlayScreen: View {
     private var gamePanel: some View {
         Card {
             Text(model.statusText).font(Face.display(22))
-            Text(L.t("play.opponentIs", "Opponent: %@", model.level.label)).font(.footnote).foregroundStyle(.secondary)
+            Text(L.t("play.opponentIs", "Opponent: %@", model.level.label)).font(.footnote).foregroundStyle(Theatre.ivoryDim)
 
             if model.premoveCount > 0 {
                 Label(
@@ -390,25 +390,25 @@ struct PlayScreen: View {
                     systemImage: "bolt.horizontal.circle"
                 )
                 .font(.footnote)
-                .foregroundStyle(.tint)
+                .foregroundStyle(Theatre.brass)
             } else if model.premoveWasDropped {
                 Label(L.t("play.theQueueWasDroppedThe", "The queue was dropped — the engine's move made it impossible."),
                       systemImage: "exclamationmark.triangle")
                     .font(.footnote)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Theatre.ivoryDim)
             }
         }
 
         if let review = model.latestReview, model.summary == nil {
             Card {
-                Text(L.t("play.coach", "Coach")).font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
+                Text(L.t("play.coach", "Coach")).font(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
                 Text("\(review.playedSAN) — \(review.assessment.grade.label)")
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(gradeColor(review.assessment.grade))
-                Text(review.sentence).font(.footnote).foregroundStyle(.secondary)
+                Text(review.sentence).font(.footnote).foregroundStyle(Theatre.ivoryDim)
                 if !review.principalVariation.isEmpty, review.assessment.grade != .best {
                     Text(L.t("play.mainLine", "Main line: %@", review.principalVariation))
-                        .font(.caption).foregroundStyle(.tertiary)
+                        .font(.caption).foregroundStyle(Theatre.ivoryFaint)
                 }
             }
         }
@@ -418,15 +418,15 @@ struct PlayScreen: View {
                 Text(Self.resultHeadline(summary.result))
                     .font(.subheadline.weight(.semibold))
                 Text(Self.errorBreakdown(summary))
-                    .font(.footnote).foregroundStyle(.secondary)
+                    .font(.footnote).foregroundStyle(Theatre.ivoryDim)
                 if let costliest = summary.costliest {
-                    Text(costliest).font(.footnote).foregroundStyle(.secondary)
+                    Text(costliest).font(.footnote).foregroundStyle(Theatre.ivoryDim)
                 }
             }
         }
 
         Card {
-            Text(L.t("play.moves", "Moves")).font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
+            Text(L.t("play.moves", "Moves")).font(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
             MoveList(moves: model.moves)
         }
     }
@@ -532,7 +532,7 @@ struct MoveList: View {
             ForEach(pairs) { pair in
                 HStack(spacing: 8) {
                     Text("\(pair.id).")
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Theatre.ivoryDim)
                         .frame(width: 28, alignment: .trailing)
                     moveText(pair.white)
                     if let black = pair.black {
@@ -557,7 +557,7 @@ struct MoveList: View {
         switch grade {
         case .inaccuracy: Color(red: 0.867, green: 0.706, blue: 0.353)
         case .mistake, .blunder: Color(red: 0.851, green: 0.439, blue: 0.373)
-        default: Color.primary
+        default: Theatre.ivory
         }
     }
 }

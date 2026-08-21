@@ -7,7 +7,7 @@ public struct RootView: View {
     @State private var selection = Tab.tactics
     @State private var navigator = Navigator()
 
-    public enum Tab: Hashable { case tactics, positional, endgames, play, progress }
+    public enum Tab: Hashable { case watch, tactics, positional, endgames, play, progress }
 
     public init() {}
 
@@ -26,7 +26,6 @@ public struct RootView: View {
                 .environment(app)
                 .environment(activity)
                 .environment(navigator)
-                .id(app.progress.appearance.carving)
                 .transition(.opacity)
                 .zIndex(1)
             }
@@ -72,8 +71,8 @@ public struct RootView: View {
                 Text(message)
                     .font(.footnote)
                     .padding(8)
-                    .background(.red.opacity(0.85), in: Capsule())
-                    .foregroundStyle(.white)
+                    .background(Theatre.bad.opacity(0.85), in: Capsule())
+                    .foregroundStyle(Theatre.light)
                     .padding(.top, 4)
             }
         }
@@ -82,6 +81,7 @@ public struct RootView: View {
     @ViewBuilder
     private var selectedScreen: some View {
         switch selection {
+        case .watch: WatchTab()
         case .tactics: TrainingTab()
         case .positional: PositionalScreen()
         case .endgames: EndgameScreen()
@@ -123,13 +123,12 @@ struct ProgressScreen: View {
                     onlineSection
                     guessSection
                     librarySection
-                    proSection
 
                     Button { confirmsReset = true } label: {
                         rowLabel(L.t("progress.resetAllProgress", "Reset all progress"), symbol: "trash")
                             .foregroundStyle(Theatre.bad)
                     }
-                    .buttonStyle(.plain)
+                    .buttonStyle(BrassPressStyle())
                 }
                 .padding(14)
                 .padding(.bottom, 18)
@@ -234,18 +233,6 @@ struct ProgressScreen: View {
         }
     }
 
-    private var proSection: some View {
-        progressSection(L.t("store.title", "Brass Pawn Pro")) {
-            ProUpsellRow()
-            if !app.store.isPro {
-                note(L.t("store.freeToday", "Free today: %lld puzzles, %lld Rush run, %lld of each other exercise.",
-                            app.progress.freeRemaining(.tactics),
-                            app.progress.freeRemaining(.rush),
-                            app.progress.freeRemaining(.positional)))
-            }
-        }
-    }
-
     private func progressSection<Content: View>(
         _ title: String, @ViewBuilder content: () -> Content
     ) -> some View {
@@ -276,8 +263,13 @@ struct ProgressScreen: View {
         }
         .padding(14)
         .frame(maxWidth: .infinity)
-        .background(Theatre.ink3, in: RoundedRectangle(cornerRadius: 13))
-        .overlay(RoundedRectangle(cornerRadius: 13).strokeBorder(Theatre.rule, lineWidth: 0.5))
+        .background {
+            BrassPlateShape(cut: 10).fill(Theatre.ink3)
+        }
+        .overlay {
+            BrassPlateShape(cut: 10)
+                .strokeBorder(Theatre.brassDeep.opacity(0.45), lineWidth: 0.65)
+        }
     }
 
     private var engineText: String {

@@ -57,11 +57,11 @@ struct OnlineScreen: View {
                 Card {
                     Text(L.t("online.playOnline", "Play online")).font(Face.display(22))
                     Text(L.t("online.aRealOpponentOverGame", "A real opponent over Game Center, on the clock. No hints, no engine, no take-backs."))
-                        .font(.footnote).foregroundStyle(.secondary)
+                        .font(.footnote).foregroundStyle(Theatre.ivoryDim)
                 }
 
                 Card {
-                    Text(L.t("online.clock", "Clock")).font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
+                    Text(L.t("online.clock", "Clock")).font(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
                     BrassSegmentedPicker(
                         L.t("online.clock", "Clock"),
                         selection: $timeControl,
@@ -71,7 +71,7 @@ struct OnlineScreen: View {
                     }
                     .disabled(isSearching)
                     Text(L.t("online.clockExplanation", "%@ each — %@. You are only paired with players who chose the same clock.", timeControl.label, timeControl.name.lowercased()))
-                        .font(.footnote).foregroundStyle(.secondary)
+                        .font(.footnote).foregroundStyle(Theatre.ivoryDim)
                 }
 
                 Card {
@@ -83,12 +83,12 @@ struct OnlineScreen: View {
                         }
                         Spacer()
                         VStack(alignment: .trailing, spacing: 2) {
-                            Text(L.t("online.record", "Record")).font(.caption2).textCase(.uppercase).foregroundStyle(.secondary)
+                            Text(L.t("online.record", "Record")).font(.caption2).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
                             Text(verbatim: "\(app.progress.onlineWins)–\(app.progress.onlineLosses)–\(app.progress.onlineDraws)")
-                                .font(.subheadline).monospacedDigit().foregroundStyle(.secondary)
+                                .font(.subheadline).monospacedDigit().foregroundStyle(Theatre.ivoryDim)
                         }
                     }
-                    Text(matchmaker.status).font(.footnote).foregroundStyle(.secondary)
+                    Text(matchmaker.status).font(.footnote).foregroundStyle(Theatre.ivoryDim)
                 }
 
                 if isSearching {
@@ -167,7 +167,7 @@ struct OnlineScreen: View {
         } panel: {
             statusCard(session)
             Card {
-                Text(L.t("online.moves", "Moves")).font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
+                Text(L.t("online.moves", "Moves")).font(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
                 MoveList(moves: session.moves.map { (san: $0, grade: nil) })
             }
         } controls: {
@@ -205,7 +205,7 @@ struct OnlineScreen: View {
         Card {
             Text(statusText(session)).font(Face.display(22))
             Text(L.t("online.gameSummary", "%@ · %@ · you are %@", session.timeControl.label, session.timeControl.name, L.color(session.myColor)))
-                .font(.footnote).foregroundStyle(.secondary)
+                .font(.footnote).foregroundStyle(Theatre.ivoryDim)
 
             if session.drawOffered {
                 HStack(spacing: 10) {
@@ -217,7 +217,7 @@ struct OnlineScreen: View {
                 }
             } else if session.drawOfferSent {
                 Text(L.t("online.drawOfferedWaitingForAn", "Draw offered — waiting for an answer."))
-                    .font(.footnote).foregroundStyle(.secondary)
+                    .font(.footnote).foregroundStyle(Theatre.ivoryDim)
             }
         }
     }

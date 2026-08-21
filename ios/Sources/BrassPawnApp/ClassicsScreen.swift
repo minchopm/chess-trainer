@@ -1,6 +1,45 @@
 import ChessTraining
 import SwiftUI
 
+/// Everything whose main action is watching an existing game belongs here:
+/// either replay a classic or judge the level of an anonymous game.
+struct WatchTab: View {
+    private enum Mode: String, CaseIterable, Identifiable {
+        case classics
+        case guessTheElo
+
+        var id: String { rawValue }
+        var label: String {
+            switch self {
+            case .classics: L.t("progress.watch", "Watch")
+            case .guessTheElo: L.t("progress.guessTheElo", "Guess the Elo")
+            }
+        }
+    }
+
+    @State private var mode: Mode = .classics
+
+    var body: some View {
+        VStack(spacing: 0) {
+            TopBar {
+                BrassSegmentedPicker(
+                    L.t("watch.mode", "Watch mode"),
+                    selection: $mode,
+                    options: Array(Mode.allCases)
+                ) { option in
+                    Text(option.label)
+                }
+            }
+
+            switch mode {
+            case .classics: ClassicsScreen(showsHeader: false)
+            case .guessTheElo: GuessTheEloScreen()
+            }
+        }
+        .background(Theatre.ink.ignoresSafeArea())
+    }
+}
+
 /// The games on offer.
 ///
 /// Nine hundred of them, and none of them a grind: every one is decisive,
@@ -9,6 +48,7 @@ import SwiftUI
 /// away the seventy-move endgame technique is the part people replay.
 struct ClassicsScreen: View {
     @Environment(AppModel.self) private var app
+    var showsHeader = true
     @State private var query = ""
     @State private var showsAll = false
     @State private var watching: ClassicGame?
@@ -23,9 +63,15 @@ struct ClassicsScreen: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            // No TopBar here: this screen lives inside the Play tab, which
-            // already has one, and two avatars in one corner is a bug that
-            // looks like a design.
+            if showsHeader {
+                TopBar {
+                    Text(L.t("progress.watch", "Watch"))
+                        .font(Face.display(20))
+                        .foregroundStyle(Theatre.ivory)
+                        .frame(maxWidth: .infinity)
+                }
+            }
+
             search
                 .padding(.horizontal, 12)
                 .padding(.top, 8)
@@ -36,6 +82,12 @@ struct ClassicsScreen: View {
                               what: L.t("watch.games", "games"), file: "classics.json")
                     .frame(maxHeight: .infinity)
             } else {
+                if query.isEmpty {
+                    gameFilter
+                        .padding(.horizontal, 12)
+                        .padding(.bottom, 4)
+                }
+
                 list
             }
         }
@@ -61,22 +113,9 @@ struct ClassicsScreen: View {
     private var list: some View {
         ScrollView {
             LazyVStack(spacing: 8) {
-                if query.isEmpty {
-                    BrassSegmentedPicker(
-                        L.t("watch.games", "Games"),
-                        selection: $showsAll,
-                        options: [false, true]
-                    ) { all in
-                        Text(all
-                            ? L.t("watch.everything", "Everything")
-                            : L.t("watch.named", "Named games"))
-                    }
-                    .padding(.bottom, 4)
-                }
-
                 ForEach(games) { game in
                     Button { watching = game } label: { row(game) }
-                        .buttonStyle(.plain)
+                        .buttonStyle(BrassPressStyle())
                 }
 
                 if games.isEmpty {
@@ -88,6 +127,18 @@ struct ClassicsScreen: View {
             }
             .padding(.horizontal, 12)
             .padding(.bottom, 90)
+        }
+    }
+
+    private var gameFilter: some View {
+        BrassSegmentedPicker(
+            L.t("watch.games", "Games"),
+            selection: $showsAll,
+            options: [false, true]
+        ) { all in
+            Text(all
+                ? L.t("watch.everything", "Everything")
+                : L.t("watch.named", "Named games"))
         }
     }
 
@@ -110,7 +161,15 @@ struct ClassicsScreen: View {
         }
         .padding(13)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Theatre.ink3, in: RoundedRectangle(cornerRadius: 13))
-        .overlay(RoundedRectangle(cornerRadius: 13).strokeBorder(Theatre.rule, lineWidth: 0.5))
+        .background {
+            BrassPlateShape(cut: 10).fill(LinearGradient(
+                colors: [Theatre.ink3, Theatre.ink2],
+                startPoint: .topLeading, endPoint: .bottomTrailing
+            ))
+        }
+        .overlay {
+            BrassPlateShape(cut: 10)
+                .strokeBorder(Theatre.brassDeep.opacity(0.45), lineWidth: 0.65)
+        }
     }
 }

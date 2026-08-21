@@ -233,7 +233,7 @@ struct PositionalScreen: View {
             Text(L.t("positional.assessPrompt", "%@ to move — how do you assess this?", L.color(model.orientation)))
                 .font(Face.display(22))
             Text(L.t("positional.noTacticsHereWeighStructure", "No tactics here. Weigh structure, activity, king safety and space."))
-                .font(.subheadline).foregroundStyle(.secondary)
+                .font(.subheadline).foregroundStyle(Theatre.ivoryDim)
         }
 
         if model.phase == .judging {
@@ -253,7 +253,7 @@ struct PositionalScreen: View {
         if model.isThinking {
             HStack(spacing: 6) {
                 BrassActivityIndicator()
-                Text(L.t("positional.checkingYourMoveWithThe", "Checking your move with the engine…")).font(.footnote).foregroundStyle(.secondary)
+                Text(L.t("positional.checkingYourMoveWithThe", "Checking your move with the engine…")).font(.footnote).foregroundStyle(Theatre.ivoryDim)
             }
         }
 
@@ -264,7 +264,7 @@ struct PositionalScreen: View {
                     VStack(alignment: .leading, spacing: 6) {
                         Text(result.title).font(.subheadline.weight(.semibold))
                         ForEach(result.lines, id: \.self) { line in
-                            Text(line).font(.footnote).foregroundStyle(.secondary)
+                            Text(line).font(.footnote).foregroundStyle(Theatre.ivoryDim)
                         }
                     }
                 }
@@ -285,7 +285,7 @@ struct PositionalScreen: View {
                              : "Engine says: \(correct.label.lowercased()) (\(EngineScore.centipawns(exercise.cp).text))")
                             .font(.subheadline.weight(.semibold))
                         ForEach(model.summary, id: \.self) { line in
-                            Text(line).font(.footnote).foregroundStyle(.secondary)
+                            Text(line).font(.footnote).foregroundStyle(Theatre.ivoryDim)
                         }
                         if model.phase == .choosing {
                             Text(L.t("positional.nowPlayTheMoveYou", "Now play the move you would choose."))
@@ -304,7 +304,7 @@ struct PositionalScreen: View {
         case .correct: Color(red: 0.424, green: 0.749, blue: 0.451)
         case .partial: Color(red: 0.867, green: 0.706, blue: 0.353)
         case .wrong: Color(red: 0.851, green: 0.439, blue: 0.373)
-        case .neutral: Color.secondary
+        case .neutral: Theatre.ivoryDim
         }
     }
 

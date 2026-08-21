@@ -7,32 +7,59 @@ struct BrassBackButton: View {
         Button(action: action) {
             Image(systemName: "chevron.left")
                 .font(.system(size: 15, weight: .semibold))
-                .foregroundStyle(Theatre.ivoryDim)
-                .frame(width: 38, height: 38)
-                .background(Theatre.ink3, in: Circle())
-                .overlay(Circle().strokeBorder(Theatre.rule, lineWidth: 0.75))
+                .foregroundStyle(Theatre.brassHot)
+                .frame(width: 40, height: 38)
+                .background {
+                    BrassPlateShape(cut: 9).fill(LinearGradient(
+                        colors: [Theatre.ink4, Theatre.ink2],
+                        startPoint: .topLeading, endPoint: .bottomTrailing
+                    ))
+                }
+                .overlay {
+                    BrassPlateShape(cut: 9)
+                        .strokeBorder(Theatre.brassDeep.opacity(0.7), lineWidth: 0.8)
+                }
         }
-        .buttonStyle(.plain)
+        .buttonStyle(BrassPressStyle())
         .accessibilityLabel("Back")
     }
 }
 
 struct BrassNavigationHeader: View {
     let title: String
+    var subtitle: String?
     let onBack: () -> Void
 
+    init(title: String, subtitle: String? = nil, onBack: @escaping () -> Void) {
+        self.title = title
+        self.subtitle = subtitle
+        self.onBack = onBack
+    }
+
     var body: some View {
-        ZStack {
+        VStack(spacing: 3) {
             Text(title)
                 .font(Face.display(20))
                 .foregroundStyle(Theatre.ivory)
                 .lineLimit(1)
-                .padding(.horizontal, 52)
+                .minimumScaleFactor(0.7)
 
-            HStack {
-                BrassBackButton(action: onBack)
-                Spacer()
+            if let subtitle {
+                Text(subtitle)
+                    .font(Face.mono(9))
+                    .tracking(1.6)
+                    .foregroundStyle(Theatre.ivoryFaint)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
             }
+        }
+        .frame(maxWidth: .infinity, alignment: .center)
+        .multilineTextAlignment(.center)
+        .padding(.horizontal, 52)
+        // Navigation controls are deliberately overlaid. They must never
+        // consume width from, or shift, the centred title.
+        .overlay(alignment: .leading) {
+            BrassBackButton(action: onBack)
         }
         .padding(.horizontal, 14)
         .padding(.top, 8)
@@ -75,21 +102,36 @@ struct BrassSegmentedPicker<Value: Hashable, Label: View>: View {
                         .tracking(0.7)
                         .lineLimit(1)
                         .minimumScaleFactor(0.65)
-                        .foregroundStyle(selected ? Theatre.ink : Theatre.ivoryDim)
+                        .foregroundStyle(selected ? Theatre.brassHot : Theatre.ivoryDim)
                         .frame(maxWidth: .infinity)
                         .padding(.horizontal, 7)
                         .padding(.vertical, 9)
-                        .background(selected ? Theatre.brass : .clear,
-                                    in: RoundedRectangle(cornerRadius: 9))
+                        .background {
+                            if selected {
+                                BrassPlateShape(cut: 7)
+                                    .fill(Theatre.brassGlow)
+                            }
+                        }
+                        .overlay {
+                            if selected {
+                                BrassPlateShape(cut: 7)
+                                    .strokeBorder(Theatre.brass.opacity(0.72), lineWidth: 0.8)
+                            }
+                        }
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(BrassPressStyle())
                 .accessibilityLabel(labelText(for: option))
                 .accessibilityAddTraits(selected ? .isSelected : [])
             }
         }
         .padding(3)
-        .background(Theatre.ink2, in: RoundedRectangle(cornerRadius: 12))
-        .overlay(RoundedRectangle(cornerRadius: 12).strokeBorder(Theatre.rule, lineWidth: 0.75))
+        .background {
+            BrassPlateShape(cut: 9).fill(Theatre.ink2)
+        }
+        .overlay {
+            BrassPlateShape(cut: 9)
+                .strokeBorder(Theatre.brassDeep.opacity(0.48), lineWidth: 0.75)
+        }
         .accessibilityElement(children: .contain)
         .accessibilityLabel(title)
     }
@@ -138,8 +180,13 @@ struct BrassCyclePicker<Value: Hashable>: View {
                 arrow("chevron.right", offset: 1)
             }
             .padding(4)
-            .background(Theatre.ink2, in: RoundedRectangle(cornerRadius: 12))
-            .overlay(RoundedRectangle(cornerRadius: 12).strokeBorder(Theatre.rule, lineWidth: 0.75))
+            .background {
+                BrassPlateShape(cut: 9).fill(Theatre.ink2)
+            }
+            .overlay {
+                BrassPlateShape(cut: 9)
+                    .strokeBorder(Theatre.brassDeep.opacity(0.48), lineWidth: 0.75)
+            }
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(title)
@@ -155,9 +202,15 @@ struct BrassCyclePicker<Value: Hashable>: View {
                 .font(.system(size: 12, weight: .semibold))
                 .foregroundStyle(Theatre.brass)
                 .frame(width: 36, height: 34)
-                .background(Theatre.ink4, in: RoundedRectangle(cornerRadius: 9))
+                .background {
+                    BrassPlateShape(cut: 7).fill(Theatre.ink4)
+                }
+                .overlay {
+                    BrassPlateShape(cut: 7)
+                        .strokeBorder(Theatre.brassDeep.opacity(0.55), lineWidth: 0.7)
+                }
         }
-        .buttonStyle(.plain)
+        .buttonStyle(BrassPressStyle())
     }
 
     private func move(_ offset: Int) {
@@ -170,10 +223,12 @@ struct BrassCyclePicker<Value: Hashable>: View {
 
 struct BrassToggle: View {
     let title: String
+    var symbol: String?
     @Binding var isOn: Bool
 
-    init(_ title: String, isOn: Binding<Bool>) {
+    init(_ title: String, symbol: String? = nil, isOn: Binding<Bool>) {
         self.title = title
+        self.symbol = symbol
         _isOn = isOn
     }
 
@@ -187,20 +242,30 @@ struct BrassToggle: View {
                     .font(.subheadline)
                     .foregroundStyle(Theatre.ivory)
                 Spacer(minLength: 8)
+                if let symbol {
+                    Image(systemName: symbol)
+                        .font(.system(size: 13, weight: .medium))
+                        .foregroundStyle(isOn ? Theatre.brass : Theatre.ivoryFaint)
+                        .frame(width: 20, height: 25)
+                        .contentTransition(.symbolEffect(.replace))
+                }
                 ZStack(alignment: isOn ? .trailing : .leading) {
-                    Capsule()
+                    BrassPlateShape(cut: 6)
                         .fill(isOn ? Theatre.brass : Theatre.ink4)
-                        .overlay(Capsule().strokeBorder(isOn ? Theatre.brass : Theatre.rule, lineWidth: 0.75))
+                        .overlay(
+                            BrassPlateShape(cut: 6)
+                                .strokeBorder(isOn ? Theatre.brassHot : Theatre.brassDeep.opacity(0.55), lineWidth: 0.75)
+                        )
                     Circle()
                         .fill(isOn ? Theatre.ink : Theatre.ivoryDim)
                         .padding(3)
-                        .shadow(color: .black.opacity(0.35), radius: 2, y: 1)
+                        .shadow(color: Theatre.shadow.opacity(0.35), radius: 2, y: 1)
                 }
                 .frame(width: 45, height: 25)
             }
             .contentShape(Rectangle())
         }
-        .buttonStyle(.plain)
+        .buttonStyle(BrassPressStyle())
         .accessibilityLabel(title)
         .accessibilityValue(isOn ? "On" : "Off")
         .accessibilityAddTraits(.isButton)
@@ -339,15 +404,24 @@ struct BrassSearchField: View {
                 Button { text = "" } label: {
                     Image(systemName: "xmark.circle.fill")
                         .foregroundStyle(Theatre.ivoryFaint)
+                        .frame(width: 24, height: 22)
+                        .background {
+                            BrassPlateShape(cut: 5).fill(Theatre.ink4)
+                        }
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(BrassPressStyle())
                 .accessibilityLabel("Clear")
             }
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 8)
-        .background(Theatre.ink3, in: Capsule())
-        .overlay(Capsule().strokeBorder(Theatre.rule, lineWidth: 0.5))
+        .background {
+            BrassPlateShape(cut: 9).fill(Theatre.ink3)
+        }
+        .overlay {
+            BrassPlateShape(cut: 9)
+                .strokeBorder(Theatre.brassDeep.opacity(0.42), lineWidth: 0.6)
+        }
     }
 }
 
@@ -364,8 +438,17 @@ struct BrassLinkButton: View {
                     .font(.system(size: 9, weight: .semibold))
             }
             .foregroundStyle(Theatre.brass)
+            .padding(.horizontal, 9)
+            .padding(.vertical, 6)
+            .background {
+                BrassPlateShape(cut: 6).fill(Theatre.ink3)
+            }
+            .overlay {
+                BrassPlateShape(cut: 6)
+                    .strokeBorder(Theatre.brassDeep.opacity(0.48), lineWidth: 0.65)
+            }
         }
-        .buttonStyle(.plain)
+        .buttonStyle(BrassPressStyle())
         .accessibilityHint(destination.absoluteString)
     }
 }
@@ -380,7 +463,7 @@ struct BrassConfirmationOverlay: View {
 
     var body: some View {
         ZStack {
-            Color.black.opacity(0.72)
+            Theatre.shadow.opacity(0.72)
                 .ignoresSafeArea()
                 .contentShape(Rectangle())
                 .onTapGesture(perform: onCancel)

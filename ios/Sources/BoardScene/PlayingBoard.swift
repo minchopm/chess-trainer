@@ -183,9 +183,15 @@ public final class PlayingBoard {
             }
         }
 
-        // The focus lags the move, so the light arrives with the piece rather
-        // than ahead of it.
-        focus = simd_mix(focus, focusTarget, SIMD3(repeating: min(1, delta * 2.6)))
+        // The focus follows the move, then lands exactly at the centre of the
+        // destination square. Leaving the interpolation a few percent short
+        // made the glow look permanently crooked during the pause between
+        // moves.
+        if travels.isEmpty {
+            focus = focusTarget
+        } else {
+            focus = simd_mix(focus, focusTarget, SIMD3(repeating: min(1, delta * 2.6)))
+        }
     }
 
     /// Puts the board into an arbitrary position.

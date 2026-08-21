@@ -18,6 +18,7 @@ struct WatchScreen: View {
     @State private var index = 0
     @State private var isPlaying = false
     @State private var scrubbing = false
+    @State private var playbackSpeed = 1.0
 
     private var plies: [Ply] { player?.plies ?? [] }
 
@@ -39,36 +40,12 @@ struct WatchScreen: View {
     }
 
     private var heading: some View {
-        ZStack(alignment: .topLeading) {
-            Button { dismiss() } label: {
-                Image(systemName: "chevron.left")
-                    .font(.system(size: 13, weight: .semibold))
-                    .foregroundStyle(Theatre.ivoryDim)
-                    .frame(width: 34, height: 34)
-                    .background(Theatre.ink3, in: Circle())
-                    .overlay(Circle().strokeBorder(Theatre.rule, lineWidth: 0.5))
-            }
-            .buttonStyle(.plain)
-            .zIndex(1)
-
-            title
+        BrassNavigationHeader(
+            title: game.players,
+            subtitle: game.occasion
+        ) {
+            dismiss()
         }
-        .padding(.top, 10)
-        .padding(.horizontal, 16)
-    }
-
-    private var title: some View {
-        VStack(spacing: 3) {
-            Text(game.players)
-                .font(Face.display(20))
-                .foregroundStyle(Theatre.ivory)
-                .multilineTextAlignment(.center)
-            Text(game.occasion)
-                .font(Face.mono(9)).tracking(1.6)
-                .foregroundStyle(Theatre.ivoryFaint)
-        }
-        .frame(maxWidth: .infinity)
-        .padding(.horizontal, 44)
     }
 
     /// The score, scrolling, with the move you are looking at lit — and every
@@ -90,13 +67,24 @@ struct WatchScreen: View {
                                 }
                                 Text(ply.san)
                                     .font(Face.mono(11, weight: current ? .semibold : .regular))
-                                    .foregroundStyle(current ? Theatre.ink : Theatre.ivoryDim)
+                                    .foregroundStyle(current ? Theatre.brassHot : Theatre.ivoryDim)
                             }
                             .padding(.horizontal, 7)
                             .padding(.vertical, 5)
-                            .background(current ? Theatre.brass : .clear, in: Capsule())
+                            .foregroundStyle(current ? Theatre.brassHot : Theatre.ivoryDim)
+                            .background {
+                                if current {
+                                    BrassPlateShape(cut: 6).fill(Theatre.brassGlow)
+                                }
+                            }
+                            .overlay {
+                                if current {
+                                    BrassPlateShape(cut: 6)
+                                        .strokeBorder(Theatre.brass.opacity(0.65), lineWidth: 0.7)
+                                }
+                            }
                         }
-                        .buttonStyle(.plain)
+                        .buttonStyle(BrassPressStyle())
                         .id(offset)
                     }
                 }
@@ -146,35 +134,56 @@ struct WatchScreen: View {
     }
 
     private var speed: some View {
-        Menu {
-            ForEach([0.5, 1.0, 1.5, 2.0, 3.0], id: \.self) { rate in
-                Button {
-                    player?.speed = rate
-                } label: {
-                    Text(verbatim: rate == 1 ? "1×" : "\(rate.formatted())×")
-                }
-            }
-        } label: {
-            Text(verbatim: "\((player?.speed ?? 1).formatted())×")
+        Button(action: cycleSpeed) {
+            Text(verbatim: "\(playbackSpeed.formatted())×")
                 .font(Face.mono(11, weight: .medium))
                 .foregroundStyle(Theatre.ivoryDim)
-                .frame(width: 42, height: 38)
-                .background(Theatre.ink3, in: Capsule())
-                .overlay(Capsule().strokeBorder(Theatre.rule, lineWidth: 0.75))
+                .contentTransition(.numericText())
+                .frame(width: 46, height: 38)
+                .background {
+                    BrassPlateShape(cut: 8).fill(Theatre.ink3)
+                }
+                .overlay {
+                    BrassPlateShape(cut: 8)
+                        .strokeBorder(Theatre.brassDeep.opacity(0.5), lineWidth: 0.75)
+                }
         }
+        .buttonStyle(BrassPressStyle())
+        .accessibilityLabel(L.t("guess.speed", "Speed"))
+        .accessibilityValue("\(playbackSpeed.formatted())×")
     }
 
     private func button(_ symbol: String, wide: Bool = false, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Image(systemName: symbol)
                 .font(.system(size: wide ? 15 : 12, weight: .semibold))
-                .foregroundStyle(wide ? Theatre.ink : Theatre.ivory)
+                .foregroundStyle(wide ? Theatre.brassHot : Theatre.ivory)
                 .frame(maxWidth: .infinity)
                 .frame(height: 38)
-                .background(wide ? Theatre.brass : Theatre.ink3, in: Capsule())
-                .overlay(Capsule().strokeBorder(wide ? .clear : Theatre.rule, lineWidth: 0.75))
+                .background {
+                    BrassPlateShape(cut: 8).fill(LinearGradient(
+                        colors: wide ? [Theatre.ink4, Theatre.ink2] : [Theatre.ink3, Theatre.ink2],
+                        startPoint: .topLeading, endPoint: .bottomTrailing
+                    ))
+                }
+                .overlay {
+                    BrassPlateShape(cut: 8)
+                        .strokeBorder(wide ? Theatre.brassHot.opacity(0.8) : Theatre.brassDeep.opacity(0.5),
+                                      lineWidth: 0.75)
+                }
         }
-        .buttonStyle(.plain)
+        .buttonStyle(BrassPressStyle())
+    }
+
+    private func cycleSpeed() {
+        let rates = [0.5, 1.0, 1.5, 2.0, 3.0]
+        let index = rates.firstIndex(of: playbackSpeed) ?? 1
+        let next = rates[(index + 1) % rates.count]
+        withAnimation(.easeOut(duration: 0.16)) {
+            playbackSpeed = next
+        }
+        player?.speed = next
+        SoundBoard.shared.play(.move)
     }
 
     private func build() {
@@ -183,6 +192,7 @@ struct WatchScreen: View {
             quality: SceneQuality.forThisDevice,
             style: app.progress.appearance.carving == .banded ? .banded : .plain
         )
+        made.speed = playbackSpeed
         made.onChange = { value in
             index = value
             isPlaying = made.isPlaying

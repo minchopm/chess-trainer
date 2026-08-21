@@ -57,12 +57,14 @@ private struct ActionPillStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundStyle(foreground)
-            .background(background, in: RoundedRectangle(cornerRadius: 13))
-            .overlay(
-                RoundedRectangle(cornerRadius: 13)
-                    .strokeBorder(border, lineWidth: 0.75)
-            )
+            .background {
+                BrassPlateShape(cut: 10).fill(background)
+            }
+            .overlay {
+                BrassPlateShape(cut: 10).strokeBorder(border, lineWidth: 0.8)
+            }
             .shadow(color: emphasis == .primary ? Theatre.brassGlow : .clear, radius: 12, y: 3)
+            .contentShape(BrassPlateShape(cut: 10))
             .opacity(enabled ? (configuration.isPressed ? 0.8 : 1) : 0.3)
             .scaleEffect(configuration.isPressed ? 0.97 : 1)
             .animation(.easeOut(duration: 0.16), value: configuration.isPressed)
@@ -70,7 +72,7 @@ private struct ActionPillStyle: ButtonStyle {
 
     private var foreground: Color {
         switch emphasis {
-        case .primary: Color(hex: 0x120E06)
+        case .primary: Theatre.brassHot
         case .destructive: Theatre.bad
         case .normal: Theatre.ivory
         }
@@ -79,18 +81,22 @@ private struct ActionPillStyle: ButtonStyle {
     private var background: AnyShapeStyle {
         switch emphasis {
         case .primary: AnyShapeStyle(LinearGradient(
-            colors: [Theatre.brassHot, Theatre.brass],
-            startPoint: .top, endPoint: .bottom))
-        case .destructive: AnyShapeStyle(Theatre.bad.opacity(0.10))
-        case .normal: AnyShapeStyle(Color.white.opacity(0.035))
+            colors: [Theatre.ink4, Theatre.ink2],
+            startPoint: .topLeading, endPoint: .bottomTrailing))
+        case .destructive: AnyShapeStyle(LinearGradient(
+            colors: [Theatre.bad.opacity(0.16), Theatre.ink2],
+            startPoint: .topLeading, endPoint: .bottomTrailing))
+        case .normal: AnyShapeStyle(LinearGradient(
+            colors: [Theatre.ink3, Theatre.ink2],
+            startPoint: .topLeading, endPoint: .bottomTrailing))
         }
     }
 
     private var border: Color {
         switch emphasis {
-        case .primary: Theatre.brassHot.opacity(0.6)
-        case .destructive: Theatre.bad.opacity(0.35)
-        case .normal: Theatre.rule
+        case .primary: Theatre.brassHot.opacity(0.8)
+        case .destructive: Theatre.bad.opacity(0.68)
+        case .normal: Theatre.brassDeep.opacity(0.5)
         }
     }
 }

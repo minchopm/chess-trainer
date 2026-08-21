@@ -94,10 +94,18 @@ struct AboutScreen: View {
                     .font(.caption2)
                     .foregroundStyle(Theatre.ivoryFaint)
             }
-            .padding(.vertical, 5)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 8)
+            .background {
+                BrassPlateShape(cut: 7).fill(Theatre.ink3)
+            }
+            .overlay {
+                BrassPlateShape(cut: 7)
+                    .strokeBorder(Theatre.brassDeep.opacity(0.44), lineWidth: 0.65)
+            }
             .contentShape(Rectangle())
         }
-        .buttonStyle(.plain)
+        .buttonStyle(BrassPressStyle())
     }
 
     private func credit(_ name: String, _ description: String, _ url: String) -> some View {

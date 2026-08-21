@@ -223,7 +223,7 @@ struct GuessTheEloScreen: View {
                 Spacer()
                 Text(verbatim: "\(model.moveNumber)/\(model.totalMoves)")
                     .font(.subheadline).monospacedDigit()
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Theatre.ivoryDim)
             }
 
             BrassProgressBar(
@@ -236,7 +236,7 @@ struct GuessTheEloScreen: View {
             // that ends in a queen sacrifice reads very differently once you
             // know it worked.
             if let game = model.game, !model.isRevealed {
-                Text(game.subtitle).font(.footnote).foregroundStyle(.secondary)
+                Text(game.subtitle).font(.footnote).foregroundStyle(Theatre.ivoryDim)
             }
 
             BrassSegmentedPicker(
@@ -257,7 +257,7 @@ struct GuessTheEloScreen: View {
                     .font(.system(size: 34, weight: .semibold, design: .rounded))
                     .monospacedDigit()
                     .contentTransition(.numericText())
-                Text(L.t("guess.yourGuessLichessRating", "your guess, Lichess rating")).font(.caption).foregroundStyle(.secondary)
+                Text(L.t("guess.yourGuessLichessRating", "your guess, Lichess rating")).font(.caption).foregroundStyle(Theatre.ivoryDim)
                 Spacer(minLength: 0)
             }
 
@@ -279,9 +279,9 @@ struct GuessTheEloScreen: View {
                 Spacer()
                 Text(verbatim: "+\(verdict.points)")
                     .font(.subheadline.weight(.semibold)).monospacedDigit()
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Theatre.ivoryDim)
             }
-            Text(verdict.summary).font(.subheadline).foregroundStyle(.secondary)
+            Text(verdict.summary).font(.subheadline).foregroundStyle(Theatre.ivoryDim)
 
             HStack(spacing: 18) {
                 revealValue(L.t("guess.youSaid", "You said"), verdict.guess)
@@ -292,19 +292,19 @@ struct GuessTheEloScreen: View {
 
             Text([game.subtitle, resultText(game.result), terminationText(game)]
                 .compactMap { $0 }.joined(separator: " · "))
-                .font(.footnote).foregroundStyle(.secondary)
+                .font(.footnote).foregroundStyle(Theatre.ivoryDim)
 
             let stats = app.progress.eloGuessStats
             if stats.judged > 1 {
                 Text(L.t("guess.judgedSummary", "%lld games judged · average miss %lld points", stats.judged, stats.averageError))
-                    .font(.caption).foregroundStyle(.secondary)
+                    .font(.caption).foregroundStyle(Theatre.ivoryDim)
             }
         }
     }
 
     private func revealValue(_ label: String, _ value: Int) -> some View {
         VStack(alignment: .leading, spacing: 1) {
-            Text(label).font(.caption2).textCase(.uppercase).foregroundStyle(.secondary)
+            Text(label).font(.caption2).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
             Text(verbatim: "\(value)").font(Face.display(22)).monospacedDigit()
         }
     }

@@ -155,7 +155,7 @@ struct FeedbackCard: View {
                 VStack(alignment: .leading, spacing: 6) {
                     Text(feedback.title).font(Face.display(21))
                     ForEach(feedback.lines, id: \.self) { line in
-                        Text(line).font(.footnote).foregroundStyle(.secondary)
+                        Text(line).font(.footnote).foregroundStyle(Theatre.ivoryDim)
                     }
                 }
             }
@@ -190,11 +190,11 @@ struct LibraryNotice: View {
                 Text(L.t("common.nothingBundled", "No %@ bundled", what)).font(Face.display(22))
                 Text(L.t("common.dataMissing", "The data did not make it into the app bundle. Check that data/%@ is listed in the Xcode target's resources.", file))
                     .font(.footnote)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Theatre.ivoryDim)
             } else {
                 HStack(spacing: 8) {
                     BrassActivityIndicator(size: 15)
-                    Text(L.t("common.loading", "Loading %@…", what)).font(.subheadline).foregroundStyle(.secondary)
+                    Text(L.t("common.loading", "Loading %@…", what)).font(.subheadline).foregroundStyle(Theatre.ivoryDim)
                 }
             }
         }
@@ -214,7 +214,7 @@ struct AllowanceNotice: View {
         Card {
             Text(L.t("store.doneForToday", "That is today's free training")).font(Face.display(22))
             Text(L.t("store.comeBackTomorrow", "The allowance resets at midnight. Playing — against the engine or against a person — has no limit and needs nothing."))
-                .font(.footnote).foregroundStyle(.secondary)
+                .font(.footnote).foregroundStyle(Theatre.ivoryDim)
             Button(L.t("store.unlockNow", "Unlock unlimited training")) { showsPaywall = true }
                 .buttonStyle(PillButtonStyle(emphasis: .solid))
                 .padding(.top, 4)

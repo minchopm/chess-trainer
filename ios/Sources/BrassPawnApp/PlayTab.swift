@@ -1,19 +1,16 @@
 import SwiftUI
 import ChessTraining
 
-/// Playing the engine, playing a person, and watching two strangers play are
-/// the same subject seen from three sides, so they share a tab rather than each
-/// taking a slot in a bar that only holds five.
+/// The two ways to play a game share one compact section. Everything based on
+/// watching an existing game lives in the separate Watch destination.
 struct PlayTab: View {
     enum Mode: String, CaseIterable, Identifiable {
-        case play, online, watch, guessTheElo
+        case play, online
         var id: String { String(describing: self) }
         var label: String {
             switch self {
             case .play: L.t("progress.play", "Play")
             case .online: L.t("progress.online", "Online")
-            case .watch: L.t("progress.watch", "Watch")
-            case .guessTheElo: L.t("progress.guessTheElo", "Guess the Elo")
             }
         }
     }
@@ -32,7 +29,7 @@ struct PlayTab: View {
     var body: some View {
         @Bindable var navigator = navigator
         return VStack(spacing: 0) {
-            TopBar(clocks: mode == .watch ? nil : clocks) {
+            TopBar(clocks: clocks) {
                 BrassSegmentedPicker(
                     L.t("play.mode", "Mode"),
                     selection: $navigator.playMode,
@@ -45,8 +42,6 @@ struct PlayTab: View {
             switch mode {
             case .play: PlayScreen()
             case .online: OnlineScreen()
-            case .watch: ClassicsScreen()
-            case .guessTheElo: GuessTheEloScreen()
             }
         }
     }

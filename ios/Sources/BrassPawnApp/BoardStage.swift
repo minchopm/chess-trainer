@@ -35,7 +35,7 @@ struct PlayerBar: View {
         HStack(spacing: 6) {
             Circle()
                 .fill(color == .white ? Color(white: 0.94) : Color(white: 0.12))
-                .overlay(Circle().strokeBorder(Color.white.opacity(0.35), lineWidth: 0.5))
+                .overlay(Circle().strokeBorder(Theatre.light.opacity(0.35), lineWidth: 0.5))
                 .frame(width: 9, height: 9)
             Text(name)
                 .font(.footnote.weight(.medium))
@@ -46,11 +46,11 @@ struct PlayerBar: View {
                 Text(verbatim: String(rating))
                     .font(.footnote.weight(.semibold))
                     .monospacedDigit()
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Theatre.ivoryDim)
             } else if mysteryRating {
                 Text(verbatim: "?")
                     .font(.footnote.weight(.semibold))
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Theatre.ivoryDim)
             }
         }
         .layoutPriority(1)
@@ -91,7 +91,7 @@ struct PlayerBar: View {
                 Text(verbatim: "+\(lead)")
                     .font(.caption2.weight(.bold))
                     .monospacedDigit()
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Theatre.ivoryDim)
             }
         }
         .lineLimit(1)

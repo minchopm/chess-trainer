@@ -213,11 +213,11 @@ public struct BoardView: View {
             .monospacedDigit()
             .lineLimit(1)
             .fixedSize()
-            .foregroundStyle(.white)
+            .foregroundStyle(Theatre.light)
             .padding(.horizontal, squareSize * 0.07)
             .padding(.vertical, squareSize * 0.03)
             .background(Self.valueColor(loss: loss).opacity(0.92), in: Capsule())
-            .shadow(color: .black.opacity(0.45), radius: 1, y: 0.5)
+            .shadow(color: Theatre.shadow.opacity(0.45), radius: 1, y: 0.5)
             // Sit low in the square so the piece it covers stays readable.
             .frame(width: squareSize, height: squareSize, alignment: .bottom)
             .padding(.bottom, squareSize * 0.04)
@@ -287,7 +287,7 @@ public struct BoardView: View {
 
             context.drawLayer { layer in
                 layer.addFilter(.shadow(
-                    color: .black.opacity(!pieceSet.usesGlyphs ? 0.35 : 0.3),
+                    color: Theatre.shadow.opacity(!pieceSet.usesGlyphs ? 0.35 : 0.3),
                     radius: squareSize * 0.045, x: 0, y: squareSize * 0.03
                 ))
 
@@ -529,7 +529,7 @@ struct PieceView: View {
             }
         }
         .frame(width: size, height: size)
-        .shadow(color: .black.opacity(0.35), radius: size * 0.045, y: size * 0.03)
+        .shadow(color: Theatre.shadow.opacity(0.35), radius: size * 0.045, y: size * 0.03)
     }
 }
 
@@ -565,7 +565,7 @@ struct PromotionPicker: View {
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            Color.black.opacity(0.45)
+            Theatre.shadow.opacity(0.45)
                 .contentShape(Rectangle())
                 .onTapGesture(perform: onCancel)
 
@@ -574,18 +574,25 @@ struct PromotionPicker: View {
                     Button { onPick(kind) } label: {
                         PieceView(piece: Piece(color, kind), size: squareSize)
                             .frame(width: squareSize, height: squareSize)
+                            .background {
+                                BrassPlateShape(cut: 7).fill(Theatre.ink3)
+                            }
+                            .overlay {
+                                BrassPlateShape(cut: 7)
+                                    .strokeBorder(Theatre.brassDeep.opacity(0.48), lineWidth: 0.65)
+                            }
                             .contentShape(Rectangle())
                     }
-                    .buttonStyle(.plain)
+                    .buttonStyle(BrassPressStyle())
                 }
             }
             .background(Color(white: 0.14))
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .strokeBorder(Color.white.opacity(0.25), lineWidth: 1)
+                    .strokeBorder(Theatre.light.opacity(0.25), lineWidth: 1)
             )
-            .shadow(color: .black.opacity(0.6), radius: 10, y: 3)
+            .shadow(color: Theatre.shadow.opacity(0.6), radius: 10, y: 3)
             .offset(
                 x: position.x,
                 y: pointsDown ? position.y : position.y - squareSize * 3

@@ -53,7 +53,7 @@ struct CompletionOverlay: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(result.title).font(Face.display(24))
                     if let detail = result.detail {
-                        Text(detail).font(.footnote).foregroundStyle(.secondary)
+                        Text(detail).font(.footnote).foregroundStyle(Theatre.ivoryDim)
                     }
                 }
                 Spacer(minLength: 0)
@@ -62,7 +62,7 @@ struct CompletionOverlay: View {
             if let line = result.line {
                 Text(line)
                     .font(.system(.footnote, design: .monospaced))
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Theatre.ivoryDim)
                     .lineLimit(2)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -85,7 +85,7 @@ struct CompletionOverlay: View {
                 .clipShape(UnevenRoundedRectangle(topLeadingRadius: 18, topTrailingRadius: 18))
         }
         .clipShape(RoundedRectangle(cornerRadius: 18))
-        .shadow(color: .black.opacity(0.35), radius: 14, y: 6)
+        .shadow(color: Theatre.shadow.opacity(0.35), radius: 14, y: 6)
         .padding(.horizontal, 12)
         .transition(.move(edge: .bottom).combined(with: .opacity))
         .onAppear { hasAppeared = true }

@@ -159,20 +159,22 @@ private struct PromotionChoice: View {
                             .scaledToFit()
                             .frame(width: 46, height: 46)
                             .padding(8)
-                            .background(Theatre.ink4, in: RoundedRectangle(cornerRadius: 10))
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .strokeBorder(Theatre.rule, lineWidth: 0.5)
-                            )
+                            .background {
+                                BrassPlateShape(cut: 9).fill(Theatre.ink4)
+                            }
+                            .overlay {
+                                BrassPlateShape(cut: 9)
+                                    .strokeBorder(Theatre.brassDeep.opacity(0.55), lineWidth: 0.75)
+                            }
                     }
-                    .buttonStyle(.plain)
+                    .buttonStyle(BrassPressStyle())
                 }
             }
         }
         .padding(18)
         .background(Theatre.ink2.opacity(0.96), in: RoundedRectangle(cornerRadius: 16))
         .overlay(RoundedRectangle(cornerRadius: 16).strokeBorder(Theatre.rule, lineWidth: 0.5))
-        .shadow(color: .black.opacity(0.6), radius: 24, y: 10)
+        .shadow(color: Theatre.shadow.opacity(0.6), radius: 24, y: 10)
     }
 }
 #endif

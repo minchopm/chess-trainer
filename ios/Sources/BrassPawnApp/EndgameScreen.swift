@@ -233,7 +233,7 @@ struct EndgameScreen: View {
             } else if let drill = model.drill {
                 Card {
                     Text(drill.name).font(Face.display(22))
-                    Text(model.goalText).font(.subheadline).foregroundStyle(.secondary)
+                    Text(model.goalText).font(.subheadline).foregroundStyle(Theatre.ivoryDim)
                     TagRow(tags: [
                         drill.goal == .win ? L.t("endgame.mustWin", "Must win") : L.t("endgame.mustDraw", "Must draw"),
                         (model.plies + 1) / 2 == 1
@@ -245,7 +245,7 @@ struct EndgameScreen: View {
                 if model.isThinking {
                     HStack(spacing: 6) {
                         BrassActivityIndicator()
-                        Text(L.t("endgame.engineIsThinking", "Engine is thinking…")).font(.footnote).foregroundStyle(.secondary)
+                        Text(L.t("endgame.engineIsThinking", "Engine is thinking…")).font(.footnote).foregroundStyle(Theatre.ivoryDim)
                     }
                 }
 
@@ -253,22 +253,22 @@ struct EndgameScreen: View {
                     Card {
                         Text(L.t("endgame.threwItAway", "%@ threw it away", lostAt.move)).font(.subheadline.weight(.semibold))
                         Text(L.t("endgame.afterThatMove", "After that move %@. Play on if you like, or restart and try the correct plan.", lostAt.reason))
-                            .font(.footnote).foregroundStyle(.secondary)
+                            .font(.footnote).foregroundStyle(Theatre.ivoryDim)
                     }
                 }
 
                 if let outcome = model.outcome {
                     Card {
                         Text(outcome.title).font(.subheadline.weight(.semibold))
-                            .foregroundStyle(outcome.success ? Color.green : Color.red)
+                            .foregroundStyle(outcome.success ? Theatre.good : Theatre.bad)
                         ForEach(outcome.lines, id: \.self) { line in
-                            Text(line).font(.footnote).foregroundStyle(.secondary)
+                            Text(line).font(.footnote).foregroundStyle(Theatre.ivoryDim)
                         }
                     }
                 }
 
                 Card {
-                    Text(L.t("endgame.theIdea", "The idea")).font(.caption).textCase(.uppercase).foregroundStyle(.secondary)
+                    Text(L.t("endgame.theIdea", "The idea")).font(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
                     Text(drill.idea).font(.footnote)
                 }
             } else {
