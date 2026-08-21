@@ -41,7 +41,7 @@ extension TurnedPieces {
         // draws in to its collar, and a neck this broad meets it corner-first:
         // the corners came through the side of the base as a ring of torn
         // white triangles. What is cut away is buried in the base anyway.
-        (-0.193, 0.598, true, 0.097), (-0.191, 0.606, false, 0.096),
+        (-0.182, 0.598, true, 0.086), (-0.189, 0.608, false, 0.094),
         (-0.189, 0.614, false, 0.094),
         (-0.189, 0.668, false, 0.082), (-0.196, 0.712, false, 0.078),
         (-0.207, 0.764, false, 0.075), (-0.218, 0.818, false, 0.073),
@@ -81,7 +81,7 @@ extension TurnedPieces {
         (0.052, 0.828, false, 0.078), (0.088, 0.786, false, 0.078),
         (0.140, 0.735, false, 0.079), (0.173, 0.688, false, 0.081),
         (0.192, 0.653, false, 0.084), (0.205, 0.614, false, 0.090),
-        (0.209, 0.606, false, 0.096), (0.208, 0.598, true, 0.097),
+        (0.208, 0.608, false, 0.094), (0.196, 0.598, true, 0.086),
     ]
 
     /// A closed curve through every anchor, breaking at the corners, carrying
@@ -555,8 +555,8 @@ extension TurnedPieces {
         // nearly a third of the head's height — cut short and close they read
         // as bumps, which is what they were.
         let root = SIMD3<Float>(-0.018, 0.962, side * 0.034)
-        let tip = SIMD3<Float>(-0.076, 1.214, side * 0.136)
-        let steps = 8, segments = 12
+        let tip = SIMD3<Float>(-0.074, 1.198, side * 0.132)
+        let steps = 11, segments = 12
 
         let axis = simd_normalize(tip - root)
         // Any two directions across the axis will do, so long as they are
@@ -568,9 +568,12 @@ extension TurnedPieces {
         for step in 0...steps {
             let along = Float(step) / Float(steps)
             let centre = root + (tip - root) * along
-            // Full at the root and drawn to a point, but not straight: an ear
-            // is fuller than a cone low down and finer at the tip.
-            let radius = 0.055 * (1 - along) * (1 - along * 0.55) + 0.002
+            // Full at the root and rounded over at the tip. Drawn to a point
+            // — a cone's straight taper — it comes out as a spine, and two
+            // spines over a horse's head read as horns. The width falls away
+            // on a quarter ellipse instead, so the last of it turns over into
+            // a dome the way an ear does.
+            let radius = 0.056 * (1 - along * along).squareRoot() * (1 - along * 0.42) + 0.001
             rings.append((0..<segments).map { segment in
                 let angle = 2 * Float.pi * Float(segment) / Float(segments)
                 let offset = aside * (radius * cos(angle) * 0.78) + other * (radius * sin(angle))

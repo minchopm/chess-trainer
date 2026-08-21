@@ -192,12 +192,19 @@ public enum TurnedPieces {
             // Then out into the shoulder the neck rises from. Cut flat instead,
             // wide enough to take the neck's corners, it reads as a saucer the
             // head has been stood on.
-            // Wide enough to take the neck's corners — it lands on the collar
-            // corner-first, at 0.229 from the axis — and no wider, or the
-            // collar reads as a brim the head has been stood on.
-            (0.236 * s, 0.586 * s), (0.240 * s, 0.602 * s),
-            (0.228 * s, 0.618 * s), (0.186 * s, 0.638 * s),
-            (0.126 * s, 0.652 * s), (0.0, 0.660 * s),
+            // Wide enough to take the neck's corners and no wider, or it reads
+            // as a brim the head has been stood on. The corner that matters is
+            // not the outline's: it is the corner of the neck's *section*,
+            // where the front of the neck meets a face at full depth, and that
+            // stands further out than the silhouette does. Missing it by a
+            // thousandth left two nicks of ivory showing through the shoulder.
+            (0.244 * s, 0.586 * s), (0.248 * s, 0.602 * s),
+            // Carried up rather than turned over quickly, so the neck is well
+            // inside the shoulder before the two surfaces meet. Cut lower, they
+            // met right on the corner of the neck, where the line between them
+            // dips and comes back — and that showed as two nicks of shadow.
+            (0.238 * s, 0.622 * s), (0.208 * s, 0.646 * s),
+            (0.152 * s, 0.668 * s), (0.086 * s, 0.680 * s), (0.0, 0.684 * s),
         ], segments: segments)
     }
 
