@@ -109,7 +109,7 @@ final class RushModel {
 
     private func conclude(solved: Bool) -> Bool {
         guard var current = run else { return solved }
-        current.record(solved: solved)
+        current.record(solved: solved, rating: puzzle?.rating ?? 1200)
         run = current
 
         flash = Flash(
@@ -269,7 +269,14 @@ struct RushScreen: View {
             return
         }
         exhausted = false
-        model.start(library: app.library.puzzles, practiceRating: app.progress.rating(.tactics))
+        model.start(
+            library: app.library.puzzles,
+            // Its own rating, so a run is pitched at how you solve *against a
+            // clock* rather than at how you solve with all afternoon.
+            practiceRating: app.progress.rating(
+                .rush(minutes: Int(model.settings.duration) / 60)
+            )
+        )
     }
 
     private var records: [(key: Int, value: RushRecord)] {
@@ -404,10 +411,13 @@ struct RushSummary: View {
             guard !recorded else { return }
             recorded = true
             app.update {
-                $0.record(rush: RushRecord(
-                    solved: run.solved, bestStreak: run.bestStreak,
-                    duration: run.settings.duration, achievedAt: Date()
-                ))
+                $0.record(
+                    rush: RushRecord(
+                        solved: run.solved, bestStreak: run.bestStreak,
+                        duration: run.settings.duration, achievedAt: Date()
+                    ),
+                    attempts: run.attempts
+                )
             }
         }
     }

@@ -78,7 +78,7 @@ struct OnlineScreen: View {
                     HStack {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(matchmaker.localName).appFont(.subheadline, weight: .semibold)
-                            Text(verbatim: "\(app.progress.onlineRating)")
+                            Text(verbatim: "\(app.progress.rating(.online(minutes: timeControl.minutes)))")
                                 .appFont(size: 22, weight: .semibold).monospacedDigit()
                         }
                         Spacer()
@@ -104,8 +104,8 @@ struct OnlineScreen: View {
                     Button {
                         matchmaker.findOpponent(
                             timeControl: timeControl,
-                            rating: app.progress.onlineRating,
-                            games: app.progress.onlineGames
+                            rating: app.progress.rating(.online(minutes: timeControl.minutes)),
+                            games: app.progress.gamesPlayed(.online(minutes: timeControl.minutes))
                         )
                     } label: {
                         Text(matchmaker.isAuthenticated ? "Find opponent" : "Sign in to Game Center")
@@ -138,7 +138,7 @@ struct OnlineScreen: View {
                 ),
                 bottom: PlayerBar(
                     name: matchmaker.localName,
-                    rating: app.progress.onlineRating,
+                    rating: app.progress.rating(.online(minutes: timeControl.minutes)),
                     color: session.myColor,
                     material: MaterialBalance(session.position)
                 )
@@ -267,10 +267,11 @@ struct OnlineScreen: View {
         guard let session = matchmaker.session, settled == nil,
               case .finished = session.phase else { return }
         guard let result = session.settle(
-            rating: app.progress.onlineRating, games: app.progress.onlineGames
+            rating: app.progress.rating(.online(minutes: timeControl.minutes)),
+            games: app.progress.gamesPlayed(.online(minutes: timeControl.minutes))
         ) else { return }
         settled = result
-        app.update { $0.record(online: result) }
+        app.update { $0.record(online: result, at: timeControl) }
         activity.release()
         matchmaker.onMatchFinished?(result)
     }
@@ -286,7 +287,7 @@ struct OnlineScreen: View {
             title: result.headline,
             detail: result.ratingDelta == 0
                 ? nil
-                : "Rating \(result.ratingDelta > 0 ? "+" : "")\(result.ratingDelta) → \(app.progress.onlineRating)",
+                : "Rating \(result.ratingDelta > 0 ? "+" : "")\(result.ratingDelta) → \(app.progress.rating(.online(minutes: timeControl.minutes)))",
             line: nil
         )
     }

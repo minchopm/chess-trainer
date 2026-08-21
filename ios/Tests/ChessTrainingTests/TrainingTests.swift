@@ -228,7 +228,7 @@ struct SelectionTests {
     @Test("Weak motifs are targeted most of the time")
     func targetsWeakness() {
         var progress = TrainingProgress()
-        progress.ratings[.tactics] = 1500
+        progress.pools[RatedPool.training(.tactics).id] = PoolRating(rating: 1500)
         progress.themes = [
             "pin": ThemeRecord(seen: 12, solved: 3),
             "fork": ThemeRecord(seen: 14, solved: 12),
@@ -256,7 +256,7 @@ struct SelectionTests {
     @Test("Without enough evidence it just tracks your level")
     func fallsBackToRating() {
         var progress = TrainingProgress()
-        progress.ratings[.tactics] = 1500
+        progress.pools[RatedPool.training(.tactics).id] = PoolRating(rating: 1500)
         let puzzles = [
             Self.puzzle("near", rating: 1540, themes: ["pin"]),
             Self.puzzle("far", rating: 2400, themes: ["pin"]),

@@ -41913,6 +41913,29 @@
         }
       }
     },
+    "progress.againstTheClock": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Timed & engine"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Timed & engine"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Timed & engine"
+          }
+        }
+      }
+    },
     "progress.attempted": {
       "extractionState": "manual",
       "localizations": {
@@ -43489,6 +43512,29 @@
         }
       }
     },
+    "progress.everyPoolIsRatedApart": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Each of these is rated on its own. Solving with a clock running is a different skill from solving with all afternoon, and beating a bot whose strength you chose is a different measure again."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Each of these is rated on its own. Solving with a clock running is a different skill from solving with all afternoon, and beating a bot whose strength you chose is a different measure again."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Each of these is rated on its own. Solving with a clock running is a different skill from solving with all afternoon, and beating a bot whose strength you chose is a different measure again."
+          }
+        }
+      }
+    },
     "progress.games": {
       "extractionState": "manual",
       "localizations": {
@@ -44707,19 +44753,19 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Online rating is kept apart from the training ratings: it measures you against the people you play, not against a library."
+            "value": "Online rating is kept apart from the training ratings: it measures you against the people you play, not against a library. Each clock is rated on its own — three minutes and thirty are different games."
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Online rating is kept apart from the training ratings: it measures you against the people you play, not against a library."
+            "value": "Online rating is kept apart from the training ratings: it measures you against the people you play, not against a library. Each clock is rated on its own — three minutes and thirty are different games."
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "Online rating is kept apart from the training ratings: it measures you against the people you play, not against a library."
+            "value": "Online rating is kept apart from the training ratings: it measures you against the people you play, not against a library. Each clock is rated on its own — three minutes and thirty are different games."
           }
         },
         "es-ES": {
@@ -46440,6 +46486,29 @@
           "stringUnit": {
             "state": "translated",
             "value": "清除全部進度"
+          }
+        }
+      }
+    },
+    "progress.rushMinutes": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rush · %lld min"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rush · %lld min"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rush · %lld min"
           }
         }
       }

@@ -23,7 +23,23 @@ public struct RushSettings: Equatable, Sendable {
     }
 }
 
+/// One puzzle in a run, and how hard it was.
+public struct RushAttempt: Sendable, Equatable {
+    public let rating: Int
+    public let solved: Bool
+
+    public init(rating: Int, solved: Bool) {
+        self.rating = rating
+        self.solved = solved
+    }
+}
+
 public struct RushRun: Sendable {
+    /// Every puzzle the run put up, with its rating. Kept because a run is
+    /// rated the way a session of tactics is — one Elo step per puzzle against
+    /// that puzzle's own rating — and the rating is only known while the
+    /// puzzle is on screen.
+    public private(set) var attempts: [RushAttempt] = []
     public private(set) var solved = 0
     public private(set) var missed = 0
     public private(set) var streak = 0
@@ -55,7 +71,8 @@ public struct RushRun: Sendable {
 
     public func hasTimeLeft(at now: Date = Date()) -> Bool { remaining(at: now) > 0 }
 
-    public mutating func record(solved wasSolved: Bool) {
+    public mutating func record(solved wasSolved: Bool, rating: Int = 1200) {
+        attempts.append(RushAttempt(rating: rating, solved: wasSolved))
         attempted += 1
         if wasSolved {
             solved += 1

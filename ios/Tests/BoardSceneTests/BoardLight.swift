@@ -22,13 +22,16 @@ struct BoardLight {
 
         // Low and turned round: the angles the pieces are actually looked at
         // from, and where both faults show.
-        let shots: [(name: String, azimuth: Float, elevation: Float)] = [
-            ("front-low", -0.72, 0.30), ("front-high", -0.72, 0.72),
-            ("side", -1.45, 0.34), ("across", 0.62, 0.30),
+        let shots: [(name: String, azimuth: Float, elevation: Float, playable: Bool)] = [
+            ("front-low", -0.72, 0.30, true), ("front-high", -0.72, 0.72, true),
+            ("side", -1.45, 0.34, true), ("across", 0.62, 0.30, true),
+            // The title sequence, which is lit for the shot rather than for
+            // play — and still has to leave a dark square looking dark.
+            ("title-near", -0.72, 0.46, false), ("title-turned", -1.20, 0.40, false),
         ]
 
         for (index, shot) in shots.enumerated() {
-            let stage = Stage(quality: .high, style: .banded, playable: true)
+            let stage = Stage(quality: .high, style: .banded, playable: shot.playable)
             stage.board.reset()
 
             var camera = OrbitCamera()

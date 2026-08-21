@@ -1582,6 +1582,13 @@
   ]
  },
  {
+  "key": "progress.againstTheClock",
+  "english": "Timed & engine",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
   "key": "progress.attempted",
   "english": "Attempted",
   "files": [
@@ -1638,6 +1645,13 @@
   ]
  },
  {
+  "key": "progress.everyPoolIsRatedApart",
+  "english": "Each of these is rated on its own. Solving with a clock running is a different skill from solving with all afternoon, and beating a bot whose strength you chose is a different measure again.",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
   "key": "progress.games",
   "english": "Games",
   "files": [
@@ -1681,7 +1695,7 @@
  },
  {
   "key": "progress.onlineRatingIsKeptApart",
-  "english": "Online rating is kept apart from the training ratings: it measures you against the people you play, not against a library.",
+  "english": "Online rating is kept apart from the training ratings: it measures you against the people you play, not against a library. Each clock is rated on its own — three minutes and thirty are different games.",
   "files": [
    "RootView.swift"
   ]
@@ -1738,6 +1752,13 @@
  {
   "key": "progress.resetAllProgress",
   "english": "Reset all progress",
+  "files": [
+   "RootView.swift"
+  ]
+ },
+ {
+  "key": "progress.rushMinutes",
+  "english": "Rush · %lld min",
   "files": [
    "RootView.swift"
   ]

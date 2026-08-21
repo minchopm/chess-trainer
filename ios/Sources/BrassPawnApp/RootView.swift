@@ -140,6 +140,7 @@ struct ProgressScreen: View {
                     ratingSection
                     todaySection
                     weakSection
+                    againstTheClockSection
                     onlineSection
                     guessSection
                     librarySection
@@ -217,12 +218,43 @@ struct ProgressScreen: View {
         }
     }
 
+    /// Timed puzzles and games against the engine — rated, and each in a pool
+    /// of its own, so they are shown apart from the untimed libraries above.
+    @ViewBuilder private var againstTheClockSection: some View {
+        let runs = Set(app.progress.rushRecords.map { Int($0.duration) / 60 }).sorted()
+        let engineGames = app.progress.gamesPlayed(.engine)
+        if !runs.isEmpty || engineGames > 0 {
+            progressSection(L.t("progress.againstTheClock", "Timed & engine")) {
+                ForEach(runs, id: \.self) { minutes in
+                    progressRow(
+                        L.t("progress.rushMinutes", "Rush · %lld min", minutes),
+                        "\(app.progress.rating(.rush(minutes: minutes)))"
+                    )
+                }
+                if engineGames > 0 {
+                    progressRow(L.t("progress.engine", "Engine"), "\(app.progress.rating(.engine))")
+                }
+                note(L.t("progress.everyPoolIsRatedApart", "Each of these is rated on its own. Solving with a clock running is a different skill from solving with all afternoon, and beating a bot whose strength you chose is a different measure again."))
+            }
+        }
+    }
+
     @ViewBuilder private var onlineSection: some View {
-        if app.progress.onlineGames > 0 {
+        // One row per clock, and only for the clocks actually played. A rating
+        // nobody has earned yet is a 1200 that means nothing.
+        let played = TimeControl.allCases.filter {
+            app.progress.gamesPlayed(.online(minutes: $0.minutes)) > 0
+        }
+        if !played.isEmpty {
             progressSection(L.t("progress.online", "Online")) {
-                progressRow(L.t("progress.rating", "Rating"), "\(app.progress.onlineRating)")
+                ForEach(played) { control in
+                    progressRow(
+                        "\(control.label) · \(control.name)",
+                        "\(app.progress.rating(.online(minutes: control.minutes)))"
+                    )
+                }
                 progressRow(L.t("progress.record", "Record"), "\(app.progress.onlineWins)W · \(app.progress.onlineLosses)L · \(app.progress.onlineDraws)D")
-                note(L.t("progress.onlineRatingIsKeptApart", "Online rating is kept apart from the training ratings: it measures you against the people you play, not against a library."))
+                note(L.t("progress.onlineRatingIsKeptApart", "Online rating is kept apart from the training ratings: it measures you against the people you play, not against a library. Each clock is rated on its own — three minutes and thirty are different games."))
             }
         }
     }

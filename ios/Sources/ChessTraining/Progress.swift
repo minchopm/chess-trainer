@@ -4,6 +4,70 @@ public enum TrainingMode: String, Codable, CaseIterable, Sendable {
     case tactics, positional, endgame
 }
 
+/// One thing a rating can mean.
+///
+/// A rating is only ever a statement about what it was earned against, and
+/// these do not compare. Beating a club bot says nothing about how you hold up
+/// at three minutes against a person; solving puzzles with a clock running is a
+/// different skill from solving the same puzzles with all afternoon. Kept as
+/// one number they average into something that describes nobody — a player
+/// strong at rapid and hopeless at bullet gets a middle figure that is wrong
+/// about both.
+///
+/// The identifier is what goes on disk, so the cases can be reordered and
+/// renamed without anyone losing a rating.
+public enum RatedPool: Hashable, Sendable {
+    /// The training libraries, untimed.
+    case training(TrainingMode)
+    /// Puzzle rush, by how long the run lasts.
+    case rush(minutes: Int)
+    /// A person, at one clock. Matchmaking already keeps these apart.
+    case online(minutes: Int)
+    /// The engine, at whatever strength was chosen. Untimed.
+    case engine
+
+    public var id: String {
+        switch self {
+        case .training(let mode): "training.\(mode.rawValue)"
+        case .rush(let minutes): "rush.\(minutes)"
+        case .online(let minutes): "online.\(minutes)"
+        case .engine: "engine"
+        }
+    }
+
+    public init?(id: String) {
+        let parts = id.split(separator: ".", maxSplits: 1).map(String.init)
+        switch (parts.first, parts.count > 1 ? parts[1] : nil) {
+        case ("engine", _): self = .engine
+        case ("training", let rest?):
+            guard let mode = TrainingMode(rawValue: rest) else { return nil }
+            self = .training(mode)
+        case ("rush", let rest?):
+            guard let minutes = Int(rest) else { return nil }
+            self = .rush(minutes: minutes)
+        case ("online", let rest?):
+            guard let minutes = Int(rest) else { return nil }
+            self = .online(minutes: minutes)
+        default: return nil
+        }
+    }
+}
+
+/// A rating and what it was earned on.
+///
+/// The count is not decoration: it sets how hard the next result moves the
+/// number, so a settled rating in one pool must not steady a fresh one in
+/// another. That is the whole reason these are kept apart rather than shared.
+public struct PoolRating: Codable, Sendable, Equatable {
+    public var rating: Int
+    public var games: Int
+
+    public init(rating: Int = 1200, games: Int = 0) {
+        self.rating = rating
+        self.games = games
+    }
+}
+
 /// One scheduled item in the spaced-repetition queue.
 public struct ReviewCard: Codable, Sendable {
     public var ease: Double
@@ -79,7 +143,12 @@ public struct AttemptRecord: Codable, Sendable {
 /// Everything the trainer remembers about you. Codable so it is one file on
 /// disk, and a value type so a view can hold a snapshot without racing.
 public struct TrainingProgress: Codable, Sendable {
-    public var ratings: [TrainingMode: Int] = [.tactics: 1200, .positional: 1200, .endgame: 1200]
+    /// Every rating the player holds, by the pool it was earned in.
+    ///
+    /// Keyed by `RatedPool.id` rather than by the enum, so the file on disk
+    /// stays readable and a case can be renamed without wiping anybody's
+    /// record.
+    public var pools: [String: PoolRating] = [:]
     public var cards: [String: ReviewCard] = [:]
     public var themes: [String: ThemeRecord] = [:]
     public var history: [AttemptRecord] = []
@@ -93,8 +162,9 @@ public struct TrainingProgress: Codable, Sendable {
     /// because nothing counts it.
     public var dailyUsage = DailyUsage()
     public var appearance = Appearance()
-    public var onlineRating = OnlineElo.starting
-    public var onlineGames = 0
+    /// Career totals across every clock. The ratings are per clock; these are
+    /// the tally of games played against people, which is one number a player
+    /// does think of as one number.
     public var onlineWins = 0
     public var onlineLosses = 0
     public var onlineDraws = 0
@@ -103,6 +173,36 @@ public struct TrainingProgress: Codable, Sendable {
     public var lastActiveDay: Date?
 
     public init() {}
+
+    /// Written out by these names, and read by them plus the two the ratings
+    /// used to live under. `ratings` and `onlineRating` are no longer stored —
+    /// they are listed so a file from before the split can still be read.
+    private enum CodingKeys: String, CodingKey {
+        case pools, cards, themes, history, games, rushRecords, eloGuesses
+        case dailyUsage, appearance
+        case onlineWins, onlineLosses, onlineDraws
+        case currentStreak, bestStreak, lastActiveDay
+        case ratings, onlineRating
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(pools, forKey: .pools)
+        try container.encode(cards, forKey: .cards)
+        try container.encode(themes, forKey: .themes)
+        try container.encode(history, forKey: .history)
+        try container.encode(games, forKey: .games)
+        try container.encode(rushRecords, forKey: .rushRecords)
+        try container.encode(eloGuesses, forKey: .eloGuesses)
+        try container.encode(dailyUsage, forKey: .dailyUsage)
+        try container.encode(appearance, forKey: .appearance)
+        try container.encode(onlineWins, forKey: .onlineWins)
+        try container.encode(onlineLosses, forKey: .onlineLosses)
+        try container.encode(onlineDraws, forKey: .onlineDraws)
+        try container.encode(currentStreak, forKey: .currentStreak)
+        try container.encode(bestStreak, forKey: .bestStreak)
+        try container.encodeIfPresent(lastActiveDay, forKey: .lastActiveDay)
+    }
 
     /// Decoded key by key, so a file written by an older build still loads.
     ///
@@ -113,8 +213,7 @@ public struct TrainingProgress: Codable, Sendable {
     /// did not exist yet, which is exactly what a default value is for.
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        ratings = try container.decodeIfPresent([TrainingMode: Int].self, forKey: .ratings)
-            ?? [.tactics: 1200, .positional: 1200, .endgame: 1200]
+        pools = try container.decodeIfPresent([String: PoolRating].self, forKey: .pools) ?? [:]
         cards = try container.decodeIfPresent([String: ReviewCard].self, forKey: .cards) ?? [:]
         themes = try container.decodeIfPresent([String: ThemeRecord].self, forKey: .themes) ?? [:]
         history = try container.decodeIfPresent([AttemptRecord].self, forKey: .history) ?? []
@@ -123,14 +222,35 @@ public struct TrainingProgress: Codable, Sendable {
         eloGuesses = try container.decodeIfPresent([EloGuessRecord].self, forKey: .eloGuesses) ?? []
         dailyUsage = try container.decodeIfPresent(DailyUsage.self, forKey: .dailyUsage) ?? DailyUsage()
         appearance = try container.decodeIfPresent(Appearance.self, forKey: .appearance) ?? Appearance()
-        onlineRating = try container.decodeIfPresent(Int.self, forKey: .onlineRating) ?? OnlineElo.starting
-        onlineGames = try container.decodeIfPresent(Int.self, forKey: .onlineGames) ?? 0
         onlineWins = try container.decodeIfPresent(Int.self, forKey: .onlineWins) ?? 0
         onlineLosses = try container.decodeIfPresent(Int.self, forKey: .onlineLosses) ?? 0
         onlineDraws = try container.decodeIfPresent(Int.self, forKey: .onlineDraws) ?? 0
         currentStreak = try container.decodeIfPresent(Int.self, forKey: .currentStreak) ?? 0
         bestStreak = try container.decodeIfPresent(Int.self, forKey: .bestStreak) ?? 0
         lastActiveDay = try container.decodeIfPresent(Date.self, forKey: .lastActiveDay)
+
+        if pools.isEmpty {
+            // A file from before the ratings were split. The three training
+            // ratings carry over as they are; the one online rating is copied
+            // to every clock, because a rating earned at five minutes is a
+            // better guess at somebody's three-minute strength than 1200 is.
+            //
+            // The game counts do *not* carry over. They set how hard the next
+            // result moves the number, and the point of splitting is that each
+            // clock now has to find its own level — starting each at nought
+            // lets it, which is what a fresh pool is for.
+            let old = try container.decodeIfPresent([TrainingMode: Int].self, forKey: .ratings)
+                ?? [.tactics: 1200, .positional: 1200, .endgame: 1200]
+            for (mode, rating) in old {
+                pools[RatedPool.training(mode).id] = PoolRating(rating: rating, games: 0)
+            }
+            let online = try container.decodeIfPresent(Int.self, forKey: .onlineRating)
+                ?? OnlineElo.starting
+            for control in TimeControl.allCases {
+                pools[RatedPool.online(minutes: control.minutes).id] =
+                    PoolRating(rating: online, games: 0)
+            }
+        }
     }
 
     /// Records a judged game and returns the verdict, so the caller does not
@@ -170,10 +290,18 @@ public struct TrainingProgress: Codable, Sendable {
 
     /// Record a finished online game. The rating change is computed by the
     /// session, which is the only place that knows what the opponent was rated.
-    public mutating func record(online result: MatchResult) {
-        onlineRating = min(max(onlineRating + result.ratingDelta, OnlineElo.range.lowerBound),
-                           OnlineElo.range.upperBound)
-        onlineGames += 1
+    /// A finished game against a person, at the clock it was played on.
+    ///
+    /// The clock is the pool. Somebody who is 1700 at fifteen minutes and 1300
+    /// at three is not 1500 at either, and the two only ever meet opponents
+    /// from their own pool — matchmaking has always kept them apart.
+    public mutating func record(online result: MatchResult, at control: TimeControl) {
+        let pool = RatedPool.online(minutes: control.minutes)
+        var held = pools[pool.id] ?? PoolRating(rating: starting(pool))
+        held.rating = min(max(held.rating + result.ratingDelta, OnlineElo.range.lowerBound),
+                          OnlineElo.range.upperBound)
+        held.games += 1
+        pools[pool.id] = held
         switch result.outcome {
         case .win: onlineWins += 1
         case .loss: onlineLosses += 1
@@ -181,7 +309,44 @@ public struct TrainingProgress: Codable, Sendable {
         }
     }
 
-    public func rating(_ mode: TrainingMode) -> Int { ratings[mode] ?? 1200 }
+    public func rating(_ mode: TrainingMode) -> Int { rating(.training(mode)) }
+
+    public func rating(_ pool: RatedPool) -> Int {
+        pools[pool.id]?.rating ?? starting(pool)
+    }
+
+    /// Where a pool begins, before anything has been played in it.
+    ///
+    /// Not 1200 for everything. Somebody who has solved tactics for a month
+    /// has already told us roughly how hard their first timed run should be,
+    /// and opening it at 1200 wastes the run on puzzles they can do in their
+    /// sleep. It is a guess and it is meant to be moved — the count starts at
+    /// nought, so the first few results shift it hard.
+    private func starting(_ pool: RatedPool) -> Int {
+        switch pool {
+        case .rush: pools[RatedPool.training(.tactics).id]?.rating ?? 1200
+        default: 1200
+        }
+    }
+
+    public func gamesPlayed(_ pool: RatedPool) -> Int { pools[pool.id]?.games ?? 0 }
+
+    /// Moves a pool's rating by one result against a known opponent.
+    ///
+    /// The same Elo everywhere, so a rating means the same thing whichever
+    /// pool it came from — what differs is only who it was earned against.
+    @discardableResult
+    public mutating func settle(
+        _ pool: RatedPool, against opponent: Int, score: Double
+    ) -> Int {
+        var held = pools[pool.id] ?? PoolRating(rating: starting(pool))
+        held.rating = OnlineElo.updated(
+            rating: held.rating, games: held.games, against: opponent, score: score
+        )
+        held.games += 1
+        pools[pool.id] = held
+        return held.rating
+    }
 
     /// Tactics dominates practical strength at club level, so it weighs heaviest.
     public var overallRating: Int {
@@ -200,8 +365,11 @@ public struct TrainingProgress: Codable, Sendable {
         let k: Double = played < 20 ? 60 : (played < 60 ? 32 : 20)
         let expected = 1 / (1 + pow(10, Double(itemRating - current) / 400))
         let next = Double(current) + k * ((correct ? 1 : 0) - expected)
-        ratings[mode] = max(400, Int(next.rounded()))
-        return ratings[mode]!
+        var held = pools[RatedPool.training(mode).id] ?? PoolRating()
+        held.rating = max(400, Int(next.rounded()))
+        held.games += 1
+        pools[RatedPool.training(mode).id] = held
+        return held.rating
     }
 
     /// SM-2, trimmed to the two outcomes a puzzle actually has. A missed puzzle
@@ -251,9 +419,21 @@ public struct TrainingProgress: Codable, Sendable {
         bumpStreak(now: now)
     }
 
+    /// A finished game against the engine.
+    ///
+    /// Rated, and in a pool of its own. The engine's strength is chosen rather
+    /// than met, which makes this a different measurement from a rating earned
+    /// against people — but it is a measurement: the opponent's rating is known
+    /// exactly, which is more than can be said for most games.
     public mutating func record(game: GameRecord) {
         games.append(game)
         if games.count > 200 { games.removeFirst(games.count - 200) }
+        let score: Double = switch game.result {
+        case "win": 1
+        case "draw": 0.5
+        default: 0
+        }
+        settle(.engine, against: game.opponentElo, score: score)
         bumpStreak(now: game.playedAt)
     }
 
@@ -358,8 +538,17 @@ extension TrainingProgress {
         }
     }
 
-    public mutating func record(rush: RushRecord) {
+    public mutating func record(rush: RushRecord, attempts: [RushAttempt] = []) {
         rushRecords.append(rush)
         if rushRecords.count > 100 { rushRecords.removeFirst(rushRecords.count - 100) }
+
+        // Rated per puzzle rather than per run: a run is not one contest with
+        // one opponent, it is forty of them, and each puzzle knows its own
+        // rating. Its own pool, and one per length — a three-minute run and a
+        // ten-minute run are different tests of the same eyes.
+        let pool = RatedPool.rush(minutes: Int(rush.duration) / 60)
+        for attempt in attempts {
+            settle(pool, against: attempt.rating, score: attempt.solved ? 1 : 0)
+        }
     }
 }
