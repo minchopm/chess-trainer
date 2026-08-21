@@ -12,6 +12,8 @@ import SwiftUI
 struct WatchScreen: View {
     @Environment(\.dismiss) private var dismiss
 
+    @Environment(AppModel.self) private var app
+
     let game: ClassicGame
 
     var body: some View {
@@ -20,6 +22,13 @@ struct WatchScreen: View {
             subtitle: game.occasion,
             startingPosition: Position(),
             notation: game.moves,
+            // Picked up where it was left. A recording is watched the way a
+            // recording is watched — in sittings — and nine hundred games is
+            // far too many to remember your own place in.
+            startAt: app.progress.watchMark(for: game.id)?.ply ?? 0,
+            onProgress: { ply, total in
+                app.update { $0.mark(watched: game.id, ply: ply, of: total) }
+            },
             onDismiss: { dismiss() }
         )
     }
@@ -37,6 +46,11 @@ struct ReplayViewer: View {
     let subtitle: String
     let startingPosition: Position
     let notation: String
+    /// Where to open. Nought for anything that has no memory of being watched.
+    var startAt: Int = 0
+    /// Called as the viewer moves through the game, with the half-move reached
+    /// and the number in the whole game.
+    var onProgress: ((Int, Int) -> Void)?
     let onDismiss: () -> Void
 
     @State private var player: GamePlayer?
@@ -149,6 +163,7 @@ struct ReplayViewer: View {
                 withAnimation(.easeOut(duration: 0.25)) {
                     proxy.scrollTo(max(0, value - 1), anchor: .center)
                 }
+                onProgress?(value, plies.count)
             }
         }
     }
@@ -210,6 +225,12 @@ struct ReplayViewer: View {
         }
         made.load(position: startingPosition, notation: notation)
         made.stage.setCoordinates(app.progress.appearance.showsCoordinates)
+        // Not past the end: a game watched to the last move opens at the last
+        // move, which is a still picture. Better to hand it back at the start.
+        if startAt > 0, startAt < made.plies.count {
+            made.seek(to: startAt)
+            index = startAt
+        }
         player = made
         // Straight into it: both a watched game and a revealed combination
         // are opened in order to see the moves happen.

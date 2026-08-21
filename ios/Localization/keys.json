@@ -3468,6 +3468,34 @@
   ]
  },
  {
+  "key": "watch.byLength",
+  "english": "Shortest",
+  "files": [
+   "ClassicsScreen.swift"
+  ]
+ },
+ {
+  "key": "watch.byRecent",
+  "english": "Last opened",
+  "files": [
+   "ClassicsScreen.swift"
+  ]
+ },
+ {
+  "key": "watch.byYear",
+  "english": "Newest",
+  "files": [
+   "ClassicsScreen.swift"
+  ]
+ },
+ {
+  "key": "watch.continue",
+  "english": "Continue",
+  "files": [
+   "ClassicsScreen.swift"
+  ]
+ },
+ {
   "key": "watch.everything",
   "english": "Everything",
   "files": [
@@ -3477,6 +3505,13 @@
  {
   "key": "watch.games",
   "english": "games",
+  "files": [
+   "ClassicsScreen.swift"
+  ]
+ },
+ {
+  "key": "watch.keep",
+  "english": "Save this game",
   "files": [
    "ClassicsScreen.swift"
   ]
@@ -3503,8 +3538,36 @@
   ]
  },
  {
+  "key": "watch.partway",
+  "english": "%lld%%",
+  "files": [
+   "ClassicsScreen.swift"
+  ]
+ },
+ {
+  "key": "watch.saved",
+  "english": "Saved",
+  "files": [
+   "ClassicsScreen.swift"
+  ]
+ },
+ {
   "key": "watch.search",
   "english": "Player, event or year",
+  "files": [
+   "ClassicsScreen.swift"
+  ]
+ },
+ {
+  "key": "watch.sortBy",
+  "english": "Order",
+  "files": [
+   "ClassicsScreen.swift"
+  ]
+ },
+ {
+  "key": "watch.watched",
+  "english": "Watched",
   "files": [
    "ClassicsScreen.swift"
   ]

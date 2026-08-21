@@ -100,3 +100,52 @@ struct RatingPoolTests {
         #expect(RatedPool(id: pool.id) == pool)
     }
 }
+
+@Suite("Watching")
+struct WatchMarkTests {
+    /// Rewinding to look at a move again is not un-watching the game.
+    @Test("A mark only ever goes forward")
+    func onlyForward() {
+        var progress = TrainingProgress()
+        progress.mark(watched: "morphy", ply: 30, of: 40)
+        progress.mark(watched: "morphy", ply: 12, of: 40)
+
+        #expect(progress.watchMark(for: "morphy")?.ply == 30)
+    }
+
+    @Test("A game watched to the last move is finished")
+    func finishing() {
+        var progress = TrainingProgress()
+        progress.mark(watched: "rotlewi", ply: 25, of: 50)
+        #expect(progress.watchMark(for: "rotlewi")?.isFinished == false)
+        #expect(progress.watchMark(for: "rotlewi")?.fraction == 0.5)
+
+        progress.mark(watched: "rotlewi", ply: 50, of: 50)
+        #expect(progress.watchMark(for: "rotlewi")?.isFinished == true)
+    }
+
+    /// The list is nine hundred games; the memory of them is not unbounded.
+    @Test("The oldest marks are the ones dropped")
+    func forgetsTheOldestFirst() {
+        var progress = TrainingProgress()
+        let start = Date(timeIntervalSince1970: 0)
+        for index in 0..<420 {
+            progress.mark(watched: "game-\(index)", ply: 1, of: 10,
+                          at: start.addingTimeInterval(Double(index)))
+        }
+
+        #expect(progress.watched.count == 400)
+        #expect(progress.watchMark(for: "game-0") == nil, "the first watched should have gone")
+        #expect(progress.watchMark(for: "game-419") != nil, "the last should not have")
+    }
+
+    @Test("Saving a game is a switch, not a one-way door")
+    func favourites() {
+        var progress = TrainingProgress()
+        #expect(progress.isFavourite("steinitz") == false)
+        progress.toggleFavourite("steinitz")
+        #expect(progress.isFavourite("steinitz"))
+        progress.toggleFavourite("steinitz")
+        #expect(progress.isFavourite("steinitz") == false)
+    }
+}

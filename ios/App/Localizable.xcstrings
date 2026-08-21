@@ -92818,6 +92818,98 @@
         }
       }
     },
+    "watch.byLength": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shortest"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shortest"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shortest"
+          }
+        }
+      }
+    },
+    "watch.byRecent": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last opened"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last opened"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last opened"
+          }
+        }
+      }
+    },
+    "watch.byYear": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newest"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newest"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newest"
+          }
+        }
+      }
+    },
+    "watch.continue": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue"
+          }
+        }
+      }
+    },
     "watch.everything": {
       "extractionState": "manual",
       "localizations": {
@@ -93208,6 +93300,29 @@
           "stringUnit": {
             "state": "translated",
             "value": "對局"
+          }
+        }
+      }
+    },
+    "watch.keep": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save this game"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save this game"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save this game"
           }
         }
       }
@@ -93803,6 +93918,52 @@
         }
       }
     },
+    "watch.partway": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld%%"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld%%"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld%%"
+          }
+        }
+      }
+    },
+    "watch.saved": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved"
+          }
+        }
+      }
+    },
     "watch.search": {
       "extractionState": "manual",
       "localizations": {
@@ -93996,6 +94157,52 @@
           "stringUnit": {
             "state": "translated",
             "value": "棋手、賽事或年份"
+          }
+        }
+      }
+    },
+    "watch.sortBy": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Order"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Order"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Order"
+          }
+        }
+      }
+    },
+    "watch.watched": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Watched"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Watched"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Watched"
           }
         }
       }

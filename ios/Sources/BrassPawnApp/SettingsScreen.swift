@@ -29,15 +29,21 @@ struct TopBar<Content: View>: View {
         // Empty training headers use Spacer/Color.clear as their centre
         // content. Without an explicit height those flexible views consume
         // the remaining screen and push the board away.
-        .frame(height: 44)
+        // Shorter than it was, and the way out no longer sits in it.
+        .frame(height: 30)
         .padding(.horizontal, 54)
         .overlay(alignment: .leading) {
+            // Lifted into the strip above, which the app leaves empty — it
+            // hides the status bar, so the room the clock would have taken was
+            // going spare. A row of its own for one round button is a row the
+            // list could have had.
             BrassBackButton {
                 if activity.isActive { activity.requestExit() } else { navigator.goToMenu() }
             }
+            .offset(y: -26)
         }
         .padding(.horizontal, 12)
-        .padding(.top, 6)
+        .padding(.top, 4)
         .padding(.bottom, 2)
     }
 }

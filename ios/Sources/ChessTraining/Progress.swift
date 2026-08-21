@@ -132,6 +132,36 @@ public struct GameRecord: Codable, Sendable {
     }
 }
 
+/// How far into a recording somebody got, and when.
+///
+/// Kept per game rather than as a single "last watched", because the library is
+/// nine hundred games and a person dips in and out of several. The date is what
+/// makes a history: the list can be ordered by when a game was last opened
+/// without keeping a separate log of openings.
+public struct WatchMark: Codable, Sendable, Equatable {
+    /// Half-moves played, counted from the start of the game.
+    public var ply: Int
+    /// Half-moves in the whole game, so a fraction can be shown without
+    /// looking the game up again.
+    public var of: Int
+    public var at: Date
+
+    public init(ply: Int, of: Int, at: Date) {
+        self.ply = ply
+        self.of = of
+        self.at = at
+    }
+
+    /// Nought to one. A game watched to the last move is finished, and one
+    /// stopped in the opening is barely started.
+    public var fraction: Double {
+        guard of > 0 else { return 0 }
+        return min(1, Double(ply) / Double(of))
+    }
+
+    public var isFinished: Bool { of > 0 && ply >= of }
+}
+
 public struct AttemptRecord: Codable, Sendable {
     public let at: Date
     public let mode: TrainingMode
@@ -168,6 +198,10 @@ public struct TrainingProgress: Codable, Sendable {
     public var onlineWins = 0
     public var onlineLosses = 0
     public var onlineDraws = 0
+    /// How far each recording has been watched, keyed by the game's id.
+    public var watched: [String: WatchMark] = [:]
+    /// Recordings kept aside, keyed by the game's id.
+    public var favourites: Set<String> = []
     public var currentStreak = 0
     public var bestStreak = 0
     public var lastActiveDay: Date?
@@ -179,7 +213,7 @@ public struct TrainingProgress: Codable, Sendable {
     /// they are listed so a file from before the split can still be read.
     private enum CodingKeys: String, CodingKey {
         case pools, cards, themes, history, games, rushRecords, eloGuesses
-        case dailyUsage, appearance
+        case dailyUsage, appearance, watched, favourites
         case onlineWins, onlineLosses, onlineDraws
         case currentStreak, bestStreak, lastActiveDay
         case ratings, onlineRating
@@ -196,6 +230,8 @@ public struct TrainingProgress: Codable, Sendable {
         try container.encode(eloGuesses, forKey: .eloGuesses)
         try container.encode(dailyUsage, forKey: .dailyUsage)
         try container.encode(appearance, forKey: .appearance)
+        try container.encode(watched, forKey: .watched)
+        try container.encode(favourites, forKey: .favourites)
         try container.encode(onlineWins, forKey: .onlineWins)
         try container.encode(onlineLosses, forKey: .onlineLosses)
         try container.encode(onlineDraws, forKey: .onlineDraws)
@@ -222,6 +258,8 @@ public struct TrainingProgress: Codable, Sendable {
         eloGuesses = try container.decodeIfPresent([EloGuessRecord].self, forKey: .eloGuesses) ?? []
         dailyUsage = try container.decodeIfPresent(DailyUsage.self, forKey: .dailyUsage) ?? DailyUsage()
         appearance = try container.decodeIfPresent(Appearance.self, forKey: .appearance) ?? Appearance()
+        watched = try container.decodeIfPresent([String: WatchMark].self, forKey: .watched) ?? [:]
+        favourites = try container.decodeIfPresent(Set<String>.self, forKey: .favourites) ?? []
         onlineWins = try container.decodeIfPresent(Int.self, forKey: .onlineWins) ?? 0
         onlineLosses = try container.decodeIfPresent(Int.self, forKey: .onlineLosses) ?? 0
         onlineDraws = try container.decodeIfPresent(Int.self, forKey: .onlineDraws) ?? 0
@@ -536,6 +574,30 @@ extension TrainingProgress {
             }
             return result
         }
+    }
+
+    /// Remembers where a recording was left.
+    ///
+    /// Only ever forward: scrubbing back to look at a move again is not
+    /// un-watching the game, and a list that forgot half a game because
+    /// somebody rewound would be worse than one that never remembered.
+    public mutating func mark(watched game: String, ply: Int, of total: Int, at now: Date = Date()) {
+        let reached = max(ply, watched[game]?.ply ?? 0)
+        watched[game] = WatchMark(ply: reached, of: total, at: now)
+        if watched.count > 400 {
+            // Oldest first, so what goes is what has not been looked at.
+            let stale = watched.sorted { $0.value.at < $1.value.at }
+                .prefix(watched.count - 400).map(\.key)
+            for key in stale { watched.removeValue(forKey: key) }
+        }
+    }
+
+    public func watchMark(for game: String) -> WatchMark? { watched[game] }
+
+    public func isFavourite(_ game: String) -> Bool { favourites.contains(game) }
+
+    public mutating func toggleFavourite(_ game: String) {
+        if favourites.contains(game) { favourites.remove(game) } else { favourites.insert(game) }
     }
 
     public mutating func record(rush: RushRecord, attempts: [RushAttempt] = []) {
