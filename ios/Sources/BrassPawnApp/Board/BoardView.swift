@@ -293,7 +293,7 @@ public struct BoardView: View {
     /// A matrix rather than a multiply, because a multiply can only darken and
     /// half of the range wanted here is whiter than the boxwood the set was
     /// photographed in. The fifth column is the part that lifts.
-    static func shading(_ tone: LightTone) -> ColorMatrix? {
+    nonisolated static func shading(_ tone: LightTone) -> ColorMatrix? {
         guard tone != .boxwood else { return nil }
         let (multiply, lift) = tone.shading
         var matrix = ColorMatrix()
@@ -304,7 +304,9 @@ public struct BoardView: View {
     }
 
     private func pieces(squareSize: CGFloat, side: CGFloat) -> some View {
-        Canvas { context, _ in
+        // Read before the drawing closure, which is not on the main actor.
+        let shade = Self.shading(theme.lightTone)
+        return Canvas { context, _ in
             var art: [Piece: GraphicsContext.ResolvedImage] = [:]
             var glyphs: [Piece: (fill: GraphicsContext.ResolvedText, rim: GraphicsContext.ResolvedText)] = [:]
             let fontSize = squareSize * 0.78
@@ -336,7 +338,7 @@ public struct BoardView: View {
                     if let image = art[piece] {
                         // The art is centred on its own square canvas, so the
                         // board square is the frame and nothing is nudged.
-                        if piece.color == .white, let shade = Self.shading(theme.lightTone) {
+                        if piece.color == .white, let shade = shade {
                             layer.drawLayer { white in
                                 white.addFilter(.colorMatrix(shade))
                                 white.draw(image, in: square)

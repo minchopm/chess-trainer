@@ -168,9 +168,10 @@ public actor StockfishEngine {
         // is what the last two minutes of waiting were made of, and a player
         // staring at a board has no way to tell a long think from a hang.
         let watchdog = Task { [ceiling = Self.ceilingMs(for: movetimeMs)] in
-            try? await Task.sleep(for: .milliseconds(ceiling))
-            guard !Task.isCancelled else { return }
-            await self.stop()
+            try await Task.sleep(for: .milliseconds(ceiling))
+            // No hop: a task made here belongs to this actor already, and it
+            // can run while the search it is watching has the actor suspended.
+            self.stop()
         }
         defer { watchdog.cancel() }
 
