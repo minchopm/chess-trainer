@@ -37,46 +37,51 @@ extension TurnedPieces {
     static let knightAnchors: [KnightAnchor] = [
         // Up the crest of the neck, from the collar. Thick where it meets the
         // turning, thinning as it rises.
-        (-0.168, 0.500, true, 0.128), (-0.192, 0.566, false, 0.104),
-        (-0.189, 0.632, false, 0.088), (-0.189, 0.665, false, 0.082),
-        (-0.193, 0.698, false, 0.078), (-0.201, 0.731, false, 0.076),
-        (-0.207, 0.764, false, 0.074), (-0.214, 0.797, false, 0.073),
-        (-0.220, 0.830, false, 0.073), (-0.224, 0.863, false, 0.073),
-        (-0.225, 0.896, false, 0.073), (-0.224, 0.929, false, 0.074),
-        (-0.218, 0.962, false, 0.076), (-0.214, 0.978, false, 0.077),
-        (-0.205, 1.004, false, 0.079), (-0.191, 1.030, false, 0.081),
-        (-0.179, 1.047, false, 0.082), (-0.164, 1.065, false, 0.083),
-        (-0.149, 1.082, false, 0.083), (-0.129, 1.099, false, 0.082),
-        (-0.106, 1.116, false, 0.080),
-        // Over the poll: one small ear, then the mane cut off square.
-        (-0.090, 1.134, false, 0.072), (-0.077, 1.143, true, 0.048),
-        (-0.068, 1.150, true, 0.042), (-0.059, 1.145, true, 0.048),
-        (-0.046, 1.143, true, 0.060), (-0.010, 1.151, true, 0.058),
-        (0.056, 1.160, true, 0.056),
-        // Down the face. The cheek is the fullest part of the head.
-        (0.058, 1.151, false, 0.066), (0.059, 1.134, false, 0.072),
-        (0.059, 1.125, false, 0.075), (0.061, 1.116, false, 0.078),
-        (0.065, 1.099, false, 0.082), (0.074, 1.091, false, 0.084),
-        (0.092, 1.074, false, 0.086), (0.114, 1.056, false, 0.086),
-        (0.135, 1.039, false, 0.084), (0.156, 1.021, false, 0.081),
-        (0.178, 1.004, false, 0.077), (0.202, 0.987, false, 0.072),
-        (0.215, 0.978, false, 0.070), (0.266, 0.943, false, 0.062),
-        // The muzzle: front all but straight down, and the narrowest of the
-        // head. At the same height as the neck and half its thickness, which
-        // is the whole reason the depth follows the outline and not the height.
-        (0.277, 0.926, false, 0.058), (0.281, 0.909, false, 0.056),
-        (0.281, 0.900, false, 0.055), (0.276, 0.883, false, 0.056),
-        (0.261, 0.866, false, 0.058), (0.253, 0.856, true, 0.060),
-        // Back under the jaw to the throat.
-        (0.180, 0.852, false, 0.068), (0.100, 0.850, false, 0.076),
-        (0.042, 0.848, true, 0.078),
-        // And down the throat into the chest, thickening into the collar.
-        (0.051, 0.839, false, 0.078), (0.058, 0.831, false, 0.078),
-        (0.088, 0.797, false, 0.078), (0.117, 0.764, false, 0.078),
-        (0.143, 0.731, false, 0.079), (0.166, 0.698, false, 0.080),
-        (0.186, 0.665, false, 0.084), (0.199, 0.632, false, 0.090),
-        (0.207, 0.599, false, 0.100), (0.199, 0.566, false, 0.110),
-        (0.182, 0.500, true, 0.128),
+        // The neck is cut off at 0.580, not lower. Below that the turning
+        // draws in to its collar, and a neck this broad meets it corner-first:
+        // the corners came through the side of the base as a ring of torn
+        // white triangles. What is cut away is buried in the base anyway.
+        (-0.194, 0.580, true, 0.103), (-0.192, 0.598, false, 0.099),
+        (-0.189, 0.614, false, 0.094),
+        (-0.189, 0.668, false, 0.082), (-0.196, 0.712, false, 0.078),
+        (-0.207, 0.764, false, 0.075), (-0.218, 0.818, false, 0.073),
+        (-0.225, 0.874, false, 0.073),   // the crest at its fullest
+        (-0.224, 0.910, false, 0.074), (-0.222, 0.946, false, 0.076),
+        (-0.207, 1.001, false, 0.079), (-0.194, 1.027, false, 0.081),
+        (-0.163, 1.068, false, 0.083), (-0.136, 1.094, false, 0.082),
+        (-0.111, 1.111, false, 0.080),
+        // Over the poll, where the mane is cut off square. The ears are not
+        // drawn here: in profile the reference's are a bump a hundredth of a
+        // unit high, which is a quarter of what the rolled edge takes, so cut
+        // into this outline they come out as shards. They are turned
+        // separately and stood on the poll, splayed, which is where a horse
+        // keeps them and what the reference's front view shows.
+        (-0.088, 1.130, false, 0.070), (-0.046, 1.143, true, 0.058),
+        (0.006, 1.152, true, 0.058), (0.058, 1.161, true, 0.056),
+        // Down the face, which falls forward faster than it looks as if it
+        // should: half its travel is spent in the top third.
+        (0.062, 1.104, false, 0.074), (0.094, 1.072, false, 0.084),
+        (0.135, 1.038, false, 0.086), (0.179, 1.003, false, 0.082),
+        (0.220, 0.975, false, 0.076), (0.261, 0.948, false, 0.068),
+        // The muzzle: blunt, and the thinnest of the head. It sits at the same
+        // height as the neck behind it and is cut half as deep, which is the
+        // whole reason the depth follows the outline rather than the height.
+        (0.273, 0.936, false, 0.063), (0.279, 0.923, false, 0.059),
+        (0.280, 0.895, false, 0.056), (0.270, 0.874, false, 0.057),
+        (0.244, 0.851, true, 0.058),
+        // Back up the underside of the jaw. The mouth is a **V**, cut up into
+        // the head at some forty degrees and closing at the cheek — not the
+        // flat slot it was, sawn straight back under the muzzle. It is most of
+        // what tells a horse's head from a boot.
+        (0.204, 0.854, false, 0.062), (0.155, 0.872, false, 0.066),
+        (0.113, 0.890, false, 0.069), (0.076, 0.900, true, 0.072),
+        // And down the throat, which is pinched in tight behind the jaw before
+        // it opens out into the chest.
+        (0.055, 0.893, false, 0.075), (0.030, 0.865, true, 0.078),
+        (0.052, 0.828, false, 0.078), (0.088, 0.786, false, 0.078),
+        (0.140, 0.735, false, 0.079), (0.173, 0.688, false, 0.081),
+        (0.192, 0.653, false, 0.084), (0.205, 0.614, false, 0.090),
+        (0.209, 0.596, false, 0.096), (0.206, 0.580, true, 0.103),
     ]
 
     /// A closed curve through every anchor, breaking at the corners, carrying
@@ -375,7 +380,50 @@ extension TurnedPieces {
     static let knightOutline = through(knightAnchors)
 
     static func knightHead(_ s: Float) -> SCNGeometry {
-        shell(knightOutline, scale: s, roll: 0.04, bulge: 0.16).geometry
+        var head = shell(knightOutline, scale: s, roll: 0.042, bulge: 0.24)
+        head.append(ear(s, side: 1))
+        head.append(ear(s, side: -1))
+        return head.geometry
+    }
+
+    /// One ear, turned on its own and stood on the poll.
+    ///
+    /// A knight's ears are the one part of it that does not live in the
+    /// silhouette. Cut into the outline they are a bump a hundredth of a unit
+    /// high — less than the rolled edge takes off, so they come out as shards —
+    /// and cut deep enough to survive they turn the head into a rabbit's. On
+    /// the piece they are two small cones splayed out from the crest, and from
+    /// the front they are most of what is up there.
+    private static func ear(_ s: Float, side: Float) -> Solid {
+        // Long and splayed, and rooted well down inside the head. The
+        // reference's reach a fifth of the way out from the middle and stand
+        // nearly a third of the head's height — cut short and close they read
+        // as bumps, which is what they were.
+        let root = SIMD3<Float>(-0.018, 0.962, side * 0.034)
+        let tip = SIMD3<Float>(-0.076, 1.214, side * 0.136)
+        let steps = 8, segments = 12
+
+        let axis = simd_normalize(tip - root)
+        // Any two directions across the axis will do, so long as they are
+        // square to it and to each other.
+        let aside = simd_normalize(simd_cross(axis, SIMD3<Float>(0, 0, 1)))
+        let other = simd_cross(axis, aside)
+
+        var rings: [[SIMD3<Float>]] = []
+        for step in 0...steps {
+            let along = Float(step) / Float(steps)
+            let centre = root + (tip - root) * along
+            // Full at the root and drawn to a point, but not straight: an ear
+            // is fuller than a cone low down and finer at the tip.
+            let radius = 0.055 * (1 - along) * (1 - along * 0.55) + 0.002
+            rings.append((0..<segments).map { segment in
+                let angle = 2 * Float.pi * Float(segment) / Float(segments)
+                let offset = aside * (radius * cos(angle) * 0.78) + other * (radius * sin(angle))
+                return (centre + offset) * s
+            })
+        }
+        let fan = (1..<(segments - 1)).map { (0, $0, $0 + 1) }
+        return skin(rings, closingWith: fan)
     }
 }
 
@@ -400,10 +448,10 @@ extension TurnedPieces {
     /// of the skull, because the outline turns in there and a ridge run
     /// straight on does not.
     static func mane(_ s: Float) -> SCNGeometry {
-        let run = crest(steps: 7, from: 3, to: 19)
+        let run = crest(steps: 7, from: 2, to: 14)
         guard run.count > 2 else { return Solid().geometry }
         let segments = 14
-        let stand: Float = 0.036          // how far the ridge sits proud of the edge
+        let stand: Float = 0.012          // how far the ridge sits proud of the edge
         let sink: Float = 0.007           // and how far its root is buried
 
         var rings: [[SIMD3<Float>]] = []

@@ -17,6 +17,7 @@ they look like.
 """
 
 import argparse
+import math
 import sys
 
 
@@ -30,9 +31,87 @@ def spans(values):
     return out
 
 
+def trace(mask, width, height):
+    """Walks the outline of the shape, in order.
+
+    Row-by-row extents are enough to read proportions off, but not to draw
+    with: where the piece has a notch — the mouth, between the muzzle and the
+    throat — a row reports two spans and says nothing about how they join. The
+    outline has to be walked to get that.
+
+    Moore neighbourhood tracing: stand on a filled pixel, look round it from
+    where you came in, and step onto the first filled pixel you meet.
+    """
+    start = next(((x, y) for y in range(height) for x in range(width) if mask[y][x]), None)
+    if start is None:
+        return []
+
+    # Clockwise from due left, which is where the scan came from.
+    around = [(-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1)]
+
+    def filled(point):
+        x, y = point
+        return 0 <= x < width and 0 <= y < height and mask[y][x]
+
+    here, came_from = start, (start[0] - 1, start[1])
+    outline = [start]
+    for _ in range(width * height * 4):
+        back = (came_from[0] - here[0], came_from[1] - here[1])
+        k = around.index(back) if back in around else 0
+        stepped = False
+        for turn in range(1, 9):
+            direction = around[(k + turn) % 8]
+            neighbour = (here[0] + direction[0], here[1] + direction[1])
+            if filled(neighbour):
+                previous = around[(k + turn - 1) % 8]
+                came_from = (here[0] + previous[0], here[1] + previous[1])
+                here = neighbour
+                stepped = True
+                break
+        if not stepped or here == start:
+            break
+        outline.append(here)
+    return outline
+
+
+def simplify(points, tolerance):
+    """Douglas-Peucker: the fewest points that still tell the same shape."""
+    if len(points) < 3:
+        return points
+
+    def furthest(lo, hi):
+        (x0, y0), (x1, y1) = points[lo], points[hi]
+        dx, dy = x1 - x0, y1 - y0
+        length = math.hypot(dx, dy) or 1.0
+        best, index = -1.0, lo
+        for i in range(lo + 1, hi):
+            x, y = points[i]
+            away = abs(dy * x - dx * y + x1 * y0 - y1 * x0) / length
+            if away > best:
+                best, index = away, i
+        return best, index
+
+    keep = {0, len(points) - 1}
+    stack = [(0, len(points) - 1)]
+    while stack:
+        lo, hi = stack.pop()
+        if hi <= lo + 1:
+            continue
+        away, index = furthest(lo, hi)
+        if away > tolerance:
+            keep.add(index)
+            stack += [(lo, index), (index, hi)]
+    return [points[i] for i in sorted(keep)]
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("image")
+    parser.add_argument("--trace", action="store_true",
+                        help="walk the outline and print it as anchors")
+    parser.add_argument("--tolerance", type=float, default=0.004)
+    parser.add_argument("--mirror", action="store_true",
+                        help="the reference faces left; our pieces face right")
     parser.add_argument("--rows", type=int, default=20)
     parser.add_argument("--threshold", type=int, default=150)
     args = parser.parse_args()
@@ -47,6 +126,31 @@ def main():
     pixels = image.load()
 
     rows = {y: [x for x in range(width) if pixels[x, y] > args.threshold] for y in range(height)}
+    if args.trace:
+        mask = [[pixels[x, y] > args.threshold for x in range(width)] for y in range(height)]
+        top = next(y for y in range(height) if rows[y])
+        widths = [max(rows[y]) - min(rows[y]) if rows[y] else 0 for y in range(height)]
+        collar = next((y for y in range(top + 40, height)
+                       if widths[y] > widths[y - 1] + 12), height - 1)
+        span = collar - top
+        centre = (min(rows[collar - 1]) + max(rows[collar - 1])) / 2
+        # Only the head: below the collar the outline is the turning's, and the
+        # turning is not drawn here.
+        for y in range(collar, height):
+            for x in range(width):
+                mask[y][x] = False
+        walked = trace(mask, width, height)
+        flip = -1 if args.mirror else 1
+        # Into the piece's own frame: the collar sits at 0.500 and the crown at
+        # 1.160, which is where the app's knight is drawn.
+        scaled = [(flip * -(x - centre) / span * 0.66, 1.16 - (y - top) / span * 0.66)
+                  for x, y in walked]
+        kept = simplify(scaled, args.tolerance)
+        print(f"// traced from {args.image}: {len(walked)} points, kept {len(kept)}")
+        for x, y in kept:
+            print(f"        ({x:+.3f}, {y:.3f}, false),")
+        return
+
     top = next(y for y in range(height) if rows[y])
     widths = [max(rows[y]) - min(rows[y]) if rows[y] else 0 for y in range(height)]
 
