@@ -177,7 +177,8 @@ public enum TurnedPieces {
         Solid.revolved(foot(s) + [
             (0.175 * s, 0.36 * s), (0.165 * s, 0.44 * s),
         ] + collar(s, 0.44, 0.165) + [
-            (0.203 * s, 0.545 * s), (0.0, 0.545 * s),
+            (0.185 * s, 0.500 * s), (0.246 * s, 0.548 * s),
+            (0.238 * s, 0.566 * s), (0.0, 0.566 * s),
         ], segments: segments)
     }
 

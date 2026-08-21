@@ -29,6 +29,23 @@ struct Solid {
         }
     }
 
+    /// A triangle carrying normals of its own, for a surface that is meant to
+    /// look smooth rather than turned.
+    ///
+    /// The lathe pieces want their facets — at forty-eight segments the facets
+    /// are most of what makes the ivory look turned. The knight is the one
+    /// piece that is not turned, and on a curved face those same facets read as
+    /// scratches drawn across the cheek.
+    mutating func triangle(_ a: SIMD3<Float>, _ b: SIMD3<Float>, _ c: SIMD3<Float>,
+                           normals na: SIMD3<Float>, _ nb: SIMD3<Float>, _ nc: SIMD3<Float>) {
+        let cross = simd_cross(b - a, c - a)
+        guard simd_length(cross) > 1e-9 else { return }
+        for (point, normal) in [(a, na), (b, nb), (c, nc)] {
+            positions.append(SCNVector3(point.x, point.y, point.z))
+            normals.append(SCNVector3(normal.x, normal.y, normal.z))
+        }
+    }
+
     mutating func quad(_ a: SIMD3<Float>, _ b: SIMD3<Float>, _ c: SIMD3<Float>, _ d: SIMD3<Float>) {
         triangle(a, b, c)
         triangle(a, c, d)
