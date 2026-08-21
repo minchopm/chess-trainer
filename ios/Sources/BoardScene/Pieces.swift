@@ -181,16 +181,23 @@ public enum TurnedPieces {
             // point after it has to be higher: a profile that steps back down
             // is revolved inside out, and shows as a ring of torn white
             // triangles round the base.
-            (0.192 * s, 0.548 * s),
+            // Straight-sided where the brass sits, not sloping. A torus laid
+            // across a cone meets it at a shallow angle and the two surfaces
+            // interpenetrate along it, which shows as a ring of torn triangles;
+            // across a cylinder they cross in two clean circles.
+            (0.193 * s, 0.534 * s),
             // A groove for the brass to sit in. A ring laid on a slope is cut
             // by it at a shallow angle and reads as a tear rather than a band.
-            (0.192 * s, 0.560 * s), (0.196 * s, 0.570 * s),
+            (0.193 * s, 0.574 * s),
             // Then out into the shoulder the neck rises from. Cut flat instead,
             // wide enough to take the neck's corners, it reads as a saucer the
             // head has been stood on.
-            (0.248 * s, 0.582 * s), (0.252 * s, 0.600 * s),
-            (0.238 * s, 0.620 * s), (0.192 * s, 0.640 * s),
-            (0.130 * s, 0.652 * s), (0.0, 0.660 * s),
+            // Wide enough to take the neck's corners — it lands on the collar
+            // corner-first, at 0.229 from the axis — and no wider, or the
+            // collar reads as a brim the head has been stood on.
+            (0.236 * s, 0.586 * s), (0.240 * s, 0.602 * s),
+            (0.228 * s, 0.618 * s), (0.186 * s, 0.638 * s),
+            (0.126 * s, 0.652 * s), (0.0, 0.660 * s),
         ], segments: segments)
     }
 
