@@ -177,8 +177,20 @@ public enum TurnedPieces {
         Solid.revolved(foot(s) + [
             (0.175 * s, 0.36 * s), (0.165 * s, 0.44 * s),
         ] + collar(s, 0.44, 0.165) + [
-            (0.185 * s, 0.500 * s), (0.246 * s, 0.548 * s),
-            (0.238 * s, 0.566 * s), (0.0, 0.566 * s),
+            // The lathe only ever climbs. `collar` finishes at 0.53, and every
+            // point after it has to be higher: a profile that steps back down
+            // is revolved inside out, and shows as a ring of torn white
+            // triangles round the base.
+            (0.192 * s, 0.548 * s),
+            // A groove for the brass to sit in. A ring laid on a slope is cut
+            // by it at a shallow angle and reads as a tear rather than a band.
+            (0.192 * s, 0.560 * s), (0.196 * s, 0.570 * s),
+            // Then out into the shoulder the neck rises from. Cut flat instead,
+            // wide enough to take the neck's corners, it reads as a saucer the
+            // head has been stood on.
+            (0.248 * s, 0.582 * s), (0.252 * s, 0.600 * s),
+            (0.238 * s, 0.620 * s), (0.192 * s, 0.640 * s),
+            (0.130 * s, 0.652 * s), (0.0, 0.660 * s),
         ], segments: segments)
     }
 
@@ -199,7 +211,7 @@ public enum TurnedPieces {
         case .pawn: [(0.5 * s, 0.152 * s, 0.019 * s), (0.772 * s, 0.158 * s, 0.017 * s)]
         case .rook: [(0.645 * s, 0.218 * s, 0.022 * s), (0.79 * s, 0.238 * s, 0.02 * s)]
         case .bishop: [(0.565 * s, 0.158 * s, 0.02 * s), (0.715 * s, 0.181 * s, 0.019 * s)]
-        case .knight: [(0.485 * s, 0.198 * s, 0.021 * s)]
+        case .knight: [(0.552 * s, 0.193 * s, 0.014 * s)]
         case .queen: [(0.625 * s, 0.178 * s, 0.022 * s), (1.285 * s, 0.238 * s, 0.021 * s)]
         case .king: [(0.665 * s, 0.183 * s, 0.022 * s), (1.31 * s, 0.243 * s, 0.022 * s),
                      (1.395 * s, 0.222 * s, 0.019 * s)]
