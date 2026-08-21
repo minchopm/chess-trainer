@@ -56,6 +56,9 @@ struct ReplayViewer: View {
         }
         .background(Theatre.ink.ignoresSafeArea())
         .onAppear(perform: build)
+        .onChange(of: app.progress.appearance.showsCoordinates) { _, showing in
+            player?.stage.setCoordinates(showing)
+        }
         .onDisappear { player?.pause() }
         .onReceive(Timer.publish(every: 0.05, on: .main, in: .common).autoconnect()) { _ in
             // BoardSceneView owns the display link while the board is 3D. A
@@ -206,6 +209,7 @@ struct ReplayViewer: View {
             isPlaying = made.isPlaying
         }
         made.load(position: startingPosition, notation: notation)
+        made.stage.setCoordinates(app.progress.appearance.showsCoordinates)
         player = made
         // Straight into it: both a watched game and a revealed combination
         // are opened in order to see the moves happen.

@@ -109,6 +109,11 @@ public final class Stage {
     public static let coordinatesName = "board-coordinates"
 
     /// Whether the files and ranks are painted on the rim.
+    ///
+    /// Off until asked for, and the title sequence never asks: that board is a
+    /// showcase playing famous games to itself, and nobody reads a square off
+    /// it. Every board that is played on, watched or solved turns them on from
+    /// the setting.
     public func setCoordinates(_ showing: Bool) {
         scene.rootNode.childNode(withName: Stage.coordinatesName, recursively: true)?
             .isHidden = !showing
