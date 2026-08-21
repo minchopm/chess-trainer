@@ -41,7 +41,7 @@ extension TurnedPieces {
         // draws in to its collar, and a neck this broad meets it corner-first:
         // the corners came through the side of the base as a ring of torn
         // white triangles. What is cut away is buried in the base anyway.
-        (-0.194, 0.580, true, 0.103), (-0.192, 0.598, false, 0.099),
+        (-0.193, 0.598, true, 0.097), (-0.191, 0.606, false, 0.096),
         (-0.189, 0.614, false, 0.094),
         (-0.189, 0.668, false, 0.082), (-0.196, 0.712, false, 0.078),
         (-0.207, 0.764, false, 0.075), (-0.218, 0.818, false, 0.073),
@@ -81,7 +81,7 @@ extension TurnedPieces {
         (0.052, 0.828, false, 0.078), (0.088, 0.786, false, 0.078),
         (0.140, 0.735, false, 0.079), (0.173, 0.688, false, 0.081),
         (0.192, 0.653, false, 0.084), (0.205, 0.614, false, 0.090),
-        (0.209, 0.596, false, 0.096), (0.206, 0.580, true, 0.103),
+        (0.209, 0.606, false, 0.096), (0.208, 0.598, true, 0.097),
     ]
 
     /// A closed curve through every anchor, breaking at the corners, carrying
@@ -93,12 +93,33 @@ extension TurnedPieces {
     static func through(_ anchors: [KnightAnchor], steps: Int = 5) -> [(x: Float, y: Float, depth: Float)] {
         var points: [(x: Float, y: Float, depth: Float)] = []
         for i in anchors.indices {
-            let a = anchors[(i - 1 + anchors.count) % anchors.count]
             let b = anchors[i]
             let c = anchors[(i + 1) % anchors.count]
+            let a = anchors[(i - 1 + anchors.count) % anchors.count]
             let d = anchors[(i + 2) % anchors.count]
             points.append((b.x, b.y, b.depth))
-            if b.corner && c.corner { continue }   // a straight run between corners
+            if b.corner || c.corner {
+                // Straight into and out of every corner, and sampled all the
+                // way. A corner is a cut, and a curve run up to one swings past
+                // it: the anchor beyond the foot of the neck is the width of
+                // the piece away, across the closing run, and the curve leaving
+                // that corner dipped four hundredths below the foot — sweeping
+                // the whole depth on its way, which came out as a thin fin
+                // hanging down through the collar on either side.
+                //
+                // Sampled, because left as one long edge the closing run is the
+                // only edge on the piece a hundred times the length of its
+                // neighbours. Drawing the face in then moves its two ends about
+                // while every other point creeps, and the cap over them tears.
+                let span = ((c.x - b.x) * (c.x - b.x) + (c.y - b.y) * (c.y - b.y)).squareRoot()
+                let cuts = max(1, Int(span / 0.008))
+                for cut in 1..<max(2, cuts) {
+                    let t = Float(cut) / Float(cuts)
+                    points.append((b.x + (c.x - b.x) * t, b.y + (c.y - b.y) * t,
+                                   b.depth + (c.depth - b.depth) * t))
+                }
+                continue
+            }
             for step in 1..<steps {
                 let t = Float(step) / Float(steps)
                 func spline(_ p0: Float, _ p1: Float, _ p2: Float, _ p3: Float) -> Float {
@@ -153,15 +174,19 @@ extension TurnedPieces {
         }
 
         var triangles: [(Int, Int, Int)] = []
-        var stalled = 0
-        while remaining.count > 3 && stalled <= remaining.count {
+        while remaining.count > 3 {
             var clipped = false
+            // The best ear going, kept in case none of them is a proper one.
+            var fallback = (turn: -Float.greatestFiniteMagnitude, at: 0)
+
             for k in remaining.indices {
                 let i0 = remaining[(k - 1 + remaining.count) % remaining.count]
                 let i1 = remaining[k]
                 let i2 = remaining[(k + 1) % remaining.count]
                 let a = points[i0], b = points[i1], c = points[i2]
-                guard cross(a, b, c) > 0 else { continue }        // a reflex corner is no ear
+                let turn = cross(a, b, c)
+                if turn > fallback.turn { fallback = (turn, k) }
+                guard turn > 0 else { continue }              // a reflex corner is no ear
 
                 // An ear may not have any other corner of the outline inside it.
                 var swallows = false
@@ -179,14 +204,63 @@ extension TurnedPieces {
                 clipped = true
                 break
             }
-            // A run that finds no ear at all is a degenerate outline. Stop with
-            // what it has rather than spinning: a head short a few triangles is
-            // a great deal better than a board that never appears.
-            stalled = clipped ? 0 : stalled + 1
-            if !clipped { break }
+
+            // Nothing clean left: take the best corner anyway rather than stop.
+            //
+            // Stopping is what a straight reading of the algorithm does, and it
+            // hands back part of a face. Part of a face is a hole — and the
+            // rings this is asked to cut are exactly the awkward cases: nearly
+            // straight runs where every corner turns by almost nothing, and
+            // rings drawn in far enough to have crossed themselves. A few
+            // triangles overlapping inside the piece cost nothing; a hole in
+            // the neck one can see through costs the piece.
+            if !clipped {
+                let k = fallback.at
+                let i0 = remaining[(k - 1 + remaining.count) % remaining.count]
+                let i1 = remaining[k]
+                let i2 = remaining[(k + 1) % remaining.count]
+                triangles.append((i0, i1, i2))
+                remaining.remove(at: k)
+            }
         }
         if remaining.count == 3 { triangles.append((remaining[0], remaining[1], remaining[2])) }
         return triangles
+    }
+
+    /// How far the face stands off the plain sweep at a point on it.
+    ///
+    /// A swept outline gives a lens: one thickness set at the rim and a smooth
+    /// dome between. No horse's head is that. It has a cheek that swells, a
+    /// socket the eye sits in, a bone running down from it, and a flat along
+    /// the nose — and none of them are at the edge, where a swept section is
+    /// the only place it can put anything. That is why the cheek stayed flat
+    /// however the outline and the depths were tuned: there was nothing in the
+    /// method that could put a shape *inside* a face.
+    ///
+    /// So the modelling is a field, added to the sweep: a handful of swells and
+    /// hollows, each a soft round patch, summed. It reads like what a carver
+    /// does — take the blank, then add and take away — and because it is a
+    /// continuous function of position, the surface stays smooth and the
+    /// normals pick the modelling up on their own.
+    static func modelling(_ x: Float, _ y: Float) -> Float {
+        /// A soft round patch: full at the middle, nothing at the edge, and
+        /// flat where it meets the surface either side so it leaves no seam.
+        func patch(_ cx: Float, _ cy: Float, _ spread: Float) -> Float {
+            let away = ((x - cx) * (x - cx) + (y - cy) * (y - cy)).squareRoot() / spread
+            guard away < 1 else { return 0 }
+            let t = 1 - away
+            return t * t * (3 - 2 * t)
+        }
+
+        var relief: Float = 0
+        relief += patch(0.030, 0.925, 0.130) * 0.030   // the cheek, the fullest part of the head
+        relief += patch(0.145, 0.985, 0.055) * 0.014   // the bone running down from the eye
+        relief -= patch(0.100, 1.055, 0.050) * 0.010   // the dish above it
+        relief -= patch(0.048, 1.048, 0.042) * 0.024   // the socket
+        relief += patch(0.052, 1.042, 0.019) * 0.011   // and the eye sitting in it
+        relief -= patch(0.235, 0.945, 0.055) * 0.012   // the flat down the nose
+        relief += patch(-0.090, 0.700, 0.100) * 0.010  // the shoulder of the neck
+        return relief
     }
 
     /// A ring of the piece: where it runs in plan, and how deep it is there.
@@ -225,7 +299,31 @@ extension TurnedPieces {
             }
             smoothed = pass
         }
-        return smoothed
+
+        // Anywhere the step has turned an edge back on itself, put both its
+        // ends back where they were.
+        //
+        // The area of the whole ring cannot see this. A narrow part folds
+        // through itself long before the ring as a whole has lost much size —
+        // the bottom of the neck is four tenths across and a quarter deep, so
+        // it closes over while the rest is still creeping — and the folded part
+        // is then skinned inside out, which shows as a torn hole one can see
+        // into the piece through.
+        var held = smoothed
+        for _ in 0..<2 {
+            var pass = held
+            for i in 0..<count {
+                let j = (i + 1) % count
+                let was = (ring[j].x - ring[i].x, ring[j].y - ring[i].y)
+                let now = (held[j].x - held[i].x, held[j].y - held[i].y)
+                if was.0 * now.0 + was.1 * now.1 <= 0 {
+                    pass[i] = ring[i]
+                    pass[j] = ring[j]
+                }
+            }
+            held = pass
+        }
+        return held
     }
 
     /// The area a ring encloses, **signed**.
@@ -269,17 +367,52 @@ extension TurnedPieces {
             normals.append((ty / length, -tx / length))
         }
 
+        // How far the edge may roll in, point by point.
+        //
+        // A roll is an inset, and an inset wider than the place it is rolling
+        // through has nowhere to go: the two sides of a narrow spot roll into
+        // each other and come out as a tube hanging off the piece. The mouth
+        // did that, and so did the bottom of the neck.
+        //
+        // One figure for the whole outline is no use — it would have to suit
+        // the narrowest place on the piece and would leave the neck square — so
+        // it is measured where it is used. Distance to the nearest other part
+        // of the outline, and no more than half of it.
+        var reach = (0..<count).map { min(roll, outline[$0].depth * 0.9) }
+        for i in 0..<count {
+            // How far it is from here to the nearest *other* part of the
+            // outline — not counting its own neighbourhood, which is always
+            // close. The roll may have half of that and no more.
+            var nearest = Float.greatestFiniteMagnitude
+            for j in 0..<count {
+                let apart = min(abs(i - j), count - abs(i - j))
+                guard apart > 14 else { continue }
+                let dx = outline[j].x - outline[i].x, dy = outline[j].y - outline[i].y
+                nearest = min(nearest, (dx * dx + dy * dy).squareRoot())
+            }
+            reach[i] = min(reach[i], nearest * 0.45)
+        }
+
         // The face, drawn in until there is nothing left of it to draw.
         let full = area(outline)
         var faces: [Ring] = [(0..<count).map { i in
-            let reach = min(roll, outline[i].depth * 0.7)
-            return (outline[i].x - normals[i].0 * reach,
-                    outline[i].y - normals[i].1 * reach, outline[i].depth)
+            (outline[i].x - normals[i].0 * reach[i],
+             outline[i].y - normals[i].1 * reach[i], outline[i].depth)
         }]
-        while faces.count < 14 {
-            let next = drawIn(faces[faces.count - 1], by: 0.015)
+        while faces.count < 10 {
+            let next = drawIn(faces[faces.count - 1], by: 0.012)
             guard area(next) > full * 0.12 else { break }
             faces.append(next)
+        }
+        // Whether each ring still cuts into a whole face is the one number
+        // that says if this piece is sound, and it is not visible in a render
+        // until something is standing in front of the hole.
+        if ProcessInfo.processInfo.environment["DIAG"] != nil {
+            for (k, ring) in faces.enumerated() {
+                let clipped = earClip(ring.map { ($0.x, $0.y) })
+                print("  ring \(k): area \(area(ring)) of \(full), "
+                      + "cuts \(clipped.count) of \(ring.count - 2)")
+            }
         }
 
         // The face is closed with the **outline's** triangulation, not the
@@ -304,9 +437,32 @@ extension TurnedPieces {
             return 1 + bulge * sin(t * .pi / 2)
         }
 
+        // Nothing below the foot of the piece.
+        //
+        // Drawing a ring in creeps outwards round a sharp corner — smoothing
+        // averages points that are bunched together there, and the average can
+        // land outside the ring it came from. At the two corners where the neck
+        // is cut off that is downwards, and three hundred vertices ended up
+        // below the cut, sweeping the depth of the piece as they went: a thin
+        // fin of ivory hanging down through the collar on either side. The
+        // underside is a cut and is flat, so this costs nothing.
+        let foot = outline.map(\.y).min() ?? 0
+
         var rings: [[SIMD3<Float>]] = []
         func place(_ ring: Ring, _ sign: Float, _ k: Int) -> [SIMD3<Float>] {
-            ring.map { SIMD3($0.x * s, $0.y * s, sign * $0.depth * lift(k) * s) }
+            // The modelling is laid on over the sweep, and faded in from the
+            // edge: nothing at the rim, so the silhouette and the roll are left
+            // exactly as drawn — but all of it within two rings, not spread
+            // across the whole face. Spread out, the modelling only reaches
+            // full strength deep in the middle, and the things worth modelling
+            // are not in the middle: the eye and the cheekbone sit a fifth of
+            // the way in from the edge, and they came out as smudges.
+            let ramp = min(1, Float(k) / 2.0)
+            let inward = ramp * ramp * (3 - 2 * ramp)
+            return ring.map {
+                SIMD3($0.x * s, max(foot, $0.y) * s,
+                      sign * ($0.depth * lift(k) + modelling($0.x, $0.y) * inward) * s)
+            }
         }
         for k in stride(from: faces.count - 1, through: 1, by: -1) {
             rings.append(place(faces[k], -1, k))
@@ -314,10 +470,9 @@ extension TurnedPieces {
         for step in 0...rimSteps {
             let angle = -Float.pi / 2 + Float.pi * Float(step) / Float(rimSteps)
             rings.append((0..<count).map { i in
-                let reach = min(roll, outline[i].depth * 0.7)
-                let inset = reach * (1 - cos(angle))
+                let inset = reach[i] * (1 - cos(angle))
                 return SIMD3((outline[i].x - normals[i].0 * inset) * s,
-                             (outline[i].y - normals[i].1 * inset) * s,
+                             max(foot, outline[i].y - normals[i].1 * inset) * s,
                              outline[i].depth * sin(angle) * s)
             })
         }
@@ -380,7 +535,7 @@ extension TurnedPieces {
     static let knightOutline = through(knightAnchors)
 
     static func knightHead(_ s: Float) -> SCNGeometry {
-        var head = shell(knightOutline, scale: s, roll: 0.042, bulge: 0.24)
+        var head = shell(knightOutline, scale: s, roll: 0.038, bulge: 0.24)
         head.append(ear(s, side: 1))
         head.append(ear(s, side: -1))
         return head.geometry
@@ -461,12 +616,18 @@ extension TurnedPieces {
             // stuck on the back rather than as part of the piece.
             let along = Float(i) / Float(run.count - 1)
             let fade = min(1, min(along, 1 - along) / 0.18)
-            let rise = stand * (fade * fade * (3 - 2 * fade))
+            // Both axes of the section die away together, not just the height.
+            // Fading the height alone leaves the ends as flat slivers — a ring
+            // of points strung along a line with no circle to them — and a
+            // sliver skins into a tangle of triangles that tears open the neck
+            // where the mane starts and finishes.
+            let taper = 0.16 + 0.84 * (fade * fade * (3 - 2 * fade))
+            let rise = stand * taper
             let before = run[max(0, i - 1)], after = run[min(run.count - 1, i + 1)]
             let tx = after.x - before.x, ty = after.y - before.y
             let length = max(1e-6, (tx * tx + ty * ty).squareRoot())
             let outward = (ty / length, -tx / length)
-            let across = run[i].depth * 0.72
+            let across = run[i].depth * 0.72 * taper
             rings.append((0..<segments).map { step in
                 let angle = 2 * Float.pi * Float(step) / Float(segments)
                 let out = rise * cos(angle) - sink

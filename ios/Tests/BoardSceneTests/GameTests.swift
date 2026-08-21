@@ -239,22 +239,24 @@ struct KnightTests {
     /// The one piece a lathe cannot turn, and so the one piece whose geometry
     /// comes from somewhere else.
     ///
-    /// Measured by its bounding box, because an SCNShape does not expose
-    /// vertices the way a geometry built by hand does — asking it for its
-    /// vertex sources returns nothing even for a plain square, which is a very
-    /// convincing way to be told a shape is missing when it is not.
-    @Test("stands as tall as the silhouette it is cut from")
+    /// Measured by its bounding box against the turning's, rather than against
+    /// figures of its own. The head has been recut several times and its foot
+    /// has moved up the piece with each one — it is cut off wherever the
+    /// turning below is wide enough to swallow the corners of a neck this
+    /// broad. What must hold is not a number but the relation: the head has to
+    /// reach down *into* the base, or it stands on air.
+    @Test("reaches down into the base it stands on")
     func head() throws {
         let node = TurnedPieces.node(for: .knight)
         #expect(node.childNodes.count == 2, "the knight should be a base and a head")
 
+        let base = try #require(node.childNodes.first)
         let head = try #require(node.childNodes.last)
         let (low, high) = head.boundingBox
         let height = Float(high.y) - Float(low.y)
-        // The silhouette runs from the base of the neck to the ear tips: 0.658
-        // of the piece's own scale, which for a knight is 0.72.
         #expect(height > 0.4, "the head came out \(height) tall, so it did not tessellate")
-        #expect(Float(low.y) < 0.4, "the head starts at \(low.y), above the neck it should meet")
+        #expect(Float(low.y) < Float(base.boundingBox.max.y),
+                "the head starts at \(low.y), above the base's top at \(base.boundingBox.max.y)")
     }
 }
 
