@@ -235,11 +235,6 @@ public struct BoardView: View {
         return Text(Self.pawns(score))
             .font(.system(size: squareSize * 0.24, weight: .bold, design: .rounded))
             .monospacedDigit()
-            // A signed number reads left to right in every language. Left to
-            // the paragraph's direction, the sign is a neutral character next
-            // to a number and a right-to-left layout is entitled to put it on
-            // the other end.
-            .environment(\.layoutDirection, .leftToRight)
             .lineLimit(1)
             .fixedSize()
             .foregroundStyle(Theatre.light)
@@ -261,16 +256,48 @@ public struct BoardView: View {
         return nil
     }
 
+    /// The number on a move's badge, in the reader's own numerals.
+    ///
+    /// Through a `NumberFormatter` rather than `String(format:)`, because a
+    /// signed number is not the same string everywhere. Arabic writes it with
+    /// its own digits and its own decimal mark — ٠٫٤ rather than 0.4 — and both
+    /// Arabic and Hebrew put an invisible directional mark before the sign:
+    /// `U+061C` and `U+200E`. That mark is the whole trick. Left to itself the
+    /// bidirectional algorithm treats a leading minus as a neutral character
+    /// beside a number and hands it to the paragraph's direction, which in
+    /// those languages puts it on the *right* of the digits. The convention is
+    /// the sign on the left, and the mark is what holds it there.
+    ///
+    /// One formatter, kept: building one costs more than the drawing does, and
+    /// this runs once per legal move on every redraw.
+    private static let scoreFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 1
+        formatter.maximumFractionDigits = 1
+        formatter.positivePrefix = formatter.plusSign
+        return formatter
+    }()
+
+    /// The distance to mate: a plain count, with no sign and no fraction.
+    private static let mateFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 0
+        return formatter
+    }()
+
     static func pawns(_ centipawns: Int) -> String {
         // Mate is stored flattened as ±(10000 − moves), so the distance can be
         // read back out. "#3" says far more than a bare "#".
         if abs(centipawns) >= 9000 {
             let moves = 10_000 - abs(centipawns)
-            let distance = moves > 0 ? "\(moves)" : ""
-            return centipawns > 0 ? "#\(distance)" : "−#\(distance)"
+            let distance = moves > 0 ? mateFormatter.string(from: NSNumber(value: moves)) ?? "" : ""
+            let mate = "#" + distance
+            return centipawns > 0 ? mate : scoreFormatter.minusSign + mate
         }
         let value = Double(centipawns) / 100
-        return String(format: "%@%.1f", value >= 0 ? "+" : "−", abs(value))
+        return scoreFormatter.string(from: NSNumber(value: value)) ?? "\(value)"
     }
 
     /// Green for the best move, sliding through amber to red as it gets worse.
