@@ -175,6 +175,41 @@
   ]
  },
  {
+  "key": "appearance.tone.boxwood",
+  "english": "Boxwood",
+  "files": [
+   "Appearance.swift"
+  ]
+ },
+ {
+  "key": "appearance.tone.chalk",
+  "english": "Chalk",
+  "files": [
+   "Appearance.swift"
+  ]
+ },
+ {
+  "key": "appearance.tone.frost",
+  "english": "Frost",
+  "files": [
+   "Appearance.swift"
+  ]
+ },
+ {
+  "key": "appearance.tone.mist",
+  "english": "Mist",
+  "files": [
+   "Appearance.swift"
+  ]
+ },
+ {
+  "key": "appearance.tone.snow",
+  "english": "Snow",
+  "files": [
+   "Appearance.swift"
+  ]
+ },
+ {
   "key": "board.promoteTo",
   "english": "Promote to",
   "files": [
@@ -2025,6 +2060,13 @@
  {
   "key": "settings.flatNote",
   "english": "Read from above. Arrows, hints and dragging a piece across the squares.",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.lightSide",
+  "english": "Light side",
   "files": [
    "SettingsScreen.swift"
   ]

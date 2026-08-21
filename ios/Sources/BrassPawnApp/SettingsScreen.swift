@@ -58,6 +58,7 @@ struct SettingsScreen: View {
                     if !app.progress.appearance.dimension.isDimensional {
                         section(L.t("settings.pieces", "Pieces")) { PieceSetGallery() }
                         section(L.t("settings.squares", "Squares")) { BoardGallery() }
+                        section(L.t("settings.lightSide", "Light side")) { LightToneGallery() }
                     }
                 }
                 .padding(16)
@@ -242,7 +243,8 @@ private struct PieceSetGallery: View {
 
     /// The chosen board, so the pieces are judged where they will be seen.
     private var previewBoard: some View {
-        let theme = BoardTheme(style: app.progress.appearance.board)
+        let theme = BoardTheme(style: app.progress.appearance.board,
+                               lightTone: app.progress.appearance.lightTone)
         return HStack(spacing: 0) {
             ForEach(0..<4, id: \.self) { column in
                 ZStack {
@@ -303,9 +305,13 @@ private struct BoardGallery: View {
 private struct MiniBoard: View {
     @Environment(\.pieceSet) private var pieceSet
     let style: BoardStyle
+    var lightTone: LightTone = .boxwood
+    /// Which side stands on it. A board is judged by the dark piece and the
+    /// light side by the light one.
+    var side: PieceColor = .black
 
     var body: some View {
-        let theme = BoardTheme(style: style)
+        let theme = BoardTheme(style: style, lightTone: lightTone)
         ZStack {
             VStack(spacing: 0) {
                 ForEach(0..<2, id: \.self) { row in
@@ -317,6 +323,7 @@ private struct MiniBoard: View {
                                 if let textures = theme.textures {
                                     Image(isLight ? textures.light : textures.dark)
                                         .resizable().scaledToFill()
+                                        .modifier(LightShade(tone: isLight ? lightTone : .boxwood))
                                 }
                             }
                             .frame(width: 34, height: 34)
@@ -324,7 +331,7 @@ private struct MiniBoard: View {
                     }
                 }
             }
-            PieceView(piece: Piece(.black, .knight), size: 34)
+            PieceView(piece: Piece(side, .knight), size: 34, lightTone: lightTone)
                 .offset(x: -17, y: 17)
         }
         .clipShape(RoundedRectangle(cornerRadius: 7))
@@ -332,6 +339,68 @@ private struct MiniBoard: View {
     }
 }
 
+
+/// The shading applied to a light square or a white piece.
+///
+/// The same numbers the board itself is drawn with, so a swatch in the settings
+/// is the thing rather than an impression of it.
+private struct LightShade: ViewModifier {
+    let tone: LightTone
+
+    func body(content: Content) -> some View {
+        let (multiply, lift) = tone.shading
+        return content
+            .colorMultiply(Color(red: multiply.0, green: multiply.1, blue: multiply.2))
+            .brightness(lift)
+    }
+}
+
+/// How light the light side is: snow, through the boxwood the set was
+/// photographed in, to a pale blue.
+///
+/// Its own choice rather than part of the board, because it shades the pieces
+/// as well as the squares — and somebody who finds ivory on cream hard to read
+/// wants both moved, not one of them.
+private struct LightToneGallery: View {
+    @Environment(AppModel.self) private var app
+
+    private let columns = [GridItem(.adaptive(minimum: 96), spacing: 10)]
+
+    var body: some View {
+        LazyVGrid(columns: columns, spacing: 10) {
+            ForEach(LightTone.allCases) { tone in
+                let chosen = app.progress.appearance.lightTone == tone
+                Button {
+                    app.update { $0.appearance.lightTone = tone }
+                } label: {
+                    VStack(spacing: 7) {
+                        MiniBoard(style: app.progress.appearance.board, lightTone: tone, side: .white)
+                        Text(tone.name)
+                            .font(Face.mono(9, weight: .medium))
+                            .tracking(1.2)
+                            .textCase(.uppercase)
+                            .foregroundStyle(chosen ? Theatre.brass : Theatre.ivoryDim)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.8)
+                    }
+                    .padding(8)
+                    .frame(maxWidth: .infinity)
+                    .background {
+                        BrassPlateShape(cut: 10)
+                            .fill(chosen ? Theatre.brassGlow : Theatre.ink3)
+                    }
+                    .overlay {
+                        BrassPlateShape(cut: 10)
+                            .strokeBorder(chosen ? Theatre.brass : Theatre.brassDeep.opacity(0.45),
+                                          lineWidth: chosen ? 1 : 0.6)
+                    }
+                    .shadow(color: chosen ? Theatre.brassGlow : .clear, radius: 10)
+                }
+                .buttonStyle(BrassPressStyle())
+            }
+        }
+    }
+}
 
 /// Flat or in the round, and which set stands on the round one.
 ///

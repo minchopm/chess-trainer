@@ -11,18 +11,25 @@ import Observation
 @MainActor
 @Observable
 final class MoveValueController {
-    private(set) var values: MoveValues?
     private(set) var isComputing = false
     private(set) var isEnabled = false
 
-    /// The position the current values belong to. Values from an earlier move
-    /// would be worse than none at all.
+    /// What was computed, and the position it was computed for. Values from an
+    /// earlier move would be worse than none at all.
+    private var computed: MoveValues?
     private var computedFEN: String?
 
-    var isStale: Bool { values != nil && computedFEN != nil }
+    /// The values to draw, which is nothing at all unless they are switched on.
+    ///
+    /// One property rather than two, because two let the board show values the
+    /// switch says are off — and it did. Switching off left the last set behind
+    /// for the board to go on drawing, and they survived a move as well: they
+    /// were only dropped where a screen remembered to say so, and the move the
+    /// *opponent* plays goes through none of those places.
+    var values: MoveValues? { isEnabled ? computed : nil }
 
     func reset() {
-        values = nil
+        computed = nil
         computedFEN = nil
         isEnabled = false
     }
@@ -30,7 +37,7 @@ final class MoveValueController {
     /// Drop values that no longer match the position on the board.
     func invalidate(unless fen: String) {
         if computedFEN != fen {
-            values = nil
+            computed = nil
             computedFEN = nil
         }
     }
@@ -38,6 +45,8 @@ final class MoveValueController {
     func toggle(fen: String, engine: StockfishEngine) async {
         if isEnabled {
             isEnabled = false
+            computed = nil
+            computedFEN = nil
             return
         }
         isEnabled = true
@@ -49,8 +58,8 @@ final class MoveValueController {
         isComputing = true
         defer { isComputing = false }
 
-        if let computed = try? await engine.valueEveryMove(fen: fen) {
-            values = computed
+        if let result = try? await engine.valueEveryMove(fen: fen) {
+            computed = result
             computedFEN = fen
         }
     }

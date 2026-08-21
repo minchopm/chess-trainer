@@ -19,6 +19,8 @@ public struct Appearance: Codable, Equatable, Sendable {
     public var dimension: BoardDimension
     /// Which set stands on the round board.
     public var carving: Carving
+    /// How the light side is shaded — the white pieces and the pale squares.
+    public var lightTone: LightTone
 
     public init(
         pieces: PieceSet = .ebony,
@@ -26,7 +28,8 @@ public struct Appearance: Codable, Equatable, Sendable {
         soundsOn: Bool = true,
         volume: Double = 0.7,
         dimension: BoardDimension = .flat,
-        carving: Carving = .banded
+        carving: Carving = .banded,
+        lightTone: LightTone = .boxwood
     ) {
         self.pieces = pieces
         self.board = board
@@ -34,6 +37,7 @@ public struct Appearance: Codable, Equatable, Sendable {
         self.volume = volume
         self.dimension = dimension
         self.carving = carving
+        self.lightTone = lightTone
     }
 
     public init(from decoder: Decoder) throws {
@@ -44,6 +48,53 @@ public struct Appearance: Codable, Equatable, Sendable {
         volume = try container.decodeIfPresent(Double.self, forKey: .volume) ?? 0.7
         dimension = try container.decodeIfPresent(BoardDimension.self, forKey: .dimension) ?? .flat
         carving = try container.decodeIfPresent(Carving.self, forKey: .carving) ?? .banded
+        lightTone = try container.decodeIfPresent(LightTone.self, forKey: .lightTone) ?? .boxwood
+    }
+}
+
+/// How the light side is shaded, from snow through the boxwood the set is
+/// photographed in to a pale blue.
+///
+/// The dark side has had four stains to choose from since the set was
+/// photographed, and the light side has had one — which is how a real set is
+/// made, and is no help at all to somebody who finds ivory-on-cream hard to
+/// read. This shifts the whole light side together, pieces and squares: shading
+/// only one of them would trade one pair that sits too close for another.
+///
+/// It is a tint over the photographs rather than a second set of them. Boxwood
+/// is very nearly white already, so there is room to lift it to snow and room
+/// to cool it towards blue, and nowhere near enough to make it a dark side.
+public enum LightTone: String, Codable, CaseIterable, Identifiable, Sendable {
+    case snow, chalk, boxwood, frost, mist
+
+    public var id: String { rawValue }
+
+    public var name: String {
+        switch self {
+        case .snow: L.t("appearance.tone.snow", "Snow")
+        case .chalk: L.t("appearance.tone.chalk", "Chalk")
+        case .boxwood: L.t("appearance.tone.boxwood", "Boxwood")
+        case .frost: L.t("appearance.tone.frost", "Frost")
+        case .mist: L.t("appearance.tone.mist", "Mist")
+        }
+    }
+
+    /// What to multiply the light side by, and how much to lift it afterwards.
+    ///
+    /// Multiplying alone can only darken, and half of what is wanted here is
+    /// *whiter* than the photograph — so the lift is what gets there, and the
+    /// multiplier is what turns it blue on the way back.
+    public var shading: (multiply: (Double, Double, Double), lift: Double) {
+        switch self {
+        case .snow: ((1.00, 1.00, 1.00), 0.10)
+        case .chalk: ((1.00, 0.995, 0.985), 0.05)
+        case .boxwood: ((1.00, 1.00, 1.00), 0.00)
+        // Boxwood is a warm photograph — its blue channel is its lowest — so
+        // the cool end of the range is reached by taking red and green down,
+        // not by adding blue there is no headroom for.
+        case .frost: ((0.900, 0.960, 1.00), 0.05)
+        case .mist: ((0.800, 0.900, 1.00), 0.10)
+        }
     }
 }
 
