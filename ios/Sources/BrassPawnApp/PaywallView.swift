@@ -280,7 +280,7 @@ struct PaywallView: View {
                     Image(systemName: "doc.text")
                     Text(L.t("settings.about", "About & licence"))
                     Spacer()
-                    Image(systemName: "chevron.right")
+                    Image(systemName: "chevron.forward")
                 }
                 .font(.subheadline)
                 .foregroundStyle(Theatre.ivory)
@@ -406,7 +406,7 @@ struct ProUpsellRow: View {
                             .font(.caption).foregroundStyle(Theatre.ivoryDim)
                     }
                     Spacer()
-                    Image(systemName: "chevron.right").font(.caption).foregroundStyle(Theatre.ivoryFaint)
+                    Image(systemName: "chevron.forward").font(.caption).foregroundStyle(Theatre.ivoryFaint)
                 }
                 .padding(.horizontal, 11)
                 .padding(.vertical, 9)

@@ -235,6 +235,11 @@ public struct BoardView: View {
         return Text(Self.pawns(score))
             .font(.system(size: squareSize * 0.24, weight: .bold, design: .rounded))
             .monospacedDigit()
+            // A signed number reads left to right in every language. Left to
+            // the paragraph's direction, the sign is a neutral character next
+            // to a number and a right-to-left layout is entitled to put it on
+            // the other end.
+            .environment(\.layoutDirection, .leftToRight)
             .lineLimit(1)
             .fixedSize()
             .foregroundStyle(Theatre.light)
