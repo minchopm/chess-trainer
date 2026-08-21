@@ -54,7 +54,8 @@ public struct RootView: View {
         .environment(app)
         .environment(activity)
         .environment(navigator)
-        .environment(\.boardTheme, BoardTheme(style: app.progress.appearance.board))
+        .environment(\.boardTheme, BoardTheme(style: app.progress.appearance.board,
+                                              lightTone: app.progress.appearance.lightTone))
         .environment(\.pieceSet, app.progress.appearance.pieces)
         .task { await app.start() }
         .onAppear {

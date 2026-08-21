@@ -59,8 +59,20 @@ extension EnvironmentValues {
 
 /// Resolves the selected family while preserving the size and weight hierarchy
 /// of each screen. Every textual component goes through this resolver, so a
-/// family change cannot leave headings or compact labels behind.
+/// family change cannot leave headings or compact labels behind. When a bundled
+/// family does not contain the current language's script, use the matching
+/// system design instead of letting Core Text mix fallback glyphs into a word.
 enum AppTypography {
+    private static let cormorantScripts = Set(["Latn", "Cyrl"])
+    private static let jetBrainsScripts = Set(["Latn", "Cyrl", "Grek"])
+
+    private static let script: String = {
+        let language = Locale.current.language
+        return language.script?.identifier
+            ?? Locale.Language(identifier: language.maximalIdentifier).script?.identifier
+            ?? "Latn"
+    }()
+
     static func font(
         for typeface: AppTypeface,
         style: Font.TextStyle,
@@ -70,9 +82,13 @@ enum AppTypography {
         case .system:
             .system(style)
         case .cormorantGaramond:
-            .custom("CormorantGaramond-Regular", size: baseSize(for: style), relativeTo: style)
+            cormorantScripts.contains(script)
+                ? .custom("CormorantGaramond-Regular", size: baseSize(for: style), relativeTo: style)
+                : .system(style, design: .serif)
         case .jetBrainsMono:
-            .custom("JetBrainsMono-Regular", size: baseSize(for: style), relativeTo: style)
+            jetBrainsScripts.contains(script)
+                ? .custom("JetBrainsMono-Regular", size: baseSize(for: style), relativeTo: style)
+                : .system(style, design: .monospaced)
         }
         return weight.map { base.weight($0) } ?? base
     }
@@ -87,9 +103,13 @@ enum AppTypography {
         case .system:
             .system(size: size)
         case .cormorantGaramond:
-            .custom("CormorantGaramond-Regular", size: size, relativeTo: style)
+            cormorantScripts.contains(script)
+                ? .custom("CormorantGaramond-Regular", size: size, relativeTo: style)
+                : .system(size: size, design: .serif)
         case .jetBrainsMono:
-            .custom("JetBrainsMono-Regular", size: size, relativeTo: style)
+            jetBrainsScripts.contains(script)
+                ? .custom("JetBrainsMono-Regular", size: size, relativeTo: style)
+                : .system(size: size, design: .monospaced)
         }
         return weight.map { base.weight($0) } ?? base
     }

@@ -10,7 +10,15 @@ public struct BoardTheme: Sendable {
     public var lastMove: Color
     public var selection: Color
     public var check: Color
+    /// The dot on an empty square a piece may move to, and the ring round one
+    /// it may take. Two of them, because one cannot be seen everywhere.
+    ///
+    /// It was a single dark dot at a quarter opacity. On a light square that
+    /// reads; on a dark square it is nearly gone, and drawn over a black piece
+    /// it is not there at all — which is the half of the board where knowing
+    /// where you may move matters most.
     public var hint: Color
+    public var hintOnDark: Color
     public var coachArrow: Color
     /// Moves you have queued while it is not your turn.
     public var premove: Color
@@ -22,15 +30,25 @@ public struct BoardTheme: Sendable {
         public let dark: String
     }
 
+    /// How the light side is shaded. Carried on the theme so the board and the
+    /// pieces drawn over it are shaded by the same number.
+    public var lightTone: LightTone = .boxwood
+
     public static var standard: BoardTheme { BoardTheme(style: .wood) }
 
     /// Highlights are chosen per board, not once: the yellow that reads as
     /// "last move" on maple disappears on the green board, and the blue that
     /// reads as "selected" on slate is invisible on ocean.
-    public init(style: BoardStyle) {
+    public init(style: BoardStyle, lightTone tone: LightTone = .boxwood) {
         let light = style.squares.light
         let dark = style.squares.dark
-        lightSquare = Color(red: light.0, green: light.1, blue: light.2)
+        lightTone = tone
+        let shading = tone.shading
+        lightSquare = Color(
+            red: min(1, light.0 * shading.multiply.0 + shading.lift),
+            green: min(1, light.1 * shading.multiply.1 + shading.lift),
+            blue: min(1, light.2 * shading.multiply.2 + shading.lift)
+        )
         darkSquare = Color(red: dark.0, green: dark.1, blue: dark.2)
         textures = style.textures.map { Textures(light: $0.light, dark: $0.dark) }
 
@@ -52,7 +70,8 @@ public struct BoardTheme: Sendable {
             selection = Color(red: 0.40, green: 0.30, blue: 0.75).opacity(0.40)
         }
         check = Color(red: 0.851, green: 0.439, blue: 0.373)
-        hint = Theatre.shadow.opacity(0.28)
+        hint = Theatre.shadow.opacity(0.32)
+        hintOnDark = Color(red: 1, green: 0.98, blue: 0.94).opacity(0.46)
         coachArrow = Color(red: 0.424, green: 0.749, blue: 0.451)
         premove = Color(red: 0.357, green: 0.608, blue: 0.835).opacity(0.42)
     }

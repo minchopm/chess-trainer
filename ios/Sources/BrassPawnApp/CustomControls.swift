@@ -1,11 +1,18 @@
 import SwiftUI
 
+/// Back, in whichever direction back is.
+///
+/// `chevron.backward` rather than `chevron.left`: the two draw the same glyph
+/// in English and only one of them turns round for a language that reads
+/// right to left. In Hebrew or Arabic the button sits on the right of the bar
+/// and pointed left anyway, which is an arrow aimed at the rest of the screen.
 struct BrassBackButton: View {
     let action: () -> Void
 
     var body: some View {
         Button(action: action) {
-            BrassIcon("chevron.left", size: 19)
+            Image(systemName: "chevron.backward")
+                .font(.system(size: 15, weight: .semibold))
                 .foregroundStyle(Theatre.brassHot)
                 .frame(width: 44, height: 44)
                 .background {
@@ -177,14 +184,14 @@ struct BrassCyclePicker<Value: Hashable>: View {
                 .foregroundStyle(Theatre.ivoryFaint)
 
             HStack(spacing: 8) {
-                arrow("chevron.left", offset: -1)
+                arrow("chevron.backward", offset: -1)
                 Text(label(selection))
                     .appFont(.subheadline, weight: .medium)
                     .foregroundStyle(Theatre.ivory)
                     .lineLimit(1)
                     .minimumScaleFactor(0.75)
                     .frame(maxWidth: .infinity)
-                arrow("chevron.right", offset: 1)
+                arrow("chevron.forward", offset: 1)
             }
             .padding(4)
             .background {

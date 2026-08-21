@@ -22,6 +22,33 @@ public actor StockfishEngine {
     private var handle: OpaquePointer { handleBox.pointer }
     private var isReady = false
 
+    /// One search at a time — enforced, not assumed.
+    ///
+    /// Being an actor serialises *calls*, which is not the same as serialising
+    /// searches. `analyse` suspends at the continuation it waits for its
+    /// results on, and an actor lets the next call in while it is suspended. So
+    /// a second search would start while the first was still running: it
+    /// overwrote the callback context the C side holds, so the first search's
+    /// results were delivered to the second search's session, and the first
+    /// call's continuation was left parked with nothing that would ever resume
+    /// it. The coach grades a move at the same moment the engine is asked for
+    /// its reply, which is exactly when this happens — and it read as the
+    /// engine thinking for minutes.
+    private var searching = false
+    private var queue: [CheckedContinuation<Void, Never>] = []
+
+    private func beginSearch() async {
+        while searching {
+            await withCheckedContinuation { queue.append($0) }
+        }
+        searching = true
+    }
+
+    private func endSearch() {
+        searching = false
+        if !queue.isEmpty { queue.removeFirst().resume() }
+    }
+
     /// Collects one search's output. Lives across the C callback boundary, so
     /// it is a reference type reached through an opaque pointer.
     private final class Session: @unchecked Sendable {
@@ -123,6 +150,9 @@ public actor StockfishEngine {
     ) async throws -> Analysis {
         guard isReady else { throw EngineError.networksMissing("networks not loaded") }
 
+        await beginSearch()
+        defer { endSearch() }
+
         setOption("MultiPV", String(multiPV))
         setOption("UCI_LimitStrength", "false")
 
@@ -132,6 +162,18 @@ public actor StockfishEngine {
 
         let session = Session()
         self.session = session
+
+        // A search that overruns its budget is stopped. Stockfish honours
+        // `movetime` itself and this should never fire — but "should never"
+        // is what the last two minutes of waiting were made of, and a player
+        // staring at a board has no way to tell a long think from a hang.
+        let watchdog = Task { [ceiling = Self.ceilingMs(for: movetimeMs)] in
+            try await Task.sleep(for: .milliseconds(ceiling))
+            // No hop: a task made here belongs to this actor already, and it
+            // can run while the search it is watching has the actor suspended.
+            self.stop()
+        }
+        defer { watchdog.cancel() }
 
         await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
             guard session.park(continuation) else {
@@ -195,5 +237,18 @@ public actor StockfishEngine {
 
     public func stop() {
         sf_stop(handle)
+    }
+
+    /// The longest any one search may run, whatever it was asked for.
+    ///
+    /// Ten seconds is well past every budget in `SearchBudget` — the longest
+    /// asks for two and a half — so reaching it means something has gone wrong
+    /// rather than that the position was hard.
+    static let hardCeilingMs = 10_000
+
+    private static func ceilingMs(for movetimeMs: Int) -> Int {
+        guard movetimeMs > 0 else { return hardCeilingMs }
+        // Its own budget and a moment to finish the iteration it is on.
+        return min(movetimeMs + 1_500, hardCeilingMs)
     }
 }

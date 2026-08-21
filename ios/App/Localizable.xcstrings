@@ -4926,6 +4926,121 @@
         }
       }
     },
+    "appearance.tone.boxwood": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boxwood"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boxwood"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boxwood"
+          }
+        }
+      }
+    },
+    "appearance.tone.chalk": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chalk"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chalk"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chalk"
+          }
+        }
+      }
+    },
+    "appearance.tone.frost": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frost"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frost"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frost"
+          }
+        }
+      }
+    },
+    "appearance.tone.mist": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mist"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mist"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mist"
+          }
+        }
+      }
+    },
+    "appearance.tone.snow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snow"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snow"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snow"
+          }
+        }
+      }
+    },
     "board.promoteTo": {
       "extractionState": "manual",
       "localizations": {
@@ -57361,6 +57476,29 @@
         }
       }
     },
+    "settings.lightSide": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light side"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light side"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light side"
+          }
+        }
+      }
+    },
     "settings.more": {
       "extractionState": "manual",
       "localizations": {
@@ -60846,7 +60984,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ma ingyen: %lld feladvány, %lld Rush-kör, a többiből %lld-%lld."
+            "value": "Ma ingyen: %lld feladvány, %lld Rush-kör, a többiből egyenként %lld."
           }
         },
         "id": {

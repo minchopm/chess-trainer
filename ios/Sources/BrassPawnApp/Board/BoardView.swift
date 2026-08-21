@@ -147,7 +147,16 @@ public struct BoardView: View {
                 let isLight = (square.file + square.rank) % 2 == 1
                 context.fill(Path(rect), with: .color(isLight ? theme.lightSquare : theme.darkSquare))
                 if let tile = tiles?[isLight ? 0 : 1] {
-                    context.draw(tile, in: rect)
+                    // A photographed board covers the colour underneath it, so
+                    // shading the light square means shading its photograph.
+                    if isLight, let shade = Self.shading(theme.lightTone) {
+                        context.drawLayer { light in
+                            light.addFilter(.colorMatrix(shade))
+                            light.draw(tile, in: rect)
+                        }
+                    } else {
+                        context.draw(tile, in: rect)
+                    }
                 }
 
                 if isInCheck(square) {
@@ -174,17 +183,32 @@ public struct BoardView: View {
 
     private func hints(squareSize: CGFloat) -> some View {
         ForEach(destinations(from: selected), id: \.index) { square in
+            // Dark on a light square, light on a dark one — and light over a
+            // piece, whatever the square under it, because the piece is what
+            // the ring is drawn across.
+            let onDark = (square.file + square.rank) % 2 == 0
+            let occupied = position[square] != nil
+            let ink = (onDark || occupied) ? theme.hintOnDark : theme.hint
             Group {
                 if let score = value(moving: selected, to: square) {
                     valueBadge(score: score, squareSize: squareSize)
-                } else if position[square] == nil {
+                } else if !occupied {
                     Circle()
-                        .fill(theme.hint)
+                        .fill(ink)
                         .frame(width: squareSize * 0.28, height: squareSize * 0.28)
+                        // A hairline of the opposite ink, so the dot keeps an
+                        // edge on a square whose wood happens to sit between
+                        // the two.
+                        .overlay(
+                            Circle().strokeBorder(onDark ? theme.hint : theme.hintOnDark,
+                                                  lineWidth: squareSize * 0.018)
+                                .frame(width: squareSize * 0.28, height: squareSize * 0.28)
+                        )
                 } else {
                     Circle()
-                        .strokeBorder(theme.hint, lineWidth: squareSize * 0.09)
+                        .strokeBorder(ink, lineWidth: squareSize * 0.09)
                         .frame(width: squareSize * 0.92, height: squareSize * 0.92)
+                        .shadow(color: Theatre.shadow.opacity(0.5), radius: squareSize * 0.03)
                 }
             }
             .frame(width: squareSize, height: squareSize)
@@ -232,16 +256,48 @@ public struct BoardView: View {
         return nil
     }
 
+    /// The number on a move's badge, in the reader's own numerals.
+    ///
+    /// Through a `NumberFormatter` rather than `String(format:)`, because a
+    /// signed number is not the same string everywhere. Arabic writes it with
+    /// its own digits and its own decimal mark — ٠٫٤ rather than 0.4 — and both
+    /// Arabic and Hebrew put an invisible directional mark before the sign:
+    /// `U+061C` and `U+200E`. That mark is the whole trick. Left to itself the
+    /// bidirectional algorithm treats a leading minus as a neutral character
+    /// beside a number and hands it to the paragraph's direction, which in
+    /// those languages puts it on the *right* of the digits. The convention is
+    /// the sign on the left, and the mark is what holds it there.
+    ///
+    /// One formatter, kept: building one costs more than the drawing does, and
+    /// this runs once per legal move on every redraw.
+    private static let scoreFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 1
+        formatter.maximumFractionDigits = 1
+        formatter.positivePrefix = formatter.plusSign
+        return formatter
+    }()
+
+    /// The distance to mate: a plain count, with no sign and no fraction.
+    private static let mateFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 0
+        return formatter
+    }()
+
     static func pawns(_ centipawns: Int) -> String {
         // Mate is stored flattened as ±(10000 − moves), so the distance can be
         // read back out. "#3" says far more than a bare "#".
         if abs(centipawns) >= 9000 {
             let moves = 10_000 - abs(centipawns)
-            let distance = moves > 0 ? "\(moves)" : ""
-            return centipawns > 0 ? "#\(distance)" : "−#\(distance)"
+            let distance = moves > 0 ? mateFormatter.string(from: NSNumber(value: moves)) ?? "" : ""
+            let mate = "#" + distance
+            return centipawns > 0 ? mate : scoreFormatter.minusSign + mate
         }
         let value = Double(centipawns) / 100
-        return String(format: "%@%.1f", value >= 0 ? "+" : "−", abs(value))
+        return scoreFormatter.string(from: NSNumber(value: value)) ?? "\(value)"
     }
 
     /// Green for the best move, sliding through amber to red as it gets worse.
@@ -263,8 +319,26 @@ public struct BoardView: View {
     /// that piece stands, so a full board costs twelve resolves rather than
     /// thirty-two, and the shadow is a single offscreen pass for the whole
     /// layer instead of one per piece.
+    /// The light side's shading as a colour matrix, or nothing where the tone
+    /// is the photograph's own.
+    ///
+    /// A matrix rather than a multiply, because a multiply can only darken and
+    /// half of the range wanted here is whiter than the boxwood the set was
+    /// photographed in. The fifth column is the part that lifts.
+    nonisolated static func shading(_ tone: LightTone) -> ColorMatrix? {
+        guard tone != .boxwood else { return nil }
+        let (multiply, lift) = tone.shading
+        var matrix = ColorMatrix()
+        matrix.r1 = Float(multiply.0); matrix.r5 = Float(lift)
+        matrix.g2 = Float(multiply.1); matrix.g5 = Float(lift)
+        matrix.b3 = Float(multiply.2); matrix.b5 = Float(lift)
+        return matrix
+    }
+
     private func pieces(squareSize: CGFloat, side: CGFloat) -> some View {
-        Canvas { context, _ in
+        // Read before the drawing closure, which is not on the main actor.
+        let shade = Self.shading(theme.lightTone)
+        return Canvas { context, _ in
             var art: [Piece: GraphicsContext.ResolvedImage] = [:]
             var glyphs: [Piece: (fill: GraphicsContext.ResolvedText, rim: GraphicsContext.ResolvedText)] = [:]
             let fontSize = squareSize * 0.78
@@ -296,7 +370,14 @@ public struct BoardView: View {
                     if let image = art[piece] {
                         // The art is centred on its own square canvas, so the
                         // board square is the frame and nothing is nudged.
-                        layer.draw(image, in: square)
+                        if piece.color == .white, let shade = shade {
+                            layer.drawLayer { white in
+                                white.addFilter(.colorMatrix(shade))
+                                white.draw(image, in: square)
+                            }
+                        } else {
+                            layer.draw(image, in: square)
+                        }
                         return
                     }
                     guard let glyph = glyphs[piece] else { return }
@@ -505,14 +586,24 @@ public struct BoardView: View {
 struct PieceView: View {
     let piece: Piece
     let size: CGFloat
+    /// Overridden where a piece is shown to choose a tone by, so the swatch can
+    /// show a tone that is not the one in force yet.
+    var lightTone: LightTone?
     @Environment(\.pieceSet) private var pieceSet
+    @Environment(\.boardTheme) private var theme
 
     var body: some View {
-        Group {
+        let tone = lightTone ?? theme.lightTone
+        let shading = piece.color == .white ? tone.shading : (multiply: (1.0, 1.0, 1.0), lift: 0.0)
+        return Group {
             if !pieceSet.usesGlyphs {
                 Image(PieceArt.name(for: piece, set: pieceSet))
                     .resizable()
                     .scaledToFit()
+                    .colorMultiply(Color(red: shading.multiply.0,
+                                         green: shading.multiply.1,
+                                         blue: shading.multiply.2))
+                    .brightness(shading.lift)
             } else {
                 ZStack {
                     ForEach(Array(PieceGlyph.rimOffsets.enumerated()), id: \.offset) { _, direction in

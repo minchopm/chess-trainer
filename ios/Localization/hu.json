@@ -306,7 +306,7 @@
  "store.comeBackTomorrow": "A keret éjfélkor nullázódik. A játék — a motor vagy egy ember ellen — korlátlan és ingyenes.",
  "store.doneForToday": "Ennyi volt a mai ingyenes edzés",
  "store.freeForever": "A játék ingyenes marad — a motor és emberek ellen is, korlát és reklám nélkül. A Pro az edzést oldja fel.",
- "store.freeToday": "Ma ingyen: %lld feladvány, %lld Rush-kör, a többiből %lld-%lld.",
+ "store.freeToday": "Ma ingyen: %lld feladvány, %lld Rush-kör, a többiből egyenként %lld.",
  "store.lifetime": "Egyszeri feloldás",
  "store.loadingPrices": "Árak betöltése…",
  "store.manage": "Előfizetés kezelése",

@@ -90,7 +90,8 @@ struct AboutScreen: View {
             HStack {
                 Text(label).appFont(.subheadline).foregroundStyle(Theatre.ivory)
                 Spacer()
-                BrassIcon("chevron.right", size: 15)
+                Image(systemName: "chevron.forward")
+                    .font(.caption2)
                     .foregroundStyle(Theatre.ivoryFaint)
             }
             .padding(.horizontal, 10)

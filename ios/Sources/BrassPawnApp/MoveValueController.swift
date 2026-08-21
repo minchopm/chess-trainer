@@ -11,17 +11,17 @@ import Observation
 @MainActor
 @Observable
 final class MoveValueController {
-    private(set) var values: MoveValues?
     private(set) var isComputing = false
     private(set) var isEnabled = false
 
     /// Only this value is handed to a board. A completed engine request may be
     /// retained as a cache while hidden, but it must never make the overlay
     /// visible again by itself.
-    var displayedValues: MoveValues? { isEnabled ? values : nil }
+    var displayedValues: MoveValues? { isEnabled ? computed : nil }
 
     /// The position the current values belong to. Values from an earlier move
     /// would be worse than none at all.
+    private var computed: MoveValues?
     private var computedFEN: String?
     private var currentFEN: String?
     /// Invalidates engine responses that finish after reset or a board change.
@@ -29,7 +29,7 @@ final class MoveValueController {
 
     func reset() {
         positionRevision &+= 1
-        values = nil
+        computed = nil
         computedFEN = nil
         currentFEN = nil
         isComputing = false
@@ -67,9 +67,9 @@ final class MoveValueController {
             if positionRevision == revision { isComputing = false }
         }
 
-        if let computed = try? await engine.valueEveryMove(fen: fen) {
+        if let result = try? await engine.valueEveryMove(fen: fen) {
             guard positionRevision == revision, currentFEN == fen else { return }
-            values = computed
+            computed = result
             computedFEN = fen
         }
     }
@@ -78,7 +78,7 @@ final class MoveValueController {
         guard currentFEN != fen else { return }
         positionRevision &+= 1
         currentFEN = fen
-        values = nil
+        computed = nil
         computedFEN = nil
         isComputing = false
     }
