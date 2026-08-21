@@ -128,9 +128,6 @@ schemes:
         BrassPawn: all
     run:
       config: Debug
-      # Lets the paywall be exercised on a simulator with no App Store account:
-      # StoreKit answers from App/BrassPawn.storekit instead.
-      storeKitConfiguration: App/BrassPawn.storekit
     test:
       config: Debug
     profile:

@@ -1,59 +1,383 @@
 {
-  "identifier" : "C4E55A10",
-  "nonRenewingSubscriptions" : [],
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "953B8193",
+  "nonRenewingSubscriptions" : [
+
+  ],
   "products" : [
     {
       "displayPrice" : "49.99",
       "familyShareable" : false,
-      "internalID" : "1000000001",
+      "internalID" : "6803787654",
       "localizations" : [
         {
-          "description" : "Unlock every puzzle, drill and run, once and for all.",
-          "displayName" : "Brass Pawn Pro — one-off unlock",
+          "description" : "पहेलियाँ, अभ्यास और दौर बिना सीमा",
+          "displayName" : "एक बार का भुगतान",
+          "locale" : "hi"
+        },
+        {
+          "description" : "Uppgifter, övningar och rundor utan gräns",
+          "displayName" : "Engångsköp",
+          "locale" : "sv"
+        },
+        {
+          "description" : "Unbegrenzt Aufgaben, Übungen und Läufe",
+          "displayName" : "Einmalig freischalten",
+          "locale" : "de"
+        },
+        {
+          "description" : "Ejercicios, finales y series sin límite",
+          "displayName" : "Pago único",
+          "locale" : "es_ES"
+        },
+        {
+          "description" : "Opgaver, øvelser og runder uden grænser",
+          "displayName" : "Engangskøb",
+          "locale" : "da"
+        },
+        {
+          "description" : "Tehtäviä, harjoituksia ja kierroksia rajatta",
+          "displayName" : "Kertaosto",
+          "locale" : "fi"
+        },
+        {
+          "description" : "Zadania, ćwiczenia i serie bez limitu",
+          "displayName" : "Jednorazowo",
+          "locale" : "pl"
+        },
+        {
+          "description" : "Exercícios, finais e séries sem limite",
+          "displayName" : "Compra única",
+          "locale" : "pt_BR"
+        },
+        {
+          "description" : "ألغاز وتمارين وجولات بلا حدود",
+          "displayName" : "فتح لمرة واحدة",
+          "locale" : "ar"
+        },
+        {
+          "description" : "문제·드릴·러시 무제한",
+          "displayName" : "한 번만 결제",
+          "locale" : "ko"
+        },
+        {
+          "description" : "Úlohy, cvičení a série bez omezení",
+          "displayName" : "Jednorázově",
+          "locale" : "cs"
+        },
+        {
+          "description" : "Задачи, упражнения и серии без ограничений",
+          "displayName" : "Разовая покупка",
+          "locale" : "ru"
+        },
+        {
+          "description" : "แบบฝึก ดริล และรอบไม่จำกัด",
+          "displayName" : "จ่ายครั้งเดียว",
+          "locale" : "th"
+        },
+        {
+          "description" : "Problèmes, exercices et runs sans limite",
+          "displayName" : "Achat unique",
+          "locale" : "fr"
+        },
+        {
+          "description" : "Exerciții, finaluri și runde fără limită",
+          "displayName" : "Plată unică",
+          "locale" : "ro"
+        },
+        {
+          "description" : "Soal, latihan, dan sesi tanpa batas",
+          "displayName" : "Sekali bayar",
+          "locale" : "id"
+        },
+        {
+          "description" : "問題・ドリル・ラッシュが無制限",
+          "displayName" : "買い切り",
+          "locale" : "ja"
+        },
+        {
+          "description" : "Teka-teki, latihan dan pusingan tanpa had",
+          "displayName" : "Bayar sekali",
+          "locale" : "ms"
+        },
+        {
+          "description" : "Unlimited puzzles, drills and Rush runs.",
+          "displayName" : "One-off unlock",
+          "locale" : "en_CA"
+        },
+        {
+          "description" : "Esercizi, finali e run senza limiti",
+          "displayName" : "Sblocco una tantum",
+          "locale" : "it"
+        },
+        {
+          "description" : "习题、练习和冲刺不限量",
+          "displayName" : "一次买断",
+          "locale" : "zh_Hans"
+        },
+        {
+          "description" : "Ασκήσεις, φινάλε και γύροι χωρίς όριο",
+          "displayName" : "Εφάπαξ",
+          "locale" : "el"
+        },
+        {
+          "description" : "Unlimited puzzles, drills and Rush runs.",
+          "displayName" : "One-off unlock",
           "locale" : "en_US"
+        },
+        {
+          "description" : "習題、練習與衝刺不限量",
+          "displayName" : "一次買斷",
+          "locale" : "zh_Hant"
+        },
+        {
+          "description" : "תרגילים, סופים וסבבים ללא הגבלה",
+          "displayName" : "רכישה חד-פעמית",
+          "locale" : "he"
+        },
+        {
+          "description" : "Sınırsız problem, alıştırma ve tur",
+          "displayName" : "Tek seferlik",
+          "locale" : "tr"
+        },
+        {
+          "description" : "Onbeperkt puzzels, oefeningen en runs",
+          "displayName" : "Eenmalig",
+          "locale" : "nl"
+        },
+        {
+          "description" : "Korlátlan feladvány, gyakorlat és kör",
+          "displayName" : "Egyszeri feloldás",
+          "locale" : "hu"
+        },
+        {
+          "description" : "Bài tập, luyện tập và lượt không giới hạn",
+          "displayName" : "Mua một lần",
+          "locale" : "vi"
+        },
+        {
+          "description" : "Problèmes, exercices et runs sans limite",
+          "displayName" : "Achat unique",
+          "locale" : "fr_CA"
         }
       ],
-      "productID" : "com.arte-soft.brasspawn.pro.lifetime",
+      "productID" : "com.artesoft.brasspawn.pro.lifetime",
       "referenceName" : "Brass Pawn Pro Lifetime",
       "type" : "NonConsumable"
     }
   ],
   "settings" : {
+    "_applicationInternalID" : "6803566012",
     "_askToBuyEnabled" : false,
+    "_billingGracePeriodEnabled" : false,
+    "_billingIssuesEnabled" : false,
     "_developerTeamID" : "8293TNMX6S",
+    "_disableDialogs" : false,
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 808986390.73067403,
     "_locale" : "en_US",
+    "_renewalBillingIssuesEnabled" : false,
     "_storefront" : "USA",
+    "_storeKitErrors" : [
+
+    ],
     "_timeRate" : 0
   },
   "subscriptionGroups" : [
     {
-      "id" : "20000001",
-      "localizations" : [],
+      "id" : "22324080",
+      "localizations" : [
+
+      ],
       "name" : "brasspawn.pro",
       "subscriptions" : [
         {
-          "adHocOffers" : [],
-          "codeOffers" : [],
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
           "displayPrice" : "3.99",
           "familyShareable" : false,
           "groupNumber" : 1,
-          "internalID" : "1000000002",
+          "internalID" : "6803789121",
           "introductoryOffer" : null,
           "localizations" : [
             {
+              "description" : "Sınırsız problem, alıştırma ve tur",
+              "displayName" : "Aylık",
+              "locale" : "tr"
+            },
+            {
+              "description" : "Teka-teki, latihan dan pusingan tanpa had",
+              "displayName" : "Bulanan",
+              "locale" : "ms"
+            },
+            {
+              "description" : "Soal, latihan, dan sesi tanpa batas",
+              "displayName" : "Bulanan",
+              "locale" : "id"
+            },
+            {
+              "description" : "Korlátlan feladvány, gyakorlat és kör",
+              "displayName" : "Havi",
+              "locale" : "hu"
+            },
+            {
+              "description" : "Bài tập, luyện tập và lượt không giới hạn",
+              "displayName" : "Hằng tháng",
+              "locale" : "vi"
+            },
+            {
+              "description" : "Tehtäviä, harjoituksia ja kierroksia rajatta",
+              "displayName" : "Kuukausittain",
+              "locale" : "fi"
+            },
+            {
+              "description" : "Exerciții, finaluri și runde fără limită",
+              "displayName" : "Lunar",
+              "locale" : "ro"
+            },
+            {
+              "description" : "Onbeperkt puzzels, oefeningen en runs",
+              "displayName" : "Maandelijks",
+              "locale" : "nl"
+            },
+            {
+              "description" : "Exercícios, finais e séries sem limite",
+              "displayName" : "Mensal",
+              "locale" : "pt_BR"
+            },
+            {
+              "description" : "Esercizi, finali e run senza limiti",
+              "displayName" : "Mensile",
+              "locale" : "it"
+            },
+            {
+              "description" : "Ejercicios, finales y series sin límite",
+              "displayName" : "Mensual",
+              "locale" : "es_ES"
+            },
+            {
+              "description" : "Problèmes, exercices et runs sans limite",
+              "displayName" : "Mensuel",
+              "locale" : "fr"
+            },
+            {
+              "description" : "Problèmes, exercices et runs sans limite",
+              "displayName" : "Mensuel",
+              "locale" : "fr_CA"
+            },
+            {
+              "description" : "Zadania, ćwiczenia i serie bez limitu",
+              "displayName" : "Miesięcznie",
+              "locale" : "pl"
+            },
+            {
+              "description" : "Unbegrenzt Aufgaben, Übungen und Läufe",
+              "displayName" : "Monatlich",
+              "locale" : "de"
+            },
+            {
               "description" : "Unlimited puzzles, drills and Rush runs.",
-              "displayName" : "Brass Pawn Pro — monthly",
+              "displayName" : "Monthly",
+              "locale" : "en_CA"
+            },
+            {
+              "description" : "Unlimited puzzles, drills and Rush runs.",
+              "displayName" : "Monthly",
               "locale" : "en_US"
+            },
+            {
+              "description" : "Uppgifter, övningar och rundor utan gräns",
+              "displayName" : "Månadsvis",
+              "locale" : "sv"
+            },
+            {
+              "description" : "Opgaver, øvelser og runder uden grænser",
+              "displayName" : "Månedligt",
+              "locale" : "da"
+            },
+            {
+              "description" : "Úlohy, cvičení a série bez omezení",
+              "displayName" : "Měsíčně",
+              "locale" : "cs"
+            },
+            {
+              "description" : "Ασκήσεις, φινάλε και γύροι χωρίς όριο",
+              "displayName" : "Μηνιαία",
+              "locale" : "el"
+            },
+            {
+              "description" : "Задачи, упражнения и серии без ограничений",
+              "displayName" : "Ежемесячно",
+              "locale" : "ru"
+            },
+            {
+              "description" : "תרגילים, סופים וסבבים ללא הגבלה",
+              "displayName" : "חודשי",
+              "locale" : "he"
+            },
+            {
+              "description" : "ألغاز وتمارين وجولات بلا حدود",
+              "displayName" : "شهريًا",
+              "locale" : "ar"
+            },
+            {
+              "description" : "पहेलियाँ, अभ्यास और दौर बिना सीमा",
+              "displayName" : "मासिक",
+              "locale" : "hi"
+            },
+            {
+              "description" : "แบบฝึก ดริล และรอบไม่จำกัด",
+              "displayName" : "รายเดือน",
+              "locale" : "th"
+            },
+            {
+              "description" : "习题、练习和冲刺不限量",
+              "displayName" : "按月",
+              "locale" : "zh_Hans"
+            },
+            {
+              "description" : "問題・ドリル・ラッシュが無制限",
+              "displayName" : "月額",
+              "locale" : "ja"
+            },
+            {
+              "description" : "習題、練習與衝刺不限量",
+              "displayName" : "每月",
+              "locale" : "zh_Hant"
+            },
+            {
+              "description" : "문제·드릴·러시 무제한",
+              "displayName" : "월간",
+              "locale" : "ko"
             }
           ],
-          "productID" : "com.arte-soft.brasspawn.pro.monthly",
+          "productID" : "com.artesoft.brasspawn.pro.monthly",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Brass Pawn Pro Monthly",
-          "subscriptionGroupID" : "20000001",
-          "type" : "RecurringSubscription"
+          "subscriptionGroupID" : "22324080",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
         }
       ]
     }
   ],
-  "version" : { "major" : 4, "minor" : 0 }
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
 }

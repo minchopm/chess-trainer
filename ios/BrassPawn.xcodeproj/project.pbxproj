@@ -14,9 +14,9 @@
 		48F44FCC87A5CBD8C989FC58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37CDE792836F404308CE33CC /* Assets.xcassets */; };
 		4B45459D78F19459C3154437 /* gameEnd.wav in Resources */ = {isa = PBXBuildFile; fileRef = 89D3D16127EFA72B35CD2DD3 /* gameEnd.wav */; };
 		4DB8B84E8E5AC99E59FBF9D5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 69DFD865B5FC73F4B5E8B02A /* Localizable.xcstrings */; };
+		508AC7B23038271300411EB1 /* BrassPawn.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 508AC7B13038271300411EB1 /* BrassPawn.storekit */; };
 		58930B467B7C7BFE1740A6F5 /* OFL-cormorant.txt in Resources */ = {isa = PBXBuildFile; fileRef = 431629F05EDBF2F9D7E727E2 /* OFL-cormorant.txt */; };
 		60EBD40D8F7AB3A60C2BF2CE /* promote.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5D5FDCDEED067C6D223FD061 /* promote.wav */; };
-		737010EE9573D8FF256F8AAC /* BrassPawn.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 297D864E27EC18F9E47E8616 /* BrassPawn.storekit */; };
 		83BE1A4A26137A9677ED5169 /* BrassPawnApp in Frameworks */ = {isa = PBXBuildFile; productRef = F1D568D032352CB45927307F /* BrassPawnApp */; };
 		918D662224B6D7E85E0C69A0 /* move.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62F903D8F5C1FC70F0A8A9DE /* move.wav */; };
 		9EBB038DDFBCD023BF2FDDE9 /* NOTICE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5A15128F3C9F50C157350AF2 /* NOTICE.txt */; };
@@ -41,20 +41,20 @@
 		0DF2B11B968359DC4476B98E /* classics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = classics.json; sourceTree = "<group>"; };
 		1BC08B8C95E3F3F1B239C1A8 /* BrassPawn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrassPawn.entitlements; sourceTree = "<group>"; };
 		26BE737C8D2E4D11376AD9C2 /* endgames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = endgames.json; sourceTree = "<group>"; };
-		297D864E27EC18F9E47E8616 /* BrassPawn.storekit */ = {isa = PBXFileReference; path = BrassPawn.storekit; sourceTree = "<group>"; };
 		2B24581FB2D0665C827FE2D5 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		2B8BABBDAE968378B02ACD81 /* BrassPawn.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BrassPawn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3512F4FB8971E731B14BA6F0 /* positions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = positions.json; sourceTree = "<group>"; };
 		37CDE792836F404308CE33CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BC0FF8E35604CEAF336DFC9 /* JetBrainsMono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JetBrainsMono.ttf; sourceTree = "<group>"; };
 		431629F05EDBF2F9D7E727E2 /* OFL-cormorant.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "OFL-cormorant.txt"; sourceTree = "<group>"; };
+		508AC7B13038271300411EB1 /* BrassPawn.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = BrassPawn.storekit; sourceTree = "<group>"; };
 		542D1BF8796033B8E9639968 /* check.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = check.wav; sourceTree = "<group>"; };
 		5A15128F3C9F50C157350AF2 /* NOTICE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NOTICE.txt; sourceTree = "<group>"; };
 		5D5FDCDEED067C6D223FD061 /* promote.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = promote.wav; sourceTree = "<group>"; };
 		5E8CEB4BAEFDA2127CC91082 /* castle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = castle.wav; sourceTree = "<group>"; };
-		61BFAD9ACF0E2C7BDFB98CBB /* nn-37f18f62d772.nnue */ = {isa = PBXFileReference; path = "nn-37f18f62d772.nnue"; sourceTree = "<group>"; };
+		61BFAD9ACF0E2C7BDFB98CBB /* nn-37f18f62d772.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-37f18f62d772.nnue"; sourceTree = "<group>"; };
 		62F903D8F5C1FC70F0A8A9DE /* move.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = move.wav; sourceTree = "<group>"; };
-		681AF0C7F282F8328C36A134 /* nn-c288c895ea92.nnue */ = {isa = PBXFileReference; path = "nn-c288c895ea92.nnue"; sourceTree = "<group>"; };
+		681AF0C7F282F8328C36A134 /* nn-c288c895ea92.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-c288c895ea92.nnue"; sourceTree = "<group>"; };
 		69DFD865B5FC73F4B5E8B02A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		71024DE3B1F2677467FD3AF1 /* CormorantGaramond.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CormorantGaramond.ttf; sourceTree = "<group>"; };
 		89D3D16127EFA72B35CD2DD3 /* gameEnd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameEnd.wav; sourceTree = "<group>"; };
@@ -163,8 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				1BC08B8C95E3F3F1B239C1A8 /* BrassPawn.entitlements */,
-				297D864E27EC18F9E47E8616 /* BrassPawn.storekit */,
 				03FB1BBFBDC650A1425E50B4 /* BrassPawnMain.swift */,
+				508AC7B13038271300411EB1 /* BrassPawn.storekit */,
 				F755F151598E76064B9B539F /* Info.plist */,
 				69DFD865B5FC73F4B5E8B02A /* Localizable.xcstrings */,
 			);
@@ -289,7 +289,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				48F44FCC87A5CBD8C989FC58 /* Assets.xcassets in Resources */,
-				737010EE9573D8FF256F8AAC /* BrassPawn.storekit in Resources */,
 				D4F6C22B9A9E78DCC1AA03A9 /* CormorantGaramond-Italic.ttf in Resources */,
 				11EE77AA55207BE6C3C461F3 /* CormorantGaramond.ttf in Resources */,
 				E072E1874AEB54C397C55234 /* JetBrainsMono.ttf in Resources */,
@@ -309,6 +308,7 @@
 				33E601C5AA0D6A17F286975A /* nn-37f18f62d772.nnue in Resources */,
 				D57C6D8CDA23277DE7B76C4C /* nn-c288c895ea92.nnue in Resources */,
 				BFF748931E1E73C495CC3F4F /* positions.json in Resources */,
+				508AC7B23038271300411EB1 /* BrassPawn.storekit in Resources */,
 				60EBD40D8F7AB3A60C2BF2CE /* promote.wav in Resources */,
 				A46303EEF15D6805AE5A77BE /* tactics.json in Resources */,
 			);

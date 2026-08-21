@@ -56,8 +56,8 @@ Two products, both optional; nothing about playing chess is behind them.
 
 | Product | Type | Price |
 | --- | --- | --- |
-| `com.arte-soft.brasspawn.pro.monthly` | auto-renewable subscription, group `brasspawn.pro` | $3.99 / month |
-| `com.arte-soft.brasspawn.pro.lifetime` | non-consumable | $49.99 once |
+| `com.artesoft.brasspawn.pro.monthly` | auto-renewable subscription, group `brasspawn.pro` | $3.99 / month |
+| `com.artesoft.brasspawn.pro.lifetime` | non-consumable | $49.99 once |
 
 `Sources/ChessTraining/Entitlement.swift` holds the free allowance — what it
 covers and how much of it a day carries — and is covered by tests, because it is
@@ -66,14 +66,14 @@ the part that decides whether somebody can use the app.
 check, purchase, restore, manage, and a listener for renewals and purchases made
 on another device.
 
-To exercise the paywall without an App Store account, run from Xcode: the scheme
-points at `App/BrassPawn.storekit`, and StoreKit answers from that file. A run
-launched with `simctl` gets no store at all — the paywall will say so — because
-the test configuration is applied by Xcode, not by the app.
+App Store Connect is the source of truth for product metadata and localized
+prices. The Xcode scheme does not use a local StoreKit configuration. Sign in
+with a Sandbox Apple Account on a development device or simulator when testing
+purchases; StoreKit fetches the products above by their exact identifiers.
 
-Before release, both products have to exist in App Store Connect with these
-exact identifiers, and the app needs the Terms of Use and Privacy Policy URLs
-filled in there as well as in the paywall.
+Both products must remain configured in App Store Connect, and the app needs
+the Terms of Use and Privacy Policy URLs filled in there as well as in the
+paywall.
 
 ## Localization
 

@@ -16,8 +16,8 @@ import UIKit
 @Observable
 public final class SubscriptionStore {
     public enum ProductID {
-        public static let monthly = "com.arte-soft.brasspawn.pro.monthly"
-        public static let lifetime = "com.arte-soft.brasspawn.pro.lifetime"
+        public static let monthly = "com.artesoft.brasspawn.pro.monthly"
+        public static let lifetime = "com.artesoft.brasspawn.pro.lifetime"
         public static let all = [monthly, lifetime]
     }
 
