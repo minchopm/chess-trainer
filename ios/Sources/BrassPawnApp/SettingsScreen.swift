@@ -60,6 +60,7 @@ struct SettingsScreen: View {
                         section(L.t("settings.squares", "Squares")) { BoardGallery() }
                         section(L.t("settings.lightSide", "Light side")) { LightToneGallery() }
                     }
+                    section(L.t("settings.coordinates", "Coordinates")) { CoordinatesSwitch() }
                     section(L.t("settings.font", "Application font")) { TypefaceChoice() }
                 }
                 .padding(16)
@@ -459,6 +460,23 @@ private struct MiniBoard: View {
     }
 }
 
+
+/// Files and ranks round the edge of the board.
+private struct CoordinatesSwitch: View {
+    @Environment(AppModel.self) private var app
+
+    var body: some View {
+        Card {
+            BrassToggle(
+                L.t("settings.showFilesAndRanks", "Show files and ranks"),
+                isOn: Binding(
+                    get: { app.progress.appearance.showsCoordinates },
+                    set: { on in app.update { $0.appearance.showsCoordinates = on } }
+                )
+            )
+        }
+    }
+}
 
 /// The shading applied to a light square or a white piece.
 ///

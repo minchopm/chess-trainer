@@ -50,6 +50,12 @@ public struct Appearance: Codable, Equatable, Sendable {
     public var carving: Carving
     /// How the light side is shaded — the white pieces and the pale squares.
     public var lightTone: LightTone
+    /// Files and ranks written round the edge of the board.
+    ///
+    /// On by default: this is a trainer, and every puzzle, every coach note and
+    /// every game in the library names its squares. Somebody who has to count
+    /// along the rank to find e4 is spending their attention on arithmetic.
+    public var showsCoordinates: Bool
 
     public init(
         typeface: AppTypeface = .system,
@@ -59,7 +65,8 @@ public struct Appearance: Codable, Equatable, Sendable {
         volume: Double = 0.7,
         dimension: BoardDimension = .flat,
         carving: Carving = .banded,
-        lightTone: LightTone = .boxwood
+        lightTone: LightTone = .boxwood,
+        showsCoordinates: Bool = true
     ) {
         self.typeface = typeface
         self.pieces = pieces
@@ -69,6 +76,7 @@ public struct Appearance: Codable, Equatable, Sendable {
         self.dimension = dimension
         self.carving = carving
         self.lightTone = lightTone
+        self.showsCoordinates = showsCoordinates
     }
 
     public init(from decoder: Decoder) throws {
@@ -81,6 +89,7 @@ public struct Appearance: Codable, Equatable, Sendable {
         dimension = try container.decodeIfPresent(BoardDimension.self, forKey: .dimension) ?? .flat
         carving = try container.decodeIfPresent(Carving.self, forKey: .carving) ?? .banded
         lightTone = try container.decodeIfPresent(LightTone.self, forKey: .lightTone) ?? .boxwood
+        showsCoordinates = try container.decodeIfPresent(Bool.self, forKey: .showsCoordinates) ?? true
     }
 }
 

@@ -108,6 +108,9 @@ private struct DimensionalBoard: View {
             }
         }
         .onAppear(perform: build)
+        .onChange(of: app.progress.appearance.showsCoordinates) { _, showing in
+            board?.stage.setCoordinates(showing)
+        }
     }
 
     private func build() {
@@ -131,6 +134,7 @@ private struct DimensionalBoard: View {
                 onPremove(from, to, nil)
             }
         }
+        live.stage.setCoordinates(app.progress.appearance.showsCoordinates)
         board = live
     }
 

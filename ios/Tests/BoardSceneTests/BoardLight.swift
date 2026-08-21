@@ -33,6 +33,7 @@ struct BoardLight {
         for (index, shot) in shots.enumerated() {
             let stage = Stage(quality: .high, style: .banded, playable: shot.playable)
             stage.board.reset()
+            stage.setCoordinates(shot.playable)
 
             var camera = OrbitCamera()
             camera.azimuth = shot.azimuth

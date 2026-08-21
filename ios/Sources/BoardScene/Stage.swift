@@ -106,6 +106,13 @@ public final class Stage {
     }
 
     public static let surfaceName = "board-surface"
+    public static let coordinatesName = "board-coordinates"
+
+    /// Whether the files and ranks are painted on the rim.
+    public func setCoordinates(_ showing: Bool) {
+        scene.rootNode.childNode(withName: Stage.coordinatesName, recursively: true)?
+            .isHidden = !showing
+    }
 
     private func buildBoard() {
         let top = SCNBox(width: 8, height: 0.02, length: 8, chamferRadius: 0)
@@ -141,6 +148,23 @@ public final class Stage {
         let plinthNode = SCNNode(geometry: plinth)
         plinthNode.position = SCNVector3(0, -0.146, 0)
         scene.rootNode.addChildNode(plinthNode)
+
+        // The files and ranks, laid on the plinth around the squares. A plane
+        // of its own rather than part of the plinth's material, so it can be
+        // switched off without rebuilding the board.
+        let rim = SCNPlane(width: 9.1, height: 9.1)
+        let paint = rim.firstMaterial!
+        paint.lightingModel = .constant
+        paint.diffuse.contents = BoardSurface.coordinates() as Any
+        paint.isDoubleSided = false
+        paint.writesToDepthBuffer = false
+        let rimNode = SCNNode(geometry: rim)
+        rimNode.name = Stage.coordinatesName
+        rimNode.eulerAngles.x = -.pi / 2
+        // Just clear of the plinth's top, which is where the ivory stops.
+        rimNode.position = SCNVector3(0, -0.0195, 0)
+        rimNode.isHidden = true
+        scene.rootNode.addChildNode(rimNode)
     }
 
     private func buildLights() {

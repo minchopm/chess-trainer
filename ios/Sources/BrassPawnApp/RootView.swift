@@ -57,6 +57,7 @@ public struct RootView: View {
         .environment(\.boardTheme, BoardTheme(style: app.progress.appearance.board,
                                               lightTone: app.progress.appearance.lightTone))
         .environment(\.pieceSet, app.progress.appearance.pieces)
+        .environment(\.showsBoardCoordinates, app.progress.appearance.showsCoordinates)
         .task { await app.start() }
         .onAppear {
             SoundBoard.shared.isEnabled = app.progress.appearance.soundsOn

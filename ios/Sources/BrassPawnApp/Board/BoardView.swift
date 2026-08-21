@@ -47,6 +47,7 @@ public struct BoardView: View {
 
     @Environment(\.boardTheme) private var theme
     @Environment(\.pieceSet) private var pieceSet
+    @Environment(\.showsBoardCoordinates) private var showsCoordinates
 
     @State private var selected: Square?
     @State private var dragging: (from: Square, translation: CGSize)?
@@ -81,7 +82,12 @@ public struct BoardView: View {
 
     public var body: some View {
         GeometryReader { geometry in
-            let side = min(geometry.size.width, geometry.size.height)
+            // The rim the files and ranks are written in, taken out of the
+            // board rather than added around it: the board has to stay square
+            // and inside the space it was given.
+            let full = min(geometry.size.width, geometry.size.height)
+            let rim = showsCoordinates ? max(12, full * 0.052) : 0
+            let side = full - rim
             let squareSize = side / 8
 
             ZStack(alignment: .topLeading) {
@@ -115,11 +121,14 @@ public struct BoardView: View {
                 }
             }
             .frame(width: side, height: side)
+            .clipShape(RoundedRectangle(cornerRadius: 6))
+            .modifier(BoardRim(showing: showsCoordinates, side: side, rim: rim,
+                               orientation: orientation))
             // A chessboard is not mirrored in Arabic or Hebrew: a1 is at the
             // bottom left of every board in the world, and flipping it would
-            // turn the coordinates the pieces are named by into a lie.
+            // turn the coordinates the pieces are named by into a lie. The rim
+            // is inside this too, or the ranks would change sides with it.
             .environment(\.layoutDirection, .leftToRight)
-            .clipShape(RoundedRectangle(cornerRadius: 6))
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         }
         .aspectRatio(1, contentMode: .fit)
@@ -590,6 +599,7 @@ struct PieceView: View {
     /// show a tone that is not the one in force yet.
     var lightTone: LightTone?
     @Environment(\.pieceSet) private var pieceSet
+    @Environment(\.showsBoardCoordinates) private var showsCoordinates
     @Environment(\.boardTheme) private var theme
 
     var body: some View {
@@ -624,12 +634,76 @@ struct PieceView: View {
     }
 }
 
+/// Files under the board and ranks beside it.
+///
+/// Along the rim rather than in the corner of each square: a letter laid over a
+/// square is one more thing between the eye and the position, and on a phone
+/// the squares are small enough already. Outside, they are there when looked
+/// for and out of the way when not.
+private struct BoardRim: ViewModifier {
+    let showing: Bool
+    let side: CGFloat
+    let rim: CGFloat
+    let orientation: PieceColor
+
+    /// Always these letters, in every language.
+    ///
+    /// The files are Latin `a`–`h` wherever the board is — FIDE's laws say so,
+    /// and PGN, which is the format the library is written in, requires it. The
+    /// ranks stay Western digits for the same reason: a coordinate is one token
+    /// with a letter and a number in it, and "e٣" is two alphabets in one word.
+    ///
+    /// Capitals here, small letters in the moves. Boards are printed with
+    /// capitals and notation is written without them, and both are right.
+    private static let files = ["A", "B", "C", "D", "E", "F", "G", "H"]
+
+    func body(content: Content) -> some View {
+        guard showing else { return AnyView(content) }
+        let square = side / 8
+        let size = max(7, rim * 0.46)
+
+        // Aligned to the top, not centred. The column of ranks is the height of
+        // the board; the column beside it is the board *plus* the row of files
+        // underneath — so centring the two against each other pushes every rank
+        // down by half a rim, and each number sits low in its row.
+        return AnyView(HStack(alignment: .top, spacing: 0) {
+            VStack(spacing: 0) {
+                ForEach(0..<8, id: \.self) { row in
+                    // Board rows run down the screen; ranks run up the board.
+                    let rank = orientation == .white ? 8 - row : row + 1
+                    Text(verbatim: "\(rank)")
+                        .appFont(size: size, weight: .medium)
+                        .monospacedDigit()
+                        .foregroundStyle(Theatre.ivoryFaint)
+                        .frame(width: rim, height: square)
+                }
+            }
+            VStack(spacing: 0) {
+                content
+                HStack(spacing: 0) {
+                    ForEach(0..<8, id: \.self) { column in
+                        let file = orientation == .white ? column : 7 - column
+                        Text(verbatim: Self.files[file])
+                            .appFont(size: size, weight: .medium)
+                            .foregroundStyle(Theatre.ivoryFaint)
+                            .frame(width: square, height: rim)
+                    }
+                }
+            }
+        })
+    }
+}
+
 private struct BoardThemeKey: EnvironmentKey {
     static var defaultValue: BoardTheme { .standard }
 }
 
 private struct PieceSetKey: EnvironmentKey {
     static var defaultValue: PieceSet { .ebony }
+}
+
+private struct BoardCoordinatesKey: EnvironmentKey {
+    static var defaultValue: Bool { true }
 }
 
 extension EnvironmentValues {
@@ -641,6 +715,11 @@ extension EnvironmentValues {
     var pieceSet: PieceSet {
         get { self[PieceSetKey.self] }
         set { self[PieceSetKey.self] = newValue }
+    }
+
+    var showsBoardCoordinates: Bool {
+        get { self[BoardCoordinatesKey.self] }
+        set { self[BoardCoordinatesKey.self] = newValue }
     }
 }
 

@@ -56166,6 +56166,29 @@
         }
       }
     },
+    "settings.coordinates": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coordinates"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coordinates"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coordinates"
+          }
+        }
+      }
+    },
     "settings.dimension": {
       "extractionState": "manual",
       "localizations": {
@@ -58549,6 +58572,29 @@
           "stringUnit": {
             "state": "translated",
             "value": "個人資料與設定"
+          }
+        }
+      }
+    },
+    "settings.showFilesAndRanks": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show files and ranks"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show files and ranks"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show files and ranks"
           }
         }
       }

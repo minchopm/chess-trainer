@@ -1,4 +1,5 @@
 import CoreGraphics
+import CoreText
 import Foundation
 
 /// The board surface, drawn rather than downloaded.
@@ -91,6 +92,58 @@ enum BoardSurface {
 
     /// Roughness varies with the grain, so the light travels across the wood
     /// instead of sitting on it.
+    /// Files and ranks, painted on the rim the board sits in.
+    ///
+    /// One image for all four sides, laid on the plinth rather than on the
+    /// squares. Each side reads from outside the board looking in, which is how
+    /// a printed board is made and the only arrangement that is right from more
+    /// than one chair.
+    static func coordinates(size: Int = 1024, boardShare: CGFloat = 8.0 / 9.1) -> CGImage? {
+        let space = CGColorSpaceCreateDeviceRGB()
+        guard let ctx = CGContext(
+            data: nil, width: size, height: size, bitsPerComponent: 8, bytesPerRow: 0,
+            space: space, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
+        ) else { return nil }
+
+        let side = CGFloat(size)
+        let rim = side * (1 - boardShare) / 2
+        let square = (side - rim * 2) / 8
+        let ink = CGColor(red: 0.92, green: 0.88, blue: 0.78, alpha: 0.62)
+        let type = CTFontCreateWithName("Menlo" as CFString, rim * 0.44, nil)
+
+        func draw(_ text: String, at centre: CGPoint, turned: CGFloat) {
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: type, .foregroundColor: ink,
+            ]
+            let line = CTLineCreateWithAttributedString(
+                NSAttributedString(string: text, attributes: attributes)
+            )
+            let bounds = CTLineGetBoundsWithOptions(line, .useOpticalBounds)
+            ctx.saveGState()
+            ctx.translateBy(x: centre.x, y: centre.y)
+            ctx.rotate(by: turned)
+            ctx.translateBy(x: -bounds.width / 2, y: -bounds.height / 2)
+            ctx.textPosition = .zero
+            CTLineDraw(line, ctx)
+            ctx.restoreGState()
+        }
+
+        // Latin and capital, in every language: FIDE names the files `a`–`h`
+        // and boards are printed with capitals. The ranks stay Western digits
+        // — a coordinate is one token, and half of it cannot change alphabet.
+        let files = ["A", "B", "C", "D", "E", "F", "G", "H"]
+        for index in 0..<8 {
+            let along = rim + square * (CGFloat(index) + 0.5)
+            // Files on the two ranks' edges, ranks on the two files' edges.
+            draw(files[index], at: CGPoint(x: along, y: rim / 2), turned: 0)
+            draw(files[index], at: CGPoint(x: along, y: side - rim / 2), turned: .pi)
+            let rank = "\(index + 1)"
+            draw(rank, at: CGPoint(x: rim / 2, y: along), turned: .pi / 2)
+            draw(rank, at: CGPoint(x: side - rim / 2, y: along), turned: -.pi / 2)
+        }
+        return ctx.makeImage()
+    }
+
     static func roughness(size: Int = 256) -> CGImage? {
         let space = CGColorSpaceCreateDeviceRGB()
         guard let ctx = CGContext(
