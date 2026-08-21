@@ -10,9 +10,8 @@ public struct Appearance: Codable, Equatable, Sendable {
     public var pieces: PieceSet
     public var board: BoardStyle
     public var soundsOn: Bool
-    /// 0...1. Kept apart from the on/off switch: turning the sound down to
-    /// nothing and turning it off are different intentions, and a player who
-    /// does the first should not lose their volume when they do the second.
+    /// 0...1. The settings mute control moves this to zero and restores the
+    /// previous non-zero value when sound is turned back on.
     public var volume: Double
     /// Flat or in the round. The flat board is the one to play a five-minute
     /// game on and the round one is the one to look at, so this is a choice

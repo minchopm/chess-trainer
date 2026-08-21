@@ -206,15 +206,37 @@ public struct BrassPlateShape: InsettableShape {
     public func path(in rect: CGRect) -> Path {
         let bounds = rect.insetBy(dx: insetAmount, dy: insetAmount)
         let corner = min(cut, min(bounds.width, bounds.height) / 2)
+        // Half the corner value would be a straight bevel. Moving the control
+        // point only a little farther inward keeps a restrained concave bow
+        // without producing the deep semicircular scallop of the full value.
+        let curve = corner * 0.65
         var path = Path()
+
+        // Each corner is carved into the plate with a concave curve. The old
+        // straight diagonal read as a clipped rectangle; the inward bow gives
+        // buttons the softer ornamental silhouette used by the rest of the
+        // brasswork while preserving the same outer measurements.
         path.move(to: CGPoint(x: bounds.minX + corner, y: bounds.minY))
         path.addLine(to: CGPoint(x: bounds.maxX - corner, y: bounds.minY))
-        path.addLine(to: CGPoint(x: bounds.maxX, y: bounds.minY + corner))
+        path.addQuadCurve(
+            to: CGPoint(x: bounds.maxX, y: bounds.minY + corner),
+            control: CGPoint(x: bounds.maxX - curve, y: bounds.minY + curve)
+        )
         path.addLine(to: CGPoint(x: bounds.maxX, y: bounds.maxY - corner))
-        path.addLine(to: CGPoint(x: bounds.maxX - corner, y: bounds.maxY))
+        path.addQuadCurve(
+            to: CGPoint(x: bounds.maxX - corner, y: bounds.maxY),
+            control: CGPoint(x: bounds.maxX - curve, y: bounds.maxY - curve)
+        )
         path.addLine(to: CGPoint(x: bounds.minX + corner, y: bounds.maxY))
-        path.addLine(to: CGPoint(x: bounds.minX, y: bounds.maxY - corner))
+        path.addQuadCurve(
+            to: CGPoint(x: bounds.minX, y: bounds.maxY - corner),
+            control: CGPoint(x: bounds.minX + curve, y: bounds.maxY - curve)
+        )
         path.addLine(to: CGPoint(x: bounds.minX, y: bounds.minY + corner))
+        path.addQuadCurve(
+            to: CGPoint(x: bounds.minX + corner, y: bounds.minY),
+            control: CGPoint(x: bounds.minX + curve, y: bounds.minY + curve)
+        )
         path.closeSubpath()
         return path
     }

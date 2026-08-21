@@ -252,11 +252,10 @@ struct RushScreen: View {
     /// One run a day on the free tier. The clock is the whole point of Rush, so
     /// the check happens before it starts rather than in the middle of one.
     private func startRun() {
-        guard app.canStart(.rush) else {
+        guard app.beginAttempt(.rush) else {
             showsPaywall = true
             return
         }
-        app.consume(.rush)
         model.start(library: app.library.puzzles, practiceRating: app.progress.rating(.tactics))
     }
 

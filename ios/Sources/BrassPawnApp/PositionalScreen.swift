@@ -170,6 +170,7 @@ struct PositionalScreen: View {
     @State private var model = PositionalModel()
     @State private var showsPaywall = false
     @State private var exhausted = false
+    @State private var hasStartedAttempt = false
 
     private var material: MaterialBalance { MaterialBalance(model.position) }
 
@@ -223,7 +224,7 @@ struct PositionalScreen: View {
                 },
             ])
         }
-        .task(id: app.library.exercises.count) { if model.exercise == nil { next(interactive: false) } }
+        .task(id: app.library.exercises.count) { if model.exercise == nil { next() } }
         .fullScreenCover(isPresented: $showsPaywall) { PaywallView(activity: .positional) }
     }
 
@@ -239,7 +240,7 @@ struct PositionalScreen: View {
         if model.phase == .judging {
             VStack(spacing: 8) {
                 ForEach(Judgement.allCases) { judgement in
-                    Button { model.judge(judgement) } label: {
+                    Button { judge(judgement) } label: {
                         Text(judgement.label)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
@@ -309,6 +310,7 @@ struct PositionalScreen: View {
     }
 
     private func choose(_ from: Square, _ to: Square, _ promotion: PieceKind?) async {
+        guard beginAttempt() else { return }
         guard let correct = await model.choose(
             from: from, to: to, promotion: promotion, engine: app.engine
         ), let exercise = model.exercise else { return }
@@ -321,13 +323,27 @@ struct PositionalScreen: View {
         }
     }
 
-    private func next(interactive: Bool = true) {
-        guard app.canStart(.positional) else {
-            if interactive { showsPaywall = true } else { exhausted = true }
-            return
+    private func judge(_ judgement: Judgement) {
+        guard beginAttempt() else { return }
+        model.judge(judgement)
+    }
+
+    private func next() {
+        exhausted = false
+        hasStartedAttempt = false
+        model.load(ItemSelector.nextExercise(from: app.library.exercises, progress: app.progress))
+    }
+
+    private func beginAttempt() -> Bool {
+        guard model.exercise != nil, model.phase != .done else { return false }
+        guard !hasStartedAttempt else { return true }
+        guard app.beginAttempt(.positional) else {
+            exhausted = true
+            showsPaywall = true
+            return false
         }
         exhausted = false
-        app.consume(.positional)
-        model.load(ItemSelector.nextExercise(from: app.library.exercises, progress: app.progress))
+        hasStartedAttempt = true
+        return true
     }
 }

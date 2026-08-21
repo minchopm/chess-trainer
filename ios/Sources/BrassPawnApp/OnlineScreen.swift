@@ -114,17 +114,6 @@ struct OnlineScreen: View {
                     .buttonStyle(PillButtonStyle(emphasis: .solid))
                 }
 
-#if DEBUG
-                Button(L.t("online.localTestGame", "Local test game")) {
-                    matchmaker.startLoopbackMatch(
-                        timeControl: timeControl,
-                        rating: app.progress.onlineRating,
-                        games: app.progress.onlineGames
-                    )
-                }
-                .buttonStyle(PillButtonStyle(emphasis: .ghost))
-                .font(.footnote)
-#endif
             }
             .padding(12)
         }

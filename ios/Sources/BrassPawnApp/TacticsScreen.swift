@@ -8,6 +8,7 @@ struct TacticsScreen: View {
     @State private var values = MoveValueController()
     @State private var showsPaywall = false
     @State private var exhausted = false
+    @State private var hasStartedAttempt = false
 
     var body: some View {
         content
@@ -64,7 +65,7 @@ struct TacticsScreen: View {
         } controls: {
             controls
         }
-        .task(id: app.library.puzzles.count) { if model.puzzle == nil { next(interactive: false) } }
+        .task(id: app.library.puzzles.count) { if model.puzzle == nil { next() } }
     }
 
     @ViewBuilder
@@ -111,14 +112,17 @@ struct TacticsScreen: View {
     private var controls: some View {
         ActionBar(items: [
             ActionItem(title: L.t("tactics.hint", "Hint"), systemImage: "lightbulb", isEnabled: !model.isFinished) {
+                guard beginAttempt() else { return }
                 model.requestHint()
             },
             ActionItem(title: values.isEnabled ? L.t("common.hide", "Hide") : L.t("common.values", "Values"),
                        systemImage: "number.square", isEnabled: !model.isFinished) {
+                guard beginAttempt() else { return }
                 model.noteAidUsed()
                 Task { await values.toggle(fen: model.position.fen, engine: app.engine) }
             },
             ActionItem(title: L.t("tactics.solution", "Solution"), systemImage: "eye", isEnabled: !model.isFinished) {
+                guard beginAttempt() else { return }
                 record(model.revealSolution())
             },
             ActionItem(title: L.t("tactics.skip", "Skip"), systemImage: "forward.end",
@@ -132,6 +136,7 @@ struct TacticsScreen: View {
     private var material: MaterialBalance { MaterialBalance(model.position) }
 
     private func handleMove(from: Square, to: Square, promotion: PieceKind?) {
+        guard beginAttempt() else { return }
         Task {
             record(await model.play(from: from, to: to, promotion: promotion))
             await values.refresh(fen: model.position.fen, engine: app.engine)
@@ -152,15 +157,24 @@ struct TacticsScreen: View {
         }
     }
 
-    private func next(interactive: Bool = true) {
-        guard app.canStart(.tactics) else {
-            if interactive { showsPaywall = true } else { exhausted = true }
-            return
-        }
+    private func next() {
         exhausted = false
-        app.consume(.tactics)
+        hasStartedAttempt = false
         values.reset()
         model.load(ItemSelector.nextPuzzle(from: app.library.puzzles, progress: app.progress))
+    }
+
+    private func beginAttempt() -> Bool {
+        guard model.puzzle != nil, !model.isFinished else { return false }
+        guard !hasStartedAttempt else { return true }
+        guard app.beginAttempt(.tactics) else {
+            exhausted = true
+            showsPaywall = true
+            return false
+        }
+        exhausted = false
+        hasStartedAttempt = true
+        return true
     }
 
     /// Show the skills first; the descriptive tags are filler beside them.

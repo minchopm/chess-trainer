@@ -8,17 +8,18 @@ struct BrassBackButton: View {
             Image(systemName: "chevron.left")
                 .font(.system(size: 15, weight: .semibold))
                 .foregroundStyle(Theatre.brassHot)
-                .frame(width: 40, height: 38)
+                .frame(width: 44, height: 44)
                 .background {
-                    BrassPlateShape(cut: 9).fill(LinearGradient(
+                    Circle().fill(LinearGradient(
                         colors: [Theatre.ink4, Theatre.ink2],
                         startPoint: .topLeading, endPoint: .bottomTrailing
                     ))
                 }
                 .overlay {
-                    BrassPlateShape(cut: 9)
+                    Circle()
                         .strokeBorder(Theatre.brassDeep.opacity(0.7), lineWidth: 0.8)
                 }
+                .contentShape(Circle())
         }
         .buttonStyle(BrassPressStyle())
         .accessibilityLabel("Back")
@@ -37,30 +38,35 @@ struct BrassNavigationHeader: View {
     }
 
     var body: some View {
-        VStack(spacing: 3) {
-            Text(title)
-                .font(Face.display(20))
-                .foregroundStyle(Theatre.ivory)
-                .lineLimit(1)
-                .minimumScaleFactor(0.7)
-
-            if let subtitle {
-                Text(subtitle)
-                    .font(Face.mono(9))
-                    .tracking(1.6)
-                    .foregroundStyle(Theatre.ivoryFaint)
+        ZStack {
+            VStack(spacing: 3) {
+                Text(title)
+                    .font(Face.display(20))
+                    .foregroundStyle(Theatre.ivory)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
+
+                if let subtitle {
+                    Text(subtitle)
+                        .font(Face.mono(9))
+                        .tracking(1.6)
+                        .foregroundStyle(Theatre.ivoryFaint)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.7)
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .center)
+            .multilineTextAlignment(.center)
+            .padding(.horizontal, 52)
+
+            // Unlike an overlay, this row contributes the back button's full
+            // height to the header, so its lower edge cannot be clipped.
+            HStack {
+                BrassBackButton(action: onBack)
+                Spacer(minLength: 0)
             }
         }
         .frame(maxWidth: .infinity, alignment: .center)
-        .multilineTextAlignment(.center)
-        .padding(.horizontal, 52)
-        // Navigation controls are deliberately overlaid. They must never
-        // consume width from, or shift, the centred title.
-        .overlay(alignment: .leading) {
-            BrassBackButton(action: onBack)
-        }
         .padding(.horizontal, 14)
         .padding(.top, 8)
         .padding(.bottom, 6)

@@ -40,16 +40,26 @@ public final class AppModel {
         progress = storage.load() ?? TrainingProgress()
     }
 
-    /// Whether this activity may be started right now: paid accounts always,
+    /// Claim one real attempt. Loading or browsing training content must never
+    /// call this; only the first move, answer or explicit run start does.
+    /// Paid accounts are always admitted and do not accumulate free usage.
+    @discardableResult
+    public func beginAttempt(_ activity: TrainingActivity, at now: Date = Date()) -> Bool {
+        guard canStart(activity, at: now) else { return false }
+        consume(activity, at: now)
+        return true
+    }
+
+    /// Whether this activity may be attempted right now: paid accounts always,
     /// free accounts until the day's allowance is gone.
-    public func canStart(_ activity: TrainingActivity, at now: Date = Date()) -> Bool {
+    private func canStart(_ activity: TrainingActivity, at now: Date) -> Bool {
         store.isPro || progress.freeRemaining(activity, at: now) > 0
     }
 
     /// Count one use against the free allowance. A paid account spends nothing,
     /// so nothing is counted for it and the numbers stay meaningful if a
     /// subscription later lapses.
-    public func consume(_ activity: TrainingActivity, at now: Date = Date()) {
+    private func consume(_ activity: TrainingActivity, at now: Date) {
         guard !store.isPro else { return }
         update { $0.recordFreeUse(of: activity, at: now) }
     }

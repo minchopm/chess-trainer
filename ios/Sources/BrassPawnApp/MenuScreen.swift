@@ -275,6 +275,11 @@ struct MenuScreen: View {
                 .strokeBorder(Theatre.brassDeep.opacity(0.9), lineWidth: 3)
                 .padding(5)
             PieceView(piece: Piece(.white, .knight), size: 48)
+                // The artwork shares the board pieces' baseline, so its
+                // visible bounds sit lower than the centre of its square PNG.
+                // Compensate only inside the medallion, where optical rather
+                // than board-baseline centring is required.
+                .offset(x: -0.25, y: -3.75)
         }
         .frame(width: 70, height: 70)
         .shadow(color: Theatre.shadow.opacity(0.75), radius: 8, y: 4)

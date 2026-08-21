@@ -29,7 +29,7 @@ struct TopBar<Content: View>: View {
         // Empty training headers use Spacer/Color.clear as their centre
         // content. Without an explicit height those flexible views consume
         // the remaining screen and push the board away.
-        .frame(height: 40)
+        .frame(height: 44)
         .padding(.horizontal, 54)
         .overlay(alignment: .leading) {
             BrassBackButton {
@@ -45,6 +45,7 @@ struct TopBar<Content: View>: View {
 struct SettingsScreen: View {
     @Environment(AppModel.self) private var app
     @Environment(\.dismiss) private var dismiss
+    @State private var volumeBeforeMute = 0.7
 
     var body: some View {
         VStack(spacing: 0) {
@@ -76,31 +77,90 @@ struct SettingsScreen: View {
     }
 
     private var sound: some View {
-        Panel {
-            BrassToggle(
-                L.t("settings.soundsOn", "Play sounds"),
-                symbol: app.progress.appearance.soundsOn
-                    ? "speaker.wave.2.fill"
-                    : "speaker.slash.fill",
-                isOn: Binding(
-                    get: { app.progress.appearance.soundsOn },
-                    set: { on in app.update { $0.appearance.soundsOn = on } }
-                )
-            )
+        let soundIsOn = app.progress.appearance.soundsOn
+            && app.progress.appearance.volume > 0
 
-            BrassSlider(
-                value: Binding(
-                    get: { app.progress.appearance.volume },
-                    set: { level in app.update { $0.appearance.volume = level } }
-                ),
-                in: 0...1
-            ) { editing in
-                // A sample on release, so the slider can be judged by ear
-                // rather than by the number next to it.
-                if !editing { SoundBoard.shared.play(.move) }
+        return Panel {
+            Text(L.t("settings.soundsOn", "Play sounds"))
+                .font(.subheadline)
+                .foregroundStyle(Theatre.ivory)
+
+            HStack(spacing: 10) {
+                Button {
+                    withAnimation(.spring(response: 0.24, dampingFraction: 0.78)) {
+                        if soundIsOn {
+                            volumeBeforeMute = app.progress.appearance.volume
+                            app.update {
+                                $0.appearance.soundsOn = false
+                                $0.appearance.volume = 0
+                            }
+                        } else {
+                            app.update {
+                                $0.appearance.soundsOn = true
+                                $0.appearance.volume = max(volumeBeforeMute, 0.1)
+                            }
+                        }
+                    }
+                } label: {
+                    Image(systemName: soundIsOn
+                          ? "speaker.wave.2.fill"
+                          : "speaker.slash.fill")
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(soundIsOn
+                                         ? Theatre.ink
+                                         : Theatre.ivoryDim)
+                        .frame(width: 44, height: 44)
+                        .background {
+                            Circle()
+                                .fill(soundIsOn
+                                      ? Theatre.brass
+                                      : Theatre.ink3)
+                        }
+                        .overlay {
+                            Circle()
+                                .strokeBorder(soundIsOn
+                                              ? Theatre.brass
+                                              : Theatre.brassDeep,
+                                              lineWidth: 1)
+                        }
+                        .shadow(color: soundIsOn
+                                ? Theatre.brassGlow
+                                : .clear,
+                                radius: 7)
+                        .contentShape(Circle())
+                        .contentTransition(.symbolEffect(.replace))
+                }
+                .buttonStyle(BrassPressStyle())
+                .accessibilityLabel(L.t("settings.soundsOn", "Play sounds"))
+                .accessibilityValue(soundIsOn ? "On" : "Off")
+
+                BrassSlider(
+                    value: Binding(
+                        get: { app.progress.appearance.volume },
+                        set: { level in
+                            if level > 0 { volumeBeforeMute = level }
+                            app.update {
+                                $0.appearance.volume = level
+                                $0.appearance.soundsOn = level > 0
+                            }
+                        }
+                    ),
+                    in: 0...1
+                ) { editing in
+                    // A sample on release, so the slider can be judged by ear
+                    // rather than by the number next to it.
+                    if !editing { SoundBoard.shared.play(.move) }
+                }
             }
-            .opacity(app.progress.appearance.soundsOn ? 1 : 0.35)
-            .disabled(!app.progress.appearance.soundsOn)
+        }
+        .onAppear {
+            let currentVolume = app.progress.appearance.volume
+            if app.progress.appearance.soundsOn, currentVolume > 0 {
+                volumeBeforeMute = currentVolume
+            } else if currentVolume > 0 {
+                volumeBeforeMute = currentVolume
+                app.update { $0.appearance.volume = 0 }
+            }
         }
     }
 
@@ -110,8 +170,22 @@ struct SettingsScreen: View {
 /// sapphire" from a word.
 private struct PieceSetGallery: View {
     @Environment(AppModel.self) private var app
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
-    private let columns = [GridItem(.adaptive(minimum: 150), spacing: 10)]
+    /// Keep the choices readable instead of letting a wide screen squeeze all
+    /// five sets into one long, shallow strip. Compact windows get two cards
+    /// per row; iPad-sized windows get three.
+    private var columns: [GridItem] {
+        let count = horizontalSizeClass == .regular ? 3 : 2
+        return Array(
+            repeating: GridItem(.flexible(minimum: 0, maximum: .infinity), spacing: 10),
+            count: count
+        )
+    }
+
+    private var previewPieceSize: CGFloat {
+        horizontalSizeClass == .regular ? 42 : 30
+    }
 
     var body: some View {
         LazyVGrid(columns: columns, spacing: 10) {
@@ -124,17 +198,18 @@ private struct PieceSetGallery: View {
                     VStack(spacing: 8) {
                         HStack(spacing: 0) {
                             ForEach([PieceKind.king, .knight], id: \.rawValue) { kind in
-                                PieceView(piece: Piece(.white, kind), size: 30)
+                                PieceView(piece: Piece(.white, kind), size: previewPieceSize)
                                     .frame(maxWidth: .infinity)
                             }
                             ForEach([PieceKind.knight, .king], id: \.rawValue) { kind in
-                                PieceView(piece: Piece(.black, kind), size: 30)
+                                PieceView(piece: Piece(.black, kind), size: previewPieceSize)
                                     .frame(maxWidth: .infinity)
                             }
                         }
                         .environment(\.pieceSet, set)
                         .frame(maxWidth: .infinity)
-                        .padding(.vertical, 5)
+                        // Four preview files are four squares, on every width.
+                        .aspectRatio(4, contentMode: .fit)
                         .background {
                             previewBoard.clipShape(RoundedRectangle(cornerRadius: 8))
                         }
@@ -143,6 +218,8 @@ private struct PieceSetGallery: View {
                             .font(Face.mono(9, weight: .medium))
                             .tracking(1.2)
                             .textCase(.uppercase)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.72)
                             .foregroundStyle(chosen ? Theatre.brass : Theatre.ivoryDim)
                     }
                     .padding(9)

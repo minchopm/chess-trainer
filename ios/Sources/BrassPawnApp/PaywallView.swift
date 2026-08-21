@@ -51,7 +51,7 @@ struct PaywallView: View {
                 .font(.system(size: 15, weight: .bold, design: .rounded))
                 .tracking(1.1)
                 .foregroundStyle(Theatre.ivory)
-            Text(L.t("store.headerSubtitle", "Unlimited training, no adverts"))
+            Text(L.t("store.headerSubtitle", "Unlimited training"))
                 .font(.caption)
                 .foregroundStyle(Theatre.ivoryDim)
         }
@@ -114,15 +114,10 @@ struct PaywallView: View {
                 .fill(Theatre.ruleSoft)
                 .frame(height: 1)
 
-            Text(L.t("store.freeForever", "Playing stays free. Pro unlocks all training:"))
-                .font(.caption)
-                .foregroundStyle(Theatre.ivoryDim)
-
             VStack(alignment: .leading, spacing: 12) {
                 row("infinity", L.t("store.unlimitedPuzzles", "All 14,351 puzzles, without a daily limit"))
                 row("timer", L.t("store.unlimitedRush", "Rush runs without a daily limit"))
                 row("square.grid.3x3.middle.filled", L.t("store.unlimitedRest", "Unlimited positional, endgame and Guess the Elo training"))
-                row("nosign", L.t("store.noAds", "No adverts anywhere in the app"))
             }
         }
         .padding(16)

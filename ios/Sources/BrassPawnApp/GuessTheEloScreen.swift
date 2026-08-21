@@ -19,9 +19,10 @@ final class GuessTheEloModel {
     private(set) var isPlaying = false
     private(set) var verdict: EloGuess?
 
-    /// Where the slider sits. Starts mid-ladder rather than at an end, so the
-    /// first move of the slider is a decision instead of a correction.
-    var guess = 1500
+    /// The same named strength ladder used when choosing an engine opponent.
+    /// Guess the Elo should speak the same language as Play, not make the
+    /// player click through dozens of 25-point values.
+    var guessLevel = OpponentLevel.all[1]
     var speed: Speed = .normal
 
     private var ticker: Task<Void, Never>?
@@ -147,7 +148,8 @@ final class GuessTheEloModel {
 
     func lockIn() -> EloGuess? {
         guard let game, verdict == nil else { return nil }
-        let result = EloGuess(guess: guess, actual: game.averageRating)
+        let guessedElo = guessLevel.elo ?? EloGuess.range.upperBound
+        let result = EloGuess(guess: guessedElo, actual: game.averageRating)
         verdict = result
         return result
     }
@@ -162,6 +164,7 @@ struct GuessTheEloScreen: View {
     @State private var model = GuessTheEloModel()
     @State private var showsPaywall = false
     @State private var exhausted = false
+    @State private var hasStartedAttempt = false
 
     var body: some View {
         Group {
@@ -172,7 +175,7 @@ struct GuessTheEloScreen: View {
                 content
             }
         }
-        .task(id: app.library.games.count) { if model.game == nil { next(interactive: false) } }
+        .task(id: app.library.games.count) { if model.game == nil { next() } }
         .fullScreenCover(isPresented: $showsPaywall) { PaywallView(activity: .guessTheElo) }
         .onDisappear { model.stop() }
     }
@@ -252,22 +255,11 @@ struct GuessTheEloScreen: View {
 
     private var guessCard: some View {
         Card {
-            HStack(alignment: .firstTextBaseline, spacing: 8) {
-                Text(verbatim: "\(model.guess)")
-                    .font(.system(size: 34, weight: .semibold, design: .rounded))
-                    .monospacedDigit()
-                    .contentTransition(.numericText())
-                Text(L.t("guess.yourGuessLichessRating", "your guess, Lichess rating")).font(.caption).foregroundStyle(Theatre.ivoryDim)
-                Spacer(minLength: 0)
-            }
-
-            BrassSlider(
-                value: Binding(
-                    get: { Double(model.guess) },
-                    set: { model.guess = Int(($0 / Double(EloGuess.step)).rounded()) * EloGuess.step }
-                ),
-                in: Double(EloGuess.range.lowerBound)...Double(EloGuess.range.upperBound),
-                step: Double(EloGuess.step)
+            BrassCyclePicker(
+                L.t("guess.yourGuessLichessRating", "Your guess, Lichess rating"),
+                selection: Binding(get: { model.guessLevel }, set: { model.guessLevel = $0 }),
+                options: OpponentLevel.all,
+                label: \.label
             )
         }
     }
@@ -342,6 +334,7 @@ struct GuessTheEloScreen: View {
     }
 
     private func lockIn() {
+        guard model.game != nil, !model.isRevealed, beginAttempt() else { return }
         guard let game = model.game, let verdict = model.lockIn() else { return }
         app.update { progress in
             progress.eloGuesses.append(
@@ -350,14 +343,21 @@ struct GuessTheEloScreen: View {
         }
     }
 
-    private func next(interactive: Bool = true) {
-        guard app.canStart(.guessTheElo) else {
-            if interactive { showsPaywall = true } else { exhausted = true }
-            return
+    private func next() {
+        exhausted = false
+        hasStartedAttempt = false
+        model.load(model.pick(from: app.library.games))
+    }
+
+    private func beginAttempt() -> Bool {
+        guard !hasStartedAttempt else { return true }
+        guard app.beginAttempt(.guessTheElo) else {
+            exhausted = true
+            showsPaywall = true
+            return false
         }
         exhausted = false
-        app.consume(.guessTheElo)
-        model.load(model.pick(from: app.library.games))
-        model.play()
+        hasStartedAttempt = true
+        return true
     }
 }

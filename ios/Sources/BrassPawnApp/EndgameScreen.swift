@@ -182,6 +182,7 @@ struct EndgameScreen: View {
     @State private var values = MoveValueController()
     @State private var showsPaywall = false
     @State private var exhausted = false
+    @State private var hasStartedAttempt = false
 
     private var material: MaterialBalance { MaterialBalance(model.position) }
 
@@ -290,11 +291,12 @@ struct EndgameScreen: View {
                 },
             ])
         }
-        .task(id: app.library.drills.count) { if model.drill == nil { next(interactive: false) } }
+        .task(id: app.library.drills.count) { if model.drill == nil { next() } }
         .fullScreenCover(isPresented: $showsPaywall) { PaywallView(activity: .endgame) }
     }
 
     private func play(_ from: Square, _ to: Square, _ promotion: PieceKind?) async {
+        guard beginAttempt() else { return }
         guard let success = await model.play(
             from: from, to: to, promotion: promotion, engine: app.engine
         ), let drill = model.drill else { return }
@@ -307,15 +309,24 @@ struct EndgameScreen: View {
         }
     }
 
-    private func next(interactive: Bool = true) {
-        guard app.canStart(.endgame) else {
-            if interactive { showsPaywall = true } else { exhausted = true }
-            return
-        }
+    private func next() {
         exhausted = false
-        app.consume(.endgame)
+        hasStartedAttempt = false
         values.reset()
         model.load(ItemSelector.nextDrill(from: app.library.drills, progress: app.progress))
+    }
+
+    private func beginAttempt() -> Bool {
+        guard model.drill != nil, !model.isFinished, !model.isThinking else { return false }
+        guard !hasStartedAttempt else { return true }
+        guard app.beginAttempt(.endgame) else {
+            exhausted = true
+            showsPaywall = true
+            return false
+        }
+        exhausted = false
+        hasStartedAttempt = true
+        return true
     }
 }
 
