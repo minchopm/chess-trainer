@@ -50,16 +50,53 @@ public extension Color {
 /// platform reads best, and a monospace for labels — the small-caps-and-
 /// tracking treatment that makes a caption look like a title card.
 public enum Face {
+    /// The scripts the two bundled faces can actually draw.
+    ///
+    /// Cormorant Garamond has Latin, Cyrillic and the Vietnamese diacritics,
+    /// and nothing else: no Greek, Arabic, Hebrew, Devanagari, Thai, or any of
+    /// the CJK. JetBrains Mono adds Greek and stops there. The app ships in
+    /// thirty-two languages, nine of them in a script neither face has a glyph
+    /// for.
+    ///
+    /// Asking for a face that cannot draw the text does not fail — Core Text
+    /// quietly substitutes, glyph by glyph, whatever the system has. So a Thai
+    /// heading comes out in the system face at a Garamond's size and spacing,
+    /// and a screen that mixes a translated title with a number comes out in
+    /// two faces at once. Nothing announces this; it simply stops looking like
+    /// the same app.
+    ///
+    /// So the choice is made deliberately instead: where the house face can
+    /// draw the language, it is used; where it cannot, the system's own serif
+    /// or monospace is, which is a face designed for that script rather than a
+    /// substitution stumbled into.
+    private static let scripts = (display: Set(["Latn", "Cyrl"]),
+                                  mono: Set(["Latn", "Cyrl", "Grek"]))
+
+    private static let script: String = {
+        let language = Locale.current.language
+        // Unwritten in the identifier for most languages — "de" does not say
+        // Latin — so it has to be filled in from what the language implies.
+        return language.script?.identifier
+            ?? Locale.Language(identifier: language.maximalIdentifier).script?.identifier
+            ?? "Latn"
+    }()
+
     public static func display(_ size: CGFloat) -> Font {
-        .custom("CormorantGaramond-SemiBold", size: size)
+        scripts.display.contains(script)
+            ? .custom("CormorantGaramond-SemiBold", size: size)
+            : .system(size: size, design: .serif).weight(.semibold)
     }
 
     public static func displayLight(_ size: CGFloat) -> Font {
-        .custom("CormorantGaramond-Light", size: size)
+        scripts.display.contains(script)
+            ? .custom("CormorantGaramond-Light", size: size)
+            : .system(size: size, design: .serif).weight(.light)
     }
 
     public static func mono(_ size: CGFloat, weight: Font.Weight = .medium) -> Font {
-        .custom("JetBrainsMono-Regular", size: size).weight(weight)
+        scripts.mono.contains(script)
+            ? .custom("JetBrainsMono-Regular", size: size).weight(weight)
+            : .system(size: size, design: .monospaced).weight(weight)
     }
 }
 

@@ -6,6 +6,8 @@ format with five lines of JSON per string, and hand-editing thirty languages of
 it is how translations quietly go missing.
 """
 import json
+import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -14,6 +16,49 @@ LOCALES = [
     "fr-FR", "he", "hi", "hu", "id", "it", "ja", "ko", "ms", "nl-NL", "no", "pl",
     "pt-BR", "ro", "ru", "sv", "th", "tr", "vi", "zh-Hans", "zh-Hant",
 ]
+
+# Anything printf will read an argument for. `%%` is an escaped percent and
+# takes none, so it is not one of these.
+PLACEHOLDER = re.compile(
+    r"%(?:\d+\$)?[-+ #0]*[\d*]*(?:\.[\d*]+)?(?:hh|h|ll|l|L|z|j|t|q)?([@dDiuUxXoOfeEgGcCsSpaAF%])"
+)
+
+
+def placeholders(text):
+    return [m.group(1) for m in PLACEHOLDER.finditer(text) if m.group(1) != "%"]
+
+
+def check(english, tables):
+    """Every translation must ask printf for exactly what the English does.
+
+    A translated string is a format string, and it is handed to `String(format:)`
+    with the arguments the *English* wanted. Add a placeholder in translation and
+    printf reads an argument that was never passed — which is not a wrong word on
+    screen, it is the app going down.
+
+    It has happened: the Hungarian for `store.freeToday` was written with a range
+    where the English has a single count — four placeholders against three — so
+    the app crashed for anyone with a Hungarian phone at the moment it told them
+    what they get for free. Nothing in the pipeline noticed, because nothing was
+    looking.
+    """
+    faults = []
+    for locale, table in sorted(tables.items()):
+        for key, text in sorted(table.items()):
+            source = english.get(key)
+            if source is None:
+                continue
+            wanted, given = placeholders(source), placeholders(text)
+            if wanted != given:
+                faults.append(
+                    f"  {locale} {key}\n"
+                    f"    en {source!r}\n"
+                    f"       wants {wanted}\n"
+                    f"    {locale} {text!r}\n"
+                    f"       gives {given}"
+                )
+    return faults
+
 
 def main():
     keys = json.loads((ROOT / "Localization/keys.json").read_text())
@@ -28,6 +73,12 @@ def main():
     # empty is what makes the app advertise them as supported languages.
     for locale in ("en-US", "en-CA"):
         tables[locale] = dict(english)
+
+    faults = check(english, tables)
+    if faults:
+        print(f"{len(faults)} translation(s) do not match the English format:\n")
+        print("\n\n".join(faults))
+        sys.exit(1)
 
     strings = {}
     for key in sorted(english):

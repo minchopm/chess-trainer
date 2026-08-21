@@ -60570,7 +60570,7 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ma ingyen: %lld feladvány, %lld Rush-kör, a többiből %lld-%lld."
+            "value": "Ma ingyen: %lld feladvány, %lld Rush-kör, a többiből egyenként %lld."
           }
         },
         "id": {

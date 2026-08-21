@@ -114,8 +114,14 @@ public final class Stage {
         surface.diffuse.contents = BoardSurface.texture(size: quality.textureSize) as Any
         surface.roughness.contents = BoardSurface.roughness() as Any
         surface.metalness.contents = 0.0
-        surface.clearCoat.contents = playable ? 0.22 : 0.55
-        surface.clearCoatRoughness.contents = playable ? 0.4 : 0.22
+        // Varnish, and how polished it is. On the board being played this is
+        // kept low and left rough: a tight coat throws the key light back as a
+        // mirror, and the squares under it go white enough that an ivory piece
+        // standing on them has nothing to stand against. The title sequence
+        // keeps the gloss, because there the shot is the point and nobody has
+        // to find a bishop on it.
+        surface.clearCoat.contents = playable ? 0.10 : 0.55
+        surface.clearCoatRoughness.contents = playable ? 0.68 : 0.22
 
         let surfaceNode = SCNNode(geometry: top)
         surfaceNode.name = Stage.surfaceName
@@ -143,9 +149,13 @@ public final class Stage {
         let keyLight = SCNLight()
         keyLight.type = .spot
         keyLight.color = Colour.make(0xFFCF94)
-        keyLight.intensity = playable ? 950 : 1150
-        keyLight.spotInnerAngle = 22
-        keyLight.spotOuterAngle = 52
+        keyLight.intensity = playable ? 790 : 1150
+        // Wide and soft for play, narrow and dramatic for the title. A tight
+        // cone puts a bright pool in the middle of the board and lets the
+        // corners fall away — which is a good photograph and a bad thing to
+        // play on, because the pieces at the two ends are the ones being read.
+        keyLight.spotInnerAngle = playable ? 34 : 22
+        keyLight.spotOuterAngle = playable ? 78 : 52
         keyLight.castsShadow = true
         keyLight.shadowMode = .deferred
         keyLight.shadowMapSize = CGSize(width: quality.shadowMapSize, height: quality.shadowMapSize)
@@ -157,7 +167,11 @@ public final class Stage {
         keyLight.zFar = 30
         key.light = keyLight
         key.position = SCNVector3(6.5, 8.5, -5.0)
-        key.look(at: SCNVector3(0.8, 0, -1.2))
+        // Aimed at the middle of the board for play, and off it for the title.
+        // Off-centre throws the shadows down the board towards the viewer,
+        // which is the shot — but it also leaves one half of the board lit and
+        // the other half not, and both halves have pieces on them.
+        key.look(at: playable ? SCNVector3(0, 0, -0.3) : SCNVector3(0.8, 0, -1.2))
         scene.rootNode.addChildNode(key)
 
         // The rim: cold, low, from the far side. It is what keeps the black
@@ -165,7 +179,7 @@ public final class Stage {
         let rimLight = SCNLight()
         rimLight.type = .spot
         rimLight.color = Colour.make(0x7C93B8)
-        rimLight.intensity = 240
+        rimLight.intensity = playable ? 268 : 240
         rimLight.spotInnerAngle = 30
         rimLight.spotOuterAngle = 78
         let rim = SCNNode()
@@ -177,7 +191,7 @@ public final class Stage {
         let fillLight = SCNLight()
         fillLight.type = .directional
         fillLight.color = Colour.make(0x8EA6CC)
-        fillLight.intensity = 165
+        fillLight.intensity = playable ? 215 : 165
         let fill = SCNNode()
         fill.light = fillLight
         fill.position = SCNVector3(-3, 4, 8)
@@ -187,7 +201,9 @@ public final class Stage {
         let ambientLight = SCNLight()
         ambientLight.type = .ambient
         ambientLight.color = Colour.make(0x141B2C)
-        ambientLight.intensity = playable ? 300 : 200
+        // Lifted for play. It is what stops the far corners going to nothing,
+        // and a black piece in a dark corner of a dark board is not a piece.
+        ambientLight.intensity = playable ? 405 : 200
         let ambient = SCNNode()
         ambient.light = ambientLight
         scene.rootNode.addChildNode(ambient)
