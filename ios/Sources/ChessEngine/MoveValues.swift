@@ -21,7 +21,7 @@ public struct MoveValues: Sendable {
     public func score(for uci: String) -> Int? { byMove[uci] }
 }
 
-extension StockfishEngine {
+extension Engine {
     /// Evaluate every legal move at once.
     ///
     /// One search with MultiPV set to the number of legal moves, rather than a
@@ -53,8 +53,8 @@ extension StockfishEngine {
             byMove[move] = line.score.comparable
         }
 
-        // Stockfish reports scores for the side to move, which is the mover —
-        // no conversion needed here, unlike scores taken *after* a move.
+        // UCI reports scores for the side to move, which is the mover — no
+        // conversion needed here, unlike scores taken *after* a move.
         let best = byMove.values.max() ?? 0
         return MoveValues(byMove: byMove, best: best)
     }

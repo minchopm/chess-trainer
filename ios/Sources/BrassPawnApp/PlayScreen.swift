@@ -7,10 +7,14 @@ import SwiftUI
 struct OpponentLevel: Identifiable, Hashable {
     let id: Int
     let name: String
-    /// nil means no limit — Stockfish at full strength.
+    /// nil means no limit — the engine at full strength.
     let elo: Int?
 
     var label: String { elo.map { "\(name) (\($0))" } ?? name }
+
+    static let fullStrength = OpponentLevel(
+        id: 5, name: L.t("play.fullStrength", "Full strength"), elo: nil
+    )
 
     static let all: [OpponentLevel] = [
         OpponentLevel(id: 0, name: L.t("play.casual", "Casual"), elo: 1400),
@@ -18,8 +22,18 @@ struct OpponentLevel: Identifiable, Hashable {
         OpponentLevel(id: 2, name: L.t("play.strongClub", "Strong club"), elo: 2100),
         OpponentLevel(id: 3, name: L.t("play.expert", "Expert"), elo: 2400),
         OpponentLevel(id: 4, name: L.t("play.master", "Master"), elo: 2700),
-        OpponentLevel(id: 5, name: L.t("play.fullStrength", "Full strength"), elo: nil),
+        fullStrength,
     ]
+
+    /// The rungs an engine can actually stand on.
+    ///
+    /// The ladder is built on `UCI_Elo`, which only Stockfish has. Offering the
+    /// same six names for Reckless and quietly giving all of them full strength
+    /// would make the app lie in six different ways at once, so an engine that
+    /// cannot limit its strength gets the one rung that is true.
+    static func available(limitsStrength: Bool) -> [OpponentLevel] {
+        limitsStrength ? all : [fullStrength]
+    }
 }
 
 @MainActor
@@ -38,6 +52,15 @@ final class PlayModel {
 
     var side: PieceColor = .white
     var level = OpponentLevel.all[1]
+
+    /// Bring the chosen rung back inside what the engine can do.
+    ///
+    /// The engine is chosen in Settings, which can happen between one game and
+    /// the next while a level from the other engine's ladder is still selected.
+    func clampLevel(limitsStrength: Bool) {
+        let available = OpponentLevel.available(limitsStrength: limitsStrength)
+        if !available.contains(level) { level = available[0] }
+    }
     var coachingEnabled = true
 
     /// Moves given while the engine is thinking. The rules of the thing live in
@@ -73,7 +96,7 @@ final class PlayModel {
             : L.t("play.engineToMove", "Engine to move.")
     }
 
-    func start(engine: StockfishEngine) async {
+    func start(engine: any Engine) async {
         position = Position()
         moves = []
         losses = []
@@ -92,7 +115,7 @@ final class PlayModel {
         refreshDestinations()
     }
 
-    func play(from: Square, to: Square, promotion: PieceKind?, engine: StockfishEngine) async {
+    func play(from: Square, to: Square, promotion: PieceKind?, engine: any Engine) async {
         guard hasStarted, !isThinking, position.sideToMove == side, !position.isGameOver else { return }
         guard let move = position.legalMoves().first(where: {
             $0.matchesNotation(of: Move(from: from, to: to, promotion: promotion))
@@ -130,7 +153,7 @@ final class PlayModel {
 
     /// Play one of your moves and grade it. A queued move is still your move,
     /// so it goes through the same coaching as one played by hand.
-    private func apply(_ move: Move, engine: StockfishEngine) async {
+    private func apply(_ move: Move, engine: any Engine) async {
         let before = position
         let san = position.san(for: move)
         let captured = position[move.to] != nil
@@ -188,7 +211,7 @@ final class PlayModel {
         refreshDestinations()
     }
 
-    func hint(engine: StockfishEngine) async {
+    func hint(engine: any Engine) async {
         guard !isThinking, position.sideToMove == side else { return }
         isThinking = true
         defer { isThinking = false }
@@ -207,7 +230,7 @@ final class PlayModel {
     /// think for long; full strength is the only setting that needs the time.
     private var budget: SearchBudget { level.elo == nil ? .fullStrength : .limited }
 
-    private func playEngineMove(engine: StockfishEngine) async {
+    private func playEngineMove(engine: any Engine) async {
         guard let uci = try? await engine.chooseMove(
             fen: position.fen,
             elo: level.elo,
@@ -270,12 +293,25 @@ struct PlayScreen: View {
 
     private var material: MaterialBalance { MaterialBalance(model.position) }
 
+    /// What to call the opponent.
+    ///
+    /// A rated rung already names itself — "Club", "Expert" — and which engine
+    /// is behind it is a detail. An unrated one only said "Full strength", which
+    /// leaves out the part the player chose, so there it is the engine's name.
+    private var opponentName: String {
+        model.level.elo == nil ? app.engineChoice.name : model.level.name
+    }
+
+    private var opponentLabel: String {
+        model.level.elo.map { "\(opponentName) (\($0))" } ?? opponentName
+    }
+
     var body: some View {
         TrainingLayout { width in
             BoardStage(
                 width: width,
                 top: PlayerBar(
-                    name: model.level.name,
+                    name: opponentName,
                     rating: model.level.elo,
                     color: model.side.opponent,
                     material: material
@@ -320,6 +356,10 @@ struct PlayScreen: View {
             recordGame()
             activity.release()
         }
+        .onAppear { model.clampLevel(limitsStrength: app.engineChoice.limitsStrength) }
+        .onChange(of: app.engineChoice) { _, choice in
+            model.clampLevel(limitsStrength: choice.limitsStrength)
+        }
         .onChange(of: model.hasStarted) { _, _ in holdWhilePlaying() }
         .onChange(of: model.moves.count) { _, _ in holdWhilePlaying() }
         .onDisappear { activity.release() }
@@ -343,15 +383,31 @@ struct PlayScreen: View {
     private var setupPanel: some View {
         Card {
             Text(L.t("play.newGame", "New game")).appFont(size: 22, weight: .semibold)
-            Text(L.t("play.theEnginePlaysAtThe", "The engine plays at the strength you choose. Coaching grades each of your moves as you make it."))
+            // Two sentences or one, because the first of them is only true when
+            // there is a ladder to choose from. Promising a choice of strength
+            // directly above the line explaining there is none is worse than
+            // saying nothing about it.
+            Text(app.engineChoice.limitsStrength
+                 ? L.t("play.theEnginePlaysAtThe", "The engine plays at the strength you choose. Coaching grades each of your moves as you make it.")
+                 : L.t("play.coachingGradesEveryMove", "Coaching grades each of your moves as you make it."))
                 .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
 
-            BrassCyclePicker(
-                L.t("play.strength", "Strength"),
-                selection: Binding(get: { model.level }, set: { model.level = $0 }),
-                options: OpponentLevel.all,
-                label: \.label
-            )
+            if app.engineChoice.limitsStrength {
+                BrassCyclePicker(
+                    L.t("play.strength", "Strength"),
+                    selection: Binding(get: { model.level }, set: { model.level = $0 }),
+                    options: OpponentLevel.all,
+                    label: \.label
+                )
+            } else {
+                // No picker rather than a picker with one entry: a control that
+                // cannot be changed invites the player to try.
+                Text(L.t("play.engineHasNoLadder",
+                         "%@ plays at full strength — it has no rating limiter. Change the engine in Settings to play a rated opponent.",
+                         app.engineChoice.name))
+                    .appFont(.footnote)
+                    .foregroundStyle(Theatre.ivoryFaint)
+            }
 
             BrassSegmentedPicker(
                 L.t("play.youPlay", "You play"),
@@ -380,7 +436,7 @@ struct PlayScreen: View {
     private var gamePanel: some View {
         Card {
             Text(model.statusText).appFont(size: 22, weight: .semibold)
-            Text(L.t("play.opponentIs", "Opponent: %@", model.level.label)).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
+            Text(L.t("play.opponentIs", "Opponent: %@", opponentLabel)).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
 
             if model.premoveCount > 0 {
                 Label {

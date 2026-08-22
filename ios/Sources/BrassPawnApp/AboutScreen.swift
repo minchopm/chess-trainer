@@ -25,7 +25,7 @@ struct AboutScreen: View {
                         Text(L.t("about.version", "Version %@", Self.version))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryDim)
-                        Text(L.t("about.tacticsPositionalJudgementEndgameTechnique", "Tactics, positional judgement, endgame technique and coached play, with Stockfish running on the device. Nothing leaves the phone."))
+                        Text(L.t("about.tacticsPositionalJudgementEndgameTechnique", "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device. Nothing leaves the phone."))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryFaint)
                     }
@@ -37,8 +37,12 @@ struct AboutScreen: View {
                         Text(L.t("about.itIncludesStockfishWhichIs", "It includes Stockfish, which is GPLv3. Because Stockfish is linked into the app, the whole application carries the same licence — and its complete source is published."))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryFaint)
+                        Text(L.t("about.itAlsoIncludesReckless", "It also includes Reckless, a second engine, which is AGPLv3. The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device and the app makes no network requests."))
+                            .appFont(.footnote)
+                            .foregroundStyle(Theatre.ivoryFaint)
 
                         documentButton("Read the full licence", resource: "LICENSE", title: L.t("about.gnuGplV3", "GNU GPL v3"))
+                        documentButton("Read the Affero licence", resource: "AGPL", title: L.t("about.gnuAgplV3", "GNU AGPL v3"))
                         documentButton("Third-party components", resource: "NOTICE", title: L.t("about.attribution", "Attribution"))
                         BrassLinkButton(title: "Source code", destination: URL(string: Self.sourceURL)!)
                             .appFont(.footnote)
@@ -47,8 +51,14 @@ struct AboutScreen: View {
                     aboutSection(L.t("about.credits", "Credits")) {
                         credit(
                             "Stockfish",
-                            "The chess engine. Copyright © 2004–2026 the Stockfish developers. GPLv3.",
+                            "A chess engine. Copyright © 2004–2026 the Stockfish developers. GPLv3.",
                             "https://stockfishchess.org"
+                        )
+                        Divider().overlay(Theatre.ruleSoft)
+                        credit(
+                            "Reckless",
+                            "The other chess engine. Copyright © the Reckless developers. AGPLv3.",
+                            "https://github.com/codedeliveryservice/Reckless"
                         )
                         Divider().overlay(Theatre.ruleSoft)
                         credit(
@@ -163,7 +173,14 @@ struct BundledTextView: View {
         .background(Theatre.ink.ignoresSafeArea())
         .task {
             guard text == nil else { return }
-            text = Self.load(resource) ?? "The licence text is missing from this build. It is also available at https://www.gnu.org/licenses/gpl-3.0.txt"
+            // The fallback names the right licence: there are two of them now,
+            // and pointing somebody at the GPL when they asked for the Affero
+            // one is worse than saying nothing.
+            let url = resource == "AGPL"
+                ? "https://www.gnu.org/licenses/agpl-3.0.txt"
+                : "https://www.gnu.org/licenses/gpl-3.0.txt"
+            text = Self.load(resource)
+                ?? "The licence text is missing from this build. It is also available at \(url)"
         }
     }
 

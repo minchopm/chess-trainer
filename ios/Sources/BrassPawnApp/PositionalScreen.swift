@@ -91,7 +91,7 @@ final class PositionalModel {
     /// Grade the chosen move. Precomputed candidates answer instantly; anything
     /// else asks the engine, which is why this is async.
     func choose(
-        from: Square, to: Square, promotion: PieceKind?, engine: StockfishEngine
+        from: Square, to: Square, promotion: PieceKind?, engine: any Engine
     ) async -> Bool? {
         guard phase == .choosing, let exercise else { return nil }
         var probe = position

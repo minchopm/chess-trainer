@@ -28,8 +28,22 @@
   ]
  },
  {
+  "key": "about.gnuAgplV3",
+  "english": "GNU AGPL v3",
+  "files": [
+   "AboutScreen.swift"
+  ]
+ },
+ {
   "key": "about.gnuGplV3",
   "english": "GNU GPL v3",
+  "files": [
+   "AboutScreen.swift"
+  ]
+ },
+ {
+  "key": "about.itAlsoIncludesReckless",
+  "english": "It also includes Reckless, a second engine, which is AGPLv3. The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device and the app makes no network requests.",
   "files": [
    "AboutScreen.swift"
   ]
@@ -57,7 +71,7 @@
  },
  {
   "key": "about.tacticsPositionalJudgementEndgameTechnique",
-  "english": "Tactics, positional judgement, endgame technique and coached play, with Stockfish running on the device. Nothing leaves the phone.",
+  "english": "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device. Nothing leaves the phone.",
   "files": [
    "AboutScreen.swift"
   ]
@@ -1295,8 +1309,22 @@
   ]
  },
  {
+  "key": "play.coachingGradesEveryMove",
+  "english": "Coaching grades each of your moves as you make it.",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
   "key": "play.draw",
   "english": "Draw.",
+  "files": [
+   "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.engineHasNoLadder",
+  "english": "%@ plays at full strength — it has no rating limiter. Change the engine in Settings to play a rated opponent.",
   "files": [
    "PlayScreen.swift"
   ]
@@ -2146,6 +2174,34 @@
   "english": "Done",
   "files": [
    "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.engine",
+  "english": "Engine",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.engine.recklessSummary",
+  "english": "A different opponent with its own taste in positions. It has no strength limiter, so it plays at full strength only.",
+  "files": [
+   "Appearance.swift"
+  ]
+ },
+ {
+  "key": "settings.engine.running",
+  "english": "Playing now: %@",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.engine.stockfishSummary",
+  "english": "The strongest engine there is, and the only one here that can play down to a rating.",
+  "files": [
+   "Appearance.swift"
   ]
  },
  {

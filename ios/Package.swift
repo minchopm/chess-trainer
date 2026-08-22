@@ -42,7 +42,16 @@ let package = Package(
             ]
         ),
 
-        .target(name: "ChessEngine", dependencies: ["CStockfish", "ChessCore"]),
+        // Reckless, a second engine, as a prebuilt static library.
+        //
+        // Binary rather than source because it is Rust: cargo builds it, and
+        // SwiftPM cannot. `ios/scripts/build-reckless.sh` produces the
+        // xcframework — device, simulator and macOS, the last so that
+        // `swift test` can exercise the engine on the host. That script has to
+        // have been run before this package will build. AGPLv3; see NOTICE.md.
+        .binaryTarget(name: "CReckless", path: "Vendor/Reckless/CReckless.xcframework"),
+
+        .target(name: "ChessEngine", dependencies: ["CStockfish", "CReckless", "ChessCore"]),
         .testTarget(name: "ChessEngineTests", dependencies: ["ChessEngine"]),
 
         // Everything the trainer knows that is not a rule of chess: what a
@@ -66,6 +75,7 @@ let package = Package(
             name: "BrassPawnApp",
             dependencies: ["ChessCore", "ChessEngine", "ChessTraining", "BoardScene"]
         ),
+        .testTarget(name: "BrassPawnAppTests", dependencies: ["BrassPawnApp"]),
     ],
     cxxLanguageStandard: .cxx17
 )

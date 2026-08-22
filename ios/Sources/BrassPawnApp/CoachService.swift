@@ -22,7 +22,7 @@ struct MoveReview: Sendable {
 /// move belongs to the *opponent* — comparing the two raw is the single easiest
 /// way to grade every move exactly backwards.
 struct CoachService {
-    let engine: StockfishEngine
+    let engine: any Engine
 
     /// Score for `color`, given a score reported for whoever is to move in `position`.
     static func score(_ score: EngineScore, for color: PieceColor, toMove: PieceColor) -> Int {

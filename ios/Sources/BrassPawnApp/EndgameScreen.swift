@@ -60,7 +60,7 @@ final class EndgameModel {
         return CoachService.score(score, for: side, toMove: toMove)
     }
 
-    func play(from: Square, to: Square, promotion: PieceKind?, engine: StockfishEngine) async -> Bool? {
+    func play(from: Square, to: Square, promotion: PieceKind?, engine: any Engine) async -> Bool? {
         guard !isFinished, !isThinking, position.sideToMove == side else { return nil }
         // Notation has to be taken before the move is made: afterwards the
         // position no longer contains the piece that moved, and disambiguation
@@ -115,7 +115,7 @@ final class EndgameModel {
         return nil
     }
 
-    private func updateEvaluation(engine: StockfishEngine) async {
+    private func updateEvaluation(engine: any Engine) async {
         guard !position.isGameOver else {
             evaluation = position.isCheckmate
                 ? .mate(position.sideToMove == side ? -1 : 1)

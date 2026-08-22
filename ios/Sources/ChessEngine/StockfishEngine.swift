@@ -7,7 +7,7 @@ import Foundation
 /// serialising access is not an optimisation but a correctness requirement.
 /// The web version learned this the hard way — sending a new position while a
 /// search was still unwinding killed the engine outright.
-public actor StockfishEngine {
+public actor StockfishEngine: Engine {
     /// The C handle, wrapped so it can be released from a nonisolated deinit.
     /// OpaquePointer is not Sendable, and an actor's deinit is not isolated.
     private final class Handle: @unchecked Sendable {
@@ -112,6 +112,25 @@ public actor StockfishEngine {
 
     public static var engineDescription: String {
         String(cString: sf_engine_info())
+    }
+
+    /// Stockfish limits strength through `UCI_Elo`, which is a real rating
+    /// limiter rather than a shortened search, so the app's whole ladder is
+    /// available.
+    public nonisolated let capabilities = EngineCapabilities(
+        name: StockfishEngine.shortDescription, limitsStrength: true
+    )
+
+    /// The name and version without the authorship that `engine_info` appends.
+    ///
+    /// UCI's `id name` is "Stockfish 18 by the Stockfish developers (see AUTHORS
+    /// file)", which is right for a UCI handshake and far too long for a line in
+    /// Settings. The credit belongs on the About screen, where it is, and where
+    /// there is room to give it properly.
+    static var shortDescription: String {
+        let full = engineDescription
+        guard let range = full.range(of: " by ") else { return full }
+        return String(full[full.startIndex..<range.lowerBound])
     }
 
     /// Point the engine at its two network files. Must succeed before searching.

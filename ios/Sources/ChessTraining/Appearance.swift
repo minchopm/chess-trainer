@@ -28,6 +28,48 @@ public enum AppTypeface: String, Codable, CaseIterable, Identifiable, Sendable {
 
 }
 
+/// Which engine plays and grades.
+///
+/// Two engines ship, and they are not interchangeable in one respect the player
+/// can see: Stockfish has `UCI_Elo` and can be asked to play like a 1400,
+/// Reckless has no strength limiter at all and plays its best or not at all. So
+/// choosing Reckless narrows the opponent ladder to a single rung, and the
+/// settings say so rather than offering ratings it cannot hit.
+///
+/// This lives here rather than in ChessEngine because ChessTraining does not
+/// depend on the engine module — and should not, since the whole point of that
+/// separation is that the trainer can be tested without an engine.
+public enum EngineChoice: String, Codable, CaseIterable, Identifiable, Sendable {
+    case stockfish
+    case reckless
+
+    public var id: String { rawValue }
+
+    public var name: String {
+        switch self {
+        case .stockfish: "Stockfish"
+        case .reckless: "Reckless"
+        }
+    }
+
+    /// Whether this engine can play at a requested rating. Mirrors
+    /// `EngineCapabilities.limitsStrength`, which is the authority — this copy
+    /// exists only so the settings can describe the choice before an engine has
+    /// been built.
+    public var limitsStrength: Bool { self == .stockfish }
+
+    public var summary: String {
+        switch self {
+        case .stockfish:
+            L.t("settings.engine.stockfishSummary",
+                "The strongest engine there is, and the only one here that can play down to a rating.")
+        case .reckless:
+            L.t("settings.engine.recklessSummary",
+                "A different opponent with its own taste in positions. It has no strength limiter, so it plays at full strength only.")
+        }
+    }
+}
+
 /// Which pieces and which board.
 ///
 /// Taste, not settings: nobody needs to be taught what a walnut board looks
@@ -56,6 +98,8 @@ public struct Appearance: Codable, Equatable, Sendable {
     /// every game in the library names its squares. Somebody who has to count
     /// along the rank to find e4 is spending their attention on arithmetic.
     public var showsCoordinates: Bool
+    /// Which engine plays, grades and labels. See `EngineChoice`.
+    public var engine: EngineChoice
 
     public init(
         typeface: AppTypeface = .system,
@@ -66,7 +110,8 @@ public struct Appearance: Codable, Equatable, Sendable {
         dimension: BoardDimension = .flat,
         carving: Carving = .banded,
         lightTone: LightTone = .boxwood,
-        showsCoordinates: Bool = true
+        showsCoordinates: Bool = true,
+        engine: EngineChoice = .stockfish
     ) {
         self.typeface = typeface
         self.pieces = pieces
@@ -77,6 +122,7 @@ public struct Appearance: Codable, Equatable, Sendable {
         self.carving = carving
         self.lightTone = lightTone
         self.showsCoordinates = showsCoordinates
+        self.engine = engine
     }
 
     public init(from decoder: Decoder) throws {
@@ -90,6 +136,10 @@ public struct Appearance: Codable, Equatable, Sendable {
         carving = try container.decodeIfPresent(Carving.self, forKey: .carving) ?? .banded
         lightTone = try container.decodeIfPresent(LightTone.self, forKey: .lightTone) ?? .boxwood
         showsCoordinates = try container.decodeIfPresent(Bool.self, forKey: .showsCoordinates) ?? true
+        // Stockfish for anybody who already had the app: the ladder they were
+        // playing against is Stockfish's, and a silent change of opponent on
+        // update is not a thing to do to somebody mid-way through a game.
+        engine = try container.decodeIfPresent(EngineChoice.self, forKey: .engine) ?? .stockfish
     }
 }
 

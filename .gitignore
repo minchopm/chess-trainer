@@ -11,6 +11,12 @@ DerivedData/
 # for no gain — they are build inputs with a canonical source.
 ios/Resources/Networks/*.nnue
 
+# The same for Reckless, whose network is 63 MB, plus the library it is compiled
+# into. Both are made by ios/scripts/build-reckless.sh.
+ios/Vendor/Reckless/networks/*.nnue
+ios/Vendor/Reckless/target/
+ios/Vendor/Reckless/CReckless.xcframework/
+
 # The Lichess puzzle database dump: ~290 MB, downloaded on demand by
 # scripts/import-lichess.mjs. The filtered slice it produces *is* committed.
 lichess_db_puzzle.csv.zst

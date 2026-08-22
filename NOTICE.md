@@ -23,6 +23,49 @@ distributed under the same licence. They are not committed to this repository;
 `ios/scripts/fetch-networks.sh` downloads the exact versions the bundled engine
 expects.
 
+## Reckless
+
+This project includes Reckless, a second UCI chess engine, which the player can
+choose in Settings instead of Stockfish.
+
+- Copyright (C) the Reckless developers
+- Licensed under the **GNU Affero General Public License version 3** — see
+  `AGPL` (in the app: About → Read the Affero licence)
+- Upstream: https://github.com/codedeliveryservice/Reckless
+- Commit vendored: `789de8912672360030d2dae2263292fd37575ae3`
+- Modifications: the engine source is vendored otherwise unchanged. Three
+  changes, all under `ios/Vendor/Reckless`:
+  - `src/ffi.rs` — a new file, a C interface over the engine, written for this
+    project. It exists because the crate exports nothing usable: every module in
+    `src/lib.rs` is private, so no separate crate can reach the search.
+  - `src/lib.rs` — one `pub mod ffi;`, declaring that file.
+  - `Cargo.toml` — `staticlib` added to `crate-type`, so it can be linked into
+    an application.
+  Those additions are licensed under AGPLv3 along with the engine.
+
+### Neural network
+
+Reckless's NNUE evaluation file is produced by the Reckless project and
+distributed under the same licence. It is compiled into the engine rather than
+loaded at runtime, and is not committed to this repository;
+`ios/scripts/build-reckless.sh` downloads the exact version the engine expects.
+
+### What the AGPL means here
+
+The GPL and the AGPL can be combined: **GPLv3 section 13** gives permission to
+link a GPLv3 work with an AGPLv3 work, and says the AGPL's own section 13 then
+applies to the combination.
+
+That section requires anyone who lets users interact with the program *remotely
+over a network* to offer those users its source. Brass Pawn does not: the engine
+runs on the device, the app makes no network requests, and no user interacts
+with this software across a network. So the clause adds nothing in practice here
+— but it travels with the application, and anyone who takes this source and puts
+it behind a network service is bound by it.
+
+Independently of that, the complete corresponding source is published, which is
+what both licences require of a distributed application.
+
 ## Lichess databases
 
 Most of the bundled tactics puzzles come from the Lichess puzzle database, and

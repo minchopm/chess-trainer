@@ -789,6 +789,203 @@
         }
       }
     },
+    "about.gnuAgplV3": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GNU AGPL v3"
+          }
+        }
+      }
+    },
     "about.gnuGplV3": {
       "extractionState": "manual",
       "localizations": {
@@ -982,6 +1179,203 @@
           "stringUnit": {
             "state": "translated",
             "value": "GNU GPL v3"
+          }
+        }
+      }
+    },
+    "about.itAlsoIncludesReckless": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يتضمن التطبيق أيضًا Reckless، وهو محرك ثانٍ مرخّص بـ AGPLv3. الرخصتان تتوافقان، وبند Affero الخاص بالبرمجيات المستخدمة عبر الشبكة لا يغيّر شيئًا هنا: كلا المحركين يعملان على هذا الجهاز، والتطبيق لا يجري أي طلبات شبكية."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obsahuje také Reckless, druhý engine, pod licencí AGPLv3. Obě licence lze spojit a klauzule Affero o softwaru používaném přes síť zde nic nemění: oba enginy běží na tomto zařízení a aplikace neprovádí žádné síťové požadavky."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appen indeholder også Reckless, en anden motor, under AGPLv3. De to licenser kan kombineres, og Affero-klausulen om software der bruges over et netværk ændrer intet her: begge motorer kører på denne enhed, og appen laver ingen netværkskald."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sie enthält außerdem Reckless, eine zweite Engine, die unter der AGPLv3 steht. Die beiden Lizenzen lassen sich verbinden, und die Affero-Klausel über Software, die über ein Netzwerk genutzt wird, ändert hier nichts: Beide Engines laufen auf diesem Gerät, und die App stellt keine Netzwerkanfragen."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Περιλαμβάνει επίσης το Reckless, μια δεύτερη μηχανή, με άδεια AGPLv3. Οι δύο άδειες συνδυάζονται, και η ρήτρα Affero για λογισμικό που χρησιμοποιείται μέσω δικτύου δεν αλλάζει τίποτα εδώ: και οι δύο μηχανές τρέχουν σε αυτή τη συσκευή και η εφαρμογή δεν κάνει αιτήματα δικτύου."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "It also includes Reckless, a second engine, which is AGPLv3. The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device and the app makes no network requests."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "It also includes Reckless, a second engine, which is AGPLv3. The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device and the app makes no network requests."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "It also includes Reckless, a second engine, which is AGPLv3. The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device and the app makes no network requests."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "También incluye Reckless, un segundo motor, bajo licencia AGPLv3. Las dos licencias se combinan, y la cláusula Affero sobre software usado a través de una red no cambia nada aquí: ambos motores se ejecutan en este dispositivo y la app no hace ninguna petición de red."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sovellus sisältää myös Recklessin, toisen moottorin, AGPLv3-lisenssillä. Lisenssit sopivat yhteen, eikä Affero-ehto verkon yli käytettävästä ohjelmistosta muuta tässä mitään: molemmat moottorit toimivat tällä laitteella, eikä sovellus tee verkkopyyntöjä."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elle comprend également Reckless, un second moteur, sous licence AGPLv3. Les deux licences se combinent, et la clause Affero sur les logiciels utilisés à travers un réseau ne change rien ici : les deux moteurs tournent sur cet appareil et l'app ne fait aucune requête réseau."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elle comprend également Reckless, un second moteur, sous licence AGPLv3. Les deux licences se combinent, et la clause Affero sur les logiciels utilisés à travers un réseau ne change rien ici : les deux moteurs tournent sur cet appareil et l'app ne fait aucune requête réseau."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "האפליקציה כוללת גם את Reckless, מנוע שני, ברישיון AGPLv3. שני הרישיונות משתלבים, וסעיף Affero בנוגע לתוכנה שנעשה בה שימוש דרך רשת אינו משנה כאן דבר: שני המנועים פועלים על המכשיר הזה, והאפליקציה אינה מבצעת שום פנייה לרשת."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इसमें Reckless भी शामिल है, एक दूसरा इंजन, जो AGPLv3 के अंतर्गत है। दोनों लाइसेंस साथ चल सकते हैं, और नेटवर्क पर इस्तेमाल होने वाले सॉफ़्टवेयर से जुड़ा Affero खंड यहाँ कुछ नहीं बदलता: दोनों इंजन इसी डिवाइस पर चलते हैं और ऐप कोई नेटवर्क अनुरोध नहीं करता।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tartalmazza a Reckless nevű második motort is, amely AGPLv3 licencű. A két licenc összekapcsolható, és az Affero hálózaton keresztül használt szoftverről szóló kikötése itt semmit sem változtat: mindkét motor ezen az eszközön fut, és az alkalmazás nem küld hálózati kérést."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aplikasi ini juga menyertakan Reckless, mesin kedua, yang berlisensi AGPLv3. Kedua lisensi dapat digabungkan, dan klausul Affero tentang perangkat lunak yang digunakan melalui jaringan tidak mengubah apa pun di sini: kedua mesin berjalan di perangkat ini dan aplikasi tidak membuat permintaan jaringan."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Include anche Reckless, un secondo motore, con licenza AGPLv3. Le due licenze si combinano, e la clausola Affero sul software usato attraverso una rete qui non cambia nulla: entrambi i motori girano su questo dispositivo e l'app non effettua richieste di rete."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AGPLv3 の第二のエンジン Reckless も含まれています。二つのライセンスは併存でき、ネットワーク越しに利用されるソフトウェアに関する Affero 条項はここでは何も変えません。どちらのエンジンもこの端末上で動作し、アプリはネットワーク通信を一切行いません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AGPLv3로 배포되는 두 번째 엔진 Reckless도 포함되어 있습니다. 두 라이선스는 함께 쓸 수 있으며, 네트워크를 통해 사용되는 소프트웨어에 관한 Affero 조항은 여기서 아무것도 바꾸지 않습니다. 두 엔진 모두 이 기기에서 실행되고, 앱은 어떤 네트워크 요청도 하지 않습니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aplikasi ini turut menyertakan Reckless, enjin kedua, di bawah AGPLv3. Kedua-dua lesen boleh digabungkan, dan klausa Affero tentang perisian yang digunakan melalui rangkaian tidak mengubah apa-apa di sini: kedua-dua enjin berjalan pada peranti ini dan aplikasi tidak membuat sebarang permintaan rangkaian."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De app bevat ook Reckless, een tweede engine, onder de AGPLv3. De twee licenties gaan samen, en de Affero-bepaling over software die via een netwerk wordt gebruikt verandert hier niets: beide engines draaien op dit apparaat en de app doet geen netwerkverzoeken."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appen inneholder også Reckless, en andre motor, under AGPLv3. De to lisensene kan kombineres, og Affero-klausulen om programvare som brukes over et nettverk endrer ingenting her: begge motorene kjører på denne enheten, og appen gjør ingen nettverkskall."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zawiera także Reckless, drugi silnik, na licencji AGPLv3. Obie licencje dają się połączyć, a klauzula Affero dotycząca oprogramowania używanego przez sieć nic tu nie zmienia: oba silniki działają na tym urządzeniu, a aplikacja nie wysyła żadnych zapytań sieciowych."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Também inclui o Reckless, um segundo motor, sob a AGPLv3. As duas licenças se combinam, e a cláusula Affero sobre software usado através de uma rede não muda nada aqui: os dois motores rodam neste aparelho e o app não faz nenhuma requisição de rede."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Include și Reckless, un al doilea motor, sub licența AGPLv3. Cele două licențe se combină, iar clauza Affero despre software-ul folosit printr-o rețea nu schimbă nimic aici: ambele motoare rulează pe acest dispozitiv, iar aplicația nu face nicio cerere de rețea."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "В приложение также входит Reckless — второй движок под лицензией AGPLv3. Две лицензии сочетаются, а пункт Affero о программах, используемых через сеть, здесь ничего не меняет: оба движка работают на этом устройстве, и приложение не делает сетевых запросов."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appen innehåller även Reckless, en andra motor, under AGPLv3. De två licenserna går att kombinera, och Affero-klausulen om programvara som används över ett nätverk ändrar ingenting här: båda motorerna körs på den här enheten och appen gör inga nätverksanrop."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "แอปนี้ยังมี Reckless ซึ่งเป็นเอนจินตัวที่สอง ภายใต้ AGPLv3 ใบอนุญาตทั้งสองรวมกันได้ และข้อกำหนด Affero เรื่องซอฟต์แวร์ที่ใช้ผ่านเครือข่ายไม่เปลี่ยนอะไรที่นี่ เพราะเอนจินทั้งสองทำงานบนเครื่องนี้ และแอปไม่มีการเรียกใช้เครือข่ายใด ๆ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uygulama ayrıca AGPLv3 lisanslı ikinci bir motor olan Reckless'i de içerir. İki lisans birleşebilir ve ağ üzerinden kullanılan yazılıma dair Affero maddesi burada hiçbir şeyi değiştirmez: her iki motor da bu cihazda çalışır ve uygulama hiçbir ağ isteği yapmaz."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ứng dụng cũng bao gồm Reckless, một engine thứ hai, theo giấy phép AGPLv3. Hai giấy phép có thể kết hợp, và điều khoản Affero về phần mềm được dùng qua mạng không thay đổi gì ở đây: cả hai engine đều chạy trên thiết bị này và ứng dụng không thực hiện bất kỳ yêu cầu mạng nào."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "本应用还包含第二个引擎 Reckless，其许可证为 AGPLv3。两种许可证可以并存，而 Affero 中关于通过网络使用软件的条款在这里没有任何影响：两个引擎都在本机运行，应用不发出任何网络请求。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "本應用程式還包含第二個引擎 Reckless，其授權為 AGPLv3。兩種授權可以並存，而 Affero 中關於透過網路使用軟體的條款在這裡沒有任何影響：兩個引擎都在本機執行，應用程式不發出任何網路請求。"
           }
         }
       }
@@ -1583,193 +1977,193 @@
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "تكتيك، وتقييم للأوضاع، وتقنية نهايات، ومباريات مع تدريب — ومحرّك Stockfish يعمل على الجهاز نفسه. لا شيء يغادر الهاتف."
+            "value": "تكتيك، وتقييم للأوضاع، وتقنية نهايات، ومباريات مع تدريب — ومحرّك المحرك يعمل على الجهاز نفسه. لا شيء يغادر الهاتف."
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktika, poziční úsudek, koncovková technika a partie s koučem, se Stockfishem běžícím přímo v zařízení. Nic neopouští telefon."
+            "value": "Taktika, poziční úsudek, koncovková technika a partie s koučem, se engineem běžícím přímo v zařízení. Nic neopouští telefon."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, positionsvurdering, slutspilsteknik og partier med coaching, med Stockfish kørende på selve enheden. Intet forlader telefonen."
+            "value": "Taktik, positionsvurdering, slutspilsteknik og partier med coaching, med motoren kørende på selve enheden. Intet forlader telefonen."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, Stellungsbeurteilung, Endspieltechnik und begleitetes Spiel, mit Stockfish direkt auf dem Gerät. Nichts verlässt das Telefon."
+            "value": "Taktik, Stellungsbeurteilung, Endspieltechnik und begleitetes Spiel, mit der Engine direkt auf dem Gerät. Nichts verlässt das Telefon."
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Τακτική, κρίση θέσης, τεχνική φινάλε και παρτίδες με καθοδήγηση, με το Stockfish να τρέχει πάνω στη συσκευή. Τίποτα δεν φεύγει από το τηλέφωνο."
+            "value": "Τακτική, κρίση θέσης, τεχνική φινάλε και παρτίδες με καθοδήγηση, με το η μηχανή να τρέχει πάνω στη συσκευή. Τίποτα δεν φεύγει από το τηλέφωνο."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactics, positional judgement, endgame technique and coached play, with Stockfish running on the device. Nothing leaves the phone."
+            "value": "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device. Nothing leaves the phone."
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactics, positional judgement, endgame technique and coached play, with Stockfish running on the device. Nothing leaves the phone."
+            "value": "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device. Nothing leaves the phone."
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactics, positional judgement, endgame technique and coached play, with Stockfish running on the device. Nothing leaves the phone."
+            "value": "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device. Nothing leaves the phone."
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "Táctica, criterio posicional, técnica de finales y partidas comentadas, con Stockfish funcionando en el dispositivo. Nada sale del teléfono."
+            "value": "Táctica, criterio posicional, técnica de finales y partidas comentadas, con el motor funcionando en el dispositivo. Nada sale del teléfono."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktiikkaa, aseman arviointia, loppupelitekniikkaa ja valmennettuja pelejä — Stockfish pyörii itse laitteessa. Mikään ei lähde puhelimesta."
+            "value": "Taktiikkaa, aseman arviointia, loppupelitekniikkaa ja valmennettuja pelejä — moottori pyörii itse laitteessa. Mikään ei lähde puhelimesta."
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactique, jugement positionnel, technique de finale et parties commentées, avec Stockfish qui tourne sur l'appareil. Rien ne quitte le téléphone."
+            "value": "Tactique, jugement positionnel, technique de finale et parties commentées, avec le moteur qui tourne sur l'appareil. Rien ne quitte le téléphone."
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactique, jugement positionnel, technique de finale et parties commentées, avec Stockfish qui tourne sur l'appareil. Rien ne quitte le téléphone."
+            "value": "Tactique, jugement positionnel, technique de finale et parties commentées, avec le moteur qui tourne sur l'appareil. Rien ne quitte le téléphone."
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "טקטיקה, שיפוט עמדתי, טכניקת סופים ומשחקים עם אימון — כאשר Stockfish רץ על המכשיר עצמו. שום דבר לא יוצא מהטלפון."
+            "value": "טקטיקה, שיפוט עמדתי, טכניקת סופים ומשחקים עם אימון — כאשר המנוע רץ על המכשיר עצמו. שום דבר לא יוצא מהטלפון."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "रणनीति, स्थिति का आकलन, अंत-खेल तकनीक और कोचिंग के साथ बाज़ियाँ — Stockfish डिवाइस पर ही चलता है। कुछ भी फ़ोन से बाहर नहीं जाता।"
+            "value": "रणनीति, स्थिति का आकलन, अंत-खेल तकनीक और कोचिंग के साथ बाज़ियाँ — इंजन डिवाइस पर ही चलता है। कुछ भी फ़ोन से बाहर नहीं जाता।"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktika, állásértékelés, végjátéktechnika és edzővel kísért játszmák, a Stockfish pedig magán a készüléken fut. Semmi nem hagyja el a telefont."
+            "value": "Taktika, állásértékelés, végjátéktechnika és edzővel kísért játszmák, a a motor pedig magán a készüléken fut. Semmi nem hagyja el a telefont."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, penilaian posisi, teknik akhir permainan, dan partai berpendamping, dengan Stockfish berjalan di perangkat itu sendiri. Tidak ada yang meninggalkan ponsel."
+            "value": "Taktik, penilaian posisi, teknik akhir permainan, dan partai berpendamping, dengan mesin berjalan di perangkat itu sendiri. Tidak ada yang meninggalkan ponsel."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tattica, giudizio posizionale, tecnica di finale e partite commentate, con Stockfish che gira sul dispositivo. Niente esce dal telefono."
+            "value": "Tattica, giudizio posizionale, tecnica di finale e partite commentate, con il motore che gira sul dispositivo. Niente esce dal telefono."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "戦術、局面判断、終盤技術、そして解説つきの対局。Stockfish は端末上で動作し、データが端末の外に出ることはありません。"
+            "value": "戦術、局面判断、終盤技術、そして解説つきの対局。エンジン は端末上で動作し、データが端末の外に出ることはありません。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "전술, 포지션 판단, 엔드게임 기술, 그리고 코칭이 붙은 대국. Stockfish가 기기 안에서 돌아가며, 어떤 데이터도 휴대폰을 떠나지 않습니다."
+            "value": "전술, 포지션 판단, 엔드게임 기술, 그리고 코칭이 붙은 대국. 엔진가 기기 안에서 돌아가며, 어떤 데이터도 휴대폰을 떠나지 않습니다."
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, penilaian kedudukan, teknik permainan akhir dan perlawanan berjurulatih, dengan Stockfish berjalan pada peranti itu sendiri. Tiada apa-apa meninggalkan telefon."
+            "value": "Taktik, penilaian kedudukan, teknik permainan akhir dan perlawanan berjurulatih, dengan enjin berjalan pada peranti itu sendiri. Tiada apa-apa meninggalkan telefon."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactiek, positioneel inzicht, eindspeltechniek en partijen met begeleiding, met Stockfish op het toestel zelf. Er verlaat niets de telefoon."
+            "value": "Tactiek, positioneel inzicht, eindspeltechniek en partijen met begeleiding, met de engine op het toestel zelf. Er verlaat niets de telefoon."
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktikk, posisjonsvurdering, sluttspillteknikk og partier med coaching, med Stockfish som kjører på selve enheten. Ingenting forlater telefonen."
+            "value": "Taktikk, posisjonsvurdering, sluttspillteknikk og partier med coaching, med motoren som kjører på selve enheten. Ingenting forlater telefonen."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktyka, ocena pozycji, technika końcówek i partie z komentarzem, ze Stockfishem działającym na urządzeniu. Nic nie opuszcza telefonu."
+            "value": "Taktyka, ocena pozycji, technika końcówek i partie z komentarzem, ze silnikem działającym na urządzeniu. Nic nie opuszcza telefonu."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tática, julgamento posicional, técnica de finais e partidas comentadas, com o Stockfish rodando no aparelho. Nada sai do telefone."
+            "value": "Tática, julgamento posicional, técnica de finais e partidas comentadas, com o o motor rodando no aparelho. Nada sai do telefone."
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactică, judecată pozițională, tehnică de final și partide cu antrenor, cu Stockfish rulând chiar pe dispozitiv. Nimic nu părăsește telefonul."
+            "value": "Tactică, judecată pozițională, tehnică de final și partide cu antrenor, cu motorul rulând chiar pe dispozitiv. Nimic nu părăsește telefonul."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Тактика, позиционная оценка, эндшпильная техника и партии с разбором — Stockfish работает прямо на устройстве. Ничего не покидает телефон."
+            "value": "Тактика, позиционная оценка, эндшпильная техника и партии с разбором — движок работает прямо на устройстве. Ничего не покидает телефон."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, positionsbedömning, slutspelsteknik och partier med coachning, med Stockfish igång på själva enheten. Ingenting lämnar telefonen."
+            "value": "Taktik, positionsbedömning, slutspelsteknik och partier med coachning, med motorn igång på själva enheten. Ingenting lämnar telefonen."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "แทคติก การประเมินตำแหน่ง เทคนิคเกมท้าย และเกมที่มีโค้ช โดย Stockfish ทำงานบนเครื่องเอง ไม่มีข้อมูลใดออกจากโทรศัพท์"
+            "value": "แทคติก การประเมินตำแหน่ง เทคนิคเกมท้าย และเกมที่มีโค้ช โดย เอนจิน ทำงานบนเครื่องเอง ไม่มีข้อมูลใดออกจากโทรศัพท์"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, konum değerlendirmesi, oyunsonu tekniği ve koçluk eşliğinde oyun; Stockfish cihazın kendisinde çalışır. Hiçbir şey telefondan çıkmaz."
+            "value": "Taktik, konum değerlendirmesi, oyunsonu tekniği ve koçluk eşliğinde oyun; motor cihazın kendisinde çalışır. Hiçbir şey telefondan çıkmaz."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Chiến thuật, đánh giá thế cờ, kỹ thuật tàn cuộc và các ván có huấn luyện viên, với Stockfish chạy ngay trên máy. Không có gì rời khỏi điện thoại."
+            "value": "Chiến thuật, đánh giá thế cờ, kỹ thuật tàn cuộc và các ván có huấn luyện viên, với engine chạy ngay trên máy. Không có gì rời khỏi điện thoại."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "战术、局面判断、残局技术和带讲解的对局，Stockfish 直接在设备上运行。没有任何数据离开手机。"
+            "value": "战术、局面判断、残局技术和带讲解的对局，引擎 直接在设备上运行。没有任何数据离开手机。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "戰術、局面判斷、殘局技術與附講解的對局，Stockfish 直接在裝置上執行。沒有任何資料離開手機。"
+            "value": "戰術、局面判斷、殘局技術與附講解的對局，引擎 直接在裝置上執行。沒有任何資料離開手機。"
           }
         }
       }
@@ -36446,6 +36840,203 @@
         }
       }
     },
+    "play.coachingGradesEveryMove": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يُقيّم المدرب كل نقلة تلعبها فور لعبها."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trenér hodnotí každý váš tah hned, jak jej zahrajete."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Træneren bedømmer hvert af dine træk, efterhånden som du spiller dem."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Trainer bewertet jeden deiner Züge, sobald du ihn machst."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ο προπονητής βαθμολογεί κάθε κίνησή σας μόλις την κάνετε."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coaching grades each of your moves as you make it."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coaching grades each of your moves as you make it."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coaching grades each of your moves as you make it."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El entrenador califica cada una de tus jugadas en cuanto la haces."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Valmentaja arvioi jokaisen siirtosi heti kun teet sen."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'entraîneur évalue chacun de vos coups au fur et à mesure."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'entraîneur évalue chacun de vos coups au fur et à mesure."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "המאמן מדרג כל מהלך שלך ברגע שאתה עושה אותו."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोच आपकी हर चाल का मूल्यांकन उसी समय करता है।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Az edző minden lépésedet értékeli, ahogy megteszed."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pelatih menilai setiap langkah Anda begitu Anda memainkannya."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'allenatore valuta ogni tua mossa nel momento in cui la giochi."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "コーチが、指したそばから一手ごとに評価します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "코치가 두는 즉시 매 수를 평가합니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jurulatih menilai setiap langkah anda sebaik sahaja anda memainkannya."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De coach beoordeelt elke zet zodra je hem doet."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Treneren vurderer hvert av trekkene dine etter hvert som du gjør dem."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trener ocenia każdy Twój ruch zaraz po jego wykonaniu."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O treinador avalia cada lance seu assim que você o joga."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antrenorul evaluează fiecare mutare a ta imediat ce o faci."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тренер оценивает каждый ваш ход сразу после того, как вы его сделали."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tränaren bedömer vart och ett av dina drag allteftersom du gör dem."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "โค้ชจะให้คะแนนทุกตาเดินของคุณทันทีที่คุณเดิน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antrenör, yaptığınız her hamleyi anında değerlendirir."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Huấn luyện viên chấm điểm từng nước đi của bạn ngay khi bạn đi."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "教练会在你每走一步时立即为其评分。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "教練會在你每走一步時立即為其評分。"
+          }
+        }
+      }
+    },
     "play.draw": {
       "extractionState": "manual",
       "localizations": {
@@ -36639,6 +37230,203 @@
           "stringUnit": {
             "state": "translated",
             "value": "和棋。"
+          }
+        }
+      }
+    },
+    "play.engineHasNoLadder": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "‏%@ يلعب بكامل قوته — لا يملك أداة لتحديد التصنيف. غيّر المحرك من الإعدادات للعب ضد خصم بتصنيف محدد."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ hraje na plnou sílu – nemá omezovač Ela. Chcete-li hrát proti soupeři se zadaným Elem, změňte engine v Nastavení."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ spiller på fuld styrke – den har ingen ratingbegrænsning. Skift motor i Indstillinger for at møde en ratet modstander."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ spielt in voller Stärke – es gibt keine Stärkebegrenzung. Wechseln Sie die Engine in den Einstellungen, um gegen einen gewerteten Gegner zu spielen."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η %@ παίζει με πλήρη δύναμη — δεν έχει περιοριστή βαθμολογίας. Αλλάξτε μηχανή στις Ρυθμίσεις για να παίξετε με αντίπαλο συγκεκριμένης βαθμολογίας."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ plays at full strength — it has no rating limiter. Change the engine in Settings to play a rated opponent."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ plays at full strength — it has no rating limiter. Change the engine in Settings to play a rated opponent."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ plays at full strength — it has no rating limiter. Change the engine in Settings to play a rated opponent."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ juega a plena potencia: no tiene limitador de nivel. Cambia el motor en Ajustes para jugar contra un rival con Elo."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ pelaa täydellä voimalla – siinä ei ole rating-rajoitinta. Vaihda moottoria asetuksissa, jos haluat pelata ratingiltaan määriteltyä vastustajaa vastaan."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ joue à pleine puissance : il n'a pas de limiteur de niveau. Changez de moteur dans les Réglages pour affronter un adversaire classé."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ joue à pleine puissance : il n'a pas de limiteur de niveau. Changez de moteur dans les Réglages pour affronter un adversaire classé."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "‏%@ משחק בעוצמה מלאה — אין לו מגביל דירוג. החליפו מנוע בהגדרות כדי לשחק מול יריב מדורג."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ पूरी ताक़त से खेलता है — इसमें रेटिंग सीमित करने की सुविधा नहीं है। रेटिंग वाले प्रतिद्वंद्वी से खेलने के लिए सेटिंग्स में इंजन बदलें।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A(z) %@ teljes erővel játszik – nincs pontszámkorlátozója. Váltson motort a Beállításokban, ha adott erősségű ellenfél ellen szeretne játszani."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ bermain dengan kekuatan penuh — tidak ada pembatas rating. Ganti mesin di Pengaturan untuk melawan lawan berperingkat."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ gioca a piena potenza: non ha un limitatore di livello. Cambia motore nelle Impostazioni per affrontare un avversario con Elo."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ は全力で指します。レーティング制限の機能がありません。レーティングを指定した相手と対局するには、設定でエンジンを切り替えてください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 은(는) 최대 기력으로 둡니다. 레이팅 제한 기능이 없습니다. 레이팅이 정해진 상대와 두려면 설정에서 엔진을 바꾸세요."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ bermain pada kekuatan penuh — ia tiada pembatas penarafan. Tukar enjin dalam Tetapan untuk bermain menentang lawan bertaraf."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ speelt op volle kracht — er is geen ratingbegrenzing. Wissel van engine in Instellingen om tegen een gewaardeerde tegenstander te spelen."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ spiller på full styrke – den har ingen ratingbegrensning. Bytt motor i Innstillinger for å møte en ratet motstander."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ gra z pełną siłą — nie ma ogranicznika rankingu. Zmień silnik w Ustawieniach, aby zagrać z przeciwnikiem o określonym rankingu."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ joga em força total: não tem limitador de nível. Troque o motor nos Ajustes para enfrentar um adversário com rating."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ joacă la putere maximă – nu are limitator de rating. Schimbă motorul în Setări pentru a juca împotriva unui adversar cu rating."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ играет в полную силу — у него нет ограничителя рейтинга. Смените движок в настройках, чтобы играть с соперником заданного рейтинга."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ spelar på full styrka – den har ingen ratingbegränsning. Byt motor i Inställningar för att möta en ratad motståndare."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ เล่นเต็มกำลัง — ไม่มีตัวจำกัดเรตติง เปลี่ยนเอนจินในการตั้งค่าเพื่อเล่นกับคู่ต่อสู้ที่มีเรตติง"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ tam güçte oynar — puan sınırlayıcısı yoktur. Puanlı bir rakibe karşı oynamak için Ayarlar'dan motoru değiştirin."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ chơi ở sức mạnh tối đa — nó không có bộ giới hạn Elo. Hãy đổi engine trong Cài đặt để chơi với đối thủ có Elo."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 以全力下棋——它没有等级分限制功能。若要与有等级分的对手下棋，请在设置中更换引擎。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 以全力下棋——它沒有等級分限制功能。若要與有等級分的對手下棋，請在設定中更換引擎。"
           }
         }
       }
@@ -60476,6 +61264,794 @@
           "stringUnit": {
             "state": "translated",
             "value": "完成"
+          }
+        }
+      }
+    },
+    "settings.engine": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المحرك"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Engine"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motor"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Engine"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μηχανή"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Engine"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Engine"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Engine"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motor"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Moottori"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Moteur"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Moteur"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מנוע"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इंजन"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motor"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesin"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motore"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エンジン"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "엔진"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enjin"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Engine"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motor"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Silnik"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motor"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motor"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Движок"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motor"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เอนจิน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motor"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Engine"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "引擎"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "引擎"
+          }
+        }
+      }
+    },
+    "settings.engine.recklessSummary": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "خصم مختلف له ذوقه الخاص في الأوضاع. لا يملك أداة لتحديد القوة، لذا يلعب بكامل قوته فقط."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jiný soupeř s vlastním vkusem na pozice. Nemá omezovač síly, takže hraje jen na plnou sílu."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En anden modstander med sin egen smag for stillinger. Den har ingen styrkebegrænsning og spiller derfor kun på fuld styrke."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein anderer Gegner mit eigenem Stellungsgeschmack. Sie hat keine Stärkebegrenzung und spielt daher nur in voller Stärke."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ένας διαφορετικός αντίπαλος με δικό του γούστο στις θέσεις. Δεν έχει περιοριστή ισχύος, οπότε παίζει μόνο με πλήρη δύναμη."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A different opponent with its own taste in positions. It has no strength limiter, so it plays at full strength only."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A different opponent with its own taste in positions. It has no strength limiter, so it plays at full strength only."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A different opponent with its own taste in positions. It has no strength limiter, so it plays at full strength only."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un rival distinto, con su propio gusto por las posiciones. No tiene limitador de fuerza, así que juega solo a plena potencia."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toisenlainen vastustaja, jolla on oma makunsa asemista. Siinä ei ole voimakkuusrajoitinta, joten se pelaa vain täydellä voimalla."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un adversaire différent, avec son propre goût pour les positions. Il n'a aucun limiteur de force et joue donc uniquement à pleine puissance."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un adversaire différent, avec son propre goût pour les positions. Il n'a aucun limiteur de force et joue donc uniquement à pleine puissance."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "יריב אחר, עם טעם משלו בעמדות. אין לו מגביל עוצמה, ולכן הוא משחק רק בעוצמה מלאה."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "एक अलग प्रतिद्वंद्वी, जिसकी स्थितियों में अपनी पसंद है। इसमें ताक़त सीमित करने की सुविधा नहीं है, इसलिए यह केवल पूरी ताक़त से खेलता है।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Másfajta ellenfél, saját ízléssel az állások iránt. Nincs erősségkorlátozója, ezért csak teljes erővel játszik."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lawan yang berbeda, dengan selera posisinya sendiri. Tidak punya pembatas kekuatan, jadi hanya bermain dengan kekuatan penuh."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un avversario diverso, con un proprio gusto per le posizioni. Non ha un limitatore di forza, quindi gioca solo a piena potenza."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "局面の好みが異なる、もう一人の対戦相手です。強さを制限する機能がないため、常に全力で指します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "국면 취향이 다른 또 하나의 상대입니다. 기력 제한 기능이 없어 항상 최대 기력으로만 둡니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lawan yang berbeza, dengan citarasanya sendiri terhadap kedudukan. Ia tiada pembatas kekuatan, jadi ia bermain pada kekuatan penuh sahaja."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Een andere tegenstander, met een eigen smaak in stellingen. Hij heeft geen sterktebegrenzing en speelt dus alleen op volle kracht."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En annen motstander med sin egen smak for stillinger. Den har ingen styrkebegrensning og spiller derfor bare på full styrke."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inny przeciwnik, z własnym gustem do pozycji. Nie ma ogranicznika siły, więc gra wyłącznie z pełną siłą."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Um adversário diferente, com gosto próprio para as posições. Não tem limitador de força, então joga apenas em força total."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un adversar diferit, cu propriul gust pentru poziții. Nu are limitator de forță, așa că joacă doar la putere maximă."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Другой соперник со своим вкусом к позициям. У него нет ограничителя силы, поэтому он играет только в полную силу."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En annan motståndare med egen smak för ställningar. Den har ingen styrkebegränsning och spelar därför bara på full styrka."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "คู่ต่อสู้อีกแบบหนึ่งที่มีรสนิยมในตำแหน่งของตัวเอง ไม่มีตัวจำกัดความแข็งแกร่ง จึงเล่นเต็มกำลังเท่านั้น"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pozisyonlara kendi zevkiyle bakan farklı bir rakip. Güç sınırlayıcısı yok, bu yüzden yalnızca tam güçte oynar."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Một đối thủ khác, với gu thế trận riêng. Nó không có bộ giới hạn sức mạnh, nên chỉ chơi ở sức mạnh tối đa."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "另一种对手，对局面有自己的偏好。它没有棋力限制功能，因此只以全力下棋。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "另一種對手，對局面有自己的偏好。它沒有棋力限制功能，因此只以全力下棋。"
+          }
+        }
+      }
+    },
+    "settings.engine.running": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يلعب الآن: %@"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nyní hraje: %@"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spiller nu: %@"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spielt gerade: %@"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Παίζει τώρα: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Playing now: %@"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Playing now: %@"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Playing now: %@"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jugando ahora: %@"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pelaa nyt: %@"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En jeu : %@"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En jeu : %@"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "משחק כעת: %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी खेल रहा है: %@"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Most játszik: %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sedang bermain: %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In gioco: %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "対局中: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "지금 두는 엔진: %@"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sedang bermain: %@"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speelt nu: %@"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spiller nå: %@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teraz gra: %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jogando agora: %@"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Joacă acum: %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сейчас играет: %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spelar nu: %@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กำลังเล่น: %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şu an oynayan: %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đang chơi: %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当前对局引擎：%@"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "目前對局引擎：%@"
+          }
+        }
+      }
+    },
+    "settings.engine.stockfishSummary": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أقوى محرك موجود، والوحيد هنا القادر على اللعب بتصنيف محدد."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nejsilnější engine, jaký existuje, a jediný zdejší, který umí hrát na zadané Elo."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Den stærkeste motor der findes, og den eneste her der kan spille på en bestemt rating."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die stärkste Engine überhaupt, und die einzige hier, die auf eine bestimmte Wertung heruntergestuft spielen kann."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η ισχυρότερη μηχανή που υπάρχει, και η μόνη εδώ που μπορεί να παίξει σε συγκεκριμένο βαθμολογικό επίπεδο."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The strongest engine there is, and the only one here that can play down to a rating."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The strongest engine there is, and the only one here that can play down to a rating."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The strongest engine there is, and the only one here that can play down to a rating."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El motor más fuerte que existe, y el único aquí que puede jugar a un Elo concreto."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vahvin moottori mitä on, ja ainoa täällä joka osaa pelata tietyllä ratingilla."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le moteur le plus fort qui soit, et le seul ici capable de jouer à un niveau Elo donné."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le moteur le plus fort qui soit, et le seul ici capable de jouer à un niveau Elo donné."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "המנוע החזק ביותר שקיים, והיחיד כאן שיודע לשחק לפי דירוג נתון."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मौजूद सबसे मज़बूत इंजन, और यहाँ का इकलौता इंजन जो किसी तय रेटिंग पर खेल सकता है।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A létező legerősebb motor, és itt az egyetlen, amely adott Élő-pontszámon tud játszani."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesin terkuat yang ada, dan satu-satunya di sini yang bisa bermain pada rating tertentu."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il motore più forte che esista, e l'unico qui capace di giocare a un Elo prestabilito."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現存する最強のエンジンであり、ここで唯一、指定したレーティングまで手加減して指せるエンジンです。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "현존하는 가장 강한 엔진이며, 여기서 유일하게 지정한 레이팅에 맞춰 둘 수 있는 엔진입니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enjin terkuat yang ada, dan satu-satunya di sini yang boleh bermain pada penarafan tertentu."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De sterkste engine die er is, en de enige hier die op een bepaalde rating kan spelen."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Den sterkeste motoren som finnes, og den eneste her som kan spille på en bestemt rating."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Najsilniejszy silnik, jaki istnieje, i jedyny tutaj, który potrafi grać na zadanym poziomie rankingowym."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O motor mais forte que existe, e o único aqui capaz de jogar em um rating definido."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cel mai puternic motor existent și singurul de aici care poate juca la un rating anume."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Самый сильный движок из существующих и единственный здесь, который умеет играть на заданный рейтинг."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Den starkaste motorn som finns, och den enda här som kan spela på en bestämd rating."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เอนจินที่แข็งแกร่งที่สุดเท่าที่มี และเป็นตัวเดียวที่นี่ที่เล่นตามระดับเรตติงที่กำหนดได้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Var olan en güçlü motor ve burada belirli bir puan seviyesinde oynayabilen tek motor."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Engine mạnh nhất hiện có, và là engine duy nhất ở đây có thể chơi ở một mức Elo định sẵn."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "现存最强的引擎，也是这里唯一能按指定等级分下棋的引擎。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現存最強的引擎，也是這裡唯一能依指定等級分下棋的引擎。"
           }
         }
       }

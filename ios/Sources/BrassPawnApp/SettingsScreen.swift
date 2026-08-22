@@ -65,6 +65,7 @@ struct SettingsScreen: View {
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 22) {
+                    section(L.t("settings.engine", "Engine")) { EnginePicker() }
                     section(L.t("settings.sounds", "Move sounds")) { sound }
                     section(L.t("settings.dimension", "Board")) { DimensionChoice() }
                     if !app.progress.appearance.dimension.isDimensional {
@@ -474,6 +475,72 @@ private struct MiniBoard: View {
 
 
 /// Files and ranks round the edge of the board.
+/// Which engine plays, grades and labels.
+///
+/// The two are not equivalent and the card says so rather than presenting them
+/// as a matter of taste: Stockfish can be asked to play at a rating and Reckless
+/// cannot, so choosing Reckless takes the opponent ladder down to one rung.
+/// Somebody who picks it and then finds Play offering no strengths should have
+/// been told here, not left to work it out.
+private struct EnginePicker: View {
+    @Environment(AppModel.self) private var app
+
+    var body: some View {
+        VStack(spacing: 10) {
+            ForEach(EngineChoice.allCases) { choice in
+                // `engineChoice` rather than the saved preference: if an engine
+                // failed to build, the app is still playing the other one, and
+                // the tick belongs against whichever is actually playing.
+                let chosen = app.engineChoice == choice
+                Button {
+                    // Through the model rather than `update`: the stored
+                    // preference and the engine actually running have to change
+                    // together, and the model is what owns that.
+                    Task { await app.chooseEngine(choice) }
+                } label: {
+                    VStack(alignment: .leading, spacing: 5) {
+                        HStack(spacing: 8) {
+                            Text(choice.name)
+                                .appFont(.subheadline, weight: .semibold)
+                                .foregroundStyle(chosen ? Theatre.brass : Theatre.ivory)
+                            Spacer(minLength: 8)
+                            if chosen {
+                                BrassIcon("checkmark", size: 14)
+                                    .foregroundStyle(Theatre.brassHot)
+                            }
+                        }
+                        Text(choice.summary)
+                            .appFont(.footnote)
+                            .foregroundStyle(Theatre.ivoryFaint)
+                            .multilineTextAlignment(.leading)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .padding(12)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background {
+                        BrassPlateShape(cut: 10)
+                            .fill(chosen ? Theatre.brassGlow : Theatre.ink3)
+                    }
+                    .overlay {
+                        BrassPlateShape(cut: 10)
+                            .strokeBorder(chosen ? Theatre.brass : Theatre.brassDeep.opacity(0.45),
+                                          lineWidth: chosen ? 1 : 0.6)
+                    }
+                }
+                .buttonStyle(BrassPressStyle())
+            }
+
+            // The version of what is actually loaded, not the name of what was
+            // chosen — so a mismatch between the two is visible rather than
+            // silent.
+            Text(L.t("settings.engine.running", "Playing now: %@", app.engineDescription))
+                .appFont(size: 11)
+                .foregroundStyle(Theatre.ivoryFaint)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+}
+
 private struct CoordinatesSwitch: View {
     @Environment(AppModel.self) private var app
 

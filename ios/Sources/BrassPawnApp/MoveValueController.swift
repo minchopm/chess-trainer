@@ -43,7 +43,7 @@ final class MoveValueController {
 
     /// Toggle visibility synchronously. Starting an engine request is detached
     /// from the button action so a second tap can hide the overlay immediately.
-    func toggle(fen: String, engine: StockfishEngine) {
+    func toggle(fen: String, engine: any Engine) {
         adopt(fen: fen)
 
         if isEnabled {
@@ -57,7 +57,7 @@ final class MoveValueController {
         }
     }
 
-    func refresh(fen: String, engine: StockfishEngine) async {
+    func refresh(fen: String, engine: any Engine) async {
         adopt(fen: fen)
         guard isEnabled, !isComputing, computedFEN != fen else { return }
 

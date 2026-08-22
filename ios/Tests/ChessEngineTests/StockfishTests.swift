@@ -128,3 +128,15 @@ struct StockfishTests {
         }
     }
 }
+
+extension StockfishTests {
+    /// The Settings line shows this, so it has to be a name rather than a UCI
+    /// handshake.
+    @Test("The capability name drops the authorship")
+    func shortName() {
+        let short = StockfishEngine.shortDescription
+        #expect(short.hasPrefix("Stockfish"))
+        #expect(!short.contains(" by "))
+        #expect(!short.contains("AUTHORS"))
+    }
+}

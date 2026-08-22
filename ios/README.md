@@ -1,15 +1,29 @@
 # Brass Pawn for iOS
 
-A native iOS build of the trainer: SwiftUI, with Stockfish 18 compiled into the
-app and running in-process. No network, no account, no server — everything is on
-the device.
+A native iOS build of the trainer: SwiftUI, with two chess engines compiled into
+the app and running in-process. No network, no account, no server — everything is
+on the device.
+
+The player picks the engine in Settings. **Stockfish 18** is the default and the
+only one that can play at a rating — the whole opponent ladder is built on its
+`UCI_Elo`. **Reckless** is the alternative: a different opponent with different
+taste, at full strength only, because it has no strength limiter to offer. See
+"Two engines" below.
 
 ## Building
 
 ```bash
-sh ios/scripts/fetch-networks.sh     # once — downloads ~107 MB of networks
+sh ios/scripts/fetch-networks.sh     # once — downloads ~107 MB of Stockfish networks
+sh ios/scripts/build-reckless.sh     # once — 63 MB network + three cargo builds
 open ios/BrassPawn.xcodeproj
 ```
+
+`build-reckless.sh` is not optional: `Package.swift` has a binary target pointing
+at the xcframework it produces, so nothing builds until it has run. It needs a
+Rust toolchain of 1.85 or newer (the crate is edition 2024) with the
+`aarch64-apple-ios` and `aarch64-apple-ios-sim` targets installed. It also builds
+an `aarch64-apple-darwin` slice, which is what lets `swift test` exercise the
+engine on the host.
 
 The Xcode project is committed, so XcodeGen is not required to open or build the
 app. Then pick a simulator or your own device and run.
@@ -36,11 +50,12 @@ xcodebuild -project BrassPawn.xcodeproj -scheme BrassPawn \
 Package.swift              Swift package: all the logic, testable from the CLI
 Sources/
   ChessCore/               rules of chess — no I/O, proven by perft
-  ChessEngine/             Swift wrapper over Stockfish
+  ChessEngine/             Engine protocol + one actor per engine
   ChessTraining/           features, grading, rating, spaced repetition, selection
   BrassPawnApp/            SwiftUI views and view models
   sfprobe/                 CLI driver for diagnosing engine problems
 Vendor/Stockfish/          upstream engine (GPLv3, unmodified) + a C bridge
+Vendor/Reckless/           the other engine (AGPLv3) + a Rust C bridge
 Resources/
   Data/                    puzzles, positional exercises, endgame drills, games
   Networks/                NNUE files (not committed — see scripts/fetch-networks.sh)
@@ -85,7 +100,7 @@ one file per language:
 python3 ios/scripts/build-catalog.py
 ```
 
-The script prints how many of the 385 keys each language has, so a partial
+The script prints how many of the 518 keys each language has, so a partial
 translation is visible rather than silent. Adding a string means adding it to
 `keys.json` and to whichever languages you can; the rest fall back to English.
 
@@ -127,10 +142,85 @@ The suite is worth knowing about because two parts of it are not the usual
   9.6 million nodes deep. Castling rights lost to a rook capture, en passant
   that exposes the king along a rank, under-promotion — a generator that gets
   any of them wrong matches at depth 1 and diverges by depth 3.
-- **Engine integration.** Real searches against the real networks, including a
-  terminal position. That last one matters: Stockfish reports a position with no
-  legal moves through a different callback, and an unset callback ends the
-  process with no diagnostic.
+- **Engine integration.** Real searches against the real networks, for both
+  engines, including a terminal position. That last one matters and differently
+  for each: Stockfish reports a position with no legal moves through a different
+  callback, and an unset callback ends the process with no diagnostic, while
+  Reckless reports one as a line with no moves in it.
+- **Move value coverage.** That each engine returns a value for *every* legal
+  move at wide MultiPV, in a quiet position and in a forced mate. The board draws
+  a number per move and gets them from one search, so an engine that reports
+  fewer lines than it was asked for is a visible defect rather than a subtle one.
+
+## Two engines
+
+`Sources/ChessEngine/Engine.swift` is the protocol both satisfy;
+`AppModel.engine` holds one of them and `AppModel.chooseEngine` swaps it. Only
+one is alive at a time — each holds a network and a thread pool, and a phone can
+usefully run one search.
+
+Two things are worth knowing before changing any of it.
+
+**Reckless cannot limit its strength.** Its whole option list is Hash, Threads,
+MoveOverhead, Minimal, Clear Hash, UCI_Chess960, MultiPV and SyzygyPath. There is
+no `UCI_LimitStrength` and no `UCI_Elo`, so the opponent ladder — Casual 1400
+through Master 2700 — is Stockfish's and stays Stockfish's. Choosing Reckless
+takes the ladder down to one rung, "Full strength", and Play says so.
+
+The alternative was to fake it by capping depth or nodes. It was not taken, and
+should not be: a depth-capped engine is not a weaker human. It plays a
+positionally excellent game and then hangs a rook — superhuman in the parts that
+need judgement, blind in the parts that need calculation — so "Casual (1400)"
+would describe neither its strength nor its character. `EngineCapabilities`
+exists so the app can ask rather than assume, and
+`Tests/BrassPawnAppTests/OpponentLadderTests.swift` holds the rule.
+
+**Reckless does cover every legal move.** The board labels each move with a
+number, from one wide MultiPV search, so an engine that reports only the lines it
+liked would leave dots where numbers were promised.
+`Tests/ChessEngineTests/RecklessCoverageTests.swift` asks the same two questions
+`ValueCoverageTests` asks of Stockfish — a quiet middlegame and a forced mate,
+which is the case that matters, because the search proves the mate and stops —
+and Reckless answers all of them. It matched Stockfish exactly at 40, 20, 40 and
+24 moves across four positions.
+
+## Notes on embedding Reckless
+
+The engine is Rust, and the bridge in `Vendor/Reckless/src/ffi.rs` is the whole
+of the fork: one new file, one `pub mod ffi;` in `src/lib.rs`, and `staticlib`
+added to `crate-type` in `Cargo.toml`. Nothing else in the engine is touched, so
+moving to a newer upstream is a re-apply of three small things. Four notes:
+
+1. **`rk_global_init` has to be idempotent, and upstream's is not.**
+   `lookup::initialize` builds a cuckoo table by insertion, evicting whatever
+   occupies a slot and re-inserting it. On an empty table it terminates when an
+   eviction yields the empty entry; on a full one it never does, and the loop
+   spins forever. Upstream never notices because `run()` calls it once. The
+   bridge guards it with a `Once` — without that, calling it twice hangs on a
+   spinning thread with no diagnostic at all.
+2. **A terminal position is reported, not omitted.** Reckless prints
+   `info depth 0 score mate 0` with no variation after it. That is not a line,
+   and `RecklessEngine` drops it, because `Analysis.isTerminal` is how every
+   screen tells checkmate from a search that has not answered yet. Stockfish
+   reaches the same place by reporting these through a callback the bridge
+   ignores.
+3. **There is no combined depth-and-time limit.** Reckless's `Limits` is one
+   enum, so it cannot say "this deep, but no longer than this" — which is the
+   pair `SearchBudget` carries everywhere. `rk_go` gets it by running a
+   depth-limited search alongside a thread that stops it at the deadline, with a
+   generation counter so a deadline that wakes late cannot cut short the *next*
+   search.
+4. **The release profile is `panic = "abort"`.** A panic anywhere in the engine
+   ends the app rather than raising an error. The bridge validates what it can —
+   an unparseable FEN is refused rather than silently replaced with the starting
+   position, which is what the engine's own wasm binding does.
+
+Both engines assume the position they are given is legal. Neither survives one
+that is not: an illegal FEN — kings on adjacent squares, say — aborts Stockfish
+with `SIGBUS` and Reckless with `SIGABRT`. Nothing in the app can reach that,
+because every FEN handed to an engine comes from a `ChessCore.Position`, which
+refuses to parse such a thing in the first place. It is worth knowing before
+adding a call site that takes a FEN from anywhere else.
 
 ## Notes on embedding Stockfish
 
@@ -147,11 +237,22 @@ Three things cost time, and all three fail silently:
 
 ## Publishing
 
-The app is GPLv3, because Stockfish is. That is not a formality:
+The app is GPLv3, because Stockfish is, and it carries an AGPLv3 obligation as
+well, because Reckless is. Neither is a formality:
 
-- [ ] Publish the complete source publicly, including `Vendor/Stockfish` and the
-      bridge. The `LICENSE` and `NOTICE.md` files at the repository root cover
-      the obligations.
+- [ ] Publish the complete source publicly, including `Vendor/Stockfish`,
+      `Vendor/Reckless` and both bridges. The `LICENSE` and `NOTICE.md` files at
+      the repository root cover the obligations.
+- [x] **Reckless is AGPLv3.** The two licences combine — GPLv3 §13 gives
+      permission to link a GPLv3 work with an AGPLv3 one, and says the AGPL's own
+      §13 then applies to the combination. That section binds anyone who lets
+      users interact with the program *remotely over a network* to offer them the
+      source. This app does not: both engines run on the device and it makes no
+      network requests, so the clause adds nothing here. It travels with the
+      source regardless, and anyone who puts this behind a network service is
+      bound by it. The full Affero text ships in the app — About → Read the
+      Affero licence — beside the GPL, and `NOTICE.md` records the three-file
+      fork.
 - [x] Licence text and attribution reachable from inside the app — Progress →
       About & licence, which carries the full GPL, the third-party notices and a
       link to the source.
@@ -166,5 +267,27 @@ The app is GPLv3, because Stockfish is. That is not a formality:
 - [ ] `ITSAppUsesNonExemptEncryption` is already set to `false`, which is
       accurate: the app uses no encryption.
 
-The app is roughly 116 MB, almost all of it the large neural network. Apple's
-over-the-air limit is 200 MB, so it downloads over cellular without a warning.
+### Size
+
+Two engines means two networks, and the second one is not small. Measured from an
+unsigned Release build for a device:
+
+| | Installed `.app` | Executable |
+| --- | --- | --- |
+| Stockfish only | 128 MiB | 8.2 MB |
+| Both engines | 190 MiB | 73.3 MB |
+
+The whole difference is Reckless: 60.3 MiB of network and 463 KB of code. Its
+network is compiled into the binary as a `static` rather than shipped as a
+resource, which is why the executable rather than the bundle is where it lands —
+`__TEXT,__const` goes from 161 KB to 64.4 MB. Being in `__TEXT` it is read-only
+and page-mapped from the binary, so it is clean memory: it costs nothing until a
+search reads it and can be evicted under pressure. The Stockfish networks, loaded
+from files into the heap, cannot.
+
+**This is the number to watch.** Apple's over-the-air limit is 200 MB, and at
+190 MiB the app is inside it with very little room. The App Store figure is the
+compressed download rather than this one, and NNUE files compress poorly, so the
+margin is real but thin. Anything else added to the bundle should be measured
+against it, and if Reckless's network grows in a future version this stops
+fitting.
