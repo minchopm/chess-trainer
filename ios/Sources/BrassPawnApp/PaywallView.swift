@@ -69,11 +69,14 @@ struct PaywallView: View {
     private var runOutText: String {
         guard let activity else { return L.t("store.unlockTraining", "Unlock the training") }
         return switch activity {
-        case .tactics: L.t("store.freePuzzleComplete", "You have completed today's free Tactics puzzle")
-        case .rush: L.t("store.freeRushAttemptUsed", "Today's free Rush attempt has been used")
-        case .positional: L.t("store.outOfPositional", "That is today's three positional exercises.")
-        case .endgame: L.t("store.outOfEndgames", "That is today's three endgame drills.")
-        case .guessTheElo: L.t("store.outOfGuess", "That is today's three games to judge.")
+        // No counts in the words. The number lives in `dailyFreeLimit` and is
+        // shown from it; spelled out here it goes stale the moment the limit
+        // changes, and it did — the copy said five while the limit was one.
+        case .tactics: L.t("store.doneTactics", "Today's free Tactics puzzles are done.")
+        case .rush: L.t("store.doneRush", "Today's free Rush runs are done.")
+        case .positional: L.t("store.donePositional", "Today's free positional exercises are done.")
+        case .endgame: L.t("store.doneEndgames", "Today's free endgame drills are done.")
+        case .guessTheElo: L.t("store.doneGuess", "Today's free games to judge are done.")
         }
     }
 

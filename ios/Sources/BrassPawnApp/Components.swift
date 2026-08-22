@@ -355,9 +355,9 @@ struct AllowanceNotice: View {
     private var allowanceTitle: String {
         switch activity {
         case .tactics:
-            L.t("store.freePuzzleComplete", "You have completed today's free Tactics puzzle")
+            L.t("store.doneTactics", "Today's free Tactics puzzles are done.")
         case .rush:
-            L.t("store.freeRushAttemptUsed", "Today's free Rush attempt has been used")
+            L.t("store.doneRush", "Today's free Rush runs are done.")
         default:
             L.t("store.doneForToday", "That is today's free training")
         }
@@ -365,15 +365,20 @@ struct AllowanceNotice: View {
 
     private var allowanceExplanation: String {
         switch activity {
+        // The count comes from the constant rather than from the sentence, and
+        // sits after a colon so it needs no plural agreement — "Free each day:
+        // 1" and "Free each day: 5" both read correctly, in every language.
         case .tactics:
             L.t(
-                "store.tacticsAllowance",
-                "One completed Tactics puzzle is free each day. Rush has its own separate daily attempt. This resets at 9:00 AM local time. Playing against AI or another person remains unlimited."
+                "store.tacticsAllowanceCount",
+                "Free each day: %lld Tactics puzzles. Rush has its own separate allowance. Both reset at 9:00 AM local time. Playing against AI or another person remains unlimited.",
+                TrainingActivity.tactics.dailyFreeLimit
             )
         case .rush:
             L.t(
-                "store.rushAllowance",
-                "One Rush attempt is free each day. It is separate from the daily Tactics puzzle. This resets at 9:00 AM local time. Playing against AI or another person remains unlimited."
+                "store.rushAllowanceCount",
+                "Free each day: %lld Rush runs, separate from the Tactics allowance. Both reset at 9:00 AM local time. Playing against AI or another person remains unlimited.",
+                TrainingActivity.rush.dailyFreeLimit
             )
         default:
             L.t("store.comeBackAtNine", "The allowance resets every day at 9:00 AM local time. Playing — against the engine or against a person — has no limit and needs nothing.")

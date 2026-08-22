@@ -11,15 +11,14 @@ public enum TrainingActivity: String, Codable, CaseIterable, Sendable {
 
     /// How many of these a free account gets each day.
     ///
-    /// Enough to feel the loop and watch the rating move, which is the only
-    /// thing that makes the paid tier worth buying. A locked door teaches
-    /// nobody what is behind it.
-    public var dailyFreeLimit: Int {
-        switch self {
-        case .tactics, .rush: 1
-        case .positional, .endgame, .guessTheElo: 3
-        }
-    }
+    /// Five of each, and the same five everywhere. Enough to feel the loop and
+    /// watch the rating move, which is the only thing that makes the paid tier
+    /// worth buying — one of something shows a person the door and nothing
+    /// behind it, and a rating that never moves is not a reason to pay.
+    ///
+    /// Counted on the attempt, never on opening the screen: browsing the
+    /// library, reading a position and changing your mind cost nothing.
+    public var dailyFreeLimit: Int { 5 }
 }
 
 /// What a free account has used today.

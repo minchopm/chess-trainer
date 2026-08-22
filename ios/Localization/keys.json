@@ -2709,6 +2709,13 @@
   ]
  },
  {
+  "key": "store.doneEndgames",
+  "english": "Today's free endgame drills are done.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
   "key": "store.doneForToday",
   "english": "That is today's free training",
   "files": [
@@ -2716,25 +2723,37 @@
   ]
  },
  {
+  "key": "store.doneGuess",
+  "english": "Today's free games to judge are done.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.donePositional",
+  "english": "Today's free positional exercises are done.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.doneRush",
+  "english": "Today's free Rush runs are done.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
+  "key": "store.doneTactics",
+  "english": "Today's free Tactics puzzles are done.",
+  "files": [
+   "PaywallView.swift"
+  ]
+ },
+ {
   "key": "store.freeForever",
   "english": "Playing stays free — against the engine and against people, with no limit and no adverts. What Pro unlocks is the training.",
   "files": [
-   "PaywallView.swift"
-  ]
- },
- {
-  "key": "store.freePuzzleComplete",
-  "english": "You have completed today's free Tactics puzzle",
-  "files": [
-   "Components.swift",
-   "PaywallView.swift"
-  ]
- },
- {
-  "key": "store.freeRushAttemptUsed",
-  "english": "Today's free Rush attempt has been used",
-  "files": [
-   "Components.swift",
    "PaywallView.swift"
   ]
  },
@@ -2802,41 +2821,6 @@
   ]
  },
  {
-  "key": "store.outOfEndgames",
-  "english": "That is today's three endgame drills.",
-  "files": [
-   "PaywallView.swift"
-  ]
- },
- {
-  "key": "store.outOfGuess",
-  "english": "That is today's three games to judge.",
-  "files": [
-   "PaywallView.swift"
-  ]
- },
- {
-  "key": "store.outOfPositional",
-  "english": "That is today's three positional exercises.",
-  "files": [
-   "PaywallView.swift"
-  ]
- },
- {
-  "key": "store.outOfPuzzles",
-  "english": "That is today's five puzzles.",
-  "files": [
-   "PaywallView.swift"
-  ]
- },
- {
-  "key": "store.outOfRush",
-  "english": "That is today's Rush run.",
-  "files": [
-   "PaywallView.swift"
-  ]
- },
- {
   "key": "store.pending",
   "english": "The purchase is waiting for approval.",
   "files": [
@@ -2893,15 +2877,15 @@
   ]
  },
  {
-  "key": "store.rushAllowance",
-  "english": "One Rush attempt is free each day. It is separate from the daily Tactics puzzle. This resets at 9:00 AM local time. Playing against AI or another person remains unlimited.",
+  "key": "store.rushAllowanceCount",
+  "english": "Free each day: %lld Rush runs, separate from the Tactics allowance. Both reset at 9:00 AM local time. Playing against AI or another person remains unlimited.",
   "files": [
    "Components.swift"
   ]
  },
  {
-  "key": "store.tacticsAllowance",
-  "english": "One completed Tactics puzzle is free each day. Rush has its own separate daily attempt. This resets at 9:00 AM local time. Playing against AI or another person remains unlimited.",
+  "key": "store.tacticsAllowanceCount",
+  "english": "Free each day: %lld Tactics puzzles. Rush has its own separate allowance. Both reset at 9:00 AM local time. Playing against AI or another person remains unlimited.",
   "files": [
    "Components.swift"
   ]
