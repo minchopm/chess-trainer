@@ -122,10 +122,12 @@ struct PhotoBoardSheet: View {
                         .disabled(isReading)
                 }
             } else {
-                Text(L.t("photo.hint",
-                         "Photograph the whole board with its edges in frame. Whatever comes out opens in the editor for you to correct — a photograph gets a few squares wrong even at its best."))
-                    .appFont(.footnote)
-                    .foregroundStyle(Theatre.ivoryDim)
+                Card {
+                    Text(L.t("photo.hint",
+                             "Photograph the whole board with its edges in frame. Whatever comes out opens in the editor for you to correct — a photograph gets a few squares wrong even at its best."))
+                        .appFont(.footnote)
+                        .foregroundStyle(Theatre.ivoryDim)
+                }
 
                 Spacer()
 
@@ -145,7 +147,7 @@ struct PhotoBoardSheet: View {
         }
         .padding(20)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .background(Theatre.ink2)
+        .background(Theatre.ink.ignoresSafeArea())
         .fullScreenCover(isPresented: $isCapturing) {
             CameraPicker { captured in
                 corners = []

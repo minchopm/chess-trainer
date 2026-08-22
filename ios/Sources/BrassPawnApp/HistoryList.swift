@@ -71,13 +71,20 @@ struct HistoryList: View {
                 .appFont(.caption, weight: .medium)
                 .foregroundStyle(resultColour(game))
         }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 11)
+        .padding(13)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Theatre.ink3.opacity(0.7))
-        .overlay(
-            BrassPlateShape(cut: 8).strokeBorder(Theatre.ruleSoft, lineWidth: 0.8)
-        )
+        // The same plate the library's own rows are cut from: a game of yours
+        // is a game like any other in the list it sits beside.
+        .background {
+            BrassPlateShape(cut: 10).fill(LinearGradient(
+                colors: [Theatre.ink3, Theatre.ink2],
+                startPoint: .topLeading, endPoint: .bottomTrailing
+            ))
+        }
+        .overlay {
+            BrassPlateShape(cut: 10)
+                .strokeBorder(Theatre.brassDeep.opacity(0.45), lineWidth: 0.65)
+        }
     }
 
     private func subtitle(_ game: SavedGame) -> String {

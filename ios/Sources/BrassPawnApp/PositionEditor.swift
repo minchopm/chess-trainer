@@ -280,17 +280,19 @@ struct PositionEditorSheet: View {
                 .frame(maxWidth: 340)
                 .frame(maxWidth: .infinity, alignment: .center)
 
-                palette
+                Card {
+                    palette
 
-                BrassSegmentedPicker(
-                    L.t("editor.toMove", "To move"),
-                    selection: Binding(get: { model.sideToMove }, set: { model.sideToMove = $0 }),
-                    options: [PieceColor.white, PieceColor.black]
-                ) { color in
-                    Text(L.color(color))
+                    BrassSegmentedPicker(
+                        L.t("editor.toMove", "To move"),
+                        selection: Binding(get: { model.sideToMove }, set: { model.sideToMove = $0 }),
+                        options: [PieceColor.white, PieceColor.black]
+                    ) { color in
+                        Text(L.color(color))
+                    }
+
+                    castlingRow
                 }
-
-                castlingRow
 
                 // The reason is worth more than the refusal. "Not a position" in
                 // front of thirty-two pieces is not something anybody can act on.
@@ -304,7 +306,7 @@ struct PositionEditorSheet: View {
             }
             .padding(20)
         }
-        .background(Theatre.ink2)
+        .background(Theatre.ink.ignoresSafeArea())
     }
 
     @ViewBuilder

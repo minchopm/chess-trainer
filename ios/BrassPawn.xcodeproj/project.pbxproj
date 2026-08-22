@@ -25,6 +25,7 @@
 		918D662224B6D7E85E0C69A0 /* move.wav in Resources */ = {isa = PBXBuildFile; fileRef = 62F903D8F5C1FC70F0A8A9DE /* move.wav */; };
 		9EBB038DDFBCD023BF2FDDE9 /* NOTICE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5A15128F3C9F50C157350AF2 /* NOTICE.txt */; };
 		9F065A8354551432F095D3C4 /* capture.wav in Resources */ = {isa = PBXBuildFile; fileRef = AF9BA6F709402079BDD2BFC3 /* capture.wav */; };
+		A2665FDBF88E05FEE6B87457 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D7C66C626791A2991355347F /* InfoPlist.xcstrings */; };
 		BF26734421711480BFC510A4 /* check.wav in Resources */ = {isa = PBXBuildFile; fileRef = 542D1BF8796033B8E9639968 /* check.wav */; };
 		C40143C2022EC79B9BC7E838 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2B24581FB2D0665C827FE2D5 /* LICENSE.txt */; };
 		D4F6C22B9A9E78DCC1AA03A9 /* CormorantGaramond-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0960A297E2DF71AAA153C624 /* CormorantGaramond-Italic.ttf */; };
@@ -61,6 +62,7 @@
 		B352EE12D38016F605048FBD /* tactics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tactics.json; sourceTree = "<group>"; };
 		BDEC44C725BD73CD12D849DC /* AGPL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = AGPL.txt; sourceTree = "<group>"; };
 		D24D12372CC2CF7108A581D3 /* classics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = classics.json; sourceTree = "<group>"; };
+		D7C66C626791A2991355347F /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		E0F7348299FB29856924A9ED /* ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ios; path = .; sourceTree = SOURCE_ROOT; };
 		E84A1598D820F0FC0FB2487F /* positions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = positions.json; sourceTree = "<group>"; };
 		E917F39BEC299C72084408A1 /* games.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = games.json; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				297D864E27EC18F9E47E8616 /* BrassPawn.storekit */,
 				03FB1BBFBDC650A1425E50B4 /* BrassPawnMain.swift */,
 				F755F151598E76064B9B539F /* Info.plist */,
+				D7C66C626791A2991355347F /* InfoPlist.xcstrings */,
 				69DFD865B5FC73F4B5E8B02A /* Localizable.xcstrings */,
 			);
 			path = App;
@@ -296,6 +299,7 @@
 				737010EE9573D8FF256F8AAC /* BrassPawn.storekit in Resources */,
 				D4F6C22B9A9E78DCC1AA03A9 /* CormorantGaramond-Italic.ttf in Resources */,
 				11EE77AA55207BE6C3C461F3 /* CormorantGaramond.ttf in Resources */,
+				A2665FDBF88E05FEE6B87457 /* InfoPlist.xcstrings in Resources */,
 				E072E1874AEB54C397C55234 /* JetBrainsMono.ttf in Resources */,
 				C40143C2022EC79B9BC7E838 /* LICENSE.txt in Resources */,
 				4DB8B84E8E5AC99E59FBF9D5 /* Localizable.xcstrings in Resources */,

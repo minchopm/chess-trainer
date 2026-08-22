@@ -105,3 +105,34 @@ def main():
         print("  (no language files yet — English only)")
 
 main()
+
+def info_plist():
+    """The permission prompts, which iOS shows from Info.plist rather than from
+    the app's own catalogue.
+
+    A separate file because they are keyed by Apple's names rather than ours,
+    and a separate catalogue because Xcode looks for this one under a fixed
+    name. Without it the camera prompt stays English in every language the app
+    is otherwise translated into — and it is the first sentence a good many
+    people would read.
+    """
+    source = ROOT / "Localization/infoplist.json"
+    if not source.exists():
+        return
+    table = json.loads(source.read_text())
+    strings = {}
+    for key, values in table.items():
+        strings[key] = {
+            "extractionState": "manual",
+            "localizations": {
+                locale: {"stringUnit": {"state": "translated", "value": text}}
+                for locale, text in values.items()
+            },
+        }
+    catalog = {"sourceLanguage": "en", "strings": strings, "version": "1.0"}
+    out = ROOT / "App/InfoPlist.xcstrings"
+    out.write_text(json.dumps(catalog, indent=2, ensure_ascii=False, sort_keys=True) + "\n")
+    print(f"{len(strings)} Info.plist key(s) → {out.relative_to(ROOT)}")
+
+
+info_plist()

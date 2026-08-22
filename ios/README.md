@@ -432,9 +432,10 @@ Three things cost time, and all three fail silently:
 The app is GPLv3, because Stockfish is, and it carries an AGPLv3 obligation as
 well, because Reckless is. Neither is a formality:
 
-- [ ] Publish the complete source publicly, including `Vendor/Stockfish`,
-      `Vendor/Reckless` and both bridges. The `LICENSE` and `NOTICE.md` files at
-      the repository root cover the obligations.
+- [x] Publish the complete source publicly, including `Vendor/Stockfish`,
+      `Vendor/Reckless` and both bridges — github.com/minchopm/chess-trainer is
+      public and GPL-3.0. The `LICENSE` and `NOTICE.md` files at the repository
+      root cover the obligations.
 - [x] **Reckless is AGPLv3.** The two licences combine — GPLv3 §13 gives
       permission to link a GPLv3 work with an AGPLv3 one, and says the AGPL's own
       §13 then applies to the combination. That section binds anyone who lets
@@ -456,8 +457,14 @@ well, because Reckless is. Neither is a formality:
       public and current.
 - [ ] Add screenshots and a privacy label. The app collects nothing and makes no
       network requests, so the label is "Data Not Collected".
-- [ ] `ITSAppUsesNonExemptEncryption` is already set to `false`, which is
-      accurate: the app uses no encryption.
+- [x] `ITSAppUsesNonExemptEncryption` is set to `false`, which is accurate: the
+      app uses no encryption.
+- [x] The permission prompts are translated. iOS reads them from Info.plist
+      rather than from the app's catalogue, so they need their own —
+      `Localization/infoplist.json` feeds `App/InfoPlist.xcstrings` through the
+      same script. Left alone, the camera prompt would have been English in all
+      twenty-nine languages, and it is the first sentence a good many people
+      would read.
 
 ### Size
 
