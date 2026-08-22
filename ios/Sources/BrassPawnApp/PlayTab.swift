@@ -1,16 +1,21 @@
 import SwiftUI
 import ChessTraining
 
-/// The two ways to play a game share one compact section. Everything based on
-/// watching an existing game lives in the separate Watch destination.
+/// The three ways to play a game share one compact section. Everything based
+/// on watching an existing game lives in the separate Watch destination.
+///
+/// Board is the odd one of the three: no opponent is assigned when you arrive,
+/// and both sides can change hands mid-game. It sits here rather than beside
+/// Watch because what you do on it is play moves.
 struct PlayTab: View {
     enum Mode: String, CaseIterable, Identifiable {
-        case play, online
+        case play, online, board
         var id: String { String(describing: self) }
         var label: String {
             switch self {
             case .play: L.t("play.vsAI", "VS AI")
             case .online: L.t("play.multiplayer", "Multiplayer")
+            case .board: L.t("play.board", "Board")
             }
         }
     }
@@ -42,6 +47,7 @@ struct PlayTab: View {
             switch mode {
             case .play: PlayScreen()
             case .online: OnlineScreen()
+            case .board: BoardScreen()
             }
         }
     }

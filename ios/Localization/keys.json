@@ -224,10 +224,143 @@
   ]
  },
  {
+  "key": "board.checkmate",
+  "english": "Checkmate — %@ wins.",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.draw",
+  "english": "Drawn.",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.empty",
+  "english": "Paste a game or a position to start from, or just play moves.",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.flip",
+  "english": "Flip",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.fromClipboard",
+  "english": "From clipboard",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.import",
+  "english": "Paste a game",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.importHint",
+  "english": "A FEN, a PGN, or just the moves — 1.e4 e5 or e2e4 e7e5. Comments, move numbers and variations are ignored.",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.importTitle",
+  "english": "Paste a game or a position",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.movesRead",
+  "english": "Read %lld moves.",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.positionOnly",
+  "english": "Position read.",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
   "key": "board.promoteTo",
   "english": "Promote to",
   "files": [
    "GameBoard.swift"
+  ]
+ },
+ {
+  "key": "board.readIt",
+  "english": "Read it",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.reviewing",
+  "english": "Looking back — play a move to branch from here.",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.seatEngine",
+  "english": "Engine",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.seatYou",
+  "english": "You",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.startOver",
+  "english": "Start over",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.stoppedAt",
+  "english": "Read %lld moves, then stopped at “%@”.",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.thinking",
+  "english": "Thinking…",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.toMove",
+  "english": "%@ to move.",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
+  "key": "board.unreadable",
+  "english": "That did not read as a game or a position.",
+  "files": [
+   "BoardScreen.swift"
   ]
  },
  {
@@ -466,6 +599,13 @@
   "english": "White",
   "files": [
    "Localized.swift"
+  ]
+ },
+ {
+  "key": "common.cancel",
+  "english": "Cancel",
+  "files": [
+   "BoardScreen.swift"
   ]
  },
  {
@@ -1264,6 +1404,13 @@
   "english": "Black",
   "files": [
    "PlayScreen.swift"
+  ]
+ },
+ {
+  "key": "play.board",
+  "english": "Board",
+  "files": [
+   "PlayTab.swift"
   ]
  },
  {

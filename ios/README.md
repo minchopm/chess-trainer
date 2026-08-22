@@ -100,7 +100,7 @@ one file per language:
 python3 ios/scripts/build-catalog.py
 ```
 
-The script prints how many of the 518 keys each language has, so a partial
+The script prints how many of the 540 keys each language has, so a partial
 translation is visible rather than silent. Adding a string means adding it to
 `keys.json` and to whichever languages you can; the rest fall back to English.
 
@@ -129,6 +129,31 @@ sessions talk through a `MatchTransport`, and the suite hands one session's
 packets straight to another to play whole games — moves, clock, resignation,
 draw offers, a peer sending an illegal move — with no Game Center involved.
 
+## The free board
+
+Play → Board is the one screen with no opponent decided in advance. You bring a
+position to it — pasted as a FEN, a PGN, bare moves (`1.e4 e5`) or UCI
+(`e2e4 e7e5`) — and then push the pieces around. `ChessCore/GameImport.swift`
+reads all four; comments, move numbers, NAGs, results and parenthesised
+variations are skipped, and a line that breaks part way gives back the moves
+before the break together with the token that stopped it, because twenty-nine
+moves with a reason beat nothing without one.
+
+Two rules are worth knowing because neither is guessable:
+
+**Either side can change hands at any time.** White and Black each have a seat —
+You or Engine — and switching one mid-game hands that colour over immediately.
+Both on Engine is the two engines playing each other; both on You is an analysis
+board. The engine plays at full strength, with no ladder: this screen is for
+looking at positions, and a deliberately weakened answer is the wrong tool for
+that even when the engine can give one.
+
+**Stepping back stops the engines.** An engine only owes a move at the live end
+of the line. Step back to look at something and everything pauses, because a
+board that moves while you are reading it is useless. Play a move from there and
+the line branches — what came after is dropped, since keeping both would mean a
+move tree, which is a different feature.
+
 ## Testing
 
 ```bash
@@ -151,6 +176,11 @@ The suite is worth knowing about because two parts of it are not the usual
   move at wide MultiPV, in a quiet position and in a forced mate. The board draws
   a number per move and gets them from one search, so an engine that reports
   fewer lines than it was asked for is a visible defect rather than a subtle one.
+- **The free board's two rules.** That a move played from the middle of a line
+  drops what came after it, and that an engine owes no move once you have
+  stepped back off the end. Both are invisible in the types — nothing stops
+  `BoardModel` appending to a line it is not showing the end of — so they are
+  held by tests rather than by the compiler.
 
 ## Two engines
 
