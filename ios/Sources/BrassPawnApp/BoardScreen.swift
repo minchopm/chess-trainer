@@ -366,7 +366,11 @@ struct BoardScreen: View {
     @State private var model = BoardModel()
     @State private var values = MoveValueController()
     @State private var isImporting = false
-    @State private var isEditing = false
+    /// The board the editor opens on. Presented by identity rather than a flag
+    /// because two things feed it — the Set up button and a photograph — and a
+    /// flag would have to be paired with somewhere to put the position.
+    @State private var editorSeed: EditorSeed?
+    @State private var isPhotographing = false
     @Environment(\.modelContext) private var history
     /// The line that has already been written down, so a board that reaches
     /// checkmate and is then stepped about does not file the same game twice.
@@ -417,15 +421,24 @@ struct BoardScreen: View {
         // Seeded with what is on the board, so the editor is a way to adjust a
         // position as well as to build one — which is what anything read off a
         // photograph will need.
-        .sheet(isPresented: $isEditing) {
+        .sheet(item: $editorSeed) { seed in
             PositionEditorSheet(
-                model: PositionEditorModel(model.position, orientation: model.orientation),
-                isPresented: $isEditing
+                model: seed.editor(orientation: model.orientation)
             ) { position in
                 model.begin(from: position)
                 driveEngines()
             }
         }
+        #if canImport(UIKit)
+        // Whatever a photograph produces goes to the editor, always. Even the
+        // best published reader gets a few squares wrong on an average board,
+        // so correcting it is the feature and not a safety net.
+        .sheet(isPresented: $isPhotographing) {
+            PhotoBoardSheet(isPresented: $isPhotographing, reader: UnreadBoard()) { pieces in
+                editorSeed = EditorSeed(pieces: pieces)
+            }
+        }
+        #endif
         // A seat handed to an engine has to start thinking without waiting for
         // a move to be played, or handing over the side to move does nothing
         // visible until you poke the board.
@@ -549,8 +562,14 @@ struct BoardScreen: View {
             HStack(spacing: 8) {
                 Button(L.t("board.import", "Paste a game")) { isImporting = true }
                     .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
-                Button(L.t("board.setUp", "Set up")) { isEditing = true }
+                Button(L.t("board.setUp", "Set up")) {
+                    editorSeed = EditorSeed(position: model.position)
+                }
+                .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
+                #if canImport(UIKit)
+                Button(L.t("board.fromPhoto", "Photo")) { isPhotographing = true }
                     .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
+                #endif
             }
 
             HStack(spacing: 8) {
@@ -723,5 +742,51 @@ private struct ImportSheet: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(Theatre.ink2)
         .onChange(of: text) { _, _ in failed = false }
+    }
+}
+
+
+/// A board on its way to the editor.
+///
+/// Carries pieces rather than a `Position` because a photograph may yield
+/// something that is not one — an unread board has no kings, and the parser
+/// refuses that. Wrapped with an id because two photographs of the same board
+/// would otherwise be the same sheet.
+private struct EditorSeed: Identifiable {
+    let id = UUID()
+    let pieces: [Square: Piece]
+    let sideToMove: PieceColor
+    let castling: CastlingRights
+
+    init(position: Position) {
+        var found: [Square: Piece] = [:]
+        for index in 0..<64 where position[Square(index)] != nil {
+            found[Square(index)] = position[Square(index)]
+        }
+        pieces = found
+        sideToMove = position.sideToMove
+        castling = position.castling
+    }
+
+    /// From a photograph: white to move and no castling rights, because a
+    /// picture says nothing about either and guessing would be inventing.
+    init(pieces: [Square: Piece]) {
+        self.pieces = pieces
+        sideToMove = .white
+        castling = []
+    }
+}
+
+
+@MainActor
+private extension EditorSeed {
+    func editor(orientation: PieceColor) -> PositionEditorModel {
+        let model = PositionEditorModel(pieces: pieces, orientation: orientation)
+        model.sideToMove = sideToMove
+        for right in [CastlingRights.whiteKingside, .whiteQueenside, .blackKingside, .blackQueenside]
+        where castling.contains(right) {
+            model.setCastling(right, on: true)
+        }
+        return model
     }
 }

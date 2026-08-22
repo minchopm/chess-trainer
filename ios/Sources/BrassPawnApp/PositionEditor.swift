@@ -31,6 +31,19 @@ final class PositionEditorModel {
         load(position)
     }
 
+    /// Start from a loose map of pieces.
+    ///
+    /// What a photograph produces cannot be a `Position`: nothing was
+    /// recognised on an unread board, and a board without kings is not a
+    /// position the parser will accept. Handing the map straight over is the
+    /// honest route — the editor was built to hold exactly this.
+    init(pieces: [Square: Piece], orientation: PieceColor = .white) {
+        self.orientation = orientation
+        self.pieces = pieces
+        sideToMove = .white
+        castling = []
+    }
+
     func load(_ position: Position) {
         pieces = [:]
         for index in 0..<64 where position[Square(index)] != nil {
@@ -247,8 +260,8 @@ private struct EditorBoard: View {
 /// need: a position read off a photograph is right about most squares and wrong
 /// about a few, and there has to be somewhere to fix the few.
 struct PositionEditorSheet: View {
+    @Environment(\.dismiss) private var dismiss
     @State var model: PositionEditorModel
-    @Binding var isPresented: Bool
     let use: (Position) -> Void
 
     private static let order: [PieceKind] = [.king, .queen, .rook, .bishop, .knight, .pawn]
@@ -402,7 +415,7 @@ struct PositionEditorSheet: View {
             }
 
             HStack(spacing: 8) {
-                Button(L.t("common.cancel", "Cancel")) { isPresented = false }
+                Button(L.t("common.cancel", "Cancel")) { dismiss() }
                     .buttonStyle(PillButtonStyle(emphasis: .ghost, usesBodySize: true))
 
                 Spacer()
@@ -410,7 +423,7 @@ struct PositionEditorSheet: View {
                 Button(L.t("editor.use", "Use this position")) {
                     guard let position = model.position else { return }
                     use(position)
-                    isPresented = false
+                    dismiss()
                 }
                 .buttonStyle(PillButtonStyle(
                     emphasis: .solid, enabled: model.position != nil, usesBodySize: true

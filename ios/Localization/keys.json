@@ -259,6 +259,13 @@
   ]
  },
  {
+  "key": "board.fromPhoto",
+  "english": "Photo",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
   "key": "board.import",
   "english": "Paste a game",
   "files": [
@@ -1502,6 +1509,76 @@
   "english": "Searching — tap to cancel",
   "files": [
    "OnlineScreen.swift"
+  ]
+ },
+ {
+  "key": "photo.again",
+  "english": "Start again",
+  "files": [
+   "PhotoBoardSheet.swift"
+  ]
+ },
+ {
+  "key": "photo.camera",
+  "english": "Take a photo",
+  "files": [
+   "PhotoBoardSheet.swift"
+  ]
+ },
+ {
+  "key": "photo.choose",
+  "english": "Choose a photo",
+  "files": [
+   "PhotoBoardSheet.swift"
+  ]
+ },
+ {
+  "key": "photo.cornersDone",
+  "english": "Four corners marked.",
+  "files": [
+   "PhotoBoardSheet.swift"
+  ]
+ },
+ {
+  "key": "photo.cornersLeft",
+  "english": "%lld more to tap.",
+  "files": [
+   "PhotoBoardSheet.swift"
+  ]
+ },
+ {
+  "key": "photo.hint",
+  "english": "Photograph the board, then tap its four corners. Whatever comes out opens in the editor for you to correct — a photograph gets a few squares wrong even at its best.",
+  "files": [
+   "PhotoBoardSheet.swift"
+  ]
+ },
+ {
+  "key": "photo.read",
+  "english": "Read it",
+  "files": [
+   "PhotoBoardSheet.swift"
+  ]
+ },
+ {
+  "key": "photo.tapCorners",
+  "english": "Tap the four corners of the board.",
+  "files": [
+   "PhotoBoardSheet.swift"
+  ]
+ },
+ {
+  "key": "photo.title",
+  "english": "Read a board from a photo",
+  "files": [
+   "PhotoBoardSheet.swift"
+  ]
+ },
+ {
+  "key": "photo.undoTap",
+  "english": "Undo tap",
+  "files": [
+   "PhotoBoardSheet.swift"
   ]
  },
  {

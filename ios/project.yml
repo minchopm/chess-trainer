@@ -85,6 +85,11 @@ targets:
       path: App/Info.plist
       properties:
         CFBundleDisplayName: Brass Pawn
+        # Reading a position off a photograph of a real board. Shown by iOS in
+        # its own permission prompt, so it has to say what the camera is for in
+        # one line and cannot be evasive about it.
+        NSCameraUsageDescription: >-
+          To read a chess position from a photo of a real board.
         UILaunchScreen: {}
         # A phone holds one board and one panel; turning it sideways leaves
         # room for neither. An iPad has room for both side by side, so it turns.

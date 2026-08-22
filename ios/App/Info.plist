@@ -22,6 +22,8 @@
 	<string>1</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>To read a chess position from a photo of a real board.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>CormorantGaramond.ttf</string>

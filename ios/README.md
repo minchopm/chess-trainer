@@ -100,7 +100,7 @@ one file per language:
 python3 ios/scripts/build-catalog.py
 ```
 
-The script prints how many of the 564 keys each language has, so a partial
+The script prints how many of the 575 keys each language has, so a partial
 translation is visible rather than silent. Adding a string means adding it to
 `keys.json` and to whichever languages you can; the rest fall back to English.
 
@@ -226,6 +226,65 @@ inside a tab rather than a destination, and it is cleared on being taken, so
 returning to Board a week later does not silently reload a game you had moved
 on from.
 
+## Reading a board from a photograph
+
+Board → Photo. Take or choose a picture, tap the board's four corners, and what
+comes out opens in the position editor to be corrected. The corners, the
+straightening and the cutting are here; the classifier that says what is
+standing on each square is not written yet, and `UnreadBoard` stands in for it
+by honestly recognising nothing.
+
+### Why the corners are tapped rather than found
+
+Every published pipeline finds the board by looking for lines, and that is the
+step that breaks. Measured on ChessReD — 10,800 real smartphone photographs —
+**chesscog locates the board in 34.38% of them**, and every error afterwards is
+downstream of the miss: 2.3% of boards come out with no mistakes at all, 42.87
+squares wrong per board on average. On its own synthetic dataset the same
+system gets 93.86% of boards perfect. It is not a weak system; it is a system
+outside its distribution.
+
+Four taps cost a moment and take that failure to nothing. What is left is a
+homography (`CIPerspectiveCorrection`, no model, no licence) and per-square
+classification.
+
+### Why we will train our own classifier
+
+The state of the art on real photographs is the ResNeXt end-to-end model of
+Masouris and van Gemert (VISAPP 2024): 15.26% of boards perfect, 3.40 squares
+wrong per board, 5.31% per square. We cannot use it. **Its repository carries
+no licence at all** — checked through the GitHub API, not the README — which
+means all rights reserved, and **ChessReD is CC BY-NC-SA 4.0**, which a paid app
+cannot touch.
+
+What is clean:
+
+| | licence | data | usable |
+|---|---|---|---|
+| chesscog | MIT | CC-BY 4.0 (OSF, checked via API) | yes |
+| neural-chessboard | MIT | — | yes |
+| chessboard2fen | MIT | — | yes |
+| LiveChess2FEN | AGPL-3.0 | — | yes, as we already ship AGPL |
+| end-to-end-chess-recognition | **none** | CC BY-NC-SA | **no** |
+| ChessReD dataset | **CC BY-NC-SA** | — | **no** |
+
+So the plan is a small per-square classifier of our own, trained on
+CC-BY material — real photographs from Roboflow Universe plus chesscog's
+renders — and exported to Core ML. A per-square model at that size is a few
+megabytes, not tens.
+
+### Why the editor is mandatory
+
+Even the best published reader gets three or four squares wrong on an average
+board. Correction is therefore the feature and not a safety net, and the
+photograph hands its result to the editor every time — including when it
+recognised nothing, which is what happens today.
+
+That last case is why the hand-over carries a map of pieces rather than a
+`Position`: a board with no kings on it is not a position, `Position(fen:)`
+refuses to parse one, and an earlier draft quietly fell back to the opening
+array — a photograph of an empty room would have produced a full chessboard.
+
 ## Testing
 
 ```bash
@@ -253,6 +312,11 @@ The suite is worth knowing about because two parts of it are not the usual
   stepped back off the end. Both are invisible in the types — nothing stops
   `BoardModel` appending to a line it is not showing the end of — so they are
   held by tests rather than by the compiler.
+- **The photograph's orientation.** Core Image counts y upwards and a tap counts
+  it downwards. Getting that wrong produces a board upside down rather than an
+  error, which is the kind of mistake that survives a review — so a picture with
+  a white patch in one corner is straightened by its own corners and the patch
+  has to still be there. Remove the flip and four of the five checks fail.
 
 ## Two engines
 
