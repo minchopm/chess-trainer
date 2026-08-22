@@ -100,7 +100,7 @@ one file per language:
 python3 ios/scripts/build-catalog.py
 ```
 
-The script prints how many of the 575 keys each language has, so a partial
+The script prints how many of the 572 keys each language has, so a partial
 translation is visible rather than silent. Adding a string means adding it to
 `keys.json` and to whichever languages you can; the rest fall back to English.
 
@@ -244,9 +244,17 @@ squares wrong per board on average. On its own synthetic dataset the same
 system gets 93.86% of boards perfect. It is not a weak system; it is a system
 outside its distribution.
 
-Four taps cost a moment and take that failure to nothing. What is left is a
+Four handles cost a moment and take that failure to nothing. What is left is a
 homography (`CIPerspectiveCorrection`, no model, no licence) and per-square
 classification.
+
+They are dragged rather than tapped, and that took a second attempt. Tapping
+asks somebody to hit a point their own fingertip is covering, in a picture
+shrunk to fit the screen — and where the board runs to the edge of the frame,
+the corner cannot be hit at all. Four handles are placed for you and dragged
+into place, with the quadrilateral drawn so its shape can be judged as a whole
+and a loupe parked in the far corner showing what is under the finger. It is how
+every document scanner does it, for the same reasons.
 
 ### Why we will train our own classifier
 

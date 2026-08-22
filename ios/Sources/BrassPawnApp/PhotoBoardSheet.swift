@@ -79,7 +79,10 @@ struct PhotoBoardSheet: View {
 
     @State private var picked: PhotosPickerItem?
     @State private var image: UIImage?
-    @State private var taps: [CGPoint] = []
+    /// The four corners, in the picture's own pixels. Always four of them.
+    @State private var corners: [CGPoint] = []
+    /// Which corner is under the finger, so the loupe knows what to show.
+    @State private var dragging: Int?
     @State private var isCapturing = false
     @State private var isReading = false
 
@@ -89,35 +92,31 @@ struct PhotoBoardSheet: View {
                 .appFont(size: 22, weight: .semibold)
 
             if let image {
-                Text(instruction)
+                Text(L.t("photo.dragCorners",
+                         "Drag the four handles onto the corners of the board."))
                     .appFont(.footnote)
-                    .foregroundStyle(taps.count == 4 ? Theatre.brass : Theatre.ivoryDim)
+                    .foregroundStyle(Theatre.ivoryDim)
 
-                tappable(image)
+                adjustable(image)
 
                 HStack(spacing: 8) {
                     Button(L.t("photo.again", "Start again")) {
-                        taps = []
+                        corners = []
                         self.image = nil
                     }
                     .buttonStyle(PillButtonStyle(emphasis: .ghost, usesBodySize: true))
-
-                    if !taps.isEmpty {
-                        Button(L.t("photo.undoTap", "Undo tap")) { taps.removeLast() }
-                            .buttonStyle(PillButtonStyle(emphasis: .ghost, usesBodySize: true))
-                    }
 
                     Spacer()
 
                     Button(L.t("photo.read", "Read it")) { read(image) }
                         .buttonStyle(PillButtonStyle(
-                            emphasis: .solid, enabled: taps.count == 4 && !isReading, usesBodySize: true
+                            emphasis: .solid, enabled: !isReading, usesBodySize: true
                         ))
-                        .disabled(taps.count != 4 || isReading)
+                        .disabled(isReading)
                 }
             } else {
                 Text(L.t("photo.hint",
-                         "Photograph the board, then tap its four corners. Whatever comes out opens in the editor for you to correct — a photograph gets a few squares wrong even at its best."))
+                         "Photograph the whole board with its edges in frame. Whatever comes out opens in the editor for you to correct — a photograph gets a few squares wrong even at its best."))
                     .appFont(.footnote)
                     .foregroundStyle(Theatre.ivoryDim)
 
@@ -142,8 +141,8 @@ struct PhotoBoardSheet: View {
         .background(Theatre.ink2)
         .fullScreenCover(isPresented: $isCapturing) {
             CameraPicker { captured in
+                corners = []
                 image = captured
-                taps = []
             }
             .ignoresSafeArea()
         }
@@ -152,67 +151,148 @@ struct PhotoBoardSheet: View {
             Task {
                 if let data = try? await item.loadTransferable(type: Data.self),
                    let loaded = UIImage(data: data) {
+                    corners = []
                     image = loaded
-                    taps = []
                 }
             }
         }
     }
 
-    private var instruction: String {
-        switch taps.count {
-        case 0: L.t("photo.tapCorners", "Tap the four corners of the board.")
-        case 4: L.t("photo.cornersDone", "Four corners marked.")
-        default: L.t("photo.cornersLeft", "%lld more to tap.", 4 - taps.count)
-        }
-    }
-
-    /// The picture, with the taps drawn on it.
+    /// The picture with four draggable handles on it.
     ///
-    /// The taps are recorded in the picture's own pixels rather than in view
-    /// points, because that is the space the corners have to be in by the time
-    /// they reach the rectifier, and converting later means keeping the view's
-    /// size around to convert with.
-    private func tappable(_ image: UIImage) -> some View {
+    /// Handles rather than taps. Tapping asks somebody to hit a point their own
+    /// fingertip is covering, in a picture shrunk to fit the screen — and if the
+    /// board runs to the edge of the frame, the corner cannot be hit at all.
+    /// Four handles are placed for you and dragged into place, which is how
+    /// every document scanner does it and for the same reasons.
+    private func adjustable(_ image: UIImage) -> some View {
         GeometryReader { geometry in
             let scale = min(geometry.size.width / image.size.width,
                             geometry.size.height / image.size.height)
-            let shown = CGSize(width: image.size.width * scale, height: image.size.height * scale)
+            let shown = CGSize(width: image.size.width * scale,
+                               height: image.size.height * scale)
 
             ZStack(alignment: .topLeading) {
                 Image(uiImage: image)
                     .resizable()
                     .frame(width: shown.width, height: shown.height)
 
-                ForEach(Array(taps.enumerated()), id: \.offset) { index, point in
-                    Circle()
-                        .strokeBorder(Theatre.brass, lineWidth: 2)
-                        .background(Circle().fill(Theatre.brass.opacity(0.25)))
-                        .frame(width: 22, height: 22)
-                        .position(x: point.x * scale, y: point.y * scale)
-                        .overlay {
-                            Text("\(index + 1)")
-                                .appFont(.caption, weight: .semibold)
-                                .foregroundStyle(Theatre.brassHot)
-                                .position(x: point.x * scale, y: point.y * scale)
-                        }
+                quadOutline(scale: scale)
+
+                ForEach(corners.indices, id: \.self) { index in
+                    handle(index: index, scale: scale, image: image)
+                }
+
+                if let dragging, corners.indices.contains(dragging) {
+                    loupe(image: image, at: corners[dragging], shown: shown, scale: scale)
                 }
             }
             .frame(width: shown.width, height: shown.height)
-            .contentShape(.rect)
-            .onTapGesture { location in
-                guard taps.count < 4, scale > 0 else { return }
-                taps.append(CGPoint(x: location.x / scale, y: location.y / scale))
-            }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            .onAppear { placeCornersIfNeeded(in: image) }
+            .onChange(of: image) { _, new in
+                corners = []
+                placeCornersIfNeeded(in: new)
+            }
         }
-        .frame(maxHeight: 420)
+    }
+
+    /// The quadrilateral being adjusted, so its shape can be judged as a whole
+    /// rather than one corner at a time.
+    private func quadOutline(scale: CGFloat) -> some View {
+        Path { path in
+            guard corners.count == 4 else { return }
+            let points = corners.map { CGPoint(x: $0.x * scale, y: $0.y * scale) }
+            path.addLines(points)
+            path.closeSubpath()
+        }
+        .stroke(Theatre.brass.opacity(0.9), lineWidth: 1.5)
+    }
+
+    private func handle(index: Int, scale: CGFloat, image: UIImage) -> some View {
+        let point = corners[index]
+        return Circle()
+            .strokeBorder(Theatre.brass, lineWidth: 2)
+            .background(Circle().fill(Theatre.brass.opacity(dragging == index ? 0.45 : 0.2)))
+            .frame(width: 30, height: 30)
+            // The touch target is larger than the ring, because a fingertip is
+            // larger than a ring.
+            .contentShape(Circle().inset(by: -14))
+            .position(x: point.x * scale, y: point.y * scale)
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged { value in
+                        dragging = index
+                        corners[index] = clamp(
+                            CGPoint(x: value.location.x / scale, y: value.location.y / scale),
+                            to: image.size
+                        )
+                    }
+                    .onEnded { _ in dragging = nil }
+            )
+    }
+
+    /// What is under the finger, shown where the finger is not.
+    ///
+    /// Parked in the corner furthest from the handle being dragged: a loupe that
+    /// follows the finger is covered by the same hand it is meant to help.
+    private func loupe(image: UIImage, at point: CGPoint, shown: CGSize, scale: CGFloat) -> some View {
+        let size: CGFloat = 108
+        let magnification: CGFloat = 2.6
+        let onTheLeft = point.x * scale > shown.width / 2
+        let onTop = point.y * scale > shown.height / 2
+
+        return ZStack {
+            Image(uiImage: image)
+                .resizable()
+                .frame(width: image.size.width * scale * magnification,
+                       height: image.size.height * scale * magnification)
+                .offset(x: size / 2 - point.x * scale * magnification,
+                        y: size / 2 - point.y * scale * magnification)
+            Path { path in
+                path.move(to: CGPoint(x: size / 2, y: 0))
+                path.addLine(to: CGPoint(x: size / 2, y: size))
+                path.move(to: CGPoint(x: 0, y: size / 2))
+                path.addLine(to: CGPoint(x: size, y: size / 2))
+            }
+            .stroke(Theatre.brass.opacity(0.85), lineWidth: 1)
+        }
+        .frame(width: size, height: size)
+        .clipShape(.circle)
+        .overlay { Circle().strokeBorder(Theatre.brass, lineWidth: 1.5) }
+        .position(
+            x: onTheLeft ? size / 2 + 8 : shown.width - size / 2 - 8,
+            y: onTop ? size / 2 + 8 : shown.height - size / 2 - 8
+        )
+        .allowsHitTesting(false)
+    }
+
+    /// Four handles, set in from the picture's own corners.
+    ///
+    /// Inside rather than exactly on them, because a board photographed with any
+    /// margin has its corners inside the frame — and a handle sitting on the
+    /// very edge looks like part of the frame rather than something to move.
+    private func placeCornersIfNeeded(in image: UIImage) {
+        guard corners.isEmpty else { return }
+        let inset = CGPoint(x: image.size.width * 0.12, y: image.size.height * 0.12)
+        corners = [
+            CGPoint(x: inset.x, y: inset.y),
+            CGPoint(x: image.size.width - inset.x, y: inset.y),
+            CGPoint(x: image.size.width - inset.x, y: image.size.height - inset.y),
+            CGPoint(x: inset.x, y: image.size.height - inset.y),
+        ]
+    }
+
+    /// A handle may go right to the edge — a board can run off the frame — but
+    /// not past it, where there is no photograph to read.
+    private func clamp(_ point: CGPoint, to size: CGSize) -> CGPoint {
+        CGPoint(x: min(max(0, point.x), size.width), y: min(max(0, point.y), size.height))
     }
 
     private func read(_ image: UIImage) {
         guard let cgImage = image.cgImage,
-              let corners = BoardGeometry.order(taps),
-              let rectified = BoardPhoto.rectify(cgImage, corners: corners) else { return }
+              let ordered = BoardGeometry.order(corners),
+              let rectified = BoardPhoto.rectify(cgImage, corners: ordered) else { return }
 
         isReading = true
         Task {

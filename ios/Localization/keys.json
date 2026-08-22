@@ -1533,22 +1533,15 @@
   ]
  },
  {
-  "key": "photo.cornersDone",
-  "english": "Four corners marked.",
-  "files": [
-   "PhotoBoardSheet.swift"
-  ]
- },
- {
-  "key": "photo.cornersLeft",
-  "english": "%lld more to tap.",
+  "key": "photo.dragCorners",
+  "english": "Drag the four handles onto the corners of the board.",
   "files": [
    "PhotoBoardSheet.swift"
   ]
  },
  {
   "key": "photo.hint",
-  "english": "Photograph the board, then tap its four corners. Whatever comes out opens in the editor for you to correct — a photograph gets a few squares wrong even at its best.",
+  "english": "Photograph the whole board with its edges in frame. Whatever comes out opens in the editor for you to correct — a photograph gets a few squares wrong even at its best.",
   "files": [
    "PhotoBoardSheet.swift"
   ]
@@ -1561,22 +1554,8 @@
   ]
  },
  {
-  "key": "photo.tapCorners",
-  "english": "Tap the four corners of the board.",
-  "files": [
-   "PhotoBoardSheet.swift"
-  ]
- },
- {
   "key": "photo.title",
   "english": "Read a board from a photo",
-  "files": [
-   "PhotoBoardSheet.swift"
-  ]
- },
- {
-  "key": "photo.undoTap",
-  "english": "Undo tap",
   "files": [
    "PhotoBoardSheet.swift"
   ]

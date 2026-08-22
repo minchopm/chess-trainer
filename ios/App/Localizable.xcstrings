@@ -43144,396 +43144,199 @@
         }
       }
     },
-    "photo.cornersDone": {
+    "photo.dragCorners": {
       "extractionState": "manual",
       "localizations": {
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "تم تحديد أربع زوايا."
+            "value": "اسحب المقابض الأربعة إلى زوايا اللوح."
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Čtyři rohy označeny."
+            "value": "Přetáhněte čtyři úchyty do rohů šachovnice."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fire hjørner markeret."
+            "value": "Træk de fire håndtag hen til brættets hjørner."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Vier Ecken markiert."
+            "value": "Zieh die vier Griffe auf die Ecken des Bretts."
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Σημειώθηκαν τέσσερις γωνίες."
+            "value": "Σύρε τις τέσσερις λαβές στις γωνίες της σκακιέρας."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Four corners marked."
+            "value": "Drag the four handles onto the corners of the board."
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Four corners marked."
+            "value": "Drag the four handles onto the corners of the board."
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "Four corners marked."
+            "value": "Drag the four handles onto the corners of the board."
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cuatro esquinas marcadas."
+            "value": "Arrastra los cuatro tiradores a las esquinas del tablero."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Neljä kulmaa merkitty."
+            "value": "Vedä neljä kahvaa laudan kulmiin."
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Quatre coins marqués."
+            "value": "Faites glisser les quatre poignées sur les coins de l’échiquier."
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Quatre coins marqués."
+            "value": "Faites glisser les quatre poignées sur les coins de l’échiquier."
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "ארבע פינות סומנו."
+            "value": "גררו את ארבע הידיות אל פינות הלוח."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "चार कोने चिह्नित।"
+            "value": "चारों हैंडल को बोर्ड के कोनों तक खींचें।"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Négy sarok megjelölve."
+            "value": "Húzd a négy fogantyút a tábla sarkaira."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Empat sudut ditandai."
+            "value": "Seret keempat pegangan ke sudut papan."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Quattro angoli segnati."
+            "value": "Trascina le quattro maniglie sugli angoli della scacchiera."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "四隅を指定しました。"
+            "value": "四つのハンドルを盤の角までドラッグしてください。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "네 모서리를 표시했습니다."
+            "value": "네 개의 핸들을 보드의 모서리로 끌어다 놓으세요."
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Empat penjuru ditanda."
+            "value": "Seret empat pemegang ke penjuru papan."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Vier hoeken gemarkeerd."
+            "value": "Sleep de vier grepen naar de hoeken van het bord."
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fire hjørner markert."
+            "value": "Dra de fire håndtakene til brettets hjørner."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Zaznaczono cztery rogi."
+            "value": "Przeciągnij cztery uchwyty na rogi szachownicy."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Quatro cantos marcados."
+            "value": "Arraste as quatro alças para os cantos do tabuleiro."
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Patru colțuri marcate."
+            "value": "Trage cele patru mânere în colțurile tablei."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Отмечены четыре угла."
+            "value": "Перетащите четыре маркера в углы доски."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fyra hörn markerade."
+            "value": "Dra de fyra handtagen till brädets hörn."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "ทำเครื่องหมายครบสี่มุมแล้ว"
+            "value": "ลากที่จับทั้งสี่ไปยังมุมของกระดาน"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dört köşe işaretlendi."
+            "value": "Dört tutamağı tahtanın köşelerine sürükle."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Đã đánh dấu bốn góc."
+            "value": "Kéo bốn tay nắm vào các góc bàn cờ."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "已标记四个角。"
+            "value": "把四个控点拖到棋盘的四个角。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "已標記四個角。"
-          }
-        }
-      }
-    },
-    "photo.cornersLeft": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar-SA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "بقيت %lld للنقر."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zbývá klepnout: %lld."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld tilbage at trykke på."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Noch %lld antippen."
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Απομένουν %lld."
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld more to tap."
-          }
-        },
-        "en-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld more to tap."
-          }
-        },
-        "en-US": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld more to tap."
-          }
-        },
-        "es-ES": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Faltan %lld por tocar."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vielä %lld napautettavaa."
-          }
-        },
-        "fr-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Encore %lld à toucher."
-          }
-        },
-        "fr-FR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Encore %lld à toucher."
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "נותרו %lld להקשה."
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld और टैप करने हैं।"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Még %lld koppintás."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tersisa %lld untuk diketuk."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ne mancano %lld da toccare."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "あと %lld か所です。"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld개 더 탭하세요."
-          }
-        },
-        "ms": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tinggal %lld untuk diketik."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nog %lld aan te tikken."
-          }
-        },
-        "no": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld igjen å trykke på."
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pozostało %lld do dotknięcia."
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Faltam %lld para tocar."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mai sunt %lld de atins."
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Осталось коснуться: %lld."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld kvar att trycka på."
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "เหลืออีก %lld จุด"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld tane daha dokun."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Còn %lld điểm nữa."
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "还需点按 %lld 处。"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "還需點按 %lld 處。"
+            "value": "把四個控點拖到棋盤的四個角。"
           }
         }
       }
@@ -43544,193 +43347,193 @@
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "صوّر اللوح ثم انقر زواياه الأربع. أياً كانت النتيجة ستُفتح في المحرر لتصححها — الصورة تخطئ في بضعة مربعات حتى في أفضل حالاتها."
+            "value": "صوّر اللوح كاملاً بحوافه داخل الإطار. أياً كانت النتيجة ستُفتح في المحرر لتصححها — الصورة تخطئ في بضعة مربعات حتى في أفضل حالاتها."
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Vyfoťte šachovnici a klepněte na její čtyři rohy. Cokoli z toho vyjde, otevře se v editoru k opravě — fotka se i v nejlepším případě splete v několika polích."
+            "value": "Vyfoťte šachovnici celou, i s okraji v záběru. Cokoli z toho vyjde, otevře se v editoru k opravě — fotka se i v nejlepším případě splete v několika polích."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fotografér brættet, og tryk så på dets fire hjørner. Hvad der end kommer ud, åbnes i editoren, så du kan rette det — et foto tager fejl på et par felter selv når det går bedst."
+            "value": "Fotografér hele brættet med kanterne inden for rammen. Hvad der end kommer ud, åbnes i editoren, så du kan rette det — et foto tager fejl på et par felter selv når det går bedst."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fotografiere das Brett und tippe dann seine vier Ecken an. Was dabei herauskommt, öffnet sich zum Korrigieren im Editor — ein Foto liegt selbst im besten Fall bei ein paar Feldern daneben."
+            "value": "Fotografiere das ganze Brett, mit den Rändern im Bild. Was dabei herauskommt, öffnet sich zum Korrigieren im Editor — ein Foto liegt selbst im besten Fall bei ein paar Feldern daneben."
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Φωτογράφισε τη σκακιέρα και μετά πάτα τις τέσσερις γωνίες της. Ό,τι προκύψει ανοίγει στον επεξεργαστή για διόρθωση — μια φωτογραφία κάνει λάθος σε λίγα τετράγωνα ακόμη και στην καλύτερη περίπτωση."
+            "value": "Φωτογράφισε ολόκληρη τη σκακιέρα, με τις άκρες μέσα στο κάδρο. Ό,τι προκύψει ανοίγει στον επεξεργαστή για διόρθωση — μια φωτογραφία κάνει λάθος σε λίγα τετράγωνα ακόμη και στην καλύτερη περίπτωση."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Photograph the board, then tap its four corners. Whatever comes out opens in the editor for you to correct — a photograph gets a few squares wrong even at its best."
+            "value": "Photograph the whole board with its edges in frame. Whatever comes out opens in the editor for you to correct — a photograph gets a few squares wrong even at its best."
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Photograph the board, then tap its four corners. Whatever comes out opens in the editor for you to correct — a photograph gets a few squares wrong even at its best."
+            "value": "Photograph the whole board with its edges in frame. Whatever comes out opens in the editor for you to correct — a photograph gets a few squares wrong even at its best."
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "Photograph the board, then tap its four corners. Whatever comes out opens in the editor for you to correct — a photograph gets a few squares wrong even at its best."
+            "value": "Photograph the whole board with its edges in frame. Whatever comes out opens in the editor for you to correct — a photograph gets a few squares wrong even at its best."
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fotografía el tablero y luego toca sus cuatro esquinas. Lo que salga se abrirá en el editor para que lo corrijas: una foto se equivoca en algunas casillas incluso en el mejor de los casos."
+            "value": "Fotografía el tablero entero, con los bordes dentro del encuadre. Lo que salga se abrirá en el editor para que lo corrijas: una foto se equivoca en algunas casillas incluso en el mejor de los casos."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Valokuvaa lauta ja napauta sitten sen neljää kulmaa. Mitä tahansa siitä tuleekin, se avautuu editoriin korjattavaksi — kuva erehtyy muutaman ruudun kohdalla parhaimmillaankin."
+            "value": "Valokuvaa koko lauta reunoineen. Mitä tahansa siitä tuleekin, se avautuu editoriin korjattavaksi — kuva erehtyy muutaman ruudun kohdalla parhaimmillaankin."
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Photographiez l’échiquier, puis touchez ses quatre coins. Le résultat s’ouvre dans l’éditeur pour correction — une photo se trompe sur quelques cases même dans le meilleur des cas."
+            "value": "Photographiez l’échiquier en entier, bords compris. Le résultat s’ouvre dans l’éditeur pour correction — une photo se trompe sur quelques cases même dans le meilleur des cas."
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Photographiez l’échiquier, puis touchez ses quatre coins. Le résultat s’ouvre dans l’éditeur pour correction — une photo se trompe sur quelques cases même dans le meilleur des cas."
+            "value": "Photographiez l’échiquier en entier, bords compris. Le résultat s’ouvre dans l’éditeur pour correction — une photo se trompe sur quelques cases même dans le meilleur des cas."
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "צלמו את הלוח ואז הקישו על ארבע פינותיו. מה שיצא ייפתח בעורך לתיקון — תמונה טועה בכמה משבצות גם במקרה הטוב."
+            "value": "צלמו את הלוח כולו, עם הקצוות בתוך הפריים. מה שיצא ייפתח בעורך לתיקון — תמונה טועה בכמה משבצות גם במקרה הטוב."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "बोर्ड की फ़ोटो लें, फिर उसके चारों कोनों पर टैप करें। जो भी निकले वह संपादक में खुलेगा ताकि आप सुधार सकें — फ़ोटो सबसे अच्छी स्थिति में भी कुछ खाने ग़लत पढ़ती है।"
+            "value": "पूरे बोर्ड की फ़ोटो लें, किनारे भी फ़्रेम में रखें। जो भी निकले वह संपादक में खुलेगा ताकि आप सुधार सकें — फ़ोटो सबसे अच्छी स्थिति में भी कुछ खाने ग़लत पढ़ती है।"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fényképezd le a táblát, majd koppints a négy sarkára. Ami kijön, a szerkesztőben nyílik meg javításra — egy fotó a legjobb esetben is elront néhány mezőt."
+            "value": "Fényképezd le az egész táblát, a széleivel együtt. Ami kijön, a szerkesztőben nyílik meg javításra — egy fotó a legjobb esetben is elront néhány mezőt."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Foto papannya, lalu ketuk keempat sudutnya. Apa pun hasilnya akan dibuka di editor untuk kamu perbaiki — sebuah foto salah beberapa petak bahkan dalam kondisi terbaik."
+            "value": "Foto seluruh papan, termasuk tepinya. Apa pun hasilnya akan dibuka di editor untuk kamu perbaiki — sebuah foto salah beberapa petak bahkan dalam kondisi terbaik."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fotografa la scacchiera, poi tocca i suoi quattro angoli. Qualunque cosa ne esca si apre nell’editor perché tu la corregga: una foto sbaglia qualche casa anche nel migliore dei casi."
+            "value": "Fotografa tutta la scacchiera, bordi compresi. Qualunque cosa ne esca si apre nell’editor perché tu la corregga: una foto sbaglia qualche casa anche nel migliore dei casi."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "盤を撮影し、その四隅をタップしてください。読み取った結果は編集画面で開くので直せます — 写真は最良の場合でも数マスを取り違えます。"
+            "value": "盤全体を、縁まで画面に入れて撮影してください。読み取った結果は編集画面で開くので直せます — 写真は最良の場合でも数マスを取り違えます。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "보드를 촬영한 뒤 네 모서리를 탭하세요. 결과는 편집기에서 열려 고칠 수 있습니다 — 사진은 아무리 잘 되어도 몇 칸은 틀립니다."
+            "value": "보드 전체를 가장자리까지 넣어 촬영하세요. 결과는 편집기에서 열려 고칠 수 있습니다 — 사진은 아무리 잘 되어도 몇 칸은 틀립니다."
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ambil foto papan, kemudian ketik empat penjurunya. Apa pun hasilnya akan dibuka dalam editor untuk anda betulkan — sebuah foto tersilap beberapa petak walaupun dalam keadaan terbaik."
+            "value": "Ambil foto seluruh papan, termasuk tepinya. Apa pun hasilnya akan dibuka dalam editor untuk anda betulkan — sebuah foto tersilap beberapa petak walaupun dalam keadaan terbaik."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fotografeer het bord en tik dan op de vier hoeken. Wat eruit komt, opent in de editor zodat je het kunt corrigeren — een foto zit er zelfs op zijn best een paar velden naast."
+            "value": "Fotografeer het hele bord, met de randen in beeld. Wat eruit komt, opent in de editor zodat je het kunt corrigeren — een foto zit er zelfs op zijn best een paar velden naast."
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fotografer brettet, og trykk så på de fire hjørnene. Hva som enn kommer ut, åpnes i editoren så du kan rette det — et foto bommer på et par felter selv på sitt beste."
+            "value": "Fotografer hele brettet, med kantene innenfor bildet. Hva som enn kommer ut, åpnes i editoren så du kan rette det — et foto bommer på et par felter selv på sitt beste."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sfotografuj szachownicę, a potem dotknij jej czterech rogów. Cokolwiek z tego wyjdzie, otworzy się w edytorze do poprawienia — zdjęcie myli się na kilku polach nawet w najlepszym razie."
+            "value": "Sfotografuj całą szachownicę, z krawędziami w kadrze. Cokolwiek z tego wyjdzie, otworzy się w edytorze do poprawienia — zdjęcie myli się na kilku polach nawet w najlepszym razie."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fotografe o tabuleiro e toque nos seus quatro cantos. O que sair abre no editor para você corrigir — uma foto erra algumas casas mesmo no melhor dos casos."
+            "value": "Fotografe o tabuleiro inteiro, com as bordas dentro do enquadramento. O que sair abre no editor para você corrigir — uma foto erra algumas casas mesmo no melhor dos casos."
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fotografiază tabla, apoi atinge cele patru colțuri. Orice ar ieși se deschide în editor ca să corectezi — o fotografie greșește câteva pătrate chiar și în cel mai bun caz."
+            "value": "Fotografiază toată tabla, cu marginile în cadru. Orice ar ieși se deschide în editor ca să corectezi — o fotografie greșește câteva pătrate chiar și în cel mai bun caz."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Сфотографируйте доску, затем коснитесь её четырёх углов. Что бы ни получилось, оно откроется в редакторе для правки — снимок ошибается на нескольких полях даже в лучшем случае."
+            "value": "Сфотографируйте доску целиком, чтобы её края попали в кадр. Что бы ни получилось, оно откроется в редакторе для правки — снимок ошибается на нескольких полях даже в лучшем случае."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fotografera brädet och tryck sedan på dess fyra hörn. Vad som än kommer ut öppnas i editorn så att du kan rätta det — ett foto missar ett par rutor även när det går som bäst."
+            "value": "Fotografera hela brädet, med kanterna inom bild. Vad som än kommer ut öppnas i editorn så att du kan rätta det — ett foto missar ett par rutor även när det går som bäst."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "ถ่ายภาพกระดาน แล้วแตะที่มุมทั้งสี่ ผลที่ได้จะเปิดในตัวแก้ไขให้คุณแก้ — ภาพถ่ายอ่านผิดอยู่สองสามช่องแม้ในกรณีที่ดีที่สุด"
+            "value": "ถ่ายภาพกระดานทั้งกระดาน ให้ขอบอยู่ในเฟรมด้วย ผลที่ได้จะเปิดในตัวแก้ไขให้คุณแก้ — ภาพถ่ายอ่านผิดอยู่สองสามช่องแม้ในกรณีที่ดีที่สุด"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tahtanın fotoğrafını çek, sonra dört köşesine dokun. Ne çıkarsa düzeltmen için düzenleyicide açılır — bir fotoğraf en iyi durumda bile birkaç kareyi yanlış okur."
+            "value": "Tahtanın tamamını, kenarları kadraja girecek şekilde çek. Ne çıkarsa düzeltmen için düzenleyicide açılır — bir fotoğraf en iyi durumda bile birkaç kareyi yanlış okur."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Chụp ảnh bàn cờ, rồi chạm vào bốn góc của nó. Kết quả sẽ mở trong trình chỉnh sửa để bạn sửa — một tấm ảnh vẫn sai vài ô ngay cả khi tốt nhất."
+            "value": "Chụp toàn bộ bàn cờ, kể cả các cạnh. Kết quả sẽ mở trong trình chỉnh sửa để bạn sửa — một tấm ảnh vẫn sai vài ô ngay cả khi tốt nhất."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "拍下棋盘，然后点按它的四个角。读出的结果会在编辑器中打开供你修正 — 照片即便在最好的情况下也会错上几格。"
+            "value": "把整个棋盘连同边缘一起拍进画面。读出的结果会在编辑器中打开供你修正 — 照片即便在最好的情况下也会错上几格。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "拍下棋盤，然後點按它的四個角。讀出的結果會在編輯器中開啟供你修正 — 照片即便在最好的情況下也會錯上幾格。"
+            "value": "把整個棋盤連同邊緣一起拍進畫面。讀出的結果會在編輯器中開啟供你修正 — 照片即便在最好的情況下也會錯上幾格。"
           }
         }
       }
@@ -43932,203 +43735,6 @@
         }
       }
     },
-    "photo.tapCorners": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar-SA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "انقر زوايا اللوح الأربع."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Klepněte na čtyři rohy šachovnice."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tryk på brættets fire hjørner."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tippe die vier Ecken des Bretts an."
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Πάτα τις τέσσερις γωνίες της σκακιέρας."
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tap the four corners of the board."
-          }
-        },
-        "en-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tap the four corners of the board."
-          }
-        },
-        "en-US": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tap the four corners of the board."
-          }
-        },
-        "es-ES": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Toca las cuatro esquinas del tablero."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Napauta laudan neljää kulmaa."
-          }
-        },
-        "fr-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Touchez les quatre coins de l’échiquier."
-          }
-        },
-        "fr-FR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Touchez les quatre coins de l’échiquier."
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "הקישו על ארבע פינות הלוח."
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "बोर्ड के चारों कोनों पर टैप करें।"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Koppints a tábla négy sarkára."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ketuk keempat sudut papan."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tocca i quattro angoli della scacchiera."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "盤の四隅をタップしてください。"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "보드의 네 모서리를 탭하세요."
-          }
-        },
-        "ms": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ketik empat penjuru papan."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tik op de vier hoeken van het bord."
-          }
-        },
-        "no": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Trykk på brettets fire hjørner."
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dotknij czterech rogów szachownicy."
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Toque nos quatro cantos do tabuleiro."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Atinge cele patru colțuri ale tablei."
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Коснитесь четырёх углов доски."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tryck på brädets fyra hörn."
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "แตะที่มุมทั้งสี่ของกระดาน"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tahtanın dört köşesine dokun."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chạm vào bốn góc bàn cờ."
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "点按棋盘的四个角。"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "點按棋盤的四個角。"
-          }
-        }
-      }
-    },
     "photo.title": {
       "extractionState": "manual",
       "localizations": {
@@ -44322,203 +43928,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "從照片讀取棋盤"
-          }
-        }
-      }
-    },
-    "photo.undoTap": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar-SA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "تراجع عن النقرة"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zpět klepnutí"
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fortryd tryk"
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tipp rückgängig"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Αναίρεση πατήματος"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Undo tap"
-          }
-        },
-        "en-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Undo tap"
-          }
-        },
-        "en-US": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Undo tap"
-          }
-        },
-        "es-ES": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deshacer toque"
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kumoa napautus"
-          }
-        },
-        "fr-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Annuler le point"
-          }
-        },
-        "fr-FR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Annuler le point"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "בטל הקשה"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "टैप पूर्ववत करें"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Koppintás visszavonása"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Batalkan ketukan"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Annulla tocco"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ひとつ戻す"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "탭 취소"
-          }
-        },
-        "ms": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Buat asal ketikan"
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tik ongedaan maken"
-          }
-        },
-        "no": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Angre trykk"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cofnij dotknięcie"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Desfazer toque"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Anulează atingerea"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Отменить точку"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ångra tryck"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ย้อนการแตะ"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dokunuşu geri al"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hoàn tác chạm"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "撤销点按"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "撤銷點按"
           }
         }
       }
