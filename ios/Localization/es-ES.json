@@ -219,6 +219,7 @@
  "photo.camera": "Hacer una foto",
  "photo.choose": "Elegir una foto",
  "photo.dragCorners": "Arrastra los cuatro tiradores a las esquinas del tablero.",
+ "photo.foundBoard": "Tablero encontrado. Arrastra un tirador si alguna esquina no encaja.",
  "photo.hint": "Fotografía el tablero entero, con los bordes dentro del encuadre. Lo que salga se abrirá en el editor para que lo corrijas: una foto se equivoca en algunas casillas incluso en el mejor de los casos.",
  "photo.read": "Leer",
  "photo.title": "Leer un tablero desde una foto",

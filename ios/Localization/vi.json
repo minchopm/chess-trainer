@@ -219,6 +219,7 @@
  "photo.camera": "Chụp ảnh",
  "photo.choose": "Chọn ảnh",
  "photo.dragCorners": "Kéo bốn tay nắm vào các góc bàn cờ.",
+ "photo.foundBoard": "Đã tìm thấy bàn cờ. Kéo tay nắm nếu góc nào chưa khớp.",
  "photo.hint": "Chụp toàn bộ bàn cờ, kể cả các cạnh. Kết quả sẽ mở trong trình chỉnh sửa để bạn sửa — một tấm ảnh vẫn sai vài ô ngay cả khi tốt nhất.",
  "photo.read": "Đọc",
  "photo.title": "Đọc bàn cờ từ ảnh",

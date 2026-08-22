@@ -85,6 +85,9 @@ struct PhotoBoardSheet: View {
     @State private var dragging: Int?
     @State private var isCapturing = false
     @State private var isReading = false
+    /// Whether the handles were placed by the detector or fell back to a guess,
+    /// so the screen can say which without the player having to work it out.
+    @State private var detected = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
@@ -92,16 +95,20 @@ struct PhotoBoardSheet: View {
                 .appFont(size: 22, weight: .semibold)
 
             if let image {
-                Text(L.t("photo.dragCorners",
-                         "Drag the four handles onto the corners of the board."))
+                Text(detected
+                     ? L.t("photo.foundBoard",
+                           "Board found. Drag a handle if any corner is not on it.")
+                     : L.t("photo.dragCorners",
+                           "Drag the four handles onto the corners of the board."))
                     .appFont(.footnote)
-                    .foregroundStyle(Theatre.ivoryDim)
+                    .foregroundStyle(detected ? Theatre.brass : Theatre.ivoryDim)
 
                 adjustable(image)
 
                 HStack(spacing: 8) {
                     Button(L.t("photo.again", "Start again")) {
                         corners = []
+                        detected = false
                         self.image = nil
                     }
                     .buttonStyle(PillButtonStyle(emphasis: .ghost, usesBodySize: true))
@@ -142,6 +149,7 @@ struct PhotoBoardSheet: View {
         .fullScreenCover(isPresented: $isCapturing) {
             CameraPicker { captured in
                 corners = []
+                detected = false
                 image = captured
             }
             .ignoresSafeArea()
@@ -152,6 +160,7 @@ struct PhotoBoardSheet: View {
                 if let data = try? await item.loadTransferable(type: Data.self),
                    let loaded = UIImage(data: data) {
                     corners = []
+                    detected = false
                     image = loaded
                 }
             }
@@ -189,11 +198,7 @@ struct PhotoBoardSheet: View {
             }
             .frame(width: shown.width, height: shown.height)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-            .onAppear { placeCornersIfNeeded(in: image) }
-            .onChange(of: image) { _, new in
-                corners = []
-                placeCornersIfNeeded(in: new)
-            }
+            .task(id: image) { await placeCorners(in: image) }
         }
     }
 
@@ -267,15 +272,45 @@ struct PhotoBoardSheet: View {
         .allowsHitTesting(false)
     }
 
-    /// Four handles, set in from the picture's own corners.
+    /// Put the handles where the board is, if the board can be found.
     ///
-    /// Inside rather than exactly on them, because a board photographed with any
-    /// margin has its corners inside the frame — and a handle sitting on the
-    /// very edge looks like part of the frame rather than something to move.
-    private func placeCornersIfNeeded(in image: UIImage) {
+    /// Vision proposes and the handles remain draggable, which is the whole
+    /// arrangement: a chessboard is a strong quadrilateral full of other strong
+    /// quadrilaterals, so a generic detector will sometimes offer an inner block
+    /// of squares instead of the outer edge. Being wrong then costs a drag
+    /// rather than the feature.
+    private func placeCorners(in image: UIImage) async {
         guard corners.isEmpty else { return }
+        let fallback = insetCorners(in: image)
+
+        guard let cgImage = image.cgImage else {
+            corners = fallback
+            detected = false
+            return
+        }
+        // Off the main actor: Vision is synchronous and a large photograph is
+        // not instant, and this runs while the sheet is being looked at.
+        let found = await Task.detached(priority: .userInitiated) {
+            BoardDetector.corners(in: cgImage)
+        }.value
+
+        guard let found else {
+            corners = fallback
+            detected = false
+            return
+        }
+        withAnimation(.easeOut(duration: 0.25)) {
+            corners = found.all
+            detected = true
+        }
+    }
+
+    /// Four handles set in from the picture's own corners, for when nothing was
+    /// found. Inside rather than exactly on them, because a handle sitting on
+    /// the very edge looks like part of the frame rather than something to move.
+    private func insetCorners(in image: UIImage) -> [CGPoint] {
         let inset = CGPoint(x: image.size.width * 0.12, y: image.size.height * 0.12)
-        corners = [
+        return [
             CGPoint(x: inset.x, y: inset.y),
             CGPoint(x: image.size.width - inset.x, y: inset.y),
             CGPoint(x: image.size.width - inset.x, y: image.size.height - inset.y),

@@ -219,6 +219,7 @@
  "photo.camera": "Ota kuva",
  "photo.choose": "Valitse kuva",
  "photo.dragCorners": "Vedä neljä kahvaa laudan kulmiin.",
+ "photo.foundBoard": "Lauta löytyi. Vedä kahvaa, jos jokin kulma ei osu.",
  "photo.hint": "Valokuvaa koko lauta reunoineen. Mitä tahansa siitä tuleekin, se avautuu editoriin korjattavaksi — kuva erehtyy muutaman ruudun kohdalla parhaimmillaankin.",
  "photo.read": "Lue",
  "photo.title": "Lue lauta valokuvasta",

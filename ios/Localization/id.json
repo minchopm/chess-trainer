@@ -219,6 +219,7 @@
  "photo.camera": "Ambil foto",
  "photo.choose": "Pilih foto",
  "photo.dragCorners": "Seret keempat pegangan ke sudut papan.",
+ "photo.foundBoard": "Papan ditemukan. Seret pegangan jika ada sudut yang meleset.",
  "photo.hint": "Foto seluruh papan, termasuk tepinya. Apa pun hasilnya akan dibuka di editor untuk kamu perbaiki — sebuah foto salah beberapa petak bahkan dalam kondisi terbaik.",
  "photo.read": "Baca",
  "photo.title": "Baca papan dari foto",

@@ -219,6 +219,7 @@
  "photo.camera": "Scatta una foto",
  "photo.choose": "Scegli una foto",
  "photo.dragCorners": "Trascina le quattro maniglie sugli angoli della scacchiera.",
+ "photo.foundBoard": "Scacchiera trovata. Trascina una maniglia se un angolo non ci sta.",
  "photo.hint": "Fotografa tutta la scacchiera, bordi compresi. Qualunque cosa ne esca si apre nell’editor perché tu la corregga: una foto sbaglia qualche casa anche nel migliore dei casi.",
  "photo.read": "Leggi",
  "photo.title": "Leggi una scacchiera da una foto",

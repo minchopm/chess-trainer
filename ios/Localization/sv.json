@@ -219,6 +219,7 @@
  "photo.camera": "Ta ett foto",
  "photo.choose": "Välj ett foto",
  "photo.dragCorners": "Dra de fyra handtagen till brädets hörn.",
+ "photo.foundBoard": "Bräde hittat. Dra ett handtag om något hörn inte sitter rätt.",
  "photo.hint": "Fotografera hela brädet, med kanterna inom bild. Vad som än kommer ut öppnas i editorn så att du kan rätta det — ett foto missar ett par rutor även när det går som bäst.",
  "photo.read": "Läs in",
  "photo.title": "Läs ett bräde från ett foto",

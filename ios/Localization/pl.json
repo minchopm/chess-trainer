@@ -219,6 +219,7 @@
  "photo.camera": "Zrób zdjęcie",
  "photo.choose": "Wybierz zdjęcie",
  "photo.dragCorners": "Przeciągnij cztery uchwyty na rogi szachownicy.",
+ "photo.foundBoard": "Znaleziono szachownicę. Przeciągnij uchwyt, jeśli któryś róg nie pasuje.",
  "photo.hint": "Sfotografuj całą szachownicę, z krawędziami w kadrze. Cokolwiek z tego wyjdzie, otworzy się w edytorze do poprawienia — zdjęcie myli się na kilku polach nawet w najlepszym razie.",
  "photo.read": "Wczytaj",
  "photo.title": "Odczytaj szachownicę ze zdjęcia",

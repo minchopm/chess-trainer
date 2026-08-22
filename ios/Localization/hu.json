@@ -219,6 +219,7 @@
  "photo.camera": "Fotó készítése",
  "photo.choose": "Fotó választása",
  "photo.dragCorners": "Húzd a négy fogantyút a tábla sarkaira.",
+ "photo.foundBoard": "Tábla megtalálva. Húzz el egy fogantyút, ha valamelyik sarok nem stimmel.",
  "photo.hint": "Fényképezd le az egész táblát, a széleivel együtt. Ami kijön, a szerkesztőben nyílik meg javításra — egy fotó a legjobb esetben is elront néhány mezőt.",
  "photo.read": "Beolvasás",
  "photo.title": "Tábla beolvasása fotóról",

@@ -219,6 +219,7 @@
  "photo.camera": "Tag et foto",
  "photo.choose": "Vælg et foto",
  "photo.dragCorners": "Træk de fire håndtag hen til brættets hjørner.",
+ "photo.foundBoard": "Bræt fundet. Træk et håndtag, hvis et hjørne ikke sidder på det.",
  "photo.hint": "Fotografér hele brættet med kanterne inden for rammen. Hvad der end kommer ud, åbnes i editoren, så du kan rette det — et foto tager fejl på et par felter selv når det går bedst.",
  "photo.read": "Indlæs",
  "photo.title": "Læs et bræt fra et foto",

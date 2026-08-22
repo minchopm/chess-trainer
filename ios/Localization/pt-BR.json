@@ -219,6 +219,7 @@
  "photo.camera": "Tirar uma foto",
  "photo.choose": "Escolher uma foto",
  "photo.dragCorners": "Arraste as quatro alças para os cantos do tabuleiro.",
+ "photo.foundBoard": "Tabuleiro encontrado. Arraste uma alça se algum canto não estiver certo.",
  "photo.hint": "Fotografe o tabuleiro inteiro, com as bordas dentro do enquadramento. O que sair abre no editor para você corrigir — uma foto erra algumas casas mesmo no melhor dos casos.",
  "photo.read": "Ler",
  "photo.title": "Ler um tabuleiro de uma foto",

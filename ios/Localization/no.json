@@ -219,6 +219,7 @@
  "photo.camera": "Ta et bilde",
  "photo.choose": "Velg et bilde",
  "photo.dragCorners": "Dra de fire håndtakene til brettets hjørner.",
+ "photo.foundBoard": "Brett funnet. Dra et håndtak hvis et hjørne ikke sitter.",
  "photo.hint": "Fotografer hele brettet, med kantene innenfor bildet. Hva som enn kommer ut, åpnes i editoren så du kan rette det — et foto bommer på et par felter selv på sitt beste.",
  "photo.read": "Les inn",
  "photo.title": "Les et brett fra et foto",

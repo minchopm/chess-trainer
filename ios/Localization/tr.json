@@ -219,6 +219,7 @@
  "photo.camera": "Fotoğraf çek",
  "photo.choose": "Fotoğraf seç",
  "photo.dragCorners": "Dört tutamağı tahtanın köşelerine sürükle.",
+ "photo.foundBoard": "Tahta bulundu. Bir köşe oturmadıysa tutamağı sürükle.",
  "photo.hint": "Tahtanın tamamını, kenarları kadraja girecek şekilde çek. Ne çıkarsa düzeltmen için düzenleyicide açılır — bir fotoğraf en iyi durumda bile birkaç kareyi yanlış okur.",
  "photo.read": "Oku",
  "photo.title": "Fotoğraftan tahta oku",

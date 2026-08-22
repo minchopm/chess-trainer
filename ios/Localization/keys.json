@@ -1540,6 +1540,13 @@
   ]
  },
  {
+  "key": "photo.foundBoard",
+  "english": "Board found. Drag a handle if any corner is not on it.",
+  "files": [
+   "PhotoBoardSheet.swift"
+  ]
+ },
+ {
   "key": "photo.hint",
   "english": "Photograph the whole board with its edges in frame. Whatever comes out opens in the editor for you to correct — a photograph gets a few squares wrong even at its best.",
   "files": [

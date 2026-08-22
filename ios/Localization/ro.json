@@ -219,6 +219,7 @@
  "photo.camera": "Fă o fotografie",
  "photo.choose": "Alege o fotografie",
  "photo.dragCorners": "Trage cele patru mânere în colțurile tablei.",
+ "photo.foundBoard": "Tablă găsită. Trage un mâner dacă vreun colț nu este pe ea.",
  "photo.hint": "Fotografiază toată tabla, cu marginile în cadru. Orice ar ieși se deschide în editor ca să corectezi — o fotografie greșește câteva pătrate chiar și în cel mai bun caz.",
  "photo.read": "Citește",
  "photo.title": "Citește o tablă dintr-o fotografie",

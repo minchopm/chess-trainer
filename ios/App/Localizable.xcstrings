@@ -43341,6 +43341,203 @@
         }
       }
     },
+    "photo.foundBoard": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم العثور على اللوح. اسحب أي مقبض إن لم يكن على زاويته."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Šachovnice nalezena. Přetáhněte úchyt, pokud některý roh nesedí."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bræt fundet. Træk et håndtag, hvis et hjørne ikke sidder på det."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brett gefunden. Zieh einen Griff, wenn eine Ecke nicht sitzt."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Βρέθηκε σκακιέρα. Σύρε μια λαβή αν κάποια γωνία δεν είναι πάνω της."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Board found. Drag a handle if any corner is not on it."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Board found. Drag a handle if any corner is not on it."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Board found. Drag a handle if any corner is not on it."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tablero encontrado. Arrastra un tirador si alguna esquina no encaja."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lauta löytyi. Vedä kahvaa, jos jokin kulma ei osu."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Échiquier trouvé. Faites glisser une poignée si un coin ne tombe pas juste."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Échiquier trouvé. Faites glisser une poignée si un coin ne tombe pas juste."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הלוח נמצא. גררו ידית אם פינה כלשהי לא עליו."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बोर्ड मिल गया। कोई कोना सही न हो तो हैंडल खींचें।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tábla megtalálva. Húzz el egy fogantyút, ha valamelyik sarok nem stimmel."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Papan ditemukan. Seret pegangan jika ada sudut yang meleset."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scacchiera trovata. Trascina una maniglia se un angolo non ci sta."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "盤を検出しました。角が合っていなければハンドルをドラッグしてください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "보드를 찾았습니다. 모서리가 맞지 않으면 핸들을 끌어 주세요."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Papan dijumpai. Seret pemegang jika ada penjuru yang tersasar."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bord gevonden. Sleep een greep als een hoek er niet op ligt."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brett funnet. Dra et håndtak hvis et hjørne ikke sitter."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Znaleziono szachownicę. Przeciągnij uchwyt, jeśli któryś róg nie pasuje."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tabuleiro encontrado. Arraste uma alça se algum canto não estiver certo."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tablă găsită. Trage un mâner dacă vreun colț nu este pe ea."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Доска найдена. Перетащите маркер, если угол не на месте."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bräde hittat. Dra ett handtag om något hörn inte sitter rätt."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "พบกระดานแล้ว ลากที่จับหากมุมใดไม่ตรง"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tahta bulundu. Bir köşe oturmadıysa tutamağı sürükle."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã tìm thấy bàn cờ. Kéo tay nắm nếu góc nào chưa khớp."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已找到棋盘。若某个角不对，拖动控点。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已找到棋盤。若某個角不對，拖動控點。"
+          }
+        }
+      }
+    },
     "photo.hint": {
       "extractionState": "manual",
       "localizations": {

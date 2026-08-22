@@ -219,6 +219,7 @@
  "photo.camera": "Vyfotit",
  "photo.choose": "Vybrat fotku",
  "photo.dragCorners": "Přetáhněte čtyři úchyty do rohů šachovnice.",
+ "photo.foundBoard": "Šachovnice nalezena. Přetáhněte úchyt, pokud některý roh nesedí.",
  "photo.hint": "Vyfoťte šachovnici celou, i s okraji v záběru. Cokoli z toho vyjde, otevře se v editoru k opravě — fotka se i v nejlepším případě splete v několika polích.",
  "photo.read": "Načíst",
  "photo.title": "Načíst šachovnici z fotky",

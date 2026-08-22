@@ -219,6 +219,7 @@
  "photo.camera": "拍照",
  "photo.choose": "選擇照片",
  "photo.dragCorners": "把四個控點拖到棋盤的四個角。",
+ "photo.foundBoard": "已找到棋盤。若某個角不對，拖動控點。",
  "photo.hint": "把整個棋盤連同邊緣一起拍進畫面。讀出的結果會在編輯器中開啟供你修正 — 照片即便在最好的情況下也會錯上幾格。",
  "photo.read": "讀取",
  "photo.title": "從照片讀取棋盤",

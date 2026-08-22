@@ -219,6 +219,7 @@
  "photo.camera": "Prendre une photo",
  "photo.choose": "Choisir une photo",
  "photo.dragCorners": "Faites glisser les quatre poignées sur les coins de l’échiquier.",
+ "photo.foundBoard": "Échiquier trouvé. Faites glisser une poignée si un coin ne tombe pas juste.",
  "photo.hint": "Photographiez l’échiquier en entier, bords compris. Le résultat s’ouvre dans l’éditeur pour correction — une photo se trompe sur quelques cases même dans le meilleur des cas.",
  "photo.read": "Lire",
  "photo.title": "Lire un échiquier depuis une photo",

@@ -100,7 +100,7 @@ one file per language:
 python3 ios/scripts/build-catalog.py
 ```
 
-The script prints how many of the 572 keys each language has, so a partial
+The script prints how many of the 573 keys each language has, so a partial
 translation is visible rather than silent. Adding a string means adding it to
 `keys.json` and to whichever languages you can; the rest fall back to English.
 
@@ -247,6 +247,24 @@ outside its distribution.
 Four handles cost a moment and take that failure to nothing. What is left is a
 homography (`CIPerspectiveCorrection`, no model, no licence) and per-square
 classification.
+
+**Vision proposes where it can, which on a chessboard is rarely.** The handles
+start wherever `BoardDetector` finds a quadrilateral worth offering, and fall
+back to a neutral inset when it does not. The honest summary of trying it: a
+generic rectangle detector does not find a chessboard. Measured on a rendered
+board in perspective, it returned a patch of the internal grid covering under
+three per cent of the picture, three hundred pixels from the real corners — a
+chessboard is a quadrilateral containing sixty-four smaller ones, and nothing in
+Vision knows which one matters. Asked for a page instead, document segmentation
+returns the photograph's own frame.
+
+So the proposals are filtered hard: not the frame, at least a quarter of the
+picture, convex, and with opposite sides within three times each other. What
+survives is worth offering; what does not leaves the handles where they were. A
+wrong proposal is worse than none — four handles in the wrong place all have to
+be dragged, where four set neutrally are at least obviously a starting point.
+Whether it earns its keep on real photographs of real boards, which have a
+border and a shadow and a table around them, is still unmeasured.
 
 They are dragged rather than tapped, and that took a second attempt. Tapping
 asks somebody to hit a point their own fingertip is covering, in a picture

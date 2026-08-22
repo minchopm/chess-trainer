@@ -219,6 +219,7 @@
  "photo.camera": "사진 찍기",
  "photo.choose": "사진 선택",
  "photo.dragCorners": "네 개의 핸들을 보드의 모서리로 끌어다 놓으세요.",
+ "photo.foundBoard": "보드를 찾았습니다. 모서리가 맞지 않으면 핸들을 끌어 주세요.",
  "photo.hint": "보드 전체를 가장자리까지 넣어 촬영하세요. 결과는 편집기에서 열려 고칠 수 있습니다 — 사진은 아무리 잘 되어도 몇 칸은 틀립니다.",
  "photo.read": "읽기",
  "photo.title": "사진에서 보드 읽기",

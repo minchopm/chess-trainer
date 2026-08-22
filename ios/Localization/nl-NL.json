@@ -219,6 +219,7 @@
  "photo.camera": "Foto maken",
  "photo.choose": "Foto kiezen",
  "photo.dragCorners": "Sleep de vier grepen naar de hoeken van het bord.",
+ "photo.foundBoard": "Bord gevonden. Sleep een greep als een hoek er niet op ligt.",
  "photo.hint": "Fotografeer het hele bord, met de randen in beeld. Wat eruit komt, opent in de editor zodat je het kunt corrigeren — een foto zit er zelfs op zijn best een paar velden naast.",
  "photo.read": "Inlezen",
  "photo.title": "Een bord van een foto lezen",
