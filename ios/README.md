@@ -455,8 +455,22 @@ well, because Reckless is. Neither is a formality:
 - [x] `AboutScreen.sourceURL` points at https://github.com/minchopm/chess-trainer
       — under GPL that link is an obligation, not a courtesy, so it has to stay
       public and current.
-- [ ] Add screenshots and a privacy label. The app collects nothing and makes no
-      network requests, so the label is "Data Not Collected".
+- [x] `App/PrivacyInfo.xcprivacy` ships in the bundle. It declares no tracking,
+      no collected data and — deliberately — no accessed API types: the app
+      calls none of the ones that need a reason. No `UserDefaults` (the progress
+      is a JSON file), no file timestamps (`attributesOfItem` is used once, for
+      a network file's size), no disk space, no boot time. An inaccurate
+      declaration would be worse than none, so if a future change reaches for
+      one of those, its reason belongs in there.
+- [ ] Add screenshots and a privacy label in App Store Connect. The app collects
+      nothing and makes no network requests, so the label is "Data Not
+      Collected".
+- [ ] Create the two products in App Store Connect with exactly these
+      identifiers: `com.artesoft.brasspawn.pro.monthly` and
+      `com.artesoft.brasspawn.pro.lifetime`. They do not match the bundle id
+      (`com.arte-soft.brasspawn`, with the hyphen) and do not need to — but the
+      strings in `SubscriptionStore.ProductID` are what the app asks StoreKit
+      for, and anything else there means an empty paywall in production.
 - [x] `ITSAppUsesNonExemptEncryption` is set to `false`, which is accurate: the
       app uses no encryption.
 - [x] The permission prompts are translated. iOS reads them from Info.plist

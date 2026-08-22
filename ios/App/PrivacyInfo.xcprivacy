@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Nothing is collected and nothing is tracked. Both engines run on the
+	     device, the progress file never leaves it, and the app makes no network
+	     requests at all — see PRIVACY.md, which says the same in prose.
+
+	     NSPrivacyAccessedAPITypes is deliberately empty. The app calls none of
+	     the APIs that need a declared reason: no UserDefaults (the progress is
+	     a JSON file, chosen for other reasons but with this consequence), no
+	     file timestamps — `attributesOfItem` is used once, to read a network
+	     file's size — no disk space, no boot time, no active keyboard. An
+	     inaccurate declaration would be worse than none; if a future change
+	     reaches for one of those, its reason belongs here. -->
+	<key>NSPrivacyTracking</key>
+	<false/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array/>
+</dict>
+</plist>

@@ -77,7 +77,10 @@ targets:
       - path: Resources/Assets.xcassets
         buildPhase: resources
       - path: App/Localizable.xcstrings
+        buildPhase: resources
       - path: App/InfoPlist.xcstrings
+        buildPhase: resources
+      - path: App/PrivacyInfo.xcprivacy
         buildPhase: resources
     dependencies:
       - package: BrassPawn

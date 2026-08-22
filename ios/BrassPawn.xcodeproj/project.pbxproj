@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B571A346C2C36F6975028EA /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 28D286B5C3D1E7AE633F4FBE /* PrivacyInfo.xcprivacy */; };
 		11EE77AA55207BE6C3C461F3 /* CormorantGaramond.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71024DE3B1F2677467FD3AF1 /* CormorantGaramond.ttf */; };
 		33E601C5AA0D6A17F286975A /* nn-37f18f62d772.nnue in Resources */ = {isa = PBXBuildFile; fileRef = 61BFAD9ACF0E2C7BDFB98CBB /* nn-37f18f62d772.nnue */; };
 		3E6C9770357775F270CEA4E0 /* castle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E8CEB4BAEFDA2127CC91082 /* castle.wav */; };
@@ -41,6 +42,7 @@
 		0960A297E2DF71AAA153C624 /* CormorantGaramond-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantGaramond-Italic.ttf"; sourceTree = "<group>"; };
 		1BC08B8C95E3F3F1B239C1A8 /* BrassPawn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrassPawn.entitlements; sourceTree = "<group>"; };
 		1C11478751FEF05F603DD828 /* endgames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = endgames.json; sourceTree = "<group>"; };
+		28D286B5C3D1E7AE633F4FBE /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		297D864E27EC18F9E47E8616 /* BrassPawn.storekit */ = {isa = PBXFileReference; path = BrassPawn.storekit; sourceTree = "<group>"; };
 		2B24581FB2D0665C827FE2D5 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		2B8BABBDAE968378B02ACD81 /* BrassPawn.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BrassPawn.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +184,7 @@
 				F755F151598E76064B9B539F /* Info.plist */,
 				D7C66C626791A2991355347F /* InfoPlist.xcstrings */,
 				69DFD865B5FC73F4B5E8B02A /* Localizable.xcstrings */,
+				28D286B5C3D1E7AE633F4FBE /* PrivacyInfo.xcprivacy */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				9EBB038DDFBCD023BF2FDDE9 /* NOTICE.txt in Resources */,
 				58930B467B7C7BFE1740A6F5 /* OFL-cormorant.txt in Resources */,
 				DEB30496F27B61E46C70A433 /* OFL-jetbrains.txt in Resources */,
+				0B571A346C2C36F6975028EA /* PrivacyInfo.xcprivacy in Resources */,
 				9F065A8354551432F095D3C4 /* capture.wav in Resources */,
 				3E6C9770357775F270CEA4E0 /* castle.wav in Resources */,
 				BF26734421711480BFC510A4 /* check.wav in Resources */,
