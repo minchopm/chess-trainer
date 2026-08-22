@@ -65,6 +65,21 @@ enum BoardGeometry {
         return abs(total) / 2
     }
 
+    /// The largest board side that puts a whole number of device pixels in
+    /// every square.
+    ///
+    /// Left to itself the side is whatever is left after the rim, and a square
+    /// is an eighth of that — a fraction. Each rank then rounds its own
+    /// boundary independently while the pieces drawn on it round theirs, and a
+    /// rank can end up a pixel out of step with the one above. It reads as rows
+    /// drifting rather than as a fault, which is why it is worth making
+    /// impossible rather than watching for.
+    static func snappedSide(available: CGFloat, rim: CGFloat, scale: CGFloat) -> CGFloat {
+        let step = 8 / max(scale, 1)
+        let side = max(0, available - rim)
+        return (side / step).rounded(.down) * step
+    }
+
     /// The square of a rectified board, as a fraction of its side.
     ///
     /// `file` and `rank` are the chess ones — file 0 is the a-file, rank 0 is

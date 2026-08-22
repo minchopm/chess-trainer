@@ -106,3 +106,46 @@ struct BoardGeometryTests {
         #expect(crop.maxY <= 800)
     }
 }
+
+/// The board's own size, which has to divide into eight without leaving a
+/// fraction behind.
+@Suite("Sizing the board")
+struct BoardSideTests {
+    /// Each rank rounding its own boundary while the pieces on it round theirs
+    /// is what makes rows look as though they have drifted apart.
+    @Test("Every square is a whole number of device pixels")
+    func squaresLandOnPixels() {
+        for scale in [CGFloat(1), 2, 3] {
+            for available in stride(from: CGFloat(200), through: 800, by: 7.3) {
+                for rim in [CGFloat(0), 12, 19.03, 41.6] {
+                    let side = BoardGeometry.snappedSide(
+                        available: available, rim: rim, scale: scale
+                    )
+                    let pixels = (side / 8) * scale
+                    #expect(
+                        abs(pixels - pixels.rounded()) < 0.0001,
+                        "side \(side) at scale \(scale) gives \(pixels) pixels a square"
+                    )
+                }
+            }
+        }
+    }
+
+    /// Snapping may only ever take room away, or the board grows out of the
+    /// space it was given — which on a phone means off the side of the screen.
+    @Test("Snapping never asks for more room than there is")
+    func neverGrows() {
+        for available in stride(from: CGFloat(100), through: 900, by: 11.7) {
+            for rim in [CGFloat(0), 12, 30] {
+                let side = BoardGeometry.snappedSide(available: available, rim: rim, scale: 3)
+                #expect(side <= available - rim + 0.0001)
+                #expect(side > available - rim - 8 / 3 - 0.0001, "and never gives up a whole square")
+            }
+        }
+    }
+
+    @Test("A board with no room is nothing, not a negative")
+    func noRoomIsZero() {
+        #expect(BoardGeometry.snappedSide(available: 10, rim: 40, scale: 3) == 0)
+    }
+}

@@ -47,6 +47,7 @@ public struct BoardView: View {
 
     @Environment(\.boardTheme) private var theme
     @Environment(\.pieceSet) private var pieceSet
+    @Environment(\.displayScale) private var displayScale
     @Environment(\.showsBoardCoordinates) private var showsCoordinates
 
     @State private var selected: Square?
@@ -87,7 +88,9 @@ public struct BoardView: View {
             // and inside the space it was given.
             let full = min(geometry.size.width, geometry.size.height)
             let rim = showsCoordinates ? max(12, full * 0.052) : 0
-            let side = full - rim
+            let side = BoardGeometry.snappedSide(
+                available: full, rim: rim, scale: displayScale
+            )
             let squareSize = side / 8
 
             ZStack(alignment: .topLeading) {
