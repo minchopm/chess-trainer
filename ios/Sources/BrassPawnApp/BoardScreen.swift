@@ -2,6 +2,7 @@ import ChessCore
 import ChessEngine
 import ChessTraining
 import Observation
+import SwiftData
 import SwiftUI
 
 /// Who is playing a side.
@@ -166,6 +167,30 @@ final class BoardModel {
         line = []
         ply = 0
         note = nil
+        rebuild()
+    }
+
+    /// Take a game over from somewhere else — a recording being watched, a
+    /// game out of the history — and stand at the end of what was handed over.
+    ///
+    /// The moves are replayed rather than trusted: they came from a store that
+    /// a future version may have written differently, and a line that stops
+    /// making sense half way through is better truncated than crashed on.
+    func take(_ handoff: BoardHandoff) {
+        abandonSearch()
+        start = handoff.start
+        line = []
+        var replay = handoff.start
+        for san in handoff.moves {
+            guard let move = replay.move(san: san) else { break }
+            line.append((move: move, san: san))
+            replay.make(move)
+        }
+        ply = line.count
+        note = line.isEmpty
+            ? nil
+            : L.t("board.takenOver", "%1$@ — carrying on after %2$lld moves.",
+                  handoff.title, line.count)
         rebuild()
     }
 
@@ -337,10 +362,15 @@ final class BoardModel {
 /// A free board: bring a position, push it about, hand either side to an engine.
 struct BoardScreen: View {
     @Environment(AppModel.self) private var app
+    @Environment(Navigator.self) private var navigator
     @State private var model = BoardModel()
     @State private var values = MoveValueController()
     @State private var isImporting = false
     @State private var isEditing = false
+    @Environment(\.modelContext) private var history
+    /// The line that has already been written down, so a board that reaches
+    /// checkmate and is then stepped about does not file the same game twice.
+    @State private var saved: String?
 
     private var material: MaterialBalance { MaterialBalance(model.position) }
 
@@ -408,6 +438,52 @@ struct BoardScreen: View {
         // A Stockfish kept alive is its networks kept in memory. Nothing on
         // this screen needs a second engine once the screen is gone.
         .onDisappear { Task { await app.releaseSpare() } }
+        // Only a finished game is kept. This board spends most of its life
+        // holding positions somebody is poking at, and filing every poke would
+        // bury the games worth having.
+        .onChange(of: model.position.isGameOver) { _, over in
+            guard over, model.isAtLiveEnd else { return }
+            saveFinishedGame()
+        }
+        // Taken on appearing rather than watched for, because the hand-over
+        // happens on another screen: by the time this one exists the game is
+        // already waiting.
+        .onAppear {
+            guard let handoff = navigator.boardHandoff else { return }
+            navigator.boardHandoff = nil
+            model.take(handoff)
+            driveEngines()
+        }
+    }
+
+    /// Write the game down.
+    ///
+    /// The result is recorded from your side when you held one, and as the bare
+    /// score when both sides were engines — there is no "you" in that game to
+    /// have won it.
+    private func saveFinishedGame() {
+        let notation = model.line.map(\.san).joined(separator: " ")
+        guard !notation.isEmpty, saved != notation else { return }
+        saved = notation
+
+        let winner: PieceColor? = model.position.isCheckmate ? model.position.sideToMove.opponent : nil
+        let yours: PieceColor? = if model.whiteSeat == .you { .white }
+            else if model.blackSeat == .you { .black } else { nil }
+
+        let result: String = if let yours, let winner { winner == yours ? "win" : "loss" }
+            else if winner == nil { "draw" }
+            else if winner == .white { "1-0" } else { "0-1" }
+
+        history.insert(SavedGame(
+            startFEN: model.start.fen,
+            notation: notation,
+            result: result,
+            white: model.whiteSeat == .you ? "" : model.whiteSeat.label,
+            black: model.blackSeat == .you ? "" : model.blackSeat.label,
+            yourColor: yours.map { $0 == .white ? "white" : "black" },
+            source: "board"
+        ))
+        try? history.save()
     }
 
     private func driveEngines() {

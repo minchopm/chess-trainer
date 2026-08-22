@@ -1,4 +1,5 @@
 import ChessTraining
+import SwiftData
 import SwiftUI
 
 public struct RootView: View {
@@ -6,6 +7,21 @@ public struct RootView: View {
     @State private var activity = ActivityGuard()
     @State private var selection = Tab.tactics
     @State private var navigator = Navigator()
+
+    /// The played games. Built once, here rather than per screen.
+    private let history = RootView.openHistory()
+
+    /// The store, falling back to memory when the one on disk will not open.
+    ///
+    /// A store that will not open costs the history, which is worth losing.
+    /// Memory-only keeps every screen working for the session — games written
+    /// to it go when the app does, which is the honest failure. If even that
+    /// throws there is no context to hand the screens and nothing sensible to
+    /// put in its place, so it is allowed to be fatal.
+    private static func openHistory() -> ModelContainer {
+        if let disk = try? GameHistory.container() { return disk }
+        return try! GameHistory.container(inMemory: true)
+    }
 
     public enum Tab: Hashable { case watch, guessTheElo, tactics, positional, endgames, play, progress }
 
@@ -44,6 +60,7 @@ public struct RootView: View {
         }
         .appTypeface(app.progress.appearance.typeface)
         .animation(.easeOut(duration: 0.2), value: activity.wantsExit)
+        .modelContainer(history)
     }
 
     private var content: some View {
@@ -59,6 +76,12 @@ public struct RootView: View {
         .environment(\.pieceSet, app.progress.appearance.pieces)
         .environment(\.showsBoardCoordinates, app.progress.appearance.showsCoordinates)
         .task { await app.start() }
+        // A screen that cannot reach the tab state asks for a destination here.
+        .onChange(of: navigator.pendingTab) { _, tab in
+            guard let tab else { return }
+            navigator.pendingTab = nil
+            selection = tab
+        }
         .onAppear {
             SoundBoard.shared.isEnabled = app.progress.appearance.soundsOn
             SoundBoard.shared.volume = app.progress.appearance.volume

@@ -13,6 +13,7 @@ struct WatchScreen: View {
     @Environment(\.dismiss) private var dismiss
 
     @Environment(AppModel.self) private var app
+    @Environment(Navigator.self) private var navigator
 
     let game: ClassicGame
 
@@ -28,6 +29,14 @@ struct WatchScreen: View {
             startAt: app.progress.watchMark(for: game.id)?.ply ?? 0,
             onProgress: { ply, total in
                 app.update { $0.mark(watched: game.id, ply: ply, of: total) }
+            },
+            onContinue: { ply in
+                navigator.continueOnBoard(BoardHandoff(
+                    title: game.players,
+                    start: Position(),
+                    moves: Array(game.moves.split(separator: " ").map(String.init).prefix(ply))
+                ))
+                dismiss()
             },
             onDismiss: { dismiss() }
         )
@@ -51,6 +60,9 @@ struct ReplayViewer: View {
     /// Called as the viewer moves through the game, with the half-move reached
     /// and the number in the whole game.
     var onProgress: ((Int, Int) -> Void)?
+    /// Offered when the game can be taken over. Handed the half-move reached,
+    /// so the board picks it up exactly where the viewer is standing.
+    var onContinue: ((Int) -> Void)?
     let onDismiss: () -> Void
 
     @State private var player: GamePlayer?
@@ -61,11 +73,39 @@ struct ReplayViewer: View {
 
     private var plies: [Ply] { player?.plies ?? [] }
 
+    /// Take the game over from where you are standing.
+    ///
+    /// Deliberately not a takeback: the game is loaded onto the free board from
+    /// this position with the moves that led to it, and carries on as one line.
+    /// A takeback that could be undone would need a tree of variations, and a
+    /// recording is not the place to grow one.
+    @ViewBuilder
+    private var continueRow: some View {
+        if let onContinue {
+            Button {
+                onContinue(index)
+            } label: {
+                Label {
+                    Text(L.t("watch.continueHere", "Play on from here"))
+                } icon: {
+                    BrassIcon("arrow.turn.down.right", size: 15)
+                }
+                .appFont(.footnote)
+                .foregroundStyle(Theatre.brass)
+                .padding(.vertical, 8)
+                .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.plain)
+            .padding(.horizontal, 16)
+        }
+    }
+
     var body: some View {
         VStack(spacing: 0) {
             heading
             replayBoard
             moves
+            continueRow
             transport
         }
         .background(Theatre.ink.ignoresSafeArea())

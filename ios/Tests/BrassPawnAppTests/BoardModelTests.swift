@@ -187,6 +187,57 @@ struct BoardModelTests {
         #expect(model.legalDestinations[sq("e2")]?.contains(sq("e4")) == true)
     }
 
+    // MARK: - Taking a game over
+
+    /// Continuing from move four of a longer game means the rest never
+    /// happened. One line carried on, not a tree of variations.
+    @Test("A game handed over stands at the end of what was handed over")
+    func takingOverStandsWhereItWasHanded() {
+        let model = makeModel()
+        model.take(BoardHandoff(
+            title: "Morphy — Duke",
+            start: Position(),
+            moves: ["e4", "e5", "Nf3", "d6"]
+        ))
+
+        #expect(model.line.map(\.san) == ["e4", "e5", "Nf3", "d6"])
+        #expect(model.ply == 4)
+        #expect(model.isAtLiveEnd)
+        #expect(model.note?.contains("Morphy") == true)
+    }
+
+    /// The moves came out of a store that a later version may have written
+    /// differently, so they are replayed rather than trusted.
+    @Test("A handed-over line that stops making sense is truncated, not crashed on")
+    func takingOverTruncatesNonsense() {
+        let model = makeModel()
+        model.take(BoardHandoff(
+            title: "Somewhere", start: Position(), moves: ["e4", "e5", "Qxz9", "Nf3"]
+        ))
+        #expect(model.line.map(\.san) == ["e4", "e5"])
+        #expect(model.ply == 2)
+    }
+
+    @Test("A game handed over from a set-up position keeps that position")
+    func takingOverKeepsTheStart() {
+        let model = makeModel()
+        let start = Position(fen: "4k3/8/8/8/8/8/4P3/4K3 w - - 0 1")!
+        model.take(BoardHandoff(title: "Endgame", start: start, moves: ["e4"]))
+
+        #expect(model.line.map(\.san) == ["e4"])
+        #expect(model.position.fen.hasPrefix("4k3/8/8/8/4P3/8/8/4K3"))
+    }
+
+    @Test("A game handed over at move nought is just the position")
+    func takingOverAtTheStart() {
+        let model = makeModel()
+        model.take(BoardHandoff(title: "Anything", start: Position(), moves: []))
+        #expect(model.line.isEmpty)
+        #expect(model.ply == 0)
+        #expect(model.note == nil)
+        #expect(model.legalDestinations[sq("e2")]?.contains(sq("e4")) == true)
+    }
+
     /// Flipping is a camera move, not a game move: it must not touch the line.
     @Test("Flipping the board leaves the game alone")
     func flippingIsOnlyACamera() {

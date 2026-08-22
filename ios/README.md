@@ -100,7 +100,7 @@ one file per language:
 python3 ios/scripts/build-catalog.py
 ```
 
-The script prints how many of the 557 keys each language has, so a partial
+The script prints how many of the 564 keys each language has, so a partial
 translation is visible rather than silent. Adding a string means adding it to
 `keys.json` and to whichever languages you can; the rest fall back to English.
 
@@ -183,6 +183,48 @@ of the line. Step back to look at something and everything pauses, because a
 board that moves while you are reading it is useless. Play a move from there and
 the line branches — what came after is dropped, since keeping both would mean a
 move tree, which is a different feature.
+
+## The games you played
+
+Every finished game is kept — from Play always, from the free board when it
+reaches a real end, because that board spends most of its life holding
+positions somebody is poking at and filing every poke would bury the games
+worth having. They live in SwiftData (`ChessTraining/GameHistory.swift`),
+separate from `progress.json`, which is read and rewritten whole on every
+change and is no place for a couple of hundred games of notation.
+
+Nothing is trimmed. A game is a few hundred bytes, so ten thousand of them is a
+couple of megabytes — cheaper than deciding on somebody's behalf which of their
+own games they are finished with.
+
+Three details are deliberate:
+
+- **The moves are stored as SAN, space-separated** — the form `GameImport`
+  reads. A saved game comes back through the same parser as a pasted one: one
+  reader, one set of bugs, and a database legible by eye.
+- **Your own side is stored as an empty name**, not as the word "You". The word
+  is translated, and a history written while the app happened to be in one
+  language would read wrong in another ever after.
+- **The id is a String**, so watch marks and favourites work on your games
+  through the same machinery the classics use.
+
+Watch has a clock switch beside the search that shows them instead of the
+library — a switch rather than a fourth segment, for the same reason the
+favourites switch is one.
+
+**Play on from here** is the point of keeping them. Anywhere a game is being
+watched — a classic or one of yours — the viewer offers to hand the position to
+the free board, along with the moves that led to it, and you carry on from
+there against a person or either engine.
+
+It is deliberately not a takeback. The game is *reloaded* onto the board as one
+line and continues; the moves after the point you picked never happened. A
+takeback that could be undone would need a tree of variations, and a thousand
+half-explored branches of the same game is not a feature, it is a mess. The
+hand-over travels through `Navigator.boardHandoff` because the board is a mode
+inside a tab rather than a destination, and it is cleared on being taken, so
+returning to Board a week later does not silently reload a game you had moved
+on from.
 
 ## Testing
 

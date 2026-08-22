@@ -47,6 +47,10 @@ struct ClassicsScreen: View {
     /// one filter people reach for repeatedly, and a thing reached for often
     /// should not be a quarter of a segmented row.
     @State private var keptOnly = false
+    /// Your own games instead of the library's. A switch beside the search for
+    /// the same reason `keptOnly` is one: it is a place you go, not a way of
+    /// narrowing the shelf you are on.
+    @State private var mineOnly = false
     @State private var watching: ClassicGame?
 
     private var games: [ClassicGame] {
@@ -101,7 +105,9 @@ struct ClassicsScreen: View {
                 .padding(.top, 8)
                 .padding(.bottom, 6)
 
-            if app.library.classics.isEmpty {
+            if mineOnly {
+                HistoryList()
+            } else if app.library.classics.isEmpty {
                 LibraryNotice(isLoaded: app.isLibraryLoaded,
                               what: L.t("watch.games", "games"), file: "classics.json")
                     .frame(maxHeight: .infinity)
@@ -132,12 +138,36 @@ struct ClassicsScreen: View {
 
     private var search: some View {
         HStack(spacing: 8) {
-            BrassSearchField(
-                placeholder: L.t("watch.search", "Player, event or year"),
-                text: $query
-            )
-            keptSwitch
+            if mineOnly {
+                Text(L.t("history.yours", "Your games"))
+                    .appFont(.subheadline, weight: .medium)
+                    .foregroundStyle(Theatre.ivory)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 4)
+            } else {
+                BrassSearchField(
+                    placeholder: L.t("watch.search", "Player, event or year"),
+                    text: $query
+                )
+            }
+            mineSwitch
+            if !mineOnly { keptSwitch }
         }
+    }
+
+    /// Your games rather than the library's.
+    private var mineSwitch: some View {
+        Button {
+            withAnimation(.easeOut(duration: 0.18)) { mineOnly.toggle() }
+        } label: {
+            BrassIcon(mineOnly ? "clock.arrow.circlepath" : "clock", size: 15)
+                .foregroundStyle(mineOnly ? Theatre.brass : Theatre.ivoryDim)
+                .frame(width: 42, height: 38)
+                .background(
+                    BrassPlateShape(cut: 7).fill(Theatre.brass.opacity(mineOnly ? 0.2 : 0.07))
+                )
+        }
+        .buttonStyle(.plain)
     }
 
     /// Saved games only, on a switch beside the search.

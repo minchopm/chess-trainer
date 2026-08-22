@@ -2,6 +2,7 @@ import ChessCore
 import ChessEngine
 import ChessTraining
 import Observation
+import SwiftData
 import SwiftUI
 
 struct OpponentLevel: Identifiable, Hashable {
@@ -290,6 +291,7 @@ struct PlayScreen: View {
     @State private var model = PlayModel()
     @State private var values = MoveValueController()
     @State private var recorded = false
+    @Environment(\.modelContext) private var history
 
     private var material: MaterialBalance { MaterialBalance(model.position) }
 
@@ -553,6 +555,21 @@ struct PlayScreen: View {
         guard !recorded, let record = model.finishedGameRecord else { return }
         recorded = true
         app.update { $0.record(game: record) }
+
+        // The progress record is the rating input; this is the game itself, so
+        // it can be watched back and picked up again.
+        history.insert(SavedGame(
+            playedAt: record.playedAt,
+            notation: model.moves.map(\.san).joined(separator: " "),
+            result: record.result,
+            white: model.side == .white ? "" : opponentLabel,
+            black: model.side == .black ? "" : opponentLabel,
+            yourColor: model.side == .white ? "white" : "black",
+            opponentElo: model.level.elo,
+            accuracy: record.accuracy,
+            source: "play"
+        ))
+        try? history.save()
     }
 }
 

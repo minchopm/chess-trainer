@@ -343,6 +343,13 @@
   ]
  },
  {
+  "key": "board.takenOver",
+  "english": "%1$@ — carrying on after %2$lld moves.",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
   "key": "board.thinking",
   "english": "Thinking…",
   "files": [
@@ -1187,6 +1194,48 @@
   "english": "your guess, Lichess rating",
   "files": [
    "GuessTheEloScreen.swift"
+  ]
+ },
+ {
+  "key": "history.drew",
+  "english": "Drawn",
+  "files": [
+   "HistoryList.swift"
+  ]
+ },
+ {
+  "key": "history.lost",
+  "english": "Lost",
+  "files": [
+   "HistoryList.swift"
+  ]
+ },
+ {
+  "key": "history.none",
+  "english": "Games you play are kept here.",
+  "files": [
+   "HistoryList.swift"
+  ]
+ },
+ {
+  "key": "history.won",
+  "english": "Won",
+  "files": [
+   "HistoryList.swift"
+  ]
+ },
+ {
+  "key": "history.you",
+  "english": "You",
+  "files": [
+   "GameHistory.swift"
+  ]
+ },
+ {
+  "key": "history.yours",
+  "english": "Your games",
+  "files": [
+   "HistoryList.swift"
   ]
  },
  {
@@ -3808,6 +3857,13 @@
   "english": "Continue",
   "files": [
    "ClassicsScreen.swift"
+  ]
+ },
+ {
+  "key": "watch.continueHere",
+  "english": "Play on from here",
+  "files": [
+   "WatchScreen.swift"
   ]
  },
  {
