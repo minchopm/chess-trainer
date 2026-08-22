@@ -114,6 +114,19 @@ final class BoardModel {
         rebuild()
     }
 
+    /// Begin again from a position somebody set up or corrected by hand.
+    ///
+    /// The line goes rather than being replayed onto the new board: the moves
+    /// belonged to the position they were played in, and that position is not
+    /// this one.
+    func begin(from position: Position) {
+        start = position
+        line = []
+        ply = 0
+        note = nil
+        rebuild()
+    }
+
     /// Read a paste and put it on the board.
     ///
     /// Returns false only when nothing could be read at all. A line that broke
@@ -269,6 +282,7 @@ struct BoardScreen: View {
     @State private var model = BoardModel()
     @State private var values = MoveValueController()
     @State private var isImporting = false
+    @State private var isEditing = false
 
     private var material: MaterialBalance { MaterialBalance(model.position) }
 
@@ -317,6 +331,18 @@ struct BoardScreen: View {
             controls
         }
         .sheet(isPresented: $isImporting) { ImportSheet(model: model, isPresented: $isImporting) }
+        // Seeded with what is on the board, so the editor is a way to adjust a
+        // position as well as to build one — which is what anything read off a
+        // photograph will need.
+        .sheet(isPresented: $isEditing) {
+            PositionEditorSheet(
+                model: PositionEditorModel(model.position, orientation: model.orientation),
+                isPresented: $isEditing
+            ) { position in
+                model.begin(from: position)
+                driveEngines()
+            }
+        }
         // A seat handed to an engine has to start thinking without waiting for
         // a move to be played, or handing over the side to move does nothing
         // visible until you poke the board.
@@ -391,6 +417,11 @@ struct BoardScreen: View {
             HStack(spacing: 8) {
                 Button(L.t("board.import", "Paste a game")) { isImporting = true }
                     .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
+                Button(L.t("board.setUp", "Set up")) { isEditing = true }
+                    .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
+            }
+
+            HStack(spacing: 8) {
                 Button(L.t("board.flip", "Flip")) { model.flip() }
                     .buttonStyle(PillButtonStyle(emphasis: .ghost, usesBodySize: true))
                 Button(L.t("board.startOver", "Start over")) {

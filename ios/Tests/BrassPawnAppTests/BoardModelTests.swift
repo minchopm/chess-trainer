@@ -168,6 +168,25 @@ struct BoardModelTests {
         #expect(model.position.fen == Position().fen)
     }
 
+    /// A position built by hand replaces the board outright. Replaying the old
+    /// line onto it would be nonsense — those moves belonged to a position that
+    /// is not this one.
+    @Test("Beginning from a hand-built position drops the old line")
+    func beginningFromAPositionDropsTheLine() {
+        let model = makeModel()
+        #expect(model.load("1. e4 e5 2. Nf3 Nc6"))
+        #expect(model.line.count == 4)
+
+        let built = Position(fen: "4k3/8/8/8/8/8/4P3/4K3 w - - 0 1")!
+        model.begin(from: built)
+
+        #expect(model.line.isEmpty)
+        #expect(model.ply == 0)
+        #expect(model.note == nil)
+        #expect(model.position.fen == built.fen)
+        #expect(model.legalDestinations[sq("e2")]?.contains(sq("e4")) == true)
+    }
+
     /// Flipping is a camera move, not a game move: it must not touch the line.
     @Test("Flipping the board leaves the game alone")
     func flippingIsOnlyACamera() {

@@ -100,7 +100,7 @@ one file per language:
 python3 ios/scripts/build-catalog.py
 ```
 
-The script prints how many of the 540 keys each language has, so a partial
+The script prints how many of the 557 keys each language has, so a partial
 translation is visible rather than silent. Adding a string means adding it to
 `keys.json` and to whichever languages you can; the rest fall back to English.
 
@@ -147,6 +147,19 @@ Both on Engine is the two engines playing each other; both on You is an analysis
 board. The engine plays at full strength, with no ladder: this screen is for
 looking at positions, and a deliberately weakened answer is the wrong tool for
 that even when the engine can give one.
+
+**Set up** opens the position editor, seeded with whatever is on the board. It
+keeps a loose map of squares to pieces rather than a `Position`, because
+half-built boards are the normal case there — two white kings while you move
+one, no black king at all for the first ten taps — and `Position` refuses to
+hold any of that. It hands over only when the board is a position, and until
+then it says in a sentence what is wrong: no king, kings touching, a pawn on the
+back rank, or the side not to move already in check. "Not a position" in front
+of thirty-two pieces is not something anybody can act on.
+
+The editor is also the correction step anything automatic will need. A position
+read off a photograph is right about most squares and wrong about a few, and
+there has to be somewhere to fix the few.
 
 **Stepping back stops the engines.** An engine only owes a move at the live end
 of the line. Step back to look at something and everything pauses, because a

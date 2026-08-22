@@ -329,6 +329,13 @@
   ]
  },
  {
+  "key": "board.setUp",
+  "english": "Set up",
+  "files": [
+   "BoardScreen.swift"
+  ]
+ },
+ {
   "key": "board.startOver",
   "english": "Start over",
   "files": [
@@ -711,6 +718,118 @@
   "english": "You",
   "files": [
    "GameCenterMatchmaker.swift"
+  ]
+ },
+ {
+  "key": "editor.castling",
+  "english": "Castling",
+  "files": [
+   "PositionEditor.swift"
+  ]
+ },
+ {
+  "key": "editor.clear",
+  "english": "Empty board",
+  "files": [
+   "PositionEditor.swift"
+  ]
+ },
+ {
+  "key": "editor.erase",
+  "english": "Eraser",
+  "files": [
+   "PositionEditor.swift"
+  ]
+ },
+ {
+  "key": "editor.kingsTouch",
+  "english": "The kings are standing next to each other.",
+  "files": [
+   "PositionEditor.swift"
+  ]
+ },
+ {
+  "key": "editor.needsKing",
+  "english": "%@ has no king.",
+  "files": [
+   "PositionEditor.swift"
+  ]
+ },
+ {
+  "key": "editor.oneKing",
+  "english": "%@ has more than one king.",
+  "files": [
+   "PositionEditor.swift"
+  ]
+ },
+ {
+  "key": "editor.opening",
+  "english": "Opening",
+  "files": [
+   "PositionEditor.swift"
+  ]
+ },
+ {
+  "key": "editor.pawnOnEdge",
+  "english": "A pawn cannot stand on the first or the last rank.",
+  "files": [
+   "PositionEditor.swift"
+  ]
+ },
+ {
+  "key": "editor.piece",
+  "english": "Piece",
+  "files": [
+   "PositionEditor.swift"
+  ]
+ },
+ {
+  "key": "editor.title",
+  "english": "Set the position up",
+  "files": [
+   "PositionEditor.swift"
+  ]
+ },
+ {
+  "key": "editor.toMove",
+  "english": "To move",
+  "files": [
+   "PositionEditor.swift"
+  ]
+ },
+ {
+  "key": "editor.tooManyPawns",
+  "english": "%@ has more than eight pawns.",
+  "files": [
+   "PositionEditor.swift"
+  ]
+ },
+ {
+  "key": "editor.tooManyPieces",
+  "english": "%@ has more than sixteen pieces.",
+  "files": [
+   "PositionEditor.swift"
+  ]
+ },
+ {
+  "key": "editor.unusable",
+  "english": "This is not a position that can be played.",
+  "files": [
+   "PositionEditor.swift"
+  ]
+ },
+ {
+  "key": "editor.use",
+  "english": "Use this position",
+  "files": [
+   "PositionEditor.swift"
+  ]
+ },
+ {
+  "key": "editor.wrongSideInCheck",
+  "english": "%1$@ is in check, so it cannot be %2$@ to move.",
+  "files": [
+   "PositionEditor.swift"
   ]
  },
  {
