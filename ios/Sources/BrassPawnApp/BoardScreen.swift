@@ -10,15 +10,34 @@ import SwiftUI
 /// is the whole point of the screen: you take a position from somewhere, push
 /// it around by hand, and hand a side over the moment you want to see what an
 /// engine would do with it.
-enum BoardSeat: String, CaseIterable, Identifiable, Sendable {
-    case you, engine
-    var id: String { rawValue }
+enum BoardSeat: Equatable, Hashable, Identifiable, Sendable {
+    case you
+    case engine(EngineChoice)
+
+    /// You first, then one entry per engine the app ships. Named rather than
+    /// lumped together as "Engine": which one is playing is the interesting
+    /// part of this screen, and on six test positions the two disagreed on
+    /// four of them.
+    static var all: [BoardSeat] { [.you] + EngineChoice.allCases.map(BoardSeat.engine) }
+
+    var id: String {
+        switch self {
+        case .you: "you"
+        case .engine(let choice): choice.rawValue
+        }
+    }
 
     var label: String {
         switch self {
         case .you: L.t("board.seatYou", "You")
-        case .engine: L.t("board.seatEngine", "Engine")
+        case .engine(let choice): choice.name
         }
+    }
+
+    /// The engine behind this seat, or nil when a person holds it.
+    var choice: EngineChoice? {
+        if case .engine(let choice) = self { return choice }
+        return nil
     }
 }
 
@@ -67,7 +86,28 @@ final class BoardModel {
 
     private func seatChanged() {
         invalidate()
+        abandonSearch()
         refreshDestinations()
+    }
+
+    /// The engine currently searching, so a change to the board can cut its
+    /// search short rather than let it burn a budget that is about to be
+    /// thrown away.
+    private var driver: (any Engine)?
+
+    /// Stop a search whose board has just changed under it.
+    ///
+    /// Only for changes a person made. Not for the engine's own move: the loop
+    /// plays one and starts the next search straight away, and a stop arriving
+    /// late would cut short the search it was not meant for.
+    ///
+    /// Without this a handed-over seat left the abandoned search running its
+    /// full budget — two and a half seconds, ten at the ceiling — while
+    /// `isThinking` held the next one off. Several quick changes queued up
+    /// behind each other and the board looked stuck.
+    private func abandonSearch() {
+        guard isThinking, let driver else { return }
+        Task { await driver.stop() }
     }
 
     func seat(for color: PieceColor) -> BoardSeat {
@@ -87,7 +127,7 @@ final class BoardModel {
     /// Only at the end of the line: stepping back to look at something has to
     /// stop the engines, or the board you are reading moves out from under you.
     var engineOwesMove: Bool {
-        isAtLiveEnd && !position.isGameOver && seat(for: position.sideToMove) == .engine
+        isAtLiveEnd && !position.isGameOver && seat(for: position.sideToMove) != .you
     }
 
     var statusText: String {
@@ -107,6 +147,7 @@ final class BoardModel {
 
     /// Start again from the opening position, both seats untouched.
     func reset() {
+        abandonSearch()
         start = Position()
         line = []
         ply = 0
@@ -120,6 +161,7 @@ final class BoardModel {
     /// belonged to the position they were played in, and that position is not
     /// this one.
     func begin(from position: Position) {
+        abandonSearch()
         start = position
         line = []
         ply = 0
@@ -134,6 +176,7 @@ final class BoardModel {
     /// bad token are a real game and are worth having.
     @discardableResult
     func load(_ text: String) -> Bool {
+        abandonSearch()
         guard let imported = GameImport.read(text) else {
             note = L.t("board.unreadable",
                        "That did not read as a game or a position.")
@@ -175,6 +218,7 @@ final class BoardModel {
         let clamped = max(0, min(line.count, target))
         guard clamped != ply else { return }
         ply = clamped
+        abandonSearch()
         rebuild()
     }
 
@@ -222,23 +266,37 @@ final class BoardModel {
     /// other, and a generation check on both sides of the await so that a
     /// search started for a board nobody is looking at any more is dropped
     /// rather than applied.
-    func runEngines(_ engine: any Engine, elo: Int?) async {
+    func runEngines(resolve: (EngineChoice) async -> (any Engine)?) async {
         guard !isThinking else { return }
         isThinking = true
-        defer { isThinking = false }
+        defer {
+            isThinking = false
+            driver = nil
+        }
 
         while engineOwesMove {
+            // Looked up per move rather than passed in once: the two sides can
+            // be held by different engines, and either can change hands while
+            // this loop is running.
+            guard let choice = seat(for: position.sideToMove).choice,
+                  let engine = await resolve(choice) else { return }
+            driver = engine
+
             let token = generation
             let fen = position.fen
-            let uci = try? await engine.chooseMove(
-                fen: fen, elo: elo, budget: .fullStrength
-            )
-            // The board can change while the search runs — a seat handed
-            // over, a step, a move played by hand. Go round again on the board
-            // that is there now rather than returning: the caller that made the
-            // change already found this loop running and left it to us, so
-            // giving up here strands two engine seats with nobody to move.
-            guard token == generation, position.fen == fen else { continue }
+            let uci = try? await engine.chooseMove(fen: fen, elo: nil, budget: .fullStrength)
+
+            // The board can change while the search runs — a seat handed over,
+            // a step, a move played by hand. Go round again on the board that
+            // is there now rather than returning: the caller that made the
+            // change found this loop running and left it to us, so giving up
+            // here strands two engine seats with nobody to move.
+            guard token == generation, position.fen == fen else {
+                // Give the stop fired for that change a moment to land, so it
+                // cuts short the search it was meant for and not the next one.
+                await Task.yield()
+                continue
+            }
             guard let uci, let parsed = Move(uci: uci),
                   let move = position.legalMoves().first(where: { $0.matchesNotation(of: parsed) })
             else { return }
@@ -286,16 +344,11 @@ struct BoardScreen: View {
 
     private var material: MaterialBalance { MaterialBalance(model.position) }
 
-    /// The engine plays at whatever the chosen engine can do. There is no
-    /// ladder here on purpose — this board is for looking at positions, and a
-    /// deliberately weakened answer is the wrong tool for that even when the
-    /// engine can give one.
+    /// Whoever holds the side, named. No ladder here on purpose — this board
+    /// is for looking at positions, and a deliberately weakened answer is the
+    /// wrong tool for that even when the engine can give one.
     private var seatName: (PieceColor) -> String {
-        { color in
-            model.seat(for: color) == .engine
-                ? app.engineChoice.name
-                : L.t("board.seatYou", "You")
-        }
+        { color in model.seat(for: color).label }
     }
 
     var body: some View {
@@ -352,10 +405,13 @@ struct BoardScreen: View {
         // move, and it has to notice. This also covers an import that lands on
         // a position an engine holds — `load` moves `ply` to the end.
         .onChange(of: model.ply) { _, _ in driveEngines() }
+        // A Stockfish kept alive is its networks kept in memory. Nothing on
+        // this screen needs a second engine once the screen is gone.
+        .onDisappear { Task { await app.releaseSpare() } }
     }
 
     private func driveEngines() {
-        Task { await model.runEngines(app.engine, elo: nil) }
+        Task { await model.runEngines { await app.engine(for: $0) } }
     }
 
     @ViewBuilder
@@ -397,7 +453,7 @@ struct BoardScreen: View {
                     get: { model.seat(for: color) },
                     set: { model.setSeat($0, for: color) }
                 ),
-                options: Array(BoardSeat.allCases)
+                options: BoardSeat.all
             ) { seat in
                 Text(seat.label)
             }

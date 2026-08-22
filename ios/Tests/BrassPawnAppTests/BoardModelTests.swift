@@ -111,7 +111,7 @@ struct BoardModelTests {
         let model = makeModel()
         #expect(!model.legalDestinations.isEmpty)
 
-        model.setSeat(.engine, for: .white)
+        model.setSeat(.engine(.stockfish), for: .white)
         #expect(model.legalDestinations.isEmpty)
 
         model.setSeat(.you, for: .white)
@@ -123,7 +123,7 @@ struct BoardModelTests {
         let model = makeModel()
         #expect(!model.engineOwesMove)
 
-        model.setSeat(.engine, for: .black)
+        model.setSeat(.engine(.stockfish), for: .black)
         #expect(!model.engineOwesMove)          // white to move, and white is yours
 
         model.play(from: sq("e2"), to: sq("e4"), promotion: nil)
@@ -135,7 +135,7 @@ struct BoardModelTests {
     @Test("Stepping back off the end stops the engines")
     func steppingBackPausesTheEngines() {
         let model = makeModel()
-        model.setSeat(.engine, for: .black)
+        model.setSeat(.engine(.stockfish), for: .black)
         model.play(from: sq("e2"), to: sq("e4"), promotion: nil)
         #expect(model.engineOwesMove)
 
@@ -149,7 +149,7 @@ struct BoardModelTests {
     @Test("A finished game owes nobody a move")
     func checkmateOwesNothing() {
         let model = makeModel()
-        model.setSeat(.engine, for: .black)
+        model.setSeat(.engine(.stockfish), for: .black)
         #expect(model.load("1. f3 e5 2. g4 Qh4#"))
         #expect(model.position.isCheckmate)
         #expect(!model.engineOwesMove)

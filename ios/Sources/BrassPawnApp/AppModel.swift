@@ -133,23 +133,14 @@ public final class AppModel {
         let previous = engine
         engineState = .starting
 
-        switch choice {
-        case .stockfish:
-            guard let networks else {
-                engineState = .failed("The engine networks are missing from the app bundle.")
-                return
-            }
-            let stockfish = StockfishEngine()
-            do {
-                try await stockfish.loadNetworks(big: networks.big, small: networks.small)
-            } catch {
-                engineState = .failed(error.localizedDescription)
-                return
-            }
-            engine = stockfish
-        case .reckless:
-            // No networks to load: Reckless's is compiled into the binary.
-            engine = RecklessEngine()
+        do {
+            engine = try await build(choice, hashMB: 128)
+        } catch let failure as EngineBuildFailure {
+            engineState = .failed(failure.message)
+            return
+        } catch {
+            engineState = .failed(error.localizedDescription)
+            return
         }
 
         // Unconditionally: `engine` has just been replaced by a new object, so
@@ -157,15 +148,72 @@ public final class AppModel {
         // an engine that is not searching does nothing.
         await previous.stop()
         engineChoice = choice
-
-        // Search on several cores, but not on all of them. Two are left for
-        // the app itself — a search that starves the UI thread makes the
-        // board feel broken, which costs more than the extra depth buys —
-        // and the cap keeps a long analysis from cooking the phone.
-        let cores = ProcessInfo.processInfo.activeProcessorCount
-        await engine.setOption("Threads", String(max(1, min(4, cores - 2))))
-        await engine.setOption("Hash", "128")
         engineState = .ready
+    }
+
+    private struct EngineBuildFailure: Error { let message: String }
+
+    /// Build one engine, ready to search.
+    ///
+    /// Threads are capped below the core count: two are left for the app
+    /// itself, because a search that starves the UI thread makes the board feel
+    /// broken, which costs more than the extra depth buys — and the cap keeps a
+    /// long analysis from cooking the phone.
+    private func build(_ choice: EngineChoice, hashMB: Int) async throws -> any Engine {
+        let built: any Engine
+        switch choice {
+        case .stockfish:
+            guard let networks else {
+                throw EngineBuildFailure(message: "The engine networks are missing from the app bundle.")
+            }
+            let stockfish = StockfishEngine()
+            try await stockfish.loadNetworks(big: networks.big, small: networks.small)
+            built = stockfish
+        case .reckless:
+            // No networks to load: Reckless's is compiled into the binary.
+            built = RecklessEngine()
+        }
+
+        let cores = ProcessInfo.processInfo.activeProcessorCount
+        await built.setOption("Threads", String(max(1, min(4, cores - 2))))
+        await built.setOption("Hash", String(hashMB))
+        return built
+    }
+
+    /// The engine that is not the chosen one, built on demand and kept.
+    ///
+    /// Only the free board asks for this, where each side can be handed to a
+    /// different engine and both are alive at once. It gets a quarter of the
+    /// chosen engine's hash: two full-sized tables is a quarter of a gigabyte
+    /// on a phone, and this one is playing a game rather than analysing a
+    /// tournament.
+    private var spare: (choice: EngineChoice, engine: any Engine)?
+
+    /// An engine of a particular kind, whichever object that turns out to be.
+    ///
+    /// Returns nil when it cannot be built — Stockfish without its networks —
+    /// so the caller can leave the side where it is rather than pretend.
+    public func engine(for choice: EngineChoice) async -> (any Engine)? {
+        if choice == engineChoice, engineState == .ready { return engine }
+        if let spare, spare.choice == choice { return spare.engine }
+
+        guard let built = try? await build(choice, hashMB: 32) else { return nil }
+        // One spare is enough: with two kinds of engine there is only ever one
+        // that is not the chosen one.
+        if let previous = spare?.engine { await previous.stop() }
+        spare = (choice, built)
+        return built
+    }
+
+    /// Let the spare go.
+    ///
+    /// Called when the free board closes. A Stockfish kept alive is its
+    /// networks kept in memory — a hundred megabytes for a screen nobody is
+    /// looking at.
+    public func releaseSpare() async {
+        guard let spare else { return }
+        await spare.engine.stop()
+        self.spare = nil
     }
 
     /// Record the choice and act on it. The settings call this rather than

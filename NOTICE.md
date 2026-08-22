@@ -89,3 +89,24 @@ Used only by the web version's build tooling, not by the iOS app.
 
 - Copyright (c) Jeff Hlywa
 - BSD 2-Clause licence
+
+## Typefaces
+
+Both are licensed under the SIL Open Font License 1.1, whose terms travel with
+the files: `Resources/Fonts/OFL-cormorant.txt` and `OFL-jetbrains.txt` ship in
+the app beside the fonts themselves.
+
+- **Cormorant Garamond** — the display and body face. Copyright 2015 the
+  Cormorant Project Authors, https://github.com/CatharsisFonts/Cormorant
+- **JetBrains Mono** — the figures and anything set as data. Copyright 2020 the
+  JetBrains Mono Project Authors, https://github.com/JetBrains/JetBrainsMono
+
+Neither font is sold on its own or renamed, which is all the OFL asks of an
+application that merely embeds them.
+
+## The pieces and the board
+
+Drawn for this app. The 3D pieces are built from measured coordinates in
+`Sources/BoardScene`, not imported from a model: the reference model consulted
+while shaping the knight is CC-BY-NC, which a paid app cannot use, so nothing of
+it is in the binary.

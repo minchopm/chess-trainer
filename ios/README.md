@@ -142,11 +142,28 @@ moves with a reason beat nothing without one.
 Two rules are worth knowing because neither is guessable:
 
 **Either side can change hands at any time.** White and Black each have a seat —
-You or Engine — and switching one mid-game hands that colour over immediately.
-Both on Engine is the two engines playing each other; both on You is an analysis
-board. The engine plays at full strength, with no ladder: this screen is for
-looking at positions, and a deliberately weakened answer is the wrong tool for
-that even when the engine can give one.
+You, Stockfish or Reckless — and switching one mid-game hands that colour over
+immediately. The engines are named rather than lumped together as "Engine",
+because which one is playing is the interesting part of this screen: the two
+disagreed on four of six test positions. Put a different one on each side and
+they play each other. Both on You is an analysis board. There is no ladder here:
+this screen is for looking at positions, and a deliberately weakened answer is
+the wrong tool for that even when the engine can give one.
+
+Both engines can therefore be alive at once. The one that is not the player's
+chosen engine is built on demand by `AppModel.engine(for:)` and gets a quarter
+of the hash — two full-sized tables is a quarter of a gigabyte on a phone — and
+is released when the screen closes, because a Stockfish kept alive is its
+hundred megabytes of networks kept in memory.
+
+**A search whose board has changed is stopped, not waited out.** Handing a seat
+over mid-search used to leave the abandoned search running its whole budget —
+two and a half seconds, ten at the ceiling — while `isThinking` held the next
+one off, so several quick changes queued behind each other and the board looked
+frozen. `BoardModel` keeps the engine it is driving and calls `stop()` on it for
+changes a person made; the tests measure the difference at 2.5 s against 0.13 s.
+Not for the engine's own move, though: the loop plays one and starts the next
+search straight away, and a stop arriving late would cut short the wrong one.
 
 **Set up** opens the position editor, seeded with whatever is on the board. It
 keeps a loose map of squares to pieces rather than a `Position`, because

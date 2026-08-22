@@ -315,13 +315,6 @@
   ]
  },
  {
-  "key": "board.seatEngine",
-  "english": "Engine",
-  "files": [
-   "BoardScreen.swift"
-  ]
- },
- {
   "key": "board.seatYou",
   "english": "You",
   "files": [

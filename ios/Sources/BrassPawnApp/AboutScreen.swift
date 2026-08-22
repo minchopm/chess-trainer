@@ -66,6 +66,12 @@ struct AboutScreen: View {
                             "Most of the bundled puzzles, with ratings from millions of human attempts. Released under CC0.",
                             "https://database.lichess.org"
                         )
+                        Divider().overlay(Theatre.ruleSoft)
+                        credit(
+                            "Cormorant Garamond & JetBrains Mono",
+                            "The typefaces. Copyright 2015 the Cormorant Project Authors and 2020 the JetBrains Mono Project Authors. SIL Open Font License 1.1.",
+                            "https://github.com/CatharsisFonts/Cormorant"
+                        )
                     }
 
                     aboutSection(L.t("about.privacy", "Privacy")) {
