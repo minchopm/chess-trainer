@@ -26,6 +26,7 @@ public final class LiveBoard: SceneDriver {
     private var premoves: [Square: [Square]] = [:]
     private var lastMove: (from: Square, to: Square)?
     private let highlights = Highlights()
+    private let tags = ValueTagPool()
     private var clock: TimeInterval = 0
     private var pendingSync = false
 
@@ -41,6 +42,7 @@ public final class LiveBoard: SceneDriver {
             target: SIMD3<Float>(0, 0.2, 0)
         )
         stage.scene.rootNode.addChildNode(highlights.node)
+        stage.scene.rootNode.addChildNode(tags.node)
         stage.board.set(position)
         place()
     }
@@ -126,6 +128,26 @@ public final class LiveBoard: SceneDriver {
         refresh()
     }
 
+    /// What each reachable square is worth, if the screen has asked for it.
+    ///
+    /// Given as text rather than as numbers: the formatting belongs to the app
+    /// layer, which knows the reader's locale — Arabic writes the value in its
+    /// own digits — and the scene has no business knowing that.
+    private var values: [Square: ValuePlate] = [:]
+
+    public func show(values: [Square: ValuePlate]) {
+        self.values = values
+        refresh()
+    }
+
+    private var valueTags: [ValueTag] {
+        destinationsForSelection.compactMap { square in
+            guard let value = values[square] else { return nil }
+            return ValueTag(square: square, text: value.text, loss: value.loss,
+                            overPiece: position[square] != nil)
+        }
+    }
+
     private var destinationsForSelection: [Square] {
         guard let selected else { return [] }
         return (legal.isEmpty ? premoves : legal)[selected] ?? []
@@ -157,6 +179,7 @@ public final class LiveBoard: SceneDriver {
 
     private func refresh() {
         highlights.show(selected: selected, destinations: destinationsForSelection, lastMove: lastMove)
+        tags.show(valueTags)
     }
 
     public func place() {

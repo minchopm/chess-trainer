@@ -34,6 +34,7 @@ struct GameBoard: View {
                 legalDestinations: legalDestinations,
                 premoveDestinations: premoveDestinations,
                 lastMove: lastMove,
+                moveValues: moveValues,
                 onMove: onMove,
                 onPremove: onPremove
             )
@@ -78,6 +79,7 @@ private struct DimensionalBoard: View {
     let legalDestinations: [Square: [Square]]
     let premoveDestinations: [Square: [Square]]
     let lastMove: (from: Square, to: Square)?
+    let moveValues: MoveValues?
     let onMove: (Square, Square, PieceKind?) -> Void
     let onPremove: (Square, Square, PieceKind?) -> Void
 
@@ -108,9 +110,32 @@ private struct DimensionalBoard: View {
             }
         }
         .onAppear(perform: build)
+        .onChange(of: valuesBySquare) { _, values in board?.show(values: values) }
+        .task(id: valuesBySquare) { board?.show(values: valuesBySquare) }
         .onChange(of: app.progress.appearance.showsCoordinates) { _, showing in
             board?.stage.setCoordinates(showing)
         }
+    }
+
+    /// The values the scene needs, keyed by where the move lands and formatted
+    /// the way the reader's language writes a number.
+    ///
+    /// Only for a square that can actually be reached from the piece in hand —
+    /// the scene decides which of these to draw, but there is no reason to hand
+    /// it the whole position's worth.
+    private var valuesBySquare: [Square: ValuePlate] {
+        guard let moveValues else { return [:] }
+        var plates: [Square: ValuePlate] = [:]
+        for (uci, score) in moveValues.byMove {
+            guard uci.count >= 4,
+                  let to = Square(uci.dropFirst(2).prefix(2)) else { continue }
+            let plate = ValuePlate(text: BoardView.pawns(score),
+                                   loss: max(0, moveValues.best - score))
+            // A promotion offers the same square four times; the queen's value
+            // is the one worth showing.
+            if plates[to] == nil || plate.loss < plates[to]!.loss { plates[to] = plate }
+        }
+        return plates
     }
 
     private func build() {
@@ -135,6 +160,7 @@ private struct DimensionalBoard: View {
             }
         }
         live.stage.setCoordinates(app.progress.appearance.showsCoordinates)
+        live.show(values: valuesBySquare)
         board = live
     }
 
