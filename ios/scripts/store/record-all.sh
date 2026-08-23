@@ -6,6 +6,19 @@
 # would be the same file made twice.
 set -e
 HERE="$(dirname "$0")"
+
+# The simulator to drive. Named rather than baked in: an identifier from
+# somebody else's machine is a script that works in one place and quietly does
+# the wrong thing everywhere else.
+UD="${SIMULATOR_UDID:-}"
+if [ -z "$UD" ]; then
+  UD=$(xcrun simctl list devices booted -j 2>/dev/null \
+       | awk -F'"' '/"udid"/ { print $4; exit }')
+fi
+if [ -z "$UD" ]; then
+  echo "No booted simulator. Boot one, or set SIMULATOR_UDID." >&2
+  exit 1
+fi
 OUT="${STORE_OUT:-$PWD/build/store}/videos"
 SCENES="demoWatch demoTactics demo"
 SHOOT="en-US ar-SA cs da de-DE el es-ES fi fr-FR he hi hu id it ja ko ms nl-NL no pl pt-BR ro ru sv th tr vi zh-Hans zh-Hant"
