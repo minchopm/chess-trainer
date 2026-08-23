@@ -150,5 +150,15 @@ public struct BoardSceneView: UIViewRepresentable {
 @MainActor
 public enum BoardSceneDebug {
     public static var titleBoardHasAppeared = false
+
+    /// Put the title game back to its first move.
+    ///
+    /// The board plays a game, lets the mate stand, clears, and waits again
+    /// before the next one starts — close to seven still seconds in a cycle of
+    /// about nineteen. A recording that began inside that gap opened on a board
+    /// that looked broken, and waiting for the app to be ready made landing in
+    /// the gap more likely rather than less. Called just before the tape rolls,
+    /// so a preview always opens on a game that is under way.
+    public static var restartTitleGame: (() -> Void)?
 }
 #endif

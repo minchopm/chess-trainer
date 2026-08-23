@@ -123,6 +123,14 @@ public struct RootView: View {
         // for. Rolling the tape on a timer instead meant the front of the file
         // held however long that particular cold launch had taken, which was
         // four seconds one run and eleven the next.
+        // Back to the first move before the tape rolls, so the recording opens
+        // on a game in progress rather than on the several still seconds
+        // between one game and the next.
+        BoardSceneDebug.restartTitleGame?()
+        // The restarted game waits before its first move, as it does for
+        // anybody opening the app. Spend that pause before the tape rolls
+        // rather than in front of it.
+        try? await Task.sleep(for: .milliseconds(2600))
         ScreenshotScene.markReady()
         await ScreenshotScene.waitForRecorder()
         try? await Task.sleep(for: ScreenshotScene.menuDwell)

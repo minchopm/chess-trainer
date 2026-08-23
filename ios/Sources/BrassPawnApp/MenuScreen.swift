@@ -346,6 +346,9 @@ private struct MenuBoardScene: View {
             .onAppear {
                 onGame(sequence.game)
                 sequence.onGame = onGame
+                #if DEBUG
+                BoardSceneDebug.restartTitleGame = { sequence.restart() }
+                #endif
             }
     }
 }

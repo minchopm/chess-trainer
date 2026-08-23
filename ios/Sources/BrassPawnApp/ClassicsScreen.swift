@@ -182,7 +182,9 @@ struct ClassicsScreen: View {
             query = String(name.prefix(length))
             try? await Task.sleep(for: .milliseconds(190))
         }
-        try? await Task.sleep(for: .seconds(1))
+        // Long enough to read what the search found, short enough that the
+        // list is not the longest still moment in the recording.
+        try? await Task.sleep(for: .milliseconds(600))
         watching = games.first
     }
     #endif

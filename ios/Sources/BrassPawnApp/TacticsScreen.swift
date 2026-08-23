@@ -287,7 +287,7 @@ struct TacticsScreen: View {
         // The screen is mounted behind the menu from launch, so wait for the
         // menu to go before solving anything anybody can see.
         while navigator.showsMenu { try? await Task.sleep(for: .milliseconds(50)) }
-        try? await Task.sleep(for: .milliseconds(700))
+        try? await Task.sleep(for: .milliseconds(350))
 
         // Two, not three. The brief is a third of the recording on the
         // training and the rest on the game, and a third of half a minute is

@@ -381,7 +381,11 @@ struct PlayScreen: View {
     /// thirty-one pictures identical but for their text.
     private func openScreenshotScene() async {
         guard let scene = ScreenshotScene.requested else { return }
-        guard scene.tab == .play else { return }
+        // The training preview belongs to the tactics tab and arrives here
+        // afterwards, so it cannot be recognised by which tab it started in.
+        // Narrowing this to the tab alone left it on the new-game panel for
+        // the last eight seconds of the recording, with no game ever started.
+        guard scene.tab == .play || scene == .demoTactics else { return }
 
         // Wait for a real engine. The scene is applied before `app.start()` has
         // finished, so this screen can appear while `app.engine` is still the
