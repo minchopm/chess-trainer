@@ -57,9 +57,12 @@ link a GPLv3 work with an AGPLv3 work, and says the AGPL's own section 13 then
 applies to the combination.
 
 That section requires anyone who lets users interact with the program *remotely
-over a network* to offer those users its source. Brass Pawn does not: the engine
-runs on the device, the app makes no network requests, and no user interacts
-with this software across a network. So the clause adds nothing in practice here
+over a network* to offer those users its source. Brass Pawn does not: both
+engines run on the device, and nobody interacts with a copy of this software
+running somewhere else. Online play is two copies talking to each other through
+Game Center, each one running on the phone of the person using it, which is not
+what that clause is about — there is no instance of the program that a user
+reaches across a network without having it. So the clause adds nothing in practice here
 — but it travels with the application, and anyone who takes this source and puts
 it behind a network service is bound by it.
 

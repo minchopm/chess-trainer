@@ -3,8 +3,10 @@
 <plist version="1.0">
 <dict>
 	<!-- Nothing is collected and nothing is tracked. Both engines run on the
-	     device, the progress file never leaves it, and the app makes no network
-	     requests at all — see PRIVACY.md, which says the same in prose.
+	     device and the progress file never leaves it. The one thing that
+	     crosses a network is an online game, which travels device to device
+	     through Game Center: Apple carries it, we have no server in the middle
+	     and receive none of it. See PRIVACY.md, which says the same in prose.
 
 	     NSPrivacyAccessedAPITypes is deliberately empty. The app calls none of
 	     the APIs that need a declared reason: no UserDefaults (the progress is

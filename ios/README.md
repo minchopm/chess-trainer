@@ -493,9 +493,12 @@ well, because Reckless is. Neither is a formality:
       a network file's size), no disk space, no boot time. An inaccurate
       declaration would be worse than none, so if a future change reaches for
       one of those, its reason belongs in there.
-- [ ] Add screenshots and a privacy label in App Store Connect. The app collects
-      nothing and makes no network requests, so the label is "Data Not
-      Collected".
+- [ ] Add screenshots and a privacy label in App Store Connect. The label is
+      "Data Not Collected": there is no server of ours, no analytics and no
+      advertising, and the only thing that crosses a network is an online game,
+      which goes device to device through Game Center. Apple collects that;
+      we never see it. See `docs/app-privacy.md` for the questionnaire answered
+      one screen at a time.
 - [ ] Create the two products in App Store Connect with exactly these
       identifiers: `com.artesoft.brasspawn.pro.monthly` and
       `com.artesoft.brasspawn.pro.lifetime`. They do not match the bundle id
