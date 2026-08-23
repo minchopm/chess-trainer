@@ -381,9 +381,7 @@ struct PlayScreen: View {
     /// thirty-one pictures identical but for their text.
     private func openScreenshotScene() async {
         guard let scene = ScreenshotScene.requested else { return }
-        guard scene == .playCoached || scene == .playMistake || scene == .playValues
-                || scene == .demo || scene == .demoTactics
-        else { return }
+        guard scene.tab == .play else { return }
 
         // Wait for a real engine. The scene is applied before `app.start()` has
         // finished, so this screen can appear while `app.engine` is still the
@@ -394,6 +392,14 @@ struct PlayScreen: View {
             try? await Task.sleep(for: .milliseconds(150))
         }
         guard app.engineState == .ready else { return }
+
+        // The setup panel and the free board are pictures of a screen before
+        // anybody has moved, so they are arranged as soon as there is an engine
+        // to arrange them around.
+        if scene == .playSetup || scene == .boardEngines {
+            ScreenshotScene.markReady()
+            return
+        }
 
         await model.start(engine: app.engine)
 
@@ -419,7 +425,17 @@ struct PlayScreen: View {
         if scene == .playValues {
             values.invalidate(unless: model.position.fen)
             values.toggle(fen: model.position.fen, engine: app.engine)
+            // The values are searched for, and an empty board is not the
+            // picture anybody wanted.
+            try? await Task.sleep(for: .seconds(3))
+            // Pick the knight up. The numbers are drawn against a selected
+            // piece, so a picture of this screen with nothing held is a picture
+            // of the feature switched on and doing nothing visible — which is
+            // what this scene has been showing all along.
+            PreviewSelection.shared.square = Square("g1")
+            try? await Task.sleep(for: .milliseconds(700))
         }
+        ScreenshotScene.markReady()
     }
 
     /// Turn the values on and pick a piece up, for a recorded preview.

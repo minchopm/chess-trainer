@@ -139,6 +139,9 @@ struct ClassicsScreen: View {
         #endif
         .task(id: app.library.classics.count) {
             #if DEBUG
+            if ScreenshotScene.requested == .watchList, !app.library.classics.isEmpty {
+                ScreenshotScene.markReady()
+            }
             await runWatchPreview()
             #endif
         }

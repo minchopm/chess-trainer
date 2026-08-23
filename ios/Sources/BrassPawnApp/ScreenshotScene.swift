@@ -105,6 +105,17 @@ enum ScreenshotScene: String {
     /// the brightness of the picture. It guessed wrong often enough to be worth
     /// removing: now the app waits, the recorder gets going over a menu that is
     /// already up, and the file needs no front trim at all.
+    /// Say the scene is arranged and the picture can be taken.
+    ///
+    /// Waited for rather than slept through. The sleeps this replaces were
+    /// tuned against a warm simulator, and a first launch after a fresh install
+    /// takes long enough that they photographed a black screen — or the menu,
+    /// still up over the screen that had been asked for.
+    static func markReady() {
+        let ready = URL.documentsDirectory.appending(path: "shot-ready")
+        try? Data().write(to: ready)
+    }
+
     static func waitForRecorder() async {
         let go = URL.documentsDirectory.appending(path: "preview-go")
         for _ in 0..<600 where !FileManager.default.fileExists(atPath: go.path) {

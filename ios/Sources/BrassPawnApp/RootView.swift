@@ -98,8 +98,20 @@ public struct RootView: View {
     /// finished loading, which on a cold launch left the menu sitting there for
     /// most of the recording.
     private func leaveMenuForPreview() async {
-        guard let scene = ScreenshotScene.requested,
-              scene == .demo || scene == .demoWatch || scene == .demoTactics
+        guard let scene = ScreenshotScene.requested else { return }
+
+        // The title scene is a picture of the menu, so it is ready once the
+        // board it is a picture of is on screen.
+        if scene == .menu {
+            for _ in 0..<200 where !BoardSceneDebug.titleBoardHasAppeared {
+                try? await Task.sleep(for: .milliseconds(50))
+            }
+            try? await Task.sleep(for: .milliseconds(600))
+            ScreenshotScene.markReady()
+            return
+        }
+
+        guard scene == .demo || scene == .demoWatch || scene == .demoTactics
         else { return }
         // From when the board is on screen, not from launch. It is built from
         // a size that does not exist until the view has been laid out, so it
