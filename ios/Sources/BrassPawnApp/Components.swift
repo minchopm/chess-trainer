@@ -19,6 +19,17 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
     /// reason to move your head. An iPad Pro in landscape has room for far
     /// more; that does not make more an improvement.
     static var maximumBoard: CGFloat { 560 }
+    /// The same rule, at the distance a tablet is held.
+    ///
+    /// The cap above is set for a phone, which is read at arm's length or
+    /// closer. A tablet stands further away, so the board can be larger before
+    /// it asks anybody to move their head — and at the phone's cap, a
+    /// thirteen-inch screen in portrait ends two fifths of the way down and
+    /// leaves the rest dark.
+    static var maximumBoardOnTablet: CGFloat { 720 }
+    /// Where one becomes the other. No phone is this wide in portrait and no
+    /// tablet is narrower.
+    static var tabletWidth: CGFloat { 700 }
     /// Sixty-ish characters a line. Text set across a full iPad is a wall.
     static var maximumText: CGFloat { 620 }
 
@@ -45,10 +56,12 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
             } else {
                 // The caps only bite on a tablet. On a phone in portrait the
                 // board is limited by the width, as it should be.
+                let cap = geometry.size.width >= Self.tabletWidth
+                    ? Self.maximumBoardOnTablet : Self.maximumBoard
                 let width = min(
                     geometry.size.width - 20,
                     geometry.size.height * 0.66 - BoardStage<EmptyView>.chromeHeight,
-                    Self.maximumBoard
+                    cap
                 )
                 VStack(spacing: 8) {
                     board(width).padding(.top, 4)

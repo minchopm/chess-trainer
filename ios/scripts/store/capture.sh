@@ -20,7 +20,10 @@ if [ -z "$UD" ]; then
 fi
 APP_ID=com.arte-soft.brasspawn
 OUT="${STORE_OUT:-$PWD/build/store}/screenshots"
-SCENES="menu playSetup playCoached playMistake playValues boardEngines watchList"
+# Overridable, because the iPad listing wants a handful rather than all of
+# them and shooting seven in twenty-nine languages to use three is an hour
+# spent on pictures nobody will look at.
+SCENES="${SCENES:-menu playSetup playCoached playMistake playValues boardEngines watchList}"
 
 # One capture per distinct translation set.
 SHOOT="${ONLY:-en-US ar-SA cs da de-DE el es-ES fi fr-FR he hi hu id it ja ko ms nl-NL no pl pt-BR ro ru sv th tr vi zh-Hans zh-Hant}"
