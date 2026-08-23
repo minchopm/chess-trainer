@@ -133,8 +133,36 @@ struct ClassicsScreen: View {
             WatchScreen(game: game)
         }
         #endif
-        .task(id: app.library.classics.count) {}
+        .task(id: app.library.classics.count) {
+            #if DEBUG
+            await runWatchPreview()
+            #endif
+        }
     }
+
+    #if DEBUG
+    /// Type a name into the search, let the list settle, then open the first
+    /// game it found.
+    ///
+    /// Typed letter by letter rather than set in one go: the point of a preview
+    /// is to show somebody using the app, and a field that fills instantly does
+    /// not look like anybody using anything.
+    private func runWatchPreview() async {
+        guard ScreenshotScene.requested == .demoWatch,
+              watching == nil, !app.library.classics.isEmpty else { return }
+
+        // From when this screen appears, not from launch: the dwell on the
+        // menu is already spent by the time anyone gets here, and counting it
+        // twice was what pushed the typing to the end of the recording.
+        try? await Task.sleep(for: .milliseconds(800))
+        for letter in "Fischer" {
+            query.append(letter)
+            try? await Task.sleep(for: .milliseconds(190))
+        }
+        try? await Task.sleep(for: .seconds(1))
+        watching = games.first
+    }
+    #endif
 
     private var search: some View {
         HStack(spacing: 8) {

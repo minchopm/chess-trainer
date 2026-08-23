@@ -375,6 +375,10 @@ struct BoardScreen: View {
     /// The line that has already been written down, so a board that reaches
     /// checkmate and is then stepped about does not file the same game twice.
     @State private var saved: String?
+    #if DEBUG
+    /// One move in the preview, not a move every two seconds for ever.
+    @State private var previewHasMoved = false
+    #endif
 
     private var material: MaterialBalance { MaterialBalance(model.position) }
 
@@ -451,6 +455,29 @@ struct BoardScreen: View {
         // A Stockfish kept alive is its networks kept in memory. Nothing on
         // this screen needs a second engine once the screen is gone.
         .onDisappear { Task { await app.releaseSpare() } }
+        #if DEBUG
+        // The end of the long preview: the game arrives from the library and a
+        // move is played on it, because "carry on from here" is a promise and a
+        // preview should show it kept.
+        .task(id: model.ply) {
+            guard ScreenshotScene.requested == .demoWatch, !previewHasMoved,
+                  !model.line.isEmpty, model.isAtLiveEnd else { return }
+            previewHasMoved = true
+            try? await Task.sleep(for: .seconds(2))
+            guard let uci = try? await app.engine.chooseMove(
+                fen: model.position.fen, budget: .hint
+            ), let move = Move(uci: uci) else { return }
+            model.play(from: move.from, to: move.to, promotion: move.promotion)
+        }
+        .task {
+            guard ScreenshotScene.requested == .boardEngines else { return }
+            // A named opening rather than the empty array: a board with a game
+            // on it photographs better than a board waiting for one.
+            model.load("1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6")
+            model.setSeat(.engine(.stockfish), for: .white)
+            model.setSeat(.engine(.reckless), for: .black)
+        }
+        #endif
         // Only a finished game is kept. This board spends most of its life
         // holding positions somebody is poking at, and filing every poke would
         // bury the games worth having.

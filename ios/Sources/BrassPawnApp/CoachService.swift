@@ -133,7 +133,12 @@ struct CoachService {
         }
 
         if wasEngineChoice {
-            if parts.isEmpty { parts.append("\(playedSAN) is what the engine plays too.") }
+            if parts.isEmpty {
+                parts.append(L.t(
+                    "coach.engineAgrees", "%@ is what the engine plays too.",
+                    playedSAN.notation
+                ))
+            }
         } else if let bestMove {
             var afterBest = position
             afterBest.make(bestMove)
@@ -142,13 +147,54 @@ struct CoachService {
                 after: PositionFeatures(afterBest),
                 move: bestMove, position: position, resulting: afterBest
             )
-            let why = reasons.isEmpty ? "" : " — it \(MoveDescription.join(reasons))"
-            let cost = assessment.centipawnsLost >= 9000
-                ? "and it throws away a forced mate"
-                : String(format: "costing about %.2f pawns", Double(assessment.centipawnsLost) / 100)
-            parts.append("\(position.san(for: bestMove)) was stronger\(why), \(cost).")
+            // Whole sentences with numbered arguments, not English fragments
+            // glued together. The old version built "X was stronger — it Y,
+            // costing about Z pawns." in code and translated only Y, so an
+            // Arabic reader got an Arabic clause inside an English sentence.
+            let better = position.san(for: bestMove).notation
+            let threwAwayMate = assessment.centipawnsLost >= 9000
+            let cost = Self.pawnFormatter
+                .string(from: NSNumber(value: Double(assessment.centipawnsLost) / 100)) ?? ""
+
+            if reasons.isEmpty {
+                parts.append(threwAwayMate
+                    ? L.t("coach.strongerMate",
+                          "%@ was stronger, and it throws away a forced mate.", better)
+                    : L.t("coach.strongerCost",
+                          "%1$@ was stronger, costing about %2$@ pawns.", better, cost))
+            } else {
+                let why = MoveDescription.join(reasons)
+                parts.append(threwAwayMate
+                    ? L.t("coach.strongerReasonMate",
+                          "%1$@ was stronger — it %2$@, and it throws away a forced mate.",
+                          better, why)
+                    : L.t("coach.strongerReasonCost",
+                          "%1$@ was stronger — it %2$@, costing about %3$@ pawns.",
+                          better, why, cost))
+            }
         }
 
         return parts.joined(separator: " ")
     }
+
+    /// The cost in pawns, in the reader's own numerals.
+    private static let pawnFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+        return formatter
+    }()
+}
+
+extension String {
+    /// Chess notation, kept the way round it is written.
+    ///
+    /// A move and a variation are Latin letters and Western digits, and dropped
+    /// into a right-to-left sentence the bidirectional algorithm reorders them:
+    /// "1.e4 c5 2.Nf3 e6" came out as "1.Nc3 Nc6 3.e6 2.Nf3 c5 e4", which is
+    /// not a variation any more. An isolate says: whatever surrounds this, read
+    /// it forwards. It costs two invisible characters and is the difference
+    /// between notation and nonsense.
+    var notation: String { "\u{2066}\(self)\u{2069}" }
 }

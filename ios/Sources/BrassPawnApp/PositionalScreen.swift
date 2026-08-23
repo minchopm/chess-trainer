@@ -147,7 +147,10 @@ final class PositionalModel {
             Double(playedCp) / 100, Double(exercise.best.cp) / 100, lost * 100
         ))
         if let pv = exercise.best.pv {
-            lines.append("Main line: \(CoachService.notation(from: position, uciMoves: pv, limit: 8))")
+            lines.append(L.t(
+                "play.mainLine", "Main line: %@",
+                CoachService.notation(from: position, uciMoves: pv, limit: 8).notation
+            ))
         }
 
         let played = position.san(for: move)

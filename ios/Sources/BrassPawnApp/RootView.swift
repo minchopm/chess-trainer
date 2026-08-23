@@ -61,7 +61,46 @@ public struct RootView: View {
         .appTypeface(app.progress.appearance.typeface)
         .animation(.easeOut(duration: 0.2), value: activity.wantsExit)
         .modelContainer(history)
+        #if DEBUG
+        .task { await leaveMenuForPreview() }
+        #endif
     }
+
+    #if DEBUG
+    /// Open straight into the scene a launch argument asked for.
+    ///
+    /// After `app.start()` rather than before: the scenes that want a board
+    /// need the engine, and the appearance is written into the progress file,
+    /// which is loaded by then.
+    private func applyScreenshotScene() {
+        guard let scene = ScreenshotScene.requested else { return }
+        if let dimension = scene.dimension {
+            app.update { $0.appearance.dimension = dimension }
+        }
+        if let mode = scene.playMode { navigator.playMode = mode }
+        selection = scene.tab
+        navigator.showsMenu = scene.showsMenu
+    }
+    #endif
+
+    #if DEBUG
+    /// The long preview opens on the title board and lets it turn a while
+    /// before going anywhere, so the recording starts on something worth
+    /// looking at rather than on a list.
+    ///
+    /// On its own clock, not behind `app.start()`. Hanging it off the engine
+    /// meant the dwell began whenever a hundred megabytes of networks had
+    /// finished loading, which on a cold launch left the menu sitting there for
+    /// most of the recording.
+    private func leaveMenuForPreview() async {
+        guard ScreenshotScene.requested == .demoWatch else { return }
+        try? await Task.sleep(for: ScreenshotScene.menuDwell)
+        selection = .watch
+        withAnimation(.timingCurve(0.16, 1, 0.3, 1, duration: 0.5)) {
+            navigator.showsMenu = false
+        }
+    }
+    #endif
 
     private var content: some View {
         selectedScreen
@@ -75,7 +114,16 @@ public struct RootView: View {
                                               lightTone: app.progress.appearance.lightTone))
         .environment(\.pieceSet, app.progress.appearance.pieces)
         .environment(\.showsBoardCoordinates, app.progress.appearance.showsCoordinates)
-        .task { await app.start() }
+        .task {
+            // Before the engine, not after. The scene only moves the navigation
+            // and the appearance, neither of which waits on anything, while
+            // `start()` loads a hundred megabytes of networks — long enough
+            // that a screenshot taken meanwhile catches the menu instead.
+            #if DEBUG
+            applyScreenshotScene()
+            #endif
+            await app.start()
+        }
         // A screen that cannot reach the tab state asks for a destination here.
         .onChange(of: navigator.pendingTab) { _, tab in
             guard let tab else { return }

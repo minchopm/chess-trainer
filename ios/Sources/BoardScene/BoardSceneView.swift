@@ -20,6 +20,13 @@ public struct BoardSceneView: UIViewRepresentable {
 
     public func makeUIView(context: Context) -> SCNView {
         let view = SCNView()
+        // Hidden until it has been framed. `SCNView()` is born without a size,
+        // and the camera's distance is solved from the view's aspect — so the
+        // frames drawn before SwiftUI lays it out are composed for a shape the
+        // view does not have. On a phone that showed as a board too large for
+        // the screen for the first second of every launch, which then shrank
+        // into place. A fade is cheaper to look at than a jump.
+        view.alpha = 0
         view.scene = sequence.stage.scene
         view.pointOfView = sequence.stage.cameraNode
         view.backgroundColor = Colour.ink
@@ -45,6 +52,11 @@ public struct BoardSceneView: UIViewRepresentable {
 
     public func updateUIView(_ view: SCNView, context: Context) {
         context.coordinator.view = view
+        // Framed here as well as on the display link. This runs as soon as
+        // SwiftUI has laid the view out, which is a good deal earlier than the
+        // first tick — and until it is framed the view is hidden, so every
+        // frame of waiting is a frame of nothing.
+        context.coordinator.fit(view.bounds.size)
     }
 
     public static func dismantleUIView(_ view: SCNView, coordinator: Driver) {
@@ -81,9 +93,13 @@ public struct BoardSceneView: UIViewRepresentable {
 
         func fit(_ size: CGSize) {
             guard size.width > 1, size.height > 1, size != framedFor else { return }
+            let first = framedFor == .zero
             framedFor = size
             sequence?.camera.fit(aspect: Float(size.width / size.height))
             sequence?.place()
+            guard first, let view, view.alpha == 0 else { return }
+            // Now it is composed for the shape it actually has.
+            UIView.animate(withDuration: 0.35) { view.alpha = 1 }
         }
 
         @objc private func tick(_ link: CADisplayLink) {

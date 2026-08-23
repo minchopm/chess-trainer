@@ -37,6 +37,8 @@ public struct LiveBoardView: UIViewRepresentable {
 
     public func makeUIView(context: Context) -> SCNView {
         let view = SCNView()
+        // Hidden until framed — see `fit`.
+        view.alpha = 0
         view.scene = board.stage.scene
         view.pointOfView = board.stage.cameraNode
         view.backgroundColor = .clear
@@ -59,6 +61,9 @@ public struct LiveBoardView: UIViewRepresentable {
 
     public func updateUIView(_ view: SCNView, context: Context) {
         context.coordinator.view = view
+        // As soon as SwiftUI has laid it out, rather than waiting for the first
+        // display-link tick — the view is hidden until it is framed.
+        context.coordinator.fit(view.bounds.size)
         context.coordinator.look(orientation)
         board.apply(position: position, legalDestinations: legalDestinations,
                     premoveDestinations: premoveDestinations, lastMove: lastMove)
@@ -107,11 +112,18 @@ public struct LiveBoardView: UIViewRepresentable {
         }
 
         /// Framed for the shape of the view, once per shape.
+        ///
+        /// The view stays hidden until this has run: the camera's distance is
+        /// solved from the aspect, so anything drawn before the view has a size
+        /// is composed for a shape it does not have.
         func fit(_ size: CGSize) {
             guard size.width > 1, size.height > 1, size != framedFor else { return }
+            let first = framedFor == .zero
             framedFor = size
             board?.camera.fit(aspect: Float(size.width / size.height))
             board?.place()
+            guard first, let view, view.alpha == 0 else { return }
+            UIView.animate(withDuration: 0.35) { view.alpha = 1 }
         }
 
         @objc private func tick(_ link: CADisplayLink) {

@@ -17,6 +17,10 @@ struct WatchScreen: View {
 
     let game: ClassicGame
 
+    /// How far the viewer has got, so the preview can hand over from there
+    /// rather than from a number chosen in advance.
+    @State private var watchedPly = 0
+
     var body: some View {
         ReplayViewer(
             title: game.players,
@@ -28,18 +32,34 @@ struct WatchScreen: View {
             // far too many to remember your own place in.
             startAt: app.progress.watchMark(for: game.id)?.ply ?? 0,
             onProgress: { ply, total in
+                watchedPly = ply
                 app.update { $0.mark(watched: game.id, ply: ply, of: total) }
             },
-            onContinue: { ply in
-                navigator.continueOnBoard(BoardHandoff(
-                    title: game.players,
-                    start: Position(),
-                    moves: Array(game.moves.split(separator: " ").map(String.init).prefix(ply))
-                ))
-                dismiss()
-            },
+            onContinue: { ply in carryOn(from: ply) },
             onDismiss: { dismiss() }
         )
+        #if DEBUG
+        // The preview watches for a while, then takes the game over — the whole
+        // point of the feature is the crossing from one screen to the other, and
+        // that only reads as anything if it happens on camera.
+        .task {
+            guard ScreenshotScene.requested == .demoWatch else { return }
+            // About a third of the preview is the game replaying. Long enough
+            // to read as watching, short enough that the crossing still lands
+            // inside Apple's thirty seconds.
+            try? await Task.sleep(for: .seconds(9))
+            carryOn(from: watchedPly)
+        }
+        #endif
+    }
+
+    private func carryOn(from ply: Int) {
+        navigator.continueOnBoard(BoardHandoff(
+            title: game.players,
+            start: Position(),
+            moves: Array(game.moves.split(separator: " ").map(String.init).prefix(ply))
+        ))
+        dismiss()
     }
 }
 

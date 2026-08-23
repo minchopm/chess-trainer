@@ -365,7 +365,74 @@ struct PlayScreen: View {
         .onChange(of: model.hasStarted) { _, _ in holdWhilePlaying() }
         .onChange(of: model.moves.count) { _, _ in holdWhilePlaying() }
         .onDisappear { activity.release() }
+        #if DEBUG
+        .task { await openScreenshotScene() }
+        #endif
     }
+
+    #if DEBUG
+    /// Put the screen into the state a store screenshot wants.
+    ///
+    /// The position is the same in every language — only the words around it
+    /// change — so it is played here rather than tapped in, which keeps the
+    /// thirty-one pictures identical but for their text.
+    private func openScreenshotScene() async {
+        guard let scene = ScreenshotScene.requested else { return }
+        guard scene == .playCoached || scene == .playMistake || scene == .playValues
+                || scene == .demo
+        else { return }
+
+        // Wait for a real engine. The scene is applied before `app.start()` has
+        // finished, so this screen can appear while `app.engine` is still the
+        // networkless placeholder — and a search on that fails quietly, which
+        // shows up as a board where the engine never replies and the coach
+        // never speaks.
+        for _ in 0..<200 where app.engineState != .ready {
+            try? await Task.sleep(for: .milliseconds(150))
+        }
+        guard app.engineState == .ready else { return }
+
+        await model.start(engine: app.engine)
+
+        if scene == .demo {
+            await runDemo()
+            return
+        }
+
+        // g4 for the mistake: a first move weak enough to be graded and famous
+        // enough that nobody has to be told why.
+        let move = scene == .playMistake ? ("g2", "g4") : ("e2", "e4")
+        guard let from = Square(move.0), let to = Square(move.1) else { return }
+        await model.play(from: from, to: to, promotion: nil, engine: app.engine)
+
+        if scene == .playValues {
+            values.invalidate(unless: model.position.fen)
+            values.toggle(fen: model.position.fen, engine: app.engine)
+        }
+    }
+
+    /// Play a short game against the clock, for a recorded preview.
+    ///
+    /// Two moves and two verdicts: e4 praised, then the queen out early and
+    /// caught. Qh5 rather than something sharper because it is legal after
+    /// every reply Black has to 1.e4, so the sequence cannot break depending on
+    /// what the engine chose.
+    private func runDemo() async {
+        func pause(_ seconds: Double) async {
+            try? await Task.sleep(for: .seconds(seconds))
+        }
+        func play(_ from: String, _ to: String) async {
+            guard let a = Square(from), let b = Square(to) else { return }
+            await model.play(from: a, to: b, promotion: nil, engine: app.engine)
+        }
+
+        await pause(2.5)          // the board, before anything happens to it
+        await play("e2", "e4")    // and the engine's reply, and the verdict
+        await pause(5)
+        await play("d1", "h5")    // the queen out early
+        await pause(6)
+    }
+    #endif
 
     /// The game is at stake from the moment it starts, not from the first move.
     /// Pressing Start and then wandering off through a tab bar is exactly the
@@ -469,7 +536,7 @@ struct PlayScreen: View {
                     .foregroundStyle(gradeColor(review.assessment.grade))
                 Text(review.sentence).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                 if !review.principalVariation.isEmpty, review.assessment.grade != .best {
-                    Text(L.t("play.mainLine", "Main line: %@", review.principalVariation))
+                    Text(L.t("play.mainLine", "Main line: %@", review.principalVariation.notation))
                         .appFont(.caption).foregroundStyle(Theatre.ivoryFaint)
                 }
             }

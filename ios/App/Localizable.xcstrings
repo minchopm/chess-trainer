@@ -13988,6 +13988,203 @@
         }
       }
     },
+    "coach.engineAgrees": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ هي نفسها نقلة المحرّك."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ je i tah motoru."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ er også motorens træk."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ist auch der Zug der Engine."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ είναι και η κίνηση της μηχανής."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ is what the engine plays too."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ is what the engine plays too."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ is what the engine plays too."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ es también la jugada del motor."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ on myös moottorin siirto."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ est aussi le coup du moteur."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ est aussi le coup du moteur."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ הוא גם המהלך של המנוע."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ वही चाल है जो इंजन भी खेलता है।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ a gép lépése is."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ juga langkah mesin."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ è anche la mossa del motore."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ はエンジンの手でもあります。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 은(는) 엔진도 두는 수입니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ juga langkah enjin."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ is ook de zet van de engine."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ er også motorens trekk."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ to także ruch silnika."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ é também o lance do motor."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ este și mutarea motorului."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ — тот же ход, что и у движка."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ är också motorns drag."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ เป็นตาที่เอนจินเดินเช่นกัน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ motorun da oynadığı hamle."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ cũng là nước đi của máy."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 也是引擎会走的着法。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 也是引擎會走的著法。"
+          }
+        }
+      }
+    },
     "coach.givesCheck": {
       "extractionState": "manual",
       "localizations": {
@@ -16545,6 +16742,794 @@
           "stringUnit": {
             "state": "translated",
             "value": "把車送上第七橫線"
+          }
+        }
+      }
+    },
+    "coach.strongerCost": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ كانت أقوى، بفارق نحو %2$@ بيدق."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ byl silnější, rozdíl asi %2$@ pěšce."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ var stærkere, en forskel på cirka %2$@ bonde."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ war stärker, ein Unterschied von etwa %2$@ Bauern."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ ήταν ισχυρότερη, διαφορά περίπου %2$@ πιονιού."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ was stronger, costing about %2$@ pawns."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ was stronger, costing about %2$@ pawns."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ was stronger, costing about %2$@ pawns."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ era más fuerte, una diferencia de unos %2$@ peones."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ oli vahvempi, ero noin %2$@ sotilasta."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ était plus fort, un écart d’environ %2$@ pion."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ était plus fort, un écart d’environ %2$@ pion."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ היה חזק יותר, הפרש של כ־%2$@ רגלי."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ अधिक मज़बूत थी, लगभग %2$@ प्यादे का अंतर।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ erősebb volt, körülbelül %2$@ gyalog különbséggel."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ lebih kuat, selisih sekitar %2$@ pion."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ era più forte, uno scarto di circa %2$@ pedoni."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ の方が強く、差はおよそ %2$@ ポーンです。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 이(가) 더 강했고, 차이는 약 %2$@ 폰입니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ lebih kuat, beza kira-kira %2$@ bidak."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ was sterker, een verschil van ongeveer %2$@ pion."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ var sterkere, en forskjell på omtrent %2$@ bonde."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ był silniejszy, różnica około %2$@ piona."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ era mais forte, uma diferença de cerca de %2$@ peões."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ era mai puternică, o diferență de circa %2$@ pioni."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ был сильнее, разница около %2$@ пешки."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ var starkare, en skillnad på ungefär %2$@ bonde."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ แข็งกว่า ต่างกันราว %2$@ เบี้ย"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ daha güçlüydü, aradaki fark yaklaşık %2$@ piyon."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ mạnh hơn, chênh khoảng %2$@ tốt."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 更强，差距约 %2$@ 个兵。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 更強，差距約 %2$@ 個兵。"
+          }
+        }
+      }
+    },
+    "coach.strongerMate": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ كانت أقوى، وهذا يضيّع كشّ مات مؤكّداً."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ byl silnější a tímhle přichází o vynucený mat."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ var stærkere, og dette smider en tvungen mat væk."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ war stärker, und damit ist ein erzwungenes Matt verschenkt."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ήταν ισχυρότερη, και έτσι χάνεται ένα εξαναγκασμένο ματ."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ was stronger, and it throws away a forced mate."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ was stronger, and it throws away a forced mate."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ was stronger, and it throws away a forced mate."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ era más fuerte, y con esto se tira un mate forzado."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ oli vahvempi, ja tämä heittää pois pakotetun matin."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ était plus fort, et cela gâche un mat forcé."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ était plus fort, et cela gâche un mat forcé."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ היה חזק יותר, וזה מפספס מט כפוי."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ अधिक मज़बूत थी, और इससे एक निश्चित शहमात हाथ से निकल जाती है।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ erősebb volt, és ezzel elúszik egy kikényszerített matt."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ lebih kuat, dan ini menyia-nyiakan sekakmat paksa."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ era più forte, e così si getta via un matto forzato."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ の方が強く、これでは必至の詰みを逃します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 이(가) 더 강했고, 이 수로 강제 메이트를 놓칩니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ lebih kuat, dan ini membuang syahmat paksa."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ was sterker, en hiermee gooi je een geforceerd mat weg."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ var sterkere, og dette kaster bort en tvungen matt."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ był silniejszy, a to marnuje wymuszonego mata."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ era mais forte, e isso joga fora um mate forçado."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ era mai puternică, iar asta aruncă un mat forțat."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ был сильнее, а этим упускается форсированный мат."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ var starkare, och det här kastar bort en tvingad matt."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ แข็งกว่า และตานี้ทำให้เสียการรุกจนที่บังคับได้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ daha güçlüydü ve bu, zorunlu matı harcıyor."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ mạnh hơn, và nước này bỏ lỡ chiếu hết ép buộc."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 更强，这一步丢掉了一个强制杀。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 更強，這一步丟掉了一個強制殺。"
+          }
+        }
+      }
+    },
+    "coach.strongerReasonCost": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ كانت أقوى — فهي %2$@، بفارق نحو %3$@ بيدق."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ byl silnější — %2$@, rozdíl asi %3$@ pěšce."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ var stærkere — den %2$@, en forskel på cirka %3$@ bonde."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ war stärker — der Zug %2$@, ein Unterschied von etwa %3$@ Bauern."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ ήταν ισχυρότερη — %2$@, διαφορά περίπου %3$@ πιονιού."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ was stronger — it %2$@, costing about %3$@ pawns."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ was stronger — it %2$@, costing about %3$@ pawns."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ was stronger — it %2$@, costing about %3$@ pawns."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ era más fuerte — %2$@, una diferencia de unos %3$@ peones."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ oli vahvempi — se %2$@, ero noin %3$@ sotilasta."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ était plus fort — ce coup %2$@, un écart d’environ %3$@ pion."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ était plus fort — ce coup %2$@, un écart d’environ %3$@ pion."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ היה חזק יותר — הוא %2$@, הפרש של כ־%3$@ רגלי."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ अधिक मज़बूत थी — यह %2$@, लगभग %3$@ प्यादे का अंतर।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ erősebb volt — %2$@, körülbelül %3$@ gyalog különbséggel."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ lebih kuat — langkah itu %2$@, selisih sekitar %3$@ pion."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ era più forte — %2$@, uno scarto di circa %3$@ pedoni."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ の方が強く、%2$@ ためです。差はおよそ %3$@ ポーンです。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 이(가) 더 강했습니다 — %2$@. 차이는 약 %3$@ 폰입니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ lebih kuat — langkah itu %2$@, beza kira-kira %3$@ bidak."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ was sterker — die zet %2$@, een verschil van ongeveer %3$@ pion."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ var sterkere — det %2$@, en forskjell på omtrent %3$@ bonde."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ był silniejszy — %2$@, różnica około %3$@ piona."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ era mais forte — %2$@, uma diferença de cerca de %3$@ peões."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ era mai puternică — %2$@, o diferență de circa %3$@ pioni."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ был сильнее — он %2$@, разница около %3$@ пешки."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ var starkare — det %2$@, en skillnad på ungefär %3$@ bonde."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ แข็งกว่า — %2$@ ต่างกันราว %3$@ เบี้ย"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ daha güçlüydü — %2$@, aradaki fark yaklaşık %3$@ piyon."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ mạnh hơn — nước đó %2$@, chênh khoảng %3$@ tốt."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 更强 — 它%2$@，差距约 %3$@ 个兵。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 更強 — 它%2$@，差距約 %3$@ 個兵。"
+          }
+        }
+      }
+    },
+    "coach.strongerReasonMate": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ كانت أقوى — فهي %2$@، وهذا يضيّع كشّ مات مؤكّداً."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ byl silnější — %2$@, a tímhle přichází o vynucený mat."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ var stærkere — den %2$@, og dette smider en tvungen mat væk."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ war stärker — der Zug %2$@, und damit ist ein erzwungenes Matt verschenkt."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ ήταν ισχυρότερη — %2$@, και έτσι χάνεται ένα εξαναγκασμένο ματ."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ was stronger — it %2$@, and it throws away a forced mate."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ was stronger — it %2$@, and it throws away a forced mate."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ was stronger — it %2$@, and it throws away a forced mate."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ era más fuerte — %2$@, y con esto se tira un mate forzado."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ oli vahvempi — se %2$@, ja tämä heittää pois pakotetun matin."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ était plus fort — ce coup %2$@, et cela gâche un mat forcé."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ était plus fort — ce coup %2$@, et cela gâche un mat forcé."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ היה חזק יותר — הוא %2$@, וזה מפספס מט כפוי."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ अधिक मज़बूत थी — यह %2$@, और इससे एक निश्चित शहमात हाथ से निकल जाती है।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ erősebb volt — %2$@, és ezzel elúszik egy kikényszerített matt."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ lebih kuat — langkah itu %2$@, dan ini menyia-nyiakan sekakmat paksa."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ era più forte — %2$@, e così si getta via un matto forzato."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ の方が強く、%2$@ ためです。これでは必至の詰みを逃します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 이(가) 더 강했습니다 — %2$@. 이 수로 강제 메이트를 놓칩니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ lebih kuat — langkah itu %2$@, dan ini membuang syahmat paksa."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ was sterker — die zet %2$@, en hiermee gooi je een geforceerd mat weg."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ var sterkere — det %2$@, og dette kaster bort en tvungen matt."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ był silniejszy — %2$@, a to marnuje wymuszonego mata."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ era mais forte — %2$@, e isso joga fora um mate forçado."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ era mai puternică — %2$@, iar asta aruncă un mat forțat."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ был сильнее — он %2$@, а этим упускается форсированный мат."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ var starkare — det %2$@, och det här kastar bort en tvingad matt."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ แข็งกว่า — %2$@ และตานี้ทำให้เสียการรุกจนที่บังคับได้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ daha güçlüydü — %2$@ ve bu, zorunlu matı harcıyor."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ mạnh hơn — nước đó %2$@, và nước này bỏ lỡ chiếu hết ép buộc."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 更强 — 它%2$@，这一步丢掉了一个强制杀。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 更強 — 它%2$@，這一步丟掉了一個強制殺。"
           }
         }
       }

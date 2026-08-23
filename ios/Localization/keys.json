@@ -497,6 +497,13 @@
   ]
  },
  {
+  "key": "coach.engineAgrees",
+  "english": "%@ is what the engine plays too.",
+  "files": [
+   "CoachService.swift"
+  ]
+ },
+ {
   "key": "coach.givesCheck",
   "english": "gives check",
   "files": [
@@ -585,6 +592,34 @@
   "english": "lands the rook on the seventh rank",
   "files": [
    "MoveDescription.swift"
+  ]
+ },
+ {
+  "key": "coach.strongerCost",
+  "english": "%1$@ was stronger, costing about %2$@ pawns.",
+  "files": [
+   "CoachService.swift"
+  ]
+ },
+ {
+  "key": "coach.strongerMate",
+  "english": "%@ was stronger, and it throws away a forced mate.",
+  "files": [
+   "CoachService.swift"
+  ]
+ },
+ {
+  "key": "coach.strongerReasonCost",
+  "english": "%1$@ was stronger — it %2$@, costing about %3$@ pawns.",
+  "files": [
+   "CoachService.swift"
+  ]
+ },
+ {
+  "key": "coach.strongerReasonMate",
+  "english": "%1$@ was stronger — it %2$@, and it throws away a forced mate.",
+  "files": [
+   "CoachService.swift"
   ]
  },
  {

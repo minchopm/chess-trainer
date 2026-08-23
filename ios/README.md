@@ -100,7 +100,7 @@ one file per language:
 python3 ios/scripts/build-catalog.py
 ```
 
-The script prints how many of the 571 keys each language has, so a partial
+The script prints how many of the 576 keys each language has, so a partial
 translation is visible rather than silent. Adding a string means adding it to
 `keys.json` and to whichever languages you can; the rest fall back to English.
 
@@ -310,6 +310,37 @@ That last case is why the hand-over carries a map of pieces rather than a
 `Position`: a board with no kings on it is not a position, `Position(fen:)`
 refuses to parse one, and an earlier draft quietly fell back to the opening
 array — a photograph of an empty room would have produced a full chessboard.
+
+## Store pictures and previews
+
+Screenshots and app previews are taken by a script, in every language, without
+a single tap. A launch argument opens the app straight into a named scene:
+
+```bash
+xcrun simctl launch <udid> com.arte-soft.brasspawn -shot playMistake \
+  -AppleLanguages "(de-DE)"
+xcrun simctl io <udid> screenshot shot.png
+```
+
+`ScreenshotScene` (debug builds only) lists what can be asked for. Tapping was
+tried first and is the wrong tool: a longer translation moves the buttons, so
+the taps that work in English miss in German. A launch argument cannot be set by
+another app or by a link, and none of this compiles into a Release build.
+
+The position in each scene is the same in every language — only the words
+change, which is what a set of store pictures wants. Two locale pairs are shot
+once and copied, because their catalogues are byte-identical: the two Englishes
+and the two Frenches. That is 29 captures filling 31 folders.
+
+Previews are recorded the same way, with `simctl io recordVideo`, from a `demo`
+scene that plays the app against a clock. Nothing is masked or resized here —
+the raw frame goes to the tooling that composes the device shot.
+
+Two things learned by looking at what came out, both now fixed and worth not
+repeating: the coach's second sentence was assembled from English fragments
+with only the clause translated, so an Arabic reader got Arabic inside English;
+and chess notation dropped into a right-to-left sentence was reordered by the
+bidirectional algorithm until it was no longer a variation.
 
 ## Testing
 
