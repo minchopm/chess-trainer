@@ -95,6 +95,19 @@ final class TacticsModel {
         return L.t("tactics.strongestContinuation", "Find the strongest continuation.")
     }
 
+    #if DEBUG
+    /// The move the solver is meant to play next, in UCI.
+    ///
+    /// For the recorded preview only: it solves puzzles so that the training
+    /// can be shown working rather than described, and it cannot read the
+    /// board. `step` stays private — this says what is expected, not where in
+    /// the line we are.
+    var expectedSolverMove: String? {
+        guard let puzzle, !isFinished, step < puzzle.solution.count else { return nil }
+        return puzzle.solution[step]
+    }
+    #endif
+
     func load(_ selection: Selection<Puzzle>?) {
         guard let selection, let start = Position(fen: selection.item.fen) else {
             puzzle = nil

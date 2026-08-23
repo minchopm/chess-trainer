@@ -99,6 +99,9 @@ public struct BoardSceneView: UIViewRepresentable {
             sequence?.place()
             guard first, let view, view.alpha == 0 else { return }
             // Now it is composed for the shape it actually has.
+            #if DEBUG
+            BoardSceneDebug.titleBoardHasAppeared = true
+            #endif
             UIView.animate(withDuration: 0.35) { view.alpha = 1 }
         }
 
@@ -134,5 +137,18 @@ public struct BoardSceneView: UIViewRepresentable {
             sequence.place()
         }
     }
+}
+#endif
+
+#if DEBUG
+/// Whether the title board has been framed and shown.
+///
+/// For recorded previews only. The board is built from a size the view does not
+/// have until it has been laid out, so it appears a second or two after the
+/// screen around it — and a preview that leaves the menu on a timer started at
+/// launch was leaving it exactly as the board arrived.
+@MainActor
+public enum BoardSceneDebug {
+    public static var titleBoardHasAppeared = false
 }
 #endif

@@ -1,3 +1,4 @@
+import BoardScene
 import ChessTraining
 import SwiftData
 import SwiftUI
@@ -78,8 +79,12 @@ public struct RootView: View {
             app.update { $0.appearance.dimension = dimension }
         }
         if let mode = scene.playMode { navigator.playMode = mode }
-        selection = scene.tab
         navigator.showsMenu = scene.showsMenu
+        // The destination waits for the menu to leave, rather than being built
+        // behind it. A screen with a board of its own was loading a second
+        // scene while the title board was still finding its feet, and neither
+        // of them appeared until both were ready.
+        if !scene.showsMenu { selection = scene.tab }
     }
     #endif
 
@@ -93,12 +98,22 @@ public struct RootView: View {
     /// finished loading, which on a cold launch left the menu sitting there for
     /// most of the recording.
     private func leaveMenuForPreview() async {
-        guard ScreenshotScene.requested == .demoWatch else { return }
-        try? await Task.sleep(for: ScreenshotScene.menuDwell)
-        selection = .watch
-        withAnimation(.timingCurve(0.16, 1, 0.3, 1, duration: 0.5)) {
-            navigator.showsMenu = false
+        guard let scene = ScreenshotScene.requested,
+              scene == .demo || scene == .demoWatch || scene == .demoTactics
+        else { return }
+        // From when the board is on screen, not from launch. It is built from
+        // a size that does not exist until the view has been laid out, so it
+        // arrives a second or two after everything around it.
+        for _ in 0..<200 where !BoardSceneDebug.titleBoardHasAppeared {
+            try? await Task.sleep(for: .milliseconds(50))
         }
+        await ScreenshotScene.waitForRecorder()
+        try? await Task.sleep(for: ScreenshotScene.menuDwell)
+        selection = scene.tab
+        // Cut, rather than dissolve. The menu's usual fade leaves it lying over
+        // the screen behind it for long enough to record, and the preview then
+        // reads as two screens at once instead of one after the other.
+        navigator.showsMenu = false
     }
     #endif
 

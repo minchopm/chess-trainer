@@ -290,6 +290,9 @@ struct PlayScreen: View {
     @Environment(ActivityGuard.self) private var activity
     @State private var model = PlayModel()
     @State private var values = MoveValueController()
+    #if DEBUG
+    @Environment(Navigator.self) private var navigator
+    #endif
     @State private var recorded = false
     @Environment(\.modelContext) private var history
 
@@ -379,7 +382,7 @@ struct PlayScreen: View {
     private func openScreenshotScene() async {
         guard let scene = ScreenshotScene.requested else { return }
         guard scene == .playCoached || scene == .playMistake || scene == .playValues
-                || scene == .demo
+                || scene == .demo || scene == .demoTactics
         else { return }
 
         // Wait for a real engine. The scene is applied before `app.start()` has
@@ -395,7 +398,15 @@ struct PlayScreen: View {
         await model.start(engine: app.engine)
 
         if scene == .demo {
+            // Behind the menu until the menu goes. The opening on the title
+            // board is part of the preview, not something to play under.
+            while navigator.showsMenu { try? await Task.sleep(for: .milliseconds(50)) }
             await runDemo()
+            return
+        }
+
+        if scene == .demoTactics {
+            await runValuesDemo()
             return
         }
 
@@ -411,10 +422,34 @@ struct PlayScreen: View {
         }
     }
 
+    /// Turn the values on and pick a piece up, for a recorded preview.
+    ///
+    /// A move is played first so the board is a game rather than a starting
+    /// array, and the piece is chosen last: the numbers are drawn against a
+    /// selected piece, so until one is held there is nothing to read.
+    private func runValuesDemo() async {
+        guard let from = Square("e2"), let to = Square("e4") else { return }
+        await model.play(from: from, to: to, promotion: nil, engine: app.engine)
+        try? await Task.sleep(for: .milliseconds(1800))
+
+        values.invalidate(unless: model.position.fen)
+        values.toggle(fen: model.position.fen, engine: app.engine)
+        // The search has to finish before there is anything to label.
+        try? await Task.sleep(for: .milliseconds(2200))
+
+        // The knight: three moves, worth visibly different amounts, and it is
+        // the piece whose choices beginners are least sure about.
+        PreviewSelection.shared.square = Square("g1")
+    }
+
     /// Play a short game against the clock, for a recorded preview.
     ///
-    /// Two moves and two verdicts: e4 praised, then the queen out early and
-    /// caught. Qh5 rather than something sharper because it is legal after
+    /// Two moves and two verdicts: e4 praised, then g4 caught.
+    ///
+    /// g4 rather than the queen out early, which the coach sometimes let pass
+    /// as merely second-best depending on what the engine had replied. A
+    /// preview of a coach that catches mistakes has to contain a mistake, and
+    /// this one is weak after every reply Black has. Qh5 rather than something sharper because it is legal after
     /// every reply Black has to 1.e4, so the sequence cannot break depending on
     /// what the engine chose.
     private func runDemo() async {
@@ -426,11 +461,14 @@ struct PlayScreen: View {
             await model.play(from: a, to: b, promotion: nil, engine: app.engine)
         }
 
-        await pause(2.5)          // the board, before anything happens to it
+        // Longer than it reads: each verdict has to be on screen long enough
+        // to be read in the language it was written in, and German takes more
+        // room than English.
+        await pause(1.5)          // the board, before anything happens to it
         await play("e2", "e4")    // and the engine's reply, and the verdict
-        await pause(5)
-        await play("d1", "h5")    // the queen out early
-        await pause(6)
+        await pause(6.5)
+        await play("g2", "g4")    // and a pawn thrown away in front of the king
+        await pause(7.5)
     }
     #endif
 

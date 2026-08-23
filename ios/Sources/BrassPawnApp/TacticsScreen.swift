@@ -10,6 +10,10 @@ struct TacticsScreen: View {
     @State private var hasStartedAttempt = false
     @State private var hasCountedCompletion = false
     @State private var showsSolutionReplay = false
+    #if DEBUG
+    @Environment(Navigator.self) private var navigator
+    @State private var hasRunPreview = false
+    #endif
 
     var body: some View {
         content
@@ -88,7 +92,12 @@ struct TacticsScreen: View {
         } controls: {
             controls
         }
-        .task(id: app.library.puzzles.count) { if model.puzzle == nil { next() } }
+        .task(id: app.library.puzzles.count) {
+            if model.puzzle == nil { next() }
+            #if DEBUG
+            await runTacticsPreview()
+            #endif
+        }
     }
 
     @ViewBuilder
@@ -235,6 +244,58 @@ struct TacticsScreen: View {
             app.progress.freeTacticsSkipsRemaining()
         )
     }
+
+    #if DEBUG
+    /// Solve puzzles for the recorded preview, then hand over to the game.
+    ///
+    /// The moves come from the puzzle's own solution rather than from an
+    /// engine: the point is to show the training working at the pace someone
+    /// would actually see it, and a search would both take longer and
+    /// occasionally disagree with the puzzle.
+    private func runTacticsPreview() async {
+        guard ScreenshotScene.requested == .demoTactics,
+              !app.library.puzzles.isEmpty, !hasRunPreview else { return }
+        hasRunPreview = true
+
+        // The screen is mounted behind the menu from launch, so wait for the
+        // menu to go before solving anything anybody can see.
+        while navigator.showsMenu { try? await Task.sleep(for: .milliseconds(50)) }
+        try? await Task.sleep(for: .milliseconds(700))
+
+        // Two, not three. The brief is a third of the recording on the
+        // training and the rest on the game, and a third of half a minute is
+        // two puzzles at a pace anybody can follow.
+        for _ in 0..<2 {
+            await solveCurrentPuzzle()
+            try? await Task.sleep(for: .milliseconds(900))
+            next()
+            try? await Task.sleep(for: .milliseconds(600))
+        }
+
+        // On to the game, where the same board says what each move is worth.
+        navigator.playMode = .play
+        navigator.pendingTab = .play
+    }
+
+    /// Play the solver's side of the current puzzle, a move at a time.
+    ///
+    /// Bounded rather than "until finished": a move the model declines to
+    /// accept would otherwise leave this spinning, and a preview that hangs is
+    /// worse than one that moves on.
+    private func solveCurrentPuzzle() async {
+        for _ in 0..<8 {
+            guard let uci = model.expectedSolverMove,
+                  let from = Square(String(uci.prefix(2))),
+                  let to = Square(String(uci.dropFirst(2).prefix(2)))
+            else { return }
+            let promotion = uci.count > 4 ? PieceKind(letter: Array(uci)[4]) : nil
+            handleMove(from: from, to: to, promotion: promotion)
+            // Long enough for the model's own pause on the opponent's reply,
+            // which is what makes the line readable rather than a jump.
+            try? await Task.sleep(for: .milliseconds(1100))
+        }
+    }
+    #endif
 
     private func beginAttempt() -> Bool {
         guard model.puzzle != nil, !model.isFinished else { return false }

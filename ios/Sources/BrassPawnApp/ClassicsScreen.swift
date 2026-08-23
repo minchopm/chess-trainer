@@ -41,6 +41,10 @@ struct ClassicsScreen: View {
     @Environment(AppModel.self) private var app
     var showsHeader = true
     @State private var query = ""
+    #if DEBUG
+    @State private var hasTypedPreview = false
+    @Environment(Navigator.self) private var navigator
+    #endif
     @State private var shelf = Shelf.named
     @State private var order = Order.shortest
     /// Saved games only. Its own switch rather than a fourth shelf: it is the
@@ -151,12 +155,28 @@ struct ClassicsScreen: View {
         guard ScreenshotScene.requested == .demoWatch,
               watching == nil, !app.library.classics.isEmpty else { return }
 
-        // From when this screen appears, not from launch: the dwell on the
-        // menu is already spent by the time anyone gets here, and counting it
-        // twice was what pushed the typing to the end of the recording.
-        try? await Task.sleep(for: .milliseconds(800))
-        for letter in "Fischer" {
-            query.append(letter)
+        // The library arrives in more than one instalment, so the task this
+        // sits in runs again on each new count. Two runs typing into one field
+        // interleaved their letters and searched for "FisFcherischer", which
+        // matches nothing — the recording then sat on an empty list.
+        guard !hasTypedPreview else { return }
+        hasTypedPreview = true
+
+        // This screen is mounted behind the menu from launch, so typing on
+        // sight meant typing out of sight: the letters went in while the menu
+        // was still over them, and the recording cut from the menu straight to
+        // a game already opening. Wait until there is something to watch.
+        while navigator.showsMenu {
+            try? await Task.sleep(for: .milliseconds(50))
+        }
+        // A beat on the list before anything is typed, so the screen it is
+        // being typed into has been seen first.
+        try? await Task.sleep(for: .milliseconds(900))
+        // Assigned as a prefix rather than appended, so the field holds what
+        // this run intends however many runs there turn out to be.
+        let name = "Fischer"
+        for length in 1...name.count {
+            query = String(name.prefix(length))
             try? await Task.sleep(for: .milliseconds(190))
         }
         try? await Task.sleep(for: .seconds(1))

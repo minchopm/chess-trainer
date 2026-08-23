@@ -1,4 +1,5 @@
 #if DEBUG
+import ChessCore
 import ChessTraining
 import Foundation
 
@@ -39,6 +40,11 @@ enum ScreenshotScene: String {
     /// a famous game found and watched, then taken over and played on. It
     /// crosses four screens, which is the part worth showing moving.
     case demoWatch
+    /// The training preview: the title board turning, puzzles solved one after
+    /// another, then a game against the engine with every move's worth written
+    /// on the squares. Tactics first because that is the part people come for,
+    /// and the values last because they are the part nothing else does.
+    case demoTactics
 
     static let requested: ScreenshotScene? = {
         let arguments = ProcessInfo.processInfo.arguments
@@ -52,6 +58,7 @@ enum ScreenshotScene: String {
         switch self {
         case .menu, .playSetup, .playCoached, .playMistake, .playValues, .boardEngines, .demo: .play
         case .watchList, .demoWatch: .watch
+        case .demoTactics: .tactics
         }
     }
 
@@ -59,7 +66,7 @@ enum ScreenshotScene: String {
     var playMode: PlayTab.Mode? {
         switch self {
         case .boardEngines: .board
-        case .playSetup, .playCoached, .playMistake, .playValues, .demo: .play
+        case .playSetup, .playCoached, .playMistake, .playValues, .demo, .demoTactics: .play
         default: nil
         }
     }
@@ -69,16 +76,55 @@ enum ScreenshotScene: String {
     var dimension: BoardDimension? {
         switch self {
         case .playSetup, .playCoached, .playMistake, .boardEngines, .demo: .dimensional
-        case .playValues: .flat
+        case .playValues, .demoTactics: .flat
         case .menu, .watchList, .demoWatch: nil
         }
     }
 
     /// Whether the menu stays up. The title scene wants it, and the long
     /// preview opens on it before moving off.
-    var showsMenu: Bool { self == .menu || self == .demoWatch }
+    var showsMenu: Bool {
+        switch self {
+        case .menu, .demo, .demoWatch, .demoTactics: true
+        default: false
+        }
+    }
 
-    /// How long the preview lingers on the menu before going to work.
-    static let menuDwell: Duration = .seconds(3)
+    /// How long the preview lingers on the menu once the board is up.
+    ///
+    /// Counted from the board appearing rather than from launch — see the wait
+    /// in `RootView` — so this is time anybody watching actually gets, and the
+    /// same everywhere.
+    static let menuDwell: Duration = .milliseconds(2500)
+
+    /// Wait for the recorder to say it is ready.
+    ///
+    /// The tape cannot be told "start now" — it takes several seconds to begin
+    /// writing — so previews used to be recorded from before the launch and cut
+    /// afterwards, and finding the cut meant guessing where the app began from
+    /// the brightness of the picture. It guessed wrong often enough to be worth
+    /// removing: now the app waits, the recorder gets going over a menu that is
+    /// already up, and the file needs no front trim at all.
+    static func waitForRecorder() async {
+        let go = URL.documentsDirectory.appending(path: "preview-go")
+        for _ in 0..<600 where !FileManager.default.fileExists(atPath: go.path) {
+            try? await Task.sleep(for: .milliseconds(100))
+        }
+    }
+}
+
+/// A piece the preview wants picked up.
+///
+/// The board keeps its selection to itself, as it should — nothing outside it
+/// has any business choosing your piece. This is the one exception, it exists
+/// only in a debug build, and it is how a recording shows what a move is worth:
+/// the values are drawn against a selected piece, so something has to select
+/// one when there is nobody there to tap.
+@Observable
+@MainActor
+final class PreviewSelection {
+    static let shared = PreviewSelection()
+    var square: Square?
+    private init() {}
 }
 #endif

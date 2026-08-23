@@ -135,6 +135,13 @@ public struct BoardView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         }
         .aspectRatio(1, contentMode: .fit)
+        #if DEBUG
+        // A recorded preview picks a piece up, because the values are drawn
+        // against a selected one and there is nobody there to tap.
+        .onChange(of: PreviewSelection.shared.square, initial: true) { _, square in
+            if let square { selected = square }
+        }
+        #endif
     }
 
     // MARK: - Layers

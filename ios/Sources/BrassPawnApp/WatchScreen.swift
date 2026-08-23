@@ -47,7 +47,7 @@ struct WatchScreen: View {
             // About a third of the preview is the game replaying. Long enough
             // to read as watching, short enough that the crossing still lands
             // inside Apple's thirty seconds.
-            try? await Task.sleep(for: .seconds(9))
+            try? await Task.sleep(for: .seconds(7))
             carryOn(from: watchedPly)
         }
         #endif
