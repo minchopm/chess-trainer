@@ -100,18 +100,27 @@ public struct Appearance: Codable, Equatable, Sendable {
     public var showsCoordinates: Bool
     /// Which engine plays, grades and labels. See `EngineChoice`.
     public var engine: EngineChoice
+    /// Whether a solved puzzle stops to be congratulated.
+    ///
+    /// On by default, and turned off from the congratulation itself. Somebody
+    /// working through puzzles at speed is interrupted by a panel telling them
+    /// what they already know from the board, and the interruption costs more
+    /// the faster they are going. A puzzle that went wrong still stops: there
+    /// the panel is the only place the reason is written down.
+    public var showsCompletionSummary: Bool
 
     public init(
         typeface: AppTypeface = .system,
         pieces: PieceSet = .ebony,
-        board: BoardStyle = .wood,
+        board: BoardStyle = .lamplight,
         soundsOn: Bool = true,
         volume: Double = 0.7,
         dimension: BoardDimension = .flat,
         carving: Carving = .banded,
         lightTone: LightTone = .boxwood,
         showsCoordinates: Bool = true,
-        engine: EngineChoice = .stockfish
+        engine: EngineChoice = .stockfish,
+        showsCompletionSummary: Bool = true
     ) {
         self.typeface = typeface
         self.pieces = pieces
@@ -123,13 +132,14 @@ public struct Appearance: Codable, Equatable, Sendable {
         self.lightTone = lightTone
         self.showsCoordinates = showsCoordinates
         self.engine = engine
+        self.showsCompletionSummary = showsCompletionSummary
     }
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         typeface = try container.decodeIfPresent(AppTypeface.self, forKey: .typeface) ?? .system
         pieces = try container.decodeIfPresent(PieceSet.self, forKey: .pieces) ?? .ebony
-        board = try container.decodeIfPresent(BoardStyle.self, forKey: .board) ?? .wood
+        board = try container.decodeIfPresent(BoardStyle.self, forKey: .board) ?? .lamplight
         soundsOn = try container.decodeIfPresent(Bool.self, forKey: .soundsOn) ?? true
         volume = try container.decodeIfPresent(Double.self, forKey: .volume) ?? 0.7
         dimension = try container.decodeIfPresent(BoardDimension.self, forKey: .dimension) ?? .flat
@@ -140,6 +150,8 @@ public struct Appearance: Codable, Equatable, Sendable {
         // playing against is Stockfish's, and a silent change of opponent on
         // update is not a thing to do to somebody mid-way through a game.
         engine = try container.decodeIfPresent(EngineChoice.self, forKey: .engine) ?? .stockfish
+        showsCompletionSummary = try container.decodeIfPresent(
+            Bool.self, forKey: .showsCompletionSummary) ?? true
     }
 }
 
@@ -244,6 +256,13 @@ public enum PieceSet: String, Codable, CaseIterable, Identifiable, Sendable {
 public enum BoardStyle: String, Codable, CaseIterable, Identifiable, Sendable {
     /// Photographed maple and walnut.
     case wood
+    /// The walnut as the lamp sees it.
+    ///
+    /// The round board is lit, and light takes the colour out of wood: beside
+    /// it the flat walnut reads as orange. These are the numbers measured off
+    /// the lit board itself, so the two dimensions are the same board seen two
+    /// ways rather than two different boards.
+    case lamplight
     case amber, forest, ocean, ivory, rose, sand, slate
 
     public var id: String { rawValue }
@@ -251,6 +270,7 @@ public enum BoardStyle: String, Codable, CaseIterable, Identifiable, Sendable {
     public var name: String {
         switch self {
         case .wood: L.t("appearance.board.wood", "Walnut")
+        case .lamplight: L.t("appearance.board.lamplight", "Lamplight")
         case .amber: L.t("appearance.board.classic", "Amber")
         case .forest: L.t("appearance.board.forest", "Forest")
         case .ocean: L.t("appearance.board.ocean", "Ocean")
@@ -271,6 +291,7 @@ public enum BoardStyle: String, Codable, CaseIterable, Identifiable, Sendable {
     public var squares: (light: (Double, Double, Double), dark: (Double, Double, Double)) {
         switch self {
         case .wood: ((0.796, 0.608, 0.400), (0.424, 0.263, 0.173))
+        case .lamplight: ((0.878, 0.733, 0.557), (0.502, 0.408, 0.302))
         case .amber: ((0.945, 0.918, 0.859), (0.706, 0.596, 0.455))
         case .forest: ((0.922, 0.925, 0.816), (0.545, 0.663, 0.435))
         case .ocean: ((0.871, 0.906, 0.925), (0.573, 0.694, 0.769))

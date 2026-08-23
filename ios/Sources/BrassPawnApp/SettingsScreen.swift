@@ -74,6 +74,7 @@ struct SettingsScreen: View {
                         section(L.t("settings.lightSide", "Light side")) { LightToneGallery() }
                     }
                     section(L.t("settings.coordinates", "Coordinates")) { CoordinatesSwitch() }
+                    section(L.t("settings.training", "Training")) { SummarySwitch() }
                     section(L.t("settings.font", "Application font")) { TypefaceChoice() }
                 }
                 .padding(16)
@@ -537,6 +538,27 @@ private struct EnginePicker: View {
                 .appFont(size: 11)
                 .foregroundStyle(Theatre.ivoryFaint)
                 .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+}
+
+/// Whether a solved puzzle stops to be congratulated.
+///
+/// Also offered on the congratulation itself, which is where most people will
+/// turn it off. It is repeated here because a setting changed from a panel
+/// that then stops appearing is a setting somebody cannot find again.
+private struct SummarySwitch: View {
+    @Environment(AppModel.self) private var app
+
+    var body: some View {
+        Card {
+            BrassToggle(
+                L.t("settings.showCompletionSummary", "Congratulate a solved puzzle"),
+                isOn: Binding(
+                    get: { app.progress.appearance.showsCompletionSummary },
+                    set: { on in app.update { $0.appearance.showsCompletionSummary = on } }
+                )
+            )
         }
     }
 }

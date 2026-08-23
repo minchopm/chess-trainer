@@ -38,6 +38,13 @@ struct CompletionOverlay: View {
     let onRetry: (() -> Void)?
     let replayTitle: String?
     let onReplay: (() -> Void)?
+    /// Offered only where the panel is worth skipping.
+    ///
+    /// A solved puzzle has nothing in here the board did not already say, so
+    /// somebody working quickly can turn it off from the panel itself rather
+    /// than hunting for it in the settings. A puzzle that went wrong keeps the
+    /// panel: that one is carrying the reason.
+    let keepShowing: Binding<Bool>?
 
     @State private var hasAppeared = false
 
@@ -47,7 +54,8 @@ struct CompletionOverlay: View {
         onPrimary: @escaping () -> Void,
         onRetry: (() -> Void)? = nil,
         replayTitle: String? = nil,
-        onReplay: (() -> Void)? = nil
+        onReplay: (() -> Void)? = nil,
+        keepShowing: Binding<Bool>? = nil
     ) {
         self.result = result
         self.primaryTitle = primaryTitle
@@ -55,6 +63,7 @@ struct CompletionOverlay: View {
         self.onRetry = onRetry
         self.replayTitle = replayTitle
         self.onReplay = onReplay
+        self.keepShowing = keepShowing
     }
 
     var body: some View {
@@ -98,6 +107,24 @@ struct CompletionOverlay: View {
                         .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(PillButtonStyle(emphasis: .ghost, usesBodySize: true))
+                }
+
+                if let keepShowing {
+                    Button {
+                        keepShowing.wrappedValue.toggle()
+                    } label: {
+                        HStack(spacing: 9) {
+                            BrassIcon(keepShowing.wrappedValue ? "square" : "checkmark.square.fill",
+                                      size: 18)
+                                .foregroundStyle(keepShowing.wrappedValue
+                                                 ? Theatre.ivoryDim : Theatre.brass)
+                            Text(L.t("common.dontShowAgain", "Do not show this again"))
+                                .appFont(.subheadline)
+                                .foregroundStyle(Theatre.ivoryDim)
+                            Spacer(minLength: 0)
+                        }
+                    }
+                    .buttonStyle(.plain)
                 }
 
                 HStack(spacing: 10) {

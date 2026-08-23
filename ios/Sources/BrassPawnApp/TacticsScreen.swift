@@ -48,7 +48,15 @@ struct TacticsScreen: View {
                         onPrimary: { next() },
                         onRetry: { model.retry() },
                         replayTitle: L.t("tactics.watchSolution", "Watch solution"),
-                        onReplay: { showsSolutionReplay = true }
+                        onReplay: { showsSolutionReplay = true },
+                        keepShowing: completion.verdict == .success
+                            ? Binding(
+                                get: { app.progress.appearance.showsCompletionSummary },
+                                set: { on in
+                                    app.update { $0.appearance.showsCompletionSummary = on }
+                                }
+                            )
+                            : nil
                     )
                     .presentationBackground(.clear)
                     .interactiveDismissDisabled()
@@ -91,6 +99,14 @@ struct TacticsScreen: View {
             }
         } controls: {
             controls
+        }
+        .task(id: model.completion) {
+            // Turned off, and solved: nothing stops, so something has to carry
+            // on. Long enough to see the last move land on the board.
+            guard skipsSummary else { return }
+            try? await Task.sleep(for: .milliseconds(900))
+            guard skipsSummary else { return }
+            next()
         }
         .task(id: app.library.puzzles.count) {
             if model.puzzle == nil { next() }
@@ -184,9 +200,20 @@ struct TacticsScreen: View {
 
     private var completionIsPresented: Binding<Bool> {
         Binding(
-            get: { model.completion != nil },
+            get: { model.completion != nil && !skipsSummary },
             set: { _ in }
         )
+    }
+
+    /// Whether this particular ending is one to pass over without stopping.
+    ///
+    /// Only a solved puzzle, and only if the panel has been turned off. A
+    /// puzzle that went wrong stops however this is set, because the panel is
+    /// where the reason is written and skipping it would leave somebody with a
+    /// board that simply refused their move.
+    private var skipsSummary: Bool {
+        !app.progress.appearance.showsCompletionSummary
+            && model.completion?.verdict == .success
     }
 
     private func handleMove(from: Square, to: Square, promotion: PieceKind?) {

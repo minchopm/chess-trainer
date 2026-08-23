@@ -119,6 +119,13 @@
   ]
  },
  {
+  "key": "appearance.board.lamplight",
+  "english": "Lamplight",
+  "files": [
+   "Appearance.swift"
+  ]
+ },
+ {
   "key": "appearance.board.ocean",
   "english": "Ocean",
   "files": [
@@ -662,6 +669,13 @@
   "english": "The data did not make it into the app bundle. Check that data/%@ is listed in the Xcode target's resources.",
   "files": [
    "Components.swift"
+  ]
+ },
+ {
+  "key": "common.dontShowAgain",
+  "english": "Do not show this again",
+  "files": [
+   "CompletionOverlay.swift"
   ]
  },
  {
@@ -2667,6 +2681,13 @@
   ]
  },
  {
+  "key": "settings.showCompletionSummary",
+  "english": "Congratulate a solved puzzle",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
   "key": "settings.showFilesAndRanks",
   "english": "Show files and ranks",
   "files": [
@@ -2704,6 +2725,13 @@
  {
   "key": "settings.title",
   "english": "Profile",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.training",
+  "english": "Training",
   "files": [
    "SettingsScreen.swift"
   ]

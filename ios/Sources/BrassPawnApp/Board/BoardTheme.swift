@@ -56,7 +56,7 @@ public struct BoardTheme: Sendable {
         // "last move" on maple disappears on the green board, and the blue
         // that reads as "selected" on slate is invisible on ocean.
         switch style {
-        case .wood, .amber, .sand:
+        case .wood, .lamplight, .amber, .sand:
             lastMove = Color(red: 1.0, green: 0.839, blue: 0.361).opacity(0.5)
             selection = Color(red: 0.20, green: 0.48, blue: 0.85).opacity(0.42)
         case .forest:

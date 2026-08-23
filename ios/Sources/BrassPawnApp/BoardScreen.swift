@@ -476,6 +476,13 @@ struct BoardScreen: View {
             model.load("1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6")
             model.setSeat(.engine(.stockfish), for: .white)
             model.setSeat(.engine(.reckless), for: .black)
+            // Said here rather than left to the play screen, which does not
+            // own this one: the free board is its own mode, so the play
+            // screen's signal only ever arrived by accident — and did not, for
+            // eighteen of the twenty-nine languages. Immediately, too, because
+            // two engines with a board between them are thinking almost all the
+            // time, and "Thinking…" is not the picture.
+            ScreenshotScene.markReady()
         }
         #endif
         // Only a finished game is kept. This board spends most of its life

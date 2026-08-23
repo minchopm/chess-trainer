@@ -119,6 +119,11 @@ public struct RootView: View {
         for _ in 0..<200 where !BoardSceneDebug.titleBoardHasAppeared {
             try? await Task.sleep(for: .milliseconds(50))
         }
+        // Said before waiting, not after: this is what the recorder is waiting
+        // for. Rolling the tape on a timer instead meant the front of the file
+        // held however long that particular cold launch had taken, which was
+        // four seconds one run and eleven the next.
+        ScreenshotScene.markReady()
         await ScreenshotScene.waitForRecorder()
         try? await Task.sleep(for: ScreenshotScene.menuDwell)
         selection = scene.tab
