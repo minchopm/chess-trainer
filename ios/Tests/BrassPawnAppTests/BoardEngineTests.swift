@@ -35,6 +35,19 @@ private actor StubEngine: Engine {
     /// Slept in slices so `stop` can actually cut it short, the way a real
     /// search does. A stub that ignored `stop` would let the test pass while
     /// the app still waited out every abandoned budget.
+    /// Wait until a search is actually under way.
+    ///
+    /// A test that wants to interrupt a search has to know one has started. The
+    /// alternative — sleeping for a while and hoping — is a race against the
+    /// thing being tested, and it loses on a loaded machine: the sleep overruns
+    /// the whole search, the interruption arrives after it finished, and the
+    /// test fails for a reason that has nothing to do with the code.
+    func waitForSearch(atLeast wanted: Int) async {
+        while searches < wanted {
+            try? await Task.sleep(for: .milliseconds(2))
+        }
+    }
+
     func chooseMove(fen: String, elo: Int?, depth: Int, movetimeMs: Int) async throws -> String? {
         searches += 1
         stopped = false
@@ -76,7 +89,9 @@ struct BoardEngineTests {
     @Test("A seat changing mid-search does not strand the board")
     func seatChangeMidSearchDoesNotStall() async {
         let model = makeModel()
-        let engine = StubEngine(delayMs: 60)
+        // Long enough that the search is still running when the seats change,
+        // even on a machine with nothing to spare.
+        let engine = StubEngine(delayMs: 2000)
         model.setSeat(.engine(.stockfish), for: .white)
 
         async let running: Void = model.runEngines { _ in engine }
@@ -84,7 +99,7 @@ struct BoardEngineTests {
         // While the first search is in flight, hand Black over and take it back.
         // Two changes, so the answer being computed is stale by the time it
         // lands — but White is still an engine and still owes a move.
-        try? await Task.sleep(for: .milliseconds(20))
+        await engine.waitForSearch(atLeast: 1)
         model.setSeat(.engine(.stockfish), for: .black)
         model.setSeat(.you, for: .black)
 
@@ -104,7 +119,7 @@ struct BoardEngineTests {
         model.setSeat(.engine(.stockfish), for: .white)
 
         async let running: Void = model.runEngines { _ in engine }
-        try? await Task.sleep(for: .milliseconds(40))
+        await engine.waitForSearch(atLeast: 1)
         model.setSeat(.you, for: .white)
         await running
 
@@ -119,7 +134,7 @@ struct BoardEngineTests {
         model.setSeat(.engine(.stockfish), for: .black)
 
         async let running: Void = model.runEngines { _ in engine }
-        try? await Task.sleep(for: .milliseconds(40))
+        await engine.waitForSearch(atLeast: 1)
         model.stepBack()
         await running
 
@@ -132,11 +147,13 @@ struct BoardEngineTests {
     func steppingMidSearchDropsTheMove() async {
         let model = makeModel()
         #expect(model.load("1. e4 e5 2. Nf3"))
-        let engine = StubEngine(delayMs: 60)
+        // Long enough to still be searching when the step lands, whatever else
+        // the machine is doing.
+        let engine = StubEngine(delayMs: 2000)
         model.setSeat(.engine(.stockfish), for: .black)
 
         async let running: Void = model.runEngines { _ in engine }
-        try? await Task.sleep(for: .milliseconds(20))
+        await engine.waitForSearch(atLeast: 1)
         model.stepBack()
         await running
 
