@@ -1,0 +1,104 @@
+<bp-page-head
+  slug="Act VI · Watch"
+  title="Nine hundred games worth watching"
+  lede="Not a database. A library — filtered hard, so that opening it at random is a good idea rather than a gamble."
+  meta="Every game decisive · two named players · short or famous"
+/>
+
+<div class="page">
+  <section class="premise" ctReveal>
+    <p class="lede measure">
+      There are databases with ten million games in them, free, a search away. Brass Pawn does not
+      try to be one, and the reason is that a database is a place you go with a question. A library
+      is a place you go without one.
+    </p>
+    <p class="measure dim">
+      Nine hundred is small enough that somebody could get through it, and every one of them earned
+      its place against three rules.
+    </p>
+  </section>
+
+  <section class="rules">
+    <ol>
+      @for (item of rules; track item.rule; let i = $index) {
+        <li ctReveal="{{ i * 70 }}">
+          <p class="mono index">{{ i + 1 }}</p>
+          <h2>{{ item.rule }}</h2>
+          <p class="dim">{{ item.why }}</p>
+        </li>
+      }
+    </ol>
+  </section>
+
+  <section class="takeover" ctReveal>
+    <p class="slug">The part that is not watching</p>
+    <h2>The move you disagree with is the whole point.</h2>
+    <div class="takeover__cols">
+      <div>
+        <p>
+          Watching a strong game from beginning to end is pleasant and teaches less than people
+          hope. What teaches is the moment — and there is always one — where you look at the board
+          and think <em>I would have taken there</em>, and then the player you are watching does
+          something else and wins anyway.
+        </p>
+        <p>
+          At that moment you can stop being a spectator. Take the position over and carry on against
+          the engine from exactly the square where you disagreed. Play your move. Find out.
+        </p>
+        <p class="faint">
+          Usually you find out that your move was fine and the game was still lost, which is its own
+          lesson: the mistake was three moves earlier and you walked past it.
+        </p>
+      </div>
+      <aside class="how" ctReveal="120">
+        <h3>How it works</h3>
+        <ul>
+          <li>Search by player, by event or by year.</li>
+          <li>Order by newest, by shortest, or by the ones you opened last.</li>
+          <li>Step through move by move, forwards and back, at your own pace.</li>
+          <li>Save a game to come back to it; the app remembers how far you got.</li>
+          <li>
+            <strong>Play on from here</strong> at any position — the engine takes the other side and
+            the coach starts grading, exactly as in a normal game.
+          </li>
+        </ul>
+        <p class="mono faint">Free and unlimited. Watch is not part of what Pro unlocks.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="provenance" ctReveal>
+    <p class="slug">Where they come from</p>
+    <h2>Game scores are matters of record. Annotations are not.</h2>
+    <p class="measure">
+      The scores come from published collections of the players’ own games. A record of which moves
+      were played in a public tournament game is a fact, and facts are not copyrightable — which is
+      why a library like this can exist at all. What <em>is</em> copyrightable is somebody’s
+      commentary on those moves, so none is included: no annotations, no borrowed analysis, no
+      exclamation marks inherited from a book.
+    </p>
+    <p class="measure dim">
+      What the app adds instead is its own — the same coach that grades your moves will grade the
+      ones on screen if you ask it to, from the same engine, with the same win-probability scale as
+      everywhere else. It is not a grandmaster’s opinion of a grandmaster’s move. It is an
+      <a routerLink="/engine">engine’s</a>, and it says so.
+    </p>
+  </section>
+
+  <section class="onward" ctReveal>
+    <div class="onward__grid">
+      <div>
+        <h2>Judging the players is a different mode.</h2>
+        <p class="dim">
+          Watch is for games worth seeing. <a routerLink="/training">Guess the Elo</a> is for
+          ordinary rated games where the question is not “what happened” but “how strong were these
+          two” — sixteen hundred of them, both players within a hundred and fifty points of each
+          other.
+        </p>
+      </div>
+      <p class="more mono">
+        <a routerLink="/training">All eight modes →</a>
+      </p>
+    </div>
+  </section>
+</div>

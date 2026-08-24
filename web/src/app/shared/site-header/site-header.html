@@ -1,0 +1,101 @@
+<!-- Not `href="#main"`: that resolves against `<base href="/">`, so on any
+     page but the home page the skip link leaves the page it is skipping
+     within. routerLink writes a real href into the prerendered HTML, so it
+     still works with no script running. -->
+<a class="skip" [routerLink]="[]" fragment="main">Skip to the words</a>
+
+<div class="bar page">
+  <a class="mark" routerLink="/" (click)="close()" aria-label="Brass Pawn — home">
+    <!-- The same pawn as the favicon, at the same proportions. -->
+    <svg viewBox="0 0 32 32" aria-hidden="true" width="22" height="22" fill="currentColor">
+      <circle cx="16" cy="9" r="4.5" />
+      <path d="M11.5 13.3h9l-1.1 2.3h-6.8z" />
+      <path
+        d="M12.5 16.2h7c0 3-1 4.8-1.9 6.2-.4.7-.7 1.1-.7 1.4h-1.8c0-.3-.3-.7-.7-1.4-.9-1.4-1.9-3.2-1.9-6.2z"
+      />
+      <path
+        d="M9.6 23.4h12.8c.7 0 1.3.6 1.3 1.3v1.5c0 .7-.6 1.3-1.3 1.3H9.6c-.7 0-1.3-.6-1.3-1.3v-1.5c0-.7.6-1.3 1.3-1.3z"
+      />
+    </svg>
+    <span class="mark__word">Brass&nbsp;Pawn</span>
+  </a>
+
+  <!-- The branch is outside the loop, not inside it. Inside, each link becomes
+       a two-branch block whose nodes hydration has to match one at a time, and
+       it gets it wrong: the browser ends up with the server's links and its own
+       both in the bar. Outside, the whole list is one shape or the other, and
+       which one it is was decided from the address before the first frame. -->
+  @if (inPage()) {
+    <nav class="nav" aria-label="Primary">
+      @for (link of links(); track link.path) {
+        <!-- Sections of the page already open. `[routerLink]="[]"` keeps the
+             address and sets the fragment; a plain href would resolve against
+             the base and leave the language behind. -->
+        <a [routerLink]="[]" [fragment]="link.path" (click)="close()">{{ link.label }}</a>
+      }
+    </nav>
+  } @else {
+    <nav class="nav" aria-label="Primary">
+      @for (link of links(); track link.path) {
+        <a [routerLink]="link.path" routerLinkActive="is-active" (click)="close()">{{
+          link.label
+        }}</a>
+      }
+    </nav>
+  }
+
+  <bp-language-picker class="lang" />
+
+  <!-- A link only once there is a listing to link to. Until then it is a
+       label: an anchor pointing at an App Store id that does not exist yet is
+       a promise the store answers with a 404. -->
+  @if (site.appStoreLive) {
+    <a class="cta" [href]="site.appStore" rel="noopener">
+      {{ cta() }}
+      <svg viewBox="0 0 16 16" width="11" height="11" aria-hidden="true">
+        <path d="M4 12 12 4M6 4h6v6" stroke="currentColor" stroke-width="1.4" fill="none" />
+      </svg>
+    </a>
+  } @else {
+    <span class="cta cta--waiting">{{ cta() }}</span>
+  }
+
+  <button
+    class="burger"
+    type="button"
+    (click)="toggle()"
+    [attr.aria-expanded]="open()"
+    aria-controls="site-menu"
+  >
+    <span class="visually-hidden">{{ open() ? 'Close menu' : 'Open menu' }}</span>
+    <span class="burger__bars" aria-hidden="true"><i></i><i></i></span>
+  </button>
+</div>
+
+<div class="sheet" id="site-menu" [attr.inert]="open() ? null : ''">
+  @if (inPage()) {
+    <nav aria-label="Primary, small screens">
+      @for (link of links(); track link.path) {
+        <a [routerLink]="[]" [fragment]="link.path" (click)="close()">{{ link.label }}</a>
+      }
+      @if (site.appStoreLive) {
+        <a [href]="site.appStore" rel="noopener" (click)="close()">{{ cta() }}</a>
+      }
+    </nav>
+  } @else {
+    <nav aria-label="Primary, small screens">
+      @for (link of links(); track link.path) {
+        <a [routerLink]="link.path" (click)="close()">{{ link.label }}</a>
+      }
+      <a routerLink="/ratings" (click)="close()">Ratings</a>
+      <a routerLink="/support" (click)="close()">Support</a>
+      <a routerLink="/terms" (click)="close()">Terms</a>
+      <a routerLink="/licences" (click)="close()">Licences</a>
+      @if (site.appStoreLive) {
+        <a [href]="site.appStore" rel="noopener" (click)="close()">{{ cta() }}</a>
+      }
+    </nav>
+  }
+
+  <bp-language-picker class="lang lang--sheet" />
+</div>

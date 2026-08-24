@@ -1,0 +1,126 @@
+<bp-page-head
+  slug="Ratings"
+  title="What a rating actually measures"
+  lede="Four numbers claim to describe how good you are at chess, and none of them converts into any of the others. This page says what each one is measuring, why the puzzle number is always the flattering one, and what Brass Pawn’s own ratings do and do not claim."
+  meta="Last reviewed 19 August 2026"
+/>
+
+<div class="page">
+  <section class="claim" ctReveal>
+    <p class="pull">
+      A rating is not a measurement of you. It is a measurement of
+      <em>you, against a particular pool, under a particular set of conditions</em> — and change any
+      of those and the number changes with it.
+    </p>
+    <div class="claim__body">
+      <p>
+        Every rating system in chess works the same way underneath: it predicts the result of your
+        next game from the difference between two numbers, then moves both numbers by however wrong
+        it was. What differs between systems is not the arithmetic — it is who is in the pool, how
+        fast the games are, and how much evidence the number is based on.
+      </p>
+      <p>
+        That is why the same player is 1500 in one place and 1900 in another without having got
+        better or worse in between. Both numbers are correct. They are answers to different
+        questions.
+      </p>
+    </div>
+  </section>
+
+  <section class="why">
+    <header class="section-head" ctReveal>
+      <p class="slug">The one that flatters</p>
+      <h2>Puzzle ratings run high, and it is not an accident.</h2>
+    </header>
+
+    <div class="why__grid">
+      <article ctReveal>
+        <h3>A puzzle tells you there is something there</h3>
+        <p>
+          The single most valuable piece of information in chess is “this position contains a win”,
+          and a puzzle gives it away before you have looked at anything. In a game nobody tells you.
+          Most of the difficulty of playing well is deciding whether this is a position that rewards
+          two minutes of calculation, and a puzzle has already answered that.
+        </p>
+      </article>
+      <article ctReveal="70">
+        <h3>And that it is findable now</h3>
+        <p>
+          A puzzle has a solution that works today, in this position, with the pieces where they
+          stand. A game asks a harder question — what improves my position — which has no verifiable
+          answer and no immediate feedback.
+        </p>
+      </article>
+      <article ctReveal="140">
+        <h3>So the gap is structural</h3>
+        <p>
+          Expect a puzzle rating several hundred points above your rating in games, on any platform,
+          at any strength. That is not you being bad at converting; it is the two numbers measuring
+          different things. Neither is the fake one.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="honest">
+    <div class="honest__inner" ctReveal>
+      <p class="slug">The table this page does not have</p>
+      <h2>There is no conversion between Lichess, chess.com and FIDE.</h2>
+      <p>
+        You will find tables claiming there is. They disagree with each other, they disagree with
+        themselves at different rating bands, and they are built from small samples of players who
+        happen to have accounts in two places — which is not a random sample of anybody.
+      </p>
+      <p>
+        What can honestly be said is directional: online ratings generally read higher than FIDE
+        ratings, and Lichess generally reads higher than chess.com. The size of the gap varies by
+        hundreds of points depending on where you are on the scale and what time control you play,
+        so turning that direction into a number produces a wrong answer with a confident face. If
+        you want to know your FIDE rating, the only way is to play FIDE-rated games.
+      </p>
+    </div>
+  </section>
+
+  <section class="ladder">
+    <header class="section-head" ctReveal>
+      <p class="slug">The bundled library</p>
+      <h2>What each band of the puzzle set is asking of you.</h2>
+      <p class="lede measure">
+        The {{ library.tactics.toLocaleString('en-US') }} puzzles run from
+        {{ library.ratingFloor }} to {{ library.ratingCeiling }}. Most of them carry ratings
+        calibrated against millions of real solving attempts, so the difficulty ordering is earned
+        rather than estimated.
+      </p>
+    </header>
+
+    <ol class="bands">
+      @for (band of bands; track band.range; let i = $index) {
+        <li [ctReveal]="i * 50">
+          <p class="bands__range mono">{{ band.range }}</p>
+          <h3>{{ band.label }}</h3>
+          <p class="bands__note">{{ band.note }}</p>
+        </li>
+      }
+    </ol>
+  </section>
+
+  <section class="questions">
+    <header class="section-head" ctReveal>
+      <p class="slug">Asked often</p>
+      <h2>Four questions with honest answers.</h2>
+    </header>
+
+    <dl class="qa">
+      @for (item of questions; track item.q; let i = $index) {
+        <div [ctReveal]="i * 50">
+          <dt>{{ item.q }}</dt>
+          <dd>{{ item.a }}</dd>
+        </div>
+      }
+    </dl>
+
+    <p class="more" ctReveal>
+      <a routerLink="/tactics">Next: the twenty tactical motifs →</a>
+    </p>
+  </section>
+</div>

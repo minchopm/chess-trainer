@@ -1,0 +1,188 @@
+<bp-page-head
+  slug="What it costs"
+  title="Playing is free. The training is sold."
+  lede="Chess against the engine and chess against a person, unlimited, with no advertising anywhere in the app — that is free and it stays free. What is sold is the library, the drills, the exercises and the run."
+/>
+
+<div class="page">
+  <section class="plans-section">
+    <div class="plans">
+      <article class="plan" ctReveal>
+        <h2>Free</h2>
+        <p class="plan__price">$0</p>
+        <p class="plan__note">No account. Nothing to sign up for.</p>
+        <ul>
+          <li>Unlimited play against the engine, 1400 to full strength</li>
+          <li>Unlimited online games over Game Center</li>
+          <li>Move-by-move coaching in every game you play</li>
+          <li>Five tactics puzzles a day</li>
+          <li>One Rush run a day</li>
+          <li>Three each: positional, endgame, Guess the Elo</li>
+          <li>Ratings, streaks and spaced repetition, in full</li>
+        </ul>
+      </article>
+
+      <article class="plan plan--lead" ctReveal="90">
+        <p class="plan__flag mono">Brass Pawn Pro</p>
+        <h2>Monthly</h2>
+        <p class="plan__price">{{ pricing.monthly }}<span>per month</span></p>
+        <p class="plan__note">Cancel in your Apple Account settings, any time.</p>
+        <ul>
+          <li>Every daily limit removed</li>
+          <li>All {{ library.tactics.toLocaleString('en-US') }} tactics puzzles</li>
+          <li>All {{ library.positional }} positional exercises</li>
+          <li>All {{ library.endgames }} endgame drills</li>
+          <li>All {{ library.games.toLocaleString('en-US') }} games to judge</li>
+          <li>Unlimited Rush</li>
+          <li>Everything in Free, unchanged</li>
+        </ul>
+      </article>
+
+      <article class="plan" ctReveal="180">
+        <h2>One-off unlock</h2>
+        <p class="plan__price">{{ pricing.lifetime }}<span>once</span></p>
+        <p class="plan__note">A non-consumable purchase. It does not renew.</p>
+        <ul>
+          <li>Exactly the same as Pro monthly</li>
+          <li>No renewal, no expiry, no reminder emails</li>
+          <li>Restores on your other devices</li>
+          <li>For people who would rather decide once</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="fineprint mono faint" ctReveal>{{ pricing.currencyNote }}</p>
+  </section>
+
+  <section class="table-section">
+    <header class="section-head" ctReveal>
+      <p class="slug">The whole allowance</p>
+      <h2>What the free tier actually gives you.</h2>
+    </header>
+
+    <div class="table-scroll" ctReveal>
+      <table class="ledger allowance">
+        <thead>
+          <tr>
+            <th scope="col">Activity</th>
+            <th scope="col">Free</th>
+            <th scope="col">Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of allowance; track row.activity) {
+            <tr>
+              <td>{{ row.activity }}</td>
+              <td class="mono">{{ row.free }}</td>
+              <td class="mono is-pro">{{ row.pro }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="faint mono" ctReveal>
+      Daily allowances reset at nine in the morning, local time — not midnight, so an evening
+      session is not cut in half by a date change.
+    </p>
+  </section>
+
+  <section class="why">
+    <header class="section-head" ctReveal>
+      <p class="slug">Why it is shaped this way</p>
+      <h2>Three decisions, and the reason for each.</h2>
+    </header>
+
+    <div class="reasons">
+      <article ctReveal>
+        <h3>Metered, not locked</h3>
+        <p>
+          Nobody pays for a trainer they have not used, and a mode that refuses to open teaches
+          nothing about what is behind it. So every mode opens, every day, and you get far enough in
+          to feel the loop and watch the rating move.
+        </p>
+        <p>
+          The paywall is never shown on launch. When the day’s allowance is spent the screen says
+          so, and only a deliberate tap opens the purchase sheet.
+        </p>
+      </article>
+
+      <article ctReveal="80">
+        <h3>Two prices, not three</h3>
+        <p>
+          There is no annual plan in between, because a third price is a third decision to make at
+          the exact moment somebody wants to solve a puzzle. Monthly if you are not sure. One-off if
+          you are.
+        </p>
+      </article>
+
+      <article ctReveal="160">
+        <h3>Playing is never sold</h3>
+        <p>
+          Chess against the engine and chess against a person cost nothing to run and are the reason
+          the app exists. Selling them would make this a chess app with a toll booth rather than a
+          trainer.
+        </p>
+        <p>
+          And there is no advertising — partly taste, partly licence. The app links two copyleft
+          engines, Stockfish under the GPLv3 and Reckless under the AGPLv3, and a proprietary ad SDK
+          in the same binary would make the whole thing undistributable.
+          <a routerLink="/licences">The licence page explains it properly.</a>
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="answers">
+    <header class="section-head" ctReveal>
+      <p class="slug">Buying, cancelling, refunds</p>
+      <h2>The awkward questions, answered here rather than in an email.</h2>
+    </header>
+
+    <dl class="qa">
+      <div ctReveal>
+        <dt>How do I cancel?</dt>
+        <dd>
+          <em>Settings → your name → Subscriptions → Brass Pawn</em>. We cannot cancel it for you,
+          because the subscription is between you and Apple and we never had it. Cancelling stops
+          future renewals and does not shorten the period you have paid for.
+        </dd>
+      </div>
+      <div ctReveal="60">
+        <dt>How do I get a refund?</dt>
+        <dd>
+          Through Apple, at
+          <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>. We
+          cannot issue refunds for App Store purchases. If something is broken,
+          <a [href]="'mailto:' + site.contactEmail">tell us</a> — we would rather fix it.
+        </dd>
+      </div>
+      <div ctReveal="120">
+        <dt>I bought the unlock and got a new phone.</dt>
+        <dd>
+          Sign in with the same Apple Account and tap <em>Restore purchases</em> on the paywall
+          screen. The app asks StoreKit what you own; nothing is stored on a server of ours because
+          there is no server of ours.
+        </dd>
+      </div>
+      <div ctReveal="180">
+        <dt>Does Pro change my rating or unlock “better” puzzles?</dt>
+        <dd>
+          No. The rating system is identical and every puzzle in the library is reachable on a free
+          account — five a day at a time. Pro removes the counter, not a curtain.
+        </dd>
+      </div>
+      <div ctReveal="240">
+        <dt>Will the free allowance shrink later?</dt>
+        <dd>
+          It may change in either direction as the library grows. Unlimited play against the engine
+          and against a person will not become a paid feature; that is written into the
+          <a routerLink="/terms">Terms</a> rather than only promised here.
+        </dd>
+      </div>
+    </dl>
+
+    <p class="more" ctReveal>
+      <a routerLink="/support">More questions, and how to reach a human →</a>
+    </p>
+  </section>
+</div>

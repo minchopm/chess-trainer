@@ -1,0 +1,107 @@
+<div class="track" #track>
+  <div class="stage" [class.is-lit]="lit()">
+    <!--
+      Frame zero, as a picture. It is on screen for the second or so it takes to
+      fetch three.js and build the scene, and because it is rendered from that
+      same scene rather than painted by hand, the canvas fading in over it is a
+      dissolve between two nearly identical images instead of a reveal.
+    -->
+    <picture class="poster" aria-hidden="true">
+      <source type="image/avif" media="(min-aspect-ratio: 9/10)" srcset="/poster/hero-wide.avif" />
+      <source type="image/webp" media="(min-aspect-ratio: 9/10)" srcset="/poster/hero-wide.webp" />
+      <source type="image/avif" srcset="/poster/hero-tall.avif" />
+      <source type="image/webp" srcset="/poster/hero-tall.webp" />
+      <img src="/poster/hero-wide.webp" alt="" decoding="async" fetchpriority="high" />
+    </picture>
+
+    <canvas #canvas class="scene" [class.is-live]="rendering()" aria-hidden="true"></canvas>
+    <div class="plate" aria-hidden="true"></div>
+    <div class="grade" aria-hidden="true"></div>
+    <div class="bars" aria-hidden="true"><i></i><i></i></div>
+
+    @if (playing(); as game) {
+      <figure class="slate mono" [style.opacity]="1 - progress() * 1.6" aria-hidden="true">
+        <figcaption>Now playing</figcaption>
+        <p class="slate__players">{{ game.white }} &mdash; {{ game.black }}</p>
+        <p class="slate__where">{{ game.event }}, {{ game.year }} &middot; {{ game.result }}</p>
+      </figure>
+    }
+
+    <div class="cards">
+      <!-- I. The title -->
+      <figure
+        class="card card--title"
+        [style.opacity]="cards()[0].opacity"
+        [style.transform]="'translate3d(0,' + cards()[0].lift + 'px,0)'"
+      >
+        <p class="mono credit">Arte&nbsp;Soft presents</p>
+        <h1>
+          <span class="line">Brass</span>
+          <span class="line">Pawn</span>
+        </h1>
+        <p class="tagline">The training half of getting good.</p>
+        <p class="mono sub">
+          Tactics · Judgement · Endgames · Rush · Guess the Elo · Play · Online
+        </p>
+      </figure>
+
+      <!-- II. The engine -->
+      <figure
+        class="card card--third"
+        [style.opacity]="cards()[1].opacity"
+        [style.transform]="'translate3d(0,' + cards()[1].lift + 'px,0)'"
+      >
+        <p class="slug">Reel one — the engine</p>
+        <h2>Stockfish, compiled in, running on your phone.</h2>
+        <p class="lede">
+          Not a server that answers when it feels like it. The strongest chess program there is, on
+          the device, offline, at full strength — grading every move you make while the game is
+          still going.
+        </p>
+      </figure>
+
+      <!-- III. The library -->
+      <figure
+        class="card card--third"
+        [style.opacity]="cards()[2].opacity"
+        [style.transform]="'translate3d(0,' + cards()[2].lift + 'px,0)'"
+      >
+        <p class="slug">Reel two — the library</p>
+        <h2>Fourteen thousand positions that all have a point.</h2>
+        <p class="lede">
+          Every puzzle has exactly one answer and no branches. Every endgame label was checked
+          against a deep search rather than remembered. A trainer that teaches you something false
+          is worse than no trainer.
+        </p>
+      </figure>
+
+      <!-- IV. The invitation -->
+      <figure
+        class="card card--centre"
+        [style.opacity]="cards()[3].opacity"
+        [style.transform]="'translate3d(0,' + cards()[3].lift + 'px,0)'"
+      >
+        <p class="slug slug--centre">Now showing</p>
+        <h2 class="closing">Nothing leaves the phone.</h2>
+        <p class="lede">
+          No account, no analytics, no advertising, no server of ours anywhere in it.
+        </p>
+        <div class="actions">
+          <a class="button button--solid" [href]="site.appStore" rel="noopener">
+            Get it on the App&nbsp;Store
+          </a>
+          <a class="button" routerLink="/training">See what is inside</a>
+        </div>
+      </figure>
+    </div>
+
+    <div class="cue mono" [style.opacity]="1 - progress() * 6" aria-hidden="true">
+      <span>scroll</span>
+      <i></i>
+    </div>
+
+    <p class="reel mono" aria-hidden="true">
+      {{ (progress() * 100).toFixed(0).padStart(3, '0') }}
+    </p>
+  </div>
+</div>

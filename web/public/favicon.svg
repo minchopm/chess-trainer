@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!--
+    A drawn pawn rather than a shrunk photograph. At sixteen pixels the app
+    icon's render is a brown smudge; a silhouette with a round head and a wide
+    foot still reads as a pawn.
+  -->
+  <rect width="32" height="32" rx="7" fill="#07080c" />
+  <g fill="#d8a95c">
+    <circle cx="16" cy="9" r="4.5" />
+    <path d="M11.5 13.3h9l-1.1 2.3h-6.8z" />
+    <path d="M12.5 16.2h7c0 3-1 4.8-1.9 6.2-.4.7-.7 1.1-.7 1.4h-1.8c0-.3-.3-.7-.7-1.4-.9-1.4-1.9-3.2-1.9-6.2z" />
+    <path d="M9.6 23.4h12.8c.7 0 1.3.6 1.3 1.3v1.5c0 .7-.6 1.3-1.3 1.3H9.6c-.7 0-1.3-.6-1.3-1.3v-1.5c0-.7.6-1.3 1.3-1.3z" />
+  </g>
+</svg>

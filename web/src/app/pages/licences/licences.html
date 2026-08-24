@@ -1,0 +1,212 @@
+<bp-page-head
+  slug="Legal"
+  title="Licences & attribution"
+  lede="Brass Pawn is free software under the GNU Affero General Public License v3, and it carries that licence for a specific reason: it links two engines, one GPLv3 and one AGPLv3. This page names every component, its licence and its copyright holder, and tells you where the source is."
+  meta="Last reviewed 24 August 2026"
+/>
+
+<div class="page wrap">
+  <article class="prose">
+    <div class="summary">
+      <p>
+        <strong
+          >Brass Pawn is licensed under the GNU Affero General Public License, version 3.</strong
+        >
+        The complete corresponding source code is published at
+        <a [href]="site.repo" rel="noopener">{{ site.repo }}</a
+        >. You may use, study, modify and redistribute it under those terms.
+      </p>
+    </div>
+
+    <h2 id="why">Why AGPLv3</h2>
+    <p>
+      The app includes two engines. <strong>Stockfish</strong> is licensed under the GNU General
+      Public License version 3. <strong>Reckless</strong> is licensed under the GNU
+      <em>Affero</em> General Public License version 3. Both are copyleft: a work that includes
+      either and is distributed must be distributed under the same terms.
+    </p>
+    <p>
+      Both are compiled into and linked with the application, so both obligations apply at once.
+      Section 13 of the GPLv3 exists for exactly this case — it permits combining GPLv3 code with
+      AGPLv3 code — and it says the Affero requirement governs the combined work. So the whole
+      application carries AGPLv3. This is not a footnote we discovered late; it is the condition of
+      using engines this strong, and it is a fair one.
+    </p>
+    <p>
+      The <strong>Affero clause</strong> is the difference between the two licences: it extends the
+      obligation to publish source from distributing a program to letting people use it over a
+      network. It changes nothing about how this app behaves. Both engines run on your device, the
+      app makes no network requests, and there is no server of ours for anybody to interact with
+      remotely. The source is published either way.
+    </p>
+    <blockquote>
+      <p>Two things follow, and both are worth knowing before you buy anything.</p>
+      <p>
+        <strong>You get the source.</strong> Not a marketing gesture — a licence obligation, and
+        your right. The repository holds the iOS app, the Swift rules engine, the training logic,
+        the puzzle-mining pipeline and this website.
+      </p>
+      <p>
+        <strong>There will never be advertising in it.</strong> A proprietary advertising SDK
+        compiled into the same binary would make the combined work undistributable under either
+        licence. Selling the app is fine — copyleft has never forbidden charging — but bolting a
+        closed SDK onto it is not.
+      </p>
+    </blockquote>
+
+    <h2 id="stockfish">Stockfish</h2>
+    <ul>
+      <li>
+        Copyright © 2004–2026 The Stockfish developers (see the project’s <code>AUTHORS</code> file)
+      </li>
+      <li>
+        Licensed under the
+        <a href="https://www.gnu.org/licenses/gpl-3.0.html" rel="noopener"
+          >GNU General Public License version 3</a
+        >
+      </li>
+      <li>
+        Upstream:
+        <a href="https://github.com/official-stockfish/Stockfish" rel="noopener"
+          >github.com/official-stockfish/Stockfish</a
+        >
+      </li>
+      <li>
+        <strong>Modifications: none.</strong> The engine source is vendored unchanged. The only
+        added file is a small C interface over its public <code>Engine</code> class, written for
+        this project and licensed under GPLv3 along with the rest.
+      </li>
+    </ul>
+    <p>
+      The two NNUE evaluation files are produced by the Stockfish project and distributed under the
+      same licence. They are not committed to the repository; a script fetches the exact versions
+      the bundled engine expects.
+    </p>
+    <p>
+      Brass Pawn is <strong>not affiliated with or endorsed by the Stockfish project</strong>.
+      Stockfish is used under the terms of its licence, and it is named here — prominently, on its
+      own page — because that is what those terms and ordinary decency both ask for.
+    </p>
+
+    <h2 id="reckless">Reckless</h2>
+    <ul>
+      <li>Copyright © its authors (see the project’s repository)</li>
+      <li>
+        Licensed under the
+        <a href="https://www.gnu.org/licenses/agpl-3.0.html" rel="noopener"
+          >GNU Affero General Public License version 3</a
+        >
+      </li>
+      <li>
+        Upstream:
+        <a href="https://github.com/codedeliveryservice/Reckless" rel="noopener"
+          >github.com/codedeliveryservice/Reckless</a
+        >
+      </li>
+      <li>
+        <strong>Modifications: three, all listed.</strong> The engine source is otherwise vendored
+        unchanged. <code>src/ffi.rs</code> is a new file — a C interface over the engine, written
+        for this project, and needed because the crate exports nothing usable: every module in
+        <code>src/lib.rs</code> is private, so nothing outside it can reach the search.
+        <code>src/lib.rs</code> gains one line declaring that module, and
+        <code>Cargo.toml</code> gains <code>staticlib</code> to its crate types so it can be linked
+        into an application. All three are licensed under AGPLv3 along with the engine.
+      </li>
+    </ul>
+    <p>
+      Its evaluation network is compiled into the engine binary rather than fetched, so there is no
+      separate weights file and nothing to download.
+    </p>
+    <p>
+      Brass Pawn is <strong>not affiliated with or endorsed by the Reckless project</strong>. It is
+      used under the terms of its licence, and named here for the same reasons Stockfish is.
+    </p>
+
+    <h2 id="lichess">Lichess</h2>
+    <p>
+      Most of the bundled tactics puzzles come from the Lichess puzzle database, and the games
+      behind Guess the Elo come from the Lichess game archives. Both are released into the public
+      domain under <strong>CC0 1.0</strong>.
+    </p>
+    <p>
+      No attribution is required by that licence. It is given here because it is deserved: those
+      14,185 puzzles carry ratings calibrated against millions of real solving attempts, which is
+      something no amount of local computation could produce.
+    </p>
+    <p>
+      Brass Pawn is not affiliated with or endorsed by Lichess. The bundled games keep the two
+      players’ ratings and moves, and not their usernames.
+    </p>
+
+    <h2 id="components">Every component</h2>
+    <div class="table-scroll">
+      <table class="ledger">
+        <caption class="visually-hidden">
+          Third-party components and their licences
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Component</th>
+            <th scope="col">What it does</th>
+            <th scope="col">Licence</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of components; track item.name) {
+            <tr>
+              <td>
+                <a [href]="item.href" rel="noopener">{{ item.name }}</a>
+                <br />
+                <span class="mono faint">{{ item.holder }}</span>
+              </td>
+              <td>{{ item.what }}</td>
+              <td class="mono">{{ item.licence }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="source">Getting the source</h2>
+    <p>
+      The complete corresponding source for the version you are running is at
+      <a [href]="site.repo" rel="noopener">{{ site.repo }}</a
+      >, tagged by release. If you would rather have it another way — a tarball, a physical medium,
+      a copy of a specific tag — write to
+      <a [href]="'mailto:' + site.contactEmail">{{ site.contactEmail }}</a> and you will get it.
+      That offer is part of the licence, not a courtesy.
+    </p>
+
+    <h2 id="marks">Names and marks</h2>
+    <p>
+      “Brass Pawn”, the wordmark and the app icon are ours and are not covered by the AGPL. You may
+      redistribute modified versions of the software — that is the point of the licence — but not
+      under our name or marks in a way that suggests they came from us.
+    </p>
+    <p>
+      Apple, App Store, iPhone, iPad and Game Center are trademarks of Apple Inc. This app is not
+      affiliated with, sponsored by or endorsed by Apple.
+    </p>
+
+    <hr />
+
+    <p class="mono faint">
+      See also: <a routerLink="/privacy">Privacy Policy</a> ·
+      <a routerLink="/terms">Terms of Service</a> ·
+      <a routerLink="/engine">How the engine is used</a>
+    </p>
+  </article>
+
+  <nav class="contents" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li><a [routerLink]="[]" fragment="why">Why AGPLv3</a></li>
+      <li><a [routerLink]="[]" fragment="stockfish">Stockfish</a></li>
+      <li><a [routerLink]="[]" fragment="reckless">Reckless</a></li>
+      <li><a [routerLink]="[]" fragment="lichess">Lichess</a></li>
+      <li><a [routerLink]="[]" fragment="components">Every component</a></li>
+      <li><a [routerLink]="[]" fragment="source">Getting the source</a></li>
+      <li><a [routerLink]="[]" fragment="marks">Names and marks</a></li>
+    </ol>
+  </nav>
+</div>

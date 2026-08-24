@@ -1,0 +1,140 @@
+<section class="film" id="see">
+  <div class="page">
+    <p class="slug" ctReveal>{{ copy().ui.film }}</p>
+
+    <div class="stage" [class.is-ipad]="device() === 'ipad'">
+      <div class="frame" ctReveal="60">
+        <div
+          class="bezel"
+          [style.aspect-ratio]="frame().width + ' / ' + frame().height"
+          [class.is-live]="playing()"
+        >
+          <!-- The source is set in code rather than bound, and deliberately.
+               A binding is applied when the view is refreshed, which is not
+               reliably before the effect that has to call load() on it — and a
+               load() against an attribute that has not been written yet fetches
+               nothing and never retries. -->
+          <video
+            #player
+            [poster]="poster()"
+            [muted]="!narrated()"
+            [loop]="!narrated()"
+            playsinline
+            disablepictureinpicture
+            preload="none"
+            [attr.aria-label]="line()"
+            (canplay)="onCanPlay()"
+            (play)="onPlay()"
+            (pause)="onPause()"
+            (ended)="onEnded()"
+          ></video>
+        </div>
+      </div>
+
+      <div class="beside">
+        <!-- The narrator's own sentence, whether or not anybody presses play.
+             It is the best one-line description of the product that exists in
+             this language, and a visitor who never turns the sound on should
+             still get to read it. -->
+        <blockquote class="line" ctReveal="120">{{ line() }}</blockquote>
+
+        <div class="chapters" role="tablist" [attr.aria-label]="copy().ui.film" ctReveal="160">
+          @for (item of clips; track item) {
+            <button
+              type="button"
+              role="tab"
+              [attr.aria-selected]="clip() === item"
+              [class.is-on]="clip() === item"
+              (click)="choose(item)"
+            >
+              {{ names()[item] }}
+            </button>
+          }
+        </div>
+
+        <div class="controls" ctReveal="200">
+          <button
+            type="button"
+            class="listen"
+            [class.is-on]="narrated()"
+            (click)="listen()"
+            [attr.aria-pressed]="narrated()"
+          >
+            <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true">
+              @if (narrated()) {
+                <path
+                  d="M2 6h3l4-3v10L5 10H2z M11.5 5.5a3.5 3.5 0 0 1 0 5 M13.5 3.5a6 6 0 0 1 0 9"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                  stroke-linejoin="round"
+                />
+              } @else {
+                <path
+                  d="M2 6h3l4-3v10L5 10H2z M11 6l4 4M15 6l-4 4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                  stroke-linejoin="round"
+                />
+              }
+            </svg>
+            {{ narrated() ? copy().ui.silent : copy().ui.narrated }}
+          </button>
+
+          <div class="devices" role="group" [attr.aria-label]="copy().ui.screens">
+            <button
+              type="button"
+              [class.is-on]="device() === 'iphone'"
+              [attr.aria-pressed]="device() === 'iphone'"
+              (click)="switchDevice('iphone')"
+            >
+              iPhone
+            </button>
+            <button
+              type="button"
+              [class.is-on]="device() === 'ipad'"
+              [attr.aria-pressed]="device() === 'ipad'"
+              (click)="switchDevice('ipad')"
+            >
+              iPad
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="screens" id="screens">
+  <div class="page">
+    <p class="slug" ctReveal>{{ copy().ui.screens }}</p>
+  </div>
+
+  <!-- Full-bleed and scrolled sideways: ten tall screenshots do not fit a page
+       and shrinking them until they do makes them unreadable, which is the
+       whole point of showing them. -->
+  <ol class="strip" [style.--shot-aspect]="frame().width + ' / ' + frame().height">
+    @for (view of views(); track view) {
+      <li>
+        <figure>
+          <picture>
+            <source type="image/avif" [attr.srcset]="srcset(view, 'avif')" [attr.sizes]="sizes" />
+            <source type="image/webp" [attr.srcset]="srcset(view, 'webp')" [attr.sizes]="sizes" />
+            <img
+              [src]="fallback(view)"
+              [width]="frame().width"
+              [height]="frame().height"
+              loading="lazy"
+              decoding="async"
+              [alt]="caption(view)[0] + ' ' + caption(view)[1]"
+            />
+          </picture>
+          <figcaption>
+            {{ caption(view)[0] }}<br /><em>{{ caption(view)[1] }}</em>
+          </figcaption>
+        </figure>
+      </li>
+    }
+  </ol>
+</section>

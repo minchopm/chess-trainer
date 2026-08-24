@@ -1,0 +1,265 @@
+:host {
+  display: block;
+}
+
+section {
+  padding: var(--rhythm) 0;
+}
+
+section + section {
+  border-top: 1px solid var(--rule-soft);
+}
+
+/* ── Opening ────────────────────────────────────────────────────────────── */
+
+.opening {
+  padding-top: calc(4.25rem + clamp(4rem, 12vh, 8rem));
+  background:
+    radial-gradient(80% 110% at 76% -6%, rgba(214, 169, 95, 0.12), transparent 58%),
+    linear-gradient(180deg, rgba(116, 168, 255, 0.05), transparent 46%);
+}
+
+h1 {
+  font-size: clamp(2.6rem, 7.2vw, 5.75rem);
+  margin: 0 0 1.75rem;
+  max-width: 20ch;
+}
+
+/* The second line takes the light, the way it does on the App Store cards the
+   words were written for. */
+h1 em,
+h2 em {
+  font-style: italic;
+  color: var(--brass);
+}
+
+/* Except where there is no italic to ask for.
+   Arabic, Hebrew, the CJK scripts, Thai and Devanagari have no italic form, so
+   the browser makes one by shearing the glyphs — which in these scripts is not
+   an emphasis, it is a rendering fault. The brass already does the work the
+   slant was there for. */
+article[lang='ar-SA'] em,
+article[lang='he'] em,
+article[lang='ja'] em,
+article[lang='ko'] em,
+article[lang^='zh'] em,
+article[lang='th'] em,
+article[lang='hi'] em {
+  font-style: normal;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+.button--brass {
+  background: var(--brass);
+  border-color: var(--brass);
+  color: var(--ink);
+}
+
+.button--brass:hover {
+  background: var(--brass-hot);
+  border-color: var(--brass-hot);
+  color: var(--ink);
+}
+
+/* Not a link, and shaped so nobody tries to press it. */
+.button--waiting {
+  color: var(--brass);
+  border-color: var(--brass-deep);
+  border-style: dashed;
+  cursor: default;
+}
+
+/* ── The counted things ─────────────────────────────────────────────────── */
+
+.figures ol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+  list-style: none;
+  margin: 0 0 var(--rhythm);
+  padding: 0;
+}
+
+.figures li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.figures .value {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  line-height: 1;
+  color: var(--brass);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.figures .label {
+  font-family: var(--font-mono);
+  font-size: var(--label);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ivory-faint);
+}
+
+.sentences {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.sentences p {
+  margin: 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule-soft);
+  color: var(--ivory-dim);
+}
+
+/* ── The privacy claim ──────────────────────────────────────────────────── */
+
+.claim h2,
+.price h2,
+.licence h2 {
+  font-size: var(--title);
+  margin: 0 0 1.5rem;
+  max-width: 22ch;
+}
+
+.claim .mono {
+  margin-top: 2rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* ── Price ──────────────────────────────────────────────────────────────── */
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: clamp(1rem, 2.5vw, 2rem);
+  margin-top: 2.5rem;
+}
+
+.plan {
+  border: 1px solid var(--rule-soft);
+  border-radius: 1rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: linear-gradient(180deg, rgba(233, 228, 216, 0.03), transparent);
+}
+
+.plan--pro {
+  border-color: var(--brass-deep);
+  background: linear-gradient(180deg, rgba(214, 169, 95, 0.09), transparent 65%);
+}
+
+.plan h3 {
+  font-size: 1.35rem;
+  margin: 0 0 0.75rem;
+}
+
+.plan .figure {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1;
+  color: var(--brass);
+  margin: 0 0 1.25rem;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.plan p {
+  font-size: 0.9375rem;
+}
+
+.plan ul {
+  margin: 0;
+  padding-inline-start: 1.1rem;
+  color: var(--ivory-dim);
+  font-size: 0.9375rem;
+}
+
+.plan li + li {
+  margin-top: 0.5rem;
+}
+
+.note {
+  margin-top: 2rem;
+}
+
+/* ── Questions ──────────────────────────────────────────────────────────── */
+
+.questions dl {
+  margin: 2.5rem 0 0;
+  display: grid;
+  gap: 2.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+}
+
+.questions dt {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  color: var(--ivory);
+}
+
+.questions dd {
+  margin: 0;
+  color: var(--ivory-dim);
+  font-size: 0.9375rem;
+}
+
+/* ── Licence, and the way out to the essays ─────────────────────────────── */
+
+.licence p {
+  font-size: 0.9375rem;
+}
+
+.deeper ul {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  max-width: 44rem;
+}
+
+.deeper li {
+  border-top: 1px solid var(--rule-soft);
+}
+
+.deeper li:last-child {
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.deeper a {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1.15rem 0;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+}
+
+.in-english {
+  color: var(--ivory-faint);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: var(--label);
+}
+
+/* Arabic and Hebrew: the whole page turns over, but the numbers do not — a
+   count is read left to right in every language that uses these digits. */
+[dir='rtl'] .figures .value,
+[dir='rtl'] .plan .figure {
+  direction: ltr;
+  unicode-bidi: isolate;
+}

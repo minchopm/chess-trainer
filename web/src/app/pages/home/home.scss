@@ -1,0 +1,475 @@
+:host {
+  display: block;
+}
+
+section {
+  padding: var(--rhythm) 0;
+  position: relative;
+}
+
+/* ── The premise ─────────────────────────────────────────────────────── */
+
+.statement {
+  border-top: 1px solid var(--rule-soft);
+  background: linear-gradient(180deg, rgba(214, 169, 95, 0.035), transparent 40%);
+}
+
+.pull {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4.2vw, 3.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  max-width: 22ch;
+  margin: 0 0 clamp(2rem, 5vh, 3.5rem);
+}
+
+.pull em {
+  font-style: italic;
+  color: var(--brass-hot);
+}
+
+.statement__body {
+  color: var(--ivory-dim);
+}
+.statement__body em {
+  color: var(--ivory);
+  font-style: italic;
+}
+
+/* ── Numbers ─────────────────────────────────────────────────────────── */
+
+.figures {
+  border-block: 1px solid var(--rule-soft);
+  padding-block: clamp(3rem, 7vh, 5rem);
+}
+
+.figures__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.figure p {
+  margin: 0;
+}
+
+.figure__value {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  line-height: 1;
+  color: var(--brass-hot);
+  letter-spacing: -0.02em;
+}
+
+.figure__label {
+  margin-top: 0.5rem !important;
+  font-size: 0.9375rem;
+}
+
+.figure__note {
+  margin-top: 0.3rem !important;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── The seven modes ─────────────────────────────────────────────────── */
+
+.acts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.act {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr) minmax(0, 15rem);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: start;
+  padding: clamp(1.75rem, 4vh, 2.75rem) 0;
+  border-bottom: 1px solid var(--rule-soft);
+  transition: background 0.6s var(--ease);
+}
+
+.act:hover {
+  background: rgba(214, 169, 95, 0.03);
+}
+
+.act__number {
+  color: var(--brass);
+  letter-spacing: 0.24em;
+  font-size: 0.75rem;
+  margin: 0.55rem 0 0;
+  padding-top: 0.1rem;
+}
+
+.act h3 {
+  font-size: var(--heading);
+  margin: 0 0 0.5rem;
+}
+
+.act__lede {
+  color: var(--ivory-dim);
+  margin: 0 0 0.65rem;
+  max-width: 44ch;
+}
+
+.act__free {
+  margin: 0;
+  color: var(--ivory-faint);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.act__stat {
+  margin: 0;
+  text-align: right;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.act__stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--ivory);
+  line-height: 1;
+}
+
+.act__stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ── The film ────────────────────────────────────────────────────────── */
+
+.film {
+  background: radial-gradient(80% 60% at 50% 0%, rgba(214, 169, 95, 0.06), transparent 60%);
+}
+
+.reel {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr) 1.25rem;
+  gap: 0.75rem;
+  align-items: stretch;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.75rem;
+  background: rgba(10, 12, 18, 0.6);
+}
+
+.reel__perf {
+  display: grid;
+  gap: 0.5rem;
+  align-content: space-between;
+  padding-block: 0.4rem;
+}
+
+.reel__perf i {
+  display: block;
+  height: 0.6rem;
+  border-radius: 2px;
+  background: rgba(233, 228, 216, 0.09);
+}
+
+.reel__video,
+.reel__slate {
+  aspect-ratio: 21 / 9;
+  width: 100%;
+  border-radius: 2px;
+  background:
+    radial-gradient(70% 70% at 50% 40%, rgba(214, 169, 95, 0.1), transparent 65%),
+    linear-gradient(180deg, #0b0d14, #05060a);
+}
+
+.reel__slate {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border: 1px dashed var(--rule);
+}
+
+.reel__slate .mono {
+  color: var(--brass);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  margin: 0;
+}
+
+.reel__slate-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  margin: 0;
+  font-style: italic;
+}
+
+.reel__slate p:last-child {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.reel figcaption {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 0.9rem 1rem 0.4rem;
+  line-height: 1.7;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+}
+
+/* ── The engine ──────────────────────────────────────────────────────── */
+
+.engine {
+  border-top: 1px solid var(--rule-soft);
+}
+
+.engine__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.engine h2 {
+  font-size: var(--title);
+  margin: 0 0 1.25rem;
+}
+
+.engine p {
+  color: var(--ivory-dim);
+}
+
+.licence-card {
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: linear-gradient(180deg, rgba(214, 169, 95, 0.05), transparent 55%);
+  font-size: 0.9375rem;
+}
+
+.licence-card strong {
+  color: var(--brass-hot);
+  font-weight: 500;
+}
+.licence-card__links {
+  margin: 0;
+  letter-spacing: 0.1em;
+}
+.licence-card__links a {
+  text-decoration: none;
+  color: var(--brass);
+}
+
+/* ── Privacy ─────────────────────────────────────────────────────────── */
+
+.privacy {
+  border-top: 1px solid var(--rule-soft);
+}
+
+.privacy__claim {
+  font-size: clamp(2.75rem, 8vw, 6rem);
+  margin: 0 0 clamp(2rem, 5vh, 3rem);
+  font-style: italic;
+  color: var(--brass-hot);
+}
+
+.privacy__cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+  color: var(--ivory-dim);
+}
+
+.privacy__cols p {
+  margin: 0;
+}
+
+/* ── Pricing ─────────────────────────────────────────────────────────── */
+
+.pricing {
+  border-top: 1px solid var(--rule-soft);
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1px;
+  background: var(--rule-soft);
+  border: 1px solid var(--rule-soft);
+}
+
+.plan {
+  background: var(--ink);
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+}
+
+.plan--lead {
+  background: linear-gradient(180deg, rgba(214, 169, 95, 0.08), rgba(5, 6, 10, 1) 55%);
+}
+
+.plan__flag {
+  margin: 0;
+  color: var(--brass);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+}
+
+.plan h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.plan__price {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  line-height: 1;
+  margin: 0.35rem 0 1.25rem;
+}
+
+.plan__price span {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ivory-faint);
+  margin-left: 0.5rem;
+}
+
+.plan ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+  font-size: 0.9375rem;
+  color: var(--ivory-dim);
+}
+
+.plan li {
+  padding-left: 1.15rem;
+  position: relative;
+  line-height: 1.55;
+}
+
+.plan li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.4rem;
+  height: 1px;
+  background: var(--brass);
+}
+
+.plans__note {
+  margin-top: 1.5rem;
+  line-height: 1.9;
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+}
+
+/* Underlined, because this one sits inside a sentence — colour alone does not
+   tell a colour-blind reader that it is a link. The standalone link lines
+   elsewhere are unambiguous without it. */
+.plans__note a {
+  color: var(--brass);
+}
+
+/* ── Questions ───────────────────────────────────────────────────────── */
+
+.faq {
+  border-top: 1px solid var(--rule-soft);
+}
+
+.faq__list {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: clamp(1.75rem, 4vw, 3rem);
+}
+
+.faq__item dt {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.faq__item dd {
+  margin: 0;
+  color: var(--ivory-dim);
+  font-size: 0.9375rem;
+}
+
+/* ── End card ────────────────────────────────────────────────────────── */
+
+.end {
+  text-align: center;
+  border-top: 1px solid var(--rule-soft);
+  padding-block: clamp(5rem, 14vh, 9rem);
+  background: radial-gradient(70% 90% at 50% 100%, rgba(214, 169, 95, 0.08), transparent 65%);
+}
+
+.end__mark {
+  color: var(--brass);
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  margin: 0 0 1.5rem;
+}
+
+.end h2 {
+  font-size: var(--title);
+  margin: 0 0 2rem;
+  font-style: italic;
+}
+
+.end__actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.end__note {
+  margin: 2rem 0 0;
+  font-size: 0.625rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* ── Narrow ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .engine__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .act {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+  }
+
+  .act__stat {
+    grid-column: 2;
+    text-align: left;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+  }
+
+  .act__stat-value {
+    font-size: 1.4rem;
+  }
+}

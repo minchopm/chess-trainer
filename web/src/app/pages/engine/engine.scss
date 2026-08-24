@@ -1,0 +1,263 @@
+:host {
+  display: block;
+}
+
+section {
+  padding: var(--rhythm) 0;
+}
+
+/* ── Three claims ────────────────────────────────────────────────────── */
+
+.claims {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: clamp(2rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.claims h2 {
+  font-size: var(--heading);
+  margin: 0 0 0.85rem;
+}
+
+.claims p {
+  color: var(--ivory-dim);
+  font-size: 0.9375rem;
+}
+
+/* ── Grading ─────────────────────────────────────────────────────────── */
+
+.grading {
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.grading h2 {
+  font-size: var(--title);
+  margin: 0 0 clamp(2rem, 5vh, 3rem);
+  max-width: 20ch;
+}
+
+.grading__cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.grading__cols p {
+  color: var(--ivory-dim);
+}
+.grading__cols em {
+  color: var(--brass-hot);
+  font-style: italic;
+}
+
+.grading__demo {
+  border: 1px solid var(--rule);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 3px;
+  background: rgba(10, 12, 18, 0.5);
+}
+
+.grading__demo > .mono:first-child {
+  color: var(--brass);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  margin: 0 0 1.5rem;
+}
+
+.bar {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  gap: 0.5rem 0.85rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.bar__label {
+  color: var(--ivory);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+}
+
+.bar__track {
+  display: block;
+  height: 3px;
+  background: rgba(233, 228, 216, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bar__track i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--brass-deep), var(--brass-hot));
+}
+
+.bar__value {
+  grid-column: 2;
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ivory-faint);
+}
+
+.grading__demo > .mono:last-child {
+  margin: 1.5rem 0 0;
+  font-size: 0.625rem;
+  line-height: 1.7;
+}
+
+/* ── Coaching words ──────────────────────────────────────────────────── */
+
+.words {
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.words h2 {
+  font-size: var(--title);
+  margin: 0 0 1.25rem;
+  max-width: 20ch;
+}
+
+.quotes {
+  list-style: none;
+  margin: clamp(2rem, 5vh, 3rem) 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.quotes li {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.6vw, 1.9rem);
+  font-style: italic;
+  color: var(--ivory);
+  padding-left: 1.5rem;
+  border-left: 1px solid rgba(214, 169, 95, 0.35);
+  line-height: 1.35;
+}
+
+.words > .mono {
+  line-height: 1.9;
+  max-width: 46rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.words > .mono em {
+  color: var(--brass-hot);
+  font-style: italic;
+}
+
+/* ── The licence ─────────────────────────────────────────────────────── */
+
+.gpl {
+  border-top: 1px solid var(--rule-soft);
+  background: radial-gradient(80% 70% at 20% 0%, rgba(214, 169, 95, 0.07), transparent 60%);
+}
+
+.gpl__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.gpl h2 {
+  font-size: var(--title);
+  margin: 0 0 1.25rem;
+}
+
+.gpl p {
+  color: var(--ivory-dim);
+}
+
+.consequence {
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: 0.9375rem;
+}
+
+.consequence h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin: 0 0 1rem;
+}
+
+.consequence strong {
+  color: var(--brass-hot);
+  font-weight: 500;
+}
+.consequence .mono {
+  margin: 0;
+}
+.consequence .mono a {
+  color: var(--brass);
+  text-decoration: none;
+}
+
+/* ── Proof ───────────────────────────────────────────────────────────── */
+
+.proof {
+  border-top: 1px solid var(--rule-soft);
+}
+.proof strong {
+  color: var(--ivory);
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .grading__cols,
+  .gpl__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── The two engines ─────────────────────────────────────────────────────── */
+
+.engines {
+  padding: var(--rhythm) 0 0;
+}
+
+/* The section headings on this page are sized per-section, so a new section
+   gets the body size unless it asks. */
+.engines h2 {
+  font-size: var(--title);
+  margin: 0 0 1.5rem;
+  max-width: 20ch;
+}
+
+.engines__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: clamp(1rem, 2.5vw, 2rem);
+  margin: 2.5rem 0;
+}
+
+.engine-card {
+  border: 1px solid var(--rule-soft);
+  border-radius: 1rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: linear-gradient(180deg, rgba(233, 228, 216, 0.03), transparent);
+}
+
+.engine-card h3 {
+  font-size: 1.5rem;
+  margin: 0 0 0.75rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.engine-card p {
+  color: var(--ivory-dim);
+  font-size: 0.9375rem;
+}
+
+.engine-card p:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,238 @@
+:host {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 60;
+  display: block;
+  transition:
+    background 0.5s var(--ease),
+    backdrop-filter 0.5s var(--ease),
+    border-color 0.5s var(--ease);
+  border-bottom: 1px solid transparent;
+}
+
+:host(.is-grounded) {
+  background: rgba(5, 6, 10, 0.72);
+  backdrop-filter: blur(18px) saturate(1.3);
+  border-bottom-color: var(--rule-soft);
+}
+
+.skip {
+  position: absolute;
+  left: 50%;
+  top: 0.5rem;
+  transform: translate(-50%, -200%);
+  background: var(--brass);
+  color: var(--ink);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: var(--caption);
+  text-decoration: none;
+  z-index: 5;
+}
+
+.skip:focus-visible {
+  transform: translate(-50%, 0);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  height: 4.25rem;
+}
+
+.mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--ivory);
+  margin-right: auto;
+}
+
+.mark svg {
+  color: var(--brass);
+  flex: none;
+}
+
+.mark__word {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  gap: clamp(1rem, 2.4vw, 2.25rem);
+}
+
+.nav a {
+  font-size: var(--caption);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ivory-dim);
+  position: relative;
+  padding-block: 0.35rem;
+  white-space: nowrap;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  height: 1px;
+  background: var(--brass);
+  transition: right 0.5s var(--ease);
+}
+
+.nav a:hover,
+.nav a.is-active {
+  color: var(--ivory);
+}
+
+.nav a:hover::after,
+.nav a.is-active::after {
+  right: 0;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: var(--caption);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--brass);
+  border: 1px solid rgba(214, 169, 95, 0.35);
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition:
+    background 0.4s var(--ease),
+    border-color 0.4s var(--ease),
+    color 0.4s var(--ease);
+}
+
+.cta:hover {
+  background: rgba(214, 169, 95, 0.12);
+  border-color: var(--brass);
+  color: var(--brass-hot);
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 0.6rem;
+  color: var(--ivory);
+  cursor: pointer;
+}
+
+.burger__bars {
+  display: block;
+  width: 22px;
+}
+
+.burger__bars i {
+  display: block;
+  height: 1px;
+  background: currentColor;
+  transition:
+    transform 0.45s var(--ease),
+    opacity 0.3s;
+}
+
+.burger__bars i:first-child {
+  margin-bottom: 6px;
+}
+
+:host(.is-open) .burger__bars i:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+:host(.is-open) .burger__bars i:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.sheet {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.6s var(--ease);
+  background: rgba(5, 6, 10, 0.96);
+  backdrop-filter: blur(18px);
+}
+
+:host(.is-open) .sheet {
+  max-height: 26rem;
+}
+
+.sheet nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem var(--gutter) 2rem;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.sheet a {
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  color: var(--ivory);
+}
+
+@media (max-width: 860px) {
+  .nav,
+  .cta {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+/* ── Language ────────────────────────────────────────────────────────────── */
+
+.lang {
+  margin-inline-start: auto;
+}
+
+/* On a narrow bar the burger already stands where this would; the picker moves
+   into the sheet, which is where the rest of the navigation goes too. */
+@media (max-width: 60rem) {
+  .bar .lang {
+    display: none;
+  }
+}
+
+.lang--sheet {
+  margin: 1.5rem 0 0;
+  padding-inline: var(--gutter);
+}
+
+@media (min-width: 60.0625rem) {
+  .lang--sheet {
+    display: none;
+  }
+}
+
+/* Not a link, and shaped so nobody tries to press it. */
+.cta--waiting {
+  border-style: dashed;
+  color: var(--brass);
+  cursor: default;
+}

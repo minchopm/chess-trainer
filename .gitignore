@@ -23,3 +23,10 @@ lichess_db_puzzle.csv.zst
 lichess_db_puzzle.csv
 
 .DS_Store
+
+# The website's films and screenshots: ~530 MB, built by web/tools/media.py from
+# capture folders that are not in this repository, and served from their own S3
+# bucket. web/.gitignore already excludes them; this is here so that anybody
+# reading the root ignore file learns they exist.
+web/media/
+web/exports/

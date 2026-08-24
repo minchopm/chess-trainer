@@ -1,0 +1,274 @@
+<bp-page-head
+  slug="Legal"
+  title="Privacy Policy"
+  lede="Brass Pawn collects nothing. This page says so in the detail a policy is supposed to have, and names the two places where data does exist — both of them Apple's, neither of them ours."
+  meta="Effective 19 August 2026 · Applies to Brass Pawn for iPhone and iPad"
+/>
+
+<div class="page wrap">
+  <article class="prose">
+    <div class="summary">
+      <p>
+        <strong>The short version.</strong> There is no account, no analytics, no advertising, no
+        third-party SDK and no server of ours. Nothing you do in the app is transmitted to us,
+        because there is nowhere for it to go. Your ratings and history live on your device and are
+        deleted with the app.
+      </p>
+      <p>
+        Two things are handled by Apple rather than by us: <strong>purchases</strong>, through the
+        App Store, and <strong>online play</strong>, through Game Center. We receive no payment
+        details and no personal information from either.
+      </p>
+    </div>
+
+    <h2 id="who">1. Who this policy is from</h2>
+    <p>
+      Brass Pawn is published by {{ site.publisher }} (“we”, “us”). This policy covers the Brass
+      Pawn app for iPhone and iPad, bundle identifier <code>{{ site.bundleId }}</code
+      >, and this website.
+    </p>
+    <p>
+      You can reach a human at
+      <a [href]="'mailto:' + site.contactEmail">{{ site.contactEmail }}</a
+      >, or open an issue at <a [href]="site.issues" rel="noopener">{{ site.issues }}</a
+      >. We answer both.
+    </p>
+
+    <h2 id="collect">2. What we collect</h2>
+    <p>
+      Nothing. The app makes no analytics calls, carries no advertising, contains no third-party
+      tracking or attribution SDK of any kind, and has no account system. It does not read your
+      contacts, photos, location, calendar, microphone, camera, health data, clipboard or
+      advertising identifier, and it does not ask for permission to do so, because it has no code
+      that would use them.
+    </p>
+    <p>
+      We do not build a profile of you, we do not sell or share data — we have none to sell — and we
+      do not use anything for advertising or for training any model.
+    </p>
+
+    <div class="table-scroll">
+      <table class="ledger">
+        <caption class="visually-hidden">
+          What each category of data does in Brass Pawn
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Where it lives</th>
+            <th scope="col">Who can see it</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ratings, solved puzzles, review schedule, streaks, statistics</td>
+            <td>The app’s container on your device</td>
+            <td>You</td>
+          </tr>
+          <tr>
+            <td>Game history and coaching feedback</td>
+            <td>The app’s container on your device</td>
+            <td>You</td>
+          </tr>
+          <tr>
+            <td>Purchase state (whether Pro is active)</td>
+            <td>Queried from the App Store, cached on device</td>
+            <td>You and Apple</td>
+          </tr>
+          <tr>
+            <td>Game Center nickname and your in-app online rating</td>
+            <td>Exchanged with your opponent during a match</td>
+            <td>You, your opponent, and Apple</td>
+          </tr>
+          <tr>
+            <td>Moves, clocks and results in an online game</td>
+            <td>Sent device to device through Game Center</td>
+            <td>You and your opponent</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="device">3. What stays on your device</h2>
+    <p>
+      Your ratings, solved puzzles, review schedule, streaks, game history and purchase state are
+      stored in the app’s own container on your device. Deleting the app deletes them. They are
+      included in an encrypted device backup if you have one turned on — that backup is between you
+      and Apple, and we have no access to it.
+    </p>
+    <p>
+      There is no “export my data” button and no “delete my account” button, because there is no
+      account and nothing of yours has left the device. Deleting the app is the deletion mechanism.
+    </p>
+
+    <h2 id="network">4. When the app uses the network</h2>
+    <p>
+      Training is entirely offline: the engine, the puzzles, the games and your progress are all in
+      the app. The app makes network connections in exactly three situations, and in all three the
+      connection is to Apple, not to us:
+    </p>
+    <ul>
+      <li>
+        <strong>Online play.</strong> Game Center finds you an opponent and carries the moves
+        between the two devices.
+      </li>
+      <li><strong>Purchases and restores.</strong> StoreKit asks the App Store what you own.</li>
+      <li>
+        <strong>Links you tap.</strong> The About screen links to the source repository, this site
+        and the licence text. Nothing opens on its own.
+      </li>
+    </ul>
+
+    <h2 id="gamecenter">5. Game Center</h2>
+    <p>
+      Online play uses Apple’s Game Center to find an opponent and to carry the moves between the
+      two devices. In a match your Game Center nickname and your in-app online rating are visible to
+      your opponent, because that is what a game between two people needs.
+    </p>
+    <p>
+      There is no server of ours in the middle. The two devices talk to each other and both run the
+      rules, so a move is played only if it is legal in the position the receiving device already
+      holds. Moves, clocks and results are not recorded by us anywhere.
+    </p>
+    <p>
+      Apple’s handling of Game Center data is governed by
+      <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s privacy policy</a>; we
+      receive none of it.
+    </p>
+
+    <h2 id="purchases">6. Purchases</h2>
+    <p>
+      The subscription and the one-off unlock are handled entirely by the App Store. We never see
+      your name, your payment details or your Apple Account. The app only asks StoreKit whether a
+      purchase is currently active and stores that answer locally so it can stop showing you a
+      paywall.
+    </p>
+    <p>
+      Apple provides us with aggregate, anonymised sales reports — units sold per territory, and
+      nothing that identifies a purchaser.
+    </p>
+
+    <h2 id="crash">7. Crash reports and App Store analytics</h2>
+    <p>
+      We include no crash-reporting or analytics library. However, iOS itself has a setting —
+      <em
+        >Settings → Privacy &amp; Security → Analytics &amp; Improvements → Share with App
+        Developers</em
+      >
+      — and if you have turned it on, Apple may share aggregated crash logs and usage statistics for
+      this app with us through App Store Connect.
+    </p>
+    <p>
+      That data comes from Apple, is aggregated by Apple, and does not identify you. You control it
+      entirely from that setting, and turning it off changes nothing about how the app works. We
+      mention it because a policy that says “we collect nothing” while Apple hands us a crash
+      dashboard would be, at best, incomplete.
+    </p>
+
+    <h2 id="chess">8. The chess content</h2>
+    <p>
+      The bundled puzzles and games come from the
+      <a href="https://database.lichess.org/" rel="noopener">Lichess database</a>, released into the
+      public domain under CC0, and from positions generated on our own machines. They contain no
+      personal information: the imported games keep the two players’ ratings and moves, and not
+      their usernames.
+    </p>
+
+    <h2 id="children">9. Children</h2>
+    <p>
+      The app collects no personal data from anyone, so there is nothing to collect from a child
+      either. It shows no advertising, contains no third-party content, has no chat, no
+      user-generated content and no external links other than to the source repository, this website
+      and the licence text.
+    </p>
+    <p>
+      Online play through Game Center is subject to Apple’s own parental controls, which a parent
+      can use to restrict multiplayer entirely (<em
+        >Settings → Screen Time → Content &amp; Privacy Restrictions → Game Center</em
+      >).
+    </p>
+
+    <h2 id="transfers">10. International transfers and retention</h2>
+    <p>
+      We hold no personal data, so there is none to transfer and none to retain. Data on your device
+      stays on your device for as long as you keep the app.
+    </p>
+
+    <h2 id="rights">11. Your rights</h2>
+    <p>
+      If you are in the European Economic Area, the United Kingdom, Switzerland, California, or
+      anywhere else with a data protection or privacy law, those laws give you rights of access,
+      correction, deletion, portability and objection over personal data a company holds about you.
+    </p>
+    <p>
+      We hold none, so there is nothing for us to disclose, correct, delete, port or stop
+      processing. You may still write to us to ask, and we will confirm this in writing. Under the
+      California Consumer Privacy Act we specifically confirm that we do not sell or share personal
+      information, and have never done so.
+    </p>
+    <p>
+      For data Apple holds — your Apple Account, Game Center profile and purchase history — the
+      controller is Apple, and Apple’s
+      <a href="https://privacy.apple.com/" rel="noopener">privacy portal</a> is where those requests
+      go.
+    </p>
+
+    <h2 id="site">12. This website</h2>
+    <p>
+      This site sets no cookies, runs no analytics and embeds no trackers. Every file it loads — the
+      page, the styles, the scripts, the typefaces and the images — comes from this domain. No third
+      party is involved in serving you this page, so there is nobody to receive your IP address but
+      the server you asked.
+    </p>
+    <p>
+      The typefaces are worth a sentence because they are the usual exception: most sites load
+      theirs from Google, which hands that company the address of every visitor who reads a heading.
+      Ours are hosted here instead.
+    </p>
+    <p>The site is a set of static files. It has no login, no forms and no database.</p>
+
+    <h2 id="changes">13. Changes to this policy</h2>
+    <p>
+      If the app ever starts doing something this page does not describe, this page changes first
+      and the effective date at the top changes with it. Because the app’s complete source is
+      published, you do not have to take our word for any of it —
+      <a [href]="site.repo" rel="noopener">the code is the primary document</a>, and this page is a
+      description of it.
+    </p>
+
+    <h2 id="contact">14. Contact</h2>
+    <p>
+      Questions about this policy, or about anything the app does:
+      <a [href]="'mailto:' + site.contactEmail">{{ site.contactEmail }}</a
+      >. If you would rather it were public, open an issue at
+      <a [href]="site.issues" rel="noopener">the project’s issue tracker</a>.
+    </p>
+
+    <hr />
+
+    <p class="mono faint">
+      See also: <a routerLink="/terms">Terms of Service</a> ·
+      <a routerLink="/licences">Licences &amp; attribution</a>
+    </p>
+  </article>
+
+  <nav class="contents" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li><a [routerLink]="[]" fragment="who">Who this policy is from</a></li>
+      <li><a [routerLink]="[]" fragment="collect">What we collect</a></li>
+      <li><a [routerLink]="[]" fragment="device">What stays on your device</a></li>
+      <li><a [routerLink]="[]" fragment="network">When the app uses the network</a></li>
+      <li><a [routerLink]="[]" fragment="gamecenter">Game Center</a></li>
+      <li><a [routerLink]="[]" fragment="purchases">Purchases</a></li>
+      <li><a [routerLink]="[]" fragment="crash">Crash reports</a></li>
+      <li><a [routerLink]="[]" fragment="chess">The chess content</a></li>
+      <li><a [routerLink]="[]" fragment="children">Children</a></li>
+      <li><a [routerLink]="[]" fragment="transfers">Transfers and retention</a></li>
+      <li><a [routerLink]="[]" fragment="rights">Your rights</a></li>
+      <li><a [routerLink]="[]" fragment="site">This website</a></li>
+      <li><a [routerLink]="[]" fragment="changes">Changes</a></li>
+      <li><a [routerLink]="[]" fragment="contact">Contact</a></li>
+    </ol>
+  </nav>
+</div>

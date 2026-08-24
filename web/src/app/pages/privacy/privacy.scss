@@ -1,0 +1,90 @@
+:host {
+  display: block;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 44rem) minmax(0, 17rem);
+  /* The contents hug the right edge rather than floating in the middle of a
+     wide page with a hole beside them. */
+  justify-content: space-between;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.contents {
+  position: sticky;
+  top: 6rem;
+  padding-block: clamp(3rem, 8vh, 5rem);
+}
+
+.contents h2 {
+  font-family: var(--font-mono);
+  font-size: var(--label);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--brass);
+  font-weight: 500;
+  margin: 0 0 1.1rem;
+}
+
+.contents ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+  counter-reset: toc;
+}
+
+.contents a {
+  text-decoration: none;
+  color: var(--ivory-dim);
+  font-size: 0.875rem;
+  display: block;
+  line-height: 1.4;
+}
+
+.contents li {
+  counter-increment: toc;
+}
+
+.contents a::before {
+  content: counter(toc, decimal-leading-zero) '  ';
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--brass);
+  letter-spacing: 0.1em;
+}
+
+.contents a:hover {
+  color: var(--ivory);
+}
+
+.summary {
+  border: 1px solid rgba(214, 169, 95, 0.3);
+  background: rgba(214, 169, 95, 0.05);
+  border-radius: 3px;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 2.5rem;
+}
+
+.summary p:last-child {
+  margin-bottom: 0;
+}
+
+.summary strong {
+  color: var(--brass-hot);
+}
+
+@media (max-width: 950px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+  .contents {
+    position: static;
+    padding-top: 0;
+    order: -1;
+    padding-bottom: 0;
+  }
+}

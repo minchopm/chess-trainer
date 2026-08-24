@@ -1,0 +1,131 @@
+<bp-page-head
+  slug="The programme"
+  title="Eight ways to be told the truth"
+  lede="Three of these are free and unlimited forever — playing, playing somebody else, and the nine hundred games in Watch. The other five are five a day on a free account and unlimited with Pro. Every one of them grades you in words about the position rather than a number you have to interpret."
+/>
+
+<div class="page">
+  <ol class="scenes">
+    @for (mode of modes; track mode.slug) {
+      <li class="scene" [id]="mode.slug">
+        <div class="scene__mark" aria-hidden="true">
+          <span>{{ mode.act }}</span>
+        </div>
+
+        <div class="scene__body" ctReveal>
+          <h2>{{ mode.title }}</h2>
+          <p class="lede">{{ mode.lede }}</p>
+          @for (paragraph of mode.body; track paragraph) {
+            <p>{{ paragraph }}</p>
+          }
+          <p class="scene__free mono">{{ mode.free }}</p>
+          @if (mode.slug === 'watch') {
+            <p class="mono">
+              <a routerLink="/watch">What got into the library, and what did not →</a>
+            </p>
+          }
+        </div>
+
+        <div class="scene__aside" ctReveal="120">
+          @if (mode.stat) {
+            <p class="stat">
+              <span class="stat__value">{{ mode.stat.value }}</span>
+              <span class="stat__label">{{ mode.stat.label }}</span>
+            </p>
+          }
+        </div>
+      </li>
+    }
+  </ol>
+</div>
+
+<section class="pipeline">
+  <div class="page">
+    <header class="section-head" ctReveal>
+      <p class="slug">How a puzzle is made</p>
+      <h2>Mined, not transcribed.</h2>
+      <p class="lede measure">
+        Writing positions down from memory risks shipping a puzzle whose “solution” is wrong or not
+        unique, which trains exactly the wrong instinct. So none of them are written down from
+        memory. They are found, and then they are attacked until they either survive or are thrown
+        away.
+      </p>
+    </header>
+
+    <ol class="steps">
+      @for (item of pipeline; track item.step; let i = $index) {
+        <li class="step" [ctReveal]="i * 60">
+          <p class="step__number mono">{{ item.step }}</p>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.body }}</p>
+        </li>
+      }
+    </ol>
+
+    <div class="honest" ctReveal>
+      <h3>And the same suspicion applied to the endgames</h3>
+      <p>
+        Every endgame drill’s stated result is checked against a deep search rather than taken on
+        trust. A mislabelled drill fails the check instead of quietly teaching you something false.
+      </p>
+      <p>
+        The verifier also catches something the usual chess libraries will not tell you: whether the
+        side <em>not</em> to move is in check. Such a position is illegal — no game can reach it —
+        but a library will happily accept it, and the engine answers with
+        <code>bestmove (none)</code>, which reads like an engine failure rather than a bad position.
+        Three hand-written drills were wrong in exactly this way. The check now catches it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="limits">
+  <div class="page">
+    <header class="section-head" ctReveal>
+      <p class="slug">Honest limitations</p>
+      <h2>What this does not do.</h2>
+    </header>
+
+    <ul class="limits__list">
+      <li ctReveal>
+        <h3>The set mixes two rating scales.</h3>
+        <p>
+          The {{ library.tacticsLichess.toLocaleString('en-US') }} Lichess puzzles carry ratings
+          calibrated against millions of human attempts. The {{ library.tacticsMined }} locally
+          mined ones carry estimates derived from solution depth and motif. Both order sensibly, but
+          a mined 1600 and a Lichess 1600 are not measured the same way.
+        </p>
+      </li>
+      <li ctReveal="70">
+        <h3>Puzzle ratings are not over-the-board ratings.</h3>
+        <p>
+          They run several hundred points higher, and they always will. They measure progress
+          against yourself, not strength against a field of humans on a clock —
+          <a routerLink="/ratings">which is worth understanding properly</a>, because the gap is
+          structural rather than a sign you are bad at converting.
+        </p>
+      </li>
+      <li ctReveal="140">
+        <h3>There is no opening training.</h3>
+        <p>
+          Deliberately. Opening study is memorisation against a repertoire you choose, which is a
+          different tool with a different shape. The positional mode covers the transition out of
+          the opening, which is the part that actually generalises.
+        </p>
+      </li>
+      <li ctReveal="210">
+        <h3>This will not make you a grandmaster.</h3>
+        <p>
+          Nothing will, on its own. Titles come from thousands of hours plus rated tournament play
+          against humans. What this gives you is the training half of that, structured, with an
+          honest measure of where you actually are.
+        </p>
+      </li>
+    </ul>
+
+    <p class="more" ctReveal>
+      <a routerLink="/tactics">The twenty motifs, defined and counted →</a><br />
+      <a routerLink="/engine">How the engine is used →</a>
+    </p>
+  </div>
+</section>

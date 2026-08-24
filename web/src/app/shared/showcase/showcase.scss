@@ -1,0 +1,233 @@
+:host {
+  display: block;
+}
+
+/* ── The film ───────────────────────────────────────────────────────────── */
+
+.film {
+  padding: var(--rhythm) 0;
+  border-top: 1px solid var(--rule-soft);
+  background:
+    radial-gradient(70% 90% at 22% 30%, rgba(214, 169, 95, 0.08), transparent 62%),
+    linear-gradient(180deg, transparent, rgba(116, 168, 255, 0.035));
+}
+
+.stage {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  /*
+   * A definite track, not `minmax(0, 20rem)`.
+   *
+   * Everything inside the frame is sized as a percentage of it — the bezel
+   * fills the column, the video fills the bezel — so under intrinsic sizing
+   * there is nothing for the column to measure and it collapses to the width
+   * of the bezel's own padding. Thirteen pixels of phone, with the aspect ratio
+   * faithfully applied to it.
+   */
+  grid-template-columns: var(--frame) minmax(0, 1fr);
+  --frame: min(100%, 20rem);
+  transition: --frame 0.6s var(--ease);
+}
+
+.stage.is-ipad {
+  --frame: min(100%, 30rem);
+}
+
+@media (max-width: 52rem) {
+  .stage {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+  }
+
+  .frame {
+    width: var(--frame);
+  }
+}
+
+.frame {
+  width: 100%;
+}
+
+/* The bezel is drawn rather than photographed: a photograph of a phone dates
+   the page the month the next one is announced, and it also means one more
+   large image on a page that already has ten. */
+.bezel {
+  position: relative;
+  width: 100%;
+  border-radius: clamp(1.6rem, 4vw, 2.6rem);
+  padding: 0.42rem;
+  background: linear-gradient(150deg, #2c313d, #0d0f15 42%, #1c2029);
+  box-shadow:
+    0 0 0 1px rgba(233, 228, 216, 0.09),
+    0 2.5rem 5rem -1.5rem rgba(0, 0, 0, 0.85),
+    0 0 6rem -2rem var(--brass-glow);
+  transition: box-shadow 0.8s var(--ease);
+}
+
+.bezel.is-live {
+  box-shadow:
+    0 0 0 1px rgba(233, 228, 216, 0.14),
+    0 2.5rem 5rem -1.5rem rgba(0, 0, 0, 0.85),
+    0 0 7rem -1.5rem rgba(214, 169, 95, 0.4);
+}
+
+.bezel video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: clamp(1.25rem, 3.4vw, 2.2rem);
+  background: var(--ink);
+}
+
+/* ── What is said, and which chapter says it ────────────────────────────── */
+
+.beside {
+  max-width: 34rem;
+  width: 100%;
+}
+
+.line {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.1vw, 2.5rem);
+  line-height: 1.16;
+  letter-spacing: -0.015em;
+  margin: 0 0 2rem;
+  text-wrap: balance;
+  color: var(--ivory);
+  border-inline-start: 1px solid var(--brass-glow);
+  padding-inline-start: clamp(1rem, 2.5vw, 1.75rem);
+}
+
+.chapters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.chapters button,
+.devices button,
+.listen {
+  font-family: var(--font-mono);
+  font-size: var(--caption);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ivory-faint);
+  background: transparent;
+  border: 1px solid var(--rule-soft);
+  border-radius: 999px;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  transition:
+    color 0.4s var(--ease),
+    border-color 0.4s var(--ease),
+    background 0.4s var(--ease);
+}
+
+.chapters button:hover,
+.devices button:hover,
+.listen:hover {
+  color: var(--ivory);
+  border-color: var(--rule);
+}
+
+.chapters button.is-on {
+  color: var(--ink);
+  background: var(--brass);
+  border-color: var(--brass);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  justify-content: space-between;
+}
+
+.listen {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.listen.is-on {
+  color: var(--brass);
+  border-color: var(--brass-deep);
+}
+
+.devices {
+  display: inline-flex;
+  gap: 0.35rem;
+}
+
+.devices button.is-on {
+  color: var(--brass);
+  border-color: var(--brass-deep);
+}
+
+/* ── The screenshots ────────────────────────────────────────────────────── */
+
+.screens {
+  padding: var(--rhythm) 0 calc(var(--rhythm) * 0.7);
+  border-top: 1px solid var(--rule-soft);
+}
+
+.strip {
+  display: flex;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--gutter) 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule) transparent;
+
+  /* The row starts where the page's text starts rather than at the window edge,
+     then runs off the right — which is what says "there is more" without a word
+     or an arrow.
+
+     `scroll-padding` as well as `padding`, and it is not belt and braces: a
+     snap point aligns an item's start edge with the scrollport's, so with the
+     padding alone the container immediately scrolls the lead-in away and the
+     first screenshot sits flush against the window. */
+  --lead: max(var(--gutter), calc(50vw - var(--page) / 2));
+  padding-inline-start: var(--lead);
+  scroll-padding-inline-start: var(--lead);
+}
+
+.strip li {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: clamp(11rem, 62vw, 22rem);
+}
+
+.strip figure {
+  margin: 0;
+}
+
+.strip img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--shot-aspect);
+  object-fit: cover;
+  border-radius: 1.1rem;
+  border: 1px solid var(--rule-soft);
+  background: var(--ink-2);
+}
+
+.strip figcaption {
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: var(--ivory-dim);
+  text-wrap: pretty;
+}
+
+.strip figcaption em {
+  font-style: normal;
+  color: var(--brass);
+}

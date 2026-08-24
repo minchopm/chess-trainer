@@ -1,0 +1,21 @@
+node_modules/
+dist/
+.angular/
+*.log
+.env
+
+# Built by tools/media.py from the capture folder — 372 films and 620 stills,
+# about half a gigabyte. It is derived, it is reproducible in twenty minutes,
+# and deploy.sh syncs it to the bucket from here rather than through the build:
+#
+#   python3 tools/media.py
+#
+# The captures it is made from live outside this repository; set
+# BRASSPAWN_CAPTURES if they are not at ~/Desktop/BrassPawn.
+media/
+
+# Render targets for the icon and poster tools, which are checked by eye and
+# then copied where they are needed.
+exports/
+
+.DS_Store

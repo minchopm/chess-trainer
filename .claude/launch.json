@@ -11,9 +11,17 @@
     },
     {
       "name": "site",
-      "runtimeExecutable": "/Users/minchomilev/work/brass-pawn/serve.sh",
+      "runtimeExecutable": "/Users/minchomilev/chess/web/serve.sh",
       "runtimeArgs": [],
       "port": 4400
+    },
+    {
+      "name": "site-dist",
+      "runtimeExecutable": "/Users/minchomilev/chess/web/serve-dist.sh",
+      "runtimeArgs": [
+        "4401"
+      ],
+      "port": 4401
     }
   ]
 }

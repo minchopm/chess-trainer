@@ -1,0 +1,115 @@
+:host {
+  display: block;
+  border-top: 1px solid var(--rule-soft);
+  padding: clamp(3.5rem, 8vh, 6rem) 0 3rem;
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(214, 169, 95, 0.05), transparent 60%), var(--ink);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(16rem, 2.2fr) repeat(3, minmax(8rem, 1fr));
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.01em;
+}
+
+.colophon p {
+  max-width: 30rem;
+  font-size: 0.9375rem;
+}
+
+.gpl {
+  color: var(--ivory-faint);
+  line-height: 1.7;
+}
+
+h2 {
+  font-family: var(--font-mono);
+  font-size: var(--label);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--brass);
+  font-weight: 500;
+  margin: 0 0 1.1rem;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+li a {
+  text-decoration: none;
+  color: var(--ivory-dim);
+  font-size: 0.9375rem;
+}
+
+li a:hover {
+  color: var(--brass-hot);
+}
+
+.baseline {
+  margin-top: clamp(3rem, 7vh, 5rem);
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rule-soft);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.baseline p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .colophon {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Languages ───────────────────────────────────────────────────────────── */
+
+.languages {
+  margin-top: clamp(2.5rem, 6vh, 4rem);
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.languages ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.15rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.languages a {
+  font-size: 0.875rem;
+  color: var(--ivory-faint);
+  text-decoration: none;
+  transition: color 0.3s var(--ease);
+}
+
+.languages a:hover {
+  color: var(--brass-hot);
+}

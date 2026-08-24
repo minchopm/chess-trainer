@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brasspawn.com/sitemap.xml

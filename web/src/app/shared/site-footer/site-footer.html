@@ -1,0 +1,68 @@
+<div class="page">
+  <div class="grid">
+    <div class="colophon">
+      <p class="wordmark">Brass Pawn</p>
+      <p class="dim">
+        Tactics, positional judgement, endgame technique and coached play, with Stockfish running on
+        the device. Nothing leaves the phone.
+      </p>
+      <p class="gpl mono">
+        Free software under the GNU Affero General Public License v3.
+        <a [href]="site.repo" rel="noopener">Read the source</a>.
+      </p>
+    </div>
+
+    @for (column of columns; track column.heading) {
+      <nav [attr.aria-label]="column.heading">
+        <h2>{{ column.heading }}</h2>
+        <ul>
+          @for (link of column.links; track link.path) {
+            <li>
+              <a [routerLink]="link.path">{{ link.label }}</a>
+            </li>
+          }
+        </ul>
+      </nav>
+    }
+
+    <nav aria-label="Elsewhere">
+      <h2>Elsewhere</h2>
+      <ul>
+        <li><a [href]="site.repo" rel="noopener">Source on GitHub</a></li>
+        <li><a [href]="site.issues" rel="noopener">Report an issue</a></li>
+        <li>
+          <a [href]="'mailto:' + site.contactEmail">{{ site.contactEmail }}</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Every language as a plain link, once, in the footer of every page.
+       The picker in the bar is the same thirty-one and is enough for a person;
+       this is what makes a crawler that never opens a <details> find them. -->
+  <nav class="languages" aria-label="Languages">
+    <h2 class="visually-hidden">Languages</h2>
+    <ul>
+      @for (locale of locales; track locale.tag) {
+        <li>
+          <a
+            [routerLink]="locale.slug === 'en' ? '/' : '/' + locale.slug"
+            [attr.hreflang]="locale.tag"
+            [attr.lang]="locale.tag"
+            [attr.dir]="locale.dir"
+            [title]="locale.english"
+            >{{ locale.name }}</a
+          >
+        </li>
+      }
+    </ul>
+  </nav>
+
+  <div class="baseline">
+    <p class="mono">© {{ year }} {{ site.publisher }}. Brass Pawn is free software.</p>
+    <p class="mono faint">
+      Stockfish © the Stockfish developers, GPLv3. Puzzles and games from the Lichess database, CC0.
+      Not affiliated with Apple, Lichess, the Stockfish project or the Reckless project.
+    </p>
+  </div>
+</div>

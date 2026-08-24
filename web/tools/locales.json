@@ -1,0 +1,249 @@
+{
+  "//": "The single source of truth for every language the site and the app ship in. tools/media.py reads this to name its output folders, tools/harvest-copy.mjs reads it to pull translations out of the app and the storefront, and tools/gen-locales.mjs turns it into src/app/i18n/locales.ts. Edit here, nowhere else.",
+  "//tag": "BCP-47, and exactly what goes in hreflang. Also the folder and filename prefix used by the source material on the Desktop.",
+  "//slug": "The URL segment. 'en' is special-cased to the site root.",
+  "//store": "The key this locale has in storefront/tools/copy.py, which uses shorter tags.",
+  "locales": [
+    {
+      "tag": "en-US",
+      "slug": "en",
+      "store": "en",
+      "name": "English",
+      "english": "English",
+      "dir": "ltr"
+    },
+    {
+      "tag": "en-CA",
+      "slug": "en-ca",
+      "store": "en-CA",
+      "name": "English (Canada)",
+      "english": "English (Canada)",
+      "dir": "ltr"
+    },
+    {
+      "tag": "ar-SA",
+      "slug": "ar",
+      "store": "ar",
+      "name": "العربية",
+      "english": "Arabic",
+      "dir": "rtl"
+    },
+    {
+      "tag": "cs",
+      "slug": "cs",
+      "store": "cs",
+      "name": "Čeština",
+      "english": "Czech",
+      "dir": "ltr"
+    },
+    {
+      "tag": "da",
+      "slug": "da",
+      "store": "da",
+      "name": "Dansk",
+      "english": "Danish",
+      "dir": "ltr"
+    },
+    {
+      "tag": "de-DE",
+      "slug": "de",
+      "store": "de",
+      "name": "Deutsch",
+      "english": "German",
+      "dir": "ltr"
+    },
+    {
+      "tag": "el",
+      "slug": "el",
+      "store": "el",
+      "name": "Ελληνικά",
+      "english": "Greek",
+      "dir": "ltr"
+    },
+    {
+      "tag": "es-ES",
+      "slug": "es",
+      "store": "es",
+      "name": "Español",
+      "english": "Spanish",
+      "dir": "ltr"
+    },
+    {
+      "tag": "fi",
+      "slug": "fi",
+      "store": "fi",
+      "name": "Suomi",
+      "english": "Finnish",
+      "dir": "ltr"
+    },
+    {
+      "tag": "fr-FR",
+      "slug": "fr",
+      "store": "fr",
+      "name": "Français",
+      "english": "French",
+      "dir": "ltr"
+    },
+    {
+      "tag": "fr-CA",
+      "slug": "fr-ca",
+      "store": "fr-CA",
+      "name": "Français (Canada)",
+      "english": "French (Canada)",
+      "dir": "ltr"
+    },
+    {
+      "tag": "he",
+      "slug": "he",
+      "store": "he",
+      "name": "עברית",
+      "english": "Hebrew",
+      "dir": "rtl"
+    },
+    {
+      "tag": "hi",
+      "slug": "hi",
+      "store": "hi",
+      "name": "हिन्दी",
+      "english": "Hindi",
+      "dir": "ltr"
+    },
+    {
+      "tag": "hu",
+      "slug": "hu",
+      "store": "hu",
+      "name": "Magyar",
+      "english": "Hungarian",
+      "dir": "ltr"
+    },
+    {
+      "tag": "id",
+      "slug": "id",
+      "store": "id",
+      "name": "Bahasa Indonesia",
+      "english": "Indonesian",
+      "dir": "ltr"
+    },
+    {
+      "tag": "it",
+      "slug": "it",
+      "store": "it",
+      "name": "Italiano",
+      "english": "Italian",
+      "dir": "ltr"
+    },
+    {
+      "tag": "ja",
+      "slug": "ja",
+      "store": "ja",
+      "name": "日本語",
+      "english": "Japanese",
+      "dir": "ltr"
+    },
+    {
+      "tag": "ko",
+      "slug": "ko",
+      "store": "ko",
+      "name": "한국어",
+      "english": "Korean",
+      "dir": "ltr"
+    },
+    {
+      "tag": "ms",
+      "slug": "ms",
+      "store": "ms",
+      "name": "Bahasa Melayu",
+      "english": "Malay",
+      "dir": "ltr"
+    },
+    {
+      "tag": "nl-NL",
+      "slug": "nl",
+      "store": "nl",
+      "name": "Nederlands",
+      "english": "Dutch",
+      "dir": "ltr"
+    },
+    {
+      "tag": "no",
+      "slug": "no",
+      "store": "nb",
+      "name": "Norsk",
+      "english": "Norwegian",
+      "dir": "ltr"
+    },
+    {
+      "tag": "pl",
+      "slug": "pl",
+      "store": "pl",
+      "name": "Polski",
+      "english": "Polish",
+      "dir": "ltr"
+    },
+    {
+      "tag": "pt-BR",
+      "slug": "pt-br",
+      "store": "pt",
+      "name": "Português (Brasil)",
+      "english": "Portuguese (Brazil)",
+      "dir": "ltr"
+    },
+    {
+      "tag": "ro",
+      "slug": "ro",
+      "store": "ro",
+      "name": "Română",
+      "english": "Romanian",
+      "dir": "ltr"
+    },
+    {
+      "tag": "ru",
+      "slug": "ru",
+      "store": "ru",
+      "name": "Русский",
+      "english": "Russian",
+      "dir": "ltr"
+    },
+    {
+      "tag": "sv",
+      "slug": "sv",
+      "store": "sv",
+      "name": "Svenska",
+      "english": "Swedish",
+      "dir": "ltr"
+    },
+    { "tag": "th", "slug": "th", "store": "th", "name": "ไทย", "english": "Thai", "dir": "ltr" },
+    {
+      "tag": "tr",
+      "slug": "tr",
+      "store": "tr",
+      "name": "Türkçe",
+      "english": "Turkish",
+      "dir": "ltr"
+    },
+    {
+      "tag": "vi",
+      "slug": "vi",
+      "store": "vi",
+      "name": "Tiếng Việt",
+      "english": "Vietnamese",
+      "dir": "ltr"
+    },
+    {
+      "tag": "zh-Hans",
+      "slug": "zh-hans",
+      "store": "zh-Hans",
+      "name": "简体中文",
+      "english": "Chinese (Simplified)",
+      "dir": "ltr"
+    },
+    {
+      "tag": "zh-Hant",
+      "slug": "zh-hant",
+      "store": "zh-Hant",
+      "name": "繁體中文",
+      "english": "Chinese (Traditional)",
+      "dir": "ltr"
+    }
+  ]
+}

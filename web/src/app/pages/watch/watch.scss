@@ -1,0 +1,113 @@
+section {
+  padding: var(--rhythm) 0;
+}
+
+section + section {
+  border-top: 1px solid var(--rule-soft);
+}
+
+h2 {
+  font-size: var(--title);
+  margin: 0 0 1.5rem;
+  max-width: 20ch;
+}
+
+.premise .lede {
+  margin-bottom: 1.5rem;
+}
+
+/* The premise ends by promising three rules, so the rules follow it directly
+   rather than across two full rhythms of nothing. */
+.premise + .rules {
+  border-top: 0;
+  padding-top: 0;
+}
+
+/* ── The three rules ─────────────────────────────────────────────────────── */
+
+.rules ol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: rule;
+}
+
+.rules li {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.25rem;
+}
+
+.rules .index {
+  color: var(--brass);
+  letter-spacing: 0.3em;
+  margin: 0 0 0.75rem;
+}
+
+.rules h2 {
+  font-size: var(--heading);
+  margin-bottom: 0.75rem;
+}
+
+.rules p:last-child {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+/* ── Taking over ─────────────────────────────────────────────────────────── */
+
+.takeover__cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+@media (max-width: 52rem) {
+  .takeover__cols {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.how {
+  border: 1px solid var(--rule-soft);
+  border-radius: 1rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: linear-gradient(180deg, rgba(214, 169, 95, 0.06), transparent 70%);
+}
+
+.how h3 {
+  font-size: 1.35rem;
+  margin: 0 0 1rem;
+}
+
+.how ul {
+  margin: 0 0 1.25rem;
+  padding-inline-start: 1.1rem;
+  color: var(--ivory-dim);
+  font-size: 0.9375rem;
+}
+
+.how li + li {
+  margin-top: 0.6rem;
+}
+
+/* ── Onward ──────────────────────────────────────────────────────────────── */
+
+.onward__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 3rem;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.onward p {
+  max-width: var(--measure);
+}
+
+.more {
+  margin: 0;
+}

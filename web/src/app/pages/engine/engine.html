@@ -1,0 +1,201 @@
+<bp-page-head
+  slug="Under the board"
+  title="Two engines, both on your phone"
+  lede="The coach is not a heuristic, not a lookup table and not a language model with opinions about chess. It is a top-ranked chess program searching the position in front of you, on your device, with no network anywhere in the loop — and there are two of them in the app, because a second opinion is worth having."
+/>
+
+<div class="page">
+  <section class="claims">
+    <article ctReveal>
+      <h2>It runs on the device</h2>
+      <p>
+        The engine is compiled into the app and searches locally. That is not a privacy slogan — it
+        is what makes the app work on a train, and what makes “analyse this” instant rather than a
+        round trip to somebody’s GPU with a queue in front of it.
+      </p>
+      <p>
+        It also means the app has nothing to send anywhere, which is why the
+        <a routerLink="/privacy">privacy policy</a> is as short as it is.
+      </p>
+    </article>
+
+    <article ctReveal="80">
+      <h2>Stockfish plays at a strength you set</h2>
+      <p>
+        Anywhere from about 1400 to full strength. A limited engine is not a strong engine playing
+        badly on purpose in the obvious way: strength is limited by restricting how deep and how
+        widely it searches, so it plays like somebody who did not see far enough — which is what a
+        human opponent actually feels like.
+      </p>
+      <p class="faint">
+        Reckless has no such limiter, so choosing it takes the opponent ladder down to one rung:
+        full strength. Settings says so before you choose rather than after.
+      </p>
+    </article>
+
+    <article ctReveal="160">
+      <h2>It defends properly in the endgames</h2>
+      <p>
+        In the endgame drills the engine takes the other side and puts up the best defence there is.
+        Knowing that king and pawn against king is winning is not the same as converting it against
+        a defence that never errs, and the difference between those two states is exactly the thing
+        the mode is for.
+      </p>
+    </article>
+  </section>
+
+  <section class="engines" ctReveal>
+    <p class="slug">Both of them, one at a time</p>
+    <h2>You pick which one plays.</h2>
+    <p class="lede measure">
+      Stockfish and Reckless are both compiled into the app. One of them is chosen in Settings, and
+      from then on it plays, it grades your moves, and it labels the endgame drills. They do not run
+      at once, and they never play each other — a second engine here is a second opinion you can
+      switch to, not a spectacle to watch.
+    </p>
+
+    <div class="engines__grid">
+      @for (engine of engines; track engine.name) {
+        <article class="engine-card" ctReveal="80">
+          <h3>
+            {{ engine.name }} <span class="mono faint">{{ engine.version }}</span>
+          </h3>
+          <p>{{ engine.note }}</p>
+          <p class="mono faint">
+            <a [href]="engine.licenceUrl" rel="noopener">{{ engine.licence }}</a> ·
+            <a [href]="engine.source" rel="noopener">source</a>
+          </p>
+        </article>
+      }
+    </div>
+
+    <p class="measure dim">
+      Why bother with the second one? Because two engines that are both near the top of the rating
+      lists still disagree, and the positions where they disagree are the interesting ones. An
+      engine is not an oracle; it is a very strong player with a taste in positions, and having two
+      of them makes that visible instead of hiding it behind a single number.
+    </p>
+  </section>
+
+  <section class="grading" ctReveal>
+    <p class="slug">The one design decision worth arguing about</p>
+    <h2>Move grading uses win probability, not centipawns.</h2>
+    <div class="grading__cols">
+      <div>
+        <p>
+          Losing a hundred centipawns when you are already up a queen barely matters. Losing them in
+          a level position is decisive. Centipawns cannot tell those apart — they are a linear scale
+          laid over a game whose outcomes are not linear at all.
+        </p>
+        <p>
+          So every evaluation is converted to a win probability first, and the grade is the drop in
+          your chances of winning. A trainer that says <em>blunder</em> when nothing happened stops
+          being worth listening to, and once you stop listening the whole thing is decoration.
+        </p>
+      </div>
+      <div class="grading__demo" aria-hidden="true">
+        <p class="mono">Same −100 cp, two positions</p>
+        <div class="bar">
+          <span class="bar__label mono">+9.0 → +8.0</span>
+          <span class="bar__track"><i style="width: 3%"></i></span>
+          <span class="bar__value mono">−1% to win</span>
+        </div>
+        <div class="bar">
+          <span class="bar__label mono">+0.2 → −0.8</span>
+          <span class="bar__track"><i style="width: 62%"></i></span>
+          <span class="bar__value mono">−24% to win</span>
+        </div>
+        <p class="mono faint">
+          Illustrative. The app computes this from the actual evaluation each time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="words" ctReveal>
+    <p class="slug">And then it says something</p>
+    <h2>“−1.4” is not feedback. This is.</h2>
+    <p class="lede measure">
+      Once the engine has an answer, a coaching layer turns it into a sentence about the position —
+      built from the features that actually changed, not from a template with the move pasted in.
+    </p>
+    <ul class="quotes">
+      <li ctReveal>“takes the open d-file”</li>
+      <li ctReveal="50">“plants the knight on the e5 outpost, where no pawn can dislodge it”</li>
+      <li ctReveal="100">“pries open lines toward the enemy king”</li>
+      <li ctReveal="150">“leaves the opponent with an isolated pawn”</li>
+      <li ctReveal="200">“lands the rook on the seventh rank”</li>
+      <li ctReveal="250">“breaks up the enemy bishop pair”</li>
+    </ul>
+    <p class="faint mono">
+      All of it translated into 31 languages — including the chess vocabulary, which is the part a
+      player notices being wrong. A fork is a <em>horquilla</em> in Spanish, a
+      <em>fourchette</em> in French, 捉双 — “catching two” — in Chinese and 両取り in Japanese.
+    </p>
+  </section>
+</div>
+
+<section class="gpl">
+  <div class="page">
+    <div class="gpl__grid">
+      <div ctReveal>
+        <p class="slug">The licence</p>
+        <h2>Using these engines has a price, and it is not money.</h2>
+        <p class="lede">
+          Stockfish is free software under the GPLv3. Reckless is free software under the AGPLv3.
+          Both are linked into this app, and both licences are copyleft: a work that includes them
+          and is distributed must carry the same terms.
+        </p>
+        <p>
+          The GPLv3 explicitly permits combining with AGPLv3 code, and what comes out of that
+          combination carries the Affero terms. So Brass Pawn is distributed under the
+          <a [href]="site.licenceUrl" rel="noopener">GNU Affero General Public License v3</a>, and
+          its complete corresponding source is published. That is not generosity. It is the
+          condition of using engines this strong, and it is a fair one.
+        </p>
+        <p class="faint">
+          The Affero clause is the one about software offered to users over a network, and it
+          changes nothing here: both engines run on your device, and the app makes no network
+          requests at all.
+        </p>
+      </div>
+
+      <aside class="consequence" ctReveal="120">
+        <h3>Two consequences, both good for you</h3>
+        <p>
+          <strong>You get the source.</strong> The iOS app, the Swift rules engine — covered by a
+          perft suite that proves the move generator correct — the training logic, the puzzle-mining
+          pipeline, and this website.
+        </p>
+        <p>
+          <strong>There will never be advertising.</strong> A proprietary ad SDK compiled into the
+          same binary would make the combined work undistributable under either licence. Charging
+          for the app is fine — copyleft has never forbidden charging. Bolting a closed SDK onto it
+          is not.
+        </p>
+        <p class="mono">
+          <a routerLink="/licences">Full licences and attribution →</a>
+        </p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="page">
+    <header class="section-head" ctReveal>
+      <p class="slug">Not taking our word for it</p>
+      <h2>The rules engine is proved, not tested.</h2>
+      <p class="lede measure">
+        The iOS app reimplements the rules in Swift rather than shipping a library, and a move
+        generator with a bug in it is a trainer that teaches illegal chess. So it is checked with a
+        <strong>perft</strong> suite: every legal move sequence to a given depth is counted from a
+        set of positions with known answers, and the count either matches exactly or the build
+        fails. There is no “mostly correct” state for a move generator to be in.
+      </p>
+    </header>
+    <p class="more" ctReveal>
+      <a [href]="site.repo" rel="noopener">Read the source →</a>
+    </p>
+  </div>
+</section>

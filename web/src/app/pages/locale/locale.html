@@ -1,0 +1,161 @@
+<article [attr.lang]="locale().tag" [attr.dir]="locale().dir">
+  <section class="opening">
+    <div class="page">
+      <p class="slug" ctReveal>{{ copy().said.slug }}</p>
+
+      <!-- The App Store caption, doing the job it was written for. It was made
+           to be read at the width of a thumb, which is exactly the discipline a
+           headline needs. -->
+      <h1 ctReveal="60">
+        {{ copy().shots.title[0] }}<br />
+        <em>{{ copy().shots.title[1] }}</em>
+      </h1>
+
+      <p class="lede measure" ctReveal="140">{{ copy().said.lede }}</p>
+
+      <div class="actions" ctReveal="200">
+        @if (site.appStoreLive) {
+          <a class="button button--brass" [href]="site.appStore" rel="noopener">
+            {{ copy().ui.download }}
+          </a>
+        } @else {
+          <span class="button button--waiting">{{ copy().ui.soon }}</span>
+        }
+        <a class="button" [routerLink]="[]" fragment="see">{{ copy().ui.film }}</a>
+      </div>
+    </div>
+  </section>
+
+  <bp-showcase [copy]="copy()" [slug]="slug()" />
+
+  <section class="figures">
+    <div class="page">
+      <ol>
+        @for (figure of figures(); track figure.label) {
+          <li ctReveal>
+            <span class="value">{{ figure.value }}</span>
+            <span class="label">{{ figure.label }}</span>
+          </li>
+        }
+      </ol>
+
+      <div class="sentences">
+        <p ctReveal="60">{{ copy().said.coaching }}</p>
+        <p ctReveal="100">{{ copy().said.takeOver }} · {{ copy().said.photo }}</p>
+        <p ctReveal="140">{{ copy().said.online }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="claim">
+    <div class="page">
+      <!-- The screenshot caption again, because it is the shortest true
+           sentence about privacy that exists in this language. -->
+      <h2 ctReveal>
+        {{ copy().shots.values[0] }} <em>{{ copy().shots.values[1] }}</em>
+      </h2>
+      <p class="measure dim" ctReveal="80">{{ copy().said.privacy }}</p>
+      <p class="mono faint" ctReveal="120">{{ copy().said.noAds }}</p>
+    </div>
+  </section>
+
+  <section class="price" id="price">
+    <div class="page">
+      <p class="slug" ctReveal>{{ copy().ui.price }}</p>
+      <h2 ctReveal="40">
+        {{ copy().shots.free[0] }} <em>{{ copy().shots.free[1] }}</em>
+      </h2>
+
+      <div class="plans">
+        <div class="plan" ctReveal="80">
+          <h3>{{ copy().ui.free }}</h3>
+          <p class="figure">0</p>
+          <p class="dim">{{ copy().said.freeForever }}</p>
+          <p class="faint">{{ copy().said.allowance }}</p>
+        </div>
+
+        <div class="plan plan--pro" ctReveal="120">
+          <h3>{{ copy().said.pro }} · {{ copy().said.monthly }}</h3>
+          <p class="figure">{{ pricing.monthly }}</p>
+          <ul>
+            <li>{{ copy().said.unlimitedPuzzles }}</li>
+            <li>{{ copy().said.unlimitedRush }}</li>
+            <li>{{ copy().said.unlimitedRest }}</li>
+          </ul>
+        </div>
+
+        <div class="plan" ctReveal="160">
+          <h3>{{ copy().said.lifetime }}</h3>
+          <p class="figure">{{ pricing.lifetime }}</p>
+          <p class="dim">{{ copy().said.renewal }}</p>
+        </div>
+      </div>
+
+      <p class="mono faint note">{{ copy().ui.prices }}</p>
+    </div>
+  </section>
+
+  <section class="questions">
+    <div class="page">
+      <p class="slug" ctReveal>{{ copy().ui.questions }}</p>
+      <dl>
+        @for (item of faq(); track item.q) {
+          <div ctReveal>
+            <dt>{{ item.q }}</dt>
+            <dd>{{ item.a }}</dd>
+          </div>
+        }
+      </dl>
+    </div>
+  </section>
+
+  <section class="licence">
+    <div class="page">
+      <h2 ctReveal>{{ copy().said.licence }}</h2>
+      <div class="measure dim" ctReveal="60">
+        <p>{{ copy().said.freeSoftware }}</p>
+        <p>{{ copy().said.stockfish }}</p>
+        <p>{{ copy().said.reckless }}</p>
+        <p>
+          <a [href]="site.repo" rel="noopener">{{ site.repo }}</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The essays. Marked as English rather than quietly left in it: a link
+       that changes language without warning is worse than one that says so. -->
+  <section class="deeper">
+    <div class="page">
+      <p class="slug" ctReveal>{{ copy().ui.more }}</p>
+      <ul ctReveal="60">
+        @for (link of deeper; track link.path) {
+          <li>
+            <a [routerLink]="link.path" hreflang="en">
+              {{ english[link.key] }}
+              <span class="in-english mono">{{ copy().ui.inEnglish }}</span>
+            </a>
+          </li>
+        }
+        <li>
+          <a routerLink="/privacy" hreflang="en">
+            {{ copy().said.privacyPolicy }}
+            <span class="in-english mono">{{ copy().ui.inEnglish }}</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/terms" hreflang="en">
+            {{ copy().said.termsOfUse }}
+            <span class="in-english mono">{{ copy().ui.inEnglish }}</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/licences" hreflang="en">
+            {{ copy().said.credits }}
+            <span class="in-english mono">{{ copy().ui.inEnglish }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</article>

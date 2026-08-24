@@ -1,0 +1,300 @@
+<bp-hero />
+
+<!-- ── The premise ─────────────────────────────────────────────────────── -->
+<section class="statement" id="premise">
+  <div class="page">
+    <p class="slug" ctReveal>The premise</p>
+    <p class="pull" ctReveal="80">
+      Nothing will make you a grandmaster on its own. What this gives you is the
+      <em>training half</em> of it — structured, measured, and honest about where you actually are.
+    </p>
+    <div class="statement__body measure" ctReveal="160">
+      <p>
+        Most chess apps are a puzzle feed with a rating attached. This one is built around a
+        different idea: that improvement comes from being told, immediately and specifically, what
+        you missed and why it mattered — and from being asked the same question again a week later,
+        before you have quietly forgotten.
+      </p>
+      <p>
+        So every mode grades you while you are still in the position, in words about the position.
+        Not “−1.4”, but <em>the rook belonged on the open file, and now it never gets there</em>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Numbers ─────────────────────────────────────────────────────────── -->
+<section class="figures" id="numbers">
+  <div class="page">
+    <div class="figures__grid">
+      @for (figure of figures; track figure.label; let i = $index) {
+        <div class="figure" [ctReveal]="i * 70">
+          <p class="figure__value">{{ figure.value }}</p>
+          <p class="figure__label">{{ figure.label }}</p>
+          <p class="figure__note faint mono">{{ figure.note }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ── The eight modes ─────────────────────────────────────────────────── -->
+<section class="modes" id="modes">
+  <div class="page">
+    <header class="section-head" ctReveal>
+      <p class="slug">The programme</p>
+      <h2>Eight ways to be told the truth about your chess.</h2>
+      <p class="lede measure">
+        Two of them are free forever, because a trainer that will not let you play chess is a demo.
+        The other five are the part that is sold.
+      </p>
+    </header>
+
+    <ol class="acts">
+      @for (mode of modes; track mode.slug; let i = $index) {
+        <li class="act" [ctReveal]="(i % 2) * 90">
+          <p class="act__number mono">{{ mode.act }}</p>
+          <div class="act__body">
+            <h3>{{ mode.title }}</h3>
+            <p class="act__lede">{{ mode.lede }}</p>
+            <p class="act__free mono">{{ mode.free }}</p>
+          </div>
+          @if (mode.stat) {
+            <p class="act__stat">
+              <span class="act__stat-value">{{ mode.stat.value }}</span>
+              <span class="act__stat-label faint">{{ mode.stat.label }}</span>
+            </p>
+          }
+        </li>
+      }
+    </ol>
+
+    <p class="more" ctReveal>
+      <a routerLink="/training">Read what each one actually does →</a><br />
+      <a routerLink="/tactics">Or start with the tactical motifs, defined →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ── The film ────────────────────────────────────────────────────────── -->
+<!-- The app itself, running, in whichever of the thirty-one languages you
+     are reading. Same component as every localised page uses; English is not a
+     special case of it. -->
+<bp-showcase [copy]="copy" slug="en" />
+
+<section class="film" id="film">
+  <div class="page">
+    <header class="section-head section-head--centre" ctReveal>
+      <p class="slug slug--centre">The film</p>
+      <h2>{{ film.title }}</h2>
+      <p class="lede measure">{{ film.synopsis }}</p>
+    </header>
+
+    <figure class="reel" ctReveal="120">
+      <div class="reel__perf reel__perf--l" aria-hidden="true">
+        @for (hole of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track hole) {
+          <i></i>
+        }
+      </div>
+
+      @if (film.src) {
+        <video
+          class="reel__video"
+          [src]="film.src"
+          [poster]="film.poster"
+          controls
+          playsinline
+          preload="none"
+        >
+          @if (film.captions) {
+            <track kind="captions" [src]="film.captions" srclang="en" label="English" default />
+          }
+        </video>
+      } @else {
+        <div class="reel__slate">
+          <p class="mono">Reel 1 · {{ film.runtime }} · in production</p>
+          <p class="reel__slate-title">{{ film.title }}</p>
+          <p class="dim measure">
+            The title film is being shot. When it is cut, it goes here — in this frame, with
+            captions, and set to load only when you ask for it.
+          </p>
+        </div>
+      }
+
+      <div class="reel__perf reel__perf--r" aria-hidden="true">
+        @for (hole of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track hole) {
+          <i></i>
+        }
+      </div>
+
+      <figcaption class="mono faint">
+        The scene above this page is rendered live in your browser — one board, seventeen pieces and
+        a single warm light, drawn at whatever frame rate your device is comfortable with.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ── The engine ──────────────────────────────────────────────────────── -->
+<section class="engine" id="engine">
+  <div class="page engine__grid">
+    <div ctReveal>
+      <p class="slug">The engine</p>
+      <h2>Two engines, compiled into the app.</h2>
+      <p class="lede">
+        The coach is not a heuristic and not a language model with opinions. It is a top-ranked
+        chess program searching the position in front of you, on your device, with no network
+        anywhere in the loop. Stockfish and Reckless are both in there; you choose which one plays,
+        grades and labels, and the other is a second opinion one setting away.
+      </p>
+      <p>
+        Move grading uses win probability rather than raw centipawns, because losing a hundred
+        centipawns when you are already up a queen barely matters, and losing them in a level
+        position is decisive. A trainer that shouts “blunder” when nothing happened stops being
+        worth listening to.
+      </p>
+      <p><a routerLink="/engine">How the engine is used, and what that costs →</a></p>
+    </div>
+
+    <aside class="licence-card" ctReveal="120">
+      <p class="slug">A licence, stated plainly</p>
+      <p>
+        Stockfish is free software under the GPLv3 and Reckless under the
+        <strong>GNU Affero General Public License, version 3</strong>. Both are linked into this
+        app, both licences are copyleft, and the GPL permits the combination — so the whole
+        application carries the Affero terms, and its complete corresponding source is published.
+      </p>
+      <p>
+        It also means there will never be advertising in it. A proprietary ad SDK compiled into the
+        same binary would make the combined work undistributable under either licence. Charging for
+        it is fine; copyleft has never forbidden charging. Bolting a closed SDK onto it is not.
+      </p>
+      <p class="licence-card__links mono">
+        <a [href]="site.repo" rel="noopener">Source</a> ·
+        <a routerLink="/licences">Licences &amp; attribution</a> ·
+        <a [href]="site.licenceUrl" rel="noopener">AGPLv3</a>
+      </p>
+    </aside>
+  </div>
+</section>
+
+<!-- ── Privacy ─────────────────────────────────────────────────────────── -->
+<section class="privacy" id="privacy">
+  <div class="page">
+    <p class="slug" ctReveal>Privacy</p>
+    <h2 class="privacy__claim" ctReveal="80">It collects nothing.</h2>
+    <div class="privacy__cols" ctReveal="160">
+      <p>
+        No analytics calls. No advertising. No third-party tracking of any kind. No account to
+        create and no server of ours for anything to be sent to. Your ratings, solved puzzles,
+        review schedule, streaks and game history are stored in the app’s own container on your
+        device, and deleting the app deletes them.
+      </p>
+      <p>
+        Online play goes through Apple’s Game Center, which carries the moves between the two
+        devices; in a match your Game Center nickname and your in-app online rating are visible to
+        your opponent, because that is what a game between two people needs. Purchases are handled
+        entirely by the App Store — we never see your payment details.
+      </p>
+    </div>
+    <p class="more" ctReveal="220"><a routerLink="/privacy">Read the full privacy policy →</a></p>
+  </div>
+</section>
+
+<!-- ── Pricing ─────────────────────────────────────────────────────────── -->
+<section class="pricing" id="pricing">
+  <div class="page">
+    <header class="section-head section-head--centre" ctReveal>
+      <p class="slug slug--centre">What it costs</p>
+      <h2>Playing is free. The training is what is sold.</h2>
+      <p class="lede measure">
+        Metered rather than locked. Nobody pays for a trainer they have not used, and a mode that
+        refuses to open teaches nothing about what is behind it.
+      </p>
+    </header>
+
+    <div class="plans">
+      <article class="plan" ctReveal>
+        <h3>Free</h3>
+        <p class="plan__price">$0</p>
+        <ul>
+          <li>Unlimited play against the engine, 1400 to full strength</li>
+          <li>Unlimited online games over Game Center</li>
+          <li>Five tactics puzzles a day</li>
+          <li>One Rush run a day</li>
+          <li>Three positional, three endgame, three Guess the Elo a day</li>
+          <li>No advertising, ever</li>
+        </ul>
+      </article>
+
+      <article class="plan plan--lead" ctReveal="90">
+        <p class="plan__flag mono">Brass Pawn Pro</p>
+        <h3>Monthly</h3>
+        <p class="plan__price">{{ pricing.monthly }}<span>/month</span></p>
+        <ul>
+          <li>Every daily limit removed</li>
+          <li>The full library: {{ library.tactics.toLocaleString('en-US') }} puzzles</li>
+          <li>Unlimited Rush, positional exercises and endgame drills</li>
+          <li>Unlimited Guess the Elo</li>
+          <li>Everything in Free, unchanged</li>
+        </ul>
+      </article>
+
+      <article class="plan" ctReveal="180">
+        <h3>One-off unlock</h3>
+        <p class="plan__price">{{ pricing.lifetime }}<span>once</span></p>
+        <ul>
+          <li>The same, bought outright</li>
+          <li>No renewal, no expiry</li>
+          <li>Restores on your other devices</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="plans__note faint mono" ctReveal>
+      {{ pricing.currencyNote }} There is no annual plan in between, because a third price is a
+      third decision to make at the moment somebody wants to solve a puzzle.
+      <a routerLink="/pricing">The whole story on pricing →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ── Questions ───────────────────────────────────────────────────────── -->
+<section class="faq" id="questions">
+  <div class="page">
+    <header class="section-head" ctReveal>
+      <p class="slug">Questions</p>
+      <h2>The four that get asked first.</h2>
+    </header>
+
+    <dl class="faq__list">
+      @for (item of faq; track item.q; let i = $index) {
+        <div class="faq__item" [ctReveal]="i * 70">
+          <dt>{{ item.q }}</dt>
+          <dd>{{ item.a }}</dd>
+        </div>
+      }
+    </dl>
+
+    <p class="more" ctReveal>
+      <a routerLink="/support">All of them, and how to reach a human →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ── End card ────────────────────────────────────────────────────────── -->
+<section class="end" id="end">
+  <div class="page">
+    <p class="mono end__mark" ctReveal>Fin.</p>
+    <h2 ctReveal="80">Find out what you are actually rated.</h2>
+    <div class="end__actions" ctReveal="160">
+      <a class="button button--solid" [href]="site.appStore" rel="noopener">
+        Get it on the App&nbsp;Store
+      </a>
+      <a class="button" [href]="site.repo" rel="noopener">Read the source</a>
+    </div>
+    <p class="faint mono end__note" ctReveal="220">
+      Requires an iPhone or iPad. Free to download. Free software under the GNU AGPL v3.
+    </p>
+  </div>
+</section>
