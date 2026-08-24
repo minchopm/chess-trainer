@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brass Pawn — Privacy Policy</title>
+<meta name="description" content="Brass Pawn collects nothing. What that means, in full.">
+<!--
+  No web fonts, no analytics, no third-party anything. A page that claims
+  nothing is collected and then calls out to somebody else's server for a
+  typeface is arguing against itself, so this one is a single file that asks
+  the network for exactly nothing once it has loaded.
+-->
+<style>
+  :root {
+    --ground: #FBF9F4;
+    --ink: #1A1712;
+    --ink-soft: #55503F;
+    --rule: #E0D9C8;
+    --brass: #8A6A2A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #05060A;
+      --ink: #E9E4D8;
+      --ink-soft: #A7A192;
+      --rule: #1E222E;
+      --brass: #D6A95F;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font: 17px/1.65 ui-serif, Georgia, "Times New Roman", serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 34rem; margin: 0 auto; padding: 4rem 1.4rem 6rem; }
+  h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.4rem;
+  }
+  .app {
+    font: 600 0.78rem/1 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 0 0 2.4rem;
+  }
+  .lead { font-size: 1.18rem; margin: 0 0 1.6rem; }
+  h2 {
+    font: 600 0.78rem/1 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 2.6rem 0 0.8rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--rule);
+  }
+  p { margin: 0 0 1rem; color: var(--ink-soft); }
+  .lead, li { color: var(--ink); }
+  a { color: var(--brass); }
+  a:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--rule);
+    font: 0.85rem/1.6 ui-sans-serif, system-ui, sans-serif;
+    color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+<main>
+  <p class="app">Brass&nbsp;Pawn</p>
+  <h1>Privacy Policy</h1>
+
+  <p class="lead"><strong>Brass Pawn collects nothing.</strong></p>
+
+  <p>The app makes no analytics calls, carries no advertising, and contains no
+  third-party tracking of any kind. There is no account to create and no server
+  of ours for anything to be sent to.</p>
+
+  <h2>What stays on your device</h2>
+  <p>Your ratings, solved puzzles, review schedule, streaks, game history and
+  purchase state are stored in the app's own container on your device. Deleting
+  the app deletes them. They are included in an encrypted device backup only if
+  you have one; nothing is uploaded anywhere else.</p>
+
+  <h2>Game Center</h2>
+  <p>Online play uses Apple's Game Center to find an opponent and to carry the
+  moves between the two devices. In a match your Game Center nickname and your
+  in-app online rating are visible to your opponent, because that is what a game
+  between two people needs. Apple's handling of Game Center data is covered by
+  Apple's own privacy policy; we receive none of it.</p>
+  <p>Moves, clocks and results travel directly between the two devices through
+  Game Center. They are not recorded by us.</p>
+
+  <h2>Purchases</h2>
+  <p>Subscriptions and the one-off unlock are handled entirely by the App Store.
+  We never see your payment details; the app only asks the App Store whether a
+  purchase is active.</p>
+
+  <h2>Chess data</h2>
+  <p>The bundled puzzles and games come from the Lichess database, released into
+  the public domain (CC0), and from positions generated on our own machines.
+  They contain no personal information: the imported games keep the two players'
+  ratings and moves, and not their usernames.</p>
+
+  <h2>Children</h2>
+  <p>The app collects no data at all, so there is nothing to collect from a
+  child either. It shows no adverts and links out only to the source repository
+  and to the licence text.</p>
+
+  <h2>Contact</h2>
+  <p>Questions: open an issue at
+  <a href="https://github.com/minchopm/chess-trainer">github.com/minchopm/chess-trainer</a>.</p>
+
+  <footer>
+    <p>This page loads no fonts, scripts or images from anywhere else, so
+    reading it tells nobody that you did.</p>
+  </footer>
+</main>
+</body>
+</html>
