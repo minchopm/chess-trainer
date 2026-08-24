@@ -394,7 +394,7 @@
  "store.appStoreUnreachable": "Impossible de joindre l'App Store : %@",
  "store.checkingAccount": "Vérification de votre compte Apple…",
  "store.close": "Fermer",
- "store.comeBackTomorrow": "Le quota repart à minuit. Jouer — contre le moteur ou contre quelqu'un — reste illimité et gratuit.",
+ "store.comeBackAtNine": "Le quota repart chaque jour à 9 h, heure locale. Jouer — contre le moteur ou contre quelqu'un — reste illimité et gratuit.",
  "store.doneEndgames": "Les exercices de finale gratuits du jour sont épuisés.",
  "store.doneForToday": "C'est l'entraînement gratuit du jour",
  "store.doneGuess": "Les parties à évaluer gratuites du jour sont épuisées.",

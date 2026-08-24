@@ -394,7 +394,7 @@
  "store.appStoreUnreachable": "No se pudo contactar con la App Store: %@",
  "store.checkingAccount": "Comprobando tu cuenta de Apple…",
  "store.close": "Cerrar",
- "store.comeBackTomorrow": "El cupo se reinicia a medianoche. Jugar —contra el motor o contra una persona— no tiene límite y no cuesta nada.",
+ "store.comeBackAtNine": "El cupo se reinicia cada día a las 9:00, hora local. Jugar —contra el motor o contra una persona— no tiene límite y no cuesta nada.",
  "store.doneEndgames": "Se acabaron los ejercicios de final gratis de hoy.",
  "store.doneForToday": "Eso es el entrenamiento gratis de hoy",
  "store.doneGuess": "Se acabaron las partidas gratis para juzgar de hoy.",

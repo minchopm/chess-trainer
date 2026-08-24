@@ -394,7 +394,7 @@
  "store.appStoreUnreachable": "Impossibile contattare l'App Store: %@",
  "store.checkingAccount": "Controllo del tuo account Apple…",
  "store.close": "Chiudi",
- "store.comeBackTomorrow": "Il conteggio riparte a mezzanotte. Giocare — contro il motore o contro una persona — è senza limiti e non costa nulla.",
+ "store.comeBackAtNine": "Il conteggio riparte ogni giorno alle 9:00, ora locale. Giocare — contro il motore o contro una persona — è senza limiti e non costa nulla.",
  "store.doneEndgames": "Gli esercizi di finale gratuiti di oggi sono finiti.",
  "store.doneForToday": "Questo è l'allenamento gratuito di oggi",
  "store.doneGuess": "Le partite gratuite da valutare di oggi sono finite.",

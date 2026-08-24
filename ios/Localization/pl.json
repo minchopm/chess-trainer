@@ -394,7 +394,7 @@
  "store.appStoreUnreachable": "Nie udało się połączyć z App Store: %@",
  "store.checkingAccount": "Sprawdzamy Twoje konto Apple…",
  "store.close": "Zamknij",
- "store.comeBackTomorrow": "Limit odnawia się o północy. Gra — z silnikiem albo z człowiekiem — jest bez limitu i za darmo.",
+ "store.comeBackAtNine": "Limit odnawia się codziennie o 9:00 czasu lokalnego. Gra — z silnikiem albo z człowiekiem — jest bez limitu i za darmo.",
  "store.doneEndgames": "Dzisiejsze darmowe ćwiczenia końcówek się skończyły.",
  "store.doneForToday": "To dzisiejszy darmowy trening",
  "store.doneGuess": "Dzisiejsze darmowe partie do oceny się skończyły.",

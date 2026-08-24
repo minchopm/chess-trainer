@@ -394,7 +394,7 @@
  "store.appStoreUnreachable": "App Storeen ei saatu yhteyttä: %@",
  "store.checkingAccount": "Tarkistetaan Apple-tiliäsi…",
  "store.close": "Sulje",
- "store.comeBackTomorrow": "Kiintiö nollautuu keskiyöllä. Pelaaminen — moottoria tai ihmistä vastaan — on rajatonta ja ilmaista.",
+ "store.comeBackAtNine": "Kiintiö nollautuu joka päivä klo 9.00 paikallista aikaa. Pelaaminen — moottoria tai ihmistä vastaan — on rajatonta ja ilmaista.",
  "store.doneEndgames": "Päivän ilmaiset loppupeliharjoitukset on käytetty.",
  "store.doneForToday": "Siinä oli päivän ilmainen harjoittelu",
  "store.doneGuess": "Päivän ilmaiset arvioitavat pelit on käytetty.",

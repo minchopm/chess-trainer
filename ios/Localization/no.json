@@ -394,7 +394,7 @@
  "store.appStoreUnreachable": "Fikk ikke kontakt med App Store: %@",
  "store.checkingAccount": "Sjekker Apple-kontoen din…",
  "store.close": "Lukk",
- "store.comeBackTomorrow": "Kvoten nullstilles ved midnatt. Å spille — mot motoren eller mot et menneske — er uten grense og gratis.",
+ "store.comeBackAtNine": "Kvoten nullstilles hver dag kl. 09.00 lokal tid. Å spille — mot motoren eller mot et menneske — er uten grense og gratis.",
  "store.doneEndgames": "Dagens gratis sluttspilløvelser er brukt opp.",
  "store.doneForToday": "Det var dagens gratis trening",
  "store.doneGuess": "Dagens gratis partier å bedømme er brukt opp.",

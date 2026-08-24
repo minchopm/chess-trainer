@@ -394,7 +394,7 @@
  "store.appStoreUnreachable": "App Store nicht erreichbar: %@",
  "store.checkingAccount": "Dein Apple-Account wird geprüft …",
  "store.close": "Schließen",
- "store.comeBackTomorrow": "Das Kontingent wird um Mitternacht zurückgesetzt. Spielen — gegen die Engine oder gegen einen Menschen — ist unbegrenzt und kostet nichts.",
+ "store.comeBackAtNine": "Das Kontingent wird jeden Tag um 9:00 Uhr Ortszeit zurückgesetzt. Spielen — gegen die Engine oder gegen einen Menschen — ist unbegrenzt und kostet nichts.",
  "store.doneEndgames": "Die kostenlosen Endspielübungen für heute sind aufgebraucht.",
  "store.doneForToday": "Das war das freie Training für heute",
  "store.doneGuess": "Die kostenlosen Partien zum Einschätzen für heute sind aufgebraucht.",

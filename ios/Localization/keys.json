@@ -2765,8 +2765,8 @@
   ]
  },
  {
-  "key": "store.comeBackTomorrow",
-  "english": "The allowance resets at midnight. Playing — against the engine or against a person — has no limit and needs nothing.",
+  "key": "store.comeBackAtNine",
+  "english": "The allowance resets every day at 9:00 AM local time. Playing — against the engine or against a person — has no limit and needs nothing.",
   "files": [
    "Components.swift"
   ]

@@ -394,7 +394,7 @@
  "store.appStoreUnreachable": "Kunde inte nå App Store: %@",
  "store.checkingAccount": "Kontrollerar ditt Apple-konto…",
  "store.close": "Stäng",
- "store.comeBackTomorrow": "Kvoten nollställs vid midnatt. Att spela — mot motorn eller mot en människa — är obegränsat och gratis.",
+ "store.comeBackAtNine": "Kvoten nollställs varje dag kl. 09.00 lokal tid. Att spela — mot motorn eller mot en människa — är obegränsat och gratis.",
  "store.doneEndgames": "Dagens gratis slutspelsövningar är slut.",
  "store.doneForToday": "Det var dagens gratis träning",
  "store.doneGuess": "Dagens gratis partier att bedöma är slut.",

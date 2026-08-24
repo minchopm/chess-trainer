@@ -2085,7 +2085,7 @@
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "전술, 포지션 판단, 엔드게임 기술, 그리고 코칭이 붙은 대국. 엔진가 기기 안에서 돌아가며, 어떤 데이터도 휴대폰을 떠나지 않습니다."
+            "value": "전술, 포지션 판단, 엔드게임 기술, 그리고 코칭이 붙은 대국. 엔진이 기기 안에서 돌아가며, 어떤 데이터도 휴대폰을 떠나지 않습니다."
           }
         },
         "ms": {
@@ -77816,199 +77816,199 @@
         }
       }
     },
-    "store.comeBackTomorrow": {
+    "store.comeBackAtNine": {
       "extractionState": "manual",
       "localizations": {
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "تُعاد الحصة عند منتصف الليل. اللعب — أمام المحرّك أو أمام شخص — بلا حدود ولا يحتاج شيئًا."
+            "value": "تُعاد الحصة كل يوم في الساعة 9 صباحًا بالتوقيت المحلي. اللعب — أمام المحرّك أو أمام شخص — بلا حدود ولا يحتاج شيئًا."
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Limit se obnoví o půlnoci. Hraní — proti enginu i proti člověku — je bez omezení a zdarma."
+            "value": "Limit se obnoví každý den v 9:00 místního času. Hraní — proti enginu i proti člověku — je bez omezení a zdarma."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kvoten nulstilles ved midnat. At spille — mod motoren eller mod et menneske — er uden grænser og gratis."
+            "value": "Kvoten nulstilles hver dag kl. 9.00 lokal tid. At spille — mod motoren eller mod et menneske — er uden grænser og gratis."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Das Kontingent wird um Mitternacht zurückgesetzt. Spielen — gegen die Engine oder gegen einen Menschen — ist unbegrenzt und kostet nichts."
+            "value": "Das Kontingent wird jeden Tag um 9:00 Uhr Ortszeit zurückgesetzt. Spielen — gegen die Engine oder gegen einen Menschen — ist unbegrenzt und kostet nichts."
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Το όριο μηδενίζει τα μεσάνυχτα. Το παιχνίδι — με τη μηχανή ή με άνθρωπο — είναι απεριόριστο και δωρεάν."
+            "value": "Το όριο μηδενίζει κάθε μέρα στις 9:00 τοπική ώρα. Το παιχνίδι — με τη μηχανή ή με άνθρωπο — είναι απεριόριστο και δωρεάν."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "The allowance resets at midnight. Playing — against the engine or against a person — has no limit and needs nothing."
+            "value": "The allowance resets every day at 9:00 AM local time. Playing — against the engine or against a person — has no limit and needs nothing."
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "The allowance resets at midnight. Playing — against the engine or against a person — has no limit and needs nothing."
+            "value": "The allowance resets every day at 9:00 AM local time. Playing — against the engine or against a person — has no limit and needs nothing."
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "The allowance resets at midnight. Playing — against the engine or against a person — has no limit and needs nothing."
+            "value": "The allowance resets every day at 9:00 AM local time. Playing — against the engine or against a person — has no limit and needs nothing."
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "El cupo se reinicia a medianoche. Jugar —contra el motor o contra una persona— no tiene límite y no cuesta nada."
+            "value": "El cupo se reinicia cada día a las 9:00, hora local. Jugar —contra el motor o contra una persona— no tiene límite y no cuesta nada."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kiintiö nollautuu keskiyöllä. Pelaaminen — moottoria tai ihmistä vastaan — on rajatonta ja ilmaista."
+            "value": "Kiintiö nollautuu joka päivä klo 9.00 paikallista aikaa. Pelaaminen — moottoria tai ihmistä vastaan — on rajatonta ja ilmaista."
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Le quota repart à minuit. Jouer — contre le moteur ou contre quelqu'un — reste illimité et gratuit."
+            "value": "Le quota repart chaque jour à 9 h, heure locale. Jouer — contre le moteur ou contre quelqu'un — reste illimité et gratuit."
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Le quota repart à minuit. Jouer — contre le moteur ou contre quelqu'un — reste illimité et gratuit."
+            "value": "Le quota repart chaque jour à 9 h, heure locale. Jouer — contre le moteur ou contre quelqu'un — reste illimité et gratuit."
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "המכסה מתאפסת בחצות. משחק — מול המנוע או מול אדם — הוא ללא הגבלה ובחינם."
+            "value": "המכסה מתאפסת בכל יום ב-9:00 לפי השעון המקומי. משחק — מול המנוע או מול אדם — הוא ללא הגבלה ובחינם."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "सीमा आधी रात को फिर से शुरू हो जाती है। खेलना — इंजन के साथ या किसी व्यक्ति के साथ — बिना सीमा और मुफ़्त है।"
+            "value": "सीमा हर दिन स्थानीय समयानुसार सुबह 9 बजे फिर से शुरू होती है। खेलना — इंजन के साथ या किसी व्यक्ति के साथ — बिना सीमा और मुफ़्त है।"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "A keret éjfélkor nullázódik. A játék — a motor vagy egy ember ellen — korlátlan és ingyenes."
+            "value": "A keret minden nap 9:00-kor, helyi idő szerint nullázódik. A játék — a motor vagy egy ember ellen — korlátlan és ingyenes."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Jatahnya direset tengah malam. Bermain — lawan mesin atau lawan orang — tanpa batas dan gratis."
+            "value": "Jatahnya direset setiap hari pukul 09.00 waktu setempat. Bermain — lawan mesin atau lawan orang — tanpa batas dan gratis."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Il conteggio riparte a mezzanotte. Giocare — contro il motore o contro una persona — è senza limiti e non costa nulla."
+            "value": "Il conteggio riparte ogni giorno alle 9:00, ora locale. Giocare — contro il motore o contro una persona — è senza limiti e non costa nulla."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "回数は深夜 0 時に戻ります。対局はエンジン相手でも人相手でも無制限、無料のままです。"
+            "value": "回数は毎日午前 9 時（現地時間）に戻ります。対局はエンジン相手でも人相手でも無制限、無料のままです。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "횟수는 자정에 초기화됩니다. 대국은 엔진이든 사람이든 제한 없이 무료입니다."
+            "value": "횟수는 매일 현지 시간 오전 9시에 초기화됩니다. 대국은 엔진이든 사람이든 제한 없이 무료입니다."
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kuota ditetapkan semula pada tengah malam. Bermain — menentang enjin atau menentang orang — tanpa had dan percuma."
+            "value": "Kuota ditetapkan semula setiap hari pada pukul 9:00 pagi waktu tempatan. Bermain — menentang enjin atau menentang orang — tanpa had dan percuma."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Het tegoed gaat om middernacht weer open. Spelen — tegen de engine of tegen iemand — is onbeperkt en gratis."
+            "value": "Het tegoed gaat elke dag om 9:00 uur lokale tijd weer open. Spelen — tegen de engine of tegen iemand — is onbeperkt en gratis."
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kvoten nullstilles ved midnatt. Å spille — mot motoren eller mot et menneske — er uten grense og gratis."
+            "value": "Kvoten nullstilles hver dag kl. 09.00 lokal tid. Å spille — mot motoren eller mot et menneske — er uten grense og gratis."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Limit odnawia się o północy. Gra — z silnikiem albo z człowiekiem — jest bez limitu i za darmo."
+            "value": "Limit odnawia się codziennie o 9:00 czasu lokalnego. Gra — z silnikiem albo z człowiekiem — jest bez limitu i za darmo."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "A cota reinicia à meia-noite. Jogar — contra o motor ou contra uma pessoa — não tem limite e não custa nada."
+            "value": "A cota reinicia todo dia às 9h, horário local. Jogar — contra o motor ou contra uma pessoa — não tem limite e não custa nada."
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cota se resetează la miezul nopții. Jocul — cu motorul sau cu o persoană — este nelimitat și gratuit."
+            "value": "Cota se resetează în fiecare zi la ora 9:00, ora locală. Jocul — cu motorul sau cu o persoană — este nelimitat și gratuit."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Лимит обнуляется в полночь. Игра — с движком или с человеком — без ограничений и бесплатно."
+            "value": "Лимит обнуляется каждый день в 9:00 по местному времени. Игра — с движком или с человеком — без ограничений и бесплатно."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kvoten nollställs vid midnatt. Att spela — mot motorn eller mot en människa — är obegränsat och gratis."
+            "value": "Kvoten nollställs varje dag kl. 09.00 lokal tid. Att spela — mot motorn eller mot en människa — är obegränsat och gratis."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "โควตารีเซ็ตตอนเที่ยงคืน การเล่น — กับเอนจินหรือกับคน — ไม่จำกัดและไม่เสียอะไร"
+            "value": "โควตารีเซ็ตทุกวันเวลา 9:00 น. ตามเวลาท้องถิ่น การเล่น — กับเอนจินหรือกับคน — ไม่จำกัดและไม่เสียอะไร"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Hak gece yarısı yenilenir. Oynamak — motora ya da bir insana karşı — sınırsızdır ve hiçbir şey gerektirmez."
+            "value": "Hak her gün yerel saatle 09.00'da yenilenir. Oynamak — motora ya da bir insana karşı — sınırsızdır ve hiçbir şey gerektirmez."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Hạn mức đặt lại lúc nửa đêm. Chơi cờ — với máy hay với người — không giới hạn và miễn phí."
+            "value": "Hạn mức đặt lại mỗi ngày lúc 9:00 giờ địa phương. Chơi cờ — với máy hay với người — không giới hạn và miễn phí."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "额度在午夜重置。对弈——无论对手是引擎还是真人——不限次数，也不收费。"
+            "value": "额度每天上午 9 点（当地时间）重置。对弈——无论对手是引擎还是真人——不限次数，也不收费。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "額度在午夜重置。對弈——不論對手是引擎還是真人——不限次數，也不收費。"
+            "value": "額度每天上午 9 點（當地時間）重置。對弈——不論對手是引擎還是真人——不限次數，也不收費。"
           }
         }
       }

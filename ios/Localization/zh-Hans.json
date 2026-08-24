@@ -394,7 +394,7 @@
  "store.appStoreUnreachable": "无法连接 App Store：%@",
  "store.checkingAccount": "正在检查你的 Apple 账户…",
  "store.close": "关闭",
- "store.comeBackTomorrow": "额度在午夜重置。对弈——无论对手是引擎还是真人——不限次数，也不收费。",
+ "store.comeBackAtNine": "额度每天上午 9 点（当地时间）重置。对弈——无论对手是引擎还是真人——不限次数，也不收费。",
  "store.doneEndgames": "今天的免费残局练习已用完。",
  "store.doneForToday": "今天的免费训练到此为止",
  "store.doneGuess": "今天的免费评级猜测已用完。",

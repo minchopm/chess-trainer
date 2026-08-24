@@ -394,7 +394,7 @@
  "store.appStoreUnreachable": "Nepodařilo se spojit s App Store: %@",
  "store.checkingAccount": "Kontrolujeme tvůj účet Apple…",
  "store.close": "Zavřít",
- "store.comeBackTomorrow": "Limit se obnoví o půlnoci. Hraní — proti enginu i proti člověku — je bez omezení a zdarma.",
+ "store.comeBackAtNine": "Limit se obnoví každý den v 9:00 místního času. Hraní — proti enginu i proti člověku — je bez omezení a zdarma.",
  "store.doneEndgames": "Dnešní koncovkové drily zdarma jsou vyčerpány.",
  "store.doneForToday": "To byl dnešní trénink zdarma",
  "store.doneGuess": "Dnešní partie k odhadu zdarma jsou vyčerpány.",

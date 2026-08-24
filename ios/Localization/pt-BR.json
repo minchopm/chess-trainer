@@ -394,7 +394,7 @@
  "store.appStoreUnreachable": "Não foi possível falar com a App Store: %@",
  "store.checkingAccount": "Verificando sua Conta Apple…",
  "store.close": "Fechar",
- "store.comeBackTomorrow": "A cota reinicia à meia-noite. Jogar — contra o motor ou contra uma pessoa — não tem limite e não custa nada.",
+ "store.comeBackAtNine": "A cota reinicia todo dia às 9h, horário local. Jogar — contra o motor ou contra uma pessoa — não tem limite e não custa nada.",
  "store.doneEndgames": "Os exercícios de final gratuitos de hoje acabaram.",
  "store.doneForToday": "Esse é o treino grátis de hoje",
  "store.doneGuess": "As partidas gratuitas para avaliar de hoje acabaram.",

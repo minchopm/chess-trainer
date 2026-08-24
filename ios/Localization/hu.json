@@ -394,7 +394,7 @@
  "store.appStoreUnreachable": "Nem sikerült elérni az App Store-t: %@",
  "store.checkingAccount": "Az Apple-fiókod ellenőrzése…",
  "store.close": "Bezárás",
- "store.comeBackTomorrow": "A keret éjfélkor nullázódik. A játék — a motor vagy egy ember ellen — korlátlan és ingyenes.",
+ "store.comeBackAtNine": "A keret minden nap 9:00-kor, helyi idő szerint nullázódik. A játék — a motor vagy egy ember ellen — korlátlan és ingyenes.",
  "store.doneEndgames": "A mai ingyenes végjáték-gyakorlatok elfogytak.",
  "store.doneForToday": "Ennyi volt a mai ingyenes edzés",
  "store.doneGuess": "A mai ingyenes megítélendő játszmák elfogytak.",

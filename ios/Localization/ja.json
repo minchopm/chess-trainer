@@ -394,7 +394,7 @@
  "store.appStoreUnreachable": "App Store に接続できませんでした: %@",
  "store.checkingAccount": "Apple アカウントを確認しています…",
  "store.close": "閉じる",
- "store.comeBackTomorrow": "回数は深夜 0 時に戻ります。対局はエンジン相手でも人相手でも無制限、無料のままです。",
+ "store.comeBackAtNine": "回数は毎日午前 9 時（現地時間）に戻ります。対局はエンジン相手でも人相手でも無制限、無料のままです。",
  "store.doneEndgames": "本日の無料の終盤練習は終わりです。",
  "store.doneForToday": "今日の無料トレーニングはここまでです",
  "store.doneGuess": "本日の無料の棋力当ては終わりです。",
