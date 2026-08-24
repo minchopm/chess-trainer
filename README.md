@@ -211,10 +211,11 @@ screen says so and offers the unlock, and only a deliberate tap opens the
 purchase sheet.
 
 There are no adverts and there will not be, and the reason is worth writing
-down: the app links Stockfish, which is GPLv3, and a proprietary advertising SDK
-compiled into the same binary would make the combined work undistributable under
-that licence. Selling the app is fine — the GPL has never forbidden charging —
-but bolting a closed SDK onto it is not.
+down: the app links two copyleft engines — Stockfish under the GPLv3 and
+Reckless under the AGPLv3 — and a proprietary advertising SDK compiled into the
+same binary would make the combined work undistributable under either. Selling
+the app is fine; copyleft has never forbidden charging. Bolting a closed SDK
+onto it is not.
 
 ### Languages
 
@@ -349,13 +350,17 @@ happened stops being worth listening to.
 Copyright © 2026 Mincho Milev.
 
 This program is free software: you can redistribute it and/or modify it under the
-terms of the **GNU General Public License, version 3 or later**, as published by
+terms of the **GNU Affero General Public License, version 3**, as published by
 the Free Software Foundation. See [LICENSE](LICENSE) for the full text.
 
 It is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
 without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
 PURPOSE.
 
-The licence is GPLv3 because the app links Stockfish, which is GPLv3 — a work
-that includes it must carry the same terms. See [NOTICE.md](NOTICE.md) for the
-third-party components and their licences.
+The licence is AGPLv3 because the app links two engines: Stockfish, which is
+GPLv3, and Reckless, which is AGPLv3. A work that includes them must carry the
+same terms, and GPLv3 section 13 — which exists for exactly this combination —
+says the Affero requirement governs the result. That requirement is about
+letting people use a program remotely over a network, which this app does not
+do: both engines run on the device and it makes no network requests at all. See
+[NOTICE.md](NOTICE.md) for the third-party components and their licences.

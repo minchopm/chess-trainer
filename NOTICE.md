@@ -5,16 +5,18 @@
 This project includes Stockfish, a UCI chess engine.
 
 - Copyright (C) 2004-2026 The Stockfish developers (see `ios/Vendor/Stockfish/AUTHORS`)
-- Licensed under the **GNU General Public License version 3** — see `LICENSE`
+- Licensed under the **GNU General Public License version 3** — see `ios/Vendor/Stockfish/Copying.txt`
 - Upstream: https://github.com/official-stockfish/Stockfish
 - Version bundled: see `ios/Vendor/Stockfish/VERSION.txt`
 - Modifications: none. The engine source is vendored unchanged. The only added
   file is `ios/Vendor/Stockfish/bridge/`, a C interface over its public `Engine`
   class, written for this project and licensed under GPLv3 along with the rest.
 
-Because Stockfish is GPLv3 and is linked into the application, **this entire
-application is licensed under GPLv3**. The complete corresponding source is at
-the repository this file ships with.
+Because Stockfish is GPLv3 and is linked into the application, its terms bind
+the whole application. Reckless adds the Affero requirement on top — see below —
+so **this entire application is licensed under AGPLv3**, and `LICENSE` holds
+that text. The complete corresponding source is at the repository this file
+ships with.
 
 ### Neural networks
 
