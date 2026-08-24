@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { Reveal } from '../../core/reveal';
+import { faqPage, filmList } from '../../core/schema';
 import { Seo } from '../../core/seo';
 import { FAQ, FILM, LIBRARY, MODES, PRICING, SITE } from '../../core/site';
 // Statically imported rather than resolved on the route: this is the home
@@ -42,15 +43,24 @@ export class Home {
       path: '/',
       title: SITE.name,
       description:
-        'Brass Pawn for iPhone and iPad: 14,351 tactics puzzles, positional judgement, ' +
-        'engine-verified endgames, Rush, Guess the Elo and coached play — with Stockfish ' +
-        'running on the device. No account, no analytics, no advertising.',
+        '14,351 tactics puzzles, 900 master games, engine-verified endgames and coached play, with two chess engines running on your iPhone. No account, no adverts.',
       updated: '2026-08-19',
       // This page is the English member of the translated set and the
       // x-default. hreflang is reciprocal — a group whose pages do not all
       // name each other is discarded whole — so the root has to declare the
       // same thirty-one alternates that /de and /ja do.
       translated: true,
+      // The same two entities the localised pages carry. This page shows the
+      // same four questions and the same three films; it was the only one in
+      // the set not saying so.
+      entities: [
+        filmList('/', 'en', 'en-US', [
+          { clip: 'play', name: copy.modes.play, description: copy.spoken.play },
+          { clip: 'tactics', name: copy.modes.tactics, description: copy.spoken.tactics },
+          { clip: 'watch', name: copy.modes.watch, description: copy.spoken.watch },
+        ]),
+        faqPage('/', 'en-US', FAQ.slice(0, 4)),
+      ],
     });
   }
 }

@@ -53,7 +53,7 @@ export class Training {
       title: 'The training',
       updated: '2026-08-24',
       description:
-        'Eight modes: tactics, positional judgement, endgames, Rush, Guess the Elo, Watch, coached play and online. What each one does, how the puzzles are mined and verified, and what is free.',
+        'Eight modes: tactics, positional judgement, endgames, Rush, Guess the Elo, Watch, coached play and online. How the puzzles are mined, and what is free.',
     });
   }
 }

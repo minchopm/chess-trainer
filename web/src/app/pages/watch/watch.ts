@@ -53,7 +53,7 @@ export class Watch {
       title: 'Watch',
       updated: '2026-08-24',
       description:
-        'Nine hundred decisive master games in Brass Pawn, every one between two named players and either short or famous. Search by player, event or year, follow the game move by move, and take any position over to play on yourself against the engine.',
+        'Nine hundred decisive master games, every one between two named players. Follow one move by move, then take the position over and play it out yourself.',
       crumbs: [{ label: 'How the training works', path: '/training' }],
     });
   }

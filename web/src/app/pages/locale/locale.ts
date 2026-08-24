@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 
 import { Reveal } from '../../core/reveal';
 import { Seo } from '../../core/seo';
+import { faqPage, filmList } from '../../core/schema';
 import { LIBRARY, PRICING, SITE, url } from '../../core/site';
 import type { Locale } from '../../i18n/locales';
 import type { Copy } from '../../i18n/types';
@@ -116,60 +117,16 @@ export class LocalePage {
         path: locale.slug === 'en' ? '/' : `/${locale.slug}`,
         locale,
         translated: true,
-        entities: [this.videos(), this.questions()],
+        entities: [
+          filmList(this.path(), locale.slug, locale.tag, [
+            { clip: 'play', name: this.copy().modes.play, description: spoken.play },
+            { clip: 'tactics', name: this.copy().modes.tactics, description: spoken.tactics },
+            { clip: 'watch', name: this.copy().modes.watch, description: spoken.watch },
+          ]),
+          faqPage(this.path(), locale.tag, this.faq()),
+        ],
       });
     });
-  }
-
-  /**
-   * The three films, declared as what they are.
-   *
-   * Worth the bytes: a VideoObject is one of the few kinds of structured data
-   * that changes the shape of the result rather than decorating it, and these
-   * are genuinely a spoken description of the product in the language of
-   * whoever is searching.
-   */
-  private videos(): Record<string, unknown> {
-    const { modes, spoken } = this.copy();
-    const { slug, tag } = this.locale();
-    const names: Record<string, string> = {
-      play: modes.play,
-      tactics: modes.tactics,
-      watch: modes.watch,
-    };
-    return {
-      '@type': 'ItemList',
-      '@id': `${url(this.path())}#films`,
-      itemListElement: (['play', 'tactics', 'watch'] as const).map((clip, i) => ({
-        '@type': 'ListItem',
-        position: i + 1,
-        item: {
-          '@type': 'VideoObject',
-          '@id': `${url(this.path())}#film-${clip}`,
-          name: `${SITE.name} — ${names[clip]}`,
-          description: spoken[clip],
-          inLanguage: tag,
-          uploadDate: SITE.published,
-          thumbnailUrl: url(`/media/video/iphone/${slug}/${clip}.jpg`),
-          contentUrl: url(`/media/video/iphone/${slug}/${clip}.mp4`),
-          isFamilyFriendly: true,
-          about: { '@id': url('/#app') },
-        },
-      })),
-    };
-  }
-
-  private questions(): Record<string, unknown> {
-    return {
-      '@type': 'FAQPage',
-      '@id': `${url(this.path())}#faq`,
-      inLanguage: this.locale().tag,
-      mainEntity: this.faq().map(({ q, a }) => ({
-        '@type': 'Question',
-        name: q,
-        acceptedAnswer: { '@type': 'Answer', text: a },
-      })),
-    };
   }
 
   private path(): string {

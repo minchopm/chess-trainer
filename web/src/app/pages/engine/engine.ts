@@ -23,7 +23,7 @@ export class EnginePage {
       title: 'The engine',
       updated: '2026-08-24',
       description:
-        'Stockfish 18 and Reckless are both compiled into Brass Pawn and run on the device. Which one plays is your choice, move grading uses win probability rather than centipawns, and copyleft is why there will never be advertising in the app.',
+        'Stockfish 18 and Reckless, both on the device, and you choose which one plays. Why move grading uses win probability rather than centipawns.',
     });
   }
 }

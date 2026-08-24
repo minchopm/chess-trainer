@@ -125,23 +125,16 @@ export class Showcase {
         return;
       }
 
-      // 400px of margin: enough that the first frame is decoded by the time it
-      // is looked at, not so much that scrolling past the section downloads it.
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            this.near.set(true);
-            return;
-          }
-          // Off screen entirely: stop. A narrated clip that keeps talking to
-          // somebody four sections further down is the worst thing a page can do.
-          const video = this.element.nativeElement.querySelector('video');
-          if (video && !video.paused) video.pause();
-        },
-        { rootMargin: '400px 0px', threshold: 0 },
-      );
-      observer.observe(frame);
-      this.stop = () => observer.disconnect();
+      // Nothing is watched until the page has finished loading its own things.
+      //
+      // On a phone the film is two megabytes and the fonts are forty kilobytes,
+      // and on a throttled connection whichever the browser starts first takes
+      // the pipe. Arming this observer at first render put the film ahead of
+      // the text: first paint moved out to three seconds and the largest
+      // element to nearly four, for a video that is below the fold and that
+      // nobody had scrolled to yet.
+      if (document.readyState === 'complete') this.arm(frame);
+      else window.addEventListener('load', () => this.arm(frame), { once: true });
     });
 
     inject(DestroyRef).onDestroy(() => this.stop?.());
@@ -170,6 +163,30 @@ export class Showcase {
 
       this.start(host);
     });
+  }
+
+  /**
+   * Start watching for the section to come near.
+   *
+   * 200px rather than the 400 this began with: on a phone the whole film
+   * section sits just under the fold, and 400px of margin meant "immediately".
+   */
+  private arm(frame: Element): void {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          this.near.set(true);
+          return;
+        }
+        // Off screen entirely: stop. A narrated clip that keeps talking to
+        // somebody four sections further down is the worst thing a page can do.
+        const video = this.element.nativeElement.querySelector('video');
+        if (video && !video.paused) video.pause();
+      },
+      { rootMargin: '200px 0px', threshold: 0 },
+    );
+    observer.observe(frame);
+    this.stop = () => observer.disconnect();
   }
 
   protected choose(clip: Clip): void {

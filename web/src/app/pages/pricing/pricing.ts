@@ -39,7 +39,7 @@ export class Pricing {
       title: 'Pricing',
       updated: '2026-08-24',
       description:
-        'Playing is free and stays free — against the engine, against a person, and the whole 900-game library. Brass Pawn Pro removes the five-a-day training limits: $3.99 a month or a one-off $49.99 unlock. No advertising, ever.',
+        'Playing is free and unlimited — the engine, a real opponent, and all 900 games. Pro lifts the five-a-day training limit: $3.99 a month or $49.99 once.',
     });
   }
 }

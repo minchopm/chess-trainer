@@ -74,9 +74,7 @@ export class Ratings {
       path: '/ratings',
       title: 'What a chess rating actually measures',
       description:
-        'Why puzzle ratings run hundreds of points above game ratings, why Lichess, chess.com ' +
-        'and FIDE numbers do not convert into one another, and what Brass Pawn’s own ratings ' +
-        'do and do not claim.',
+        'Why puzzle ratings run hundreds of points above game ratings, why Lichess, chess.com and FIDE numbers do not convert, and what these ones claim.',
       updated: '2026-08-19',
       crumbs: [{ label: 'The training', path: '/training' }],
       entities: [

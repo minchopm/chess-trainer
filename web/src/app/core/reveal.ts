@@ -4,19 +4,25 @@ import { DestroyRef, Directive, ElementRef, afterNextRender, inject, input } fro
  * Fades an element up the first time it enters the frame, and then forgets
  * about it.
  *
- * The important part is what happens when the fade does not run. Hiding
- * content and waiting for an observer is a bet, and if the bet is ever lost
- * the page is blank — so it is hedged twice: anything already in view when the
- * page loads is revealed immediately rather than waited for, and a timer
- * reveals everything else regardless after a few seconds. A missed animation
- * is a small loss; an invisible page is not.
+ * **Nothing is hidden until this runs.** The prerendered HTML carries no
+ * hidden state at all; the browser paints the page, and only then does this
+ * hide the elements that are off screen so they have somewhere to fade up
+ * from. Nobody sees that happen, because by definition they are not looking at
+ * them.
  *
- * On the server this does nothing, so the prerendered HTML carries the
- * un-revealed state and the browser takes over from there.
+ * It was the other way round — hidden in CSS, revealed by this — and it cost
+ * three seconds of largest-contentful-paint on a phone. The text was in the
+ * document from the first byte and stayed invisible until a hundred kilobytes
+ * of JavaScript had downloaded, parsed and hydrated, which is a long time to
+ * show somebody an empty screen in order to animate it.
+ *
+ * The fade is still hedged: anything on screen is never hidden in the first
+ * place, and a timer reveals whatever the observer has not after a few
+ * seconds. A missed animation is a small loss; an invisible page is not.
  */
 @Directive({
   selector: '[ctReveal]',
-  host: { '[attr.data-reveal]': '""', '[style.--reveal-delay.ms]': 'ctReveal()' },
+  host: { '[style.--reveal-delay.ms]': 'ctReveal()' },
 })
 export class Reveal {
   /** Stagger, in milliseconds. */
@@ -44,17 +50,16 @@ export class Reveal {
         matchMedia('(prefers-reduced-motion: reduce)').matches ||
         typeof IntersectionObserver === 'undefined'
       ) {
-        reveal();
-        return;
+        return; // never hidden, so there is nothing to reveal
       }
 
-      // Already on screen: reveal now. Waiting for an observer to tell us what
-      // the browser already knows only produces a flash of nothing.
+      // Already on screen: leave it alone. Hiding something a person is looking
+      // at in order to fade it back in is a flicker, not an animation.
       const box = el.getBoundingClientRect();
-      if (box.top < window.innerHeight && box.bottom > 0) {
-        reveal();
-        return;
-      }
+      if (box.top < window.innerHeight && box.bottom > 0) return;
+
+      // Off screen: now it can be hidden, and now it has somewhere to come from.
+      el.setAttribute('data-reveal', 'out');
 
       observer = new IntersectionObserver(
         (entries) => {

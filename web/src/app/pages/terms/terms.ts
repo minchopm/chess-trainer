@@ -22,7 +22,7 @@ export class Terms {
       title: 'Terms of Service',
       updated: '2026-08-19',
       description:
-        'The terms of use and end user licence agreement for Brass Pawn, including the App Store minimum terms, subscription terms, and how they sit alongside the GNU General Public License v3.',
+        'The terms of use and end user licence agreement for Brass Pawn, including Apple’s minimum terms and how they sit alongside the GNU AGPL v3.',
     });
   }
 }

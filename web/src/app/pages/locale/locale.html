@@ -49,13 +49,13 @@
 
   <section class="claim">
     <div class="page">
-      <!-- The screenshot caption again, because it is the shortest true
-           sentence about privacy that exists in this language. -->
-      <h2 ctReveal>
-        {{ copy().shots.values[0] }} <em>{{ copy().shots.values[1] }}</em>
-      </h2>
+      <!-- The app's own line about advertising, which is the shortest true
+           sentence on the subject that exists in this language. The screenshot
+           captions were all written about something else — the one that used to
+           stand here is about what a move is worth — and a headline over the
+           wrong picture is worse than no headline. -->
+      <h2 ctReveal>{{ copy().said.noAds }}</h2>
       <p class="measure dim" ctReveal="80">{{ copy().said.privacy }}</p>
-      <p class="mono faint" ctReveal="120">{{ copy().said.noAds }}</p>
     </div>
   </section>
 

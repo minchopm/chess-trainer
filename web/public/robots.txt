@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+# Answer engines are welcome, and there is a file written for them.
+# See https://llmstxt.org
 Sitemap: https://brasspawn.com/sitemap.xml

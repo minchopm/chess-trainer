@@ -29,9 +29,7 @@ export class Motifs {
       path: '/tactics',
       title: 'Chess tactics: the twenty motifs',
       description:
-        'Fork, pin, skewer, discovered attack, deflection, zwischenzug, zugzwang and the rest — ' +
-        'what each tactical motif is, how to spot it, and how many of Brass Pawn’s 14,351 ' +
-        'puzzles turn on it.',
+        'Fork, pin, skewer, discovered attack, deflection, zwischenzug, zugzwang and the rest — what each is, how to spot it, and how much practice there is of it.',
       updated: '2026-08-19',
       crumbs: [{ label: 'The training', path: '/training' }],
       entities: [

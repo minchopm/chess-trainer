@@ -226,10 +226,16 @@ hr {
   letter-spacing: 0.08em;
 }
 
-/* Reveal-on-scroll, driven by the [ctReveal] directive. */
-[data-reveal] {
+/* Reveal-on-scroll, driven by the [ctReveal] directive.
+   `out` rather than the bare attribute: the directive adds it, in the browser,
+   only to elements that are off screen. Nothing is hidden before that, so the
+   page paints its text on the first frame instead of waiting for hydration. */
+[data-reveal='out'] {
   opacity: 0;
   transform: translate3d(0, 1.75rem, 0);
+}
+
+[data-reveal] {
   transition:
     opacity 1s var(--ease),
     transform 1.1s var(--ease);
@@ -239,15 +245,6 @@ hr {
 [data-reveal='in'] {
   opacity: 1;
   transform: none;
-}
-
-/* Without scripting nothing will ever set the attribute, so nothing must
-   depend on it being set. */
-@media (scripting: none) {
-  [data-reveal] {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 .noscript {
@@ -267,7 +264,7 @@ hr {
     scroll-behavior: auto !important;
   }
 
-  [data-reveal] {
+  [data-reveal='out'] {
     opacity: 1;
     transform: none;
   }

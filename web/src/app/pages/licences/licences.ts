@@ -102,7 +102,7 @@ export class Licences {
       title: 'Licences & attribution',
       updated: '2026-08-19',
       description:
-        'Brass Pawn is AGPLv3 because it links two copyleft engines: Stockfish under the GPLv3 and Reckless under the AGPLv3. Every third-party component, its licence and its copyright holder, and where to get the complete corresponding source.',
+        'Brass Pawn is AGPLv3 because it links two copyleft engines. Every third-party component, its licence and its holder, and where the source is.',
     });
   }
 }
