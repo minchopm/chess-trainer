@@ -83,6 +83,8 @@ public struct LiveBoardView: UIViewRepresentable {
         private var last = CFTimeInterval(0)
         private var orientation: PieceColor?
         private var framedFor: CGSize = .zero
+        /// Display-link ticks since the size last changed.
+        private var settled = 0
         weak var view: SCNView?
 
         func start(board: LiveBoard, orientation: PieceColor) {
@@ -117,12 +119,25 @@ public struct LiveBoardView: UIViewRepresentable {
         /// solved from the aspect, so anything drawn before the view has a size
         /// is composed for a shape it does not have.
         func fit(_ size: CGSize) {
-            guard size.width > 1, size.height > 1, size != framedFor else { return }
-            let first = framedFor == .zero
+            guard size.width > 1, size.height > 1, size != framedFor else {
+                settled += 1
+                reveal()
+                return
+            }
             framedFor = size
+            settled = 0
             board?.camera.fit(aspect: Float(size.width / size.height))
             board?.place()
-            guard first, let view, view.alpha == 0 else { return }
+        }
+
+        /// Show the board once its size has stopped changing.
+        ///
+        /// Revealing on the first measurement was not enough. SwiftUI lays this
+        /// out more than once on the way in, and the board was already visible
+        /// when the second measurement corrected it, so the correction read as
+        /// the scene jumping.
+        private func reveal() {
+            guard settled >= 8, let view, view.alpha == 0 else { return }
             UIView.animate(withDuration: 0.35) { view.alpha = 1 }
         }
 

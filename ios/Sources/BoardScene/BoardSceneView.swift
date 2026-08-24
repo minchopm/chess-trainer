@@ -76,6 +76,8 @@ public struct BoardSceneView: UIViewRepresentable {
         /// Only re-framed when the view actually changes shape; doing it every
         /// frame would undo a pinch as fast as it was made.
         private var framedFor: CGSize = .zero
+        /// Display-link ticks since the size last changed.
+        private var settled = 0
         weak var view: SCNView?
 
         func start(sequence: any SceneDriver) {
@@ -92,13 +94,27 @@ public struct BoardSceneView: UIViewRepresentable {
         }
 
         func fit(_ size: CGSize) {
-            guard size.width > 1, size.height > 1, size != framedFor else { return }
-            let first = framedFor == .zero
+            guard size.width > 1, size.height > 1, size != framedFor else {
+                settled += 1
+                reveal()
+                return
+            }
             framedFor = size
+            settled = 0
             sequence?.camera.fit(aspect: Float(size.width / size.height))
             sequence?.place()
-            guard first, let view, view.alpha == 0 else { return }
-            // Now it is composed for the shape it actually has.
+        }
+
+        /// Show the board once its size has stopped changing.
+        ///
+        /// Revealing on the first measurement was not enough. SwiftUI lays this
+        /// out more than once on the way in — the second pass reports a
+        /// different height once the rest of the screen has resolved — and the
+        /// board was already visible by then, so the correction read as the
+        /// scene jumping. Waiting for a few frames at one size costs a tenth of
+        /// a second and shows one board instead of two.
+        private func reveal() {
+            guard settled >= 8, let view, view.alpha == 0 else { return }
             #if DEBUG
             BoardSceneDebug.titleBoardHasAppeared = true
             #endif

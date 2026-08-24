@@ -1,191 +1,215 @@
 {
-  "sourceLanguage": "en",
-  "strings": {
-    "NSCameraUsageDescription": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar-SA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "لقراءة وضعية شطرنج من صورة للوح حقيقي."
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Brass Pawn"
+          }
+        }
+      }
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "BrassPawn"
+          }
+        }
+      }
+    },
+    "NSCameraUsageDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar-SA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لقراءة وضعية شطرنج من صورة للوح حقيقي."
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pro načtení šachové pozice z fotografie skutečné šachovnice."
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro načtení šachové pozice z fotografie skutečné šachovnice."
           }
         },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Til at læse en skakstilling fra et foto af et rigtigt bræt."
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Til at læse en skakstilling fra et foto af et rigtigt bræt."
           }
         },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Um eine Schachstellung von einem Foto eines echten Bretts zu lesen."
+        "de-DE" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um eine Schachstellung von einem Foto eines echten Bretts zu lesen."
           }
         },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Για ανάγνωση θέσης σκακιού από φωτογραφία πραγματικής σκακιέρας."
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Για ανάγνωση θέσης σκακιού από φωτογραφία πραγματικής σκακιέρας."
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "To read a chess position from a photo of a real board."
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To read a chess position from a photo of a real board."
           }
         },
-        "es-ES": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Para leer una posición de ajedrez desde una foto de un tablero real."
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para leer una posición de ajedrez desde una foto de un tablero real."
           }
         },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Shakkiaseman lukemiseen valokuvasta oikeasta laudasta."
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shakkiaseman lukemiseen valokuvasta oikeasta laudasta."
           }
         },
-        "fr-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pour lire une position d’échecs depuis une photo d’un vrai échiquier."
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour lire une position d’échecs depuis une photo d’un vrai échiquier."
           }
         },
-        "fr-FR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pour lire une position d’échecs depuis une photo d’un vrai échiquier."
+        "fr-FR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour lire une position d’échecs depuis une photo d’un vrai échiquier."
           }
         },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "כדי לקרוא עמדת שחמט מתמונה של לוח אמיתי."
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "כדי לקרוא עמדת שחמט מתמונה של לוח אמיתי."
           }
         },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "असली बोर्ड की फ़ोटो से शतरंज की पोज़िशन पढ़ने के लिए।"
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "असली बोर्ड की फ़ोटो से शतरंज की पोज़िशन पढ़ने के लिए।"
           }
         },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sakkállás beolvasásához egy valódi tábláról készült fotóról."
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sakkállás beolvasásához egy valódi tábláról készült fotóról."
           }
         },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Untuk membaca posisi catur dari foto papan sungguhan."
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untuk membaca posisi catur dari foto papan sungguhan."
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Per leggere una posizione di scacchi da una foto di una scacchiera reale."
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per leggere una posizione di scacchi da una foto di una scacchiera reale."
           }
         },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "実際の盤の写真からチェスの局面を読み取るために使います。"
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "実際の盤の写真からチェスの局面を読み取るために使います。"
           }
         },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "실제 보드 사진에서 체스 포지션을 읽기 위해 사용합니다."
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "실제 보드 사진에서 체스 포지션을 읽기 위해 사용합니다."
           }
         },
-        "ms": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Untuk membaca kedudukan catur daripada foto papan sebenar."
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untuk membaca kedudukan catur daripada foto papan sebenar."
           }
         },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Om een schaakstelling te lezen van een foto van een echt bord."
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For å lese en sjakkstilling fra et foto av et ekte brett."
           }
         },
-        "no": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "For å lese en sjakkstilling fra et foto av et ekte brett."
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Om een schaakstelling te lezen van een foto van een echt bord."
           }
         },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aby odczytać pozycję szachową ze zdjęcia prawdziwej szachownicy."
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aby odczytać pozycję szachową ze zdjęcia prawdziwej szachownicy."
           }
         },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Para ler uma posição de xadrez a partir de uma foto de um tabuleiro real."
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para ler uma posição de xadrez a partir de uma foto de um tabuleiro real."
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pentru a citi o poziție de șah dintr-o fotografie a unei table reale."
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pentru a citi o poziție de șah dintr-o fotografie a unei table reale."
           }
         },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Чтобы прочитать шахматную позицию с фотографии настоящей доски."
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чтобы прочитать шахматную позицию с фотографии настоящей доски."
           }
         },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "För att läsa en schackställning från ett foto av ett riktigt bräde."
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "För att läsa en schackställning från ett foto av ett riktigt bräde."
           }
         },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "เพื่ออ่านตำแหน่งหมากรุกจากภาพถ่ายกระดานจริง"
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เพื่ออ่านตำแหน่งหมากรุกจากภาพถ่ายกระดานจริง"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Gerçek bir tahtanın fotoğrafından satranç konumu okumak için."
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gerçek bir tahtanın fotoğrafından satranç konumu okumak için."
           }
         },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Để đọc thế cờ từ ảnh chụp bàn cờ thật."
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Để đọc thế cờ từ ảnh chụp bàn cờ thật."
           }
         },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "用于从真实棋盘的照片中读取棋局。"
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用于从真实棋盘的照片中读取棋局。"
           }
         },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "用於從真實棋盤的照片中讀取棋局。"
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用於從真實棋盤的照片中讀取棋局。"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }
