@@ -1,6 +1,5 @@
 import ChessCore
 import ChessTraining
-import ChessEngine
 import SwiftUI
 
 /// Coaching marks drawn over the board.
@@ -780,3 +779,20 @@ struct PromotionPicker: View {
         }
     }
 }
+
+#if DEBUG
+/// A piece the preview wants picked up.
+///
+/// The board keeps its selection to itself, as it should — nothing outside it
+/// has any business choosing your piece. This is the one exception, it exists
+/// only in a debug build, and it is how a recording shows what a move is worth:
+/// the values are drawn against a selected piece, so something has to select
+/// one when there is nobody there to tap.
+@Observable
+@MainActor
+final class PreviewSelection {
+    static let shared = PreviewSelection()
+    var square: Square?
+    private init() {}
+}
+#endif
