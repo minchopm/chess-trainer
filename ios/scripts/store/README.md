@@ -48,12 +48,15 @@ set of slots, and a picture that is not one of those sizes is refused on upload:
 
 | Slot | Pixels | Simulator |
 |---|---|---|
-| `APP_IPHONE_69` | 1320 × 2868 | iPhone 17 Pro Max |
+| `APP_IPHONE_67` | 1320 × 2868 | iPhone 17 Pro Max |
 | `APP_IPHONE_65` | 1242 × 2688 | iPhone 11 Pro Max and kin |
+| `APP_IPHONE_61` | 1206 × 2622 | iPhone 17 Pro |
 | `APP_IPAD_PRO_3GEN_129` | 2064 × 2752 | iPad Pro 13-inch |
 
-An iPhone 17 **Pro** gives 1206 × 2622, which is not a slot. It looks right,
-it opens fine, and App Store Connect will not take it.
+The sizes here are the ones App Store Connect was asked to accept, one slot
+at a time, rather than the ones a table somewhere claims. What matters is that
+the slot matches the pixels: a 1206 × 2622 picture is fine, and is fine only in
+`APP_IPHONE_61`. Put it in `APP_IPHONE_65` and it is refused.
 
 ## Why the age rating is 4+
 
