@@ -45,5 +45,29 @@ search the description.** That single fact decides everything here:
   It comes from `~/Desktop/BrassPawn/listing/<locale>.md`, which is also where
   the promotional text comes from.
 
+## The block at the foot of every description
+
+Guideline 3.1.2 wants four things in the *metadata* of an app with an
+auto-renewable subscription: what the subscription is, how long it runs, what
+it costs, and working links to the Terms of Use and the privacy policy. Having
+them on the purchase screen — which this app always did — is not enough. A
+listing without them is returned, every time.
+
+`legal.py` holds that block in all thirty-one languages and `upload.py` appends
+it to the description. Kept apart from the prose so the description stays
+readable and the legal text stays in one place.
+
+Two decisions worth recording:
+
+- **No price is written into it.** It would have to be right in a hundred and
+  seventy-five storefronts, it changes without the listing changing, and the
+  purchase screen shows it in the reader's own currency. The other live apps on
+  this account are approved without it.
+- **The EULA is Apple's standard one**, `apple.com/legal/…/stdeula/`, which is
+  what every other app on the account uses. No custom agreement is registered,
+  so nothing has to be maintained.
+
+## The rest
+
 `stockfish` is in every keyword list. It is a search term with real volume and
 it is not a competitor's name being borrowed: the engine is in the app.

@@ -12,6 +12,7 @@ exists, so an existing one is PATCHed instead. That makes this safe to re-run.
 import pathlib, re, sys
 from asc import call
 from aso import ASO
+from legal import footer
 
 APP_ID = "6803566012"
 LISTING = pathlib.Path.home() / "Desktop/BrassPawn/listing"
@@ -67,8 +68,13 @@ def main():
     for locale in only:
         name, subtitle, keywords = ASO[locale]
         s = sections(locale)
-        description = s.get("description", "")
+        # Guideline 3.1.2 wants the subscription terms and both legal links in
+        # the metadata, not only on the purchase screen. Appended rather than
+        # written into the source files so the prose stays prose.
+        description = (s.get("description", "").rstrip() + "\n\n" + footer(locale))
         promo = s.get("promotional text", "")
+        if len(description) > 4000:
+            raise SystemExit(f"{locale}: description is {len(description)} characters")
 
         a = upsert("appInfoLocalizations", ("appInfo", "appInfos"), app_info,
                    info_seen.get(locale), locale,
