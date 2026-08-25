@@ -42,7 +42,14 @@ SOURCE = Path(
 # The iOS target, in the same repository. One asset, one command, both places:
 # the app icon and the favicon drifting apart is exactly the sort of thing
 # nobody notices until somebody screenshots them side by side.
-IOS_ICON = ROOT.parent / "ios/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.png"
+# The Icon Composer document. Its layer is kept square here because Icon
+# Composer applies Apple's mask itself, and a layer that arrives already masked
+# leaves a ring between its curve and the system's — through which the
+# document's background fill shows, as a blue rim on all four corners.
+#
+# There is no longer an AppIcon.appiconset beside it. Two things named AppIcon
+# is a coin toss that actool happens to win the right way; one is a decision.
+IOS_ICON_DOC = ROOT.parent / "ios/Resources/AppIcon.icon"
 
 # The social card. 1200x630 is what every platform crops to, so the picture is
 # cut to that shape here rather than left square for them to cut badly: handed a
@@ -193,13 +200,14 @@ def main() -> int:
     # The old vector pawn would win over every PNG in Chrome and Firefox, which
     # both prefer an SVG icon when one is offered, so the new one would never
     # appear. It goes.
-    # The app's own icon, from the same master. Flat, square and opaque: the
-    # asset catalogue takes a 1024 and App Store validation rejects alpha.
-    if IOS_ICON.parent.is_dir():
-        master.save(IOS_ICON, optimize=True)
-        print(f"  {IOS_ICON.name:16} 1024x1024  -> {IOS_ICON.parent.name}")
-    else:
-        print(f"  (no iOS asset catalogue at {IOS_ICON.parent})", file=sys.stderr)
+    doc_assets = IOS_ICON_DOC / "Assets"
+    if doc_assets.is_dir():
+        import json as _json
+
+        spec = _json.loads((IOS_ICON_DOC / "icon.json").read_text())
+        name = spec["groups"][0]["layers"][0]["image-name"]
+        master.save(doc_assets / name, optimize=True)
+        print(f"  {name[:28]:28} squared, in AppIcon.icon  (the app's icon)")
 
     stale = OUT / "favicon.svg"
     if stale.exists():

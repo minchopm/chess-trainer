@@ -28,6 +28,7 @@
 		9EBB038DDFBCD023BF2FDDE9 /* NOTICE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5A15128F3C9F50C157350AF2 /* NOTICE.txt */; };
 		9F065A8354551432F095D3C4 /* capture.wav in Resources */ = {isa = PBXBuildFile; fileRef = AF9BA6F709402079BDD2BFC3 /* capture.wav */; };
 		A2665FDBF88E05FEE6B87457 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D7C66C626791A2991355347F /* InfoPlist.xcstrings */; };
+		ABD3EF740988AE051AE02B24 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 9DDEB02CE21C8EE2182F0ED7 /* AppIcon.icon */; };
 		B6ECBB6AEAD0C393A7FCEAA4 /* BrassPawnClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F873F5DEE5C304C557E5C0 /* BrassPawnClip.swift */; };
 		BF26734421711480BFC510A4 /* check.wav in Resources */ = {isa = PBXBuildFile; fileRef = 542D1BF8796033B8E9639968 /* check.wav */; };
 		C40143C2022EC79B9BC7E838 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2B24581FB2D0665C827FE2D5 /* LICENSE.txt */; };
@@ -90,6 +91,7 @@
 		7B14931322A005EFF2D2DE0A /* BrassPawnClip.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BrassPawnClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		819E738DE1796C37648E3DFF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89D3D16127EFA72B35CD2DD3 /* gameEnd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameEnd.wav; sourceTree = "<group>"; };
+		9DDEB02CE21C8EE2182F0ED7 /* AppIcon.icon */ = {isa = PBXFileReference; path = AppIcon.icon; sourceTree = "<group>"; };
 		AF9BA6F709402079BDD2BFC3 /* capture.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = capture.wav; sourceTree = "<group>"; };
 		B1291E8C6DEDA19EC5DCAA03 /* OFL-jetbrains.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "OFL-jetbrains.txt"; sourceTree = "<group>"; };
 		B352EE12D38016F605048FBD /* tactics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tactics.json; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		8687E52E8663C6A14CEE6A7D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9DDEB02CE21C8EE2182F0ED7 /* AppIcon.icon */,
 				37CDE792836F404308CE33CC /* Assets.xcassets */,
 				7B86BA4A9E42D81ED48D9901 /* Fonts */,
 				49E8C6A505B82D5C23026FF0 /* Legal */,
@@ -368,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E62F5D604361CE52143BA25 /* AGPL.txt in Resources */,
+				ABD3EF740988AE051AE02B24 /* AppIcon.icon in Resources */,
 				48F44FCC87A5CBD8C989FC58 /* Assets.xcassets in Resources */,
 				737010EE9573D8FF256F8AAC /* BrassPawn.storekit in Resources */,
 				D4F6C22B9A9E78DCC1AA03A9 /* CormorantGaramond-Italic.ttf in Resources */,

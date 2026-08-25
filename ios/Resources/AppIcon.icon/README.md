@@ -1,32 +1,43 @@
-# AppIcon.icon — the Icon Composer document
+# AppIcon.icon — the app icon
 
-Kept here so the icon has a source in the repository rather than only on
-somebody's Desktop. **It is not wired into the build.** The app icon is still
-the flat square at `Assets.xcassets/AppIcon.appiconset/AppIcon.png`, which
-`web/tools/icons.py` writes from the same artwork.
+This is the app icon. There is no `AppIcon.appiconset` beside it any more: two
+things named AppIcon is a coin toss that `actool` happens to win the right way,
+and one of them is a decision.
 
-Two things have to be true before switching, and neither is today.
+`project.yml` refers to it as `type: file`, so the generator hands the bundle to
+`actool` as one wrapper instead of recursing into it as a group. An older
+comment in that file said this could not be done with XcodeGen. It can.
 
-## The layer is the wrong image
+What it buys, over the flat 1024 the icon used to be, is the three appearances
+iOS 26 asks for — light, dark and tinted — which you can confirm in a build:
 
-`icon.json` names `brasspawnAppicon-iOS-Default-1024x1024@1x.png` as its only
-layer — and that file is the *finished* export, with Apple's squircle already
-cut out of its alpha. Icon Composer expects the artwork; it applies the mask
-itself.
+```
+xcrun assetutil --info BrassPawn.app/Assets.car | grep IconImageStack
+```
 
-The consequence is visible. The layer's own curve reaches full opacity about
-332px in from the corner on a 1024 icon. Apple's mask corner is about 229px.
-Between the two there is a ring where the layer is transparent and the mask is
-not, and what shows through it is the document's `fill` — which is
-`extended-srgb:0.000, 0.533, 1.000`, a blue. A blue fringe around all four
-corners.
+## The layer must stay square
 
-The fix is in Icon Composer, not here: give the layer the square artwork.
+`icon.json` has one layer, and it has to be the **square** artwork. Icon
+Composer applies Apple's mask itself.
 
-## The project generator has to be able to see it
+Give it the finished iOS export instead — which is what it arrived as — and the
+layer's own curve reaches full opacity about 332px in on a 1024 icon while
+Apple's mask corner is about 229. Between them is a ring where the layer is
+transparent and the mask is not, and through it shows this document's `fill`,
+which is `extended-srgb:0.000, 0.533, 1.000`. A blue rim on all four corners.
 
-`project.yml` lists resources by explicit path, so this directory is inert
-until something adds it. Wiring it means a `sources:` entry, pointing
-`ASSETCATALOG_COMPILER_APPICON_NAME` at `AppIcon.icon` rather than the
-appiconset, retiring `AppIcon.appiconset`, and running `xcodegen` — which
-rewrites `project.pbxproj` wholesale.
+`web/tools/icons.py` writes the square layer here, from the same artwork it
+cuts the favicon and the social card from:
+
+```bash
+python3 web/tools/icons.py
+```
+
+Re-export from Icon Composer and you will overwrite it with a rounded one
+again. Run the script afterwards.
+
+## Worth looking at on a device
+
+The tinted appearance turns the icon monochrome, and this one is a photograph.
+`"translucency": {"enabled": true, "value": 0.5}` in `icon.json` is what
+governs how that reads. It has not been judged on hardware.

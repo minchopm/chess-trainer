@@ -76,6 +76,12 @@ targets:
         buildPhase: resources
       - path: Resources/Assets.xcassets
         buildPhase: resources
+      # The Icon Composer document. `type: file` so the generator treats the
+      # bundle as one wrapper rather than recursing into it as a group — which
+      # is what actool needs in order to compile it as an icon at all.
+      - path: Resources/AppIcon.icon
+        type: file
+        buildPhase: resources
       - path: App/Localizable.xcstrings
         buildPhase: resources
       - path: App/InfoPlist.xcstrings
@@ -128,10 +134,9 @@ targets:
         CURRENT_PROJECT_VERSION: "1"
         SWIFT_VERSION: "6.0"
         TARGETED_DEVICE_FAMILY: "1,2"
-        # A flat 1024 square rather than the Icon Composer document. The
-        # document needs Xcode's synchronised folder groups to be found, which
-        # this project's generator does not produce — see the icon note in
-        # ios/README.md.
+        # Resources/AppIcon.icon, not the appiconset of the same name. Both
+        # exist; the document wins because actool prefers it, and it is what
+        # gives iOS 26 the light, dark and tinted appearances.
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         DEVELOPMENT_TEAM: 8293TNMX6S
         CODE_SIGN_STYLE: Automatic
