@@ -45,4 +45,6 @@ the licence text.
 
 ## Contact
 
-Questions: open an issue at https://github.com/minchopm/chess-trainer
+Questions about this policy, or a request about your data:
+privacy@brasspawn.com. Anything else: support@brasspawn.com. The source is at
+https://github.com/minchopm/chess-trainer, where an issue is also read.

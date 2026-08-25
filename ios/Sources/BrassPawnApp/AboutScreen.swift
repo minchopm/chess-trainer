@@ -8,6 +8,11 @@ struct AboutScreen: View {
     @State private var document: LegalDocument?
 
     private static let sourceURL = "https://github.com/minchopm/chess-trainer"
+    /// Forwarded to a real inbox rather than answered by a mailbox nobody
+    /// watches. Two addresses because a request about somebody's data
+    /// arrives on a deadline and a question about a puzzle does not.
+    private static let supportEmail = "support@brasspawn.com"
+    private static let privacyEmail = "privacy@brasspawn.com"
 
     static let termsURL = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
     static let privacyURL = URL(string: "https://brasspawn.com/privacy")!
@@ -78,6 +83,20 @@ struct AboutScreen: View {
                         Text(L.t("about.theAppCollectsNothingSends", "The app collects nothing, sends nothing and makes no network requests. Your ratings and history are stored only on this device, and deleting the app deletes them."))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryFaint)
+                        BrassLinkButton(
+                            title: Self.privacyEmail,
+                            destination: URL(string: "mailto:\(Self.privacyEmail)")!
+                        )
+                    }
+
+                    aboutSection(L.t("about.contact", "Contact")) {
+                        Text(L.t("about.somethingWrongOrMissing", "Something wrong, or missing? There is somebody at the other end of this."))
+                            .appFont(.footnote)
+                            .foregroundStyle(Theatre.ivoryFaint)
+                        BrassLinkButton(
+                            title: Self.supportEmail,
+                            destination: URL(string: "mailto:\(Self.supportEmail)")!
+                        )
                     }
                 }
                 .padding(16)

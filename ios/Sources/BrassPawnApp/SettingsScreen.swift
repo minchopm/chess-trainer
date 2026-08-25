@@ -58,6 +58,7 @@ struct SettingsScreen: View {
     @Environment(AppModel.self) private var app
     @Environment(\.dismiss) private var dismiss
     @State private var volumeBeforeMute = 0.7
+    @State private var showsAbout = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -76,12 +77,23 @@ struct SettingsScreen: View {
                     section(L.t("settings.coordinates", "Coordinates")) { CoordinatesSwitch() }
                     section(L.t("settings.training", "Training")) { SummarySwitch() }
                     section(L.t("settings.font", "Application font")) { TypefaceChoice() }
+                    // About carries the licences and the address to write to.
+                    // It used to be reachable only from the paywall, which put
+                    // the way of getting in touch behind the way of paying.
+                    section(L.t("about.about", "About")) {
+                        Button { showsAbout = true } label: {
+                            Text(L.t("about.licencesAndContact", "Licences, credits and how to get in touch"))
+                                .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(PillButtonStyle(emphasis: .ghost))
+                    }
                 }
                 .padding(16)
                 .padding(.bottom, 30)
             }
             .background(Theatre.ink.ignoresSafeArea())
         }
+        .fullScreenCover(isPresented: $showsAbout) { AboutScreen() }
     }
 
     private func section<Content: View>(
