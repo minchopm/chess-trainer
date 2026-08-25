@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  The launch screen, as a storyboard rather than the UILaunchScreen dictionary.
+
+  The dictionary form draws its image at natural size and centres it, which is
+  right for a small mark and wrong for a full-bleed photograph: the artwork
+  would hang in the middle of the screen with the ground colour around it. A
+  storyboard can pin an image view to all four edges and fill.
+
+  Aspect-fill rather than fit, because a launch screen with letterbox bars is
+  worse than one that crops. The artwork is composed for a tall phone; on an
+  iPad it loses its left and right edges, which is why the pawn and the name
+  sit in the middle column where the crop cannot reach them.
+-->
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchArt" translatesAutoresizingMaskIntoConstraints="NO" id="art-view">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
+                        <color key="backgroundColor" red="0.0196078431" green="0.0235294118" blue="0.0392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="art-view" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="art-top"/>
+                            <constraint firstItem="art-view" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="art-leading"/>
+                            <constraint firstAttribute="trailing" secondItem="art-view" secondAttribute="trailing" id="art-trailing"/>
+                            <constraint firstAttribute="bottom" secondItem="art-view" secondAttribute="bottom" id="art-bottom"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LaunchArt" width="1704" height="3692"/>
+    </resources>
+</document>

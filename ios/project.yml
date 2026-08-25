@@ -85,6 +85,8 @@ targets:
     dependencies:
       - package: BrassPawn
         product: BrassPawnApp
+      - target: BrassPawnClip
+        embed: true
     info:
       path: App/Info.plist
       properties:
@@ -94,15 +96,7 @@ targets:
         # one line and cannot be evasive about it.
         NSCameraUsageDescription: >-
           To read a chess position from a photo of a real board.
-        # The pawn the app is named after, and its name, on the ground the
-        # app paints on. Only what is the same in every language goes here: a
-        # launch screen cannot be localised, and "Brass Pawn" is the one string
-        # that is identical in all thirty-one. The line under it in the menu is
-        # translated twenty-seven different ways, so it stays in the menu.
-        UILaunchScreen:
-          UIImageName: LaunchMark
-          UIColorName: LaunchGround
-          UIImageRespectsSafeAreaInsets: false
+        UILaunchStoryboardName: LaunchScreen
         # A phone holds one board and one panel; turning it sideways leaves
         # room for neither. An iPad has room for both side by side, so it turns.
         UISupportedInterfaceOrientations:
@@ -134,15 +128,56 @@ targets:
         CURRENT_PROJECT_VERSION: "1"
         SWIFT_VERSION: "6.0"
         TARGETED_DEVICE_FAMILY: "1,2"
+        # A flat 1024 square rather than the Icon Composer document. The
+        # document needs Xcode's synchronised folder groups to be found, which
+        # this project's generator does not produce — see the icon note in
+        # ios/README.md.
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         DEVELOPMENT_TEAM: 8293TNMX6S
         CODE_SIGN_STYLE: Automatic
+
+  # The spike: does Game Center treat an App Clip as the same game as the app
+  # it belongs to? Nothing is built on this until it has answered.
+  BrassPawnClip:
+    type: application.on-demand-install-capable
+    platform: iOS
+    sources:
+      - Clip
+    info:
+      path: Clip/Info.plist
+      properties:
+        CFBundleDisplayName: Brass Pawn
+        NSAppClip:
+          NSAppClipRequestEphemeralUserNotification: false
+          NSAppClipRequestLocationConfirmation: false
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIUserInterfaceStyle: Dark
+        ITSAppUsesNonExemptEncryption: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.arte-soft.brasspawn.Clip
+        CODE_SIGN_ENTITLEMENTS: Clip/BrassPawnClip.entitlements
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "6.0"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        DEVELOPMENT_TEAM: 8293TNMX6S
+        CODE_SIGN_STYLE: Automatic
+
 
 schemes:
   BrassPawn:
     build:
       targets:
         BrassPawn: all
+  BrassPawnClip:
+    build:
+      targets:
+        BrassPawnClip: all
+    run:
+      config: Debug
     run:
       config: Debug
     test:

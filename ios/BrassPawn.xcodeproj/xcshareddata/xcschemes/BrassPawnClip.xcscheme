@@ -15,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6E00C448F6B49474C0919D79"
-               BuildableName = "BrassPawn.app"
-               BlueprintName = "BrassPawn"
+               BlueprintIdentifier = "0DE13E9AB178E736D00B2142"
+               BuildableName = "BrassPawnClip.app"
+               BlueprintName = "BrassPawnClip"
                ReferencedContainer = "container:BrassPawn.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,14 +32,16 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6E00C448F6B49474C0919D79"
-            BuildableName = "BrassPawn.app"
-            BlueprintName = "BrassPawn"
+            BlueprintIdentifier = "0DE13E9AB178E736D00B2142"
+            BuildableName = "BrassPawnClip.app"
+            BlueprintName = "BrassPawnClip"
             ReferencedContainer = "container:BrassPawn.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
       </Testables>
+      <CommandLineArguments>
+      </CommandLineArguments>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -55,12 +57,14 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6E00C448F6B49474C0919D79"
-            BuildableName = "BrassPawn.app"
-            BlueprintName = "BrassPawn"
+            BlueprintIdentifier = "0DE13E9AB178E736D00B2142"
+            BuildableName = "BrassPawnClip.app"
+            BlueprintName = "BrassPawnClip"
             ReferencedContainer = "container:BrassPawn.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -72,12 +76,14 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6E00C448F6B49474C0919D79"
-            BuildableName = "BrassPawn.app"
-            BlueprintName = "BrassPawn"
+            BlueprintIdentifier = "0DE13E9AB178E736D00B2142"
+            BuildableName = "BrassPawnClip.app"
+            BlueprintName = "BrassPawnClip"
             ReferencedContainer = "container:BrassPawn.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+      </CommandLineArguments>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
