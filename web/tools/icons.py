@@ -40,6 +40,12 @@ SOURCE = Path(
     )
 )
 
+# The social card. 1200x630 is what every platform crops to, so the picture is
+# cut to that shape here rather than left square for them to cut badly: handed a
+# square, they take a band out of the middle and the piece loses its head and
+# its base.
+OG = {"width": 1200, "height": 630, "top": 0.16}
+
 # The whole photograph, for anywhere there is room for it.
 LARGE = {"icon-180.png": 180, "icon-192.png": 192, "icon-512.png": 512}
 # The head, for anywhere there is not.
@@ -103,6 +109,27 @@ def main() -> int:
         thumb.save(OUT / f"favicon-{size}.png", optimize=True)
         smalls.append(thumb)
         print(f"  favicon-{size}.png    {size}x{size}  (the head)")
+
+    # The card, cut from the same photograph. No type on it: the platforms draw
+    # the title and the description themselves, from the tags in the page, and
+    # a picture that repeats them is a picture saying the same thing twice.
+    band = round(master.width * OG["height"] / OG["width"])
+    top = round(master.height * OG["top"])
+    card = master.crop((0, top, master.width, top + band))
+    # JPEG, not PNG. This is a photograph: as a PNG it is six hundred kilobytes
+    # of losslessly-stored film grain, and every platform that fetches it for a
+    # preview pays for that. At quality 86 it is a fifth of the size and nobody
+    # can see the difference in a feed.
+    card.resize((OG["width"], OG["height"]), Image.LANCZOS).save(
+        OUT / "og.jpg", quality=86, optimize=True, progressive=True
+    )
+    size = (OUT / "og.jpg").stat().st_size
+    print(f'  og.jpg           {OG["width"]}x{OG["height"]}  ({size // 1024} kB, the card)')
+
+    stale_card = OUT / "og.png"
+    if stale_card.exists():
+        stale_card.unlink()
+        print("  og.png           removed — it was a prototype, and a PNG of a photograph")
 
     # One .ico holding all three: it is what a browser reaches for when it
     # guesses /favicon.ico without reading the page, and what several search

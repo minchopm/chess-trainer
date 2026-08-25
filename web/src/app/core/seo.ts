@@ -139,16 +139,16 @@ export class Seo {
       'og:title': full,
       'og:description': page.description,
       'og:url': canonical,
-      'og:image': url('/og.png'),
+      'og:image': url('/og.jpg'),
       'og:image:width': '1200',
       'og:image:height': '630',
-      'og:image:type': 'image/png',
+      'og:image:type': 'image/jpeg',
       'og:image:alt': `${SITE.name} — ${SITE.tagline}`,
 
       'twitter:card': 'summary_large_image',
       'twitter:title': full,
       'twitter:description': page.description,
-      'twitter:image': url('/og.png'),
+      'twitter:image': url('/og.jpg'),
       'twitter:image:alt': `${SITE.name} — ${SITE.tagline}`,
 
       // Safari's smart app banner. Emitted only once there is a real listing to
