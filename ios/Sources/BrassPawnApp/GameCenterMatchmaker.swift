@@ -60,6 +60,17 @@ public final class GameCenterMatchmaker: NSObject {
         return true
     }
 
+    /// Whether there is a real Game Center player to put in an invitation.
+    ///
+    /// Stricter than `isAuthenticated`, which is only about the state machine:
+    /// on a simulator with nobody signed in the state settles at `.ready` while
+    /// the player ID is still the placeholder. A link built from the
+    /// placeholder names nobody, so the offer to send one is withheld until
+    /// there is somebody to name.
+    public var canInvite: Bool {
+        isAuthenticated && localPlayerID != "local"
+    }
+
     #if canImport(GameKit)
     private var match: GKMatch?
     private var timeControl: TimeControl = .five
@@ -114,7 +125,18 @@ public final class GameCenterMatchmaker: NSObject {
         #endif
     }
 
-    public func findOpponent(timeControl: TimeControl, rating: Int, games: Int) {
+    /// Look for a game.
+    ///
+    /// With an `invitation`, the search happens in that invitation's own pool
+    /// rather than the clock's, so the only person who can be found is the one
+    /// who sent the link. It is the nearest Game Center comes to a named
+    /// opponent: it pairs by pool, never by player.
+    public func findOpponent(
+        timeControl: TimeControl,
+        rating: Int,
+        games: Int,
+        invitation: Invitation? = nil
+    ) {
         #if canImport(GameKit)
         guard isAuthenticated else {
             authenticate()
@@ -129,10 +151,11 @@ public final class GameCenterMatchmaker: NSObject {
         request.maxPlayers = 2
         // The pool is the clock. Nobody who asked for thirty minutes should be
         // handed a three-minute game.
-        request.playerGroup = timeControl.playerGroup
+        request.playerGroup = invitation?.playerGroup ?? timeControl.playerGroup
 
         state = .searching(timeControl)
-        status = "Looking for a \(timeControl.label) opponent…"
+        status = invitation.map { "Waiting for \($0.name)…" }
+            ?? "Looking for a \(timeControl.label) opponent…"
 
         GKMatchmaker.shared().findMatch(for: request) { [weak self] match, error in
             // GKMatch is not Sendable, and the callback lands off the main

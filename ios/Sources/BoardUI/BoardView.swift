@@ -305,7 +305,7 @@ public struct BoardView: View {
         return formatter
     }()
 
-    static func pawns(_ centipawns: Int) -> String {
+    public static func pawns(_ centipawns: Int) -> String {
         // Mate is stored flattened as ±(10000 − moves), so the distance can be
         // read back out. "#3" says far more than a bare "#".
         if abs(centipawns) >= 9000 {

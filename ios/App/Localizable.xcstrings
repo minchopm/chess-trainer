@@ -10836,6 +10836,991 @@
         }
       }
     },
+    "clip.fourteenThousandMore": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يضمّ Brass Pawn أربعة عشر ألفًا غيرها، مختارة ممّا تجده صعبًا لا بالقرعة — ومحرّكًا يخبرك بقيمة النقلة الأقوى."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn jich má dalších čtrnáct tisíc, vybíraných podle toho, co vám dělá potíže, ne náhodně — a motor, který řekne, co silnější tah stál za."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn har fjorten tusinde mere, valgt ud fra det, du har svært ved, ikke tilfældigt — og en motor, der fortæller, hvad det stærkere træk var værd."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn hat vierzehntausend weitere, ausgewählt nach dem, was Ihnen schwerfällt, nicht zufällig — und eine Engine, die sagt, was der stärkere Zug wert war."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το Brass Pawn έχει άλλα δεκατέσσερις χιλιάδες, επιλεγμένα από όσα δυσκολεύεστε και όχι στην τύχη — και μια μηχανή που λέει πόσο άξιζε η δυνατότερη κίνηση."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn has fourteen thousand more, chosen from what you have been finding hard rather than at random — and an engine that tells you what the stronger move was worth."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn has fourteen thousand more, chosen from what you have been finding hard rather than at random — and an engine that tells you what the stronger move was worth."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn has fourteen thousand more, chosen from what you have been finding hard rather than at random — and an engine that tells you what the stronger move was worth."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn tiene catorce mil más, elegidos entre lo que te cuesta y no al azar — y un motor que dice cuánto valía la jugada más fuerte."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawnissa on neljätoista tuhatta lisää, valittuna siitä mikä on tuntunut vaikealta eikä sattumanvaraisesti — ja moottori, joka kertoo mitä vahvempi siirto oli arvoltaan."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn en compte quatorze mille autres, choisis selon ce qui vous résiste plutôt qu’au hasard — et un moteur qui dit ce que valait le meilleur coup."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn en compte quatorze mille autres, choisis selon ce qui vous résiste plutôt qu’au hasard — et un moteur qui dit ce que valait le meilleur coup."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ל‑Brass Pawn יש עוד ארבעה‑עשר אלף, נבחרים לפי מה שקשה לך ולא באקראי — ומנוע שאומר כמה היה שווה המהלך החזק יותר."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn में चौदह हज़ार और हैं, जो बेतरतीब नहीं बल्कि आपकी कठिनाइयों से चुने जाते हैं — और एक इंजन जो बताता है कि बेहतर चाल कितनी क़ीमती थी।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A Brass Pawnban további tizennégyezer van, abból válogatva, ami nehezen megy, nem véletlenszerűen — és egy motor, amely megmondja, mit ért az erősebb lépés."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn punya empat belas ribu lagi, dipilih dari apa yang terasa sulit bagi Anda, bukan secara acak — dan mesin yang memberi tahu nilai langkah yang lebih kuat."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn ne ha altri quattordicimila, scelti tra ciò che trovi difficile e non a caso — e un motore che dice quanto valeva la mossa migliore."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn にはさらに 14,000 問。無作為ではなく、あなたが苦手にしてきたものから選ばれます。より強い手が何点だったかを教えるエンジンつき。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn에는 14,000문제가 더 있습니다. 무작위가 아니라 어려워한 것에서 고릅니다 — 그리고 더 강한 수의 가치를 알려주는 엔진이 함께합니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn ada empat belas ribu lagi, dipilih daripada apa yang anda dapati sukar dan bukan secara rawak — serta enjin yang memberitahu nilai langkah yang lebih kuat."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn heeft er nog veertienduizend, gekozen op wat je lastig vindt in plaats van willekeurig — en een engine die zegt wat de sterkere zet waard was."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn har fjorten tusen til, valgt ut fra det du synes er vanskelig og ikke tilfeldig — og en motor som sier hva det sterkere trekket var verdt."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn ma jeszcze czternaście tysięcy, wybieranych z tego, co sprawia Ci trudność, a nie losowo — i silnik, który mówi, ile wart był mocniejszy ruch."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Brass Pawn tem mais catorze mil, escolhidos pelo que você tem achado difícil e não ao acaso — e um motor que diz quanto valia o lance mais forte."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn mai are paisprezece mii, alese din ce ți se pare greu, nu la întâmplare — și un motor care spune cât a valorat mutarea mai bună."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "В Brass Pawn их ещё четырнадцать тысяч — выбранных по тому, что даётся вам трудно, а не наугад, и движок, который говорит, чего стоил более сильный ход."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn har fjortontusen till, valda utifrån vad du tycker är svårt och inte slumpmässigt — och en motor som säger vad det starkare draget var värt."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn มีอีกหนึ่งหมื่นสี่พันข้อ คัดจากสิ่งที่คุณทำได้ยาก ไม่ใช่สุ่ม — พร้อมเอนจินที่บอกว่าตาเดินที่ดีกว่ามีค่าเท่าใด"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn’da on dört bin tane daha var; rastgele değil, zorlandığınız yerlerden seçilir — ve daha güçlü hamlenin kaç ettiğini söyleyen bir motor."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn còn mười bốn nghìn bài nữa, chọn theo những gì bạn thấy khó chứ không ngẫu nhiên — cùng một engine cho biết nước đi mạnh hơn đáng giá bao nhiêu."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn 还有一万四千道，按你觉得难的来挑，而非随机 —— 并有引擎告诉你更强的一手值多少。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn 還有一萬四千道，按你覺得難的來挑，而非隨機 —— 並有引擎告訴你更強的一手值多少。"
+          }
+        }
+      }
+    },
+    "clip.getTheApp": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "احصل على Brass Pawn"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Získat Brass Pawn"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hent Brass Pawn"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn laden"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποκτήστε το Brass Pawn"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get Brass Pawn"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get Brass Pawn"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get Brass Pawn"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consigue Brass Pawn"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hanki Brass Pawn"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obtenir Brass Pawn"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obtenir Brass Pawn"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "להורדת Brass Pawn"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn प्राप्त करें"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn letöltése"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dapatkan Brass Pawn"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ottieni Brass Pawn"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn を入手"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn 받기"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dapatkan Brass Pawn"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn downloaden"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hent Brass Pawn"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pobierz Brass Pawn"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obter o Brass Pawn"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descarcă Brass Pawn"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Установить Brass Pawn"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hämta Brass Pawn"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รับ Brass Pawn"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn’ı edinin"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tải Brass Pawn"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "获取 Brass Pawn"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "取得 Brass Pawn"
+          }
+        }
+      }
+    },
+    "clip.invitationKept": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الدعوة محفوظة. ثبّت التطبيق وستجدها بانتظارك."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pozvánka je uložena. Nainstalujte aplikaci a bude na vás čekat."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitationen er gemt. Installér appen, så ligger den og venter."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Einladung ist gespeichert. Installieren Sie die App, dann wartet sie dort."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η πρόσκληση φυλάσσεται. Εγκαταστήστε την εφαρμογή και θα σας περιμένει."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The invitation is kept. Install the app and it will be waiting."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The invitation is kept. Install the app and it will be waiting."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The invitation is kept. Install the app and it will be waiting."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La invitación queda guardada. Instala la app y allí estará."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kutsu on tallessa. Asenna sovellus, niin se odottaa siellä."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’invitation est conservée. Installez l’app, elle vous y attendra."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’invitation est conservée. Installez l’app, elle vous y attendra."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ההזמנה נשמרה. התקינו את האפליקציה והיא תחכה שם."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आमंत्रण सुरक्षित है। ऐप इंस्टॉल करें, वह वहाँ प्रतीक्षा में मिलेगा।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A meghívó megmarad. Telepítse az appot, és ott várja majd."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Undangan disimpan. Pasang aplikasinya dan ia akan menunggu di sana."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L’invito resta salvato. Installa l’app e lo troverai ad attenderti."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "招待は保存されます。アプリを入れれば、そこで待っています。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "초대는 보관됩니다. 앱을 설치하면 그대로 기다리고 있습니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jemputan itu disimpan. Pasang apl dan ia akan menunggu di sana."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De uitnodiging blijft bewaard. Installeer de app en ze staat klaar."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitasjonen er tatt vare på. Installer appen, så ligger den og venter."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zaproszenie zostaje zachowane. Zainstaluj aplikację, a będzie tam czekać."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O convite fica guardado. Instale o app e ele estará à espera."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitația se păstrează. Instalează aplicația și te va aștepta acolo."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Приглашение сохранено. Установите приложение — оно будет там."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inbjudan sparas. Installera appen, så ligger den och väntar."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "คำเชิญถูกเก็บไว้ ติดตั้งแอปแล้วจะพบรออยู่"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Davet saklanır. Uygulamayı kurun, orada sizi bekliyor olacak."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lời mời được giữ lại. Cài ứng dụng và nó sẽ đợi ở đó."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "邀请已保留。装上应用，它就在那里等你。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "邀請已保留。裝上應用程式，它就在那裡等你。"
+          }
+        }
+      }
+    },
+    "clip.invitedYou": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دعاك %@ إلى مباراة."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ vás vyzval na partii."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ har inviteret dig til et parti."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ hat dich zu einer Partie eingeladen."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ο/Η %@ σε προσκάλεσε σε παρτίδα."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ invited you to a game."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ invited you to a game."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ invited you to a game."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ te ha invitado a una partida."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ kutsui sinut pelaamaan."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ vous invite à une partie."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ vous invite à une partie."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ הזמין אותך למשחק."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ने आपको एक खेल के लिए आमंत्रित किया है।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ meghívott egy játszmára."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ mengundang Anda bermain."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ti ha invitato a una partita."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ さんから対局の招待です。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 님이 대국에 초대했습니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ menjemput anda bermain."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ heeft je uitgenodigd voor een partij."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ har invitert deg til et parti."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ zaprosił(a) Cię do partii."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ convidou você para uma partida."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ te-a invitat la o partidă."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ приглашает вас на партию."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ har bjudit in dig till ett parti."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ชวนคุณเล่นหมากรุก"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ sizi bir oyuna davet etti."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ đã mời bạn chơi một ván."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 邀请你下一盘。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 邀請你下一盤。"
+          }
+        }
+      }
+    },
+    "clip.thatIsTheSample": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تلك ستّ منها"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To bylo šest z nich"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Det var seks af dem"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das waren sechs davon"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αυτά ήταν έξι από αυτά"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "That was six of them"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "That was six of them"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "That was six of them"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esos eran seis"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siinä oli kuusi niistä"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En voilà six"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En voilà six"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אלה היו שישה מהם"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ये उनमें से छह थे"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ez hat volt közülük"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Itu enam di antaranya"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Questi erano sei"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "これで 6 問"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "여섯 문제였습니다"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Itu enam daripadanya"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dat waren er zes"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Det var seks av dem"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To było sześć z nich"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esses foram seis"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acestea au fost șase"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Это были шесть из них"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Det var sex av dem"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "นั่นคือหกข้อ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bunlar altı taneydi"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đó là sáu bài"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "这是其中六道"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "這是其中六道"
+          }
+        }
+      }
+    },
     "clock.blitz": {
       "extractionState": "manual",
       "localizations": {
@@ -41962,6 +42947,991 @@
         }
       }
     },
+    "online.invitation": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دعوة"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pozvánka"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitation"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einladung"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πρόσκληση"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitation"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitation"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitation"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitación"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kutsu"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitation"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitation"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הזמנה"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आमंत्रण"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meghívó"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Undangan"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invito"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "招待"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "초대"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jemputan"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uitnodiging"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitasjon"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zaproszenie"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Convite"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitație"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Приглашение"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inbjudan"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "คำเชิญ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Davet"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lời mời"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "邀请"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "邀請"
+          }
+        }
+      }
+    },
+    "online.invitationClock": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ لكلٍّ منكما. ستُوصَل بهم مباشرةً لا إلى قائمة الانتظار العامة."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ pro každého. Budete spojeni přímo s nimi, ne s obecnou frontou."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ til hver. Du bliver stillet direkte igennem til dem, ikke ud i den almindelige pulje."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je %@. Sie werden direkt mit ihnen verbunden, nicht in den allgemeinen Pool gestellt."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ο καθένας. Θα συνδεθείτε απευθείας μαζί τους, όχι με τη γενική δεξαμενή."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ each. You will be put straight through to them rather than into the general pool."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ each. You will be put straight through to them rather than into the general pool."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ each. You will be put straight through to them rather than into the general pool."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ cada uno. Se te conectará directamente con esa persona, no con la cola general."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ kummallekin. Sinut yhdistetään suoraan heihin, ei yleiseen jonoon."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ chacun. Vous serez mis en relation directement avec cette personne, pas avec la file générale."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ chacun. Vous serez mis en relation directement avec cette personne, pas avec la file générale."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ לכל צד. תחוברו ישירות אליהם ולא לתור הכללי."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्रत्येक को %@। आपको सीधे उन्हीं से जोड़ा जाएगा, आम कतार से नहीं।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fejenként %@. Közvetlenül vele kapcsolják össze, nem az általános sorba kerül."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ masing-masing. Anda akan langsung disambungkan dengan mereka, bukan ke antrean umum."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ a testa. Sarai messo direttamente in contatto con loro, non nella coda generale."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "持ち時間は各 %@。一般の待ち行列ではなく、その相手に直接つながります。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "각자 %@. 일반 대기열이 아니라 그 상대와 바로 연결됩니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ setiap seorang. Anda akan disambungkan terus kepada mereka, bukan ke barisan umum."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ elk. Je wordt rechtstreeks met hen verbonden, niet met de algemene wachtrij."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ hver. Du blir koblet rett til dem, ikke til den vanlige køen."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Po %@ na gracza. Zostaniesz połączony(a) bezpośrednio z tą osobą, nie z ogólną kolejką."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ para cada um. Você será ligado diretamente a essa pessoa, não à fila geral."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Câte %@ fiecare. Vei fi conectat direct la ei, nu la coada generală."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "По %@ каждому. Вас соединят напрямую с ним, а не с общей очередью."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ var. Du kopplas direkt till dem, inte till den allmänna kön."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ฝ่ายละ %@ คุณจะถูกต่อตรงไปยังเขา ไม่ใช่คิวรวม"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kişi başı %@. Genel havuza değil, doğrudan ona bağlanacaksınız."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mỗi bên %@. Bạn sẽ được nối thẳng tới họ, không phải hàng chờ chung."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每方 %@。你会直接与对方连上，而不是进入公共队列。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每方 %@。你會直接與對方連上，而不是進入公共佇列。"
+          }
+        }
+      }
+    },
+    "online.inviteExplanation": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أرسِل رابطًا. من يفتحه يمكنه لعب بعض التكتيكات فورًا، بالتطبيق أو بدونه، وتبقى الدعوة بانتظاره هنا."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pošlete odkaz. Kdo ho otevře, může si hned zahrát pár taktik — s aplikací i bez ní — a pozvánka na něj počká tady."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send et link. Den, der åbner det, kan spille et par taktikopgaver med det samme, med eller uden appen, og invitationen venter på dem her."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schicken Sie einen Link. Wer ihn öffnet, kann sofort ein paar Taktikaufgaben spielen, mit oder ohne App, und die Einladung wartet hier auf ihn."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Στείλτε έναν σύνδεσμο. Όποιος τον ανοίξει μπορεί να παίξει αμέσως μερικές τακτικές, με ή χωρίς την εφαρμογή, και η πρόσκληση τον περιμένει εδώ."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send a link. Whoever opens it can play a few tactics straight away, with or without the app, and the invitation waits for them here."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send a link. Whoever opens it can play a few tactics straight away, with or without the app, and the invitation waits for them here."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send a link. Whoever opens it can play a few tactics straight away, with or without the app, and the invitation waits for them here."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envía un enlace. Quien lo abra podrá jugar unas tácticas al momento, con o sin la app, y la invitación le esperará aquí."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lähetä linkki. Sen avaaja voi pelata heti pari taktiikkatehtävää, sovelluksen kanssa tai ilman, ja kutsu odottaa häntä täällä."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envoyez un lien. Qui l’ouvre peut jouer quelques tactiques tout de suite, avec ou sans l’app, et l’invitation l’attend ici."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envoyez un lien. Qui l’ouvre peut jouer quelques tactiques tout de suite, avec ou sans l’app, et l’invitation l’attend ici."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שלחו קישור. מי שיפתח אותו יוכל לפתור כמה תרגילים מיד, עם האפליקציה או בלעדיה, וההזמנה תחכה לו כאן."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "एक लिंक भेजें। जो इसे खोलेगा वह तुरंत कुछ टैक्टिक्स खेल सकता है — ऐप के साथ या बिना — और आमंत्रण यहाँ उसकी प्रतीक्षा करेगा।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Küldjön egy linket. Aki megnyitja, azonnal játszhat néhány taktikát, apppal vagy anélkül, a meghívó pedig itt várja."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kirim tautan. Siapa pun yang membukanya bisa langsung memainkan beberapa taktik, dengan atau tanpa aplikasi, dan undangannya menunggu di sini."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manda un link. Chi lo apre può giocare subito qualche tattica, con o senza l’app, e l’invito lo aspetta qui."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "リンクを送ります。開いた人はアプリの有無にかかわらずすぐに戦術問題を解け、招待はここで待っています。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "링크를 보내세요. 받은 사람은 앱이 없어도 바로 전술 몇 개를 풀 수 있고, 초대는 여기서 기다립니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hantar pautan. Sesiapa yang membukanya boleh terus bermain beberapa taktik, dengan atau tanpa apl, dan jemputan menunggu mereka di sini."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stuur een link. Wie hem opent, kan meteen een paar tactieken spelen, met of zonder de app, en de uitnodiging wacht hier op ze."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send en lenke. Den som åpner den, kan spille et par taktikkoppgaver med en gang, med eller uten appen, og invitasjonen venter på dem her."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wyślij link. Kto go otworzy, od razu rozwiąże kilka taktyk — z aplikacją albo bez — a zaproszenie czeka na niego tutaj."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envie um link. Quem o abrir pode jogar algumas táticas na hora, com ou sem o app, e o convite espera por essa pessoa aqui."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trimite un link. Cine îl deschide poate juca imediat câteva tactici, cu sau fără aplicație, iar invitația îl așteaptă aici."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отправьте ссылку. Кто её откроет, сразу решит пару задач — с приложением или без, — а приглашение будет ждать его здесь."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skicka en länk. Den som öppnar den kan spela ett par taktikuppgifter direkt, med eller utan appen, och inbjudan väntar på dem här."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ส่งลิงก์ไป ใครเปิดก็เล่นโจทย์แทกติกได้ทันที ไม่ว่าจะมีแอปหรือไม่ และคำเชิญจะรออยู่ตรงนี้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir bağlantı gönderin. Açan kişi uygulama olsun olmasın hemen birkaç taktik oynayabilir, davet de burada onu bekler."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gửi một liên kết. Ai mở nó đều chơi được vài bài chiến thuật ngay, có hay không có ứng dụng, và lời mời sẽ đợi họ ở đây."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "发一个链接。打开的人不论有没有装应用，都能立刻做几道战术题，邀请就在这里等着他。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "發一個連結。打開的人不論有沒有裝應用程式，都能立刻做幾道戰術題，邀請就在這裡等著他。"
+          }
+        }
+      }
+    },
+    "online.inviteMessage": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مباراة شطرنج، %@ لكلٍّ منّا: %@"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partie šachu, %@ pro každého: %@"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Et parti skak, %@ til hver: %@"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine Partie Schach, je %@: %@"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μια παρτίδα σκάκι, %@ ο καθένας: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A game of chess, %@ each: %@"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A game of chess, %@ each: %@"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A game of chess, %@ each: %@"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una partida de ajedrez, %@ cada uno: %@"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shakkipeli, %@ kummallekin: %@"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une partie d’échecs, %@ chacun : %@"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Une partie d’échecs, %@ chacun : %@"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "משחק שחמט, %@ לכל צד: %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "शतरंज का एक खेल, प्रत्येक को %@: %@"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Egy sakkparti, fejenként %@: %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satu partai catur, %@ masing-masing: %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una partita a scacchi, %@ a testa: %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "チェスを一局、持ち時間は各 %@：%@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "체스 한 판, 각자 %@: %@"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satu permainan catur, %@ setiap seorang: %@"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Een partij schaak, %@ elk: %@"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Et parti sjakk, %@ hver: %@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partia szachów, po %@ na gracza: %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uma partida de xadrez, %@ para cada um: %@"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O partidă de șah, câte %@ fiecare: %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Партия в шахматы, по %@ каждому: %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ett parti schack, %@ var: %@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เล่นหมากรุกสักกระดาน ฝ่ายละ %@: %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir satranç partisi, kişi başı %@: %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Một ván cờ vua, mỗi bên %@: %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下一盘棋，每方 %@：%@"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下一盤棋，每方 %@：%@"
+          }
+        }
+      }
+    },
+    "online.inviteSomebody": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ادعُ شخصًا"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pozvat někoho"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inviter nogen"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jemanden einladen"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προσκαλέστε κάποιον"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invite somebody"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invite somebody"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invite somebody"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invita a alguien"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kutsu joku"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inviter quelqu’un"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inviter quelqu’un"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "להזמין מישהו"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "किसी को आमंत्रित करें"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hívjon meg valakit"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Undang seseorang"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invita qualcuno"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "誰かを招待"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "초대하기"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jemput seseorang"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nodig iemand uit"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inviter noen"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zaproś kogoś"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Convide alguém"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invită pe cineva"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пригласить"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bjud in någon"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ชวนใครสักคน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Birini davet edin"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mời ai đó"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "邀请别人"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "邀請別人"
+          }
+        }
+      }
+    },
     "online.leaveTheGame": {
       "extractionState": "manual",
       "localizations": {
@@ -43928,6 +45898,203 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在尋找對手 — 點一下取消"
+          }
+        }
+      }
+    },
+    "online.sendTheLink": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أرسِل الرابط"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Odeslat odkaz"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send linket"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link senden"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποστολή συνδέσμου"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send the link"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send the link"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send the link"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviar el enlace"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lähetä linkki"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envoyer le lien"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envoyer le lien"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לשלוח את הקישור"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "लिंक भेजें"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link küldése"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kirim tautan"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invia il link"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "リンクを送る"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "링크 보내기"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hantar pautan"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link versturen"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send lenken"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wyślij link"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviar o link"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trimite linkul"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отправить ссылку"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skicka länken"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ส่งลิงก์"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlantıyı gönder"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gửi liên kết"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "发送链接"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "傳送連結"
           }
         }
       }

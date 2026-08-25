@@ -59,12 +59,38 @@ public struct RootView: View {
                 .zIndex(3)
             }
         }
+        // An invitation link opens the App Clip only for somebody who does not
+        // have the app. Anybody who does gets sent straight here instead, so
+        // the app has to be able to read the same link — otherwise the people
+        // most likely to accept an invitation are the ones it never reaches.
+        // Stored rather than acted on: the multiplayer screen picks it up when
+        // it is opened, which is where accepting belongs.
+        .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
+            guard let url = activity.webpageURL,
+                  let invitation = Invitation(url: url)
+            else { return }
+            accept(invitation)
+        }
+        .onOpenURL { url in
+            guard let invitation = Invitation(url: url) else { return }
+            accept(invitation)
+        }
         .appTypeface(app.progress.appearance.typeface)
         .animation(.easeOut(duration: 0.2), value: activity.wantsExit)
         .modelContainer(history)
         #if DEBUG
         .task { await leaveMenuForPreview() }
         #endif
+    }
+
+    /// Put an invitation where the multiplayer screen will find it, and open
+    /// that screen. Not `.play`'s default mode: somebody who followed an
+    /// invitation wants the opponent it names, not the engine.
+    private func accept(_ invitation: Invitation) {
+        SharedContainer.store(invitation)
+        navigator.playMode = .online
+        navigator.pendingTab = .play
+        navigator.showsMenu = false
     }
 
     #if DEBUG

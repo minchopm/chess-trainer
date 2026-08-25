@@ -13,6 +13,9 @@ struct OnlineScreen: View {
     private var matchmaker: GameCenterMatchmaker { app.matchmaker }
     @State private var timeControl = TimeControl.five
     @State private var settled: MatchResult?
+    /// Left by the App Clip, if somebody arrived here from a link. Read
+    /// once and taken away, so a declined invitation is not offered again.
+    @State private var invitation: Invitation?
 
     /// Drives the clock display. The clock itself works from timestamps, so
     /// this only decides how often the numbers are redrawn — not how they are
@@ -34,6 +37,10 @@ struct OnlineScreen: View {
         }
         .onAppear {
             if case .signedOut = matchmaker.state { matchmaker.authenticate() }
+            if invitation == nil, let waiting = SharedContainer.takeInvitation() {
+                invitation = waiting
+                timeControl = TimeControl(rawValue: waiting.minutes) ?? .five
+            }
         }
         .onDisappear {
             matchmaker.cancelSearch()
@@ -58,6 +65,10 @@ struct OnlineScreen: View {
                     Text(L.t("online.playOnline", "Play online")).appFont(size: 22, weight: .semibold)
                     Text(L.t("online.aRealOpponentOverGame", "A real opponent over Game Center, on the clock. No hints, no engine, no take-backs."))
                         .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
+                }
+
+                if let invitation {
+                    invitationCard(invitation)
                 }
 
                 Card {
@@ -114,8 +125,85 @@ struct OnlineScreen: View {
                     .buttonStyle(PillButtonStyle(emphasis: .solid))
                 }
 
+                inviteCard
             }
             .padding(12)
+        }
+    }
+
+    // MARK: - Invitations
+
+    /// Somebody arrived here from a link and their invitation survived the
+    /// install. Accepting it searches that invitation's own pool, so the
+    /// opponent found is the person who sent it and nobody else.
+    @ViewBuilder
+    private func invitationCard(_ invitation: Invitation) -> some View {
+        Card {
+            Slug(text: L.t("online.invitation", "Invitation"))
+            Text(L.t("clip.invitedYou", "%@ invited you to a game.", invitation.name))
+                .appFont(.subheadline)
+            Text(L.t(
+                "online.invitationClock",
+                "%@ each. You will be put straight through to them rather than into the general pool.",
+                TimeControl(rawValue: invitation.minutes)?.label ?? "\(invitation.minutes)"
+            ))
+            .appFont(.footnote)
+            .foregroundStyle(Theatre.ivoryDim)
+            HStack(spacing: 10) {
+                Button(L.t("online.accept", "Accept")) {
+                    let control = TimeControl(rawValue: invitation.minutes) ?? .five
+                    timeControl = control
+                    matchmaker.findOpponent(
+                        timeControl: control,
+                        rating: app.progress.rating(.online(minutes: control.minutes)),
+                        games: app.progress.gamesPlayed(.online(minutes: control.minutes)),
+                        invitation: invitation
+                    )
+                }
+                .buttonStyle(PillButtonStyle(emphasis: .solid))
+                .disabled(isSearching || !matchmaker.isAuthenticated)
+
+                Button(L.t("online.decline", "Decline")) { self.invitation = nil }
+                    .buttonStyle(PillButtonStyle(emphasis: .ghost))
+            }
+        }
+    }
+
+    /// Asking somebody else. The link opens an App Clip for anybody without the
+    /// app — they play a few tactics while it downloads, and the invitation is
+    /// waiting for them here afterwards.
+    @ViewBuilder
+    private var inviteCard: some View {
+        if matchmaker.canInvite {
+            let mine = Invitation(
+                name: matchmaker.localName,
+                playerID: matchmaker.localPlayerID,
+                minutes: timeControl.minutes
+            )
+            Card {
+                Slug(text: L.t("online.inviteSomebody", "Invite somebody"))
+                Text(L.t(
+                    "online.inviteExplanation",
+                    "Send a link. Whoever opens it can play a few tactics straight away, with or without the app, and the invitation waits for them here."
+                ))
+                .appFont(.footnote)
+                .foregroundStyle(Theatre.ivoryDim)
+                ShareLink(
+                    item: mine.link,
+                    subject: Text(verbatim: "Brass Pawn"),
+                    message: Text(L.t(
+                        "online.inviteMessage",
+                        "A game of chess, %@ each: %@",
+                        timeControl.label,
+                        mine.link.absoluteString
+                    ))
+                ) {
+                    Text(L.t("online.sendTheLink", "Send the link"))
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(PillButtonStyle(emphasis: .ghost))
+                .disabled(isSearching)
+            }
         }
     }
 

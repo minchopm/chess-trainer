@@ -1,0 +1,118 @@
+{
+ "note": "Six puzzles for the App Clip, drawn from data/tactics.json. A separate file so the clip carries six positions rather than fourteen thousand \u2014 and so the order is chosen rather than random: the first is a gift, the last is worth showing somebody.",
+ "puzzles": [
+  {
+   "id": "pqfas8l",
+   "fen": "8/1rp2kn1/4ppp1/P1Qq4/8/7P/5PP1/R2R2K1 b - - 0 33",
+   "solution": [
+    "d5c5"
+   ],
+   "themes": [
+    "pin",
+    "hangingPiece",
+    "winsMaterial",
+    "middlegame",
+    "oneMove"
+   ],
+   "rating": 760,
+   "sideToMove": "b",
+   "finalEval": 533,
+   "mate": false
+  },
+  {
+   "id": "p3uh8bd",
+   "fen": "5bk1/2q3pn/4r2p/4p3/1n1B1P1P/4PQ2/1P3P2/2R4K w - - 0 40",
+   "solution": [
+    "c1c7"
+   ],
+   "themes": [
+    "pin",
+    "hangingPiece",
+    "winsMaterial",
+    "middlegame",
+    "oneMove"
+   ],
+   "rating": 770,
+   "sideToMove": "w",
+   "finalEval": 482,
+   "mate": false
+  },
+  {
+   "id": "lfLiZ3",
+   "fen": "r1b2rk1/pp2n1p1/1qn1pp2/3pP1NQ/8/8/PPP2PPP/1RB1K2R w K - 0 14",
+   "solution": [
+    "h5h7"
+   ],
+   "themes": [
+    "mate",
+    "mateIn1",
+    "oneMove",
+    "opening"
+   ],
+   "rating": 800,
+   "sideToMove": "w",
+   "mate": true,
+   "source": "lichess"
+  },
+  {
+   "id": "py6f6an",
+   "fen": "rnb1kb1r/pp3pp1/4p1np/3pP1B1/Pq6/5N2/NPPQ1PPP/R3KB1R b KQkq - 1 10",
+   "solution": [
+    "b4b2"
+   ],
+   "themes": [
+    "fork",
+    "pin",
+    "hangingPiece",
+    "winsMaterial",
+    "opening",
+    "oneMove"
+   ],
+   "rating": 960,
+   "sideToMove": "b",
+   "finalEval": 248,
+   "mate": false
+  },
+  {
+   "id": "lxXgs3",
+   "fen": "8/p7/7Q/6n1/6k1/1P6/P3r1PK/8 b - - 0 37",
+   "solution": [
+    "g5f3",
+    "h2h1",
+    "e2e1"
+   ],
+   "themes": [
+    "endgame",
+    "mate",
+    "mateIn2",
+    "pin",
+    "short"
+   ],
+   "rating": 1000,
+   "sideToMove": "b",
+   "mate": true,
+   "source": "lichess"
+  },
+  {
+   "id": "lawowc",
+   "fen": "r2q1r1k/pp2N1pp/3p1p2/4p1Q1/2B5/7P/PP3PP1/R5K1 w - - 0 20",
+   "solution": [
+    "e7g6",
+    "h7g6",
+    "g5h4"
+   ],
+   "themes": [
+    "kingsideAttack",
+    "mate",
+    "mateIn2",
+    "middlegame",
+    "sacrifice",
+    "short"
+   ],
+   "rating": 1102,
+   "sideToMove": "w",
+   "mate": true,
+   "source": "lichess"
+  }
+ ]
+}

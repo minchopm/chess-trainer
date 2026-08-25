@@ -76,6 +76,8 @@ targets:
         buildPhase: resources
       - path: Resources/Assets.xcassets
         buildPhase: resources
+      - path: Resources/BoardAssets.xcassets
+        buildPhase: resources
       # The Icon Composer document. `type: file` so the generator treats the
       # bundle as one wrapper rather than recursing into it as a group — which
       # is what actool needs in order to compile it as an icon at all.
@@ -141,13 +143,45 @@ targets:
         DEVELOPMENT_TEAM: 8293TNMX6S
         CODE_SIGN_STYLE: Automatic
 
-  # The spike: does Game Center treat an App Clip as the same game as the app
-  # it belongs to? Nothing is built on this until it has answered.
+  # Six tactics, and a button to the App Store. No engine — the smallest
+  # network alone is a hundred megabytes, and the whole clip has to fit in
+  # that. What it does carry is the real board, which is why BoardUI exists.
   BrassPawnClip:
     type: application.on-demand-install-capable
     platform: iOS
     sources:
       - Clip
+      # Six positions rather than fourteen thousand: 2 KB instead of 3.4 MB,
+      # and an order that was chosen rather than drawn.
+      - path: ../data/clip-tactics.json
+        buildPhase: resources
+      # The same catalogue the app compiles, so the clip speaks all thirty-one
+      # languages without a second set of translations to keep in step. Only
+      # the handful of keys it looks up are ever read.
+      - path: App/Localizable.xcstrings
+        buildPhase: resources
+      - path: App/InfoPlist.xcstrings
+        buildPhase: resources
+      # The pieces and the board, shared with the app rather than copied. Kept
+      # in a catalogue of their own precisely so the clip can take them without
+      # the app's icons and launch art: those were seventeen of the clip's
+      # twenty-three megabytes, and a clip is downloaded while somebody waits.
+      - path: Resources/BoardAssets.xcassets
+        buildPhase: resources
+      # Only the display face, and only for the name at the top: the clip has
+      # no settings to change the typeface with, so the other two would be
+      # nearly two megabytes nobody ever sees.
+      - path: Resources/Fonts/CormorantGaramond.ttf
+        buildPhase: resources
+      # The same icon document as the app. A clip that arrives wearing a
+      # different face is a different app as far as anybody looking at it is
+      # concerned.
+      - path: Resources/AppIcon.icon
+        type: file
+        buildPhase: resources
+    dependencies:
+      - package: BrassPawn
+        product: BoardUI
     info:
       path: Clip/Info.plist
       properties:
@@ -155,15 +189,21 @@ targets:
         NSAppClip:
           NSAppClipRequestEphemeralUserNotification: false
           NSAppClipRequestLocationConfirmation: false
-        UILaunchScreen: {}
+        UILaunchScreen:
+          UIColorName: ClipLaunch
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
+        UIStatusBarHidden: true
+        UIViewControllerBasedStatusBarAppearance: false
+        UIAppFonts:
+          - CormorantGaramond.ttf
         UIUserInterfaceStyle: Dark
         ITSAppUsesNonExemptEncryption: false
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.arte-soft.brasspawn.Clip
         CODE_SIGN_ENTITLEMENTS: Clip/BrassPawnClip.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         MARKETING_VERSION: "1.0"
         CURRENT_PROJECT_VERSION: "1"
         SWIFT_VERSION: "6.0"

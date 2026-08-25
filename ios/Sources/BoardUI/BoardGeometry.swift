@@ -10,7 +10,7 @@ import Foundation
 /// take that failure to nothing.
 public enum BoardGeometry {
     /// The four corners, named, whatever order they were tapped in.
-    public struct Corners: Equatable {
+    public struct Corners: Equatable, Sendable {
         public var topLeft: CGPoint
         public var topRight: CGPoint
         public var bottomRight: CGPoint
