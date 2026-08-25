@@ -36,9 +36,13 @@ OUT = ROOT / "public"
 SOURCE = Path(
     os.environ.get(
         "BRASSPAWN_ICON",
-        Path.home() / "Desktop/brasspawnAppicon.icon/Assets/Brass_Pawn_Logo_2048.png",
+        Path.home() / "Desktop/brasspawnAppicon-iOS-Default-1024x1024@1x.png",
     )
 )
+# The iOS target, in the same repository. One asset, one command, both places:
+# the app icon and the favicon drifting apart is exactly the sort of thing
+# nobody notices until somebody screenshots them side by side.
+IOS_ICON = ROOT.parent / "ios/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.png"
 
 # The social card. 1200x630 is what every platform crops to, so the picture is
 # cut to that shape here rather than left square for them to cut badly: handed a
@@ -56,7 +60,7 @@ SMALL = (16, 32, 48)
 #
 # Measured, not guessed: the ivory of the piece is the only thing in the frame
 # that is both bright and unsaturated, so isolating it by hue puts the piece at
-# x 808-1144 and its top at y 384 in the 2048 master. These are those numbers,
+# x 396-616 and its top at y 168 in the master. These are those numbers,
 # written down.
 #
 # They are constants rather than a detector because the detector kept finding
@@ -65,7 +69,7 @@ SMALL = (16, 32, 48)
 # which produces a crop that is wrong in a way nobody can see in a sixteen-pixel
 # PNG. A constant that is checked against the source is safer than a
 # measurement that can quietly miss.
-HEAD = {"x": 0.281, "y": 0.170, "side": 0.400}
+HEAD = {"x": 0.232, "y": 0.141, "side": 0.524}
 
 
 def pawn_box(im: Image.Image) -> tuple[int, int, int, int]:
@@ -81,22 +85,71 @@ def pawn_box(im: Image.Image) -> tuple[int, int, int, int]:
     return (x0, y0, x0 + side, y0 + side)
 
 
+def square_master(im: Image.Image) -> Image.Image:
+    """An opaque square, whatever shape the source arrived in.
+
+    The icon is exported for iOS, which means its corners are already cut to
+    Apple's squircle and the alpha outside it is zero. That is wrong twice
+    over: iOS applies its own mask, so a pre-rounded icon is rounded twice, and
+    App Store validation rejects an icon with an alpha channel at all.
+
+    Fabricating the missing corners — compositing over an enlarged copy of the
+    picture — leaves a visible arc where the source's own edge shading stops.
+    So instead this takes the largest centred square that is entirely inside
+    the opaque region and scales it back up. On this icon that is 868 of 1024,
+    an eighteen percent enlargement of a photographic render, which is
+    invisible, and it costs the outer eight percent of a frame that is only
+    board.
+    """
+    if im.mode not in ("RGBA", "LA"):
+        return im.convert("RGB")
+
+    alpha = im.convert("RGBA").split()[3]
+    n = im.width
+
+    def clear(side: int) -> bool:
+        x0, x1 = (n - side) // 2, (n - side) // 2 + side - 1
+        return all(
+            alpha.getpixel(p) > 250
+            for t in range(x0, x1 + 1, 4)
+            for p in ((t, x0), (t, x1), (x0, t), (x1, t))
+        )
+
+    if clear(n):
+        return im.convert("RGB")
+
+    low, high = n // 4, n
+    while low < high:
+        mid = (low + high + 1) // 2
+        if clear(mid):
+            low = mid
+        else:
+            high = mid - 1
+
+    if low < n * 0.7:
+        raise SystemExit(f"icons: only {low}px of {n} is opaque — that is too much to throw away")
+
+    edge = (n - low) // 2
+    print(f"  master           squared by inscribing {low}px of {n} and scaling back up")
+    return im.convert("RGB").crop((edge, edge, edge + low, edge + low)).resize(
+        (n, n), Image.LANCZOS
+    )
+
+
 def main() -> int:
     if not SOURCE.is_file():
         print(f"icons: no source at {SOURCE}", file=sys.stderr)
         print("set BRASSPAWN_ICON to the square master", file=sys.stderr)
         return 1
 
-    master = Image.open(SOURCE).convert("RGB")
-    if master.width != master.height:
-        print(f"icons: the source is {master.size}, not square", file=sys.stderr)
+    source = Image.open(SOURCE)
+    if source.width != source.height:
+        print(f"icons: the source is {source.size}, not square", file=sys.stderr)
         return 1
-    if master.width != 2048:
-        print(
-            f"icons: the source is {master.width}px; HEAD was measured on the "
-            "2048 master. Check the crop by eye before trusting it.",
-            file=sys.stderr,
-        )
+    if source.width < 1024:
+        print(f"icons: the source is only {source.width}px", file=sys.stderr)
+        return 1
+    master = square_master(source)
 
     for name, size in LARGE.items():
         master.resize((size, size), Image.LANCZOS).save(OUT / name, optimize=True)
@@ -140,6 +193,14 @@ def main() -> int:
     # The old vector pawn would win over every PNG in Chrome and Firefox, which
     # both prefer an SVG icon when one is offered, so the new one would never
     # appear. It goes.
+    # The app's own icon, from the same master. Flat, square and opaque: the
+    # asset catalogue takes a 1024 and App Store validation rejects alpha.
+    if IOS_ICON.parent.is_dir():
+        master.save(IOS_ICON, optimize=True)
+        print(f"  {IOS_ICON.name:16} 1024x1024  -> {IOS_ICON.parent.name}")
+    else:
+        print(f"  (no iOS asset catalogue at {IOS_ICON.parent})", file=sys.stderr)
+
     stale = OUT / "favicon.svg"
     if stale.exists():
         stale.unlink()
