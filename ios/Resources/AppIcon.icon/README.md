@@ -15,6 +15,17 @@ iOS 26 asks for — light, dark and tinted — which you can confirm in a build:
 xcrun assetutil --info BrassPawn.app/Assets.car | grep IconImageStack
 ```
 
+## The master is here
+
+`Assets/Brass_Pawn_Logo_2048.png` — the photograph as shot, 2048 square and
+opaque. Everything is cut from it: this document's layer, the three web icons,
+the three favicon sizes and the social card.
+
+It is in the repository because it kept living on a Desktop, and twice went
+missing between one change and the next. The iOS export beside it is a zoomed
+crop of this with Apple's mask already applied — useful to look at, not useful
+to build from.
+
 ## The layer must stay square
 
 `icon.json` has one layer, and it has to be the **square** artwork. Icon
@@ -26,8 +37,8 @@ Apple's mask corner is about 229. Between them is a ring where the layer is
 transparent and the mask is not, and through it shows this document's `fill`,
 which is `extended-srgb:0.000, 0.533, 1.000`. A blue rim on all four corners.
 
-`web/tools/icons.py` writes the square layer here, from the same artwork it
-cuts the favicon and the social card from:
+`web/tools/icons.py` writes the layer here at 1024, the size `icon.json`
+declares, downscaled from the master:
 
 ```bash
 python3 web/tools/icons.py

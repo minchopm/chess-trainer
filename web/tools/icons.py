@@ -33,10 +33,18 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "public"
+# The master, in the repository rather than on somebody's Desktop — which is
+# where it kept living, and where it twice went missing between one change and
+# the next.
+#
+# It is the photograph as shot: 2048 square, opaque, wider than the iOS export,
+# which is a zoomed crop of it with Apple's mask already applied. Everything
+# else here is cut from this.
 SOURCE = Path(
     os.environ.get(
         "BRASSPAWN_ICON",
-        Path.home() / "Desktop/brasspawnAppicon-iOS-Default-1024x1024@1x.png",
+        Path(__file__).resolve().parent.parent.parent
+        / "ios/Resources/AppIcon.icon/Assets/Brass_Pawn_Logo_2048.png",
     )
 )
 # The iOS target, in the same repository. One asset, one command, both places:
@@ -67,7 +75,7 @@ SMALL = (16, 32, 48)
 #
 # Measured, not guessed: the ivory of the piece is the only thing in the frame
 # that is both bright and unsaturated, so isolating it by hue puts the piece at
-# x 396-616 and its top at y 168 in the master. These are those numbers,
+# x 808-1144 and its top at y 384 in the 2048 master. These are those numbers,
 # written down.
 #
 # They are constants rather than a detector because the detector kept finding
@@ -76,7 +84,7 @@ SMALL = (16, 32, 48)
 # which produces a crop that is wrong in a way nobody can see in a sixteen-pixel
 # PNG. A constant that is checked against the source is safer than a
 # measurement that can quietly miss.
-HEAD = {"x": 0.232, "y": 0.141, "side": 0.524}
+HEAD = {"x": 0.281, "y": 0.170, "side": 0.400}
 
 
 def pawn_box(im: Image.Image) -> tuple[int, int, int, int]:
@@ -206,7 +214,10 @@ def main() -> int:
 
         spec = _json.loads((IOS_ICON_DOC / "icon.json").read_text())
         name = spec["groups"][0]["layers"][0]["image-name"]
-        master.save(doc_assets / name, optimize=True)
+        # Written at 1024 because that is the size icon.json declares. The
+        # master is 2048; downscaling loses nothing anybody can see and keeps
+        # the document honest if it is ever reopened in Icon Composer.
+        master.resize((1024, 1024), Image.LANCZOS).save(doc_assets / name, optimize=True)
         print(f"  {name[:28]:28} squared, in AppIcon.icon  (the app's icon)")
 
     stale = OUT / "favicon.svg"
