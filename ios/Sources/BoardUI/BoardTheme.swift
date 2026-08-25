@@ -84,16 +84,16 @@ public struct BoardTheme: Sendable {
 /// whichever font the system feels like using, and — as this project found out
 /// the hard way — liable to be rendered as a colour emoji that ignores the
 /// colour asked for. An image is the piece somebody actually sculpted.
-enum PieceArt {
+public enum PieceArt {
     /// Every piece is drawn on the same square canvas with the same baseline,
     /// so a king comes out taller than a pawn without anything here scaling
     /// them relative to each other. The light side is boxwood whichever set is
     /// chosen; only the dark side is stained.
-    static func name(for piece: Piece, set: PieceSet) -> String {
+    public static func name(for piece: Piece, set: PieceSet) -> String {
         name(for: piece.color, piece.kind, set: set)
     }
 
-    static func name(for color: PieceColor, _ kind: PieceKind, set: PieceSet) -> String {
+    public static func name(for color: PieceColor, _ kind: PieceKind, set: PieceSet) -> String {
         let side = color == .white ? "white" : set.darkArtPrefix
         return "\(side)-\(kindName(kind))"
     }
@@ -117,7 +117,7 @@ enum PieceArt {
 /// are different characters with different metrics, so a white pawn comes out
 /// visibly smaller than a black one. Using one set and colouring it gives both
 /// sides identical shapes and weight.
-enum PieceGlyph {
+public enum PieceGlyph {
     /// Text presentation selector, U+FE0E.
     ///
     /// Without it the pawn is drawn by the colour emoji font, which ignores

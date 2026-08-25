@@ -601,7 +601,7 @@ public struct BoardView: View {
 
 /// One piece, for the places that are not the board itself — the promotion
 /// picker and anything else that wants a single piece at a given size.
-struct PieceView: View {
+public struct PieceView: View {
     let piece: Piece
     let size: CGFloat
     /// Overridden where a piece is shown to choose a tone by, so the swatch can
@@ -611,7 +611,13 @@ struct PieceView: View {
     @Environment(\.showsBoardCoordinates) private var showsCoordinates
     @Environment(\.boardTheme) private var theme
 
-    var body: some View {
+    public init(piece: Piece, size: CGFloat, lightTone: LightTone? = nil) {
+        self.piece = piece
+        self.size = size
+        self.lightTone = lightTone
+    }
+
+    public var body: some View {
         let tone = lightTone ?? theme.lightTone
         let shading = piece.color == .white ? tone.shading : (multiply: (1.0, 1.0, 1.0), lift: 0.0)
         return Group {
@@ -715,7 +721,7 @@ private struct BoardCoordinatesKey: EnvironmentKey {
     static var defaultValue: Bool { true }
 }
 
-extension EnvironmentValues {
+public extension EnvironmentValues {
     var boardTheme: BoardTheme {
         get { self[BoardThemeKey.self] }
         set { self[BoardThemeKey.self] = newValue }
@@ -790,9 +796,9 @@ struct PromotionPicker: View {
 /// one when there is nobody there to tap.
 @Observable
 @MainActor
-final class PreviewSelection {
-    static let shared = PreviewSelection()
-    var square: Square?
+public final class PreviewSelection {
+    public static let shared = PreviewSelection()
+    public var square: Square?
     private init() {}
 }
 #endif

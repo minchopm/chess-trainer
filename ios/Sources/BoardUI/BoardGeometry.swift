@@ -8,15 +8,22 @@ import Foundation
 /// best-measured one locates the board in 34% of phone photos, and every error
 /// after that is downstream of the miss. Four taps cost the player a moment and
 /// take that failure to nothing.
-enum BoardGeometry {
+public enum BoardGeometry {
     /// The four corners, named, whatever order they were tapped in.
-    struct Corners: Equatable {
-        var topLeft: CGPoint
-        var topRight: CGPoint
-        var bottomRight: CGPoint
-        var bottomLeft: CGPoint
+    public struct Corners: Equatable {
+        public var topLeft: CGPoint
+        public var topRight: CGPoint
+        public var bottomRight: CGPoint
+        public var bottomLeft: CGPoint
 
-        var all: [CGPoint] { [topLeft, topRight, bottomRight, bottomLeft] }
+        public var all: [CGPoint] { [topLeft, topRight, bottomRight, bottomLeft] }
+
+        public init(topLeft: CGPoint, topRight: CGPoint, bottomRight: CGPoint, bottomLeft: CGPoint) {
+            self.topLeft = topLeft
+            self.topRight = topRight
+            self.bottomRight = bottomRight
+            self.bottomLeft = bottomLeft
+        }
     }
 
     /// Sort four taps into corners.
@@ -30,7 +37,7 @@ enum BoardGeometry {
     /// Image coordinates, y downwards. Returns nil unless there are exactly
     /// four points and they make a quadrilateral with some area to it — four
     /// taps in nearly a line are a mis-tap, not a board.
-    static func order(_ points: [CGPoint]) -> Corners? {
+    public static func order(_ points: [CGPoint]) -> Corners? {
         guard points.count == 4 else { return nil }
 
         let centre = CGPoint(
@@ -74,7 +81,7 @@ enum BoardGeometry {
     /// rank can end up a pixel out of step with the one above. It reads as rows
     /// drifting rather than as a fault, which is why it is worth making
     /// impossible rather than watching for.
-    static func snappedSide(available: CGFloat, rim: CGFloat, scale: CGFloat) -> CGFloat {
+    public static func snappedSide(available: CGFloat, rim: CGFloat, scale: CGFloat) -> CGFloat {
         let step = 8 / max(scale, 1)
         let side = max(0, available - rim)
         return (side / step).rounded(.down) * step
@@ -85,7 +92,7 @@ enum BoardGeometry {
     /// `file` and `rank` are the chess ones — file 0 is the a-file, rank 0 is
     /// rank 1 — and the board is assumed rectified with a8 at the top left,
     /// which is what the corner order produces.
-    static func square(file: Int, rank: Int, side: CGFloat) -> CGRect {
+    public static func square(file: Int, rank: Int, side: CGFloat) -> CGRect {
         let step = side / 8
         return CGRect(
             x: CGFloat(file) * step,
@@ -100,7 +107,7 @@ enum BoardGeometry {
     /// stands *on* its square and is photographed from the side: the square
     /// alone holds a base and no piece. The extra height is the cost of seeing
     /// what is standing there.
-    static func pieceCrop(file: Int, rank: Int, side: CGFloat, heightMultiple: CGFloat = 2.4) -> CGRect {
+    public static func pieceCrop(file: Int, rank: Int, side: CGFloat, heightMultiple: CGFloat = 2.4) -> CGRect {
         let base = square(file: file, rank: rank, side: side)
         let tall = base.height * heightMultiple
         return CGRect(

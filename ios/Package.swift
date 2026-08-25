@@ -9,6 +9,7 @@ let package = Package(
         .library(name: "ChessEngine", targets: ["ChessEngine"]),
         .library(name: "ChessTraining", targets: ["ChessTraining"]),
         .library(name: "BoardScene", targets: ["BoardScene"]),
+        .library(name: "BoardUI", targets: ["BoardUI"]),
         .library(name: "BrassPawnApp", targets: ["BrassPawnApp"]),
     ],
     targets: [
@@ -69,11 +70,18 @@ let package = Package(
         .target(name: "BoardScene", dependencies: ["ChessCore"]),
         .testTarget(name: "BoardSceneTests", dependencies: ["BoardScene"]),
 
+        // The board in two dimensions, and the palette it is drawn in. Split
+        // out of the app so the App Clip can show a position: the clip has no
+        // room for an engine, and before this the board could not be compiled
+        // without linking one.
+        .target(name: "BoardUI", dependencies: ["ChessCore", "ChessTraining"]),
+        .testTarget(name: "BoardUITests", dependencies: ["BoardUI"]),
+
         // The SwiftUI layer. Kept as a library rather than an app target so the
         // views can be compiled and previewed without the Xcode project.
         .target(
             name: "BrassPawnApp",
-            dependencies: ["ChessCore", "ChessEngine", "ChessTraining", "BoardScene"]
+            dependencies: ["ChessCore", "ChessEngine", "ChessTraining", "BoardScene", "BoardUI"]
         ),
         .testTarget(name: "BrassPawnAppTests", dependencies: ["BrassPawnApp"]),
     ],

@@ -1,6 +1,6 @@
 import CoreGraphics
 import Testing
-@testable import BrassPawnApp
+@testable import BoardUI
 
 /// Four taps into a board.
 @Suite("Reading a board off a photograph")
