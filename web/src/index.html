@@ -11,8 +11,21 @@
       name="description"
       content="Brass Pawn for iPhone and iPad: tactics, positional judgement, endgame technique and coached play, with two chess engines running on the device. Nothing leaves the phone."
     />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <link rel="alternate icon" type="image/png" href="favicon-32.png" />
+    <!--
+      Three sizes rather than one, and no SVG.
+
+      Chrome and Firefox prefer an SVG icon over every PNG offered, so keeping
+      the old vector pawn here would mean the new icon never appeared. And a
+      browser given one size scales it itself, badly: the 16 is a different
+      crop from the 48, not the same picture shrunk, because at sixteen pixels
+      the board the piece stands on is four dark smudges.
+    -->
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <!-- Square and opaque on purpose: iOS rounds it itself, and an icon that
+         arrives pre-rounded is rounded twice. -->
     <link rel="apple-touch-icon" href="icon-180.png" />
     <link rel="manifest" href="site.webmanifest" />
     <!--

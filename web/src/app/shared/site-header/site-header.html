@@ -6,17 +6,10 @@
 
 <div class="bar page">
   <a class="mark" routerLink="/" (click)="close()" aria-label="Brass Pawn — home">
-    <!-- The same pawn as the favicon, at the same proportions. -->
-    <svg viewBox="0 0 32 32" aria-hidden="true" width="22" height="22" fill="currentColor">
-      <circle cx="16" cy="9" r="4.5" />
-      <path d="M11.5 13.3h9l-1.1 2.3h-6.8z" />
-      <path
-        d="M12.5 16.2h7c0 3-1 4.8-1.9 6.2-.4.7-.7 1.1-.7 1.4h-1.8c0-.3-.3-.7-.7-1.4-.9-1.4-1.9-3.2-1.9-6.2z"
-      />
-      <path
-        d="M9.6 23.4h12.8c.7 0 1.3.6 1.3 1.3v1.5c0 .7-.6 1.3-1.3 1.3H9.6c-.7 0-1.3-.6-1.3-1.3v-1.5c0-.7.6-1.3 1.3-1.3z"
-      />
-    </svg>
+    <!-- The app icon, at the size of a capital letter. It is a photograph, so
+         it is offered at 48 and drawn at 22 — a browser given a 22px source
+         and a 2x screen has nothing to scale from. -->
+    <img class="mark__icon" src="favicon-48.png" width="22" height="22" alt="" decoding="async" />
     <span class="mark__word">Brass&nbsp;Pawn</span>
   </a>
 

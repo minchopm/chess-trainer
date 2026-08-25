@@ -50,9 +50,12 @@
   margin-right: auto;
 }
 
-.mark svg {
-  color: var(--brass);
+.mark__icon {
   flex: none;
+  border-radius: 5px;
+  /* The icon is a dark square; against the dark bar it needs an edge or it
+     reads as a hole rather than a mark. */
+  box-shadow: 0 0 0 1px rgb(233 228 216 / 12%);
 }
 
 .mark__word {
