@@ -22,8 +22,24 @@ export const SITE = {
   origin: 'https://brasspawn.com',
   publisher: 'Mincho Milev',
   copyrightYear: 2026,
-  /** Named in Terms and Privacy as the support channel Apple requires. */
-  contactEmail: 'mincho.milev@gmail.com',
+  /**
+   * Named in Terms and Privacy as the support channel Apple requires.
+   *
+   * On the domain rather than a personal inbox — not for appearances, but
+   * because this address is printed on two legal pages and handed to Apple,
+   * and an address on a domain can be pointed somewhere else later without
+   * reissuing either. There is no mailbox behind it: SES receives, a Lambda
+   * rewrites the headers so the forward survives SPF and DKIM, and it lands in
+   * a real inbox. See work/mail-forwarder.
+   *
+   * privacy@, legal@, security@, press@, hello@, postmaster@ and abuse@ all
+   * answer to the same place. The last two because RFC 2142 expects any domain
+   * that sends mail to answer on them.
+   */
+  contactEmail: 'support@brasspawn.com',
+  /** The same mailbox, for the page whose subject it is. */
+  privacyEmail: 'privacy@brasspawn.com',
+  legalEmail: 'legal@brasspawn.com',
   /**
    * Still the old name, deliberately: this is the link the GPL obliges the app
    * to keep working, and the repository has not been renamed. If it ever is,
