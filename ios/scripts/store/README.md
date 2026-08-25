@@ -38,3 +38,35 @@ stretch is, by hashing downscaled frames rather than by thresholding a
 difference — no single noise figure both catches the recorder repeating its
 first frame and spares a camera orbiting a few pixels a second. Anything over
 two seconds is a bad take, and `record-all.sh` shoots it again.
+
+
+## Screenshot sizes the store actually accepts
+
+`capture.sh` photographs whichever simulator happens to be booted, and that is
+the one thing about it worth checking before a run. The App Store has a fixed
+set of slots, and a picture that is not one of those sizes is refused on upload:
+
+| Slot | Pixels | Simulator |
+|---|---|---|
+| `APP_IPHONE_69` | 1320 × 2868 | iPhone 17 Pro Max |
+| `APP_IPHONE_65` | 1242 × 2688 | iPhone 11 Pro Max and kin |
+| `APP_IPAD_PRO_3GEN_129` | 2064 × 2752 | iPad Pro 13-inch |
+
+An iPhone 17 **Pro** gives 1206 × 2622, which is not a slot. It looks right,
+it opens fine, and App Store Connect will not take it.
+
+## Why the age rating is 4+
+
+Declared through the API, everything `NONE` or `false`. Nothing on Apple's list
+is in the app, and the two questions that decide a rating for a game played
+against a stranger — messaging and chat, user-generated content — are answered
+by the wire protocol in `MatchProtocol.swift`: it carries a move, a
+resignation, a draw offer and a result. There is no field a person can type
+into, so there is nothing to moderate.
+
+A capture is not violence, and chess is not simulated gambling.
+
+**Not in the Kids Category**, which is a separate thing from a 4+ rating. That
+category forbids links out of the app without a parental gate, and this one
+links to the licence, the privacy policy and the source. Nothing in it needs
+that category; the 4+ rating is what puts it in front of a beginner of any age.
