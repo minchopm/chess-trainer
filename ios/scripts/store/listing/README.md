@@ -67,6 +67,35 @@ Two decisions worth recording:
   what every other app on the account uses. No custom agreement is registered,
   so nothing has to be maintained.
 
+## The review screenshot every purchase needs
+
+An in-app purchase cannot be submitted without a picture of the screen that
+offers it, and while it is missing the purchase sits in `MISSING_METADATA` and
+the app cannot go for review at all.
+
+`screenshot.py` uploads one:
+
+```bash
+python3 screenshot.py shot.png subscription <subscription id>
+python3 screenshot.py shot.png iap <in-app purchase id>
+```
+
+Take the picture with the app's own screenshot scene rather than by hand — the
+purchase screen is otherwise reached only by running a day's free training out:
+
+```bash
+xcrun simctl launch <udid> com.arte-soft.brasspawn -shot paywall
+```
+
+Apple's asset upload is three steps — reserve, PUT the bytes, confirm with an
+MD5 — and **all three are needed**. A reservation whose confirmation failed
+reads as `AWAITING_UPLOAD`, which looks from the outside exactly like no
+screenshot at all. The confirming PATCH returned a 500 the first time and
+succeeded on a retry, so retry it rather than starting over.
+
+The in-app purchase's screenshot hangs off the **v2** path; the subscription's
+off v1. The v1 path for an IAP returns "the relationship does not exist".
+
 ## The rest
 
 `stockfish` is in every keyword list. It is a search term with real volume and

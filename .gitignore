@@ -30,3 +30,4 @@ lichess_db_puzzle.csv
 # reading the root ignore file learns they exist.
 web/media/
 web/exports/
+__pycache__/

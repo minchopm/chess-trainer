@@ -45,6 +45,13 @@ enum ScreenshotScene: String {
     /// on the squares. Tactics first because that is the part people come for,
     /// and the values last because they are the part nothing else does.
     case demoTactics
+    /// The purchase screen, for Apple rather than for the store page.
+    ///
+    /// Every in-app purchase needs a screenshot of where it is offered before
+    /// it can be submitted, and it has to be taken in each language for the
+    /// reviewer to read. Reaching it by hand means running a day's free
+    /// training out first; this opens it directly.
+    case paywall
 
     static let requested: ScreenshotScene? = {
         let arguments = ProcessInfo.processInfo.arguments
@@ -56,7 +63,8 @@ enum ScreenshotScene: String {
     /// Which tab the scene lives in.
     var tab: RootView.Tab {
         switch self {
-        case .menu, .playSetup, .playCoached, .playMistake, .playValues, .boardEngines, .demo: .play
+        case .menu, .playSetup, .playCoached, .playMistake, .playValues, .boardEngines, .demo,
+             .paywall: .play
         case .watchList, .demoWatch: .watch
         case .demoTactics: .tactics
         }
@@ -77,7 +85,7 @@ enum ScreenshotScene: String {
         switch self {
         case .playSetup, .playCoached, .playMistake, .boardEngines, .demo: .dimensional
         case .playValues, .demoTactics: .flat
-        case .menu, .watchList, .demoWatch: nil
+        case .menu, .watchList, .demoWatch, .paywall: nil
         }
     }
 
@@ -85,7 +93,9 @@ enum ScreenshotScene: String {
     /// preview opens on it before moving off.
     var showsMenu: Bool {
         switch self {
-        case .menu, .demo, .demoWatch, .demoTactics: true
+        // The paywall is presented over the menu, which is where it is
+        // reached from, so the menu stays.
+        case .menu, .demo, .demoWatch, .demoTactics, .paywall: true
         default: false
         }
     }

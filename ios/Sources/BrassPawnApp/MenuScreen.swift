@@ -99,6 +99,18 @@ struct MenuScreen: View {
         .background(Theatre.ink)
         .fullScreenCover(isPresented: $showsPurchases) { PaywallView() }
         .fullScreenCover(isPresented: $showsSettings) { SettingsScreen() }
+        #if DEBUG
+        // Every in-app purchase needs a screenshot of the screen that offers
+        // it, in each language, before it can be submitted. Opened from here
+        // because this is where the purchase screen is reached from anyway.
+        .task {
+            guard ScreenshotScene.requested == .paywall else { return }
+            try? await Task.sleep(for: .milliseconds(400))
+            showsPurchases = true
+            try? await Task.sleep(for: .milliseconds(1400))
+            ScreenshotScene.markReady()
+        }
+        #endif
     }
 
     /// Purchases and preferences sit together in the top-right corner, with
