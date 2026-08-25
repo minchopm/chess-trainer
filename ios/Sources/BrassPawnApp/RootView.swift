@@ -129,7 +129,7 @@ public struct RootView: View {
         // The title scene is a picture of the menu, so it is ready once the
         // board it is a picture of is on screen.
         if scene == .menu {
-            for _ in 0..<200 where !BoardSceneDebug.titleBoardHasAppeared {
+            for _ in 0..<200 where !BoardSceneDebug.boardHasAppeared {
                 try? await Task.sleep(for: .milliseconds(50))
             }
             try? await Task.sleep(for: .milliseconds(600))
@@ -142,7 +142,7 @@ public struct RootView: View {
         // From when the board is on screen, not from launch. It is built from
         // a size that does not exist until the view has been laid out, so it
         // arrives a second or two after everything around it.
-        for _ in 0..<200 where !BoardSceneDebug.titleBoardHasAppeared {
+        for _ in 0..<200 where !BoardSceneDebug.boardHasAppeared {
             try? await Task.sleep(for: .milliseconds(50))
         }
         // Said before waiting, not after: this is what the recorder is waiting

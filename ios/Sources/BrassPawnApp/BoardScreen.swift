@@ -1,3 +1,4 @@
+import BoardScene
 import ChessCore
 import ChessEngine
 import ChessTraining
@@ -479,9 +480,19 @@ struct BoardScreen: View {
             // Said here rather than left to the play screen, which does not
             // own this one: the free board is its own mode, so the play
             // screen's signal only ever arrived by accident — and did not, for
-            // eighteen of the twenty-nine languages. Immediately, too, because
-            // two engines with a board between them are thinking almost all the
-            // time, and "Thinking…" is not the picture.
+            // eighteen of the twenty-nine languages.
+            //
+            // Then wait for the board to fade itself in. Saying ready the
+            // instant the game was loaded was near enough on most launches and
+            // not near enough on two: Hindi and Simplified Chinese have a
+            // typeface to load first, which pushed the first frame past the
+            // moment the shutter went, and both listings had a picture of an
+            // empty room. Waiting on the board rather than on a longer sleep
+            // keeps the composition — this is meant to be caught early, while
+            // the loaded game is still settling onto the squares.
+            for _ in 0..<200 where !BoardSceneDebug.boardHasAppeared {
+                try? await Task.sleep(for: .milliseconds(50))
+            }
             ScreenshotScene.markReady()
         }
         #endif

@@ -116,7 +116,7 @@ public struct BoardSceneView: UIViewRepresentable {
         private func reveal() {
             guard settled >= 8, let view, view.alpha == 0 else { return }
             #if DEBUG
-            BoardSceneDebug.titleBoardHasAppeared = true
+            BoardSceneDebug.boardHasAppeared = true
             #endif
             UIView.animate(withDuration: 0.35) { view.alpha = 1 }
         }
@@ -165,7 +165,12 @@ public struct BoardSceneView: UIViewRepresentable {
 /// launch was leaving it exactly as the board arrived.
 @MainActor
 public enum BoardSceneDebug {
-    public static var titleBoardHasAppeared = false
+    /// Set the moment a turned board fades itself in.
+    ///
+    /// Not only the title one, despite where it started: the free board asks
+    /// the same question, and a screenshot taken before the answer is yes is a
+    /// photograph of an empty room.
+    public static var boardHasAppeared = false
 
     /// Put the title game back to its first move.
     ///
