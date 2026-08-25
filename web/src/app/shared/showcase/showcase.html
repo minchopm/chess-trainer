@@ -111,30 +111,70 @@
     <p class="slug" ctReveal>{{ copy().ui.screens }}</p>
   </div>
 
-  <!-- Full-bleed and scrolled sideways: ten tall screenshots do not fit a page
-       and shrinking them until they do makes them unreadable, which is the
-       whole point of showing them. -->
-  <ol class="strip" [style.--shot-aspect]="frame().width + ' / ' + frame().height">
-    @for (view of views(); track view) {
-      <li>
-        <figure>
+  @if (device() === 'iphone') {
+    <!-- The App Store row, joined.
+
+         These seven are not screenshots; they are the composed frames, and one
+         ribbon of warm light crosses all of them, so side by side they are a
+         single picture. That is why they scroll rather than take turns: a
+         carousel shows one at a time and the only thing worth showing is the
+         join. They overlap by a pixel because sub-pixel rounding otherwise
+         draws a hairline down every seam. -->
+    <ol class="panorama" [style.--panel-aspect]="panelAspect">
+      @for (name of panels; track name) {
+        <li>
           <picture>
-            <source type="image/avif" [attr.srcset]="srcset(view, 'avif')" [attr.sizes]="sizes" />
-            <source type="image/webp" [attr.srcset]="srcset(view, 'webp')" [attr.sizes]="sizes" />
+            <source
+              type="image/avif"
+              [attr.srcset]="panelSet(name, 'avif')"
+              [attr.sizes]="panelSizes"
+            />
+            <source
+              type="image/webp"
+              [attr.srcset]="panelSet(name, 'webp')"
+              [attr.sizes]="panelSizes"
+            />
+            <!-- The caption is burnt into the frame, so it goes in the alt
+                 rather than under it: repeated below it would be the same
+                 sentence twice, and left out entirely it would be a sentence
+                 no crawler and no screen reader can reach. -->
             <img
-              [src]="fallback(view)"
-              [width]="frame().width"
-              [height]="frame().height"
+              [src]="panelFallback(name)"
+              [width]="panelWidth"
+              [height]="panelHeight"
               loading="lazy"
               decoding="async"
-              [alt]="caption(view)[0] + ' ' + caption(view)[1]"
+              [alt]="caption(name)[0] + ' ' + caption(name)[1]"
             />
           </picture>
-          <figcaption>
-            {{ caption(view)[0] }}<br /><em>{{ caption(view)[1] }}</em>
-          </figcaption>
-        </figure>
-      </li>
-    }
-  </ol>
+        </li>
+      }
+    </ol>
+  } @else {
+    <!-- No composed row exists for iPad, so the tab shows the captures
+         themselves, with the caption set as text beneath. -->
+    <ol class="strip" [style.--shot-aspect]="frame().width + ' / ' + frame().height">
+      @for (view of views(); track view) {
+        <li>
+          <figure>
+            <picture>
+              <source type="image/avif" [attr.srcset]="srcset(view, 'avif')" [attr.sizes]="sizes" />
+              <source type="image/webp" [attr.srcset]="srcset(view, 'webp')" [attr.sizes]="sizes" />
+              <img
+                [src]="fallback(view)"
+                [width]="frame().width"
+                [height]="frame().height"
+                loading="lazy"
+                decoding="async"
+                [alt]="caption(view)[0] + ' ' + caption(view)[1]"
+              />
+            </picture>
+            <figcaption>
+              {{ caption(view)[0] }}<br /><em>{{ caption(view)[1] }}</em>
+            </figcaption>
+          </figure>
+        </li>
+      }
+    </ol>
+  }
 </section>

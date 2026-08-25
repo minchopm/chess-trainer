@@ -57,6 +57,39 @@ export const loopSrc = (device: Device, slug: string, clip: Clip): string =>
 export const posterSrc = (device: Device, slug: string, clip: Clip): string =>
   `${base(device, slug)}/${clip}.jpg`;
 
+/**
+ * The App Store row: seven composed frames per language, in the order the pitch
+ * runs, and they join edge to edge — one ribbon of warm light crosses all
+ * seven, so the row is a panorama rather than a set of cards.
+ *
+ * That is why the site scrolls them sideways instead of showing one at a time.
+ * A carousel would hide the only thing that makes them worth showing.
+ */
+export const PANELS = [
+  'title',
+  'mistake',
+  'values',
+  'library',
+  'engines',
+  'coached',
+  'free',
+] as const;
+
+export type Panel = (typeof PANELS)[number];
+
+/** The frame's own proportions, so the row can be sized without measuring. */
+export const PANEL = { width: 1320, height: 2868 } as const;
+
+const PANEL_WIDTHS = [340, 680] as const;
+
+const panel = (slug: string, name: string): string => `/media/panel/${slug}/${name}`;
+
+export const panelSrcset = (slug: string, name: string, type: 'avif' | 'webp'): string =>
+  PANEL_WIDTHS.map((w) => `${panel(slug, name)}-${w}.${type} ${w}w`).join(', ');
+
+export const panelSrc = (slug: string, name: string): string =>
+  `${panel(slug, name)}-${PANEL_WIDTHS.at(-1)}.webp`;
+
 const shot = (device: Device, slug: string, view: string): string =>
   `/media/shot/${device}/${slug}/${view}`;
 

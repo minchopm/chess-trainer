@@ -69,6 +69,22 @@ VIEWS = {
     },
 }
 
+# The App Store frames, which are not screenshots but a composed row: one
+# ribbon of warm light crosses all seven, so they join edge to edge and the
+# join is the point. They are exported per language, in the order the pitch
+# runs, and the caption on each is burnt into the picture — which is why the
+# site puts that caption in the alt text rather than repeating it underneath.
+PANEL_FRAMES = [
+    "01-title",
+    "02-mistake",
+    "03-values",
+    "04-library",
+    "05-engines",
+    "06-coached",
+    "07-free",
+]
+PANEL_WIDTHS = (340, 680)
+
 # The tall edge of the encoded video, and the widths each screenshot is offered
 # at. Both devices are shown inside a drawn bezel roughly 380 CSS px (iPhone)
 # and 700 CSS px (iPad) wide, so these carry a comfortable 2x and no more.
@@ -181,6 +197,18 @@ def jobs(only: str, wanted: set[str] | None, force: bool) -> list[tuple]:
                         if stale(out / f"{clip}.jpg", silent, force):
                             todo.append((poster, silent, out / f"{clip}.jpg", height))
 
+            if device == "iphone" and only in ("all", "shots", "panels"):
+                # Keyed by the storefront's own locale names, which are shorter
+                # than the app's — the same mapping locales.json already holds.
+                folder = SOURCE / "storefront/exports/iphone-6.9" / loc["store"]
+                for index, frame in enumerate(PANEL_FRAMES, start=1):
+                    src = folder / f"{frame}.png"
+                    if not src.exists():
+                        continue
+                    stem = OUT / "panel" / slug / frame.split("-", 1)[1]
+                    if stale(Path(f"{stem}-{PANEL_WIDTHS[-1]}.avif"), src, force):
+                        todo.append((encode_shot, src, stem, PANEL_WIDTHS))
+
             if only in ("all", "shots"):
                 for name, view in VIEWS[device].items():
                     src = SOURCE / device / "screenshots" / tag / f"{name}.png"
@@ -196,7 +224,7 @@ def jobs(only: str, wanted: set[str] | None, force: bool) -> list[tuple]:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--locales", help="comma-separated BCP-47 tags; default all")
-    ap.add_argument("--only", choices=("all", "video", "shots"), default="all")
+    ap.add_argument("--only", choices=("all", "video", "shots", "panels"), default="all")
     ap.add_argument("--jobs", type=int, default=max(2, (os.cpu_count() or 4) // 2))
     ap.add_argument("--force", action="store_true")
     args = ap.parse_args()

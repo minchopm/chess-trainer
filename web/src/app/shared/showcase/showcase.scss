@@ -167,6 +167,44 @@
   border-color: var(--brass-deep);
 }
 
+/* ── The App Store row ──────────────────────────────────────────────────── */
+
+.panorama {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--gutter) 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule) transparent;
+
+  /* Same lead-in as the strip: the row starts where the page's text starts and
+     runs off the right, which is what says "there is more" without an arrow. */
+  --lead: max(var(--gutter), calc(50vw - var(--page) / 2));
+  padding-inline-start: var(--lead);
+  scroll-padding-inline-start: var(--lead);
+}
+
+.panorama li {
+  flex: 0 0 auto;
+  width: clamp(9rem, 44vw, 17rem);
+}
+
+/* A pixel of overlap. The frames join exactly in the source; on screen their
+   widths land on fractions of a device pixel and the rounding draws a hairline
+   down every seam. Overlapping by one covers it, and one pixel of a photograph
+   is nothing. */
+.panorama li + li {
+  margin-inline-start: -1px;
+}
+
+.panorama img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--panel-aspect);
+}
+
 /* ── The screenshots ────────────────────────────────────────────────────── */
 
 .screens {

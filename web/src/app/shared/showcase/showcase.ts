@@ -20,9 +20,13 @@ import {
   type Clip,
   type Device,
   FRAME,
+  PANEL,
+  PANELS,
   VIEWS,
   filmSrc,
   loopSrc,
+  panelSrc,
+  panelSrcset,
   posterSrc,
   shotSrc,
   shotSrcset,
@@ -92,6 +96,20 @@ export class Showcase {
    * fetch the larger file on every phone.
    */
   protected readonly sizes = '(max-width: 40rem) 62vw, 22rem';
+
+  protected readonly panels = PANELS;
+  protected readonly panelWidth = PANEL.width;
+  protected readonly panelHeight = PANEL.height;
+  protected readonly panelAspect = `${PANEL.width} / ${PANEL.height}`;
+  protected readonly panelSizes = '(max-width: 40rem) 44vw, 17rem';
+
+  protected panelSet(name: string, type: 'avif' | 'webp'): string {
+    return panelSrcset(this.slug(), name, type);
+  }
+
+  protected panelFallback(name: string): string {
+    return panelSrc(this.slug(), name);
+  }
   protected readonly frame = computed(() => FRAME[this.device()]);
 
   protected readonly poster = computed(() => posterSrc(this.device(), this.slug(), this.clip()));
