@@ -98,6 +98,13 @@ targets:
     info:
       path: App/Info.plist
       properties:
+        # Pinned to the build settings rather than left out. XcodeGen writes
+        # a literal CFBundleVersion of 1 when nothing says otherwise, and the
+        # Info.plist beats CURRENT_PROJECT_VERSION — so bumping the setting
+        # alone changed nothing, and an archive went out numbered the same as
+        # the build already uploaded.
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleDisplayName: Brass Pawn
         # Reading a position off a photograph of a real board. Shown by iOS in
         # its own permission prompt, so it has to say what the camera is for in
@@ -185,6 +192,8 @@ targets:
     info:
       path: Clip/Info.plist
       properties:
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleDisplayName: Brass Pawn
         NSAppClip:
           NSAppClipRequestEphemeralUserNotification: false
