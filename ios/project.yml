@@ -202,6 +202,18 @@ targets:
           UIColorName: ClipLaunch
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
+        # All four on iPad, matching the app. A bundle that runs on iPad has to
+        # take every orientation or it cannot be a multitasking citizen, and
+        # the store refuses it outright — which is what happened. The clip is
+        # laid out for portrait and simply lets the board find its width.
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        # XcodeGen writes this for an ordinary application and not for an App
+        # Clip, and the store wants APPL from both.
+        CFBundlePackageType: APPL
         UIStatusBarHidden: true
         UIViewControllerBasedStatusBarAppearance: false
         UIAppFonts:
