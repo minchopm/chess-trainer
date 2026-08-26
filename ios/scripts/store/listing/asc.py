@@ -4,11 +4,37 @@
 A thin wrapper: mint the JWT, then GET/PATCH/POST JSON. Everything the store
 listing needs is one of those three.
 """
-import json, os, sys, time, urllib.request, urllib.error
+import json, os, pathlib, sys, time, urllib.request, urllib.error
 
-ISSUER = os.environ["ASC_ISSUER_ID"]
-KEY_ID = os.environ["ASC_KEY_ID"]
-KEY_PATH = os.path.expanduser(os.environ["ASC_KEY_PATH"])
+def _settings():
+    """Read ~/.appstore/config, letting the environment override it.
+
+    The key itself is downloadable exactly once and belongs nowhere near a
+    repository; the two identifiers beside it are not secrets but are still
+    account-specific. Keeping all three in one file outside the tree means a
+    script can be run without a preamble of exports, and a rotated key is one
+    edit rather than a search.
+    """
+    values = {}
+    config = pathlib.Path("~/.appstore/config").expanduser()
+    if config.exists():
+        for line in config.read_text().splitlines():
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            name, _, value = line.partition("=")
+            values[name.strip()] = value.strip()
+    values.update({k: v for k, v in os.environ.items() if k.startswith("ASC_")})
+    missing = [k for k in ("ASC_ISSUER_ID", "ASC_KEY_ID", "ASC_KEY_PATH") if not values.get(k)]
+    if missing:
+        raise SystemExit("missing " + ", ".join(missing) + " — set them in ~/.appstore/config")
+    return values
+
+
+_S = _settings()
+ISSUER = _S["ASC_ISSUER_ID"]
+KEY_ID = _S["ASC_KEY_ID"]
+KEY_PATH = os.path.expanduser(_S["ASC_KEY_PATH"])
 BASE = "https://api.appstoreconnect.apple.com/v1"
 
 _token = None
