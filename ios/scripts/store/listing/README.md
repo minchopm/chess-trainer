@@ -96,6 +96,42 @@ succeeded on a retry, so retry it rather than starting over.
 The in-app purchase's screenshot hangs off the **v2** path; the subscription's
 off v1. The v1 path for an IAP returns "the relationship does not exist".
 
+## The App Clip's card
+
+The card is what a link opens onto: the app's name, one line under it, an
+image, and a button. `clipexperience.py` writes it in every language.
+
+```bash
+python3 clipexperience.py <default experience id> header.png     # all locales
+python3 clipexperience.py <id> header.png de-DE ja               # or these
+```
+
+The header is 1800 x 1200 and Apple wants one per locale, so the same file goes
+up thirty-one times. It carries no text on purpose — that is what lets one
+picture serve every language, and it is why the store screenshots cannot be
+reused for it: those are portrait and have words on them.
+
+## Submitting, and what the API will not do
+
+`reviewSubmissionItems` accepts only `appStoreVersion`. The purchases have to
+be added from their own pages in App Store Connect, and there are three of them
+rather than one:
+
+1. the app version
+2. the subscription **group**
+3. the subscription **inside** the group — adding the group alone is refused
+   with "New subscription groups must be submitted with an auto-renewable
+   subscription from within that group"
+4. the non-consumable
+
+All four go in one draft so they are reviewed together, which is also Apple's
+requirement: a first purchase must be submitted with a version.
+
+Two more things the version needs before it will go in at all, neither of them
+obvious from the web UI: a `copyright` string, and — if the build carries the
+Game Center entitlement — a `gameCenterAppVersion`. The latter is configuration
+in App Store Connect, not in the binary, so it does not need a new build.
+
 ## The rest
 
 `stockfish` is in every keyword list. It is a search term with real volume and
