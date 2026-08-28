@@ -178,6 +178,17 @@ def main() -> int:
     for loc in locales:
         tag, slug, store = loc["tag"], loc["slug"], loc["store"]
 
+        # A language with no App Store localisation has none of the three corpora
+        # this script assembles from, so there is nothing here to harvest for it.
+        # Its file is written by hand; regenerating it would replace a real
+        # translation with empty strings and the loader would still list it.
+        if loc.get("handwritten"):
+            if not (OUT / f"{slug}.ts").exists():
+                missing.append(f"{tag}: copy/{slug}.ts is hand-written and absent")
+            index.append(f"  '{slug}': () => import('./copy/{slug}').then((m) => m.copy),")
+            continue
+
+
         said = {name: value(strings, key, tag) for name, key in STRINGS.items()}
         modes = {name: value(strings, key, tag) for name, key in MODES.items()}
         shots = {view: list(pair) for view, pair in storefront[store].items()}

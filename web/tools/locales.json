@@ -212,7 +212,14 @@
       "english": "Swedish",
       "dir": "ltr"
     },
-    { "tag": "th", "slug": "th", "store": "th", "name": "ไทย", "english": "Thai", "dir": "ltr" },
+    {
+      "tag": "th",
+      "slug": "th",
+      "store": "th",
+      "name": "ไทย",
+      "english": "Thai",
+      "dir": "ltr"
+    },
     {
       "tag": "tr",
       "slug": "tr",
@@ -244,6 +251,16 @@
       "name": "繁體中文",
       "english": "Chinese (Traditional)",
       "dir": "ltr"
+    },
+    {
+      "tag": "bg",
+      "slug": "bg",
+      "store": null,
+      "name": "Български",
+      "english": "Bulgarian",
+      "dir": "ltr",
+      "handwritten": true
     }
-  ]
+  ],
+  "//handwritten": "Bulgarian has no source to harvest from. Apple offers no Bulgarian App Store localisation, so there are no storefront captions, no narrator script and no entry in the app's string catalogue -- the three corpora every other language here is assembled from. Its copy/bg.ts is therefore written by hand and marked so, and harvest-copy.py leaves it alone instead of overwriting it with blanks."
 }

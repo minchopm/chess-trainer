@@ -39,4 +39,5 @@ export const COPY: Record<string, () => Promise<Copy>> = {
   vi: () => import('./copy/vi').then((m) => m.copy),
   'zh-hans': () => import('./copy/zh-hans').then((m) => m.copy),
   'zh-hant': () => import('./copy/zh-hant').then((m) => m.copy),
+  bg: () => import('./copy/bg').then((m) => m.copy),
 };

@@ -488,6 +488,21 @@ export const LOCALES: readonly Locale[] = [
       soon: '即將登陸 App Store',
     },
   },
+  {
+    tag: 'bg',
+    slug: 'bg',
+    name: 'Български',
+    english: 'Bulgarian',
+    dir: 'ltr',
+    nav: {
+      film: 'Виж го в движение',
+      screens: 'Всеки екран',
+      price: 'Колко струва',
+      questions: 'Въпроси',
+      download: 'Изтегли от App Store',
+      soon: 'Очаквай го в App Store',
+    },
+  },
 ];
 
 /** English lives at `/`; every other language at `/<slug>`. */
