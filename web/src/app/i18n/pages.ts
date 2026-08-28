@@ -21,6 +21,8 @@ export const PAGES: Record<string, () => Promise<Pages>> = {
   it: () => import('./pages/it').then((m) => m.pages),
   nl: () => import('./pages/nl').then((m) => m.pages),
   pl: () => import('./pages/pl').then((m) => m.pages),
+  ru: () => import('./pages/ru').then((m) => m.pages),
+  cs: () => import('./pages/cs').then((m) => m.pages),
   'pt-br': () => import('./pages/pt-br').then((m) => m.pages),
   'fr-ca': () => import('./pages/fr-ca').then((m) => m.pages),
   'en-ca': () => import('./pages/en-ca').then((m) => m.pages),
