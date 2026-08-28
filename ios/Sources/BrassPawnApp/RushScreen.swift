@@ -257,7 +257,8 @@ struct RushScreen: View {
         }
     }
 
-    /// One run a day on the free tier. The clock is the whole point of Rush, so
+    /// Five runs a day on the free tier, the same as every other kind of
+    /// training — `dailyFreeLimit` is one number. The clock is the whole point of Rush, so
     /// the check happens before it starts rather than in the middle of one.
     private func startRun() {
         guard app.beginAttempt(.rush) else {

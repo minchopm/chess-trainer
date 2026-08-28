@@ -18,7 +18,7 @@ export const copy: Copy = {
     privacy:
       'Aplikasi tidak mengumpulkan apa pun, tidak mengirim apa pun, dan tidak melakukan permintaan jaringan. Rating dan riwayatmu hanya tersimpan di perangkat ini dan ikut terhapus bersama aplikasi.',
     freeSoftware:
-      'Aplikasi ini adalah perangkat lunak bebas, dilisensikan di bawah GNU General Public License versi 3 atau yang lebih baru.',
+      'Aplikasi ini adalah perangkat lunak bebas, dilisensikan di bawah GNU Affero General Public License versi 3 atau yang lebih baru.',
     stockfish:
       'Aplikasi ini menyertakan Stockfish yang dirilis dengan lisensi GPLv3. Karena Stockfish ditautkan ke dalam aplikasi, seluruh aplikasi memakai lisensi yang sama — dan kode sumbernya diterbitkan lengkap.',
     reckless:

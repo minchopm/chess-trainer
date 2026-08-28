@@ -17,7 +17,7 @@ export const copy: Copy = {
     lede: '戰術、局面判斷、殘局技術與附講解的對局，引擎 直接在裝置上執行。沒有任何資料離開手機。',
     privacy:
       '本 App 不蒐集任何資料、不傳送任何資料，也不進行網路連線。你的等級分與紀錄只存在這台裝置上，刪除 App 就一併刪除。',
-    freeSoftware: '本 App 是自由軟體，依 GNU General Public License 第 3 版或更新版本授權。',
+    freeSoftware: '本 App 是自由軟體，依 GNU Affero General Public License 第 3 版或更新版本授權。',
     stockfish:
       '本 App 內含以 GPLv3 發布的 Stockfish。由於 Stockfish 連結進 App，整個 App 採用相同授權，其完整原始碼已公開。',
     reckless:

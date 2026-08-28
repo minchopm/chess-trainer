@@ -2962,193 +2962,193 @@
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "هذا التطبيق برمجية حرّة، مرخّصة برخصة GNU General Public License الإصدار 3 أو أحدث."
+            "value": "هذا التطبيق برمجية حرّة، مرخّصة برخصة GNU Affero General Public License الإصدار 3 أو أحدث."
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tato aplikace je svobodný software pod licencí GNU General Public License verze 3 nebo novější."
+            "value": "Tato aplikace je svobodný software pod licencí GNU Affero General Public License verze 3 nebo novější."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Denne app er fri software, licenseret under GNU General Public License version 3 eller nyere."
+            "value": "Denne app er fri software, licenseret under GNU Affero General Public License version 3 eller nyere."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Diese Anwendung ist freie Software unter der GNU General Public License Version 3 oder später."
+            "value": "Diese Anwendung ist freie Software unter der GNU Affero General Public License Version 3 oder später."
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Η εφαρμογή είναι ελεύθερο λογισμικό, με άδεια GNU General Public License έκδοση 3 ή νεότερη."
+            "value": "Η εφαρμογή είναι ελεύθερο λογισμικό, με άδεια GNU Affero General Public License έκδοση 3 ή νεότερη."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "This application is free software, licensed under the GNU General Public License version 3 or later."
+            "value": "This application is free software, licensed under the GNU Affero General Public License version 3 or later."
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "This application is free software, licensed under the GNU General Public License version 3 or later."
+            "value": "This application is free software, licensed under the GNU Affero General Public License version 3 or later."
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "This application is free software, licensed under the GNU General Public License version 3 or later."
+            "value": "This application is free software, licensed under the GNU Affero General Public License version 3 or later."
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "Esta aplicación es software libre, con licencia GNU General Public License versión 3 o posterior."
+            "value": "Esta aplicación es software libre, con licencia GNU Affero General Public License versión 3 o posterior."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tämä sovellus on vapaa ohjelmisto, lisensoitu GNU General Public License -lisenssin versiolla 3 tai uudemmalla."
+            "value": "Tämä sovellus on vapaa ohjelmisto, lisensoitu GNU Affero General Public License -lisenssin versiolla 3 tai uudemmalla."
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cette application est un logiciel libre, sous licence GNU General Public License version 3 ou ultérieure."
+            "value": "Cette application est un logiciel libre, sous licence GNU Affero General Public License version 3 ou ultérieure."
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cette application est un logiciel libre, sous licence GNU General Public License version 3 ou ultérieure."
+            "value": "Cette application est un logiciel libre, sous licence GNU Affero General Public License version 3 ou ultérieure."
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "אפליקציה זו היא תוכנה חופשית, ברישיון GNU General Public License גרסה 3 או מאוחרת יותר."
+            "value": "אפליקציה זו היא תוכנה חופשית, ברישיון GNU Affero General Public License גרסה 3 או מאוחרת יותר."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "यह ऐप मुक्त सॉफ़्टवेयर है, GNU General Public License संस्करण 3 या उसके बाद के तहत।"
+            "value": "यह ऐप मुक्त सॉफ़्टवेयर है, GNU Affero General Public License संस्करण 3 या उसके बाद के तहत।"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ez az alkalmazás szabad szoftver, a GNU General Public License 3-as vagy későbbi verziója alatt."
+            "value": "Ez az alkalmazás szabad szoftver, a GNU Affero General Public License 3-as vagy későbbi verziója alatt."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aplikasi ini adalah perangkat lunak bebas, dilisensikan di bawah GNU General Public License versi 3 atau yang lebih baru."
+            "value": "Aplikasi ini adalah perangkat lunak bebas, dilisensikan di bawah GNU Affero General Public License versi 3 atau yang lebih baru."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Questa applicazione è software libero, con licenza GNU General Public License versione 3 o successiva."
+            "value": "Questa applicazione è software libero, con licenza GNU Affero General Public License versione 3 o successiva."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "本アプリはフリーソフトウェアであり、GNU General Public License バージョン 3 以降の条件で配布されています。"
+            "value": "本アプリはフリーソフトウェアであり、GNU Affero General Public License バージョン 3 以降の条件で配布されています。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "이 앱은 자유 소프트웨어이며, GNU General Public License 버전 3 이상으로 배포됩니다."
+            "value": "이 앱은 자유 소프트웨어이며, GNU Affero General Public License 버전 3 이상으로 배포됩니다."
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aplikasi ini ialah perisian bebas, dilesenkan di bawah GNU General Public License versi 3 atau lebih baharu."
+            "value": "Aplikasi ini ialah perisian bebas, dilesenkan di bawah GNU Affero General Public License versi 3 atau lebih baharu."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Deze app is vrije software onder de GNU General Public License versie 3 of later."
+            "value": "Deze app is vrije software onder de GNU Affero General Public License versie 3 of later."
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Denne appen er fri programvare, lisensiert under GNU General Public License versjon 3 eller nyere."
+            "value": "Denne appen er fri programvare, lisensiert under GNU Affero General Public License versjon 3 eller nyere."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ta aplikacja to wolne oprogramowanie na licencji GNU General Public License w wersji 3 lub nowszej."
+            "value": "Ta aplikacja to wolne oprogramowanie na licencji GNU Affero General Public License w wersji 3 lub nowszej."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Este aplicativo é software livre, licenciado sob a GNU General Public License versão 3 ou posterior."
+            "value": "Este aplicativo é software livre, licenciado sob a GNU Affero General Public License versão 3 ou posterior."
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Această aplicație este software liber, licențiat sub GNU General Public License versiunea 3 sau ulterioară."
+            "value": "Această aplicație este software liber, licențiat sub GNU Affero General Public License versiunea 3 sau ulterioară."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Это свободное программное обеспечение под лицензией GNU General Public License версии 3 или новее."
+            "value": "Это свободное программное обеспечение под лицензией GNU Affero General Public License версии 3 или новее."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Den här appen är fri programvara, licensierad under GNU General Public License version 3 eller senare."
+            "value": "Den här appen är fri programvara, licensierad under GNU Affero General Public License version 3 eller senare."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "แอปนี้เป็นซอฟต์แวร์เสรี ภายใต้สัญญาอนุญาต GNU General Public License รุ่น 3 หรือใหม่กว่า"
+            "value": "แอปนี้เป็นซอฟต์แวร์เสรี ภายใต้สัญญาอนุญาต GNU Affero General Public License รุ่น 3 หรือใหม่กว่า"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Bu uygulama özgür yazılımdır; GNU General Public License sürüm 3 veya sonrası ile lisanslanmıştır."
+            "value": "Bu uygulama özgür yazılımdır; GNU Affero General Public License sürüm 3 veya sonrası ile lisanslanmıştır."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ứng dụng này là phần mềm tự do, theo giấy phép GNU General Public License phiên bản 3 hoặc mới hơn."
+            "value": "Ứng dụng này là phần mềm tự do, theo giấy phép GNU Affero General Public License phiên bản 3 hoặc mới hơn."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "本应用是自由软件，依 GNU General Public License 第 3 版或更新版本授权。"
+            "value": "本应用是自由软件，依 GNU Affero General Public License 第 3 版或更新版本授权。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "本 App 是自由軟體，依 GNU General Public License 第 3 版或更新版本授權。"
+            "value": "本 App 是自由軟體，依 GNU Affero General Public License 第 3 版或更新版本授權。"
           }
         }
       }

@@ -18,7 +18,7 @@ export const copy: Copy = {
     privacy:
       '本アプリは何も収集せず、何も送信せず、ネットワーク通信も行いません。レーティングと履歴はこの端末にのみ保存され、アプリを削除すれば一緒に消えます。',
     freeSoftware:
-      '本アプリはフリーソフトウェアであり、GNU General Public License バージョン 3 以降の条件で配布されています。',
+      '本アプリはフリーソフトウェアであり、GNU Affero General Public License バージョン 3 以降の条件で配布されています。',
     stockfish:
       '本アプリには GPLv3 で公開されている Stockfish が含まれます。Stockfish をリンクしているため、アプリ全体が同じライセンスに従い、そのソースコードはすべて公開されています。',
     reckless:

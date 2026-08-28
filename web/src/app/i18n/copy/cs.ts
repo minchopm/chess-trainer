@@ -18,7 +18,7 @@ export const copy: Copy = {
     privacy:
       'Aplikace nic nesbírá, nic neodesílá a nedělá žádné síťové požadavky. Tvoje ratingy a historie zůstávají jen v tomto zařízení a smažou se spolu s aplikací.',
     freeSoftware:
-      'Tato aplikace je svobodný software pod licencí GNU General Public License verze 3 nebo novější.',
+      'Tato aplikace je svobodný software pod licencí GNU Affero General Public License verze 3 nebo novější.',
     stockfish:
       'Aplikace obsahuje Stockfish, který je pod licencí GPLv3. Protože je Stockfish do aplikace slinkován, podléhá stejné licenci celá aplikace — a její úplný zdrojový kód je zveřejněn.',
     reckless:

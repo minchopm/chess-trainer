@@ -18,7 +18,7 @@ export const copy: Copy = {
     privacy:
       'Die App sammelt nichts, sendet nichts und stellt keine Netzwerkanfragen. Deine Wertungen und deine Historie liegen nur auf diesem Gerät; wer die App löscht, löscht sie mit.',
     freeSoftware:
-      'Diese Anwendung ist freie Software unter der GNU General Public License Version 3 oder später.',
+      'Diese Anwendung ist freie Software unter der GNU Affero General Public License Version 3 oder später.',
     stockfish:
       'Die App enthält Stockfish, das unter der GPLv3 steht. Weil Stockfish in die App eingebunden ist, gilt dieselbe Lizenz für die gesamte Anwendung — und ihr vollständiger Quelltext ist veröffentlicht.',
     reckless:

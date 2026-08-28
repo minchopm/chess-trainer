@@ -18,7 +18,7 @@ export const copy: Copy = {
     privacy:
       'Aplicația nu colectează nimic, nu trimite nimic și nu face cereri de rețea. Ratingurile și istoricul rămân doar pe acest dispozitiv și dispar odată cu aplicația.',
     freeSoftware:
-      'Această aplicație este software liber, licențiat sub GNU General Public License versiunea 3 sau ulterioară.',
+      'Această aplicație este software liber, licențiat sub GNU Affero General Public License versiunea 3 sau ulterioară.',
     stockfish:
       'Aplicația include Stockfish, publicat sub GPLv3. Fiindcă Stockfish este legat în aplicație, întreaga aplicație poartă aceeași licență — iar codul ei sursă complet este publicat.',
     reckless:

@@ -76,9 +76,18 @@ public struct BoardSceneView: UIViewRepresentable {
         /// Only re-framed when the view actually changes shape; doing it every
         /// frame would undo a pinch as fast as it was made.
         private var framedFor: CGSize = .zero
-        /// Display-link ticks since the size last changed.
-        private var settled = 0
+        /// When the view last took the shape it currently has.
+        private var framedAt: CFTimeInterval = 0
+        /// Whether anything has been drawn since it took that shape.
+        private var drawnSinceFraming = 0
         weak var view: SCNView?
+
+        /// How long the view must hold one shape before the board is shown.
+        ///
+        /// A tenth of a second and a bit: several turns of the runloop, which
+        /// is what the second layout pass takes to arrive, and short enough
+        /// that nobody waits through it.
+        private static let settle: CFTimeInterval = 0.12
 
         func start(sequence: any SceneDriver) {
             self.sequence = sequence
@@ -95,12 +104,13 @@ public struct BoardSceneView: UIViewRepresentable {
 
         func fit(_ size: CGSize) {
             guard size.width > 1, size.height > 1, size != framedFor else {
-                settled += 1
+                drawnSinceFraming += 1
                 reveal()
                 return
             }
             framedFor = size
-            settled = 0
+            framedAt = CACurrentMediaTime()
+            drawnSinceFraming = 0
             sequence?.camera.fit(aspect: Float(size.width / size.height))
             sequence?.place()
         }
@@ -111,10 +121,26 @@ public struct BoardSceneView: UIViewRepresentable {
         /// out more than once on the way in — the second pass reports a
         /// different height once the rest of the screen has resolved — and the
         /// board was already visible by then, so the correction read as the
-        /// scene jumping. Waiting for a few frames at one size costs a tenth of
-        /// a second and shows one board instead of two.
+        /// scene jumping. So it waits for the shape to hold still.
+        ///
+        /// It waits on the clock, and that is the point. This used to wait for
+        /// eight drawn frames, which sounds like the same thing and is not: the
+        /// second layout pass is a main-thread event that arrives when the
+        /// runloop reaches it, and has nothing to do with how fast this device
+        /// draws. Counting frames tied the wait to the renderer, so the slower
+        /// the device the longer its board was missing — which is exactly
+        /// backwards. Measured on a simulator, those eight frames cost a
+        /// quarter of a second warm and a second and a third cold, for a guard
+        /// that never needed more than a tenth.
+        ///
+        /// One drawn frame is still required. Not for the picture — `place()`
+        /// has already moved the camera by then, so the next frame out is
+        /// correct either way — but because a view that is not being drawn at
+        /// all should not be faded in as though it were.
         private func reveal() {
-            guard settled >= 8, let view, view.alpha == 0 else { return }
+            guard let view, view.alpha == 0,
+                  framedAt > 0, drawnSinceFraming >= 1,
+                  CACurrentMediaTime() - framedAt >= Self.settle else { return }
             #if DEBUG
             BoardSceneDebug.boardHasAppeared = true
             #endif

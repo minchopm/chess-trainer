@@ -17,7 +17,7 @@ export const copy: Copy = {
     lede: '战术、局面判断、残局技术和带讲解的对局，引擎 直接在设备上运行。没有任何数据离开手机。',
     privacy:
       '本应用不收集任何数据，不发送任何数据，也不进行网络请求。你的等级分和记录只存在这台设备上，删除应用即一并删除。',
-    freeSoftware: '本应用是自由软件，依 GNU General Public License 第 3 版或更新版本授权。',
+    freeSoftware: '本应用是自由软件，依 GNU Affero General Public License 第 3 版或更新版本授权。',
     stockfish:
       '本应用包含以 GPLv3 发布的 Stockfish。由于 Stockfish 被链接进应用，整个应用采用同一许可协议，其完整源代码已经公开。',
     reckless:

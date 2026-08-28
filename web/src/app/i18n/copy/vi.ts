@@ -18,7 +18,7 @@ export const copy: Copy = {
     privacy:
       'Ứng dụng không thu thập gì, không gửi gì và không thực hiện yêu cầu mạng nào. Hệ số và lịch sử của bạn chỉ nằm trên máy này và sẽ mất khi gỡ ứng dụng.',
     freeSoftware:
-      'Ứng dụng này là phần mềm tự do, theo giấy phép GNU General Public License phiên bản 3 hoặc mới hơn.',
+      'Ứng dụng này là phần mềm tự do, theo giấy phép GNU Affero General Public License phiên bản 3 hoặc mới hơn.',
     stockfish:
       'Ứng dụng có kèm Stockfish, phát hành theo GPLv3. Vì Stockfish được liên kết vào ứng dụng nên toàn bộ ứng dụng mang cùng giấy phép — và mã nguồn đầy đủ đã được công bố.',
     reckless:

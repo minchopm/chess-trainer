@@ -18,7 +18,7 @@ export const copy: Copy = {
     privacy:
       'La aplicación no recoge nada, no envía nada y no hace peticiones de red. Tus valoraciones y tu historial se guardan solo en este dispositivo, y se borran al borrar la aplicación.',
     freeSoftware:
-      'Esta aplicación es software libre, con licencia GNU General Public License versión 3 o posterior.',
+      'Esta aplicación es software libre, con licencia GNU Affero General Public License versión 3 o posterior.',
     stockfish:
       'Incluye Stockfish, que está bajo la GPLv3. Como Stockfish está enlazado en la aplicación, toda la aplicación lleva la misma licencia, y su código fuente completo está publicado.',
     reckless:

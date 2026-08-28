@@ -18,7 +18,7 @@ export const copy: Copy = {
     privacy:
       'Az alkalmazás semmit nem gyűjt, semmit nem küld, és nem indít hálózati kérést. Az értékszámaid és az előzményeid csak ezen a készüléken vannak, és a törléssel együtt tűnnek el.',
     freeSoftware:
-      'Ez az alkalmazás szabad szoftver, a GNU General Public License 3-as vagy későbbi verziója alatt.',
+      'Ez az alkalmazás szabad szoftver, a GNU Affero General Public License 3-as vagy későbbi verziója alatt.',
     stockfish:
       'Az alkalmazás tartalmazza a Stockfisht, amely GPLv3 alatt jelenik meg. Mivel a Stockfish be van linkelve, az egész alkalmazásra ugyanaz a licenc vonatkozik — és a teljes forráskódja nyilvános.',
     reckless:

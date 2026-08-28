@@ -338,22 +338,47 @@ private enum MenuTypography {
 }
 
 #if canImport(UIKit)
+/// Holds the title scene, and builds it once.
+///
+/// `State(initialValue:)` reads as "initialise this once" and does not. The
+/// expression is evaluated every time the view struct is made, and every
+/// result but the first is thrown away — and a view struct is made again
+/// whenever anything it reads changes. With the sequence built in the view's
+/// `init`, every change anywhere in the app model built a whole SceneKit
+/// scene, six turned pieces and a board texture, and dropped it. Three of them
+/// went by in the first three seconds of a launch; one was kept.
+///
+/// A box costs nothing to make, so the extra copies of *it* are free, and the
+/// scene is built on first use by whichever copy SwiftUI kept.
+@MainActor
+private final class TitleScene {
+    private var built: TitleSequence?
+
+    func sequence(carving: Carving) -> TitleSequence {
+        if let built { return built }
+        let made = TitleSequence(
+            quality: SceneQuality.forThisDevice,
+            style: carving == .banded ? .banded : .plain
+        )
+        built = made
+        return made
+    }
+}
+
 /// Owns the title-screen SceneKit sequence so changing a carved set rebuilds
 /// this scene alone. The menu above it — including any presented full-screen
 /// Settings or Subscription view — keeps its identity and state.
+///
+/// A carved set is a different scene, and the caller gives this view a new
+/// identity when it changes — so the box goes with the old identity and the
+/// new one builds once, which is the behaviour that was wanted all along.
 private struct MenuBoardScene: View {
-    @State private var sequence: TitleSequence
+    @State private var scene = TitleScene()
+    let carving: Carving
     let onGame: (ShowGame) -> Void
 
-    init(carving: Carving, onGame: @escaping (ShowGame) -> Void) {
-        self.onGame = onGame
-        _sequence = State(initialValue: TitleSequence(
-            quality: SceneQuality.forThisDevice,
-            style: carving == .banded ? .banded : .plain
-        ))
-    }
-
     var body: some View {
+        let sequence = scene.sequence(carving: carving)
         BoardSceneView(sequence: sequence)
             .onAppear {
                 onGame(sequence.game)

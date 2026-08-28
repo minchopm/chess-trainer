@@ -18,7 +18,7 @@ export const copy: Copy = {
     privacy:
       'Uygulama hiçbir şey toplamaz, hiçbir şey göndermez ve ağ isteği yapmaz. Puanların ve geçmişin yalnızca bu cihazda durur; uygulamayı silmek onları da siler.',
     freeSoftware:
-      'Bu uygulama özgür yazılımdır; GNU General Public License sürüm 3 veya sonrası ile lisanslanmıştır.',
+      'Bu uygulama özgür yazılımdır; GNU Affero General Public License sürüm 3 veya sonrası ile lisanslanmıştır.',
     stockfish:
       "Uygulama, GPLv3 ile dağıtılan Stockfish'i içerir. Stockfish uygulamaya bağlandığı için tüm uygulama aynı lisansı taşır — ve kaynak kodunun tamamı yayımlanmıştır.",
     reckless:

@@ -18,7 +18,7 @@ export const copy: Copy = {
     privacy:
       'Sovellus ei kerää mitään, ei lähetä mitään eikä tee verkkopyyntöjä. Ratingisi ja historiasi ovat vain tässä laitteessa ja katoavat sovelluksen mukana.',
     freeSoftware:
-      'Tämä sovellus on vapaa ohjelmisto, lisensoitu GNU General Public License -lisenssin versiolla 3 tai uudemmalla.',
+      'Tämä sovellus on vapaa ohjelmisto, lisensoitu GNU Affero General Public License -lisenssin versiolla 3 tai uudemmalla.',
     stockfish:
       'Sovellus sisältää Stockfishin, joka julkaistaan GPLv3-lisenssillä. Koska Stockfish on linkitetty sovellukseen, koko sovellus on saman lisenssin alainen — ja sen täydellinen lähdekoodi on julkaistu.',
     reckless:
