@@ -113,3 +113,12 @@ li a:hover {
 .languages a:hover {
   color: var(--brass-hot);
 }
+
+/* A link that leaves this language behind. Quiet enough to ignore when you
+   already read English, present enough to save a click when you do not. */
+.in-english {
+  margin-inline-start: 0.4em;
+  font-size: 0.72em;
+  opacity: 0.55;
+  white-space: nowrap;
+}

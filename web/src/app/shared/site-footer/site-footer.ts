@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { SITE } from '../../core/site';
+import { CurrentLocale } from '../../i18n/current';
 import { LOCALES } from '../../i18n/locales';
 
 /** End credits. Everything legal is one click from here, on every page. */
@@ -13,12 +14,26 @@ import { LOCALES } from '../../i18n/locales';
   styleUrl: './site-footer.scss',
 })
 export class SiteFooter {
+  private readonly current = inject(CurrentLocale);
+
   protected readonly site = SITE;
   protected readonly year = SITE.copyrightYear;
   protected readonly locales = LOCALES;
 
+  /**
+   * The footer's own words, in the language of the page.
+   *
+   * The link labels below stay English on purpose: they name essays that exist
+   * only in English, and each one is marked as leaving the language behind —
+   * the same treatment the localised home page already gives them.
+   */
+  protected readonly chrome = computed(() => this.current.locale().chrome);
+  protected readonly localised = this.current.localised;
+  protected readonly lede = computed(() => this.current.locale().chrome);
+
   protected readonly columns = [
     {
+      key: 'colApp' as const,
       heading: 'The app',
       links: [
         { path: '/training', label: 'Training' },
@@ -28,6 +43,7 @@ export class SiteFooter {
       ],
     },
     {
+      key: 'colChess' as const,
       heading: 'Chess',
       links: [
         { path: '/tactics', label: 'The twenty motifs' },
@@ -36,6 +52,7 @@ export class SiteFooter {
       ],
     },
     {
+      key: 'colLegal' as const,
       heading: 'Legal',
       links: [
         { path: '/privacy', label: 'Privacy Policy' },

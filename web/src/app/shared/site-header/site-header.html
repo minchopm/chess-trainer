@@ -2,7 +2,7 @@
      page but the home page the skip link leaves the page it is skipping
      within. routerLink writes a real href into the prerendered HTML, so it
      still works with no script running. -->
-<a class="skip" [routerLink]="[]" fragment="main">Skip to the words</a>
+<a class="skip" [routerLink]="[]" fragment="main">{{ chrome().skip }}</a>
 
 <div class="bar page">
   <a class="mark" routerLink="/" (click)="close()" aria-label="Brass Pawn — home">

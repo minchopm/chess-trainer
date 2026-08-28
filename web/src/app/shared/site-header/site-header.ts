@@ -32,7 +32,16 @@ export class SiteHeader {
   protected readonly grounded = signal(false);
   protected readonly open = signal(false);
 
-  private readonly localised = inject(CurrentLocale).localised;
+  private readonly current = inject(CurrentLocale);
+  private readonly localised = this.current.localised;
+
+  /**
+   * The chrome in the language of the page.
+   *
+   * The skip link was hardcoded English on all thirty-two, which is the one
+   * string on the page a screen-reader user hears first.
+   */
+  protected readonly chrome = computed(() => this.current.locale().chrome);
 
   private readonly english = [
     { path: '/training', label: 'Training' },

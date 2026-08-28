@@ -78,8 +78,6 @@ export const copy: Copy = {
     language: 'Language',
     menu: 'Menu',
     close: 'Close',
-    skip: 'Skip to the content',
-    inEnglish: 'in English',
     film: 'See it in motion',
     screens: 'Every screen',
     price: 'What it costs',

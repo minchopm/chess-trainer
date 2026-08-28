@@ -74,8 +74,6 @@ export const copy: Copy = {
     language: '语言',
     menu: '菜单',
     close: '关闭',
-    skip: '跳到正文',
-    inEnglish: '英文',
     film: '看它怎么运作',
     screens: '每一个界面',
     price: '价格',

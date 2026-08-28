@@ -79,8 +79,6 @@ export const copy: Copy = {
     language: 'Dil',
     menu: 'Menü',
     close: 'Kapat',
-    skip: 'İçeriğe geç',
-    inEnglish: 'İngilizce',
     film: 'Çalışırken izle',
     screens: 'Her ekran',
     price: 'Ne kadar',

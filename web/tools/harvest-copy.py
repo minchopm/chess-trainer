@@ -152,6 +152,15 @@ def ts(v, indent: int = 0) -> str:
     return json.dumps(v, ensure_ascii=False).replace("\\u2019", "\u2019")
 
 
+# The header and footer's own words. They go into locales.ts, which is
+# synchronous and in the main bundle, and so must not also be duplicated into
+# Copy.ui, which arrives by dynamic import a moment later.
+CHROME_KEYS = (
+    "skip", "readSource", "elsewhere", "sourceOnGitHub", "reportIssue",
+    "languages", "colApp", "colChess", "colLegal", "licence", "rights",
+    "attribution", "inEnglish",
+)
+
 IDENT = re.compile(r"^[A-Za-z_$][A-Za-z0-9_$]*$")
 
 
@@ -193,7 +202,7 @@ def main() -> int:
         modes = {name: value(strings, key, tag) for name, key in MODES.items()}
         shots = {view: list(pair) for view, pair in storefront[store].items()}
         spoken = narration.get(tag, {})
-        ui = {k: v for k, v in manual[tag].items()}
+        ui = {k: v for k, v in manual[tag].items() if k not in CHROME_KEYS}
 
         for name, v in {**said, **modes}.items():
             if not v:
@@ -255,6 +264,12 @@ export const COPY: Record<string, () => Promise<Copy>> = {{
         + ", nav: "
         + ts({k: manual[loc["tag"]][k] for k in
               ("film", "screens", "price", "questions", "download", "soon")})
+        + ", chrome: "
+        + ts({**{k: manual[loc["tag"]][k] for k in
+                 ("skip", "inEnglish", "readSource", "elsewhere", "sourceOnGitHub",
+                  "reportIssue", "languages", "colApp", "colChess", "colLegal",
+                  "licence", "rights", "attribution")},
+              "lede": value(strings, STRINGS["lede"], loc["tag"])})
         + " }"
         for loc in locales
     )
@@ -280,6 +295,34 @@ export interface Locale {{
     readonly questions: string;
     readonly download: string;
     readonly soon: string;
+  }};
+  /**
+   * The header and footer, which every page in every language wears.
+   *
+   * Here rather than in `Copy.ui` for the reason the note above gives about
+   * `nav`: `Copy` arrives by dynamic import, a moment after the markup it
+   * belongs to. The footer would serialise in one language and hydrate in
+   * another, and Angular would keep both sets of nodes. These are synchronous
+   * and in the main bundle, which is what makes the chrome right on the first
+   * frame.
+   */
+  readonly chrome: {{
+    readonly skip: string;
+    /** Marks a link that leaves this language behind. */
+    readonly inEnglish: string;
+    /** The app's own one-sentence description, from its catalogue. */
+    readonly lede: string;
+    readonly readSource: string;
+    readonly elsewhere: string;
+    readonly sourceOnGitHub: string;
+    readonly reportIssue: string;
+    readonly languages: string;
+    readonly colApp: string;
+    readonly colChess: string;
+    readonly colLegal: string;
+    readonly licence: string;
+    readonly rights: string;
+    readonly attribution: string;
   }};
 }}
 

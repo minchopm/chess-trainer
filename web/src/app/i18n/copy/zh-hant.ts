@@ -74,8 +74,6 @@ export const copy: Copy = {
     language: '語言',
     menu: '選單',
     close: '關閉',
-    skip: '跳至內容',
-    inEnglish: '英文',
     film: '看它怎麼運作',
     screens: '每一個畫面',
     price: '價格',

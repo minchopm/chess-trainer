@@ -79,8 +79,6 @@ export const copy: Copy = {
     language: 'Jazyk',
     menu: 'Nabídka',
     close: 'Zavřít',
-    skip: 'Přejít na obsah',
-    inEnglish: 'anglicky',
     film: 'Podívej se, jak to chodí',
     screens: 'Každá obrazovka',
     price: 'Kolik to stojí',

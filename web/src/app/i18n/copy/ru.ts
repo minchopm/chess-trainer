@@ -79,8 +79,6 @@ export const copy: Copy = {
     language: 'Язык',
     menu: 'Меню',
     close: 'Закрыть',
-    skip: 'Перейти к содержанию',
-    inEnglish: 'на английском',
     film: 'Посмотрите, как это работает',
     screens: 'Каждый экран',
     price: 'Сколько это стоит',

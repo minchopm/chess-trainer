@@ -133,26 +133,26 @@
           <li>
             <a [routerLink]="link.path" hreflang="en">
               {{ english[link.key] }}
-              <span class="in-english mono">{{ copy().ui.inEnglish }}</span>
+              <span class="in-english mono">{{ locale().chrome.inEnglish }}</span>
             </a>
           </li>
         }
         <li>
           <a routerLink="/privacy" hreflang="en">
             {{ copy().said.privacyPolicy }}
-            <span class="in-english mono">{{ copy().ui.inEnglish }}</span>
+            <span class="in-english mono">{{ locale().chrome.inEnglish }}</span>
           </a>
         </li>
         <li>
           <a routerLink="/terms" hreflang="en">
             {{ copy().said.termsOfUse }}
-            <span class="in-english mono">{{ copy().ui.inEnglish }}</span>
+            <span class="in-english mono">{{ locale().chrome.inEnglish }}</span>
           </a>
         </li>
         <li>
           <a routerLink="/licences" hreflang="en">
             {{ copy().said.credits }}
-            <span class="in-english mono">{{ copy().ui.inEnglish }}</span>
+            <span class="in-english mono">{{ locale().chrome.inEnglish }}</span>
           </a>
         </li>
       </ul>

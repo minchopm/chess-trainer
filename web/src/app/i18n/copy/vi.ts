@@ -78,8 +78,6 @@ export const copy: Copy = {
     language: 'Ngôn ngữ',
     menu: 'Menu',
     close: 'Đóng',
-    skip: 'Bỏ qua tới nội dung',
-    inEnglish: 'bằng tiếng Anh',
     film: 'Xem ứng dụng hoạt động',
     screens: 'Mọi màn hình',
     price: 'Giá bao nhiêu',

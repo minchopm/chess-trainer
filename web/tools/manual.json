@@ -28,7 +28,18 @@
       "How does the subscription work?",
       "Can I see the source code?"
     ],
-    "prices": "Prices shown are US App Store prices. Your local price is set by the App Store."
+    "prices": "Prices shown are US App Store prices. Your local price is set by the App Store.",
+    "readSource": "Read the source",
+    "elsewhere": "Elsewhere",
+    "sourceOnGitHub": "Source on GitHub",
+    "reportIssue": "Report an issue",
+    "languages": "Languages",
+    "colApp": "The app",
+    "colChess": "Chess",
+    "colLegal": "Legal",
+    "licence": "Free software under the GNU Affero General Public License v3.",
+    "rights": "Brass Pawn is free software.",
+    "attribution": "Stockfish © the Stockfish developers, GPLv3. Puzzles and games from the Lichess database, CC0. Not affiliated with Apple, Lichess, the Stockfish project or the Reckless project."
   },
   "en-CA": {
     "category": "a chess trainer for iPhone and iPad",
@@ -56,7 +67,18 @@
       "How does the subscription work?",
       "Can I see the source code?"
     ],
-    "prices": "Prices shown are US App Store prices. Your local price is set by the App Store."
+    "prices": "Prices shown are US App Store prices. Your local price is set by the App Store.",
+    "readSource": "Read the source",
+    "elsewhere": "Elsewhere",
+    "sourceOnGitHub": "Source on GitHub",
+    "reportIssue": "Report an issue",
+    "languages": "Languages",
+    "colApp": "The app",
+    "colChess": "Chess",
+    "colLegal": "Legal",
+    "licence": "Free software under the GNU Affero General Public License v3.",
+    "rights": "Brass Pawn is free software.",
+    "attribution": "Stockfish © the Stockfish developers, GPLv3. Puzzles and games from the Lichess database, CC0. Not affiliated with Apple, Lichess, the Stockfish project or the Reckless project."
   },
   "ar-SA": {
     "category": "مدرّب شطرنج لـ iPhone و iPad",
@@ -84,7 +106,18 @@
       "كيف يعمل الاشتراك؟",
       "هل يمكنني الاطلاع على الشيفرة المصدرية؟"
     ],
-    "prices": "الأسعار المعروضة هي أسعار App Store الأمريكي، وسعرك المحلي يحدده App Store."
+    "prices": "الأسعار المعروضة هي أسعار App Store الأمريكي، وسعرك المحلي يحدده App Store.",
+    "readSource": "اقرأ الشيفرة المصدرية",
+    "elsewhere": "في أماكن أخرى",
+    "sourceOnGitHub": "الشيفرة المصدرية على GitHub",
+    "reportIssue": "أبلغ عن مشكلة",
+    "languages": "اللغات",
+    "colApp": "التطبيق",
+    "colChess": "الشطرنج",
+    "colLegal": "قانوني",
+    "licence": "برمجية حرة بموجب رخصة GNU Affero General Public License v3.",
+    "rights": "‏Brass Pawn برمجية حرة.",
+    "attribution": "‏Stockfish © مطوّرو Stockfish، GPLv3. الألغاز والمباريات من قاعدة بيانات Lichess، CC0. لا صلة له بشركة Apple ولا بـLichess ولا بمشروع Stockfish ولا بمشروع Reckless."
   },
   "cs": {
     "category": "šachový trenér pro iPhone a iPad",
@@ -112,7 +145,18 @@
       "Jak funguje předplatné?",
       "Můžu se podívat na zdrojový kód?"
     ],
-    "prices": "Uvedené ceny jsou z amerického App Storu. Tvoji místní cenu určuje App Store."
+    "prices": "Uvedené ceny jsou z amerického App Storu. Tvoji místní cenu určuje App Store.",
+    "readSource": "Přečíst zdrojový kód",
+    "elsewhere": "Jinde",
+    "sourceOnGitHub": "Zdrojový kód na GitHubu",
+    "reportIssue": "Nahlásit problém",
+    "languages": "Jazyky",
+    "colApp": "Aplikace",
+    "colChess": "Šachy",
+    "colLegal": "Právní informace",
+    "licence": "Svobodný software pod licencí GNU Affero General Public License v3.",
+    "rights": "Brass Pawn je svobodný software.",
+    "attribution": "Stockfish © vývojáři Stockfishe, GPLv3. Úlohy a partie z databáze Lichess, CC0. Bez vazby na Apple, Lichess, projekt Stockfish či projekt Reckless."
   },
   "da": {
     "category": "en skaktræner til iPhone og iPad",
@@ -140,7 +184,18 @@
       "Hvordan fungerer abonnementet?",
       "Kan jeg se kildekoden?"
     ],
-    "prices": "De viste priser er fra det amerikanske App Store. Din lokale pris fastsættes af App Store."
+    "prices": "De viste priser er fra det amerikanske App Store. Din lokale pris fastsættes af App Store.",
+    "readSource": "Læs kildekoden",
+    "elsewhere": "Andre steder",
+    "sourceOnGitHub": "Kildekode på GitHub",
+    "reportIssue": "Rapportér et problem",
+    "languages": "Sprog",
+    "colApp": "Appen",
+    "colChess": "Skak",
+    "colLegal": "Juridisk",
+    "licence": "Fri software under GNU Affero General Public License v3.",
+    "rights": "Brass Pawn er fri software.",
+    "attribution": "Stockfish © Stockfish-udviklerne, GPLv3. Opgaver og partier fra Lichess-databasen, CC0. Ikke tilknyttet Apple, Lichess, Stockfish-projektet eller Reckless-projektet."
   },
   "de-DE": {
     "category": "ein Schachtrainer für iPhone und iPad",
@@ -168,7 +223,18 @@
       "Wie funktioniert das Abo?",
       "Kann ich den Quelltext einsehen?"
     ],
-    "prices": "Die angezeigten Preise sind die des US-App-Stores. Deinen lokalen Preis legt der App Store fest."
+    "prices": "Die angezeigten Preise sind die des US-App-Stores. Deinen lokalen Preis legt der App Store fest.",
+    "readSource": "Den Quelltext lesen",
+    "elsewhere": "Anderswo",
+    "sourceOnGitHub": "Quelltext auf GitHub",
+    "reportIssue": "Ein Problem melden",
+    "languages": "Sprachen",
+    "colApp": "Die App",
+    "colChess": "Schach",
+    "colLegal": "Rechtliches",
+    "licence": "Freie Software unter der GNU Affero General Public License v3.",
+    "rights": "Brass Pawn ist freie Software.",
+    "attribution": "Stockfish © die Stockfish-Entwickler, GPLv3. Aufgaben und Partien aus der Lichess-Datenbank, CC0. Nicht verbunden mit Apple, Lichess, dem Stockfish-Projekt oder dem Reckless-Projekt."
   },
   "el": {
     "category": "ένας προπονητής σκακιού για iPhone και iPad",
@@ -196,7 +262,18 @@
       "Πώς λειτουργεί η συνδρομή;",
       "Μπορώ να δω τον πηγαίο κώδικα;"
     ],
-    "prices": "Οι τιμές που εμφανίζονται είναι του αμερικανικού App Store. Την τοπική σου τιμή την ορίζει το App Store."
+    "prices": "Οι τιμές που εμφανίζονται είναι του αμερικανικού App Store. Την τοπική σου τιμή την ορίζει το App Store.",
+    "readSource": "Δες τον κώδικα",
+    "elsewhere": "Αλλού",
+    "sourceOnGitHub": "Κώδικας στο GitHub",
+    "reportIssue": "Ανάφερε ένα πρόβλημα",
+    "languages": "Γλώσσες",
+    "colApp": "Η εφαρμογή",
+    "colChess": "Σκάκι",
+    "colLegal": "Νομικά",
+    "licence": "Ελεύθερο λογισμικό υπό την GNU Affero General Public License v3.",
+    "rights": "Το Brass Pawn είναι ελεύθερο λογισμικό.",
+    "attribution": "Stockfish © οι προγραμματιστές του Stockfish, GPLv3. Ασκήσεις και παρτίδες από τη βάση του Lichess, CC0. Χωρίς σχέση με την Apple, το Lichess, το έργο Stockfish ή το έργο Reckless."
   },
   "es-ES": {
     "category": "un entrenador de ajedrez para iPhone y iPad",
@@ -224,7 +301,18 @@
       "¿Cómo funciona la suscripción?",
       "¿Puedo ver el código fuente?"
     ],
-    "prices": "Los precios mostrados son los del App Store de EE. UU. Tu precio local lo fija el App Store."
+    "prices": "Los precios mostrados son los del App Store de EE. UU. Tu precio local lo fija el App Store.",
+    "readSource": "Leer el código",
+    "elsewhere": "En otros sitios",
+    "sourceOnGitHub": "Código en GitHub",
+    "reportIssue": "Informar de un problema",
+    "languages": "Idiomas",
+    "colApp": "La app",
+    "colChess": "Ajedrez",
+    "colLegal": "Legal",
+    "licence": "Software libre bajo la GNU Affero General Public License v3.",
+    "rights": "Brass Pawn es software libre.",
+    "attribution": "Stockfish © los desarrolladores de Stockfish, GPLv3. Ejercicios y partidas de la base de datos de Lichess, CC0. Sin relación con Apple, Lichess, el proyecto Stockfish ni el proyecto Reckless."
   },
   "fi": {
     "category": "shakkivalmentaja iPhonelle ja iPadille",
@@ -252,7 +340,18 @@
       "Miten tilaus toimii?",
       "Voinko nähdä lähdekoodin?"
     ],
-    "prices": "Näytetyt hinnat ovat Yhdysvaltain App Storen hintoja. Paikallisen hintasi määrittää App Store."
+    "prices": "Näytetyt hinnat ovat Yhdysvaltain App Storen hintoja. Paikallisen hintasi määrittää App Store.",
+    "readSource": "Lue lähdekoodi",
+    "elsewhere": "Muualla",
+    "sourceOnGitHub": "Lähdekoodi GitHubissa",
+    "reportIssue": "Ilmoita ongelmasta",
+    "languages": "Kielet",
+    "colApp": "Sovellus",
+    "colChess": "Šakki",
+    "colLegal": "Oikeudellinen",
+    "licence": "Vapaa ohjelmisto GNU Affero General Public License v3 -lisenssillä.",
+    "rights": "Brass Pawn on vapaa ohjelmisto.",
+    "attribution": "Stockfish © Stockfishin kehittäjät, GPLv3. Tehtävät ja pelit Lichess-tietokannasta, CC0. Ei yhteydessä Appleen, Lichessiin, Stockfish-projektiin eikä Reckless-projektiin."
   },
   "fr-FR": {
     "category": "un entraîneur d'échecs pour iPhone et iPad",
@@ -280,7 +379,18 @@
       "Comment fonctionne l'abonnement ?",
       "Puis-je voir le code source ?"
     ],
-    "prices": "Les prix affichés sont ceux de l'App Store américain. Votre prix local est fixé par l'App Store."
+    "prices": "Les prix affichés sont ceux de l'App Store américain. Votre prix local est fixé par l'App Store.",
+    "readSource": "Lire le code source",
+    "elsewhere": "Ailleurs",
+    "sourceOnGitHub": "Code source sur GitHub",
+    "reportIssue": "Signaler un problème",
+    "languages": "Langues",
+    "colApp": "L’application",
+    "colChess": "Échecs",
+    "colLegal": "Mentions légales",
+    "licence": "Logiciel libre sous la GNU Affero General Public License v3.",
+    "rights": "Brass Pawn est un logiciel libre.",
+    "attribution": "Stockfish © les développeurs de Stockfish, GPLv3. Exercices et parties issus de la base Lichess, CC0. Sans lien avec Apple, Lichess, le projet Stockfish ni le projet Reckless."
   },
   "fr-CA": {
     "category": "un entraîneur d'échecs pour iPhone et iPad",
@@ -308,7 +418,18 @@
       "Comment fonctionne l'abonnement ?",
       "Puis-je voir le code source ?"
     ],
-    "prices": "Les prix affichés sont ceux de l'App Store américain. Votre prix local est fixé par l'App Store."
+    "prices": "Les prix affichés sont ceux de l'App Store américain. Votre prix local est fixé par l'App Store.",
+    "readSource": "Lire le code source",
+    "elsewhere": "Ailleurs",
+    "sourceOnGitHub": "Code source sur GitHub",
+    "reportIssue": "Signaler un problème",
+    "languages": "Langues",
+    "colApp": "L’application",
+    "colChess": "Échecs",
+    "colLegal": "Mentions légales",
+    "licence": "Logiciel libre sous la GNU Affero General Public License v3.",
+    "rights": "Brass Pawn est un logiciel libre.",
+    "attribution": "Stockfish © les développeurs de Stockfish, GPLv3. Exercices et parties issus de la base Lichess, CC0. Sans lien avec Apple, Lichess, le projet Stockfish ni le projet Reckless."
   },
   "he": {
     "category": "מאמן שחמט ל‑iPhone ול‑iPad",
@@ -336,7 +457,18 @@
       "איך עובד המנוי?",
       "אפשר לראות את קוד המקור?"
     ],
-    "prices": "המחירים המוצגים הם של App Store בארצות הברית. המחיר המקומי שלך נקבע על ידי App Store."
+    "prices": "המחירים המוצגים הם של App Store בארצות הברית. המחיר המקומי שלך נקבע על ידי App Store.",
+    "readSource": "קראו את קוד המקור",
+    "elsewhere": "במקומות אחרים",
+    "sourceOnGitHub": "קוד המקור ב‑GitHub",
+    "reportIssue": "דיווח על תקלה",
+    "languages": "שפות",
+    "colApp": "האפליקציה",
+    "colChess": "שחמט",
+    "colLegal": "משפטי",
+    "licence": "תוכנה חופשית תחת GNU Affero General Public License v3.",
+    "rights": "‏Brass Pawn היא תוכנה חופשית.",
+    "attribution": "‏Stockfish © מפתחי Stockfish, GPLv3. התרגילים והמשחקים מתוך מסד הנתונים של Lichess, CC0. ללא כל קשר ל‑Apple, ל‑Lichess, לפרויקט Stockfish או לפרויקט Reckless."
   },
   "hi": {
     "category": "iPhone और iPad के लिए एक शतरंज प्रशिक्षक",
@@ -364,7 +496,18 @@
       "सदस्यता कैसे काम करती है?",
       "क्या मैं सोर्स कोड देख सकता हूँ?"
     ],
-    "prices": "दिखाई गई कीमतें अमेरिकी App Store की हैं। आपकी स्थानीय कीमत App Store तय करता है।"
+    "prices": "दिखाई गई कीमतें अमेरिकी App Store की हैं। आपकी स्थानीय कीमत App Store तय करता है।",
+    "readSource": "स्रोत कोड देखें",
+    "elsewhere": "अन्यत्र",
+    "sourceOnGitHub": "GitHub पर स्रोत कोड",
+    "reportIssue": "समस्या बताएँ",
+    "languages": "भाषाएँ",
+    "colApp": "ऐप",
+    "colChess": "शतरंज",
+    "colLegal": "क़ानूनी",
+    "licence": "GNU Affero General Public License v3 के अंतर्गत मुक्त सॉफ़्टवेयर।",
+    "rights": "Brass Pawn मुक्त सॉफ़्टवेयर है।",
+    "attribution": "Stockfish © Stockfish के डेवलपर, GPLv3। पहेलियाँ और खेल Lichess के डेटाबेस से, CC0। Apple, Lichess, Stockfish परियोजना या Reckless परियोजना से कोई संबंध नहीं।"
   },
   "hu": {
     "category": "sakkedző iPhone-ra és iPadre",
@@ -392,7 +535,18 @@
       "Hogyan működik az előfizetés?",
       "Megnézhetem a forráskódot?"
     ],
-    "prices": "A feltüntetett árak az amerikai App Store árai. A helyi árat az App Store állapítja meg."
+    "prices": "A feltüntetett árak az amerikai App Store árai. A helyi árat az App Store állapítja meg.",
+    "readSource": "Nézd meg a forráskódot",
+    "elsewhere": "Máshol",
+    "sourceOnGitHub": "Forráskód a GitHubon",
+    "reportIssue": "Hiba jelentése",
+    "languages": "Nyelvek",
+    "colApp": "Az alkalmazás",
+    "colChess": "Sakk",
+    "colLegal": "Jogi tudnivalók",
+    "licence": "Szabad szoftver a GNU Affero General Public License v3 alatt.",
+    "rights": "A Brass Pawn szabad szoftver.",
+    "attribution": "Stockfish © a Stockfish fejlesztői, GPLv3. A feladványok és játszmák a Lichess adatbázisából, CC0. Nem áll kapcsolatban az Apple-lel, a Lichess-szel, a Stockfish projekttel vagy a Reckless projekttel."
   },
   "id": {
     "category": "pelatih catur untuk iPhone dan iPad",
@@ -420,7 +574,18 @@
       "Bagaimana cara kerja langganannya?",
       "Bisakah saya melihat kode sumbernya?"
     ],
-    "prices": "Harga yang ditampilkan adalah harga App Store AS. Harga lokal Anda ditetapkan oleh App Store."
+    "prices": "Harga yang ditampilkan adalah harga App Store AS. Harga lokal Anda ditetapkan oleh App Store.",
+    "readSource": "Baca kode sumbernya",
+    "elsewhere": "Di tempat lain",
+    "sourceOnGitHub": "Kode sumber di GitHub",
+    "reportIssue": "Laporkan masalah",
+    "languages": "Bahasa",
+    "colApp": "Aplikasinya",
+    "colChess": "Catur",
+    "colLegal": "Hukum",
+    "licence": "Perangkat lunak bebas di bawah GNU Affero General Public License v3.",
+    "rights": "Brass Pawn adalah perangkat lunak bebas.",
+    "attribution": "Stockfish © para pengembang Stockfish, GPLv3. Teka-teki dan partai dari basis data Lichess, CC0. Tidak berafiliasi dengan Apple, Lichess, proyek Stockfish, maupun proyek Reckless."
   },
   "it": {
     "category": "un allenatore di scacchi per iPhone e iPad",
@@ -448,7 +613,18 @@
       "Come funziona l'abbonamento?",
       "Posso vedere il codice sorgente?"
     ],
-    "prices": "I prezzi mostrati sono quelli dell'App Store statunitense. Il tuo prezzo locale lo stabilisce l'App Store."
+    "prices": "I prezzi mostrati sono quelli dell'App Store statunitense. Il tuo prezzo locale lo stabilisce l'App Store.",
+    "readSource": "Leggi il codice",
+    "elsewhere": "Altrove",
+    "sourceOnGitHub": "Codice su GitHub",
+    "reportIssue": "Segnala un problema",
+    "languages": "Lingue",
+    "colApp": "L’app",
+    "colChess": "Scacchi",
+    "colLegal": "Note legali",
+    "licence": "Software libero sotto la GNU Affero General Public License v3.",
+    "rights": "Brass Pawn è software libero.",
+    "attribution": "Stockfish © gli sviluppatori di Stockfish, GPLv3. Esercizi e partite dal database di Lichess, CC0. Non affiliato ad Apple, Lichess, al progetto Stockfish né al progetto Reckless."
   },
   "ja": {
     "category": "iPhone と iPad のためのチェス・トレーナー",
@@ -476,7 +652,18 @@
       "サブスクリプションの仕組みは？",
       "ソースコードは公開されていますか？"
     ],
-    "prices": "表示価格は米国 App Store のものです。お住まいの地域の価格は App Store が決定します。"
+    "prices": "表示価格は米国 App Store のものです。お住まいの地域の価格は App Store が決定します。",
+    "readSource": "ソースコードを読む",
+    "elsewhere": "そのほか",
+    "sourceOnGitHub": "GitHub のソースコード",
+    "reportIssue": "問題を報告",
+    "languages": "言語",
+    "colApp": "アプリ",
+    "colChess": "チェス",
+    "colLegal": "法的事項",
+    "licence": "GNU Affero General Public License v3 のもとで公開されているフリーソフトウェアです。",
+    "rights": "Brass Pawn はフリーソフトウェアです。",
+    "attribution": "Stockfish © Stockfish 開発者、GPLv3。問題と棋譜は Lichess のデータベースより、CC0。Apple、Lichess、Stockfish プロジェクト、Reckless プロジェクトとは無関係です。"
   },
   "ko": {
     "category": "iPhone과 iPad를 위한 체스 트레이너",
@@ -504,7 +691,18 @@
       "구독은 어떻게 작동하나요?",
       "소스 코드를 볼 수 있나요?"
     ],
-    "prices": "표시된 가격은 미국 App Store 기준입니다. 현지 가격은 App Store가 정합니다."
+    "prices": "표시된 가격은 미국 App Store 기준입니다. 현지 가격은 App Store가 정합니다.",
+    "readSource": "소스 코드 보기",
+    "elsewhere": "다른 곳",
+    "sourceOnGitHub": "GitHub의 소스 코드",
+    "reportIssue": "문제 신고",
+    "languages": "언어",
+    "colApp": "앱",
+    "colChess": "체스",
+    "colLegal": "법적 고지",
+    "licence": "GNU Affero General Public License v3에 따른 자유 소프트웨어입니다.",
+    "rights": "Brass Pawn은 자유 소프트웨어입니다.",
+    "attribution": "Stockfish © Stockfish 개발자, GPLv3. 문제와 기보는 Lichess 데이터베이스에서, CC0. Apple, Lichess, Stockfish 프로젝트, Reckless 프로젝트와 무관합니다."
   },
   "ms": {
     "category": "jurulatih catur untuk iPhone dan iPad",
@@ -532,7 +730,18 @@
       "Bagaimana langganan berfungsi?",
       "Bolehkah saya melihat kod sumbernya?"
     ],
-    "prices": "Harga yang dipaparkan ialah harga App Store AS. Harga tempatan anda ditetapkan oleh App Store."
+    "prices": "Harga yang dipaparkan ialah harga App Store AS. Harga tempatan anda ditetapkan oleh App Store.",
+    "readSource": "Baca kod sumbernya",
+    "elsewhere": "Di tempat lain",
+    "sourceOnGitHub": "Kod sumber di GitHub",
+    "reportIssue": "Laporkan masalah",
+    "languages": "Bahasa",
+    "colApp": "Aplikasi",
+    "colChess": "Catur",
+    "colLegal": "Undang-undang",
+    "licence": "Perisian bebas di bawah GNU Affero General Public License v3.",
+    "rights": "Brass Pawn ialah perisian bebas.",
+    "attribution": "Stockfish © pembangun Stockfish, GPLv3. Teka-teki dan permainan daripada pangkalan data Lichess, CC0. Tiada kaitan dengan Apple, Lichess, projek Stockfish atau projek Reckless."
   },
   "nl-NL": {
     "category": "een schaaktrainer voor iPhone en iPad",
@@ -560,7 +769,18 @@
       "Hoe werkt het abonnement?",
       "Kan ik de broncode inzien?"
     ],
-    "prices": "De getoonde prijzen zijn die van de Amerikaanse App Store. Je lokale prijs wordt door de App Store bepaald."
+    "prices": "De getoonde prijzen zijn die van de Amerikaanse App Store. Je lokale prijs wordt door de App Store bepaald.",
+    "readSource": "Lees de broncode",
+    "elsewhere": "Elders",
+    "sourceOnGitHub": "Broncode op GitHub",
+    "reportIssue": "Een probleem melden",
+    "languages": "Talen",
+    "colApp": "De app",
+    "colChess": "Schaken",
+    "colLegal": "Juridisch",
+    "licence": "Vrije software onder de GNU Affero General Public License v3.",
+    "rights": "Brass Pawn is vrije software.",
+    "attribution": "Stockfish © de Stockfish-ontwikkelaars, GPLv3. Opgaven en partijen uit de Lichess-database, CC0. Niet verbonden aan Apple, Lichess, het Stockfish-project of het Reckless-project."
   },
   "no": {
     "category": "en sjakktrener for iPhone og iPad",
@@ -588,7 +808,18 @@
       "Hvordan fungerer abonnementet?",
       "Kan jeg se kildekoden?"
     ],
-    "prices": "Prisene som vises er fra den amerikanske App Store. Din lokale pris fastsettes av App Store."
+    "prices": "Prisene som vises er fra den amerikanske App Store. Din lokale pris fastsettes av App Store.",
+    "readSource": "Les kildekoden",
+    "elsewhere": "Andre steder",
+    "sourceOnGitHub": "Kildekode på GitHub",
+    "reportIssue": "Rapporter et problem",
+    "languages": "Språk",
+    "colApp": "Appen",
+    "colChess": "Sjakk",
+    "colLegal": "Juridisk",
+    "licence": "Fri programvare under GNU Affero General Public License v3.",
+    "rights": "Brass Pawn er fri programvare.",
+    "attribution": "Stockfish © Stockfish-utviklerne, GPLv3. Oppgaver og partier fra Lichess-databasen, CC0. Ikke tilknyttet Apple, Lichess, Stockfish-prosjektet eller Reckless-prosjektet."
   },
   "pl": {
     "category": "trener szachowy na iPhone'a i iPada",
@@ -616,7 +847,18 @@
       "Jak działa subskrypcja?",
       "Czy mogę zobaczyć kod źródłowy?"
     ],
-    "prices": "Podane ceny pochodzą z amerykańskiego App Store. Twoją lokalną cenę ustala App Store."
+    "prices": "Podane ceny pochodzą z amerykańskiego App Store. Twoją lokalną cenę ustala App Store.",
+    "readSource": "Przeczytaj kod źródłowy",
+    "elsewhere": "Gdzie indziej",
+    "sourceOnGitHub": "Kod źródłowy na GitHubie",
+    "reportIssue": "Zgłoś problem",
+    "languages": "Języki",
+    "colApp": "Aplikacja",
+    "colChess": "Szachy",
+    "colLegal": "Informacje prawne",
+    "licence": "Wolne oprogramowanie na licencji GNU Affero General Public License v3.",
+    "rights": "Brass Pawn to wolne oprogramowanie.",
+    "attribution": "Stockfish © twórcy Stockfisha, GPLv3. Zadania i partie z bazy Lichess, CC0. Bez związku z Apple, Lichess, projektem Stockfish ani projektem Reckless."
   },
   "pt-BR": {
     "category": "um treinador de xadrez para iPhone e iPad",
@@ -644,7 +886,18 @@
       "Como funciona a assinatura?",
       "Posso ver o código-fonte?"
     ],
-    "prices": "Os preços exibidos são da App Store dos EUA. Seu preço local é definido pela App Store."
+    "prices": "Os preços exibidos são da App Store dos EUA. Seu preço local é definido pela App Store.",
+    "readSource": "Ler o código",
+    "elsewhere": "Em outros lugares",
+    "sourceOnGitHub": "Código no GitHub",
+    "reportIssue": "Relatar um problema",
+    "languages": "Idiomas",
+    "colApp": "O app",
+    "colChess": "Xadrez",
+    "colLegal": "Jurídico",
+    "licence": "Software livre sob a GNU Affero General Public License v3.",
+    "rights": "Brass Pawn é software livre.",
+    "attribution": "Stockfish © os desenvolvedores do Stockfish, GPLv3. Exercícios e partidas do banco de dados do Lichess, CC0. Sem vínculo com a Apple, o Lichess, o projeto Stockfish ou o projeto Reckless."
   },
   "ro": {
     "category": "un antrenor de șah pentru iPhone și iPad",
@@ -672,7 +925,18 @@
       "Cum funcționează abonamentul?",
       "Pot vedea codul sursă?"
     ],
-    "prices": "Prețurile afișate sunt cele din App Store-ul american. Prețul tău local este stabilit de App Store."
+    "prices": "Prețurile afișate sunt cele din App Store-ul american. Prețul tău local este stabilit de App Store.",
+    "readSource": "Citește codul sursă",
+    "elsewhere": "În altă parte",
+    "sourceOnGitHub": "Cod sursă pe GitHub",
+    "reportIssue": "Raportează o problemă",
+    "languages": "Limbi",
+    "colApp": "Aplicația",
+    "colChess": "Șah",
+    "colLegal": "Juridic",
+    "licence": "Software liber sub licența GNU Affero General Public License v3.",
+    "rights": "Brass Pawn este software liber.",
+    "attribution": "Stockfish © dezvoltatorii Stockfish, GPLv3. Exercițiile și partidele provin din baza de date Lichess, CC0. Fără legătură cu Apple, Lichess, proiectul Stockfish sau proiectul Reckless."
   },
   "ru": {
     "category": "шахматный тренер для iPhone и iPad",
@@ -700,7 +964,18 @@
       "Как работает подписка?",
       "Можно ли посмотреть исходный код?"
     ],
-    "prices": "Указаны цены App Store США. Вашу местную цену устанавливает App Store."
+    "prices": "Указаны цены App Store США. Вашу местную цену устанавливает App Store.",
+    "readSource": "Посмотреть исходный код",
+    "elsewhere": "В других местах",
+    "sourceOnGitHub": "Исходный код на GitHub",
+    "reportIssue": "Сообщить о проблеме",
+    "languages": "Языки",
+    "colApp": "Приложение",
+    "colChess": "Шахматы",
+    "colLegal": "Правовая информация",
+    "licence": "Свободное ПО под лицензией GNU Affero General Public License v3.",
+    "rights": "Brass Pawn — свободное программное обеспечение.",
+    "attribution": "Stockfish © разработчики Stockfish, GPLv3. Задачи и партии из базы Lichess, CC0. Не связано с Apple, Lichess, проектом Stockfish или проектом Reckless."
   },
   "sv": {
     "category": "en schacktränare för iPhone och iPad",
@@ -728,7 +1003,18 @@
       "Hur fungerar prenumerationen?",
       "Kan jag se källkoden?"
     ],
-    "prices": "Priserna som visas är från amerikanska App Store. Ditt lokala pris sätts av App Store."
+    "prices": "Priserna som visas är från amerikanska App Store. Ditt lokala pris sätts av App Store.",
+    "readSource": "Läs källkoden",
+    "elsewhere": "Annorstädes",
+    "sourceOnGitHub": "Källkod på GitHub",
+    "reportIssue": "Rapportera ett problem",
+    "languages": "Språk",
+    "colApp": "Appen",
+    "colChess": "Schack",
+    "colLegal": "Juridik",
+    "licence": "Fri programvara under GNU Affero General Public License v3.",
+    "rights": "Brass Pawn är fri programvara.",
+    "attribution": "Stockfish © Stockfish-utvecklarna, GPLv3. Uppgifter och partier från Lichess-databasen, CC0. Inte knutet till Apple, Lichess, Stockfish-projektet eller Reckless-projektet."
   },
   "th": {
     "category": "โค้ชหมากรุกสำหรับ iPhone และ iPad",
@@ -756,7 +1042,18 @@
       "การสมัครสมาชิกทำงานอย่างไร",
       "ดูซอร์สโค้ดได้ไหม"
     ],
-    "prices": "ราคาที่แสดงเป็นราคาของ App Store สหรัฐฯ ราคาในประเทศของคุณกำหนดโดย App Store"
+    "prices": "ราคาที่แสดงเป็นราคาของ App Store สหรัฐฯ ราคาในประเทศของคุณกำหนดโดย App Store",
+    "readSource": "อ่านซอร์สโค้ด",
+    "elsewhere": "ที่อื่น",
+    "sourceOnGitHub": "ซอร์สโค้ดบน GitHub",
+    "reportIssue": "แจ้งปัญหา",
+    "languages": "ภาษา",
+    "colApp": "แอป",
+    "colChess": "หมากรุกสากล",
+    "colLegal": "กฎหมาย",
+    "licence": "ซอฟต์แวร์เสรีภายใต้ GNU Affero General Public License v3",
+    "rights": "Brass Pawn เป็นซอฟต์แวร์เสรี",
+    "attribution": "Stockfish © ผู้พัฒนา Stockfish, GPLv3 โจทย์และเกมมาจากฐานข้อมูล Lichess, CC0 ไม่มีความเกี่ยวข้องกับ Apple, Lichess, โครงการ Stockfish หรือโครงการ Reckless"
   },
   "tr": {
     "category": "iPhone ve iPad için bir satranç antrenörü",
@@ -784,7 +1081,18 @@
       "Abonelik nasıl işliyor?",
       "Kaynak kodunu görebilir miyim?"
     ],
-    "prices": "Gösterilen fiyatlar ABD App Store fiyatlarıdır. Yerel fiyatını App Store belirler."
+    "prices": "Gösterilen fiyatlar ABD App Store fiyatlarıdır. Yerel fiyatını App Store belirler.",
+    "readSource": "Kaynak kodu oku",
+    "elsewhere": "Başka yerlerde",
+    "sourceOnGitHub": "GitHub’da kaynak kod",
+    "reportIssue": "Bir sorun bildir",
+    "languages": "Diller",
+    "colApp": "Uygulama",
+    "colChess": "Satranç",
+    "colLegal": "Yasal",
+    "licence": "GNU Affero General Public License v3 altında özgür yazılım.",
+    "rights": "Brass Pawn özgür yazılımdır.",
+    "attribution": "Stockfish © Stockfish geliştiricileri, GPLv3. Bulmacalar ve partiler Lichess veritabanından, CC0. Apple, Lichess, Stockfish projesi veya Reckless projesi ile bağlantılı değildir."
   },
   "vi": {
     "category": "huấn luyện viên cờ vua cho iPhone và iPad",
@@ -812,7 +1120,18 @@
       "Gói đăng ký hoạt động thế nào?",
       "Tôi có thể xem mã nguồn không?"
     ],
-    "prices": "Giá hiển thị là giá của App Store Mỹ. Giá tại nước bạn do App Store ấn định."
+    "prices": "Giá hiển thị là giá của App Store Mỹ. Giá tại nước bạn do App Store ấn định.",
+    "readSource": "Đọc mã nguồn",
+    "elsewhere": "Nơi khác",
+    "sourceOnGitHub": "Mã nguồn trên GitHub",
+    "reportIssue": "Báo lỗi",
+    "languages": "Ngôn ngữ",
+    "colApp": "Ứng dụng",
+    "colChess": "Cờ vua",
+    "colLegal": "Pháp lý",
+    "licence": "Phần mềm tự do theo GNU Affero General Public License v3.",
+    "rights": "Brass Pawn là phần mềm tự do.",
+    "attribution": "Stockfish © các nhà phát triển Stockfish, GPLv3. Thế cờ và ván đấu lấy từ cơ sở dữ liệu Lichess, CC0. Không liên kết với Apple, Lichess, dự án Stockfish hay dự án Reckless."
   },
   "zh-Hans": {
     "category": "一款 iPhone 和 iPad 上的国际象棋教练",
@@ -840,7 +1159,18 @@
       "订阅是怎么算的？",
       "可以看到源代码吗？"
     ],
-    "prices": "显示的是美国 App Store 价格。你所在地区的价格由 App Store 决定。"
+    "prices": "显示的是美国 App Store 价格。你所在地区的价格由 App Store 决定。",
+    "readSource": "阅读源代码",
+    "elsewhere": "别处",
+    "sourceOnGitHub": "GitHub 上的源代码",
+    "reportIssue": "报告问题",
+    "languages": "语言",
+    "colApp": "应用",
+    "colChess": "国际象棋",
+    "colLegal": "法律",
+    "licence": "依据 GNU Affero General Public License v3 发布的自由软件。",
+    "rights": "Brass Pawn 是自由软件。",
+    "attribution": "Stockfish © Stockfish 开发者，GPLv3。习题与对局取自 Lichess 数据库，CC0。与 Apple、Lichess、Stockfish 项目或 Reckless 项目均无关联。"
   },
   "zh-Hant": {
     "category": "一款 iPhone 和 iPad 上的西洋棋教練",
@@ -868,7 +1198,18 @@
       "訂閱是怎麼算的？",
       "可以看到原始碼嗎？"
     ],
-    "prices": "顯示的是美國 App Store 價格。你所在地區的價格由 App Store 決定。"
+    "prices": "顯示的是美國 App Store 價格。你所在地區的價格由 App Store 決定。",
+    "readSource": "閱讀原始碼",
+    "elsewhere": "別處",
+    "sourceOnGitHub": "GitHub 上的原始碼",
+    "reportIssue": "回報問題",
+    "languages": "語言",
+    "colApp": "App",
+    "colChess": "西洋棋",
+    "colLegal": "法律",
+    "licence": "依據 GNU Affero General Public License v3 發布的自由軟體。",
+    "rights": "Brass Pawn 是自由軟體。",
+    "attribution": "Stockfish © Stockfish 開發者，GPLv3。習題與棋局取自 Lichess 資料庫，CC0。與 Apple、Lichess、Stockfish 專案或 Reckless 專案均無關聯。"
   },
   "bg": {
     "category": "шахматен треньор за iPhone и iPad",
@@ -896,6 +1237,18 @@
       "Как работи абонаментът?",
       "Може ли да видя изходния код?"
     ],
-    "prices": "Показаните цени са от американския App Store. Твоята местна цена се определя от App Store."
-  }
+    "prices": "Показаните цени са от американския App Store. Твоята местна цена се определя от App Store.",
+    "readSource": "Виж изходния код",
+    "elsewhere": "Другаде",
+    "sourceOnGitHub": "Изходен код в GitHub",
+    "reportIssue": "Съобщи за проблем",
+    "languages": "Езици",
+    "colApp": "Приложението",
+    "colChess": "Шах",
+    "colLegal": "Правно",
+    "licence": "Свободен софтуер под GNU Affero General Public License v3.",
+    "rights": "Brass Pawn е свободен софтуер.",
+    "attribution": "Stockfish © разработчиците на Stockfish, GPLv3. Задачите и партиите са от базата на Lichess, CC0. Няма връзка с Apple, Lichess, проекта Stockfish или проекта Reckless."
+  },
+  "//footer": "The footer's own words. Everything else in this file is chrome the app never says; these are too. Proper nouns and the licence's name stay in English in every language, because that is how a licence is cited."
 }

@@ -79,8 +79,6 @@ export const copy: Copy = {
     language: 'Limbă',
     menu: 'Meniu',
     close: 'Închide',
-    skip: 'Salt la conținut',
-    inEnglish: 'în engleză',
     film: 'Vezi-o în acțiune',
     screens: 'Fiecare ecran',
     price: 'Cât costă',

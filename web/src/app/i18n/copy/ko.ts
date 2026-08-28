@@ -78,8 +78,6 @@ export const copy: Copy = {
     language: '언어',
     menu: '메뉴',
     close: '닫기',
-    skip: '본문으로 건너뛰기',
-    inEnglish: '영어',
     film: '움직이는 모습 보기',
     screens: '모든 화면',
     price: '가격',

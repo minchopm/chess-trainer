@@ -79,8 +79,6 @@ export const copy: Copy = {
     language: 'Nyelv',
     menu: 'Menü',
     close: 'Bezárás',
-    skip: 'Ugrás a tartalomhoz',
-    inEnglish: 'angolul',
     film: 'Nézd meg működés közben',
     screens: 'Minden képernyő',
     price: 'Mennyibe kerül',

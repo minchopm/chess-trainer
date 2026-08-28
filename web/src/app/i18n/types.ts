@@ -77,14 +77,15 @@ export interface Spoken {
 }
 
 export interface Ui {
+  // `skip` and the footer's words used to live here. They moved to
+  // `Locale.chrome` in locales.ts: this object arrives by dynamic import, and
+  // chrome that hydrates a frame after its own markup gets duplicated rather
+  // than replaced.
   readonly category: string;
   readonly support: string;
   readonly language: string;
   readonly menu: string;
   readonly close: string;
-  readonly skip: string;
-  /** Marks a link that leaves this language behind. */
-  readonly inEnglish: string;
   readonly film: string;
   readonly screens: string;
   readonly price: string;

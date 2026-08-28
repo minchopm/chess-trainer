@@ -20,6 +20,34 @@ export interface Locale {
     readonly download: string;
     readonly soon: string;
   };
+  /**
+   * The header and footer, which every page in every language wears.
+   *
+   * Here rather than in `Copy.ui` for the reason the note above gives about
+   * `nav`: `Copy` arrives by dynamic import, a moment after the markup it
+   * belongs to. The footer would serialise in one language and hydrate in
+   * another, and Angular would keep both sets of nodes. These are synchronous
+   * and in the main bundle, which is what makes the chrome right on the first
+   * frame.
+   */
+  readonly chrome: {
+    readonly skip: string;
+    /** Marks a link that leaves this language behind. */
+    readonly inEnglish: string;
+    /** The app's own one-sentence description, from its catalogue. */
+    readonly lede: string;
+    readonly readSource: string;
+    readonly elsewhere: string;
+    readonly sourceOnGitHub: string;
+    readonly reportIssue: string;
+    readonly languages: string;
+    readonly colApp: string;
+    readonly colChess: string;
+    readonly colLegal: string;
+    readonly licence: string;
+    readonly rights: string;
+    readonly attribution: string;
+  };
 }
 
 export const LOCALES: readonly Locale[] = [
@@ -37,6 +65,23 @@ export const LOCALES: readonly Locale[] = [
       download: 'Download on the App Store',
       soon: 'Coming to the App Store',
     },
+    chrome: {
+      skip: 'Skip to the content',
+      inEnglish: 'in English',
+      readSource: 'Read the source',
+      elsewhere: 'Elsewhere',
+      sourceOnGitHub: 'Source on GitHub',
+      reportIssue: 'Report an issue',
+      languages: 'Languages',
+      colApp: 'The app',
+      colChess: 'Chess',
+      colLegal: 'Legal',
+      licence: 'Free software under the GNU Affero General Public License v3.',
+      rights: 'Brass Pawn is free software.',
+      attribution:
+        'Stockfish © the Stockfish developers, GPLv3. Puzzles and games from the Lichess database, CC0. Not affiliated with Apple, Lichess, the Stockfish project or the Reckless project.',
+      lede: 'Tactics, positional judgement, endgame technique and coached play, with the engine running on the device. Nothing leaves the phone.',
+    },
   },
   {
     tag: 'en-CA',
@@ -51,6 +96,23 @@ export const LOCALES: readonly Locale[] = [
       questions: 'Questions',
       download: 'Download on the App Store',
       soon: 'Coming to the App Store',
+    },
+    chrome: {
+      skip: 'Skip to the content',
+      inEnglish: 'in English',
+      readSource: 'Read the source',
+      elsewhere: 'Elsewhere',
+      sourceOnGitHub: 'Source on GitHub',
+      reportIssue: 'Report an issue',
+      languages: 'Languages',
+      colApp: 'The app',
+      colChess: 'Chess',
+      colLegal: 'Legal',
+      licence: 'Free software under the GNU Affero General Public License v3.',
+      rights: 'Brass Pawn is free software.',
+      attribution:
+        'Stockfish © the Stockfish developers, GPLv3. Puzzles and games from the Lichess database, CC0. Not affiliated with Apple, Lichess, the Stockfish project or the Reckless project.',
+      lede: 'Tactics, positional judgement, endgame technique and coached play, with the engine running on the device. Nothing leaves the phone.',
     },
   },
   {
@@ -67,6 +129,23 @@ export const LOCALES: readonly Locale[] = [
       download: 'التنزيل من App Store',
       soon: 'قريبًا على App Store',
     },
+    chrome: {
+      skip: 'تخطَّ إلى المحتوى',
+      inEnglish: 'بالإنجليزية',
+      readSource: 'اقرأ الشيفرة المصدرية',
+      elsewhere: 'في أماكن أخرى',
+      sourceOnGitHub: 'الشيفرة المصدرية على GitHub',
+      reportIssue: 'أبلغ عن مشكلة',
+      languages: 'اللغات',
+      colApp: 'التطبيق',
+      colChess: 'الشطرنج',
+      colLegal: 'قانوني',
+      licence: 'برمجية حرة بموجب رخصة GNU Affero General Public License v3.',
+      rights: '‏Brass Pawn برمجية حرة.',
+      attribution:
+        '‏Stockfish © مطوّرو Stockfish، GPLv3. الألغاز والمباريات من قاعدة بيانات Lichess، CC0. لا صلة له بشركة Apple ولا بـLichess ولا بمشروع Stockfish ولا بمشروع Reckless.',
+      lede: 'تكتيك، وتقييم للأوضاع، وتقنية نهايات، ومباريات مع تدريب — ومحرّك المحرك يعمل على الجهاز نفسه. لا شيء يغادر الهاتف.',
+    },
   },
   {
     tag: 'cs',
@@ -81,6 +160,23 @@ export const LOCALES: readonly Locale[] = [
       questions: 'Otázky',
       download: 'Stáhnout v App Store',
       soon: 'Brzy v App Store',
+    },
+    chrome: {
+      skip: 'Přejít na obsah',
+      inEnglish: 'anglicky',
+      readSource: 'Přečíst zdrojový kód',
+      elsewhere: 'Jinde',
+      sourceOnGitHub: 'Zdrojový kód na GitHubu',
+      reportIssue: 'Nahlásit problém',
+      languages: 'Jazyky',
+      colApp: 'Aplikace',
+      colChess: 'Šachy',
+      colLegal: 'Právní informace',
+      licence: 'Svobodný software pod licencí GNU Affero General Public License v3.',
+      rights: 'Brass Pawn je svobodný software.',
+      attribution:
+        'Stockfish © vývojáři Stockfishe, GPLv3. Úlohy a partie z databáze Lichess, CC0. Bez vazby na Apple, Lichess, projekt Stockfish či projekt Reckless.',
+      lede: 'Taktika, poziční úsudek, koncovková technika a partie s koučem, se engineem běžícím přímo v zařízení. Nic neopouští telefon.',
     },
   },
   {
@@ -97,6 +193,23 @@ export const LOCALES: readonly Locale[] = [
       download: 'Hent i App Store',
       soon: 'Snart i App Store',
     },
+    chrome: {
+      skip: 'Spring til indholdet',
+      inEnglish: 'på engelsk',
+      readSource: 'Læs kildekoden',
+      elsewhere: 'Andre steder',
+      sourceOnGitHub: 'Kildekode på GitHub',
+      reportIssue: 'Rapportér et problem',
+      languages: 'Sprog',
+      colApp: 'Appen',
+      colChess: 'Skak',
+      colLegal: 'Juridisk',
+      licence: 'Fri software under GNU Affero General Public License v3.',
+      rights: 'Brass Pawn er fri software.',
+      attribution:
+        'Stockfish © Stockfish-udviklerne, GPLv3. Opgaver og partier fra Lichess-databasen, CC0. Ikke tilknyttet Apple, Lichess, Stockfish-projektet eller Reckless-projektet.',
+      lede: 'Taktik, positionsvurdering, slutspilsteknik og partier med coaching, med motoren kørende på selve enheden. Intet forlader telefonen.',
+    },
   },
   {
     tag: 'de-DE',
@@ -111,6 +224,23 @@ export const LOCALES: readonly Locale[] = [
       questions: 'Fragen',
       download: 'Laden im App Store',
       soon: 'Demnächst im App Store',
+    },
+    chrome: {
+      skip: 'Zum Inhalt springen',
+      inEnglish: 'auf Englisch',
+      readSource: 'Den Quelltext lesen',
+      elsewhere: 'Anderswo',
+      sourceOnGitHub: 'Quelltext auf GitHub',
+      reportIssue: 'Ein Problem melden',
+      languages: 'Sprachen',
+      colApp: 'Die App',
+      colChess: 'Schach',
+      colLegal: 'Rechtliches',
+      licence: 'Freie Software unter der GNU Affero General Public License v3.',
+      rights: 'Brass Pawn ist freie Software.',
+      attribution:
+        'Stockfish © die Stockfish-Entwickler, GPLv3. Aufgaben und Partien aus der Lichess-Datenbank, CC0. Nicht verbunden mit Apple, Lichess, dem Stockfish-Projekt oder dem Reckless-Projekt.',
+      lede: 'Taktik, Stellungsbeurteilung, Endspieltechnik und begleitetes Spiel, mit der Engine direkt auf dem Gerät. Nichts verlässt das Telefon.',
     },
   },
   {
@@ -127,6 +257,23 @@ export const LOCALES: readonly Locale[] = [
       download: 'Λήψη από το App Store',
       soon: 'Σύντομα στο App Store',
     },
+    chrome: {
+      skip: 'Μετάβαση στο περιεχόμενο',
+      inEnglish: 'στα αγγλικά',
+      readSource: 'Δες τον κώδικα',
+      elsewhere: 'Αλλού',
+      sourceOnGitHub: 'Κώδικας στο GitHub',
+      reportIssue: 'Ανάφερε ένα πρόβλημα',
+      languages: 'Γλώσσες',
+      colApp: 'Η εφαρμογή',
+      colChess: 'Σκάκι',
+      colLegal: 'Νομικά',
+      licence: 'Ελεύθερο λογισμικό υπό την GNU Affero General Public License v3.',
+      rights: 'Το Brass Pawn είναι ελεύθερο λογισμικό.',
+      attribution:
+        'Stockfish © οι προγραμματιστές του Stockfish, GPLv3. Ασκήσεις και παρτίδες από τη βάση του Lichess, CC0. Χωρίς σχέση με την Apple, το Lichess, το έργο Stockfish ή το έργο Reckless.',
+      lede: 'Τακτική, κρίση θέσης, τεχνική φινάλε και παρτίδες με καθοδήγηση, με το η μηχανή να τρέχει πάνω στη συσκευή. Τίποτα δεν φεύγει από το τηλέφωνο.',
+    },
   },
   {
     tag: 'es-ES',
@@ -141,6 +288,23 @@ export const LOCALES: readonly Locale[] = [
       questions: 'Preguntas',
       download: 'Consíguelo en el App Store',
       soon: 'Muy pronto en el App Store',
+    },
+    chrome: {
+      skip: 'Ir al contenido',
+      inEnglish: 'en inglés',
+      readSource: 'Leer el código',
+      elsewhere: 'En otros sitios',
+      sourceOnGitHub: 'Código en GitHub',
+      reportIssue: 'Informar de un problema',
+      languages: 'Idiomas',
+      colApp: 'La app',
+      colChess: 'Ajedrez',
+      colLegal: 'Legal',
+      licence: 'Software libre bajo la GNU Affero General Public License v3.',
+      rights: 'Brass Pawn es software libre.',
+      attribution:
+        'Stockfish © los desarrolladores de Stockfish, GPLv3. Ejercicios y partidas de la base de datos de Lichess, CC0. Sin relación con Apple, Lichess, el proyecto Stockfish ni el proyecto Reckless.',
+      lede: 'Táctica, criterio posicional, técnica de finales y partidas comentadas, con el motor funcionando en el dispositivo. Nada sale del teléfono.',
     },
   },
   {
@@ -157,6 +321,23 @@ export const LOCALES: readonly Locale[] = [
       download: 'Lataa App Storesta',
       soon: 'Pian App Storessa',
     },
+    chrome: {
+      skip: 'Siirry sisältöön',
+      inEnglish: 'englanniksi',
+      readSource: 'Lue lähdekoodi',
+      elsewhere: 'Muualla',
+      sourceOnGitHub: 'Lähdekoodi GitHubissa',
+      reportIssue: 'Ilmoita ongelmasta',
+      languages: 'Kielet',
+      colApp: 'Sovellus',
+      colChess: 'Šakki',
+      colLegal: 'Oikeudellinen',
+      licence: 'Vapaa ohjelmisto GNU Affero General Public License v3 -lisenssillä.',
+      rights: 'Brass Pawn on vapaa ohjelmisto.',
+      attribution:
+        'Stockfish © Stockfishin kehittäjät, GPLv3. Tehtävät ja pelit Lichess-tietokannasta, CC0. Ei yhteydessä Appleen, Lichessiin, Stockfish-projektiin eikä Reckless-projektiin.',
+      lede: 'Taktiikkaa, aseman arviointia, loppupelitekniikkaa ja valmennettuja pelejä — moottori pyörii itse laitteessa. Mikään ei lähde puhelimesta.',
+    },
   },
   {
     tag: 'fr-FR',
@@ -171,6 +352,23 @@ export const LOCALES: readonly Locale[] = [
       questions: 'Questions',
       download: "Télécharger dans l'App Store",
       soon: "Bientôt sur l'App Store",
+    },
+    chrome: {
+      skip: 'Aller au contenu',
+      inEnglish: 'en anglais',
+      readSource: 'Lire le code source',
+      elsewhere: 'Ailleurs',
+      sourceOnGitHub: 'Code source sur GitHub',
+      reportIssue: 'Signaler un problème',
+      languages: 'Langues',
+      colApp: 'L’application',
+      colChess: 'Échecs',
+      colLegal: 'Mentions légales',
+      licence: 'Logiciel libre sous la GNU Affero General Public License v3.',
+      rights: 'Brass Pawn est un logiciel libre.',
+      attribution:
+        'Stockfish © les développeurs de Stockfish, GPLv3. Exercices et parties issus de la base Lichess, CC0. Sans lien avec Apple, Lichess, le projet Stockfish ni le projet Reckless.',
+      lede: "Tactique, jugement positionnel, technique de finale et parties commentées, avec le moteur qui tourne sur l'appareil. Rien ne quitte le téléphone.",
     },
   },
   {
@@ -187,6 +385,23 @@ export const LOCALES: readonly Locale[] = [
       download: "Télécharger dans l'App Store",
       soon: "Bientôt sur l'App Store",
     },
+    chrome: {
+      skip: 'Aller au contenu',
+      inEnglish: 'en anglais',
+      readSource: 'Lire le code source',
+      elsewhere: 'Ailleurs',
+      sourceOnGitHub: 'Code source sur GitHub',
+      reportIssue: 'Signaler un problème',
+      languages: 'Langues',
+      colApp: 'L’application',
+      colChess: 'Échecs',
+      colLegal: 'Mentions légales',
+      licence: 'Logiciel libre sous la GNU Affero General Public License v3.',
+      rights: 'Brass Pawn est un logiciel libre.',
+      attribution:
+        'Stockfish © les développeurs de Stockfish, GPLv3. Exercices et parties issus de la base Lichess, CC0. Sans lien avec Apple, Lichess, le projet Stockfish ni le projet Reckless.',
+      lede: "Tactique, jugement positionnel, technique de finale et parties commentées, avec le moteur qui tourne sur l'appareil. Rien ne quitte le téléphone.",
+    },
   },
   {
     tag: 'he',
@@ -201,6 +416,23 @@ export const LOCALES: readonly Locale[] = [
       questions: 'שאלות',
       download: 'הורדה מ‑App Store',
       soon: 'בקרוב ב‑App Store',
+    },
+    chrome: {
+      skip: 'דילוג לתוכן',
+      inEnglish: 'באנגלית',
+      readSource: 'קראו את קוד המקור',
+      elsewhere: 'במקומות אחרים',
+      sourceOnGitHub: 'קוד המקור ב‑GitHub',
+      reportIssue: 'דיווח על תקלה',
+      languages: 'שפות',
+      colApp: 'האפליקציה',
+      colChess: 'שחמט',
+      colLegal: 'משפטי',
+      licence: 'תוכנה חופשית תחת GNU Affero General Public License v3.',
+      rights: '‏Brass Pawn היא תוכנה חופשית.',
+      attribution:
+        '‏Stockfish © מפתחי Stockfish, GPLv3. התרגילים והמשחקים מתוך מסד הנתונים של Lichess, CC0. ללא כל קשר ל‑Apple, ל‑Lichess, לפרויקט Stockfish או לפרויקט Reckless.',
+      lede: 'טקטיקה, שיפוט עמדתי, טכניקת סופים ומשחקים עם אימון — כאשר המנוע רץ על המכשיר עצמו. שום דבר לא יוצא מהטלפון.',
     },
   },
   {
@@ -217,6 +449,23 @@ export const LOCALES: readonly Locale[] = [
       download: 'App Store से डाउनलोड करें',
       soon: 'जल्द ही App Store पर',
     },
+    chrome: {
+      skip: 'सामग्री पर जाएँ',
+      inEnglish: 'अंग्रेज़ी में',
+      readSource: 'स्रोत कोड देखें',
+      elsewhere: 'अन्यत्र',
+      sourceOnGitHub: 'GitHub पर स्रोत कोड',
+      reportIssue: 'समस्या बताएँ',
+      languages: 'भाषाएँ',
+      colApp: 'ऐप',
+      colChess: 'शतरंज',
+      colLegal: 'क़ानूनी',
+      licence: 'GNU Affero General Public License v3 के अंतर्गत मुक्त सॉफ़्टवेयर।',
+      rights: 'Brass Pawn मुक्त सॉफ़्टवेयर है।',
+      attribution:
+        'Stockfish © Stockfish के डेवलपर, GPLv3। पहेलियाँ और खेल Lichess के डेटाबेस से, CC0। Apple, Lichess, Stockfish परियोजना या Reckless परियोजना से कोई संबंध नहीं।',
+      lede: 'रणनीति, स्थिति का आकलन, अंत-खेल तकनीक और कोचिंग के साथ बाज़ियाँ — इंजन डिवाइस पर ही चलता है। कुछ भी फ़ोन से बाहर नहीं जाता।',
+    },
   },
   {
     tag: 'hu',
@@ -231,6 +480,23 @@ export const LOCALES: readonly Locale[] = [
       questions: 'Kérdések',
       download: 'Letöltés az App Store-ból',
       soon: 'Hamarosan az App Store-ban',
+    },
+    chrome: {
+      skip: 'Ugrás a tartalomhoz',
+      inEnglish: 'angolul',
+      readSource: 'Nézd meg a forráskódot',
+      elsewhere: 'Máshol',
+      sourceOnGitHub: 'Forráskód a GitHubon',
+      reportIssue: 'Hiba jelentése',
+      languages: 'Nyelvek',
+      colApp: 'Az alkalmazás',
+      colChess: 'Sakk',
+      colLegal: 'Jogi tudnivalók',
+      licence: 'Szabad szoftver a GNU Affero General Public License v3 alatt.',
+      rights: 'A Brass Pawn szabad szoftver.',
+      attribution:
+        'Stockfish © a Stockfish fejlesztői, GPLv3. A feladványok és játszmák a Lichess adatbázisából, CC0. Nem áll kapcsolatban az Apple-lel, a Lichess-szel, a Stockfish projekttel vagy a Reckless projekttel.',
+      lede: 'Taktika, állásértékelés, végjátéktechnika és edzővel kísért játszmák, a a motor pedig magán a készüléken fut. Semmi nem hagyja el a telefont.',
     },
   },
   {
@@ -247,6 +513,23 @@ export const LOCALES: readonly Locale[] = [
       download: 'Unduh di App Store',
       soon: 'Segera di App Store',
     },
+    chrome: {
+      skip: 'Lompat ke konten',
+      inEnglish: 'dalam bahasa Inggris',
+      readSource: 'Baca kode sumbernya',
+      elsewhere: 'Di tempat lain',
+      sourceOnGitHub: 'Kode sumber di GitHub',
+      reportIssue: 'Laporkan masalah',
+      languages: 'Bahasa',
+      colApp: 'Aplikasinya',
+      colChess: 'Catur',
+      colLegal: 'Hukum',
+      licence: 'Perangkat lunak bebas di bawah GNU Affero General Public License v3.',
+      rights: 'Brass Pawn adalah perangkat lunak bebas.',
+      attribution:
+        'Stockfish © para pengembang Stockfish, GPLv3. Teka-teki dan partai dari basis data Lichess, CC0. Tidak berafiliasi dengan Apple, Lichess, proyek Stockfish, maupun proyek Reckless.',
+      lede: 'Taktik, penilaian posisi, teknik akhir permainan, dan partai berpendamping, dengan mesin berjalan di perangkat itu sendiri. Tidak ada yang meninggalkan ponsel.',
+    },
   },
   {
     tag: 'it',
@@ -261,6 +544,23 @@ export const LOCALES: readonly Locale[] = [
       questions: 'Domande',
       download: 'Scaricala su App Store',
       soon: 'Presto su App Store',
+    },
+    chrome: {
+      skip: 'Vai al contenuto',
+      inEnglish: 'in inglese',
+      readSource: 'Leggi il codice',
+      elsewhere: 'Altrove',
+      sourceOnGitHub: 'Codice su GitHub',
+      reportIssue: 'Segnala un problema',
+      languages: 'Lingue',
+      colApp: 'L’app',
+      colChess: 'Scacchi',
+      colLegal: 'Note legali',
+      licence: 'Software libero sotto la GNU Affero General Public License v3.',
+      rights: 'Brass Pawn è software libero.',
+      attribution:
+        'Stockfish © gli sviluppatori di Stockfish, GPLv3. Esercizi e partite dal database di Lichess, CC0. Non affiliato ad Apple, Lichess, al progetto Stockfish né al progetto Reckless.',
+      lede: 'Tattica, giudizio posizionale, tecnica di finale e partite commentate, con il motore che gira sul dispositivo. Niente esce dal telefono.',
     },
   },
   {
@@ -277,6 +577,24 @@ export const LOCALES: readonly Locale[] = [
       download: 'App Store からダウンロード',
       soon: 'App Store に近日登場',
     },
+    chrome: {
+      skip: '本文へスキップ',
+      inEnglish: '英語',
+      readSource: 'ソースコードを読む',
+      elsewhere: 'そのほか',
+      sourceOnGitHub: 'GitHub のソースコード',
+      reportIssue: '問題を報告',
+      languages: '言語',
+      colApp: 'アプリ',
+      colChess: 'チェス',
+      colLegal: '法的事項',
+      licence:
+        'GNU Affero General Public License v3 のもとで公開されているフリーソフトウェアです。',
+      rights: 'Brass Pawn はフリーソフトウェアです。',
+      attribution:
+        'Stockfish © Stockfish 開発者、GPLv3。問題と棋譜は Lichess のデータベースより、CC0。Apple、Lichess、Stockfish プロジェクト、Reckless プロジェクトとは無関係です。',
+      lede: '戦術、局面判断、終盤技術、そして解説つきの対局。エンジン は端末上で動作し、データが端末の外に出ることはありません。',
+    },
   },
   {
     tag: 'ko',
@@ -291,6 +609,23 @@ export const LOCALES: readonly Locale[] = [
       questions: '자주 묻는 질문',
       download: 'App Store에서 다운로드',
       soon: 'App Store에 곧 출시',
+    },
+    chrome: {
+      skip: '본문으로 건너뛰기',
+      inEnglish: '영어',
+      readSource: '소스 코드 보기',
+      elsewhere: '다른 곳',
+      sourceOnGitHub: 'GitHub의 소스 코드',
+      reportIssue: '문제 신고',
+      languages: '언어',
+      colApp: '앱',
+      colChess: '체스',
+      colLegal: '법적 고지',
+      licence: 'GNU Affero General Public License v3에 따른 자유 소프트웨어입니다.',
+      rights: 'Brass Pawn은 자유 소프트웨어입니다.',
+      attribution:
+        'Stockfish © Stockfish 개발자, GPLv3. 문제와 기보는 Lichess 데이터베이스에서, CC0. Apple, Lichess, Stockfish 프로젝트, Reckless 프로젝트와 무관합니다.',
+      lede: '전술, 포지션 판단, 엔드게임 기술, 그리고 코칭이 붙은 대국. 엔진이 기기 안에서 돌아가며, 어떤 데이터도 휴대폰을 떠나지 않습니다.',
     },
   },
   {
@@ -307,6 +642,23 @@ export const LOCALES: readonly Locale[] = [
       download: 'Muat turun di App Store',
       soon: 'Tidak lama lagi di App Store',
     },
+    chrome: {
+      skip: 'Langkau ke kandungan',
+      inEnglish: 'dalam bahasa Inggeris',
+      readSource: 'Baca kod sumbernya',
+      elsewhere: 'Di tempat lain',
+      sourceOnGitHub: 'Kod sumber di GitHub',
+      reportIssue: 'Laporkan masalah',
+      languages: 'Bahasa',
+      colApp: 'Aplikasi',
+      colChess: 'Catur',
+      colLegal: 'Undang-undang',
+      licence: 'Perisian bebas di bawah GNU Affero General Public License v3.',
+      rights: 'Brass Pawn ialah perisian bebas.',
+      attribution:
+        'Stockfish © pembangun Stockfish, GPLv3. Teka-teki dan permainan daripada pangkalan data Lichess, CC0. Tiada kaitan dengan Apple, Lichess, projek Stockfish atau projek Reckless.',
+      lede: 'Taktik, penilaian kedudukan, teknik permainan akhir dan perlawanan berjurulatih, dengan enjin berjalan pada peranti itu sendiri. Tiada apa-apa meninggalkan telefon.',
+    },
   },
   {
     tag: 'nl-NL',
@@ -321,6 +673,23 @@ export const LOCALES: readonly Locale[] = [
       questions: 'Vragen',
       download: 'Download in de App Store',
       soon: 'Binnenkort in de App Store',
+    },
+    chrome: {
+      skip: 'Naar de inhoud',
+      inEnglish: 'in het Engels',
+      readSource: 'Lees de broncode',
+      elsewhere: 'Elders',
+      sourceOnGitHub: 'Broncode op GitHub',
+      reportIssue: 'Een probleem melden',
+      languages: 'Talen',
+      colApp: 'De app',
+      colChess: 'Schaken',
+      colLegal: 'Juridisch',
+      licence: 'Vrije software onder de GNU Affero General Public License v3.',
+      rights: 'Brass Pawn is vrije software.',
+      attribution:
+        'Stockfish © de Stockfish-ontwikkelaars, GPLv3. Opgaven en partijen uit de Lichess-database, CC0. Niet verbonden aan Apple, Lichess, het Stockfish-project of het Reckless-project.',
+      lede: 'Tactiek, positioneel inzicht, eindspeltechniek en partijen met begeleiding, met de engine op het toestel zelf. Er verlaat niets de telefoon.',
     },
   },
   {
@@ -337,6 +706,23 @@ export const LOCALES: readonly Locale[] = [
       download: 'Last ned på App Store',
       soon: 'Snart på App Store',
     },
+    chrome: {
+      skip: 'Hopp til innholdet',
+      inEnglish: 'på engelsk',
+      readSource: 'Les kildekoden',
+      elsewhere: 'Andre steder',
+      sourceOnGitHub: 'Kildekode på GitHub',
+      reportIssue: 'Rapporter et problem',
+      languages: 'Språk',
+      colApp: 'Appen',
+      colChess: 'Sjakk',
+      colLegal: 'Juridisk',
+      licence: 'Fri programvare under GNU Affero General Public License v3.',
+      rights: 'Brass Pawn er fri programvare.',
+      attribution:
+        'Stockfish © Stockfish-utviklerne, GPLv3. Oppgaver og partier fra Lichess-databasen, CC0. Ikke tilknyttet Apple, Lichess, Stockfish-prosjektet eller Reckless-prosjektet.',
+      lede: 'Taktikk, posisjonsvurdering, sluttspillteknikk og partier med coaching, med motoren som kjører på selve enheten. Ingenting forlater telefonen.',
+    },
   },
   {
     tag: 'pl',
@@ -351,6 +737,23 @@ export const LOCALES: readonly Locale[] = [
       questions: 'Pytania',
       download: 'Pobierz w App Store',
       soon: 'Wkrótce w App Store',
+    },
+    chrome: {
+      skip: 'Przejdź do treści',
+      inEnglish: 'po angielsku',
+      readSource: 'Przeczytaj kod źródłowy',
+      elsewhere: 'Gdzie indziej',
+      sourceOnGitHub: 'Kod źródłowy na GitHubie',
+      reportIssue: 'Zgłoś problem',
+      languages: 'Języki',
+      colApp: 'Aplikacja',
+      colChess: 'Szachy',
+      colLegal: 'Informacje prawne',
+      licence: 'Wolne oprogramowanie na licencji GNU Affero General Public License v3.',
+      rights: 'Brass Pawn to wolne oprogramowanie.',
+      attribution:
+        'Stockfish © twórcy Stockfisha, GPLv3. Zadania i partie z bazy Lichess, CC0. Bez związku z Apple, Lichess, projektem Stockfish ani projektem Reckless.',
+      lede: 'Taktyka, ocena pozycji, technika końcówek i partie z komentarzem, ze silnikem działającym na urządzeniu. Nic nie opuszcza telefonu.',
     },
   },
   {
@@ -367,6 +770,23 @@ export const LOCALES: readonly Locale[] = [
       download: 'Baixar na App Store',
       soon: 'Em breve na App Store',
     },
+    chrome: {
+      skip: 'Ir para o conteúdo',
+      inEnglish: 'em inglês',
+      readSource: 'Ler o código',
+      elsewhere: 'Em outros lugares',
+      sourceOnGitHub: 'Código no GitHub',
+      reportIssue: 'Relatar um problema',
+      languages: 'Idiomas',
+      colApp: 'O app',
+      colChess: 'Xadrez',
+      colLegal: 'Jurídico',
+      licence: 'Software livre sob a GNU Affero General Public License v3.',
+      rights: 'Brass Pawn é software livre.',
+      attribution:
+        'Stockfish © os desenvolvedores do Stockfish, GPLv3. Exercícios e partidas do banco de dados do Lichess, CC0. Sem vínculo com a Apple, o Lichess, o projeto Stockfish ou o projeto Reckless.',
+      lede: 'Tática, julgamento posicional, técnica de finais e partidas comentadas, com o o motor rodando no aparelho. Nada sai do telefone.',
+    },
   },
   {
     tag: 'ro',
@@ -381,6 +801,23 @@ export const LOCALES: readonly Locale[] = [
       questions: 'Întrebări',
       download: 'Descarcă din App Store',
       soon: 'În curând în App Store',
+    },
+    chrome: {
+      skip: 'Salt la conținut',
+      inEnglish: 'în engleză',
+      readSource: 'Citește codul sursă',
+      elsewhere: 'În altă parte',
+      sourceOnGitHub: 'Cod sursă pe GitHub',
+      reportIssue: 'Raportează o problemă',
+      languages: 'Limbi',
+      colApp: 'Aplicația',
+      colChess: 'Șah',
+      colLegal: 'Juridic',
+      licence: 'Software liber sub licența GNU Affero General Public License v3.',
+      rights: 'Brass Pawn este software liber.',
+      attribution:
+        'Stockfish © dezvoltatorii Stockfish, GPLv3. Exercițiile și partidele provin din baza de date Lichess, CC0. Fără legătură cu Apple, Lichess, proiectul Stockfish sau proiectul Reckless.',
+      lede: 'Tactică, judecată pozițională, tehnică de final și partide cu antrenor, cu motorul rulând chiar pe dispozitiv. Nimic nu părăsește telefonul.',
     },
   },
   {
@@ -397,6 +834,23 @@ export const LOCALES: readonly Locale[] = [
       download: 'Загрузите в App Store',
       soon: 'Скоро в App Store',
     },
+    chrome: {
+      skip: 'Перейти к содержанию',
+      inEnglish: 'на английском',
+      readSource: 'Посмотреть исходный код',
+      elsewhere: 'В других местах',
+      sourceOnGitHub: 'Исходный код на GitHub',
+      reportIssue: 'Сообщить о проблеме',
+      languages: 'Языки',
+      colApp: 'Приложение',
+      colChess: 'Шахматы',
+      colLegal: 'Правовая информация',
+      licence: 'Свободное ПО под лицензией GNU Affero General Public License v3.',
+      rights: 'Brass Pawn — свободное программное обеспечение.',
+      attribution:
+        'Stockfish © разработчики Stockfish, GPLv3. Задачи и партии из базы Lichess, CC0. Не связано с Apple, Lichess, проектом Stockfish или проектом Reckless.',
+      lede: 'Тактика, позиционная оценка, эндшпильная техника и партии с разбором — движок работает прямо на устройстве. Ничего не покидает телефон.',
+    },
   },
   {
     tag: 'sv',
@@ -411,6 +865,23 @@ export const LOCALES: readonly Locale[] = [
       questions: 'Frågor',
       download: 'Ladda ned på App Store',
       soon: 'Snart på App Store',
+    },
+    chrome: {
+      skip: 'Hoppa till innehållet',
+      inEnglish: 'på engelska',
+      readSource: 'Läs källkoden',
+      elsewhere: 'Annorstädes',
+      sourceOnGitHub: 'Källkod på GitHub',
+      reportIssue: 'Rapportera ett problem',
+      languages: 'Språk',
+      colApp: 'Appen',
+      colChess: 'Schack',
+      colLegal: 'Juridik',
+      licence: 'Fri programvara under GNU Affero General Public License v3.',
+      rights: 'Brass Pawn är fri programvara.',
+      attribution:
+        'Stockfish © Stockfish-utvecklarna, GPLv3. Uppgifter och partier från Lichess-databasen, CC0. Inte knutet till Apple, Lichess, Stockfish-projektet eller Reckless-projektet.',
+      lede: 'Taktik, positionsbedömning, slutspelsteknik och partier med coachning, med motorn igång på själva enheten. Ingenting lämnar telefonen.',
     },
   },
   {
@@ -427,6 +898,23 @@ export const LOCALES: readonly Locale[] = [
       download: 'ดาวน์โหลดบน App Store',
       soon: 'เร็ว ๆ นี้บน App Store',
     },
+    chrome: {
+      skip: 'ข้ามไปยังเนื้อหา',
+      inEnglish: 'ภาษาอังกฤษ',
+      readSource: 'อ่านซอร์สโค้ด',
+      elsewhere: 'ที่อื่น',
+      sourceOnGitHub: 'ซอร์สโค้ดบน GitHub',
+      reportIssue: 'แจ้งปัญหา',
+      languages: 'ภาษา',
+      colApp: 'แอป',
+      colChess: 'หมากรุกสากล',
+      colLegal: 'กฎหมาย',
+      licence: 'ซอฟต์แวร์เสรีภายใต้ GNU Affero General Public License v3',
+      rights: 'Brass Pawn เป็นซอฟต์แวร์เสรี',
+      attribution:
+        'Stockfish © ผู้พัฒนา Stockfish, GPLv3 โจทย์และเกมมาจากฐานข้อมูล Lichess, CC0 ไม่มีความเกี่ยวข้องกับ Apple, Lichess, โครงการ Stockfish หรือโครงการ Reckless',
+      lede: 'แทคติก การประเมินตำแหน่ง เทคนิคเกมท้าย และเกมที่มีโค้ช โดย เอนจิน ทำงานบนเครื่องเอง ไม่มีข้อมูลใดออกจากโทรศัพท์',
+    },
   },
   {
     tag: 'tr',
@@ -441,6 +929,23 @@ export const LOCALES: readonly Locale[] = [
       questions: 'Sorular',
       download: "App Store'dan indirin",
       soon: "Yakında App Store'da",
+    },
+    chrome: {
+      skip: 'İçeriğe geç',
+      inEnglish: 'İngilizce',
+      readSource: 'Kaynak kodu oku',
+      elsewhere: 'Başka yerlerde',
+      sourceOnGitHub: 'GitHub’da kaynak kod',
+      reportIssue: 'Bir sorun bildir',
+      languages: 'Diller',
+      colApp: 'Uygulama',
+      colChess: 'Satranç',
+      colLegal: 'Yasal',
+      licence: 'GNU Affero General Public License v3 altında özgür yazılım.',
+      rights: 'Brass Pawn özgür yazılımdır.',
+      attribution:
+        'Stockfish © Stockfish geliştiricileri, GPLv3. Bulmacalar ve partiler Lichess veritabanından, CC0. Apple, Lichess, Stockfish projesi veya Reckless projesi ile bağlantılı değildir.',
+      lede: 'Taktik, konum değerlendirmesi, oyunsonu tekniği ve koçluk eşliğinde oyun; motor cihazın kendisinde çalışır. Hiçbir şey telefondan çıkmaz.',
     },
   },
   {
@@ -457,6 +962,23 @@ export const LOCALES: readonly Locale[] = [
       download: 'Tải về trên App Store',
       soon: 'Sắp có trên App Store',
     },
+    chrome: {
+      skip: 'Bỏ qua tới nội dung',
+      inEnglish: 'bằng tiếng Anh',
+      readSource: 'Đọc mã nguồn',
+      elsewhere: 'Nơi khác',
+      sourceOnGitHub: 'Mã nguồn trên GitHub',
+      reportIssue: 'Báo lỗi',
+      languages: 'Ngôn ngữ',
+      colApp: 'Ứng dụng',
+      colChess: 'Cờ vua',
+      colLegal: 'Pháp lý',
+      licence: 'Phần mềm tự do theo GNU Affero General Public License v3.',
+      rights: 'Brass Pawn là phần mềm tự do.',
+      attribution:
+        'Stockfish © các nhà phát triển Stockfish, GPLv3. Thế cờ và ván đấu lấy từ cơ sở dữ liệu Lichess, CC0. Không liên kết với Apple, Lichess, dự án Stockfish hay dự án Reckless.',
+      lede: 'Chiến thuật, đánh giá thế cờ, kỹ thuật tàn cuộc và các ván có huấn luyện viên, với engine chạy ngay trên máy. Không có gì rời khỏi điện thoại.',
+    },
   },
   {
     tag: 'zh-Hans',
@@ -471,6 +993,23 @@ export const LOCALES: readonly Locale[] = [
       questions: '常见问题',
       download: '从 App Store 下载',
       soon: '即将登陆 App Store',
+    },
+    chrome: {
+      skip: '跳到正文',
+      inEnglish: '英文',
+      readSource: '阅读源代码',
+      elsewhere: '别处',
+      sourceOnGitHub: 'GitHub 上的源代码',
+      reportIssue: '报告问题',
+      languages: '语言',
+      colApp: '应用',
+      colChess: '国际象棋',
+      colLegal: '法律',
+      licence: '依据 GNU Affero General Public License v3 发布的自由软件。',
+      rights: 'Brass Pawn 是自由软件。',
+      attribution:
+        'Stockfish © Stockfish 开发者，GPLv3。习题与对局取自 Lichess 数据库，CC0。与 Apple、Lichess、Stockfish 项目或 Reckless 项目均无关联。',
+      lede: '战术、局面判断、残局技术和带讲解的对局，引擎 直接在设备上运行。没有任何数据离开手机。',
     },
   },
   {
@@ -487,6 +1026,23 @@ export const LOCALES: readonly Locale[] = [
       download: '從 App Store 下載',
       soon: '即將登陸 App Store',
     },
+    chrome: {
+      skip: '跳至內容',
+      inEnglish: '英文',
+      readSource: '閱讀原始碼',
+      elsewhere: '別處',
+      sourceOnGitHub: 'GitHub 上的原始碼',
+      reportIssue: '回報問題',
+      languages: '語言',
+      colApp: 'App',
+      colChess: '西洋棋',
+      colLegal: '法律',
+      licence: '依據 GNU Affero General Public License v3 發布的自由軟體。',
+      rights: 'Brass Pawn 是自由軟體。',
+      attribution:
+        'Stockfish © Stockfish 開發者，GPLv3。習題與棋局取自 Lichess 資料庫，CC0。與 Apple、Lichess、Stockfish 專案或 Reckless 專案均無關聯。',
+      lede: '戰術、局面判斷、殘局技術與附講解的對局，引擎 直接在裝置上執行。沒有任何資料離開手機。',
+    },
   },
   {
     tag: 'bg',
@@ -501,6 +1057,23 @@ export const LOCALES: readonly Locale[] = [
       questions: 'Въпроси',
       download: 'Изтегли от App Store',
       soon: 'Очаквай го в App Store',
+    },
+    chrome: {
+      skip: 'Към съдържанието',
+      inEnglish: 'на английски',
+      readSource: 'Виж изходния код',
+      elsewhere: 'Другаде',
+      sourceOnGitHub: 'Изходен код в GitHub',
+      reportIssue: 'Съобщи за проблем',
+      languages: 'Езици',
+      colApp: 'Приложението',
+      colChess: 'Шах',
+      colLegal: 'Правно',
+      licence: 'Свободен софтуер под GNU Affero General Public License v3.',
+      rights: 'Brass Pawn е свободен софтуер.',
+      attribution:
+        'Stockfish © разработчиците на Stockfish, GPLv3. Задачите и партиите са от базата на Lichess, CC0. Няма връзка с Apple, Lichess, проекта Stockfish или проекта Reckless.',
+      lede: 'Tactics, positional judgement, endgame technique and coached play, with the engine running on the device. Nothing leaves the phone.',
     },
   },
 ];

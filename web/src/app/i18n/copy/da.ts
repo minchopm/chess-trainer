@@ -79,8 +79,6 @@ export const copy: Copy = {
     language: 'Sprog',
     menu: 'Menu',
     close: 'Luk',
-    skip: 'Spring til indholdet',
-    inEnglish: 'på engelsk',
     film: 'Se den i brug',
     screens: 'Hver skærm',
     price: 'Hvad det koster',
