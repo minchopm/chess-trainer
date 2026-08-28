@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject, computed, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, computed, input, effect } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { Reveal } from '../../core/reveal';
 import { Seo } from '../../core/seo';
 import { LIBRARY, MOTIFS, url } from '../../core/site';
+import { CurrentLocale } from '../../i18n/current';
 import type { Pages } from '../../i18n/pages/types';
 import { PageHead } from '../../shared/page-head/page-head';
 
@@ -24,6 +25,15 @@ import { PageHead } from '../../shared/page-head/page-head';
 export class Motifs {
   /** Resolved by the router before the page renders. See app.routes.ts. */
   readonly pages = input.required<Pages>();
+  /**
+   * Which language this page is in.
+   *
+   * From CurrentLocale rather than a route input: that service already derives
+   * it from the address, is seeded from `location.pathname` so it is right on
+   * the first frame, and does not depend on an input default having been
+   * evaluated before the effect below first runs — which it is not.
+   */
+  private readonly locale = inject(CurrentLocale).locale;
 
   protected readonly c = computed(() => this.pages().tactics);
 
@@ -39,37 +49,45 @@ export class Motifs {
   protected readonly library = LIBRARY;
 
   constructor() {
-    inject(Seo).apply({
-      path: '/tactics',
-      title: 'Chess tactics: the twenty motifs',
-      description:
-        'Fork, pin, skewer, discovered attack, deflection, zwischenzug, zugzwang and the rest — what each is, how to spot it, and how much practice there is of it.',
-      updated: '2026-08-19',
-      crumbs: [{ label: 'The training', path: '/training' }],
-      entities: [
-        {
-          '@type': 'DefinedTermSet',
-          '@id': url('/tactics#glossary'),
-          name: 'Chess tactical motifs',
-          description: 'The tactical vocabulary Brass Pawn tags its puzzle library with.',
-          hasDefinedTerm: MOTIFS.map((motif) => ({
-            '@type': 'DefinedTerm',
-            '@id': url(`/tactics#${motif.slug}`),
-            name: motif.name,
-            description: motif.short,
-            inDefinedTermSet: { '@id': url('/tactics#glossary') },
-          })),
-        },
-        {
-          '@type': 'FAQPage',
-          '@id': url('/tactics#faq'),
-          mainEntity: MOTIFS.slice(0, 8).map((motif) => ({
-            '@type': 'Question',
-            name: `What is a ${motif.name.toLowerCase()} in chess?`,
-            acceptedAnswer: { '@type': 'Answer', text: `${motif.short} ${motif.body}` },
-          })),
-        },
-      ],
+    const seo = inject(Seo);
+    // In an effect because the language arrives as an input, and the title, the
+    // description, the canonical and the `lang` attribute all follow it.
+    effect(() => {
+      const locale = this.locale();
+      const meta = this.c().meta;
+      seo.apply({
+        path: locale.slug === 'en' ? '/tactics' : `/${locale.slug}/tactics`,
+        translatedPath: '/tactics',
+        locale,
+        title: meta.title,
+        description: meta.description,
+        updated: '2026-08-19',
+        crumbs: [{ label: 'The training', path: '/training' }],
+        entities: [
+          {
+            '@type': 'DefinedTermSet',
+            '@id': url('/tactics#glossary'),
+            name: 'Chess tactical motifs',
+            description: 'The tactical vocabulary Brass Pawn tags its puzzle library with.',
+            hasDefinedTerm: MOTIFS.map((motif) => ({
+              '@type': 'DefinedTerm',
+              '@id': url(`/tactics#${motif.slug}`),
+              name: motif.name,
+              description: motif.short,
+              inDefinedTermSet: { '@id': url('/tactics#glossary') },
+            })),
+          },
+          {
+            '@type': 'FAQPage',
+            '@id': url('/tactics#faq'),
+            mainEntity: MOTIFS.slice(0, 8).map((motif) => ({
+              '@type': 'Question',
+              name: `What is a ${motif.name.toLowerCase()} in chess?`,
+              acceptedAnswer: { '@type': 'Answer', text: `${motif.short} ${motif.body}` },
+            })),
+          },
+        ],
+      });
     });
   }
 }

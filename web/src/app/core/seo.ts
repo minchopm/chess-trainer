@@ -2,6 +2,7 @@ import { DOCUMENT, Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 import { DEFAULT_LOCALE, LOCALES as LANGUAGES, type Locale, localePath } from '../i18n/locales';
+import { PAGE_LOCALES } from '../i18n/pages';
 import { LIBRARY, LOCALES, PRICING, SITE, url } from './site';
 
 /** One step in the trail, in the order a reader would walk it. */
@@ -11,6 +12,8 @@ export interface Crumb {
 }
 
 export interface PageMeta {
+  /** For an inner page that exists in several languages: its English path. */
+  readonly translatedPath?: string;
   readonly title: string;
   readonly description: string;
   /** Route path, e.g. '/privacy'. '/' for the home page. */
@@ -113,6 +116,21 @@ export class Seo {
     )) {
       link.remove();
     }
+    // An inner page that exists in some languages names those, and only those.
+    // Search engines read hreflang as a claim about a whole group and discard a
+    // group whose members disagree about who is in it — so this set must never
+    // borrow the home pages' set, which is a different group.
+    if (page.translatedPath) {
+      this.addLink('alternate', url(page.translatedPath), 'en');
+      for (const slug of PAGE_LOCALES) {
+        if (slug === 'en') continue;
+        const locale = LANGUAGES.find((l) => l.slug === slug);
+        if (locale) this.addLink('alternate', url(`/${slug}${page.translatedPath}`), locale.tag);
+      }
+      this.addLink('alternate', url(page.translatedPath), 'x-default');
+      return;
+    }
+
     if (!page.translated) return;
 
     for (const locale of LANGUAGES) {

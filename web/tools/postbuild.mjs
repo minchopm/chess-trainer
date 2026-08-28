@@ -10,6 +10,38 @@ const ORIGIN = 'https://brasspawn.com';
 
 const { locales } = JSON.parse(await readFile(new URL('./locales.json', import.meta.url), 'utf8'));
 
+/**
+ * Languages whose four commercial pages are translated.
+ *
+ * Read out of the loader rather than listed again here. That file is what the
+ * router generates its routes from, so a language named in one place and not
+ * the other would put a URL in the sitemap that nothing renders — and the
+ * assertion at the foot of this script would fail the build, which is the
+ * cheapest place to find out.
+ */
+const pagesTs = await readFile(new URL('../src/app/i18n/pages.ts', import.meta.url), 'utf8');
+const PAGE_LOCALES = [...pagesTs.matchAll(/import\('\.\/pages\/([a-z-]+)'\)/g)].map((m) => m[1]);
+
+/** The four that are translated, and the seven essays that stay in English. */
+const TRANSLATED_PAGES = ['/training', '/tactics', '/pricing', '/support'];
+
+/**
+ * One alternates block per inner page, naming only the languages that have it.
+ *
+ * Not the block above: that one names the home pages. A page whose hreflang set
+ * points at addresses in a different group is a group whose members disagree
+ * about who is in it, which is the case the note above says gets discarded.
+ */
+const pageAlternates = (path) =>
+  [
+    `    <xhtml:link rel="alternate" hreflang="en" href="${ORIGIN}${path}"/>`,
+    ...PAGE_LOCALES.filter((slug) => slug !== 'en').map(
+      (slug) =>
+        `    <xhtml:link rel="alternate" hreflang="${locales.find((l) => l.slug === slug).tag}" href="${ORIGIN}/${slug}${path}"/>`,
+    ),
+    `    <xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}${path}"/>`,
+  ].join('\n');
+
 /** English is the site root; every other language is one segment down. */
 const localePath = (locale) => (locale.slug === 'en' ? '/' : `/${locale.slug}`);
 
@@ -32,13 +64,13 @@ const ALTERNATES = [
 /** Pages worth indexing, in the order a reader would meet them. */
 const PAGES = [
   { path: '/', priority: '1.0', changefreq: 'monthly', translated: true },
-  { path: '/training', priority: '0.9', changefreq: 'monthly' },
-  { path: '/tactics', priority: '0.9', changefreq: 'monthly' },
+  { path: '/training', priority: '0.9', changefreq: 'monthly', alternates: '/training' },
+  { path: '/tactics', priority: '0.9', changefreq: 'monthly', alternates: '/tactics' },
   { path: '/watch', priority: '0.9', changefreq: 'monthly' },
   { path: '/ratings', priority: '0.8', changefreq: 'monthly' },
   { path: '/engine', priority: '0.8', changefreq: 'monthly' },
-  { path: '/pricing', priority: '0.8', changefreq: 'monthly' },
-  { path: '/support', priority: '0.6', changefreq: 'monthly' },
+  { path: '/pricing', priority: '0.8', changefreq: 'monthly', alternates: '/pricing' },
+  { path: '/support', priority: '0.6', changefreq: 'monthly', alternates: '/support' },
   { path: '/privacy', priority: '0.5', changefreq: 'yearly' },
   { path: '/terms', priority: '0.5', changefreq: 'yearly' },
   { path: '/licences', priority: '0.5', changefreq: 'yearly' },
@@ -53,6 +85,17 @@ const PAGES = [
       changefreq: 'monthly',
       translated: true,
     })),
+  // The four commercial pages in every language that has them. Nothing is
+  // emitted for a language that does not: the router has no route for it, so a
+  // URL here would be a promise of a page that was never rendered.
+  ...PAGE_LOCALES.filter((slug) => slug !== 'en').flatMap((slug) =>
+    TRANSLATED_PAGES.map((path) => ({
+      path: `/${slug}${path}`,
+      priority: path === '/support' ? '0.6' : '0.8',
+      changefreq: 'monthly',
+      alternates: path,
+    })),
+  ),
 ];
 
 const today = new Date().toISOString().slice(0, 10);
@@ -64,7 +107,7 @@ const body = PAGES.map(
     <lastmod>${today}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
-${page.translated ? ALTERNATES + '\n' : ''}  </url>`,
+${page.translated ? ALTERNATES + '\n' : page.alternates ? pageAlternates(page.alternates) + '\n' : ''}  </url>`,
 ).join('\n');
 
 await writeFile(

@@ -26,6 +26,34 @@ const localeRoutes: Routes = LOCALES.filter((locale) => locale.slug !== 'en').ma
 }));
 
 /**
+ * The four commercial pages, in the languages that have them.
+ *
+ * Generated from PAGES rather than from LOCALES, and that is the whole point.
+ * The home page exists in every language because its words came from the app;
+ * these four were written for the website and have to be translated from
+ * nothing. A language gets `/de/pricing` on the day its translation lands, and
+ * before that it has no such address at all — rather than an English page
+ * wearing a German slug, which is duplicate content and worse than absence.
+ */
+const localePageRoutes: Routes = LOCALES.filter(
+  (locale) => locale.slug !== 'en' && locale.slug in PAGES,
+).flatMap((locale) =>
+  (
+    [
+      ['training', () => import('./pages/training/training').then((m) => m.Training)],
+      ['tactics', () => import('./pages/motifs/motifs').then((m) => m.Motifs)],
+      ['pricing', () => import('./pages/pricing/pricing').then((m) => m.Pricing)],
+      ['support', () => import('./pages/support/support').then((m) => m.Support)],
+    ] as const
+  ).map(([path, loadComponent]) => ({
+    path: `${locale.slug}/${path}`,
+    data: { locale },
+    resolve: { pages: () => PAGES[locale.slug]() },
+    loadComponent,
+  })),
+);
+
+/**
  * Every page is lazy, which matters here for one reason: the home page carries
  * three.js and the other seven do not.
  */
@@ -103,6 +131,7 @@ export const routes: Routes = [
   // The thirty other languages. Before the catch-all, after everything whose
   // path is a word rather than a language.
   ...localeRoutes,
+  ...localePageRoutes,
 
   // English is the site root, so /en is a second address for a page that
   // already has one.
