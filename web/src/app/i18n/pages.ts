@@ -16,6 +16,8 @@ import type { Pages } from './pages/types';
 export const PAGES: Record<string, () => Promise<Pages>> = {
   en: () => import('./pages/en').then((m) => m.pages),
   bg: () => import('./pages/bg').then((m) => m.pages),
+  es: () => import('./pages/es').then((m) => m.pages),
+  de: () => import('./pages/de').then((m) => m.pages),
 };
 
 /** Slugs with a finished translation of the inner pages. */
