@@ -6,11 +6,35 @@
       same scene rather than painted by hand, the canvas fading in over it is a
       dissolve between two nearly identical images instead of a reveal.
     -->
+    <!-- Two sizes of each, not one.
+         This was a single 800x500 and it was fine while it was what you saw
+         for a second before the canvas took over. It is not fine when the
+         scene is declined — on a dense screen it was being drawn at three
+         times its own resolution, which is what "blurry" was. The 2x file is
+         only fetched by a screen that can show it. -->
     <picture class="poster" aria-hidden="true">
-      <source type="image/avif" media="(min-aspect-ratio: 9/10)" srcset="/poster/hero-wide.avif" />
-      <source type="image/webp" media="(min-aspect-ratio: 9/10)" srcset="/poster/hero-wide.webp" />
-      <source type="image/avif" srcset="/poster/hero-tall.avif" />
-      <source type="image/webp" srcset="/poster/hero-tall.webp" />
+      <source
+        type="image/avif"
+        media="(min-aspect-ratio: 9/10)"
+        srcset="/poster/hero-wide.avif 800w, /poster/hero-wide@2x.avif 1600w"
+        sizes="100vw"
+      />
+      <source
+        type="image/webp"
+        media="(min-aspect-ratio: 9/10)"
+        srcset="/poster/hero-wide.webp 800w, /poster/hero-wide@2x.webp 1600w"
+        sizes="100vw"
+      />
+      <source
+        type="image/avif"
+        srcset="/poster/hero-tall.avif 450w, /poster/hero-tall@2x.avif 900w"
+        sizes="100vw"
+      />
+      <source
+        type="image/webp"
+        srcset="/poster/hero-tall.webp 450w, /poster/hero-tall@2x.webp 900w"
+        sizes="100vw"
+      />
       <img src="/poster/hero-wide.webp" alt="" decoding="async" fetchpriority="high" />
     </picture>
 

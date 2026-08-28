@@ -11,7 +11,12 @@ import {
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { prefersReducedMotion, sceneQuality, shouldLoadScene } from '../../../core/capability';
+import {
+  prefersReducedMotion,
+  sceneQuality,
+  shouldLoadScene,
+  watchCapability,
+} from '../../../core/capability';
 import { SITE } from '../../../core/site';
 import type { Game } from '../../../three/games';
 import type { TitleSequence } from '../../../three/title-sequence';
@@ -147,7 +152,26 @@ export class Hero implements OnDestroy {
     // next question.
     requestAnimationFrame(() => this.lit.set(true));
 
-    if (!shouldLoadScene()) return;
+    if (!shouldLoadScene()) {
+      // Refused for now, not for ever. `effectiveType` is an estimate the
+      // browser revises, and a page that opened during a slow moment should
+      // not be stuck with a still of the scene for the rest of its life.
+      this.teardown.push(watchCapability(() => void this.startScene()));
+      return;
+    }
+
+    await this.startScene();
+  }
+
+  /**
+   * Build the scene and wire it to the page.
+   *
+   * Separate from `mount` so that a connection which was misjudged at load can
+   * call it later — mount also installs the scroll listeners, and calling that
+   * twice would install them twice.
+   */
+  private async startScene(): Promise<void> {
+    if (this.driver || this.destroyed) return;
 
     const canvas = this.canvas().nativeElement;
     const stage = canvas.parentElement;

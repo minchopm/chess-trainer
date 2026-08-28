@@ -19,18 +19,59 @@ interface Connectivity {
   readonly effectiveType?: string;
 }
 
-/** Whether it is worth downloading and running the scene at all. */
+/**
+ * Whether it is worth downloading and running the scene at all.
+ *
+ * This used to refuse on `effectiveType` of `2g` as well as `slow-2g`, and
+ * that was wrong in a way that took a while to see. `effectiveType` is not a
+ * fact about the connection; it is a rolling estimate the browser makes from
+ * recent round-trip times, and a page that opens with a burst of parallel
+ * requests can push its own estimate down to `2g` on a fibre line. The scene
+ * was then refused for the life of that page, and what a visitor got instead
+ * was a ten-kilobyte still stretched across their screen.
+ *
+ * So only the signals that mean something now:
+ *
+ *   saveData      an explicit request from the person, not a guess
+ *   slow-2g       the one tier that is genuinely hopeless for 600 kB
+ *   deviceMemory  a hard property of the device, not a measurement
+ *
+ * And when the estimate is wrong, `watchCapability` below notices.
+ */
 export function shouldLoadScene(): boolean {
   if (typeof window === 'undefined') return false;
 
   const nav = navigator as Navigator & { deviceMemory?: number; connection?: Connectivity };
 
-  // Data-saver is an explicit request, not a hint.
   if (nav.connection?.saveData) return false;
-  if (/(^|-)(2g|slow-2g)$/.test(nav.connection?.effectiveType ?? '')) return false;
+  if (nav.connection?.effectiveType === 'slow-2g') return false;
   if ((nav.deviceMemory ?? 4) <= 2) return false;
 
   return true;
+}
+
+/**
+ * Call back once, if the connection later looks good enough to change the
+ * answer above.
+ *
+ * The estimate that refused the scene is revised as the browser learns more,
+ * and without this the page would keep showing a poster on a connection that
+ * had turned out to be fine. Returns a function that stops listening.
+ */
+export function watchCapability(onImproved: () => void): () => void {
+  const connection = (navigator as Navigator & { connection?: Connectivity & EventTarget })
+    .connection;
+  if (!connection?.addEventListener) return () => {};
+
+  const check = () => {
+    if (shouldLoadScene()) {
+      stop();
+      onImproved();
+    }
+  };
+  const stop = () => connection.removeEventListener('change', check);
+  connection.addEventListener('change', check);
+  return stop;
 }
 
 /** Reduced motion still gets the scene — just one frame of it, per scroll. */
