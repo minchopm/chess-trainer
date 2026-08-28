@@ -111,7 +111,65 @@ export interface PricingPage {
   };
 }
 
+export interface TrainingPage {
+  readonly head: Head;
+  readonly meta: Meta;
+  /**
+   * The eight modes, in the order MODES lists them.
+   *
+   * `title` is here rather than taken from `Copy.modes` because the page names
+   * two of them at greater length than the app's tab does — "Positional
+   * judgement" for "Positional", "Play & coach" for "Play". A translator should
+   * follow the app's word and lengthen it the way the English does.
+   */
+  readonly modes: readonly {
+    readonly title: string;
+    readonly lede: string;
+    readonly body: readonly string[];
+    readonly free: string;
+    readonly stat?: string;
+  }[];
+  readonly watchLink: string;
+  readonly pipeline: {
+    readonly slug: string;
+    readonly title: string;
+    readonly lede: string;
+    readonly steps: readonly { readonly title: string; readonly body: string }[];
+  };
+  readonly honest: { readonly title: string; readonly body: readonly string[] };
+  readonly limits: {
+    readonly slug: string;
+    readonly title: string;
+    /** The second one ends on a link; `ratingsLink` is its text. */
+    readonly items: readonly { readonly title: string; readonly body: string }[];
+    readonly ratingsLink: string;
+  };
+  readonly more: { readonly motifs: string; readonly engine: string };
+}
+
+export interface TacticsPage {
+  readonly head: Head & { readonly meta: string };
+  readonly meta: Meta;
+  readonly indexLabel: string;
+  /** The word after each count. Plural rules differ; keep it simple. */
+  readonly puzzles: string;
+  /** The twenty motifs, in the order MOTIFS lists them. */
+  readonly motifs: readonly {
+    readonly name: string;
+    readonly short: string;
+    readonly body: string;
+  }[];
+  readonly after: {
+    readonly slug: string;
+    readonly title: string;
+    readonly body: readonly string[];
+    readonly more: string;
+  };
+}
+
 export interface Pages {
   readonly support: SupportPage;
   readonly pricing: PricingPage;
+  readonly training: TrainingPage;
+  readonly tactics: TacticsPage;
 }

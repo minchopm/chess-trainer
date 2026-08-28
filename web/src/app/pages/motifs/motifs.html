@@ -1,24 +1,24 @@
 <bp-page-head
-  slug="Glossary"
-  title="The twenty motifs"
-  lede="Every tactic in chess is one of a small number of shapes, and once you can name them you start seeing them a move earlier. These are the ones Brass Pawn tags its puzzles with — each one followed by how many positions in the bundled library actually turn on it."
-  meta="Counted from the bundled set of 14,351 puzzles · Last reviewed 19 August 2026"
+  [slug]="c().head.slug"
+  [title]="c().head.title"
+  [lede]="c().head.lede"
+  [meta]="c().head.meta"
 />
 
 <div class="page">
-  <nav class="index" aria-label="The motifs" ctReveal>
-    @for (motif of motifs; track motif.slug) {
+  <nav class="index" [attr.aria-label]="c().indexLabel" ctReveal>
+    @for (motif of motifs(); track motif.slug) {
       <a [href]="'#' + motif.slug">{{ motif.name }}</a>
     }
   </nav>
 
   <dl class="motifs">
-    @for (motif of motifs; track motif.slug; let i = $index) {
+    @for (motif of motifs(); track motif.slug; let i = $index) {
       <div class="motif" [id]="motif.slug" [ctReveal]="(i % 2) * 60">
         <dt>
           <h2>{{ motif.name }}</h2>
           <p class="motif__count mono">
-            <span>{{ motif.count.toLocaleString('en-US') }}</span> puzzles
+            <span>{{ motif.count.toLocaleString('en-US') }}</span> {{ c().puzzles }}
           </p>
         </dt>
         <dd>
@@ -31,21 +31,13 @@
 
   <section class="after">
     <div class="after__inner" ctReveal>
-      <p class="slug">Why the numbers are here</p>
-      <h2>A glossary tells you what a fork is. A number tells you whether you can practise it.</h2>
-      <p>
-        Knowing the name of a pattern and being able to find it under a clock are different skills,
-        and only the second one wins games. Every count above is the real number of positions in the
-        bundled library tagged with that motif — not an estimate, and not rounded up. Sixty x-ray
-        puzzles is sixty; if that is the thing you keep missing, it is worth knowing you will not
-        run out in an evening.
-      </p>
-      <p>
-        The trainer tracks which motifs you get wrong, so after a few hundred puzzles it can tell
-        you not that you are 1620, but that you are 1620 and you keep walking past deflections.
-      </p>
+      <p class="slug">{{ c().after.slug }}</p>
+      <h2>{{ c().after.title }}</h2>
+      @for (para of c().after.body; track para) {
+        <p>{{ para }}</p>
+      }
       <p class="more">
-        <a routerLink="/training">How the puzzles are mined and verified →</a>
+        <a routerLink="/training">{{ c().after.more }}</a>
       </p>
     </div>
   </section>

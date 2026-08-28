@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { Reveal } from '../../core/reveal';
 import { Seo } from '../../core/seo';
+import type { Pages } from '../../i18n/pages/types';
 import { LIBRARY, MODES, SITE } from '../../core/site';
 import { PageHead } from '../../shared/page-head/page-head';
 
@@ -14,38 +15,49 @@ import { PageHead } from '../../shared/page-head/page-head';
   styleUrl: './training.scss',
 })
 export class Training {
+  /** Resolved by the router before the page renders. See app.routes.ts. */
+  readonly pages = input.required<Pages>();
+
+  protected readonly c = computed(() => this.pages().training);
+
+  /** Slug, act numeral and the stat's figure are structure; the words are not. */
+  protected readonly modes = computed(() =>
+    MODES.map((mode, i) => {
+      const words = this.c().modes[i];
+      // `stat` means two things: a figure in MODES and its label in the copy.
+      // Spreading one over the other silently replaced an object with a string.
+      return {
+        slug: mode.slug,
+        act: mode.act,
+        statValue: mode.stat?.value,
+        statLabel: words.stat,
+        title: words.title,
+        lede: words.lede,
+        body: words.body,
+        free: words.free,
+      };
+    }),
+  );
+
+  /** The step numbers stay in code; only the sentences are translated. */
+  protected readonly pipelineSteps = computed(() =>
+    this.c().pipeline.steps.map((step, i) => ({ ...step, step: String(i + 1).padStart(2, '0') })),
+  );
+
+  /** The library's two figures belong to the data, not to thirty-two translations. */
+  protected readonly limits = computed(() =>
+    this.c().limits.items.map((item) => ({
+      ...item,
+      body: item.body
+        .replace('{lichess}', LIBRARY.tacticsLichess.toLocaleString('en-US'))
+        .replace('{mined}', String(LIBRARY.tacticsMined)),
+    })),
+  );
+
   protected readonly site = SITE;
-  protected readonly modes = MODES;
   protected readonly library = LIBRARY;
 
   /** How a mined puzzle gets from "the engine played something" to shipping. */
-  protected readonly pipeline = [
-    {
-      step: '01',
-      title: 'Play, at human strength',
-      body: 'Stockfish plays itself at deliberately human-like strength — 1320 to 2500 Elo — opening with a random pick among its top few shallow choices, so the games vary instead of repeating one line forever.',
-    },
-    {
-      step: '02',
-      title: 'Screen for the property, not the blunder',
-      body: 'Every position is searched at depth 12 with two candidate lines. The signal is not “somebody blundered” but the thing a puzzle actually needs: one move is far better than every alternative.',
-    },
-    {
-      step: '03',
-      title: 'Re-search deep, with a margin',
-      body: 'Survivors are searched again at depth 20 with MultiPV. A candidate is kept only if the best move beats the runner-up by at least 140 centipawns and actually achieves something.',
-    },
-    {
-      step: '04',
-      title: 'Extend until it branches',
-      body: 'The solution is extended move by move for as long as every one of the solver’s moves stays uniquely best. The moment there are two good answers, the puzzle ends there — so it never has a branch you could be marked wrong for taking.',
-    },
-    {
-      step: '05',
-      title: 'Verify with a fresh engine',
-      body: 'The whole set is re-checked at a higher depth by a separate script with a new engine instance. On the bundled mined set that rejected 6 of 172 puzzles whose solutions stopped being unique two plies deeper. Those were dropped rather than shipped.',
-    },
-  ] as const;
 
   constructor() {
     inject(Seo).apply({

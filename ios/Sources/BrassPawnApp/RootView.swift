@@ -26,7 +26,9 @@ public struct RootView: View {
 
     public enum Tab: Hashable { case watch, guessTheElo, tactics, positional, endgames, play, progress }
 
-    public init() {}
+    public init() {
+        LaunchClock.mark("RootView init")
+    }
 
     public var body: some View {
         ZStack {

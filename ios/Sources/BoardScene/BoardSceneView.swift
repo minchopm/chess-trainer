@@ -3,6 +3,19 @@ import SceneKit
 import SwiftUI
 import UIKit
 
+/// TEMPORARY — measuring the launch.
+@MainActor
+public enum LaunchClock {
+    static let zero = CFAbsoluteTimeGetCurrent()
+    public static func mark(_ what: String) {
+        print(String(format: "⏱ %7.1f ms  %@", (CFAbsoluteTimeGetCurrent() - zero) * 1000, what))
+    }
+    public static func took(_ what: String, _ seconds: CFTimeInterval) {
+        print(String(format: "⏱ %7.1f ms  %@ took %.1f ms",
+                     (CFAbsoluteTimeGetCurrent() - zero) * 1000, what, seconds * 1000))
+    }
+}
+
 /// The 3D board, hosted in SwiftUI.
 ///
 /// Driven by a display link on the main thread rather than by SceneKit's own
@@ -19,6 +32,7 @@ public struct BoardSceneView: UIViewRepresentable {
     }
 
     public func makeUIView(context: Context) -> SCNView {
+        LaunchClock.mark("makeUIView")
         let view = SCNView()
         // Hidden until it has been framed. `SCNView()` is born without a size,
         // and the camera's distance is solved from the view's aspect — so the
@@ -80,6 +94,7 @@ public struct BoardSceneView: UIViewRepresentable {
         private var framedAt: CFTimeInterval = 0
         /// Whether anything has been drawn since it took that shape.
         private var drawnSinceFraming = 0
+        private var ticks = 0
         weak var view: SCNView?
 
         /// How long the view must hold one shape before the board is shown.
@@ -108,6 +123,7 @@ public struct BoardSceneView: UIViewRepresentable {
                 reveal()
                 return
             }
+            LaunchClock.mark("laid out at \(Int(size.width))×\(Int(size.height)) — settle restarts")
             framedFor = size
             framedAt = CACurrentMediaTime()
             drawnSinceFraming = 0
@@ -138,17 +154,17 @@ public struct BoardSceneView: UIViewRepresentable {
         /// correct either way — but because a view that is not being drawn at
         /// all should not be faded in as though it were.
         private func reveal() {
-            guard let view, view.alpha == 0,
-                  framedAt > 0, drawnSinceFraming >= 1,
-                  CACurrentMediaTime() - framedAt >= Self.settle else { return }
+            guard drawnSinceFraming >= 8, let view, view.alpha == 0 else { return }
             #if DEBUG
             BoardSceneDebug.boardHasAppeared = true
             #endif
+            LaunchClock.mark("reveal — fade of 350 ms begins")
             UIView.animate(withDuration: 0.35) { view.alpha = 1 }
         }
 
         @objc private func tick(_ link: CADisplayLink) {
             guard let sequence else { return }
+            if ticks < 3 { ticks += 1; LaunchClock.mark("tick \(ticks)") }
             fit(view?.bounds.size ?? .zero)
             if last == 0 { last = link.timestamp }
             // Clamped: a frame that took a second is an app coming back from

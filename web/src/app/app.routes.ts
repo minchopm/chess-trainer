@@ -58,10 +58,12 @@ export const routes: Routes = [
     : []),
   {
     path: 'training',
+    resolve: { pages: () => PAGES['en']() },
     loadComponent: () => import('./pages/training/training').then((m) => m.Training),
   },
   {
     path: 'tactics',
+    resolve: { pages: () => PAGES['en']() },
     loadComponent: () => import('./pages/motifs/motifs').then((m) => m.Motifs),
   },
   {

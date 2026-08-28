@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { Reveal } from '../../core/reveal';
 import { Seo } from '../../core/seo';
 import { LIBRARY, MOTIFS, url } from '../../core/site';
+import type { Pages } from '../../i18n/pages/types';
 import { PageHead } from '../../shared/page-head/page-head';
 
 /**
@@ -21,7 +22,20 @@ import { PageHead } from '../../shared/page-head/page-head';
   styleUrl: './motifs.scss',
 })
 export class Motifs {
-  protected readonly motifs = MOTIFS;
+  /** Resolved by the router before the page renders. See app.routes.ts. */
+  readonly pages = input.required<Pages>();
+
+  protected readonly c = computed(() => this.pages().tactics);
+
+  /**
+   * The twenty motifs: slug and count from the library, the three sentences
+   * about each from the language. Paired by position, so a translation cannot
+   * attach the wrong count to a motif.
+   */
+  protected readonly motifs = computed(() =>
+    MOTIFS.map((motif, i) => ({ ...motif, ...this.c().motifs[i] })),
+  );
+
   protected readonly library = LIBRARY;
 
   constructor() {
