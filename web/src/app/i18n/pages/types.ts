@@ -54,6 +54,64 @@ export interface SupportPage {
   };
 }
 
+/** A question and its answer, wherever a page sets them out as a list. */
+export interface Qa {
+  readonly q: string;
+  readonly a: string;
+}
+
+export interface PricingPage {
+  readonly head: Head;
+  readonly meta: Meta;
+  readonly free: {
+    readonly name: string;
+    readonly note: string;
+    readonly items: readonly string[];
+  };
+  readonly monthly: {
+    readonly flag: string;
+    readonly name: string;
+    readonly per: string;
+    readonly note: string;
+    readonly items: readonly string[];
+  };
+  readonly lifetime: {
+    readonly name: string;
+    readonly once: string;
+    readonly note: string;
+    readonly items: readonly string[];
+  };
+  readonly table: {
+    readonly slug: string;
+    readonly title: string;
+    readonly activity: string;
+    readonly freeCol: string;
+    readonly proCol: string;
+    readonly unlimited: string;
+    readonly fiveADay: string;
+    readonly none: string;
+    /** Row labels, in the order the table lists them. */
+    readonly rows: readonly string[];
+    readonly reset: string;
+  };
+  readonly why: {
+    readonly slug: string;
+    readonly title: string;
+    readonly reasons: readonly { readonly title: string; readonly body: readonly string[] }[];
+    /** The last reason ends in a link; its text is separate. */
+    readonly licenceLink: string;
+  };
+  readonly answers: {
+    readonly slug: string;
+    readonly title: string;
+    readonly items: readonly Qa[];
+    /** The word the last answer links on. */
+    readonly termsLink: string;
+    readonly more: string;
+  };
+}
+
 export interface Pages {
   readonly support: SupportPage;
+  readonly pricing: PricingPage;
 }

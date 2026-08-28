@@ -1,55 +1,41 @@
-<bp-page-head
-  slug="Support"
-  title="Ask a person"
-  lede="There is no ticket system, no chatbot and no help centre with 400 articles in it. There is an email address and an issue tracker, and both reach the person who wrote the app."
-/>
+<bp-page-head [slug]="c().head.slug" [title]="c().head.title" [lede]="c().head.lede" />
 
 <div class="page">
   <section class="channels">
     <article class="channel" ctReveal>
-      <p class="slug">Email</p>
+      <p class="slug">{{ c().email.slug }}</p>
       <h2>
         <a [href]="'mailto:' + site.contactEmail">{{ site.contactEmail }}</a>
       </h2>
-      <p>
-        For anything: a bug, a wrong puzzle, a question about a purchase, or a disagreement with an
-        evaluation. Write in English or Bulgarian.
-      </p>
+      <p>{{ c().email.body }}</p>
     </article>
 
     <article class="channel" ctReveal="90">
-      <p class="slug">Issue tracker</p>
-      <h2><a [href]="site.issues" rel="noopener">GitHub issues</a></h2>
-      <p>
-        For anything you would rather were public — and for anything you want other people to be
-        able to find later, which is most bug reports.
-      </p>
+      <p class="slug">{{ c().tracker.slug }}</p>
+      <h2>
+        <a [href]="site.issues" rel="noopener">{{ c().tracker.name }}</a>
+      </h2>
+      <p>{{ c().tracker.body }}</p>
     </article>
   </section>
 
   <section class="report">
     <div class="report__inner" ctReveal>
-      <p class="slug">If a puzzle is wrong</p>
-      <h2>Send four things and it can be checked in a minute.</h2>
+      <p class="slug">{{ c().report.slug }}</p>
+      <h2>{{ c().report.title }}</h2>
       <ol class="checklist">
-        <li>The <strong>FEN</strong> shown on the puzzle screen — tap and hold to copy it.</li>
-        <li>The move you played, and the move the app said was right.</li>
-        <li>Which mode you were in.</li>
-        <li>The app version, from the About screen.</li>
+        @for (item of c().report.checklist; track item) {
+          <li>{{ item }}</li>
+        }
       </ol>
-      <p>
-        Puzzles do occasionally disagree with a deeper search, and the disagreements cluster on
-        long, quiet, highly rated positions whose point lies deeper than the verification searched.
-        That is a limit of the check rather than a fault in the puzzle — but it is worth knowing
-        which ones, and the only way to know is if you say.
-      </p>
+      <p>{{ c().report.caveat }}</p>
     </div>
   </section>
 
   <section class="faq">
     <header class="section-head" ctReveal>
-      <p class="slug">Questions</p>
-      <h2>Asked often enough to write down.</h2>
+      <p class="slug">{{ c().faq.slug }}</p>
+      <h2>{{ c().faq.title }}</h2>
     </header>
 
     <dl class="faq__list">
@@ -62,9 +48,11 @@
     </dl>
 
     <p class="more" ctReveal>
-      <a routerLink="/ratings">What a rating measures</a> ·
-      <a routerLink="/tactics">The motifs</a> · <a routerLink="/privacy">Privacy Policy</a> ·
-      <a routerLink="/terms">Terms of Service</a> · <a routerLink="/licences">Licences</a>
+      <a routerLink="/ratings">{{ c().more.ratings }}</a> ·
+      <a routerLink="/tactics">{{ c().more.tactics }}</a> ·
+      <a routerLink="/privacy">{{ c().more.privacy }}</a> ·
+      <a routerLink="/terms">{{ c().more.terms }}</a> ·
+      <a routerLink="/licences">{{ c().more.licences }}</a>
     </p>
   </section>
 </div>

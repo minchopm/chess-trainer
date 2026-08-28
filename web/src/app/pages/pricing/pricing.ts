@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { Reveal } from '../../core/reveal';
 import { Seo } from '../../core/seo';
 import { LIBRARY, PRICING, SITE } from '../../core/site';
+import type { Pages } from '../../i18n/pages/types';
 import { PageHead } from '../../shared/page-head/page-head';
 
 @Component({
@@ -14,24 +15,54 @@ import { PageHead } from '../../shared/page-head/page-head';
   styleUrl: './pricing.scss',
 })
 export class Pricing {
+  /** Resolved by the router before the page renders. See app.routes.ts. */
+  readonly pages = input.required<Pages>();
+
+  /** This page's words, short. */
+  protected readonly c = computed(() => this.pages().pricing);
+
+  /**
+   * The Pro list, with the library's real figures in it.
+   *
+   * The counts are data and the sentences around them are language, so they
+   * meet here rather than being written into thirty-two translations that would
+   * all have to be edited the next time a puzzle is added.
+   */
+  protected readonly proItems = computed(() =>
+    this.c().monthly.items.map((item) =>
+      item
+        .replace('{tactics}', LIBRARY.tactics.toLocaleString('en-US'))
+        .replace('{positional}', String(LIBRARY.positional))
+        .replace('{endgames}', String(LIBRARY.endgames))
+        .replace('{games}', LIBRARY.games.toLocaleString('en-US')),
+    ),
+  );
+
+  /**
+   * The allowance table: row labels from the language, the two values from
+   * here. Five of each is the app's current shape, and the plan card above says
+   * the same — it used to say one Rush run and three of the rest, which was a
+   * year out of date and understated what a free account gets.
+   */
+  protected readonly allowance = computed(() => {
+    const t = this.c().table;
+    const values: readonly [string, string][] = [
+      [t.unlimited, t.unlimited],
+      [t.unlimited, t.unlimited],
+      [t.unlimited, t.unlimited],
+      [t.fiveADay, t.unlimited],
+      [t.fiveADay, t.unlimited],
+      [t.fiveADay, t.unlimited],
+      [t.fiveADay, t.unlimited],
+      [t.fiveADay, t.unlimited],
+      [t.none, t.none],
+    ];
+    return t.rows.map((activity, i) => ({ activity, free: values[i][0], pro: values[i][1] }));
+  });
+
   protected readonly site = SITE;
   protected readonly pricing = PRICING;
   protected readonly library = LIBRARY;
-
-  protected readonly allowance = [
-    { activity: 'Play against the engine', free: 'Unlimited', pro: 'Unlimited' },
-    { activity: 'Online games over Game Center', free: 'Unlimited', pro: 'Unlimited' },
-    { activity: 'Watch — the 900-game library', free: 'Unlimited', pro: 'Unlimited' },
-    // Five of each, and the same five everywhere: the app stopped having a
-    // ladder of different allowances, and a page that still shows one is
-    // telling somebody they get less than they do.
-    { activity: 'Tactics puzzles', free: '5 a day', pro: 'Unlimited' },
-    { activity: 'Rush runs', free: '5 a day', pro: 'Unlimited' },
-    { activity: 'Positional exercises', free: '5 a day', pro: 'Unlimited' },
-    { activity: 'Endgame drills', free: '5 a day', pro: 'Unlimited' },
-    { activity: 'Guess the Elo', free: '5 a day', pro: 'Unlimited' },
-    { activity: 'Advertising', free: 'None', pro: 'None' },
-  ] as const;
 
   constructor() {
     inject(Seo).apply({

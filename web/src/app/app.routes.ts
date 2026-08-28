@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 
 import { COPY } from './i18n/copy';
 import { LOCALES } from './i18n/locales';
+import { PAGES } from './i18n/pages';
 
 /**
  * One page per language, generated from the locale table.
@@ -77,10 +78,12 @@ export const routes: Routes = [
   },
   {
     path: 'pricing',
+    resolve: { pages: () => PAGES['en']() },
     loadComponent: () => import('./pages/pricing/pricing').then((m) => m.Pricing),
   },
   {
     path: 'support',
+    resolve: { pages: () => PAGES['en']() },
     loadComponent: () => import('./pages/support/support').then((m) => m.Support),
   },
   {
