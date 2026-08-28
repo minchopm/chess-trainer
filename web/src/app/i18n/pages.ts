@@ -17,6 +17,8 @@ export const PAGES: Record<string, () => Promise<Pages>> = {
   en: () => import('./pages/en').then((m) => m.pages),
   bg: () => import('./pages/bg').then((m) => m.pages),
   es: () => import('./pages/es').then((m) => m.pages),
+  fr: () => import('./pages/fr').then((m) => m.pages),
+  it: () => import('./pages/it').then((m) => m.pages),
   de: () => import('./pages/de').then((m) => m.pages),
 };
 
