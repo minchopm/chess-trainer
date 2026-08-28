@@ -1,3 +1,4 @@
+import { isDevMode } from '@angular/core';
 import { Routes } from '@angular/router';
 
 import { COPY } from './i18n/copy';
@@ -32,6 +33,24 @@ export const routes: Routes = [
     path: '',
     loadComponent: () => import('./pages/home/home').then((m) => m.Home),
   },
+
+  // The hero's poster is rendered from the live scene rather than painted, so
+  // it matches frame zero exactly — see `tools/poster.py`. Development only:
+  // routed in production it would reach the sitemap as a render target rather
+  // than a page, and a crawler would find a canvas with no words in it.
+  //
+  // `isDevMode()` is read at runtime, so the build still emits the component's
+  // chunk — 828 bytes that production never asks for. Worth it: the poster has
+  // to be reshot every time the pieces or the camera move, and a route that
+  // only exists while one is editing a file is a route nobody reshoots from.
+  ...(isDevMode()
+    ? [
+        {
+          path: '__poster',
+          loadComponent: () => import('./pages/poster/poster').then((m) => m.Poster),
+        },
+      ]
+    : []),
   {
     path: 'training',
     loadComponent: () => import('./pages/training/training').then((m) => m.Training),
