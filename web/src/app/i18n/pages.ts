@@ -26,6 +26,8 @@ export const PAGES: Record<string, () => Promise<Pages>> = {
   sv: () => import('./pages/sv').then((m) => m.pages),
   da: () => import('./pages/da').then((m) => m.pages),
   no: () => import('./pages/no').then((m) => m.pages),
+  fi: () => import('./pages/fi').then((m) => m.pages),
+  hu: () => import('./pages/hu').then((m) => m.pages),
   'pt-br': () => import('./pages/pt-br').then((m) => m.pages),
   'fr-ca': () => import('./pages/fr-ca').then((m) => m.pages),
   'en-ca': () => import('./pages/en-ca').then((m) => m.pages),
