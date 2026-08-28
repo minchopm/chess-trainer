@@ -28,6 +28,8 @@ export const PAGES: Record<string, () => Promise<Pages>> = {
   no: () => import('./pages/no').then((m) => m.pages),
   fi: () => import('./pages/fi').then((m) => m.pages),
   hu: () => import('./pages/hu').then((m) => m.pages),
+  ro: () => import('./pages/ro').then((m) => m.pages),
+  el: () => import('./pages/el').then((m) => m.pages),
   'pt-br': () => import('./pages/pt-br').then((m) => m.pages),
   'fr-ca': () => import('./pages/fr-ca').then((m) => m.pages),
   'en-ca': () => import('./pages/en-ca').then((m) => m.pages),
