@@ -1583,193 +1583,193 @@
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "يتضمّن التطبيق محرّك Stockfish المنشور برخصة GPLv3. ولأن Stockfish مرتبط بالتطبيق، يخضع التطبيق كله للرخصة نفسها، وشيفرته المصدرية كاملةً منشورة."
+            "value": "يتضمن التطبيق Stockfish المرخّص بـ GPLv3 وReckless المرخّص بـ AGPLv3. ولأن كليهما مرتبط بالتطبيق، فإن التطبيق كله يخضع لـ AGPLv3 — وشيفرته المصدرية منشورة كاملة."
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aplikace obsahuje Stockfish, který je pod licencí GPLv3. Protože je Stockfish do aplikace slinkován, podléhá stejné licenci celá aplikace — a její úplný zdrojový kód je zveřejněn."
+            "value": "Obsahuje Stockfish pod GPLv3 a Reckless pod AGPLv3. Protože jsou oba slinkovány do aplikace, celá aplikace podléhá AGPLv3 — a její úplný zdrojový kód je zveřejněn."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Appen indeholder Stockfish, som er udgivet under GPLv3. Fordi Stockfish er linket ind i appen, er hele appen omfattet af samme licens — og dens fulde kildekode er offentliggjort."
+            "value": "Den indeholder Stockfish, som er GPLv3, og Reckless, som er AGPLv3. Fordi begge er linket ind i appen, er hele applikationen under AGPLv3 — og hele dens kildekode er offentliggjort."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Die App enthält Stockfish, das unter der GPLv3 steht. Weil Stockfish in die App eingebunden ist, gilt dieselbe Lizenz für die gesamte Anwendung — und ihr vollständiger Quelltext ist veröffentlicht."
+            "value": "Sie enthält Stockfish unter der GPLv3 und Reckless unter der AGPLv3. Weil beide in die App eingebunden sind, steht die gesamte Anwendung unter der AGPLv3 — und ihr vollständiger Quelltext ist veröffentlicht."
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Περιλαμβάνει το Stockfish, που διατίθεται με άδεια GPLv3. Επειδή το Stockfish είναι συνδεδεμένο με την εφαρμογή, ολόκληρη η εφαρμογή φέρει την ίδια άδεια — και ο πλήρης πηγαίος κώδικάς της είναι δημοσιευμένος."
+            "value": "Περιλαμβάνει το Stockfish, που είναι GPLv3, και το Reckless, που είναι AGPLv3. Επειδή και τα δύο συνδέονται με την εφαρμογή, ολόκληρη η εφαρμογή διέπεται από την AGPLv3 — και ο πλήρης πηγαίος κώδικάς της είναι δημοσιευμένος."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "It includes Stockfish, which is GPLv3. Because Stockfish is linked into the app, the whole application carries the same licence — and its complete source is published."
+            "value": "It includes Stockfish, which is GPLv3, and Reckless, which is AGPLv3. Because both are linked into the app, the whole application carries AGPLv3 — and its complete source is published."
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "It includes Stockfish, which is GPLv3. Because Stockfish is linked into the app, the whole application carries the same licence — and its complete source is published."
+            "value": "It includes Stockfish, which is GPLv3, and Reckless, which is AGPLv3. Because both are linked into the app, the whole application carries AGPLv3 — and its complete source is published."
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "It includes Stockfish, which is GPLv3. Because Stockfish is linked into the app, the whole application carries the same licence — and its complete source is published."
+            "value": "It includes Stockfish, which is GPLv3, and Reckless, which is AGPLv3. Because both are linked into the app, the whole application carries AGPLv3 — and its complete source is published."
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "Incluye Stockfish, que está bajo la GPLv3. Como Stockfish está enlazado en la aplicación, toda la aplicación lleva la misma licencia, y su código fuente completo está publicado."
+            "value": "Incluye Stockfish, que está bajo GPLv3, y Reckless, que está bajo AGPLv3. Como ambos están enlazados en la aplicación, toda la aplicación queda bajo AGPLv3, y su código fuente completo está publicado."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sovellus sisältää Stockfishin, joka julkaistaan GPLv3-lisenssillä. Koska Stockfish on linkitetty sovellukseen, koko sovellus on saman lisenssin alainen — ja sen täydellinen lähdekoodi on julkaistu."
+            "value": "Se sisältää Stockfishin, joka on GPLv3, ja Recklessin, joka on AGPLv3. Koska molemmat on linkitetty sovellukseen, koko sovellus on AGPLv3:n alainen — ja sen koko lähdekoodi on julkaistu."
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "L'application inclut Stockfish, publié sous GPLv3. Comme Stockfish y est lié, toute l'application porte la même licence — et son code source complet est publié."
+            "value": "Elle inclut Stockfish, sous GPLv3, et Reckless, sous AGPLv3. Comme les deux sont liés à l’application, l’application entière est sous AGPLv3 — et l’intégralité de son code source est publiée."
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "L'application inclut Stockfish, publié sous GPLv3. Comme Stockfish y est lié, toute l'application porte la même licence — et son code source complet est publié."
+            "value": "Elle inclut Stockfish, sous GPLv3, et Reckless, sous AGPLv3. Comme les deux sont liés à l’application, l’application entière est sous AGPLv3 — et l’intégralité de son code source est publiée."
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "האפליקציה כוללת את Stockfish, המופץ ברישיון GPLv3. מכיוון ש-Stockfish מקושר לאפליקציה, כל האפליקציה כפופה לאותו רישיון — וקוד המקור המלא שלה פורסם."
+            "value": "היישום כולל את Stockfish, שהוא GPLv3, ואת Reckless, שהוא AGPLv3. מכיוון ששניהם מקושרים לתוך היישום, כל היישום נתון תחת AGPLv3 — וקוד המקור המלא שלו מפורסם."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "इस ऐप में Stockfish शामिल है, जो GPLv3 के तहत जारी होता है। चूँकि Stockfish ऐप से जुड़ा है, पूरा ऐप उसी लाइसेंस के अधीन है — और इसका पूरा स्रोत कोड प्रकाशित है।"
+            "value": "इसमें Stockfish शामिल है, जो GPLv3 पर है, और Reckless, जो AGPLv3 पर है। चूँकि दोनों ऐप में लिंक हैं, पूरा एप्लिकेशन AGPLv3 के अधीन है — और इसका पूरा स्रोत कोड प्रकाशित है।"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Az alkalmazás tartalmazza a Stockfisht, amely GPLv3 alatt jelenik meg. Mivel a Stockfish be van linkelve, az egész alkalmazásra ugyanaz a licenc vonatkozik — és a teljes forráskódja nyilvános."
+            "value": "Tartalmazza a GPLv3 alatti Stockfisht és az AGPLv3 alatti Recklesst. Mivel mindkettő be van linkelve az alkalmazásba, a teljes alkalmazás AGPLv3 alá tartozik — és a teljes forráskódja nyilvános."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aplikasi ini menyertakan Stockfish yang dirilis dengan lisensi GPLv3. Karena Stockfish ditautkan ke dalam aplikasi, seluruh aplikasi memakai lisensi yang sama — dan kode sumbernya diterbitkan lengkap."
+            "value": "Aplikasi ini menyertakan Stockfish, yang berlisensi GPLv3, dan Reckless, yang berlisensi AGPLv3. Karena keduanya ditautkan ke dalam aplikasi, seluruh aplikasi berada di bawah AGPLv3 — dan seluruh kode sumbernya diterbitkan."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Include Stockfish, distribuito con licenza GPLv3. Poiché Stockfish è collegato all'app, l'intera applicazione porta la stessa licenza — e il suo codice sorgente completo è pubblicato."
+            "value": "Include Stockfish, che è GPLv3, e Reckless, che è AGPLv3. Poiché entrambi sono collegati all’app, l’intera applicazione è sotto AGPLv3, e il suo codice sorgente completo è pubblicato."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "本アプリには GPLv3 で公開されている Stockfish が含まれます。Stockfish をリンクしているため、アプリ全体が同じライセンスに従い、そのソースコードはすべて公開されています。"
+            "value": "本アプリには GPLv3 の Stockfish と AGPLv3 の Reckless が含まれます。どちらもリンクしているため、アプリ全体が AGPLv3 に従い、そのソースコードはすべて公開されています。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "이 앱에는 GPLv3로 배포되는 Stockfish가 포함되어 있습니다. Stockfish가 앱에 링크되어 있으므로 앱 전체가 같은 라이선스를 따르며, 전체 소스 코드가 공개되어 있습니다."
+            "value": "이 앱에는 GPLv3인 Stockfish와 AGPLv3인 Reckless가 포함되어 있습니다. 둘 다 앱에 링크되어 있으므로 애플리케이션 전체가 AGPLv3를 따르며, 전체 소스 코드가 공개되어 있습니다."
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aplikasi ini menyertakan Stockfish yang dikeluarkan di bawah GPLv3. Oleh sebab Stockfish dipautkan ke dalam aplikasi, seluruh aplikasi memakai lesen yang sama — dan kod sumbernya diterbitkan sepenuhnya."
+            "value": "Ia mengandungi Stockfish, yang berlesen GPLv3, dan Reckless, yang berlesen AGPLv3. Kerana kedua-duanya dipaut ke dalam aplikasi, keseluruhan aplikasi tertakluk kepada AGPLv3 — dan seluruh kod sumbernya diterbitkan."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "De app bevat Stockfish, dat onder de GPLv3 valt. Omdat Stockfish erin gelinkt is, valt de hele app onder dezelfde licentie — en de volledige broncode is gepubliceerd."
+            "value": "Ze bevat Stockfish, dat onder de GPLv3 valt, en Reckless, dat onder de AGPLv3 valt. Omdat beide in de app zijn gekoppeld, valt de hele toepassing onder de AGPLv3 — en de volledige broncode is gepubliceerd."
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Appen inneholder Stockfish, som er utgitt under GPLv3. Fordi Stockfish er lenket inn i appen, omfattes hele appen av samme lisens — og hele kildekoden er offentliggjort."
+            "value": "Den inneholder Stockfish, som er GPLv3, og Reckless, som er AGPLv3. Fordi begge er lenket inn i appen, er hele applikasjonen under AGPLv3 — og hele kildekoden er publisert."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aplikacja zawiera Stockfisha na licencji GPLv3. Ponieważ Stockfish jest z nią zlinkowany, cała aplikacja podlega tej samej licencji — a jej pełny kod źródłowy jest opublikowany."
+            "value": "Zawiera Stockfisha na licencji GPLv3 oraz Recklessa na licencji AGPLv3. Ponieważ oba są wkompilowane w aplikację, cała aplikacja podlega AGPLv3, a jej pełny kod źródłowy jest opublikowany."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Inclui o Stockfish, que é GPLv3. Como o Stockfish está ligado ao aplicativo, todo o aplicativo carrega a mesma licença — e o código-fonte completo está publicado."
+            "value": "Inclui o Stockfish, sob GPLv3, e o Reckless, sob AGPLv3. Como ambos estão vinculados ao aplicativo, todo o aplicativo fica sob AGPLv3 — e todo o seu código-fonte está publicado."
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aplicația include Stockfish, publicat sub GPLv3. Fiindcă Stockfish este legat în aplicație, întreaga aplicație poartă aceeași licență — iar codul ei sursă complet este publicat."
+            "value": "Include Stockfish, aflat sub GPLv3, și Reckless, aflat sub AGPLv3. Fiindcă amândouă sunt legate în aplicație, întreaga aplicație se află sub AGPLv3, iar codul ei sursă complet este publicat."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "В приложение входит Stockfish под лицензией GPLv3. Поскольку Stockfish связан с приложением, вся программа распространяется на тех же условиях — и её полный исходный код опубликован."
+            "value": "В неё входят Stockfish под GPLv3 и Reckless под AGPLv3. Поскольку оба связаны с приложением, всё приложение распространяется под AGPLv3, и его исходный код опубликован полностью."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Appen innehåller Stockfish, som ges ut under GPLv3. Eftersom Stockfish är länkat in i appen omfattas hela appen av samma licens — och dess fullständiga källkod är publicerad."
+            "value": "Den innehåller Stockfish, som är GPLv3, och Reckless, som är AGPLv3. Eftersom båda är länkade in i appen står hela applikationen under AGPLv3 — och hela dess källkod är publicerad."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "แอปนี้มี Stockfish ซึ่งเผยแพร่ภายใต้ GPLv3 เนื่องจาก Stockfish ถูกลิงก์เข้ากับแอป แอปทั้งหมดจึงอยู่ภายใต้สัญญาอนุญาตเดียวกัน และซอร์สโค้ดทั้งหมดถูกเผยแพร่ไว้แล้ว"
+            "value": "แอปนี้มี Stockfish ซึ่งอยู่ภายใต้ GPLv3 และ Reckless ซึ่งอยู่ภายใต้ AGPLv3 เนื่องจากทั้งสองถูกลิงก์เข้ามาในแอป แอปพลิเคชันทั้งหมดจึงอยู่ภายใต้ AGPLv3 และซอร์สโค้ดทั้งหมดได้รับการเผยแพร่แล้ว"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Uygulama, GPLv3 ile dağıtılan Stockfish'i içerir. Stockfish uygulamaya bağlandığı için tüm uygulama aynı lisansı taşır — ve kaynak kodunun tamamı yayımlanmıştır."
+            "value": "Uygulama, GPLv3 olan Stockfish’i ve AGPLv3 olan Reckless’i içerir. İkisi de uygulamaya bağlandığı için uygulamanın tamamı AGPLv3 kapsamındadır ve kaynak kodunun tümü yayımlanmıştır."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ứng dụng có kèm Stockfish, phát hành theo GPLv3. Vì Stockfish được liên kết vào ứng dụng nên toàn bộ ứng dụng mang cùng giấy phép — và mã nguồn đầy đủ đã được công bố."
+            "value": "Ứng dụng bao gồm Stockfish theo GPLv3 và Reckless theo AGPLv3. Vì cả hai đều được liên kết vào ứng dụng, toàn bộ ứng dụng chịu giấy phép AGPLv3 — và toàn bộ mã nguồn của nó được công bố."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "本应用包含以 GPLv3 发布的 Stockfish。由于 Stockfish 被链接进应用，整个应用采用同一许可协议，其完整源代码已经公开。"
+            "value": "本应用包含采用 GPLv3 的 Stockfish 和采用 AGPLv3 的 Reckless。由于两者都被链接进应用，整个应用适用 AGPLv3，其完整源代码已公开。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "本 App 內含以 GPLv3 發布的 Stockfish。由於 Stockfish 連結進 App，整個 App 採用相同授權，其完整原始碼已公開。"
+            "value": "本應用程式包含採用 GPLv3 的 Stockfish 與採用 AGPLv3 的 Reckless。由於兩者都被連結進應用程式，整個應用程式適用 AGPLv3，其完整原始碼已公開。"
           }
         }
       }
