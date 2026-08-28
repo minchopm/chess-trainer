@@ -356,12 +356,10 @@ private final class TitleScene {
 
     func sequence(carving: Carving) -> TitleSequence {
         if let built { return built }
-        let began = CFAbsoluteTimeGetCurrent()
         let made = TitleSequence(
             quality: SceneQuality.forThisDevice,
             style: carving == .banded ? .banded : .plain
         )
-        LaunchClock.took("TitleSequence build", CFAbsoluteTimeGetCurrent() - began)
         built = made
         return made
     }
