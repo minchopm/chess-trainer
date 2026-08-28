@@ -195,7 +195,7 @@ export function cylinder(
 }
 
 /** A torus: the brass bands, and the rook's rim. */
-export function ring(radius: number, tube: number, at: Vec3, segments = 32, sides = 12): Solid {
+export function ring(radius: number, tube: number, at: Vec3, segments = 40, sides = 12): Solid {
   const solid = new Solid();
   const point = (major: number, minor: number): Vec3 => [
     at[0] + (radius + tube * Math.cos(minor)) * Math.cos(major),

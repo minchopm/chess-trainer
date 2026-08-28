@@ -31,16 +31,34 @@
   object-fit: cover;
 }
 
+/* The opening film, between the poster and the canvas — put there by the
+   component rather than by this template, because it is only ever wanted by a
+   browser that is about to load the scene it hands over to. */
+.overture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* `cover` and not `contain`, and it only tells the truth because the film is
+     shot wider than any window it will be put in: then it scales to the height,
+     keeps the whole vertical frame and loses a strip off each side — which is
+     exactly what the scene's camera does as a window widens. See the shapes in
+     tools/overture.py. */
+  object-fit: cover;
+}
+
 .scene {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
-  /* Shorter than it was: a long dissolve made sense over a bare gradient, but
-     between the poster and the frame it was rendered from there is almost
-     nothing to dissolve. */
-  transition: opacity 1.1s var(--ease);
+  /* Short, and it has to stay short. What the canvas comes up over is not a
+     gradient any more but the same frame of the same scene, one encode older —
+     long enough to hide the sharpening, not long enough to be a dissolve.
+     `FADE` in hero.ts is this number. */
+  transition: opacity 340ms var(--ease);
 }
 
 .scene.is-live {

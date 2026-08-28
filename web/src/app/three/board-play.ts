@@ -29,6 +29,9 @@ export interface PieceMaterials {
   /** Warmed by the key light — worn by whichever piece is moving. */
   readonly ivoryLit: Material;
   readonly ebonyLit: Material;
+  /** The bands and finials, on both sides of the board. */
+  readonly brass: Material;
+  readonly brassLit: Material;
 }
 
 interface Piece {
@@ -98,11 +101,20 @@ export class PlayingBoard {
   private readonly taken: Taken[] = [];
   private readonly focusTarget = new Vector3(0, 0.4, 0);
   private readonly scratch = new Vector3();
+  private readonly pairs: Material[][];
 
   constructor(
     private readonly geometries: Record<PieceKind, BufferGeometry>,
     private readonly materials: PieceMaterials,
   ) {
+    const { ivory, ivoryLit, ebony, ebonyLit, brass, brassLit } = materials;
+    this.pairs = [
+      [ivory, brass],
+      [ivoryLit, brassLit],
+      [ebony, brass],
+      [ebonyLit, brassLit],
+    ];
+
     for (const placement of startingPosition()) {
       const mesh = new Mesh(geometries[placement.kind], this.material(placement.white, false));
       mesh.castShadow = true;
@@ -245,8 +257,15 @@ export class PlayingBoard {
     });
   }
 
-  private material(white: boolean, lit: boolean): Material {
-    if (white) return lit ? this.materials.ivoryLit : this.materials.ivory;
-    return lit ? this.materials.ebonyLit : this.materials.ebony;
+  /**
+   * The four pairs a piece can wear, made once.
+   *
+   * Body first and brass second, which is the order `buildPieceGeometry` puts
+   * the two groups in. A piece that is moving warms both: the brass catches the
+   * key light along with the wood it is wrapped around, and lighting only one
+   * of them makes the bands look like they belong to a different piece.
+   */
+  private material(white: boolean, lit: boolean): Material[] {
+    return this.pairs[(white ? 0 : 2) + (lit ? 1 : 0)];
   }
 }

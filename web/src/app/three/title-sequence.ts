@@ -34,7 +34,7 @@ import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 
-import { Canvas2D, boardTexture, dustTexture, scratch } from './board';
+import { Canvas2D, boardTexture, dustTexture, scratch, seeded } from './board';
 import { PlayingBoard } from './board-play';
 import { GAMES, Game } from './games';
 import { PIECE_KINDS, PieceKind, buildPieceGeometry } from './pieces';
@@ -77,6 +77,48 @@ const TARGET = new CatmullRomCurve3(
   'catmullrom',
   0.3,
 );
+
+/**
+ * The opening film's frame rate, which is also the step `seek` winds the scene
+ * on by — the two have to agree or the handover lands on the wrong frame.
+ * `tools/overture.py` reads this number out of this file rather than keeping a
+ * copy of it.
+ */
+export const FILM_FPS = 24;
+
+/** How long the film runs. Past its end it holds, and the handover still works. */
+export const FILM_SECONDS = 5;
+
+/** The world's up, for turning the rig about the board's centre. */
+const UP = new Vector3(0, 1, 0);
+
+/**
+ * The overture: the board turning under a camera that has not been asked to
+ * move yet.
+ *
+ * The first shot is a fixed three-quarter view, and a fixed view of a board
+ * where nothing has happened yet is a photograph. So before the reader has
+ * scrolled anywhere, the whole rig — lens and aim together — swings slowly
+ * about the board's centre. The lights do not swing with it, which is the
+ * point: the brass finds the key light and loses it again as the board comes
+ * round.
+ *
+ * A swing rather than an orbit, and the reason is the handover to scroll. An
+ * orbit is at an arbitrary angle whenever the reader first reaches for the
+ * wheel, and unwinding a quarter turn so the scripted shot can start is a
+ * lurch. `sin` is back at zero every half period and never further from it
+ * than `SWING`, so there is only ever a few degrees to give back.
+ *
+ * It is also what the opening film is a film of — see `tools/overture.py` —
+ * which is why it is a function of the clock and nothing else.
+ */
+export const SWING = 0.42; // radians out and back — about twenty-four degrees
+export const SWING_PERIOD = 16; // seconds for a full there-and-back-again
+
+/** Where the overture has the board turned to, `seconds` in. */
+export function swingAt(seconds: number): number {
+  return SWING * Math.sin((2 * Math.PI * seconds) / SWING_PERIOD);
+}
 
 /**
  * How the games are paced.
@@ -397,8 +439,11 @@ export class TitleSequence {
   }
 
   private buildPieces(geometries: Record<PieceKind, BufferGeometry>): PlayingBoard {
+    // The banded set is a photographed Staunton: its light side is boxwood,
+    // warmer and creamier than a plain ivory, and its dark side is nearer to
+    // true black because the brass has to read against it.
     const ivory = new MeshPhysicalMaterial({
-      color: new Color(0xe6dfcd),
+      color: new Color(0xe8dcc0),
       roughness: 0.36,
       metalness: 0.0,
       clearcoat: 0.55,
@@ -407,7 +452,7 @@ export class TitleSequence {
       sheenColor: new Color(0xfff4dd),
     });
     const ebony = new MeshPhysicalMaterial({
-      color: new Color(0x11131a),
+      color: new Color(0x14161c),
       roughness: 0.3,
       metalness: 0.08,
       clearcoat: 0.75,
@@ -424,10 +469,40 @@ export class TitleSequence {
     ebonyLit.emissive = new Color(0xd6a95f);
     ebonyLit.emissiveIntensity = 0.7;
 
-    const play = new PlayingBoard(geometries, { ivory, ebony, ivoryLit, ebonyLit });
+    // Brass rather than gold: the same brass the rest of the app is lit by.
+    const brass = new MeshPhysicalMaterial({
+      color: new Color(0xd9ac61),
+      roughness: 0.28,
+      // Not quite a mirror. At full metalness a surface has no colour of its
+      // own — it is only what it reflects — and in a room this dark that means
+      // the broad bands read as dark metal while the small rings, which happen
+      // to catch the key light, read as gold. Backing off the metalness lets
+      // the brass keep its colour where there is nothing bright to reflect.
+      metalness: 0.78,
+    });
+    const brassLit = brass.clone();
+    brassLit.emissive = new Color(0xf0cd8e);
+    brassLit.emissiveIntensity = 0.35;
+
+    const play = new PlayingBoard(geometries, {
+      ivory,
+      ebony,
+      ivoryLit,
+      ebonyLit,
+      brass,
+      brassLit,
+    });
     this.scene.add(play.group);
 
-    this.disposables.push(ivory, ebony, ivoryLit, ebonyLit, ...Object.values(geometries));
+    this.disposables.push(
+      ivory,
+      ebony,
+      ivoryLit,
+      ebonyLit,
+      brass,
+      brassLit,
+      ...Object.values(geometries),
+    );
     return play;
   }
 
@@ -472,11 +547,14 @@ export class TitleSequence {
     const positions = new Float32Array(count * 3);
     const drift = new Float32Array(count);
 
+    // Seeded, so the film and the live scene have their dust in the same
+    // places — see `seeded` in `board.ts`.
+    const random = seeded(0xd057);
     for (let i = 0; i < count; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 22;
-      positions[i * 3 + 1] = Math.random() * 8;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 22;
-      drift[i] = 0.04 + Math.random() * 0.16;
+      positions[i * 3] = (random() - 0.5) * 22;
+      positions[i * 3 + 1] = random() * 8;
+      positions[i * 3 + 2] = (random() - 0.5) * 22;
+      drift[i] = 0.04 + random() * 0.16;
     }
 
     const geometry = new BufferGeometry();
@@ -556,12 +634,52 @@ export class TitleSequence {
     this.render();
   }
 
+  /**
+   * Runs the scene forward to `seconds`, without drawing anything.
+   *
+   * This is what makes the handover from the opening film invisible. The film
+   * is eight seconds of this scene; by the time three.js has arrived and built
+   * a second copy of it, the film is some way in, and a scene that started
+   * from zero would put every piece back on its home square and turn the board
+   * back to square on. Instead it is wound forward to wherever the film got
+   * to, and the first frame it draws is the frame the film was showing.
+   *
+   * Stepped at the film's own frame time rather than in one jump, because the
+   * moves are a simulation and not a function of the clock: a piece is where
+   * the last few hundred deltas left it. Same steps, same arithmetic, same
+   * board — which is also why every source of noise in here is seeded.
+   *
+   * A few hundred steps of vector arithmetic and no rendering: single-digit
+   * milliseconds, once, on a thread that is about to start rendering anyway.
+   */
+  seek(seconds: number): void {
+    const step = 1 / FILM_FPS;
+    // From wherever the clock already is, so shooting the film is one step per
+    // frame rather than the whole history again for every frame.
+    const steps = Math.min(Math.round((seconds - this.clock) * FILM_FPS), FILM_FPS * 600);
+    for (let i = 0; i < steps; i++) {
+      this.clock += step;
+      this.simulate(step);
+    }
+    this.eased = this.progress;
+  }
+
   private update(delta: number): void {
     // The camera lags the scroll, which is what stops a scroll-driven shot
     // from feeling like a slider being dragged.
     this.eased += (this.progress - this.eased) * Math.min(1, delta * 3.4);
     this.apply(this.eased);
+    this.simulate(delta);
+  }
 
+  /**
+   * Everything that moves on its own: the dust, the game, the light.
+   *
+   * Split out from `update` so `seek` can run it without placing a camera or
+   * drawing a frame — winding the scene forward to where the opening film left
+   * off is this, several hundred times, and nothing else.
+   */
+  private simulate(delta: number): void {
     // Dust rises and wraps, so the light always has something crossing it.
     const positions = this.dust.geometry.getAttribute('position') as BufferAttribute;
     const drift = this.dust.geometry.getAttribute('aDrift') as BufferAttribute;
@@ -625,6 +743,16 @@ export class TitleSequence {
     const sway = (1 - t * 0.6) * 0.055;
     eye.x += Math.sin(this.clock * 0.42) * sway;
     eye.y += Math.sin(this.clock * 0.31 + 1.2) * sway * 0.7;
+
+    // The swing, given back as soon as the reader scrolls: full at the top of
+    // the page and gone by six percent of the way down, which is well before
+    // the first card has finished leaving.
+    const held = Math.max(0, 1 - t / 0.06);
+    if (held > 0) {
+      const angle = swingAt(this.clock) * held * held * (3 - 2 * held);
+      eye.applyAxisAngle(UP, angle);
+      target.applyAxisAngle(UP, angle);
+    }
 
     this.camera.position.copy(eye);
     this.camera.lookAt(target);

@@ -30,6 +30,8 @@ type Incoming =
       quality: 'high' | 'low';
       still: boolean;
       progress: number;
+      /** Where the opening film had got to, so the scene starts on its frame. */
+      seekTo: number;
     }
   | { type: 'resize'; width: number; height: number; pixelRatio: number }
   | { type: 'progress'; value: number }
@@ -59,6 +61,7 @@ addEventListener('message', async ({ data }: MessageEvent<Incoming>) => {
           onPainted: () => postMessage({ type: 'painted' } satisfies Outgoing),
         });
         sequence.setProgress(data.progress);
+        sequence.seek(data.seekTo);
         sequence.renderStill();
         // Start drawing immediately rather than waiting to be told. The hero is
         // at the top of the page, so it is on screen by definition at this

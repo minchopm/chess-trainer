@@ -11,7 +11,18 @@
          for a second before the canvas took over. It is not fine when the
          scene is declined — on a dense screen it was being drawn at three
          times its own resolution, which is what "blurry" was. The 2x file is
-         only fetched by a screen that can show it. -->
+         only fetched by a screen that can show it.
+
+         The shapes are two to one and nine to ten, which are the shapes of no
+         screen at all. They are the shapes that make `cover` agree with the
+         camera: it holds a fixed vertical angle and widens sideways as the
+         window does, so a still wider than the window scales to its height and
+         loses a strip off each side — what the camera would have done. A still
+         narrower than the window crops top and bottom instead, and the board
+         stands a tenth larger in it than in the scene that fades in over it.
+
+         The portrait pair is a shade under nine to ten rather than on it,
+         because the camera changes to its wider lens *below* that aspect. -->
     <picture class="poster" aria-hidden="true">
       <source
         type="image/avif"
@@ -27,12 +38,12 @@
       />
       <source
         type="image/avif"
-        srcset="/poster/hero-tall.avif 450w, /poster/hero-tall@2x.avif 900w"
+        srcset="/poster/hero-tall.avif 356w, /poster/hero-tall@2x.avif 712w"
         sizes="100vw"
       />
       <source
         type="image/webp"
-        srcset="/poster/hero-tall.webp 450w, /poster/hero-tall@2x.webp 900w"
+        srcset="/poster/hero-tall.webp 356w, /poster/hero-tall@2x.webp 712w"
         sizes="100vw"
       />
       <img src="/poster/hero-wide.webp" alt="" decoding="async" fetchpriority="high" />

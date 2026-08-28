@@ -49,6 +49,10 @@ export const routes: Routes = [
           path: '__poster',
           loadComponent: () => import('./pages/poster/poster').then((m) => m.Poster),
         },
+        {
+          path: '__film',
+          loadComponent: () => import('./pages/poster/film').then((m) => m.Film),
+        },
       ]
     : []),
   {

@@ -42,7 +42,20 @@ CHROME = os.environ.get(
 
 # The 2x sizes are what is rendered; the 1x files are resampled down from them
 # rather than shot small, so their edges are averaged rather than aliased.
-SHAPES = {"wide": (1600, 1000), "tall": (900, 1600)}
+#
+# Two to one and nine to ten, which are not the shapes of any screen — they are
+# the shapes that make `object-fit: cover` agree with the camera. The camera
+# holds a fixed vertical angle and widens sideways as the window does, so a
+# still that is wider than the window scales to its height, keeps the whole
+# vertical frame and loses a strip off each side, which is exactly what the
+# camera would have done. A still that is narrower crops top and bottom
+# instead, and the board sits a tenth larger in it than in the scene that fades
+# in over it.#
+# Just under nine to ten, not exactly: the camera changes to the wider lens at
+# an aspect *below* 0.9, so a portrait file shot at exactly 0.9 is taken with
+# the landscape lens and shows a different amount of board than the phone it is
+# covering for.
+SHAPES = {"wide": (1600, 800), "tall": (712, 800)}
 
 
 def cyan(message: str) -> None:

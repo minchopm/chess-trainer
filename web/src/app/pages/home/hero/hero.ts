@@ -58,6 +58,9 @@ const CARDS: readonly Card[] = [
  */
 const USE_WORKER = false;
 
+/** How long the canvas takes to cover the film, in milliseconds. Matches the SCSS. */
+const FADE = 340;
+
 /**
  * Whatever is drawing the scene, seen from here.
  *
@@ -121,6 +124,7 @@ export class Hero implements OnDestroy {
   });
 
   private driver: Driver | null = null;
+  private film: HTMLVideoElement | null = null;
   private ticking = false;
   private inView = false;
   private destroyed = false;
@@ -179,6 +183,11 @@ export class Hero implements OnDestroy {
 
     const quality = sceneQuality();
     const still = prefersReducedMotion();
+
+    // The film goes up first, because it is the thing that covers the wait it
+    // is about to be handed over from.
+    if (!still) this.startFilm(stage, canvas);
+
     const size = () => ({
       width: stage.clientWidth,
       height: stage.clientHeight,
@@ -274,7 +283,7 @@ export class Hero implements OnDestroy {
     worker.addEventListener('message', ({ data }) => {
       if (data?.type === 'painted') {
         clearTimeout(watchdog);
-        this.rendering.set(true);
+        this.reveal();
       }
       // The scene refused the job — most likely no rAF in this worker, which
       // would render frames that are never presented. Nothing to do but leave
@@ -288,7 +297,18 @@ export class Hero implements OnDestroy {
     });
 
     worker.postMessage(
-      { type: 'init', canvas: offscreen, ...size, quality, still, progress: this.progress() },
+      {
+        type: 'init',
+        canvas: offscreen,
+        ...size,
+        quality,
+        still,
+        progress: this.progress(),
+        // Read before the worker has even loaded its module, so this runs a
+        // little behind the film — a tenth of a second at the outside, against
+        // a swing that takes sixteen seconds to go out and back.
+        seekTo: this.filmTime(),
+      },
       [offscreen],
     );
 
@@ -320,12 +340,16 @@ export class Hero implements OnDestroy {
         quality,
         still,
         onGame: still ? undefined : (game) => this.playing.set(game),
-        onPainted: () => this.rendering.set(true),
+        onPainted: () => this.reveal(),
       });
+      // Read here, at the last possible moment: building the scene is most of
+      // the wait the film is covering, so the film is further along now than it
+      // was when the wait began.
+      sequence.seek(this.filmTime());
       sequence.renderStill();
       if (still) {
         // No loop will run, so the still above is all there will ever be.
-        this.rendering.set(true);
+        this.reveal();
       } else {
         // Start drawing now rather than waiting to be told. The hero is at the
         // top of the page, so it is on screen by definition at this point, and
@@ -352,6 +376,117 @@ export class Hero implements OnDestroy {
     }
   }
 
+  // ── the opening film ────────────────────────────────────────────────────
+
+  /**
+   * Puts up the film the scene is going to take over from.
+   *
+   * The poster underneath is a real frame of this scene, which was enough
+   * while it was on screen for half a second. It is not enough at the top of a
+   * page somebody has just arrived at: a chess board that does not move is a
+   * photograph of a chess board, and no amount of it being the right photograph
+   * changes that.
+   *
+   * So the film — six seconds of this same scene, shot from it frame by frame
+   * by `tools/overture.py`. It plays while three.js is fetched, parsed and
+   * built, and then the live scene is wound forward to whatever second the film
+   * reached and drawn over it. Everything either of them does is a function of
+   * elapsed time from zero, and every source of noise in the scene is seeded,
+   * so the frame the film is holding and the frame the scene starts on are the
+   * same picture.
+   *
+   * Built here rather than in the template because it should not exist in
+   * thirty-one prerendered pages: it is only ever wanted by a browser that is
+   * about to load a scene, and a `<video>` in the HTML is one the crawler and
+   * the reduced-motion reader both have to be talked out of.
+   */
+  private startFilm(stage: HTMLElement, before: HTMLElement): void {
+    // The camera widens below 0.9 aspect, so a wide film on a phone is not the
+    // shot the scene will take over with — it is a different one, cropped.
+    const wide = window.matchMedia('(min-aspect-ratio: 9/10)').matches;
+    const shape = wide ? 'wide' : 'tall';
+
+    const video = document.createElement('video');
+    video.className = 'overture';
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.loop = false;
+    video.preload = 'auto';
+    video.setAttribute('aria-hidden', 'true');
+    // AV1 first: on a shot this dark it is worth about a third of the bytes,
+    // and everything that cannot decode it falls through to the H.264.
+    for (const [type, extension] of [
+      ['video/webm', 'webm'],
+      ['video/mp4', 'mp4'],
+    ] as const) {
+      const source = document.createElement('source');
+      source.src = `/overture/overture-${shape}.${extension}`;
+      source.type = type;
+      video.append(source);
+    }
+
+    // Both the attribute and the call, which are not the same request. The
+    // attribute is what a browser consults when it decides whether a tab that
+    // is not being looked at yet may start playing; the call is what starts it
+    // in a tab that is. A page opened in a background tab — restored on
+    // startup, opened in a new tab from somewhere else — gets only the first.
+    video.autoplay = true;
+    stage.insertBefore(video, before);
+    this.film = video;
+
+    // Refusal is a real outcome and not an error: a data-saver setting, a
+    // browser that wants a gesture first. Nothing to report, because what is
+    // underneath is the poster, which is where this began. But a refusal while
+    // the tab is hidden is worth one more try when it is looked at.
+    const attempt = () => {
+      // Only while this is still the film. After the handover it is a detached
+      // element with no source, and asking it to play is asking for nothing.
+      if (this.film === video) void video.play().catch(() => undefined);
+    };
+    attempt();
+    video.addEventListener('canplay', attempt, { once: true });
+    document.addEventListener('visibilitychange', attempt);
+    this.teardown.push(() => document.removeEventListener('visibilitychange', attempt));
+  }
+
+  /**
+   * How far into the film we are, in seconds.
+   *
+   * Zero if there is no film, if it never started, or if it was never allowed
+   * to play — and zero is the honest answer in all three cases, because zero is
+   * where the scene would otherwise begin.
+   */
+  private filmTime(): number {
+    const film = this.film;
+    if (!film || film.readyState < 2) return 0;
+    return Math.max(0, Math.min(film.currentTime, film.duration || 0));
+  }
+
+  /**
+   * The handover: the canvas comes up, and the film goes when it is covered.
+   *
+   * The two are the same picture, so this could be a cut — except that the film
+   * has been through an encoder at a bitrate chosen for a placeholder, and
+   * cutting from that to a clean render is a visible sharpening. A third of a
+   * second of dissolve hides it, and both keep running at the same rate
+   * underneath, so nothing drifts apart while it happens.
+   */
+  private reveal(): void {
+    if (this.rendering()) return;
+    this.rendering.set(true);
+
+    const film = this.film;
+    if (!film) return;
+    this.film = null;
+    window.setTimeout(() => {
+      film.pause();
+      film.removeAttribute('src');
+      film.load(); // lets go of the decoder rather than leaving it parked
+      film.remove();
+    }, FADE);
+  }
+
   // ── scroll ──────────────────────────────────────────────────────────────
 
   private measure(): void {
@@ -367,5 +502,7 @@ export class Hero implements OnDestroy {
     this.destroyed = true;
     for (const off of this.teardown) off();
     this.driver?.dispose();
+    this.film?.pause();
+    this.film?.remove();
   }
 }

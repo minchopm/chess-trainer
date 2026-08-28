@@ -32,7 +32,32 @@ export function scratch(width: number, height: number): HTMLCanvasElement | Offs
 
 export type Canvas2D = CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D;
 
+/**
+ * A small deterministic generator, standing in for `Math.random`.
+ *
+ * Every scrap of noise in this scene — the grain in the wood, the dust in the
+ * light — was random, and randomness is fine right up until two copies of the
+ * scene have to agree. The opening film is one copy and the live scene is
+ * another, and the whole point of the handover is that the frame the film
+ * stops on and the frame the scene starts on are the same picture. Wood that
+ * is grained differently in each is the one difference nobody could miss,
+ * because the board is most of the frame.
+ *
+ * mulberry32: thirty-two bits of state, four operations, and a period long
+ * enough for the few thousand draws asked of it here.
+ */
+export function seeded(seed: number): () => number {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
 export function boardTexture(size = 1024): { map: Texture; roughness: Texture } {
+  const random = seeded(0x5ea50ed);
   const canvas = scratch(size, size);
   const ctx = canvas.getContext('2d') as Canvas2D;
   const square = size / 8;
@@ -54,16 +79,16 @@ export function boardTexture(size = 1024): { map: Texture; roughness: Texture } 
       ctx.strokeStyle = light ? 'rgba(90,74,48,0.09)' : 'rgba(0,0,0,0.22)';
       ctx.lineWidth = 1.2;
       for (let i = 0; i < 18; i++) {
-        const y = rank * square + Math.random() * square;
+        const y = rank * square + random() * square;
         ctx.beginPath();
         ctx.moveTo(file * square, y);
         ctx.bezierCurveTo(
           file * square + square * 0.33,
-          y + (Math.random() - 0.5) * 7,
+          y + (random() - 0.5) * 7,
           file * square + square * 0.66,
-          y + (Math.random() - 0.5) * 7,
+          y + (random() - 0.5) * 7,
           file * square + square,
-          y + (Math.random() - 0.5) * 4,
+          y + (random() - 0.5) * 4,
         );
         ctx.stroke();
       }
@@ -94,8 +119,8 @@ export function boardTexture(size = 1024): { map: Texture; roughness: Texture } 
   rctx.fillStyle = '#7a7a7a';
   rctx.fillRect(0, 0, 256, 256);
   for (let i = 0; i < 900; i++) {
-    rctx.fillStyle = `rgba(255,255,255,${Math.random() * 0.06})`;
-    rctx.fillRect(Math.random() * 256, Math.random() * 256, Math.random() * 16 + 3, 1);
+    rctx.fillStyle = `rgba(255,255,255,${random() * 0.06})`;
+    rctx.fillRect(random() * 256, random() * 256, random() * 16 + 3, 1);
   }
   const roughness = new CanvasTexture(rough as HTMLCanvasElement);
   roughness.wrapS = roughness.wrapT = RepeatWrapping;

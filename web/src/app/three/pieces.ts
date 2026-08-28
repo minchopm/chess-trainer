@@ -21,14 +21,17 @@ import { Solid, type Turn, cylinder, revolved, ring, sphere } from './solid';
  * because a set where the bishop outranks the queen reads as wrong long before
  * anybody works out why.
  *
- * The one departure: in the app the crown, the cross and the knight's mane are
- * *trim*, brass parts of the gilded set that the plain set does without. This
- * scene has one material, so there is no gilded set to belong to — and a queen
- * without her crown and a king without his cross are two identical spindles.
- * They are turned into the body here. The brass itself is not ported.
+ * This is the app's *banded* set, which is what the app ships by default: the
+ * same turning, given gilt collars and gilt finials. So a piece is two things —
+ * a body of boxwood or ebony, and the brass on it — and `buildPieceGeometry`
+ * hands back one geometry in two groups, body first, so a single mesh can wear
+ * both materials.
  */
 
 export type PieceKind = 'pawn' | 'knight' | 'bishop' | 'rook' | 'queen' | 'king';
+
+/** A band, as the height it sits at, its radius, and the thickness of the ring. */
+type Turn3 = readonly [number, number, number];
 
 const SEGMENTS = 48;
 
@@ -174,19 +177,6 @@ function queen(s: number, segments = SEGMENTS): BufferGeometry {
     segments,
   );
 
-  const points = 9;
-  for (let i = 0; i < points; i++) {
-    const angle = (i / points) * Math.PI * 2;
-    solid.append(
-      sphere(
-        0.05 * s,
-        [Math.cos(angle) * 0.215 * s, 1.34 * s, Math.sin(angle) * 0.215 * s],
-        20,
-        12,
-      ),
-    );
-  }
-  solid.append(sphere(0.077 * s, [0, 1.36 * s, 0], 32, 16));
   return solid.geometry;
 }
 
@@ -210,10 +200,6 @@ function king(s: number, segments = SEGMENTS): BufferGeometry {
     segments,
   );
 
-  // A Staunton cross is short and stands on the crown. Drawn tall it reads as a
-  // mast, and the piece stops being a king.
-  solid.append(cylinder(0.052 * s, 0.2 * s, [0, 1.5 * s, 0]));
-  solid.append(cylinder(0.044 * s, 0.17 * s, [0, 1.52 * s, 0], 12, 'x'));
   return solid.geometry;
 }
 
@@ -257,12 +243,125 @@ function knight(s: number, segments = SEGMENTS): BufferGeometry {
   );
 
   const head = knightHead(s);
-  const mane = knightMane(s);
   // The silhouette is drawn facing along +x and swept through z; a quarter turn
   // stands it across the board, facing the opponent.
   head.rotateY(-Math.PI / 2);
-  mane.rotateY(-Math.PI / 2);
-  return merge([base.geometry, head, mane]);
+  return merge([base.geometry, head]);
+}
+
+/**
+ * The gilded step the piece stands on.
+ *
+ * On the photographed set this is not a ring laid against the base — it is the
+ * bottom of the base itself, turned in gold, and it is the widest piece of
+ * brass on the piece. A torus in its place either hides inside the wood or
+ * stands off it like a bracelet.
+ */
+function gildedFoot(s: number, segments = SEGMENTS): Solid {
+  // A hair proud of the wood it sheathes. Turned to exactly the same profile
+  // the two surfaces are coincident, and coincident surfaces fight for the same
+  // pixels — the gold flickers, or loses.
+  const out = 1.03;
+  return revolved(
+    [
+      [0.0, -0.002 * s],
+      [0.305 * s * out, -0.002 * s],
+      [0.305 * s * out, 0.035 * s],
+      [0.292 * s * out, 0.078 * s],
+      [0.276 * s, 0.092 * s],
+      [0.276 * s, 0.086 * s],
+    ],
+    segments,
+  );
+}
+
+/** Where the bands sit: at the waist of the base, and on each collar. */
+function bands(kind: PieceKind, s: number): Turn3[] {
+  const waist: Turn3[] = [[0.132 * s, 0.208 * s, 0.019 * s]];
+  const collars: Record<PieceKind, Turn3[]> = {
+    pawn: [
+      [0.5 * s, 0.152 * s, 0.019 * s],
+      [0.772 * s, 0.158 * s, 0.017 * s],
+    ],
+    rook: [
+      [0.645 * s, 0.218 * s, 0.022 * s],
+      [0.79 * s, 0.238 * s, 0.02 * s],
+    ],
+    bishop: [
+      [0.565 * s, 0.158 * s, 0.02 * s],
+      [0.715 * s, 0.181 * s, 0.019 * s],
+    ],
+    knight: [[0.552 * s, 0.193 * s, 0.014 * s]],
+    queen: [
+      [0.625 * s, 0.178 * s, 0.022 * s],
+      [1.285 * s, 0.238 * s, 0.021 * s],
+    ],
+    king: [
+      [0.665 * s, 0.183 * s, 0.022 * s],
+      [1.31 * s, 0.243 * s, 0.022 * s],
+      [1.395 * s, 0.222 * s, 0.019 * s],
+    ],
+  };
+  return [...waist, ...collars[kind]];
+}
+
+/**
+ * The gilt on top: the finial the turning already ends in, in brass rather
+ * than in the body's own material.
+ */
+function finial(kind: PieceKind, s: number): Solid | null {
+  switch (kind) {
+    case 'pawn':
+    case 'knight':
+      return null;
+
+    case 'bishop':
+      return sphere(0.062 * s, [0, 1.26 * s, 0], 32, 20);
+
+    case 'rook':
+      return ring(0.237 * s, 0.032 * s, [0, 0.86 * s, 0]);
+
+    case 'queen': {
+      const crown = sphere(0.077 * s, [0, 1.36 * s, 0], 32, 16);
+      const points = 9;
+      for (let i = 0; i < points; i++) {
+        const angle = (i / points) * Math.PI * 2;
+        crown.append(
+          sphere(
+            0.05 * s,
+            [Math.cos(angle) * 0.215 * s, 1.34 * s, Math.sin(angle) * 0.215 * s],
+            20,
+            12,
+          ),
+        );
+      }
+      return crown;
+    }
+
+    case 'king': {
+      // A Staunton cross is short and stands on the crown. Drawn tall it reads
+      // as a mast, and the piece stops being a king.
+      const cross = cylinder(0.052 * s, 0.2 * s, [0, 1.5 * s, 0]);
+      cross.append(cylinder(0.044 * s, 0.17 * s, [0, 1.52 * s, 0], 12, 'x'));
+      return cross;
+    }
+  }
+}
+
+/** Everything on a piece that is brass rather than wood. */
+function trim(kind: PieceKind, s: number, segments = SEGMENTS): BufferGeometry {
+  const solid = gildedFoot(s, segments);
+  for (const [y, radius, tube] of bands(kind, s)) {
+    solid.append(ring(radius, tube, [0, y, 0]));
+  }
+  const top = finial(kind, s);
+  if (top) solid.append(top);
+  if (kind === 'knight') {
+    const mane = knightMane(s);
+    mane.rotateY(-Math.PI / 2);
+    return merge([solid.geometry, mane]);
+  }
+  return solid.geometry;
 }
 
 const HEIGHT: Record<PieceKind, number> = {
@@ -294,9 +393,17 @@ export const PIECE_KINDS = Object.keys(BUILD) as PieceKind[];
  * enough that doing them separately is not.
  */
 export function buildPieceGeometry(kind: PieceKind, segments = SEGMENTS): BufferGeometry {
-  const geometry = BUILD[kind](HEIGHT[kind], segments);
-  geometry.computeVertexNormals();
-  return geometry;
+  const s = HEIGHT[kind];
+  // Merged *with* groups: one geometry, two draw ranges, so a piece is still a
+  // single mesh with a single transform and the brass is simply the second
+  // material on it. Two meshes per piece would have to be moved, lifted, taken
+  // and put back in step with each other, thirty-two times over.
+  //
+  // Given one material instead of two the groups both draw with it, which is
+  // what the icon page wants — a pawn in solid brass.
+  const merged = mergeGeometries([BUILD[kind](s, segments), trim(kind, s, segments)], true);
+  if (!merged) throw new Error(`chess pieces: ${kind} could not be merged`);
+  return merged;
 }
 
 /** All six, in one go. Convenient, and blocking — prefer the staged form. */
