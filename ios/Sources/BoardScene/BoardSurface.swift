@@ -98,7 +98,13 @@ enum BoardSurface {
     /// squares. Each side reads from outside the board looking in, which is how
     /// a printed board is made and the only arrangement that is right from more
     /// than one chair.
-    static func coordinates(size: Int = 1024, boardShare: CGFloat = 8.0 / 9.1) -> CGImage? {
+    /// `ink` is what the letters are made of. The default is the theatre's:
+    /// pale grey-cream on a black plinth, which is paint. A board with a
+    /// boxwood inlay line round it would have its letters cut from the same
+    /// boxwood, so the parlour hands its own in.
+    static func coordinates(size: Int = 1024, boardShare: CGFloat = 8.0 / 9.1,
+                            ink: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat)
+                                = (0.92, 0.88, 0.78, 0.62)) -> CGImage? {
         let space = CGColorSpaceCreateDeviceRGB()
         guard let ctx = CGContext(
             data: nil, width: size, height: size, bitsPerComponent: 8, bytesPerRow: 0,
@@ -108,12 +114,12 @@ enum BoardSurface {
         let side = CGFloat(size)
         let rim = side * (1 - boardShare) / 2
         let square = (side - rim * 2) / 8
-        let ink = CGColor(red: 0.92, green: 0.88, blue: 0.78, alpha: 0.62)
+        let paint = CGColor(red: ink.r, green: ink.g, blue: ink.b, alpha: ink.a)
         let type = CTFontCreateWithName("Menlo" as CFString, rim * 0.44, nil)
 
         func draw(_ text: String, at centre: CGPoint, turned: CGFloat) {
             let attributes: [NSAttributedString.Key: Any] = [
-                .font: type, .foregroundColor: ink,
+                .font: type, .foregroundColor: paint,
             ]
             let line = CTLineCreateWithAttributedString(
                 NSAttributedString(string: text, attributes: attributes)

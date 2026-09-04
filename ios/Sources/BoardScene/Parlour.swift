@@ -226,6 +226,20 @@ enum Parlour {
         return ctx.makeImage()
     }
 
+    /// The files and ranks, cut from the same boxwood as the inlay line.
+    ///
+    /// `BoardSurface.coordinates` draws them; this only says what they are made
+    /// of, and it lives here so the number sits beside the `inlay` it has to
+    /// match. On the theatre's black plinth the letters are paint — pale grey
+    /// on a dark ground, which is what a printed board has. On a walnut frame
+    /// with a boxwood line already running round it, paint is the one thing
+    /// they cannot be: a board like this has its letters *inlaid*, in the same
+    /// wood, and grey ones read as a label stuck to the furniture.
+    static func letters(size: Int = 1024, boardShare: CGFloat = 8.0 / 9.1) -> CGImage? {
+        BoardSurface.coordinates(size: size, boardShare: boardShare,
+                                 ink: (inlay.r, inlay.g, inlay.b, 0.88))
+    }
+
     /// The table, in sawn planks.
     ///
     /// Wide boards with a dark seam between them and one or two knots, because

@@ -313,15 +313,43 @@ public final class Stage {
         // switched off without rebuilding the board.
         let rim = SCNPlane(width: 9.1, height: 9.1)
         let paint = rim.firstMaterial!
-        paint.lightingModel = .constant
-        paint.diffuse.contents = BoardSurface.coordinates() as Any
+        let parlour = dressing == .parlour
+        // Lit in the parlour, unlit in the theatre, and that is the difference
+        // that matters rather than the colour. `.constant` ignores every light
+        // in the scene, so the letters come out equally bright in the hot pool
+        // under the lamp and in the corner the lamp does not reach — which is
+        // exactly how a printed label behaves and exactly how inlaid wood does
+        // not. Given the lamp to sit in, they dim with the frame around them.
+        //
+        // The theatre keeps `.constant` on purpose: its plinth is very nearly
+        // black and its one spot comes from off-stage, so letters that took
+        // that light would be legible along one edge of the board and gone
+        // along the other.
+        paint.lightingModel = parlour ? .physicallyBased : .constant
+        paint.diffuse.contents = (parlour
+            ? Parlour.letters(size: quality.textureSize)
+            : BoardSurface.coordinates()) as Any
+        if parlour {
+            paint.roughness.contents = 0.44
+            paint.metalness.contents = 0.0
+        }
         paint.isDoubleSided = false
         paint.writesToDepthBuffer = false
         let rimNode = SCNNode(geometry: rim)
         rimNode.name = Stage.coordinatesName
         rimNode.eulerAngles.x = -.pi / 2
-        // Just clear of the plinth's top, which is where the ivory stops.
-        rimNode.position = SCNVector3(0, -0.0195, 0)
+        // Just clear of the plinth's top, which is where the ivory stops — and
+        // a little further clear in the parlour, where the plane is lit and so
+        // has a shaded surface of its own to be confused with rather than a
+        // flat colour that wins either way.
+        rimNode.position = SCNVector3(0, parlour ? -0.0182 : -0.0195, 0)
+        // A decal casts nothing. It is a nine-unit square lying just above the
+        // frame, so left to cast it drops a shadow of the whole board onto the
+        // table — where the board's own shadow happens to hide it, which is
+        // luck rather than a reason. The theatre is left as it was: its plane
+        // has always cast one, and this branch is not the place to find out
+        // what depended on that.
+        if parlour { rimNode.castsShadow = false }
         rimNode.isHidden = true
         scene.rootNode.addChildNode(rimNode)
     }
