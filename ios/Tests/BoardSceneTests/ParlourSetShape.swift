@@ -82,20 +82,22 @@ struct ParlourSetShape {
         #expect(reach < 0.5, "\(kind) reaches \(reach) from the middle of its square")
     }
 
-    /// The rook's battlements are closed solids.
+    /// A battlement is a closed solid.
     ///
-    /// The site's rook cuts its merlons with a partial `Solid.revolved`, which
-    /// closes an open sweep with two radial faces run all the way to the axis —
-    /// so each merlon drags a pair of blades through the middle of the piece,
-    /// and from directly overhead the rook is a pinwheel of fins. That is an
-    /// elevation `OrbitCamera` allows, so it is a fault a player can see.
+    /// Both rooks are built from `Solid.sector`, and both were built from a
+    /// partial `Solid.revolved` before it — which closes an open sweep with two
+    /// radial faces run all the way to the axis, so each merlon dragged a pair
+    /// of blades through the middle of the piece and the hollow came out full
+    /// of them. Nothing on a chessboard shows it; a shot from straight overhead
+    /// does, and `OrbitCamera.elevationRange` goes to .pi/2.
     ///
     /// Counting edges settles it: on a closed surface every edge belongs to
-    /// exactly two triangles.
-    @Test("a merlon is closed")
-    func merlonWatertight() {
-        let block = ParlourSet.merlon(from: 0, to: 0.5, inner: 0.184, outer: 0.242,
-                                      bottom: 0.86, top: 1.08)
+    /// exactly two triangles. The old construction fails this — its radial
+    /// faces meet the axis in a seam that belongs to one triangle only.
+    @Test("a battlement is closed")
+    func battlementWatertight() {
+        let block = Solid.sector(inner: 0.184, outer: 0.242, bottom: 0.86, top: 1.08,
+                                 from: 0, through: 0.5)
         func corner(_ point: SCNVector3) -> String {
             String(format: "%.4f,%.4f,%.4f", point.x, point.y, point.z)
         }
@@ -110,7 +112,44 @@ struct ParlourSetShape {
         }
         let open = edges.filter { $0.value == 1 }
         #expect(open.isEmpty,
-                "\(open.count) of \(edges.count) edges belong to one triangle only, so the merlon is a shell")
+                "\(open.count) of \(edges.count) edges belong to one triangle only, so the block is a shell")
+    }
+
+    /// Neither rook has anything standing in its hollow.
+    ///
+    /// The watertightness of one block does not prove the rook is right — the
+    /// old build produced closed geometry too, just with blades in the middle
+    /// of it. This is the assertion that would have caught it: above the
+    /// rampart floor, no triangle of either rook comes anywhere near the axis.
+    @Test("the rook's hollow is empty", arguments: [PieceStyle.plain, .banded, .parlour])
+    func rookIsHollow(_ style: PieceStyle) {
+        let node = TurnedPieces.node(for: .rook, style: style)
+        // Well above the rampart, so the turning's own cap is not counted.
+        let floor: Float = style == .parlour ? 0.95 : 0.62
+        var nearest = Float.greatestFiniteMagnitude
+        node.enumerateHierarchy { child, _ in
+            guard let geometry = child.geometry else { return }
+            for source in geometry.sources(for: .vertex) {
+                let stride = source.dataStride, offset = source.dataOffset
+                source.data.withUnsafeBytes { raw in
+                    for index in 0..<source.vectorCount {
+                        let base = index * stride + offset
+                        let x = raw.loadUnaligned(fromByteOffset: base, as: Float.self)
+                        let y = raw.loadUnaligned(fromByteOffset: base + 4, as: Float.self)
+                        let z = raw.loadUnaligned(fromByteOffset: base + 8, as: Float.self)
+                        // `continue`, not `return`. Inside a
+                        // `withUnsafeBytes` closure a `return` leaves the
+                        // closure, so the scan stopped at the first vertex
+                        // below the floor — which is the base, the first vertex
+                        // there is. The test passed on the broken rook.
+                        guard y > floor else { continue }
+                        nearest = min(nearest, (x * x + z * z).squareRoot())
+                    }
+                }
+            }
+        }
+        #expect(nearest > 0.05,
+                "the \(style) rook has geometry \(nearest) from the axis above its rampart, so something is standing in the hollow")
     }
 
     /// The knight's head lands inside its base's shoulder.

@@ -108,52 +108,6 @@ enum ParlourSet {
         ]
     }
 
-    /// One merlon: a block of wall between two radii, two heights and two
-    /// angles, closed on all six sides.
-    ///
-    /// It stands a couple of thousandths proud of the rim it is cut out of, on
-    /// both faces, rather than flush with it. Turned to exactly the rim's
-    /// radius the two surfaces are coincident over the height they share, and
-    /// coincident surfaces fight for the same pixels — which shows as the
-    /// battlements flickering as the board turns.
-    static func merlon(from first: Float, to last: Float,
-                       inner: Float, outer: Float,
-                       bottom: Float, top: Float, steps: Int = 8) -> Solid {
-        var solid = Solid()
-        func at(_ radius: Float, _ y: Float, _ angle: Float) -> SIMD3<Float> {
-            SIMD3(radius * cosf(angle), y, radius * sinf(angle))
-        }
-
-        for step in 0..<steps {
-            let a = first + (last - first) * Float(step) / Float(steps)
-            let b = first + (last - first) * Float(step + 1) / Float(steps)
-            solid.quad(at(outer, top, a), at(outer, top, b),
-                       at(outer, bottom, b), at(outer, bottom, a))
-            solid.quad(at(inner, top, b), at(inner, top, a),
-                       at(inner, bottom, a), at(inner, bottom, b))
-            solid.quad(at(inner, top, a), at(inner, top, b),
-                       at(outer, top, b), at(outer, top, a))
-            // The underside, buried in the rim and never seen — but drawn, so
-            // the block is a closed solid rather than a shell with a hole in
-            // the bottom that the light gets into.
-            solid.quad(at(outer, bottom, a), at(outer, bottom, b),
-                       at(inner, bottom, b), at(inner, bottom, a))
-        }
-
-        // The two square-cut ends, which are what the gaps between the
-        // battlements actually are.
-        for (angle, opening) in [(first, true), (last, false)] {
-            let corners = [at(inner, bottom, angle), at(outer, bottom, angle),
-                           at(outer, top, angle), at(inner, top, angle)]
-            if opening {
-                solid.quad(corners[3], corners[2], corners[1], corners[0])
-            } else {
-                solid.quad(corners[0], corners[1], corners[2], corners[3])
-            }
-        }
-        return solid
-    }
-
     // MARK: - the six
 
     private static func pawn() -> Solid {
@@ -224,9 +178,14 @@ enum ParlourSet {
             // Half wall, half gap. Wider merlons close the gaps into slots and
             // the rim reads as notched rather than as crenellated.
             let width: Float = 2 * .pi / Float(merlons) * 0.52
-            solid.append(merlon(from: centre - width / 2, to: centre + width / 2,
-                                inner: 0.184, outer: 0.242,
-                                bottom: 0.860, top: 1.080))
+            // A couple of thousandths proud of the rim on both faces, and its
+            // underside buried in it. Flush, the two surfaces are coincident
+            // over the height they share, and coincident surfaces fight for the
+            // same pixels — which shows as the battlements flickering as the
+            // board turns.
+            solid.append(.sector(inner: 0.184, outer: 0.242,
+                                 bottom: 0.860, top: 1.080,
+                                 from: centre - width / 2, through: width))
         }
         return solid
     }

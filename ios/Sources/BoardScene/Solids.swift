@@ -195,6 +195,58 @@ extension Solid {
         return solid
     }
 
+    /// A block of wall: the solid between two radii, two heights and two
+    /// angles, closed on all six sides.
+    ///
+    /// This is here because `revolved` cannot do it, in a way that is easy to
+    /// miss. A partial sweep is an open shell, so `revolved` closes it with two
+    /// radial faces — and it closes them **to the axis**, because the profiles
+    /// it is built for start there. Hand it a profile that does not, which is
+    /// what a battlement is, and each piece drags a pair of blade-shaped faces
+    /// right through the middle of the turning. On a rook the battlements come
+    /// out attached to a five-spoked fan filling the hollow they are supposed
+    /// to stand around: invisible from a chair, plain from straight overhead,
+    /// and `OrbitCamera` lets the camera go straight overhead.
+    ///
+    /// Both rooks use this. Angles follow `revolved`: where the sweep starts,
+    /// and how far it goes.
+    static func sector(inner: Float, outer: Float, bottom: Float, top: Float,
+                       from start: Float, through sweep: Float, segments: Int = 8) -> Solid {
+        var solid = Solid()
+        func at(_ radius: Float, _ y: Float, _ angle: Float) -> SIMD3<Float> {
+            SIMD3(radius * cosf(angle), y, radius * sinf(angle))
+        }
+
+        for step in 0..<segments {
+            let a = start + sweep * Float(step) / Float(segments)
+            let b = start + sweep * Float(step + 1) / Float(segments)
+            solid.quad(at(outer, top, a), at(outer, top, b),
+                       at(outer, bottom, b), at(outer, bottom, a))
+            solid.quad(at(inner, top, b), at(inner, top, a),
+                       at(inner, bottom, a), at(inner, bottom, b))
+            solid.quad(at(inner, top, a), at(inner, top, b),
+                       at(outer, top, b), at(outer, top, a))
+            // The underside, which on a rook is buried in the rim and never
+            // seen — but drawn, so the block is a closed solid rather than a
+            // shell with a hole in the bottom for the light to get into.
+            solid.quad(at(outer, bottom, a), at(outer, bottom, b),
+                       at(inner, bottom, b), at(inner, bottom, a))
+        }
+
+        // The two square-cut ends, which on a rook are what the gaps between
+        // the battlements actually are.
+        for (angle, opening) in [(start, true), (start + sweep, false)] {
+            let corners = [at(inner, bottom, angle), at(outer, bottom, angle),
+                           at(outer, top, angle), at(inner, top, angle)]
+            if opening {
+                solid.quad(corners[3], corners[2], corners[1], corners[0])
+            } else {
+                solid.quad(corners[0], corners[1], corners[2], corners[3])
+            }
+        }
+        return solid
+    }
+
     enum Axis {
         case y, x
         func place(_ x: Float, _ y: Float, _ z: Float) -> SIMD3<Float> {

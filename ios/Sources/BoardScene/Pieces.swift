@@ -119,20 +119,37 @@ public enum TurnedPieces {
 
         // Battlements cut rather than stacked.
         //
-        // Five towers left standing out of a wall, each one a piece of the same
-        // turning swept through part of a circle instead of all of it — so the
-        // gaps between them are square-cut and go all the way down to the
-        // rampart. Little cylinders stood on the rim, which is the cheap way,
-        // read as pegs from every angle.
+        // Five towers left standing out of a wall, so the gaps between them are
+        // square-cut and go all the way down to the rampart. Little cylinders
+        // stood on the rim, which is the cheap way, read as pegs from every
+        // angle.
+        //
+        // Each was a partial `Solid.revolved` for a long time, and that was
+        // simply wrong: `revolved` closes an open sweep with two radial faces
+        // run to the **axis**, because the profiles it is built for start
+        // there. A battlement's does not, so every merlon came with a pair of
+        // blades through the middle of the piece, and the five of them filled
+        // the hollow they were meant to stand around with a fan.
+        //
+        // It was thought to be an overhead-only fault when it was found. It is
+        // not: at an ordinary thirty degrees, close in, the merlons read as
+        // thin curved shells with the blades cutting across the gaps between
+        // them — the top of the piece looks like torn sheet rather than
+        // masonry. What hid it is scale. On a full board at the zoom the app
+        // opens at, the rook is sixty pixels tall and its top is a smudge.
+        //
+        // The heights and radii below are the ones the set has always had, so
+        // the silhouette is unchanged — bar a thousandth. The block is a hair
+        // proud of the rim on both faces and its underside is buried in it:
+        // flush, the two are coincident over the height they share, and
+        // coincident surfaces fight for the same pixels.
         let merlons = 5
-        let wall: [Turn] = [
-            (0.185 * s, 0.9 * s), (0.245 * s, 0.9 * s),
-            (0.245 * s, 1.02 * s), (0.185 * s, 1.02 * s),
-        ]
         for i in 0..<merlons {
             let centre = Float(i) / Float(merlons) * 2 * .pi
             let width: Float = 2 * .pi / Float(merlons) * 0.56
-            solid.append(.revolved(wall, segments: 8, from: centre - width / 2, through: width))
+            solid.append(.sector(inner: 0.1835 * s, outer: 0.2465 * s,
+                                 bottom: 0.888 * s, top: 1.02 * s,
+                                 from: centre - width / 2, through: width))
         }
 
         return solid
