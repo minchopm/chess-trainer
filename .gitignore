@@ -1,6 +1,7 @@
 # Build output
 node_modules/
 ios/.build/
+ios/build/
 ios/Tools/*/.build/
 DerivedData/
 *.xcuserdatad
