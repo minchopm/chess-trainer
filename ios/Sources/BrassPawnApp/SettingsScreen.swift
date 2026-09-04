@@ -1,3 +1,4 @@
+import BoardScene
 import ChessCore
 import ChessTraining
 import SwiftUI
@@ -699,6 +700,18 @@ struct DimensionChoice: View {
                          "The walnut set comes with its own board: a framed maple board on a table, under a lamp."))
                     .appFont(.footnote)
                     .foregroundStyle(Theatre.ivoryFaint)
+
+                // The set and the room it stands in are one thing, and neither
+                // survives being described. Three names on three buttons said
+                // nothing about which of them somebody would rather look at for
+                // an hour, so here is the thing itself, playing, and turnable.
+                #if canImport(UIKit)
+                SetPreview(carving: app.progress.appearance.carving)
+                Text(L.t("settings.previewNote", "Drag to turn it."))
+                    .appFont(.caption2)
+                    .foregroundStyle(Theatre.ivoryFaint)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                #endif
                 Text(L.t("settings.dimensionalCaveat", "Arrows and move values are drawn on the flat board only."))
                     .appFont(.footnote)
                     .foregroundStyle(Theatre.ivoryFaint)
@@ -761,3 +774,36 @@ struct DimensionChoice: View {
         .buttonStyle(BrassPressStyle())
     }
 }
+
+#if canImport(UIKit)
+/// The chosen set, on its own board, playing a game and free to be turned.
+///
+/// The same sequence the title screen runs, at the same quality, because the
+/// point of it is to answer "what will my chess look like" — and a preview that
+/// is cheaper than the thing it previews answers a different question.
+///
+/// Rebuilt from scratch when the choice changes rather than re-dressed: a set
+/// and its room are one scene, the walnut one brings its own board, and there
+/// is nothing here worth the bookkeeping of swapping pieces inside a live one.
+private struct SetPreview: View {
+    let carving: Carving
+
+    var body: some View {
+        BoardSceneView(sequence: TitleSequence(
+            quality: SceneQuality.forThisDevice,
+            style: carving.style
+        ))
+        // A shape rather than a rectangle, so the preview sits in the same
+        // brass plate as everything else on this screen.
+        .frame(height: 260)
+        .clipShape(BrassPlateShape(cut: 10))
+        .overlay {
+            BrassPlateShape(cut: 10)
+                .strokeBorder(Theatre.brassDeep.opacity(0.45), lineWidth: 0.8)
+        }
+        // Identity by set: SwiftUI then builds a new scene when the choice
+        // changes instead of handing the old one a new style it cannot apply.
+        .id(carving)
+    }
+}
+#endif
