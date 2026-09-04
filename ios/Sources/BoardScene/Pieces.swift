@@ -41,8 +41,29 @@ public enum PieceStyle: String, Sendable, CaseIterable, Codable {
     /// and gilt finials. Not the photographs turned into meshes, which cannot
     /// honestly be done: the same lathe, given the same jewellery.
     case banded
+    /// A different lathe: the club Staunton off the lamp table, in boxwood and
+    /// walnut, cut to a real set's proportions rather than the site's. See
+    /// `ParlourSet`, and `Parlour` for the board it comes with.
+    case parlour
 
     public var isBanded: Bool { self == .banded }
+
+    /// The room this set is shown in.
+    ///
+    /// A set and a board are one object in a photograph, and these two are not
+    /// interchangeable: the walnut set is cut for a lit table and would sit in
+    /// the theatre's black room looking like a different game, while the
+    /// banded set's brass has nothing to catch under a domestic lamp. So the
+    /// board follows the set rather than being a second setting to choose.
+    public var dressing: Dressing { self == .parlour ? .parlour : .theatre }
+}
+
+/// Which board the set stands on, and the room around it. See `Parlour`.
+public enum Dressing: Sendable {
+    /// The black room with a lit ebony plinth, which the app opens on.
+    case theatre
+    /// A walnut board on a table under a lamp.
+    case parlour
 }
 
 /// Chess pieces, turned rather than modelled.
@@ -293,6 +314,10 @@ public enum TurnedPieces {
     /// geometry that cannot be one: a lathe and an extrusion, meeting at the
     /// neck.
     public static func node(for kind: PieceKind, style: PieceStyle = .plain) -> SCNNode {
+        // The walnut set is a different turning rather than this one dressed
+        // differently, so it is built elsewhere and only shares the knight.
+        if style == .parlour { return ParlourSet.node(for: kind) }
+
         let s = height[kind] ?? 0.7
         let node = SCNNode()
 

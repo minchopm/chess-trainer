@@ -358,7 +358,7 @@ private final class TitleScene {
         if let built { return built }
         let made = TitleSequence(
             quality: SceneQuality.forThisDevice,
-            style: carving == .banded ? .banded : .plain
+            style: carving.style
         )
         built = made
         return made
@@ -390,6 +390,29 @@ private struct MenuBoardScene: View {
     }
 }
 #endif
+
+extension Carving {
+    /// Which set to build, from the player's choice of one.
+    ///
+    /// The mapping lives here rather than on `Carving` itself because `Carving`
+    /// is in ChessTraining and `PieceStyle` is in BoardScene, and ChessTraining
+    /// does not depend on BoardScene — deliberately, so the trainer can be
+    /// tested without a renderer. This is the one place the two meet.
+    ///
+    /// It was written out longhand as `carving == .banded ? .banded : .plain`
+    /// at each of the four sites that build a board, which is exactly the shape
+    /// that silently keeps working when a third case is added and quietly shows
+    /// the wrong set. It had already drifted once: the copy inside `TitleScene`
+    /// was written after the other three, and a fourth would have stood the
+    /// plain set on the title screen while the player had chosen walnut.
+    var style: PieceStyle {
+        switch self {
+        case .plain: .plain
+        case .banded: .banded
+        case .parlour: .parlour
+        }
+    }
+}
 
 extension SceneQuality {
     /// Two settings, chosen once. The distinction that matters is not the model

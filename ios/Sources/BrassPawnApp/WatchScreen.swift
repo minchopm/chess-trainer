@@ -276,7 +276,7 @@ struct ReplayViewer: View {
         guard player == nil else { return }
         let made = GamePlayer(
             quality: SceneQuality.forThisDevice,
-            style: app.progress.appearance.carving == .banded ? .banded : .plain
+            style: app.progress.appearance.carving.style
         )
         made.speed = playbackSpeed
         made.onChange = { value in

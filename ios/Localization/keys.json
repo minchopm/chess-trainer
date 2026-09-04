@@ -2660,6 +2660,20 @@
   ]
  },
  {
+  "key": "settings.parlourNote",
+  "english": "The walnut set comes with its own board: a framed maple board on a table, under a lamp.",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
+  "key": "settings.parlourSet",
+  "english": "Boxwood & walnut",
+  "files": [
+   "SettingsScreen.swift"
+  ]
+ },
+ {
   "key": "settings.pieces",
   "english": "Pieces",
   "files": [

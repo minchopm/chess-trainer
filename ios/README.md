@@ -52,6 +52,8 @@ Sources/
   ChessCore/               rules of chess — no I/O, proven by perft
   ChessEngine/             Engine protocol + one actor per engine
   ChessTraining/           features, grading, rating, spaced repetition, selection
+  BoardScene/              the board in the round: SceneKit, turned pieces, two rooms
+  BoardUI/                 the flat board and the palette it is drawn in
   BrassPawnApp/            SwiftUI views and view models
   sfprobe/                 CLI driver for diagnosing engine problems
 Vendor/Stockfish/          upstream engine (GPLv3, unmodified) + a C bridge
@@ -226,6 +228,34 @@ inside a tab rather than a destination, and it is cleared on being taken, so
 returning to Board a week later does not silently reload a game you had moved
 on from.
 
+## Three sets, two boards
+
+The board in the round comes in two dressings, and the set decides which — see
+`PieceStyle.dressing`. They are not interchangeable, which is why there is one
+control in Settings rather than two.
+
+**The theatre**, which the app opens on, is the site's set in the site's room: a
+field of squares on an ebony plinth in a black room, one hard warm spot from
+off-stage, and no frame. It is lit for a shot, and it is the right room for the
+title sequence — a board playing famous games to itself, where the only thing
+being asked of the player is to look. The set comes plain or banded in brass.
+
+**The parlour** is a photograph of a chess board instead: a framed maple-and-walnut
+board with a boxwood inlay line, standing on a table in a dim room under one
+lamp. The set on it is a third turning — `ParlourSet` — cut to a real
+tournament set's proportions rather than the site's, which is most of the
+difference: the site's king stands 1.44 squares on a 0.55-square foot, and a
+real one is 1.67 on 0.70. The reference is wider still, and this set's king
+takes 0.79 of its square, so a full back rank reads as crowded rather than as
+sparse. Its knight is deliberately not new — it is the site's head, scaled,
+because that mesh is the most expensive thing in `BoardScene` and a second horse
+would be a set that no longer looked like one set.
+
+What makes the parlour read as a photograph is not the pieces. It is the frame,
+the inlay line, the table, and a lamp placed *behind* the board — a lamp on the
+player's own side throws every shadow away from the camera and behind the piece
+casting it, and the set comes out looking pasted onto the squares.
+
 ## Reading a board from a photograph
 
 Board → Photo. Take or choose a picture, tap the board's four corners, and what
@@ -369,6 +399,14 @@ The suite is worth knowing about because two parts of it are not the usual
   stepped back off the end. Both are invisible in the types — nothing stops
   `BoardModel` appending to a line it is not showing the end of — so they are
   held by tests rather than by the compiler.
+- **The walnut set's shape.** That every piece stands the height the set claims,
+  starts on the square rather than under it, and keeps its foot inside its own
+  square — and that a rook's battlement is a closed solid. Each is a fault the
+  set actually had: two heights were out by a twentieth of a square, and the
+  battlements were cut with a partial `Solid.revolved`, which closes an open
+  sweep at the axis and so drags a pair of blades through the middle of the
+  piece. That last one is invisible from a chair and plain from overhead, which
+  is an elevation the camera allows.
 - **The photograph's orientation.** Core Image counts y upwards and a tap counts
   it downwards. Getting that wrong produces a board upside down rather than an
   error, which is the kind of mistake that survives a review — so a picture with

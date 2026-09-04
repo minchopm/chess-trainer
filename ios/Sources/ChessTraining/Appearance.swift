@@ -207,13 +207,23 @@ public enum BoardDimension: String, Codable, CaseIterable, Identifiable, Sendabl
     public var isDimensional: Bool { self == .dimensional }
 }
 
-/// The two turned sets.
+/// The turned sets, and the board each is shown on.
 public enum Carving: String, Codable, CaseIterable, Identifiable, Sendable {
     /// Boxwood and ebony, nothing on them but the turning.
     case plain
     /// The same turning with brass bands and brass finials — the set the flat
     /// board uses, which is a photographed Staunton with gilt collars.
     case banded
+    /// A club Staunton in boxwood and walnut, cut to a real set's proportions,
+    /// on a framed maple board on a table under a lamp.
+    ///
+    /// This one brings its own board, which the other two do not: they share
+    /// the lit black room the app opens on. A set and a board are one object in
+    /// a photograph and these two are not interchangeable — the walnut set in
+    /// the black room reads as a different game, and the banded set's brass has
+    /// nothing to catch under a domestic lamp. So the choice is of a look
+    /// rather than of a set, and there is one control rather than two.
+    case parlour
     public var id: String { rawValue }
 }
 

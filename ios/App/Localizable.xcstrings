@@ -77619,6 +77619,28 @@
         }
       }
     },
+    "settings.parlourNote": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The walnut set comes with its own board: a framed maple board on a table, under a lamp."
+          }
+        }
+      }
+    },
+    "settings.parlourSet": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boxwood & walnut"
+          }
+        }
+      }
+    },
     "settings.pieces": {
       "extractionState": "manual",
       "localizations": {

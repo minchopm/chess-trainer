@@ -353,8 +353,23 @@ final class PieceMaterials {
         // The banded set is a photographed Staunton: its light side is boxwood,
         // warmer and creamier than the site's ivory, and its dark side is
         // nearer to true black because the brass has to read against it.
-        let light: UInt32 = style.isBanded ? 0xE8DCC0 : 0xE6DFCD
-        let dark: UInt32 = style.isBanded ? 0x14161C : 0x11131A
+        //
+        // The walnut set's dark side is not black at all. It is a stain, and
+        // the thing a stain does that paint does not is let the grain through,
+        // so the pieces read as wood from across a room. Taken to ebony it
+        // stops being this set — and on a lit board a near-black piece is a
+        // silhouette with a highlight on it, which is exactly what the theatre
+        // wants and exactly what a lamp-lit table does not.
+        let light: UInt32 = switch style {
+        case .banded: 0xE8DCC0
+        case .parlour: 0xE6D8B4
+        case .plain: 0xE6DFCD
+        }
+        let dark: UInt32 = switch style {
+        case .banded: 0x14161C
+        case .parlour: 0x53321F
+        case .plain: 0x11131A
+        }
 
         for material in [brass, brassLit] {
             material.lightingModel = .physicallyBased
@@ -371,21 +386,29 @@ final class PieceMaterials {
         brassLit.emission.contents = Colour.make(0xF0CD8E)
         brassLit.emission.intensity = 0.35
 
+        // Lacquer or oil. The site's sets are french-polished — a tight coat
+        // that throws a small hard highlight, which is what makes them read as
+        // display pieces in a dark room. A set that is played with is oiled and
+        // waxed instead: the sheen is broad and low, and there is no separate
+        // varnish layer for the lamp to find. Given the lacquer, the walnut
+        // came out looking like moulded plastic under the same light.
+        let oiled = style == .parlour
+
         for material in [ivory, ivoryLit] {
             material.lightingModel = .physicallyBased
             material.diffuse.contents = Colour.make(light)
-            material.roughness.contents = 0.36
+            material.roughness.contents = oiled ? 0.46 : 0.36
             material.metalness.contents = 0.0
-            material.clearCoat.contents = 0.55
-            material.clearCoatRoughness.contents = 0.3
+            material.clearCoat.contents = oiled ? 0.16 : 0.55
+            material.clearCoatRoughness.contents = oiled ? 0.58 : 0.3
         }
         for material in [ebony, ebonyLit] {
             material.lightingModel = .physicallyBased
             material.diffuse.contents = Colour.make(dark)
-            material.roughness.contents = 0.3
-            material.metalness.contents = 0.08
-            material.clearCoat.contents = 0.75
-            material.clearCoatRoughness.contents = 0.18
+            material.roughness.contents = oiled ? 0.42 : 0.3
+            material.metalness.contents = oiled ? 0.0 : 0.08
+            material.clearCoat.contents = oiled ? 0.20 : 0.75
+            material.clearCoatRoughness.contents = oiled ? 0.52 : 0.18
         }
         ivoryLit.emission.contents = Colour.make(0xD6A95F)
         ivoryLit.emission.intensity = 0.3

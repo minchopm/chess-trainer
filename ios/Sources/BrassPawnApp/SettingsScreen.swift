@@ -688,6 +688,17 @@ struct DimensionChoice: View {
                     carving(.banded, L.t("settings.banded", "Brass banded"))
                     carving(.plain, L.t("settings.plainSet", "Boxwood & ebony"))
                 }
+                // The walnut set gets its own row rather than a third of one.
+                // Two reasons, and the layout is the smaller: three of these
+                // labels across a phone wrap to three lines each. The other is
+                // that this is the only choice here that changes the board as
+                // well as the pieces, and a note saying so does not fit under a
+                // button a third of the screen wide.
+                carving(.parlour, L.t("settings.parlourSet", "Boxwood & walnut"))
+                Text(L.t("settings.parlourNote",
+                         "The walnut set comes with its own board: a framed maple board on a table, under a lamp."))
+                    .appFont(.footnote)
+                    .foregroundStyle(Theatre.ivoryFaint)
                 Text(L.t("settings.dimensionalCaveat", "Arrows and move values are drawn on the flat board only."))
                     .appFont(.footnote)
                     .foregroundStyle(Theatre.ivoryFaint)

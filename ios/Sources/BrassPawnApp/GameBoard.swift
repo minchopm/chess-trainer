@@ -142,7 +142,7 @@ private struct DimensionalBoard: View {
         guard board == nil else { return }
         let live = LiveBoard(
             quality: SceneQuality.forThisDevice,
-            style: app.progress.appearance.carving == .banded ? .banded : .plain,
+            style: app.progress.appearance.carving.style,
             orientation: orientation
         )
         live.onMove = { from, to in
