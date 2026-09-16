@@ -27,6 +27,7 @@ public final class LiveBoard: SceneDriver {
     private var lastMove: (from: Square, to: Square)?
     private let highlights = Highlights()
     private let tags = ValueTagPool()
+    private let arrows = ArrowPool()
     private var clock: TimeInterval = 0
     private var pendingSync = false
 
@@ -42,6 +43,7 @@ public final class LiveBoard: SceneDriver {
             target: SIMD3<Float>(0, 0.2, 0)
         )
         stage.scene.rootNode.addChildNode(highlights.node)
+        stage.scene.rootNode.addChildNode(arrows.node)
         stage.scene.rootNode.addChildNode(tags.node)
         stage.board.set(position)
         place()
@@ -140,6 +142,18 @@ public final class LiveBoard: SceneDriver {
         refresh()
     }
 
+    /// What the coach is pointing at, if anything.
+    ///
+    /// Not derived from the position the way the dots are: an arrow is
+    /// somebody's opinion about it, and the scene is not the one holding the
+    /// opinion.
+    private var coachArrows: [BoardArrow] = []
+
+    public func show(arrows: [BoardArrow]) {
+        coachArrows = arrows
+        refresh()
+    }
+
     private var valueTags: [ValueTag] {
         destinationsForSelection.compactMap { square in
             guard let value = values[square] else { return nil }
@@ -178,6 +192,7 @@ public final class LiveBoard: SceneDriver {
 
     private func refresh() {
         highlights.show(selected: selected, destinations: destinationsForSelection, lastMove: lastMove)
+        arrows.show(coachArrows)
         tags.show(valueTags)
     }
 

@@ -7,10 +7,11 @@ import SwiftUI
 /// The board every screen asks for, flat or in the round.
 ///
 /// One call site, one set of arguments, and the player's own choice decides
-/// which of the two draws it. The arguments are the flat board's, because the
-/// flat board is the one that can express all of them: arrows, per-move values
-/// and a piece dragged across the squares are all things a fixed overhead grid
-/// can do and a camera that can be anywhere cannot.
+/// which of the two draws it. The arguments are the flat board's, because it is
+/// the older of the two and the one everything was written against. What the
+/// round board cannot take, it is not given — a piece dragged across the
+/// squares is a thing a fixed overhead grid can do and a camera that can be
+/// anywhere cannot.
 struct GameBoard: View {
     @Environment(AppModel.self) private var app
 
@@ -34,6 +35,7 @@ struct GameBoard: View {
                 legalDestinations: legalDestinations,
                 premoveDestinations: premoveDestinations,
                 lastMove: lastMove,
+                shapes: shapes,
                 moveValues: moveValues,
                 onMove: onMove,
                 onPremove: onPremove
@@ -79,6 +81,7 @@ private struct DimensionalBoard: View {
     let legalDestinations: [Square: [Square]]
     let premoveDestinations: [Square: [Square]]
     let lastMove: (from: Square, to: Square)?
+    let shapes: [BoardShape]
     let moveValues: MoveValues?
     let onMove: (Square, Square, PieceKind?) -> Void
     let onPremove: (Square, Square, PieceKind?) -> Void
@@ -112,6 +115,8 @@ private struct DimensionalBoard: View {
         .onAppear(perform: build)
         .onChange(of: valuesBySquare) { _, values in board?.show(values: values) }
         .task(id: valuesBySquare) { board?.show(values: valuesBySquare) }
+        .onChange(of: boardArrows) { _, arrows in board?.show(arrows: arrows) }
+        .task(id: boardArrows) { board?.show(arrows: boardArrows) }
         .onChange(of: app.progress.appearance.showsCoordinates) { _, showing in
             board?.stage.setCoordinates(showing)
         }
@@ -138,6 +143,23 @@ private struct DimensionalBoard: View {
         return plates
     }
 
+    /// The coach's marks, in the terms the scene understands.
+    ///
+    /// Arrows only. The flat board's vocabulary also has a circle, and nothing
+    /// in the app has ever drawn one — so rather than invent a round inlay
+    /// nobody has asked for, the case is named here and passed over, where
+    /// whoever draws the first circle will find it.
+    private var boardArrows: [BoardArrow] {
+        shapes.compactMap { shape in
+            switch shape.kind {
+            case .arrow(let from, let to):
+                BoardArrow(from: from, to: to, tint: shape.colorHint.sceneTint)
+            case .circle:
+                nil
+            }
+        }
+    }
+
     private func build() {
         guard board == nil else { return }
         let live = LiveBoard(
@@ -161,12 +183,29 @@ private struct DimensionalBoard: View {
         }
         live.stage.setCoordinates(app.progress.appearance.showsCoordinates)
         live.show(values: valuesBySquare)
+        live.show(arrows: boardArrows)
         board = live
     }
 
     private func isPromotion(from: Square, to: Square) -> Bool {
         guard let piece = position[from], piece.kind == .pawn else { return false }
         return to.rank == piece.color.promotionRank
+    }
+}
+
+/// The flat board's coaching colours, said in the scene's terms.
+///
+/// The two boards are separate modules and neither can see the other — the
+/// scene deliberately depends on the rules and nothing else, so that a game can
+/// be played out on it without the app. This is the seam, and it lives here
+/// because this file is the one place that has both in scope.
+private extension BoardShape.Hint {
+    var sceneTint: ArrowTint {
+        switch self {
+        case .good: .good
+        case .suggestion: .suggestion
+        case .warning: .warning
+        }
     }
 }
 
