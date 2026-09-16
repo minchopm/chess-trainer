@@ -32,27 +32,66 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
     static var tabletWidth: CGFloat { 700 }
     /// Sixty-ish characters a line. Text set across a full iPad is a wall.
     static var maximumText: CGFloat { 620 }
+    /// The narrowest the panel beside the board may be squeezed.
+    ///
+    /// About what it gets on a phone in portrait, which is the width every one
+    /// of these panels was written for: a coach's paragraph, two columns of
+    /// move notation, a row of buttons. Below it they start wrapping into
+    /// columns of two words.
+    static var minimumPanel: CGFloat { 340 }
+    /// The padding around the pair and the gap between them: 12 a side, 16
+    /// down the middle.
+    static var wideSurround: CGFloat { 40 }
+    /// The widest the board and the column beside it can between them use.
+    ///
+    /// Both stop growing at their own caps, so past this a window is only
+    /// adding margin. The Mac reads it as the width to centre a screen in.
+    static var maximumWide: CGFloat { maximumBoardOnTablet + maximumText + wideSurround }
 
     var body: some View {
         GeometryReader { geometry in
             let isWide = geometry.size.width > geometry.size.height
 
             if isWide {
+                // What the two of them have to share, once the outer padding
+                // and the gap between them are taken out.
+                let available = geometry.size.width - Self.wideSurround
+                // The board is served first, and the panel gets what is left.
+                //
+                // It used to be the other way about: the board took a fixed
+                // 54% and the panel everything after it, so on a wide screen
+                // every point of extra width went to the column of text — which
+                // stops at sixty characters a line and floats the rest of the
+                // way in empty ink — while the board sat at a cap set for a
+                // phone held at arm's length. On a Mac window that was a board
+                // of 560 points beside 560 points of nothing.
+                //
+                // The board is what the screen is *for*. It takes the height it
+                // is given, up to the cap for a screen at this distance, and
+                // stops only where the panel would be squeezed below the width
+                // it was written for.
+                let cap = geometry.size.width >= Self.tabletWidth
+                    ? Self.maximumBoardOnTablet : Self.maximumBoard
                 let width = min(
-                    geometry.size.width * 0.54,
                     geometry.size.height - 24 - BoardStage<EmptyView>.chromeHeight,
-                    Self.maximumBoard
+                    cap,
+                    available - Self.minimumPanel
                 )
                 HStack(alignment: .top, spacing: 16) {
-                    board(width).padding(.leading, 12).padding(.vertical, 12)
+                    board(width).padding(.vertical, 12)
                     VStack(spacing: 12) {
-                        ScrollView { VStack(spacing: 12) { panel }.frame(maxWidth: Self.maximumText) }
-                        controls.frame(maxWidth: Self.maximumText)
+                        ScrollView { VStack(spacing: 12) { panel } }
+                        controls
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding(.trailing, 12)
+                    // A column rather than the remainder. Whatever a window
+                    // wider than the pair of them adds now goes into the
+                    // margins on either side, where it reads as room around a
+                    // composition instead of a gap through the middle of one.
+                    .frame(maxWidth: Self.maximumText)
                     .padding(.vertical, 12)
                 }
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal, 12)
             } else {
                 // The caps only bite on a tablet. On a phone in portrait the
                 // board is limited by the width, as it should be.
@@ -362,7 +401,7 @@ struct AllowanceNotice: View {
                 .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
             }
         }
-        .fullScreenCover(isPresented: $showsPaywall) { PaywallView(activity: activity) }
+        .appCover(isPresented: $showsPaywall) { PaywallView(activity: activity) }
     }
 
     private var allowanceTitle: String {

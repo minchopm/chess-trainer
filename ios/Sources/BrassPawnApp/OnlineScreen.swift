@@ -47,7 +47,7 @@ struct OnlineScreen: View {
             activity.release()
         }
         #if canImport(UIKit)
-        .fullScreenCover(item: Binding(
+        .appCover(item: Binding(
             get: { matchmaker.pendingAuthController },
             set: { matchmaker.pendingAuthController = $0 }
         )) { item in
@@ -250,7 +250,7 @@ struct OnlineScreen: View {
         } controls: {
             controls(session)
         }
-        .fullScreenCover(isPresented: completionIsPresented(session)) {
+        .appCover(isPresented: completionIsPresented(session)) {
             if case .finished(let result) = session.phase {
                 CompletionOverlay(
                     result: completion(for: settled ?? result),

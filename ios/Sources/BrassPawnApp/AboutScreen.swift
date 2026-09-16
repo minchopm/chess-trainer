@@ -104,7 +104,7 @@ struct AboutScreen: View {
             }
         }
         .background(Theatre.ink.ignoresSafeArea())
-        .fullScreenCover(item: $document) { item in
+        .appCover(item: $document) { item in
             BundledTextView(resource: item.resource, title: item.title)
         }
     }

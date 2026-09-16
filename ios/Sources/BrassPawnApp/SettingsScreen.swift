@@ -47,10 +47,12 @@ struct TopBar<Content: View>: View {
             BrassBackButton {
                 if activity.isActive { activity.requestExit() } else { navigator.goToMenu() }
             }
-            .offset(y: -26)
+            // Not lifted on a Mac: that strip is the title bar, and the
+            // window's own close, minimise and zoom buttons are in it.
+            .offset(y: Mac.backButtonLift)
         }
         .padding(.horizontal, 12)
-        .padding(.top, 4)
+        .padding(.top, Mac.topBarHeadroom)
         .padding(.bottom, 2)
     }
 }
@@ -94,7 +96,7 @@ struct SettingsScreen: View {
             }
             .background(Theatre.ink.ignoresSafeArea())
         }
-        .fullScreenCover(isPresented: $showsAbout) { AboutScreen() }
+        .appCover(isPresented: $showsAbout) { AboutScreen() }
     }
 
     private func section<Content: View>(

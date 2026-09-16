@@ -35,7 +35,7 @@ struct HistoryList: View {
             }
         }
         #if os(iOS)
-        .fullScreenCover(item: $watching) { game in
+        .appCover(item: $watching) { game in
             SavedGameViewer(game: game)
         }
         #endif

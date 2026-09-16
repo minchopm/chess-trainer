@@ -148,7 +148,7 @@ struct PhotoBoardSheet: View {
         .padding(20)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(Theatre.ink.ignoresSafeArea())
-        .fullScreenCover(isPresented: $isCapturing) {
+        .appCover(isPresented: $isCapturing) {
             CameraPicker { captured in
                 corners = []
                 detected = false

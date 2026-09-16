@@ -93,8 +93,14 @@ targets:
     dependencies:
       - package: BrassPawn
         product: BrassPawnApp
+      # iOS only. There is no such thing as an App Clip on a Mac: nothing
+      # invokes one, and the target cannot be built for Catalyst at all, so
+      # without the filter the Mac build fails on a dependency it has no use
+      # for. The filter is on the dependency and the embed both, which is what
+      # `platformFilter` writes.
       - target: BrassPawnClip
         embed: true
+        platformFilter: iOS
     info:
       path: App/Info.plist
       properties:
@@ -139,10 +145,25 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.arte-soft.brasspawn
         CODE_SIGN_ENTITLEMENTS: App/BrassPawn.entitlements
+        # The Mac wants a different set. App Sandbox is not optional for a Mac
+        # App Store build, and the App Group is an iOS arrangement — the clip
+        # that used it does not exist here. See App/BrassPawnCatalyst.entitlements.
+        CODE_SIGN_ENTITLEMENTS[sdk=macosx*]: App/BrassPawnCatalyst.entitlements
         MARKETING_VERSION: "1.0"
         CURRENT_PROJECT_VERSION: "2"
         SWIFT_VERSION: "6.0"
-        TARGETED_DEVICE_FAMILY: "1,2"
+        # 6 is the Mac. Its presence is what asks for the Mac idiom — native
+        # control metrics and a window drawn at its own scale — rather than an
+        # iPad screen shrunk to 77% and left slightly soft. The app draws nearly
+        # all of its own furniture, so there is little of UIKit's to be resized
+        # by the change, and the board is the one thing that gains from every
+        # pixel being its own.
+        TARGETED_DEVICE_FAMILY: "1,2,6"
+        SUPPORTS_MACCATALYST: YES
+        # The same bundle identifier on both, so the Mac build is the same
+        # product as the iOS one: one App Store listing, one universal purchase,
+        # and a subscription bought on a phone that is already paid for here.
+        DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER: NO
         # Resources/AppIcon.icon, not the appiconset of the same name. Both
         # exist; the document wins because actool prefers it, and it is what
         # gives iOS 26 the light, dark and tinted appearances.
@@ -229,6 +250,10 @@ targets:
         CURRENT_PROJECT_VERSION: "2"
         SWIFT_VERSION: "6.0"
         TARGETED_DEVICE_FAMILY: "1,2"
+        # Said out loud rather than left to the default, because the app beside
+        # it now says YES and a reader would otherwise have to know which way
+        # the default falls.
+        SUPPORTS_MACCATALYST: NO
         DEVELOPMENT_TEAM: 8293TNMX6S
         CODE_SIGN_STYLE: Automatic
 

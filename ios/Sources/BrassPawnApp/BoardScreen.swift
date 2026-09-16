@@ -422,11 +422,11 @@ struct BoardScreen: View {
         } controls: {
             controls
         }
-        .sheet(isPresented: $isImporting) { ImportSheet(model: model, isPresented: $isImporting) }
+        .appSheet(isPresented: $isImporting) { ImportSheet(model: model, isPresented: $isImporting) }
         // Seeded with what is on the board, so the editor is a way to adjust a
         // position as well as to build one — which is what anything read off a
         // photograph will need.
-        .sheet(item: $editorSeed) { seed in
+        .appSheet(item: $editorSeed) { seed in
             PositionEditorSheet(
                 model: seed.editor(orientation: model.orientation)
             ) { position in
@@ -438,7 +438,7 @@ struct BoardScreen: View {
         // Whatever a photograph produces goes to the editor, always. Even the
         // best published reader gets a few squares wrong on an average board,
         // so correcting it is the feature and not a safety net.
-        .sheet(isPresented: $isPhotographing) {
+        .appSheet(isPresented: $isPhotographing) {
             PhotoBoardSheet(isPresented: $isPhotographing, reader: UnreadBoard()) { pieces in
                 editorSeed = EditorSeed(pieces: pieces)
             }

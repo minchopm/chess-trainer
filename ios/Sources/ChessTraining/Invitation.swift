@@ -104,8 +104,25 @@ public extension Invitation {
 public enum SharedContainer {
     public static let appGroup = "group.com.arte-soft.brasspawn"
 
+    /// The App Group where there is one, and the app's own container where
+    /// there is not.
+    ///
+    /// The Mac build has no App Group: a Mac has no App Clip to share one with,
+    /// and a group on macOS would have to be registered separately and named
+    /// with the team prefix to buy nothing. But the app also uses this as its
+    /// own hand-off — the view that opens an invitation link is not the view
+    /// that acts on it — and that half has to keep working. Falling back to
+    /// Application Support keeps it working everywhere, and on iOS the group is
+    /// found first, so nothing about the clip changes.
     private static var directory: URL? {
-        FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroup)
+        if let group = FileManager.default
+            .containerURL(forSecurityApplicationGroupIdentifier: appGroup) {
+            return group
+        }
+        return try? FileManager.default.url(
+            for: .applicationSupportDirectory, in: .userDomainMask,
+            appropriateFor: nil, create: true
+        )
     }
 
     private static var pendingInvitation: URL? {

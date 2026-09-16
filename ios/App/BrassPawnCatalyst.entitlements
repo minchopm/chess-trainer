@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- The Mac Catalyst half of App/BrassPawn.entitlements. Two differences,
+	     both forced by the platform rather than chosen:
+
+	     The sandbox is not optional. A Mac App Store build is refused without
+	     it, and everything inside it has to be asked for by name — which is
+	     what the four keys below do.
+
+	     The App Group is gone. It existed so the App Clip could leave an
+	     invitation where the app would find it, and a Mac has no App Clip to
+	     leave one. SharedContainer falls back to the app's own container when
+	     no group is available, so the app still hands an invitation from the
+	     link that opened it to the screen that acts on it. -->
+	<key>com.apple.security.app-sandbox</key>
+	<true/>
+
+	<!-- Game Center and StoreKit both talk to Apple. Neither works in a
+	     sandbox that cannot open an outbound connection, and Online play is
+	     the whole of one mode. Client only: nothing listens. -->
+	<key>com.apple.security.network.client</key>
+	<true/>
+
+	<!-- Reading a position off a photograph of a real board, on a Mac that
+	     has a camera pointed at one. -->
+	<key>com.apple.security.device.camera</key>
+	<true/>
+
+	<!-- The photo picker, which is the other way into the same feature.
+	     Read-only: the app takes a copy of the picture and never writes back
+	     to the library. -->
+	<key>com.apple.security.assets.pictures.read-only</key>
+	<true/>
+
+	<key>com.apple.developer.game-center</key>
+	<true/>
+</dict>
+</plist>

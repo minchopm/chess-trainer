@@ -1,16 +1,19 @@
 #!/bin/sh
 # Builds the vendored Reckless engine into an xcframework for iOS.
 #
-# Produces Vendor/Reckless/CReckless.xcframework with three slices: the device
-# (aarch64-apple-ios), the simulator (aarch64-apple-ios-sim), and macOS
-# (aarch64-apple-darwin). macOS is not there to run the app — it is there because
-# `swift test` builds for the host, and the engine tests are the ones that matter.
+# Produces Vendor/Reckless/CReckless.xcframework with four slices: the device
+# (aarch64-apple-ios), the simulator (aarch64-apple-ios-sim), Mac Catalyst
+# (aarch64-apple-ios-macabi) and macOS (aarch64-apple-darwin). Catalyst is the
+# Mac build of the app itself. Plain macOS is not there to run anything — it is
+# there because `swift test` builds for the host, and the engine tests are the
+# ones that matter. The two are different platforms to the linker even on the
+# same machine, so both slices have to exist.
 #
 # Neither the xcframework nor the network is committed: both are build outputs or
 # build inputs with a canonical source, in the same spirit as fetch-networks.sh.
 #
 # Requires Rust 1.85 or newer — the crate is edition 2024:
-#   rustup target add aarch64-apple-ios aarch64-apple-ios-sim
+#   rustup target add aarch64-apple-ios aarch64-apple-ios-sim aarch64-apple-ios-macabi
 set -e
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -32,7 +35,7 @@ export EVALFILE
 
 # --no-default-features drops Syzygy, whose build script needs clang and bindgen
 # to compile Fathom. Tablebases are not something a phone carries anyway.
-for target in aarch64-apple-ios aarch64-apple-ios-sim aarch64-apple-darwin; do
+for target in aarch64-apple-ios aarch64-apple-ios-sim aarch64-apple-ios-macabi aarch64-apple-darwin; do
     echo "building $target ..."
     cargo build --manifest-path "$CRATE/Cargo.toml" \
         --release --no-default-features --lib --target "$target"
@@ -48,6 +51,7 @@ rm -rf "$CRATE/CReckless.xcframework"
 xcodebuild -create-xcframework \
     -library "$CRATE/target/aarch64-apple-ios/release/libreckless.a" -headers "$HEADERS" \
     -library "$CRATE/target/aarch64-apple-ios-sim/release/libreckless.a" -headers "$HEADERS" \
+    -library "$CRATE/target/aarch64-apple-ios-macabi/release/libreckless.a" -headers "$HEADERS" \
     -library "$CRATE/target/aarch64-apple-darwin/release/libreckless.a" -headers "$HEADERS" \
     -output "$CRATE/CReckless.xcframework" >/dev/null
 

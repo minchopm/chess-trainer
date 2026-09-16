@@ -42,7 +42,7 @@ struct PaywallView: View {
         .background(Theatre.ink.ignoresSafeArea())
         .task { await store.prepare() }
         .onChange(of: store.isPro) { _, isPro in if isPro { dismiss() } }
-        .fullScreenCover(isPresented: $showsAbout) { AboutScreen() }
+        .appCover(isPresented: $showsAbout) { AboutScreen() }
     }
 
     private var purchasesHeader: some View {
@@ -420,7 +420,7 @@ struct ProUpsellRow: View {
                 }
             }
             .buttonStyle(BrassPressStyle())
-            .fullScreenCover(isPresented: $showsPaywall) { PaywallView() }
+            .appCover(isPresented: $showsPaywall) { PaywallView() }
         }
     }
 }

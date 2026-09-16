@@ -97,8 +97,8 @@ struct MenuScreen: View {
         }
         .ignoresSafeArea(edges: .horizontal)
         .background(Theatre.ink)
-        .fullScreenCover(isPresented: $showsPurchases) { PaywallView() }
-        .fullScreenCover(isPresented: $showsSettings) { SettingsScreen() }
+        .appCover(isPresented: $showsPurchases) { PaywallView() }
+        .appCover(isPresented: $showsSettings) { SettingsScreen() }
         #if DEBUG
         // Every in-app purchase needs a screenshot of the screen that offers
         // it, in each language, before it can be submitted. Opened from here

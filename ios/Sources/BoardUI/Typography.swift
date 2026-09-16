@@ -226,6 +226,40 @@ public struct Panel<Content: View>: View {
     }
 }
 
+/// A button's answer to a pointer resting on it.
+///
+/// A phone has nothing to answer: a finger arrives and presses in one motion,
+/// so a button is either untouched or pressed. A Mac has a pointer that crosses
+/// a button long before anything is clicked, and a button that does not change
+/// under it reads as a picture of a button rather than a button. This is the
+/// smallest honest answer — a brightening about as large as the press undoes,
+/// because the whole app is drawn in a dark room and more than this glares.
+///
+/// Nothing at all off Mac Catalyst, so the phone and the iPad are untouched.
+struct PointerLift: ViewModifier {
+    let isPressed: Bool
+    @State private var hovering = false
+
+    func body(content: Content) -> some View {
+        #if targetEnvironment(macCatalyst)
+        content
+            // Not while it is held down: the press already has an answer of its
+            // own, and two at once reads as a flicker.
+            .brightness(hovering && !isPressed ? 0.07 : 0)
+            .animation(.easeOut(duration: 0.12), value: hovering)
+            .onHover { hovering = $0 }
+        #else
+        content
+        #endif
+    }
+}
+
+extension View {
+    func pointerLift(isPressed: Bool) -> some View {
+        modifier(PointerLift(isPressed: isPressed))
+    }
+}
+
 /// The pill from the site: hairline ghost by default, brass when it is the
 /// thing to press.
 public struct PillButtonStyle: ButtonStyle {
@@ -266,6 +300,7 @@ public struct PillButtonStyle: ButtonStyle {
             .opacity(enabled ? (configuration.isPressed ? 0.75 : 1) : 0.35)
             .scaleEffect(configuration.isPressed ? 0.98 : 1)
             .animation(.easeOut(duration: 0.16), value: configuration.isPressed)
+            .pointerLift(isPressed: configuration.isPressed || !enabled)
     }
 
     private var foreground: Color {
@@ -384,6 +419,7 @@ public struct BrassPressStyle: ButtonStyle {
             .opacity(configuration.isPressed ? 0.72 : 1)
             .scaleEffect(configuration.isPressed ? 0.985 : 1)
             .animation(.easeOut(duration: 0.14), value: configuration.isPressed)
+            .pointerLift(isPressed: configuration.isPressed)
     }
 }
 

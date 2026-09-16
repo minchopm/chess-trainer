@@ -133,7 +133,7 @@ struct ClassicsScreen: View {
         // library, and the tab bar underneath a transport bar is two rows of
         // controls that mean different things.
         #if os(iOS)
-        .fullScreenCover(item: $watching) { game in
+        .appCover(item: $watching) { game in
             WatchScreen(game: game)
         }
         #endif

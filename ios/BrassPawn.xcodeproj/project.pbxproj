@@ -11,7 +11,7 @@
 		11EE77AA55207BE6C3C461F3 /* CormorantGaramond.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71024DE3B1F2677467FD3AF1 /* CormorantGaramond.ttf */; };
 		1E54F463CC369E77BD5408AA /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 69DFD865B5FC73F4B5E8B02A /* Localizable.xcstrings */; };
 		2541B3543B99FC399B8C6611 /* clip-tactics.json in Resources */ = {isa = PBXBuildFile; fileRef = B18672398F8740AE3E14E4FA /* clip-tactics.json */; };
-		326E3A0015E6E2D2A89BFBF0 /* BrassPawnClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 7B14931322A005EFF2D2DE0A /* BrassPawnClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		326E3A0015E6E2D2A89BFBF0 /* BrassPawnClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 7B14931322A005EFF2D2DE0A /* BrassPawnClip.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		33E601C5AA0D6A17F286975A /* nn-37f18f62d772.nnue in Resources */ = {isa = PBXBuildFile; fileRef = 61BFAD9ACF0E2C7BDFB98CBB /* nn-37f18f62d772.nnue */; };
 		370968881587B058E14D7F8C /* ClipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269ABEE3FF0731519BE91AA8 /* ClipModel.swift */; };
 		3E6C9770357775F270CEA4E0 /* castle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E8CEB4BAEFDA2127CC91082 /* castle.wav */; };
@@ -112,6 +112,7 @@
 		C32C4A98E4324BA02D976DD9 /* BrassPawnClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrassPawnClip.entitlements; sourceTree = "<group>"; };
 		C41421C90AD63F6ECDF72F3A /* ClipScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipScreen.swift; sourceTree = "<group>"; };
 		D24D12372CC2CF7108A581D3 /* classics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = classics.json; sourceTree = "<group>"; };
+		D3B008FF8B71C5288B8E1D02 /* BrassPawnCatalyst.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrassPawnCatalyst.entitlements; sourceTree = "<group>"; };
 		D7C66C626791A2991355347F /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		E0F7348299FB29856924A9ED /* ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ios; path = .; sourceTree = SOURCE_ROOT; };
 		E84A1598D820F0FC0FB2487F /* positions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = positions.json; sourceTree = "<group>"; };
@@ -240,6 +241,7 @@
 			children = (
 				1BC08B8C95E3F3F1B239C1A8 /* BrassPawn.entitlements */,
 				297D864E27EC18F9E47E8616 /* BrassPawn.storekit */,
+				D3B008FF8B71C5288B8E1D02 /* BrassPawnCatalyst.entitlements */,
 				03FB1BBFBDC650A1425E50B4 /* BrassPawnMain.swift */,
 				F755F151598E76064B9B539F /* Info.plist */,
 				D7C66C626791A2991355347F /* InfoPlist.xcstrings */,
@@ -470,6 +472,7 @@
 /* Begin PBXTargetDependency section */
 		C4D5E13E98EC038F68CC86ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 0DE13E9AB178E736D00B2142 /* BrassPawnClip */;
 			targetProxy = C60C69DAE266C608C005DBB0 /* PBXContainerItemProxy */;
 		};
@@ -481,9 +484,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = App/BrassPawn.entitlements;
+				"CODE_SIGN_ENTITLEMENTS[sdk=macosx*]" = App/BrassPawnCatalyst.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DEVELOPMENT_TEAM = 8293TNMX6S;
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -493,8 +498,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arte-soft.brasspawn";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -503,9 +509,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = App/BrassPawn.entitlements;
+				"CODE_SIGN_ENTITLEMENTS[sdk=macosx*]" = App/BrassPawnCatalyst.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DEVELOPMENT_TEAM = 8293TNMX6S;
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -515,8 +523,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arte-soft.brasspawn";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
@@ -536,6 +545,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arte-soft.brasspawn.Clip";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -557,6 +567,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arte-soft.brasspawn.Clip";
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

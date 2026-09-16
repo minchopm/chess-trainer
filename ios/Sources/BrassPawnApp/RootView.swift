@@ -170,6 +170,13 @@ public struct RootView: View {
 
     private var content: some View {
         selectedScreen
+        // A Mac window is whatever width somebody dragged it to, and every
+        // screen here is a board with a column of reading beside it — both
+        // capped already. Past their sum a wider window only pulls the two
+        // apart, so the screen stops growing and centres itself in the ink
+        // instead. The title board behind the menu is not capped: it is a
+        // picture of a room, and a picture should fill its frame.
+        .macContentWidth()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Theatre.ink.ignoresSafeArea())
         .overlay(FilmGrain())

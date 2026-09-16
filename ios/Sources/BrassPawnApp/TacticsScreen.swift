@@ -22,7 +22,7 @@ struct TacticsScreen: View {
                 hasStartedAttempt: hasStartedAttempt,
                 wasDenied: exhausted
             )
-            .fullScreenCover(item: wrongFeedbackBinding) { feedback in
+            .appCover(item: wrongFeedbackBinding) { feedback in
                 WrongMoveOverlay(
                     feedback: feedback,
                     onDismiss: { model.dismissWrongFeedback() }
@@ -30,7 +30,7 @@ struct TacticsScreen: View {
                 .presentationBackground(.clear)
                 .interactiveDismissDisabled()
             }
-            .fullScreenCover(isPresented: completionIsPresented) {
+            .appCover(isPresented: completionIsPresented) {
                 if showsSolutionReplay,
                    let puzzle = model.puzzle,
                    let start = Position(fen: puzzle.fen) {

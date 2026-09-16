@@ -21,9 +21,11 @@ open ios/BrassPawn.xcodeproj
 `build-reckless.sh` is not optional: `Package.swift` has a binary target pointing
 at the xcframework it produces, so nothing builds until it has run. It needs a
 Rust toolchain of 1.85 or newer (the crate is edition 2024) with the
-`aarch64-apple-ios` and `aarch64-apple-ios-sim` targets installed. It also builds
-an `aarch64-apple-darwin` slice, which is what lets `swift test` exercise the
-engine on the host.
+`aarch64-apple-ios`, `aarch64-apple-ios-sim` and `aarch64-apple-ios-macabi`
+targets installed — the last is Mac Catalyst. It also builds an
+`aarch64-apple-darwin` slice, which is what lets `swift test` exercise the engine
+on the host; Catalyst and plain macOS are different platforms to the linker even
+on the same machine, so both slices have to exist.
 
 The Xcode project is committed, so XcodeGen is not required to open or build the
 app. Then pick a simulator or your own device and run.
@@ -43,6 +45,57 @@ cd ios
 xcodebuild -project BrassPawn.xcodeproj -scheme BrassPawn \
   -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build
 ```
+
+## On the Mac
+
+The same app, through Mac Catalyst — one bundle identifier, one App Store
+listing, and a subscription bought on a phone already paid for here. Choose
+**My Mac (Mac Catalyst)** as the destination, or:
+
+```bash
+cd ios
+xcodebuild -project BrassPawn.xcodeproj -scheme BrassPawn \
+  -destination 'platform=macOS,variant=Mac Catalyst' build
+```
+
+The App ID needs the **Mac Catalyst** platform enabled in the developer portal
+before it will sign; the iOS profile does not cover it. Everything else is the
+same build.
+
+Four things about the Mac are not the iOS app:
+
+**The interface is optimised for Mac**, not scaled from an iPad —
+`TARGETED_DEVICE_FAMILY` carries a 6. The app draws nearly all its own furniture,
+so there is little of UIKit's to be resized by the choice, and the board gets
+every pixel at its own scale rather than at 77% of one.
+
+**A different entitlements file.** `App/BrassPawnCatalyst.entitlements` is
+selected by an `[sdk=macosx*]` condition. It adds the App Sandbox, which a Mac
+App Store build cannot ship without, and drops the App Group — that existed so
+the App Clip could leave an invitation behind, and there is no App Clip on a Mac.
+`SharedContainer` falls back to the app's own container where no group exists,
+so an invitation still survives the trip from the link that opened it to the
+screen that acts on it.
+
+**The window has a floor.** `Mac.minimumWindowSize` — below about 880 × 660 the
+panel beside the board is narrower than its own paragraph. `MacWindow.swift`
+also empties the title bar, since the app writes its own name on the screen
+below in the face it chose, and caps how wide a laid-out screen may grow before
+it simply centres itself.
+
+**Presentations carry their own environment.** On iOS a `fullScreenCover`
+inherits the environment of whatever presented it. On Catalyst it does not, and
+a screen that asks for `AppModel` and finds nothing traps — Settings, the
+purchase screen, the end of a puzzle, all of them. `Presentation.swift` supplies
+`appCover` and `appSheet`, which read the surroundings at the call site and hand
+them on. **Use those and not `fullScreenCover`/`sheet` directly**, or the screen
+you add will crash on the Mac and nowhere else.
+
+One thing may be missing rather than different: "Take a photo" appears only
+where `UIImagePickerController` reports a camera source, which under Catalyst it
+generally does not. Reading a position off a photograph still works through the
+picker, which is the path most people on a Mac would take anyway. The sandbox
+asks for the camera regardless, so the button works wherever it does appear.
 
 ## Layout
 
