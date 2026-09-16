@@ -1,0 +1,11 @@
+# Upstream's .gitignore, two directories up, carries `reckless*` — meant for the
+# built binary of that name. It also matches `include/reckless.h`, which is not
+# upstream's and not built: it is the hand-written C header this app's bridge is
+# made of, and without it `build-reckless.sh` stops at the copy and no
+# xcframework is produced. Nothing then resolves the package, and Xcode reports
+# it as a missing product, three steps from the cause.
+#
+# The rule lives here rather than beside the one it answers, because `bridge/` is
+# ours and the directory above it is vendored: re-vendoring the engine would take
+# a negation written up there away with it, and the header would go quiet again.
+!include/reckless.h

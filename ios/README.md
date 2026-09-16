@@ -27,6 +27,12 @@ targets installed — the last is Mac Catalyst. It also builds an
 on the host; Catalyst and plain macOS are different platforms to the linker even
 on the same machine, so both slices have to exist.
 
+Skip either script and Xcode reports **"Missing package product 'BrassPawnApp'"**,
+which is three steps from the cause: the binary target has no artifact, so
+SwiftPM cannot resolve the local package, so none of its products exist. The
+real message is further down the log — *local binary target 'CReckless' … does
+not contain a binary artifact*. Run the two scripts and resolve again.
+
 The Xcode project is committed, so XcodeGen is not required to open or build the
 app. Then pick a simulator or your own device and run.
 
