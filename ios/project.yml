@@ -166,6 +166,13 @@ targets:
         # not eligible for it, so the pair was a contradiction rather than a
         # choice: two Macs listed, only one of which can happen.
         SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+        # Apple silicon only. The generic Catalyst destination an archive builds
+        # against is "arm64, x86_64", so without this it compiles an Intel half
+        # and fails at the link on the engine, which is built for one
+        # architecture — at the end of a long Release build, on the one step
+        # nobody runs until they are shipping. macOS 26 is the last release to
+        # carry Intel at all, and this app's floor is macOS 14.
+        ARCHS[sdk=macosx*]: arm64
         # The same bundle identifier on both, so the Mac build is the same
         # product as the iOS one: one App Store listing, one universal purchase,
         # and a subscription bought on a phone that is already paid for here.

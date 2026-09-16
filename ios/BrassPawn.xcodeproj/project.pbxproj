@@ -486,6 +486,7 @@
 		26CDD3364F1D584531874C4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"ARCHS[sdk=macosx*]" = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = App/BrassPawn.entitlements;
 				"CODE_SIGN_ENTITLEMENTS[sdk=macosx*]" = App/BrassPawnCatalyst.entitlements;
@@ -512,6 +513,7 @@
 		35EE2E1668B900C9145D01B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"ARCHS[sdk=macosx*]" = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = App/BrassPawn.entitlements;
 				"CODE_SIGN_ENTITLEMENTS[sdk=macosx*]" = App/BrassPawnCatalyst.entitlements;

@@ -1,0 +1,6 @@
+// Lets Swift `import CReckless`, the way ChessEngine imports CStockfish.
+// Copied into the xcframework's Headers directory by scripts/build-reckless.sh.
+module CReckless {
+    header "reckless.h"
+    export *
+}

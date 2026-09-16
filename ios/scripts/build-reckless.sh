@@ -31,8 +31,7 @@ CRATE="$ROOT/Vendor/Reckless"
 #
 # The app loads the same network from its bundle instead, the way it already
 # does for Stockfish. `fetch-networks.sh` puts it there.
-for target in aarch64-apple-ios aarch64-apple-ios-sim \
-              aarch64-apple-ios-macabi x86_64-apple-ios-macabi aarch64-apple-darwin; do
+for target in aarch64-apple-ios aarch64-apple-ios-sim aarch64-apple-ios-macabi aarch64-apple-darwin; do
     echo "building $target ..."
     cargo build --manifest-path "$CRATE/Cargo.toml" \
         --release --no-default-features --lib --target "$target"
@@ -41,15 +40,11 @@ for target in aarch64-apple-ios aarch64-apple-ios-sim \
     strip -S "$CRATE/target/$target/release/libreckless.a"
 done
 
-# Catalyst ships both architectures — an App Store archive builds for arm64 and
-# x86_64, and a Mac slice missing one will not link — so the two are lipo'd into
-# a single library and the xcframework carries one fat Catalyst slice rather than
-# two that would collide.
-FAT="$CRATE/target/maccatalyst-libreckless.a"
-lipo -create \
-    "$CRATE/target/aarch64-apple-ios-macabi/release/libreckless.a" \
-    "$CRATE/target/x86_64-apple-ios-macabi/release/libreckless.a" \
-    -output "$FAT"
+# Apple silicon only, on both Mac slices. An archive would otherwise want x86_64
+# as well — the generic Catalyst destination builds for both — which is why
+# `ARCHS[sdk=macosx*]` is pinned to arm64 in project.yml. The two go together:
+# widen one and the other has to follow, or the link fails at archive time and
+# nowhere earlier.
 
 # The modulemap travels with the header so Swift can `import CReckless`.
 HEADERS="$CRATE/target/xcframework-headers"
@@ -61,7 +56,7 @@ rm -rf "$CRATE/CReckless.xcframework"
 xcodebuild -create-xcframework \
     -library "$CRATE/target/aarch64-apple-ios/release/libreckless.a" -headers "$HEADERS" \
     -library "$CRATE/target/aarch64-apple-ios-sim/release/libreckless.a" -headers "$HEADERS" \
-    -library "$FAT" -headers "$HEADERS" \
+    -library "$CRATE/target/aarch64-apple-ios-macabi/release/libreckless.a" -headers "$HEADERS" \
     -library "$CRATE/target/aarch64-apple-darwin/release/libreckless.a" -headers "$HEADERS" \
     -output "$CRATE/CReckless.xcframework" >/dev/null
 
