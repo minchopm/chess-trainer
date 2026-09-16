@@ -128,6 +128,12 @@ targets:
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
         ITSAppUsesNonExemptEncryption: false
+        # Which shelf the Mac App Store puts it on. Required there and only
+        # there: on iOS the category is a field in App Store Connect and the
+        # bundle says nothing, so this was missing until a Mac archive refused
+        # validation over it. Board games rather than strategy — the thing being
+        # sold is a board. Not given to the App Clip, which is iOS only.
+        LSApplicationCategoryType: public.app-category.board-games
         # Hidden everywhere, from the launch screen on. A game does not show
         # the time of day, the battery or the signal bars, and this one is a
         # board on a dark ground: the status bar was the only thing on the
