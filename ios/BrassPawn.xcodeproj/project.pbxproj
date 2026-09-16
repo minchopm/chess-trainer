@@ -28,6 +28,7 @@
 		737010EE9573D8FF256F8AAC /* BrassPawn.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 297D864E27EC18F9E47E8616 /* BrassPawn.storekit */; };
 		73EC26353679B386AEAABDB4 /* BoardAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87E214FEFB819800F6FBB06B /* BoardAssets.xcassets */; };
 		783E3996A3F1B3773C3EB9FD /* CormorantGaramond.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71024DE3B1F2677467FD3AF1 /* CormorantGaramond.ttf */; };
+		7B4D57E5BAFD9A5D1CC80D84 /* reckless.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1802D25B196D739AA6BE282 /* reckless.nnue */; };
 		83BE1A4A26137A9677ED5169 /* BrassPawnApp in Frameworks */ = {isa = PBXBuildFile; productRef = F1D568D032352CB45927307F /* BrassPawnApp */; };
 		85413C58961B32373D2A205F /* classics.json in Resources */ = {isa = PBXBuildFile; fileRef = D24D12372CC2CF7108A581D3 /* classics.json */; };
 		8DEDBE132B025555150C43DD /* ClipScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41421C90AD63F6ECDF72F3A /* ClipScreen.swift */; };
@@ -106,6 +107,7 @@
 		9DDEB02CE21C8EE2182F0ED7 /* AppIcon.icon */ = {isa = PBXFileReference; path = AppIcon.icon; sourceTree = "<group>"; };
 		AF9BA6F709402079BDD2BFC3 /* capture.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = capture.wav; sourceTree = "<group>"; };
 		B1291E8C6DEDA19EC5DCAA03 /* OFL-jetbrains.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "OFL-jetbrains.txt"; sourceTree = "<group>"; };
+		B1802D25B196D739AA6BE282 /* reckless.nnue */ = {isa = PBXFileReference; path = reckless.nnue; sourceTree = "<group>"; };
 		B18672398F8740AE3E14E4FA /* clip-tactics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "clip-tactics.json"; sourceTree = "<group>"; };
 		B352EE12D38016F605048FBD /* tactics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tactics.json; sourceTree = "<group>"; };
 		BDEC44C725BD73CD12D849DC /* AGPL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = AGPL.txt; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				61BFAD9ACF0E2C7BDFB98CBB /* nn-37f18f62d772.nnue */,
 				681AF0C7F282F8328C36A134 /* nn-c288c895ea92.nnue */,
+				B1802D25B196D739AA6BE282 /* reckless.nnue */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				D57C6D8CDA23277DE7B76C4C /* nn-c288c895ea92.nnue in Resources */,
 				59E32A739EF8B735804AB4FC /* positions.json in Resources */,
 				60EBD40D8F7AB3A60C2BF2CE /* promote.wav in Resources */,
+				7B4D57E5BAFD9A5D1CC80D84 /* reckless.nnue in Resources */,
 				52A1B49434E155E2A6167E6B /* tactics.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +503,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arte-soft.brasspawn";
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
@@ -524,6 +529,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arte-soft.brasspawn";
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};

@@ -160,6 +160,12 @@ targets:
         # pixel being its own.
         TARGETED_DEVICE_FAMILY: "1,2,6"
         SUPPORTS_MACCATALYST: YES
+        # And not the other Mac. Xcode offers "Mac (Designed for iPad)" by
+        # default — the iPad build run under compatibility — and it was showing
+        # in Supported Destinations beside the Catalyst one. A Catalyst app is
+        # not eligible for it, so the pair was a contradiction rather than a
+        # choice: two Macs listed, only one of which can happen.
+        SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
         # The same bundle identifier on both, so the Mac build is the same
         # product as the iOS one: one App Store listing, one universal purchase,
         # and a subscription bought on a phone that is already paid for here.
