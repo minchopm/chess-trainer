@@ -9,24 +9,21 @@ import SceneKit
 /// The flat board writes these into the square. The turned board cannot: a
 /// number laid flat on a square is legible from one chair and foreshortened
 /// into a smear from every other, and the board turns. So on the round board
-/// each value is a small standing plate that keeps its face to whoever is
-/// looking — it lives in the scene, takes the room's light and the scene's
-/// perspective, but never turns edge-on.
+/// each value is a small plate that stands in its square and keeps its face
+/// square to whoever is looking — it sits in the scene, shrinks with distance
+/// and swings round with the board, but never turns edge-on, at any of the
+/// angles the camera can be dragged to.
 public struct ValueTag: Sendable, Equatable {
     public let square: Square
     /// Already formatted in the reader's own numerals.
     public let text: String
     /// Centipawns given up against the best move available.
     public let loss: Int
-    /// Whether a piece stands on the square, which decides how high the plate
-    /// floats: above the piece rather than through it.
-    public let overPiece: Bool
 
-    public init(square: Square, text: String, loss: Int, overPiece: Bool) {
+    public init(square: Square, text: String, loss: Int) {
         self.square = square
         self.text = text
         self.loss = loss
-        self.overPiece = overPiece
     }
 }
 
@@ -69,10 +66,21 @@ final class ValueTagPool {
     /// The most squares a single piece can reach — a queen on an open board.
     private static let capacity = 28
 
-    /// How high the plate floats, in squares. A piece is about one square tall
-    /// at the tallest; clearing that keeps the number off the king's cross.
-    private static let overEmpty: Float = 0.52
-    private static let overOccupied: Float = 1.38
+    /// How high the plate stands, in squares — half its own height, so it rests
+    /// on the square rather than floating over it.
+    ///
+    /// It used to float: 0.52 above an empty square and 1.38 above an occupied
+    /// one, to clear the piece. Height is parallax, and parallax is what made
+    /// the number look like it belonged to the wrong square. From the angle the
+    /// board opens at, 1.38 puts the plate a full square beyond the piece it is
+    /// describing; even from straight overhead it drifts outward from the middle
+    /// of the board. At half the plate's own height there is nowhere for it to
+    /// drift to: the plate turns about its centre, and its centre is over the
+    /// square it names, at every angle the camera can reach.
+    ///
+    /// Clearing the piece is no longer what keeps the number visible — the
+    /// material does, by ignoring the depth buffer entirely. See `plate()`.
+    private static let standing: Float = 0.23
 
     init() {
         for _ in 0..<Self.capacity {
@@ -92,11 +100,7 @@ final class ValueTagPool {
             let tag = tags[index]
             plate.isHidden = false
             let point = PlayingBoard.position(of: tag.square)
-            plate.position = SCNVector3(
-                point.x,
-                tag.overPiece ? Self.overOccupied : Self.overEmpty,
-                point.z
-            )
+            plate.position = SCNVector3(point.x, Self.standing, point.z)
             let tint = ValueTint.components(loss: tag.loss)
             plate.geometry?.firstMaterial?.diffuse.contents =
                 Self.face(tag.text, tint: tint) as Any
@@ -109,17 +113,30 @@ final class ValueTagPool {
         material.lightingModel = .constant
         material.isDoubleSided = true
         material.writesToDepthBuffer = false
+        // Nor read from it. A number hidden behind the queen it is describing is
+        // worse than no number, and this is what says so — rather than lifting
+        // the plate over the piece's head, which is where the old drift came
+        // from. Paired with the rendering order below: drawn last, over
+        // everything, wherever it stands.
+        material.readsFromDepthBuffer = false
         material.transparencyMode = .aOne
 
         let node = SCNNode(geometry: plane)
-        // Turned about the upright axis only. Free on all three and the plate
-        // tips with the camera and reads as a sticker on the lens; free on
-        // none and it goes edge-on the moment the board is turned.
+        // Square to the camera on all three axes.
+        //
+        // It used to turn about the upright axis alone, which keeps a plate
+        // standing like a signpost — right for a camera at table height, and
+        // steadily worse as it rises. This one climbs to straight down, and a
+        // signpost seen from directly above is a line. Well before that the
+        // number is already squashed into something you read by guessing.
+        //
+        // The objection to freeing all three was that the plate then tips with
+        // the camera and reads as a sticker on the lens. It does not, because it
+        // is anchored: it sits in its square, it shrinks with distance, and it
+        // swings round with the board. What it no longer does is turn edge-on.
         let facing = SCNBillboardConstraint()
-        facing.freeAxes = .Y
+        facing.freeAxes = .all
         node.constraints = [facing]
-        // Over the pieces, whatever the depth buffer thinks: a number hidden
-        // behind the queen it is describing is worse than no number.
         node.renderingOrder = 20
         return node
     }

@@ -143,8 +143,7 @@ public final class LiveBoard: SceneDriver {
     private var valueTags: [ValueTag] {
         destinationsForSelection.compactMap { square in
             guard let value = values[square] else { return nil }
-            return ValueTag(square: square, text: value.text, loss: value.loss,
-                            overPiece: position[square] != nil)
+            return ValueTag(square: square, text: value.text, loss: value.loss)
         }
     }
 
