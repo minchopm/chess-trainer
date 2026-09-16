@@ -192,8 +192,39 @@ pub extern "C" fn rk_engine_info() -> *const c_char {
     .as_ptr()
 }
 
+/// Read the network from a file. False if it is missing, unreadable or the
+/// wrong size for this build.
+///
+/// Stockfish's bridge has `sf_load_networks` and this is its counterpart, added
+/// when the network stopped being compiled in — see the `embedded-network`
+/// feature in Cargo.toml. It is global rather than per-engine because the
+/// network is: every engine in the process searches with the same one.
+///
+/// A build that still embeds its network answers true without reading anything,
+/// so a caller can make the call unconditionally.
+#[unsafe(no_mangle)]
+pub extern "C" fn rk_load_network(path: *const c_char) -> bool {
+    #[cfg(feature = "embedded-network")]
+    {
+        let _ = path;
+        true
+    }
+    #[cfg(not(feature = "embedded-network"))]
+    {
+        let Some(path) = to_str(path) else { return false };
+        crate::nnue::load_network(std::path::Path::new(path))
+    }
+}
+
+/// Null until a network has been loaded — see `rk_load_network`. An engine
+/// without one cannot search, and returning it would only move the failure to
+/// the first move it was asked for.
 #[unsafe(no_mangle)]
 pub extern "C" fn rk_create() -> *mut RKEngine {
+    if !crate::nnue::has_network() {
+        return std::ptr::null_mut();
+    }
+
     rk_global_init();
 
     let shared = Arc::new(SharedContext::default());

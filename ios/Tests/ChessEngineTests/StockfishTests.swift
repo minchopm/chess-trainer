@@ -21,7 +21,10 @@ struct StockfishTests {
         guard let files = try? FileManager.default.contentsOfDirectory(atPath: directory.path) else {
             return nil
         }
-        let nets = files.filter { $0.hasSuffix(".nnue") }
+        // `nn-` is Stockfish's own prefix. Reckless's network lives in the same
+        // directory and is also a .nnue, and without the prefix this counted
+        // three files, failed its own check and skipped the whole suite quietly.
+        let nets = files.filter { $0.hasPrefix("nn-") && $0.hasSuffix(".nnue") }
         guard nets.count == 2 else { return nil }
 
         // The big network is the larger file; names change between releases.

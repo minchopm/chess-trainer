@@ -18,7 +18,11 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
     /// A board wider than this stops being easier to read and starts being a
     /// reason to move your head. An iPad Pro in landscape has room for far
     /// more; that does not make more an improvement.
-    static var maximumBoard: CGFloat { 560 }
+    ///
+    /// `nonisolated`, here and on every measurement below, because a `View` is
+    /// main-actor isolated and these are plain numbers anything may read —
+    /// `Mac.contentWidth` takes two of them from outside the actor.
+    nonisolated static var maximumBoard: CGFloat { 560 }
     /// The same rule, at the distance a tablet is held.
     ///
     /// The cap above is set for a phone, which is read at arm's length or
@@ -26,27 +30,27 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
     /// it asks anybody to move their head — and at the phone's cap, a
     /// thirteen-inch screen in portrait ends two fifths of the way down and
     /// leaves the rest dark.
-    static var maximumBoardOnTablet: CGFloat { 720 }
+    nonisolated static var maximumBoardOnTablet: CGFloat { 720 }
     /// Where one becomes the other. No phone is this wide in portrait and no
     /// tablet is narrower.
-    static var tabletWidth: CGFloat { 700 }
+    nonisolated static var tabletWidth: CGFloat { 700 }
     /// Sixty-ish characters a line. Text set across a full iPad is a wall.
-    static var maximumText: CGFloat { 620 }
+    nonisolated static var maximumText: CGFloat { 620 }
     /// The narrowest the panel beside the board may be squeezed.
     ///
     /// About what it gets on a phone in portrait, which is the width every one
     /// of these panels was written for: a coach's paragraph, two columns of
     /// move notation, a row of buttons. Below it they start wrapping into
     /// columns of two words.
-    static var minimumPanel: CGFloat { 340 }
+    nonisolated static var minimumPanel: CGFloat { 340 }
     /// The padding around the pair and the gap between them: 12 a side, 16
     /// down the middle.
-    static var wideSurround: CGFloat { 40 }
+    nonisolated static var wideSurround: CGFloat { 40 }
     /// The widest the board and the column beside it can between them use.
     ///
     /// Both stop growing at their own caps, so past this a window is only
     /// adding margin. The Mac reads it as the width to centre a screen in.
-    static var maximumWide: CGFloat { maximumBoardOnTablet + maximumText + wideSurround }
+    nonisolated static var maximumWide: CGFloat { maximumBoardOnTablet + maximumText + wideSurround }
 
     var body: some View {
         GeometryReader { geometry in

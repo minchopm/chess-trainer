@@ -170,8 +170,10 @@ public final class AppModel {
             try await stockfish.loadNetworks(big: networks.big, small: networks.small)
             built = stockfish
         case .reckless:
-            // No networks to load: Reckless's is compiled into the binary.
-            built = RecklessEngine()
+            guard let network = Bundle.main.url(forResource: "reckless", withExtension: "nnue") else {
+                throw EngineBuildFailure(message: "The engine networks are missing from the app bundle.")
+            }
+            built = try RecklessEngine(network: network)
         }
 
         let cores = ProcessInfo.processInfo.activeProcessorCount
@@ -230,13 +232,17 @@ public final class AppModel {
         update { $0.appearance.engine = choice }
     }
 
-    /// Networks are found by size rather than name: the file names are pinned to
-    /// the Stockfish version and change whenever it is updated.
+    /// Stockfish's two networks, found by size rather than name: the file names
+    /// are pinned to the Stockfish version and change whenever it is updated.
+    ///
+    /// The `nn-` prefix is Stockfish's own and is what keeps this from picking up
+    /// Reckless's network, which is also a .nnue in the same directory and also
+    /// well over the threshold that distinguishes the big net from the small one.
     private func networkURL(matching predicate: (Int) -> Bool) -> URL? {
         guard let urls = Bundle.main.urls(forResourcesWithExtension: "nnue", subdirectory: nil) else {
             return nil
         }
-        return urls.first { url in
+        return urls.filter { $0.lastPathComponent.hasPrefix("nn-") }.first { url in
             let size = (try? FileManager.default.attributesOfItem(atPath: url.path)[.size]) as? Int
             return predicate(size ?? 0)
         }

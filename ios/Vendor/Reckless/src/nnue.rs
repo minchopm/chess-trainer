@@ -366,10 +366,69 @@ pub struct Parameters {
     l3_biases: Aligned<[f32; OUTPUT_BUCKETS]>,
 }
 
+/// The network, when it is read from a file instead of compiled in.
+///
+/// Set once, before the first engine is created, and then never again — it is
+/// leaked deliberately, because every thread's accumulator holds a reference to
+/// it for the life of the process and there is no moment at which freeing it
+/// would be correct.
+#[cfg(not(feature = "embedded-network"))]
+static LOADED: std::sync::OnceLock<&'static Parameters> = std::sync::OnceLock::new();
+
+/// Read the network from `path`. False if it cannot be used.
+///
+/// The length is checked against the type this build expects, because the file
+/// is not parsed but reinterpreted: a network from a different version of the
+/// engine would otherwise be transmuted into nonsense and played out of. A
+/// second call after a successful one is a no-op and true.
+#[cfg(not(feature = "embedded-network"))]
+pub fn load_network(path: &std::path::Path) -> bool {
+    if LOADED.get().is_some() {
+        return true;
+    }
+
+    let Ok(bytes) = std::fs::read(path) else { return false };
+    if bytes.len() != std::mem::size_of::<Parameters>() {
+        return false;
+    }
+
+    // Through a Box so the allocation carries the type's own 64-byte alignment,
+    // which the forward pass loads against and a Vec of bytes would not give.
+    let mut uninitialised = Box::<std::mem::MaybeUninit<Parameters>>::new(std::mem::MaybeUninit::uninit());
+    unsafe {
+        std::ptr::copy_nonoverlapping(bytes.as_ptr(), uninitialised.as_mut_ptr().cast::<u8>(), bytes.len());
+    }
+    let parameters: Box<Parameters> = unsafe { Box::from_raw(Box::into_raw(uninitialised).cast::<Parameters>()) };
+    let _ = LOADED.set(Box::leak(parameters));
+    true
+}
+
+/// Whether a network is available to search with.
+#[cfg(not(feature = "embedded-network"))]
+pub fn has_network() -> bool {
+    LOADED.get().is_some()
+}
+
+#[cfg(feature = "embedded-network")]
+pub fn has_network() -> bool {
+    true
+}
+
 impl Parameters {
+    #[cfg(feature = "embedded-network")]
     fn embedded() -> &'static Self {
         static EMBEDDED: Parameters = unsafe { std::mem::transmute(*include_bytes!(env!("MODEL"))) };
         &EMBEDDED
+    }
+
+    /// The loaded network.
+    ///
+    /// Panics if there is none, which is an invariant rather than a failure
+    /// mode: `rk_create` refuses to build an engine before `rk_load_network`
+    /// has succeeded, so nothing that could reach this can exist yet.
+    #[cfg(not(feature = "embedded-network"))]
+    fn embedded() -> &'static Self {
+        LOADED.get().expect("rk_load_network must succeed before an engine is created")
     }
 
     fn allocate_owned() -> Arc<Self> {

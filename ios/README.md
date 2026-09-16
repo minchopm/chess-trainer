@@ -13,25 +13,34 @@ taste, at full strength only, because it has no strength limiter to offer. See
 ## Building
 
 ```bash
-sh ios/scripts/fetch-networks.sh     # once — downloads ~107 MB of Stockfish networks
-sh ios/scripts/build-reckless.sh     # once — 63 MB network + three cargo builds
+sh ios/scripts/fetch-networks.sh     # once — downloads ~167 MB of engine networks
 open ios/BrassPawn.xcodeproj
 ```
 
-`build-reckless.sh` is not optional: `Package.swift` has a binary target pointing
-at the xcframework it produces, so nothing builds until it has run. It needs a
-Rust toolchain of 1.85 or newer (the crate is edition 2024) with the
-`aarch64-apple-ios`, `aarch64-apple-ios-sim` and `aarch64-apple-ios-macabi`
-targets installed — the last is Mac Catalyst. It also builds an
-`aarch64-apple-darwin` slice, which is what lets `swift test` exercise the engine
-on the host; Catalyst and plain macOS are different platforms to the linker even
-on the same machine, so both slices have to exist.
+That is the whole of it, and it needs nothing but curl. **No Rust toolchain is
+required to build this app.** Reckless is a Rust engine, but the library it
+compiles to is committed — `ios/Vendor/Reckless/CReckless.xcframework`, 58 MB
+across four platform slices — so `build-reckless.sh` is a maintainer's script,
+run when the engine itself changes and not otherwise. It wants Rust 1.85 or
+newer (the crate is edition 2024) with the `aarch64-apple-ios`,
+`aarch64-apple-ios-sim` and `aarch64-apple-ios-macabi` targets, the last being
+Mac Catalyst; it also builds `aarch64-apple-darwin`, which is what lets
+`swift test` exercise the engine on the host.
 
-Skip either script and Xcode reports **"Missing package product 'BrassPawnApp'"**,
-which is three steps from the cause: the binary target has no artifact, so
-SwiftPM cannot resolve the local package, so none of its products exist. The
-real message is further down the log — *local binary target 'CReckless' … does
-not contain a binary artifact*. Run the two scripts and resolve again.
+Skip `fetch-networks.sh` and the app builds but has no engine: it opens on the
+board and reports the networks missing. If the xcframework is somehow absent,
+Xcode reports **"Missing package product 'BrassPawnApp'"**, which is three steps
+from the cause — the binary target has no artifact, so SwiftPM cannot resolve the
+local package, so none of its products exist. The real message is further down
+the log: *local binary target 'CReckless' … does not contain a binary artifact*.
+
+None of the three networks is committed. Together they are 167 MB of build input
+with a canonical source, which is what `fetch-networks.sh` is for. The engines'
+libraries are a different matter and are small enough to live here: Reckless used
+to compile its 60 MB network into itself, which made each slice 141 MB and the
+xcframework 564 MB, and that is why a Rust toolchain used to be everybody's
+problem. It now loads the network from the bundle at start-up, the way Stockfish
+always has.
 
 The Xcode project is committed, so XcodeGen is not required to open or build the
 app. Then pick a simulator or your own device and run.

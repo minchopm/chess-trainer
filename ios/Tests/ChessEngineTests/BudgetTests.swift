@@ -86,7 +86,7 @@ struct BudgetTests {
     /// of `StockfishEngine`'s shape, and this is what says so.
     @Test("Reckless answers three searches asked for at once")
     func recklessOverlappingSearchesFinish() async throws {
-        let engine = await RecklessTests.makeEngine()
+        guard let engine = try await RecklessTests.makeEngine() else { return }
 
         let started = Date()
         async let reply = engine.chooseMove(
@@ -122,7 +122,7 @@ struct BudgetTests {
     @Test("Both engines can search at the same moment")
     func bothEnginesAtOnce() async throws {
         guard let stockfish = try await StockfishTests.makeEngine() else { return }
-        let reckless = await RecklessTests.makeEngine()
+        guard let reckless = try await RecklessTests.makeEngine() else { return }
 
         let started = Date()
         async let first = stockfish.analyse(

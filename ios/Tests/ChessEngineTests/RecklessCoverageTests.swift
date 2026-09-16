@@ -22,7 +22,7 @@ struct RecklessCoverageTests {
 
     @Test("A quiet position values every legal move")
     func quietIsComplete() async throws {
-        let engine = await RecklessTests.makeEngine()
+        guard let engine = try await RecklessTests.makeEngine() else { return }
         let legal = Position(fen: quiet)!.legalMoves().count
         let values = try await engine.valueEveryMove(fen: quiet)
         #expect(values.byMove.count == legal,
@@ -31,7 +31,7 @@ struct RecklessCoverageTests {
 
     @Test("A position with a forced mate values every legal move too")
     func mateIsComplete() async throws {
-        let engine = await RecklessTests.makeEngine()
+        guard let engine = try await RecklessTests.makeEngine() else { return }
         let legal = Position(fen: mating)!.legalMoves().count
         let values = try await engine.valueEveryMove(fen: mating)
         #expect(values.byMove.count == legal,

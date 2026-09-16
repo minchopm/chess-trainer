@@ -14,7 +14,11 @@ const BASE_URL: &str = "https://github.com/codedeliveryservice/RecklessNetworks/
 const NETWORK_NAME: &str = "v60-7f587dfb.nnue";
 
 fn main() {
-    generate_model_env();
+    // Only when the network is being compiled in. Without the feature there is
+    // nothing to find, nothing to download, and no MODEL for `include_bytes!`.
+    if embeds_network() {
+        generate_model_env();
+    }
     generate_attack_maps();
     generate_compiler_info();
     generate_engine_version();
@@ -24,7 +28,7 @@ fn main() {
         generate_syzygy_binding();
     }
 
-    if !Path::new("networks").join(NETWORK_NAME).exists() && env::var("EVALFILE").is_err() {
+    if embeds_network() && !Path::new("networks").join(NETWORK_NAME).exists() && env::var("EVALFILE").is_err() {
         download_network();
     }
 
@@ -53,6 +57,11 @@ fn generate_syzygy_binding() {
         .expect("Failed to generate Fathom bindings")
         .write_to_file("src/bindings.rs")
         .unwrap();
+}
+
+/// Cargo announces each enabled feature to the build script like this.
+fn embeds_network() -> bool {
+    env::var("CARGO_FEATURE_EMBEDDED_NETWORK").is_ok()
 }
 
 fn generate_model_env() {

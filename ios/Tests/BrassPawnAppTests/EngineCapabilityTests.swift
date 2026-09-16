@@ -1,5 +1,6 @@
 import ChessEngine
 import ChessTraining
+import Foundation
 import Testing
 @testable import BrassPawnApp
 
@@ -13,12 +14,24 @@ import Testing
 /// the app quietly offering ratings nothing can hit.
 @Suite(.serialized)
 struct EngineCapabilityTests {
+    /// Reckless will not be built without its network, which is fetched rather
+    /// than committed — so these skip when it is absent, as the engine suites do.
+    static func recklessNetwork() -> URL? {
+        let url = URL(fileURLWithPath: #filePath)
+            .deletingLastPathComponent()  // BrassPawnAppTests
+            .deletingLastPathComponent()  // Tests
+            .deletingLastPathComponent()  // package root
+            .appendingPathComponent("Resources/Networks/reckless.nnue")
+        return FileManager.default.fileExists(atPath: url.path) ? url : nil
+    }
+
     @Test("Every choice's claim about strength matches the engine it names")
     func claimsMatchTheEngines() async throws {
+        guard let network = Self.recklessNetwork() else { return }
         for choice in EngineChoice.allCases {
             let engine: any Engine = switch choice {
             case .stockfish: StockfishEngine()
-            case .reckless: RecklessEngine()
+            case .reckless: try RecklessEngine(network: network)
             }
             #expect(engine.capabilities.limitsStrength == choice.limitsStrength,
                     "\(choice.name) claims limitsStrength = \(choice.limitsStrength)")
@@ -29,6 +42,8 @@ struct EngineCapabilityTests {
     @Test("Each engine's reported name begins with the name it is chosen by")
     func namesAgree() async throws {
         #expect(StockfishEngine().capabilities.name.hasPrefix(EngineChoice.stockfish.name))
-        #expect(RecklessEngine().capabilities.name.hasPrefix(EngineChoice.reckless.name))
+        guard let network = Self.recklessNetwork() else { return }
+        #expect(try RecklessEngine(network: network).capabilities.name
+            .hasPrefix(EngineChoice.reckless.name))
     }
 }

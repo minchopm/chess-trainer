@@ -10,8 +10,18 @@ publish = false
 crate-type = ["cdylib", "rlib", "staticlib"]
 
 [features]
-default = ["syzygy"]
+# `embedded-network` is on by default so that building this crate on its own is
+# unchanged: the engine compiles its network in and needs no file beside it.
+#
+# The iOS app turns it off — it builds with --no-default-features — because the
+# network is 60 MB and a static library carries it twice, once as data and once
+# inside the bitcode LTO emits. Four platform slices of that is 564 MB of build
+# output that cannot go anywhere near a git repository. Off, the library is
+# 11 MB and the app loads the same network from its bundle at start-up, exactly
+# as it already does for Stockfish. See bridge/include/reckless.h.
+default = ["syzygy", "embedded-network"]
 syzygy = []
+embedded-network = []
 spsa = []
 
 [profile.dev]

@@ -6,9 +6,10 @@
 // that reason and for that reason only.
 //
 // The shape deliberately follows the Stockfish bridge so RecklessEngine.swift
-// can be a near-copy of StockfishEngine.swift. Two differences are unavoidable
-// and are called out at the declarations concerned: there is no rk_load_networks
-// (the network is compiled in), and rk_engine_info reports a Reckless version.
+// can be a near-copy of StockfishEngine.swift. One difference is unavoidable and
+// is called out at the declaration concerned: rk_load_network is global where
+// sf_load_networks is per-engine, because Reckless keeps one network for the
+// whole process. And rk_engine_info reports a Reckless version.
 #ifndef RECKLESS_H
 #define RECKLESS_H
 
@@ -45,16 +46,27 @@ void rk_global_init(void);
 
 const char* rk_engine_info(void);
 
+/// Null before rk_load_network has succeeded: an engine with no network cannot
+/// search, and handing one back would only move the failure to the first move it
+/// was asked for.
 RKEngine* rk_create(void);
 void rk_destroy(RKEngine* engine);
 
-/// There is no rk_load_networks.
+/// Read the network from a file. Must succeed before rk_create.
 ///
-/// Reckless embeds its network in the binary as a `static` — `include_bytes!` of
-/// the file named by EVALFILE at build time — so there is no path to hand it and
-/// no failure to report. The 63 MB that buys is the dominant cost of the engine;
-/// see ios/README.md. rk_create is correspondingly infallible where sf_create
-/// must be followed by sf_load_networks.
+/// Reckless used to compile its network in, as `include_bytes!` of the file
+/// named by EVALFILE, and this declaration used to say so and explain why there
+/// was nothing to load. What that cost was 141 MB of static library per platform
+/// slice — the 60 MB network stored twice over, once as data and once inside the
+/// bitcode that fat LTO emits — against 235 KB of actual engine. The crate now
+/// has an `embedded-network` feature, on by default so that building it alone is
+/// unchanged, and this app builds with it off.
+///
+/// Global rather than per-engine, unlike sf_load_networks, because the network
+/// is: every engine in the process searches with the same one. A build that
+/// still embeds its network returns true without reading anything, so the call
+/// can be made unconditionally.
+bool rk_load_network(const char* path);
 
 /// Recognised names: Threads, Hash, MultiPV, MoveOverhead, Minimal.
 /// An unknown name is ignored, matching the UCI layer's tolerance.

@@ -96,17 +96,24 @@ public actor RecklessEngine: Engine {
 
     private var session: Session?
 
-    public init() {
+    /// Point the engine at its network and build it. Throws if the file is
+    /// missing, unreadable, or not the network this build of the engine expects.
+    ///
+    /// One step where `StockfishEngine` takes two — `init` then `loadNetworks` —
+    /// because Reckless keeps one network for the whole process rather than one
+    /// per engine, so there is nothing to attach it to. Loading it is what makes
+    /// an engine possible, not something done to an engine that already exists.
+    public init(network: URL) throws {
         rk_global_init()
+
+        let loaded = network.path.withCString { rk_load_network($0) }
+        guard loaded else { throw EngineError.networksMissing(network.path) }
+
         guard let created = rk_create() else {
-            fatalError("Reckless could not be created")
+            throw EngineError.networksMissing(network.path)
         }
         handleBox = Handle(created)
     }
-
-    /// No loadNetworks: Reckless's network is compiled into the binary, so
-    /// there is no file to find and no failure to report. `init` is
-    /// correspondingly infallible where `StockfishEngine` needs a second step.
     public static var engineDescription: String {
         String(cString: rk_engine_info())
     }
