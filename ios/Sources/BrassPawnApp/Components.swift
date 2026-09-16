@@ -30,7 +30,13 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
     /// it asks anybody to move their head — and at the phone's cap, a
     /// thirteen-inch screen in portrait ends two fifths of the way down and
     /// leaves the rest dark.
-    nonisolated static var maximumBoardOnTablet: CGFloat { 720 }
+    ///
+    /// High enough that on a tablet in landscape it is the *height* that decides
+    /// the board, not this. At 720 an iPad had three hundred points of ink under
+    /// the board and nothing in them; the room was there and the cap was the
+    /// only reason it went unused. Twenty-one centimetres of board on a
+    /// thirteen-inch screen is still half the size of a real one.
+    nonisolated static var maximumBoardOnTablet: CGFloat { 820 }
     /// Where one becomes the other. No phone is this wide in portrait and no
     /// tablet is narrower.
     nonisolated static var tabletWidth: CGFloat { 700 }
@@ -82,7 +88,7 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
                     available - Self.minimumPanel
                 )
                 HStack(alignment: .top, spacing: 16) {
-                    board(width).padding(.vertical, 12)
+                    board(width)
                     VStack(spacing: 12) {
                         ScrollView { VStack(spacing: 12) { panel } }
                         controls
@@ -92,9 +98,19 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
                     // margins on either side, where it reads as room around a
                     // composition instead of a gap through the middle of one.
                     .frame(maxWidth: Self.maximumText)
-                    .padding(.vertical, 12)
                 }
-                .frame(maxWidth: .infinity)
+                // As tall as the board, so the controls at the foot of the
+                // column stand level with the foot of the board.
+                //
+                // Left to fill the screen, the column was as tall as the window
+                // while the board was as tall as the board, and on a screen with
+                // height to spare that put the buttons a couple of hundred
+                // points below everything they belong to, alone against the
+                // ink. The pair is then centred in whatever height is left, so
+                // what remains reads as margin above and below rather than as a
+                // gap underneath.
+                .frame(height: width + BoardStage<EmptyView>.chromeHeight)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding(.horizontal, 12)
             } else {
                 // The caps only bite on a tablet. On a phone in portrait the

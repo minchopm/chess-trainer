@@ -423,44 +423,34 @@ public struct BrassPressStyle: ButtonStyle {
     }
 }
 
-/// The projector never quite stops flickering.
+/// A tiled grain over the ink, so the ground has a texture rather than being a
+/// flat fill. It sits above everything and takes no touches.
 ///
-/// The site draws this with an SVG noise filter and shifts it four times a
-/// second; here it is one tiled texture moved the same way, which costs a
-/// texture rather than a filter per frame. It sits above everything and takes
-/// no touches, and it holds still for anyone who has asked the system for less
-/// motion — a grain that crawls is exactly the kind of movement that setting
-/// exists to stop.
+/// It used to crawl: the site shifts its noise four times a second, and this
+/// followed with a `TimelineView` stepping a tiled texture five times a second.
+/// What that meant in practice was the whole screen — board, panel and every
+/// button on it — re-composited at 5 Hz, for ever, on every screen that is not
+/// the menu. It read as a shimmer on the buttons and it cost frames the board
+/// wanted. Reduce Motion held it still, which was the tell: if the honest
+/// version of this is motionless, it can be motionless for everybody.
+///
+/// Still, it is the same texture at the same opacity. Nothing about how it looks
+/// has changed but the movement.
 public struct FilmGrain: View {
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-
-    private static let steps: [CGSize] = [
-        CGSize(width: 0, height: 0),
-        CGSize(width: -8, height: 4),
-        CGSize(width: 4, height: -8),
-        CGSize(width: -4, height: -4),
-    ]
-
     public init() {}
 
     public var body: some View {
-        TimelineView(.periodic(from: .now, by: 0.2)) { context in
-            let step = reduceMotion
-                ? 0
-                : Int(context.date.timeIntervalSinceReferenceDate / 0.2) % Self.steps.count
-            Image("grain")
-                .resizable(resizingMode: .tile)
-                .offset(Self.steps[step])
-                // Plain compositing, like the site. An overlay blend does
-                // nothing against a ground this dark — it scales the base
-                // towards itself, and almost-black scaled towards anything is
-                // still almost-black. Measured: zero variance on the
-                // background. Laid over at low opacity, the tile lifts the ink
-                // a few per cent and the texture is there.
-                .opacity(0.045)
-        }
-        .ignoresSafeArea()
-        .allowsHitTesting(false)
+        Image("grain")
+            .resizable(resizingMode: .tile)
+            // Plain compositing, like the site. An overlay blend does nothing
+            // against a ground this dark — it scales the base towards itself,
+            // and almost-black scaled towards anything is still almost-black.
+            // Measured: zero variance on the background. Laid over at low
+            // opacity, the tile lifts the ink a few per cent and the texture is
+            // there.
+            .opacity(0.045)
+            .ignoresSafeArea()
+            .allowsHitTesting(false)
     }
 }
 
