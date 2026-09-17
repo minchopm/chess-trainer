@@ -27,8 +27,13 @@ newer (the crate is edition 2024) with the `aarch64-apple-ios`,
 Mac Catalyst; it also builds `aarch64-apple-darwin`, which is what lets
 `swift test` exercise the engine on the host.
 
-Skip `fetch-networks.sh` and the app builds but has no engine: it opens on the
-board and reports the networks missing. If the xcframework is somehow absent,
+Skip `fetch-networks.sh` and the build stops before it starts, with the reason:
+*the engine networks are missing. Run: sh ios/scripts/fetch-networks.sh*. That
+check is a build phase on the app target, and it is there because without it the
+first thing you see is three `lstat ... No such file or directory` errors
+against the resource copy, which name the files and not the cause.
+
+If the xcframework is somehow absent,
 Xcode reports **"Missing package product 'BrassPawnApp'"**, which is three steps
 from the cause — the binary target has no artifact, so SwiftPM cannot resolve the
 local package, so none of its products exist. The real message is further down

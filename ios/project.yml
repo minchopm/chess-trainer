@@ -50,6 +50,26 @@ targets:
   BrassPawn:
     type: application
     platform: iOS
+    # Before anything else, because the next thing to happen without the
+    # networks is three `lstat ... No such file or directory` errors against
+    # the resource copy, which name the files and not the reason. They are not
+    # committed — 167 MB of build input with a canonical source — and one
+    # script fetches them. Saying so here is the difference between a minute
+    # and an afternoon on a machine that has just cloned this.
+    preBuildScripts:
+      - name: Engine networks are present
+        basedOnDependencyAnalysis: false
+        script: |
+          missing=""
+          for net in "$SRCROOT/Resources/Networks/reckless.nnue" \
+                     "$SRCROOT"/Resources/Networks/nn-*.nnue; do
+            [ -f "$net" ] || missing="yes"
+          done
+          if [ -n "$missing" ]; then
+            echo "error: the engine networks are missing. Run: sh ios/scripts/fetch-networks.sh"
+            echo "note: they are ~167 MB and are not committed; the script needs nothing but curl."
+            exit 1
+          fi
     sources:
       - App
       # The puzzle data is referenced from the repository root rather than

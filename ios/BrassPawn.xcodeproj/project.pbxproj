@@ -307,6 +307,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E620E285E1D0DC218120A06 /* Build configuration list for PBXNativeTarget "BrassPawn" */;
 			buildPhases = (
+				99E479684296027C153231FC /* Engine networks are present */,
 				026CA40498E1E61B3FB81251 /* Sources */,
 				F9031F2CA64EC37C9C45D860 /* Resources */,
 				AE5E9B9B97CCDB30EEF01335 /* Frameworks */,
@@ -451,6 +452,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		99E479684296027C153231FC /* Engine networks are present */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Engine networks are present";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "missing=\"\"\nfor net in \"$SRCROOT/Resources/Networks/reckless.nnue\" \\\n           \"$SRCROOT\"/Resources/Networks/nn-*.nnue; do\n  [ -f \"$net\" ] || missing=\"yes\"\ndone\nif [ -n \"$missing\" ]; then\n  echo \"error: the engine networks are missing. Run: sh ios/scripts/fetch-networks.sh\"\n  echo \"note: they are ~167 MB and are not committed; the script needs nothing but curl.\"\n  exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		026CA40498E1E61B3FB81251 /* Sources */ = {
