@@ -179,7 +179,12 @@ public struct RootView: View {
         .macContentWidth()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Theatre.ink.ignoresSafeArea())
-        .overlay(FilmGrain())
+        // The grain used to be laid over the whole screen here, which anchored
+        // it to the screen: everything that scrolls travelled underneath it, so
+        // the texture crawled across the panels and the pills as they went and
+        // read as a background that changes while you read it. It belongs to
+        // the plates now — `grained` in BoardUI — where it moves with them.
+        // The ink itself is near-black and was never the part carrying it.
         .environment(app)
         .environment(activity)
         .environment(navigator)

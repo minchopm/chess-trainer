@@ -222,6 +222,7 @@ public struct Panel<Content: View>: View {
                     .clipShape(UnevenRoundedRectangle(topLeadingRadius: 14, topTrailingRadius: 14))
                     .allowsHitTesting(false)
             }
+            .grained(RoundedRectangle(cornerRadius: 14))
             .reveal()
     }
 }
@@ -294,6 +295,7 @@ public struct PillButtonStyle: ButtonStyle {
                 BrassPlateShape(cut: 10).strokeBorder(border, lineWidth: 0.8)
             }
             .shadow(color: glow, radius: 10, y: 3)
+            .grained(BrassPlateShape(cut: 10))
             // A custom style can make the control look larger than its Text
             // label. Keep the interactive area identical to the visible pill.
             .contentShape(BrassPlateShape(cut: 10))
@@ -451,6 +453,27 @@ public struct FilmGrain: View {
             .opacity(0.045)
             .ignoresSafeArea()
             .allowsHitTesting(false)
+    }
+}
+
+public extension View {
+    /// Lays the grain over this view alone, in this view's own coordinates.
+    ///
+    /// The difference from `FilmGrain` is where the tile is anchored. Over the
+    /// whole screen it is anchored to the screen, so anything that scrolls
+    /// travels underneath it and the texture appears to crawl across every
+    /// plate it passes — which reads as a background that changes while you
+    /// scroll, and is tiring to look at on the one part of the screen that is
+    /// meant to hold still and be read. Anchored to the plate, the grain is
+    /// part of the plate: it moves with it and never moves across it.
+    func grained(_ shape: some Shape) -> some View {
+        overlay {
+            Image("grain")
+                .resizable(resizingMode: .tile)
+                .opacity(0.045)
+                .clipShape(shape)
+                .allowsHitTesting(false)
+        }
     }
 }
 
