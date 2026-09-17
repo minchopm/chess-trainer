@@ -222,7 +222,6 @@ public struct Panel<Content: View>: View {
                     .clipShape(UnevenRoundedRectangle(topLeadingRadius: 14, topTrailingRadius: 14))
                     .allowsHitTesting(false)
             }
-            .reveal()
     }
 }
 
@@ -465,29 +464,17 @@ public struct FilmGrain: View {
     }
 }
 
-/// The site's reveal: a panel does not appear, it rises into place.
-///
-/// The easing is the site's own — a curve that arrives fast and settles — and
-/// the distance is small on purpose. Anything further reads as a screen being
-/// assembled in front of you rather than as one that was already there.
-public struct Reveal: ViewModifier {
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @State private var shown = false
-    var delay: Double = 0
-
-    public func body(content: Content) -> some View {
-        content
-            .opacity(shown || reduceMotion ? 1 : 0)
-            .offset(y: shown || reduceMotion ? 0 : 14)
-            .onAppear {
-                guard !reduceMotion else { return }
-                withAnimation(.timingCurve(0.16, 1, 0.3, 1, duration: 0.55).delay(delay)) {
-                    shown = true
-                }
-            }
-    }
-}
-
-public extension View {
-    func reveal(delay: Double = 0) -> some View { modifier(Reveal(delay: delay)) }
-}
+// The site's reveal used to live here: a panel did not appear, it rose into
+// place — up fourteen points and in from nothing, on every `Panel` in the app.
+//
+// The site is a page you scroll once. This is a screen you sit in front of for
+// an hour, and `Panel` is the card every training screen is built from, so the
+// rise ran on arrival at each one and again whenever a card's branch changed
+// under it: a coach's verdict appearing, a setup panel giving way to a game.
+// Cards that move while you are reading them are not a flourish, and the
+// buttons inside travelled with the card, which is the "mask" moving over them.
+//
+// It was also the one piece of motion the rest of the app does not have. The
+// menu, the settings and the subscriptions screen build no `Panel` at all, so
+// they never rose, and the inner screens were the odd ones out. Nothing moves
+// now, which is what the rest of the app already did.
