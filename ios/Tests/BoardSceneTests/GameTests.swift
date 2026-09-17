@@ -315,6 +315,42 @@ struct FramingTests {
         }
     }
 
+    /// Looking straight down, nothing may leave the frame.
+    ///
+    /// The crop a tall screen is allowed at a three-quarter angle is bought
+    /// with perspective: the corners it takes are the two furthest away. From
+    /// overhead there is no furthest corner — the board squares up and all four
+    /// are the same — so the same allowance cuts the widest part of the board
+    /// off both sides at once, which is what it was doing.
+    ///
+    /// Every aspect the app is drawn into, from a phone in portrait to a Mac
+    /// window, at the top of the elevation range and all the way round.
+    @Test("From overhead the board is inside the frame", arguments: [0.46, 0.62, 1.0, 1.72])
+    func overhead(aspect: Float) {
+        for step in 0..<12 {
+            var camera = OrbitCamera()
+            camera.fit(aspect: aspect)
+            camera.turn(by: Float(step) * .pi / 6 - camera.azimuth,
+                        and: OrbitCamera.elevationRange.upperBound - camera.elevation)
+
+            let worst = widestCorner(camera, aspect: aspect)
+            #expect(worst <= 1, "at \(camera.azimuth) rad the board reaches \(worst) of the frame")
+        }
+    }
+
+    /// And the shot the app opens on is not touched by that.
+    @Test("The opening angle is framed as it was", arguments: [0.46, 1.72])
+    func openingAngleUnchanged(aspect: Float) {
+        var camera = OrbitCamera()
+        camera.fit(aspect: aspect)
+        // 0.66 radians is `OrbitCamera`'s own default and the angle the title
+        // board is built at; the crop only closes above 0.9.
+        #expect(camera.elevation == 0.66)
+        let worst = widestCorner(camera, aspect: aspect)
+        #expect(worst > (aspect > 1.15 ? 0.9 : 1.0),
+                "the opening shot pulled back to \(worst) of the frame")
+    }
+
     @Test("The camera draws back into the diagonal and comes in square on")
     func breathes() {
         var square = OrbitCamera()

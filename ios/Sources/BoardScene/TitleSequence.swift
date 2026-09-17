@@ -85,7 +85,25 @@ public struct OrbitCamera: Sendable {
         // How far the board is allowed to reach across the frame. A tall screen
         // may crop its far corners a little — a board that fits entirely into a
         // phone is a board nobody can see — and a wide one has no reason to.
-        let allowed: Float = aspect > 1.15 ? 0.96 : 1.12
+        let oblique: Float = aspect > 1.15 ? 0.96 : 1.12
+
+        // But only while there is a far corner. That allowance is bought with
+        // perspective: at a three-quarter angle the corners it crops are the
+        // two furthest away, the smallest things on screen, and losing their
+        // outer inch costs nothing. Climb towards overhead and that stops being
+        // true — the board squares up, all four corners come to the same size
+        // and the same distance, and the same allowance now cuts the widest
+        // part of the board off both sides at once. It reads as a board too big
+        // for the screen rather than as a shot.
+        //
+        // So the crop closes as the camera rises, and only in the top of the
+        // climb: nothing below fifty-odd degrees moves, which leaves the angle
+        // the app opens on exactly where it was. At straight down the board is
+        // inside the frame with a little to spare — a little, because `eye`
+        // adds a handheld sway the solver does not account for, and a corner
+        // that sits exactly on the edge would drift over it.
+        let squaringUp = min(1, max(0, (elevation - 0.9) / (.pi / 2 - 0.9)))
+        let allowed = oblique + (0.98 - oblique) * squaringUp
 
         // Solved rather than estimated. The distance a turned board needs is
         // not a formula worth deriving: perspective makes the near corner
