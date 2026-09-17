@@ -128,27 +128,55 @@ struct BoardStage<Board: View>: View {
     @ViewBuilder var board: Board
 
     /// Height the two rows add above and below the board.
-    static var chromeHeight: CGFloat { 2 * (barHeight + spacing) }
+    ///
+    /// `nonisolated` because the layout subtracts it from the height before it
+    /// has a board to ask — `TrainingLayout.portraitBoard(in:)` is a plain
+    /// measurement, off the actor, and this is a plain number.
+    nonisolated static var chromeHeight: CGFloat { 2 * (barHeight + spacing) }
 
-    private static var barHeight: CGFloat { 22 }
-    private static var spacing: CGFloat { 5 }
-    private static var evaluationWidth: CGFloat { 14 }
-    private static var evaluationGap: CGFloat { 8 }
+    /// What the two strips down the sides take out of the width, when the
+    /// evaluation bar is shown. The layout has to know it to place the board's
+    /// foot; see `boardSide(in:showsEvaluation:)`.
+    nonisolated static var gutters: CGFloat { 2 * (evaluationWidth + evaluationGap) }
 
+    /// The board itself, out of a stage of this width.
+    nonisolated static func boardSide(in width: CGFloat, showsEvaluation: Bool) -> CGFloat {
+        max(0, width - (showsEvaluation ? gutters : 0))
+    }
+
+    nonisolated private static var barHeight: CGFloat { 22 }
+    nonisolated private static var spacing: CGFloat { 5 }
+    nonisolated private static var evaluationWidth: CGFloat { 14 }
+    nonisolated private static var evaluationGap: CGFloat { 8 }
+
+    /// The board takes the width less both gutters, not just the one with the
+    /// bar in it.
+    ///
+    /// The evaluation bar used to be subtracted from the left and nothing from
+    /// the right, which put the board's centre eleven points right of the
+    /// stage's. Nothing lines up against that: the board is the thing the eye
+    /// centres on, and everything above and below it — the player rows, the
+    /// panel, the screen itself — is centred on the stage. Eleven points is
+    /// small enough not to be seen and large enough to be felt.
     private var side: CGFloat {
-        max(0, width - (showsEvaluation ? Self.evaluationWidth + Self.evaluationGap : 0))
+        Self.boardSide(in: width, showsEvaluation: showsEvaluation)
     }
 
     var body: some View {
         HStack(spacing: Self.evaluationGap) {
             if showsEvaluation {
                 EvaluationBar(score: evaluation, orientation: orientation)
-                    .frame(height: side)
+                    .frame(width: Self.evaluationWidth, height: side)
             }
             VStack(spacing: Self.spacing) {
                 top.frame(width: side, height: Self.barHeight)
                 board.frame(width: side, height: side)
                 bottom.frame(width: side, height: Self.barHeight)
+            }
+            // The bar's own width again, empty. It is what makes the board sit
+            // in the middle of the stage rather than lean off the bar.
+            if showsEvaluation {
+                Color.clear.frame(width: Self.evaluationWidth, height: side)
             }
         }
         .frame(width: width)

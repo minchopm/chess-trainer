@@ -193,7 +193,7 @@ struct EndgameScreen: View {
     }
 
     private var board: some View {
-        TrainingLayout { width in
+        TrainingLayout(showsEvaluation: true) { width in
             BoardStage(
                 width: width,
                 top: PlayerBar(

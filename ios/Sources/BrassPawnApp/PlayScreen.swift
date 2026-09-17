@@ -312,7 +312,7 @@ struct PlayScreen: View {
     }
 
     var body: some View {
-        TrainingLayout { width in
+        TrainingLayout(showsEvaluation: true) { width in
             BoardStage(
                 width: width,
                 top: PlayerBar(

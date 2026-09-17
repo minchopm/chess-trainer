@@ -11,6 +11,15 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
     /// screen whose size must be decided rather than negotiated: left to a
     /// stack it comes out as tall as its share of the column, which on a phone
     /// is a good deal less than the screen is wide.
+    /// Whether the board below carries the evaluation bar down its side.
+    ///
+    /// The layout would rather not know, but it has to: the bar and the blank
+    /// strip facing it come out of the width, so a stage of a given width is
+    /// forty-four points shorter than a square of it. Without that the column
+    /// beside the board is pinned to a height the board never reaches and the
+    /// controls at its foot stand clear of everything they belong to — which is
+    /// the very thing the pinned height was added to stop.
+    var showsEvaluation = false
     @ViewBuilder var board: (CGFloat) -> Board
     @ViewBuilder var panel: Panel
     @ViewBuilder var controls: Controls
@@ -58,14 +67,45 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
     /// adding margin. The Mac reads it as the width to centre a screen in.
     nonisolated static var maximumWide: CGFloat { maximumBoardOnTablet + maximumText + wideSurround }
 
+    /// The width the stage gets in portrait.
+    ///
+    /// In portrait the screen is the cap, and there is no second one. A board
+    /// in portrait is as wide as the device lets it be — that is what portrait
+    /// is for. The reading caps belong to the wide layout, where a board could
+    /// otherwise grow past the point of being easier to read; here the device
+    /// has already set the limit, and applying a second one on top of it left a
+    /// hundred points of ink down either side of a thirteen-inch iPad.
+    ///
+    /// Three quarters of the height rather than the two thirds it was, so that
+    /// on a tablet it is the width that decides. On a phone the width decided
+    /// already and none of this moves it.
+    nonisolated static func portraitBoard(in size: CGSize) -> CGFloat {
+        min(size.width - 20, size.height * 0.75 - BoardStage<EmptyView>.chromeHeight)
+    }
+
+    /// The board the wide layout can give, once the panel beside it has the
+    /// width it was written for.
+    ///
+    /// The board is served first and the panel gets what is left, which is the
+    /// other way about from how it started; see the body for why.
+    nonisolated static func wideBoard(in size: CGSize, showsEvaluation: Bool) -> CGFloat {
+        // What the two of them have to share, once the outer padding and the
+        // gap between them are taken out.
+        let available = size.width - wideSurround
+        let cap = size.width >= tabletWidth ? maximumBoardOnTablet : maximumBoard
+        let gutters = showsEvaluation ? BoardStage<EmptyView>.gutters : 0
+        return min(
+            size.height - 24 - BoardStage<EmptyView>.chromeHeight,
+            cap,
+            available - minimumPanel - gutters
+        )
+    }
+
     var body: some View {
         GeometryReader { geometry in
             let isWide = geometry.size.width > geometry.size.height
 
             if isWide {
-                // What the two of them have to share, once the outer padding
-                // and the gap between them are taken out.
-                let available = geometry.size.width - Self.wideSurround
                 // The board is served first, and the panel gets what is left.
                 //
                 // It used to be the other way about: the board took a fixed
@@ -80,15 +120,14 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
                 // is given, up to the cap for a screen at this distance, and
                 // stops only where the panel would be squeezed below the width
                 // it was written for.
-                let cap = geometry.size.width >= Self.tabletWidth
-                    ? Self.maximumBoardOnTablet : Self.maximumBoard
-                let width = min(
-                    geometry.size.height - 24 - BoardStage<EmptyView>.chromeHeight,
-                    cap,
-                    available - Self.minimumPanel
-                )
+                //
+                // Reckoned on the board rather than on the stage around it, so
+                // that the caps mean what they say and the height below is the
+                // height the board actually stands at.
+                let gutters = showsEvaluation ? BoardStage<EmptyView>.gutters : 0
+                let side = Self.wideBoard(in: geometry.size, showsEvaluation: showsEvaluation)
                 HStack(alignment: .top, spacing: 16) {
-                    board(width)
+                    board(side + gutters)
                     VStack(spacing: 12) {
                         ScrollView { VStack(spacing: 12) { panel } }
                         controls
@@ -109,19 +148,11 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
                 // ink. The pair is then centred in whatever height is left, so
                 // what remains reads as margin above and below rather than as a
                 // gap underneath.
-                .frame(height: width + BoardStage<EmptyView>.chromeHeight)
+                .frame(height: side + BoardStage<EmptyView>.chromeHeight)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding(.horizontal, 12)
             } else {
-                // The caps only bite on a tablet. On a phone in portrait the
-                // board is limited by the width, as it should be.
-                let cap = geometry.size.width >= Self.tabletWidth
-                    ? Self.maximumBoardOnTablet : Self.maximumBoard
-                let width = min(
-                    geometry.size.width - 20,
-                    geometry.size.height * 0.66 - BoardStage<EmptyView>.chromeHeight,
-                    cap
-                )
+                let width = Self.portraitBoard(in: geometry.size)
                 VStack(spacing: 8) {
                     board(width).padding(.top, 4)
                     ScrollView {
