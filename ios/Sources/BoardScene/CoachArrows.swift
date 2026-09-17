@@ -50,6 +50,93 @@ public enum ArrowTint: Sendable, Equatable {
     }
 }
 
+/// A ring round a square, in the same language as the arrow.
+///
+/// The flat board has had a circle in its vocabulary since the beginning and
+/// nothing ever drew one; this is the first thing that does — the mark on every
+/// piece that has a legal move. It is a ring rather than a filled disc because
+/// the piece has to stay readable underneath it: the mark is about the piece,
+/// not instead of it.
+public struct BoardRing: Sendable, Equatable {
+    public let square: Square
+    public let tint: ArrowTint
+
+    public init(square: Square, tint: ArrowTint) {
+        self.square = square
+        self.tint = tint
+    }
+}
+
+/// The pool of rings laid on the board.
+///
+/// Unlike an arrow, a ring is the same shape wherever it goes, so the geometry
+/// is made once and every ring is a node sharing it. There can be sixteen of
+/// them at the start of a game and they are all identical.
+@MainActor
+final class RingPool {
+    let node = SCNNode()
+    private var shown: [BoardRing] = []
+    /// One geometry per tint, built the first time that tint is asked for.
+    private var geometries: [UInt32: SCNGeometry] = [:]
+
+    /// Under the arrow and over the dots. A ring says which pieces may move; an
+    /// arrow says which move to make, and when both are on the board the answer
+    /// belongs on top of the question.
+    private static let lift: Float = 0.010
+    /// The flat board's circle, in squares — radius 0.42, stroked 0.07 wide, so
+    /// the pipe is half of that. Both boards draw the same ring.
+    private static let ringRadius: CGFloat = 0.42
+    private static let pipeRadius: CGFloat = 0.035
+    /// Squashed flat, so the ring is an inlay with a top and a side rather than
+    /// a length of rope lying on the board — the same thickness the arrow has.
+    private static let thickness: CGFloat = 0.014
+
+    func show(_ rings: [BoardRing]) {
+        guard rings != shown else { return }
+        shown = rings
+        node.childNodes.forEach { $0.removeFromParentNode() }
+        for ring in rings {
+            node.addChildNode(inlay(ring))
+        }
+    }
+
+    private func inlay(_ ring: BoardRing) -> SCNNode {
+        let geometry = geometries[ring.tint.hex] ?? Self.make(tint: ring.tint)
+        geometries[ring.tint.hex] = geometry
+
+        let flat = SCNNode(geometry: geometry)
+        // A torus already lies in the board's plane — its axis is up — so it
+        // needs no turn, only flattening.
+        flat.scale = SCNVector3(1, .init(Self.thickness / (2 * Self.pipeRadius)), 1)
+        flat.opacity = 0.9
+        // Above the dots, below the arrow and the value plates.
+        flat.renderingOrder = 11
+
+        let place = PlayingBoard.position(of: ring.square)
+        let node = SCNNode()
+        node.addChildNode(flat)
+        node.position = SCNVector3(place.x, Self.lift + Float(Self.thickness) / 2, place.z)
+        return node
+    }
+
+    private static func make(tint: ArrowTint) -> SCNGeometry {
+        let torus = SCNTorus(ringRadius: ringRadius, pipeRadius: pipeRadius)
+        // Enough segments that the ring is round at the size a square is drawn
+        // on a phone, and few enough that sixteen of them cost nothing.
+        torus.ringSegmentCount = 48
+        torus.pipeSegmentCount = 8
+        let material = torus.firstMaterial!
+        let colour = Colour.make(tint.hex)
+        // The arrow's materials, for the same reason: lit so the inlay has a
+        // side, emissive so it survives a square the lamp has not reached.
+        material.lightingModel = .lambert
+        material.diffuse.contents = colour
+        material.emission.contents = Colour.make(tint.hex, alpha: 0.45)
+        material.writesToDepthBuffer = false
+        return torus
+    }
+}
+
 /// The pool of arrows laid on the board.
 ///
 /// A pool of one, because the coach has never asked for two at once, and the

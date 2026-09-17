@@ -104,6 +104,7 @@ final class PlayModel {
         latestReview = nil
         summary = nil
         shapes = []
+        hintLevel = 0
         lastMove = nil
         evaluation = .centipawns(20)
         hasStarted = true
@@ -164,6 +165,10 @@ final class PlayModel {
         SoundBoard.shared.play(move: move, captured: captured, resulting: position)
         legalDestinations = [:]
         shapes = []
+        // Every position starts the hint ladder again: rings first, then the
+        // move. Carrying the level across would hand somebody the answer to a
+        // position they had not asked about yet.
+        hintLevel = 0
         // Straight away, not after the coaching search: the whole point of a
         // queued move is that it can be given while the engine is busy.
         refreshPremoveDestinations()
@@ -209,11 +214,30 @@ final class PlayModel {
         position = replay
         latestReview = nil
         lastMove = nil
+        // A different position, so the marks on the board are about a position
+        // that is no longer there, and the ladder starts again with it.
+        shapes = []
+        hintLevel = 0
         refreshDestinations()
     }
 
+    /// How many times a hint has been asked for in this position. Reset by
+    /// every move, so each position starts the ladder again.
+    private var hintLevel = 0
+
     func hint(engine: any Engine) async {
         guard !isThinking, position.sideToMove == side else { return }
+
+        // The first rung rings every piece that has a move; the second gives
+        // the move. Tactics has used that grammar since it was written — a
+        // circle for which piece, an arrow for which move — and it is the rung
+        // that teaches rather than answers. See `BoardShape.movable`.
+        hintLevel += 1
+        if hintLevel == 1 {
+            shapes = BoardShape.movable(legalDestinations)
+            return
+        }
+
         isThinking = true
         defer { isThinking = false }
         guard let analysis = try? await engine.analyse(

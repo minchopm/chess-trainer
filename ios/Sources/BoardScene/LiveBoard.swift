@@ -28,6 +28,7 @@ public final class LiveBoard: SceneDriver {
     private let highlights = Highlights()
     private let tags = ValueTagPool()
     private let arrows = ArrowPool()
+    private let rings = RingPool()
     private var clock: TimeInterval = 0
     private var pendingSync = false
 
@@ -44,6 +45,7 @@ public final class LiveBoard: SceneDriver {
         )
         stage.scene.rootNode.addChildNode(highlights.node)
         stage.scene.rootNode.addChildNode(arrows.node)
+        stage.scene.rootNode.addChildNode(rings.node)
         stage.scene.rootNode.addChildNode(tags.node)
         stage.board.set(position)
         place()
@@ -154,6 +156,15 @@ public final class LiveBoard: SceneDriver {
         refresh()
     }
 
+    /// The rings round the squares the coach is pointing out. Same standing as
+    /// the arrows: an opinion about the position rather than a fact of it.
+    private var coachRings: [BoardRing] = []
+
+    public func show(rings: [BoardRing]) {
+        coachRings = rings
+        refresh()
+    }
+
     private var valueTags: [ValueTag] {
         destinationsForSelection.compactMap { square in
             guard let value = values[square] else { return nil }
@@ -193,6 +204,7 @@ public final class LiveBoard: SceneDriver {
     private func refresh() {
         highlights.show(selected: selected, destinations: destinationsForSelection, lastMove: lastMove)
         arrows.show(coachArrows)
+        rings.show(coachRings)
         tags.show(valueTags)
     }
 

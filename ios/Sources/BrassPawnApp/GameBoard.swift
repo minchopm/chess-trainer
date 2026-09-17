@@ -117,6 +117,8 @@ private struct DimensionalBoard: View {
         .task(id: valuesBySquare) { board?.show(values: valuesBySquare) }
         .onChange(of: boardArrows) { _, arrows in board?.show(arrows: arrows) }
         .task(id: boardArrows) { board?.show(arrows: boardArrows) }
+        .onChange(of: boardRings) { _, rings in board?.show(rings: rings) }
+        .task(id: boardRings) { board?.show(rings: boardRings) }
         .onChange(of: app.progress.appearance.showsCoordinates) { _, showing in
             board?.stage.setCoordinates(showing)
         }
@@ -145,16 +147,27 @@ private struct DimensionalBoard: View {
 
     /// The coach's marks, in the terms the scene understands.
     ///
-    /// Arrows only. The flat board's vocabulary also has a circle, and nothing
-    /// in the app has ever drawn one — so rather than invent a round inlay
-    /// nobody has asked for, the case is named here and passed over, where
-    /// whoever draws the first circle will find it.
+    /// The circle used to be named here and passed over, because nothing in
+    /// the app drew one. Something does now — the ring round each piece that
+    /// has a move — so it has an inlay of its own, and the two kinds go to the
+    /// scene separately because they are different geometry.
     private var boardArrows: [BoardArrow] {
         shapes.compactMap { shape in
             switch shape.kind {
             case .arrow(let from, let to):
                 BoardArrow(from: from, to: to, tint: shape.colorHint.sceneTint)
             case .circle:
+                nil
+            }
+        }
+    }
+
+    private var boardRings: [BoardRing] {
+        shapes.compactMap { shape in
+            switch shape.kind {
+            case .circle(let square):
+                BoardRing(square: square, tint: shape.colorHint.sceneTint)
+            case .arrow:
                 nil
             }
         }
@@ -184,6 +197,7 @@ private struct DimensionalBoard: View {
         live.stage.setCoordinates(app.progress.appearance.showsCoordinates)
         live.show(values: valuesBySquare)
         live.show(arrows: boardArrows)
+        live.show(rings: boardRings)
         board = live
     }
 

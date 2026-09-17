@@ -19,6 +19,26 @@ public struct BoardShape: Equatable, Sendable, Identifiable {
     public static func circle(_ square: Square, _ hint: Hint = .suggestion) -> BoardShape {
         BoardShape(kind: .circle(square), colorHint: hint)
     }
+
+    /// A ring on every piece that has a move, given the destinations the board
+    /// is already working from.
+    ///
+    /// The mark that teaches rather than answers. In check it is the whole
+    /// point: the king is the piece under attack and it is rarely the only
+    /// piece that can do something about it — a block and a capture are moves
+    /// too, and somebody who has just learned what check is does not know to
+    /// look for them. This says every piece that can move without saying which
+    /// one to play.
+    ///
+    /// Sorted, so the same position always produces the same list and nothing
+    /// downstream mistakes a reordering for a change.
+    public static func movable(_ destinations: [Square: [Square]]) -> [BoardShape] {
+        destinations
+            .filter { !$0.value.isEmpty }
+            .keys
+            .sorted { $0.index < $1.index }
+            .map { circle($0) }
+    }
 }
 
 /// An interactive chessboard.
