@@ -21,6 +21,11 @@ struct TopBar<Content: View>: View {
     var bare = false
     @ViewBuilder var content: Content
 
+    /// Empty training headers use Spacer/Color.clear as their centre content.
+    /// Without an explicit height those flexible views consume the remaining
+    /// screen and push the board away.
+    nonisolated static var rowHeight: CGFloat { 30 }
+
     var body: some View {
         // Whatever the screen puts here — a mode picker, usually — is a way
         // out of the game as much as the tab bar is, so it goes away for
@@ -33,23 +38,29 @@ struct TopBar<Content: View>: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .center)
-        // Empty training headers use Spacer/Color.clear as their centre
-        // content. Without an explicit height those flexible views consume
-        // the remaining screen and push the board away.
         // Shorter than it was, and the way out no longer sits in it.
-        .frame(height: bare ? 0 : 30)
+        .frame(height: bare ? 0 : Self.rowHeight)
         .padding(.horizontal, 54)
         .overlay(alignment: .leading) {
             // Lifted into the strip above, which the app leaves empty — it
             // hides the status bar, so the room the clock would have taken was
             // going spare. A row of its own for one round button is a row the
             // list could have had.
-            BrassBackButton {
-                if activity.isActive { activity.requestExit() } else { navigator.goToMenu() }
+            //
+            // How far it may rise depends on how much strip this device left,
+            // so the reader is here to ask: it fills the row and reports where
+            // in the window the row begins. Nothing about the layout depends on
+            // the answer — only the offset does — so this costs a pass and no
+            // reflow.
+            GeometryReader { proxy in
+                BrassBackButton {
+                    if activity.isActive { activity.requestExit() } else { navigator.goToMenu() }
+                }
+                .frame(width: proxy.size.width, height: proxy.size.height, alignment: .leading)
+                .offset(y: BrassBackButton.lift(
+                    above: proxy.frame(in: .global).minY, rowHeight: proxy.size.height
+                ))
             }
-            // Not lifted on a Mac: that strip is the title bar, and the
-            // window's own close, minimise and zoom buttons are in it.
-            .offset(y: Mac.backButtonLift)
         }
         .padding(.horizontal, 12)
         .padding(.top, Mac.topBarHeadroom)

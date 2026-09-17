@@ -14,48 +14,46 @@ import Testing
 struct BoardWidth {
     typealias Layout = TrainingLayout<EmptyView, EmptyView, EmptyView>
 
-    /// Margins a tablet in portrait is left with, as a fraction of its width.
+    /// Every real device gives the board its width.
     ///
-    /// Room around a composition, not a gap beside one. At the old cap a 13"
-    /// iPad gave up a fifth of its width; anything in single figures reads as
-    /// the edge of the page.
-    @Test("a tablet keeps its width", arguments: [
-        CGSize(width: 1024, height: 1366),   // iPad Pro 13"
-        CGSize(width: 834, height: 1194),    // iPad Pro 11"
-        CGSize(width: 820, height: 1180),    // iPad Air
-        CGSize(width: 744, height: 1133),    // iPad mini
+    /// These are layout heights, not screen heights — what is left of the
+    /// screen once the tab bar and the safe areas have had theirs, which is
+    /// roughly sixty points on an iPad and rather more on a phone. It is the
+    /// pessimistic reading on purpose: the fraction this replaced looked
+    /// generous against a screen height and was still holding back forty points
+    /// a side against the real one.
+    @Test("the width decides", arguments: [
+        CGSize(width: 1024, height: 1300),   // iPad Pro 13"
+        CGSize(width: 834, height: 1130),    // iPad Pro 11"
+        CGSize(width: 820, height: 1120),    // iPad Air
+        CGSize(width: 744, height: 1070),    // iPad mini
+        CGSize(width: 440, height: 800),     // iPhone Pro Max
+        CGSize(width: 393, height: 700),     // iPhone Pro
+        CGSize(width: 375, height: 560),     // the smallest still sold
     ])
-    func tabletKeepsItsWidth(size: CGSize) {
-        let width = Layout.portraitBoard(in: size)
-        let margin = (size.width - width) / 2
-        #expect(margin / size.width < 0.05, "\(margin) points a side of \(size.width)")
+    func widthDecides(size: CGSize) {
+        #expect(Layout.portraitBoard(in: size) == size.width - 20)
     }
 
     /// And the panel below it still has somewhere to be.
     ///
-    /// The board plus the two player rows, against the height. Growing the
-    /// board is only an improvement while what follows it — the coach's
-    /// paragraph, the controls — is still on the screen underneath.
+    /// Growing the board is only an improvement while what follows it — the
+    /// coach's paragraph, the controls — is still on the screen underneath. The
+    /// floor is what the height is for now; a window short enough to reach it
+    /// gets a smaller board rather than buttons it cannot see.
     @Test("the panel still has room", arguments: [
-        CGSize(width: 1024, height: 1366),
-        CGSize(width: 834, height: 1194),
-        CGSize(width: 744, height: 1133),
-        CGSize(width: 393, height: 852),
-        CGSize(width: 375, height: 667),
+        CGSize(width: 1024, height: 1300),
+        CGSize(width: 834, height: 1130),
+        CGSize(width: 375, height: 560),
+        CGSize(width: 600, height: 620),     // short enough that the floor bites
+        CGSize(width: 500, height: 420),
     ])
     func panelStillHasRoom(size: CGSize) {
         let stage = Layout.portraitBoard(in: size) + BoardStage<EmptyView>.chromeHeight
-        #expect(size.height - stage > 240, "\(size.height - stage) points left under the board")
-    }
-
-    /// A phone was already bound by its width, and none of this moves it.
-    @Test("a phone is unchanged", arguments: [
-        CGSize(width: 440, height: 956),     // iPhone Pro Max
-        CGSize(width: 393, height: 852),     // iPhone Pro
-        CGSize(width: 375, height: 667),     // the smallest still sold
-    ])
-    func phoneIsUnchanged(size: CGSize) {
-        #expect(Layout.portraitBoard(in: size) == size.width - 20)
+        #expect(
+            size.height - stage >= Layout.minimumBelowBoard,
+            "\(size.height - stage) points left under the board"
+        )
     }
 
     /// The column beside the board ends where the board ends.

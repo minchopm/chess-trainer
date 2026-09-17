@@ -67,6 +67,13 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
     /// adding margin. The Mac reads it as the width to centre a screen in.
     nonisolated static var maximumWide: CGFloat { maximumBoardOnTablet + maximumText + wideSurround }
 
+    /// What has to be left under the board in portrait, whatever else happens.
+    ///
+    /// The controls sit outside the scroll view and have to be reachable, and
+    /// the panel above them has to show enough of itself to be worth scrolling.
+    /// One card and a row of buttons is the floor.
+    nonisolated static var minimumBelowBoard: CGFloat { 150 }
+
     /// The width the stage gets in portrait.
     ///
     /// In portrait the screen is the cap, and there is no second one. A board
@@ -76,11 +83,18 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
     /// has already set the limit, and applying a second one on top of it left a
     /// hundred points of ink down either side of a thirteen-inch iPad.
     ///
-    /// Three quarters of the height rather than the two thirds it was, so that
-    /// on a tablet it is the width that decides. On a phone the width decided
-    /// already and none of this moves it.
+    /// The height comes in as a floor under what follows the board rather than
+    /// as a fraction of the screen. A fraction was a guess at the same thing
+    /// and it guessed low: two thirds, then three quarters, and a thirteen-inch
+    /// iPad still had forty points of ink down either side that a fraction was
+    /// holding back for a panel that did not need them. On every screen the app
+    /// actually runs on it is now the width that decides; the floor is what
+    /// catches a window too short to put a board of that width in at all.
     nonisolated static func portraitBoard(in size: CGSize) -> CGFloat {
-        min(size.width - 20, size.height * 0.75 - BoardStage<EmptyView>.chromeHeight)
+        min(
+            size.width - 20,
+            size.height - minimumBelowBoard - BoardStage<EmptyView>.chromeHeight
+        )
     }
 
     /// The board the wide layout can give, once the panel beside it has the

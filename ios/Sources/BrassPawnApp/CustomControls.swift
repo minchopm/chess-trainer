@@ -10,12 +10,43 @@ import SwiftUI
 struct BrassBackButton: View {
     let action: () -> Void
 
+    /// A finger's worth, and the same on every screen.
+    nonisolated static var diameter: CGFloat { 44 }
+
+    /// How far the button rises into the strip above the row it sits in.
+    ///
+    /// It used to be a flat twenty-six points on iOS, which assumes every
+    /// device leaves the same strip free above the bar. They do not. A phone
+    /// with an island gives close to sixty points, an iPad twenty-four, and a
+    /// phone in landscape none at all — so on an iPad the flat lift took the
+    /// top off the circle, at the one moment in the app when the way out of a
+    /// game is the only control on the screen.
+    ///
+    /// Measured instead: the button rises until its top edge is six points
+    /// below the top of the window and no further, and never past the
+    /// twenty-six that made a row of its own unnecessary to begin with. The
+    /// same sum pushes it *down* where the row starts too high for a circle
+    /// this size, which is what a phone held sideways does.
+    ///
+    /// - Parameters:
+    ///   - top: where the row it is overlaid on begins, in the window.
+    ///   - rowHeight: that row's height. The button is centred on it, and it
+    ///     is smaller than the button, so the circle already stands proud of
+    ///     the row before anything is lifted at all.
+    nonisolated static func lift(above top: CGFloat, rowHeight: CGFloat) -> CGFloat {
+        // Not on a Mac: that strip is the title bar, and the window's own
+        // close, minimise and zoom buttons are already in it.
+        guard !Mac.isCatalyst else { return 0 }
+        let unlifted = top + (rowHeight - diameter) / 2
+        return -min(26, unlifted - 6)
+    }
+
     var body: some View {
         Button(action: action) {
             Image(systemName: "chevron.backward")
                 .font(.system(size: 15, weight: .semibold))
                 .foregroundStyle(Theatre.brassHot)
-                .frame(width: 44, height: 44)
+                .frame(width: Self.diameter, height: Self.diameter)
                 .background {
                     Circle().fill(LinearGradient(
                         colors: [Theatre.ink4, Theatre.ink2],

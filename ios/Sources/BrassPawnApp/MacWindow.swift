@@ -53,15 +53,6 @@ enum Mac {
         TrainingLayout<EmptyView, EmptyView, EmptyView>.maximumWide
     }
 
-    /// How far the back button sits above its own row.
-    ///
-    /// On iOS it is lifted into the strip the hidden status bar leaves free —
-    /// a row of its own for one round button is a row the screen could have
-    /// used. On a Mac that strip is the title bar, and the window's own close,
-    /// minimise and zoom buttons are already in it. Lifting the button there
-    /// puts it underneath them.
-    static var backButtonLift: CGFloat { isCatalyst ? 0 : -26 }
-
     /// Headroom above the top row.
     ///
     /// Four points on iOS, where the button is lifted clear. On a Mac the
