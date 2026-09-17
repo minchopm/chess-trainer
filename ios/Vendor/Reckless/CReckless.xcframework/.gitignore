@@ -1,0 +1,14 @@
+# Upstream's .gitignore, two directories up, carries `reckless*` — meant for the
+# built binary of that name. It matches every `reckless.h` under this directory
+# too, which is four of the five files that make this framework a framework: a
+# module map that names a header, and the header it names.
+#
+# Without them a clone has the libraries and the module maps and nothing to
+# read, so the first thing that imports CReckless stops at "header 'reckless.h'
+# not found" — on the other machine, never on the one that built it, because
+# there the file is sitting on disk untracked.
+#
+# The same rule already exists in bridge/.gitignore for the hand-written header
+# this one is copied from. One negation was not enough: it only covered the
+# copy that `build-reckless.sh` reads, not the four it writes.
+!*/Headers/reckless.h
