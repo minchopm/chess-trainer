@@ -26,6 +26,14 @@ struct TopBar<Content: View>: View {
     /// screen and push the board away.
     nonisolated static var rowHeight: CGFloat { 30 }
 
+    /// The strip above the bar — what the hidden status bar left free. Read
+    /// rather than assumed; `BrassBackButton.headroom(strip:rowHeight:)` says
+    /// why. It is the window's inset, so it does not depend on this row's own
+    /// padding and reading it cannot chase its own tail.
+    @State private var strip: CGFloat = 0
+
+    private var height: CGFloat { bare ? 0 : Self.rowHeight }
+
     var body: some View {
         // Whatever the screen puts here — a mode picker, usually — is a way
         // out of the game as much as the tab bar is, so it goes away for
@@ -39,7 +47,7 @@ struct TopBar<Content: View>: View {
         }
         .frame(maxWidth: .infinity, alignment: .center)
         // Shorter than it was, and the way out no longer sits in it.
-        .frame(height: bare ? 0 : Self.rowHeight)
+        .frame(height: height)
         .padding(.horizontal, 54)
         .overlay(alignment: .leading) {
             // Lifted into the strip above, which the app leaves empty — it
@@ -63,8 +71,28 @@ struct TopBar<Content: View>: View {
             }
         }
         .padding(.horizontal, 12)
-        .padding(.top, Mac.topBarHeadroom)
+        .padding(.top, max(Mac.topBarHeadroom,
+                           BrassBackButton.headroom(strip: strip, rowHeight: height)))
         .padding(.bottom, 2)
+        .background {
+            GeometryReader { proxy in
+                Color.clear.preference(key: TopStrip.self, value: proxy.safeAreaInsets.top)
+            }
+            // Ignoring it is what makes it visible: a reader inside the safe
+            // area is told there is none, and reports zero on every device.
+            .ignoresSafeArea()
+        }
+        .onPreferenceChange(TopStrip.self) { [$strip] value in
+            $strip.wrappedValue = value
+        }
+    }
+}
+
+/// How much room the window leaves above the top bar.
+private struct TopStrip: PreferenceKey {
+    static let defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = max(value, nextValue())
     }
 }
 

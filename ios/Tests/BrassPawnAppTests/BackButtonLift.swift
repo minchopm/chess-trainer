@@ -2,65 +2,71 @@ import SwiftUI
 import Testing
 @testable import BrassPawnApp
 
-/// The way out of a game has to be on the screen.
+/// The way out of a game has to be on the screen, and only on its own row.
 ///
 /// The top bar is a thirty-point row and the button is a forty-four point
-/// circle, so the circle stands seven points proud of the row before anything
-/// lifts it at all. On top of that it is lifted into the strip the hidden
-/// status bar leaves free — and that strip is a different height on every
-/// device. A flat lift took the top off the circle on an iPad, which is a
-/// fault you only see on the one device you did not open the simulator on.
+/// circle centred on it, so the circle stands seven points proud at each end
+/// before anything moves it. Above, that is the point: it uses the strip the
+/// hidden status bar leaves free. But that strip is a different height on every
+/// device — close to sixty points on a phone with an island, nothing at all on
+/// an iPad or on a phone held sideways — and a flat lift first took the top off
+/// the circle on an iPad and then, corrected, pushed its foot down onto the
+/// opponent's name. Both are faults you see on one device and not the next.
 @Suite("back button lift", .enabled(if: !Mac.isCatalyst, "the Mac keeps it in the row"))
 struct BackButtonLift {
-    /// The strip each device leaves above the row: its top safe area plus the
-    /// bar's own headroom.
-    static let phoneWithIsland: CGFloat = 59 + 4
-    static let phoneLandscape: CGFloat = 0 + 4
-    static let tablet: CGFloat = 24 + 4
+    /// What each device leaves above the bar.
+    static let phoneWithIsland: CGFloat = 59
+    static let olderPhone: CGFloat = 47
+    /// An iPad with the status bar hidden keeps none of it, and neither does a
+    /// phone turned on its side.
+    static let noStrip: CGFloat = 0
 
-    /// Where the circle's top edge ends up, which is the whole question.
-    static func top(above row: CGFloat, rowHeight: CGFloat) -> CGFloat {
-        row + (rowHeight - BrassBackButton.diameter) / 2
+    static let strips = [phoneWithIsland, olderPhone, noStrip]
+    static let rows = [TopBar<EmptyView>.rowHeight, 0]
+
+    /// The bar as it is actually built: the strip, then whichever headroom is
+    /// larger — the platform's or the one the button asks for.
+    static func circle(strip: CGFloat, rowHeight: CGFloat)
+        -> (top: CGFloat, foot: CGFloat, rowFoot: CGFloat)
+    {
+        let row = strip + max(Mac.topBarHeadroom,
+                             BrassBackButton.headroom(strip: strip, rowHeight: rowHeight))
+        let top = row + (rowHeight - BrassBackButton.diameter) / 2
             + BrassBackButton.lift(above: row, rowHeight: rowHeight)
+        return (top, top + BrassBackButton.diameter, row + rowHeight)
     }
 
-    @Test("the whole circle is on the screen", arguments: [
-        phoneWithIsland, phoneLandscape, tablet,
-    ], [TopBar<EmptyView>.rowHeight, 0])
-    func wholeCircleIsOnScreen(row: CGFloat, rowHeight: CGFloat) {
-        let top = Self.top(above: row, rowHeight: rowHeight)
-        #expect(top >= 0, "\(top) points from the top of the window")
-        // Not against the very edge either: the corners of every screen it runs
-        // on are rounded, and the button sits in one of them.
-        #expect(top >= 5)
+    @Test("the whole circle is on the screen", arguments: strips, rows)
+    func wholeCircleIsOnScreen(strip: CGFloat, rowHeight: CGFloat) {
+        let circle = Self.circle(strip: strip, rowHeight: rowHeight)
+        // Not against the very edge either: every screen it runs on has rounded
+        // corners and the button sits in one of them.
+        #expect(circle.top >= 5, "\(circle.top) points from the top of the window")
     }
 
-    /// A phone has strip to spare, and the button still takes the same
-    /// twenty-six points of it that made a row of its own unnecessary.
-    @Test("a phone is unchanged")
-    func phoneIsUnchanged() {
-        #expect(
-            BrassBackButton.lift(above: Self.phoneWithIsland,
-                                 rowHeight: TopBar<EmptyView>.rowHeight) == -26
-        )
+    /// And it stays in its own row. Below the row is the opponent's name.
+    @Test("it does not come out of the bottom of its row", arguments: strips, rows)
+    func staysInItsRow(strip: CGFloat, rowHeight: CGFloat) {
+        let circle = Self.circle(strip: strip, rowHeight: rowHeight)
+        #expect(circle.foot <= circle.rowFoot,
+                "\(circle.foot - circle.rowFoot) points past the foot of the row")
     }
 
-    /// An iPad has less, and takes less.
-    @Test("a tablet takes what there is")
-    func tabletTakesWhatThereIs() {
-        let lift = BrassBackButton.lift(above: Self.tablet,
-                                        rowHeight: TopBar<EmptyView>.rowHeight)
-        #expect(lift > -26, "a tablet cannot afford the full lift")
-        #expect(lift < 0, "and it can afford some of it")
+    /// A phone has strip to spare, so the bar starts where it always did and
+    /// the button still takes the twenty-six points that made a row of its own
+    /// unnecessary in the first place.
+    @Test("a phone is unchanged", arguments: [phoneWithIsland, olderPhone])
+    func phoneIsUnchanged(strip: CGFloat) {
+        let row = TopBar<EmptyView>.rowHeight
+        #expect(BrassBackButton.headroom(strip: strip, rowHeight: row) == 0)
+        #expect(BrassBackButton.lift(above: strip + Mac.topBarHeadroom, rowHeight: row) == -26)
     }
 
-    /// A phone held sideways has none at all, and the button comes *down* into
-    /// the row rather than half off the top of the screen.
-    @Test("no strip means no lift")
-    func noStripMeansNoLift() {
-        #expect(
-            BrassBackButton.lift(above: Self.phoneLandscape,
-                                 rowHeight: TopBar<EmptyView>.rowHeight) > 0
-        )
+    /// Where there is none, the row makes one rather than the button leaving
+    /// the screen or landing on the row below.
+    @Test("no strip means the row makes one")
+    func noStripMeansTheRowMakesOne() {
+        let row = TopBar<EmptyView>.rowHeight
+        #expect(BrassBackButton.headroom(strip: Self.noStrip, rowHeight: row) > Mac.topBarHeadroom)
     }
 }

@@ -38,8 +38,33 @@ struct BrassBackButton: View {
         // close, minimise and zoom buttons are already in it.
         guard !Mac.isCatalyst else { return 0 }
         let unlifted = top + (rowHeight - diameter) / 2
-        return -min(26, unlifted - 6)
+        return -min(26, unlifted - margin)
     }
+
+    /// How far down the window the row it sits in has to start.
+    ///
+    /// The strip the hidden status bar leaves free is the whole premise of
+    /// lifting the button at all, and on half the devices the app runs on there
+    /// is no such strip. A phone keeps close to sixty points of it for the
+    /// island whether the status bar is drawn or not; an iPad with the status
+    /// bar hidden keeps nothing, and neither does a phone held sideways. There
+    /// the button is not lifted into anything — it is pushed down to stay on
+    /// the screen, and since it is fourteen points taller than the row it is
+    /// centred on, it comes out of the bottom of that row and onto whatever the
+    /// screen put next. On the playing screens that is the opponent's name.
+    ///
+    /// So where there is no strip the row makes one: it starts far enough down
+    /// that the whole circle fits between the top of the window and the foot of
+    /// the row — the margin, then the seven points the circle stands proud by
+    /// at each end. On a phone the strip already covers it and this is nothing.
+    nonisolated static func headroom(strip: CGFloat, rowHeight: CGFloat) -> CGFloat {
+        guard !Mac.isCatalyst else { return 0 }
+        return max(0, margin + diameter - rowHeight - strip)
+    }
+
+    /// How close to the top of the window the circle may come. Every screen it
+    /// runs on has rounded corners and the button sits in one of them.
+    nonisolated private static var margin: CGFloat { 6 }
 
     var body: some View {
         Button(action: action) {
