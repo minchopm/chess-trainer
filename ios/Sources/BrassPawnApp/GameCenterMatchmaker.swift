@@ -77,6 +77,11 @@ public final class GameCenterMatchmaker: NSObject {
     private var localRating = OnlineElo.starting
     private var localGames = 0
     private var disconnectWork: Task<Void, Never>?
+    private var connectWork: Task<Void, Never>?
+    /// How long two paired devices are given to actually reach each other.
+    /// Being matched and never connecting is a real outcome — a message beats
+    /// a screen that says Connecting for ever.
+    private static let connectGrace: TimeInterval = 20
     /// How long an opponent may be gone before the game is given to you. Long
     /// enough for a lift or a tunnel, short enough that nobody sits waiting on
     /// somebody who has closed the app.
@@ -216,6 +221,8 @@ public final class GameCenterMatchmaker: NSObject {
         #if canImport(GameKit)
         disconnectWork?.cancel()
         disconnectWork = nil
+        connectWork?.cancel()
+        connectWork = nil
         match?.disconnect()
         match = nil
         #endif
@@ -255,6 +262,35 @@ public final class GameCenterMatchmaker: NSObject {
     private func begin(_ match: GKMatch) {
         self.match = match
         match.delegate = self
+        state = .connected
+        status = "Connecting…"
+
+        connectWork?.cancel()
+        connectWork = Task { @MainActor [weak self] in
+            try? await Task.sleep(for: .seconds(Self.connectGrace))
+            guard !Task.isCancelled, let self, self.session == nil else { return }
+            self.leaveMatch()
+            self.status = "Paired, but the connection could not be made."
+        }
+        startSessionIfConnected()
+    }
+
+    /// Being handed a match is not the same as being connected to it.
+    ///
+    /// `findMatch` returns as soon as Game Center has paired two players, and
+    /// `GKMatch.players` is filled in there and then — but the direct
+    /// connection between the devices is still being made, and
+    /// `expectedPlayerCount` is what says whether it has been. The session used
+    /// to be built and begun on the spot, so the host's opening packets went
+    /// out over a link that did not exist yet and were simply lost. Both sides
+    /// then sat on "Connecting…".
+    ///
+    /// Called from both places the answer can change: when the match arrives
+    /// already connected, and when the delegate says a player has connected.
+    private func startSessionIfConnected() {
+        guard let match, session == nil, match.expectedPlayerCount == 0 else { return }
+        connectWork?.cancel()
+        connectWork = nil
 
         // The host is settled by sorting the two player IDs, so both devices
         // reach the same answer without asking each other. It decides colours;
@@ -312,6 +348,9 @@ extension GameCenterMatchmaker: @preconcurrency GKMatchDelegate {
                 self.disconnectWork?.cancel()
                 self.disconnectWork = nil
                 self.status = "Connected."
+                // The link is up. If this is the first player to arrive, it is
+                // also the moment the session can be started.
+                self.startSessionIfConnected()
             default:
                 break
             }

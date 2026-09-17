@@ -46,6 +46,11 @@ public final class MatchSession {
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     private var ply = 0
+    /// Set once `begin` has been called, so a hello that arrives before this
+    /// device is ready does not start a game it has not been asked for yet.
+    private var hasBegun = false
+    private var whiteIsHost: Bool?
+    private var lastHello: Date?
 
     public var isMyTurn: Bool {
         if case .playing = phase { return position.sideToMove == myColor }
@@ -74,10 +79,33 @@ public final class MatchSession {
     /// half the time. It decides *randomly* so that being the host, which comes
     /// down to which player ID sorts first, is not worth a colour.
     public func begin(whiteIsHost: Bool? = nil) {
+        self.whiteIsHost = whiteIsHost
+        hasBegun = true
         send(.hello(me))
-        guard isHost else { return }
+        dealColours()
+    }
+
+    /// Deal the colours, once there is somebody to deal them to.
+    ///
+    /// The host used to do this in `begin`, the instant Game Center handed back
+    /// a match. That is too early. The two devices do not finish connecting at
+    /// the same moment, and a packet sent before the other end has a session to
+    /// hand it to is dropped — it is not queued and it is never asked for
+    /// again. The guest then sat on "Connecting…" waiting for a start that had
+    /// already been spent, which is a game that never begins and never fails
+    /// either.
+    ///
+    /// So the deal waits for the guest's own hello, which is the one piece of
+    /// evidence that there is a session at the other end listening. Called from
+    /// both ends of that — `begin` and the arrival of a hello — because either
+    /// may be the one that happens last.
+    private func dealColours() {
+        guard isHost, hasBegun, opponent != nil, case .waiting = phase else { return }
         let hostPlaysWhite = whiteIsHost ?? Bool.random()
         myColor = hostPlaysWhite ? .white : .black
+        // Ours again with it: if the hello this device sent was the one that
+        // was dropped, this is the copy the guest shows in the player row.
+        send(.hello(me))
         send(.start(MatchPacket.Start(
             youPlay: hostPlaysWhite ? .black : .white,
             timeControl: timeControl
@@ -90,6 +118,7 @@ public final class MatchSession {
         switch packet {
         case .hello(let hello):
             opponent = hello
+            dealColours()
 
         case .start(let start):
             // Only the guest is told what to play, and only once.
@@ -159,6 +188,17 @@ public final class MatchSession {
     /// whose clock ran out is the one that knows it, and claiming the
     /// opponent's would turn a slow network into a loss.
     public func tick(now: Date = Date()) {
+        // Still waiting: say hello again. The first one can be spent before
+        // the other device has a session to receive it, and one lost packet
+        // would otherwise cost the whole game — both ends sitting on
+        // "Connecting…", each waiting for the other to speak first. A few
+        // bytes a second until somebody answers is the cheap way out.
+        if case .waiting = phase {
+            guard lastHello.map({ now.timeIntervalSince($0) >= 1 }) ?? true else { return }
+            lastHello = now
+            send(.hello(me))
+            return
+        }
         guard case .playing = phase, clock.isRunning else { return }
         guard clock.hasFlagged(myClockKey, at: now) else { return }
         send(.gameOver(MatchPacket.GameOver(winner: myColor.opponent, reason: .timeout)))

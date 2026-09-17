@@ -57,6 +57,51 @@ private func makePair(timeControl: TimeControl = .five) -> Pair {
 @Suite("Online match")
 @MainActor
 struct MatchTests {
+    /// Neither device knows which of them will be ready first.
+    ///
+    /// Game Center hands both ends a match at more or less the same moment, but
+    /// "more or less" is the whole problem: whichever session is built second
+    /// misses anything the first one said. The deal therefore waits for the
+    /// guest's hello rather than going out with the host's, and it has to work
+    /// whichever order the two arrive in.
+    @Test("The host waits for the guest before dealing")
+    func hostWaitsForTheGuest() {
+        let pair = makePair()
+
+        pair.host.begin(whiteIsHost: true)
+        #expect(pair.host.phase == .waiting, "nobody has answered yet")
+        #expect(pair.guest.phase == .waiting)
+
+        pair.guest.begin()
+        #expect(pair.host.phase == .playing)
+        #expect(pair.guest.phase == .playing)
+        #expect(pair.host.myColor == .white)
+        #expect(pair.guest.myColor == .black)
+    }
+
+    /// And a hello spoken into a void is said again.
+    ///
+    /// This is the case that hung: the guest's first hello goes out before the
+    /// host has a session to hand it to, so it is dropped — not queued, not
+    /// resent by anything underneath. Without the repeat both ends wait for the
+    /// other to speak first, which is a game that never starts and never fails.
+    @Test("A hello lost before the other side is listening is said again")
+    func lostHelloIsSaidAgain() {
+        let pair = makePair()
+
+        pair.guestTransport.dropped = true
+        pair.guest.begin()
+        pair.host.begin(whiteIsHost: true)
+        #expect(pair.host.phase == .waiting, "the host never heard the guest")
+        #expect(pair.guest.phase == .waiting)
+
+        pair.guestTransport.dropped = false
+        pair.guest.tick(now: Date())
+        #expect(pair.host.phase == .playing)
+        #expect(pair.guest.phase == .playing)
+        #expect(pair.guest.opponent?.name == "Ann", "and the host says who it is")
+    }
+
     @Test("The host deals the colours and both sides agree")
     func colours() {
         let pair = makePair()

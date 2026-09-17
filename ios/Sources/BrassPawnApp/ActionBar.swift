@@ -4,7 +4,20 @@ import SwiftUI
 struct ActionItem: Identifiable {
     enum Emphasis { case normal, primary, destructive }
 
-    let id = UUID()
+    /// The title, not a fresh `UUID`.
+    ///
+    /// A `UUID()` here is assigned when the item is built, and these are rebuilt
+    /// every time the screen around them is — so the row's `ForEach` saw four
+    /// entirely new buttons on every pass, tore the old ones down and put new
+    /// ones up. A button replaced between the press and the release never fires:
+    /// the gesture goes down with it. On most screens the rebuilds are rare
+    /// enough that a tap lands between two of them and it works by luck. The
+    /// online screen redraws ten times a second for the clock, and there the
+    /// luck runs out — Lobby could be pressed all day and do nothing.
+    ///
+    /// A title is stable across rebuilds and distinct within a row, which is
+    /// all identity here has to be.
+    var id: String { title }
     let title: String
     let systemImage: String
     var emphasis: Emphasis = .normal
