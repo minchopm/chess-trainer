@@ -155,8 +155,13 @@ targets:
         # App Store build, and the App Group is an iOS arrangement — the clip
         # that used it does not exist here. See App/BrassPawnCatalyst.entitlements.
         CODE_SIGN_ENTITLEMENTS[sdk=macosx*]: App/BrassPawnCatalyst.entitlements
-        MARKETING_VERSION: "1.0"
-        CURRENT_PROJECT_VERSION: "2"
+        MARKETING_VERSION: "1.1"
+        # Carried on from 2 rather than restarted at 1. App Store Connect wants
+        # the build number unique within a marketing version, so 1 would have
+        # been legal — but 1.0 (2) is already uploaded for the Mac, and a
+        # sequence that only ever goes up is one fewer thing to reason about
+        # when two platforms are drawing from the same record.
+        CURRENT_PROJECT_VERSION: "3"
         SWIFT_VERSION: "6.0"
         # 6 is the Mac. Its presence is what asks for the Mac idiom — native
         # control metrics and a window drawn at its own scale — rather than an
@@ -265,8 +270,13 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.arte-soft.brasspawn.Clip
         CODE_SIGN_ENTITLEMENTS: Clip/BrassPawnClip.entitlements
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-        MARKETING_VERSION: "1.0"
-        CURRENT_PROJECT_VERSION: "2"
+        MARKETING_VERSION: "1.1"
+        # Carried on from 2 rather than restarted at 1. App Store Connect wants
+        # the build number unique within a marketing version, so 1 would have
+        # been legal — but 1.0 (2) is already uploaded for the Mac, and a
+        # sequence that only ever goes up is one fewer thing to reason about
+        # when two platforms are drawing from the same record.
+        CURRENT_PROJECT_VERSION: "3"
         SWIFT_VERSION: "6.0"
         TARGETED_DEVICE_FAMILY: "1,2"
         # Said out loud rather than left to the default, because the app beside
