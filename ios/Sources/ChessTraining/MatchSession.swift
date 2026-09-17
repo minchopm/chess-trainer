@@ -51,6 +51,10 @@ public final class MatchSession {
     private var hasBegun = false
     private var whiteIsHost: Bool?
     private var lastHello: Date?
+    /// When the opponent's clock first read zero here. See `tick`.
+    private var opponentFlaggedSince: Date?
+    /// How long the opponent's flag has to stand before it is claimed.
+    private static let flagGrace: TimeInterval = 3
 
     public var isMyTurn: Bool {
         if case .playing = phase { return position.sideToMove == myColor }
@@ -159,7 +163,9 @@ public final class MatchSession {
 
         apply(move)
         send(.move(MatchPacket.MovePacket(
-            uci: move.uci, ply: ply, remaining: clock.remaining(myClockKey)
+            uci: move.uci, ply: ply,
+            remaining: clock.remaining(myClockKey),
+            yours: clock.remaining(opponentClockKey)
         )))
         checkGameOverAfterMove(justMovedBy: myColor)
         return true
@@ -184,9 +190,20 @@ public final class MatchSession {
         if accept { finish(MatchResult(outcome: .draw, reason: .agreement)) }
     }
 
-    /// Called on a display timer. Only ever claims *your own* flag: the device
-    /// whose clock ran out is the one that knows it, and claiming the
-    /// opponent's would turn a slow network into a loss.
+    /// Called on a display timer: the clocks are read here, and a game that
+    /// has run out of time is ended here.
+    ///
+    /// Both flags, not just this device's own. Claiming only your own reads
+    /// well — the device whose clock ran out is the one that knows it — but it
+    /// assumes that device is awake to say so, and a phone whose screen has
+    /// locked or an app in the background is not. The game then carried on
+    /// past zero with the clock showing nothing left, and was decided by
+    /// whatever happened next instead.
+    ///
+    /// The opponent's flag waits out `flagGrace` first. This device's reading
+    /// of their clock is the lower of the two by design, and their move may be
+    /// on the wire as it runs out; a few seconds of doubt costs nothing and
+    /// turns a slow network into a lost second rather than a lost game.
     public func tick(now: Date = Date()) {
         // Still waiting: say hello again. The first one can be spent before
         // the other device has a session to receive it, and one lost packet
@@ -200,9 +217,22 @@ public final class MatchSession {
             return
         }
         guard case .playing = phase, clock.isRunning else { return }
-        guard clock.hasFlagged(myClockKey, at: now) else { return }
-        send(.gameOver(MatchPacket.GameOver(winner: myColor.opponent, reason: .timeout)))
-        finish(MatchResult(outcome: .loss, reason: .timeout))
+
+        if clock.hasFlagged(myClockKey, at: now) {
+            send(.gameOver(MatchPacket.GameOver(winner: myColor.opponent, reason: .timeout)))
+            finish(MatchResult(outcome: .loss, reason: .timeout))
+            return
+        }
+
+        guard clock.hasFlagged(opponentClockKey, at: now) else {
+            opponentFlaggedSince = nil
+            return
+        }
+        let since = opponentFlaggedSince ?? now
+        opponentFlaggedSince = since
+        guard now.timeIntervalSince(since) >= Self.flagGrace else { return }
+        send(.gameOver(MatchPacket.GameOver(winner: myColor, reason: .timeout)))
+        finish(MatchResult(outcome: .win, reason: .timeout))
     }
 
     /// The opponent left and did not come back.
@@ -263,6 +293,9 @@ public final class MatchSession {
 
         apply(move)
         clock.adopt(packet.remaining, for: opponentClockKey)
+        // And their reading of mine. Downwards only, like theirs — see
+        // `MovePacket.yours` for why both directions are needed.
+        if let mine = packet.yours { clock.adopt(mine, for: myClockKey) }
         checkGameOverAfterMove(justMovedBy: myColor.opponent)
     }
 

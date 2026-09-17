@@ -152,6 +152,61 @@ struct MatchTests {
         #expect(pair.host.phase == .finished(MatchResult(outcome: .loss, reason: .checkmate)))
     }
 
+    /// A flag has to end the game even when the device it belongs to is asleep.
+    ///
+    /// Only the owner used to claim it, which reads well and assumes the owner
+    /// is awake to say so. A phone whose screen has locked is not, and the game
+    /// then ran on past zero with the clock showing nothing left — decided by
+    /// whatever happened after, on a board that should have been over.
+    @Test("A flag the other device never reports is claimed here")
+    func opponentFlagIsClaimed() {
+        let pair = makePair(timeControl: .three)
+        pair.begin()
+        // One move, so that it is the guest thinking and the guest's clock
+        // that runs out.
+        #expect(pair.host.play(from: Square("e2")!, to: Square("e4")!, promotion: nil))
+
+        let out = Date().addingTimeInterval(TimeControl.three.seconds + 1)
+        pair.host.tick(now: out)
+        #expect(pair.host.phase == .playing, "not on sight: their move may be on the wire")
+
+        pair.host.tick(now: out.addingTimeInterval(4))
+        #expect(pair.host.phase == .finished(MatchResult(outcome: .win, reason: .timeout)))
+        #expect(pair.guest.phase == .finished(MatchResult(outcome: .loss, reason: .timeout)),
+                "and the other device is told, rather than left on a dead board")
+    }
+
+    /// Each device is a network hop kinder to itself than the other is, so a
+    /// move carries both readings and each is taken downwards. Without it the
+    /// two screens disagree, and one player can be out of time on the other's
+    /// while still thinking on their own.
+    @Test("A move's reading of your own clock is taken, downwards only")
+    func adoptsTheirReadingOfYourClock() throws {
+        let pair = makePair()
+        pair.begin()
+        #expect(pair.host.play(from: Square("e2")!, to: Square("e4")!, promotion: nil))
+
+        func answer(yours: TimeInterval) throws -> Data {
+            try JSONEncoder().encode(MatchPacket.move(
+                .init(uci: "e7e5", ply: 2, remaining: 280, yours: yours)
+            ))
+        }
+
+        // Their reading of the host's clock is lower than the host's own, which
+        // is what a slow link looks like from the other end.
+        pair.host.receive(try answer(yours: 120))
+        let now = Date()
+        #expect(pair.host.clock.remaining(.white, at: now) <= 120.5)
+
+        // And a reading that is higher is not taken: a modified build does not
+        // get to hand itself time.
+        let before = pair.host.clock.remaining(.white, at: now)
+        pair.host.receive(try JSONEncoder().encode(MatchPacket.move(
+            .init(uci: "g8f6", ply: 4, remaining: 270, yours: 999)
+        )))
+        #expect(pair.host.clock.remaining(.white, at: now) <= before)
+    }
+
     @Test("Resigning loses for the sender and wins for the receiver")
     func resignation() {
         let pair = makePair()
@@ -180,16 +235,20 @@ struct MatchTests {
         #expect(pair.guest.phase == .finished(MatchResult(outcome: .draw, reason: .agreement)))
     }
 
-    @Test("Your own flag ends the game; the opponent's does not")
+    @Test("Your own flag ends the game at once; the opponent's waits a moment")
     func flagFall() {
         let pair = makePair(timeControl: .three)
         pair.begin()
         let later = Date().addingTimeInterval(TimeControl.three.seconds + 1)
 
-        // The side not to move has burned no time, so its own tick is silent.
+        // The guest can see the host is out of time, but not yet: their move
+        // may be on the wire, and this device's reading of their clock is the
+        // lower of the two. See `opponentFlagIsClaimed` for the other end of
+        // this — the grace runs out and the claim is made.
         pair.guest.tick(now: later)
         #expect(pair.guest.phase == .playing)
 
+        // The owner of the clock has no such doubt.
         pair.host.tick(now: later)
         #expect(pair.host.phase == .finished(MatchResult(outcome: .loss, reason: .timeout)))
         #expect(pair.guest.phase == .finished(MatchResult(outcome: .win, reason: .timeout)))

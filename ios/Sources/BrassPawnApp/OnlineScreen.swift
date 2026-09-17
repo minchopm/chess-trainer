@@ -262,6 +262,26 @@ struct OnlineScreen: View {
                 .interactiveDismissDisabled()
             }
         }
+        // A draw offer is a question with two answers and a clock running on
+        // both of them, so it is put where a question goes. It used to be a row
+        // inside the status card, which on a phone is under the board and on a
+        // Mac is in the column beside it — in both cases somewhere you find by
+        // looking, and on the Mac the offer was simply missed while the game
+        // went on.
+        .overlay {
+            if session.drawOffered {
+                BrassConfirmationOverlay(
+                    title: L.t("online.drawOffered", "Draw offered."),
+                    message: L.t("online.offersADraw", "%@ offers a draw.",
+                                 session.opponent?.name ?? L.t("online.opponent", "Opponent")),
+                    confirmTitle: L.t("online.accept", "Accept"),
+                    cancelTitle: L.t("online.playOn", "Play on"),
+                    onConfirm: { session.respondToDraw(accept: true) },
+                    onCancel: { session.respondToDraw(accept: false) }
+                )
+            }
+        }
+        .animation(.easeOut(duration: 0.2), value: session.drawOffered)
         .onChange(of: session.moves.count) { _, _ in
             SoundBoard.shared.play(.move)
         }
@@ -295,15 +315,10 @@ struct OnlineScreen: View {
             Text(L.t("online.gameSummary", "%@ · %@ · you are %@", session.timeControl.label, session.timeControl.name, L.color(session.myColor)))
                 .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
 
-            if session.drawOffered {
-                HStack(spacing: 10) {
-                    Text(L.t("online.drawOffered", "Draw offered.")).appFont(.subheadline)
-                    Button(L.t("online.accept", "Accept")) { session.respondToDraw(accept: true) }
-                        .buttonStyle(PillButtonStyle(emphasis: .solid))
-                    Button(L.t("online.decline", "Decline")) { session.respondToDraw(accept: false) }
-                        .buttonStyle(PillButtonStyle(emphasis: .ghost))
-                }
-            } else if session.drawOfferSent {
+            // The offer itself is a modal, not a row in this card — see the
+            // overlay on `game`. What stays here is the half that is only news:
+            // that your own offer is out and unanswered.
+            if session.drawOfferSent {
                 Text(L.t("online.drawOfferedWaitingForAn", "Draw offered — waiting for an answer."))
                     .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
             }

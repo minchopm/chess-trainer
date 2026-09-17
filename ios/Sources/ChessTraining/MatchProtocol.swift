@@ -59,11 +59,28 @@ public enum MatchPacket: Codable, Equatable, Sendable {
         public var ply: Int
         /// The sender's own clock after making the move.
         public var remaining: TimeInterval
+        /// And the sender's reading of the *receiver's* clock.
+        ///
+        /// Without it the two devices disagree, and always in the same
+        /// direction: each starts the opponent's clock when the move arrives
+        /// and its own when the move is sent, so each is a network hop kinder
+        /// to itself than the other is. A hundred milliseconds a move is four
+        /// seconds over a blitz game — enough for one player to be out of time
+        /// on the other's screen while still thinking on their own.
+        ///
+        /// Both readings are adopted downwards, so the pair converges on the
+        /// lower of the two and both screens show the same number.
+        ///
+        /// Optional because a packet from a build that predates it still has
+        /// to decode; there is nothing to adopt and the old drift is what you
+        /// get.
+        public var yours: TimeInterval?
 
-        public init(uci: String, ply: Int, remaining: TimeInterval) {
+        public init(uci: String, ply: Int, remaining: TimeInterval, yours: TimeInterval? = nil) {
             self.uci = uci
             self.ply = ply
             self.remaining = remaining
+            self.yours = yours
         }
     }
 
