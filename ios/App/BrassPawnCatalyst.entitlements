@@ -19,8 +19,21 @@
 
 	<!-- Game Center and StoreKit both talk to Apple. Neither works in a
 	     sandbox that cannot open an outbound connection, and Online play is
-	     the whole of one mode. Client only: nothing listens. -->
+	     the whole of one mode. -->
 	<key>com.apple.security.network.client</key>
+	<true/>
+
+	<!-- And the sandbox has to let something in as well, which is what this
+	     file used to say it did not.
+
+	     Finding an opponent goes through Apple's servers, but the match that
+	     comes back does not: `GKMatch` is a direct connection between the two
+	     devices, and each of them has to accept one from the other. A Mac with
+	     the client entitlement alone gets as far as being paired and then
+	     never connects — which is exactly what a Mac and a phone looking for
+	     each other looked like. A phone is not sandboxed and so was never
+	     asked the question. -->
+	<key>com.apple.security.network.server</key>
 	<true/>
 
 	<!-- Reading a position off a photograph of a real board, on a Mac that
