@@ -41,6 +41,9 @@ struct OnlineScreen: View {
                 invitation = waiting
                 timeControl = TimeControl(rawValue: waiting.minutes) ?? .five
             }
+            #if DEBUG
+            stageDrawOfferForScreenshot()
+            #endif
         }
         .onDisappear {
             matchmaker.cancelSearch()
@@ -207,6 +210,26 @@ struct OnlineScreen: View {
         }
     }
 
+    #if DEBUG
+    /// Put a game with a draw on the table on screen, for `.onlineDraw`.
+    ///
+    /// Against the debug loopback, which exists because Game Center will not
+    /// sign in on a simulator. The pause is the opponent thinking: an offer
+    /// that is there before the board is reads as part of the furniture.
+    private func stageDrawOfferForScreenshot() {
+        guard ScreenshotScene.requested == .onlineDraw, matchmaker.session == nil else { return }
+        matchmaker.startLoopbackMatch(
+            timeControl: timeControl,
+            rating: app.progress.rating(.online(minutes: timeControl.minutes)),
+            games: 0
+        )
+        Task { @MainActor in
+            try? await Task.sleep(for: .seconds(1.5))
+            matchmaker.offerDrawFromLoopback()
+        }
+    }
+    #endif
+
     private var isSearching: Bool {
         if case .searching = matchmaker.state { return true }
         return false
@@ -263,24 +286,19 @@ struct OnlineScreen: View {
             }
         }
         // A draw offer is a question with two answers and a clock running on
-        // both of them, so it is put where a question goes. It used to be a row
-        // inside the status card, which on a phone is under the board and on a
-        // Mac is in the column beside it — in both cases somewhere you find by
-        // looking, and on the Mac the offer was simply missed while the game
-        // went on.
-        .overlay {
-            if session.drawOffered {
-                BrassConfirmationOverlay(
-                    title: L.t("online.drawOffered", "Draw offered."),
-                    message: L.t("online.offersADraw", "%@ offers a draw.",
-                                 session.opponent?.name ?? L.t("online.opponent", "Opponent")),
-                    confirmTitle: L.t("online.accept", "Accept"),
-                    cancelTitle: L.t("online.playOn", "Play on"),
-                    onConfirm: { session.respondToDraw(accept: true) },
-                    onCancel: { session.respondToDraw(accept: false) }
-                )
-            }
-        }
+        // both of them. It used to be a row inside the status card — under the
+        // board on a phone, in the column beside it on a Mac, in both cases
+        // somewhere you find by looking, and on the Mac it was simply missed
+        // while the game went on.
+        //
+        // Then it was the app's usual confirmation, which is centred over a
+        // dimmed screen and takes a tap anywhere as a refusal. That is the
+        // right shape for "leave the game?" and the wrong one here: the clock
+        // is still running, the board is still the thing being looked at, and a
+        // stray click should not answer for you. So it stands aside instead —
+        // no veil, nothing to dismiss by accident, and the board still playable
+        // underneath while you decide.
+        .overlay { drawOffer(session) }
         .animation(.easeOut(duration: 0.2), value: session.drawOffered)
         .onChange(of: session.moves.count) { _, _ in
             SoundBoard.shared.play(.move)
@@ -297,6 +315,62 @@ struct OnlineScreen: View {
             }
         }
         .animation(.spring(duration: 0.35), value: settled)
+    }
+
+    /// The offer, out of the way.
+    ///
+    /// It goes at the head of the reading column, on the right, wherever that
+    /// column happens to be: beside the board on a wide screen, under it on a
+    /// tall one. So on a Mac it is the top-right corner, and on a phone it is
+    /// just below the board — in both cases over text rather than over the
+    /// position, and clear of the controls, which have to stay pressable.
+    ///
+    /// The drop in the tall case is the board's own height, taken from the
+    /// layout that draws it rather than guessed, so the two cannot disagree.
+    @ViewBuilder
+    private func drawOffer(_ session: MatchSession) -> some View {
+        GeometryReader { geometry in
+            let isWide = geometry.size.width > geometry.size.height
+            let board = TrainingLayout<EmptyView, EmptyView, EmptyView>
+                .portraitBoard(in: geometry.size) + BoardStage<EmptyView>.chromeHeight
+            if session.drawOffered {
+                BrassModalPanel(tint: Theatre.brass) {
+                    Text(L.t("online.drawOffered", "Draw offered."))
+                        .appFont(size: 17, weight: .semibold)
+                        .foregroundStyle(Theatre.ivory)
+                    Text(L.t("online.offersADraw", "%@ offers a draw.",
+                             session.opponent?.name ?? L.t("online.opponent", "Opponent")))
+                        .appFont(.footnote)
+                        .foregroundStyle(Theatre.ivoryDim)
+                        .fixedSize(horizontal: false, vertical: true)
+                    HStack(spacing: 8) {
+                        Button(L.t("online.accept", "Accept")) {
+                            session.respondToDraw(accept: true)
+                        }
+                        .buttonStyle(PillButtonStyle(emphasis: .solid))
+                        Button(L.t("online.playOn", "Play on")) {
+                            session.respondToDraw(accept: false)
+                        }
+                        .buttonStyle(PillButtonStyle(emphasis: .ghost))
+                    }
+                }
+                // Narrow enough to be a note rather than a screen, and wide
+                // enough for two buttons and a name.
+                //
+                // Only the plate itself takes taps — the reader around it draws
+                // nothing, so the board underneath stays playable while you
+                // decide. The clock does not stop for a question and neither
+                // should the position.
+                .frame(maxWidth: 270)
+                .padding(12)
+                .padding(.top, isWide ? 0 : board)
+                .transition(.opacity.combined(with: .move(edge: .trailing)))
+                .frame(
+                    width: geometry.size.width, height: geometry.size.height,
+                    alignment: .topTrailing
+                )
+            }
+        }
     }
 
     private func completionIsPresented(_ session: MatchSession) -> Binding<Bool> {

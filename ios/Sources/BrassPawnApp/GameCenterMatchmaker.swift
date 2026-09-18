@@ -256,6 +256,15 @@ public final class GameCenterMatchmaker: NSObject {
         get { _loopback }
         set { _loopback = newValue }
     }
+
+    /// The other side of a loopback match offers a draw.
+    ///
+    /// For the screenshot scene only. There is no other way to see the offer:
+    /// Game Center does not sign in on a simulator, so the only real one takes
+    /// two devices, two Apple IDs and a draw offered at the right moment.
+    public func offerDrawFromLoopback() {
+        loopback?.theirs.offerDraw()
+    }
 #endif
 
     #if canImport(GameKit)

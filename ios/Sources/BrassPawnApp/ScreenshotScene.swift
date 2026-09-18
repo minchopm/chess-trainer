@@ -28,6 +28,14 @@ enum ScreenshotScene: String {
     case playMistake
     /// The flat board with what every move is worth written on the squares.
     case playValues
+    /// An online game with a draw on the table.
+    ///
+    /// The one screen that cannot be reached to be looked at: Game Center will
+    /// not sign in on a simulator, so without this the offer could only be seen
+    /// on two real devices with two Apple IDs and one of them offering a draw
+    /// at the right moment. It runs against the debug loopback, which is there
+    /// for the same reason.
+    case onlineDraw
     /// The free board with a different engine on each side.
     case boardEngines
     /// The library of recorded games.
@@ -64,7 +72,7 @@ enum ScreenshotScene: String {
     var tab: RootView.Tab {
         switch self {
         case .menu, .playSetup, .playCoached, .playMistake, .playValues, .boardEngines, .demo,
-             .paywall: .play
+             .onlineDraw, .paywall: .play
         case .watchList, .demoWatch: .watch
         case .demoTactics: .tactics
         }
@@ -74,6 +82,7 @@ enum ScreenshotScene: String {
     var playMode: PlayTab.Mode? {
         switch self {
         case .boardEngines: .board
+        case .onlineDraw: .online
         case .playSetup, .playCoached, .playMistake, .playValues, .demo, .demoTactics: .play
         default: nil
         }
@@ -83,7 +92,7 @@ enum ScreenshotScene: String {
     /// values are only drawn on the flat one.
     var dimension: BoardDimension? {
         switch self {
-        case .playSetup, .playCoached, .playMistake, .boardEngines, .demo: .dimensional
+        case .playSetup, .playCoached, .playMistake, .boardEngines, .demo, .onlineDraw: .dimensional
         case .playValues, .demoTactics: .flat
         case .menu, .watchList, .demoWatch, .paywall: nil
         }
