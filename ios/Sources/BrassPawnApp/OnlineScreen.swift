@@ -264,6 +264,8 @@ struct OnlineScreen: View {
                     }
                 )
             }
+        } notice: {
+            drawOffer(session)
         } panel: {
             statusCard(session)
             Card {
@@ -285,20 +287,6 @@ struct OnlineScreen: View {
                 .interactiveDismissDisabled()
             }
         }
-        // A draw offer is a question with two answers and a clock running on
-        // both of them. It used to be a row inside the status card — under the
-        // board on a phone, in the column beside it on a Mac, in both cases
-        // somewhere you find by looking, and on the Mac it was simply missed
-        // while the game went on.
-        //
-        // Then it was the app's usual confirmation, which is centred over a
-        // dimmed screen and takes a tap anywhere as a refusal. That is the
-        // right shape for "leave the game?" and the wrong one here: the clock
-        // is still running, the board is still the thing being looked at, and a
-        // stray click should not answer for you. So it stands aside instead —
-        // no veil, nothing to dismiss by accident, and the board still playable
-        // underneath while you decide.
-        .overlay { drawOffer(session) }
         .animation(.easeOut(duration: 0.2), value: session.drawOffered)
         .onChange(of: session.moves.count) { _, _ in
             SoundBoard.shared.play(.move)
@@ -317,59 +305,50 @@ struct OnlineScreen: View {
         .animation(.spring(duration: 0.35), value: settled)
     }
 
-    /// The offer, out of the way.
+    /// The offer, at the head of the reading and never over it.
     ///
-    /// It goes at the head of the reading column, on the right, wherever that
-    /// column happens to be: beside the board on a wide screen, under it on a
-    /// tall one. So on a Mac it is the top-right corner, and on a phone it is
-    /// just below the board — in both cases over text rather than over the
-    /// position, and clear of the controls, which have to stay pressable.
+    /// It has been three things. A row inside the status card — under the board
+    /// on a phone, in the column beside it on a Mac, in both cases somewhere
+    /// you find by looking, and on the Mac it was simply missed while the game
+    /// went on. Then the app's usual confirmation, centred over a dimmed
+    /// screen, which takes a tap anywhere as a refusal: the right shape for
+    /// "leave the game?" and the wrong one here, because the clock is still
+    /// running, the board is still the thing being looked at, and a stray click
+    /// should not answer for you. Then a note floated into the top corner of
+    /// the column, which is comfortable on a Mac and lands on the Resign button
+    /// of an iPhone SE — a hundred and fifty points under the board, and a
+    /// notice is most of them.
     ///
-    /// The drop in the tall case is the board's own height, taken from the
-    /// layout that draws it rather than guessed, so the two cannot disagree.
+    /// So it takes the layout's notice slot: the head of the reading column
+    /// wherever that column is, in the flow rather than over it. It pushes the
+    /// reading down, which costs a scroll, and covers nothing at all — not the
+    /// position, not the controls, on any screen the app runs on. The board
+    /// underneath stays playable while you decide, because the clock does not
+    /// stop for a question and neither should the position.
     @ViewBuilder
     private func drawOffer(_ session: MatchSession) -> some View {
-        GeometryReader { geometry in
-            let isWide = geometry.size.width > geometry.size.height
-            let board = TrainingLayout<EmptyView, EmptyView, EmptyView>
-                .portraitBoard(in: geometry.size) + BoardStage<EmptyView>.chromeHeight
-            if session.drawOffered {
-                BrassModalPanel(tint: Theatre.brass) {
-                    Text(L.t("online.drawOffered", "Draw offered."))
-                        .appFont(size: 17, weight: .semibold)
-                        .foregroundStyle(Theatre.ivory)
-                    Text(L.t("online.offersADraw", "%@ offers a draw.",
-                             session.opponent?.name ?? L.t("online.opponent", "Opponent")))
-                        .appFont(.footnote)
-                        .foregroundStyle(Theatre.ivoryDim)
-                        .fixedSize(horizontal: false, vertical: true)
-                    HStack(spacing: 8) {
-                        Button(L.t("online.accept", "Accept")) {
-                            session.respondToDraw(accept: true)
-                        }
-                        .buttonStyle(PillButtonStyle(emphasis: .solid))
-                        Button(L.t("online.playOn", "Play on")) {
-                            session.respondToDraw(accept: false)
-                        }
-                        .buttonStyle(PillButtonStyle(emphasis: .ghost))
+        if session.drawOffered {
+            BrassModalPanel(tint: Theatre.brass) {
+                Text(L.t("online.drawOffered", "Draw offered."))
+                    .appFont(size: 17, weight: .semibold)
+                    .foregroundStyle(Theatre.ivory)
+                Text(L.t("online.offersADraw", "%@ offers a draw.",
+                         session.opponent?.name ?? L.t("online.opponent", "Opponent")))
+                    .appFont(.footnote)
+                    .foregroundStyle(Theatre.ivoryDim)
+                    .fixedSize(horizontal: false, vertical: true)
+                HStack(spacing: 8) {
+                    Button(L.t("online.accept", "Accept")) {
+                        session.respondToDraw(accept: true)
                     }
+                    .buttonStyle(PillButtonStyle(emphasis: .solid))
+                    Button(L.t("online.playOn", "Play on")) {
+                        session.respondToDraw(accept: false)
+                    }
+                    .buttonStyle(PillButtonStyle(emphasis: .ghost))
                 }
-                // Narrow enough to be a note rather than a screen, and wide
-                // enough for two buttons and a name.
-                //
-                // Only the plate itself takes taps — the reader around it draws
-                // nothing, so the board underneath stays playable while you
-                // decide. The clock does not stop for a question and neither
-                // should the position.
-                .frame(maxWidth: 270)
-                .padding(12)
-                .padding(.top, isWide ? 0 : board)
-                .transition(.opacity.combined(with: .move(edge: .trailing)))
-                .frame(
-                    width: geometry.size.width, height: geometry.size.height,
-                    alignment: .topTrailing
-                )
             }
+            .transition(.opacity.combined(with: .move(edge: .top)))
         }
     }
 

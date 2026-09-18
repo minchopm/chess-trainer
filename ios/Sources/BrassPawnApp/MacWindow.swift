@@ -50,7 +50,7 @@ enum Mac {
     /// The title screen is deliberately not capped: it is a photograph of a
     /// room, and a photograph should fill the frame it is given.
     static var contentWidth: CGFloat {
-        TrainingLayout<EmptyView, EmptyView, EmptyView>.maximumWide
+        TrainingLayout<EmptyView, EmptyView, EmptyView, EmptyView>.maximumWide
     }
 
     /// Headroom above the top row.

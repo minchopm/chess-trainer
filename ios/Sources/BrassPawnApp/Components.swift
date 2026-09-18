@@ -6,7 +6,7 @@ import SwiftUI
 /// On a phone that stacks vertically with the board on top; in landscape or on
 /// an iPad the panel moves beside it, because a board squeezed into half the
 /// height of a landscape screen is unusable.
-struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
+struct TrainingLayout<Board: View, Notice: View, Panel: View, Controls: View>: View {
     /// Handed the width the board may use. A board is the one part of the
     /// screen whose size must be decided rather than negotiated: left to a
     /// stack it comes out as tall as its share of the column, which on a phone
@@ -20,7 +20,19 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
     /// controls at its foot stand clear of everything they belong to — which is
     /// the very thing the pinned height was added to stop.
     var showsEvaluation = false
+    /// Measured rather than assumed; see `portraitBoard(in:notice:)`.
+    @State private var noticeHeight: CGFloat = 0
     @ViewBuilder var board: (CGFloat) -> Board
+    /// Something the screen has to say that is not part of the reading: an
+    /// offer to answer, a warning to see.
+    ///
+    /// It goes at the head of the column rather than over it, and that is the
+    /// whole point of it having a slot at all. Floated into a corner it fits
+    /// comfortably on a Mac and lands on the controls of an iPhone SE, where
+    /// there are barely a hundred and fifty points under the board and a
+    /// notice is most of them. In the flow it pushes the reading down instead,
+    /// which costs a scroll and covers nothing.
+    @ViewBuilder var notice: Notice
     @ViewBuilder var panel: Panel
     @ViewBuilder var controls: Controls
 
@@ -74,6 +86,13 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
     /// One card and a row of buttons is the floor.
     nonisolated static var minimumBelowBoard: CGFloat { 150 }
 
+    /// And what has to be left beside a notice, when there is one.
+    ///
+    /// Less than the floor above, because a notice is the thing being read
+    /// while it is up: the reading behind it can be a sliver and scrolled. What
+    /// cannot go is the row of controls, which is all this covers.
+    nonisolated static var minimumBesideNotice: CGFloat { 80 }
+
     /// The width the stage gets in portrait.
     ///
     /// In portrait the screen is the cap, and there is no second one. A board
@@ -90,11 +109,17 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
     /// holding back for a panel that did not need them. On every screen the app
     /// actually runs on it is now the width that decides; the floor is what
     /// catches a window too short to put a board of that width in at all.
-    nonisolated static func portraitBoard(in size: CGSize) -> CGFloat {
-        min(
-            size.width - 20,
-            size.height - minimumBelowBoard - BoardStage<EmptyView>.chromeHeight
-        )
+    /// - Parameter notice: how tall the notice above the reading is, if there
+    ///   is one. Its room has to come from somewhere and the board is the only
+    ///   part of the screen that can give it: on an iPhone SE the board is as
+    ///   wide as the screen and what is left under it is a notice and no more,
+    ///   so without this the controls were pushed off the bottom. On a phone
+    ///   with a modern screen there is slack and nothing moves.
+    nonisolated static func portraitBoard(in size: CGSize, notice: CGFloat = 0) -> CGFloat {
+        let below = notice > 0
+            ? max(minimumBelowBoard, notice + minimumBesideNotice)
+            : minimumBelowBoard
+        return min(size.width - 20, size.height - below - BoardStage<EmptyView>.chromeHeight)
     }
 
     /// The board the wide layout can give, once the panel beside it has the
@@ -143,6 +168,7 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
                 HStack(alignment: .top, spacing: 16) {
                     board(side + gutters)
                     VStack(spacing: 12) {
+                        notice
                         ScrollView { VStack(spacing: 12) { panel } }
                         controls
                     }
@@ -166,9 +192,24 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding(.horizontal, 12)
             } else {
-                let width = Self.portraitBoard(in: geometry.size)
+                let width = Self.portraitBoard(in: geometry.size, notice: noticeHeight)
                 VStack(spacing: 8) {
                     board(width).padding(.top, 4)
+                    notice
+                        .padding(.horizontal, 10)
+                        .frame(maxWidth: Self.maximumText)
+                        .frame(maxWidth: .infinity)
+                        // How tall it came out, so the board above can make
+                        // room for it. A notice's height depends on its width
+                        // and its words, never on the board, so asking cannot
+                        // chase its own tail.
+                        .background {
+                            GeometryReader { shape in
+                                Color.clear.preference(
+                                    key: NoticeHeight.self, value: shape.size.height
+                                )
+                            }
+                        }
                     ScrollView {
                         VStack(spacing: 10) { panel }
                             .padding(.horizontal, 10)
@@ -186,6 +227,39 @@ struct TrainingLayout<Board: View, Panel: View, Controls: View>: View {
                 .frame(maxWidth: .infinity)
             }
         }
+        .onPreferenceChange(NoticeHeight.self) { [$noticeHeight] height in
+            $noticeHeight.wrappedValue = height
+        }
+    }
+}
+
+/// How tall the notice above the reading came out.
+private struct NoticeHeight: PreferenceKey {
+    static let defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = max(value, nextValue())
+    }
+}
+
+extension TrainingLayout where Notice == EmptyView {
+    /// The usual case: a screen with nothing to announce.
+    ///
+    /// Written out so that the seven screens which have no notice keep reading
+    /// `TrainingLayout { } panel: { } controls: { }`, with the slot only
+    /// mentioned by the one screen that uses it.
+    init(
+        showsEvaluation: Bool = false,
+        @ViewBuilder board: @escaping (CGFloat) -> Board,
+        @ViewBuilder panel: () -> Panel,
+        @ViewBuilder controls: () -> Controls
+    ) {
+        self.init(
+            showsEvaluation: showsEvaluation,
+            board: board,
+            notice: { EmptyView() },
+            panel: panel,
+            controls: controls
+        )
     }
 }
 

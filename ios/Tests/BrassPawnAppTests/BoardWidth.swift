@@ -12,7 +12,7 @@ import Testing
 /// simulator on a phone would miss.
 @Suite("board width")
 struct BoardWidth {
-    typealias Layout = TrainingLayout<EmptyView, EmptyView, EmptyView>
+    typealias Layout = TrainingLayout<EmptyView, EmptyView, EmptyView, EmptyView>
 
     /// Every real device gives the board its width.
     ///
@@ -33,6 +33,32 @@ struct BoardWidth {
     ])
     func widthDecides(size: CGSize) {
         #expect(Layout.portraitBoard(in: size) == size.width - 20)
+    }
+
+    /// A notice above the reading takes its room from the board, where there
+    /// is no slack to take it from anywhere else.
+    ///
+    /// The case that made this necessary is an iPhone SE with a draw offered:
+    /// the board is as wide as the screen, what is left under it is a notice
+    /// and no more, and the controls were pushed off the bottom of the screen.
+    /// On a phone with a modern screen there is slack, and nothing moves.
+    @Test("a notice comes out of the board, and only where it has to")
+    func noticeComesOutOfTheBoard() {
+        let notice: CGFloat = 140
+
+        // An iPhone SE, less its chrome: the board gives way.
+        let small = CGSize(width: 375, height: 560)
+        let shrunk = Layout.portraitBoard(in: small, notice: notice)
+        #expect(shrunk < Layout.portraitBoard(in: small), "the board should give way")
+        let used = shrunk + BoardStage<EmptyView>.chromeHeight + notice
+        #expect(small.height - used >= Layout.minimumBesideNotice,
+                "\(small.height - used) points left for the controls")
+
+        // A modern phone and a tablet have the room already.
+        for size in [CGSize(width: 393, height: 700), CGSize(width: 1024, height: 1300)] {
+            #expect(Layout.portraitBoard(in: size, notice: notice)
+                    == Layout.portraitBoard(in: size), "\(size) should not move")
+        }
     }
 
     /// And the panel below it still has somewhere to be.
