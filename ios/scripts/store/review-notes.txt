@@ -1,0 +1,68 @@
+BRASS PAWN — APP REVIEW NOTES
+
+1. DEMO ACCOUNT
+Not applicable: the app has no accounts. No registration, no sign-in, no
+profile, no password — and so nothing to delete. All progress is kept on the
+device. The only sign-in anywhere is Apple's own Game Center, used by
+Multiplayer; every other mode works signed out.
+
+2. WHAT IT IS, AND FOR WHOM
+An offline chess trainer. It plays, grades what you played, and says why the
+better move was better. A beginner who plays online gets a result and no
+explanation; an engine score of "-2.3" is not one either. This app names the
+mistake, says what it cost, shows the move that was there, and then drills the
+pattern behind it. For players from beginner to club strength (about 600-2000):
+the opponent ladder is built on Stockfish's UCI_Elo, so the engine plays at the
+user's strength rather than at full strength.
+
+Modes: Play (engine, coached), Multiplayer (Game Center, on a clock), Board
+(free board, two engines, read a position off a photo), Tactics and Rush
+(puzzles on a review schedule), Positional and Endgames (drills), Guess the Elo
+(judge a real game's strength), Watch (famous games), Progress (ratings).
+
+3. HOW TO REACH EVERYTHING
+No credentials, no sample files, no setup. Every mode is one click from the main
+menu. Training modes give five free attempts each per day, with no purchase and
+no account, which is enough to see every paid screen working. The paywall is the
+card icon at the top right of the main menu, or appears when a day's free
+attempts run out; it offers a monthly subscription and a lifetime unlock.
+Playing — against the engine and against a person — is free and unlimited.
+Multiplayer needs Game Center signed in and a second player; if none is found,
+that is matchmaking with nobody to match, not an error.
+
+4. EXTERNAL SERVICES
+None of ours. The app has no server and makes no network requests of its own —
+there is not one URLSession in the source. It uses three Apple frameworks:
+GameKit (Game Center, for Multiplayer — moves pass between the two devices, not
+through any server of ours), StoreKit 2 (the subscription and the unlock), and
+Vision (reading a board off a photograph, on-device). No analytics, advertising,
+attribution, crash reporting or third-party SDK of any kind. No AI service: the
+chess strength is two conventional engines compiled into the app and running on
+the device. Puzzles, drills, games and both engines' networks are bundled.
+
+5. REGIONAL DIFFERENCES
+None. Identical features and content in every storefront, no geo-gating.
+Localised into 32 languages; the language is the only thing that differs.
+
+6. REGULATED INDUSTRY AND THIRD-PARTY MATERIAL
+Not a regulated industry: no gambling, wagering or real-money play, and no
+financial, medical or legal content. Third-party material, all open-source or
+public domain, credited in the app under About > Licences and in NOTICE.md:
+- Stockfish (GPLv3), bundled unchanged with a C interface written for this app
+- Reckless (AGPLv3), a second engine, the same
+- Lichess puzzle and game databases (CC0 public domain); usernames stripped
+- Cormorant Garamond and JetBrains Mono (SIL OFL 1.1)
+Because both engines are linked in, the whole application is AGPLv3 and its
+complete source is published at https://github.com/minchopm/chess-trainer, which
+the app links to from About.
+
+7. PRIVACY
+The app collects nothing: no analytics, advertising, tracking, account or
+server. Ratings, solved puzzles, review schedule and purchase state stay in the
+app's container on the device.
+
+8. CONTENT AND MODERATION
+No user-generated content and no messaging. The Multiplayer protocol carries a
+move, a resignation, a draw offer, a draw response and a result — there is no
+field a person can type into, so there is nothing to report, block or moderate.
+Opponents are identified by their Game Center nickname, which Apple supplies.
