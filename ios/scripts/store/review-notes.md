@@ -139,8 +139,16 @@ supplies and Apple's own controls cover.
 
 Apple asks for one "captured on a physical device, running the latest operating
 system", beginning with launching the app. For a macOS submission that is this
-Mac, recorded with ⇧⌘5 or QuickTime → File → New Screen Recording. Record the
-app window, not the whole desktop.
+Mac.
+
+`record-review.sh` makes it: a Release build, launched from Finder, driven by
+the real cursor through the steps below, and encoded for App Store Connect
+(about 17 MB for three minutes). It waits until the Mac has been left alone and
+stops the moment anyone touches the mouse. Update macOS first — Apple asks for
+the latest version, and the first take was made on 26.2 with 26.7 available.
+
+By hand, the same thing is ⇧⌘5 or QuickTime → File → New Screen Recording.
+Record the app window, not the whole desktop.
 
 The build in the recording should be the one submitted — a Release build of the
 same version — not a debug build, and Game Center should be signed in before the
