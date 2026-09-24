@@ -604,8 +604,22 @@ private struct AllowanceGateModifier: ViewModifier {
     let hasStartedAttempt: Bool
     let wasDenied: Bool
 
+    /// Whether the lock could possibly come down. It cannot on a subscriber,
+    /// and it cannot during an attempt already under way — `isLocked` answers
+    /// no to both before it looks at the clock.
+    private var watching: Bool { !hasStartedAttempt && !app.store.isPro }
+
     func body(content: Content) -> some View {
-        TimelineView(.periodic(from: .now, by: 1)) { timeline in
+        // Ticking once a second only while the answer can change. It used to
+        // tick for the life of the screen, re-running this with the whole
+        // training screen inside it, board and all, to recompute an answer
+        // that was settled for as long as a puzzle was being solved.
+        //
+        // Paused rather than swapped for a plain `content`: an `if` here would
+        // give the screen a new identity each time an attempt started or
+        // ended, and a new identity is a board built again from nothing. The
+        // animation schedule is the one SwiftUI means to be paused and resumed.
+        TimelineView(.animation(minimumInterval: 1, paused: !watching)) { timeline in
             let locked = isLocked(at: timeline.date)
             ZStack {
                 content
