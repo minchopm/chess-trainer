@@ -5,16 +5,18 @@
 This project includes Stockfish, a UCI chess engine.
 
 - Copyright (C) 2004-2026 The Stockfish developers (see `ios/Vendor/Stockfish/AUTHORS`)
-- Licensed under the **GNU General Public License version 3** — see `LICENSE`
+- Licensed under the **GNU General Public License version 3** — see `ios/Vendor/Stockfish/Copying.txt`
 - Upstream: https://github.com/official-stockfish/Stockfish
 - Version bundled: see `ios/Vendor/Stockfish/VERSION.txt`
 - Modifications: none. The engine source is vendored unchanged. The only added
   file is `ios/Vendor/Stockfish/bridge/`, a C interface over its public `Engine`
   class, written for this project and licensed under GPLv3 along with the rest.
 
-Because Stockfish is GPLv3 and is linked into the application, **this entire
-application is licensed under GPLv3**. The complete corresponding source is at
-the repository this file ships with.
+Because Stockfish is GPLv3 and is linked into the application, its terms bind
+the whole application. Reckless adds the Affero requirement on top — see below —
+so **this entire application is licensed under AGPLv3**, and `LICENSE` holds
+that text. The complete corresponding source is at the repository this file
+ships with.
 
 ### Neural networks
 
@@ -33,22 +35,33 @@ choose in Settings instead of Stockfish.
   `AGPL` (in the app: About → Read the Affero licence)
 - Upstream: https://github.com/codedeliveryservice/Reckless
 - Commit vendored: `789de8912672360030d2dae2263292fd37575ae3`
-- Modifications: the engine source is vendored otherwise unchanged. Three
+- Modifications: the engine source is vendored otherwise unchanged. The
   changes, all under `ios/Vendor/Reckless`:
   - `src/ffi.rs` — a new file, a C interface over the engine, written for this
     project. It exists because the crate exports nothing usable: every module in
-    `src/lib.rs` is private, so no separate crate can reach the search.
+    `src/lib.rs` is private, so no separate crate can reach the search. It also
+    carries `rk_load_network`, which hands the engine its network from a file,
+    and creating an engine fails cleanly when no network has been given.
   - `src/lib.rs` — one `pub mod ffi;`, declaring that file.
+  - `src/nnue.rs` — the network can be loaded from a file at run time as well
+    as compiled in: `load_network` and `has_network`, and a `OnceLock` that the
+    evaluation reads from when a network was loaded.
   - `Cargo.toml` — `staticlib` added to `crate-type`, so it can be linked into
-    an application.
-  Those additions are licensed under AGPLv3 along with the engine.
+    an application; and a new feature, `embedded-network`, on by default, which
+    decides whether the network is compiled in.
+  - `build/build.rs` — the network is only looked for and downloaded when that
+    feature is on.
+  The app builds the engine with the feature off. Those additions are licensed
+  under AGPLv3 along with the engine.
 
 ### Neural network
 
 Reckless's NNUE evaluation file is produced by the Reckless project and
-distributed under the same licence. It is compiled into the engine rather than
-loaded at runtime, and is not committed to this repository;
-`ios/scripts/build-reckless.sh` downloads the exact version the engine expects.
+distributed under the same licence. It ships in the app as a file of its own,
+`reckless.nnue`, and is loaded when the engine starts — it used to be compiled
+into the engine, which made each platform's library 141 MB. It is not committed
+to this repository; `ios/scripts/fetch-networks.sh` downloads the exact version
+the engine expects, alongside Stockfish's two.
 
 ### What the AGPL means here
 
@@ -57,9 +70,12 @@ link a GPLv3 work with an AGPLv3 work, and says the AGPL's own section 13 then
 applies to the combination.
 
 That section requires anyone who lets users interact with the program *remotely
-over a network* to offer those users its source. Brass Pawn does not: the engine
-runs on the device, the app makes no network requests, and no user interacts
-with this software across a network. So the clause adds nothing in practice here
+over a network* to offer those users its source. Brass Pawn does not: both
+engines run on the device, and nobody interacts with a copy of this software
+running somewhere else. Online play is two copies talking to each other through
+Game Center, each one running on the phone of the person using it, which is not
+what that clause is about — there is no instance of the program that a user
+reaches across a network without having it. So the clause adds nothing in practice here
 — but it travels with the application, and anyone who takes this source and puts
 it behind a network service is bound by it.
 

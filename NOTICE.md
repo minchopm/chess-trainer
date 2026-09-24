@@ -35,22 +35,33 @@ choose in Settings instead of Stockfish.
   `AGPL` (in the app: About → Read the Affero licence)
 - Upstream: https://github.com/codedeliveryservice/Reckless
 - Commit vendored: `789de8912672360030d2dae2263292fd37575ae3`
-- Modifications: the engine source is vendored otherwise unchanged. Three
+- Modifications: the engine source is vendored otherwise unchanged. The
   changes, all under `ios/Vendor/Reckless`:
   - `src/ffi.rs` — a new file, a C interface over the engine, written for this
     project. It exists because the crate exports nothing usable: every module in
-    `src/lib.rs` is private, so no separate crate can reach the search.
+    `src/lib.rs` is private, so no separate crate can reach the search. It also
+    carries `rk_load_network`, which hands the engine its network from a file,
+    and creating an engine fails cleanly when no network has been given.
   - `src/lib.rs` — one `pub mod ffi;`, declaring that file.
+  - `src/nnue.rs` — the network can be loaded from a file at run time as well
+    as compiled in: `load_network` and `has_network`, and a `OnceLock` that the
+    evaluation reads from when a network was loaded.
   - `Cargo.toml` — `staticlib` added to `crate-type`, so it can be linked into
-    an application.
-  Those additions are licensed under AGPLv3 along with the engine.
+    an application; and a new feature, `embedded-network`, on by default, which
+    decides whether the network is compiled in.
+  - `build/build.rs` — the network is only looked for and downloaded when that
+    feature is on.
+  The app builds the engine with the feature off. Those additions are licensed
+  under AGPLv3 along with the engine.
 
 ### Neural network
 
 Reckless's NNUE evaluation file is produced by the Reckless project and
-distributed under the same licence. It is compiled into the engine rather than
-loaded at runtime, and is not committed to this repository;
-`ios/scripts/build-reckless.sh` downloads the exact version the engine expects.
+distributed under the same licence. It ships in the app as a file of its own,
+`reckless.nnue`, and is loaded when the engine starts — it used to be compiled
+into the engine, which made each platform's library 141 MB. It is not committed
+to this repository; `ios/scripts/fetch-networks.sh` downloads the exact version
+the engine expects, alongside Stockfish's two.
 
 ### What the AGPL means here
 
