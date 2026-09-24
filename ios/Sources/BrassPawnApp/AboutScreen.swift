@@ -30,19 +30,19 @@ struct AboutScreen: View {
                         Text(L.t("about.version", "Version %@", Self.version))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryDim)
-                        Text(L.t("about.tacticsPositionalJudgementEndgameTechnique", "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device. Nothing leaves the phone."))
+                        Text(L.t("about.tacticsPositionalJudgementEndgameTechnique", "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected."))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryFaint)
                     }
 
                     aboutSection(L.t("about.licence", "Licence")) {
-                        Text(L.t("about.thisApplicationIsFreeSoftware", "This application is free software, licensed under the GNU General Public License version 3 or later."))
+                        Text(L.t("about.thisApplicationIsFreeSoftware", "This application is free software, licensed under the GNU Affero General Public License version 3 or later."))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivory)
-                        Text(L.t("about.itIncludesStockfishWhichIs", "It includes Stockfish, which is GPLv3. Because Stockfish is linked into the app, the whole application carries the same licence — and its complete source is published."))
+                        Text(L.t("about.itIncludesStockfishWhichIs", "It includes Stockfish, which is GPLv3, and Reckless, which is AGPLv3. Because both are linked into the app, the whole application carries AGPLv3 — and its complete source is published."))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryFaint)
-                        Text(L.t("about.itAlsoIncludesReckless", "It also includes Reckless, a second engine, which is AGPLv3. The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device and the app makes no network requests."))
+                        Text(L.t("about.itAlsoIncludesReckless", "The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device and the app makes no network requests."))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryFaint)
 
