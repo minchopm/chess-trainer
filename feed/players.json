@@ -1,0 +1,35 @@
+{
+  "note": "The players the daily feed looks for first. A game with one of them in it beats a higher-rated game without. Matched on FIDE ID, then on the name as the broadcast writes it ('Surname, Given'). `display` is how the feed writes the name; `short` is the name in a headline. Anyone not listed is written 'Given Surname' and headlined by surname, which is wrong for Chinese names — hence the entries below that exist only to fix that.",
+  "players": [
+    { "fideId": 1503014, "name": "Carlsen, Magnus", "display": "Magnus Carlsen", "short": "Carlsen" },
+    { "fideId": 2016192, "name": "Nakamura, Hikaru", "display": "Hikaru Nakamura", "short": "Nakamura" },
+    { "fideId": 2020009, "name": "Caruana, Fabiano", "display": "Fabiano Caruana", "short": "Caruana" },
+    { "fideId": 46616543, "name": "Gukesh, D", "display": "Gukesh D", "short": "Gukesh" },
+    { "fideId": 25059530, "name": "Praggnanandhaa, R", "display": "R Praggnanandhaa", "short": "Praggnanandhaa" },
+    { "fideId": 35009192, "name": "Erigaisi, Arjun", "display": "Arjun Erigaisi", "short": "Erigaisi" },
+    { "fideId": 12573981, "name": "Firouzja, Alireza", "display": "Alireza Firouzja", "short": "Firouzja" },
+    { "fideId": 8603677, "name": "Ding, Liren", "display": "Ding Liren", "short": "Ding" },
+    { "fideId": 4168119, "name": "Nepomniachtchi, Ian", "display": "Ian Nepomniachtchi", "short": "Nepomniachtchi" },
+    { "fideId": 5202213, "name": "So, Wesley", "display": "Wesley So", "short": "So" },
+    { "fideId": 14204118, "name": "Abdusattorov, Nodirbek", "display": "Nodirbek Abdusattorov", "short": "Abdusattorov" },
+    { "fideId": 14205483, "name": "Sindarov, Javokhir", "display": "Javokhir Sindarov", "short": "Sindarov" },
+    { "fideId": 12940690, "name": "Keymer, Vincent", "display": "Vincent Keymer", "short": "Keymer" },
+    { "fideId": 24116068, "name": "Giri, Anish", "display": "Anish Giri", "short": "Giri" },
+    { "fideId": 8603405, "name": "Wei, Yi", "display": "Wei Yi", "short": "Wei Yi" },
+    { "fideId": 623539, "name": "Vachier-Lagrave, Maxime", "display": "Maxime Vachier-Lagrave", "short": "Vachier-Lagrave" },
+    { "fideId": 13300474, "name": "Aronian, Levon", "display": "Levon Aronian", "short": "Aronian" },
+    { "fideId": 1170546, "name": "Duda, Jan-Krzysztof", "display": "Jan-Krzysztof Duda", "short": "Duda" },
+    { "fideId": 738590, "name": "Rapport, Richard", "display": "Richard Rapport", "short": "Rapport" },
+    { "fideId": 12401137, "name": "Le, Quang Liem", "display": "Le Quang Liem", "short": "Le Quang Liem" }
+  ],
+  "names": [
+    { "name": "Yu, Yangyi", "display": "Yu Yangyi", "short": "Yu Yangyi" },
+    { "name": "Ju, Wenjun", "display": "Ju Wenjun", "short": "Ju Wenjun" },
+    { "name": "Hou, Yifan", "display": "Hou Yifan", "short": "Hou Yifan" },
+    { "name": "Lei, Tingjie", "display": "Lei Tingjie", "short": "Lei Tingjie" },
+    { "name": "Tan, Zhongyi", "display": "Tan Zhongyi", "short": "Tan Zhongyi" },
+    { "name": "Zhu, Jiner", "display": "Zhu Jiner", "short": "Zhu Jiner" },
+    { "name": "Bu, Xiangzhi", "display": "Bu Xiangzhi", "short": "Bu Xiangzhi" },
+    { "name": "Wang, Hao", "display": "Wang Hao", "short": "Wang Hao" }
+  ]
+}

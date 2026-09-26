@@ -32,3 +32,15 @@ lichess_db_puzzle.csv
 web/media/
 web/exports/
 __pycache__/
+
+# The daily feed's build output: the file publish.mjs uploads. The record of
+# what went out is feed/published.json, which is committed.
+feed/out/
+# The review pages review.mjs writes next to each day's drafts.
+feed/drafts/*.html
+# The website's copy of the feed: written by scripts/feed/site.mjs before every
+# build and deploy, from the feed itself. types.ts is the one file kept.
+web/src/app/pages/today/feed/index.ts
+web/src/app/pages/today/feed/stories.ts
+web/src/app/pages/today/feed/sitemap.json
+web/src/app/pages/today/feed/stories/
