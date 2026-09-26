@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Juega · Entrena · Observa',
-    lede: 'Táctica, criterio posicional, técnica de finales y partidas comentadas, con el motor funcionando en el dispositivo. Nada sale del teléfono.',
+    lede: 'Táctica, criterio posicional, técnica de finales y partidas comentadas, con el motor funcionando en el propio dispositivo. Sin cuenta y sin recopilar nada.',
     privacy:
-      'La aplicación no recoge nada, no envía nada y no hace peticiones de red. Tus valoraciones y tu historial se guardan solo en este dispositivo, y se borran al borrar la aplicación.',
+      'La aplicación no recoge nada ni envía nada sobre ti. Lo único que descarga es el resumen diario, cuando abres Hoy. Tus valoraciones y tu historial se guardan solo en este dispositivo, y se borran al borrar la aplicación.',
     freeSoftware:
       'Esta aplicación es software libre, con licencia GNU Affero General Public License versión 3 o posterior.',
     stockfish:
-      'Incluye Stockfish, que está bajo la GPLv3. Como Stockfish está enlazado en la aplicación, toda la aplicación lleva la misma licencia, y su código fuente completo está publicado.',
+      'Incluye Stockfish, que está bajo GPLv3, y Reckless, que está bajo AGPLv3. Como ambos están enlazados en la aplicación, toda la aplicación queda bajo AGPLv3, y su código fuente completo está publicado.',
     reckless:
-      'También incluye Reckless, un segundo motor, bajo licencia AGPLv3. Las dos licencias se combinan, y la cláusula Affero sobre software usado a través de una red no cambia nada aquí: ambos motores se ejecutan en este dispositivo y la app no hace ninguna petición de red.',
+      'Las dos licencias se combinan, y la cláusula Affero sobre software usado a través de una red no cambia nada aquí: ambos motores se ejecutan en este dispositivo y nadie accede a ellos a través de una red.',
     coaching: 'El entrenador califica cada una de tus jugadas en cuanto la haces.',
     online:
       'Un rival de verdad a través de Game Center, con reloj. Sin pistas, sin motor, sin deshacer jugadas.',

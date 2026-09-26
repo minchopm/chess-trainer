@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Main · Latih · Tonton',
-    lede: 'Taktik, penilaian posisi, teknik akhir permainan, dan partai berpendamping, dengan mesin berjalan di perangkat itu sendiri. Tidak ada yang meninggalkan ponsel.',
+    lede: 'Taktik, penilaian posisi, teknik akhir permainan, dan partai berpendamping, dengan mesin berjalan di perangkat itu sendiri. Tanpa akun, dan tidak ada yang dikumpulkan.',
     privacy:
-      'Aplikasi tidak mengumpulkan apa pun, tidak mengirim apa pun, dan tidak melakukan permintaan jaringan. Rating dan riwayatmu hanya tersimpan di perangkat ini dan ikut terhapus bersama aplikasi.',
+      'Aplikasi tidak mengumpulkan apa pun dan tidak mengirim apa pun tentang dirimu. Satu-satunya yang diunduhnya adalah umpan harian, saat kamu membuka Hari ini. Rating dan riwayatmu hanya tersimpan di perangkat ini dan ikut terhapus bersama aplikasi.',
     freeSoftware:
       'Aplikasi ini adalah perangkat lunak bebas, dilisensikan di bawah GNU Affero General Public License versi 3 atau yang lebih baru.',
     stockfish:
-      'Aplikasi ini menyertakan Stockfish yang dirilis dengan lisensi GPLv3. Karena Stockfish ditautkan ke dalam aplikasi, seluruh aplikasi memakai lisensi yang sama — dan kode sumbernya diterbitkan lengkap.',
+      'Aplikasi ini menyertakan Stockfish, yang berlisensi GPLv3, dan Reckless, yang berlisensi AGPLv3. Karena keduanya ditautkan ke dalam aplikasi, seluruh aplikasi berada di bawah AGPLv3 — dan seluruh kode sumbernya diterbitkan.',
     reckless:
-      'Aplikasi ini juga menyertakan Reckless, mesin kedua, yang berlisensi AGPLv3. Kedua lisensi dapat digabungkan, dan klausul Affero tentang perangkat lunak yang digunakan melalui jaringan tidak mengubah apa pun di sini: kedua mesin berjalan di perangkat ini dan aplikasi tidak membuat permintaan jaringan.',
+      'Kedua lisensi dapat digabungkan, dan klausul Affero tentang perangkat lunak yang digunakan melalui jaringan tidak mengubah apa pun di sini: kedua mesin berjalan di perangkat ini dan tidak ada yang mengaksesnya melalui jaringan.',
     coaching: 'Pelatih menilai setiap langkah Anda begitu Anda memainkannya.',
     online:
       'Lawan sungguhan lewat Game Center, dengan jam. Tanpa petunjuk, tanpa mesin, tanpa menarik langkah kembali.',

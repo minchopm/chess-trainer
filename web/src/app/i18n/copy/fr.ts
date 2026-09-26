@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: "Jouer · S'entraîner · Regarder",
-    lede: "Tactique, jugement positionnel, technique de finale et parties commentées, avec le moteur qui tourne sur l'appareil. Rien ne quitte le téléphone.",
+    lede: "Tactique, jugement positionnel, technique de finale et parties commentées, avec le moteur qui tourne sur l'appareil lui-même. Aucun compte, et rien n'est collecté.",
     privacy:
-      "L'application ne collecte rien, n'envoie rien et ne fait aucune requête réseau. Vos classements et votre historique restent sur cet appareil, et disparaissent avec l'application.",
+      "L'application ne collecte rien et n'envoie rien vous concernant. La seule chose qu'elle télécharge est le fil du jour, quand vous ouvrez Aujourd'hui. Vos classements et votre historique restent sur cet appareil, et disparaissent avec l'application.",
     freeSoftware:
       'Cette application est un logiciel libre, sous licence GNU Affero General Public License version 3 ou ultérieure.',
     stockfish:
-      "L'application inclut Stockfish, publié sous GPLv3. Comme Stockfish y est lié, toute l'application porte la même licence — et son code source complet est publié.",
+      'Elle inclut Stockfish, sous GPLv3, et Reckless, sous AGPLv3. Comme les deux sont liés à l’application, l’application entière est sous AGPLv3 — et l’intégralité de son code source est publiée.',
     reckless:
-      "Elle comprend également Reckless, un second moteur, sous licence AGPLv3. Les deux licences se combinent, et la clause Affero sur les logiciels utilisés à travers un réseau ne change rien ici : les deux moteurs tournent sur cet appareil et l'app ne fait aucune requête réseau.",
+      "Les deux licences se combinent, et la clause Affero sur les logiciels utilisés à travers un réseau ne change rien ici : les deux moteurs tournent sur cet appareil et personne n'y accède à travers un réseau.",
     coaching: "L'entraîneur évalue chacun de vos coups au fur et à mesure.",
     online:
       "Un vrai adversaire via Game Center, à la pendule. Pas d'indice, pas de moteur, pas de retour en arrière.",

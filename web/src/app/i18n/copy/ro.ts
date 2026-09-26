@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Joacă · Antrenează · Privește',
-    lede: 'Tactică, judecată pozițională, tehnică de final și partide cu antrenor, cu motorul rulând chiar pe dispozitiv. Nimic nu părăsește telefonul.',
+    lede: 'Tactică, judecată pozițională, tehnică de final și partide cu antrenor, cu motorul rulând chiar pe dispozitiv. Fără cont și fără colectare de date.',
     privacy:
-      'Aplicația nu colectează nimic, nu trimite nimic și nu face cereri de rețea. Ratingurile și istoricul rămân doar pe acest dispozitiv și dispar odată cu aplicația.',
+      'Aplicația nu colectează nimic și nu trimite nimic despre tine. Singurul lucru pe care îl descarcă este fluxul zilnic, când deschizi Azi. Ratingurile și istoricul rămân doar pe acest dispozitiv și dispar odată cu aplicația.',
     freeSoftware:
       'Această aplicație este software liber, licențiat sub GNU Affero General Public License versiunea 3 sau ulterioară.',
     stockfish:
-      'Aplicația include Stockfish, publicat sub GPLv3. Fiindcă Stockfish este legat în aplicație, întreaga aplicație poartă aceeași licență — iar codul ei sursă complet este publicat.',
+      'Include Stockfish, aflat sub GPLv3, și Reckless, aflat sub AGPLv3. Fiindcă amândouă sunt legate în aplicație, întreaga aplicație se află sub AGPLv3, iar codul ei sursă complet este publicat.',
     reckless:
-      'Include și Reckless, un al doilea motor, sub licența AGPLv3. Cele două licențe se combină, iar clauza Affero despre software-ul folosit printr-o rețea nu schimbă nimic aici: ambele motoare rulează pe acest dispozitiv, iar aplicația nu face nicio cerere de rețea.',
+      'Cele două licențe se combină, iar clauza Affero despre software-ul folosit printr-o rețea nu schimbă nimic aici: ambele motoare rulează pe acest dispozitiv și nimeni nu le accesează printr-o rețea.',
     coaching: 'Antrenorul evaluează fiecare mutare a ta imediat ce o faci.',
     online:
       'Un adversar real prin Game Center, cu ceas. Fără indicii, fără motor, fără mutări luate înapoi.',

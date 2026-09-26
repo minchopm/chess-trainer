@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Gioca · Allenati · Guarda',
-    lede: 'Tattica, giudizio posizionale, tecnica di finale e partite commentate, con il motore che gira sul dispositivo. Niente esce dal telefono.',
+    lede: 'Tattica, giudizio posizionale, tecnica di finale e partite commentate, con il motore che gira sul dispositivo stesso. Nessun account e nessun dato raccolto.',
     privacy:
-      "L'app non raccoglie nulla, non invia nulla e non fa richieste di rete. I tuoi punteggi e la tua cronologia restano solo su questo dispositivo e si cancellano con l'app.",
+      "L'app non raccoglie nulla e non invia nulla su di te. L'unica cosa che scarica è il feed del giorno, quando apri Oggi. I tuoi punteggi e la tua cronologia restano solo su questo dispositivo e si cancellano con l'app.",
     freeSoftware:
       'Questa applicazione è software libero, con licenza GNU Affero General Public License versione 3 o successiva.',
     stockfish:
-      "Include Stockfish, distribuito con licenza GPLv3. Poiché Stockfish è collegato all'app, l'intera applicazione porta la stessa licenza — e il suo codice sorgente completo è pubblicato.",
+      'Include Stockfish, che è GPLv3, e Reckless, che è AGPLv3. Poiché entrambi sono collegati all’app, l’intera applicazione è sotto AGPLv3, e il suo codice sorgente completo è pubblicato.',
     reckless:
-      "Include anche Reckless, un secondo motore, con licenza AGPLv3. Le due licenze si combinano, e la clausola Affero sul software usato attraverso una rete qui non cambia nulla: entrambi i motori girano su questo dispositivo e l'app non effettua richieste di rete.",
+      'Le due licenze si combinano, e la clausola Affero sul software usato attraverso una rete qui non cambia nulla: entrambi i motori girano su questo dispositivo e nessuno vi accede attraverso una rete.',
     coaching: "L'allenatore valuta ogni tua mossa nel momento in cui la giochi.",
     online:
       "Un avversario vero tramite Game Center, con l'orologio. Nessun suggerimento, nessun motore, nessuna mossa ritirata.",

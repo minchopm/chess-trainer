@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Spelen · Trainen · Kijken',
-    lede: 'Tactiek, positioneel inzicht, eindspeltechniek en partijen met begeleiding, met de engine op het toestel zelf. Er verlaat niets de telefoon.',
+    lede: 'Tactiek, positioneel inzicht, eindspeltechniek en partijen met begeleiding, met de engine op het toestel zelf. Geen account, en er wordt niets verzameld.',
     privacy:
-      'De app verzamelt niets, verstuurt niets en doet geen netwerkverzoeken. Je ratings en geschiedenis staan alleen op dit toestel en verdwijnen met de app.',
+      'De app verzamelt niets en verstuurt niets over jou. Het enige wat hij downloadt is de dagelijkse feed, wanneer je Vandaag opent. Je ratings en geschiedenis staan alleen op dit toestel en verdwijnen met de app.',
     freeSoftware:
       'Deze app is vrije software onder de GNU Affero General Public License versie 3 of later.',
     stockfish:
-      'De app bevat Stockfish, dat onder de GPLv3 valt. Omdat Stockfish erin gelinkt is, valt de hele app onder dezelfde licentie — en de volledige broncode is gepubliceerd.',
+      'Ze bevat Stockfish, dat onder de GPLv3 valt, en Reckless, dat onder de AGPLv3 valt. Omdat beide in de app zijn gekoppeld, valt de hele toepassing onder de AGPLv3 — en de volledige broncode is gepubliceerd.',
     reckless:
-      'De app bevat ook Reckless, een tweede engine, onder de AGPLv3. De twee licenties gaan samen, en de Affero-bepaling over software die via een netwerk wordt gebruikt verandert hier niets: beide engines draaien op dit apparaat en de app doet geen netwerkverzoeken.',
+      'De twee licenties gaan samen, en de Affero-bepaling over software die via een netwerk wordt gebruikt verandert hier niets: beide engines draaien op dit apparaat en niemand benadert ze via een netwerk.',
     coaching: 'De coach beoordeelt elke zet zodra je hem doet.',
     online:
       'Een echte tegenstander via Game Center, met klok. Geen hints, geen engine, geen zetten terugnemen.',

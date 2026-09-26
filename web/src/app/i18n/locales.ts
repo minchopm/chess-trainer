@@ -80,7 +80,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn is free software.',
       attribution:
         'Stockfish © the Stockfish developers, GPLv3. Puzzles and games from the Lichess database, CC0. Not affiliated with Apple, Lichess, the Stockfish project or the Reckless project.',
-      lede: 'Tactics, positional judgement, endgame technique and coached play, with the engine running on the device. Nothing leaves the phone.',
+      lede: 'Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected.',
     },
   },
   {
@@ -112,7 +112,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn is free software.',
       attribution:
         'Stockfish © the Stockfish developers, GPLv3. Puzzles and games from the Lichess database, CC0. Not affiliated with Apple, Lichess, the Stockfish project or the Reckless project.',
-      lede: 'Tactics, positional judgement, endgame technique and coached play, with the engine running on the device. Nothing leaves the phone.',
+      lede: 'Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected.',
     },
   },
   {
@@ -144,7 +144,7 @@ export const LOCALES: readonly Locale[] = [
       rights: '‏Brass Pawn برمجية حرة.',
       attribution:
         '‏Stockfish © مطوّرو Stockfish، GPLv3. الألغاز والمباريات من قاعدة بيانات Lichess، CC0. لا صلة له بشركة Apple ولا بـLichess ولا بمشروع Stockfish ولا بمشروع Reckless.',
-      lede: 'تكتيك، وتقييم للأوضاع، وتقنية نهايات، ومباريات مع تدريب — ومحرّك المحرك يعمل على الجهاز نفسه. لا شيء يغادر الهاتف.',
+      lede: 'تكتيك، وتقييم للأوضاع، وتقنية نهايات، ومباريات مع تدريب — والمحرك يعمل على الجهاز نفسه. لا حساب، ولا جمع لأي بيانات.',
     },
   },
   {
@@ -176,7 +176,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn je svobodný software.',
       attribution:
         'Stockfish © vývojáři Stockfishe, GPLv3. Úlohy a partie z databáze Lichess, CC0. Bez vazby na Apple, Lichess, projekt Stockfish či projekt Reckless.',
-      lede: 'Taktika, poziční úsudek, koncovková technika a partie s koučem, se engineem běžícím přímo v zařízení. Nic neopouští telefon.',
+      lede: 'Taktika, poziční úsudek, koncovková technika a partie s koučem, s enginem běžícím přímo v zařízení. Žádný účet a nic se neshromažďuje.',
     },
   },
   {
@@ -208,7 +208,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn er fri software.',
       attribution:
         'Stockfish © Stockfish-udviklerne, GPLv3. Opgaver og partier fra Lichess-databasen, CC0. Ikke tilknyttet Apple, Lichess, Stockfish-projektet eller Reckless-projektet.',
-      lede: 'Taktik, positionsvurdering, slutspilsteknik og partier med coaching, med motoren kørende på selve enheden. Intet forlader telefonen.',
+      lede: 'Taktik, positionsvurdering, slutspilsteknik og partier med coaching, med motoren kørende på selve enheden. Ingen konto, og intet indsamles.',
     },
   },
   {
@@ -240,7 +240,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn ist freie Software.',
       attribution:
         'Stockfish © die Stockfish-Entwickler, GPLv3. Aufgaben und Partien aus der Lichess-Datenbank, CC0. Nicht verbunden mit Apple, Lichess, dem Stockfish-Projekt oder dem Reckless-Projekt.',
-      lede: 'Taktik, Stellungsbeurteilung, Endspieltechnik und begleitetes Spiel, mit der Engine direkt auf dem Gerät. Nichts verlässt das Telefon.',
+      lede: 'Taktik, Stellungsbeurteilung, Endspieltechnik und begleitetes Spiel, mit der Engine direkt auf dem Gerät. Kein Konto, und nichts wird erfasst.',
     },
   },
   {
@@ -272,7 +272,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Το Brass Pawn είναι ελεύθερο λογισμικό.',
       attribution:
         'Stockfish © οι προγραμματιστές του Stockfish, GPLv3. Ασκήσεις και παρτίδες από τη βάση του Lichess, CC0. Χωρίς σχέση με την Apple, το Lichess, το έργο Stockfish ή το έργο Reckless.',
-      lede: 'Τακτική, κρίση θέσης, τεχνική φινάλε και παρτίδες με καθοδήγηση, με το η μηχανή να τρέχει πάνω στη συσκευή. Τίποτα δεν φεύγει από το τηλέφωνο.',
+      lede: 'Τακτική, κρίση θέσης, τεχνική φινάλε και παρτίδες με καθοδήγηση, με τη μηχανή να τρέχει πάνω στη συσκευή. Κανένας λογαριασμός και καμία συλλογή δεδομένων.',
     },
   },
   {
@@ -304,7 +304,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn es software libre.',
       attribution:
         'Stockfish © los desarrolladores de Stockfish, GPLv3. Ejercicios y partidas de la base de datos de Lichess, CC0. Sin relación con Apple, Lichess, el proyecto Stockfish ni el proyecto Reckless.',
-      lede: 'Táctica, criterio posicional, técnica de finales y partidas comentadas, con el motor funcionando en el dispositivo. Nada sale del teléfono.',
+      lede: 'Táctica, criterio posicional, técnica de finales y partidas comentadas, con el motor funcionando en el propio dispositivo. Sin cuenta y sin recopilar nada.',
     },
   },
   {
@@ -336,7 +336,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn on vapaa ohjelmisto.',
       attribution:
         'Stockfish © Stockfishin kehittäjät, GPLv3. Tehtävät ja pelit Lichess-tietokannasta, CC0. Ei yhteydessä Appleen, Lichessiin, Stockfish-projektiin eikä Reckless-projektiin.',
-      lede: 'Taktiikkaa, aseman arviointia, loppupelitekniikkaa ja valmennettuja pelejä — moottori pyörii itse laitteessa. Mikään ei lähde puhelimesta.',
+      lede: 'Taktiikkaa, aseman arviointia, loppupelitekniikkaa ja valmennettuja pelejä — moottori pyörii itse laitteessa. Ei tiliä, eikä mitään kerätä.',
     },
   },
   {
@@ -368,7 +368,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn est un logiciel libre.',
       attribution:
         'Stockfish © les développeurs de Stockfish, GPLv3. Exercices et parties issus de la base Lichess, CC0. Sans lien avec Apple, Lichess, le projet Stockfish ni le projet Reckless.',
-      lede: "Tactique, jugement positionnel, technique de finale et parties commentées, avec le moteur qui tourne sur l'appareil. Rien ne quitte le téléphone.",
+      lede: "Tactique, jugement positionnel, technique de finale et parties commentées, avec le moteur qui tourne sur l'appareil lui-même. Aucun compte, et rien n'est collecté.",
     },
   },
   {
@@ -400,7 +400,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn est un logiciel libre.',
       attribution:
         'Stockfish © les développeurs de Stockfish, GPLv3. Exercices et parties issus de la base Lichess, CC0. Sans lien avec Apple, Lichess, le projet Stockfish ni le projet Reckless.',
-      lede: "Tactique, jugement positionnel, technique de finale et parties commentées, avec le moteur qui tourne sur l'appareil. Rien ne quitte le téléphone.",
+      lede: "Tactique, jugement positionnel, technique de finale et parties commentées, avec le moteur qui tourne sur l'appareil lui-même. Aucun compte, et rien n'est collecté.",
     },
   },
   {
@@ -432,7 +432,7 @@ export const LOCALES: readonly Locale[] = [
       rights: '‏Brass Pawn היא תוכנה חופשית.',
       attribution:
         '‏Stockfish © מפתחי Stockfish, GPLv3. התרגילים והמשחקים מתוך מסד הנתונים של Lichess, CC0. ללא כל קשר ל‑Apple, ל‑Lichess, לפרויקט Stockfish או לפרויקט Reckless.',
-      lede: 'טקטיקה, שיפוט עמדתי, טכניקת סופים ומשחקים עם אימון — כאשר המנוע רץ על המכשיר עצמו. שום דבר לא יוצא מהטלפון.',
+      lede: 'טקטיקה, שיפוט עמדתי, טכניקת סופים ומשחקים עם אימון — כאשר המנוע רץ על המכשיר עצמו. אין חשבון, ושום דבר לא נאסף.',
     },
   },
   {
@@ -464,7 +464,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn मुक्त सॉफ़्टवेयर है।',
       attribution:
         'Stockfish © Stockfish के डेवलपर, GPLv3। पहेलियाँ और खेल Lichess के डेटाबेस से, CC0। Apple, Lichess, Stockfish परियोजना या Reckless परियोजना से कोई संबंध नहीं।',
-      lede: 'रणनीति, स्थिति का आकलन, अंत-खेल तकनीक और कोचिंग के साथ बाज़ियाँ — इंजन डिवाइस पर ही चलता है। कुछ भी फ़ोन से बाहर नहीं जाता।',
+      lede: 'रणनीति, स्थिति का आकलन, अंत-खेल तकनीक और कोचिंग के साथ बाज़ियाँ — इंजन डिवाइस पर ही चलता है। न कोई खाता, न कोई डेटा इकट्ठा किया जाता है।',
     },
   },
   {
@@ -496,7 +496,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'A Brass Pawn szabad szoftver.',
       attribution:
         'Stockfish © a Stockfish fejlesztői, GPLv3. A feladványok és játszmák a Lichess adatbázisából, CC0. Nem áll kapcsolatban az Apple-lel, a Lichess-szel, a Stockfish projekttel vagy a Reckless projekttel.',
-      lede: 'Taktika, állásértékelés, végjátéktechnika és edzővel kísért játszmák, a a motor pedig magán a készüléken fut. Semmi nem hagyja el a telefont.',
+      lede: 'Taktika, állásértékelés, végjátéktechnika és edzővel kísért játszmák, a motor pedig magán a készüléken fut. Nincs fiók, és semmit sem gyűjtünk.',
     },
   },
   {
@@ -528,7 +528,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn adalah perangkat lunak bebas.',
       attribution:
         'Stockfish © para pengembang Stockfish, GPLv3. Teka-teki dan partai dari basis data Lichess, CC0. Tidak berafiliasi dengan Apple, Lichess, proyek Stockfish, maupun proyek Reckless.',
-      lede: 'Taktik, penilaian posisi, teknik akhir permainan, dan partai berpendamping, dengan mesin berjalan di perangkat itu sendiri. Tidak ada yang meninggalkan ponsel.',
+      lede: 'Taktik, penilaian posisi, teknik akhir permainan, dan partai berpendamping, dengan mesin berjalan di perangkat itu sendiri. Tanpa akun, dan tidak ada yang dikumpulkan.',
     },
   },
   {
@@ -560,7 +560,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn è software libero.',
       attribution:
         'Stockfish © gli sviluppatori di Stockfish, GPLv3. Esercizi e partite dal database di Lichess, CC0. Non affiliato ad Apple, Lichess, al progetto Stockfish né al progetto Reckless.',
-      lede: 'Tattica, giudizio posizionale, tecnica di finale e partite commentate, con il motore che gira sul dispositivo. Niente esce dal telefono.',
+      lede: 'Tattica, giudizio posizionale, tecnica di finale e partite commentate, con il motore che gira sul dispositivo stesso. Nessun account e nessun dato raccolto.',
     },
   },
   {
@@ -593,7 +593,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn はフリーソフトウェアです。',
       attribution:
         'Stockfish © Stockfish 開発者、GPLv3。問題と棋譜は Lichess のデータベースより、CC0。Apple、Lichess、Stockfish プロジェクト、Reckless プロジェクトとは無関係です。',
-      lede: '戦術、局面判断、終盤技術、そして解説つきの対局。エンジン は端末上で動作し、データが端末の外に出ることはありません。',
+      lede: '戦術、局面判断、終盤技術、そして解説つきの対局。エンジンは端末上で動作します。アカウントは不要で、データを収集することもありません。',
     },
   },
   {
@@ -625,7 +625,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn은 자유 소프트웨어입니다.',
       attribution:
         'Stockfish © Stockfish 개발자, GPLv3. 문제와 기보는 Lichess 데이터베이스에서, CC0. Apple, Lichess, Stockfish 프로젝트, Reckless 프로젝트와 무관합니다.',
-      lede: '전술, 포지션 판단, 엔드게임 기술, 그리고 코칭이 붙은 대국. 엔진이 기기 안에서 돌아가며, 어떤 데이터도 휴대폰을 떠나지 않습니다.',
+      lede: '전술, 포지션 판단, 엔드게임 기술, 그리고 코칭이 붙은 대국. 엔진이 기기 안에서 돌아갑니다. 계정이 필요 없고, 어떤 데이터도 수집하지 않습니다.',
     },
   },
   {
@@ -657,7 +657,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn ialah perisian bebas.',
       attribution:
         'Stockfish © pembangun Stockfish, GPLv3. Teka-teki dan permainan daripada pangkalan data Lichess, CC0. Tiada kaitan dengan Apple, Lichess, projek Stockfish atau projek Reckless.',
-      lede: 'Taktik, penilaian kedudukan, teknik permainan akhir dan perlawanan berjurulatih, dengan enjin berjalan pada peranti itu sendiri. Tiada apa-apa meninggalkan telefon.',
+      lede: 'Taktik, penilaian kedudukan, teknik permainan akhir dan perlawanan berjurulatih, dengan enjin berjalan pada peranti itu sendiri. Tiada akaun, dan tiada apa-apa dikumpul.',
     },
   },
   {
@@ -689,7 +689,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn is vrije software.',
       attribution:
         'Stockfish © de Stockfish-ontwikkelaars, GPLv3. Opgaven en partijen uit de Lichess-database, CC0. Niet verbonden aan Apple, Lichess, het Stockfish-project of het Reckless-project.',
-      lede: 'Tactiek, positioneel inzicht, eindspeltechniek en partijen met begeleiding, met de engine op het toestel zelf. Er verlaat niets de telefoon.',
+      lede: 'Tactiek, positioneel inzicht, eindspeltechniek en partijen met begeleiding, met de engine op het toestel zelf. Geen account, en er wordt niets verzameld.',
     },
   },
   {
@@ -721,7 +721,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn er fri programvare.',
       attribution:
         'Stockfish © Stockfish-utviklerne, GPLv3. Oppgaver og partier fra Lichess-databasen, CC0. Ikke tilknyttet Apple, Lichess, Stockfish-prosjektet eller Reckless-prosjektet.',
-      lede: 'Taktikk, posisjonsvurdering, sluttspillteknikk og partier med coaching, med motoren som kjører på selve enheten. Ingenting forlater telefonen.',
+      lede: 'Taktikk, posisjonsvurdering, sluttspillteknikk og partier med coaching, med motoren som kjører på selve enheten. Ingen konto, og ingenting samles inn.',
     },
   },
   {
@@ -753,7 +753,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn to wolne oprogramowanie.',
       attribution:
         'Stockfish © twórcy Stockfisha, GPLv3. Zadania i partie z bazy Lichess, CC0. Bez związku z Apple, Lichess, projektem Stockfish ani projektem Reckless.',
-      lede: 'Taktyka, ocena pozycji, technika końcówek i partie z komentarzem, ze silnikem działającym na urządzeniu. Nic nie opuszcza telefonu.',
+      lede: 'Taktyka, ocena pozycji, technika końcówek i partie z komentarzem, z silnikiem działającym na samym urządzeniu. Bez konta i bez zbierania jakichkolwiek danych.',
     },
   },
   {
@@ -785,7 +785,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn é software livre.',
       attribution:
         'Stockfish © os desenvolvedores do Stockfish, GPLv3. Exercícios e partidas do banco de dados do Lichess, CC0. Sem vínculo com a Apple, o Lichess, o projeto Stockfish ou o projeto Reckless.',
-      lede: 'Tática, julgamento posicional, técnica de finais e partidas comentadas, com o o motor rodando no aparelho. Nada sai do telefone.',
+      lede: 'Tática, julgamento posicional, técnica de finais e partidas comentadas, com o motor rodando no próprio aparelho. Sem conta, e nada é coletado.',
     },
   },
   {
@@ -817,7 +817,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn este software liber.',
       attribution:
         'Stockfish © dezvoltatorii Stockfish, GPLv3. Exercițiile și partidele provin din baza de date Lichess, CC0. Fără legătură cu Apple, Lichess, proiectul Stockfish sau proiectul Reckless.',
-      lede: 'Tactică, judecată pozițională, tehnică de final și partide cu antrenor, cu motorul rulând chiar pe dispozitiv. Nimic nu părăsește telefonul.',
+      lede: 'Tactică, judecată pozițională, tehnică de final și partide cu antrenor, cu motorul rulând chiar pe dispozitiv. Fără cont și fără colectare de date.',
     },
   },
   {
@@ -849,7 +849,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn — свободное программное обеспечение.',
       attribution:
         'Stockfish © разработчики Stockfish, GPLv3. Задачи и партии из базы Lichess, CC0. Не связано с Apple, Lichess, проектом Stockfish или проектом Reckless.',
-      lede: 'Тактика, позиционная оценка, эндшпильная техника и партии с разбором — движок работает прямо на устройстве. Ничего не покидает телефон.',
+      lede: 'Тактика, позиционная оценка, эндшпильная техника и партии с разбором — движок работает прямо на устройстве. Без аккаунта, и ничего не собирается.',
     },
   },
   {
@@ -881,7 +881,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn är fri programvara.',
       attribution:
         'Stockfish © Stockfish-utvecklarna, GPLv3. Uppgifter och partier från Lichess-databasen, CC0. Inte knutet till Apple, Lichess, Stockfish-projektet eller Reckless-projektet.',
-      lede: 'Taktik, positionsbedömning, slutspelsteknik och partier med coachning, med motorn igång på själva enheten. Ingenting lämnar telefonen.',
+      lede: 'Taktik, positionsbedömning, slutspelsteknik och partier med coachning, med motorn igång på själva enheten. Inget konto, och ingenting samlas in.',
     },
   },
   {
@@ -913,7 +913,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn เป็นซอฟต์แวร์เสรี',
       attribution:
         'Stockfish © ผู้พัฒนา Stockfish, GPLv3 โจทย์และเกมมาจากฐานข้อมูล Lichess, CC0 ไม่มีความเกี่ยวข้องกับ Apple, Lichess, โครงการ Stockfish หรือโครงการ Reckless',
-      lede: 'แทคติก การประเมินตำแหน่ง เทคนิคเกมท้าย และเกมที่มีโค้ช โดย เอนจิน ทำงานบนเครื่องเอง ไม่มีข้อมูลใดออกจากโทรศัพท์',
+      lede: 'แทคติก การประเมินตำแหน่ง เทคนิคเกมท้าย และเกมที่มีโค้ช โดยเอนจินทำงานบนเครื่องเอง ไม่ต้องมีบัญชี และไม่มีการเก็บข้อมูลใดๆ',
     },
   },
   {
@@ -945,7 +945,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn özgür yazılımdır.',
       attribution:
         'Stockfish © Stockfish geliştiricileri, GPLv3. Bulmacalar ve partiler Lichess veritabanından, CC0. Apple, Lichess, Stockfish projesi veya Reckless projesi ile bağlantılı değildir.',
-      lede: 'Taktik, konum değerlendirmesi, oyunsonu tekniği ve koçluk eşliğinde oyun; motor cihazın kendisinde çalışır. Hiçbir şey telefondan çıkmaz.',
+      lede: 'Taktik, konum değerlendirmesi, oyunsonu tekniği ve koçluk eşliğinde oyun; motor cihazın kendisinde çalışır. Hesap yok, hiçbir veri toplanmaz.',
     },
   },
   {
@@ -977,7 +977,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn là phần mềm tự do.',
       attribution:
         'Stockfish © các nhà phát triển Stockfish, GPLv3. Thế cờ và ván đấu lấy từ cơ sở dữ liệu Lichess, CC0. Không liên kết với Apple, Lichess, dự án Stockfish hay dự án Reckless.',
-      lede: 'Chiến thuật, đánh giá thế cờ, kỹ thuật tàn cuộc và các ván có huấn luyện viên, với engine chạy ngay trên máy. Không có gì rời khỏi điện thoại.',
+      lede: 'Chiến thuật, đánh giá thế cờ, kỹ thuật tàn cuộc và các ván có huấn luyện viên, với engine chạy ngay trên máy. Không cần tài khoản, và không thu thập bất cứ dữ liệu nào.',
     },
   },
   {
@@ -1009,7 +1009,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn 是自由软件。',
       attribution:
         'Stockfish © Stockfish 开发者，GPLv3。习题与对局取自 Lichess 数据库，CC0。与 Apple、Lichess、Stockfish 项目或 Reckless 项目均无关联。',
-      lede: '战术、局面判断、残局技术和带讲解的对局，引擎 直接在设备上运行。没有任何数据离开手机。',
+      lede: '战术、局面判断、残局技术和带讲解的对局，引擎直接在设备上运行。无需账户，也不收集任何数据。',
     },
   },
   {
@@ -1041,7 +1041,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn 是自由軟體。',
       attribution:
         'Stockfish © Stockfish 開發者，GPLv3。習題與棋局取自 Lichess 資料庫，CC0。與 Apple、Lichess、Stockfish 專案或 Reckless 專案均無關聯。',
-      lede: '戰術、局面判斷、殘局技術與附講解的對局，引擎 直接在裝置上執行。沒有任何資料離開手機。',
+      lede: '戰術、局面判斷、殘局技術與附講解的對局，引擎直接在裝置上執行。無需帳號，也不收集任何資料。',
     },
   },
   {
@@ -1073,7 +1073,7 @@ export const LOCALES: readonly Locale[] = [
       rights: 'Brass Pawn е свободен софтуер.',
       attribution:
         'Stockfish © разработчиците на Stockfish, GPLv3. Задачите и партиите са от базата на Lichess, CC0. Няма връзка с Apple, Lichess, проекта Stockfish или проекта Reckless.',
-      lede: 'Tactics, positional judgement, endgame technique and coached play, with the engine running on the device. Nothing leaves the phone.',
+      lede: 'Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected.',
     },
   },
 ];

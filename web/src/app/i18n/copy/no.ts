@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Spill · Tren · Se',
-    lede: 'Taktikk, posisjonsvurdering, sluttspillteknikk og partier med coaching, med motoren som kjører på selve enheten. Ingenting forlater telefonen.',
+    lede: 'Taktikk, posisjonsvurdering, sluttspillteknikk og partier med coaching, med motoren som kjører på selve enheten. Ingen konto, og ingenting samles inn.',
     privacy:
-      'Appen samler ikke inn noe, sender ingenting og gjør ingen nettverkskall. Ratingene og historikken din ligger bare på denne enheten og slettes sammen med appen.',
+      'Appen samler ikke inn noe og sender ingenting om deg. Det eneste den laster ned, er dagens feed, når du åpner I dag. Ratingene og historikken din ligger bare på denne enheten og slettes sammen med appen.',
     freeSoftware:
       'Denne appen er fri programvare, lisensiert under GNU Affero General Public License versjon 3 eller nyere.',
     stockfish:
-      'Appen inneholder Stockfish, som er utgitt under GPLv3. Fordi Stockfish er lenket inn i appen, omfattes hele appen av samme lisens — og hele kildekoden er offentliggjort.',
+      'Den inneholder Stockfish, som er GPLv3, og Reckless, som er AGPLv3. Fordi begge er lenket inn i appen, er hele applikasjonen under AGPLv3 — og hele kildekoden er publisert.',
     reckless:
-      'Appen inneholder også Reckless, en andre motor, under AGPLv3. De to lisensene kan kombineres, og Affero-klausulen om programvare som brukes over et nettverk endrer ingenting her: begge motorene kjører på denne enheten, og appen gjør ingen nettverkskall.',
+      'De to lisensene kan kombineres, og Affero-klausulen om programvare som brukes over et nettverk endrer ingenting her: begge motorene kjører på denne enheten, og ingen bruker dem over et nettverk.',
     coaching: 'Treneren vurderer hvert av trekkene dine etter hvert som du gjør dem.',
     online:
       'En ekte motstander via Game Center, på klokke. Ingen hint, ingen motor, ingen angrede trekk.',

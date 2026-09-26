@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Chơi · Luyện · Xem',
-    lede: 'Chiến thuật, đánh giá thế cờ, kỹ thuật tàn cuộc và các ván có huấn luyện viên, với engine chạy ngay trên máy. Không có gì rời khỏi điện thoại.',
+    lede: 'Chiến thuật, đánh giá thế cờ, kỹ thuật tàn cuộc và các ván có huấn luyện viên, với engine chạy ngay trên máy. Không cần tài khoản, và không thu thập bất cứ dữ liệu nào.',
     privacy:
-      'Ứng dụng không thu thập gì, không gửi gì và không thực hiện yêu cầu mạng nào. Hệ số và lịch sử của bạn chỉ nằm trên máy này và sẽ mất khi gỡ ứng dụng.',
+      'Ứng dụng không thu thập gì và không gửi gì về bạn. Thứ duy nhất nó tải xuống là bản tin hằng ngày, khi bạn mở Hôm nay. Hệ số và lịch sử của bạn chỉ nằm trên máy này và sẽ mất khi gỡ ứng dụng.',
     freeSoftware:
       'Ứng dụng này là phần mềm tự do, theo giấy phép GNU Affero General Public License phiên bản 3 hoặc mới hơn.',
     stockfish:
-      'Ứng dụng có kèm Stockfish, phát hành theo GPLv3. Vì Stockfish được liên kết vào ứng dụng nên toàn bộ ứng dụng mang cùng giấy phép — và mã nguồn đầy đủ đã được công bố.',
+      'Ứng dụng bao gồm Stockfish theo GPLv3 và Reckless theo AGPLv3. Vì cả hai đều được liên kết vào ứng dụng, toàn bộ ứng dụng chịu giấy phép AGPLv3 — và toàn bộ mã nguồn của nó được công bố.',
     reckless:
-      'Ứng dụng cũng bao gồm Reckless, một engine thứ hai, theo giấy phép AGPLv3. Hai giấy phép có thể kết hợp, và điều khoản Affero về phần mềm được dùng qua mạng không thay đổi gì ở đây: cả hai engine đều chạy trên thiết bị này và ứng dụng không thực hiện bất kỳ yêu cầu mạng nào.',
+      'Hai giấy phép có thể kết hợp, và điều khoản Affero về phần mềm được dùng qua mạng không thay đổi gì ở đây: cả hai engine đều chạy trên thiết bị này và không ai truy cập chúng qua mạng.',
     coaching: 'Huấn luyện viên chấm điểm từng nước đi của bạn ngay khi bạn đi.',
     online: 'Đối thủ thật qua Game Center, có đồng hồ. Không gợi ý, không máy, không đi lại nước.',
     photo: 'Đọc bàn cờ từ ảnh',

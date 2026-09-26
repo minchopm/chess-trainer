@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Oyna · Çalış · İzle',
-    lede: 'Taktik, konum değerlendirmesi, oyunsonu tekniği ve koçluk eşliğinde oyun; motor cihazın kendisinde çalışır. Hiçbir şey telefondan çıkmaz.',
+    lede: 'Taktik, konum değerlendirmesi, oyunsonu tekniği ve koçluk eşliğinde oyun; motor cihazın kendisinde çalışır. Hesap yok, hiçbir veri toplanmaz.',
     privacy:
-      'Uygulama hiçbir şey toplamaz, hiçbir şey göndermez ve ağ isteği yapmaz. Puanların ve geçmişin yalnızca bu cihazda durur; uygulamayı silmek onları da siler.',
+      "Uygulama hiçbir şey toplamaz ve senin hakkında hiçbir şey göndermez. İndirdiği tek şey, Bugün'ü açtığında günlük akıştır. Puanların ve geçmişin yalnızca bu cihazda durur; uygulamayı silmek onları da siler.",
     freeSoftware:
       'Bu uygulama özgür yazılımdır; GNU Affero General Public License sürüm 3 veya sonrası ile lisanslanmıştır.',
     stockfish:
-      "Uygulama, GPLv3 ile dağıtılan Stockfish'i içerir. Stockfish uygulamaya bağlandığı için tüm uygulama aynı lisansı taşır — ve kaynak kodunun tamamı yayımlanmıştır.",
+      'Uygulama, GPLv3 olan Stockfish’i ve AGPLv3 olan Reckless’i içerir. İkisi de uygulamaya bağlandığı için uygulamanın tamamı AGPLv3 kapsamındadır ve kaynak kodunun tümü yayımlanmıştır.',
     reckless:
-      "Uygulama ayrıca AGPLv3 lisanslı ikinci bir motor olan Reckless'i de içerir. İki lisans birleşebilir ve ağ üzerinden kullanılan yazılıma dair Affero maddesi burada hiçbir şeyi değiştirmez: her iki motor da bu cihazda çalışır ve uygulama hiçbir ağ isteği yapmaz.",
+      'İki lisans birleşebilir ve ağ üzerinden kullanılan yazılıma dair Affero maddesi burada hiçbir şeyi değiştirmez: her iki motor da bu cihazda çalışır ve kimse onlara ağ üzerinden erişmez.',
     coaching: 'Antrenör, yaptığınız her hamleyi anında değerlendirir.',
     online:
       'Game Center üzerinden gerçek bir rakip, saatle. İpucu yok, motor yok, hamle geri alma yok.',

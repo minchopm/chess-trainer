@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Graj · Trenuj · Oglądaj',
-    lede: 'Taktyka, ocena pozycji, technika końcówek i partie z komentarzem, ze silnikem działającym na urządzeniu. Nic nie opuszcza telefonu.',
+    lede: 'Taktyka, ocena pozycji, technika końcówek i partie z komentarzem, z silnikiem działającym na samym urządzeniu. Bez konta i bez zbierania jakichkolwiek danych.',
     privacy:
-      'Aplikacja niczego nie zbiera, niczego nie wysyła i nie łączy się z siecią. Twoje rankingi i historia są tylko na tym urządzeniu i znikają razem z aplikacją.',
+      'Aplikacja niczego nie zbiera i niczego o tobie nie wysyła. Jedyne, co pobiera, to dzienny przegląd, gdy otworzysz Dziś. Twoje rankingi i historia są tylko na tym urządzeniu i znikają razem z aplikacją.',
     freeSoftware:
       'Ta aplikacja to wolne oprogramowanie na licencji GNU Affero General Public License w wersji 3 lub nowszej.',
     stockfish:
-      'Aplikacja zawiera Stockfisha na licencji GPLv3. Ponieważ Stockfish jest z nią zlinkowany, cała aplikacja podlega tej samej licencji — a jej pełny kod źródłowy jest opublikowany.',
+      'Zawiera Stockfisha na licencji GPLv3 oraz Recklessa na licencji AGPLv3. Ponieważ oba są wkompilowane w aplikację, cała aplikacja podlega AGPLv3, a jej pełny kod źródłowy jest opublikowany.',
     reckless:
-      'Zawiera także Reckless, drugi silnik, na licencji AGPLv3. Obie licencje dają się połączyć, a klauzula Affero dotycząca oprogramowania używanego przez sieć nic tu nie zmienia: oba silniki działają na tym urządzeniu, a aplikacja nie wysyła żadnych zapytań sieciowych.',
+      'Obie licencje dają się połączyć, a klauzula Affero dotycząca oprogramowania używanego przez sieć nic tu nie zmienia: oba silniki działają na tym urządzeniu i nikt nie korzysta z nich przez sieć.',
     coaching: 'Trener ocenia każdy Twój ruch zaraz po jego wykonaniu.',
     online:
       'Żywy przeciwnik przez Game Center, z zegarem. Bez podpowiedzi, bez silnika, bez cofania posunięć.',

@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Spielen · Trainieren · Zusehen',
-    lede: 'Taktik, Stellungsbeurteilung, Endspieltechnik und begleitetes Spiel, mit der Engine direkt auf dem Gerät. Nichts verlässt das Telefon.',
+    lede: 'Taktik, Stellungsbeurteilung, Endspieltechnik und begleitetes Spiel, mit der Engine direkt auf dem Gerät. Kein Konto, und nichts wird erfasst.',
     privacy:
-      'Die App sammelt nichts, sendet nichts und stellt keine Netzwerkanfragen. Deine Wertungen und deine Historie liegen nur auf diesem Gerät; wer die App löscht, löscht sie mit.',
+      'Die App sammelt nichts und sendet nichts über dich. Das Einzige, was sie herunterlädt, ist der tägliche Feed, wenn du Heute öffnest. Deine Wertungen und deine Historie liegen nur auf diesem Gerät; wer die App löscht, löscht sie mit.',
     freeSoftware:
       'Diese Anwendung ist freie Software unter der GNU Affero General Public License Version 3 oder später.',
     stockfish:
-      'Die App enthält Stockfish, das unter der GPLv3 steht. Weil Stockfish in die App eingebunden ist, gilt dieselbe Lizenz für die gesamte Anwendung — und ihr vollständiger Quelltext ist veröffentlicht.',
+      'Sie enthält Stockfish unter der GPLv3 und Reckless unter der AGPLv3. Weil beide in die App eingebunden sind, steht die gesamte Anwendung unter der AGPLv3 — und ihr vollständiger Quelltext ist veröffentlicht.',
     reckless:
-      'Sie enthält außerdem Reckless, eine zweite Engine, die unter der AGPLv3 steht. Die beiden Lizenzen lassen sich verbinden, und die Affero-Klausel über Software, die über ein Netzwerk genutzt wird, ändert hier nichts: Beide Engines laufen auf diesem Gerät, und die App stellt keine Netzwerkanfragen.',
+      'Die beiden Lizenzen lassen sich verbinden, und die Affero-Klausel über Software, die über ein Netzwerk genutzt wird, ändert hier nichts: Beide Engines laufen auf diesem Gerät, und niemand greift über ein Netzwerk auf sie zu.',
     coaching: 'Der Trainer bewertet jeden deiner Züge, sobald du ihn machst.',
     online:
       'Ein echter Gegner über Game Center, mit Uhr. Keine Tipps, keine Engine, keine Zugrücknahme.',

@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Játék · Edzés · Nézés',
-    lede: 'Taktika, állásértékelés, végjátéktechnika és edzővel kísért játszmák, a a motor pedig magán a készüléken fut. Semmi nem hagyja el a telefont.',
+    lede: 'Taktika, állásértékelés, végjátéktechnika és edzővel kísért játszmák, a motor pedig magán a készüléken fut. Nincs fiók, és semmit sem gyűjtünk.',
     privacy:
-      'Az alkalmazás semmit nem gyűjt, semmit nem küld, és nem indít hálózati kérést. Az értékszámaid és az előzményeid csak ezen a készüléken vannak, és a törléssel együtt tűnnek el.',
+      'Az alkalmazás semmit nem gyűjt, és semmit nem küld rólad. Egyetlen dolgot tölt le: a napi hírfolyamot, amikor megnyitod a Ma nézetet. Az értékszámaid és az előzményeid csak ezen a készüléken vannak, és a törléssel együtt tűnnek el.',
     freeSoftware:
       'Ez az alkalmazás szabad szoftver, a GNU Affero General Public License 3-as vagy későbbi verziója alatt.',
     stockfish:
-      'Az alkalmazás tartalmazza a Stockfisht, amely GPLv3 alatt jelenik meg. Mivel a Stockfish be van linkelve, az egész alkalmazásra ugyanaz a licenc vonatkozik — és a teljes forráskódja nyilvános.',
+      'Tartalmazza a GPLv3 alatti Stockfisht és az AGPLv3 alatti Recklesst. Mivel mindkettő be van linkelve az alkalmazásba, a teljes alkalmazás AGPLv3 alá tartozik — és a teljes forráskódja nyilvános.',
     reckless:
-      'Tartalmazza a Reckless nevű második motort is, amely AGPLv3 licencű. A két licenc összekapcsolható, és az Affero hálózaton keresztül használt szoftverről szóló kikötése itt semmit sem változtat: mindkét motor ezen az eszközön fut, és az alkalmazás nem küld hálózati kérést.',
+      'A két licenc összekapcsolható, és az Affero hálózaton keresztül használt szoftverről szóló kikötése itt semmit sem változtat: mindkét motor ezen az eszközön fut, és senki sem éri el őket hálózaton keresztül.',
     coaching: 'Az edző minden lépésedet értékeli, ahogy megteszed.',
     online:
       'Valódi ellenfél a Game Centeren keresztül, órával. Nincs tipp, nincs motor, nincs visszalépés.',

@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Play · Train · Watch',
-    lede: 'Tactics, positional judgement, endgame technique and coached play, with the engine running on the device. Nothing leaves the phone.',
+    lede: 'Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected.',
     privacy:
-      'The app collects nothing, sends nothing and makes no network requests. Your ratings and history are stored only on this device, and deleting the app deletes them.',
+      'The app collects nothing and sends nothing about you. The one thing it downloads is the daily feed, when you open Today. Your ratings and history are stored only on this device, and deleting the app deletes them.',
     freeSoftware:
       'This application is free software, licensed under the GNU Affero General Public License version 3 or later.',
     stockfish:
-      'It includes Stockfish, which is GPLv3. Because Stockfish is linked into the app, the whole application carries the same licence — and its complete source is published.',
+      'It includes Stockfish, which is GPLv3, and Reckless, which is AGPLv3. Because both are linked into the app, the whole application carries AGPLv3 — and its complete source is published.',
     reckless:
-      'It also includes Reckless, a second engine, which is AGPLv3. The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device and the app makes no network requests.',
+      'The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device, and nobody reaches them over a network.',
     coaching: 'Coaching grades each of your moves as you make it.',
     online: 'A real opponent over Game Center, on the clock. No hints, no engine, no take-backs.',
     photo: 'Read a board from a photo',

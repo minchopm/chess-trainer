@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Spil · Træn · Se',
-    lede: 'Taktik, positionsvurdering, slutspilsteknik og partier med coaching, med motoren kørende på selve enheden. Intet forlader telefonen.',
+    lede: 'Taktik, positionsvurdering, slutspilsteknik og partier med coaching, med motoren kørende på selve enheden. Ingen konto, og intet indsamles.',
     privacy:
-      'Appen indsamler intet, sender intet og laver ingen netværkskald. Dine ratings og din historik ligger kun på denne enhed og slettes sammen med appen.',
+      'Appen indsamler intet og sender intet om dig. Det eneste, den henter, er dagens feed, når du åbner I dag. Dine ratings og din historik ligger kun på denne enhed og slettes sammen med appen.',
     freeSoftware:
       'Denne app er fri software, licenseret under GNU Affero General Public License version 3 eller nyere.',
     stockfish:
-      'Appen indeholder Stockfish, som er udgivet under GPLv3. Fordi Stockfish er linket ind i appen, er hele appen omfattet af samme licens — og dens fulde kildekode er offentliggjort.',
+      'Den indeholder Stockfish, som er GPLv3, og Reckless, som er AGPLv3. Fordi begge er linket ind i appen, er hele applikationen under AGPLv3 — og hele dens kildekode er offentliggjort.',
     reckless:
-      'Appen indeholder også Reckless, en anden motor, under AGPLv3. De to licenser kan kombineres, og Affero-klausulen om software der bruges over et netværk ændrer intet her: begge motorer kører på denne enhed, og appen laver ingen netværkskald.',
+      'De to licenser kan kombineres, og Affero-klausulen om software der bruges over et netværk ændrer intet her: begge motorer kører på denne enhed, og ingen tilgår dem over et netværk.',
     coaching: 'Træneren bedømmer hvert af dine træk, efterhånden som du spiller dem.',
     online:
       'En rigtig modstander via Game Center, på ur. Ingen hints, ingen motor, ingen fortrydelser.',

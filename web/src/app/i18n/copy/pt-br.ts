@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Jogar · Treinar · Assistir',
-    lede: 'Tática, julgamento posicional, técnica de finais e partidas comentadas, com o o motor rodando no aparelho. Nada sai do telefone.',
+    lede: 'Tática, julgamento posicional, técnica de finais e partidas comentadas, com o motor rodando no próprio aparelho. Sem conta, e nada é coletado.',
     privacy:
-      'O aplicativo não coleta nada, não envia nada e não faz requisições de rede. Seus ratings e seu histórico ficam só neste aparelho, e somem junto com o aplicativo.',
+      'O aplicativo não coleta nada e não envia nada sobre você. A única coisa que ele baixa é o feed do dia, quando você abre Hoje. Seus ratings e seu histórico ficam só neste aparelho, e somem junto com o aplicativo.',
     freeSoftware:
       'Este aplicativo é software livre, licenciado sob a GNU Affero General Public License versão 3 ou posterior.',
     stockfish:
-      'Inclui o Stockfish, que é GPLv3. Como o Stockfish está ligado ao aplicativo, todo o aplicativo carrega a mesma licença — e o código-fonte completo está publicado.',
+      'Inclui o Stockfish, sob GPLv3, e o Reckless, sob AGPLv3. Como ambos estão vinculados ao aplicativo, todo o aplicativo fica sob AGPLv3 — e todo o seu código-fonte está publicado.',
     reckless:
-      'Também inclui o Reckless, um segundo motor, sob a AGPLv3. As duas licenças se combinam, e a cláusula Affero sobre software usado através de uma rede não muda nada aqui: os dois motores rodam neste aparelho e o app não faz nenhuma requisição de rede.',
+      'As duas licenças se combinam, e a cláusula Affero sobre software usado através de uma rede não muda nada aqui: os dois motores rodam neste aparelho e ninguém os acessa por uma rede.',
     coaching: 'O treinador avalia cada lance seu assim que você o joga.',
     online:
       'Um adversário de verdade pelo Game Center, no relógio. Sem dicas, sem motor, sem voltar lances.',

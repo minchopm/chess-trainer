@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Pelaa · Harjoittele · Katso',
-    lede: 'Taktiikkaa, aseman arviointia, loppupelitekniikkaa ja valmennettuja pelejä — moottori pyörii itse laitteessa. Mikään ei lähde puhelimesta.',
+    lede: 'Taktiikkaa, aseman arviointia, loppupelitekniikkaa ja valmennettuja pelejä — moottori pyörii itse laitteessa. Ei tiliä, eikä mitään kerätä.',
     privacy:
-      'Sovellus ei kerää mitään, ei lähetä mitään eikä tee verkkopyyntöjä. Ratingisi ja historiasi ovat vain tässä laitteessa ja katoavat sovelluksen mukana.',
+      'Sovellus ei kerää mitään eikä lähetä sinusta mitään. Ainoa asia, jonka se lataa, on päivän syöte, kun avaat Tänään-näkymän. Ratingisi ja historiasi ovat vain tässä laitteessa ja katoavat sovelluksen mukana.',
     freeSoftware:
       'Tämä sovellus on vapaa ohjelmisto, lisensoitu GNU Affero General Public License -lisenssin versiolla 3 tai uudemmalla.',
     stockfish:
-      'Sovellus sisältää Stockfishin, joka julkaistaan GPLv3-lisenssillä. Koska Stockfish on linkitetty sovellukseen, koko sovellus on saman lisenssin alainen — ja sen täydellinen lähdekoodi on julkaistu.',
+      'Se sisältää Stockfishin, joka on GPLv3, ja Recklessin, joka on AGPLv3. Koska molemmat on linkitetty sovellukseen, koko sovellus on AGPLv3:n alainen — ja sen koko lähdekoodi on julkaistu.',
     reckless:
-      'Sovellus sisältää myös Recklessin, toisen moottorin, AGPLv3-lisenssillä. Lisenssit sopivat yhteen, eikä Affero-ehto verkon yli käytettävästä ohjelmistosta muuta tässä mitään: molemmat moottorit toimivat tällä laitteella, eikä sovellus tee verkkopyyntöjä.',
+      'Lisenssit sopivat yhteen, eikä Affero-ehto verkon yli käytettävästä ohjelmistosta muuta tässä mitään: molemmat moottorit toimivat tällä laitteella, eikä kukaan käytä niitä verkon yli.',
     coaching: 'Valmentaja arvioi jokaisen siirtosi heti kun teet sen.',
     online:
       'Oikea vastustaja Game Centerin kautta, kello käynnissä. Ei vihjeitä, ei moottoria, ei siirtojen perumista.',

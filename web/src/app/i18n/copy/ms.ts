@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Main · Latih · Tonton',
-    lede: 'Taktik, penilaian kedudukan, teknik permainan akhir dan perlawanan berjurulatih, dengan enjin berjalan pada peranti itu sendiri. Tiada apa-apa meninggalkan telefon.',
+    lede: 'Taktik, penilaian kedudukan, teknik permainan akhir dan perlawanan berjurulatih, dengan enjin berjalan pada peranti itu sendiri. Tiada akaun, dan tiada apa-apa dikumpul.',
     privacy:
-      'Aplikasi tidak mengumpul apa-apa, tidak menghantar apa-apa dan tidak membuat permintaan rangkaian. Rating dan sejarah anda hanya tersimpan pada peranti ini dan terpadam bersama aplikasi.',
+      'Aplikasi tidak mengumpul apa-apa dan tidak menghantar apa-apa tentang anda. Satu-satunya yang dimuat turun ialah suapan harian, apabila anda membuka Hari ini. Rating dan sejarah anda hanya tersimpan pada peranti ini dan terpadam bersama aplikasi.',
     freeSoftware:
       'Aplikasi ini ialah perisian bebas, dilesenkan di bawah GNU Affero General Public License versi 3 atau lebih baharu.',
     stockfish:
-      'Aplikasi ini menyertakan Stockfish yang dikeluarkan di bawah GPLv3. Oleh sebab Stockfish dipautkan ke dalam aplikasi, seluruh aplikasi memakai lesen yang sama — dan kod sumbernya diterbitkan sepenuhnya.',
+      'Ia mengandungi Stockfish, yang berlesen GPLv3, dan Reckless, yang berlesen AGPLv3. Kerana kedua-duanya dipaut ke dalam aplikasi, keseluruhan aplikasi tertakluk kepada AGPLv3 — dan seluruh kod sumbernya diterbitkan.',
     reckless:
-      'Aplikasi ini turut menyertakan Reckless, enjin kedua, di bawah AGPLv3. Kedua-dua lesen boleh digabungkan, dan klausa Affero tentang perisian yang digunakan melalui rangkaian tidak mengubah apa-apa di sini: kedua-dua enjin berjalan pada peranti ini dan aplikasi tidak membuat sebarang permintaan rangkaian.',
+      'Kedua-dua lesen boleh digabungkan, dan klausa Affero tentang perisian yang digunakan melalui rangkaian tidak mengubah apa-apa di sini: kedua-dua enjin berjalan pada peranti ini dan tiada sesiapa mencapainya melalui rangkaian.',
     coaching: 'Jurulatih menilai setiap langkah anda sebaik sahaja anda memainkannya.',
     online:
       'Lawan sebenar melalui Game Center, dengan jam. Tiada petunjuk, tiada enjin, tiada tarik balik langkah.',

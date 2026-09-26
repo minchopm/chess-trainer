@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Spela · Träna · Se',
-    lede: 'Taktik, positionsbedömning, slutspelsteknik och partier med coachning, med motorn igång på själva enheten. Ingenting lämnar telefonen.',
+    lede: 'Taktik, positionsbedömning, slutspelsteknik och partier med coachning, med motorn igång på själva enheten. Inget konto, och ingenting samlas in.',
     privacy:
-      'Appen samlar inte in något, skickar inget och gör inga nätverksanrop. Dina ratings och din historik finns bara på den här enheten och försvinner med appen.',
+      'Appen samlar inte in något och skickar inget om dig. Det enda den hämtar är dagens flöde, när du öppnar I dag. Dina ratings och din historik finns bara på den här enheten och försvinner med appen.',
     freeSoftware:
       'Den här appen är fri programvara, licensierad under GNU Affero General Public License version 3 eller senare.',
     stockfish:
-      'Appen innehåller Stockfish, som ges ut under GPLv3. Eftersom Stockfish är länkat in i appen omfattas hela appen av samma licens — och dess fullständiga källkod är publicerad.',
+      'Den innehåller Stockfish, som är GPLv3, och Reckless, som är AGPLv3. Eftersom båda är länkade in i appen står hela applikationen under AGPLv3 — och hela dess källkod är publicerad.',
     reckless:
-      'Appen innehåller även Reckless, en andra motor, under AGPLv3. De två licenserna går att kombinera, och Affero-klausulen om programvara som används över ett nätverk ändrar ingenting här: båda motorerna körs på den här enheten och appen gör inga nätverksanrop.',
+      'De två licenserna går att kombinera, och Affero-klausulen om programvara som används över ett nätverk ändrar ingenting här: båda motorerna körs på den här enheten och ingen når dem över ett nätverk.',
     coaching: 'Tränaren bedömer vart och ett av dina drag allteftersom du gör dem.',
     online:
       'En riktig motståndare via Game Center, med klocka. Inga tips, ingen motor, inga återtagna drag.',

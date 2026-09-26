@@ -14,15 +14,15 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Hraj · Trénuj · Sleduj',
-    lede: 'Taktika, poziční úsudek, koncovková technika a partie s koučem, se engineem běžícím přímo v zařízení. Nic neopouští telefon.',
+    lede: 'Taktika, poziční úsudek, koncovková technika a partie s koučem, s enginem běžícím přímo v zařízení. Žádný účet a nic se neshromažďuje.',
     privacy:
-      'Aplikace nic nesbírá, nic neodesílá a nedělá žádné síťové požadavky. Tvoje ratingy a historie zůstávají jen v tomto zařízení a smažou se spolu s aplikací.',
+      'Aplikace nic nesbírá a nic o tobě neodesílá. Jediné, co stahuje, je denní přehled, když otevřeš Dnes. Tvoje ratingy a historie zůstávají jen v tomto zařízení a smažou se spolu s aplikací.',
     freeSoftware:
       'Tato aplikace je svobodný software pod licencí GNU Affero General Public License verze 3 nebo novější.',
     stockfish:
-      'Aplikace obsahuje Stockfish, který je pod licencí GPLv3. Protože je Stockfish do aplikace slinkován, podléhá stejné licenci celá aplikace — a její úplný zdrojový kód je zveřejněn.',
+      'Obsahuje Stockfish pod GPLv3 a Reckless pod AGPLv3. Protože jsou oba slinkovány do aplikace, celá aplikace podléhá AGPLv3 — a její úplný zdrojový kód je zveřejněn.',
     reckless:
-      'Obsahuje také Reckless, druhý engine, pod licencí AGPLv3. Obě licence lze spojit a klauzule Affero o softwaru používaném přes síť zde nic nemění: oba enginy běží na tomto zařízení a aplikace neprovádí žádné síťové požadavky.',
+      'Obě licence lze spojit a klauzule Affero o softwaru používaném přes síť zde nic nemění: oba enginy běží na tomto zařízení a nikdo k nim přes síť nepřistupuje.',
     coaching: 'Trenér hodnotí každý váš tah hned, jak jej zahrajete.',
     online:
       'Skutečný soupeř přes Game Center, na hodiny. Bez nápověd, bez enginu, bez braní tahů zpět.',
