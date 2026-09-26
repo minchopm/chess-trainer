@@ -13,6 +13,30 @@
         [flip]="flip()"
         [label]="'The position after ' + (ply() ? moveLabel(ply(), sans()[ply() - 1]) : 'no moves')"
       />
+      @if (handoff()) {
+        <div class="handoff" role="dialog" aria-modal="false" aria-labelledby="handoff-title">
+          <p class="slug">In Brass Pawn</p>
+          <h2 id="handoff-title">The rest of the game is in the app</h2>
+          <p class="dim">
+            Carry on from
+            {{ ply() ? moveLabel(ply(), sans()[ply() - 1]) : 'the start' }}: replay it to the end on a flat
+            board or in 3D, and take the position over against the engine — free, with no account.
+          </p>
+          <div class="handoff__buttons">
+            @if (onPhone()) {
+              <a class="button button--solid" [href]="clipLink()">Continue in Brass Pawn</a>
+            } @else {
+              <a class="button button--solid" [href]="site.appStore" rel="noopener">Get it on the App Store</a>
+            }
+          </div>
+          <p class="handoff__links mono">
+            @if (!onPhone()) {
+              <a [href]="appLink()">Have it? Open at this move</a>
+            }
+            <button type="button" (click)="handoff.set(false)">Back to the story</button>
+          </p>
+        </div>
+      }
       <figcaption class="mono">
         @if (story().key && ply() === story().key!.ply) {
           After {{ moveLabel(ply(), story().key!.played) }} · Stockfish {{ scoreText(story().key!.before) }} →

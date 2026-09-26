@@ -14,6 +14,8 @@ struct TodayScreen: View {
     @Environment(TodayFeed.self) private var feed
     @Environment(Navigator.self) private var navigator
     @State private var open: FeedStory?
+    /// The move a link asked for, for the story it opened.
+    @State private var openAt: Int?
 
     var body: some View {
         VStack(spacing: 0) {
@@ -28,8 +30,8 @@ struct TodayScreen: View {
         .background(Theatre.ink.ignoresSafeArea())
         .task { await feed.refresh() }
         .task(id: "\(navigator.pendingStory ?? "")|\(feed.stories.count)") { openPending() }
-        .appCover(item: $open) { story in
-            StoryScreen(story: story)
+        .appCover(item: $open, onDismiss: { openAt = nil }) { story in
+            StoryScreen(story: story, replayFrom: openAt)
         }
     }
 
@@ -37,6 +39,8 @@ struct TodayScreen: View {
     private func openPending() {
         guard let id = navigator.pendingStory, let story = feed.story(id: id) else { return }
         navigator.pendingStory = nil
+        openAt = navigator.pendingPly
+        navigator.pendingPly = nil
         open = story
     }
 
@@ -239,8 +243,12 @@ struct StoryScreen: View {
     @Environment(\.pieceSet) private var pieceSet
 
     let story: FeedStory
+    /// Where the reader had got to on the site, when a link brought them: the
+    /// story opens straight into the replay from that move.
+    var replayFrom: Int? = nil
 
     @State private var replaying = false
+    @State private var handedOver = false
     @State private var shareImage: Image?
 
     private var orientation: PieceColor { story.winner == .black ? .black : .white }
@@ -285,6 +293,13 @@ struct StoryScreen: View {
             }
         }
         .background(Theatre.ink.ignoresSafeArea())
+        .onAppear {
+            // Once: back out of the replay and the story is there to read,
+            // rather than the replay opening again on top of it.
+            guard replayFrom != nil, !handedOver else { return }
+            handedOver = true
+            replaying = true
+        }
         .task {
             // After the screen is up rather than before: the round board's
             // still is a full SceneKit render, and made on the way in it held
@@ -299,8 +314,9 @@ struct StoryScreen: View {
                 startingPosition: Position(),
                 notation: story.moves,
                 // One move before the one the story is about, so the reader
-                // sees it played rather than finds it already on the board.
-                startAt: max(0, story.focusPly - 1),
+                // sees it played rather than finds it already on the board —
+                // or, handed over from the site, the move they had reached.
+                startAt: replayFrom ?? max(0, story.focusPly - 1),
                 onContinue: { ply in
                     replaying = false
                     carryOn(from: ply)

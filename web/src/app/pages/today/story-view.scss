@@ -23,6 +23,93 @@ section + section,
 
 .story__board {
   margin: 0;
+  position: relative;
+}
+
+/*
+ * The hand-over, laid over the board it takes the place of — the square and
+ * nothing else, so the caption, the replay and the story are still there to
+ * read round it.
+ */
+.handoff {
+  position: absolute;
+  inset: 0 0 auto;
+  aspect-ratio: 1;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: clamp(0.9rem, 5%, 2rem);
+  border-radius: 3px;
+  overflow: auto;
+  background: rgba(5, 6, 10, 0.86);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--rule);
+
+  // Centred by margins rather than by justify-content, which on a small
+  // screen centres the overflow too and cuts off the top of the card.
+  > :first-child {
+    margin-top: auto;
+  }
+
+  > :last-child {
+    margin-bottom: auto;
+  }
+
+  .slug {
+    margin: 0;
+  }
+
+  h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(1.25rem, 3.2vw, 1.9rem);
+    line-height: 1.15;
+  }
+
+  p {
+    margin: 0;
+    font-size: clamp(0.88rem, 1.4vw, 1rem);
+    line-height: 1.5;
+  }
+}
+
+.handoff__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.2rem;
+}
+
+.handoff__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+
+  a,
+  button {
+    font: inherit;
+    font-size: var(--label);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ivory-faint);
+    background: transparent;
+    border: 0;
+    padding: 0.3rem 0;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a {
+    color: var(--brass);
+  }
+
+  a:hover,
+  button:hover {
+    color: var(--ivory);
+  }
 }
 
 .story__board figcaption {

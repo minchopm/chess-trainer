@@ -11,6 +11,13 @@ import type { Story } from './feed/types';
 import { longDate, moveLabel, movePairs, occasion, playerText, resultText, scoreText } from './words';
 
 /**
+ * Moves the site gives away before it hands the game over. Enough to see the
+ * key move played and a little either side of it; the rest of the game — and
+ * playing the position yourself — is what the app is for.
+ */
+const FREE_MOVES = 5;
+
+/**
  * One game from the daily feed, drawn: the board at the moment that mattered,
  * the story, the whole score, and where the moves came from.
  *
@@ -38,8 +45,11 @@ export class StoryView {
   protected readonly date = computed(() => longDate(this.story().date));
   protected readonly paragraphs = computed(() => this.story().body.split(/\n\n+/));
   protected readonly pairs = computed(() => movePairs(this.story().moves));
-  /** The app's own address for this story. Opens Brass Pawn on it when installed. */
-  protected readonly appLink = computed(() => `brasspawn://today/${this.story().id}`);
+  /**
+   * The app's own address for this story, at the move the reader is on.
+   * Opens Brass Pawn there when it is installed.
+   */
+  protected readonly appLink = computed(() => `brasspawn://today/${this.story().id}?ply=${this.ply()}`);
 
   /**
    * The App Clip's link for this story — the same form the game invitations
@@ -49,7 +59,8 @@ export class StoryView {
    * game survives the trip through the App Store.
    */
   protected readonly clipLink = computed(
-    () => `https://appclip.apple.com/id?p=${SITE.clipBundleId}&s=${encodeURIComponent(this.story().id)}`,
+    () =>
+      `https://appclip.apple.com/id?p=${SITE.clipBundleId}&s=${encodeURIComponent(this.story().id)}&ply=${this.ply()}`,
   );
 
   /**
@@ -66,6 +77,8 @@ export class StoryView {
     effect(() => {
       const story = this.story();
       this.ply.set(story.key?.ply ?? story.moves.split(' ').length);
+      this.moved.set(0);
+      this.handoff.set(false);
     });
     afterNextRender(() => {
       const ua = navigator.userAgent;
@@ -90,10 +103,28 @@ export class StoryView {
     return { fen: this.story().fen, last: this.story().last };
   });
 
+  /** How many times the reader has moved the board on this story. */
+  protected readonly moved = signal(0);
+  /** The card that hands the game to the app, over the board. */
+  protected readonly handoff = signal(false);
+  protected readonly freeMoves = FREE_MOVES;
+
+  /**
+   * Move the board — a step, a jump to either end, a move picked from the
+   * score. The first few are the site's; after that the board is the app's,
+   * and the next one opens the card that takes the game there, at this move.
+   */
   protected step(ply: number): void {
     const line = this.story().line;
     if (!line) return;
-    this.ply.set(Math.max(0, Math.min(ply, line.length - 1)));
+    const target = Math.max(0, Math.min(ply, line.length - 1));
+    if (target === this.ply()) return;
+    if (this.moved() >= FREE_MOVES) {
+      this.handoff.set(true);
+      return;
+    }
+    this.ply.set(target);
+    this.moved.update((n) => n + 1);
   }
 
   /** The neighbours in the feed as this build has it, for reading on. */

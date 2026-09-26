@@ -143,21 +143,28 @@ public enum SharedContainer {
     }
 
     /// Written by the clip when it was opened on a story from the daily feed,
-    /// so the app installed from it opens on the same game.
-    public static func store(storyID: String) {
+    /// so the app installed from it opens on the same game — and at the move
+    /// the reader had got to, which the clip rewrites as they step.
+    ///
+    /// The id on the first line and the move on the second, so a file written
+    /// by a clip from before there was a move still reads as a story.
+    public static func store(storyID: String, ply: Int? = nil) {
         guard let url = pendingStory else { return }
-        try? Data(storyID.utf8).write(to: url, options: .atomic)
+        let text = ply.map { "\(storyID)\n\($0)" } ?? storyID
+        try? Data(text.utf8).write(to: url, options: .atomic)
     }
 
     /// Read by the app at launch, once, for the same reason as an invitation.
-    public static func takeStory() -> String? {
+    public static func takeStory() -> FeedLink.Target? {
         guard let url = pendingStory,
               let data = try? Data(contentsOf: url),
-              let id = String(data: data, encoding: .utf8),
-              id.range(of: "^[a-z0-9-]{1,120}$", options: .regularExpression) != nil
+              let text = String(data: data, encoding: .utf8)
         else { return nil }
         try? FileManager.default.removeItem(at: url)
-        return id
+        let lines = text.split(separator: "\n", omittingEmptySubsequences: false).map(String.init)
+        guard let id = lines.first, id.range(of: "^[a-z0-9-]{1,120}$", options: .regularExpression) != nil
+        else { return nil }
+        return FeedLink.Target(id: id, ply: FeedLink.ply(lines.count > 1 ? lines[1] : nil))
     }
 
     /// Read by the app, once. Taking it away as it is read is deliberate: an

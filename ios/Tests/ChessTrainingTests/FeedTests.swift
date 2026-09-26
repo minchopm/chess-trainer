@@ -159,6 +159,26 @@ struct FeedTests {
         #expect(Invitation(url: FeedLink.clip(for: id)) == nil)
     }
 
+    @Test("a link from the site carries the move the reader had reached, and only a move")
+    func storyLinksAtAMove() {
+        let id = "2026-09-25-so-sindarov-olympiad-r9"
+        let at = FeedLink.Target(id: id, ply: 86)
+        #expect(FeedLink.target(in: URL(string: "brasspawn://today/\(id)?ply=86")!) == at)
+        #expect(FeedLink.target(in: FeedLink.clip(for: id, ply: 86)) == at)
+        #expect(FeedLink.target(in: URL(string: "https://brasspawn.com/today/\(id)?ply=86")!) == at)
+        #expect(FeedLink.target(in: URL(string: "https://brasspawn.com/today/story?id=\(id)&ply=86")!) == at)
+        // Without one, the story opens where it always has.
+        #expect(FeedLink.target(in: FeedLink.clip(for: id)) == FeedLink.Target(id: id))
+        // Anything that is not a move in a game is no move, and the story
+        // still opens.
+        for junk in ["-3", "4.5", "abc", "99999", ""] {
+            #expect(FeedLink.target(in: URL(string: "brasspawn://today/\(id)?ply=\(junk)")!) == FeedLink.Target(id: id))
+        }
+        // The clip's link keeps the story first, where an older clip looks.
+        #expect(FeedLink.storyID(in: FeedLink.clip(for: id, ply: 3)) == id)
+        #expect(Invitation(url: FeedLink.clip(for: id, ply: 3)) == nil)
+    }
+
     @Test("an engine score reads as a number from White's side")
     func scoreText() {
         #expect(FeedStory.Score(cp: 108, mate: nil).text.hasPrefix("+1"))

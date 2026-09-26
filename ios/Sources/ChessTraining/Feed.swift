@@ -250,8 +250,27 @@ extension FeedStory.Score {
 /// shows the game and leaves it in the shared container for the app installed
 /// from it. And brasspawn.com/today/<id>, in case the site's address is ever
 /// handed over as it is.
+///
+/// Any of them may say where in the game the reader was, as `ply` — the site
+/// lets somebody step through five moves and then hands the game over, and it
+/// would be a poor hand-over that started them again from the key move.
 public enum FeedLink {
+    /// A story, and the half-move the reader had reached in it, if a link said.
+    public struct Target: Equatable, Sendable {
+        public let id: String
+        public let ply: Int?
+
+        public init(id: String, ply: Int? = nil) {
+            self.id = id
+            self.ply = ply
+        }
+    }
+
     public static func storyID(in url: URL) -> String? {
+        target(in: url)?.id
+    }
+
+    public static func target(in url: URL) -> Target? {
         let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
         var candidate: String?
         switch (url.scheme, url.host()) {
@@ -271,16 +290,24 @@ public enum FeedLink {
         }
         guard let id = candidate, id.range(of: "^[a-z0-9-]{1,120}$", options: .regularExpression) != nil
         else { return nil }
-        return id
+        return Target(id: id, ply: ply(components?.queryItems?.first { $0.name == "ply" }?.value))
     }
 
-    /// The App Clip's link for a story.
-    public static func clip(for id: String) -> URL {
+    /// A half-move count as a link writes it: digits, and no longer than a game.
+    public static func ply(_ text: String?) -> Int? {
+        guard let text, text.range(of: "^[0-9]{1,4}$", options: .regularExpression) != nil,
+              let ply = Int(text), ply <= 1200
+        else { return nil }
+        return ply
+    }
+
+    /// The App Clip's link for a story, at a move if one is given.
+    public static func clip(for id: String, ply: Int? = nil) -> URL {
         var components = URLComponents(string: "https://appclip.apple.com/id")!
         components.queryItems = [
             URLQueryItem(name: "p", value: Invitation.clipBundleID),
             URLQueryItem(name: "s", value: id),
-        ]
+        ] + (ply.map { [URLQueryItem(name: "ply", value: String($0))] } ?? [])
         return components.url!
     }
 

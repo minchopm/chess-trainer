@@ -162,11 +162,11 @@ final class ClipModel {
     /// Take the invitation — or the story — out of the URL that launched us
     /// and leave a copy where the app will find it if this ends in an install.
     func accept(_ url: URL) {
-        if let id = FeedLink.storyID(in: url) {
-            guard id != storyID else { return }
-            storyID = id
-            SharedContainer.store(storyID: id)
-            Task { await loadStory(id) }
+        if let target = FeedLink.target(in: url) {
+            guard target.id != storyID else { return }
+            storyID = target.id
+            SharedContainer.store(storyID: target.id, ply: target.ply)
+            Task { await loadStory(target.id, at: target.ply) }
             return
         }
         guard let invitation = Invitation(url: url) else { return }
@@ -175,7 +175,7 @@ final class ClipModel {
     }
 
     /// The one file the clip reads, and only when it was opened on a story.
-    private func loadStory(_ id: String) async {
+    private func loadStory(_ id: String, at ply: Int? = nil) async {
         storyFailed = false
         do {
             let (data, response) = try await URLSession.shared.data(from: FeedLink.file(for: id))
@@ -188,7 +188,8 @@ final class ClipModel {
                 line.append((position, move))
             }
             storyLine = line
-            storyPly = min(story.focusPly, line.count - 1)
+            // Where the site left the reader, if it said; the key move if not.
+            storyPly = min(ply ?? story.focusPly, line.count - 1)
             self.story = story
         } catch {
             // The puzzles, then: a game that cannot be shown is no reason to
@@ -200,6 +201,9 @@ final class ClipModel {
     /// Through the game a move at a time, or to either end of it.
     func step(to ply: Int) {
         storyPly = max(0, min(ply, storyLine.count - 1))
+        // The app installed from here carries on from this move, not the one
+        // the clip was opened on.
+        if let storyID { SharedContainer.store(storyID: storyID, ply: storyPly) }
     }
 
     /// The same invocation URL, read from the environment.

@@ -75,14 +75,14 @@ public struct RootView: View {
         // first: an invitation has no story in it, and a story no invitation.
         .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
             guard let url = activity.webpageURL else { return }
-            if let story = FeedLink.storyID(in: url) {
+            if let story = FeedLink.target(in: url) {
                 open(story: story)
             } else if let invitation = Invitation(url: url) {
                 accept(invitation)
             }
         }
         .onOpenURL { url in
-            if let story = FeedLink.storyID(in: url) {
+            if let story = FeedLink.target(in: url) {
                 open(story: story)
             } else if let invitation = Invitation(url: url) {
                 accept(invitation)
@@ -97,8 +97,9 @@ public struct RootView: View {
     }
 
     /// Today, with the story waiting to be opened once the feed has arrived.
-    private func open(story id: String) {
-        navigator.pendingStory = id
+    private func open(story target: FeedLink.Target) {
+        navigator.pendingStory = target.id
+        navigator.pendingPly = target.ply
         navigator.pendingTab = .today
         navigator.showsMenu = false
     }

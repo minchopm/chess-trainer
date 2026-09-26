@@ -34,6 +34,9 @@ final class Navigator {
     /// A story asked for by a link from the site, brasspawn://today/<id>.
     /// Today picks it up once the feed has arrived and opens it.
     var pendingStory: String?
+    /// Where in that story the reader had got to on the site, if the link said:
+    /// the story opens replaying from there rather than from its key move.
+    var pendingPly: Int?
 
     /// Open the free board on a position, with the moves that led to it.
     func continueOnBoard(_ handoff: BoardHandoff) {
