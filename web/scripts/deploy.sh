@@ -290,4 +290,20 @@ else
   warn "Continuing anyway (ALLOW_NO_CLOUDFRONT=1)."
 fi
 
+# --------------------------------------------------------------- IndexNow
+#
+# Bing's index feeds ChatGPT search and Copilot. Tell it about every page in
+# the live sitemap, after the upload so the key file in public/ is already
+# served. Never fatal: the site is deployed whether or not an engine answered.
+
+if [[ "$INVALIDATE_ONLY" != "1" ]]; then
+  if [[ "$DRY_RUN" == "1" ]]; then
+    printf '\033[90m  would run: node tools/indexnow.mjs https://%s\033[0m\n' "$SITE_DOMAIN"
+  else
+    log "Submitting sitemap URLs to IndexNow…"
+    node "$ROOT_DIR/tools/indexnow.mjs" "https://$SITE_DOMAIN" \
+      || warn "IndexNow did not accept the submission; the deploy itself is complete."
+  fi
+fi
+
 log "Done. https://$SITE_DOMAIN"
