@@ -11,12 +11,13 @@ import { FAQ, FILM, LIBRARY, MODES, PRICING, SITE } from '../../core/site';
 // trade for a saving it never gets to keep.
 import { copy } from '../../i18n/copy/en';
 import { Showcase } from '../../shared/showcase/showcase';
+import { TodayStrip } from '../today/today-strip';
 import { Hero } from './hero/hero';
 
 @Component({
   selector: 'bp-home',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, Hero, Reveal, Showcase],
+  imports: [RouterLink, Hero, Reveal, Showcase, TodayStrip],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
@@ -35,7 +36,7 @@ export class Home {
     { value: '15', label: 'endgame drills', note: 'every label engine-verified' },
     { value: '1,624', label: 'rated games', note: 'for Guess the Elo' },
     { value: '31', label: 'languages', note: 'chess vocabulary translated, not guessed' },
-    { value: '0', label: 'bytes sent anywhere', note: 'there is no server of ours' },
+    { value: '0', label: 'accounts or trackers', note: 'nothing about you leaves the device' },
   ] as const;
 
   constructor() {

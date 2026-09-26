@@ -1,0 +1,136 @@
+<bp-page-head
+  [slug]="occasion()"
+  [title]="story().headline"
+  [meta]="date() + ' · ' + story().white.short + ' ' + resultText(story().result) + ' ' + story().black.short"
+/>
+
+<div class="page">
+  <article class="story" ctReveal>
+    <figure class="story__board">
+      <bp-diagram
+        [fen]="story().fen"
+        [last]="story().last"
+        [flip]="flip()"
+        [label]="
+          story().key
+            ? 'The position after ' + moveLabel(story().key!.ply, story().key!.played)
+            : 'The final position'
+        "
+      />
+      <figcaption class="mono">
+        @if (story().key; as key) {
+          After {{ moveLabel(key.ply, key.played) }} · Stockfish {{ scoreText(key.before) }} →
+          {{ scoreText(key.after) }}
+        } @else {
+          The final position
+        }
+      </figcaption>
+    </figure>
+
+    <div class="story__words">
+      @for (paragraph of paragraphs(); track $index) {
+        <p class="lede-ish">{{ paragraph }}</p>
+      }
+
+      <dl class="facts">
+        <dt>White</dt>
+        <dd>
+          {{ playerText(story().white) }}@if (story().white.elo) {, {{ story().white.elo }}}
+          @if (story().white.team) {<span class="faint"> · {{ story().white.team }}</span>}
+        </dd>
+        <dt>Black</dt>
+        <dd>
+          {{ playerText(story().black) }}@if (story().black.elo) {, {{ story().black.elo }}}
+          @if (story().black.team) {<span class="faint"> · {{ story().black.team }}</span>}
+        </dd>
+        <dt>Result</dt>
+        <dd>{{ resultText(story().result) }} in {{ pairs().length }} moves</dd>
+        @if (story().opening.name) {
+          <dt>Opening</dt>
+          <dd>{{ story().opening.name }}@if (story().opening.eco) {<span class="faint"> · {{ story().opening.eco }}</span>}</dd>
+        }
+        <dt>Event</dt>
+        <dd>
+          {{ story().event.name }}@if (story().event.section) {, {{ story().event.section }}}@if (story().event.round) {, round {{ story().event.round }}}
+          @if (story().event.location) {<span class="faint"> · {{ story().event.location }}</span>}
+        </dd>
+        @if (story().key; as key) {
+          <dt>Key move</dt>
+          <dd>{{ moveLabel(key.ply, key.played) }}</dd>
+          @if (key.better) {
+            <dt>Engine’s choice</dt>
+            <dd>{{ moveLabel(key.ply, key.better) }}</dd>
+          }
+        }
+      </dl>
+    </div>
+  </article>
+
+  <section class="take" ctReveal>
+    <div>
+      <p class="slug">In Brass Pawn</p>
+      <h2>Stop at the move. Play it differently.</h2>
+      <p class="measure dim">
+        Replay the game on a flat board or in 3D, wind back to the moment it turned, and take the
+        position over against the engine — free, with no account.
+      </p>
+      @if (!onPhone()) {
+        <p class="measure faint take__note">
+          On an iPhone or iPad this page opens the game itself — in the app if you have it, and if
+          not, in a preview that keeps it waiting for when you do.
+        </p>
+      }
+    </div>
+    <div class="take__buttons">
+      @if (onPhone()) {
+        <a class="button button--solid" [href]="clipLink()">Open this game in Brass Pawn</a>
+        <a class="button" [href]="site.appStore" rel="noopener">App Store</a>
+      } @else {
+        <a class="button button--solid" [href]="site.appStore" rel="noopener">Get it on the App Store</a>
+        <a class="button" [href]="appLink()">Already have it? Open this game</a>
+      }
+    </div>
+  </section>
+
+  <section class="score" ctReveal>
+    <p class="slug">The game</p>
+    <p class="moves mono">
+      @for (pair of pairs(); track pair.n) {
+        <span class="pair"
+          ><span class="n">{{ pair.n }}.</span>
+          <span [class.key]="story().key?.ply === pair.n * 2 - 1">{{ pair.white }}</span>
+          @if (pair.black) {
+            <span [class.key]="story().key?.ply === pair.n * 2">{{ pair.black }}</span>
+          }
+        </span>
+      }
+      <span class="result">{{ resultText(story().result) }}</span>
+    </p>
+    <p class="source faint">
+      Moves from the official broadcast
+      @if (story().source.url) {
+        — <a [href]="story().source.url" rel="noopener">the game on Lichess</a>
+      }. Evaluations by Stockfish 18. Brass Pawn is not affiliated with the event or the players.
+    </p>
+  </section>
+
+  <nav class="onward" aria-label="More stories" ctReveal>
+    @if (neighbours().newer; as newer) {
+      <a class="onward__link" [routerLink]="['/today', newer.id]">
+        <span class="mono faint">Newer</span>
+        <span>{{ newer.headline }}</span>
+      </a>
+    } @else {
+      <span></span>
+    }
+    <a class="onward__all mono" routerLink="/today">All stories</a>
+    @if (neighbours().older; as older) {
+      <a class="onward__link onward__link--older" [routerLink]="['/today', older.id]">
+        <span class="mono faint">Older</span>
+        <span>{{ older.headline }}</span>
+      </a>
+    } @else {
+      <span></span>
+    }
+  </nav>
+</div>

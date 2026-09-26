@@ -49,19 +49,25 @@ export const SITE = {
   repo: 'https://github.com/minchopm/chess-trainer',
   issues: 'https://github.com/minchopm/chess-trainer/issues',
   /**
-   * Replace with the real numeric App Store id once the app is live. Empty
-   * means "not published yet", and everything that depends on a real listing —
-   * the Safari smart app banner, the download URLs in the structured data —
-   * stays out of the page rather than pointing at a 404. A broken store link
-   * in structured data is worse than no structured data.
+   * The numeric App Store id. Empty would mean "not published yet", and
+   * everything that depends on a real listing — the Safari smart app banner,
+   * the download URLs in the structured data — would stay out of the page
+   * rather than point at a 404. A broken store link in structured data is
+   * worse than no structured data.
+   *
+   * The app is live; this said otherwise until September 2026, which left the
+   * header's button reading "Coming soon" and the home page's pointing at
+   * id0000000000.
    */
-  appStoreId: '',
-  appStore: 'https://apps.apple.com/app/brass-pawn/id0000000000',
-  appStoreLive: false,
+  appStoreId: '6803566012',
+  appStore: 'https://apps.apple.com/app/brass-pawn/id6803566012',
+  appStoreLive: true,
   bundleId: 'com.arte-soft.brasspawn',
+  /** The App Clip: game invitations and the daily feed's stories open in it. */
+  clipBundleId: 'com.arte-soft.brasspawn.Clip',
   platforms: 'iPhone and iPad',
   minimumOs: 'iOS 17.0 or later',
-  version: '1.0',
+  version: '1.1',
   /**
    * The licence of the app as a whole.
    *
@@ -69,8 +75,9 @@ export const SITE = {
    * combination, and what comes out the other side carries the Affero terms —
    * so the combined work is AGPLv3, which is what the App Store listing says
    * too. The Affero clause is about software offered over a network; nothing
-   * here is, because both engines run on the device and the app makes no
-   * network requests at all.
+   * here is, because both engines run on the device and nobody reaches them
+   * remotely. The one download the app makes — Today's feed — is a static
+   * file, not a service.
    */
   licence: 'GNU Affero General Public License v3',
   licenceShort: 'AGPLv3',

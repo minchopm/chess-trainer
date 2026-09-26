@@ -3,10 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "prestart": "node ../scripts/feed/site.mjs || node ../scripts/feed/site.mjs --empty",
     "start": "ng serve --port 4400 --hmr=false",
+    "prebuild": "node ../scripts/feed/site.mjs || node ../scripts/feed/site.mjs --empty",
     "build": "ng build && node tools/postbuild.mjs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "prebuild:prod": "node ../scripts/feed/site.mjs || node ../scripts/feed/site.mjs --empty",
     "build:prod": "ng build --configuration production && node tools/postbuild.mjs",
     "deploy": "./scripts/deploy.sh",
     "deploy:dry": "DRY_RUN=1 ./scripts/deploy.sh",
@@ -43,5 +46,5 @@
     "typescript": "~6.0.2",
     "vitest": "^4.0.8"
   },
-  "description": "The informational website for Brass Pawn \u2014 Angular, prerendered, with a WebGL title sequence."
+  "description": "The informational website for Brass Pawn — Angular, prerendered, with a WebGL title sequence."
 }

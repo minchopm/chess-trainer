@@ -66,6 +66,7 @@ const PAGES = [
   { path: '/', priority: '1.0', changefreq: 'monthly', translated: true },
   { path: '/training', priority: '0.9', changefreq: 'monthly', alternates: '/training' },
   { path: '/tactics', priority: '0.9', changefreq: 'monthly', alternates: '/tactics' },
+  { path: '/today', priority: '0.9', changefreq: 'daily' },
   { path: '/watch', priority: '0.9', changefreq: 'monthly' },
   { path: '/ratings', priority: '0.8', changefreq: 'monthly' },
   { path: '/engine', priority: '0.8', changefreq: 'monthly' },
@@ -100,11 +101,21 @@ const PAGES = [
 
 const today = new Date().toISOString().slice(0, 10);
 
+// The daily feed's stories, as scripts/feed/site.mjs left them for this
+// build. Each is dated by its own day rather than by the build, so a crawler
+// is not told that a week-old game report changed this morning.
+const published = JSON.parse(
+  await readFile(new URL('../src/app/pages/today/feed/sitemap.json', import.meta.url), 'utf8').catch(() => '[]'),
+);
+for (const story of published) {
+  PAGES.push({ path: `/today/${story.id}`, priority: '0.6', changefreq: 'yearly', lastmod: story.date });
+}
+
 // Written by hand rather than by a library, because it is eight lines of XML.
 const body = PAGES.map(
   (page) => `  <url>
     <loc>${ORIGIN}${page.path === '/' ? '/' : page.path}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${page.lastmod ?? today}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
 ${page.translated ? ALTERNATES + '\n' : page.alternates ? pageAlternates(page.alternates) + '\n' : ''}  </url>`,
@@ -155,8 +166,9 @@ await writeFile(
 
 > ${text('category').replace(/^a /, 'A ')}. Tactics, positional judgement, endgame
 > technique, coached play and a library of master games, with two chess engines
-> running on the device. No account, no analytics, no advertising, and no
-> network requests at all.
+> running on the device. No account, no analytics and no advertising. The one
+> thing the app downloads is the daily feed of top games, a static file from
+> brasspawn.com, and only when its Today screen is opened.
 
 Brass Pawn is published by ${text('publisher')} and is free software under the
 ${text('licence')}. The complete source is at ${text('repo')}.
@@ -184,6 +196,7 @@ at $3.99 a month or $49.99 once. There is no advertising anywhere in the app.
 
 - [Home](${ORIGIN}/): what the app is, the eight modes, the films, pricing
 - [The training](${ORIGIN}/training): each mode in full, and how a puzzle is mined and verified
+- [Today](${ORIGIN}/today): the finished games from the day's top events, each with the move where Stockfish says it turned
 - [Watch](${ORIGIN}/watch): the ${number('classics')}-game library — what got in, what did not, and taking a position over
 - [The twenty tactical motifs](${ORIGIN}/tactics): fork, pin, skewer and the rest, with how many puzzles turn on each
 - [What a rating measures](${ORIGIN}/ratings): why a puzzle rating is not a FIDE rating

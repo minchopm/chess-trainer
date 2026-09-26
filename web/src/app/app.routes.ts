@@ -1,5 +1,5 @@
-import { isDevMode } from '@angular/core';
-import { Routes } from '@angular/router';
+import { inject, isDevMode } from '@angular/core';
+import { ActivatedRouteSnapshot, RedirectCommand, Router, Routes } from '@angular/router';
 
 import { COPY } from './i18n/copy';
 import { LOCALES } from './i18n/locales';
@@ -102,6 +102,31 @@ export const routes: Routes = [
     path: 'ratings',
     loadComponent: () => import('./pages/ratings/ratings').then((m) => m.Ratings),
   },
+  // The daily feed. A story that is not in it is a 404 rather than an empty
+  // page: the resolver finds nothing, and the router is sent to the page that
+  // says so — which, prerendered, is what a crawler following a stale link
+  // should be told.
+  {
+    path: 'today',
+    loadComponent: () => import('./pages/today/today').then((m) => m.Today),
+  },
+  // A story newer than the last deploy, filled in the browser from the feed.
+  // Before today/:id, which would otherwise take "story" for an id.
+  {
+    path: 'today/story',
+    loadComponent: () => import('./pages/today/story-shell').then((m) => m.StoryShell),
+  },
+  {
+    path: 'today/:id',
+    resolve: {
+      story: async (route: ActivatedRouteSnapshot) => {
+        const { STORIES } = await import('./pages/today/feed/stories');
+        const load = STORIES[route.paramMap.get('id') ?? ''];
+        return load ? load() : new RedirectCommand(inject(Router).parseUrl('/404'));
+      },
+    },
+    loadComponent: () => import('./pages/today/story-page').then((m) => m.StoryPage),
+  },
   {
     path: 'engine',
     loadComponent: () => import('./pages/engine/engine').then((m) => m.EnginePage),
@@ -147,6 +172,8 @@ export const routes: Routes = [
   { path: 'rating', redirectTo: 'ratings', pathMatch: 'full' },
   { path: 'games', redirectTo: 'watch', pathMatch: 'full' },
   { path: 'library', redirectTo: 'watch', pathMatch: 'full' },
+  { path: 'news', redirectTo: 'today', pathMatch: 'full' },
+  { path: 'feed', redirectTo: 'today', pathMatch: 'full' },
   // Prerendered so a static host has a real 404.html to serve.
   {
     path: '404',

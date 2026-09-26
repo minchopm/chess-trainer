@@ -5,11 +5,16 @@ Two things a plain `http.server` gets wrong for this site: it has never heard
 of `media/`, which is deployed separately, and it does not know that `/de` is
 `/de/index.html` — the CloudFront function does that in production, and without
 it every localised page is a 404 locally and looks like a routing bug.
+
+And one it cannot know: the daily feed is not in media/ at all. It is written
+to the bucket by the collector in Lambda, so /media/feed/ is fetched from
+brasspawn.com — the page reads the same stories locally as it does live.
 """
 
 from __future__ import annotations
 
 import sys
+import urllib.request
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -19,7 +24,25 @@ DIST = ROOT / "dist/brass-pawn/browser"
 MEDIA = ROOT / "media"
 
 
+FEED = "https://brasspawn.com"
+
+
 class Handler(SimpleHTTPRequestHandler):
+    def do_GET(self) -> None:
+        if not self.path.startswith("/media/feed/"):
+            return super().do_GET()
+        try:
+            with urllib.request.urlopen(FEED + self.path, timeout=15) as upstream:
+                body = upstream.read()
+                self.send_response(upstream.status)
+                self.send_header("Content-Type", upstream.headers.get("Content-Type", "application/json"))
+        except urllib.error.HTTPError as error:
+            body = b""
+            self.send_response(error.code)
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
     def translate_path(self, path: str) -> str:
         clean = path.split("?", 1)[0].split("#", 1)[0]
         if clean.startswith("/media/"):

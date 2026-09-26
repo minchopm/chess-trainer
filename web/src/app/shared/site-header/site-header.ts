@@ -44,6 +44,7 @@ export class SiteHeader {
   protected readonly chrome = computed(() => this.current.locale().chrome);
 
   private readonly english = [
+    { path: '/today', label: 'Today' },
     { path: '/training', label: 'Training' },
     { path: '/tactics', label: 'Tactics' },
     { path: '/engine', label: 'The engine' },

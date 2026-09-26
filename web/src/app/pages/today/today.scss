@@ -1,0 +1,34 @@
+section {
+  padding: var(--rhythm) 0;
+}
+
+section + section {
+  border-top: 1px solid var(--rule-soft);
+}
+
+.day {
+  padding: clamp(2.5rem, 7vh, 4.5rem) 0;
+}
+
+.day__date {
+  font-size: var(--label);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin: 0 0 1.5rem;
+}
+
+.stories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.provenance h2 {
+  font-size: var(--title);
+  margin: 0 0 1.5rem;
+  max-width: 20ch;
+}

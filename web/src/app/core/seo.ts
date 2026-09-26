@@ -39,6 +39,16 @@ export interface PageMeta {
    * site teaches a search engine to distrust the rest of its annotations.
    */
   readonly translated?: boolean;
+  /**
+   * What Safari's app banner hands the app when somebody who has it taps Open.
+   * A daily story passes its own address, so the app opens on that story
+   * rather than on its menu.
+   */
+  readonly appArgument?: string;
+  /** A dated piece rather than a standing page: og:type article, and its own publication date. */
+  readonly published?: string;
+  /** A page that stands in for another until that one exists. Followed, not indexed. */
+  readonly noindex?: boolean;
 }
 
 /**
@@ -78,9 +88,11 @@ export class Seo {
 
     for (const [key, content] of Object.entries(this.tags(page, full, canonical))) {
       if (!content) continue;
+      // Open Graph's own keys, article:* included, are properties; the rest are names.
+      const property = /^(og|article):/.test(key);
       this.meta.updateTag(
-        key.startsWith('og:') ? { property: key, content } : { name: key, content },
-        key.startsWith('og:') ? `property="${key}"` : `name="${key}"`,
+        property ? { property: key, content } : { name: key, content },
+        property ? `property="${key}"` : `name="${key}"`,
       );
     }
 
@@ -149,9 +161,12 @@ export class Seo {
       // Without max-image-preview:large a result gets a thumbnail rather than
       // the wide card, and max-snippet:-1 lets the description come from the
       // page instead of being truncated to a default.
-      robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
+      robots: page.noindex
+        ? 'noindex, follow'
+        : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
 
-      'og:type': 'website',
+      'og:type': page.published ? 'article' : 'website',
+      ...(page.published ? { 'article:published_time': page.published } : {}),
       'og:site_name': SITE.name,
       'og:locale': locale.tag.replace('-', '_'),
       'og:title': full,
@@ -171,7 +186,13 @@ export class Seo {
 
       // Safari's smart app banner. Emitted only once there is a real listing to
       // point at — a banner to a dead id is worse than no banner.
-      ...(SITE.appStoreId ? { 'apple-itunes-app': `app-id=${SITE.appStoreId}` } : {}),
+      ...(SITE.appStoreId
+        ? {
+            'apple-itunes-app': page.appArgument
+              ? `app-id=${SITE.appStoreId}, app-argument=${page.appArgument}`
+              : `app-id=${SITE.appStoreId}`,
+          }
+        : {}),
     };
   }
 
@@ -282,8 +303,8 @@ export class Seo {
       about: { '@id': url('/#app') },
       primaryImageOfPage: { '@id': url('/#logo') },
       inLanguage: locale.tag,
-      datePublished: SITE.published,
-      dateModified: page.updated ?? SITE.published,
+      datePublished: page.published ?? SITE.published,
+      dateModified: page.updated ?? page.published ?? SITE.published,
     };
 
     // A single-item trail is just the home page pointing at itself, which is

@@ -103,6 +103,13 @@ if [[ -z "$AWS_BIN" ]]; then
 fi
 [[ -n "$AWS_BIN" ]] || die "AWS CLI not found. brew install awscli, or set AWS_BIN."
 
+# The daily feed's story pages: the history as the feed's public files have it
+# today. Which stories those are is the collector's FEED_PUBLIC, for the app
+# and the site alike — see feed/README.md.
+if [[ "${SKIP_BUILD:-0}" != "1" && "${SKIP_FEED:-0}" != "1" ]]; then
+  node "$ROOT_DIR/../scripts/feed/site.mjs" || die "Could not read the feed for the story pages. SKIP_FEED=1 to deploy the last copy."
+fi
+
 # The canonical URL is compiled into every page from src/app/core/site.ts. If it
 # disagrees with where we are deploying, every page ships a canonical tag
 # pointing at a different host than the one serving it — which quietly wrecks

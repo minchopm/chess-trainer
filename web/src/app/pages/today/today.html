@@ -1,0 +1,44 @@
+<bp-page-head
+  slug="Daily · Today"
+  title="The top boards, every day"
+  lede="The finished games from the day’s biggest events, each with the move where the engine says it turned — and a board to take it over on."
+  meta="Moves from the official broadcasts · evaluations by Stockfish · free in the app"
+/>
+
+<div class="page">
+  @if (days().length === 0) {
+    <section class="empty" ctReveal>
+      <p class="lede measure">The first stories go up with the next round of a top event.</p>
+    </section>
+  }
+
+  @for (day of days(); track day.date) {
+    <section class="day" ctReveal>
+      <h2 class="mono day__date">
+        <time [attr.datetime]="day.date">{{ day.label }}</time>
+      </h2>
+      <ol class="stories">
+        @for (story of day.stories; track story.id) {
+          <li>
+            <bp-story-card [story]="story" />
+          </li>
+        }
+      </ol>
+    </section>
+  }
+
+  <section class="provenance" ctReveal>
+    <p class="slug">How this is made</p>
+    <h2>Facts, an engine, and nothing else.</h2>
+    <p class="measure">
+      The moves and results come from the events’ official live broadcasts, as relayed by
+      <a href="https://lichess.org/broadcast" rel="noopener">Lichess</a>. A record of which moves
+      were played is a fact. Every assessment of a position is Stockfish’s, and each story says so.
+    </p>
+    <p class="measure dim">
+      The words are written from those two things only: no quotes, no guesses about what anybody
+      was thinking, and no photographs — the boards are drawn by Brass Pawn itself. Brass Pawn is
+      not affiliated with the events, the federations or the players.
+    </p>
+  </section>
+</div>

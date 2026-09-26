@@ -2,17 +2,18 @@
   slug="Legal"
   title="Privacy Policy"
   lede="Brass Pawn collects nothing. This page says so in the detail a policy is supposed to have, and names the two places where data does exist — both of them Apple's, neither of them ours."
-  meta="Effective 19 August 2026 · Applies to Brass Pawn for iPhone and iPad"
+  meta="Effective 26 September 2026 · Applies to Brass Pawn for iPhone and iPad"
 />
 
 <div class="page wrap">
   <article class="prose">
     <div class="summary">
       <p>
-        <strong>The short version.</strong> There is no account, no analytics, no advertising, no
-        third-party SDK and no server of ours. Nothing you do in the app is transmitted to us,
-        because there is nowhere for it to go. Your ratings and history live on your device and are
-        deleted with the app.
+        <strong>The short version.</strong> There is no account, no analytics, no advertising and no
+        third-party SDK. Nothing you do in the app is transmitted to us. The one thing the app
+        fetches from us is the day’s games, when you open Today — the same files for everybody, and
+        we keep no record of who asked. Your ratings and history live on your device and are deleted
+        with the app.
       </p>
       <p>
         Two things are handled by Apple rather than by us: <strong>purchases</strong>, through the
@@ -104,8 +105,8 @@
     <h2 id="network">4. When the app uses the network</h2>
     <p>
       Training is entirely offline: the engine, the puzzles, the games and your progress are all in
-      the app. The app makes network connections in exactly three situations, and in all three the
-      connection is to Apple, not to us:
+      the app. The app makes network connections in exactly four situations. Three of them are
+      connections to Apple; the fourth is a download from this site:
     </p>
     <ul>
       <li>
@@ -116,6 +117,16 @@
       <li>
         <strong>Links you tap.</strong> The About screen links to the source repository, this site
         and the licence text. Nothing opens on its own.
+      </li>
+      <li>
+        <strong>Today.</strong> Opening the Today screen downloads
+        <code>brasspawn.com/media/feed/v1/latest.json</code> — the latest games from the top
+        events — and, as you scroll back, one file for each earlier day. They are the same files for
+        everybody, and nothing is fetched at launch or in the background. The App Clip, opened from
+        a story’s link on this site, downloads that one story’s file the same way. The request
+        carries no account, identifier or cookie; it reaches Amazon CloudFront, which delivers this
+        site, with your IP address as any web request does. Request logging is off on CloudFront and
+        on the storage behind it, so nothing is kept about who downloaded the file or when.
       </li>
     </ul>
 
