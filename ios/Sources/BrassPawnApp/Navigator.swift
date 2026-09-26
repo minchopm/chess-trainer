@@ -31,6 +31,10 @@ final class Navigator {
     /// A destination asked for by a screen that cannot reach the tab state.
     var pendingTab: RootView.Tab?
 
+    /// A story asked for by a link from the site, brasspawn://today/<id>.
+    /// Today picks it up once the feed has arrived and opens it.
+    var pendingStory: String?
+
     /// Open the free board on a position, with the moves that led to it.
     func continueOnBoard(_ handoff: BoardHandoff) {
         boardHandoff = handoff

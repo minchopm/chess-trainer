@@ -51,7 +51,7 @@ public extension Invitation {
     /// association file and no hosting, and it is the one form of the link that
     /// works the moment the clip is approved. Sent through whatever the sender
     /// already uses — Messages, WhatsApp, mail — because it is only a link.
-    static let clipBundleID = "com.arte-soft.brasspawn.Clip"
+    public static let clipBundleID = "com.arte-soft.brasspawn.Clip"
 
     var link: URL {
         var components = URLComponents(string: "https://appclip.apple.com/id")!
@@ -136,6 +136,28 @@ public enum SharedContainer {
               let data = try? JSONEncoder().encode(invitation)
         else { return }
         try? data.write(to: url, options: .atomic)
+    }
+
+    private static var pendingStory: URL? {
+        directory?.appending(path: "pending-story.txt")
+    }
+
+    /// Written by the clip when it was opened on a story from the daily feed,
+    /// so the app installed from it opens on the same game.
+    public static func store(storyID: String) {
+        guard let url = pendingStory else { return }
+        try? Data(storyID.utf8).write(to: url, options: .atomic)
+    }
+
+    /// Read by the app at launch, once, for the same reason as an invitation.
+    public static func takeStory() -> String? {
+        guard let url = pendingStory,
+              let data = try? Data(contentsOf: url),
+              let id = String(data: data, encoding: .utf8),
+              id.range(of: "^[a-z0-9-]{1,120}$", options: .regularExpression) != nil
+        else { return nil }
+        try? FileManager.default.removeItem(at: url)
+        return id
     }
 
     /// Read by the app, once. Taking it away as it is read is deliberate: an

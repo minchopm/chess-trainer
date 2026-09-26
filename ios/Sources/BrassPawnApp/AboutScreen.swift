@@ -42,7 +42,7 @@ struct AboutScreen: View {
                         Text(L.t("about.itIncludesStockfishWhichIs", "It includes Stockfish, which is GPLv3, and Reckless, which is AGPLv3. Because both are linked into the app, the whole application carries AGPLv3 — and its complete source is published."))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryFaint)
-                        Text(L.t("about.itAlsoIncludesReckless", "The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device and the app makes no network requests."))
+                        Text(L.t("about.itAlsoIncludesReckless", "The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device, and nobody reaches them over a network."))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryFaint)
 
@@ -80,7 +80,7 @@ struct AboutScreen: View {
                     }
 
                     aboutSection(L.t("about.privacy", "Privacy")) {
-                        Text(L.t("about.theAppCollectsNothingSends", "The app collects nothing, sends nothing and makes no network requests. Your ratings and history are stored only on this device, and deleting the app deletes them."))
+                        Text(L.t("about.theAppCollectsNothingSends", "The app collects nothing and sends nothing about you. The one thing it downloads is the daily feed, when you open Today. Your ratings and history are stored only on this device, and deleting the app deletes them."))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryFaint)
                         BrassLinkButton(

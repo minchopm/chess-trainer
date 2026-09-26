@@ -33,18 +33,122 @@ struct ClipScreen: View {
     @ViewBuilder
     private var content: some View {
         VStack(spacing: 0) {
-            header
-            Spacer(minLength: 8)
-            if model.isFinished {
-                finished
+            if let story = model.story {
+                storyHeader(story)
+                Spacer(minLength: 8)
+                storyBoard(story)
+            } else if model.storyID != nil && !model.storyFailed {
+                storyHeaderLoading
+                Spacer(minLength: 8)
+                ProgressView().tint(Theatre.brass)
             } else {
-                board
+                header
+                Spacer(minLength: 8)
+                if model.isFinished {
+                    finished
+                } else {
+                    board
+                }
             }
             Spacer(minLength: 8)
             footer
         }
         .padding(.horizontal, 18)
         .padding(.bottom, 10)
+    }
+
+    // MARK: - A game from the daily feed
+
+    private var storyHeaderLoading: some View {
+        Text(verbatim: "Brass Pawn")
+            .font(.custom("CormorantGaramond-SemiBold", size: 30))
+            .foregroundStyle(Theatre.ivory)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.top, 12)
+    }
+
+    private func storyHeader(_ story: FeedStory) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(verbatim: "Brass Pawn")
+                .font(.custom("CormorantGaramond-SemiBold", size: 30))
+                .foregroundStyle(Theatre.ivory)
+            Text(story.occasion.uppercased())
+                .appFont(size: 10)
+                .tracking(2.4)
+                .foregroundStyle(Theatre.brass)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+            Text(story.title)
+                .appFont(size: 20, weight: .semibold)
+                .foregroundStyle(Theatre.ivory)
+            // What the app will do with it, said before anybody has to ask:
+            // the one thing a clip cannot do is the thing worth installing for.
+            Text(L.t("clip.gameKept", "The game is kept. Install Brass Pawn and it opens on it — to replay it on a board in 3D, and to play on from the key move against the engine."))
+                .appFont(size: 13)
+                .foregroundStyle(Theatre.brass)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .frame(maxWidth: 520, alignment: .leading)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.top, 12)
+    }
+
+    private func storyBoard(_ story: FeedStory) -> some View {
+        let ply = model.storyPly
+        let entry = model.storyLine[ply]
+        return VStack(spacing: 12) {
+            BoardView(
+                position: entry.position,
+                orientation: story.winner == .black ? .black : .white,
+                lastMove: entry.move.map { ($0.from, $0.to) }
+            )
+            .frame(maxWidth: 520)
+            .allowsHitTesting(false)
+
+            Text(caption(story, ply: ply))
+                .appFont(size: 12)
+                .foregroundStyle(ply == story.key?.ply ? Theatre.brass : Theatre.ivoryFaint)
+                .frame(height: 16)
+
+            HStack(spacing: 10) {
+                stepButton("backward.end.fill", to: 0)
+                stepButton("backward.fill", to: ply - 1)
+                // Straight back to the moment the story is about, from
+                // wherever the stepping has got to.
+                if let key = story.key {
+                    Button {
+                        model.step(to: key.ply)
+                    } label: {
+                        Text(verbatim: FeedStory.label(ply: key.ply, san: key.played))
+                            .monospacedDigit()
+                            .frame(minWidth: 88)
+                    }
+                    // Body size, which is also what keeps it from being set in
+                    // capitals: "RXB3" is not how anybody writes a move.
+                    .buttonStyle(PillButtonStyle(emphasis: ply == key.ply ? .solid : .ghost, usesBodySize: true))
+                }
+                stepButton("forward.fill", to: ply + 1)
+                stepButton("forward.end.fill", to: model.storyLine.count - 1)
+            }
+            .frame(maxWidth: 520)
+        }
+    }
+
+    private func caption(_ story: FeedStory, ply: Int) -> String {
+        guard ply > 0 else { return L.t("clip.startingPosition", "The starting position") }
+        let label = FeedStory.label(ply: ply, san: story.sans[ply - 1])
+        return L.t("today.after", "After %@", label)
+    }
+
+    private func stepButton(_ symbol: String, to ply: Int) -> some View {
+        Button {
+            model.step(to: ply)
+        } label: {
+            Image(systemName: symbol)
+                .font(.system(size: 14, weight: .semibold))
+                .frame(width: 22, height: 18)
+        }
+        .buttonStyle(PillButtonStyle(emphasis: .quiet))
     }
 
     // MARK: - Header

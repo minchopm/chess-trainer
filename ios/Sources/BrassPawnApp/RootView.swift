@@ -8,6 +8,9 @@ public struct RootView: View {
     @State private var activity = ActivityGuard()
     @State private var selection = Tab.tactics
     @State private var navigator = Navigator()
+    /// Built here and not in Today, so leaving the screen and coming back
+    /// keeps what was fetched rather than asking again.
+    @State private var today = TodayFeed()
 
     /// The played games. Built once, here rather than per screen.
     private let history = RootView.openHistory()
@@ -24,7 +27,7 @@ public struct RootView: View {
         return try! GameHistory.container(inMemory: true)
     }
 
-    public enum Tab: Hashable { case watch, guessTheElo, tactics, positional, endgames, play, progress }
+    public enum Tab: Hashable { case today, watch, guessTheElo, tactics, positional, endgames, play, progress }
 
     public init() {}
 
@@ -43,6 +46,7 @@ public struct RootView: View {
                 .environment(app)
                 .environment(activity)
                 .environment(navigator)
+                .environment(today)
                 .transition(.opacity)
                 .zIndex(1)
             }
@@ -65,15 +69,24 @@ public struct RootView: View {
         // most likely to accept an invitation are the ones it never reaches.
         // Stored rather than acted on: the multiplayer screen picks it up when
         // it is opened, which is where accepting belongs.
+        //
+        // A story from the daily feed comes the same way — the site's button on
+        // an iPhone is the clip's link with the story in it — and is looked for
+        // first: an invitation has no story in it, and a story no invitation.
         .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
-            guard let url = activity.webpageURL,
-                  let invitation = Invitation(url: url)
-            else { return }
-            accept(invitation)
+            guard let url = activity.webpageURL else { return }
+            if let story = FeedLink.storyID(in: url) {
+                open(story: story)
+            } else if let invitation = Invitation(url: url) {
+                accept(invitation)
+            }
         }
         .onOpenURL { url in
-            guard let invitation = Invitation(url: url) else { return }
-            accept(invitation)
+            if let story = FeedLink.storyID(in: url) {
+                open(story: story)
+            } else if let invitation = Invitation(url: url) {
+                accept(invitation)
+            }
         }
         .appTypeface(app.progress.appearance.typeface)
         .animation(.easeOut(duration: 0.2), value: activity.wantsExit)
@@ -81,6 +94,13 @@ public struct RootView: View {
         #if DEBUG
         .task { await leaveMenuForPreview() }
         #endif
+    }
+
+    /// Today, with the story waiting to be opened once the feed has arrived.
+    private func open(story id: String) {
+        navigator.pendingStory = id
+        navigator.pendingTab = .today
+        navigator.showsMenu = false
     }
 
     /// Put an invitation where the multiplayer screen will find it, and open
@@ -191,6 +211,7 @@ public struct RootView: View {
         .environment(app)
         .environment(activity)
         .environment(navigator)
+        .environment(today)
         .environment(\.boardTheme, BoardTheme(style: app.progress.appearance.board,
                                               lightTone: app.progress.appearance.lightTone))
         .environment(\.pieceSet, app.progress.appearance.pieces)
@@ -203,6 +224,9 @@ public struct RootView: View {
             #if DEBUG
             applyScreenshotScene()
             #endif
+            // A game somebody opened in the clip before installing: the app
+            // they installed from it opens on the same game, once.
+            if let story = SharedContainer.takeStory() { open(story: story) }
             await app.start()
         }
         // A screen that cannot reach the tab state asks for a destination here.
@@ -236,6 +260,7 @@ public struct RootView: View {
     @ViewBuilder
     private var selectedScreen: some View {
         switch selection {
+        case .today: TodayScreen()
         case .watch: ClassicsScreen()
         case .guessTheElo: GuessTheEloTab()
         case .tactics: TrainingTab()

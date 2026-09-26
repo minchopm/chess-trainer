@@ -31,8 +31,13 @@ Multiplayer needs Game Center signed in and a second player; if none is found,
 that is matchmaking with nobody to match, not an error.
 
 4. EXTERNAL SERVICES
-None of ours. The app has no server and makes no network requests of its own —
-there is not one URLSession in the source. It uses three Apple frameworks:
+One kind of request of our own: opening the Today screen downloads static JSON
+from https://brasspawn.com/media/feed/v1/ (latest.json, then one file per earlier
+day as the list is scrolled back; the same files for everybody), through a URLSession with no cookies, no cache and no
+identifier. It is never fetched at launch or in the background, and the
+server keeps no log of it. The stories in it are written from public facts: the
+moves and results of official broadcasts, and Stockfish's evaluations. Nothing
+is collected, so the privacy label is unchanged. It uses three Apple frameworks:
 GameKit (Game Center, for Multiplayer — moves pass between the two devices, not
 through any server of ours), StoreKit 2 (the subscription and the unlock), and
 Vision (reading a board off a photograph, on-device). No analytics, advertising,

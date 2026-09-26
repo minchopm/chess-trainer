@@ -81,10 +81,29 @@ extension Position {
             return moves.first { $0.kind == .queensideCastle }
         }
 
+        // Only the moves that could be this one are printed: those landing on
+        // the square the text names, made by the piece it names. Printing is
+        // what costs — each printed move is played to see whether it checks
+        // or mates — and doing it for all thirty-odd legal moves, at every ply
+        // of every game in a feed, was seconds of a phone's time before a
+        // single story appeared.
+        let characters = Array(text)
+        var destination: Square?
+        for index in stride(from: characters.count - 2, through: 0, by: -1) {
+            if let square = Square(String(characters[index...index + 1])) {
+                destination = square
+                break
+            }
+        }
+        let kind: PieceKind = characters.first.flatMap { "KQRBN".contains($0) ? PieceKind(letter: $0) : nil } ?? .pawn
+        let candidates = moves.filter { move in
+            (destination == nil || move.to == destination) && self[move.from]?.kind == kind
+        }
+
         // Matching by regenerating notation is slower than parsing the string,
         // but it cannot disagree with `san(for:)` — and a parser that disagrees
         // with its own printer is a bug that surfaces only in stored games.
-        return moves.first { candidate in
+        return candidates.first { candidate in
             var printed = self.san(for: candidate)
             for noise in ["!", "?", "+", "#"] {
                 printed = printed.replacingOccurrences(of: noise, with: "")

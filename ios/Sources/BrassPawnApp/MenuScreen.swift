@@ -113,9 +113,50 @@ struct MenuScreen: View {
         #endif
     }
 
-    /// Purchases and preferences sit together in the top-right corner, with
-    /// settings at the outside edge where it is quickest to find.
+    /// Today in the top-left corner; purchases and preferences together in the
+    /// top-right, with settings at the outside edge where it is quickest to find.
     private var menuActions: some View {
+        HStack(spacing: 0) {
+            todayEntry
+            Spacer(minLength: 12)
+            accountActions
+        }
+        .padding(.horizontal, 18)
+        .padding(.top, 8)
+    }
+
+    /// The day's games, on a plate of its own rather than a seventh square in
+    /// the grid: it is the one thing on this screen that is new every day, and
+    /// the grid is the part that never changes.
+    private var todayEntry: some View {
+        Button {
+            onChoose(.today)
+        } label: {
+            HStack(spacing: 8) {
+                BrassIcon("doc.text", size: 19)
+                Text(L.t("today.title", "Today").uppercased())
+                    .appFont(size: 10, weight: .semibold)
+                    .tracking(2.2)
+                    .lineLimit(1)
+            }
+            .foregroundStyle(Theatre.brassHot.opacity(0.9))
+            .padding(.horizontal, 14)
+            .frame(height: 48)
+            .background {
+                BrassPlateShape(cut: 11)
+                    .fill(Theatre.ink3.opacity(0.94))
+            }
+            .overlay {
+                BrassPlateShape(cut: 11)
+                    .strokeBorder(Theatre.brassDeep.opacity(0.75), lineWidth: 0.8)
+            }
+            .shadow(color: Theatre.shadow.opacity(0.45), radius: 14, y: 5)
+        }
+        .buttonStyle(BrassPressStyle())
+        .accessibilityLabel(L.t("today.title", "Today"))
+    }
+
+    private var accountActions: some View {
         HStack(spacing: 0) {
             menuAction(
                 symbol: "creditcard",
@@ -146,9 +187,6 @@ struct MenuScreen: View {
                 .strokeBorder(Theatre.brassDeep.opacity(0.75), lineWidth: 0.8)
         }
         .shadow(color: Theatre.shadow.opacity(0.45), radius: 14, y: 5)
-        .frame(maxWidth: .infinity, alignment: .trailing)
-        .padding(.horizontal, 18)
-        .padding(.top, 8)
     }
 
     private func menuAction(

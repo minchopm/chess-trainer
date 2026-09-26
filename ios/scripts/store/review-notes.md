@@ -68,10 +68,18 @@ click from the main menu.
 
 ## 4. External services, tools and platforms
 
-**None of ours. The app has no server, and makes no network requests of its own
-— there is not one `URLSession` in the source.**
+**One request of our own, and it sends nothing.** Opening the **Today** screen
+downloads static JSON from `https://brasspawn.com/media/feed/v1/` — `latest.json`,
+then one file per earlier day as the list is scrolled back; the same files for
+everybody — through a `URLSession`
+with no cookies, no cache and no identifier (`TodayFeed.swift`). It is never
+fetched at launch or in the background, and CloudFront and S3 request logging
+are both off, so nothing is kept about who downloaded it. The stories are
+written from public facts: the moves and results of official broadcasts, and
+Stockfish's evaluations. Nothing is collected, so the privacy label stays *Data
+Not Collected*.
 
-What it does use:
+What else it uses:
 
 | | |
 |---|---|

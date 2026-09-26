@@ -132,6 +132,15 @@ targets:
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleDisplayName: Brass Pawn
+        # brasspawn://today/<id>: how a story page on the site opens the same
+        # story in the app, through Safari's app banner or its "Open in Brass
+        # Pawn" button. A scheme rather than a universal link because a
+        # universal link needs the Associated Domains capability on the App ID,
+        # and this needs nothing from the portal.
+        CFBundleURLTypes:
+          - CFBundleURLName: com.arte-soft.brasspawn
+            CFBundleURLSchemes:
+              - brasspawn
         # Reading a position off a photograph of a real board. Shown by iOS in
         # its own permission prompt, so it has to say what the camera is for in
         # one line and cannot be evasive about it.

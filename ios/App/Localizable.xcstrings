@@ -1386,193 +1386,193 @@
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "الرخصتان تتوافقان، وبند Affero الخاص بالبرمجيات المستخدمة عبر الشبكة لا يغيّر شيئًا هنا: كلا المحركين يعملان على هذا الجهاز، والتطبيق لا يجري أي طلبات شبكية."
+            "value": "الرخصتان تتوافقان، وبند Affero الخاص بالبرمجيات المستخدمة عبر الشبكة لا يغيّر شيئًا هنا: كلا المحركين يعملان على هذا الجهاز، ولا يصل إليهما أحد عبر الشبكة."
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Obě licence lze spojit a klauzule Affero o softwaru používaném přes síť zde nic nemění: oba enginy běží na tomto zařízení a aplikace neprovádí žádné síťové požadavky."
+            "value": "Obě licence lze spojit a klauzule Affero o softwaru používaném přes síť zde nic nemění: oba enginy běží na tomto zařízení a nikdo k nim přes síť nepřistupuje."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "De to licenser kan kombineres, og Affero-klausulen om software der bruges over et netværk ændrer intet her: begge motorer kører på denne enhed, og appen laver ingen netværkskald."
+            "value": "De to licenser kan kombineres, og Affero-klausulen om software der bruges over et netværk ændrer intet her: begge motorer kører på denne enhed, og ingen tilgår dem over et netværk."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Die beiden Lizenzen lassen sich verbinden, und die Affero-Klausel über Software, die über ein Netzwerk genutzt wird, ändert hier nichts: Beide Engines laufen auf diesem Gerät, und die App stellt keine Netzwerkanfragen."
+            "value": "Die beiden Lizenzen lassen sich verbinden, und die Affero-Klausel über Software, die über ein Netzwerk genutzt wird, ändert hier nichts: Beide Engines laufen auf diesem Gerät, und niemand greift über ein Netzwerk auf sie zu."
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Οι δύο άδειες συνδυάζονται, και η ρήτρα Affero για λογισμικό που χρησιμοποιείται μέσω δικτύου δεν αλλάζει τίποτα εδώ: και οι δύο μηχανές τρέχουν σε αυτή τη συσκευή και η εφαρμογή δεν κάνει αιτήματα δικτύου."
+            "value": "Οι δύο άδειες συνδυάζονται, και η ρήτρα Affero για λογισμικό που χρησιμοποιείται μέσω δικτύου δεν αλλάζει τίποτα εδώ: και οι δύο μηχανές τρέχουν σε αυτή τη συσκευή και κανείς δεν έχει πρόσβαση σε αυτές μέσω δικτύου."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device and the app makes no network requests."
+            "value": "The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device, and nobody reaches them over a network."
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device and the app makes no network requests."
+            "value": "The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device, and nobody reaches them over a network."
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device and the app makes no network requests."
+            "value": "The two licences combine, and the Affero clause about software used over a network changes nothing here: both engines run on this device, and nobody reaches them over a network."
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "Las dos licencias se combinan, y la cláusula Affero sobre software usado a través de una red no cambia nada aquí: ambos motores se ejecutan en este dispositivo y la app no hace ninguna petición de red."
+            "value": "Las dos licencias se combinan, y la cláusula Affero sobre software usado a través de una red no cambia nada aquí: ambos motores se ejecutan en este dispositivo y nadie accede a ellos a través de una red."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lisenssit sopivat yhteen, eikä Affero-ehto verkon yli käytettävästä ohjelmistosta muuta tässä mitään: molemmat moottorit toimivat tällä laitteella, eikä sovellus tee verkkopyyntöjä."
+            "value": "Lisenssit sopivat yhteen, eikä Affero-ehto verkon yli käytettävästä ohjelmistosta muuta tässä mitään: molemmat moottorit toimivat tällä laitteella, eikä kukaan käytä niitä verkon yli."
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Les deux licences se combinent, et la clause Affero sur les logiciels utilisés à travers un réseau ne change rien ici : les deux moteurs tournent sur cet appareil et l'app ne fait aucune requête réseau."
+            "value": "Les deux licences se combinent, et la clause Affero sur les logiciels utilisés à travers un réseau ne change rien ici : les deux moteurs tournent sur cet appareil et personne n'y accède à travers un réseau."
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Les deux licences se combinent, et la clause Affero sur les logiciels utilisés à travers un réseau ne change rien ici : les deux moteurs tournent sur cet appareil et l'app ne fait aucune requête réseau."
+            "value": "Les deux licences se combinent, et la clause Affero sur les logiciels utilisés à travers un réseau ne change rien ici : les deux moteurs tournent sur cet appareil et personne n'y accède à travers un réseau."
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "שני הרישיונות משתלבים, וסעיף Affero בנוגע לתוכנה שנעשה בה שימוש דרך רשת אינו משנה כאן דבר: שני המנועים פועלים על המכשיר הזה, והאפליקציה אינה מבצעת שום פנייה לרשת."
+            "value": "שני הרישיונות משתלבים, וסעיף Affero בנוגע לתוכנה שנעשה בה שימוש דרך רשת אינו משנה כאן דבר: שני המנועים פועלים על המכשיר הזה, ואיש אינו ניגש אליהם דרך רשת."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "दोनों लाइसेंस साथ चल सकते हैं, और नेटवर्क पर इस्तेमाल होने वाले सॉफ़्टवेयर से जुड़ा Affero खंड यहाँ कुछ नहीं बदलता: दोनों इंजन इसी डिवाइस पर चलते हैं और ऐप कोई नेटवर्क अनुरोध नहीं करता।"
+            "value": "दोनों लाइसेंस साथ चल सकते हैं, और नेटवर्क पर इस्तेमाल होने वाले सॉफ़्टवेयर से जुड़ा Affero खंड यहाँ कुछ नहीं बदलता: दोनों इंजन इसी डिवाइस पर चलते हैं और कोई भी उन तक नेटवर्क के ज़रिए नहीं पहुँचता।"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "A két licenc összekapcsolható, és az Affero hálózaton keresztül használt szoftverről szóló kikötése itt semmit sem változtat: mindkét motor ezen az eszközön fut, és az alkalmazás nem küld hálózati kérést."
+            "value": "A két licenc összekapcsolható, és az Affero hálózaton keresztül használt szoftverről szóló kikötése itt semmit sem változtat: mindkét motor ezen az eszközön fut, és senki sem éri el őket hálózaton keresztül."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kedua lisensi dapat digabungkan, dan klausul Affero tentang perangkat lunak yang digunakan melalui jaringan tidak mengubah apa pun di sini: kedua mesin berjalan di perangkat ini dan aplikasi tidak membuat permintaan jaringan."
+            "value": "Kedua lisensi dapat digabungkan, dan klausul Affero tentang perangkat lunak yang digunakan melalui jaringan tidak mengubah apa pun di sini: kedua mesin berjalan di perangkat ini dan tidak ada yang mengaksesnya melalui jaringan."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Le due licenze si combinano, e la clausola Affero sul software usato attraverso una rete qui non cambia nulla: entrambi i motori girano su questo dispositivo e l'app non effettua richieste di rete."
+            "value": "Le due licenze si combinano, e la clausola Affero sul software usato attraverso una rete qui non cambia nulla: entrambi i motori girano su questo dispositivo e nessuno vi accede attraverso una rete."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "二つのライセンスは併存でき、ネットワーク越しに利用されるソフトウェアに関する Affero 条項はここでは何も変えません。どちらのエンジンもこの端末上で動作し、アプリはネットワーク通信を一切行いません。"
+            "value": "二つのライセンスは併存でき、ネットワーク越しに利用されるソフトウェアに関する Affero 条項はここでは何も変えません。どちらのエンジンもこの端末上で動作し、ネットワーク越しに誰かが利用することはありません。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "두 라이선스는 함께 쓸 수 있으며, 네트워크를 통해 사용되는 소프트웨어에 관한 Affero 조항은 여기서 아무것도 바꾸지 않습니다. 두 엔진 모두 이 기기에서 실행되고, 앱은 어떤 네트워크 요청도 하지 않습니다."
+            "value": "두 라이선스는 함께 쓸 수 있으며, 네트워크를 통해 사용되는 소프트웨어에 관한 Affero 조항은 여기서 아무것도 바꾸지 않습니다. 두 엔진 모두 이 기기에서 실행되며, 누구도 네트워크를 통해 엔진에 접근하지 않습니다."
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kedua-dua lesen boleh digabungkan, dan klausa Affero tentang perisian yang digunakan melalui rangkaian tidak mengubah apa-apa di sini: kedua-dua enjin berjalan pada peranti ini dan aplikasi tidak membuat sebarang permintaan rangkaian."
+            "value": "Kedua-dua lesen boleh digabungkan, dan klausa Affero tentang perisian yang digunakan melalui rangkaian tidak mengubah apa-apa di sini: kedua-dua enjin berjalan pada peranti ini dan tiada sesiapa mencapainya melalui rangkaian."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "De twee licenties gaan samen, en de Affero-bepaling over software die via een netwerk wordt gebruikt verandert hier niets: beide engines draaien op dit apparaat en de app doet geen netwerkverzoeken."
+            "value": "De twee licenties gaan samen, en de Affero-bepaling over software die via een netwerk wordt gebruikt verandert hier niets: beide engines draaien op dit apparaat en niemand benadert ze via een netwerk."
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "De to lisensene kan kombineres, og Affero-klausulen om programvare som brukes over et nettverk endrer ingenting her: begge motorene kjører på denne enheten, og appen gjør ingen nettverkskall."
+            "value": "De to lisensene kan kombineres, og Affero-klausulen om programvare som brukes over et nettverk endrer ingenting her: begge motorene kjører på denne enheten, og ingen bruker dem over et nettverk."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Obie licencje dają się połączyć, a klauzula Affero dotycząca oprogramowania używanego przez sieć nic tu nie zmienia: oba silniki działają na tym urządzeniu, a aplikacja nie wysyła żadnych zapytań sieciowych."
+            "value": "Obie licencje dają się połączyć, a klauzula Affero dotycząca oprogramowania używanego przez sieć nic tu nie zmienia: oba silniki działają na tym urządzeniu i nikt nie korzysta z nich przez sieć."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "As duas licenças se combinam, e a cláusula Affero sobre software usado através de uma rede não muda nada aqui: os dois motores rodam neste aparelho e o app não faz nenhuma requisição de rede."
+            "value": "As duas licenças se combinam, e a cláusula Affero sobre software usado através de uma rede não muda nada aqui: os dois motores rodam neste aparelho e ninguém os acessa por uma rede."
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cele două licențe se combină, iar clauza Affero despre software-ul folosit printr-o rețea nu schimbă nimic aici: ambele motoare rulează pe acest dispozitiv, iar aplicația nu face nicio cerere de rețea."
+            "value": "Cele două licențe se combină, iar clauza Affero despre software-ul folosit printr-o rețea nu schimbă nimic aici: ambele motoare rulează pe acest dispozitiv și nimeni nu le accesează printr-o rețea."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Две лицензии сочетаются, а пункт Affero о программах, используемых через сеть, здесь ничего не меняет: оба движка работают на этом устройстве, и приложение не делает сетевых запросов."
+            "value": "Две лицензии сочетаются, а пункт Affero о программах, используемых через сеть, здесь ничего не меняет: оба движка работают на этом устройстве, и никто не обращается к ним через сеть."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "De två licenserna går att kombinera, och Affero-klausulen om programvara som används över ett nätverk ändrar ingenting här: båda motorerna körs på den här enheten och appen gör inga nätverksanrop."
+            "value": "De två licenserna går att kombinera, och Affero-klausulen om programvara som används över ett nätverk ändrar ingenting här: båda motorerna körs på den här enheten och ingen når dem över ett nätverk."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "ใบอนุญาตทั้งสองรวมกันได้ และข้อกำหนด Affero เรื่องซอฟต์แวร์ที่ใช้ผ่านเครือข่ายไม่เปลี่ยนอะไรที่นี่ เพราะเอนจินทั้งสองทำงานบนเครื่องนี้ และแอปไม่มีการเรียกใช้เครือข่ายใด ๆ"
+            "value": "ใบอนุญาตทั้งสองรวมกันได้ และข้อกำหนด Affero เรื่องซอฟต์แวร์ที่ใช้ผ่านเครือข่ายไม่เปลี่ยนอะไรที่นี่ เพราะเอนจินทั้งสองทำงานบนเครื่องนี้ และไม่มีใครเข้าถึงเอนจินผ่านเครือข่าย"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "İki lisans birleşebilir ve ağ üzerinden kullanılan yazılıma dair Affero maddesi burada hiçbir şeyi değiştirmez: her iki motor da bu cihazda çalışır ve uygulama hiçbir ağ isteği yapmaz."
+            "value": "İki lisans birleşebilir ve ağ üzerinden kullanılan yazılıma dair Affero maddesi burada hiçbir şeyi değiştirmez: her iki motor da bu cihazda çalışır ve kimse onlara ağ üzerinden erişmez."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Hai giấy phép có thể kết hợp, và điều khoản Affero về phần mềm được dùng qua mạng không thay đổi gì ở đây: cả hai engine đều chạy trên thiết bị này và ứng dụng không thực hiện bất kỳ yêu cầu mạng nào."
+            "value": "Hai giấy phép có thể kết hợp, và điều khoản Affero về phần mềm được dùng qua mạng không thay đổi gì ở đây: cả hai engine đều chạy trên thiết bị này và không ai truy cập chúng qua mạng."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "两种许可证可以并存，而 Affero 中关于通过网络使用软件的条款在这里没有任何影响：两个引擎都在本机运行，应用不发出任何网络请求。"
+            "value": "两种许可证可以并存，而 Affero 中关于通过网络使用软件的条款在这里没有任何影响：两个引擎都在本机运行，没有人通过网络使用它们。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "兩種授權可以並存，而 Affero 中關於透過網路使用軟體的條款在這裡沒有任何影響：兩個引擎都在本機執行，應用程式不發出任何網路請求。"
+            "value": "兩種授權可以並存，而 Affero 中關於透過網路使用軟體的條款在這裡沒有任何影響：兩個引擎都在本機執行，沒有人透過網路使用它們。"
           }
         }
       }
@@ -2765,193 +2765,193 @@
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "لا يجمع التطبيق شيئًا، ولا يرسل شيئًا، ولا يجري أي اتصال بالشبكة. تصنيفاتك وسجلّك محفوظة على هذا الجهاز وحده، وتُحذف بحذف التطبيق."
+            "value": "لا يجمع التطبيق شيئًا ولا يرسل عنك شيئًا. الشيء الوحيد الذي ينزّله هو الموجز اليومي، عندما تفتح «اليوم». تصنيفاتك وسجلّك محفوظة على هذا الجهاز وحده، وتُحذف بحذف التطبيق."
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aplikace nic nesbírá, nic neodesílá a nedělá žádné síťové požadavky. Tvoje ratingy a historie zůstávají jen v tomto zařízení a smažou se spolu s aplikací."
+            "value": "Aplikace nic nesbírá a nic o tobě neodesílá. Jediné, co stahuje, je denní přehled, když otevřeš Dnes. Tvoje ratingy a historie zůstávají jen v tomto zařízení a smažou se spolu s aplikací."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Appen indsamler intet, sender intet og laver ingen netværkskald. Dine ratings og din historik ligger kun på denne enhed og slettes sammen med appen."
+            "value": "Appen indsamler intet og sender intet om dig. Det eneste, den henter, er dagens feed, når du åbner I dag. Dine ratings og din historik ligger kun på denne enhed og slettes sammen med appen."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Die App sammelt nichts, sendet nichts und stellt keine Netzwerkanfragen. Deine Wertungen und deine Historie liegen nur auf diesem Gerät; wer die App löscht, löscht sie mit."
+            "value": "Die App sammelt nichts und sendet nichts über dich. Das Einzige, was sie herunterlädt, ist der tägliche Feed, wenn du Heute öffnest. Deine Wertungen und deine Historie liegen nur auf diesem Gerät; wer die App löscht, löscht sie mit."
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Η εφαρμογή δεν συλλέγει τίποτα, δεν στέλνει τίποτα και δεν κάνει αιτήματα δικτύου. Οι βαθμολογίες και το ιστορικό σου μένουν μόνο σε αυτή τη συσκευή και σβήνονται μαζί με την εφαρμογή."
+            "value": "Η εφαρμογή δεν συλλέγει τίποτα και δεν στέλνει τίποτα για σένα. Το μόνο που κατεβάζει είναι η ημερήσια ροή, όταν ανοίγεις το Σήμερα. Οι βαθμολογίες και το ιστορικό σου μένουν μόνο σε αυτή τη συσκευή και σβήνονται μαζί με την εφαρμογή."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "The app collects nothing, sends nothing and makes no network requests. Your ratings and history are stored only on this device, and deleting the app deletes them."
+            "value": "The app collects nothing and sends nothing about you. The one thing it downloads is the daily feed, when you open Today. Your ratings and history are stored only on this device, and deleting the app deletes them."
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "The app collects nothing, sends nothing and makes no network requests. Your ratings and history are stored only on this device, and deleting the app deletes them."
+            "value": "The app collects nothing and sends nothing about you. The one thing it downloads is the daily feed, when you open Today. Your ratings and history are stored only on this device, and deleting the app deletes them."
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "The app collects nothing, sends nothing and makes no network requests. Your ratings and history are stored only on this device, and deleting the app deletes them."
+            "value": "The app collects nothing and sends nothing about you. The one thing it downloads is the daily feed, when you open Today. Your ratings and history are stored only on this device, and deleting the app deletes them."
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "La aplicación no recoge nada, no envía nada y no hace peticiones de red. Tus valoraciones y tu historial se guardan solo en este dispositivo, y se borran al borrar la aplicación."
+            "value": "La aplicación no recoge nada ni envía nada sobre ti. Lo único que descarga es el resumen diario, cuando abres Hoy. Tus valoraciones y tu historial se guardan solo en este dispositivo, y se borran al borrar la aplicación."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sovellus ei kerää mitään, ei lähetä mitään eikä tee verkkopyyntöjä. Ratingisi ja historiasi ovat vain tässä laitteessa ja katoavat sovelluksen mukana."
+            "value": "Sovellus ei kerää mitään eikä lähetä sinusta mitään. Ainoa asia, jonka se lataa, on päivän syöte, kun avaat Tänään-näkymän. Ratingisi ja historiasi ovat vain tässä laitteessa ja katoavat sovelluksen mukana."
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "L'application ne collecte rien, n'envoie rien et ne fait aucune requête réseau. Vos classements et votre historique restent sur cet appareil, et disparaissent avec l'application."
+            "value": "L'application ne collecte rien et n'envoie rien vous concernant. La seule chose qu'elle télécharge est le fil du jour, quand vous ouvrez Aujourd'hui. Vos classements et votre historique restent sur cet appareil, et disparaissent avec l'application."
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "L'application ne collecte rien, n'envoie rien et ne fait aucune requête réseau. Vos classements et votre historique restent sur cet appareil, et disparaissent avec l'application."
+            "value": "L'application ne collecte rien et n'envoie rien vous concernant. La seule chose qu'elle télécharge est le fil du jour, quand vous ouvrez Aujourd'hui. Vos classements et votre historique restent sur cet appareil, et disparaissent avec l'application."
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "האפליקציה לא אוספת דבר, לא שולחת דבר ולא מבצעת פניות רשת. הדירוגים וההיסטוריה שלך נשמרים רק במכשיר הזה, ונמחקים יחד עם האפליקציה."
+            "value": "האפליקציה לא אוספת דבר ולא שולחת דבר עליך. הדבר היחיד שהיא מורידה הוא העדכון היומי, כשפותחים את „היום”. הדירוגים וההיסטוריה שלך נשמרים רק במכשיר הזה, ונמחקים יחד עם האפליקציה."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "ऐप कुछ भी इकट्ठा नहीं करता, कुछ भी नहीं भेजता और कोई नेटवर्क अनुरोध नहीं करता। आपकी रेटिंग और इतिहास सिर्फ़ इसी डिवाइस पर रहते हैं और ऐप हटाने पर मिट जाते हैं।"
+            "value": "ऐप न कुछ इकट्ठा करता है, न आपके बारे में कुछ भेजता है। वह सिर्फ़ एक चीज़ डाउनलोड करता है — दैनिक फ़ीड, जब आप ‘आज’ खोलते हैं। आपकी रेटिंग और इतिहास सिर्फ़ इसी डिवाइस पर रहते हैं और ऐप हटाने पर मिट जाते हैं।"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Az alkalmazás semmit nem gyűjt, semmit nem küld, és nem indít hálózati kérést. Az értékszámaid és az előzményeid csak ezen a készüléken vannak, és a törléssel együtt tűnnek el."
+            "value": "Az alkalmazás semmit nem gyűjt, és semmit nem küld rólad. Egyetlen dolgot tölt le: a napi hírfolyamot, amikor megnyitod a Ma nézetet. Az értékszámaid és az előzményeid csak ezen a készüléken vannak, és a törléssel együtt tűnnek el."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aplikasi tidak mengumpulkan apa pun, tidak mengirim apa pun, dan tidak melakukan permintaan jaringan. Rating dan riwayatmu hanya tersimpan di perangkat ini dan ikut terhapus bersama aplikasi."
+            "value": "Aplikasi tidak mengumpulkan apa pun dan tidak mengirim apa pun tentang dirimu. Satu-satunya yang diunduhnya adalah umpan harian, saat kamu membuka Hari ini. Rating dan riwayatmu hanya tersimpan di perangkat ini dan ikut terhapus bersama aplikasi."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "L'app non raccoglie nulla, non invia nulla e non fa richieste di rete. I tuoi punteggi e la tua cronologia restano solo su questo dispositivo e si cancellano con l'app."
+            "value": "L'app non raccoglie nulla e non invia nulla su di te. L'unica cosa che scarica è il feed del giorno, quando apri Oggi. I tuoi punteggi e la tua cronologia restano solo su questo dispositivo e si cancellano con l'app."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "本アプリは何も収集せず、何も送信せず、ネットワーク通信も行いません。レーティングと履歴はこの端末にのみ保存され、アプリを削除すれば一緒に消えます。"
+            "value": "本アプリはあなたについて何も収集せず、何も送信しません。ダウンロードするのは「今日」を開いたときの日替わりフィードだけです。レーティングと履歴はこの端末にのみ保存され、アプリを削除すれば一緒に消えます。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "이 앱은 아무것도 수집하지 않고, 아무것도 보내지 않으며, 네트워크 요청도 하지 않습니다. 레이팅과 기록은 이 기기에만 저장되고, 앱을 지우면 함께 사라집니다."
+            "value": "이 앱은 사용자에 대해 아무것도 수집하거나 보내지 않습니다. 앱이 내려받는 것은 '오늘'을 열 때의 일일 피드뿐입니다. 레이팅과 기록은 이 기기에만 저장되고, 앱을 지우면 함께 사라집니다."
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aplikasi tidak mengumpul apa-apa, tidak menghantar apa-apa dan tidak membuat permintaan rangkaian. Rating dan sejarah anda hanya tersimpan pada peranti ini dan terpadam bersama aplikasi."
+            "value": "Aplikasi tidak mengumpul apa-apa dan tidak menghantar apa-apa tentang anda. Satu-satunya yang dimuat turun ialah suapan harian, apabila anda membuka Hari ini. Rating dan sejarah anda hanya tersimpan pada peranti ini dan terpadam bersama aplikasi."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "De app verzamelt niets, verstuurt niets en doet geen netwerkverzoeken. Je ratings en geschiedenis staan alleen op dit toestel en verdwijnen met de app."
+            "value": "De app verzamelt niets en verstuurt niets over jou. Het enige wat hij downloadt is de dagelijkse feed, wanneer je Vandaag opent. Je ratings en geschiedenis staan alleen op dit toestel en verdwijnen met de app."
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Appen samler ikke inn noe, sender ingenting og gjør ingen nettverkskall. Ratingene og historikken din ligger bare på denne enheten og slettes sammen med appen."
+            "value": "Appen samler ikke inn noe og sender ingenting om deg. Det eneste den laster ned, er dagens feed, når du åpner I dag. Ratingene og historikken din ligger bare på denne enheten og slettes sammen med appen."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aplikacja niczego nie zbiera, niczego nie wysyła i nie łączy się z siecią. Twoje rankingi i historia są tylko na tym urządzeniu i znikają razem z aplikacją."
+            "value": "Aplikacja niczego nie zbiera i niczego o tobie nie wysyła. Jedyne, co pobiera, to dzienny przegląd, gdy otworzysz Dziś. Twoje rankingi i historia są tylko na tym urządzeniu i znikają razem z aplikacją."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O aplicativo não coleta nada, não envia nada e não faz requisições de rede. Seus ratings e seu histórico ficam só neste aparelho, e somem junto com o aplicativo."
+            "value": "O aplicativo não coleta nada e não envia nada sobre você. A única coisa que ele baixa é o feed do dia, quando você abre Hoje. Seus ratings e seu histórico ficam só neste aparelho, e somem junto com o aplicativo."
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aplicația nu colectează nimic, nu trimite nimic și nu face cereri de rețea. Ratingurile și istoricul rămân doar pe acest dispozitiv și dispar odată cu aplicația."
+            "value": "Aplicația nu colectează nimic și nu trimite nimic despre tine. Singurul lucru pe care îl descarcă este fluxul zilnic, când deschizi Azi. Ratingurile și istoricul rămân doar pe acest dispozitiv și dispar odată cu aplicația."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Приложение ничего не собирает, ничего не отправляет и не обращается к сети. Ваши рейтинги и история хранятся только на этом устройстве и удаляются вместе с приложением."
+            "value": "Приложение ничего не собирает и ничего о вас не отправляет. Единственное, что оно загружает, — ежедневная лента, когда вы открываете «Сегодня». Ваши рейтинги и история хранятся только на этом устройстве и удаляются вместе с приложением."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Appen samlar inte in något, skickar inget och gör inga nätverksanrop. Dina ratings och din historik finns bara på den här enheten och försvinner med appen."
+            "value": "Appen samlar inte in något och skickar inget om dig. Det enda den hämtar är dagens flöde, när du öppnar I dag. Dina ratings och din historik finns bara på den här enheten och försvinner med appen."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "แอปไม่เก็บข้อมูลใด ไม่ส่งข้อมูลใด และไม่เรียกเครือข่าย เรตติ้งและประวัติของคุณอยู่บนเครื่องนี้เท่านั้น และจะหายไปพร้อมกับแอป"
+            "value": "แอปไม่เก็บและไม่ส่งข้อมูลใดเกี่ยวกับคุณ สิ่งเดียวที่แอปดาวน์โหลดคือฟีดประจำวัน เมื่อคุณเปิด วันนี้ เรตติ้งและประวัติของคุณอยู่บนเครื่องนี้เท่านั้น และจะหายไปพร้อมกับแอป"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Uygulama hiçbir şey toplamaz, hiçbir şey göndermez ve ağ isteği yapmaz. Puanların ve geçmişin yalnızca bu cihazda durur; uygulamayı silmek onları da siler."
+            "value": "Uygulama hiçbir şey toplamaz ve senin hakkında hiçbir şey göndermez. İndirdiği tek şey, Bugün'ü açtığında günlük akıştır. Puanların ve geçmişin yalnızca bu cihazda durur; uygulamayı silmek onları da siler."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ứng dụng không thu thập gì, không gửi gì và không thực hiện yêu cầu mạng nào. Hệ số và lịch sử của bạn chỉ nằm trên máy này và sẽ mất khi gỡ ứng dụng."
+            "value": "Ứng dụng không thu thập gì và không gửi gì về bạn. Thứ duy nhất nó tải xuống là bản tin hằng ngày, khi bạn mở Hôm nay. Hệ số và lịch sử của bạn chỉ nằm trên máy này và sẽ mất khi gỡ ứng dụng."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "本应用不收集任何数据，不发送任何数据，也不进行网络请求。你的等级分和记录只存在这台设备上，删除应用即一并删除。"
+            "value": "本应用不收集任何数据，也不发送任何关于你的信息。它唯一下载的是每日动态，而且只在你打开“今天”时。你的等级分和记录只存在这台设备上，删除应用即一并删除。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "本 App 不蒐集任何資料、不傳送任何資料，也不進行網路連線。你的等級分與紀錄只存在這台裝置上，刪除 App 就一併刪除。"
+            "value": "本 App 不蒐集任何資料，也不傳送任何關於你的資訊。它唯一下載的是每日動態，而且只在你打開「今天」時。你的等級分與紀錄只存在這台裝置上，刪除 App 就一併刪除。"
           }
         }
       }
@@ -11624,6 +11624,203 @@
         }
       }
     },
+    "clip.gameKept": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المباراة محفوظة. ثبّت Brass Pawn وسيفتح عليها — لتعيد عرضها على رقعة ثلاثية الأبعاد، ولتواصل اللعب من النقلة الحاسمة ضد المحرك."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partie je uložená. Nainstaluj Brass Pawn a otevře se právě na ní — přehraješ si ji na 3D šachovnici a od klíčového tahu ji můžeš dohrát proti enginu."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partiet er gemt. Installér Brass Pawn, så åbner den på det — til at afspille det på et 3D-bræt og spille videre fra nøgletrækket mod motoren."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Partie ist gespeichert. Installiere Brass Pawn, und es öffnet sich genau damit — zum Nachspielen auf einem 3D-Brett und zum Weiterspielen vom Schlüsselzug an gegen die Engine."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η παρτίδα κρατήθηκε. Εγκατάστησε το Brass Pawn και θα ανοίξει σε αυτήν — για να την ξαναδείς σε τρισδιάστατη σκακιέρα και να συνεχίσεις από την κρίσιμη κίνηση απέναντι στη μηχανή."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The game is kept. Install Brass Pawn and it opens on it — to replay it on a board in 3D, and to play on from the key move against the engine."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The game is kept. Install Brass Pawn and it opens on it — to replay it on a board in 3D, and to play on from the key move against the engine."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The game is kept. Install Brass Pawn and it opens on it — to replay it on a board in 3D, and to play on from the key move against the engine."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La partida queda guardada. Instala Brass Pawn y se abrirá en ella: para reproducirla en un tablero 3D y seguir jugando desde la jugada clave contra el motor."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Peli on tallessa. Asenna Brass Pawn, niin se avautuu tähän peliin — voit toistaa sen 3D-laudalla ja jatkaa avainsiirrosta moottoria vastaan."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La partie est gardée. Installez Brass Pawn et il s'ouvrira dessus — pour la rejouer sur un échiquier en 3D et continuer depuis le coup clé contre le moteur."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La partie est gardée. Installez Brass Pawn et il s'ouvrira dessus — pour la rejouer sur un échiquier en 3D et continuer depuis le coup clé contre le moteur."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "המשחק נשמר. מתקינים את Brass Pawn והוא נפתח עליו — כדי לצפות בו שוב על לוח תלת־ממדי ולהמשיך לשחק מהמסע המכריע מול המנוע."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बाज़ी सहेज ली गई है। Brass Pawn इंस्टॉल करें और यह इसी पर खुलेगा — 3D बोर्ड पर इसे दोबारा देखने और निर्णायक चाल से इंजन के ख़िलाफ़ आगे खेलने के लिए।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A játszma megmarad. Telepítsd a Brass Pawnt, és ezzel nyílik meg — visszajátszhatod 3D-s táblán, és a kulcslépéstől folytathatod a motor ellen."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partai ini disimpan. Pasang Brass Pawn dan aplikasi akan langsung membukanya — untuk memutar ulang di papan 3D dan melanjutkan dari langkah kunci melawan mesin."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La partita è conservata. Installa Brass Pawn e si aprirà su di essa: per rivederla su una scacchiera in 3D e continuare dalla mossa chiave contro il motore."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この対局は保存されています。Brass Pawn をインストールするとこの対局が開き、3D の盤で再生したり、鍵の一手からエンジン相手に指し継いだりできます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이 대국은 저장되어 있습니다. Brass Pawn을 설치하면 바로 이 대국이 열리며, 3D 보드로 다시 보고 핵심 수부터 엔진을 상대로 이어 둘 수 있습니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permainan ini disimpan. Pasang Brass Pawn dan ia akan dibuka pada permainan ini — untuk memainkannya semula di papan 3D dan meneruskan dari langkah utama melawan enjin."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De partij wordt bewaard. Installeer Brass Pawn en het opent erop — om hem na te spelen op een 3D-bord en vanaf de sleutelzet verder te spelen tegen de engine."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partiet er tatt vare på. Installer Brass Pawn, så åpner det seg på partiet — for å spille det av på et 3D-brett og spille videre fra nøkkeltrekket mot motoren."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partia jest zachowana. Zainstaluj Brass Pawn, a otworzy się właśnie na niej — by odtworzyć ją na szachownicy 3D i grać dalej od kluczowego ruchu przeciwko silnikowi."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A partida fica guardada. Instale o Brass Pawn e ele abre nela — para rever num tabuleiro 3D e continuar do lance-chave contra o motor."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partida este păstrată. Instalează Brass Pawn și se va deschide pe ea — ca s-o revezi pe o tablă 3D și să joci mai departe de la mutarea-cheie împotriva motorului."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Партия сохранена. Установите Brass Pawn — и оно откроется на ней: чтобы посмотреть её на 3D-доске и доиграть с ключевого хода против движка."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partiet sparas. Installera Brass Pawn så öppnas det på partiet — för att spela upp det på ett 3D-bräde och spela vidare från nyckeldraget mot motorn."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เกมนี้ถูกเก็บไว้แล้ว ติดตั้ง Brass Pawn แล้วแอปจะเปิดที่เกมนี้ ทั้งดูซ้ำบนกระดาน 3D และเล่นต่อจากตาเดินสำคัญกับเอนจิน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oyun saklandı. Brass Pawn'ı kur, doğrudan bu oyunla açılsın — 3D tahtada tekrar izlemek ve kilit hamleden motora karşı devam etmek için."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ván đấu đã được giữ lại. Cài Brass Pawn và ứng dụng sẽ mở đúng ván này — để xem lại trên bàn cờ 3D và chơi tiếp từ nước then chốt với engine."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "这盘棋已保存。安装 Brass Pawn 后会直接打开它——可在 3D 棋盘上回放，并从关键一着起与引擎续下。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "這盤棋已保存。安裝 Brass Pawn 後會直接開啟它——可在 3D 棋盤上回放，並從關鍵一著起與引擎續下。"
+          }
+        }
+      }
+    },
     "clip.getTheApp": {
       "extractionState": "manual",
       "localizations": {
@@ -12211,6 +12408,203 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ 邀請你下一盤。"
+          }
+        }
+      }
+    },
+    "clip.startingPosition": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الوضع الابتدائي"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Výchozí postavení"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Udgangsstillingen"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Ausgangsstellung"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η αρχική θέση"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The starting position"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The starting position"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The starting position"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La posición inicial"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alkuasema"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La position initiale"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La position initiale"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "העמדה ההתחלתית"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "शुरुआती स्थिति"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A kiinduló állás"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Posisi awal"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La posizione iniziale"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "開始局面"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "시작 배치"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kedudukan permulaan"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De beginstelling"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utgangsstillingen"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pozycja wyjściowa"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A posição inicial"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Poziția inițială"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Начальная позиция"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utgångsställningen"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ตำแหน่งเริ่มต้น"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başlangıç konumu"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thế cờ ban đầu"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "初始局面"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "初始局面"
           }
         }
       }
@@ -113688,6 +114082,4143 @@
           "stringUnit": {
             "state": "translated",
             "value": "欠行"
+          }
+        }
+      }
+    },
+    "today.after": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بعد %@"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Po %@"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Efter %@"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach %@"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μετά το %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After %@"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After %@"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After %@"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tras %@"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siirron %@ jälkeen"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Après %@"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Après %@"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אחרי %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ के बाद"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ után"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setelah %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dopo %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ の後"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 이후"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selepas %@"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Na %@"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Etter %@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Po %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Depois de %@"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "După %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "После %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Efter %@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "หลัง %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ sonrası"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sau %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 之后"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 之後"
+          }
+        }
+      }
+    },
+    "today.beat": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فوز %1$@ على %2$@"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ poráží %2$@"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ slår %2$@"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ schlägt %2$@"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Νίκη: %1$@ εναντίον %2$@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ beat %2$@"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ beat %2$@"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ beat %2$@"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ vence a %2$@"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ voittaa pelaajan %2$@"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ bat %2$@"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ bat %2$@"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ניצחון ל־%1$@ על %2$@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ ने %2$@ को हराया"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ nyer %2$@ ellen"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ mengalahkan %2$@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ batte %2$@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@が%2$@に勝利"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@, %2$@에게 승리"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ menewaskan %2$@"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ verslaat %2$@"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ slår %2$@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ pokonuje %2$@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ vence %2$@"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ câștigă contra %2$@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ обыгрывает %2$@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ besegrar %2$@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ ชนะ %2$@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@, %2$@ karşısında kazandı"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ thắng %2$@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 战胜 %2$@"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 戰勝 %2$@"
+          }
+        }
+      }
+    },
+    "today.drew": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعادل بين %1$@ و%2$@"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remíza: %1$@ – %2$@"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remis mellem %1$@ og %2$@"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remis zwischen %1$@ und %2$@"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ισοπαλία: %1$@ – %2$@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ and %2$@ drew"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ and %2$@ drew"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ and %2$@ drew"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tablas entre %1$@ y %2$@"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tasapeli: %1$@ – %2$@"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nulle entre %1$@ et %2$@"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nulle entre %1$@ et %2$@"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "תיקו בין %1$@ ל־%2$@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ और %2$@ की बाज़ी ड्रॉ"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Döntetlen: %1$@ – %2$@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ dan %2$@ remis"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Patta tra %1$@ e %2$@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@と%2$@が引き分け"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ – %2$@ 무승부"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ dan %2$@ seri"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remise tussen %1$@ en %2$@"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remis mellom %1$@ og %2$@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remis: %1$@ – %2$@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empate entre %1$@ e %2$@"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remiză între %1$@ și %2$@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ничья: %1$@ – %2$@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remi mellan %1$@ och %2$@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ เสมอกับ %2$@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ ile %2$@ berabere"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ và %2$@ hòa"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 与 %2$@ 弈和"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 與 %2$@ 弈和"
+          }
+        }
+      }
+    },
+    "today.empty": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا توجد قصص بعد. تُنشر بعد كل جولة من بطولة كبرى."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zatím žádné příběhy. Přibývají po každém kole velkého turnaje."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen historier endnu. De kommer efter hver runde i en stor turnering."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine Geschichten. Sie erscheinen nach jeder Runde eines großen Turniers."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν υπάρχουν ακόμα ιστορίες. Ανεβαίνουν μετά από κάθε γύρο μιας μεγάλης διοργάνωσης."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No stories yet. They go up after each round of a top event."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No stories yet. They go up after each round of a top event."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No stories yet. They go up after each round of a top event."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay historias. Se publican tras cada ronda de un gran torneo."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ei vielä juttuja. Niitä tulee jokaisen suurturnauksen kierroksen jälkeen."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas encore d'articles. Ils paraissent après chaque ronde d'un grand tournoi."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas encore d'articles. Ils paraissent après chaque ronde d'un grand tournoi."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "עדיין אין כתבות. הן עולות אחרי כל סיבוב של אירוע מוביל."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी कोई कहानी नहीं। ये किसी बड़े टूर्नामेंट के हर राउंड के बाद आती हैं।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Még nincs történet. Egy nagy verseny minden fordulója után jelennek meg."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada cerita. Cerita muncul setelah setiap babak turnamen besar."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ancora nessuna storia. Arrivano dopo ogni turno di un grande torneo."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まだ記事はありません。主要大会の各ラウンド後に掲載されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "아직 소식이 없습니다. 주요 대회의 라운드가 끝날 때마다 올라옵니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada cerita. Ia disiarkan selepas setiap pusingan kejohanan besar."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen verhalen. Ze verschijnen na elke ronde van een groot toernooi."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen saker ennå. De kommer etter hver runde i en stor turnering."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Na razie nic. Nowe teksty pojawiają się po każdej rundzie wielkiego turnieju."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda não há histórias. Elas saem depois de cada rodada de um grande torneio."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Încă nu sunt povești. Apar după fiecare rundă a unui turneu important."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пока ничего нет. Материалы появляются после каждого тура крупного турнира."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inga berättelser än. De kommer efter varje rond i en stor turnering."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ยังไม่มีเรื่อง เรื่องใหม่จะขึ้นหลังจบแต่ละรอบของรายการใหญ่"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henüz haber yok. Büyük turnuvaların her turundan sonra eklenir."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chưa có bài nào. Bài mới xuất hiện sau mỗi vòng của một giải lớn."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "还没有内容。每轮顶级赛事结束后更新。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "還沒有內容。每輪頂級賽事結束後更新。"
+          }
+        }
+      }
+    },
+    "today.enginesChoice": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اختيار المحرك"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volba enginu"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motorens valg"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wahl der Engine"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επιλογή της μηχανής"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Engine’s choice"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Engine’s choice"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Engine’s choice"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La del motor"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Moottorin valinta"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choix du moteur"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choix du moteur"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הבחירה של המנוע"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इंजन की पसंद"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A motor választása"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilihan mesin"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scelta del motore"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エンジンの推奨手"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "엔진의 선택"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pilihan enjin"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keuze van de engine"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motorens valg"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wybór silnika"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escolha do motor"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alegerea motorului"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбор движка"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motorns val"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ตาที่เอนจินเลือก"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motorun tercihi"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lựa chọn của engine"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "引擎推荐"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "引擎推薦"
+          }
+        }
+      }
+    },
+    "today.event": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "البطولة"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turnaj"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turnering"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turnier"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Διοργάνωση"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Event"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Event"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Event"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Torneo"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turnaus"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tournoi"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tournoi"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אירוע"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "टूर्नामेंट"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verseny"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turnamen"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Torneo"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "大会"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "대회"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kejohanan"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toernooi"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turnering"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turniej"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Torneio"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turneu"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Турнир"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turnering"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รายการ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turnuva"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Giải đấu"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "赛事"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "賽事"
+          }
+        }
+      }
+    },
+    "today.inEnglish": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التعليق بالإنجليزية"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Komentář v angličtině"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kommentar på engelsk"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kommentar auf Englisch"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Σχολιασμός στα αγγλικά"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commentary in English"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commentary in English"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commentary in English"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comentario en inglés"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kommentti englanniksi"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commentaire en anglais"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commentaire en anglais"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "פרשנות באנגלית"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अंग्रेज़ी में टिप्पणी"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kommentár angolul"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Komentar dalam bahasa Inggris"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commento in inglese"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "解説は英語です"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "해설은 영어로 제공됩니다"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ulasan dalam bahasa Inggeris"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Commentaar in het Engels"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kommentar på engelsk"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Komentarz po angielsku"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comentário em inglês"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comentariu în engleză"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Комментарий на английском"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kommentar på engelska"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "คำบรรยายภาษาอังกฤษ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İngilizce yorum"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bình luận bằng tiếng Anh"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "英文解说"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "英文解說"
+          }
+        }
+      }
+    },
+    "today.keyMove": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "النقلة الحاسمة: %@"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klíčový tah: %@"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nøgletræk: %@"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schlüsselzug: %@"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κρίσιμη κίνηση: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Key move: %@"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Key move: %@"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Key move: %@"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jugada clave: %@"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avainsiirto: %@"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coup clé : %@"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coup clé : %@"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "המסע המכריע: %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "निर्णायक चाल: %@"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kulcslépés: %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langkah kunci: %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mossa chiave: %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "鍵の一手: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "핵심 수: %@"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langkah utama: %@"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sleutelzet: %@"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nøkkeltrekk: %@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kluczowy ruch: %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lance-chave: %@"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mutarea-cheie: %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ключевой ход: %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nyckeldrag: %@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ตาเดินสำคัญ: %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilit hamle: %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nước đi then chốt: %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "关键一着：%@"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "關鍵一著：%@"
+          }
+        }
+      }
+    },
+    "today.keyMoveLabel": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "النقلة الحاسمة"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klíčový tah"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nøgletræk"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schlüsselzug"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κρίσιμη κίνηση"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Key move"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Key move"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Key move"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jugada clave"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avainsiirto"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coup clé"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coup clé"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "המסע המכריע"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "निर्णायक चाल"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kulcslépés"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langkah kunci"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mossa chiave"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "鍵の一手"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "핵심 수"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langkah utama"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sleutelzet"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nøkkeltrekk"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kluczowy ruch"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lance-chave"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mutarea-cheie"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ключевой ход"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nyckeldrag"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ตาเดินสำคัญ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilit hamle"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nước đi then chốt"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "关键一着"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "關鍵一著"
+          }
+        }
+      }
+    },
+    "today.loading": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ جلب مباريات اليوم…"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Načítám dnešní partie…"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henter dagens partier…"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Partien des Tages werden geladen …"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Φόρτωση των σημερινών παρτίδων…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fetching today’s games…"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fetching today’s games…"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fetching today’s games…"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cargando las partidas de hoy…"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haetaan päivän pelejä…"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chargement des parties du jour…"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chargement des parties du jour…"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "טוען את המשחקים של היום…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आज की बाज़ियाँ लाई जा रही हैं…"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A mai játszmák betöltése…"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mengambil partai hari ini…"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caricamento delle partite di oggi…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日の対局を読み込み中…"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "오늘의 대국을 불러오는 중…"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mengambil permainan hari ini…"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De partijen van vandaag worden geladen…"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henter dagens partier…"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pobieranie dzisiejszych partii…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carregando as partidas de hoje…"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se încarcă partidele de azi…"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Загружаем партии дня…"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hämtar dagens partier…"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กำลังโหลดเกมของวันนี้…"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Günün oyunları yükleniyor…"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đang tải các ván đấu hôm nay…"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在获取今天的对局…"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在取得今天的對局…"
+          }
+        }
+      }
+    },
+    "today.offline": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعذّر الوصول إلى brasspawn.com. هذه آخر القصص التي وصلت."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nepodařilo se spojit s brasspawn.com. Toto jsou poslední stažené příběhy."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kunne ikke nå brasspawn.com. Det her er de seneste historier, der kom frem."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "brasspawn.com ist nicht erreichbar. Das hier sind die zuletzt geladenen Geschichten."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν ήταν δυνατή η σύνδεση με το brasspawn.com. Αυτές είναι οι τελευταίες ιστορίες που έφτασαν."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn’t reach brasspawn.com. These are the last stories that arrived."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn’t reach brasspawn.com. These are the last stories that arrived."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn’t reach brasspawn.com. These are the last stories that arrived."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo conectar con brasspawn.com. Estas son las últimas historias que llegaron."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yhteyttä brasspawn.comiin ei saatu. Nämä ovat viimeksi saapuneet jutut."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de joindre brasspawn.com. Voici les derniers articles reçus."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de joindre brasspawn.com. Voici les derniers articles reçus."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא ניתן להתחבר ל־brasspawn.com. אלה הכתבות האחרונות שהגיעו."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "brasspawn.com तक नहीं पहुँच सके। ये आख़िरी बार आई कहानियाँ हैं।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nem sikerült elérni a brasspawn.com oldalt. Ezek a legutóbb letöltött történetek."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat menjangkau brasspawn.com. Ini cerita terakhir yang sempat diterima."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile raggiungere brasspawn.com. Queste sono le ultime storie arrivate."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "brasspawn.com に接続できませんでした。前回受け取った記事を表示しています。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "brasspawn.com에 연결할 수 없습니다. 마지막으로 받은 소식입니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat mencapai brasspawn.com. Ini cerita terakhir yang diterima."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "brasspawn.com is niet bereikbaar. Dit zijn de laatst binnengekomen verhalen."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fikk ikke kontakt med brasspawn.com. Dette er de siste sakene som kom inn."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nie udało się połączyć z brasspawn.com. To ostatnie pobrane teksty."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível acessar brasspawn.com. Estas são as últimas histórias recebidas."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nu am putut accesa brasspawn.com. Acestea sunt ultimele povești primite."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось связаться с brasspawn.com. Это последние загруженные материалы."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kunde inte nå brasspawn.com. Det här är de senaste berättelserna som kom in."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เชื่อมต่อ brasspawn.com ไม่ได้ นี่คือเรื่องล่าสุดที่ได้รับไว้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "brasspawn.com'a ulaşılamadı. Bunlar en son gelen haberler."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không thể kết nối tới brasspawn.com. Đây là những bài nhận được gần nhất."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法连接 brasspawn.com。以下是最近一次收到的内容。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "無法連線到 brasspawn.com。以下是最近一次收到的內容。"
+          }
+        }
+      }
+    },
+    "today.privacy": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فتح «اليوم» ينزّل أحدث المباريات من brasspawn.com، والأيام السابقة كلما رجعت إليها. لا يُرسل شيء عنك، ولا يُحتفظ بشيء."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otevřením Dnes se stáhnou nejnovější partie z brasspawn.com a při posouvání zpět i starší dny. Nic o tobě se neodesílá a nic se neukládá."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Når du åbner I dag, hentes de nyeste partier fra brasspawn.com, og ældre dage, når du ruller tilbage. Intet om dig sendes, og intet gemmes."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beim Öffnen von Heute werden die neuesten Partien von brasspawn.com geladen, und frühere Tage, wenn du zurückscrollst. Dabei wird nichts über dich gesendet, und nichts wird gespeichert."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Όταν ανοίγεις το Σήμερα, κατεβαίνουν οι πιο πρόσφατες παρτίδες από το brasspawn.com, και οι προηγούμενες μέρες καθώς κυλάς προς τα πίσω. Τίποτα για σένα δεν στέλνεται και τίποτα δεν κρατιέται."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opening Today downloads the latest games from brasspawn.com, and earlier days as you scroll back. Nothing about you is sent, and nothing is kept."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opening Today downloads the latest games from brasspawn.com, and earlier days as you scroll back. Nothing about you is sent, and nothing is kept."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opening Today downloads the latest games from brasspawn.com, and earlier days as you scroll back. Nothing about you is sent, and nothing is kept."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Al abrir Hoy se descargan las últimas partidas de brasspawn.com, y los días anteriores al desplazarte hacia atrás. No se envía nada sobre ti y no se guarda nada."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tänään-näkymän avaaminen lataa uusimmat pelit osoitteesta brasspawn.com ja aiemmat päivät, kun selaat taaksepäin. Sinusta ei lähetetä mitään, eikä mitään tallenneta."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvrir Aujourd'hui télécharge les dernières parties depuis brasspawn.com, et les jours précédents quand vous remontez. Rien vous concernant n'est envoyé, et rien n'est conservé."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvrir Aujourd'hui télécharge les dernières parties depuis brasspawn.com, et les jours précédents quand vous remontez. Rien vous concernant n'est envoyé, et rien n'est conservé."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "פתיחת „היום” מורידה את המשחקים האחרונים מ־brasspawn.com, וימים קודמים כשגוללים אחורה. שום דבר עליך לא נשלח, ושום דבר לא נשמר."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "‘आज’ खोलने पर brasspawn.com से ताज़ा बाज़ियाँ डाउनलोड होती हैं, और पीछे स्क्रॉल करने पर पिछले दिन। आपके बारे में कुछ नहीं भेजा जाता, और कुछ भी रखा नहीं जाता।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A Ma megnyitásakor a legfrissebb játszmák töltődnek le a brasspawn.com oldalról, visszagörgetéskor pedig a korábbi napok. Rólad semmi nem megy el, és semmit nem tárolunk."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Membuka Hari ini mengunduh partai terbaru dari brasspawn.com, dan hari-hari sebelumnya saat kamu menggulir ke belakang. Tidak ada data tentang dirimu yang terkirim, dan tidak ada yang disimpan."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprire Oggi scarica le partite più recenti da brasspawn.com, e i giorni precedenti quando scorri indietro. Non viene inviato nulla su di te e non viene conservato nulla."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「今日」を開くと brasspawn.com から最新の対局を、さかのぼると前の日の分をダウンロードします。あなたに関する情報は何も送信されず、何も保存されません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "'오늘'을 열면 brasspawn.com에서 최신 대국을, 뒤로 넘기면 지난 날의 대국을 내려받습니다. 사용자에 관한 정보는 전혀 보내지 않으며, 아무것도 보관되지 않습니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Membuka Hari ini memuat turun permainan terkini daripada brasspawn.com, dan hari-hari sebelumnya apabila anda menatal ke belakang. Tiada maklumat tentang anda dihantar, dan tiada apa-apa disimpan."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als je Vandaag opent, worden de nieuwste partijen van brasspawn.com gedownload, en eerdere dagen als je terugscrolt. Er gaat niets over jou mee, en er wordt niets bewaard."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Når du åpner I dag, lastes de nyeste partiene ned fra brasspawn.com, og tidligere dager når du blar tilbake. Ingenting om deg sendes, og ingenting lagres."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otwarcie Dziś pobiera najnowsze partie z brasspawn.com, a przy przewijaniu wstecz także wcześniejsze dni. Nic o tobie nie jest wysyłane ani przechowywane."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir Hoje baixa as partidas mais recentes de brasspawn.com, e os dias anteriores conforme você rola para trás. Nada sobre você é enviado, e nada é guardado."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deschiderea Azi descarcă cele mai noi partide de pe brasspawn.com, iar zilele anterioare pe măsură ce derulezi înapoi. Nu se trimite nimic despre tine și nu se păstrează nimic."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "При открытии «Сегодня» загружаются последние партии с brasspawn.com, а при прокрутке назад — предыдущие дни. О вас ничего не передаётся и ничего не сохраняется."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "När du öppnar I dag hämtas de senaste partierna från brasspawn.com, och tidigare dagar när du skrollar bakåt. Inget om dig skickas, och inget sparas."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "การเปิด วันนี้ จะดาวน์โหลดเกมล่าสุดจาก brasspawn.com และวันก่อนหน้าเมื่อเลื่อนย้อนกลับ ไม่มีข้อมูลใดเกี่ยวกับคุณถูกส่งไป และไม่มีการเก็บสิ่งใด"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bugün'ü açmak brasspawn.com'dan en yeni oyunları, geriye kaydırdıkça da önceki günleri indirir. Seninle ilgili hiçbir şey gönderilmez ve hiçbir şey saklanmaz."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mở Hôm nay sẽ tải các ván mới nhất từ brasspawn.com, và những ngày trước khi bạn cuộn ngược lại. Không có thông tin nào về bạn được gửi đi, và không có gì được lưu lại."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开“今天”会从 brasspawn.com 下载最新的对局，往回翻时再下载之前几天的。不会发送任何关于你的信息，也不会保留任何记录。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打開「今天」會從 brasspawn.com 下載最新的對局，往回翻時再下載之前幾天的。不會傳送任何關於你的資訊，也不會保留任何紀錄。"
+          }
+        }
+      }
+    },
+    "today.replay": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إعادة العرض"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Přehrát"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afspil"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nachspielen"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αναπαραγωγή"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Replay"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Replay"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Replay"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reproducir"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toista"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rejouer"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rejouer"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הפעלה חוזרת"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "फिर से देखें"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visszajátszás"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Putar ulang"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rivedi"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "再生"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "다시 보기"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Main semula"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Naspelen"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spill av"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Odtwórz"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rever"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reluare"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Смотреть"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spela upp"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ดูซ้ำ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekrar izle"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xem lại"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "回放"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "回放"
+          }
+        }
+      }
+    },
+    "today.result": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "النتيجة"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Výsledek"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resultat"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ergebnis"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποτέλεσμα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Result"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Result"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Result"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resultado"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tulos"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Résultat"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Résultat"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "תוצאה"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "नतीजा"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eredmény"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hasil"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Risultato"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "結果"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "결과"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keputusan"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uitslag"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resultat"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wynik"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resultado"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rezultat"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Результат"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resultat"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ผล"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonuç"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kết quả"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "结果"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "結果"
+          }
+        }
+      }
+    },
+    "today.round": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الجولة %lld"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld. kolo"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld. runde"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Runde %lld"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Γύρος %lld"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Round %lld"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Round %lld"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Round %lld"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ronda %lld"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kierros %lld"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ronde %lld"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ronde %lld"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "סיבוב %lld"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "राउंड %lld"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld. forduló"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Babak %lld"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turno %lld"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "第%lldラウンド"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld라운드"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pusingan %lld"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ronde %lld"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Runde %lld"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Runda %lld"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rodada %lld"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Runda %lld"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тур %lld"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rond %lld"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รอบที่ %lld"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld. tur"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vòng %lld"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "第 %lld 轮"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "第 %lld 輪"
+          }
+        }
+      }
+    },
+    "today.share": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مشاركة"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sdílet"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Del"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teilen"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κοινοποίηση"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartir"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jaa"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partager"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partager"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "שיתוף"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "शेयर करें"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Megosztás"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bagikan"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Condividi"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "共有"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "공유"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kongsi"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delen"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Del"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Udostępnij"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartilhar"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Distribuie"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поделиться"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dela"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "แชร์"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paylaş"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chia sẻ"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "分享"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "分享"
+          }
+        }
+      }
+    },
+    "today.source": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "النقلات من البث الرسمي، عبر Lichess. التقييمات من Stockfish. لا ترتبط Brass Pawn بالبطولة ولا باللاعبين."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tahy z oficiálního přenosu, zprostředkované Lichess. Hodnocení od Stockfishe. Brass Pawn není s turnajem ani s hráči nijak spojen."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Træk fra den officielle transmission, videreformidlet af Lichess. Vurderinger fra Stockfish. Brass Pawn er ikke tilknyttet turneringen eller spillerne."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Züge aus der offiziellen Übertragung, weitergegeben von Lichess. Bewertungen von Stockfish. Brass Pawn steht in keiner Verbindung zum Turnier oder zu den Spielern."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κινήσεις από την επίσημη μετάδοση, μέσω Lichess. Αξιολογήσεις από το Stockfish. Το Brass Pawn δεν συνδέεται με τη διοργάνωση ή τους παίκτες."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Moves from the official broadcast, relayed by Lichess. Evaluations by Stockfish. Brass Pawn is not affiliated with the event or the players."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Moves from the official broadcast, relayed by Lichess. Evaluations by Stockfish. Brass Pawn is not affiliated with the event or the players."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Moves from the official broadcast, relayed by Lichess. Evaluations by Stockfish. Brass Pawn is not affiliated with the event or the players."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jugadas de la retransmisión oficial, vía Lichess. Evaluaciones de Stockfish. Brass Pawn no está vinculado al torneo ni a los jugadores."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siirrot virallisesta lähetyksestä Lichessin välittämänä. Arviot Stockfishilta. Brass Pawn ei liity turnaukseen eikä pelaajiin."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coups issus de la retransmission officielle, relayée par Lichess. Évaluations de Stockfish. Brass Pawn n'est lié ni au tournoi ni aux joueurs."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coups issus de la retransmission officielle, relayée par Lichess. Évaluations de Stockfish. Brass Pawn n'est lié ni au tournoi ni aux joueurs."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "המסעים מהשידור הרשמי, דרך Lichess. ההערכות של Stockfish. ל־Brass Pawn אין קשר לאירוע או לשחקנים."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "चालें आधिकारिक प्रसारण से, Lichess के ज़रिए। आकलन Stockfish के। Brass Pawn का टूर्नामेंट या खिलाड़ियों से कोई संबंध नहीं है।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A lépések a hivatalos közvetítésből származnak, a Lichess továbbításában. Az értékelések a Stockfishtől. A Brass Pawn nem áll kapcsolatban sem a versennyel, sem a játékosokkal."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langkah dari siaran resmi, diteruskan oleh Lichess. Evaluasi oleh Stockfish. Brass Pawn tidak berafiliasi dengan turnamen maupun para pemain."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mosse dalla trasmissione ufficiale, tramite Lichess. Valutazioni di Stockfish. Brass Pawn non è affiliato al torneo né ai giocatori."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "指し手は公式中継（Lichess 経由）から、評価値は Stockfish によるものです。Brass Pawn は大会および選手とは関係ありません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "수순은 Lichess가 중계한 공식 방송에서, 평가는 Stockfish에서 가져왔습니다. Brass Pawn은 대회나 선수와 관련이 없습니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langkah daripada siaran rasmi, disalurkan oleh Lichess. Penilaian oleh Stockfish. Brass Pawn tidak bergabung dengan kejohanan atau para pemain."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zetten uit de officiële uitzending, doorgegeven door Lichess. Evaluaties van Stockfish. Brass Pawn is niet verbonden aan het toernooi of de spelers."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trekk fra den offisielle overføringen, videreformidlet av Lichess. Vurderinger fra Stockfish. Brass Pawn er ikke tilknyttet turneringen eller spillerne."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ruchy z oficjalnej transmisji, przekazane przez Lichess. Oceny Stockfisha. Brass Pawn nie jest powiązany z turniejem ani z zawodnikami."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lances da transmissão oficial, via Lichess. Avaliações do Stockfish. O Brass Pawn não tem vínculo com o torneio nem com os jogadores."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mutări din transmisiunea oficială, preluate prin Lichess. Evaluări de la Stockfish. Brass Pawn nu este afiliat turneului sau jucătorilor."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ходы — из официальной трансляции через Lichess. Оценки — Stockfish. Brass Pawn не связан ни с турниром, ни с игроками."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drag från den officiella sändningen, vidarebefordrade av Lichess. Värderingar av Stockfish. Brass Pawn är inte knutet till turneringen eller spelarna."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ตาเดินจากการถ่ายทอดอย่างเป็นทางการผ่าน Lichess การประเมินโดย Stockfish Brass Pawn ไม่มีส่วนเกี่ยวข้องกับรายการแข่งขันหรือผู้เล่น"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hamleler resmi yayından, Lichess aracılığıyla. Değerlendirmeler Stockfish'e ait. Brass Pawn'ın turnuvayla ya da oyuncularla bir bağı yoktur."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nước đi lấy từ buổi truyền trực tiếp chính thức qua Lichess. Đánh giá của Stockfish. Brass Pawn không liên kết với giải đấu hay các kỳ thủ."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "着法来自官方直播，经 Lichess 转播。评估来自 Stockfish。Brass Pawn 与赛事及棋手均无关联。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "著法來自官方直播，經 Lichess 轉播。評估來自 Stockfish。Brass Pawn 與賽事及棋手均無關聯。"
+          }
+        }
+      }
+    },
+    "today.stockfish": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stockfish %1$@ → %2$@"
+          }
+        }
+      }
+    },
+    "today.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اليوم"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dnes"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I dag"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heute"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Σήμερα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoy"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tänään"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aujourd'hui"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aujourd'hui"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "היום"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आज"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ma"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hari ini"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oggi"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今日"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "오늘"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hari ini"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vandaag"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I dag"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dziś"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoje"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Azi"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сегодня"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I dag"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "วันนี้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bugün"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hôm nay"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今天"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今天"
+          }
+        }
+      }
+    },
+    "today.tryIt": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جرّبها بنفسك"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vyzkoušet"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prøv selv"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selbst probieren"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δοκίμασέ το"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try it yourself"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try it yourself"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try it yourself"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pruébalo tú"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kokeile itse"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "À vous de jouer"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "À vous de jouer"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לנסות בעצמך"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ख़ुद आज़माएँ"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Próbáld ki"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coba sendiri"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prova tu"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自分で指してみる"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "직접 두어 보기"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuba sendiri"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zelf proberen"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prøv selv"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zagraj stąd"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tente você"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Încearcă și tu"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Попробуйте сами"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prova själv"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ลองเล่นเอง"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kendin dene"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tự thử"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "亲自试试"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "親自試試"
+          }
+        }
+      }
+    },
+    "today.unreachable": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعذّر الوصول إلى brasspawn.com. تحقّق من الاتصال وحاول مجددًا."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nepodařilo se spojit s brasspawn.com. Zkontroluj připojení a zkus to znovu."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kunne ikke nå brasspawn.com. Tjek forbindelsen, og prøv igen."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "brasspawn.com ist nicht erreichbar. Prüfe die Verbindung und versuch es noch einmal."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν ήταν δυνατή η σύνδεση με το brasspawn.com. Έλεγξε τη σύνδεση και δοκίμασε ξανά."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn’t reach brasspawn.com. Check the connection and try again."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn’t reach brasspawn.com. Check the connection and try again."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn’t reach brasspawn.com. Check the connection and try again."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo conectar con brasspawn.com. Comprueba la conexión y vuelve a intentarlo."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yhteyttä brasspawn.comiin ei saatu. Tarkista verkkoyhteys ja yritä uudelleen."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de joindre brasspawn.com. Vérifiez la connexion et réessayez."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de joindre brasspawn.com. Vérifiez la connexion et réessayez."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא ניתן להתחבר ל־brasspawn.com. כדאי לבדוק את החיבור ולנסות שוב."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "brasspawn.com तक नहीं पहुँच सके। कनेक्शन जाँचकर फिर कोशिश करें।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nem sikerült elérni a brasspawn.com oldalt. Ellenőrizd a kapcsolatot, és próbáld újra."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat menjangkau brasspawn.com. Periksa koneksi dan coba lagi."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile raggiungere brasspawn.com. Controlla la connessione e riprova."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "brasspawn.com に接続できませんでした。接続を確認して、もう一度お試しください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "brasspawn.com에 연결할 수 없습니다. 연결 상태를 확인한 뒤 다시 시도하세요."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat mencapai brasspawn.com. Semak sambungan dan cuba lagi."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "brasspawn.com is niet bereikbaar. Controleer de verbinding en probeer het opnieuw."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fikk ikke kontakt med brasspawn.com. Sjekk tilkoblingen og prøv igjen."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nie udało się połączyć z brasspawn.com. Sprawdź połączenie i spróbuj ponownie."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível acessar brasspawn.com. Verifique a conexão e tente de novo."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nu am putut accesa brasspawn.com. Verifică conexiunea și încearcă din nou."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось связаться с brasspawn.com. Проверьте подключение и попробуйте ещё раз."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kunde inte nå brasspawn.com. Kontrollera anslutningen och försök igen."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เชื่อมต่อ brasspawn.com ไม่ได้ ตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "brasspawn.com'a ulaşılamadı. Bağlantını kontrol edip tekrar dene."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không thể kết nối tới brasspawn.com. Hãy kiểm tra kết nối và thử lại."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法连接 brasspawn.com。请检查网络连接后重试。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "無法連線到 brasspawn.com。請檢查網路連線後再試一次。"
           }
         }
       }

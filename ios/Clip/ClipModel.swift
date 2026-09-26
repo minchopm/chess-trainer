@@ -37,6 +37,16 @@ final class ClipModel {
     /// app through the shared container so an install does not lose it.
     var invitation: Invitation?
 
+    /// A game from the daily feed, when the link was one — the site's button
+    /// on an iPhone without the app. The clip shows it and keeps it, and the
+    /// app installed from here opens on it.
+    private(set) var story: FeedStory?
+    private(set) var storyID: String?
+    private(set) var storyFailed = false
+    /// The game as positions, and the move that made each one.
+    private(set) var storyLine: [(position: Position, move: Move?)] = []
+    private(set) var storyPly = 0
+
     /// How far into the current solution we are. The solution alternates
     /// solver, opponent, solver…; this counts only the moves already played.
     private var ply = 0
@@ -149,12 +159,47 @@ final class ClipModel {
         shouldOfferApp = false
     }
 
-    /// Take the invitation out of the URL that launched us and leave a copy
-    /// where the app will find it if this ends in an install.
+    /// Take the invitation — or the story — out of the URL that launched us
+    /// and leave a copy where the app will find it if this ends in an install.
     func accept(_ url: URL) {
+        if let id = FeedLink.storyID(in: url) {
+            guard id != storyID else { return }
+            storyID = id
+            SharedContainer.store(storyID: id)
+            Task { await loadStory(id) }
+            return
+        }
         guard let invitation = Invitation(url: url) else { return }
         self.invitation = invitation
         SharedContainer.store(invitation)
+    }
+
+    /// The one file the clip reads, and only when it was opened on a story.
+    private func loadStory(_ id: String) async {
+        storyFailed = false
+        do {
+            let (data, response) = try await URLSession.shared.data(from: FeedLink.file(for: id))
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw URLError(.badServerResponse) }
+            let story = try JSONDecoder().decode(FeedStory.self, from: data)
+            var position = Position()
+            var line: [(Position, Move?)] = [(position, nil)]
+            for san in story.sans {
+                guard let move = position.move(san: san), position.make(move) != nil else { throw URLError(.cannotParseResponse) }
+                line.append((position, move))
+            }
+            storyLine = line
+            storyPly = min(story.focusPly, line.count - 1)
+            self.story = story
+        } catch {
+            // The puzzles, then: a game that cannot be shown is no reason to
+            // show nothing. The app still opens on it, from the container.
+            storyFailed = true
+        }
+    }
+
+    /// Through the game a move at a time, or to either end of it.
+    func step(to ply: Int) {
+        storyPly = max(0, min(ply, storyLine.count - 1))
     }
 
     /// The same invocation URL, read from the environment.

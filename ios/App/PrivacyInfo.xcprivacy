@@ -3,10 +3,13 @@
 <plist version="1.0">
 <dict>
 	<!-- Nothing is collected and nothing is tracked. Both engines run on the
-	     device and the progress file never leaves it. The one thing that
-	     crosses a network is an online game, which travels device to device
-	     through Game Center: Apple carries it, we have no server in the middle
-	     and receive none of it. See PRIVACY.md, which says the same in prose.
+	     device and the progress file never leaves it. Two things cross a
+	     network. An online game travels device to device through Game Center:
+	     Apple carries it, we have no server in the middle and receive none of
+	     it. And opening Today downloads one static file from brasspawn.com —
+	     a GET with no identifier, cookie or cache, answered with the same file
+	     for everybody and logged nowhere — so it collects nothing and is not a
+	     tracking domain. See PRIVACY.md, which says the same in prose.
 
 	     NSPrivacyAccessedAPITypes is deliberately empty. The app calls none of
 	     the APIs that need a declared reason: no UserDefaults (the progress is
