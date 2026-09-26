@@ -7,24 +7,36 @@
 <div class="page">
   <article class="story" ctReveal>
     <figure class="story__board">
-      <bp-diagram
-        [fen]="story().fen"
-        [last]="story().last"
+      <bp-board
+        [fen]="shown().fen"
+        [last]="shown().last"
         [flip]="flip()"
-        [label]="
-          story().key
-            ? 'The position after ' + moveLabel(story().key!.ply, story().key!.played)
-            : 'The final position'
-        "
+        [label]="'The position after ' + (ply() ? moveLabel(ply(), sans()[ply() - 1]) : 'no moves')"
       />
       <figcaption class="mono">
-        @if (story().key; as key) {
-          After {{ moveLabel(key.ply, key.played) }} · Stockfish {{ scoreText(key.before) }} →
-          {{ scoreText(key.after) }}
+        @if (story().key && ply() === story().key!.ply) {
+          After {{ moveLabel(ply(), story().key!.played) }} · Stockfish {{ scoreText(story().key!.before) }} →
+          {{ scoreText(story().key!.after) }}
+        } @else if (ply() > 0) {
+          After {{ moveLabel(ply(), sans()[ply() - 1]) }}
         } @else {
-          The final position
+          The starting position
         }
       </figcaption>
+      @if (story().line; as line) {
+        <div class="replay mono" role="group" aria-label="Replay">
+          <button type="button" (click)="step(0)" aria-label="Start">⏮</button>
+          <button type="button" (click)="step(ply() - 1)" aria-label="Back">◀</button>
+          @if (story().key; as key) {
+            <button type="button" class="key" [class.on]="ply() === key.ply" (click)="step(key.ply)">
+              {{ moveLabel(key.ply, key.played) }}
+            </button>
+          }
+          <button type="button" (click)="step(ply() + 1)" aria-label="Forward">▶</button>
+          <button type="button" (click)="step(line.length - 1)" aria-label="End">⏭</button>
+        </div>
+      }
+      <bp-board-look class="look" />
     </figure>
 
     <div class="story__words">
@@ -98,9 +110,9 @@
       @for (pair of pairs(); track pair.n) {
         <span class="pair"
           ><span class="n">{{ pair.n }}.</span>
-          <span [class.key]="story().key?.ply === pair.n * 2 - 1">{{ pair.white }}</span>
+          <button type="button" class="move" [class.key]="story().key?.ply === pair.n * 2 - 1" [class.at]="ply() === pair.n * 2 - 1" (click)="step(pair.n * 2 - 1)">{{ pair.white }}</button>
           @if (pair.black) {
-            <span [class.key]="story().key?.ply === pair.n * 2">{{ pair.black }}</span>
+            <button type="button" class="move" [class.key]="story().key?.ply === pair.n * 2" [class.at]="ply() === pair.n * 2" (click)="step(pair.n * 2)">{{ pair.black }}</button>
           }
         </span>
       }

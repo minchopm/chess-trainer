@@ -20,7 +20,8 @@ const pieces = {};
 for (const colour of 'wb') {
   for (const kind of 'KQRBNP') {
     const code = colour + kind;
-    const png = await readFile(resolve(ROOT, `web/public/pieces/${code}.png`));
+    const file = colour === 'w' ? `web/public/pieces/${code}.png` : `web/public/pieces/ebony/${code}.png`;
+    const png = await readFile(resolve(ROOT, file));
     pieces[code] = `data:image/png;base64,${png.toString('base64')}`;
   }
 }

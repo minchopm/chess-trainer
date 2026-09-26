@@ -172,3 +172,45 @@ section + section,
     text-align: start;
   }
 }
+
+.replay {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0.9rem 0 0;
+}
+
+.replay button,
+.move {
+  font: inherit;
+  color: var(--ivory-dim);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+}
+
+.replay .key.on,
+.replay button:hover {
+  border-color: var(--brass);
+  color: var(--brass-hot);
+}
+
+.look {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.9rem;
+}
+
+/* The score's moves are buttons now, and should still read as text. */
+.move {
+  border: 0;
+  padding: 0 0.2rem;
+  border-radius: 0.25rem;
+}
+
+.move.at {
+  outline: 1px solid var(--brass-deep);
+  color: var(--ivory);
+}

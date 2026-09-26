@@ -61,7 +61,15 @@ export interface StorySummary {
   readonly last: { readonly from: string; readonly to: string } | null;
 }
 
+/** One position of a game and the move that made it; the first has none. */
+export interface LinePosition {
+  readonly fen: string;
+  readonly last: { readonly from: string; readonly to: string } | null;
+}
+
 export interface Story extends StorySummary {
+  /** Every position of the game, for the replay. Absent on a story read live from the feed. */
+  readonly line?: readonly LinePosition[];
   readonly opening: { readonly eco: string | null; readonly name: string | null };
   readonly moves: string;
   readonly key: KeyMoment | null;

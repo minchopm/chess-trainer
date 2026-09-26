@@ -1,10 +1,11 @@
-import { afterNextRender, ChangeDetectionStrategy, Component, computed, input, signal } from '@angular/core';
+import { afterNextRender, ChangeDetectionStrategy, Component, computed, effect, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { Reveal } from '../../core/reveal';
 import { SITE } from '../../core/site';
 import { PageHead } from '../../shared/page-head/page-head';
-import { Diagram } from './diagram';
+import { Board } from '../../board/board';
+import { BoardLook } from '../../board/look';
 import { FEED } from './feed';
 import type { Story } from './feed/types';
 import { longDate, moveLabel, movePairs, occasion, playerText, resultText, scoreText } from './words';
@@ -20,7 +21,7 @@ import { longDate, moveLabel, movePairs, occasion, playerText, resultText, score
 @Component({
   selector: 'bp-story-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, PageHead, Reveal, Diagram],
+  imports: [RouterLink, PageHead, Reveal, Board, BoardLook],
   templateUrl: './story-view.html',
   styleUrl: './story-view.scss',
 })
@@ -60,12 +61,40 @@ export class StoryView {
   protected readonly onPhone = signal(false);
 
   constructor() {
+    // Back to the story's own move whenever the story changes — following a
+    // link to the next one keeps the component and changes its input.
+    effect(() => {
+      const story = this.story();
+      this.ply.set(story.key?.ply ?? story.moves.split(' ').length);
+    });
     afterNextRender(() => {
       const ua = navigator.userAgent;
       this.onPhone.set(/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1));
     });
   }
   protected readonly flip = computed(() => this.story().result === '0-1');
+
+  protected readonly sans = computed(() => this.story().moves.split(' '));
+
+  /**
+   * Where the replay stands, in half-moves. It opens on the move the story is
+   * about, as the app's story screen does, and a story read live from the feed
+   * — which has no positions worked out for it — stays there.
+   */
+  protected readonly ply = signal(0);
+
+  protected readonly shown = computed(() => {
+    const line = this.story().line;
+    const ply = this.ply();
+    if (line && line[ply]) return line[ply];
+    return { fen: this.story().fen, last: this.story().last };
+  });
+
+  protected step(ply: number): void {
+    const line = this.story().line;
+    if (!line) return;
+    this.ply.set(Math.max(0, Math.min(ply, line.length - 1)));
+  }
 
   /** The neighbours in the feed as this build has it, for reading on. */
   protected readonly neighbours = computed(() => {

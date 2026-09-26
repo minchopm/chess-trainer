@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { Diagram } from './diagram';
+import { Board } from '../../board/board';
 import type { StorySummary } from './feed/types';
 import { storyLink } from './live';
 import { occasion, resultText } from './words';
@@ -10,14 +10,16 @@ import { occasion, resultText } from './words';
 @Component({
   selector: 'bp-story-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, Diagram],
+  imports: [RouterLink, Board],
   template: `
     <a class="story" [routerLink]="link().path" [queryParams]="link().query">
-      <bp-diagram
+      <bp-board
         class="story__board"
         [fen]="story().fen"
         [last]="story().last"
         [flip]="story().result === '0-1'"
+        [flat]="true"
+        [bare]="true"
         [label]="'The position in ' + story().white.short + '–' + story().black.short"
       />
       <div class="story__words">

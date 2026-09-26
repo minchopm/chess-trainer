@@ -1,6 +1,6 @@
 // A position as an SVG diagram, on the app's walnut squares with the app's
-// own pieces. The website's diagrams are the same drawing in TypeScript
-// (web/src/app/pages/today/diagram.ts); keep the two in step.
+// own pieces — for the review page, which is read once and thrown away. The
+// site draws its boards in the browser instead (web/src/app/board).
 import { Chess } from 'chess.js';
 
 export const LIGHT = '#CB9B66';

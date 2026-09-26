@@ -56,14 +56,16 @@ export function seeded(seed: number): () => number {
   };
 }
 
-export function boardTexture(size = 1024): { map: Texture; roughness: Texture } {
+export function boardTexture(
+  size = 1024,
+  // The title board's own two woods. A story's board passes the reader's
+  // chosen style instead, and gets the same grain over those colours.
+  { light: LIGHT, dark: DARK }: { light: string; dark: string } = { light: '#c9bda3', dark: '#453d30' },
+): { map: Texture; roughness: Texture } {
   const random = seeded(0x5ea50ed);
   const canvas = scratch(size, size);
   const ctx = canvas.getContext('2d') as Canvas2D;
   const square = size / 8;
-
-  const LIGHT = '#c9bda3';
-  const DARK = '#453d30';
 
   for (let file = 0; file < 8; file++) {
     for (let rank = 0; rank < 8; rank++) {
