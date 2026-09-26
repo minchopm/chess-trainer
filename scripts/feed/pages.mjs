@@ -13,12 +13,27 @@
 // What is written goes to the site's bucket, beside the deploy's files and
 // under keys the deploy leaves alone: today/<id>/index.html, today/feed.xml,
 // sitemap-today.xml. Only stories the feed makes public (FEED_PUBLIC) get any.
-import { existsSync, readdirSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
+import { LANGS } from './article.mjs';
 import { pageStory, pageURL } from './page-story.mjs';
 import { openS3 } from './s3.mjs';
+import { inLanguage } from './store.mjs';
+
+/**
+ * The other languages a story has a page in, as the feed names them and as
+ * the site's addresses do: /de/today/<id>, /pt-br/today/<id>.
+ */
+export const LANGUAGES = LANGS.filter((lang) => lang !== 'en').map((lang) => ({
+  lang,
+  slug: { 'pt-BR': 'pt-br', 'zh-Hans': 'zh-hans', 'zh-Hant': 'zh-hant' }[lang] ?? lang,
+}));
+
+/** A story's page in one of them. */
+export const languageURL = (id, slug) => `https://brasspawn.com/${slug}/today/${id}`;
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 
@@ -52,13 +67,31 @@ export function openPages({
   const s3 = openS3({ bucket, region });
   let renderer = null;
 
+  let file = null;
   async function render(path, context) {
     renderer ??= (async () => {
-      const file = RENDERERS.find((candidate) => existsSync(candidate));
+      file = RENDERERS.find((candidate) => existsSync(candidate));
       if (!file) throw new Error('no site renderer — build the site, or deploy the collector with one');
       return import(pathToFileURL(file).href);
     })();
     return (await renderer).render(path, context);
+  }
+
+  /**
+   * Which build the renderer is: a hash of its manifest, which names every
+   * chunk the pages it renders ask for. A page rendered by an older build
+   * still works — its chunks stay on the site — but it is that build's page,
+   * so the other languages are rendered again, a story at a time, until every
+   * one is this build's.
+   */
+  let buildHash = null;
+  async function build() {
+    if (!buildHash) {
+      await render('/404', null).catch(() => null);
+      const manifest = join(dirname(file), 'angular-app-manifest.mjs');
+      buildHash = createHash('sha1').update(readFileSync(manifest)).digest('hex').slice(0, 12);
+    }
+    return buildHash;
   }
 
   async function put(key, body, options) {
@@ -82,15 +115,40 @@ export function openPages({
       return pageURL(story.id);
     },
 
+    build,
+
+    /**
+     * A story's pages in every other language, from each language's copy of
+     * it. Rendered one after another — the renderer is one process — and
+     * written side by side.
+     */
+    async translations(story) {
+      const pages = [];
+      for (const { lang, slug } of LANGUAGES) {
+        const html = await render(`/${slug}/today/${story.id}`, { story: pageStory(inLanguage(story, lang)) });
+        if (!html || !html.includes(`<link rel="canonical" href="${languageURL(story.id, slug)}"`)) {
+          throw new Error(`the renderer did not make the ${slug} page for ${story.id}`);
+        }
+        pages.push({ key: `${slug}/today/${story.id}/index.html`, html, url: languageURL(story.id, slug) });
+      }
+      await Promise.all(pages.map(({ key, html }) => put(key, html, HTML)));
+      return pages.map(({ url }) => url);
+    },
+
     /**
      * The stories' sitemap and the Atom feed, from every public story, newest
      * first — written whole each time, so a run that follows a deploy puts back
      * anything the deploy's timing left out.
      */
-    async lists(stories) {
+    async lists(stories, translated = {}) {
       const withPages = stories.filter((story) => story.url === pageURL(story.id));
+      const entry = (loc, story) => `  <url>\n    <loc>${escape(loc)}</loc>\n    <lastmod>${escape(lastmod(story))}</lastmod>\n  </url>`;
+      // The story in English, and in every language it has been rendered in.
       const urls = withPages
-        .map((story) => `  <url>\n    <loc>${escape(story.url)}</loc>\n    <lastmod>${escape(lastmod(story))}</lastmod>\n  </url>`)
+        .flatMap((story) => [
+          entry(story.url, story),
+          ...(translated[story.id] ? LANGUAGES.map(({ slug }) => entry(languageURL(story.id, slug), story)) : []),
+        ])
         .join('\n');
       await put(
         'sitemap-today.xml',
@@ -98,7 +156,7 @@ export function openPages({
         LIST('application/xml; charset=utf-8'),
       );
       await put('today/feed.xml', atom(withPages.slice(0, FEED_ENTRIES)), LIST('application/atom+xml; charset=utf-8'));
-      log(`  sitemap-today.xml and today/feed.xml: ${withPages.length} stories`);
+      log(`  sitemap-today.xml and today/feed.xml: ${withPages.length} stories, ${Object.keys(translated).length} of them in every language`);
     },
 
     /** Bing and the engines that share its endpoint, told about the new pages. */
@@ -142,7 +200,7 @@ export function openPages({
  * retries a page that failed to render on an earlier run. Returns the pages it
  * wrote, for whoever tells the search engines.
  */
-export async function publishPages({ store, site, days, log = console.error }) {
+export async function publishPages({ store, site, days, log = console.error, translated = null }) {
   const stories = await store.publicStories(days);
   const changed = [];
   const written = [];
@@ -160,8 +218,44 @@ export async function publishPages({ store, site, days, log = console.error }) {
     log(`  ${changed.length} stories given their page's address, ${written.length} of them a new page`);
   }
   const byId = new Map(changed.map((story) => [story.id, story]));
-  await site.lists(stories.map((story) => byId.get(story.id) ?? story));
+  await site.lists(stories.map((story) => byId.get(story.id) ?? story), translated ?? (await store.pages()).done);
   return written;
+}
+
+/**
+ * Every public story's pages in the other languages, rendered by this build:
+ * newest first, as many as the time allows, and the rest on the next run. A
+ * new story is the newest, so it is always among the first; after a site
+ * deploy the whole history is rendered again, a run or two at most. Returns
+ * the pages rendered for the first time, for whoever tells the search
+ * engines, and the record of which stories are done.
+ */
+export async function translatePages({ store, site, days, budgetMs, log = console.error }) {
+  const started = Date.now();
+  const build = await site.build();
+  const pages = await store.pages();
+  const stories = await store.publicStories(days);
+  const fresh = [];
+  let rendered = 0;
+  for (const summary of stories) {
+    if (pages.done[summary.id] === build) continue;
+    if (Date.now() - started > budgetMs) break;
+    const story = await store.story(summary.id);
+    if (!story) continue;
+    try {
+      const urls = await site.translations(story);
+      if (!pages.done[summary.id]) fresh.push(...urls);
+      pages.done[summary.id] = build;
+      rendered++;
+      if (rendered % 10 === 0) await store.savePages(pages);
+    } catch (error) {
+      log(`  ✗ languages for ${summary.id}: ${error.message}`);
+    }
+  }
+  if (rendered) await store.savePages(pages);
+  const left = stories.filter((story) => pages.done[story.id] !== build).length;
+  log(`  ${rendered} stories rendered in every language by build ${build}; ${left} to go`);
+  return { fresh, done: pages.done, left };
 }
 
 /** Whether the site already serves this story's page. */

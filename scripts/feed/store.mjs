@@ -39,6 +39,8 @@ export function inLanguage(story, lang) {
 
 export const PREFIX = 'media/feed/v1';
 const STATE_KEY = 'feed-state/v1/state.json';
+/** Which build rendered each story's pages in the other languages — see pages.mjs. */
+const PAGES_KEY = 'feed-state/v1/pages.json';
 const LATEST_DAYS = 3;
 
 export function openStore({
@@ -110,6 +112,10 @@ export function openStore({
       return { rounds: {}, games: {}, days: {}, ...state };
     },
     saveState: (state) => put(STATE_KEY, { ...state, updatedAt: new Date().toISOString() }, { isPublic: false }),
+    async pages() {
+      return { done: {}, ...((await get(PAGES_KEY)) ?? {}) };
+    },
+    savePages: (pages) => put(PAGES_KEY, { ...pages, updatedAt: new Date().toISOString() }, { isPublic: false }),
     story: (id) => get(`${PREFIX}/stories/${id}.json`),
     async day(date) {
       if (!dayCache.has(date)) dayCache.set(date, (await get(`${PREFIX}/days/${date}.json`)) ?? { date, stories: [] });

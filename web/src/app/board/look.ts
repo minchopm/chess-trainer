@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 
+import { TodayLanguage } from '../pages/today/i18n';
 import { BoardSettings } from './board';
 import { BoardStyle, Carving, CARVINGS, LightTone, PIECE_SETS, PieceSet, STYLES, TONES } from './config';
 
@@ -22,35 +23,35 @@ import { BoardStyle, Carving, CARVINGS, LightTone, PIECE_SETS, PieceSet, STYLES,
            the flat board's, and in the round the only choice is the set. -->
       @if (config().dimension === '3d') {
         <label>
-          <span class="sr">Set</span>
+          <span class="sr">{{ w().app['set'] }}</span>
           <select [value]="config().carving" (change)="set({ carving: $any($event.target).value })">
             @for (carving of carvings; track carving.id) {
-              <option [value]="carving.id" [selected]="carving.id === config().carving">{{ carving.name }}</option>
+              <option [value]="carving.id" [selected]="carving.id === config().carving">{{ w().app[carving.id] ?? carving.name }}</option>
             }
           </select>
         </label>
       } @else {
         <label>
-          <span class="sr">Squares</span>
+          <span class="sr">{{ w().app['squares'] }}</span>
           <select [value]="config().style" (change)="set({ style: $any($event.target).value })">
             @for (style of styles; track style.id) {
-              <option [value]="style.id" [selected]="style.id === config().style">{{ style.name }}</option>
+              <option [value]="style.id" [selected]="style.id === config().style">{{ w().app[style.id] ?? style.name }}</option>
             }
           </select>
         </label>
         <label>
-          <span class="sr">Pieces</span>
+          <span class="sr">{{ w().app['pieces'] }}</span>
           <select [value]="config().pieces" (change)="set({ pieces: $any($event.target).value })">
             @for (set of sets; track set.id) {
-              <option [value]="set.id" [selected]="set.id === config().pieces">{{ set.name }}</option>
+              <option [value]="set.id" [selected]="set.id === config().pieces">{{ w().app[set.id] ?? set.name }}</option>
             }
           </select>
         </label>
         <label>
-          <span class="sr">Light side</span>
+          <span class="sr">{{ w().app['lightSide'] }}</span>
           <select [value]="config().tone" (change)="set({ tone: $any($event.target).value })">
             @for (tone of tones; track tone.id) {
-              <option [value]="tone.id" [selected]="tone.id === config().tone">{{ tone.name }}</option>
+              <option [value]="tone.id" [selected]="tone.id === config().tone">{{ w().app[tone.id] ?? tone.name }}</option>
             }
           </select>
         </label>
@@ -77,6 +78,8 @@ import { BoardStyle, Carving, CARVINGS, LightTone, PIECE_SETS, PieceSet, STYLES,
 })
 export class BoardLook {
   private readonly settings = inject(BoardSettings);
+  /** The app's own names for its boards, sets and tones, in the page's language. */
+  protected readonly w = inject(TodayLanguage).words;
   protected readonly config = computed(() => this.settings.config());
 
   protected readonly styles = (Object.keys(STYLES) as BoardStyle[]).map((id) => ({ id, name: STYLES[id].name }));

@@ -1,4 +1,4 @@
-import { afterNextRender, ChangeDetectionStrategy, Component, computed, effect, input, signal } from '@angular/core';
+import { afterNextRender, ChangeDetectionStrategy, Component, computed, effect, inject, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { Reveal } from '../../core/reveal';
@@ -7,8 +7,9 @@ import { PageHead } from '../../shared/page-head/page-head';
 import { Board } from '../../board/board';
 import { BoardLook } from '../../board/look';
 import { FEED } from './feed';
-import type { Story } from './feed/types';
-import { longDate, moveLabel, movePairs, occasion, playerText, resultText, scoreText } from './words';
+import type { Story, StorySummary } from './feed/types';
+import { fill, listPath, storyLocales, storyPath, TodayLanguage } from './i18n';
+import { moveLabel, movePairs, playerText, resultText, scoreText } from './words';
 
 /**
  * Moves the site gives away before it hands the game over. Enough to see the
@@ -34,6 +35,14 @@ const FREE_MOVES = 5;
 })
 export class StoryView {
   readonly story = input.required<Story>();
+  /** The stories around this one, in the page's language — the build's English list if not given. */
+  readonly feed = input<readonly StorySummary[] | undefined>(undefined);
+
+  private readonly language = inject(TodayLanguage);
+  /** The page's words, in its language. */
+  protected readonly w = this.language.words;
+  protected readonly fill = fill;
+  protected readonly languages = storyLocales();
 
   protected readonly site = SITE;
   protected readonly moveLabel = moveLabel;
@@ -41,8 +50,17 @@ export class StoryView {
   protected readonly playerText = playerText;
   protected readonly resultText = resultText;
 
-  protected readonly occasion = computed(() => occasion(this.story()));
-  protected readonly date = computed(() => longDate(this.story().date));
+  protected readonly english = computed(() => this.w().slug === 'en');
+  protected readonly occasion = computed(() => this.language.occasion(this.story()));
+  protected readonly date = computed(() => this.language.longDate(this.story().date));
+  protected readonly section = computed(() =>
+    this.story().event.section === 'Women' ? this.w().women : this.story().event.section,
+  );
+  protected readonly inMoves = computed(() => this.language.inMoves(this.pairs().length));
+  protected readonly list = computed(() => listPath(this.w().slug));
+  protected path(id: string, slug = this.w().slug): string {
+    return storyPath(id, slug);
+  }
   protected readonly paragraphs = computed(() => this.story().body.split(/\n\n+/));
   protected readonly pairs = computed(() => movePairs(this.story().moves));
   /**
@@ -127,10 +145,11 @@ export class StoryView {
     this.moved.update((n) => n + 1);
   }
 
-  /** The neighbours in the feed as this build has it, for reading on. */
+  /** The neighbours in the feed as this build has it, in the page's language, for reading on. */
   protected readonly neighbours = computed(() => {
-    const i = FEED.findIndex((s) => s.id === this.story().id);
-    if (i < 0) return { newer: null, older: FEED[0] ?? null };
-    return { newer: i > 0 ? FEED[i - 1] : null, older: FEED[i + 1] ?? null };
+    const feed = this.feed() ?? FEED;
+    const i = feed.findIndex((s) => s.id === this.story().id);
+    if (i < 0) return { newer: null, older: feed[0] ?? null };
+    return { newer: i > 0 ? feed[i - 1] : null, older: feed[i + 1] ?? null };
   });
 }

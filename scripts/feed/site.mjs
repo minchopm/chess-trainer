@@ -84,4 +84,43 @@ await writeFile(
 );
 // For the sitemap, which is written by a plain Node script after the build.
 await writeFile(resolve(dir, 'sitemap.json'), JSON.stringify(stories.map(({ id, date }) => ({ id, date }))) + '\n');
-console.error(`${stories.length} stories → web/src/app/pages/today/feed`);
+
+// Each language's list, from that language's copy of the feed: the same
+// stories, their headlines and ledes in the language — for /de/today and the
+// rest. The story pages themselves are the collector's (pages.mjs); the lists
+// are prerendered here, one small module per language, loaded by its page.
+const FOLDERS = {
+  ar: 'ar', bg: 'bg', cs: 'cs', da: 'da', de: 'de', el: 'el', es: 'es', fi: 'fi', fr: 'fr', he: 'he',
+  hi: 'hi', hu: 'hu', id: 'id', it: 'it', ja: 'ja', ko: 'ko', ms: 'ms', nl: 'nl', no: 'no', pl: 'pl',
+  'pt-br': 'pt-BR', ro: 'ro', ru: 'ru', sv: 'sv', th: 'th', tr: 'tr', vi: 'vi', 'zh-hans': 'zh-Hans', 'zh-hant': 'zh-Hant',
+};
+await rm(resolve(dir, 'i18n'), { recursive: true, force: true });
+await mkdir(resolve(dir, 'i18n'), { recursive: true });
+const jobs = Object.entries(FOLDERS).flatMap(([slug, folder]) => (latest.days ?? []).map(({ date }) => ({ slug, folder, date })));
+const byLanguage = Object.fromEntries(Object.keys(FOLDERS).map((slug) => [slug, new Map()]));
+// Sixteen at a time: the files are small, and the edge has them.
+for (let i = 0; i < jobs.length; i += 16) {
+  await Promise.all(jobs.slice(i, i + 16).map(async ({ slug, folder, date }) => {
+    const day = await json(`${folder}/days/${date}.json`);
+    for (const story of day?.stories ?? []) byLanguage[slug].set(story.id, story);
+  }));
+}
+for (const [slug, found] of Object.entries(byLanguage)) {
+  // The English list's order, the language's words; a story the language's
+  // copy does not have yet is listed in English.
+  const list = stories.map((story) => {
+    const own = found.get(story.id);
+    return summary(own ? { ...story, headline: own.headline, lede: own.lede ?? story.lede } : story);
+  });
+  await writeFile(
+    resolve(dir, `i18n/${slug}.ts`),
+    `${header}import type { StorySummary } from '../types';\n\nexport const FEED: readonly StorySummary[] = ${JSON.stringify(list, null, 2)};\n`,
+  );
+}
+await writeFile(
+  resolve(dir, 'i18n/index.ts'),
+  `${header}import type { StorySummary } from '../types';\n\nexport const LOCAL_FEEDS: Record<string, () => Promise<readonly StorySummary[]>> = {\n` +
+    Object.keys(FOLDERS).map((slug) => `  '${slug}': () => import('./${slug}').then((m) => m.FEED),`).join('\n') +
+    `\n};\n`,
+);
+console.error(`${stories.length} stories → web/src/app/pages/today/feed, in ${Object.keys(FOLDERS).length + 1} languages`);

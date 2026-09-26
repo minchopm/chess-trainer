@@ -2,7 +2,8 @@ import { ChangeDetectionStrategy, Component, effect, inject, input } from '@angu
 
 import { Seo } from '../../core/seo';
 import { url } from '../../core/site';
-import type { Story } from './feed/types';
+import type { Story, StorySummary } from './feed/types';
+import { listPath, STORY_SLUGS, storyPath, TodayLanguage } from './i18n';
 import { StoryView } from './story-view';
 
 /**
@@ -17,26 +18,35 @@ import { StoryView } from './story-view';
   selector: 'bp-story',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [StoryView],
-  template: `<bp-story-view [story]="story()" />`,
+  template: `<bp-story-view [story]="story()" [feed]="feed()" />`,
 })
 export class StoryPage {
   /** From the route's resolver: this story, loaded on its own. */
   readonly story = input.required<Story>();
+  /** From the route, on the pages in another language: that language's list, for the neighbours. */
+  readonly feed = input<readonly StorySummary[] | undefined>(undefined);
 
   private readonly seo = inject(Seo);
+  private readonly language = inject(TodayLanguage);
 
   constructor() {
     effect(() => {
       const story = this.story();
-      const path = `/today/${story.id}`;
+      const words = this.language.words();
+      // Its own address in the reader's language, and the same story's pages
+      // in every other language named as its translations.
+      const path = storyPath(story.id, words.slug);
       this.seo.apply({
         path,
+        translatedPath: `/today/${story.id}`,
+        translatedIn: STORY_SLUGS,
+        locale: words.locale,
         title: story.headline,
         description: story.lede,
         published: story.date,
         updated: story.date,
         appArgument: `brasspawn://today/${story.id}`,
-        crumbs: [{ label: 'Today', path: '/today' }],
+        crumbs: [{ label: words.app['today'], path: listPath(words.slug) }],
         entities: [
           {
             '@type': 'Article',
@@ -49,7 +59,7 @@ export class StoryPage {
             author: { '@id': url('/#organization') },
             publisher: { '@id': url('/#organization') },
             image: url('/og.jpg'),
-            inLanguage: 'en',
+            inLanguage: words.locale.tag,
             about: {
               '@type': 'SportsEvent',
               name: story.event.name,

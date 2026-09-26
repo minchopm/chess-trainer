@@ -21,6 +21,8 @@
 export const LANGS = [
   'en', 'ar', 'cs', 'da', 'de', 'el', 'es', 'fi', 'fr', 'he', 'hi', 'hu', 'id', 'it', 'ja',
   'ko', 'ms', 'nl', 'no', 'pl', 'pt-BR', 'ro', 'ru', 'sv', 'th', 'tr', 'vi', 'zh-Hans', 'zh-Hant',
+  // The website speaks one language the app does not yet.
+  'bg',
 ];
 
 // ------------------------------------------------------------------- facts
@@ -674,6 +676,24 @@ const T = {
     upset: (s, g) => `Penarafan berkata lain: ${T.ms.side[s]} ${g} mata lebih rendah.`,
     mate: (n) => `Permainan berakhir dengan mat pada langkah ${n}.`,
     cta: 'Main semula langkah demi langkah, kemudian teruskan kedudukan penting menentang enjin.',
+  },
+  bg: {
+    round: (r) => `${r}. кръг`, women: 'жени',
+    side: { white: 'белите', black: 'черните' },
+    assess: { level: () => 'равенство', small: (s) => `леко предимство за ${T.bg.side[s]}`, clear: (s) => `ясно предимство за ${T.bg.side[s]}`, winning: (s) => `спечелена позиция за ${T.bg.side[s]}`, mate: (s) => `форсиран мат за ${T.bg.side[s]}` },
+    win: (s) => `победа за ${T.bg.side[s]}`, draw: 'реми',
+    moves: (n) => `за ${n} ${n === 1 ? 'ход' : 'хода'}`,
+    head: { mate: (n) => `мат на ${n}-ия ход`, upset: (g) => `изненада при ${g} точки разлика в рейтинга`, clock: (t) => `един ход при ${t} на часовника реши всичко`, challenge: 'кой ход искаше енджинът?', decider: 'ходът, който реши всичко', chance: 'шанс за победа според Stockfish, който отмина' },
+    mistake: (m, b, a) => `Stockfish преди ${m}: ${b}. След него: ${a}.`,
+    breakthrough: (m, b, a) => `${m} реши партията. Stockfish преди това: ${b}; след това: ${a} — и оценката повече не се върна.`,
+    swing: (m, a) => `След ${m} Stockfish даваше ${a} — и въпреки това партията завърши реми.`,
+    clock: (t) => `Ходът е изигран при ${t} на часовника.`,
+    better: (mv) => `Изборът на Stockfish беше ${mv}. Защо?`,
+    liked: 'Какво видя Stockfish в този ход?',
+    reply: (mv) => `А най-добрият отговор, ${mv}, дойде веднага.`,
+    upset: (s, g) => `Рейтингът казваше друго: ${T.bg.side[s]} бяха с ${g} точки по-ниско.`,
+    mate: (n) => `Партията завърши с мат на ${n}-ия ход.`,
+    cta: 'Разгледайте партията ход по ход и продължете ключовата позиция срещу енджина.',
   },
   ro: {
     round: (r) => `runda ${r}`, women: 'feminin',

@@ -1,4 +1,4 @@
-import { afterNextRender, ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { afterNextRender, ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
 
 import { Reveal } from '../../core/reveal';
 import { Seo } from '../../core/seo';
@@ -6,9 +6,9 @@ import { SITE } from '../../core/site';
 import { PageHead } from '../../shared/page-head/page-head';
 import { FEED } from './feed';
 import type { StorySummary } from './feed/types';
+import { feedFolder, listPath, STORY_SLUGS, TodayLanguage } from './i18n';
 import { liveStories } from './live';
 import { StoryCard } from './story-card';
-import { longDate } from './words';
 
 /** How many stories the page lists. The rest are one link away, story to story. */
 const SHOWN = 60;
@@ -30,6 +30,16 @@ const SHOWN = 60;
   styleUrl: './today.scss',
 })
 export class Today {
+  /** From the route, on the pages in another language: that language's list. */
+  readonly feed = input<readonly StorySummary[] | undefined>(undefined);
+
+  private readonly language = inject(TodayLanguage);
+  protected readonly w = this.language.words;
+  /** The first paragraph about how it is made, split round the one word that is a link. */
+  protected readonly how = computed(() => {
+    const [before, ...after] = this.w().howP1.split('Lichess');
+    return { before, after: after.join('Lichess') };
+  });
   protected readonly site = SITE;
 
   /** Stories since the last deploy, from the live feed — see live.ts. */
@@ -37,11 +47,11 @@ export class Today {
 
   protected readonly days = computed(() => {
     const days: { date: string; label: string; stories: StorySummary[] }[] = [];
-    const all = [...this.live(), ...FEED].sort((a, b) => b.date.localeCompare(a.date)).slice(0, SHOWN);
+    const all = [...this.live(), ...(this.feed() ?? FEED)].sort((a, b) => b.date.localeCompare(a.date)).slice(0, SHOWN);
     for (const story of all) {
       let day = days.at(-1);
       if (day?.date !== story.date) {
-        day = { date: story.date, label: longDate(story.date), stories: [] };
+        day = { date: story.date, label: this.language.longDate(story.date), stories: [] };
         days.push(day);
       }
       day.stories.push(story);
@@ -50,13 +60,19 @@ export class Today {
   });
 
   constructor() {
+    const words = this.language.words();
     inject(Seo).apply({
-      path: '/today',
-      title: 'Today — the top boards, every day',
+      path: listPath(words.slug),
+      translatedPath: '/today',
+      translatedIn: STORY_SLUGS,
+      locale: words.locale,
+      title: `${words.app['today']} — ${words.listTitle}`,
       updated: FEED[0]?.date,
-      description:
-        'The finished games from the day’s top chess events, each with the move where Stockfish says it turned. Replay any of them in Brass Pawn, or play on from the key position.',
+      description: words.listLede,
     });
-    afterNextRender(async () => this.live.set(await liveStories()));
+    afterNextRender(async () => {
+      const own = new Set((this.feed() ?? FEED).map((story) => story.id));
+      this.live.set(await liveStories(feedFolder(words.slug), own));
+    });
   }
 }

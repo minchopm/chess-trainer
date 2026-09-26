@@ -4,6 +4,8 @@ import { Routes } from '@angular/router';
 import { COPY } from './i18n/copy';
 import { LOCALES } from './i18n/locales';
 import { PAGES } from './i18n/pages';
+import { LOCAL_FEEDS } from './pages/today/feed/i18n';
+import { STORY_SLUGS } from './pages/today/i18n/slugs';
 import { resolveStory } from './pages/today/story-resolver';
 
 /**
@@ -22,7 +24,11 @@ import { resolveStory } from './pages/today/story-resolver';
 const localeRoutes: Routes = LOCALES.filter((locale) => locale.slug !== 'en').map((locale) => ({
   path: locale.slug,
   data: { locale },
-  resolve: { copy: () => COPY[locale.slug]() },
+  resolve: {
+    copy: () => COPY[locale.slug](),
+    // The daily feed's strip, in the languages the feed is written in.
+    ...(STORY_SLUGS.includes(locale.slug) ? { feed: () => LOCAL_FEEDS[locale.slug]() } : {}),
+  },
   loadComponent: () => import('./pages/locale/locale').then((m) => m.LocalePage),
 }));
 
@@ -53,6 +59,27 @@ const localePageRoutes: Routes = LOCALES.filter(
     loadComponent,
   })),
 );
+
+/**
+ * The daily feed in every language the collector writes it in: the list,
+ * prerendered from this build's copy of the feed, and each story, rendered by
+ * the collector with this build's renderer as the story is written (see
+ * scripts/feed/pages.mjs and app.routes.server.ts).
+ */
+const localeTodayRoutes: Routes = LOCALES.filter((locale) => STORY_SLUGS.includes(locale.slug)).flatMap((locale) => [
+  {
+    path: `${locale.slug}/today`,
+    data: { locale },
+    resolve: { feed: () => LOCAL_FEEDS[locale.slug]() },
+    loadComponent: () => import('./pages/today/today').then((m) => m.Today),
+  },
+  {
+    path: `${locale.slug}/today/:id`,
+    data: { locale },
+    resolve: { story: resolveStory, feed: () => LOCAL_FEEDS[locale.slug]() },
+    loadComponent: () => import('./pages/today/story-page').then((m) => m.StoryPage),
+  },
+]);
 
 /**
  * Every page is lazy, which matters here for one reason: the home page carries
@@ -152,6 +179,7 @@ export const routes: Routes = [
   // path is a word rather than a language.
   ...localeRoutes,
   ...localePageRoutes,
+  ...localeTodayRoutes,
 
   // English is the site root, so /en is a second address for a page that
   // already has one.

@@ -9,12 +9,13 @@ export const BUILT = new Set(FEED.map((s) => s.id));
  * the last deploy — read in the browser from the file the app reads. Whatever
  * is in it is public: which stories are is the collector's FEED_PUBLIC.
  */
-export async function liveStories(): Promise<StorySummary[]> {
+export async function liveStories(folder: string | null = null, known: ReadonlySet<string> = BUILT): Promise<StorySummary[]> {
   try {
-    const response = await fetch('/media/feed/v1/latest.json');
+    // The copy of the feed in the page's language, beside the English one.
+    const response = await fetch(`/media/feed/v1/${folder ? `${folder}/` : ''}latest.json`);
     if (!response.ok) return [];
     const latest = (await response.json()) as { stories?: StorySummary[] };
-    return (latest.stories ?? []).filter((s) => !BUILT.has(s.id));
+    return (latest.stories ?? []).filter((s) => !known.has(s.id));
   } catch {
     // The built list stands on its own; the live one only adds to it.
     return [];

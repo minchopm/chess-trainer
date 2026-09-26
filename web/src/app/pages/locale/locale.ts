@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, effect, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import type { StorySummary } from '../today/feed/types';
+import { TodayStrip } from '../today/today-strip';
 
 import { Reveal } from '../../core/reveal';
 import { Seo } from '../../core/seo';
@@ -27,7 +29,7 @@ import { Showcase } from '../../shared/showcase/showcase';
 @Component({
   selector: 'bp-locale',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, Reveal, Showcase],
+  imports: [RouterLink, Reveal, Showcase, TodayStrip],
   templateUrl: './locale.html',
   styleUrl: './locale.scss',
 })
@@ -35,6 +37,8 @@ export class LocalePage {
   /** Resolved by the router before the page renders. See app.routes.ts. */
   readonly copy = input.required<Copy>();
   readonly locale = input.required<Locale>();
+  /** The daily feed in this language, for the strip — absent in a language the feed is not written in. */
+  readonly feed = input<readonly StorySummary[] | undefined>(undefined);
 
   protected readonly site = SITE;
   protected readonly library = LIBRARY;

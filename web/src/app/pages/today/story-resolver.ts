@@ -2,7 +2,9 @@ import { isPlatformBrowser } from '@angular/common';
 import { inject, makeStateKey, PLATFORM_ID, REQUEST_CONTEXT, TransferState } from '@angular/core';
 import { ActivatedRouteSnapshot, RedirectCommand, Router } from '@angular/router';
 
+import type { Locale } from '../../i18n/locales';
 import type { Story } from './feed/types';
+import { feedFolder } from './i18n/slugs';
 
 /** What the collector hands the renderer with a story's page: the story, as the feed has it now. */
 export interface StoryRenderContext {
@@ -25,11 +27,15 @@ export function resolveStory(route: ActivatedRouteSnapshot): Promise<Story | Red
   // Everything injected before the first await: a resolver's injection
   // context does not survive one.
   const id = route.paramMap.get('id') ?? '';
+  // The page's language, on the routes that have one: the feed's folder for
+  // it, whose copy of the story is in that language.
+  const locale = route.data['locale'] as Locale | undefined;
+  const folder = locale ? feedFolder(locale.slug) : null;
   const router = inject(Router);
   const state = inject(TransferState);
   const context = inject(REQUEST_CONTEXT, { optional: true }) as StoryRenderContext | null;
   const browser = isPlatformBrowser(inject(PLATFORM_ID));
-  const key = makeStateKey<Story>(`story:${id}`);
+  const key = makeStateKey<Story>(folder ? `story:${folder}:${id}` : `story:${id}`);
 
   return (async () => {
     // The collector's copy first, on the server and then in the browser: it is
@@ -42,13 +48,17 @@ export function resolveStory(route: ActivatedRouteSnapshot): Promise<Story | Red
     const carried = state.get(key, null);
     if (carried) return carried;
 
-    const { STORIES } = await import('./feed/stories');
-    const load = STORIES[id];
-    if (load) return load();
+    // The build's own copies are English; a page in another language never
+    // reads them.
+    if (!folder) {
+      const { STORIES } = await import('./feed/stories');
+      const load = STORIES[id];
+      if (load) return load();
+    }
 
     if (browser && /^[a-z0-9-]{1,120}$/.test(id)) {
       try {
-        const response = await fetch(`/media/feed/v1/stories/${id}.json`);
+        const response = await fetch(`/media/feed/v1/${folder ? `${folder}/` : ''}stories/${id}.json`);
         if (response.ok) return (await response.json()) as Story;
       } catch {
         // The 404 below.

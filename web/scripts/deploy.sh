@@ -328,8 +328,17 @@ if [[ "$INVALIDATE_ONLY" != "1" && "${SKIP_COLLECTOR:-0}" != "1" ]]; then
     printf '\033[90m  would run: CODE_ONLY=1 scripts/feed/deploy-lambda.sh\033[0m\n'
   else
     log "Giving the feed collector this build's renderer…"
-    CODE_ONLY=1 "$ROOT_DIR/../scripts/feed/deploy-lambda.sh" \
-      || warn "The collector kept its old renderer; its new pages will ask for the last build's chunks until: CODE_ONLY=1 scripts/feed/deploy-lambda.sh"
+    if CODE_ONLY=1 "$ROOT_DIR/../scripts/feed/deploy-lambda.sh"; then
+      # And the stories' pages in the other languages, rendered again by this
+      # build now rather than over the next few scheduled runs. Asynchronous:
+      # it takes minutes, and the deploy is done.
+      aws_do lambda invoke --region "${FEED_REGION:-eu-central-1}" --function-name brasspawn-feed-collector \
+        --invocation-type Event --cli-binary-format raw-in-base64-out --payload '{"pages":true}' /dev/null >/dev/null \
+        && log "The collector is rendering every story's other languages with this build." \
+        || warn "Could not start the collector's page run; the next scheduled run does it."
+    else
+      warn "The collector kept its old renderer; its new pages will ask for the last build's chunks until: CODE_ONLY=1 scripts/feed/deploy-lambda.sh"
+    fi
   fi
 fi
 

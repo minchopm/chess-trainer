@@ -11,53 +11,49 @@
         [fen]="shown().fen"
         [last]="shown().last"
         [flip]="flip()"
-        [label]="'The position after ' + (ply() ? moveLabel(ply(), sans()[ply() - 1]) : 'no moves')"
+        [label]="fill(w().positionAfter, ply() ? moveLabel(ply(), sans()[ply() - 1]) : w().noMoves)"
       />
       @if (handoff()) {
         <div class="handoff" role="dialog" aria-modal="false" aria-labelledby="handoff-title">
-          <p class="slug">In Brass Pawn</p>
-          <h2 id="handoff-title">The rest of the game is in the app</h2>
-          <p class="dim">
-            Carry on from
-            {{ ply() ? moveLabel(ply(), sans()[ply() - 1]) : 'the start' }}: replay it to the end on a flat
-            board or in 3D, and take the position over against the engine — free, with no account.
-          </p>
+          <p class="slug">{{ w().inBrassPawn }}</p>
+          <h2 id="handoff-title">{{ w().handoffTitle }}</h2>
+          <p class="dim">{{ fill(w().handoffBody, ply() ? moveLabel(ply(), sans()[ply() - 1]) : w().fromStart) }}</p>
           <div class="handoff__buttons">
             @if (onPhone()) {
-              <a class="button button--solid" [href]="clipLink()">Continue in Brass Pawn</a>
+              <a class="button button--solid" [href]="clipLink()">{{ w().continueInApp }}</a>
             } @else {
-              <a class="button button--solid" [href]="site.appStore" rel="noopener">Get it on the App Store</a>
+              <a class="button button--solid" [href]="site.appStore" rel="noopener">{{ w().getAppStore }}</a>
             }
           </div>
           <p class="handoff__links mono">
             @if (!onPhone()) {
-              <a [href]="appLink()">Have it? Open at this move</a>
+              <a [href]="appLink()">{{ w().haveItOpen }}</a>
             }
-            <button type="button" (click)="handoff.set(false)">Back to the story</button>
+            <button type="button" (click)="handoff.set(false)">{{ w().backToStory }}</button>
           </p>
         </div>
       }
       <figcaption class="mono">
         @if (story().key && ply() === story().key!.ply) {
-          After {{ moveLabel(ply(), story().key!.played) }} · Stockfish {{ scoreText(story().key!.before) }} →
-          {{ scoreText(story().key!.after) }}
+          {{ fill(w().app['after'], moveLabel(ply(), story().key!.played)) }} ·
+          {{ fill(w().app['stockfish'], scoreText(story().key!.before), scoreText(story().key!.after)) }}
         } @else if (ply() > 0) {
-          After {{ moveLabel(ply(), sans()[ply() - 1]) }}
+          {{ fill(w().app['after'], moveLabel(ply(), sans()[ply() - 1])) }}
         } @else {
-          The starting position
+          {{ w().startPosition }}
         }
       </figcaption>
       @if (story().line; as line) {
-        <div class="replay mono" role="group" aria-label="Replay">
-          <button type="button" (click)="step(0)" aria-label="Start">⏮</button>
-          <button type="button" (click)="step(ply() - 1)" aria-label="Back">◀</button>
+        <div class="replay mono" role="group" [attr.aria-label]="w().app['replay']">
+          <button type="button" (click)="step(0)" [attr.aria-label]="w().start">⏮</button>
+          <button type="button" (click)="step(ply() - 1)" [attr.aria-label]="w().back">◀</button>
           @if (story().key; as key) {
             <button type="button" class="key" [class.on]="ply() === key.ply" (click)="step(key.ply)">
               {{ moveLabel(key.ply, key.played) }}
             </button>
           }
-          <button type="button" (click)="step(ply() + 1)" aria-label="Forward">▶</button>
-          <button type="button" (click)="step(line.length - 1)" aria-label="End">⏭</button>
+          <button type="button" (click)="step(ply() + 1)" [attr.aria-label]="w().forward">▶</button>
+          <button type="button" (click)="step(line.length - 1)" [attr.aria-label]="w().end">⏭</button>
         </div>
       }
       <bp-board-look class="look" />
@@ -69,32 +65,32 @@
       }
 
       <dl class="facts">
-        <dt>White</dt>
+        <dt>{{ w().app['white'] }}</dt>
         <dd>
           {{ playerText(story().white) }}@if (story().white.elo) {, {{ story().white.elo }}}
           @if (story().white.team) {<span class="faint"> · {{ story().white.team }}</span>}
         </dd>
-        <dt>Black</dt>
+        <dt>{{ w().app['black'] }}</dt>
         <dd>
           {{ playerText(story().black) }}@if (story().black.elo) {, {{ story().black.elo }}}
           @if (story().black.team) {<span class="faint"> · {{ story().black.team }}</span>}
         </dd>
-        <dt>Result</dt>
-        <dd>{{ resultText(story().result) }} in {{ pairs().length }} moves</dd>
+        <dt>{{ w().app['result'] }}</dt>
+        <dd>{{ resultText(story().result) }} {{ inMoves() }}</dd>
         @if (story().opening.name) {
-          <dt>Opening</dt>
+          <dt>{{ w().opening }}</dt>
           <dd>{{ story().opening.name }}@if (story().opening.eco) {<span class="faint"> · {{ story().opening.eco }}</span>}</dd>
         }
-        <dt>Event</dt>
+        <dt>{{ w().app['event'] }}</dt>
         <dd>
-          {{ story().event.name }}@if (story().event.section) {, {{ story().event.section }}}@if (story().event.round) {, round {{ story().event.round }}}
+          {{ story().event.name }}@if (section()) {, {{ section() }}}@if (story().event.round) {, {{ fill(w().app['round'], story().event.round!) }}}
           @if (story().event.location) {<span class="faint"> · {{ story().event.location }}</span>}
         </dd>
         @if (story().key; as key) {
-          <dt>Key move</dt>
+          <dt>{{ w().app['keyMove'] }}</dt>
           <dd>{{ moveLabel(key.ply, key.played) }}</dd>
           @if (key.better) {
-            <dt>Engine’s choice</dt>
+            <dt>{{ w().app['enginesChoice'] }}</dt>
             <dd>{{ moveLabel(key.ply, key.better) }}</dd>
           }
         }
@@ -104,32 +100,26 @@
 
   <section class="take" ctReveal>
     <div>
-      <p class="slug">In Brass Pawn</p>
-      <h2>Stop at the move. Play it differently.</h2>
-      <p class="measure dim">
-        Replay the game on a flat board or in 3D, wind back to the moment it turned, and take the
-        position over against the engine — free, with no account.
-      </p>
+      <p class="slug">{{ w().inBrassPawn }}</p>
+      <h2>{{ w().takeTitle }}</h2>
+      <p class="measure dim">{{ w().takeBody }}</p>
       @if (!onPhone()) {
-        <p class="measure faint take__note">
-          On an iPhone or iPad this page opens the game itself — in the app if you have it, and if
-          not, in a preview that keeps it waiting for when you do.
-        </p>
+        <p class="measure faint take__note">{{ w().takeNote }}</p>
       }
     </div>
     <div class="take__buttons">
       @if (onPhone()) {
-        <a class="button button--solid" [href]="clipLink()">Open this game in Brass Pawn</a>
-        <a class="button" [href]="site.appStore" rel="noopener">App Store</a>
+        <a class="button button--solid" [href]="clipLink()">{{ w().openThisGame }}</a>
+        <a class="button" [href]="site.appStore" rel="noopener">{{ w().appStore }}</a>
       } @else {
-        <a class="button button--solid" [href]="site.appStore" rel="noopener">Get it on the App Store</a>
-        <a class="button" [href]="appLink()">Already have it? Open this game</a>
+        <a class="button button--solid" [href]="site.appStore" rel="noopener">{{ w().getAppStore }}</a>
+        <a class="button" [href]="appLink()">{{ w().alreadyHave }}</a>
       }
     </div>
   </section>
 
   <section class="score" ctReveal>
-    <p class="slug">The game</p>
+    <p class="slug">{{ w().theGame }}</p>
     <p class="moves mono">
       @for (pair of pairs(); track pair.n) {
         <span class="pair"
@@ -143,30 +133,53 @@
       <span class="result">{{ resultText(story().result) }}</span>
     </p>
     <p class="source faint">
-      Moves from the official broadcast
+      {{ w().sourceLine }}
       @if (story().source.url) {
-        — <a [href]="story().source.url" rel="noopener">the game on Lichess</a>
-      }. Evaluations by Stockfish 18. Brass Pawn is not affiliated with the event or the players.
+        — <a [href]="story().source.url" rel="noopener">{{ w().onLichess }}</a>
+      }. {{ w().credits }}
     </p>
   </section>
 
-  <nav class="onward" aria-label="More stories" ctReveal>
+  <nav class="onward" [attr.aria-label]="w().moreStories" ctReveal>
     @if (neighbours().newer; as newer) {
-      <a class="onward__link" [routerLink]="['/today', newer.id]">
-        <span class="mono faint">Newer</span>
-        <span>{{ newer.headline }}</span>
-      </a>
+      @if (english()) {
+        <a class="onward__link" [routerLink]="['/today', newer.id]">
+          <span class="mono faint">{{ w().newer }}</span>
+          <span>{{ newer.headline }}</span>
+        </a>
+      } @else {
+        <a class="onward__link" [href]="path(newer.id)">
+          <span class="mono faint">{{ w().newer }}</span>
+          <span>{{ newer.headline }}</span>
+        </a>
+      }
     } @else {
       <span></span>
     }
-    <a class="onward__all mono" routerLink="/today">All stories</a>
+    <a class="onward__all mono" [routerLink]="list()">{{ w().allStories }}</a>
     @if (neighbours().older; as older) {
-      <a class="onward__link onward__link--older" [routerLink]="['/today', older.id]">
-        <span class="mono faint">Older</span>
-        <span>{{ older.headline }}</span>
-      </a>
+      @if (english()) {
+        <a class="onward__link onward__link--older" [routerLink]="['/today', older.id]">
+          <span class="mono faint">{{ w().older }}</span>
+          <span>{{ older.headline }}</span>
+        </a>
+      } @else {
+        <a class="onward__link onward__link--older" [href]="path(older.id)">
+          <span class="mono faint">{{ w().older }}</span>
+          <span>{{ older.headline }}</span>
+        </a>
+      }
     } @else {
       <span></span>
+    }
+  </nav>
+
+  <nav class="languages mono faint" [attr.aria-label]="w().alsoIn">
+    <span>{{ w().alsoIn }}</span>
+    @for (locale of languages; track locale.slug) {
+      @if (locale.slug !== w().slug) {
+        <a [href]="path(story().id, locale.slug)" [attr.hreflang]="locale.tag" [attr.lang]="locale.tag">{{ locale.name }}</a>
+      }
     }
   </nav>
 </div>

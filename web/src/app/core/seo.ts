@@ -14,6 +14,11 @@ export interface Crumb {
 export interface PageMeta {
   /** For an inner page that exists in several languages: its English path. */
   readonly translatedPath?: string;
+  /**
+   * The slugs `translatedPath` exists under besides English, when they are not
+   * the four commercial pages' — a daily story has pages in its own set.
+   */
+  readonly translatedIn?: readonly string[];
   readonly title: string;
   readonly description: string;
   /** Route path, e.g. '/privacy'. '/' for the home page. */
@@ -134,7 +139,7 @@ export class Seo {
     // borrow the home pages' set, which is a different group.
     if (page.translatedPath) {
       this.addLink('alternate', url(page.translatedPath), 'en');
-      for (const slug of PAGE_LOCALES) {
+      for (const slug of page.translatedIn ?? PAGE_LOCALES) {
         if (slug === 'en') continue;
         const locale = LANGUAGES.find((l) => l.slug === slug);
         if (locale) this.addLink('alternate', url(`/${slug}${page.translatedPath}`), locale.tag);

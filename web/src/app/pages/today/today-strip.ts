@@ -1,9 +1,10 @@
-import { afterNextRender, ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { afterNextRender, ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { Reveal } from '../../core/reveal';
 import { FEED } from './feed';
 import type { StorySummary } from './feed/types';
+import { feedFolder, listPath, TodayLanguage } from './i18n';
 import { liveStories } from './live';
 import { StoryCard } from './story-card';
 
@@ -27,19 +28,16 @@ const SHOWN = 3;
       <section class="strip" id="today">
         <div class="page">
           <header class="section-head" ctReveal>
-            <p class="slug">Today · on the top boards</p>
-            <h2>The day’s games, and where they turned.</h2>
-            <p class="lede measure dim">
-              The finished games from the biggest events, each with the move Stockfish says decided it.
-              Open one in Brass Pawn to replay it and take the position over.
-            </p>
+            <p class="slug">{{ w().stripSlug }}</p>
+            <h2>{{ w().stripTitle }}</h2>
+            <p class="lede measure dim">{{ w().stripLede }}</p>
           </header>
           <ol class="stories">
             @for (story of stories(); track story.id; let i = $index) {
               <li [ctReveal]="i * 70"><bp-story-card [story]="story" /></li>
             }
           </ol>
-          <p class="more mono" ctReveal><a routerLink="/today">All the stories →</a></p>
+          <p class="more mono" ctReveal><a [routerLink]="list()">{{ w().allStories }}</a></p>
         </div>
       </section>
     }
@@ -58,13 +56,22 @@ const SHOWN = 3;
   `,
 })
 export class TodayStrip {
+  /** A home page in another language passes its language's list. */
+  readonly feed = input<readonly StorySummary[] | undefined>(undefined);
+
+  private readonly language = inject(TodayLanguage);
+  protected readonly w = this.language.words;
+  protected readonly list = computed(() => listPath(this.w().slug));
   private readonly live = signal<StorySummary[]>([]);
 
   protected readonly stories = computed(() =>
-    [...this.live(), ...FEED].sort((a, b) => b.date.localeCompare(a.date)).slice(0, SHOWN),
+    [...this.live(), ...(this.feed() ?? FEED)].sort((a, b) => b.date.localeCompare(a.date)).slice(0, SHOWN),
   );
 
   constructor() {
-    afterNextRender(async () => this.live.set(await liveStories()));
+    afterNextRender(async () => {
+      const own = new Set((this.feed() ?? FEED).map((story) => story.id));
+      this.live.set(await liveStories(feedFolder(this.w().slug), own));
+    });
   }
 }

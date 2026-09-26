@@ -301,3 +301,22 @@ section + section,
   outline: 1px solid var(--brass-deep);
   color: var(--ivory);
 }
+
+/* The same story in the other languages it has a page in: a line of names, quiet. */
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+  margin: 2.5rem 0 0;
+  font-size: var(--label);
+  letter-spacing: 0.06em;
+
+  a {
+    color: var(--ivory-faint);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--ivory);
+    }
+  }
+}

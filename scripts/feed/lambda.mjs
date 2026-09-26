@@ -1,7 +1,7 @@
 // The collector, on a schedule: EventBridge runs it every two hours, and each
 // run reads the rounds that have finished since the last one. See collect.mjs.
 import { collect } from './collect.mjs';
-import { openPages } from './pages.mjs';
+import { openPages, translatePages } from './pages.mjs';
 import { openStore } from './store.mjs';
 
 export const handler = async (event, context) => {
@@ -20,19 +20,28 @@ export const handler = async (event, context) => {
     return { rendered: story.id, ms: Date.now() - started, node: process.version, writes };
   }
 
-  // Stop starting games with three minutes in hand. A game takes a minute or
-  // two, and the writes after it must never be cut off halfway.
-  const budgetMs = Math.max(60_000, context.getRemainingTimeInMillis() - 180_000);
-  const written = await collect({
-    // FEED_DRY_RUN=1 reads and analyses and writes nothing — for trying a
-    // package before it replaces the one on the schedule.
-    store: openStore({ dryRun, log }),
-    // Each new story's page on the site, with the renderer of the build that
-    // is deployed — packaged beside this file by deploy-lambda.sh.
-    site: openPages({ dryRun, log }),
-    budgetMs,
-    workers: Number(process.env.FEED_WORKERS ?? 1),
-    log,
-  });
-  return { written: written.map((story) => story.id) };
+  const store = openStore({ dryRun, log });
+  // Each new story's page on the site, with the renderer of the build that
+  // is deployed — packaged beside this file by deploy-lambda.sh.
+  const site = openPages({ dryRun, log });
+
+  // { "pages": true } is a site deploy asking for the other languages' pages
+  // in its new build, now rather than over the next few runs: no collecting,
+  // the whole of the time on pages.
+  let written = [];
+  if (!event?.pages) {
+    // Stop starting games with three minutes in hand. A game takes a minute or
+    // two, and the writes after it must never be cut off halfway.
+    const budgetMs = Math.max(60_000, context.getRemainingTimeInMillis() - 180_000);
+    written = await collect({ store, site, budgetMs, workers: Number(process.env.FEED_WORKERS ?? 1), log });
+  }
+
+  // The story pages in every other language, as long as there is time: new
+  // stories first, then whatever an earlier build rendered.
+  const { days } = await store.state();
+  const pagesBudget = Math.max(0, context.getRemainingTimeInMillis() - 90_000);
+  const { fresh, done, left } = await translatePages({ store, site, days, budgetMs: pagesBudget, log });
+  await site.lists(await store.publicStories(days), done);
+  await site.announce(fresh);
+  return { written: written.map((story) => story.id), newPages: fresh.length, left };
 };

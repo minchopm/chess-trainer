@@ -28,6 +28,10 @@
 
   <bp-showcase [copy]="copy()" [slug]="slug()" />
 
+  @if (feed()) {
+    <bp-today-strip [feed]="feed()" />
+  }
+
   <section class="figures">
     <div class="page">
       <ol>

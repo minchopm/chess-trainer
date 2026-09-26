@@ -1,11 +1,12 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { Board } from '../../board/board';
 import type { StorySummary } from './feed/types';
+import { fill, storyPath, TodayLanguage } from './i18n';
 import { storyLink } from './live';
-import { occasion, resultText } from './words';
+import { resultText } from './words';
 
 /** One story in a list: its board, where it was played, and what happened. */
 @Component({
@@ -26,7 +27,7 @@ import { occasion, resultText } from './words';
         [flip]="story().result === '0-1'"
         [flat]="true"
         [bare]="true"
-        [label]="'The position in ' + story().white.short + '–' + story().black.short"
+        [label]="fill(w().positionIn, story().white.short + '–' + story().black.short)"
       />
       <div class="story__words">
         <p class="mono story__occasion">{{ occasion() }}</p>
@@ -79,7 +80,16 @@ import { occasion, resultText } from './words';
 })
 export class StoryCard {
   readonly story = input.required<StorySummary>();
-  protected readonly link = computed(() => storyLink(this.story()));
-  protected readonly occasion = computed(() => occasion(this.story()));
+  private readonly language = inject(TodayLanguage);
+  protected readonly w = this.language.words;
+  protected readonly fill = fill;
+  // In English, the build's page or the collector's; in another language,
+  // always the collector's, loaded as a page so it brings its own story.
+  protected readonly link = computed(() =>
+    this.w().slug === 'en'
+      ? storyLink(this.story())
+      : { path: [], query: null, href: storyPath(this.story().id, this.w().slug) },
+  );
+  protected readonly occasion = computed(() => this.language.occasion(this.story()));
   protected readonly result = computed(() => resultText(this.story().result));
 }
