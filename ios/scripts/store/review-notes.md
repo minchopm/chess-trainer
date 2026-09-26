@@ -46,6 +46,8 @@ What is in it:
 - **Positional** and **Endgames** — drills.
 - **Guess the Elo** — watch a real game and judge the players' strength.
 - **Watch** — a library of famous games.
+- **Today** — the finished games of the day's top chess events, each at the move
+  where Stockfish's evaluation turned; replay it, or play on from there.
 - **Progress** — ratings per activity, streaks, history.
 
 ## 3. How to reach every feature
@@ -62,6 +64,10 @@ click from the main menu.
 - **Multiplayer** needs Game Center signed in on the Mac, and a second player. If
   no opponent is found, that is matchmaking having nobody to match with, not an
   error.
+- **Today** is the TODAY plate on the main menu. A story opens on its key move;
+  **Replay** steps through the game and **Try it yourself** continues it on the
+  free board. A game's page on brasspawn.com opens the same game in the app,
+  at the move the reader had reached there.
 - The **photograph** feature is Play → Board → **Photo**. It reads a position off
   a picture of a real board, on the device. On a Mac without a camera, it offers
   the photo library instead.

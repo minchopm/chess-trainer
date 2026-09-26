@@ -18,7 +18,8 @@ user's strength rather than at full strength.
 Modes: Play (engine, coached), Multiplayer (Game Center, on a clock), Board
 (free board, two engines, read a position off a photo), Tactics and Rush
 (puzzles on a review schedule), Positional and Endgames (drills), Guess the Elo
-(judge a real game's strength), Watch (famous games), Progress (ratings).
+(judge a real game's strength), Watch (famous games), Today (the day's top
+finished games, each at the move where the evaluation turned), Progress (ratings).
 
 3. HOW TO REACH EVERYTHING
 No credentials, no sample files, no setup. Every mode is one click from the main
@@ -27,6 +28,8 @@ no account, which is enough to see every paid screen working. The paywall is the
 card icon at the top right of the main menu, or appears when a day's free
 attempts run out; it offers a monthly subscription and a lifetime unlock.
 Playing — against the engine and against a person — is free and unlimited.
+Today is the TODAY plate on the main menu: a story opens on its key move, Replay
+steps through the game, Try it yourself continues it on the free board.
 Multiplayer needs Game Center signed in and a second player; if none is found,
 that is matchmaking with nobody to match, not an error.
 
