@@ -20,6 +20,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { LANGS } from './article.mjs';
 import { pageStory, pageURL } from './page-story.mjs';
+import { reportURL } from './reports.mjs';
 import { openS3 } from './s3.mjs';
 import { inLanguage } from './store.mjs';
 
@@ -136,11 +137,32 @@ export function openPages({
     },
 
     /**
+     * One of the Olympiad's reports, in English and every other language, from
+     * its copy in each (reports.mjs): rendered one after another, written side
+     * by side.
+     */
+    async report({ id, byLang }) {
+      const pages = [];
+      for (const lang of ['en', ...LANGUAGES.map((l) => l.lang)]) {
+        const slug = LANGUAGES.find((l) => l.lang === lang)?.slug;
+        const path = slug ? `/${slug}/reports/${id}` : `/reports/${id}`;
+        const html = await render(path, { report: byLang[lang] });
+        if (!html || !html.includes(`<link rel="canonical" href="${reportURL(id, lang)}"`)) {
+          throw new Error(`the renderer did not make the ${slug ?? 'en'} page for ${id}`);
+        }
+        pages.push({ key: `${path.slice(1)}/index.html`, html, url: reportURL(id, lang) });
+      }
+      await Promise.all(pages.map(({ key, html }) => put(key, html, HTML)));
+      return pages.map(({ url }) => url);
+    },
+
+    /**
      * The stories' sitemap and the Atom feed, from every public story, newest
      * first — written whole each time, so a run that follows a deploy puts back
-     * anything the deploy's timing left out.
+     * anything the deploy's timing left out. The Olympiad's reports are in the
+     * sitemap too, in every language, once rendered.
      */
-    async lists(stories, translated = {}) {
+    async lists(stories, translated = {}, reports = []) {
       const withPages = stories.filter((story) => story.url === pageURL(story.id));
       const entry = (loc, story) => `  <url>\n    <loc>${escape(loc)}</loc>\n    <lastmod>${escape(lastmod(story))}</lastmod>\n  </url>`;
       // The story in English, and in every language it has been rendered in.
@@ -150,13 +172,18 @@ export function openPages({
           ...(translated[story.id] ? LANGUAGES.map(({ slug }) => entry(languageURL(story.id, slug), story)) : []),
         ])
         .join('\n');
+      const reportUrls = reports
+        .flatMap(({ id, date }) =>
+          ['en', ...LANGUAGES.map((l) => l.lang)].map((lang) => entry(reportURL(id, lang), { date: date ?? new Date().toISOString().slice(0, 10) })),
+        )
+        .join('\n');
       await put(
         'sitemap-today.xml',
-        `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`,
+        `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[urls, reportUrls].filter(Boolean).join('\n')}\n</urlset>\n`,
         LIST('application/xml; charset=utf-8'),
       );
       await put('today/feed.xml', atom(withPages.slice(0, FEED_ENTRIES)), LIST('application/atom+xml; charset=utf-8'));
-      log(`  sitemap-today.xml and today/feed.xml: ${withPages.length} stories, ${Object.keys(translated).length} of them in every language`);
+      log(`  sitemap-today.xml and today/feed.xml: ${withPages.length} stories, ${Object.keys(translated).length} of them in every language; ${reports.length} reports`);
     },
 
     /** Bing and the engines that share its endpoint, told about the new pages. */
@@ -256,6 +283,38 @@ export async function translatePages({ store, site, days, budgetMs, log = consol
   const left = stories.filter((story) => pages.done[story.id] !== build).length;
   log(`  ${rendered} stories rendered in every language by build ${build}; ${left} to go`);
   return { fresh, done: pages.done, left };
+}
+
+/**
+ * The Olympiad's reports' pages, rendered again whenever a report or the
+ * build has changed since it last was — as many as the time allows, the
+ * event's first. Returns the pages rendered for the first time, and the
+ * reports that have their pages, for the sitemap.
+ */
+export async function renderReports({ store, site, reports, budgetMs, log = console.error }) {
+  const started = Date.now();
+  const build = await site.build();
+  const pages = await store.pages();
+  const done = { ...(pages.reports ?? {}) };
+  const fresh = [];
+  let rendered = 0;
+  const order = [...reports].sort((a, b) => !a.id.includes('-round-') ? -1 : !b.id.includes('-round-') ? 1 : 0);
+  for (const report of order) {
+    const stamp = `${build}:${createHash('sha1').update(JSON.stringify(report.byLang)).digest('hex').slice(0, 12)}`;
+    if (done[report.id] === stamp) continue;
+    if (Date.now() - started > budgetMs) break;
+    try {
+      const urls = await site.report(report);
+      if (!done[report.id]) fresh.push(...urls);
+      done[report.id] = stamp;
+      rendered++;
+    } catch (error) {
+      log(`  ✗ report ${report.id}: ${error.message}`);
+    }
+  }
+  if (rendered) await store.savePages({ ...(await store.pages()), reports: done });
+  log(`  ${rendered} Olympiad reports rendered in every language by build ${build}`);
+  return { fresh, listed: reports.filter((r) => done[r.id]).map(({ id, date }) => ({ id, date })) };
 }
 
 /** Whether the site already serves this story's page. */

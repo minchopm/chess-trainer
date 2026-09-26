@@ -6,7 +6,7 @@ import type { StorySummary } from '../feed/types';
 import { APP_WORDS } from './app-words';
 import { type Plural, siteWords, type SiteWords } from './site-words';
 
-export { feedFolder, listPath, STORY_SLUGS, storyPath, storySlug } from './slugs';
+export { feedFolder, listPath, reportPath, STORY_SLUGS, storyPath, storySlug } from './slugs';
 import { STORY_SLUGS, storySlug } from './slugs';
 
 /** The app has no Bulgarian yet; the site does, so its words for the app's labels are here. */

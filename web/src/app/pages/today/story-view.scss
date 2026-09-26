@@ -320,3 +320,19 @@ section + section,
     }
   }
 }
+
+.report-link {
+  margin: 1.5rem 0 0;
+  font-size: var(--label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  a {
+    color: var(--brass);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--ivory);
+    }
+  }
+}

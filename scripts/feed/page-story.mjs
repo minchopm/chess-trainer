@@ -5,6 +5,7 @@
 import { Chess } from 'chess.js';
 
 import { positionAt } from './diagram.mjs';
+import { reportFor } from './reports.mjs';
 
 /** The story, with the board it is about worked out if the stored copy has none. */
 export function forSite(story) {
@@ -28,6 +29,7 @@ export function forSite(story) {
     body: story.body,
     url: pageURL(story.id),
     source: story.source,
+    report: reportFor(story),
   };
 }
 

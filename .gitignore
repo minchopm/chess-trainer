@@ -45,3 +45,4 @@ web/src/app/pages/today/feed/stories.ts
 web/src/app/pages/today/feed/sitemap.json
 web/src/app/pages/today/feed/stories/
 web/src/app/pages/today/feed/i18n/
+web/src/app/pages/today/feed/reports.ts

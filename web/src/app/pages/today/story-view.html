@@ -95,6 +95,9 @@
           }
         }
       </dl>
+      @if (report(); as report) {
+        <p class="report-link mono"><a [href]="report.path">{{ report.label }} →</a></p>
+      }
     </div>
   </article>
 

@@ -96,12 +96,27 @@ const ALTERNATES = [
   `    <xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}/"/>`,
 ].join('\n');
 
+/**
+ * The daily feed's languages, read out of the one list the routes are made
+ * from, and the alternates block the Today lists in them share.
+ */
+const slugsTs = await readFile(new URL('../src/app/pages/today/i18n/slugs.ts', import.meta.url), 'utf8');
+const STORY_SLUGS = [...slugsTs.slice(slugsTs.indexOf('STORY_SLUGS')).split('= [')[1].split('];')[0].matchAll(/'([a-z-]+)'/g)].map((m) => m[1]);
+const todayAlternates = [
+  `    <xhtml:link rel="alternate" hreflang="en" href="${ORIGIN}/today"/>`,
+  ...STORY_SLUGS.map(
+    (slug) => `    <xhtml:link rel="alternate" hreflang="${locales.find((l) => l.slug === slug)?.tag ?? slug}" href="${ORIGIN}/${slug}/today"/>`,
+  ),
+  `    <xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}/today"/>`,
+].join('\n');
+
 /** Pages worth indexing, in the order a reader would meet them. */
 const PAGES = [
   { path: '/', priority: '1.0', changefreq: 'monthly', translated: true },
   { path: '/training', priority: '0.9', changefreq: 'monthly', alternates: '/training' },
   { path: '/tactics', priority: '0.9', changefreq: 'monthly', alternates: '/tactics' },
-  { path: '/today', priority: '0.9', changefreq: 'daily' },
+  { path: '/today', priority: '0.9', changefreq: 'daily', block: todayAlternates },
+  ...STORY_SLUGS.map((slug) => ({ path: `/${slug}/today`, priority: '0.8', changefreq: 'daily', block: todayAlternates })),
   { path: '/watch', priority: '0.9', changefreq: 'monthly' },
   { path: '/ratings', priority: '0.8', changefreq: 'monthly' },
   { path: '/engine', priority: '0.8', changefreq: 'monthly' },
@@ -152,7 +167,7 @@ const body = PAGES.map(
     <lastmod>${page.lastmod ?? today}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
-${page.translated ? ALTERNATES + '\n' : page.alternates ? pageAlternates(page.alternates) + '\n' : ''}  </url>`,
+${page.translated ? ALTERNATES + '\n' : page.alternates ? pageAlternates(page.alternates) + '\n' : page.block ? page.block + '\n' : ''}  </url>`,
 ).join('\n');
 
 await writeFile(

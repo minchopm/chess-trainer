@@ -123,4 +123,22 @@ await writeFile(
     Object.keys(FOLDERS).map((slug) => `  '${slug}': () => import('./${slug}').then((m) => m.FEED),`).join('\n') +
     `\n};\n`,
 );
-console.error(`${stories.length} stories → web/src/app/pages/today/feed, in ${Object.keys(FOLDERS).length + 1} languages`);
+
+// The Olympiad's reports, for the list's link to them: the event's and the
+// latest round's, in each language — read from each language's index of them
+// (reports.mjs). The list asks the live index for newer ones in the browser.
+const links = {};
+const reportIndex = async (folder) => (empty ? null : await json(`${folder ? `${folder}/` : ''}reports/index.json`));
+const pick = (index) => {
+  const reports = index?.reports ?? [];
+  return [reports.find((r) => r.kind === 'event'), reports.find((r) => r.kind === 'round')]
+    .filter(Boolean)
+    .map(({ id, kind, round, headline }) => ({ id, kind, round, headline }));
+};
+links.en = pick(await reportIndex(null));
+await Promise.all(Object.entries(FOLDERS).map(async ([slug, folder]) => (links[slug] = pick(await reportIndex(folder)))));
+await writeFile(
+  resolve(dir, 'reports.ts'),
+  `${header}import type { ReportLink } from './types';\n\nexport const REPORT_LINKS: Record<string, readonly ReportLink[]> = ${JSON.stringify(links, null, 2)};\n`,
+);
+console.error(`${stories.length} stories → web/src/app/pages/today/feed, in ${Object.keys(FOLDERS).length + 1} languages; ${links.en.length} report links`);

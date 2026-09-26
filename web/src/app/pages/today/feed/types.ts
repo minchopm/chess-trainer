@@ -82,4 +82,14 @@ export interface Story extends StorySummary {
   readonly body: string;
   readonly url: string;
   readonly source: { readonly name: string; readonly url: string | null };
+  /** The Olympiad's report a story from it links to — see scripts/feed/reports.mjs. */
+  readonly report?: string | null;
+}
+
+/** A link to one of the Olympiad's reports, from the list: its id and its headline in the list's language. */
+export interface ReportLink {
+  readonly id: string;
+  readonly kind: 'round' | 'event';
+  readonly round: number;
+  readonly headline: string;
 }

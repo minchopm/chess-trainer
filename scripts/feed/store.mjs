@@ -112,6 +112,10 @@ export function openStore({
       return { rounds: {}, games: {}, days: {}, ...state };
     },
     saveState: (state) => put(STATE_KEY, { ...state, updatedAt: new Date().toISOString() }, { isPublic: false }),
+    /** A file only the collector reads, and one everybody may: for the reports (reports.mjs). */
+    getPrivate: (key) => get(key),
+    putPrivate: (key, value) => put(key, value, { isPublic: false }),
+    putPublic: (key, value, options = {}) => put(key, value, options),
     async pages() {
       return { done: {}, ...((await get(PAGES_KEY)) ?? {}) };
     },

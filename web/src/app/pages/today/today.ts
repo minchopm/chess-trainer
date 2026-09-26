@@ -4,9 +4,11 @@ import { Reveal } from '../../core/reveal';
 import { Seo } from '../../core/seo';
 import { SITE } from '../../core/site';
 import { PageHead } from '../../shared/page-head/page-head';
+import { reportWords } from '../reports/words';
 import { FEED } from './feed';
-import type { StorySummary } from './feed/types';
-import { feedFolder, listPath, STORY_SLUGS, TodayLanguage } from './i18n';
+import { REPORT_LINKS } from './feed/reports';
+import type { ReportLink, StorySummary } from './feed/types';
+import { feedFolder, listPath, reportPath, STORY_SLUGS, TodayLanguage } from './i18n';
 import { liveStories } from './live';
 import { StoryCard } from './story-card';
 
@@ -42,6 +44,21 @@ export class Today {
   });
   protected readonly site = SITE;
 
+  /**
+   * The Olympiad's reports: the event's and the latest round's, as this build
+   * has them, and then as the live index has them — a round finished since
+   * the last deploy has its report the same hour.
+   */
+  private readonly liveReports = signal<readonly ReportLink[] | null>(null);
+  protected readonly reports = computed(() => {
+    const slug = this.w().slug;
+    return (this.liveReports() ?? REPORT_LINKS[slug] ?? REPORT_LINKS['en'] ?? []).map((link) => ({
+      ...link,
+      path: reportPath(link.id, slug),
+    }));
+  });
+  protected readonly r = computed(() => reportWords(this.w().slug));
+
   /** Stories since the last deploy, from the live feed — see live.ts. */
   private readonly live = signal<StorySummary[]>([]);
 
@@ -73,6 +90,21 @@ export class Today {
     afterNextRender(async () => {
       const own = new Set((this.feed() ?? FEED).map((story) => story.id));
       this.live.set(await liveStories(feedFolder(words.slug), own));
+      this.liveReports.set(await liveReports(feedFolder(words.slug)));
     });
+  }
+}
+
+/** The event's report and the latest round's, from the live index in a language; null if it cannot be read. */
+async function liveReports(folder: string | null): Promise<ReportLink[] | null> {
+  try {
+    const response = await fetch(`/media/feed/v1/${folder ? `${folder}/` : ''}reports/index.json`);
+    if (!response.ok) return null;
+    const { reports = [] } = (await response.json()) as { reports?: ReportLink[] };
+    return [reports.find((r) => r.kind === 'event'), reports.find((r) => r.kind === 'round')]
+      .filter((r): r is ReportLink => !!r)
+      .map(({ id, kind, round, headline }) => ({ id, kind, round, headline }));
+  } catch {
+    return null;
   }
 }

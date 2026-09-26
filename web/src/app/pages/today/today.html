@@ -6,6 +6,17 @@
 />
 
 <div class="page">
+  @if (reports().length) {
+    <section class="reports" ctReveal>
+      <p class="slug">{{ r().section }}</p>
+      <ul>
+        @for (link of reports(); track link.id) {
+          <li><a [href]="link.path">{{ link.headline }}</a></li>
+        }
+      </ul>
+    </section>
+  }
+
   @if (days().length === 0) {
     <section class="empty" ctReveal>
       <p class="lede measure">{{ w().app['empty'] }}</p>

@@ -8,7 +8,8 @@
 # What it makes, all in eu-central-1 beside the media bucket:
 #   brasspawn-feed-collector       the function: Node 22 on arm64, 2 GB, 15 minutes
 #   brasspawn-feed-collector       its role: read and write media/feed/ and feed-state/, write the
-#                                  site's today/, <language>/today/ and sitemap-today.xml, and nothing else
+#                                  site's today/, <language>/today/, reports/, <language>/reports/
+#                                  and sitemap-today.xml, and nothing else
 #   brasspawn-feed-every-2-hours   the EventBridge rule that runs it
 #   /aws/lambda/brasspawn-feed-collector, kept for fourteen days
 #
@@ -40,7 +41,7 @@ BUILD="$(mktemp -d)"
 trap 'rm -rf "$BUILD"' EXIT
 mkdir -p "$BUILD/scripts/feed" "$BUILD/feed" "$BUILD/node_modules/stockfish/bin"
 cp "$ROOT/scripts/engine-node.mjs" "$BUILD/scripts/"
-for f in lichess words article analyse collect store s3 engine-pool diagram page-story pages lambda; do
+for f in lichess words article analyse collect store s3 engine-pool diagram page-story pages olympiad report-words reports lambda; do
   cp "$ROOT/scripts/feed/$f.mjs" "$BUILD/scripts/feed/"
 done
 # The renderer, as the collector needs it — see pack-renderer.mjs.
@@ -101,7 +102,7 @@ run iam put-role-policy --role-name "$NAME" --policy-name feed-bucket --policy-d
       \"Resource\": [\"arn:aws:s3:::$BUCKET/media/feed/*\", \"arn:aws:s3:::$BUCKET/feed-state/*\"] },
     { \"Effect\": \"Allow\", \"Action\": \"s3:ListBucket\", \"Resource\": \"arn:aws:s3:::$BUCKET\" },
     { \"Effect\": \"Allow\", \"Action\": \"s3:PutObject\",
-      \"Resource\": [\"arn:aws:s3:::$SITE_BUCKET/today/*\", \"arn:aws:s3:::$SITE_BUCKET/*/today/*\", \"arn:aws:s3:::$SITE_BUCKET/sitemap-today.xml\"] }
+      \"Resource\": [\"arn:aws:s3:::$SITE_BUCKET/today/*\", \"arn:aws:s3:::$SITE_BUCKET/*/today/*\", \"arn:aws:s3:::$SITE_BUCKET/reports/*\", \"arn:aws:s3:::$SITE_BUCKET/*/reports/*\", \"arn:aws:s3:::$SITE_BUCKET/sitemap-today.xml\"] }
   ]
 }"
 # A new role takes a few seconds to be assumable by Lambda.

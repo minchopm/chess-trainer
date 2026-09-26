@@ -1,7 +1,8 @@
 // The collector, on a schedule: EventBridge runs it every two hours, and each
 // run reads the rounds that have finished since the last one. See collect.mjs.
 import { collect } from './collect.mjs';
-import { openPages, translatePages } from './pages.mjs';
+import { openPages, renderReports, translatePages } from './pages.mjs';
+import { REPORTS, writeReports } from './reports.mjs';
 import { openStore } from './store.mjs';
 
 export const handler = async (event, context) => {
@@ -36,12 +37,28 @@ export const handler = async (event, context) => {
     written = await collect({ store, site, budgetMs, workers: Number(process.env.FEED_WORKERS ?? 1), log });
   }
 
+  const { days } = await store.state();
+
+  // The Olympiad's reports: any round finished since, the event's table
+  // after it, in every language, and their pages. Never the run's failure —
+  // the stories come first.
+  let reportPages = { fresh: [], listed: [] };
+  try {
+    const readBudget = Math.min(5 * 60_000, Math.max(0, context.getRemainingTimeInMillis() - 300_000));
+    const reports = await writeReports({ store, stories: await store.publicStories(days), budgetMs: readBudget, log });
+    const renderBudget = Math.max(0, context.getRemainingTimeInMillis() - 180_000);
+    reportPages = await renderReports({ store, site, reports, budgetMs: renderBudget, log });
+  } catch (error) {
+    log(`  ✗ Olympiad reports: ${error.stack ?? error.message}`);
+    const index = await store.getPrivate(`${REPORTS}/index.json`).catch(() => null);
+    reportPages.listed = (index?.reports ?? []).map(({ id, date }) => ({ id, date }));
+  }
+
   // The story pages in every other language, as long as there is time: new
   // stories first, then whatever an earlier build rendered.
-  const { days } = await store.state();
   const pagesBudget = Math.max(0, context.getRemainingTimeInMillis() - 90_000);
   const { fresh, done, left } = await translatePages({ store, site, days, budgetMs: pagesBudget, log });
-  await site.lists(await store.publicStories(days), done);
-  await site.announce(fresh);
-  return { written: written.map((story) => story.id), newPages: fresh.length, left };
+  await site.lists(await store.publicStories(days), done, reportPages.listed);
+  await site.announce([...fresh, ...reportPages.fresh]);
+  return { written: written.map((story) => story.id), newPages: fresh.length, newReportPages: reportPages.fresh.length, left };
 };

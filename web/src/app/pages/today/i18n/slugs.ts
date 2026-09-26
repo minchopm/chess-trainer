@@ -39,3 +39,9 @@ export function listPath(slug: string): string {
   const own = storySlug(slug);
   return own === 'en' ? '/today' : `/${own}/today`;
 }
+
+/** Where one of the Olympiad's reports is, in a language. */
+export function reportPath(id: string, slug: string): string {
+  const own = storySlug(slug);
+  return own === 'en' ? `/reports/${id}` : `/${own}/reports/${id}`;
+}

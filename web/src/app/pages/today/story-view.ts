@@ -8,7 +8,8 @@ import { Board } from '../../board/board';
 import { BoardLook } from '../../board/look';
 import { FEED } from './feed';
 import type { Story, StorySummary } from './feed/types';
-import { fill, listPath, storyLocales, storyPath, TodayLanguage } from './i18n';
+import { reportWords } from '../reports/words';
+import { fill, listPath, reportPath, storyLocales, storyPath, TodayLanguage } from './i18n';
 import { moveLabel, movePairs, playerText, resultText, scoreText } from './words';
 
 /**
@@ -61,6 +62,13 @@ export class StoryView {
   protected path(id: string, slug = this.w().slug): string {
     return storyPath(id, slug);
   }
+  /** The Olympiad's report, for a story from it: where, and what the link says. */
+  protected readonly report = computed(() => {
+    const id = this.story().report;
+    if (!id) return null;
+    const r = reportWords(this.w().slug);
+    return { path: reportPath(id, this.w().slug), label: `${r.section} — ${r.standings}` };
+  });
   protected readonly paragraphs = computed(() => this.story().body.split(/\n\n+/));
   protected readonly pairs = computed(() => movePairs(this.story().moves));
   /**

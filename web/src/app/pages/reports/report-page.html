@@ -1,0 +1,179 @@
+<bp-page-head [slug]="slug()" [title]="report().headline" [lede]="report().lede" [meta]="meta()" />
+
+<div class="page">
+  @for (section of report().sections; track section.key; let s = $index) {
+    <section class="section" ctReveal>
+      <h2>{{ section.name }}</h2>
+      <div class="grid">
+        @if (section.top.length) {
+          <div>
+            <p class="slug">{{ r().topMatches }}</p>
+            <table class="matches">
+              <tbody>
+                @for (match of section.top; track match.home) {
+                  <tr>
+                    <td class="team" [class.won]="match.score[0] > match.score[1]">{{ match.homeName }}</td>
+                    <td class="mono score"><span dir="ltr">{{ score(match.score) }}</span></td>
+                    <td class="team away" [class.won]="match.score[1] > match.score[0]">{{ match.awayName }}</td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        }
+        <div>
+          <p class="slug">{{ r().standings }}</p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" class="mono">#</th>
+                <th scope="col">{{ r().team }}</th>
+                <th scope="col" class="num" [attr.title]="r().mp">{{ r().mp }}</th>
+                <th scope="col" class="num" [attr.title]="r().gp">{{ r().gp }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (row of section.table; track row.team; let i = $index) {
+                <tr>
+                  <td class="mono faint"><span dir="ltr">{{ places()[s][i] }}</span></td>
+                  <td>{{ row.name }}</td>
+                  <td class="mono num">{{ row.mp }}</td>
+                  <td class="mono num faint"><span dir="ltr">{{ points(row.gp) }}</span></td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <dl class="counts">
+        <div><dt>{{ r().games }}</dt><dd class="mono">{{ number(section.numbers.games) }}</dd></div>
+        <div><dt>{{ r().whiteWins }}</dt><dd class="mono">{{ number(section.numbers.white) }}</dd></div>
+        <div><dt>{{ r().blackWins }}</dt><dd class="mono">{{ number(section.numbers.black) }}</dd></div>
+        <div><dt>{{ r().draws }}</dt><dd class="mono">{{ number(section.numbers.draws) }}</dd></div>
+      </dl>
+
+      @if (section.upsets.length) {
+        <p class="slug">{{ r().upsets }}</p>
+        <table class="upsets">
+          <thead>
+            <tr>
+              <th scope="col">{{ r().winner }}</th>
+              <th scope="col">{{ r().loser }}</th>
+              <th scope="col" class="num">{{ r().difference }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (upset of section.upsets; track $index) {
+              <tr>
+                <td>
+                  {{ player(upset.winner) }} <span class="mono faint">{{ upset.winner.elo }}</span>
+                  @if (upset.winner.teamName) {<span class="faint"> · {{ upset.winner.teamName }}</span>}
+                </td>
+                <td>
+                  {{ player(upset.loser) }} <span class="mono faint">{{ upset.loser.elo }}</span>
+                  @if (upset.loser.teamName) {<span class="faint"> · {{ upset.loser.teamName }}</span>}
+                </td>
+                <td class="mono num">
+                  @if (upset.url) {
+                    <a [href]="upset.url" rel="noopener">{{ upset.gap }}</a>
+                  } @else {
+                    {{ upset.gap }}
+                  }
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      }
+    </section>
+  }
+
+  @if (report().numbers; as numbers) {
+    <section class="section" ctReveal>
+      <h2>{{ r().inNumbers }}</h2>
+      <dl class="counts">
+        <div><dt>{{ r().games }}</dt><dd class="mono">{{ number(numbers.games) }}</dd></div>
+        <div><dt>{{ r().whiteWins }}</dt><dd class="mono">{{ number(numbers.white) }}</dd></div>
+        <div><dt>{{ r().blackWins }}</dt><dd class="mono">{{ number(numbers.black) }}</dd></div>
+        <div><dt>{{ r().draws }}</dt><dd class="mono">{{ number(numbers.draws) }}</dd></div>
+      </dl>
+      <div class="grid">
+        @if (numbers.openings.length) {
+          <div>
+            <p class="slug">{{ r().openings }}</p>
+            <ol class="openings">
+              @for (opening of numbers.openings; track opening.name) {
+                <li>{{ opening.name }} <span class="mono faint">{{ number(opening.count) }}</span></li>
+              }
+            </ol>
+          </div>
+        }
+        @if (numbers.longest; as game) {
+          <div>
+            <p class="slug">{{ r().longest }}</p>
+            <p>
+              {{ player(game.white) }} – {{ player(game.black) }}
+              <span class="mono" dir="ltr">{{ game.result === '1/2-1/2' ? '½–½' : game.result.replace('-', '–') }}</span>
+            </p>
+            <p class="faint">
+              {{ number(game.moves) }} {{ r().moves }}@if (game.opening) {, {{ game.opening }}}
+              @if (game.url) { · <a [href]="game.url" rel="noopener">Lichess</a>}
+            </p>
+          </div>
+        }
+      </div>
+    </section>
+  }
+
+  @if (report().stories.length) {
+    <section class="section" ctReveal>
+      <h2>{{ r().stories }}</h2>
+      <ul class="links">
+        @for (story of report().stories; track story.id) {
+          <li><a [href]="storyPath(story.id)">{{ story.headline }}</a></li>
+        }
+      </ul>
+    </section>
+  }
+
+  @if (report().reports; as reports) {
+    @if (reports.length) {
+      <section class="section" ctReveal>
+        <h2>{{ r().rounds }}</h2>
+        <ol class="rounds mono">
+          @for (round of reports; track round.id) {
+            <li><a [href]="reportPath(round.id)">{{ fill(w().app['round'], round.round) }}</a></li>
+          }
+        </ol>
+      </section>
+    }
+  } @else {
+    <nav class="onward mono" ctReveal>
+      <a [href]="reportPath(hub())">{{ r().section }} — {{ r().rounds }}</a>
+      <a [href]="list()">{{ w().allStories }}</a>
+    </nav>
+  }
+
+  <section class="section source" ctReveal>
+    <p class="measure faint">{{ r().counted }}</p>
+    <p class="mono sources">
+      @if (report().event.standings) {
+        <a [href]="report().event.standings" rel="noopener">{{ r().official }}</a>
+      }
+      @if (report().event.website) {
+        <a [href]="report().event.website" rel="noopener">{{ r().site }}</a>
+      }
+      <a [href]="report().event.broadcast" rel="noopener">{{ r().broadcast }}</a>
+    </p>
+  </section>
+
+  <nav class="languages mono faint" [attr.aria-label]="w().alsoIn">
+    <span>{{ w().alsoIn }}</span>
+    @for (locale of languages; track locale.slug) {
+      @if (locale.slug !== w().slug) {
+        <a [href]="reportPath(report().id, locale.slug)" [attr.hreflang]="locale.tag" [attr.lang]="locale.tag">{{ locale.name }}</a>
+      }
+    }
+  </nav>
+</div>

@@ -6,6 +6,7 @@ import { LOCALES } from './i18n/locales';
 import { PAGES } from './i18n/pages';
 import { LOCAL_FEEDS } from './pages/today/feed/i18n';
 import { STORY_SLUGS } from './pages/today/i18n/slugs';
+import { resolveReport } from './pages/reports/report-resolver';
 import { resolveStory } from './pages/today/story-resolver';
 
 /**
@@ -79,6 +80,12 @@ const localeTodayRoutes: Routes = LOCALES.filter((locale) => STORY_SLUGS.include
     resolve: { story: resolveStory, feed: () => LOCAL_FEEDS[locale.slug]() },
     loadComponent: () => import('./pages/today/story-page').then((m) => m.StoryPage),
   },
+  {
+    path: `${locale.slug}/reports/:id`,
+    data: { locale },
+    resolve: { report: resolveReport },
+    loadComponent: () => import('./pages/reports/report-page').then((m) => m.ReportPage),
+  },
 ]);
 
 /**
@@ -148,6 +155,13 @@ export const routes: Routes = [
     path: 'today/:id',
     resolve: { story: resolveStory },
     loadComponent: () => import('./pages/today/story-page').then((m) => m.StoryPage),
+  },
+  // The Olympiad's reports — a round's, the event's — rendered by the
+  // collector as it writes them, like the stories in the other languages.
+  {
+    path: 'reports/:id',
+    resolve: { report: resolveReport },
+    loadComponent: () => import('./pages/reports/report-page').then((m) => m.ReportPage),
   },
   {
     path: 'engine',

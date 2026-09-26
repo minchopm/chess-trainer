@@ -24,5 +24,9 @@ export const serverRoutes: ServerRoute[] = [
   // deploy would be most of the deploy. The collector asks this build's
   // renderer for it (scripts/feed/pages.mjs); nothing serves it on request.
   ...STORY_SLUGS.map((slug) => ({ path: `${slug}/today/:id`, renderMode: RenderMode.Server }) as ServerRoute),
+  // The Olympiad's reports, in every language: the collector's too, as it
+  // writes them (scripts/feed/reports.mjs).
+  { path: 'reports/:id', renderMode: RenderMode.Server },
+  ...STORY_SLUGS.map((slug) => ({ path: `${slug}/reports/:id`, renderMode: RenderMode.Server }) as ServerRoute),
   { path: '**', renderMode: RenderMode.Prerender },
 ];
