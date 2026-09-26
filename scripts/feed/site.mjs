@@ -27,10 +27,23 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const FEED = process.env.FEED_ORIGIN ?? 'https://brasspawn.com/media/feed/v1';
 
 async function json(path) {
-  const response = await fetch(`${FEED}/${path}`, { headers: { Accept: 'application/json' } });
-  if (response.status === 404 || response.status === 403) return null;
-  if (!response.ok) throw new Error(`${response.status} for ${path}`);
-  return response.json();
+  // A few tries, as the collector's own requests have: a connection that
+  // times out once is a network having a moment, not a feed that is gone.
+  for (let attempt = 1; ; attempt++) {
+    try {
+      const response = await fetch(`${FEED}/${path}`, {
+        headers: { Accept: 'application/json' },
+        signal: AbortSignal.timeout(30_000),
+      });
+      if (response.status === 404 || response.status === 403) return null;
+      if (response.status >= 500 && attempt < 4) throw new Error(`${response.status} for ${path}`);
+      if (!response.ok) throw Object.assign(new Error(`${response.status} for ${path}`), { final: true });
+      return await response.json();
+    } catch (error) {
+      if (error.final || attempt >= 4) throw error;
+      await new Promise((done) => setTimeout(done, 1500 * attempt));
+    }
+  }
 }
 
 /** A story as the site reads it — the stored story, with the board worked out if it is not. */
