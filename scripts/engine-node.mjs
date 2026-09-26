@@ -5,6 +5,12 @@ import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 
 export async function createEngine({ flavour = 'lite-single', hash = 64 } = {}) {
+  // stockfish.js, run under Node, sets the global fetch to null so that its
+  // own loader reads the WASM from disk rather than asking for it over the
+  // network — and leaves it null, for everything else in the process. The
+  // feed's collector speaks to S3 with fetch in the same process, so it is
+  // put back once the engine is loaded and answering.
+  const fetchBefore = globalThis.fetch;
   const initEngine = require('stockfish');
   const engine = await initEngine(flavour);
 
@@ -39,6 +45,7 @@ export async function createEngine({ flavour = 'lite-single', hash = 64 } = {}) 
   send(`setoption name Hash value ${hash}`);
   send('setoption name Threads value 1');
   await run('isready', (l) => l === 'readyok');
+  if (typeof fetchBefore === 'function' && globalThis.fetch !== fetchBefore) globalThis.fetch = fetchBefore;
 
   let queue = Promise.resolve();
   const enqueue = (task) => {
