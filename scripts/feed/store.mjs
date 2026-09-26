@@ -2,8 +2,15 @@
 //
 //   media/feed/v1/latest.json          the app's first request: the newest days, and the list of all days
 //   media/feed/v1/days/<date>.json     one day's stories, for going back through the history
-//   media/feed/v1/stories/<id>.json    one story, for the site
+//   media/feed/v1/stories/<id>.json    one story, for the site — with its words in every language
+//   media/feed/v1/<lang>/…             the same three, in one language: an app reading German reads
+//                                      media/feed/v1/de/latest.json and never downloads the other
+//                                      twenty-seven; a story without that language's words is in
+//                                      English there, and says so ("lang": "en")
 //   feed-state/v1/state.json           what the collector has already read — private
+//
+// The top-level files are English, as they always were, so an app that knows
+// nothing of languages reads what it always read.
 //
 // Everything under media/ is public through the /media/* behaviour on the
 // distribution; feed-state/ matches no behaviour, so nothing outside the
@@ -13,8 +20,22 @@
 // rewrites and approves it, as "approved". The collector never touches a story
 // that exists. Which statuses the public files carry is FEED_PUBLIC: "all"
 // while the feature is being tested, "approved" once only read words go out.
+import { LANGS } from './article.mjs';
 import { positionAt } from './diagram.mjs';
 import { openS3 } from './s3.mjs';
+
+/** The languages with folders of their own; English is the top level. */
+const OTHER = LANGS.filter((lang) => lang !== 'en');
+
+/** A story without its other languages — what the English files carry. */
+const bare = ({ words, ...story }) => story;
+
+/** A story as one language's files carry it: that language's words, or English and a note that it is. */
+export function inLanguage(story, lang) {
+  const { words, ...rest } = story;
+  const own = words?.[lang];
+  return own ? { ...rest, headline: own.headline, lede: own.lede, body: own.body, lang } : { ...rest, lang: 'en' };
+}
 
 export const PREFIX = 'media/feed/v1';
 const STATE_KEY = 'feed-state/v1/state.json';
@@ -37,9 +58,13 @@ export function openStore({
     return text == null ? null : JSON.parse(text);
   }
 
-  async function put(key, value, { isPublic = true } = {}) {
+  let quietWrites = 0;
+  async function put(key, value, { isPublic = true, quiet = false } = {}) {
     if (dryRun) {
-      log(`  would write s3://${bucket}/${key}`);
+      // One line per English file; the twenty-eight languages' copies of it
+      // are counted rather than listed.
+      if (quiet) quietWrites++;
+      else log(`  would write s3://${bucket}/${key}`);
       return;
     }
     await s3.put(key, JSON.stringify(value), {
@@ -56,6 +81,17 @@ export function openStore({
   // else writes them while the collector runs, and without this every story
   // written read every day there is to list them.
   const dayCache = new Map();
+  // Whole stories, other languages and all, as read or written this run: the
+  // day files carry the English only, and each language's day file is made
+  // from these.
+  const fullCache = new Map();
+  async function full(story) {
+    if (story.words) return story;
+    if (!fullCache.has(story.id)) fullCache.set(story.id, (await get(`${PREFIX}/stories/${story.id}.json`)) ?? story);
+    return fullCache.get(story.id);
+  }
+  // Each language's copy of one file, side by side.
+  const inEvery = (make) => Promise.all(OTHER.map((lang) => make(lang)));
 
   return {
     bucket,
@@ -88,8 +124,13 @@ export function openStore({
      */
     async write(stories, days, { latest = true } = {}) {
       const touched = new Set();
-      for (const story of stories) {
+      for (const given of stories) {
+        // A story given without its languages — a change to one field, made
+        // from a day file's copy — keeps the languages it already had.
+        const story = given.words ? given : { ...(await full(given)), ...given };
+        fullCache.set(story.id, story);
         await put(`${PREFIX}/stories/${story.id}.json`, story);
+        await inEvery((lang) => put(`${PREFIX}/${lang}/stories/${story.id}.json`, inLanguage(story, lang), { quiet: true }));
         touched.add(story.date);
       }
       for (const date of touched) {
@@ -100,9 +141,13 @@ export function openStore({
           const story = await this.story(id);
           if (story) kept.set(id, story);
         }
-        const day = { date, stories: order([...kept.values()].filter(visible)) };
+        const shown = order([...kept.values()].filter(visible));
+        const day = { date, stories: shown.map(bare) };
         dayCache.set(date, day);
         await put(`${PREFIX}/days/${date}.json`, day);
+        const whole = await Promise.all(shown.map(full));
+        await inEvery((lang) => put(`${PREFIX}/${lang}/days/${date}.json`,
+          { date, lang, stories: whole.map((story) => inLanguage(story, lang)) }, { quiet: true }));
       }
       if (latest) await this.writeLatest(days);
     },
@@ -118,13 +163,20 @@ export function openStore({
         index.push({ date, count: shown.length });
         if (index.length <= LATEST_DAYS) stories.push(...order(shown));
       }
-      await put(`${PREFIX}/latest.json`, {
+      const file = (list, extra = {}) => ({
         version: 1,
         generatedAt: new Date().toISOString(),
         source: { name: 'Lichess broadcasts', url: 'https://lichess.org/broadcast' },
+        ...extra,
         days: index,
-        stories,
+        stories: list,
       });
+      await put(`${PREFIX}/latest.json`, file(stories.map(bare)));
+      const whole = await Promise.all(stories.map(full));
+      await inEvery((lang) => put(`${PREFIX}/${lang}/latest.json`,
+        file(whole.map((story) => inLanguage(story, lang)), { lang }), { quiet: true }));
+      if (dryRun && quietWrites) log(`  … and ${quietWrites} copies in the other ${OTHER.length} languages`);
+      quietWrites = 0;
     },
   };
 }
@@ -179,8 +231,11 @@ export function stored(story) {
         }
       : null,
     headline: story.headline,
-    lede: story.body.split(/(?<=[.!?])\s+(?=[A-Z0-9])/)[0],
+    lede: story.lede ?? story.body.split(/(?<=[.!?])\s+(?=[A-Z0-9])/)[0],
     body: story.body,
+    // The story in every other language the app speaks (article.mjs), for
+    // the files each language reads. English is the fields above.
+    words: story.words ?? null,
     fen,
     last,
     // The address that works from the moment the story exists: the page that

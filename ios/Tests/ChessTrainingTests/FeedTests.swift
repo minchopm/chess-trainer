@@ -159,6 +159,30 @@ struct FeedTests {
         #expect(Invitation(url: FeedLink.clip(for: id)) == nil)
     }
 
+    @Test("each language the app speaks reads its own copy of the feed, and English the top level")
+    func feedFolders() {
+        #expect(FeedLink.folder(for: "en") == nil)
+        #expect(FeedLink.folder(for: "en-US") == nil)
+        #expect(FeedLink.folder(for: "de-DE") == "de")
+        #expect(FeedLink.folder(for: "fr-CA") == "fr")
+        #expect(FeedLink.folder(for: "ar-SA") == "ar")
+        #expect(FeedLink.folder(for: "pt-BR") == "pt-BR")
+        #expect(FeedLink.folder(for: "zh-Hans") == "zh-Hans")
+        #expect(FeedLink.folder(for: "zh-Hant") == "zh-Hant")
+        #expect(FeedLink.folder(for: "no") == "no")
+        // A language the feed is not written in reads the English.
+        #expect(FeedLink.folder(for: "bg") == nil)
+    }
+
+    @Test("a story in another language's copy says which language its words are in")
+    func storyLanguage() throws {
+        let json = #"{"id":"x","date":"2026-09-26","event":{"name":"E","short":"E","section":null,"round":1,"location":null,"url":null},"white":{"name":"A B","short":"B","title":null,"elo":null,"team":null},"black":{"name":"C D","short":"D","title":null,"elo":null,"team":null},"result":"1-0","opening":{"eco":null,"name":null},"moves":"e4 e5","key":null,"headline":"B – D 1–0: Sieg für Weiß","body":"…","lang":"de","url":"https://brasspawn.com/today/x","source":{"name":"Lichess broadcast","url":null}}"#
+        let story = try JSONDecoder().decode(FeedStory.self, from: Data(json.utf8))
+        #expect(story.lang == "de")
+        let english = try JSONDecoder().decode(FeedStory.self, from: Data(json.replacingOccurrences(of: #","lang":"de""#, with: "").utf8))
+        #expect(english.lang == nil)
+    }
+
     @Test("a link from the site carries the move the reader had reached, and only a move")
     func storyLinksAtAMove() {
         let id = "2026-09-25-so-sindarov-olympiad-r9"

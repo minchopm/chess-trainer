@@ -139,6 +139,10 @@ public struct FeedStory: Codable, Sendable, Hashable, Identifiable {
     public let key: Key?
     public let headline: String
     public let body: String
+    /// The language `headline` and `body` are written in, where the file says:
+    /// each language's copy of the feed carries its own words, and says "en"
+    /// for a story that has none in it yet. Absent from the English files.
+    public let lang: String?
     public let url: URL
     public let source: Source
     /// The board the story is about and the move that made it, worked out by
@@ -299,6 +303,22 @@ public enum FeedLink {
               let ply = Int(text), ply <= 1200
         else { return nil }
         return ply
+    }
+
+    /// The folder of the feed written in a language the app is localised into,
+    /// or nil for English, which is the top level. The folders are the
+    /// collector's (scripts/feed/article.mjs, LANGS): a language and, where the
+    /// app has more than one of it, the variant — Brazilian Portuguese, Chinese
+    /// in either script.
+    public static func folder(for localization: String) -> String? {
+        let whole: Set<String> = ["pt-BR", "zh-Hans", "zh-Hant"]
+        if whole.contains(localization) { return localization }
+        let language = String(localization.prefix { $0 != "-" && $0 != "_" })
+        let languages: Set<String> = [
+            "ar", "cs", "da", "de", "el", "es", "fi", "fr", "he", "hi", "hu", "id", "it", "ja",
+            "ko", "ms", "nl", "no", "pl", "ro", "ru", "sv", "th", "tr", "vi",
+        ]
+        return languages.contains(language) ? language : nil
     }
 
     /// The App Clip's link for a story, at a move if one is given.

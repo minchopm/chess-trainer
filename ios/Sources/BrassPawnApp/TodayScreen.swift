@@ -175,7 +175,7 @@ struct TodayScreen: View {
                     .appFont(size: 8).tracking(1.4)
                     .foregroundStyle(Theatre.ivoryFaint)
                     .lineLimit(1)
-                Text(Self.isEnglish ? story.headline : story.title)
+                Text(story.inReadersLanguage ? story.headline : story.title)
                     .appFont(size: 16, weight: .semibold)
                     .foregroundStyle(Theatre.ivory)
                     .multilineTextAlignment(.leading)
@@ -210,6 +210,16 @@ struct TodayScreen: View {
     /// written headline says more than the one the app can build.
     static var isEnglish: Bool {
         Bundle.main.preferredLocalizations.first?.hasPrefix("en") ?? true
+    }
+}
+
+extension FeedStory {
+    /// Whether the story's words are in the language the app is read in —
+    /// English for an English reader, or the reader's own language where the
+    /// feed has it. A story that is not falls back to the headline the app
+    /// builds, and to the English commentary, marked as English.
+    var inReadersLanguage: Bool {
+        TodayScreen.isEnglish || (lang != nil && lang != "en")
     }
 }
 
@@ -401,7 +411,7 @@ struct StoryScreen: View {
     @ViewBuilder
     private var words: some View {
         VStack(alignment: .leading, spacing: 8) {
-            if !TodayScreen.isEnglish {
+            if !story.inReadersLanguage {
                 Text(L.t("today.inEnglish", "Commentary in English").uppercased())
                     .appFont(size: 8).tracking(1.4)
                     .foregroundStyle(Theatre.ivoryFaint)
@@ -414,7 +424,7 @@ struct StoryScreen: View {
                 .foregroundStyle(Theatre.ivoryDim)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .environment(\.locale, Locale(identifier: "en"))
+        .environment(\.locale, Locale(identifier: story.inReadersLanguage ? (Bundle.main.preferredLocalizations.first ?? "en") : "en"))
     }
 
     private var facts: some View {

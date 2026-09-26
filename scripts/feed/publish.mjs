@@ -18,6 +18,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Chess } from 'chess.js';
 
+import { articles } from './article.mjs';
 import { openPages, publishPages } from './pages.mjs';
 import { openStore, stored } from './store.mjs';
 import { moveLabel } from './words.mjs';
@@ -71,7 +72,10 @@ for (const file of (await readdir(dir)).filter((f) => f.endsWith('.json')).sort(
     }
     const live = await store.story(story.id);
     if (live?.status === 'approved' && live.headline === story.headline && live.body === story.body) continue;
-    approved.push(stored({ ...story, status: 'approved' }));
+    // The approved words are English; the other languages keep the
+    // collector's, made from the same facts, until they are rewritten too.
+    const { en, ...words } = articles(story);
+    approved.push(stored({ ...story, status: 'approved', lede: undefined, words }));
     console.error(`✓ ${story.id}${live ? ` (over the ${live.status} version)` : ' (new)'}`);
   }
 }

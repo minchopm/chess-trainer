@@ -14,8 +14,8 @@
 // stories are chosen from the whole day rather than from whichever games had
 // finished when the collector happened to look, and a day it has read is
 // never read again.
-// Every story is written as "auto" — the draft's own words, which say only
-// what the broadcast and the engine say. A person rewriting and approving one
+// Every story is written as "auto" — article.mjs's words, in every language
+// the app speaks, which say only what the broadcast and the engine say. A person rewriting and approving one
 // is publish.mjs's business; the collector never touches a story that exists.
 import { readFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
@@ -27,7 +27,8 @@ import { createEngines } from './engine-pool.mjs';
 import { parsePgn, roundPgn } from './lichess.mjs';
 import { openPages, publishPages } from './pages.mjs';
 import { openStore, stored } from './store.mjs';
-import { draftWords, eventNames, person } from './words.mjs';
+import { articles } from './article.mjs';
+import { eventNames, person } from './words.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 
@@ -250,7 +251,10 @@ async function storyFor({ game, gameId, rank, weight, t, round, names }, { engin
     key: turn.key ? { ...turn.key, clock: game.clocks[turn.key.ply - 1] ?? null } : null,
     source: { name: 'Lichess broadcast', url: tags.GameURL ?? tags.BroadcastURL ?? null },
   };
-  return stored({ ...story, ...draftWords(story) });
+  // The words, in every language — and a story whose words fail the checks
+  // is not written at all (article.mjs throws, and the game is reported).
+  const { en, ...words } = articles(story);
+  return stored({ ...story, headline: en.headline, lede: en.lede, body: en.body, words });
 }
 
 function parseArgs(argv) {

@@ -6,15 +6,28 @@
 //
 //   node scripts/feed/reshape.mjs --dry-run
 //   node scripts/feed/reshape.mjs
+//   node scripts/feed/reshape.mjs --words    and the words written again by article.mjs:
+//                                            every language of every story, and the English
+//                                            too of a story nobody has approved
+import { articles } from './article.mjs';
 import { openStore, stored } from './store.mjs';
 
 const store = openStore({ dryRun: process.argv.includes('--dry-run') });
+const rewrite = process.argv.includes('--words');
 const state = await store.state();
 const stories = [];
 for (const ids of Object.values(state.days)) {
   for (const id of ids) {
     const story = await store.story(id);
-    if (story) stories.push(stored(story));
+    if (!story) continue;
+    if (!rewrite) {
+      stories.push(stored(story));
+      continue;
+    }
+    const { en, ...words } = articles(story);
+    // A person's approved words stand; the collector's own are replaced.
+    const english = story.status === 'approved' ? {} : { headline: en.headline, lede: en.lede, body: en.body };
+    stories.push(stored({ ...story, ...english, words }));
   }
 }
 await store.write(stories, state.days);

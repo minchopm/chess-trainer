@@ -40,7 +40,7 @@ BUILD="$(mktemp -d)"
 trap 'rm -rf "$BUILD"' EXIT
 mkdir -p "$BUILD/scripts/feed" "$BUILD/feed" "$BUILD/node_modules/stockfish/bin"
 cp "$ROOT/scripts/engine-node.mjs" "$BUILD/scripts/"
-for f in lichess words analyse collect store s3 engine-pool diagram page-story pages lambda; do
+for f in lichess words article analyse collect store s3 engine-pool diagram page-story pages lambda; do
   cp "$ROOT/scripts/feed/$f.mjs" "$BUILD/scripts/feed/"
 done
 # The renderer, as the collector needs it — see pack-renderer.mjs.

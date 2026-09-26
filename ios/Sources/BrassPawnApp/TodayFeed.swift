@@ -35,7 +35,10 @@ final class TodayFeed {
             return url
         }
         #endif
-        return URL(string: "https://brasspawn.com/media/feed/v1/latest.json")!
+        // The copy of the feed in the reader's language, which the collector
+        // writes beside the English one; English is the top level.
+        let folder = Bundle.main.preferredLocalizations.first.flatMap(FeedLink.folder(for:))
+        return URL(string: "https://brasspawn.com/media/feed/v1/\(folder.map { "\($0)/" } ?? "")latest.json")!
     }()
 
     private(set) var stories: [FeedStory] = []
