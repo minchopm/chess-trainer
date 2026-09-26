@@ -125,7 +125,9 @@ enum Parlour {
 
         for file in 0..<8 {
             for rank in 0..<8 {
-                let light = (file + rank) % 2 == 0
+                // Rank 0 is the bottom of a CG image, and the bottom of the
+                // image is White's side: a1 is dark. See SquareColours.
+                let light = (file + rank) % 2 == 1
                 let cell = CGRect(x: CGFloat(file) * square, y: CGFloat(rank) * square,
                                   width: square, height: square)
                 fill(ctx, light ? maple : walnut, cell)

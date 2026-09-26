@@ -46,7 +46,10 @@ enum BoardSurface {
 
         for file in 0..<8 {
             for rank in 0..<8 {
-                let isLight = (file + rank) % 2 == 0
+                // CG draws from the bottom left, and the bottom of this image
+                // is White's side of the board: rank 0 here is the first rank,
+                // and a1 is dark. See SquareColours.
+                let isLight = (file + rank) % 2 == 1
                 let tone = isLight ? light : dark
                 let x = CGFloat(file) * square, y = CGFloat(rank) * square
                 ctx.setFillColor(red: tone.r, green: tone.g, blue: tone.b, alpha: 1)
