@@ -59,6 +59,12 @@ export interface StorySummary {
   /** The board the story is about: after the key move, or the final one. */
   readonly fen: string;
   readonly last: { readonly from: string; readonly to: string } | null;
+  /**
+   * The story's address, as the feed has it: its own page once one has been
+   * made — by a deploy, or by the collector for a story newer than it — and
+   * /today/story?id= for a story from before the collector made pages.
+   */
+  readonly url?: string;
 }
 
 /** One position of a game and the move that made it; the first has none. */

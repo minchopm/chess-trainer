@@ -48,10 +48,30 @@ if (sitemap.status !== 200) {
   process.exit(1);
 }
 
-const xml = await sitemap.text();
-const urlList = [...xml.matchAll(/<loc\b[^>]*>([\s\S]*?)<\/loc>/gi)].map(match =>
+// The sitemap is an index: the site's pages, and the stories. Its <loc>s are
+// sitemaps to read rather than pages to submit.
+const locs = (xml) => [...xml.matchAll(/<loc\b[^>]*>([\s\S]*?)<\/loc>/gi)].map(match =>
   match[1].trim().replace(/&amp;/g, '&'),
 );
+const xml = await sitemap.text();
+const urlList = [];
+if (/<sitemapindex\b/i.test(xml)) {
+  for (const child of locs(xml)) {
+    const response = await fetch(child, {
+      headers: { 'user-agent': 'Brass-Pawn-IndexNow/1.0' },
+      signal: AbortSignal.timeout(20_000),
+    });
+    // The stories' sitemap is the collector's, and does not exist until it
+    // has run once; the pages are still worth submitting without it.
+    if (response.status !== 200) {
+      console.error(`IndexNow: skipping ${child}, which returned ${response.status}`);
+      continue;
+    }
+    urlList.push(...locs(await response.text()));
+  }
+} else {
+  urlList.push(...locs(xml));
+}
 if (!urlList.length) {
   console.error('cannot submit IndexNow: sitemap contains no <loc> URLs');
   process.exit(1);

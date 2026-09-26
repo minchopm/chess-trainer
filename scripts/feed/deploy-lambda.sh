@@ -3,23 +3,32 @@
 #
 #   scripts/feed/deploy-lambda.sh            package, create or update, schedule
 #   DRY_RUN=1 scripts/feed/deploy-lambda.sh  package only, and say what would be done
+#   CODE_ONLY=1 scripts/feed/deploy-lambda.sh  the package and nothing else — what a site deploy runs
 #
 # What it makes, all in eu-central-1 beside the media bucket:
 #   brasspawn-feed-collector       the function: Node 22 on arm64, 2 GB, 15 minutes
-#   brasspawn-feed-collector       its role: read and write media/feed/ and feed-state/, and nothing else
+#   brasspawn-feed-collector       its role: read and write media/feed/ and feed-state/, write the
+#                                  site's today/ and sitemap-today.xml, and nothing else
 #   brasspawn-feed-every-2-hours   the EventBridge rule that runs it
 #   /aws/lambda/brasspawn-feed-collector, kept for fourteen days
 #
-# The package is the collector's own files, chess.js, and the one Stockfish
-# build it uses — no SDK: S3 is spoken to in signed HTTP (scripts/feed/s3.mjs).
+# The package is the collector's own files, chess.js, the one Stockfish build
+# it uses, and the website's renderer from the last site build — the Angular
+# server bundle, which renders a new story's page (pages.mjs). No SDK: S3 is
+# spoken to in signed HTTP (scripts/feed/s3.mjs).
+#
+# The renderer must be the deployed build's: a page it renders asks for that
+# build's chunks. web/scripts/deploy.sh runs this with CODE_ONLY=1 after every
+# site deploy for exactly that reason.
 set -euo pipefail
 
 REGION="${FEED_REGION:-eu-central-1}"
 NAME=brasspawn-feed-collector
 RULE=brasspawn-feed-every-2-hours
 BUCKET="${FEED_BUCKET:-brasspawn-media}"
-PUBLIC="${FEED_PUBLIC:-all}"
+SITE_BUCKET="${SITE_BUCKET:-brasspawn.com}"
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+SERVER="$ROOT/web/dist/brass-pawn/server"
 
 log() { printf '\033[36m▸\033[0m %s\n' "$*"; }
 run() {
@@ -31,9 +40,12 @@ BUILD="$(mktemp -d)"
 trap 'rm -rf "$BUILD"' EXIT
 mkdir -p "$BUILD/scripts/feed" "$BUILD/feed" "$BUILD/node_modules/stockfish/bin"
 cp "$ROOT/scripts/engine-node.mjs" "$BUILD/scripts/"
-for f in lichess words analyse collect store s3 engine-pool diagram lambda; do
+for f in lichess words analyse collect store s3 engine-pool diagram page-story pages lambda; do
   cp "$ROOT/scripts/feed/$f.mjs" "$BUILD/scripts/feed/"
 done
+# The renderer, as the collector needs it — see pack-renderer.mjs.
+[[ -f "$SERVER/server.mjs" ]] || { echo "No site renderer at $SERVER — build the site first (cd web && npm run build:prod)." >&2; exit 1; }
+node "$ROOT/scripts/feed/pack-renderer.mjs" "$SERVER" "$BUILD/scripts/feed/site-server"
 cp "$ROOT/feed/players.json" "$BUILD/feed/"
 cp -R "$ROOT/node_modules/chess.js" "$BUILD/node_modules/"
 cp "$ROOT/node_modules/stockfish/index.js" "$ROOT/node_modules/stockfish/package.json" \
@@ -47,6 +59,24 @@ if [[ -n "${PACKAGE_OUT:-}" ]]; then
   log "Kept a copy at $PACKAGE_OUT"
   [[ "${PACKAGE_ONLY:-0}" == "1" ]] && exit 0
 fi
+
+# A site deploy refreshes the renderer and touches nothing else — least of all
+# FEED_PUBLIC, which is somebody's decision and not the site's.
+if [[ "${CODE_ONLY:-0}" == "1" ]]; then
+  log "Updating $NAME's code"
+  run lambda update-function-code --region "$REGION" --function-name "$NAME" \
+    --zip-file "fileb://$BUILD/function.zip" --query CodeSize --output text
+  [[ "${DRY_RUN:-0}" == "1" ]] || aws lambda wait function-updated --region "$REGION" --function-name "$NAME"
+  exit 0
+fi
+
+# What the feed shows is kept as it is unless it is said otherwise: running
+# this to change the package must not quietly make every draft public again.
+PUBLIC="${FEED_PUBLIC:-$(aws lambda get-function-configuration --region "$REGION" --function-name "$NAME" \
+  --query Environment.Variables.FEED_PUBLIC --output text 2>/dev/null || true)}"
+[[ -z "$PUBLIC" || "$PUBLIC" == "None" ]] && PUBLIC=all
+# IndexNow's key is the one key file the site serves; it is public by design.
+INDEXNOW_KEY="$(ls "$ROOT/web/public" | grep -E '^[a-f0-9-]{8,128}\.txt$' | head -1 | sed 's/\.txt$//')"
 
 ACCOUNT="$(aws sts get-caller-identity --query Account --output text)"
 ROLE_ARN="arn:aws:iam::$ACCOUNT:role/$NAME"
@@ -69,14 +99,16 @@ run iam put-role-policy --role-name "$NAME" --policy-name feed-bucket --policy-d
   \"Statement\": [
     { \"Effect\": \"Allow\", \"Action\": [\"s3:GetObject\", \"s3:PutObject\"],
       \"Resource\": [\"arn:aws:s3:::$BUCKET/media/feed/*\", \"arn:aws:s3:::$BUCKET/feed-state/*\"] },
-    { \"Effect\": \"Allow\", \"Action\": \"s3:ListBucket\", \"Resource\": \"arn:aws:s3:::$BUCKET\" }
+    { \"Effect\": \"Allow\", \"Action\": \"s3:ListBucket\", \"Resource\": \"arn:aws:s3:::$BUCKET\" },
+    { \"Effect\": \"Allow\", \"Action\": \"s3:PutObject\",
+      \"Resource\": [\"arn:aws:s3:::$SITE_BUCKET/today/*\", \"arn:aws:s3:::$SITE_BUCKET/sitemap-today.xml\"] }
   ]
 }"
 # A new role takes a few seconds to be assumable by Lambda.
 [[ "${CREATED_ROLE:-0}" == "1" && "${DRY_RUN:-0}" != "1" ]] && sleep 12
 
 # ----------------------------------------------------------------- function
-ENVIRONMENT="Variables={FEED_BUCKET=$BUCKET,FEED_REGION=$REGION,FEED_PUBLIC=$PUBLIC,FEED_WORKERS=1}"
+ENVIRONMENT="Variables={FEED_BUCKET=$BUCKET,FEED_REGION=$REGION,FEED_PUBLIC=$PUBLIC,FEED_WORKERS=1,SITE_BUCKET=$SITE_BUCKET,SITE_REGION=$REGION,INDEXNOW_KEY=$INDEXNOW_KEY}"
 if aws lambda get-function --region "$REGION" --function-name "$NAME" >/dev/null 2>&1; then
   log "Updating $NAME"
   run lambda update-function-code --region "$REGION" --function-name "$NAME" \

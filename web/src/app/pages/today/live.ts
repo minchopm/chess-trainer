@@ -21,9 +21,24 @@ export async function liveStories(): Promise<StorySummary[]> {
   }
 }
 
-/** Where a story opens: its own page, or the one that draws a new story from the feed. */
-export function storyLink(story: StorySummary): { path: string[]; query: Record<string, string> | null } {
-  return BUILT.has(story.id)
-    ? { path: ['/today', story.id], query: null }
-    : { path: ['/today/story'], query: { id: story.id } };
+/** Whether the feed says the collector has made this story its own page. */
+export function hasPage(story: Pick<StorySummary, 'id' | 'url'>): boolean {
+  return story.url === `https://brasspawn.com/today/${story.id}`;
+}
+
+/**
+ * Where a story opens. One this build has: its page, inside the app. One
+ * newer, whose page the collector made: that page, loaded as a page — it
+ * carries the story it was made from, replay and all, which navigating to it
+ * inside the app would not have. One from before the collector made pages:
+ * the page that draws a story from the feed.
+ */
+export function storyLink(story: StorySummary): {
+  path: string[];
+  query: Record<string, string> | null;
+  href: string | null;
+} {
+  if (BUILT.has(story.id)) return { path: ['/today', story.id], query: null, href: null };
+  if (hasPage(story)) return { path: [], query: null, href: `/today/${story.id}` };
+  return { path: ['/today/story'], query: { id: story.id }, href: null };
 }

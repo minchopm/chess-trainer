@@ -18,6 +18,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Chess } from 'chess.js';
 
+import { openPages, publishPages } from './pages.mjs';
 import { openStore, stored } from './store.mjs';
 import { moveLabel } from './words.mjs';
 
@@ -82,10 +83,26 @@ if (!approved.length) {
     const ids = (state.days[story.date] ??= []);
     if (!ids.includes(story.id)) ids.push(story.id);
   }
+  // Their pages again, in the approved words — rendered with the local build,
+  // so deploy the site first if it has changed since. Only a story the feed
+  // makes public gets one.
+  const site = openPages({ dryRun: !upload });
+  const pages = [];
+  for (const [i, story] of approved.entries()) {
+    if (!store.visible(story)) continue;
+    try {
+      pages.push(await site.page(story));
+      approved[i] = { ...story, url: pages.at(-1) };
+    } catch (error) {
+      console.error(`✗ page for ${story.id}: ${error.message}`);
+    }
+  }
   await store.write(approved, state.days);
+  await publishPages({ store, site, days: state.days });
+  await site.announce(pages);
   if (upload) {
     await store.saveState(state);
-    console.error(`Published ${approved.length}. The app has them within five minutes; the site's pages with its next deploy.`);
+    console.error(`Published ${approved.length}, ${pages.length} pages rewritten. The app has them within five minutes.`);
   } else {
     console.error(`${approved.length} ready. Run again with --upload to publish them.`);
   }

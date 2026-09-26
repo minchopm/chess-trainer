@@ -4,7 +4,9 @@
 // for the same reason: three calls do not need forty packages, and a Lambda
 // that imports none of them starts faster. Virtual-hosted addresses, the
 // three signed headers S3 needs, plus the session token that Lambda's
-// credentials come with.
+// credentials come with — and path-style for a bucket with a dot in its name,
+// such as the site's own, brasspawn.com, whose virtual-hosted address no
+// certificate matches.
 import { createHash, createHmac } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { homedir } from 'node:os';
@@ -69,7 +71,8 @@ function canonicalQuery(items) {
 }
 
 export function openS3({ bucket, region }) {
-  const host = `${bucket}.s3.${region}.amazonaws.com`;
+  const pathStyle = bucket.includes('.');
+  const host = pathStyle ? `s3.${region}.amazonaws.com` : `${bucket}.s3.${region}.amazonaws.com`;
   let keys = null;
 
   // Signed afresh on every attempt: the date is part of the signature, and a
@@ -92,7 +95,7 @@ export function openS3({ bucket, region }) {
     const amzDate = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
     const dateStamp = amzDate.slice(0, 8);
     const payloadHash = sha256Hex(payload);
-    const uri = canonicalURI(key);
+    const uri = pathStyle ? `/${percentEncode(bucket)}${canonicalURI(key)}` : canonicalURI(key);
     const queryString = canonicalQuery(query);
 
     const signed = [

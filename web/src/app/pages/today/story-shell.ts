@@ -2,18 +2,18 @@ import { afterNextRender, ChangeDetectionStrategy, Component, inject, input, sig
 import { Router, RouterLink } from '@angular/router';
 
 import { Seo } from '../../core/seo';
-import { BUILT } from './live';
+import { BUILT, hasPage } from './live';
 import type { Story } from './feed/types';
 import { StoryView } from './story-view';
 
 /**
- * A story newer than the last deploy: /today/story?id=<id>.
+ * The address a story had before it had a page: /today/story?id=<id>.
  *
- * The feed grows every two hours and the site is built when somebody builds
- * it, so between the two a story exists in the feed and has no page. This is
- * its page until then — the same view, filled in the browser from the same
- * file the app reads. It asks search engines not to index it: the story's
- * real address arrives with the next deploy, and that is the one to rank.
+ * The collector now writes every new story's page as it writes the story, so
+ * this is for links made before it did, and for a story whose page failed to
+ * render and waits for the next run. One with a page is sent to it; one
+ * without is drawn here, in the browser, from the file the app reads. It asks
+ * search engines not to index it: the story's own address is the one to rank.
  */
 @Component({
   selector: 'bp-story-shell',
@@ -66,6 +66,12 @@ export class StoryShell {
       try {
         const response = await fetch(`/media/feed/v1/stories/${id}.json`);
         const story = response.ok ? await response.json() : null;
+        // Given its own page since the link was made: that page, which has
+        // the replay and is the address to keep.
+        if (story && hasPage(story)) {
+          location.replace(`/today/${id}`);
+          return;
+        }
         if (story) {
           this.story.set(story);
           document.title = `${story.headline} — Brass Pawn`;

@@ -55,12 +55,30 @@ node scripts/feed/collect.mjs --hours 720 --pages 5 --workers 4       # a month 
 node scripts/feed/collect.mjs --dry-run                               # read and analyse, write nothing
 node scripts/feed/reshape.mjs                                         # rewrite every story in today's shape
 node scripts/feed/site.mjs [--empty]                                  # the site's copy (run before every build)
+node scripts/feed/pages.mjs [--dry-run]                               # every public story given its page; the lists rewritten
+aws lambda invoke --region eu-central-1 --function-name brasspawn-feed-collector \
+  --payload '{"renderCheck":"<story id>"}' --cli-binary-format raw-in-base64-out /dev/stdout   # the renderer, tried in Lambda
 aws logs tail /aws/lambda/brasspawn-feed-collector --region eu-central-1 --follow
 ```
 
+## A page for every story, as it is written
+
 `web/scripts/deploy.sh` runs `site.mjs` before every build, so a deploy prerenders
-the history as it stands. Stories newer than the last deploy show on `/today` and
-open at `/today/story?id=…`, filled in the browser from the same files.
+the history as it stands. A story newer than that gets its page from the
+collector, the moment it writes the story (`pages.mjs`): rendered with the site's
+own renderer — the Angular server bundle of the deployed build
+(`web/src/server.ts`), which the Lambda's package carries and every site deploy
+refreshes — and written to the site's bucket at `today/<id>/index.html`. The
+page is the one a deploy would have made, and the next deploy writes it again.
+
+Every run also rewrites `sitemap-today.xml` (the stories' half of the sitemap,
+which `sitemap.xml` indexes beside the deploy's `sitemap-pages.xml`) and the
+Atom feed at `today/feed.xml`, and tells IndexNow about the new pages. A story's
+`url` in the feed is its page once it has one; a page that failed to render is
+tried again on the next run. Approving a story (`publish.mjs --upload`) renders
+its page again in the approved words — with the local build, so deploy the site
+first if it has changed. Nothing here needs CI or a server: the Lambda that
+collects the stories writes their pages.
 
 ## Getting from the site into the app
 

@@ -1,12 +1,47 @@
 /**
- * Two things the Angular build does not do for a static host: a sitemap, and a
- * 404 page at the path servers actually look for.
+ * What the Angular build does not do for a static host: the old addresses'
+ * redirects, a sitemap, and a 404 page at the path servers actually look for.
  */
-import { copyFile, readFile, readdir, stat, writeFile } from 'node:fs/promises';
-import { join } from 'node:path';
+import { copyFile, mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises';
+import { dirname, join, resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 const OUT = 'dist/brass-pawn/browser';
 const ORIGIN = 'https://brasspawn.com';
+
+// ── redirects ────────────────────────────────────────────────────────────────
+//
+// The build keeps a server bundle now, for the collector to render new stories
+// with (web/src/server.ts), and a build with a server leaves the old addresses
+// — /eula, /privacy-policy and the rest — to the server to redirect. There is
+// no server: the site is files. So each is written as the page the static
+// build wrote for it, from the server's own list of them.
+{
+  const manifest = await import(pathToFileURL(resolve('dist/brass-pawn/server/angular-app-manifest.mjs')).href).catch(() => null);
+  for (const { route, redirectTo } of manifest?.default?.routes ?? []) {
+    if (!redirectTo || route.includes('*') || route.includes(':')) continue;
+    const file = join(OUT, route.replace(/^\//, ''), 'index.html');
+    const exists = await stat(file).then(() => true, () => false);
+    if (exists) continue;
+    await mkdir(dirname(file), { recursive: true });
+    await writeFile(
+      file,
+      `<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting</title>
+    <meta http-equiv="refresh" content="0; url=${redirectTo}">
+  </head>
+  <body>
+    <pre>Redirecting to <a href="${redirectTo}">${redirectTo}</a></pre>
+  </body>
+</html>
+`,
+      'utf8',
+    );
+  }
+}
 
 const { locales } = JSON.parse(await readFile(new URL('./locales.json', import.meta.url), 'utf8'));
 
@@ -101,15 +136,14 @@ const PAGES = [
 
 const today = new Date().toISOString().slice(0, 10);
 
-// The daily feed's stories, as scripts/feed/site.mjs left them for this
-// build. Each is dated by its own day rather than by the build, so a crawler
-// is not told that a week-old game report changed this morning.
+// The daily feed's stories are not listed here. They have a sitemap of their
+// own, sitemap-today.xml, which the collector rewrites whenever it writes a
+// story — a story newer than this build has a page the collector rendered,
+// and a list written at deploy would not know it exists. This build still
+// prerenders every story there was; they are counted, for the check below.
 const published = JSON.parse(
   await readFile(new URL('../src/app/pages/today/feed/sitemap.json', import.meta.url), 'utf8').catch(() => '[]'),
 );
-for (const story of published) {
-  PAGES.push({ path: `/today/${story.id}`, priority: '0.6', changefreq: 'yearly', lastmod: story.date });
-}
 
 // Written by hand rather than by a library, because it is eight lines of XML.
 const body = PAGES.map(
@@ -122,12 +156,30 @@ ${page.translated ? ALTERNATES + '\n' : page.alternates ? pageAlternates(page.al
 ).join('\n');
 
 await writeFile(
-  join(OUT, 'sitemap.xml'),
+  join(OUT, 'sitemap-pages.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${body}
 </urlset>
+`,
+  'utf8',
+);
+
+// The index robots.txt names: the site's pages, from this build, and the
+// stories, from the collector (scripts/feed/pages.mjs).
+await writeFile(
+  join(OUT, 'sitemap.xml'),
+  `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>${ORIGIN}/sitemap-pages.xml</loc>
+    <lastmod>${today}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${ORIGIN}/sitemap-today.xml</loc>
+  </sitemap>
+</sitemapindex>
 `,
   'utf8',
 );
@@ -235,7 +287,8 @@ const bytes = (
 ).reduce((a, b) => a + b, 0);
 
 console.log(
-  `postbuild: sitemap and llms.txt written, ${PAGES.length} urls (${locales.length} languages), ` +
+  `postbuild: sitemap and llms.txt written, ${PAGES.length} urls (${locales.length} languages) ` +
+    `and ${published.length} stories, ` +
     `${html} prerendered pages, ${(bytes / 1024 / 1024).toFixed(2)} MB total`,
 );
 
@@ -243,9 +296,9 @@ console.log(
 // one of them silently stopped being generated, the sitemap would still promise
 // it and the site would answer with a soft 404 in that language.
 const localised = files.filter((f) => /^[a-z-]+\/index\.html$/.test(f)).length;
-if (html < PAGES.length) {
+if (html < PAGES.length + published.length) {
   console.error(
-    `postbuild: ${PAGES.length} urls in the sitemap but only ${html} pages were prerendered ` +
+    `postbuild: ${PAGES.length} urls in the sitemap and ${published.length} stories, but only ${html} pages were prerendered ` +
       `(${localised} of them one segment deep). A promised page that does not exist is worse ` +
       `than one that was never promised.`,
   );

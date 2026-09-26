@@ -1,9 +1,10 @@
-import { inject, isDevMode } from '@angular/core';
-import { ActivatedRouteSnapshot, RedirectCommand, Router, Routes } from '@angular/router';
+import { isDevMode } from '@angular/core';
+import { Routes } from '@angular/router';
 
 import { COPY } from './i18n/copy';
 import { LOCALES } from './i18n/locales';
 import { PAGES } from './i18n/pages';
+import { resolveStory } from './pages/today/story-resolver';
 
 /**
  * One page per language, generated from the locale table.
@@ -118,13 +119,7 @@ export const routes: Routes = [
   },
   {
     path: 'today/:id',
-    resolve: {
-      story: async (route: ActivatedRouteSnapshot) => {
-        const { STORIES } = await import('./pages/today/feed/stories');
-        const load = STORIES[route.paramMap.get('id') ?? ''];
-        return load ? load() : new RedirectCommand(inject(Router).parseUrl('/404'));
-      },
-    },
+    resolve: { story: resolveStory },
     loadComponent: () => import('./pages/today/story-page').then((m) => m.StoryPage),
   },
   {

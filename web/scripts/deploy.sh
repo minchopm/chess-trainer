@@ -180,11 +180,14 @@ if [[ "$INVALIDATE_ONLY" != "1" ]]; then
   # live in this bucket under that prefix, and if anybody ever puts them back
   # by hand, PRUNE=1 would decide they are orphans and delete all eighteen
   # hundred of them. One exclusion is cheaper than that afternoon.
+  # The stories' sitemap and the Atom feed are the collector's, rewritten
+  # whenever it writes a story (scripts/feed/pages.mjs). Not in this build, so
+  # excluded, or PRUNE=1 would delete them as strays.
   log "2/4  images, icons, robots and sitemap → 1 day"
   aws_do s3 sync "$DIST_DIR" "s3://$NG_DEPLOY_AWS_BUCKET" \
     "${sync_flags[@]}" \
     --exclude "*.js" --exclude "*.css" --exclude "*.html" --exclude "fonts/*" \
-    --exclude "media/*" \
+    --exclude "media/*" --exclude "sitemap-today.xml" --exclude "today/feed.xml" \
     --cache-control "$SHORT"
 
   # Every route is its own prerendered file, so this is a sync rather than a
@@ -310,6 +313,23 @@ if [[ "$INVALIDATE_ONLY" != "1" ]]; then
     log "Submitting sitemap URLs to IndexNow…"
     node "$ROOT_DIR/tools/indexnow.mjs" "https://$SITE_DOMAIN" \
       || warn "IndexNow did not accept the submission; the deploy itself is complete."
+  fi
+fi
+
+# ---------------------------------------------------------- the collector
+#
+# The collector renders a story newer than this deploy with the site's own
+# renderer, and a page it renders asks for this build's chunks — so it gets
+# this build's renderer, now that the chunks it names are up. Its code only:
+# what the feed shows is not the site's to change. SKIP_COLLECTOR=1 leaves it.
+
+if [[ "$INVALIDATE_ONLY" != "1" && "${SKIP_COLLECTOR:-0}" != "1" ]]; then
+  if [[ "$DRY_RUN" == "1" ]]; then
+    printf '\033[90m  would run: CODE_ONLY=1 scripts/feed/deploy-lambda.sh\033[0m\n'
+  else
+    log "Giving the feed collector this build's renderer…"
+    CODE_ONLY=1 "$ROOT_DIR/../scripts/feed/deploy-lambda.sh" \
+      || warn "The collector kept its old renderer; its new pages will ask for the last build's chunks until: CODE_ONLY=1 scripts/feed/deploy-lambda.sh"
   fi
 fi
 

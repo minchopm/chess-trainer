@@ -8,6 +8,7 @@
 //   node scripts/feed/collect.mjs --hours 720 --pages 5 --workers 4   # a month back
 //   node scripts/feed/collect.mjs --tour n1pPI5Q0      # one broadcast, whatever its tier
 //   node scripts/feed/collect.mjs --dry-run            # read and analyse, write nothing
+//   node scripts/feed/collect.mjs --site               # and the new stories' pages, with the local build
 //
 // A day of an event is read once all its rounds are over, and read once: its
 // stories are chosen from the whole day rather than from whichever games had
@@ -24,6 +25,7 @@ import { Chess } from 'chess.js';
 import { candidateTours, loadPlayers, score, slugify, turningPoint } from './analyse.mjs';
 import { createEngines } from './engine-pool.mjs';
 import { parsePgn, roundPgn } from './lichess.mjs';
+import { openPages, publishPages } from './pages.mjs';
 import { openStore, stored } from './store.mjs';
 import { draftWords, eventNames, person } from './words.mjs';
 
@@ -49,6 +51,9 @@ export async function collect({
   pages = 1,
   minElo = 2400,
   depth = 12,
+  // The website's side — openPages(): each new public story's page, and the
+  // lists. Without it the collector writes the feed and nothing else.
+  site = null,
   log = console.error,
 } = {}) {
   const started = Date.now();
@@ -127,13 +132,27 @@ export async function collect({
 
   const engines = jobs.length ? await createEngines(Math.min(workers, jobs.length)) : [];
   const written = [];
+  const announced = [];
   let next = 0;
 
   // One save at a time, so two workers finishing together cannot each write
   // a state that has lost the other's story.
   let saving = Promise.resolve();
-  const save = (story, job) => {
+  const save = (drafted, job) => {
     saving = saving.then(async () => {
+      let story = drafted;
+      // The page first, so the feed never lists a story whose address is not
+      // yet there. A page that fails is tried again at the end of the run, and
+      // on every run after until it is made.
+      if (story && site && store.visible(story)) {
+        try {
+          const url = await site.page(story);
+          story = { ...story, url };
+          announced.push(url);
+        } catch (error) {
+          log(`  ✗ page for ${story.id}: ${error.message}`);
+        }
+      }
       if (story) {
         (state.days[story.date] ??= []).push(story.id);
         taken.add(story.id);
@@ -173,6 +192,16 @@ export async function collect({
   for (const { entry, left } of groups) if (left === 0) entry.done = true;
   if (written.length) await store.writeLatest(state.days);
   await store.saveState(state);
+  if (site) {
+    // Every run, not only one that wrote something: it retries a page that
+    // failed, and rewrites the lists a deploy may have raced.
+    try {
+      announced.push(...(await publishPages({ store, site, days: state.days, log })));
+      await site.announce(announced);
+    } catch (error) {
+      log(`  ✗ the site's lists: ${error.message}`);
+    }
+  }
   log(`${written.length} stories written in ${Math.round((Date.now() - started) / 1000)} s`);
   return written;
 }
@@ -225,11 +254,11 @@ async function storyFor({ game, gameId, rank, weight, t, round, names }, { engin
 }
 
 function parseArgs(argv) {
-  const args = { hours: 72, workers: 1, tour: null, pages: 1, budget: 3600, 'dry-run': false };
+  const args = { hours: 72, workers: 1, tour: null, pages: 1, budget: 3600, 'dry-run': false, site: false };
   for (let i = 0; i < argv.length; i++) {
     const key = argv[i].replace(/^--/, '');
     if (!(key in args)) throw new Error(`unknown option --${key}`);
-    if (key === 'dry-run') args[key] = true;
+    if (key === 'dry-run' || key === 'site') args[key] = true;
     else args[key] = key === 'tour' ? argv[++i] : Number(argv[++i]);
   }
   return args;
@@ -240,6 +269,9 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1
   const args = parseArgs(process.argv.slice(2));
   collect({
     store: openStore({ dryRun: args['dry-run'] }),
+    // Pages only when asked: they are rendered with the local build, which is
+    // right only if it is the one deployed.
+    site: args.site ? openPages({ dryRun: args['dry-run'] }) : null,
     hours: args.hours,
     workers: args.workers,
     only: args.tour,

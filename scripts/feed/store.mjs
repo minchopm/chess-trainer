@@ -59,6 +59,16 @@ export function openStore({
 
   return {
     bucket,
+    /** Whether the feed's public files carry this story — FEED_PUBLIC. */
+    visible,
+    /** Every public story, newest day first, as the day files list them. */
+    async publicStories(days) {
+      const stories = [];
+      for (const date of Object.keys(days).sort().reverse()) {
+        stories.push(...(await this.day(date)).stories.filter(visible));
+      }
+      return stories;
+    },
     async state() {
       const state = (await get(STATE_KEY)) ?? {};
       return { rounds: {}, games: {}, days: {}, ...state };
@@ -174,9 +184,9 @@ export function stored(story) {
     fen,
     last,
     // The address that works from the moment the story exists: the page that
-    // draws a story from the feed, which hands over to the story's own page
-    // once a deploy has made one.
-    url: `https://brasspawn.com/today/story?id=${story.id}`,
+    // draws a story from the feed. The story's own page replaces it once one
+    // is written — by the collector at once, or by a deploy — see pages.mjs.
+    url: story.url?.startsWith('https://brasspawn.com/today/') ? story.url : `https://brasspawn.com/today/story?id=${story.id}`,
     source: story.source,
     updatedAt: new Date().toISOString(),
   };

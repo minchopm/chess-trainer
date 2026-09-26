@@ -1,3 +1,4 @@
+import { NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
@@ -10,9 +11,14 @@ import { occasion, resultText } from './words';
 @Component({
   selector: 'bp-story-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, Board],
+  imports: [NgTemplateOutlet, RouterLink, Board],
   template: `
-    <a class="story" [routerLink]="link().path" [queryParams]="link().query">
+    @if (link().href; as href) {
+      <a class="story" [href]="href"><ng-container [ngTemplateOutlet]="card" /></a>
+    } @else {
+      <a class="story" [routerLink]="link().path" [queryParams]="link().query"><ng-container [ngTemplateOutlet]="card" /></a>
+    }
+    <ng-template #card>
       <bp-board
         class="story__board"
         [fen]="story().fen"
@@ -30,7 +36,7 @@ import { occasion, resultText } from './words';
         </p>
         <p class="dim story__lede">{{ story().lede }}</p>
       </div>
-    </a>
+    </ng-template>
   `,
   styles: `
     :host { display: block; height: 100%; }
