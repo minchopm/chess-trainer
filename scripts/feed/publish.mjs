@@ -18,7 +18,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Chess } from 'chess.js';
 
-import { articles } from './article.mjs';
+import { articles, problems as unsafe } from './article.mjs';
 import { openPages, publishPages } from './pages.mjs';
 import { openStore, stored } from './store.mjs';
 import { moveLabel } from './words.mjs';
@@ -54,7 +54,40 @@ function problems(story) {
   if (/\b(he|she|his|her|him|hers|himself|herself)\b/i.test(`${story.headline} ${story.body}`)) {
     found.push('uses a gendered pronoun — the feed names people instead');
   }
+  // The collector's own bar, too: nothing that judges a person or reports a
+  // feeling nobody reported.
+  for (const wrong of unsafe(`${story.headline}\n${story.body}`, 'en')) {
+    if (!found.some((f) => f.includes('pronoun'))) found.push(wrong);
+  }
   return found;
+}
+
+/**
+ * The other languages, as the draft has them: each one somebody rewrote —
+ * which is any whose words differ from the collector's — kept and checked
+ * like the English, and every other made again from the facts. A rewritten
+ * language must still name the key move, and has no lede of its own unless
+ * it was given one: its first sentence is it.
+ */
+function languages(story, made) {
+  const words = { ...made };
+  const found = [];
+  const label = story.key ? moveLabel(story.key.ply, story.key.played) : null;
+  for (const [lang, own] of Object.entries(story.words ?? {})) {
+    if (lang === 'en' || !made[lang]) continue;
+    const same = own.headline === made[lang].headline && own.body === made[lang].body;
+    if (same) continue;
+    if (typeof own.headline !== 'string' || typeof own.body !== 'string' || !own.headline || !own.body) {
+      found.push(`${lang}: no headline or body`);
+      continue;
+    }
+    const wrong = unsafe(`${own.headline}\n${own.body}`, lang);
+    if (wrong.length) found.push(`${lang}: ${wrong.join(', ')}`);
+    if (label && !own.body.includes(label) && !own.headline.includes(label)) found.push(`${lang}: never mentions ${label}`);
+    const lede = own.lede ?? own.body.split(/(?<=[.!?。！？।])\s*/u)[0];
+    words[lang] = { headline: own.headline, lede, body: own.body };
+  }
+  return { words, found };
 }
 
 const store = openStore({ dryRun: !upload });
@@ -72,9 +105,14 @@ for (const file of (await readdir(dir)).filter((f) => f.endsWith('.json')).sort(
     }
     const live = await store.story(story.id);
     if (live?.status === 'approved' && live.headline === story.headline && live.body === story.body) continue;
-    // The approved words are English; the other languages keep the
-    // collector's, made from the same facts, until they are rewritten too.
-    const { en, ...words } = articles(story);
+    // The approved words are English, and any language rewritten beside
+    // them; the others keep the collector's, made from the same facts.
+    const { en, ...made } = articles(story);
+    const { words, found } = languages(story, made);
+    if (found.length) {
+      console.error(`✗ ${story.id}: ${found.join('; ')}`);
+      continue;
+    }
     approved.push(stored({ ...story, status: 'approved', lede: undefined, words }));
     console.error(`✓ ${story.id}${live ? ` (over the ${live.status} version)` : ' (new)'}`);
   }
