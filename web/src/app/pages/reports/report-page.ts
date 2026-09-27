@@ -119,17 +119,50 @@ export class ReportPage {
             publisher: { '@id': url('/#organization') },
             image: url('/og.jpg'),
             inLanguage: words.locale.tag,
-            about: {
-              '@type': 'SportsEvent',
-              name: report.event.name,
-              sport: 'Chess',
-              ...(report.event.dates ? { startDate: report.event.dates[0], endDate: report.event.dates[1] } : {}),
-              ...(report.event.location ? { location: { '@type': 'Place', name: report.event.location } } : {}),
-              ...(report.event.website ? { url: report.event.website } : {}),
-            },
+            about: event(report),
           },
         ],
       });
     });
   }
+}
+
+/**
+ * The tournament as Google reads an event: its dates, that it went ahead as
+ * planned, in person, where, and who ran it. Only with its dates — an event
+ * without a start date is an error in Search Console, and the name alone is
+ * then all there is to say. No performer and no offers: the competitors are
+ * the teams in the tables, and nobody sells a ticket to watch a broadcast.
+ */
+function event(report: Report): Record<string, unknown> {
+  const { name, dates, location, website } = report.event;
+  if (!dates) return { '@type': 'Thing', name };
+  const [city, ...rest] = (location ?? '').split(',').map((part) => part.trim());
+  const country = rest.at(-1);
+  return {
+    '@type': 'SportsEvent',
+    name,
+    sport: 'Chess',
+    startDate: dates[0],
+    endDate: dates[1],
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    image: [url('/og.jpg')],
+    description: report.lede,
+    ...(location
+      ? {
+          location: {
+            '@type': 'Place',
+            name: location,
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: city,
+              ...(country ? { addressCountry: country } : {}),
+            },
+          },
+        }
+      : {}),
+    ...(/\bFIDE\b/.test(name) ? { organizer: { '@type': 'Organization', name: 'FIDE', url: 'https://www.fide.com' } } : {}),
+    ...(website ? { url: website } : {}),
+  };
 }

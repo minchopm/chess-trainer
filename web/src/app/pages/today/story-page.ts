@@ -60,12 +60,15 @@ export class StoryPage {
             publisher: { '@id': url('/#organization') },
             image: url('/og.jpg'),
             inLanguage: words.locale.tag,
-            about: {
-              '@type': 'SportsEvent',
-              name: story.event.name,
-              sport: 'Chess',
-              ...(story.event.location ? { location: { '@type': 'Place', name: story.event.location } } : {}),
-            },
+            // What the article is about, named — and not as an Event. A story
+            // is a page about one game, not a listing of the tournament, and
+            // Google reads any Event it finds as an event to show in search,
+            // which then has to have dates, a venue and tickets. The
+            // tournament's own page, the Olympiad report, is where it is one.
+            about: { '@type': 'Thing', name: story.event.name },
+            ...(story.event.location
+              ? { contentLocation: { '@type': 'Place', name: story.event.location } }
+              : {}),
             mentions: [story.white, story.black].map((p) => ({ '@type': 'Person', name: p.name })),
           },
         ],
