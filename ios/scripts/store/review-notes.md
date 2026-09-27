@@ -65,7 +65,13 @@ click from the main menu.
   unlimited, and always will be; what is sold is the training.
 - **Multiplayer** needs Game Center signed in on the Mac, and a second player. If
   no opponent is found, that is matchmaking having nobody to match with, not an
-  error.
+  error. Under **Players** in the multiplayer lobby are the rank list for each
+  clock — five Game Center leaderboards, one per clock, holding each player's
+  online rating — and the players active this week and not, from the same
+  leaderboards' dates; **Invite** beside a player sends a Game Center
+  invitation for a game on that clock. When a game ends, **Play again** asks
+  the same opponent for another, with the colours swapped, without leaving the
+  match.
 - **Today** is the TODAY plate on the main menu. A story opens on its key move;
   **Replay** steps through the game and **Try it yourself** continues it on the
   free board. A game's page on brasspawn.com opens the same game in the app,

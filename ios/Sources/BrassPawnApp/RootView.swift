@@ -231,6 +231,14 @@ public struct RootView: View {
                 open(story: FeedLink.Target(id: arguments[flag + 1]))
             }
             #endif
+            // An invitation accepted in Game Center's own notification — the
+            // app may have been opened by it: the online screen, where the
+            // game it starts is played.
+            app.matchmaker.onInviteAccepted = { [navigator] in
+                navigator.playMode = .online
+                navigator.pendingTab = .play
+                navigator.showsMenu = false
+            }
             // A game somebody opened in the clip before installing: the app
             // they installed from it opens on the same game, once.
             if let story = SharedContainer.takeStory() { open(story: story) }

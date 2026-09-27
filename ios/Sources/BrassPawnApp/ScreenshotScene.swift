@@ -60,6 +60,14 @@ enum ScreenshotScene: String {
     /// reviewer to read. Reaching it by hand means running a day's free
     /// training out first; this opens it directly.
     case paywall
+    /// The online lobby with players in it, and the players screen — both
+    /// filled with invented players, since Game Center will not sign in on a
+    /// simulator to fill them with real ones.
+    case onlineLobby
+    case players
+    /// An online game just lost to a resignation, with the opponent asking for
+    /// another — against the debug loopback.
+    case onlineRematch
 
     static let requested: ScreenshotScene? = {
         let arguments = ProcessInfo.processInfo.arguments
@@ -72,7 +80,7 @@ enum ScreenshotScene: String {
     var tab: RootView.Tab {
         switch self {
         case .menu, .playSetup, .playCoached, .playMistake, .playValues, .boardEngines, .demo,
-             .onlineDraw, .paywall: .play
+             .onlineDraw, .paywall, .onlineLobby, .players, .onlineRematch: .play
         case .watchList, .demoWatch: .watch
         case .demoTactics: .tactics
         }
@@ -82,7 +90,7 @@ enum ScreenshotScene: String {
     var playMode: PlayTab.Mode? {
         switch self {
         case .boardEngines: .board
-        case .onlineDraw: .online
+        case .onlineDraw, .onlineLobby, .players, .onlineRematch: .online
         case .playSetup, .playCoached, .playMistake, .playValues, .demo, .demoTactics: .play
         default: nil
         }
@@ -93,8 +101,8 @@ enum ScreenshotScene: String {
     var dimension: BoardDimension? {
         switch self {
         case .playSetup, .playCoached, .playMistake, .boardEngines, .demo, .onlineDraw: .dimensional
-        case .playValues, .demoTactics: .flat
-        case .menu, .watchList, .demoWatch, .paywall: nil
+        case .playValues, .demoTactics, .onlineRematch: .flat
+        case .menu, .watchList, .demoWatch, .paywall, .onlineLobby, .players: nil
         }
     }
 

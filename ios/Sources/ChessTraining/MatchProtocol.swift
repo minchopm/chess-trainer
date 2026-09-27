@@ -18,6 +18,15 @@ public enum MatchPacket: Codable, Equatable, Sendable {
     case drawResponse(accepted: Bool)
     /// Claimed by whichever device notices first; the other accepts it.
     case gameOver(GameOver)
+    /// After a game: another one, in the same match, colours swapped and the
+    /// clock the same — so two people who want to carry on do not have to find
+    /// each other again. A build that predates these drops them unread, and
+    /// the offer simply goes unanswered.
+    case rematchOffer
+    case rematchResponse(accepted: Bool)
+    /// Leaving the match: said, so the other side knows at once rather than
+    /// after the wait a dropped connection is given to come back.
+    case goodbye
 
     public struct Hello: Codable, Equatable, Sendable {
         public var version: Int = MatchProtocolVersion.current

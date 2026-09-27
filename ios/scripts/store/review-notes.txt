@@ -36,7 +36,10 @@ story can be read and replayed for free; continuing one on the board is free
 for the last day's stories and part of Pro for older ones, which show a lock on
 that button and open the paywall.
 Multiplayer needs Game Center signed in and a second player; if none is found,
-that is matchmaking with nobody to match, not an error.
+that is matchmaking with nobody to match, not an error. Players in the
+multiplayer lobby shows the rank list per clock (five Game Center leaderboards)
+and who has been active this week; Invite sends a Game Center invitation. After
+a game, Play again asks the same opponent for another, colours swapped.
 
 4. EXTERNAL SERVICES
 One kind of request of our own: opening the Today screen downloads static JSON

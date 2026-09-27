@@ -45,6 +45,12 @@ struct CompletionOverlay: View {
     /// than hunting for it in the settings. A puzzle that went wrong keeps the
     /// panel: that one is carrying the reason.
     let keepShowing: Binding<Bool>?
+    /// Something of the screen's own between the result and the buttons —
+    /// an online game's offer of another.
+    let accessory: AnyView?
+    /// The primary button as the one to press, or as the way out beside an
+    /// accessory that holds the one to press.
+    let primaryEmphasis: PillButtonStyle.Emphasis
 
     @State private var hasAppeared = false
 
@@ -55,7 +61,9 @@ struct CompletionOverlay: View {
         onRetry: (() -> Void)? = nil,
         replayTitle: String? = nil,
         onReplay: (() -> Void)? = nil,
-        keepShowing: Binding<Bool>? = nil
+        keepShowing: Binding<Bool>? = nil,
+        accessory: AnyView? = nil,
+        primaryEmphasis: PillButtonStyle.Emphasis = .solid
     ) {
         self.result = result
         self.primaryTitle = primaryTitle
@@ -64,6 +72,8 @@ struct CompletionOverlay: View {
         self.replayTitle = replayTitle
         self.onReplay = onReplay
         self.keepShowing = keepShowing
+        self.accessory = accessory
+        self.primaryEmphasis = primaryEmphasis
     }
 
     var body: some View {
@@ -127,6 +137,8 @@ struct CompletionOverlay: View {
                     .buttonStyle(.plain)
                 }
 
+                if let accessory { accessory }
+
                 HStack(spacing: 10) {
                     if let onRetry {
                         Button(L.t("common.tryAgain", "Try again"), action: onRetry)
@@ -134,7 +146,7 @@ struct CompletionOverlay: View {
                             .frame(maxWidth: .infinity)
                     }
                     Button(primaryTitle, action: onPrimary)
-                        .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
+                        .buttonStyle(PillButtonStyle(emphasis: primaryEmphasis, usesBodySize: true))
                         .frame(maxWidth: .infinity)
                 }
             }

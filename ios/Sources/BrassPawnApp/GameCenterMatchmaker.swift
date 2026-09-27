@@ -88,6 +88,18 @@ public final class GameCenterMatchmaker: NSObject {
     private static let reconnectGrace: TimeInterval = 45
     #endif
 
+    /// This player's rating and games on a clock — for a match that starts
+    /// from an invitation, which can arrive anywhere in the app rather than
+    /// from the lobby that knows them.
+    public var ratingLookup: ((TimeControl) -> (rating: Int, games: Int))?
+    /// Signed in: time to tell the rank lists this player is still about.
+    public var onAuthenticated: (() -> Void)?
+    /// An invitation was accepted, from Game Center's own notification: the
+    /// app should be on the online screen for the game that follows.
+    public var onInviteAccepted: (() -> Void)?
+    /// Who is being invited, while an invitation is out.
+    public private(set) var invitee: String?
+
     public override init() { super.init() }
 
 #if DEBUG
@@ -120,8 +132,17 @@ public final class GameCenterMatchmaker: NSObject {
                 self.localPlayerID = GKLocalPlayer.local.gamePlayerID
                 self.localName = GKLocalPlayer.local.alias
                 self.pendingAuthController = nil
-                self.state = .ready
-                self.status = "Signed in as \(self.localName)."
+                // Only while nothing is under way: signing in again mid-game
+                // must not put the lobby back.
+                if case .authenticating = self.state {
+                    self.state = .ready
+                    self.status = "Signed in as \(self.localName)."
+                }
+                // Invitations sent to this player arrive through the listener,
+                // including the one whose notification opened the app.
+                GKLocalPlayer.local.unregisterAllListeners()
+                GKLocalPlayer.local.register(self)
+                self.onAuthenticated?()
             }
         }
         #else
@@ -162,7 +183,15 @@ public final class GameCenterMatchmaker: NSObject {
         status = invitation.map { "Waiting for \($0.name)…" }
             ?? "Looking for a \(timeControl.label) opponent…"
 
-        GKMatchmaker.shared().findMatch(for: request) { [weak self] match, error in
+        GKMatchmaker.shared().findMatch(for: request, withCompletionHandler: found)
+        #endif
+    }
+
+    #if canImport(GameKit)
+    /// What Game Center hands back from a search, an invitation sent or one
+    /// accepted: a match to begin, or the reason there is none.
+    private var found: (GKMatch?, Error?) -> Void {
+        { [weak self] match, error in
             // GKMatch is not Sendable, and the callback lands off the main
             // actor. The box carries it across without the compiler having to
             // take Game Center's word for its thread safety.
@@ -170,6 +199,7 @@ public final class GameCenterMatchmaker: NSObject {
             let message = error?.localizedDescription
             Task { @MainActor in
                 guard let self else { return }
+                self.invitee = nil
                 guard case .searching = self.state else {
                     carried?.value.disconnect()
                     return
@@ -187,8 +217,62 @@ public final class GameCenterMatchmaker: NSObject {
                 self.begin(carried.value)
             }
         }
-        #endif
     }
+
+    /// Invite one player, by their Game Center identity — somebody off the
+    /// rank list, or a recent opponent. Game Center delivers it as a
+    /// notification on their devices; accepting it puts both straight into a
+    /// match on this clock, with no search and no link.
+    public func invite(_ player: GKPlayer, timeControl: TimeControl) {
+        guard isAuthenticated, session == nil else { return }
+        if case .searching = state { cancelSearch() }
+        self.timeControl = timeControl
+        if let lookup = ratingLookup { (localRating, localGames) = lookup(timeControl) }
+        let request = GKMatchRequest()
+        request.minPlayers = 2
+        request.maxPlayers = 2
+        request.recipients = [player]
+        // The clock travels with the invitation, as its pool.
+        request.playerGroup = timeControl.playerGroup
+        request.inviteMessage = L.t("online.inviteNote", "A game of chess, %@ each.", timeControl.label)
+        request.recipientResponseHandler = { [weak self] player, response in
+            let alias = player.alias
+            let declined = response != .accepted
+            Task { @MainActor in
+                guard let self, declined, case .searching = self.state, self.invitee != nil else { return }
+                self.cancelSearch()
+                self.status = L.t("online.inviteDeclined", "%@ cannot play right now.", alias)
+            }
+        }
+        invitee = player.alias
+        state = .searching(timeControl)
+        status = L.t("online.inviting", "Inviting %@…", player.alias)
+        GKMatchmaker.shared().findMatch(for: request, withCompletionHandler: found)
+    }
+
+    /// Invite somebody off one of the lists.
+    func invite(_ player: BoardPlayer, on control: TimeControl, from boards: OnlineBoards) {
+        guard let gkPlayer = boards.player(player.id) else {
+            status = L.t("online.inviteUnavailable", "%@ cannot be invited from here right now.", player.alias)
+            return
+        }
+        invite(gkPlayer, timeControl: control)
+    }
+
+    /// An invitation this player accepted — from Game Center's notification,
+    /// wherever in the app they were, or with the app not running at all.
+    fileprivate func accept(_ invite: GKInvite) {
+        guard session == nil else { return }
+        if case .searching = state { cancelSearch() }
+        let control = TimeControl.fromPlayerGroup(invite.playerGroup) ?? .five
+        timeControl = control
+        if let lookup = ratingLookup { (localRating, localGames) = lookup(control) }
+        state = .searching(control)
+        status = L.t("online.joining", "Joining %@…", invite.sender.alias)
+        onInviteAccepted?()
+        GKMatchmaker.shared().match(for: invite, completionHandler: found)
+    }
+    #endif
 
     /// The instant the clocks are read at.
     ///
@@ -208,23 +292,42 @@ public final class GameCenterMatchmaker: NSObject {
 #endif
     }
 
+    /// The clock of the game being searched for, invited to, or played.
+    public var currentTimeControl: TimeControl {
+        #if canImport(GameKit)
+        return session?.timeControl ?? timeControl
+        #else
+        return session?.timeControl ?? .five
+        #endif
+    }
+
     public func cancelSearch() {
         #if canImport(GameKit)
+        // Takes back an invitation that is out as well as a search.
         GKMatchmaker.shared().cancel()
         #endif
+        invitee = nil
         guard isAuthenticated else { return }
         state = .ready
         status = "Search cancelled."
     }
 
     public func leaveMatch() {
+        // Said before going, so the other side can stop waiting on an answer
+        // to a rematch at once, rather than after the reconnect grace.
+        session?.leave()
         #if canImport(GameKit)
         disconnectWork?.cancel()
         disconnectWork = nil
         connectWork?.cancel()
         connectWork = nil
-        match?.disconnect()
+        // A moment for the goodbye to leave before the link does.
+        let leaving = match.map { UncheckedBox($0) }
         match = nil
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(400))
+            leaving?.value.disconnect()
+        }
         #endif
         session = nil
 #if DEBUG
@@ -264,6 +367,12 @@ public final class GameCenterMatchmaker: NSObject {
     /// two devices, two Apple IDs and a draw offered at the right moment.
     public func offerDrawFromLoopback() {
         loopback?.theirs.offerDraw()
+    }
+
+    /// The other side of a loopback match resigns and asks for another game.
+    public func resignAndAskForRematchFromLoopback() {
+        loopback?.theirs.resign()
+        loopback?.theirs.offerRematch()
     }
 #endif
 
@@ -332,6 +441,15 @@ extension GameCenterMatchmaker: MatchTransport {
     }
 }
 
+extension GameCenterMatchmaker: @preconcurrency GKLocalPlayerListener {
+    /// Accepted in Game Center's notification — the app may have been opened
+    /// by it, in which case this arrives as soon as the player is signed in.
+    public func player(_ player: GKPlayer, didAccept invite: GKInvite) {
+        let carried = UncheckedBox(invite)
+        Task { @MainActor in self.accept(carried.value) }
+    }
+}
+
 extension GameCenterMatchmaker: @preconcurrency GKMatchDelegate {
     public func match(_ match: GKMatch, didReceive data: Data, fromRemotePlayer player: GKPlayer) {
         Task { @MainActor in
@@ -345,6 +463,11 @@ extension GameCenterMatchmaker: @preconcurrency GKMatchDelegate {
             guard self.match === match else { return }
             switch state {
             case .disconnected:
+                // After a game there is nothing to come back to: they left.
+                if let session = self.session, case .finished = session.phase {
+                    session.opponentDisconnected()
+                    return
+                }
                 self.status = "\(player.alias) disconnected — waiting for them to come back…"
                 self.disconnectWork?.cancel()
                 self.disconnectWork = Task { @MainActor [weak self] in

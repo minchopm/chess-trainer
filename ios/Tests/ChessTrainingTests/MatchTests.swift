@@ -303,4 +303,71 @@ struct MatchTests {
         #expect(settled?.ratingDelta == 20)          // K=40, even ratings, a win
         #expect(pair.guest.settle(rating: 1220, games: 1) == nil)
     }
+
+    @Test("Another game, when both want one, swaps the colours and starts again")
+    func rematchSwapsColours() {
+        let pair = makePair()
+        pair.begin(hostPlaysWhite: true)
+        pair.host.resign()
+        #expect(pair.guest.settle(rating: 1200, games: 0)?.ratingDelta == 20)
+
+        // The winner asks, with the rating the game left.
+        pair.guest.offerRematch(as: .init(playerID: "B", name: "Bo", rating: 1220, games: 1))
+        #expect(pair.guest.rematchOfferSent)
+        #expect(pair.host.rematchOffered)
+
+        pair.host.respondToRematch(accept: true)
+        #expect(pair.host.phase == .playing)
+        #expect(pair.guest.phase == .playing)
+        #expect(pair.host.myColor == .black)
+        #expect(pair.guest.myColor == .white)
+        #expect(pair.host.gameNumber == 2 && pair.guest.gameNumber == 2)
+        #expect(pair.host.opponent?.rating == 1220, "the new game is scored against the new rating")
+        #expect(pair.host.moves.isEmpty && !pair.guest.rematchOfferSent && !pair.host.rematchOffered)
+
+        // And it is a game: White moves first, on both boards.
+        #expect(pair.guest.play(from: Square("e2")!, to: Square("e4")!, promotion: nil))
+        #expect(pair.host.moves == ["e4"])
+    }
+
+    @Test("Asking for another game at the same moment is a yes from both")
+    func rematchCrossedOffers() {
+        let pair = makePair()
+        pair.begin(hostPlaysWhite: false)
+        pair.host.resign()
+        // Each asks before hearing the other: the packets cross.
+        pair.hostTransport.dropped = true
+        pair.host.offerRematch()
+        pair.hostTransport.dropped = false
+        pair.guest.offerRematch()             // reaches the host, who had asked
+        #expect(pair.host.phase == .playing)
+        #expect(pair.guest.phase == .playing)
+        #expect(pair.host.myColor == .white && pair.guest.myColor == .black)
+        #expect(pair.host.gameNumber == 2 && pair.guest.gameNumber == 2)
+    }
+
+    @Test("A declined rematch, and an opponent who has left, end the asking")
+    func rematchDeclinedAndLeft() {
+        let pair = makePair()
+        pair.begin()
+        pair.guest.resign()
+        pair.host.offerRematch()
+        pair.guest.respondToRematch(accept: false)
+        #expect(pair.host.rematchDeclined)
+        #expect(!pair.host.rematchOfferSent)
+        if case .finished = pair.host.phase {} else { Issue.record("no new game was started") }
+
+        pair.guest.leave()
+        #expect(pair.host.opponentLeft)
+        pair.host.offerRematch()
+        #expect(!pair.host.rematchOfferSent, "nobody is there to ask")
+    }
+
+    @Test("Saying goodbye in the middle of a game loses it")
+    func goodbyeMidGame() {
+        let pair = makePair()
+        pair.begin()
+        pair.guest.leave()
+        #expect(pair.host.phase == .finished(MatchResult(outcome: .win, reason: .disconnected)))
+    }
 }

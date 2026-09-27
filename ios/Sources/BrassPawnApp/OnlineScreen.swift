@@ -16,6 +16,7 @@ struct OnlineScreen: View {
     /// Left by the App Clip, if somebody arrived here from a link. Read
     /// once and taken away, so a declined invitation is not offered again.
     @State private var invitation: Invitation?
+    @State private var showsPlayers = false
 
     /// Drives the clock display. The clock itself works from timestamps, so
     /// this only decides how often the numbers are redrawn — not how they are
@@ -36,14 +37,24 @@ struct OnlineScreen: View {
             settleIfFinished()
         }
         .onAppear {
-            if case .signedOut = matchmaker.state { matchmaker.authenticate() }
+            // Signed in quietly at launch; asked again here if that did not
+            // work, now that somebody has come to play.
+            switch matchmaker.state {
+            case .signedOut, .failed: matchmaker.authenticate()
+            default: break
+            }
             if invitation == nil, let waiting = SharedContainer.takeInvitation() {
                 invitation = waiting
                 timeControl = TimeControl(rawValue: waiting.minutes) ?? .five
             }
             #if DEBUG
             stageDrawOfferForScreenshot()
+            stagePlayersForScreenshot()
             #endif
+        }
+        .task(id: timeControl) { await app.boards.refreshLooking() }
+        .appCover(isPresented: $showsPlayers) {
+            PlayersScreen(clock: timeControl) { player, control in invite(player, on: control) }
         }
         .onDisappear {
             matchmaker.cancelSearch()
@@ -86,6 +97,7 @@ struct OnlineScreen: View {
                     .disabled(isSearching)
                     Text(L.t("online.clockExplanation", "%@ each — %@. You are only paired with players who chose the same clock.", timeControl.label, timeControl.name.lowercased()))
                         .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
+                    LookingNow(count: app.boards.lookingNow[timeControl], control: timeControl)
                 }
 
                 Card {
@@ -109,7 +121,11 @@ struct OnlineScreen: View {
                     Button(role: .destructive) { matchmaker.cancelSearch() } label: {
                         HStack(spacing: 8) {
                             BrassActivityIndicator(size: 15)
-                            Text(L.t("online.searchingTapToCancel", "Searching — tap to cancel"))
+                            if let invitee = matchmaker.invitee {
+                                Text(L.t("online.waitingForTapToCancel", "Waiting for %@ — tap to cancel", invitee))
+                            } else {
+                                Text(L.t("online.searchingTapToCancel", "Searching — tap to cancel"))
+                            }
                         }
                         .frame(maxWidth: .infinity)
                     }
@@ -122,16 +138,65 @@ struct OnlineScreen: View {
                             games: app.progress.gamesPlayed(.online(minutes: timeControl.minutes))
                         )
                     } label: {
-                        Text(matchmaker.isAuthenticated ? "Find opponent" : "Sign in to Game Center")
+                        Text(matchmaker.isAuthenticated
+                             ? L.t("online.findOpponent", "Find opponent")
+                             : L.t("online.signIn", "Sign in to Game Center"))
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(PillButtonStyle(emphasis: .solid))
                 }
 
+                playersCard
                 inviteCard
             }
             .padding(12)
         }
+    }
+
+    // MARK: - Players
+
+    /// Who to play: the people played lately, then whoever has been about this
+    /// week — each an invitation away — and the way to the rank list.
+    @ViewBuilder
+    private var playersCard: some View {
+        if matchmaker.canInvite || app.boards.hasLoaded {
+            let boards = app.boards
+            let recent = Array(boards.recent.prefix(2))
+            let active = Array(boards.active().filter { player in !recent.contains { $0.id == player.id } }
+                .prefix(4 - recent.count))
+            Card {
+                Slug(text: L.t("online.players", "Players"))
+                if !boards.hasLoaded {
+                    HStack(spacing: 9) {
+                        BrassActivityIndicator(size: 15)
+                        Text(L.t("online.loadingPlayers", "Reading the lists from Game Center…"))
+                            .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
+                    }
+                } else if recent.isEmpty && active.isEmpty {
+                    Text(L.t("online.nobodyYet", "Nobody else has played online yet. Invite somebody with a link from the lobby."))
+                        .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
+                } else {
+                    VStack(spacing: 2) {
+                        ForEach(recent + active) { player in
+                            PlayerRow(player: player, showsRank: false,
+                                      invite: isSearching || matchmaker.session != nil ? nil : { invite(player, on: timeControl) })
+                        }
+                    }
+                }
+                Button { showsPlayers = true } label: {
+                    Text(L.t("online.rankListAndPlayers", "Rank list and all players"))
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(PillButtonStyle(emphasis: .ghost))
+            }
+        }
+    }
+
+    /// Invite one player, on a clock — through Game Center, as a notification
+    /// on their devices; the lobby shows it going out, and a yes starts the game.
+    private func invite(_ player: BoardPlayer, on control: TimeControl) {
+        timeControl = control
+        matchmaker.invite(player, on: control, from: app.boards)
     }
 
     // MARK: - Invitations
@@ -211,6 +276,33 @@ struct OnlineScreen: View {
     }
 
     #if DEBUG
+    /// Players to look at, for `.onlineLobby` and `.players`; and a game lost,
+    /// with the opponent asking for another, for `.onlineRematch`.
+    private func stagePlayersForScreenshot() {
+        switch ScreenshotScene.requested {
+        case .onlineLobby:
+            app.boards.fillWithSamples()
+        case .players:
+            app.boards.fillWithSamples()
+            showsPlayers = true
+        case .onlineRematch:
+            guard matchmaker.session == nil else { return }
+            matchmaker.startLoopbackMatch(timeControl: timeControl,
+                                          rating: app.progress.rating(.online(minutes: timeControl.minutes)),
+                                          games: 3)
+            Task { @MainActor in
+                // Once both sides of the loopback are playing.
+                while !(matchmaker.session.map(isPlaying) ?? false) {
+                    try? await Task.sleep(for: .milliseconds(200))
+                }
+                try? await Task.sleep(for: .seconds(1.5))
+                matchmaker.resignAndAskForRematchFromLoopback()
+            }
+        default:
+            break
+        }
+    }
+
     /// Put a game with a draw on the table on screen, for `.onlineDraw`.
     ///
     /// Against the debug loopback, which exists because Game Center will not
@@ -249,7 +341,7 @@ struct OnlineScreen: View {
                 ),
                 bottom: PlayerBar(
                     name: matchmaker.localName,
-                    rating: app.progress.rating(.online(minutes: timeControl.minutes)),
+                    rating: app.progress.rating(.online(minutes: session.timeControl.minutes)),
                     color: session.myColor,
                     material: MaterialBalance(session.position)
                 )
@@ -278,16 +370,20 @@ struct OnlineScreen: View {
         .appCover(isPresented: completionIsPresented(session)) {
             if case .finished(let result) = session.phase {
                 CompletionOverlay(
-                    result: completion(for: settled ?? result),
+                    result: completion(for: settled ?? result, at: session.timeControl),
                     primaryTitle: L.t("online.backToTheLobby", "Back to the lobby"),
                     onPrimary: { matchmaker.leaveMatch(); settled = nil },
-                    onRetry: nil
+                    onRetry: nil,
+                    accessory: AnyView(RematchPanel(session: session, hello: { hello(for: session) })),
+                    primaryEmphasis: session.opponentLeft || session.rematchDeclined ? .solid : .ghost
                 )
                 .presentationBackground(.clear)
                 .interactiveDismissDisabled()
             }
         }
         .animation(.easeOut(duration: 0.2), value: session.drawOffered)
+        // A rematch is a new game in the same match: its result is its own.
+        .onChange(of: session.gameNumber) { _, _ in settled = nil }
         .onChange(of: session.moves.count) { _, _ in
             SoundBoard.shared.play(.move)
         }
@@ -418,21 +514,36 @@ struct OnlineScreen: View {
         return false
     }
 
+    /// This side as the opponent should now see it: the rating the game just
+    /// played left, for the next one to be scored against.
+    private func hello(for session: MatchSession) -> MatchPacket.Hello {
+        let rated = RatedPool.online(minutes: session.timeControl.minutes)
+        return MatchPacket.Hello(
+            playerID: session.me.playerID,
+            name: session.me.name,
+            rating: app.progress.rating(rated),
+            games: app.progress.gamesPlayed(rated)
+        )
+    }
+
     /// Apply the rating exactly once, the moment the game ends.
     private func settleIfFinished() {
         guard let session = matchmaker.session, settled == nil,
               case .finished = session.phase else { return }
+        // The game's own clock, not the lobby's: a game that began from an
+        // invitation is on whatever clock the invitation said.
+        let control = session.timeControl
         guard let result = session.settle(
-            rating: app.progress.rating(.online(minutes: timeControl.minutes)),
-            games: app.progress.gamesPlayed(.online(minutes: timeControl.minutes))
+            rating: app.progress.rating(.online(minutes: control.minutes)),
+            games: app.progress.gamesPlayed(.online(minutes: control.minutes))
         ) else { return }
         settled = result
-        app.update { $0.record(online: result, at: timeControl) }
+        app.recordOnline(result, at: control)
         activity.release()
         matchmaker.onMatchFinished?(result)
     }
 
-    private func completion(for result: MatchResult) -> CompletionResult {
+    private func completion(for result: MatchResult, at control: TimeControl) -> CompletionResult {
         let verdict: CompletionResult.Verdict = switch result.outcome {
         case .win: .success
         case .draw: .partial
@@ -443,8 +554,81 @@ struct OnlineScreen: View {
             title: result.headline,
             detail: result.ratingDelta == 0
                 ? nil
-                : "Rating \(result.ratingDelta > 0 ? "+" : "")\(result.ratingDelta) → \(app.progress.rating(.online(minutes: timeControl.minutes)))",
+                : L.t("online.ratingChange", "Rating %1$@ → %2$lld",
+                      "\(result.ratingDelta > 0 ? "+" : "")\(result.ratingDelta)",
+                      app.progress.rating(.online(minutes: control.minutes))),
             line: nil
         )
+    }
+}
+
+/// Another game, asked for and answered in the result panel itself. The two
+/// players are still connected to each other, so there is no invitation to
+/// send and nobody to find: one asks, the other says yes, and the board is
+/// set up again with the colours swapped.
+private struct RematchPanel: View {
+    let session: MatchSession
+    /// This side as it now stands, rating and all — see `OnlineScreen.hello`.
+    let hello: () -> MatchPacket.Hello
+
+    private var name: String { session.opponent?.name ?? L.t("online.opponent", "Opponent") }
+    private var nextColour: String { L.color(session.myColor.opponent) }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            if session.opponentLeft {
+                Text(L.t("online.opponentLeft", "%@ has left.", name))
+                    .appFont(.subheadline)
+                    .foregroundStyle(Theatre.ivoryDim)
+            } else if session.rematchOffered {
+                Text(L.t("online.rematchOffered", "%1$@ wants another game. You would play %2$@.", name, nextColour))
+                    .appFont(.subheadline, weight: .semibold)
+                    .foregroundStyle(Theatre.ivory)
+                    .fixedSize(horizontal: false, vertical: true)
+                HStack(spacing: 10) {
+                    Button {
+                        session.respondToRematch(accept: true, as: hello())
+                    } label: {
+                        Text(L.t("online.accept", "Accept")).frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
+                    Button {
+                        session.respondToRematch(accept: false)
+                    } label: {
+                        Text(L.t("online.decline", "Decline")).frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(PillButtonStyle(emphasis: .ghost, usesBodySize: true))
+                }
+            } else if session.rematchOfferSent {
+                HStack(spacing: 9) {
+                    BrassActivityIndicator(size: 15)
+                    Text(L.t("online.rematchWaiting", "Asking %@ for another game…", name))
+                        .appFont(.subheadline)
+                        .foregroundStyle(Theatre.ivoryDim)
+                }
+            } else if session.rematchDeclined {
+                Text(L.t("online.rematchDeclined", "%@ does not want another game.", name))
+                    .appFont(.subheadline)
+                    .foregroundStyle(Theatre.ivoryDim)
+            } else {
+                Button {
+                    session.offerRematch(as: hello())
+                } label: {
+                    Label {
+                        Text(L.t("online.playAgain", "Play again"))
+                    } icon: {
+                        BrassIcon("arrow.clockwise", size: 17)
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
+                Text(L.t("online.rematchDetail", "The same clock, colours swapped: you would play %@.", nextColour))
+                    .appFont(.footnote)
+                    .foregroundStyle(Theatre.ivoryDim)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .animation(.easeOut(duration: 0.2), value: session.rematchOffered)
+        .animation(.easeOut(duration: 0.2), value: session.rematchOfferSent)
     }
 }

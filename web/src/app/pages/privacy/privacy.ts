@@ -19,7 +19,7 @@ export class Privacy {
     inject(Seo).apply({
       path: '/privacy',
       title: 'Privacy Policy',
-      updated: '2026-09-26',
+      updated: '2026-09-27',
       description:
         'Brass Pawn collects nothing. No analytics, no advertising, no third-party tracking and no account. The full privacy policy, in plain words.',
     });

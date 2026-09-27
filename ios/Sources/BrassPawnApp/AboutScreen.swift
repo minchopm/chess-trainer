@@ -83,6 +83,9 @@ struct AboutScreen: View {
                         Text(L.t("about.theAppCollectsNothingSends", "The app collects nothing and sends nothing about you. The one thing it downloads is the daily feed, when you open Today. Your ratings and history are stored only on this device, and deleting the app deletes them."))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryFaint)
+                        Text(L.t("about.gameCenterLists", "Online play is the one exception: if you play, your Game Center nickname and your online rating on each clock go on Game Center's rank lists, where other players can see them and invite you. They are Apple's; we receive none of it."))
+                            .appFont(.footnote)
+                            .foregroundStyle(Theatre.ivoryFaint)
                         BrassLinkButton(
                             title: Self.privacyEmail,
                             destination: URL(string: "mailto:\(Self.privacyEmail)")!

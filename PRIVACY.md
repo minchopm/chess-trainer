@@ -24,6 +24,15 @@ privacy policy; we receive none of it.
 Moves, clocks and results travel directly between the two devices through Game
 Center. They are not recorded by us.
 
+If you play online, the app also puts your online rating on each clock you have
+played on Game Center's leaderboards — one for each clock — and sends it again
+when you open the app signed in to Game Center. Other players see your Game
+Center nickname, your rating and when you were last seen there, as your Game
+Center privacy settings allow; that is what the app's rank list and its list of
+active and inactive players are made from, and what lets another player invite
+you to a game. The leaderboards are Apple's: we receive none of it, and there is
+no server of ours behind them.
+
 ## Today
 
 The Today screen shows the games from the top chess events. When you open it,

@@ -49,11 +49,39 @@ public final class AppModel {
     public let store = SubscriptionStore()
     /// Game Center identity and matchmaking for online play.
     public let matchmaker = GameCenterMatchmaker()
+    /// The rank lists and the players, from Game Center.
+    let boards = OnlineBoards()
     private let storage: ProgressStorage
 
     public init(storage: ProgressStorage = .documents()) {
         self.storage = storage
         progress = storage.load() ?? TrainingProgress()
+        matchmaker.ratingLookup = { [weak self] control in
+            let pool = RatedPool.online(minutes: control.minutes)
+            return (self?.progress.rating(pool) ?? OnlineElo.starting, self?.progress.gamesPlayed(pool) ?? 0)
+        }
+        matchmaker.onAuthenticated = { [weak self] in
+            Task { await self?.announceOnline() }
+        }
+    }
+
+    /// Signed in to Game Center: this player's rating on every clock they
+    /// have played is sent again, which is what keeps them among the active
+    /// players, and the lists are read afresh.
+    func announceOnline() async {
+        for control in TimeControl.allCases {
+            let pool = RatedPool.online(minutes: control.minutes)
+            guard progress.gamesPlayed(pool) > 0 else { continue }
+            await boards.submit(rating: progress.rating(pool), for: control)
+        }
+        await boards.refresh()
+    }
+
+    /// An online game has been scored: its clock's list gets the new rating.
+    func recordOnline(_ result: MatchResult, at control: TimeControl) {
+        update { $0.record(online: result, at: control) }
+        let rating = progress.rating(.online(minutes: control.minutes))
+        Task { await boards.submit(rating: rating, for: control) }
     }
 
     /// Claim one allowance unit. Most modes call this on the first answer or
@@ -112,6 +140,11 @@ public final class AppModel {
         }
 
         await store.prepare()
+        // Game Center, quietly: a player who is signed in on the device is
+        // signed in here without being asked, so an invitation can reach them
+        // — including the one whose notification opened the app. Nobody is
+        // asked to sign in until they open online play.
+        if case .signedOut = matchmaker.state { matchmaker.authenticate() }
 
         networks = (big: big, small: small)
         await useEngine(progress.appearance.engine)

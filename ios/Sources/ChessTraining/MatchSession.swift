@@ -37,10 +37,22 @@ public final class MatchSession {
     /// True while the opponent's draw offer is on the table.
     public private(set) var drawOffered = false
     public private(set) var drawOfferSent = false
+    /// After a game: the opponent asks for another.
+    public private(set) var rematchOffered = false
+    /// After a game: this side has asked for another, and waits for the answer.
+    public private(set) var rematchOfferSent = false
+    /// The opponent said no to another game.
+    public private(set) var rematchDeclined = false
+    /// The opponent has left the match: nothing more can be asked of them.
+    public private(set) var opponentLeft = false
+    /// Which game of the match this is — 1, and one more for every rematch.
+    public private(set) var gameNumber = 1
 
     public let timeControl: TimeControl
     public let isHost: Bool
-    public let me: MatchPacket.Hello
+    /// Who this side is, as the opponent is told — with the rating the last
+    /// game left, once there has been one. See `offerRematch(as:)`.
+    public private(set) var me: MatchPacket.Hello
 
     private weak var transport: MatchTransport?
     private let encoder = JSONEncoder()
@@ -149,6 +161,27 @@ public final class MatchSession {
             // it is entitled to declare: its own flag, or a result this device
             // can confirm from its own board.
             accept(over)
+
+        case .rematchOffer:
+            guard case .finished = phase, !opponentLeft else { return }
+            if rematchOfferSent {
+                // Both asked at once, each before hearing the other: that is
+                // a yes from both, and both start the next game.
+                rematchOfferSent = false
+                send(.rematchResponse(accepted: true))
+                restart()
+            } else {
+                rematchOffered = true
+                rematchDeclined = false
+            }
+
+        case .rematchResponse(let accepted):
+            guard rematchOfferSent, case .finished = phase else { return }
+            rematchOfferSent = false
+            if accepted { restart() } else { rematchDeclined = true }
+
+        case .goodbye:
+            opponentDisconnected()
         }
     }
 
@@ -188,6 +221,38 @@ public final class MatchSession {
         drawOffered = false
         send(.drawResponse(accepted: accept))
         if accept { finish(MatchResult(outcome: .draw, reason: .agreement)) }
+    }
+
+    // MARK: - Another game
+
+    /// Ask for another game: same clock, colours swapped. `updated` is this
+    /// side as it now stands — its rating after the game just played — so the
+    /// opponent's player row, and the rating the next game is scored against,
+    /// are this game's and not the last one's.
+    public func offerRematch(as updated: MatchPacket.Hello? = nil) {
+        guard case .finished = phase, !opponentLeft, !rematchOfferSent else { return }
+        if let updated { me = updated }
+        // Asked already: asking back is saying yes.
+        if rematchOffered {
+            respondToRematch(accept: true)
+            return
+        }
+        rematchOfferSent = true
+        rematchDeclined = false
+        send(.rematchOffer)
+    }
+
+    public func respondToRematch(accept: Bool, as updated: MatchPacket.Hello? = nil) {
+        guard rematchOffered, case .finished = phase else { return }
+        if let updated { me = updated }
+        rematchOffered = false
+        send(.rematchResponse(accepted: accept))
+        if accept { restart() }
+    }
+
+    /// Leaving: say so, so the other side is not left waiting on an answer.
+    public func leave() {
+        send(.goodbye)
     }
 
     /// Called on a display timer: the clocks are read here, and a game that
@@ -235,8 +300,11 @@ public final class MatchSession {
         finish(MatchResult(outcome: .win, reason: .timeout))
     }
 
-    /// The opponent left and did not come back.
+    /// The opponent left and did not come back — or said goodbye.
     public func opponentDisconnected() {
+        opponentLeft = true
+        rematchOffered = false
+        rematchOfferSent = false
         guard case .playing = phase else { return }
         finish(MatchResult(outcome: .win, reason: .disconnected))
     }
@@ -258,6 +326,20 @@ public final class MatchSession {
 
     private static func key(_ color: PieceColor) -> ChessClock.PieceColorKey {
         color == .white ? .white : .black
+    }
+
+    /// The next game of the match: the colours swap, everything else starts
+    /// again. Both sides swap their own colour, so they cannot disagree.
+    private func restart() {
+        myColor = myColor.opponent
+        gameNumber += 1
+        rematchOffered = false
+        rematchOfferSent = false
+        rematchDeclined = false
+        opponentFlaggedSince = nil
+        // Who this side is now, rating and all, before the first move.
+        send(.hello(me))
+        startPlaying()
     }
 
     private func startPlaying() {
