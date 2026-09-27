@@ -53,7 +53,7 @@ export const pages: Pages = {
     meta: {
       title: 'Hinnat',
       description:
-        'Pelaaminen on ilmaista ja rajatonta — moottori, elävä vastustaja ja kaikki 900 peliä. Pro poistaa viiden päivärajan: 3,99 dollaria kuussa tai 49,99 kertamaksuna.',
+        'Pelaaminen on ilmaista ja rajatonta — moottori, elävä vastustaja ja kaikki 900 peliä. Pro poistaa viiden päivärajan: 3,99 dollaria kuussa tai 39,99 kertamaksuna.',
     },
     free: {
       name: 'Ilmainen',

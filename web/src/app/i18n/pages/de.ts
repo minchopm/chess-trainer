@@ -53,7 +53,7 @@ export const pages: Pages = {
     meta: {
       title: 'Preise',
       description:
-        'Spielen ist gratis und unbegrenzt — die Engine, ein echter Gegner und alle 900 Partien. Pro hebt das Tageslimit von fünf auf: 3,99 $ im Monat oder 49,99 $ einmalig.',
+        'Spielen ist gratis und unbegrenzt — die Engine, ein echter Gegner und alle 900 Partien. Pro hebt das Tageslimit von fünf auf: 3,99 $ im Monat oder 39,99 $ einmalig.',
     },
     free: {
       name: 'Gratis',

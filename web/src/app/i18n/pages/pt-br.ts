@@ -53,7 +53,7 @@ export const pages: Pages = {
     meta: {
       title: 'Preços',
       description:
-        'Jogar é grátis e sem limite — o motor, um adversário de verdade e as 900 partidas. O Pro tira o limite de cinco por dia: 3,99 dólares por mês ou 49,99 uma vez só.',
+        'Jogar é grátis e sem limite — o motor, um adversário de verdade e as 900 partidas. O Pro tira o limite de cinco por dia: 3,99 dólares por mês ou 39,99 uma vez só.',
     },
     free: {
       name: 'Grátis',

@@ -194,7 +194,7 @@ export const LIBRARY = {
 
 export const PRICING = {
   monthly: '$3.99',
-  lifetime: '$49.99',
+  lifetime: '$39.99',
   currencyNote: 'Prices shown are US App Store prices. Your local price is set by the App Store.',
 } as const;
 

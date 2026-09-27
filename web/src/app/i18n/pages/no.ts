@@ -53,7 +53,7 @@ export const pages: Pages = {
     meta: {
       title: 'Priser',
       description:
-        'Å spille er gratis og ubegrenset — motoren, en levende motstander og alle 900 partier. Pro fjerner grensen på fem om dagen: 3,99 dollar i måneden eller 49,99 én gang.',
+        'Å spille er gratis og ubegrenset — motoren, en levende motstander og alle 900 partier. Pro fjerner grensen på fem om dagen: 3,99 dollar i måneden eller 39,99 én gang.',
     },
     free: {
       name: 'Gratis',

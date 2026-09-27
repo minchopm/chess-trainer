@@ -53,7 +53,7 @@ export const pages: Pages = {
     meta: {
       title: 'Harga',
       description:
-        'Bermain itu gratis dan tanpa batas — mesin, lawan manusia, dan seluruh 900 partai. Pro menghapus batas lima per hari: 3,99 dolar per bulan atau 49,99 sekali bayar.',
+        'Bermain itu gratis dan tanpa batas — mesin, lawan manusia, dan seluruh 900 partai. Pro menghapus batas lima per hari: 3,99 dolar per bulan atau 39,99 sekali bayar.',
     },
     free: {
       name: 'Gratis',

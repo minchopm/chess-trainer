@@ -53,7 +53,7 @@ export const pages: Pages = {
     meta: {
       title: 'Prezzi',
       description:
-        'Giocare è gratis e senza limiti — il motore, un avversario vero e tutte le 900 partite. Pro toglie il limite di cinque al giorno: 3,99 dollari al mese oppure 49,99 una volta sola.',
+        'Giocare è gratis e senza limiti — il motore, un avversario vero e tutte le 900 partite. Pro toglie il limite di cinque al giorno: 3,99 dollari al mese oppure 39,99 una volta sola.',
     },
     free: {
       name: 'Gratis',

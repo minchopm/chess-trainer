@@ -53,7 +53,7 @@ export const pages: Pages = {
     meta: {
       title: 'Prețuri',
       description:
-        'Jocul e gratuit și nelimitat — motorul, un adversar viu și toate cele 900 de partide. Pro scoate limita de cinci pe zi: 3,99 dolari pe lună sau 49,99 o singură dată.',
+        'Jocul e gratuit și nelimitat — motorul, un adversar viu și toate cele 900 de partide. Pro scoate limita de cinci pe zi: 3,99 dolari pe lună sau 39,99 o singură dată.',
     },
     free: {
       name: 'Gratuit',

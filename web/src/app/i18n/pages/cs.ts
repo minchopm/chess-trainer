@@ -53,7 +53,7 @@ export const pages: Pages = {
     meta: {
       title: 'Ceník',
       description:
-        'Hraní je zdarma a neomezené — engine, živý soupeř a všech 900 partií. Pro ruší limit pět denně: 3,99 dolaru měsíčně nebo 49,99 jednorázově.',
+        'Hraní je zdarma a neomezené — engine, živý soupeř a všech 900 partií. Pro ruší limit pět denně: 3,99 dolaru měsíčně nebo 39,99 jednorázově.',
     },
     free: {
       name: 'Zdarma',

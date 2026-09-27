@@ -53,7 +53,7 @@ export const pages: Pages = {
     meta: {
       title: 'Árak',
       description:
-        'A játék ingyenes és korlátlan — a motor, egy élő ellenfél és mind a 900 játszma. A Pro leveszi a napi ötös korlátot: 3,99 dollár havonta vagy 49,99 egyszer.',
+        'A játék ingyenes és korlátlan — a motor, egy élő ellenfél és mind a 900 játszma. A Pro leveszi a napi ötös korlátot: 3,99 dollár havonta vagy 39,99 egyszer.',
     },
     free: {
       name: 'Ingyenes',

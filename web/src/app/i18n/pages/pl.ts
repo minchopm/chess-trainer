@@ -53,7 +53,7 @@ export const pages: Pages = {
     meta: {
       title: 'Cennik',
       description:
-        'Gra jest darmowa i nieograniczona — silnik, żywy przeciwnik i wszystkie 900 partii. Pro znosi limit pięciu dziennie: 3,99 dolara miesięcznie albo 49,99 jednorazowo.',
+        'Gra jest darmowa i nieograniczona — silnik, żywy przeciwnik i wszystkie 900 partii. Pro znosi limit pięciu dziennie: 3,99 dolara miesięcznie albo 39,99 jednorazowo.',
     },
     free: {
       name: 'Za darmo',

@@ -53,7 +53,7 @@ export const pages: Pages = {
     meta: {
       title: 'Prijzen',
       description:
-        'Spelen is gratis en onbeperkt — de engine, een echte tegenstander en alle 900 partijen. Pro haalt de limiet van vijf per dag weg: 3,99 dollar per maand of 49,99 eenmalig.',
+        'Spelen is gratis en onbeperkt — de engine, een echte tegenstander en alle 900 partijen. Pro haalt de limiet van vijf per dag weg: 3,99 dollar per maand of 39,99 eenmalig.',
     },
     free: {
       name: 'Gratis',

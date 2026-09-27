@@ -53,7 +53,7 @@ export const pages: Pages = {
     meta: {
       title: 'Tarifs',
       description:
-        'Jouer est gratuit et sans limite — le moteur, un adversaire réel et les 900 parties. Pro lève la limite de cinq par jour : 3,99 $ par mois ou 49,99 $ une fois.',
+        'Jouer est gratuit et sans limite — le moteur, un adversaire réel et les 900 parties. Pro lève la limite de cinq par jour : 3,99 $ par mois ou 39,99 $ une fois.',
     },
     free: {
       name: 'Gratuit',

@@ -53,7 +53,7 @@ export const pages: Pages = {
     meta: {
       title: 'Precios',
       description:
-        'Jugar es gratis e ilimitado — el motor, un rival de verdad y las 900 partidas. Pro levanta el límite de cinco al día: 3,99 dólares al mes o 49,99 una sola vez.',
+        'Jugar es gratis e ilimitado — el motor, un rival de verdad y las 900 partidas. Pro levanta el límite de cinco al día: 3,99 dólares al mes o 39,99 una sola vez.',
     },
     free: {
       name: 'Gratis',

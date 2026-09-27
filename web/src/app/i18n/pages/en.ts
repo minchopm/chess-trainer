@@ -58,7 +58,7 @@ export const pages: Pages = {
     meta: {
       title: 'Pricing',
       description:
-        'Playing is free and unlimited — the engine, a real opponent, and all 900 games. Pro lifts the five-a-day training limit: $3.99 a month or $49.99 once.',
+        'Playing is free and unlimited — the engine, a real opponent, and all 900 games. Pro lifts the five-a-day training limit: $3.99 a month or $39.99 once.',
     },
     free: {
       name: 'Free',

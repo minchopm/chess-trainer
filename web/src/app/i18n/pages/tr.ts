@@ -53,7 +53,7 @@ export const pages: Pages = {
     meta: {
       title: 'Fiyatlar',
       description:
-        'Oynamak ücretsiz ve sınırsız — motor, canlı bir rakip ve 900 partinin tamamı. Pro günde beş sınırını kaldırır: ayda 3,99 dolar ya da tek seferde 49,99.',
+        'Oynamak ücretsiz ve sınırsız — motor, canlı bir rakip ve 900 partinin tamamı. Pro günde beş sınırını kaldırır: ayda 3,99 dolar ya da tek seferde 39,99.',
     },
     free: {
       name: 'Ücretsiz',

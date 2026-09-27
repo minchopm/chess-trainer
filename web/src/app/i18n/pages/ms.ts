@@ -53,7 +53,7 @@ export const pages: Pages = {
     meta: {
       title: 'Harga',
       description:
-        'Bermain itu percuma dan tanpa had — enjin, lawan manusia sebenar dan kesemua 900 perlawanan. Pro menanggalkan had lima sehari: 3,99 dolar sebulan atau 49,99 sekali bayar.',
+        'Bermain itu percuma dan tanpa had — enjin, lawan manusia sebenar dan kesemua 900 perlawanan. Pro menanggalkan had lima sehari: 3,99 dolar sebulan atau 39,99 sekali bayar.',
     },
     free: {
       name: 'Percuma',

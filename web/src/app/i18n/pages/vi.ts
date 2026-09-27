@@ -53,7 +53,7 @@ export const pages: Pages = {
     meta: {
       title: 'Giá',
       description:
-        'Chơi thì miễn phí và không giới hạn — máy cờ, một đối thủ người thật và cả 900 ván. Pro gỡ bỏ hạn mức năm lượt mỗi ngày: 3,99 đô mỗi tháng hoặc 49,99 trả một lần.',
+        'Chơi thì miễn phí và không giới hạn — máy cờ, một đối thủ người thật và cả 900 ván. Pro gỡ bỏ hạn mức năm lượt mỗi ngày: 3,99 đô mỗi tháng hoặc 39,99 trả một lần.',
     },
     free: {
       name: 'Miễn phí',
