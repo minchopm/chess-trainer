@@ -1,0 +1,1262 @@
+{
+  "date": "2026-09-27",
+  "pulledAt": "2026-09-27T13:53:22.009Z",
+  "stories": [
+    {
+      "id": "2026-09-27-giri-keymer-olympiad-r11",
+      "status": "approved",
+      "date": "2026-09-27",
+      "rank": 0,
+      "weight": 1064,
+      "event": {
+        "name": "46th FIDE Chess Olympiad Samarkand 2026",
+        "short": "Olympiad",
+        "section": "Open",
+        "round": 11,
+        "location": "Samarkand, Uzbekistan",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-11/QJSVWmNu"
+      },
+      "white": {
+        "name": "Anish Giri",
+        "short": "Giri",
+        "title": "GM",
+        "elo": 2757,
+        "team": "Netherlands"
+      },
+      "black": {
+        "name": "Vincent Keymer",
+        "short": "Keymer",
+        "title": "GM",
+        "elo": 2764,
+        "team": "Germany"
+      },
+      "result": "1/2-1/2",
+      "opening": {
+        "eco": "C50",
+        "name": "Italian Game: Giuoco Pianissimo, Italian Four Knights Variation"
+      },
+      "moves": "e4 e5 Nf3 Nc6 Bc4 Nf6 d3 Bc5 Nc3 d6 Na4 Bb6 a3 h6 O-O Nh7 h3 Qf6 Nh2 Qg6 Kh1 Be6 Bxe6 fxe6 c3 O-O Nxb6 axb6 a4 Nf6 Re1 Qf7 b4 Ne7 Ra2 Ng6 g3 b5 a5 b6 Qb3 bxa5 bxa5 Rfb8 a6 c5 Be3 Ne7 Nf1 Nc6 Nd2 Ne8 f4 Nc7 Nf3 Rxa6 Rf2 Qh5 Kh2 exf4 Bxf4 Rf8 g4 Qf7 Bg3 e5 Qb1 Qe6 Ref1 b4 cxb4 Nxb4 d4 exd4 Nxd4 Rxf2+ Rxf2 cxd4 Qxb4 Rc6 Qxd4 Ne8 e5 Rc4 Qb6 Rc1 exd6 Qd5 Rg2 Qd1 Qg1 Nxd6",
+      "ending": null,
+      "key": null,
+      "headline": "Giri and Keymer draw, and Germany win the match to finish on 18",
+      "body": "GM Anish Giri (Netherlands, 2757) and GM Vincent Keymer (Germany, 2764) drew in 46 moves in the final round of the 46th FIDE Chess Olympiad in Samarkand, from an Italian Game.\n\nGermany won the match 2½–1½, Matthias Bluebaum beating Jorden van Foreest, and finish on 18 match points, level with India and two behind Uzbekistan, by the count of the relayed games. The official tiebreaks decide the order of the two.\n\nReplay it move by move, then play the final position on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "تعادل بين Giri وKeymer، وألمانيا تفوز بالمباراة وتنهي برصيد 18",
+          "body": "تعادل بين GM Anish Giri (هولندا، 2757) وGM Vincent Keymer (ألمانيا، 2764) في 46 نقلة، من الافتتاح الإيطالي، في الجولة الأخيرة من أولمبياد الشطرنج السادس والأربعين لـFIDE في سمرقند.\n\nفازت ألمانيا بالمباراة ⁨2½–1½⁩ — بفوز Matthias Bluebaum على Jorden van Foreest — وتنهي برصيد 18 نقطة مباراة، بالتساوي مع الهند وبفارق نقطتين خلف أوزبكستان، وفق عدّ الأدوار المنقولة. تحدد معايير كسر التعادل الرسمية ترتيب الفريقين.\n\nأعد عرض الدور نقلة بنقلة، ثم تابع الوضع الأخير ضد المحرك."
+        },
+        "cs": {
+          "headline": "Giri a Keymer remizují, Německo vyhrává zápas a končí s 18 body",
+          "body": "GM Anish Giri (Nizozemsko, 2757) a GM Vincent Keymer (Německo, 2764) remizují ve 46 tazích, v italské hře, v posledním kole 46. šachové olympiády FIDE v Samarkandu.\n\nNěmecko vyhrává zápas 2½–1½ – Matthias Bluebaum poráží Jorden van Foreest – a končí s 18 zápasovými body, stejně jako Indie a dva za Uzbekistánem, podle sčítání přenášených partií. O pořadí obou rozhodují oficiální pomocná hodnocení.\n\nPřehraj si partii tah po tahu a pak hraj koncovou pozici dál proti enginu."
+        },
+        "da": {
+          "headline": "Remis mellem Giri og Keymer – Tyskland vinder matchen og slutter på 18",
+          "body": "GM Anish Giri (Nederlandene, 2757) og GM Vincent Keymer (Tyskland, 2764) spillede remis i 46 træk, ud fra et italiensk parti, i sidste runde af den 46. FIDE-skakolympiade i Samarkand.\n\nTyskland vandt matchen 2½–1½ – Matthias Bluebaum slog Jorden van Foreest – og slutter med 18 matchpoint, lige med Indien og to efter Usbekistan, talt ud fra de transmitterede partier. De officielle korrektioner afgør rækkefølgen mellem de to.\n\nAfspil partiet træk for træk, og spil så slutstillingen videre mod motoren."
+        },
+        "de": {
+          "headline": "Giri und Keymer remis – Deutschland gewinnt den Kampf und endet mit 18 Punkten",
+          "body": "GM Anish Giri (Niederlande, 2757) und GM Vincent Keymer (Deutschland, 2764) haben sich in der letzten Runde der 46. FIDE-Schacholympiade in Samarkand nach 46 Zügen aus einer Italienischen Partie remis getrennt.\n\nDeutschland gewann den Kampf 2½:1½ – Matthias Bluebaum schlug Jorden van Foreest – und beendet das Turnier mit 18 Mannschaftspunkten, gleichauf mit Indien und zwei hinter Usbekistan, gezählt aus den übertragenen Partien. Die Reihenfolge der beiden entscheiden die offiziellen Feinwertungen.\n\nZug für Zug nachspielen, dann die Schlussstellung gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Ισοπαλία Giri–Keymer, και η Γερμανία κερδίζει τον αγώνα και τερματίζει με 18",
+          "body": "GM Anish Giri (Ολλανδία, 2757) και GM Vincent Keymer (Γερμανία, 2764) έφεραν ισοπαλία σε 46 κινήσεις, από ιταλική παρτίδα, στον τελευταίο γύρο της 46ης Σκακιστικής Ολυμπιάδας της FIDE στη Σαμαρκάνδη.\n\nΗ Γερμανία κέρδισε τον αγώνα 2½–1½ — νίκη για Matthias Bluebaum επί Jorden van Foreest — και τερματίζει με 18 βαθμούς αγώνα, ισόβαθμη με την Ινδία και δύο πίσω από το Ουζμπεκιστάν, σύμφωνα με την καταμέτρηση των παρτίδων που μεταδόθηκαν. Τη σειρά των δύο την καθορίζουν τα επίσημα κριτήρια ισοβαθμίας.\n\nΞαναδές την κίνηση προς κίνηση και μετά συνέχισε την τελική θέση απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Tablas entre Giri y Keymer; Alemania gana el match y termina con 18",
+          "body": "GM Anish Giri (Países Bajos, 2757) y GM Vincent Keymer (Alemania, 2764) hicieron tablas en 46 jugadas, en una apertura italiana, en la última ronda de la 46.ª Olimpiada de Ajedrez de la FIDE en Samarcanda.\n\nAlemania ganó el match 2½–1½ —Matthias Bluebaum venció a Jorden van Foreest— y termina con 18 puntos de match, igualada con India y a dos de Uzbekistán, según el recuento de las partidas retransmitidas. Los desempates oficiales deciden el orden entre ambas.\n\nRevívela jugada a jugada y luego sigue la posición final contra el motor."
+        },
+        "fi": {
+          "headline": "Giri ja Keymer tasapeliin – Saksa voittaa ottelun ja päättää 18 pisteeseen",
+          "body": "GM Anish Giri (Alankomaat, 2757) ja GM Vincent Keymer (Saksa, 2764) pelasivat tasapelin 46 siirrossa italialaisesta pelistä 46. FIDE:n shakkiolympialaisten viimeisellä kierroksella Samarkandissa.\n\nSaksa voitti ottelun 2½–1½ – Matthias Bluebaum voitti Jorden van Foreestin – ja päättää 18 ottelupisteeseen, tasoihin Intian kanssa ja kaksi Uzbekistanin perään, lähetettyjen pelien perusteella laskettuna. Kahden joukkueen järjestyksen ratkaisevat viralliset tasapisteratkaisut.\n\nToista peli siirto siirrolta ja jatka sitten loppuasemaa moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Nulle entre Giri et Keymer, l’Allemagne gagne le match et termine à 18 points",
+          "body": "GM Anish Giri (Pays-Bas, 2757) et GM Vincent Keymer (Allemagne, 2764) ont fait nulle en 46 coups, dans une partie italienne, lors de la dernière ronde de la 46e Olympiade d’échecs FIDE à Samarcande.\n\nL’Allemagne a gagné le match 2½–1½ — Matthias Bluebaum a battu Jorden van Foreest — et termine avec 18 points de match, à égalité avec l’Inde et deux derrière l’Ouzbékistan, selon le décompte des parties retransmises. Les départages officiels fixent l’ordre des deux.\n\nRejouez-la coup par coup, puis continuez la position finale contre le moteur."
+        },
+        "he": {
+          "headline": "תיקו בין Giri ל־Keymer, וגרמניה מנצחת במפגש ומסיימת עם 18",
+          "body": "תיקו בין GM Anish Giri (הולנד, 2757) ל־GM Vincent Keymer (גרמניה, 2764) ב־46 מסעים, מפתיחה איטלקית, בסיבוב האחרון של אולימפיאדת השחמט ה־46 של FIDE בסמרקנד.\n\nגרמניה ניצחה במפגש ⁨2½–1½⁩ — ניצחון ל־Matthias Bluebaum על Jorden van Foreest — ומסיימת עם 18 נקודות משחק, בשוויון עם הודו ושתיים מאחורי אוזבקיסטן, לפי ספירת המשחקים ששודרו. את הסדר בין השתיים קובעים שוברי השוויון הרשמיים.\n\nצפו במשחק מסע אחר מסע, ואז המשיכו את העמדה הסופית מול המנוע."
+        },
+        "hi": {
+          "headline": "Giri और Keymer की बाज़ी ड्रॉ, जर्मनी ने मुक़ाबला जीता और 18 अंकों पर समाप्त किया",
+          "body": "समरकंद में 46वें FIDE शतरंज ओलंपियाड के आख़िरी राउंड में GM Anish Giri (नीदरलैंड, 2757) और GM Vincent Keymer (जर्मनी, 2764) की बाज़ी इटैलियन ओपनिंग से 46 चालों में ड्रॉ रही।\n\nजर्मनी ने मुक़ाबला 2½–1½ से जीता — Matthias Bluebaum ने Jorden van Foreest को हराया — और 18 मैच अंकों के साथ समाप्त किया, भारत के बराबर और उज़्बेकिस्तान से दो पीछे, प्रसारित बाज़ियों की गिनती के अनुसार। दोनों का क्रम आधिकारिक टाई-ब्रेक तय करते हैं।\n\nबाज़ी को चाल-दर-चाल देखें, फिर अंतिम स्थिति को इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "Döntetlen Giri és Keymer között – Németország megnyeri a mérkőzést és 18 ponttal zár",
+          "body": "GM Anish Giri (Hollandia, 2757) és GM Vincent Keymer (Németország, 2764) 46 lépésben döntetlent játszott egy olasz játékból a 46. FIDE sakkolimpia utolsó fordulójában Szamarkandban.\n\nNémetország 2½–1½-re nyerte a mérkőzést – Matthias Bluebaum legyőzte Jorden van Foreestet –, és 18 csapatponttal zár, holtversenyben Indiával, két ponttal Üzbegisztán mögött, a közvetített játszmák alapján számolva. A kettejük sorrendjét a hivatalos holtverseny-eldöntés adja.\n\nJátszd vissza lépésről lépésre, aztán folytasd a végállást a motor ellen."
+        },
+        "id": {
+          "headline": "Giri dan Keymer remis, Jerman menangi pertandingan dan finis dengan 18",
+          "body": "Di babak terakhir Olimpiade Catur FIDE ke-46 di Samarkand, GM Anish Giri (Belanda, 2757) dan GM Vincent Keymer (Jerman, 2764) bermain remis dalam 46 langkah, dari pembukaan Italia.\n\nJerman memenangi pertandingan 2½–1½ — Matthias Bluebaum mengalahkan Jorden van Foreest — dan finis dengan 18 poin pertandingan, sama dengan India dan dua di belakang Uzbekistan, menurut hitungan partai yang disiarkan. Urutan keduanya ditentukan tiebreak resmi.\n\nPutar ulang langkah demi langkah, lalu lanjutkan posisi akhirnya melawan mesin."
+        },
+        "it": {
+          "headline": "Patta tra Giri e Keymer, la Germania vince il match e chiude a 18",
+          "body": "GM Anish Giri (Paesi Bassi, 2757) e GM Vincent Keymer (Germania, 2764) hanno pattato in 46 mosse, da una partita italiana, nell’ultimo turno della 46ª Olimpiade degli scacchi FIDE a Samarcanda.\n\nLa Germania ha vinto il match 2½–1½ — Matthias Bluebaum ha battuto Jorden van Foreest — e chiude con 18 punti match, alla pari con l’India e a due dall’Uzbekistan, secondo il conteggio delle partite trasmesse. L’ordine tra le due lo decidono gli spareggi ufficiali.\n\nRivedila mossa per mossa, poi continua la posizione finale contro il motore."
+        },
+        "ja": {
+          "headline": "GiriとKeymerは引き分け、ドイツはマッチに勝ちマッチポイント18で終了",
+          "body": "サマルカンドで行われた第46回FIDEチェス・オリンピアード最終ラウンドで、GM Anish Giri（オランダ、2757）とGM Vincent Keymer（ドイツ、2764）はイタリアン・ゲームから46手で引き分けました。\n\nドイツはマッチを2½–1½で制し（Matthias BluebaumがJorden van Foreestに勝利）、マッチポイント18で終了。中継された対局から数えると、インドと並び、ウズベキスタンに2点差です。両チームの順位は公式のタイブレークで決まります。\n\n一手ずつ再生して、最終局面をエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "Giri와 Keymer 무승부, 독일은 매치를 이기고 매치 포인트 18로 마무리",
+          "body": "사마르칸트에서 열린 제46회 FIDE 체스 올림피아드 마지막 라운드에서 GM Anish Giri(네덜란드, 2757)와 GM Vincent Keymer(독일, 2764)가 이탈리안 게임에서 46수 만에 비겼습니다.\n\n독일은 매치를 2½–1½로 이겼고(Matthias Bluebaum이 Jorden van Foreest를 꺾음), 매치 포인트 18로 마쳤습니다. 중계된 대국으로 세면 인도와 동률, 우즈베키스탄에 2점 뒤집니다. 두 팀의 순서는 공식 타이브레이크로 정해집니다.\n\n한 수씩 다시 보고, 마지막 국면을 엔진을 상대로 이어 두어 보세요."
+        },
+        "ms": {
+          "headline": "Giri dan Keymer seri, Jerman menang perlawanan dan tamat dengan 18",
+          "body": "Dalam pusingan terakhir Olimpiad Catur FIDE ke-46 di Samarkand, GM Anish Giri (Belanda, 2757) dan GM Vincent Keymer (Jerman, 2764) seri dalam 46 langkah, daripada pembukaan Itali.\n\nJerman memenangi perlawanan 2½–1½ — Matthias Bluebaum menewaskan Jorden van Foreest — dan tamat dengan 18 mata perlawanan, sama dengan India dan dua di belakang Uzbekistan, mengikut kiraan permainan yang disiarkan. Susunan kedua-duanya ditentukan oleh pemecah seri rasmi.\n\nMain semula langkah demi langkah, kemudian teruskan kedudukan akhir menentang enjin."
+        },
+        "nl": {
+          "headline": "Giri en Keymer remise, Duitsland wint de match en eindigt op 18",
+          "body": "GM Anish Giri (Nederland, 2757) en GM Vincent Keymer (Duitsland, 2764) speelden remise in 46 zetten, vanuit een Italiaanse partij, in de laatste ronde van de 46e FIDE Schaakolympiade in Samarkand.\n\nDuitsland won de match met 2½–1½ – Matthias Bluebaum versloeg Jorden van Foreest – en eindigt met 18 matchpunten, gelijk met India en twee achter Oezbekistan, geteld uit de uitgezonden partijen. De officiële weerstandspunten bepalen de volgorde van die twee.\n\nSpeel de partij zet voor zet na en speel de slotstelling dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "Remis mellom Giri og Keymer – Tyskland vinner matchen og ender på 18",
+          "body": "GM Anish Giri (Nederland, 2757) og GM Vincent Keymer (Tyskland, 2764) spilte remis på 46 trekk, fra et italiensk parti, i siste runde av den 46. FIDE-sjakkolympiaden i Samarkand.\n\nTyskland vant matchen 2½–1½ – Matthias Bluebaum slo Jorden van Foreest – og ender på 18 matchpoeng, likt med India og to bak Usbekistan, talt fra de sendte partiene. Den offisielle korreksjonen avgjør rekkefølgen mellom de to.\n\nSpill av partiet trekk for trekk, og spill så sluttstillingen videre mot motoren."
+        },
+        "pl": {
+          "headline": "Giri i Keymer remisują, a Niemcy wygrywają mecz i kończą z 18 punktami",
+          "body": "GM Anish Giri (Holandia, 2757) i GM Vincent Keymer (Niemcy, 2764) remisują w 46 ruchach, w partii włoskiej, w ostatniej rundzie 46. Olimpiady Szachowej FIDE w Samarkandzie.\n\nNiemcy wygrywają mecz 2½–1½ – Matthias Bluebaum pokonuje Jorden van Foreest – i kończą z 18 punktami meczowymi, na równi z Indiami i dwa za Uzbekistanem, według zliczenia transmitowanych partii. O kolejności obu drużyn decyduje oficjalna punktacja pomocnicza.\n\nOdtwórz partię ruch po ruchu, potem graj dalej końcową pozycję przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Empate entre Giri e Keymer; a Alemanha vence o match e termina com 18",
+          "body": "GM Anish Giri (Países Baixos, 2757) e GM Vincent Keymer (Alemanha, 2764) empataram em 46 lances, numa partida italiana, na última rodada da 46ª Olimpíada de Xadrez da FIDE em Samarcanda.\n\nA Alemanha venceu o match por 2½–1½ — Matthias Bluebaum venceu Jorden van Foreest — e termina com 18 pontos de match, empatada com a Índia e a dois do Uzbequistão, pela contagem das partidas transmitidas. Os desempates oficiais decidem a ordem entre as duas.\n\nReveja lance a lance e depois continue a posição final contra o motor."
+        },
+        "ro": {
+          "headline": "Remiză între Giri și Keymer, Germania câștigă meciul și termină cu 18",
+          "body": "GM Anish Giri (Țările de Jos, 2757) și GM Vincent Keymer (Germania, 2764) au remizat în 46 de mutări, dintr-o partidă italiană, în ultima rundă a celei de-a 46-a Olimpiade de Șah FIDE, la Samarkand.\n\nGermania a câștigat meciul cu 2½–1½ — Matthias Bluebaum a câștigat contra Jorden van Foreest — și termină cu 18 puncte de meci, la egalitate cu India și la două puncte în urma Uzbekistanului, după numărătoarea partidelor transmise. Ordinea celor două o stabilesc departajările oficiale.\n\nRevezi-o mutare cu mutare, apoi continuă poziția finală contra motorului."
+        },
+        "ru": {
+          "headline": "Ничья Giri и Keymer, а Германия выигрывает матч и заканчивает с 18 очками",
+          "body": "GM Anish Giri (Нидерланды, 2757) и GM Vincent Keymer (Германия, 2764) сыграли вничью за 46 ходов, в итальянской партии, в последнем туре 46-й шахматной олимпиады ФИДЕ в Самарканде.\n\nГермания выиграла матч 2½–1½ — Matthias Bluebaum обыгрывает Jorden van Foreest — и заканчивает с 18 командными очками, наравне с Индией и на два позади Узбекистана, по подсчёту транслировавшихся партий. Порядок двух команд определяют официальные дополнительные показатели.\n\nПосмотрите партию ход за ходом, а затем продолжите финальную позицию против движка."
+        },
+        "sv": {
+          "headline": "Remi mellan Giri och Keymer – Tyskland vinner matchen och slutar på 18",
+          "body": "GM Anish Giri (Nederländerna, 2757) och GM Vincent Keymer (Tyskland, 2764) spelade remi på 46 drag, ur ett italienskt parti, i sista ronden av den 46:e FIDE-schackolympiaden i Samarkand.\n\nTyskland vann matchen med 2½–1½ – Matthias Bluebaum besegrade Jorden van Foreest – och slutar på 18 matchpoäng, lika med Indien och två bakom Uzbekistan, räknat på de sända partierna. Den officiella särskiljningen avgör ordningen mellan de två.\n\nSpela upp partiet drag för drag och spela sedan vidare slutställningen mot motorn."
+        },
+        "th": {
+          "headline": "Giri กับ Keymer เสมอ เยอรมนีชนะแมตช์และจบที่ 18 แต้ม",
+          "body": "ในรอบสุดท้ายของหมากรุกโอลิมปิก FIDE ครั้งที่ 46 ที่ซามาร์คันด์ GM Anish Giri (เนเธอร์แลนด์, 2757) กับ GM Vincent Keymer (เยอรมนี, 2764) เสมอกันใน 46 ตา จากการเปิดแบบอิตาเลียน\n\nเยอรมนีชนะแมตช์ 2½–1½ (Matthias Bluebaum ชนะ Jorden van Foreest) และจบด้วย 18 แต้มแมตช์ นับจากเกมที่ถ่ายทอด เท่ากับอินเดีย และตามหลังอุซเบกิสถาน 2 แต้ม ลำดับของสองทีมตัดสินด้วยเกณฑ์อย่างเป็นทางการ\n\nดูเกมทีละตา แล้วเล่นตำแหน่งสุดท้ายต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "Giri ile Keymer berabere; Almanya maçı kazanıp 18 puanla bitirdi",
+          "body": "GM Anish Giri (Hollanda, 2757) ve GM Vincent Keymer (Almanya, 2764), 46. FIDE Satranç Olimpiyatı'nın Semerkant'taki son turunda bir İtalyan oyununda 46 hamlede berabere kaldı.\n\nAlmanya maçı 2½–1½ kazandı – Matthias Bluebaum, Jorden van Foreest'i yendi – ve 18 maç puanıyla bitiriyor: Hindistan ile eşit, Özbekistan'ın iki puan gerisinde, yayınlanan oyunlara göre sayıldığında. İkisinin sırasını resmi eşitlik bozma ölçütleri belirliyor.\n\nOyunu hamle hamle izle, sonra son konumu motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Giri và Keymer hòa, Đức thắng trận và kết thúc với 18 điểm",
+          "body": "Ở vòng cuối Olympiad Cờ vua FIDE lần thứ 46 tại Samarkand, GM Anish Giri (Hà Lan, 2757) và GM Vincent Keymer (Đức, 2764) hòa sau 46 nước, từ khai cuộc Ý.\n\nĐức thắng trận 2½–1½ — Matthias Bluebaum thắng Jorden van Foreest — và kết thúc với 18 điểm trận, theo số ván được phát sóng: bằng Ấn Độ và kém Uzbekistan 2 điểm. Thứ tự hai đội do các chỉ số phụ chính thức quyết định.\n\nXem lại từng nước, rồi chơi tiếp thế cờ cuối với engine."
+        },
+        "zh-Hans": {
+          "headline": "Giri与Keymer弈和，德国赢下团体赛，以18分收官",
+          "body": "在撒马尔罕举行的第46届FIDE国际象棋奥林匹克最后一轮中，GM Anish Giri（荷兰，2757）与GM Vincent Keymer（德国，2764）以意大利开局弈了46步后握手言和。\n\n德国以2½–1½赢下团体赛（Matthias Bluebaum战胜Jorden van Foreest），以18个团体分收官。按转播对局统计，与印度同分，落后乌兹别克斯坦2分；两队的名次由官方对比分决定。\n\n一步一步回放这盘棋，然后对着引擎把终局局面续下去。"
+        },
+        "zh-Hant": {
+          "headline": "Giri與Keymer弈和，德國贏下團體賽，以18分收官",
+          "body": "在撒馬爾罕舉行的第46屆FIDE西洋棋奧林匹克最後一輪中，GM Anish Giri（荷蘭，2757）與GM Vincent Keymer（德國，2764）以義大利開局弈了46步後握手言和。\n\n德國以2½–1½贏下團體賽（Matthias Bluebaum戰勝Jorden van Foreest），以18個團體分收官。按轉播對局統計，與印度同分，落後烏茲別克2分；兩隊的名次由官方對比分決定。\n\n一步一步回放這盤棋，然後對著引擎把終局局面續下去。"
+        },
+        "bg": {
+          "headline": "Реми между Giri и Keymer, а Германия печели мача и завършва с 18 точки",
+          "body": "GM Anish Giri (Нидерландия, 2757) и GM Vincent Keymer (Германия, 2764) завършиха наравно за 46 хода в последния кръг на 46-ата шахматна олимпиада на ФИДЕ в Самарканд, след италианска партия.\n\nГермания спечели мача с 2½–1½ — Matthias Bluebaum победи Jorden van Foreest — и завършва с 18 мачови точки, колкото Индия и две по-малко от Узбекистан, според преброяването на предаваните партии. Кой от двата отбора е втори, решават официалните допълнителни показатели.\n\nПреиграйте партията ход по ход, после продължете крайната позиция срещу енджина."
+        }
+      },
+      "fen": "6k1/6p1/3n3p/8/6P1/6BP/6RK/2rq2Q1 w - - 0 47",
+      "last": {
+        "from": "e8",
+        "to": "d6"
+      },
+      "url": "https://brasspawn.com/today/2026-09-27-giri-keymer-olympiad-r11",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-11/QJSVWmNu/TVFmsIgH"
+      },
+      "updatedAt": "2026-09-27T13:05:48.202Z"
+    },
+    {
+      "id": "2026-09-27-praggnanandhaa-rapport-olympiad-r11",
+      "status": "approved",
+      "date": "2026-09-27",
+      "rank": 1,
+      "weight": 1061,
+      "event": {
+        "name": "46th FIDE Chess Olympiad Samarkand 2026",
+        "short": "Olympiad",
+        "section": "Open",
+        "round": 11,
+        "location": "Samarkand, Uzbekistan",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-11/QJSVWmNu"
+      },
+      "white": {
+        "name": "R Praggnanandhaa",
+        "short": "Praggnanandhaa",
+        "title": "GM",
+        "elo": 2761,
+        "team": "India"
+      },
+      "black": {
+        "name": "Richard Rapport",
+        "short": "Rapport",
+        "title": "GM",
+        "elo": 2726,
+        "team": "Hungary"
+      },
+      "result": "1/2-1/2",
+      "opening": {
+        "eco": "E44",
+        "name": "Nimzo-Indian Defense: St. Petersburg Variation"
+      },
+      "moves": "d4 Nf6 c4 e6 Nc3 Bb4 e3 b6 Ne2 O-O a3 Bxc3+ Nxc3 d5 Be2 Ba6 b3 Nc6 O-O dxc4 bxc4 Qd7 a4 Rfd8 Qc2 Na5 Nb5 Bb7 Bb2 c6 Na3 c5 Rfd1 cxd4 Bxd4 Qe7 Nb5 Nd7 Bc3 Nc5 Rd4 e5 Rxd8+ Rxd8 Bxa5 bxa5 Nc3 g6 h3 Kg7 Rd1 Rxd1+ Qxd1 Qd7 Qxd7 Nxd7 Kf1 Nc5 g3 g5 Ke1 Bc6 Bd1 f5 Bc2 f4 gxf4 exf4 exf4 gxf4 Ne2 Nxa4 Nxf4 Nb6 c5 Nd7 Ne6+ Kf6 Nd4 Bg2 c6 Nb6 f4 Bxh3 Bxh7 Nd5 Kf2 Nxf4 Kg3 Ke5 Nf3+ Kd6 Kxf4 Bg2 Be4 Bxf3 Kxf3 a4 Bd5 a3 Ke4 a2 Bxa2 Kxc6",
+      "ending": null,
+      "key": null,
+      "headline": "Praggnanandhaa and Rapport draw as India and Hungary split the last match 2–2",
+      "body": "GM R Praggnanandhaa (India, 2761) and GM Richard Rapport (Hungary, 2726) drew in 52 moves in the final round of the 46th FIDE Chess Olympiad in Samarkand, from a Nimzo-Indian Defense.\n\nAround them the match went both ways: Gleb Dudin beat Gukesh D for Hungary, Arjun Erigaisi beat Peter Leko for India, and it ended 2–2. India finish on 18 match points, level with Germany and two behind Uzbekistan, by the count of the relayed games.\n\nReplay it move by move, then play the final position on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "تعادل بين Praggnanandhaa وRapport، والهند والمجر تتقاسمان المباراة الأخيرة ⁨2–2⁩",
+          "body": "تعادل بين GM R Praggnanandhaa (الهند، 2761) وGM Richard Rapport (المجر، 2726) في 52 نقلة، من الدفاع النيمزو-هندي، في الجولة الأخيرة من أولمبياد الشطرنج السادس والأربعين لـFIDE في سمرقند.\n\nمن حولهما مالت المباراة في الاتجاهين: فوز للمجر من Gleb Dudin على Gukesh D، وفوز للهند من Arjun Erigaisi على Peter Leko، والنتيجة ⁨2–2⁩. تنهي الهند برصيد 18 نقطة مباراة، بالتساوي مع ألمانيا وبفارق نقطتين خلف أوزبكستان، وفق عدّ الأدوار المنقولة.\n\nأعد عرض الدور نقلة بنقلة، ثم تابع الوضع الأخير ضد المحرك."
+        },
+        "cs": {
+          "headline": "Praggnanandhaa a Rapport remizují, Indie a Maďarsko si dělí poslední zápas 2–2",
+          "body": "GM R Praggnanandhaa (Indie, 2761) a GM Richard Rapport (Maďarsko, 2726) remizují v 52 tazích, v nimcovičovské indické obraně, v posledním kole 46. šachové olympiády FIDE v Samarkandu.\n\nKolem nich se zápas houpal na obě strany: Gleb Dudin poráží Gukesh D za Maďarsko, Arjun Erigaisi poráží Peter Leko za Indii a končí se 2–2. Indie končí s 18 zápasovými body, stejně jako Německo a dva za Uzbekistánem, podle sčítání přenášených partií.\n\nPřehraj si partii tah po tahu a pak hraj koncovou pozici dál proti enginu."
+        },
+        "da": {
+          "headline": "Remis mellem Praggnanandhaa og Rapport – Indien og Ungarn deler sidste match 2–2",
+          "body": "GM R Praggnanandhaa (Indien, 2761) og GM Richard Rapport (Ungarn, 2726) spillede remis i 52 træk, ud fra et nimzoindisk forsvar, i sidste runde af den 46. FIDE-skakolympiade i Samarkand.\n\nOmkring dem gik matchen begge veje: Gleb Dudin slog Gukesh D for Ungarn, Arjun Erigaisi slog Peter Leko for Indien, og det endte 2–2. Indien slutter med 18 matchpoint, lige med Tyskland og to efter Usbekistan, talt ud fra de transmitterede partier.\n\nAfspil partiet træk for træk, og spil så slutstillingen videre mod motoren."
+        },
+        "de": {
+          "headline": "Praggnanandhaa und Rapport remis – Indien und Ungarn teilen den letzten Kampf 2:2",
+          "body": "GM R Praggnanandhaa (Indien, 2761) und GM Richard Rapport (Ungarn, 2726) haben sich in der letzten Runde der 46. FIDE-Schacholympiade in Samarkand nach 52 Zügen aus einer Nimzowitsch-Indischen Verteidigung remis getrennt.\n\nDaneben ging es in beide Richtungen: Gleb Dudin schlug Gukesh D für Ungarn, Arjun Erigaisi schlug Peter Leko für Indien, und der Kampf endete 2:2. Indien beendet das Turnier mit 18 Mannschaftspunkten, gleichauf mit Deutschland und zwei hinter Usbekistan – gezählt aus den übertragenen Partien.\n\nZug für Zug nachspielen, dann die Schlussstellung gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Ισοπαλία Praggnanandhaa–Rapport, και Ινδία και Ουγγαρία μοιράζονται τον τελευταίο αγώνα 2–2",
+          "body": "GM R Praggnanandhaa (Ινδία, 2761) και GM Richard Rapport (Ουγγαρία, 2726) έφεραν ισοπαλία σε 52 κινήσεις, από νιμτσοϊνδική άμυνα, στον τελευταίο γύρο της 46ης Σκακιστικής Ολυμπιάδας της FIDE στη Σαμαρκάνδη.\n\nΓύρω τους ο αγώνας έγειρε και προς τις δύο πλευρές: νίκη για την Ουγγαρία από Gleb Dudin επί Gukesh D, νίκη για την Ινδία από Arjun Erigaisi επί Peter Leko, και τελικό 2–2. Η Ινδία τερματίζει με 18 βαθμούς αγώνα, ισόβαθμη με τη Γερμανία και δύο πίσω από το Ουζμπεκιστάν, σύμφωνα με την καταμέτρηση των παρτίδων που μεταδόθηκαν.\n\nΞαναδές την κίνηση προς κίνηση και μετά συνέχισε την τελική θέση απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Tablas entre Praggnanandhaa y Rapport; India y Hungría se reparten el último match 2–2",
+          "body": "GM R Praggnanandhaa (India, 2761) y GM Richard Rapport (Hungría, 2726) hicieron tablas en 52 jugadas, en una defensa Nimzoindia, en la última ronda de la 46.ª Olimpiada de Ajedrez de la FIDE en Samarcanda.\n\nA su alrededor el match fue de un lado a otro: Gleb Dudin venció a Gukesh D para Hungría, Arjun Erigaisi venció a Peter Leko para India, y terminó 2–2. India termina con 18 puntos de match, igualada con Alemania y a dos de Uzbekistán, según el recuento de las partidas retransmitidas.\n\nRevívela jugada a jugada y luego sigue la posición final contra el motor."
+        },
+        "fi": {
+          "headline": "Praggnanandhaa ja Rapport tasapeliin – Intia ja Unkari jakavat viimeisen ottelun 2–2",
+          "body": "GM R Praggnanandhaa (Intia, 2761) ja GM Richard Rapport (Unkari, 2726) pelasivat tasapelin 52 siirrossa nimzointialaisesta puolustuksesta 46. FIDE:n shakkiolympialaisten viimeisellä kierroksella Samarkandissa.\n\nHeidän ympärillään ottelu heilui molempiin suuntiin: Gleb Dudin voitti Gukesh D:n Unkarille, Arjun Erigaisi voitti Peter Lekon Intialle, ja tulos oli 2–2. Intia päättää 18 ottelupisteeseen, tasoihin Saksan kanssa ja kaksi Uzbekistanin perään, lähetettyjen pelien perusteella laskettuna.\n\nToista peli siirto siirrolta ja jatka sitten loppuasemaa moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Nulle entre Praggnanandhaa et Rapport, l’Inde et la Hongrie se quittent sur 2–2",
+          "body": "GM R Praggnanandhaa (Inde, 2761) et GM Richard Rapport (Hongrie, 2726) ont fait nulle en 52 coups, dans une défense nimzo-indienne, lors de la dernière ronde de la 46e Olympiade d’échecs FIDE à Samarcande.\n\nAutour d’eux, le match a penché des deux côtés : Gleb Dudin a battu Gukesh D pour la Hongrie, Arjun Erigaisi a battu Peter Leko pour l’Inde, et le score final est de 2–2. L’Inde termine avec 18 points de match, à égalité avec l’Allemagne et deux derrière l’Ouzbékistan, selon le décompte des parties retransmises.\n\nRejouez-la coup par coup, puis continuez la position finale contre le moteur."
+        },
+        "he": {
+          "headline": "תיקו בין Praggnanandhaa ל־Rapport, והודו והונגריה חולקות את המפגש האחרון ⁨2–2⁩",
+          "body": "תיקו בין GM R Praggnanandhaa (הודו, 2761) ל־GM Richard Rapport (הונגריה, 2726) ב־52 מסעים, מהגנה נימצו־הודית, בסיבוב האחרון של אולימפיאדת השחמט ה־46 של FIDE בסמרקנד.\n\nמסביב, המפגש נטה לשני הכיוונים: ניצחון להונגריה של Gleb Dudin על Gukesh D, ניצחון להודו של Arjun Erigaisi על Peter Leko, ותוצאה סופית ⁨2–2⁩. הודו מסיימת עם 18 נקודות משחק, בשוויון עם גרמניה ושתיים מאחורי אוזבקיסטן, לפי ספירת המשחקים ששודרו.\n\nצפו במשחק מסע אחר מסע, ואז המשיכו את העמדה הסופית מול המנוע."
+        },
+        "hi": {
+          "headline": "Praggnanandhaa और Rapport की बाज़ी ड्रॉ, भारत और हंगरी ने आख़िरी मुक़ाबला 2–2 से बाँटा",
+          "body": "समरकंद में 46वें FIDE शतरंज ओलंपियाड के आख़िरी राउंड में GM R Praggnanandhaa (भारत, 2761) और GM Richard Rapport (हंगरी, 2726) की बाज़ी निम्ज़ो-इंडियन डिफ़ेंस से 52 चालों में ड्रॉ रही।\n\nआसपास मुक़ाबला दोनों ओर झुका: हंगरी के लिए Gleb Dudin ने Gukesh D को हराया, भारत के लिए Arjun Erigaisi ने Peter Leko को हराया, और नतीजा 2–2 रहा। प्रसारित बाज़ियों की गिनती के अनुसार भारत 18 मैच अंकों के साथ समाप्त करता है, जर्मनी के बराबर और उज़्बेकिस्तान से दो पीछे।\n\nबाज़ी को चाल-दर-चाल देखें, फिर अंतिम स्थिति को इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "Döntetlen Praggnanandhaa és Rapport között – India és Magyarország 2–2-vel zárja az utolsó mérkőzést",
+          "body": "GM R Praggnanandhaa (India, 2761) és GM Richard Rapport (Magyarország, 2726) 52 lépésben döntetlent játszott egy Nimzoindiai védelemből a 46. FIDE sakkolimpia utolsó fordulójában Szamarkandban.\n\nKörülöttük a mérkőzés mindkét irányba kilengett: Gleb Dudin legyőzte Gukesh D-t Magyarországnak, Arjun Erigaisi legyőzte Peter Lekót Indiának, és 2–2 lett a vége. India 18 csapatponttal zár, holtversenyben Németországgal, két ponttal Üzbegisztán mögött, a közvetített játszmák alapján számolva.\n\nJátszd vissza lépésről lépésre, aztán folytasd a végállást a motor ellen."
+        },
+        "id": {
+          "headline": "Praggnanandhaa dan Rapport remis, India dan Hungaria berbagi pertandingan terakhir 2–2",
+          "body": "Di babak terakhir Olimpiade Catur FIDE ke-46 di Samarkand, GM R Praggnanandhaa (India, 2761) dan GM Richard Rapport (Hungaria, 2726) bermain remis dalam 52 langkah, dari Pertahanan Nimzo-India.\n\nDi papan-papan sekitarnya, pertandingan berayun ke dua arah: Gleb Dudin mengalahkan Gukesh D untuk Hungaria, Arjun Erigaisi mengalahkan Peter Leko untuk India, dan hasilnya 2–2. Menurut hitungan partai yang disiarkan, India finis dengan 18 poin pertandingan, sama dengan Jerman dan dua di belakang Uzbekistan.\n\nPutar ulang langkah demi langkah, lalu lanjutkan posisi akhirnya melawan mesin."
+        },
+        "it": {
+          "headline": "Patta tra Praggnanandhaa e Rapport, India e Ungheria si dividono l’ultimo match 2–2",
+          "body": "GM R Praggnanandhaa (India, 2761) e GM Richard Rapport (Ungheria, 2726) hanno pattato in 52 mosse, da una difesa Nimzo-indiana, nell’ultimo turno della 46ª Olimpiade degli scacchi FIDE a Samarcanda.\n\nIntorno a loro il match è andato da una parte e dall’altra: Gleb Dudin ha battuto Gukesh D per l’Ungheria, Arjun Erigaisi ha battuto Peter Leko per l’India, e il risultato è stato 2–2. L’India chiude con 18 punti match, alla pari con la Germania e a due dall’Uzbekistan, secondo il conteggio delle partite trasmesse.\n\nRivedila mossa per mossa, poi continua la posizione finale contro il motore."
+        },
+        "ja": {
+          "headline": "PraggnanandhaaとRapportは引き分け、インドとハンガリーは最後のマッチを2–2で分ける",
+          "body": "サマルカンドで行われた第46回FIDEチェス・オリンピアード最終ラウンドで、GM R Praggnanandhaa（インド、2761）とGM Richard Rapport（ハンガリー、2726）はニムゾ・インディアン・ディフェンスから52手で引き分けました。\n\n周りのボードでは両方向に振れました。ハンガリーはGleb DudinがGukesh Dに、インドはArjun ErigaisiがPeter Lekoに勝ち、結果は2–2。中継された対局から数えると、インドはマッチポイント18で終了。ドイツと並び、ウズベキスタンに2点差です。\n\n一手ずつ再生して、最終局面をエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "Praggnanandhaa와 Rapport 무승부, 인도와 헝가리는 마지막 매치를 2–2로 나눠",
+          "body": "사마르칸트에서 열린 제46회 FIDE 체스 올림피아드 마지막 라운드에서 GM R Praggnanandhaa(인도, 2761)와 GM Richard Rapport(헝가리, 2726)가 님조 인디언 디펜스에서 52수 만에 비겼습니다.\n\n주변 보드에서는 양쪽으로 흔들렸습니다. 헝가리의 Gleb Dudin이 Gukesh D를, 인도의 Arjun Erigaisi가 Peter Leko를 이겼고, 결과는 2–2였습니다. 중계된 대국으로 세면 인도는 매치 포인트 18로 마쳐 독일과 동률, 우즈베키스탄에 2점 뒤집니다.\n\n한 수씩 다시 보고, 마지막 국면을 엔진을 상대로 이어 두어 보세요."
+        },
+        "ms": {
+          "headline": "Praggnanandhaa dan Rapport seri, India dan Hungary berkongsi perlawanan terakhir 2–2",
+          "body": "Dalam pusingan terakhir Olimpiad Catur FIDE ke-46 di Samarkand, GM R Praggnanandhaa (India, 2761) dan GM Richard Rapport (Hungary, 2726) seri dalam 52 langkah, daripada Pertahanan Nimzo-India.\n\nDi papan-papan sekeliling, perlawanan berayun ke dua arah: Gleb Dudin menewaskan Gukesh D untuk Hungary, Arjun Erigaisi menewaskan Peter Leko untuk India, dan keputusannya 2–2. Mengikut kiraan permainan yang disiarkan, India tamat dengan 18 mata perlawanan, sama dengan Jerman dan dua di belakang Uzbekistan.\n\nMain semula langkah demi langkah, kemudian teruskan kedudukan akhir menentang enjin."
+        },
+        "nl": {
+          "headline": "Praggnanandhaa en Rapport remise, India en Hongarije delen de laatste match: 2–2",
+          "body": "GM R Praggnanandhaa (India, 2761) en GM Richard Rapport (Hongarije, 2726) speelden remise in 52 zetten, vanuit een Nimzo-Indische verdediging, in de laatste ronde van de 46e FIDE Schaakolympiade in Samarkand.\n\nEromheen ging de match alle kanten op: Gleb Dudin versloeg Gukesh D voor Hongarije, Arjun Erigaisi versloeg Peter Leko voor India, en het werd 2–2. India eindigt met 18 matchpunten, gelijk met Duitsland en twee achter Oezbekistan, geteld uit de uitgezonden partijen.\n\nSpeel de partij zet voor zet na en speel de slotstelling dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "Remis mellom Praggnanandhaa og Rapport – India og Ungarn deler siste match 2–2",
+          "body": "GM R Praggnanandhaa (India, 2761) og GM Richard Rapport (Ungarn, 2726) spilte remis på 52 trekk, fra et nimzoindisk forsvar, i siste runde av den 46. FIDE-sjakkolympiaden i Samarkand.\n\nRundt dem gikk matchen begge veier: Gleb Dudin slo Gukesh D for Ungarn, Arjun Erigaisi slo Peter Leko for India, og det endte 2–2. India ender på 18 matchpoeng, likt med Tyskland og to bak Usbekistan, talt fra de sendte partiene.\n\nSpill av partiet trekk for trekk, og spill så sluttstillingen videre mot motoren."
+        },
+        "pl": {
+          "headline": "Praggnanandhaa i Rapport remisują, a Indie i Węgry dzielą się ostatnim meczem 2–2",
+          "body": "GM R Praggnanandhaa (Indie, 2761) i GM Richard Rapport (Węgry, 2726) remisują w 52 ruchach, w obronie nimzoindyjskiej, w ostatniej rundzie 46. Olimpiady Szachowej FIDE w Samarkandzie.\n\nWokół nich mecz przechylał się w obie strony: Gleb Dudin pokonuje Gukesh D dla Węgier, Arjun Erigaisi pokonuje Peter Leko dla Indii, i kończy się 2–2. Indie kończą z 18 punktami meczowymi, na równi z Niemcami i dwa za Uzbekistanem, według zliczenia transmitowanych partii.\n\nOdtwórz partię ruch po ruchu, potem graj dalej końcową pozycję przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Empate entre Praggnanandhaa e Rapport; Índia e Hungria dividem o último match em 2–2",
+          "body": "GM R Praggnanandhaa (Índia, 2761) e GM Richard Rapport (Hungria, 2726) empataram em 52 lances, numa defesa Nimzoíndia, na última rodada da 46ª Olimpíada de Xadrez da FIDE em Samarcanda.\n\nAo redor deles, o match foi para os dois lados: Gleb Dudin venceu Gukesh D pela Hungria, Arjun Erigaisi venceu Peter Leko pela Índia, e o placar ficou em 2–2. A Índia termina com 18 pontos de match, empatada com a Alemanha e a dois do Uzbequistão, pela contagem das partidas transmitidas.\n\nReveja lance a lance e depois continue a posição final contra o motor."
+        },
+        "ro": {
+          "headline": "Remiză între Praggnanandhaa și Rapport, iar India și Ungaria împart ultimul meci, 2–2",
+          "body": "GM R Praggnanandhaa (India, 2761) și GM Richard Rapport (Ungaria, 2726) au remizat în 52 de mutări, dintr-o apărare Nimzo-indiană, în ultima rundă a celei de-a 46-a Olimpiade de Șah FIDE, la Samarkand.\n\nÎn jurul lor, meciul a înclinat în ambele sensuri: Gleb Dudin a câștigat contra Gukesh D pentru Ungaria, Arjun Erigaisi a câștigat contra Peter Leko pentru India, iar scorul final a fost 2–2. India încheie cu 18 puncte de meci, la egalitate cu Germania și la două puncte în urma Uzbekistanului, după numărătoarea partidelor transmise.\n\nRevezi-o mutare cu mutare, apoi continuă poziția finală contra motorului."
+        },
+        "ru": {
+          "headline": "Ничья Praggnanandhaa и Rapport, а Индия и Венгрия делят последний матч — 2–2",
+          "body": "GM R Praggnanandhaa (Индия, 2761) и GM Richard Rapport (Венгрия, 2726) сыграли вничью за 52 хода, в защите Нимцовича, в последнем туре 46-й шахматной олимпиады ФИДЕ в Самарканде.\n\nВокруг них матч качался в обе стороны: Gleb Dudin обыгрывает Gukesh D за Венгрию, Arjun Erigaisi обыгрывает Peter Leko за Индию, и итог — 2–2. Индия заканчивает с 18 командными очками, наравне с Германией и на два позади Узбекистана, по подсчёту транслировавшихся партий.\n\nПосмотрите партию ход за ходом, а затем продолжите финальную позицию против движка."
+        },
+        "sv": {
+          "headline": "Remi mellan Praggnanandhaa och Rapport – Indien och Ungern delar sista matchen 2–2",
+          "body": "GM R Praggnanandhaa (Indien, 2761) och GM Richard Rapport (Ungern, 2726) spelade remi på 52 drag, ur ett nimzoindiskt försvar, i sista ronden av den 46:e FIDE-schackolympiaden i Samarkand.\n\nRunt dem gick matchen åt båda hållen: Gleb Dudin besegrade Gukesh D för Ungern, Arjun Erigaisi besegrade Peter Leko för Indien, och det slutade 2–2. Indien slutar på 18 matchpoäng, lika med Tyskland och två bakom Uzbekistan, räknat på de sända partierna.\n\nSpela upp partiet drag för drag och spela sedan vidare slutställningen mot motorn."
+        },
+        "th": {
+          "headline": "Praggnanandhaa กับ Rapport เสมอ อินเดียกับฮังการีแบ่งแมตช์สุดท้าย 2–2",
+          "body": "ในรอบสุดท้ายของหมากรุกโอลิมปิก FIDE ครั้งที่ 46 ที่ซามาร์คันด์ GM R Praggnanandhaa (อินเดีย, 2761) กับ GM Richard Rapport (ฮังการี, 2726) เสมอกันใน 52 ตา จากการเปิดแบบนิมโซ-อินเดียน\n\nกระดานรอบข้างผลัดกันได้เปรียบ: Gleb Dudin ชนะ Gukesh D ให้ฮังการี Arjun Erigaisi ชนะ Peter Leko ให้อินเดีย และผลออกมา 2–2 นับจากเกมที่ถ่ายทอด อินเดียจบด้วย 18 แต้มแมตช์ เท่ากับเยอรมนี และตามหลังอุซเบกิสถาน 2 แต้ม\n\nดูเกมทีละตา แล้วเล่นตำแหน่งสุดท้ายต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "Praggnanandhaa ile Rapport berabere; Hindistan ile Macaristan son maçı 2–2 paylaştı",
+          "body": "GM R Praggnanandhaa (Hindistan, 2761) ve GM Richard Rapport (Macaristan, 2726), 46. FIDE Satranç Olimpiyatı'nın Semerkant'taki son turunda bir Nimzo-Hint Savunması'nda 52 hamlede berabere kaldı.\n\nEtraflarında maç iki yöne de sallandı: Gleb Dudin Macaristan adına Gukesh D'yi, Arjun Erigaisi Hindistan adına Peter Leko'yu yendi ve maç 2–2 bitti. Hindistan 18 maç puanıyla bitiriyor: Almanya ile eşit, Özbekistan'ın iki puan gerisinde, yayınlanan oyunlara göre sayıldığında.\n\nOyunu hamle hamle izle, sonra son konumu motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Praggnanandhaa và Rapport hòa, Ấn Độ và Hungary chia điểm trận cuối 2–2",
+          "body": "Ở vòng cuối Olympiad Cờ vua FIDE lần thứ 46 tại Samarkand, GM R Praggnanandhaa (Ấn Độ, 2761) và GM Richard Rapport (Hungary, 2726) hòa sau 52 nước, từ phòng thủ Nimzo-Ấn.\n\nỞ các bàn xung quanh, trận đấu nghiêng về cả hai phía: Gleb Dudin thắng Gukesh D cho Hungary, Arjun Erigaisi thắng Peter Leko cho Ấn Độ, và kết quả là 2–2. Theo số ván được phát sóng, Ấn Độ kết thúc với 18 điểm trận, bằng Đức và kém Uzbekistan 2 điểm.\n\nXem lại từng nước, rồi chơi tiếp thế cờ cuối với engine."
+        },
+        "zh-Hans": {
+          "headline": "Praggnanandhaa与Rapport弈和，印度与匈牙利最后一场2–2平分秋色",
+          "body": "在撒马尔罕举行的第46届FIDE国际象棋奥林匹克最后一轮中，GM R Praggnanandhaa（印度，2761）与GM Richard Rapport（匈牙利，2726）以尼姆佐维奇防御弈了52步后握手言和。\n\n其他台次双方互有胜负：匈牙利的Gleb Dudin战胜Gukesh D，印度的Arjun Erigaisi战胜Peter Leko，最终2–2。按转播对局统计，印度以18个团体分收官，与德国同分，落后乌兹别克斯坦2分。\n\n一步一步回放这盘棋，然后对着引擎把终局局面续下去。"
+        },
+        "zh-Hant": {
+          "headline": "Praggnanandhaa與Rapport弈和，印度與匈牙利最後一場2–2平分秋色",
+          "body": "在撒馬爾罕舉行的第46屆FIDE西洋棋奧林匹克最後一輪中，GM R Praggnanandhaa（印度，2761）與GM Richard Rapport（匈牙利，2726）以尼姆佐維奇防禦弈了52步後握手言和。\n\n其他台次雙方互有勝負：匈牙利的Gleb Dudin戰勝Gukesh D，印度的Arjun Erigaisi戰勝Peter Leko，最終2–2。按轉播對局統計，印度以18個團體分收官，與德國同分，落後烏茲別克2分。\n\n一步一步回放這盤棋，然後對著引擎把終局局面續下去。"
+        },
+        "bg": {
+          "headline": "Реми между Praggnanandhaa и Rapport, а Индия и Унгария делят последния мач 2–2",
+          "body": "GM R Praggnanandhaa (Индия, 2761) и GM Richard Rapport (Унгария, 2726) завършиха наравно за 52 хода в последния кръг на 46-ата шахматна олимпиада на ФИДЕ в Самарканд, след Нимцоиндийска защита.\n\nОколо тях мачът се люшкаше и в двете посоки: Gleb Dudin победи Gukesh D за Унгария, Arjun Erigaisi победи Peter Leko за Индия и мачът завърши 2–2. Индия завършва с 18 мачови точки, колкото Германия и две по-малко от Узбекистан, според преброяването на предаваните партии.\n\nПреиграйте партията ход по ход, после продължете крайната позиция срещу енджина."
+        }
+      },
+      "fen": "8/p7/2k5/8/4K3/8/B7/8 w - - 0 53",
+      "last": {
+        "from": "d6",
+        "to": "c6"
+      },
+      "url": "https://brasspawn.com/today/2026-09-27-praggnanandhaa-rapport-olympiad-r11",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-11/QJSVWmNu/taO7SCQY"
+      },
+      "updatedAt": "2026-09-27T13:05:59.656Z"
+    },
+    {
+      "id": "2026-09-27-dudin-gukesh-olympiad-r11",
+      "status": "approved",
+      "date": "2026-09-27",
+      "rank": 2,
+      "weight": 996,
+      "event": {
+        "name": "46th FIDE Chess Olympiad Samarkand 2026",
+        "short": "Olympiad",
+        "section": "Open",
+        "round": 11,
+        "location": "Samarkand, Uzbekistan",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-11/QJSVWmNu"
+      },
+      "white": {
+        "name": "Gleb Dudin",
+        "short": "Dudin",
+        "title": "GM",
+        "elo": 2560,
+        "team": "Hungary"
+      },
+      "black": {
+        "name": "Gukesh D",
+        "short": "Gukesh",
+        "title": "GM",
+        "elo": 2703,
+        "team": "India"
+      },
+      "result": "1-0",
+      "opening": {
+        "eco": "B31",
+        "name": "Sicilian Defense: Nyezhmetdinov-Rossolimo Attack, Fianchetto Variation"
+      },
+      "moves": "e4 c5 Nf3 Nc6 Bb5 g6 O-O Bg7 d3 e5 a3 Nge7 b4 d6 bxc5 dxc5 Bg5 Qd6 Bxe7 Kxe7 Bxc6 bxc6 Qe1 c4 dxc4 Bg4 Nbd2 Qc5 Nb3 Qxc4 Na5 Qc5 Nb7 Qc4 Qd2 Kf8 Nd6 Qc5 Ng5 h6 Ngxf7 Rh7 Rab1 Kg8 Nb7 Qe7 Nfd6 Bf8 c4 Qf6 c5 h5 Na5 Rd7 h3 Be6 Rfd1 g5 Qc3 g4 h4 Bg7 g3 Rf8 Rd2 Bh6 Rc2 Rc7 Nac4 Qg6 Re1 Bg7 Ne3 Rf3 Qa5 Rd7 Qa6 Bf8 Qxc6 Bxd6 cxd6 Rf8 Rd2 Kh7 Nc4 Qh6 Red1 Qf6 Qc5 Bxc4 Qxc4 Kg6 Qc5 Re8 a4 Qf3 Qb5 Qf7 Rd5 Qg7 Rc1 Re6 Qb8 Qf6 Rc7 Rd8 Rc8 Rdxd6 Rg8+ Kh7 Rf8 Qe7 Rh8+ Kg6 Qg8+ Qg7 Rxd6",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 60,
+        "played": "g4",
+        "better": "Bg7",
+        "reply": "h4",
+        "replyPlayed": true,
+        "before": {
+          "cp": 227,
+          "mate": null
+        },
+        "after": {
+          "cp": 290,
+          "mate": null
+        },
+        "clock": 202
+      },
+      "headline": "143 rating points below, Dudin beats Gukesh in the Olympiad's final round",
+      "body": "GM Gleb Dudin (Hungary, 2560) beat GM Gukesh D (India, 2703) in 59 moves in the last round of the 46th FIDE Chess Olympiad in Samarkand.\n\nStockfish already had White clearly better (+2.27) before 30...g4, played with 3:22 on Black's clock, and winning (+2.90) after it. The engine wanted 30...Bg7; its best reply to the move played, 31.h4, came at once.\n\nHungary and India drew the match 2–2, Arjun Erigaisi beating Peter Leko for India. India finish on 18 match points, level with Germany and two behind Uzbekistan, by the count of the relayed games.\n\nReplay it move by move, then try 30...Bg7 against the engine.",
+      "words": {
+        "ar": {
+          "headline": "بفارق 143 نقطة تصنيف ومع ذلك: فوز Dudin على Gukesh في الجولة الأخيرة من الأولمبياد",
+          "body": "فوز GM Gleb Dudin (المجر، 2560) على GM Gukesh D (الهند، 2703) في 59 نقلة، في الجولة الأخيرة من أولمبياد الشطرنج السادس والأربعين لـFIDE في سمرقند.\n\nكان Stockfish يمنح الأبيض أفضلية واضحة (⁨+2.27⁩) قبل ⁨30...g4⁩، التي لُعبت وفي ساعة الأسود ⁨3:22⁩، ثم وضعًا رابحًا (⁨+2.90⁩) بعدها. أراد المحرك ⁨30...Bg7⁩، وجاء أفضل رد له على النقلة التي لُعبت، ⁨31.h4⁩، على الفور.\n\nتعادلت المجر والهند ⁨2–2⁩، مع فوز للهند من Arjun Erigaisi على Peter Leko. تنهي الهند برصيد 18 نقطة مباراة، بالتساوي مع ألمانيا وبفارق نقطتين خلف أوزبكستان، وفق عدّ الأدوار المنقولة.\n\nأعد عرض الدور نقلة بنقلة، ثم جرّب ⁨30...Bg7⁩ ضد المحرك."
+        },
+        "cs": {
+          "headline": "O 143 bodů níž, a přesto: Dudin poráží Gukesh D v posledním kole olympiády",
+          "body": "GM Gleb Dudin (Maďarsko, 2560) poráží GM Gukesh D (Indie, 2703) v 59 tazích v posledním kole 46. šachové olympiády FIDE v Samarkandu.\n\nStockfish už před 30...g4 viděl jasnou výhodu bílého (+2,27); tah padl s 3:22 na hodinách černého a po něm má bílý vyhráno (+2,90). Engine chtěl 30...Bg7; jeho nejlepší odpověď na zahraný tah, 31.h4, přišla hned.\n\nMaďarsko a Indie remizují 2–2, za Indii vyhrává Arjun Erigaisi s Peter Leko. Indie končí s 18 zápasovými body, stejně jako Německo a dva za Uzbekistánem, podle sčítání přenášených partií.\n\nPřehraj si partii tah po tahu a pak zkus 30...Bg7 proti enginu."
+        },
+        "da": {
+          "headline": "143 ratingpoint lavere og alligevel: Dudin slår Gukesh i olympiadens sidste runde",
+          "body": "GM Gleb Dudin (Ungarn, 2560) slog GM Gukesh D (Indien, 2703) i 59 træk i sidste runde af den 46. FIDE-skakolympiade i Samarkand.\n\nStockfish så allerede hvid klart bedre før 30...g4 (+2,27); trækket kom med 3:22 tilbage på sorts ur, og bagefter stod hvid til gevinst (+2,90). Motoren ville have 30...Bg7; dens bedste svar på det spillede træk, 31.h4, kom med det samme.\n\nUngarn og Indien spillede 2–2, med sejr til Arjun Erigaisi over Peter Leko for Indien. Indien slutter med 18 matchpoint, lige med Tyskland og to efter Usbekistan, talt ud fra de transmitterede partier.\n\nAfspil partiet træk for træk, og prøv så 30...Bg7 mod motoren."
+        },
+        "de": {
+          "headline": "143 Elo weniger, trotzdem Sieg: Dudin schlägt Gukesh in der letzten Olympiarunde",
+          "body": "GM Gleb Dudin (Ungarn, 2560) hat in der letzten Runde der 46. FIDE-Schacholympiade in Samarkand GM Gukesh D (Indien, 2703) in 59 Zügen geschlagen.\n\nStockfish sah Weiß schon vor 30...g4 klar im Vorteil (+2,27); der Zug fiel mit 3:22 auf der Uhr von Schwarz, danach stand Weiß auf Gewinn (+2,90). Die Engine wollte 30...Bg7; ihre beste Antwort auf den gespielten Zug, 31.h4, kam sofort.\n\nUngarn und Indien trennten sich 2:2, für Indien gewann Arjun Erigaisi gegen Peter Leko. Indien beendet das Turnier mit 18 Mannschaftspunkten, gleichauf mit Deutschland und zwei hinter Usbekistan – gezählt aus den übertragenen Partien.\n\nZug für Zug nachspielen, dann 30...Bg7 selbst gegen die Engine probieren."
+        },
+        "el": {
+          "headline": "Με 143 βαθμούς λιγότερους, κι όμως: Dudin νικά Gukesh στον τελευταίο γύρο της Ολυμπιάδας",
+          "body": "GM Gleb Dudin (Ουγγαρία, 2560): νίκη επί GM Gukesh D (Ινδία, 2703) σε 59 κινήσεις, στον τελευταίο γύρο της 46ης Σκακιστικής Ολυμπιάδας της FIDE στη Σαμαρκάνδη.\n\nΤο Stockfish έδινε ήδη καθαρό πλεονέκτημα στα λευκά (+2,27) πριν από το 30...g4, που παίχτηκε με 3:22 στο ρολόι των μαύρων, και κερδισμένη θέση (+2,90) μετά. Η μηχανή ήθελε 30...Bg7· η καλύτερη απάντησή της στην κίνηση που παίχτηκε, 31.h4, ήρθε αμέσως.\n\nΟυγγαρία και Ινδία έφεραν 2–2, με νίκη για την Ινδία από Arjun Erigaisi επί Peter Leko. Η Ινδία τελειώνει με 18 βαθμούς αγώνα, ισόβαθμη με τη Γερμανία και δύο πίσω από το Ουζμπεκιστάν, σύμφωνα με την καταμέτρηση των παρτίδων που μεταδόθηκαν.\n\nΞαναδές την κίνηση προς κίνηση και μετά δοκίμασε το 30...Bg7 απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "143 puntos menos de Elo y aun así: Dudin vence a Gukesh en la última ronda de la Olimpiada",
+          "body": "GM Gleb Dudin (Hungría, 2560) venció a GM Gukesh D (India, 2703) en 59 jugadas en la última ronda de la 46.ª Olimpiada de Ajedrez de la FIDE en Samarcanda.\n\nStockfish ya daba una clara ventaja a las blancas (+2,27) antes de 30...g4, jugada con 3:22 en el reloj de las negras, y una posición ganadora (+2,90) después. El motor quería 30...Bg7; su mejor respuesta a la jugada hecha, 31.h4, llegó al instante.\n\nHungría e India empataron 2–2, con Arjun Erigaisi ganando a Peter Leko para India. India termina con 18 puntos de match, igualada con Alemania y a dos de Uzbekistán, según el recuento de las partidas retransmitidas.\n\nRevívela jugada a jugada y luego prueba 30...Bg7 contra el motor."
+        },
+        "fi": {
+          "headline": "143 pistettä alempana ja silti: Dudin voittaa Gukeshin olympialaisten viimeisellä kierroksella",
+          "body": "GM Gleb Dudin (Unkari, 2560) voitti GM Gukesh D:n (Intia, 2703) 59 siirrossa 46. FIDE:n shakkiolympialaisten viimeisellä kierroksella Samarkandissa.\n\nStockfishin mukaan valkealla oli selvä etu jo ennen siirtoa 30...g4 (+2,27); se pelattiin mustan kellossa 3:22 jäljellä, ja sen jälkeen valkea oli voittoasemassa (+2,90). Moottori halusi 30...Bg7; sen paras vastaus pelattuun siirtoon, 31.h4, tuli heti.\n\nUnkari ja Intia pelasivat 2–2, ja Intialle voiton otti Arjun Erigaisi Peter Lekoa vastaan. Intia päättää 18 ottelupisteeseen, tasoihin Saksan kanssa ja kaksi Uzbekistanin perään, lähetettyjen pelien perusteella laskettuna.\n\nToista peli siirto siirrolta ja kokeile sitten 30...Bg7 moottoria vastaan."
+        },
+        "fr": {
+          "headline": "143 points Elo de moins, et pourtant : Dudin bat Gukesh à la dernière ronde de l’Olympiade",
+          "body": "GM Gleb Dudin (Hongrie, 2560) a battu GM Gukesh D (Inde, 2703) en 59 coups lors de la dernière ronde de la 46e Olympiade d’échecs FIDE à Samarcande.\n\nStockfish donnait déjà un net avantage aux Blancs (+2,27) avant 30...g4, joué avec 3:22 à la pendule des Noirs, puis une position gagnante (+2,90) après. Le moteur voulait 30...Bg7 ; sa meilleure réponse au coup joué, 31.h4, est tombée aussitôt.\n\nLa Hongrie et l’Inde ont fait 2–2, Arjun Erigaisi battant Peter Leko pour l’Inde. L’Inde termine avec 18 points de match, à égalité avec l’Allemagne et deux derrière l’Ouzbékistan, selon le décompte des parties retransmises.\n\nRejouez-la coup par coup, puis essayez 30...Bg7 contre le moteur."
+        },
+        "he": {
+          "headline": "143 נקודות דירוג פחות, ובכל זאת: ניצחון ל־Dudin על Gukesh בסיבוב האחרון של האולימפיאדה",
+          "body": "ניצחון ל־GM Gleb Dudin (הונגריה, 2560) על GM Gukesh D (הודו, 2703) ב־59 מסעים, בסיבוב האחרון של אולימפיאדת השחמט ה־46 של FIDE בסמרקנד.\n\nלפי Stockfish, ללבן כבר היה יתרון ברור (⁨+2.27⁩) לפני ⁨30...g4⁩, שנעשה עם ⁨3:22⁩ בשעון של השחור, ואחריו עמדה מנצחת (⁨+2.90⁩). המנוע רצה ⁨30...Bg7⁩; התשובה הטובה ביותר שלו למסע שנעשה, ⁨31.h4⁩, הגיעה מיד.\n\nהונגריה והודו סיימו ⁨2–2⁩, עם ניצחון להודו של Arjun Erigaisi על Peter Leko. הודו מסיימת עם 18 נקודות משחק, בשוויון עם גרמניה ושתיים מאחורי אוזבקיסטן, לפי ספירת המשחקים ששודרו.\n\nצפו במשחק מסע אחר מסע, ואז נסו את ⁨30...Bg7⁩ מול המנוע."
+        },
+        "hi": {
+          "headline": "143 रेटिंग अंक कम, फिर भी: ओलंपियाड के आख़िरी राउंड में Dudin ने Gukesh को हराया",
+          "body": "समरकंद में 46वें FIDE शतरंज ओलंपियाड के आख़िरी राउंड में GM Gleb Dudin (हंगरी, 2560) ने GM Gukesh D (भारत, 2703) को 59 चालों में हराया।\n\nStockfish के अनुसार 30...g4 से पहले ही सफ़ेद को साफ़ बढ़त थी (+2.27); यह चाल काले की घड़ी में 3:22 बाक़ी रहते चली गई, और इसके बाद सफ़ेद जीत की स्थिति में था (+2.90)। इंजन 30...Bg7 चाहता था; चली गई चाल पर उसका सबसे अच्छा जवाब, 31.h4, तुरंत आया।\n\nहंगरी और भारत का मुक़ाबला 2–2 रहा; भारत के लिए Arjun Erigaisi ने Peter Leko को हराया। प्रसारित बाज़ियों की गिनती के अनुसार भारत 18 मैच अंकों के साथ समाप्त करता है — जर्मनी के बराबर और उज़्बेकिस्तान से दो पीछे।\n\nबाज़ी को चाल-दर-चाल देखें, फिर इंजन के ख़िलाफ़ 30...Bg7 आज़माएँ।"
+        },
+        "hu": {
+          "headline": "143 ponttal alacsonyabb értékszámmal is: Dudin legyőzi Gukesht az olimpia utolsó fordulójában",
+          "body": "GM Gleb Dudin (Magyarország, 2560) 59 lépésben legyőzte GM Gukesh D-t (India, 2703) a 46. FIDE sakkolimpia utolsó fordulójában Szamarkandban.\n\nA Stockfish szerint világos már 30...g4 előtt egyértelmű előnyben volt (+2,27); a lépés sötét óráján 3:22-vel jött, és utána világos nyerő állásban volt (+2,90). A motor 30...Bg7-et akarta; legjobb válasza a megtett lépésre, 31.h4, azonnal jött.\n\nMagyarország és India 2–2-t játszott, Indiának Arjun Erigaisi nyert Peter Leko ellen. India 18 csapatponttal zár, holtversenyben Németországgal, két ponttal Üzbegisztán mögött, a közvetített játszmák alapján számolva.\n\nJátszd vissza lépésről lépésre, aztán próbáld ki 30...Bg7-et a motor ellen."
+        },
+        "id": {
+          "headline": "Rating 143 poin lebih rendah, tetap menang: Dudin kalahkan Gukesh di babak terakhir Olimpiade",
+          "body": "Di babak terakhir Olimpiade Catur FIDE ke-46 di Samarkand, GM Gleb Dudin (Hungaria, 2560) mengalahkan GM Gukesh D (India, 2703) dalam 59 langkah.\n\nStockfish sudah menilai Putih unggul jelas (+2,27) sebelum 30...g4, yang dimainkan dengan sisa 3:22 di jam Hitam, lalu menang (+2,90) sesudahnya. Mesin menginginkan 30...Bg7; jawaban terbaiknya atas langkah yang dimainkan, 31.h4, langsung datang.\n\nHungaria dan India bermain 2–2, dengan kemenangan Arjun Erigaisi atas Peter Leko untuk India. Menurut hitungan partai yang disiarkan, India finis dengan 18 poin pertandingan, sama dengan Jerman dan dua di belakang Uzbekistan.\n\nPutar ulang langkah demi langkah, lalu coba 30...Bg7 melawan mesin."
+        },
+        "it": {
+          "headline": "143 punti Elo in meno, eppure: Dudin batte Gukesh all’ultimo turno delle Olimpiadi",
+          "body": "GM Gleb Dudin (Ungheria, 2560) ha battuto GM Gukesh D (India, 2703) in 59 mosse nell’ultimo turno della 46ª Olimpiade degli scacchi FIDE a Samarcanda.\n\nStockfish vedeva già un chiaro vantaggio del Bianco (+2,27) prima di 30...g4, giocata con 3:22 sull’orologio del Nero, e una posizione vinta (+2,90) dopo. Il motore voleva 30...Bg7; la sua migliore risposta alla mossa giocata, 31.h4, è arrivata subito.\n\nUngheria e India hanno pareggiato 2–2, con Arjun Erigaisi vincente su Peter Leko per l’India. L’India chiude con 18 punti match, alla pari con la Germania e a due dall’Uzbekistan, secondo il conteggio delle partite trasmesse.\n\nRivedila mossa per mossa, poi prova 30...Bg7 contro il motore."
+        },
+        "ja": {
+          "headline": "レーティング差143をはね返す：Dudinがオリンピアード最終ラウンドでGukeshに勝利",
+          "body": "サマルカンドで行われた第46回FIDEチェス・オリンピアード最終ラウンドで、GM Gleb Dudin（ハンガリー、2560）がGM Gukesh D（インド、2703）に59手で勝ちました。\n\nStockfishは30...g4の前から白の明確な優勢（+2.27）と見ていました。この手は黒の残り時間3:22で指され、その後は白の勝勢（+2.90）です。エンジンが望んだのは30...Bg7。指された手への最善の応手31.h4がすぐに返されました。\n\nハンガリー対インドは2–2で、インドはArjun ErigaisiがPeter Lekoに勝ちました。中継された対局から数えると、インドはマッチポイント18で終了。ドイツと並び、ウズベキスタンに2点差です。\n\n一手ずつ再生して、エンジン相手に30...Bg7を試してみましょう。"
+        },
+        "ko": {
+          "headline": "레이팅 143점 차를 넘어: Dudin, 올림피아드 마지막 라운드에서 Gukesh에게 승리",
+          "body": "사마르칸트에서 열린 제46회 FIDE 체스 올림피아드 마지막 라운드에서 GM Gleb Dudin(헝가리, 2560)이 GM Gukesh D(인도, 2703)에게 59수 만에 이겼습니다.\n\nStockfish는 30...g4 이전부터 백의 뚜렷한 우세(+2.27)로 보았습니다. 이 수는 흑의 남은 시간 3:22에 두어졌고, 이후 백은 이기는 형세(+2.90)가 되었습니다. 엔진이 원한 수는 30...Bg7였고, 둔 수에 대한 최선의 응수 31.h4가 곧바로 나왔습니다.\n\n헝가리와 인도는 2–2로 비겼고, 인도에서는 Arjun Erigaisi가 Peter Leko를 이겼습니다. 중계된 대국으로 세면 인도는 매치 포인트 18로 마쳐 독일과 동률, 우즈베키스탄에 2점 뒤집니다.\n\n한 수씩 다시 보고, 엔진을 상대로 30...Bg7를 두어 보세요."
+        },
+        "ms": {
+          "headline": "Penarafan 143 mata lebih rendah, tetap menang: Dudin tewaskan Gukesh dalam pusingan terakhir Olimpiad",
+          "body": "Dalam pusingan terakhir Olimpiad Catur FIDE ke-46 di Samarkand, GM Gleb Dudin (Hungary, 2560) menewaskan GM Gukesh D (India, 2703) dalam 59 langkah.\n\nStockfish sudah menilai Putih jelas mendahului (+2,27) sebelum 30...g4, yang dimainkan dengan baki 3:22 pada jam Hitam, dan menang (+2,90) selepasnya. Enjin mahukan 30...Bg7; jawapan terbaiknya kepada langkah yang dimainkan, 31.h4, tiba serta-merta.\n\nHungary dan India seri 2–2, dengan kemenangan Arjun Erigaisi ke atas Peter Leko untuk India. Mengikut kiraan permainan yang disiarkan, India menamatkan saingan dengan 18 mata perlawanan, sama dengan Jerman dan dua di belakang Uzbekistan.\n\nMain semula langkah demi langkah, kemudian cuba 30...Bg7 menentang enjin."
+        },
+        "nl": {
+          "headline": "143 ratingpunten lager en toch: Dudin verslaat Gukesh in de laatste ronde van de Olympiade",
+          "body": "GM Gleb Dudin (Hongarije, 2560) versloeg GM Gukesh D (India, 2703) in 59 zetten in de laatste ronde van de 46e FIDE Schaakolympiade in Samarkand.\n\nStockfish zag wit al voor 30...g4 duidelijk beter (+2,27); de zet kwam met 3:22 op de klok van zwart, en daarna stond wit gewonnen (+2,90). De engine wilde 30...Bg7; het beste antwoord op de gespeelde zet, 31.h4, kwam meteen.\n\nHongarije en India speelden 2–2, met een zege van Arjun Erigaisi op Peter Leko voor India. India eindigt met 18 matchpunten, gelijk met Duitsland en twee achter Oezbekistan, geteld uit de uitgezonden partijen.\n\nSpeel de partij zet voor zet na en probeer dan 30...Bg7 tegen de engine."
+        },
+        "no": {
+          "headline": "143 ratingpoeng lavere og likevel: Dudin slår Gukesh i olympiadens siste runde",
+          "body": "GM Gleb Dudin (Ungarn, 2560) slo GM Gukesh D (India, 2703) på 59 trekk i siste runde av den 46. FIDE-sjakkolympiaden i Samarkand.\n\nStockfish så hvit klart bedre allerede før 30...g4 (+2,27); trekket kom med 3:22 igjen på svarts klokke, og etterpå sto hvit til gevinst (+2,90). Motoren ville ha 30...Bg7; det beste svaret på trekket som ble spilt, 31.h4, kom med en gang.\n\nUngarn og India spilte 2–2, med seier til Arjun Erigaisi mot Peter Leko for India. India ender på 18 matchpoeng, likt med Tyskland og to bak Usbekistan, talt fra de sendte partiene.\n\nSpill av partiet trekk for trekk, og prøv så 30...Bg7 mot motoren."
+        },
+        "pl": {
+          "headline": "143 punkty rankingu mniej, a jednak: Dudin pokonuje Gukesh D w ostatniej rundzie olimpiady",
+          "body": "GM Gleb Dudin (Węgry, 2560) pokonuje GM Gukesh D (Indie, 2703) w 59 ruchach w ostatniej rundzie 46. Olimpiady Szachowej FIDE w Samarkandzie.\n\nStockfish już przed 30...g4 widział wyraźną przewagę białych (+2,27); ruch padł przy 3:22 na zegarze czarnych, a po nim białe mają wygraną (+2,90). Silnik chciał 30...Bg7; jego najlepsza odpowiedź na zagrany ruch, 31.h4, padła od razu.\n\nWęgry i Indie remisują 2–2 – dla Indii wygrywa Arjun Erigaisi w partii z Peter Leko. Indie kończą z 18 punktami meczowymi, na równi z Niemcami i dwa za Uzbekistanem, według zliczenia transmitowanych partii.\n\nOdtwórz partię ruch po ruchu, potem spróbuj 30...Bg7 przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "143 pontos de rating a menos, e mesmo assim: Dudin vence Gukesh na última rodada da Olimpíada",
+          "body": "GM Gleb Dudin (Hungria, 2560) venceu GM Gukesh D (Índia, 2703) em 59 lances na última rodada da 46ª Olimpíada de Xadrez da FIDE em Samarcanda.\n\nO Stockfish já dava clara vantagem às brancas (+2,27) antes de 30...g4, jogado com 3:22 no relógio das pretas, e posição vencedora (+2,90) depois. O motor queria 30...Bg7; sua melhor resposta ao lance jogado, 31.h4, veio na hora.\n\nHungria e Índia empataram em 2–2, com Arjun Erigaisi vencendo Peter Leko pela Índia. A Índia termina com 18 pontos de match, empatada com a Alemanha e a dois do Uzbequistão, pela contagem das partidas transmitidas.\n\nReveja lance a lance e depois tente 30...Bg7 contra o motor."
+        },
+        "ro": {
+          "headline": "Cu 143 de puncte de rating mai puțin, și totuși: Dudin câștigă contra Gukesh în ultima rundă a Olimpiadei",
+          "body": "GM Gleb Dudin (Ungaria, 2560) a câștigat contra GM Gukesh D (India, 2703) în 59 de mutări, în ultima rundă a celei de-a 46-a Olimpiade de Șah FIDE, la Samarkand.\n\nStockfish vedea deja un avantaj clar pentru Alb (+2,27) înainte de 30...g4, jucată cu 3:22 pe ceasul Negrului, iar după ea o poziție câștigătoare (+2,90). Motorul voia 30...Bg7; cel mai bun răspuns al său la mutarea jucată, 31.h4, a venit imediat.\n\nUngaria și India au remizat 2–2, cu Arjun Erigaisi câștigând contra Peter Leko pentru India. India încheie cu 18 puncte de meci, la egalitate cu Germania și la două puncte în urma Uzbekistanului, după numărătoarea partidelor transmise.\n\nRevezi-o mutare cu mutare, apoi încearcă 30...Bg7 contra motorului."
+        },
+        "ru": {
+          "headline": "На 143 пункта ниже по рейтингу — и победа: Dudin обыгрывает Gukesh в последнем туре олимпиады",
+          "body": "GM Gleb Dudin (Венгрия, 2560) обыгрывает GM Gukesh D (Индия, 2703) за 59 ходов в последнем туре 46-й шахматной олимпиады ФИДЕ в Самарканде.\n\nStockfish уже до 30...g4 давал белым явный перевес (+2,27); ход сделан с 3:22 на часах чёрных, и после него у белых выигрыш (+2,90). Движок хотел 30...Bg7; его лучший ответ на сделанный ход, 31.h4, последовал сразу.\n\nВенгрия и Индия сыграли вничью 2–2: за Индию Arjun Erigaisi обыгрывает Peter Leko. Индия завершает олимпиаду с 18 командными очками — наравне с Германией и на два очка позади Узбекистана, по подсчёту транслировавшихся партий.\n\nПосмотрите партию ход за ходом, а затем попробуйте 30...Bg7 против движка."
+        },
+        "sv": {
+          "headline": "143 ratingpoäng lägre och ändå: Dudin besegrar Gukesh i olympiadens sista rond",
+          "body": "GM Gleb Dudin (Ungern, 2560) besegrade GM Gukesh D (Indien, 2703) på 59 drag i sista ronden av den 46:e FIDE-schackolympiaden i Samarkand.\n\nStockfish såg vit tydligt bättre redan före 30...g4 (+2,27); draget kom med 3:22 kvar på svarts klocka, och efteråt stod vit på vinst (+2,90). Motorn ville ha 30...Bg7; dess bästa svar på det spelade draget, 31.h4, kom direkt.\n\nUngern och Indien spelade 2–2, med seger för Arjun Erigaisi mot Peter Leko för Indien. Indien slutar på 18 matchpoäng, lika med Tyskland och två bakom Uzbekistan, räknat på de sända partierna.\n\nSpela upp partiet drag för drag och prova sedan 30...Bg7 mot motorn."
+        },
+        "th": {
+          "headline": "เรตติ้งต่ำกว่า 143 แต่ชนะ: Dudin ชนะ Gukesh ในรอบสุดท้ายของโอลิมปิก",
+          "body": "ในรอบสุดท้ายของหมากรุกโอลิมปิก FIDE ครั้งที่ 46 ที่ซามาร์คันด์ GM Gleb Dudin (ฮังการี, 2560) ชนะ GM Gukesh D (อินเดีย, 2703) ใน 59 ตา\n\nStockfish มองว่าฝ่ายขาวได้เปรียบชัดเจนตั้งแต่ก่อน 30...g4 (+2.27) ตานี้เดินตอนที่นาฬิกาฝ่ายดำเหลือ 3:22 และหลังจากนั้นฝ่ายขาวอยู่ในสถานะชนะ (+2.90) เอนจินต้องการ 30...Bg7 ส่วนการตอบที่ดีที่สุดต่อตาที่เดิน คือ 31.h4 มาทันที\n\nฮังการีกับอินเดียเสมอกัน 2–2 โดยฝ่ายอินเดีย Arjun Erigaisi ชนะ Peter Leko นับจากเกมที่ถ่ายทอด อินเดียจบด้วย 18 แต้มแมตช์ เท่ากับเยอรมนี และตามหลังอุซเบกิสถาน 2 แต้ม\n\nดูเกมทีละตา แล้วลอง 30...Bg7 กับเอนจิน"
+        },
+        "tr": {
+          "headline": "143 puan düşük reytingle bile: Dudin, olimpiyatın son turunda Gukesh'i yendi",
+          "body": "GM Gleb Dudin (Macaristan, 2560), 46. FIDE Satranç Olimpiyatı'nın Semerkant'taki son turunda GM Gukesh D'yi (Hindistan, 2703) 59 hamlede yendi.\n\nStockfish, 30...g4'ten önce beyazı zaten açık farkla üstün görüyordu (+2,27); hamle siyahın saatinde 3:22 kala oynandı ve sonrasında beyaz kazanan konumdaydı (+2,90). Motor 30...Bg7 istiyordu; oynanan hamleye en iyi yanıtı olan 31.h4 hemen geldi.\n\nMacaristan ile Hindistan 2–2 berabere kaldı; Hindistan adına Arjun Erigaisi, Peter Leko'yu yendi. Hindistan 18 maç puanıyla bitiriyor: Almanya ile eşit, Özbekistan'ın iki puan gerisinde, yayınlanan oyunlara göre sayıldığında.\n\nOyunu hamle hamle izle, sonra motora karşı 30...Bg7'yi dene."
+        },
+        "vi": {
+          "headline": "Kém 143 điểm hệ số vẫn thắng: Dudin hạ Gukesh ở vòng cuối Olympiad",
+          "body": "Ở vòng cuối Olympiad Cờ vua FIDE lần thứ 46 tại Samarkand, GM Gleb Dudin (Hungary, 2560) thắng GM Gukesh D (Ấn Độ, 2703) sau 59 nước.\n\nStockfish đã thấy Trắng ưu thế rõ (+2,27) từ trước 30...g4; nước này được đi khi đồng hồ Đen còn 3:22, và sau đó Trắng ở thế thắng (+2,90). Engine muốn 30...Bg7; nước đáp tốt nhất của nó với nước đã đi, 31.h4, đến ngay lập tức.\n\nHungary và Ấn Độ hòa 2–2, bên phía Ấn Độ Arjun Erigaisi thắng Peter Leko. Theo số ván được phát sóng, Ấn Độ kết thúc với 18 điểm trận, bằng Đức và kém Uzbekistan 2 điểm.\n\nXem lại từng nước, rồi thử 30...Bg7 với engine."
+        },
+        "zh-Hans": {
+          "headline": "等级分低143分照样赢：Dudin在奥林匹克最后一轮击败Gukesh",
+          "body": "在撒马尔罕举行的第46届FIDE国际象棋奥林匹克最后一轮中，GM Gleb Dudin（匈牙利，2560）用59步击败了GM Gukesh D（印度，2703）。\n\n在30...g4之前，Stockfish就已认为白方明显占优（+2.27）；这步棋是在黑方钟上剩3:22时走出的，之后白方进入胜势（+2.90）。引擎想走的是30...Bg7；它对实战着法的最佳应着31.h4随即走出。\n\n匈牙利与印度战成2–2，印度方面Arjun Erigaisi战胜了Peter Leko。按转播对局统计，印度以18个团体分结束比赛，与德国同分，落后乌兹别克斯坦2分。\n\n一步一步回放这盘棋，然后对着引擎试试30...Bg7。"
+        },
+        "zh-Hant": {
+          "headline": "等級分低143分照樣贏：Dudin在奧林匹克最後一輪擊敗Gukesh",
+          "body": "在撒馬爾罕舉行的第46屆FIDE西洋棋奧林匹克最後一輪中，GM Gleb Dudin（匈牙利，2560）以59步擊敗了GM Gukesh D（印度，2703）。\n\n在30...g4之前，Stockfish就已認為白方明顯佔優（+2.27）；這步棋是在黑方鐘上剩3:22時走出的，之後白方進入勝勢（+2.90）。引擎想走的是30...Bg7；它對實戰著法的最佳應著31.h4隨即走出。\n\n匈牙利與印度戰成2–2，印度方面Arjun Erigaisi戰勝了Peter Leko。按轉播對局統計，印度以18個團體分結束比賽，與德國同分，落後烏茲別克2分。\n\n一步一步回放這盤棋，然後對著引擎試試30...Bg7。"
+        },
+        "bg": {
+          "headline": "С 143 точки по-нисък рейтинг, Dudin побеждава Gukesh в последния кръг на олимпиадата",
+          "body": "GM Gleb Dudin (Унгария, 2560) победи GM Gukesh D (Индия, 2703) за 59 хода в последния кръг на 46-ата шахматна олимпиада на ФИДЕ в Самарканд.\n\nStockfish вече даваше ясно предимство на белите (+2,27) преди 30...g4, изигран с 3:22 на часовника на черните, а след него — печеливша позиция (+2,90). Енджинът искаше 30...Bg7; най-добрият му отговор на изиграния ход, 31.h4, дойде веднага.\n\nУнгария и Индия завършиха мача 2–2, като Arjun Erigaisi победи Peter Leko за Индия. Индия завършва с 18 мачови точки — колкото Германия и две по-малко от Узбекистан, според преброяването на предаваните партии.\n\nПреиграйте партията ход по ход, после опитайте 30...Bg7 срещу енджина."
+        }
+      },
+      "fen": "r4bk1/p2r4/2pNbq2/N1P1p2p/4P1p1/P1Q4P/5PP1/1R1R2K1 w - - 0 31",
+      "last": {
+        "from": "g5",
+        "to": "g4"
+      },
+      "url": "https://brasspawn.com/today/2026-09-27-dudin-gukesh-olympiad-r11",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-11/QJSVWmNu/IHDkac6V"
+      },
+      "updatedAt": "2026-09-27T13:06:31.165Z"
+    },
+    {
+      "id": "2026-09-27-leko-erigaisi-olympiad-r11",
+      "status": "approved",
+      "date": "2026-09-27",
+      "rank": 3,
+      "weight": 909,
+      "event": {
+        "name": "46th FIDE Chess Olympiad Samarkand 2026",
+        "short": "Olympiad",
+        "section": "Open",
+        "round": 11,
+        "location": "Samarkand, Uzbekistan",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-11/QJSVWmNu"
+      },
+      "white": {
+        "name": "Peter Leko",
+        "short": "Leko",
+        "title": "GM",
+        "elo": 2676,
+        "team": "Hungary"
+      },
+      "black": {
+        "name": "Arjun Erigaisi",
+        "short": "Erigaisi",
+        "title": "GM",
+        "elo": 2759,
+        "team": "India"
+      },
+      "result": "0-1",
+      "opening": {
+        "eco": "C64",
+        "name": "Ruy Lopez: Classical Variation"
+      },
+      "moves": "e4 e5 Nf3 Nc6 Bb5 Bc5 O-O d6 c3 a6 Ba4 Bg4 h3 Bh5 d3 Ne7 Be3 O-O Nbd2 Kh8 Qe2 f6 Rad1 Ba7 Bxa7 Rxa7 Qe3 Ra8 Bxc6 Nxc6 c4 Qd7 g4 Bf7 d4 h5 d5 Ne7 Nh2 Ng6 b3 Nf4 Nb1 g5 Nc3 Kg7 Ne2 hxg4 hxg4 Rh8 Nxf4 gxf4 Qe2 c6 f3 Rh3 Rf2 Qc7 Rg2 Rah8 Qf2 cxd5 cxd5 Kg6 Qc2 Qb6+ Qf2 Qa5 Rc1 Kg5 Rc2 Qb5 Qe2 Qb6+ Qf2 Qe3 Re2 Qc1+ Re1 Qc3 Re2 Be8 Rc2 Qe3 Re2 Qd3 Rd2 Qb5 Rc2 Bd7 Rc3 Qb4 Rc4 Qa5 Rc2 Bb5 Rc1 R3h7 Kh1 Qa3 Qd2 a5 Kg1 Ba6 Qc3 b6 Qb2 Qb4 Qd2 Qb5 Qd1 a4 bxa4 Qb4 Rf2 Qa3 Kh1 Qe3 Rcc2 Rh3 Qc1 Bd3 Rcd2 Rxh2+ Rxh2 Qxf3+ Kg1 Qe3+",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 115,
+        "played": "Rf2",
+        "better": "Rc6",
+        "reply": "Qa3",
+        "replyPlayed": true,
+        "before": {
+          "cp": -165,
+          "mate": null
+        },
+        "after": {
+          "cp": -426,
+          "mate": null
+        },
+        "clock": 60
+      },
+      "headline": "A minute on the clock, one move: Erigaisi beats Leko and India level the match",
+      "body": "GM Arjun Erigaisi (India, 2759) beat GM Peter Leko (Hungary, 2676) with Black in 64 moves in the last round of the 46th FIDE Chess Olympiad in Samarkand.\n\nThe game turned on 58.Rf2, played with a minute left on White's clock. Stockfish had Black clearly better before it (−1.65) and winning after it (−4.26). It wanted 58.Rc6, and 58...Qa3, its best reply, came straight back.\n\nIn the same match Gleb Dudin beat Gukesh D, and India and Hungary finished 2–2.\n\nReplay it, then try 58.Rc6 against the engine — with all the time you want.",
+      "words": {
+        "ar": {
+          "headline": "دقيقة على الساعة ونقلة واحدة: فوز Erigaisi على Leko والهند تعادل المباراة",
+          "body": "فوز GM Arjun Erigaisi (الهند، 2759) على GM Peter Leko (المجر، 2676) بالقطع السوداء في 64 نقلة، في الجولة الأخيرة من أولمبياد الشطرنج السادس والأربعين لـFIDE في سمرقند.\n\nانقلب الدور مع ⁨58.Rf2⁩، التي لُعبت وفي ساعة الأبيض دقيقة واحدة. كان Stockfish يرى أفضلية واضحة للأسود قبلها (⁨−1.65⁩) ووضعًا رابحًا بعدها (⁨−4.26⁩). أراد ⁨58.Rc6⁩، وجاء ⁨58...Qa3⁩، أفضل رد، على الفور.\n\nوفي المباراة نفسها كان هناك فوز لـGleb Dudin على Gukesh D، وانتهت مباراة الهند والمجر ⁨2–2⁩.\n\nأعد عرضه، ثم جرّب ⁨58.Rc6⁩ ضد المحرك — بكل الوقت الذي تريده."
+        },
+        "cs": {
+          "headline": "Minuta na hodinách, jeden tah: Erigaisi poráží Leko a Indie vyrovnává zápas",
+          "body": "GM Arjun Erigaisi (Indie, 2759) poráží černými GM Peter Leko (Maďarsko, 2676) v 64 tazích v posledním kole 46. šachové olympiády FIDE v Samarkandu.\n\nPartie se láme tahem 58.Rf2, zahraným s minutou na hodinách bílého. Stockfish viděl předtím jasnou výhodu černého (−1,65) a potom výhru (−4,26). Chtěl 58.Rc6 a 58...Qa3, jeho nejlepší odpověď, přišla hned.\n\nVe stejném zápase Gleb Dudin poráží Gukesh D a Indie s Maďarskem remizují 2–2.\n\nPřehraj si ji a pak zkus 58.Rc6 proti enginu – s tolika časem, kolik chceš."
+        },
+        "da": {
+          "headline": "Ét minut på uret, ét træk: Erigaisi slår Leko, og Indien udligner matchen",
+          "body": "GM Arjun Erigaisi (Indien, 2759) slog GM Peter Leko (Ungarn, 2676) med sort i 64 træk i sidste runde af den 46. FIDE-skakolympiade i Samarkand.\n\nPartiet vendte med 58.Rf2, spillet med ét minut tilbage på hvids ur. Stockfish så sort klart bedre før (−1,65) og til gevinst efter (−4,26). Motoren ville have 58.Rc6, og 58...Qa3, dens bedste svar, fulgte med det samme.\n\nI samme match slog Gleb Dudin Gukesh D, og Indien og Ungarn endte 2–2.\n\nAfspil det, og prøv så 58.Rc6 mod motoren – med al den tid, du vil."
+        },
+        "de": {
+          "headline": "Eine Minute auf der Uhr, ein Zug: Erigaisi schlägt Leko und Indien gleicht aus",
+          "body": "GM Arjun Erigaisi (Indien, 2759) hat in der letzten Runde der 46. FIDE-Schacholympiade in Samarkand mit Schwarz GM Peter Leko (Ungarn, 2676) in 64 Zügen geschlagen.\n\nDie Partie kippte mit 58.Rf2, gespielt mit einer Minute auf der Uhr von Weiß. Stockfish sah Schwarz davor klar besser (−1,65) und danach auf Gewinn (−4,26). Die Engine wollte 58.Rc6, und 58...Qa3, ihre beste Antwort, kam sofort.\n\nIm selben Kampf schlug Gleb Dudin Gukesh D; Indien und Ungarn trennten sich 2:2.\n\nNachspielen und dann 58.Rc6 gegen die Engine probieren – mit so viel Zeit, wie du willst."
+        },
+        "el": {
+          "headline": "Ένα λεπτό στο ρολόι, μία κίνηση: Erigaisi νικά Leko και η Ινδία ισοφαρίζει",
+          "body": "GM Arjun Erigaisi (Ινδία, 2759): νίκη με τα μαύρα επί GM Peter Leko (Ουγγαρία, 2676) σε 64 κινήσεις, στον τελευταίο γύρο της 46ης Σκακιστικής Ολυμπιάδας της FIDE στη Σαμαρκάνδη.\n\nΗ παρτίδα γύρισε με το 58.Rf2, που παίχτηκε με ένα λεπτό στο ρολόι των λευκών. Το Stockfish έβλεπε καθαρό πλεονέκτημα των μαύρων πριν (−1,65) και κερδισμένη θέση μετά (−4,26). Ήθελε 58.Rc6, και το 58...Qa3, η καλύτερη απάντηση, ήρθε αμέσως.\n\nΣτον ίδιο αγώνα, νίκη από Gleb Dudin επί Gukesh D, και Ινδία και Ουγγαρία έφεραν 2–2.\n\nΞαναδές την και μετά δοκίμασε το 58.Rc6 απέναντι στη μηχανή — με όσο χρόνο θέλεις."
+        },
+        "es": {
+          "headline": "Un minuto en el reloj, una jugada: Erigaisi vence a Leko e India iguala el match",
+          "body": "GM Arjun Erigaisi (India, 2759) venció a GM Peter Leko (Hungría, 2676) con negras en 64 jugadas en la última ronda de la 46.ª Olimpiada de Ajedrez de la FIDE en Samarcanda.\n\nLa partida cambió con 58.Rf2, jugada con un minuto en el reloj de las blancas. Stockfish veía clara ventaja de las negras antes (−1,65) y posición ganadora después (−4,26). Quería 58.Rc6, y 58...Qa3, su mejor respuesta, llegó enseguida.\n\nEn el mismo match, Gleb Dudin venció a Gukesh D, e India y Hungría empataron 2–2.\n\nRevívela y luego prueba 58.Rc6 contra el motor, con todo el tiempo que quieras."
+        },
+        "fi": {
+          "headline": "Minuutti kellossa, yksi siirto: Erigaisi voittaa Lekon ja Intia tasoittaa ottelun",
+          "body": "GM Arjun Erigaisi (Intia, 2759) voitti GM Peter Lekon (Unkari, 2676) mustilla 64 siirrossa 46. FIDE:n shakkiolympialaisten viimeisellä kierroksella Samarkandissa.\n\nPeli kääntyi siirtoon 58.Rf2, joka pelattiin valkean kellossa minuutti jäljellä. Stockfishin mukaan mustalla oli selvä etu ennen sitä (−1,65) ja voittoasema sen jälkeen (−4,26). Moottori halusi 58.Rc6, ja 58...Qa3, sen paras vastaus, tuli heti.\n\nSamassa ottelussa Gleb Dudin voitti Gukesh D:n, ja Intia ja Unkari päättivät 2–2.\n\nToista peli ja kokeile sitten 58.Rc6 moottoria vastaan – niin pitkällä ajalla kuin haluat."
+        },
+        "fr": {
+          "headline": "Une minute à la pendule, un coup : Erigaisi bat Leko et l’Inde égalise",
+          "body": "GM Arjun Erigaisi (Inde, 2759) a battu GM Peter Leko (Hongrie, 2676) avec les Noirs en 64 coups lors de la dernière ronde de la 46e Olympiade d’échecs FIDE à Samarcande.\n\nLa partie a basculé sur 58.Rf2, joué avec une minute à la pendule des Blancs. Stockfish voyait les Noirs nettement mieux avant (−1,65) et gagnants après (−4,26). Il voulait 58.Rc6, et 58...Qa3, sa meilleure réponse, a suivi aussitôt.\n\nDans le même match, Gleb Dudin a battu Gukesh D, et l’Inde et la Hongrie ont fait 2–2.\n\nRejouez-la, puis essayez 58.Rc6 contre le moteur — avec tout le temps que vous voulez."
+        },
+        "he": {
+          "headline": "דקה בשעון, מסע אחד: ניצחון ל־Erigaisi על Leko, והודו משווה את המפגש",
+          "body": "ניצחון ל־GM Arjun Erigaisi (הודו, 2759) על GM Peter Leko (הונגריה, 2676) עם הכלים השחורים ב־64 מסעים, בסיבוב האחרון של אולימפיאדת השחמט ה־46 של FIDE בסמרקנד.\n\nהמשחק התהפך ב־⁨58.Rf2⁩, שנעשה עם דקה בשעון של הלבן. לפי Stockfish, לשחור היה יתרון ברור לפניו (⁨−1.65⁩) ועמדה מנצחת אחריו (⁨−4.26⁩). המנוע רצה ⁨58.Rc6⁩, ו־⁨58...Qa3⁩, התשובה הטובה ביותר, הגיעה מיד.\n\nבאותו מפגש נרשם ניצחון ל־Gleb Dudin על Gukesh D, והודו והונגריה סיימו ⁨2–2⁩.\n\nצפו בו, ואז נסו את ⁨58.Rc6⁩ מול המנוע — עם כל הזמן שתרצו."
+        },
+        "hi": {
+          "headline": "घड़ी पर एक मिनट, एक चाल: Erigaisi ने Leko को हराया और भारत ने मुक़ाबला बराबर किया",
+          "body": "समरकंद में 46वें FIDE शतरंज ओलंपियाड के आख़िरी राउंड में GM Arjun Erigaisi (भारत, 2759) ने काले मोहरों से GM Peter Leko (हंगरी, 2676) को 64 चालों में हराया।\n\nबाज़ी 58.Rf2 पर पलटी, जो सफ़ेद की घड़ी में एक मिनट बाक़ी रहते चली गई। Stockfish के अनुसार इससे पहले काले को साफ़ बढ़त थी (−1.65) और इसके बाद जीत की स्थिति (−4.26)। इंजन 58.Rc6 चाहता था, और उसका सबसे अच्छा जवाब, 58...Qa3, तुरंत आया।\n\nउसी मुक़ाबले में Gleb Dudin ने Gukesh D को हराया, और भारत और हंगरी का मुक़ाबला 2–2 रहा।\n\nबाज़ी देखें, फिर इंजन के ख़िलाफ़ 58.Rc6 आज़माएँ — जितना चाहें उतने समय के साथ।"
+        },
+        "hu": {
+          "headline": "Egy perc az órán, egy lépés: Erigaisi legyőzi Lekót, és India kiegyenlít",
+          "body": "GM Arjun Erigaisi (India, 2759) sötéttel 64 lépésben legyőzte GM Peter Lekót (Magyarország, 2676) a 46. FIDE sakkolimpia utolsó fordulójában Szamarkandban.\n\nA játszma 58.Rf2-vel fordult meg, amely világos óráján egy perccel jött. A Stockfish szerint előtte sötét egyértelmű előnyben volt (−1,65), utána nyerő állásban (−4,26). A motor 58.Rc6-ot akarta, és 58...Qa3, a legjobb válasza, azonnal jött.\n\nUgyanebben a mérkőzésben Gleb Dudin legyőzte Gukesh D-t, és India és Magyarország 2–2-vel zárt.\n\nJátszd vissza, aztán próbáld ki 58.Rc6-ot a motor ellen – annyi idővel, amennyit csak akarsz."
+        },
+        "id": {
+          "headline": "Satu menit di jam, satu langkah: Erigaisi kalahkan Leko dan India menyamakan kedudukan",
+          "body": "Di babak terakhir Olimpiade Catur FIDE ke-46 di Samarkand, GM Arjun Erigaisi (India, 2759) mengalahkan GM Peter Leko (Hungaria, 2676) dengan bidak hitam dalam 64 langkah.\n\nPartai berbalik pada 58.Rf2, yang dimainkan dengan sisa satu menit di jam Putih. Stockfish menilai Hitam unggul jelas sebelumnya (−1,65) dan menang sesudahnya (−4,26). Mesin menginginkan 58.Rc6, dan 58...Qa3, jawaban terbaiknya, langsung datang.\n\nDi pertandingan yang sama, Gleb Dudin mengalahkan Gukesh D, dan India serta Hungaria berakhir 2–2.\n\nPutar ulang, lalu coba 58.Rc6 melawan mesin — dengan waktu sebanyak yang kamu mau."
+        },
+        "it": {
+          "headline": "Un minuto sull’orologio, una mossa: Erigaisi batte Leko e l’India pareggia il match",
+          "body": "GM Arjun Erigaisi (India, 2759) ha battuto GM Peter Leko (Ungheria, 2676) con il Nero in 64 mosse nell’ultimo turno della 46ª Olimpiade degli scacchi FIDE a Samarcanda.\n\nLa partita è girata su 58.Rf2, giocata con un minuto sull’orologio del Bianco. Stockfish vedeva il Nero chiaramente meglio prima (−1,65) e vincente dopo (−4,26). Voleva 58.Rc6, e 58...Qa3, la sua migliore risposta, è arrivata subito.\n\nNello stesso match Gleb Dudin ha battuto Gukesh D, e India e Ungheria hanno chiuso 2–2.\n\nRivedila, poi prova 58.Rc6 contro il motore, con tutto il tempo che vuoi."
+        },
+        "ja": {
+          "headline": "残り1分、一手で決着：ErigaisiがLekoに勝ち、インドがマッチを同点に",
+          "body": "サマルカンドで行われた第46回FIDEチェス・オリンピアード最終ラウンドで、GM Arjun Erigaisi（インド、2759）が黒番でGM Peter Leko（ハンガリー、2676）に64手で勝ちました。\n\n流れが変わったのは58.Rf2。白の残り時間1分で指された手です。Stockfishはその前を黒の明確な優勢（−1.65）、その後を黒の勝勢（−4.26）と評価。エンジンが望んだのは58.Rc6で、最善の応手58...Qa3がすぐに指されました。\n\n同じマッチでGleb DudinがGukesh Dに勝ち、インド対ハンガリーは2–2でした。\n\n再生してから、好きなだけ時間をかけてエンジン相手に58.Rc6を試してみましょう。"
+        },
+        "ko": {
+          "headline": "남은 시간 1분, 한 수: Erigaisi가 Leko를 꺾고 인도가 매치를 동점으로",
+          "body": "사마르칸트에서 열린 제46회 FIDE 체스 올림피아드 마지막 라운드에서 GM Arjun Erigaisi(인도, 2759)가 흑으로 GM Peter Leko(헝가리, 2676)를 64수 만에 이겼습니다.\n\n흐름을 바꾼 수는 백의 남은 시간 1분에 둔 58.Rf2였습니다. Stockfish는 그 전을 흑의 뚜렷한 우세(−1.65), 그 후를 흑이 이기는 형세(−4.26)로 보았습니다. 엔진은 58.Rc6를 원했고, 최선의 응수 58...Qa3가 곧바로 나왔습니다.\n\n같은 매치에서 Gleb Dudin이 Gukesh D를 이겼고, 인도와 헝가리는 2–2로 끝났습니다.\n\n다시 본 뒤, 원하는 만큼 시간을 들여 엔진을 상대로 58.Rc6를 두어 보세요."
+        },
+        "ms": {
+          "headline": "Seminit pada jam, satu langkah: Erigaisi tewaskan Leko dan India menyamakan kedudukan",
+          "body": "Dalam pusingan terakhir Olimpiad Catur FIDE ke-46 di Samarkand, GM Arjun Erigaisi (India, 2759) menewaskan GM Peter Leko (Hungary, 2676) dengan buah hitam dalam 64 langkah.\n\nPermainan berubah pada 58.Rf2, yang dimainkan dengan baki seminit pada jam Putih. Stockfish menilai Hitam jelas mendahului sebelumnya (−1,65) dan menang selepasnya (−4,26). Enjin mahukan 58.Rc6, dan 58...Qa3, jawapan terbaiknya, tiba serta-merta.\n\nDalam perlawanan yang sama, Gleb Dudin menewaskan Gukesh D, dan India serta Hungary berkesudahan 2–2.\n\nMain semula, kemudian cuba 58.Rc6 menentang enjin — dengan seberapa banyak masa yang anda mahu."
+        },
+        "nl": {
+          "headline": "Eén minuut op de klok, één zet: Erigaisi verslaat Leko en India trekt de match gelijk",
+          "body": "GM Arjun Erigaisi (India, 2759) versloeg GM Peter Leko (Hongarije, 2676) met zwart in 64 zetten in de laatste ronde van de 46e FIDE Schaakolympiade in Samarkand.\n\nDe partij kantelde met 58.Rf2, gespeeld met één minuut op de klok van wit. Stockfish zag zwart ervoor duidelijk beter (−1,65) en erna gewonnen (−4,26). De engine wilde 58.Rc6, en 58...Qa3, het beste antwoord, volgde meteen.\n\nIn dezelfde match versloeg Gleb Dudin Gukesh D, en India en Hongarije eindigden op 2–2.\n\nSpeel hem na en probeer dan 58.Rc6 tegen de engine – met alle tijd die je wilt."
+        },
+        "no": {
+          "headline": "Ett minutt på klokka, ett trekk: Erigaisi slår Leko, og India utligner matchen",
+          "body": "GM Arjun Erigaisi (India, 2759) slo GM Peter Leko (Ungarn, 2676) med svart på 64 trekk i siste runde av den 46. FIDE-sjakkolympiaden i Samarkand.\n\nPartiet snudde med 58.Rf2, spilt med ett minutt igjen på hvits klokke. Stockfish så svart klart bedre før (−1,65) og til gevinst etter (−4,26). Motoren ville ha 58.Rc6, og 58...Qa3, det beste svaret, fulgte med en gang.\n\nI samme match slo Gleb Dudin Gukesh D, og India og Ungarn endte 2–2.\n\nSpill det av, og prøv så 58.Rc6 mot motoren – med all tiden du vil."
+        },
+        "pl": {
+          "headline": "Minuta na zegarze, jeden ruch: Erigaisi pokonuje Leko, a Indie wyrównują mecz",
+          "body": "GM Arjun Erigaisi (Indie, 2759) pokonuje czarnymi GM Peter Leko (Węgry, 2676) w 64 ruchach w ostatniej rundzie 46. Olimpiady Szachowej FIDE w Samarkandzie.\n\nPartia odwraca się po 58.Rf2, zagranym przy minucie na zegarze białych. Stockfish widział przed nim wyraźną przewagę czarnych (−1,65), a po nim wygraną (−4,26). Chciał 58.Rc6, a 58...Qa3, jego najlepsza odpowiedź, padła od razu.\n\nW tym samym meczu Gleb Dudin pokonuje Gukesh D i Indie z Węgrami remisują 2–2.\n\nOdtwórz ją, potem spróbuj 58.Rc6 przeciwko silnikowi – z całym czasem, jakiego potrzebujesz."
+        },
+        "pt-BR": {
+          "headline": "Um minuto no relógio, um lance: Erigaisi vence Leko e a Índia empata o match",
+          "body": "GM Arjun Erigaisi (Índia, 2759) venceu GM Peter Leko (Hungria, 2676) de pretas em 64 lances na última rodada da 46ª Olimpíada de Xadrez da FIDE em Samarcanda.\n\nA partida virou em 58.Rf2, jogado com um minuto no relógio das brancas. O Stockfish via clara vantagem das pretas antes (−1,65) e posição vencedora depois (−4,26). Queria 58.Rc6, e 58...Qa3, sua melhor resposta, veio logo em seguida.\n\nNo mesmo match, Gleb Dudin venceu Gukesh D, e Índia e Hungria terminaram em 2–2.\n\nReveja e depois tente 58.Rc6 contra o motor, com todo o tempo que quiser."
+        },
+        "ro": {
+          "headline": "Un minut pe ceas, o mutare: Erigaisi câștigă contra Leko, iar India egalează meciul",
+          "body": "GM Arjun Erigaisi (India, 2759) a câștigat cu negrele contra GM Peter Leko (Ungaria, 2676) în 64 de mutări, în ultima rundă a celei de-a 46-a Olimpiade de Șah FIDE, la Samarkand.\n\nPartida s-a întors la 58.Rf2, jucată cu un minut pe ceasul Albului. Stockfish vedea un avantaj clar al Negrului înainte (−1,65) și o poziție câștigătoare după (−4,26). Voia 58.Rc6, iar 58...Qa3, cel mai bun răspuns, a urmat imediat.\n\nÎn același meci, Gleb Dudin a câștigat contra Gukesh D, iar India și Ungaria au încheiat 2–2.\n\nRevezi-o, apoi încearcă 58.Rc6 contra motorului — cu tot timpul pe care îl vrei."
+        },
+        "ru": {
+          "headline": "Минута на часах, один ход: Erigaisi обыгрывает Leko, и Индия сравнивает счёт в матче",
+          "body": "GM Arjun Erigaisi (Индия, 2759) чёрными обыгрывает GM Peter Leko (Венгрия, 2676) за 64 хода в последнем туре 46-й шахматной олимпиады ФИДЕ в Самарканде.\n\nПерелом — 58.Rf2, ход сделан с одной минутой на часах белых. До него Stockfish давал чёрным явный перевес (−1,65), после — выигрыш (−4,26). Движок хотел 58.Rc6, а 58...Qa3, его лучший ответ, последовал сразу.\n\nВ том же матче Gleb Dudin обыгрывает Gukesh D, и Индия с Венгрией расходятся на 2–2.\n\nПосмотрите партию, а затем попробуйте 58.Rc6 против движка — со всем временем, какое нужно."
+        },
+        "sv": {
+          "headline": "En minut på klockan, ett drag: Erigaisi besegrar Leko och Indien kvitterar matchen",
+          "body": "GM Arjun Erigaisi (Indien, 2759) besegrade GM Peter Leko (Ungern, 2676) med svart på 64 drag i sista ronden av den 46:e FIDE-schackolympiaden i Samarkand.\n\nPartiet vände på 58.Rf2, spelat med en minut kvar på vits klocka. Stockfish såg svart tydligt bättre före (−1,65) och på vinst efter (−4,26). Motorn ville ha 58.Rc6, och 58...Qa3, dess bästa svar, följde direkt.\n\nI samma match besegrade Gleb Dudin Gukesh D, och Indien och Ungern slutade 2–2.\n\nSpela upp det och prova sedan 58.Rc6 mot motorn – med all tid du vill ha."
+        },
+        "th": {
+          "headline": "เวลาเหลือนาทีเดียว ตาเดียว: Erigaisi ชนะ Leko และอินเดียตีเสมอแมตช์",
+          "body": "ในรอบสุดท้ายของหมากรุกโอลิมปิก FIDE ครั้งที่ 46 ที่ซามาร์คันด์ GM Arjun Erigaisi (อินเดีย, 2759) ถือฝ่ายดำชนะ GM Peter Leko (ฮังการี, 2676) ใน 64 ตา\n\nเกมพลิกที่ 58.Rf2 ซึ่งเดินตอนที่นาฬิกาฝ่ายขาวเหลือหนึ่งนาที Stockfish มองว่าก่อนหน้านั้นฝ่ายดำได้เปรียบชัดเจน (−1.65) และหลังจากนั้นอยู่ในสถานะชนะ (−4.26) เอนจินต้องการ 58.Rc6 และการตอบที่ดีที่สุด 58...Qa3 ก็ตามมาทันที\n\nในแมตช์เดียวกัน Gleb Dudin ชนะ Gukesh D และอินเดียกับฮังการีจบที่ 2–2\n\nดูเกม แล้วลอง 58.Rc6 กับเอนจิน โดยใช้เวลาได้เต็มที่"
+        },
+        "tr": {
+          "headline": "Saatte bir dakika, tek hamle: Erigaisi, Leko'yu yendi ve Hindistan maçı eşitledi",
+          "body": "GM Arjun Erigaisi (Hindistan, 2759), 46. FIDE Satranç Olimpiyatı'nın Semerkant'taki son turunda siyah taşlarla GM Peter Leko'yu (Macaristan, 2676) 64 hamlede yendi.\n\nOyun, beyazın saatinde bir dakika kala oynanan 58.Rf2 ile döndü. Stockfish öncesinde siyahı açık farkla üstün (−1,65), sonrasında kazanan konumda (−4,26) görüyordu. Motor 58.Rc6 istiyordu ve en iyi yanıtı olan 58...Qa3 hemen geldi.\n\nAynı maçta Gleb Dudin, Gukesh D'yi yendi ve Hindistan ile Macaristan 2–2 bitirdi.\n\nOyunu izle, sonra motora karşı 58.Rc6'yı dene – istediğin kadar zamanla."
+        },
+        "vi": {
+          "headline": "Còn một phút trên đồng hồ, một nước đi: Erigaisi thắng Leko, Ấn Độ gỡ hòa trận đấu",
+          "body": "Ở vòng cuối Olympiad Cờ vua FIDE lần thứ 46 tại Samarkand, GM Arjun Erigaisi (Ấn Độ, 2759) cầm quân Đen thắng GM Peter Leko (Hungary, 2676) sau 64 nước.\n\nVán cờ đổi chiều ở 58.Rf2, được đi khi đồng hồ Trắng còn một phút. Stockfish thấy Đen ưu thế rõ trước đó (−1,65) và thế thắng sau đó (−4,26). Engine muốn 58.Rc6, và nước đáp tốt nhất 58...Qa3 đến ngay.\n\nTrong cùng trận đấu, Gleb Dudin thắng Gukesh D, và Ấn Độ với Hungary hòa 2–2.\n\nXem lại, rồi thử 58.Rc6 với engine — với bao nhiêu thời gian tùy thích."
+        },
+        "zh-Hans": {
+          "headline": "钟上只剩一分钟，一步定局：Erigaisi击败Leko，印度扳平比分",
+          "body": "在撒马尔罕举行的第46届FIDE国际象棋奥林匹克最后一轮中，GM Arjun Erigaisi（印度，2759）执黑用64步击败了GM Peter Leko（匈牙利，2676）。\n\n转折点是58.Rf2，走于白方钟上仅剩一分钟时。Stockfish认为此前黑方明显占优（−1.65），此后黑方胜势（−4.26）。引擎想走58.Rc6，而最佳应着58...Qa3随即走出。\n\n同一场团体赛中，Gleb Dudin战胜了Gukesh D，印度与匈牙利最终2–2。\n\n回放这盘棋，然后不限时间地对着引擎试试58.Rc6。"
+        },
+        "zh-Hant": {
+          "headline": "鐘上只剩一分鐘，一步定局：Erigaisi擊敗Leko，印度扳平比分",
+          "body": "在撒馬爾罕舉行的第46屆FIDE西洋棋奧林匹克最後一輪中，GM Arjun Erigaisi（印度，2759）執黑以64步擊敗了GM Peter Leko（匈牙利，2676）。\n\n轉折點是58.Rf2，走於白方鐘上僅剩一分鐘時。Stockfish認為此前黑方明顯佔優（−1.65），此後黑方勝勢（−4.26）。引擎想走58.Rc6，而最佳應著58...Qa3隨即走出。\n\n同一場團體賽中，Gleb Dudin戰勝了Gukesh D，印度與匈牙利最終2–2。\n\n回放這盤棋，然後不限時間地對著引擎試試58.Rc6。"
+        },
+        "bg": {
+          "headline": "Минута на часовника, един ход: Erigaisi побеждава Leko и Индия изравнява мача",
+          "body": "GM Arjun Erigaisi (Индия, 2759) победи GM Peter Leko (Унгария, 2676) с черните за 64 хода в последния кръг на 46-ата шахматна олимпиада на ФИДЕ в Самарканд.\n\nПартията се обърна с 58.Rf2, изигран с една минута на часовника на белите. Stockfish даваше ясно предимство на черните преди него (−1,65) и печеливша позиция след него (−4,26). Искаше 58.Rc6, а 58...Qa3, най-добрият отговор, последва веднага.\n\nВ същия мач Gleb Dudin победи Gukesh D и Индия и Унгария завършиха 2–2.\n\nПреиграйте я, после опитайте 58.Rc6 срещу енджина — с колкото време искате."
+        }
+      },
+      "fen": "7r/7r/bp1p1p2/3Pp1k1/Pq2PpP1/5P2/P4R1N/2RQ2K1 b - - 2 58",
+      "last": {
+        "from": "g2",
+        "to": "f2"
+      },
+      "url": "https://brasspawn.com/today/2026-09-27-leko-erigaisi-olympiad-r11",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-11/QJSVWmNu/gMpc4emo"
+      },
+      "updatedAt": "2026-09-27T13:06:45.387Z"
+    },
+    {
+      "id": "2026-09-27-abdisalimov-wei-yi-olympiad-r11",
+      "status": "approved",
+      "date": "2026-09-27",
+      "rank": 4,
+      "weight": 902,
+      "event": {
+        "name": "46th FIDE Chess Olympiad Samarkand 2026",
+        "short": "Olympiad",
+        "section": "Open",
+        "round": 11,
+        "location": "Samarkand, Uzbekistan",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-11/QJSVWmNu"
+      },
+      "white": {
+        "name": "Abdimalik Abdisalimov",
+        "short": "Abdisalimov",
+        "title": "GM",
+        "elo": 2548,
+        "team": "Uzbekistan 2"
+      },
+      "black": {
+        "name": "Wei Yi",
+        "short": "Wei Yi",
+        "title": "GM",
+        "elo": 2752,
+        "team": "China"
+      },
+      "result": "0-1",
+      "opening": {
+        "eco": "D45",
+        "name": "Semi-Slav Defense: Stoltz Variation"
+      },
+      "moves": "c4 e6 Nc3 d5 d4 c6 e3 Nf6 Nf3 Nbd7 Qc2 Bd6 b3 O-O Be2 e5 cxd5 e4 Nxe4 Nxe4 Qxe4 Nf6 Qb1 cxd5 Bd3 Ne4 Bxe4 dxe4 Qxe4 Re8 Qd3 Qa5+ Bd2 Qh5 Ne5 Bxe5 dxe5 Bf5 Qe2 Qg6 f3 Bd3 Qf2 Rac8 e4 Rc2 Qe3 Ba6 Rc1 Rxa2 Kf2 Rd8 Rhd1 h6 Qc3 Qb6+ Kg3 Bf1 Rxf1 Qg6+ Kh3 Qh5+ Kg3 Raxd2 Rg1 Qg5+ Kh3 Kh7 e6 Qh5+ Kg3 R8d3 Qc5 Rxg2+ Kxg2 Qxf3#",
+      "ending": "checkmate",
+      "key": {
+        "kind": "mistake",
+        "ply": 59,
+        "played": "Rxf1",
+        "better": "e6",
+        "reply": "Qg6+",
+        "replyPlayed": true,
+        "before": {
+          "cp": -221,
+          "mate": null
+        },
+        "after": {
+          "cp": -365,
+          "mate": null
+        },
+        "clock": 214
+      },
+      "headline": "Checkmate on f3: Wei Yi ends the Olympiad with a mate in 38 moves",
+      "body": "GM Wei Yi (China, 2752) checkmated GM Abdimalik Abdisalimov (Uzbekistan 2, 2548) in 38 moves in the final round of the 46th FIDE Chess Olympiad in Samarkand. The last move was 38...Qxf3#.\n\nEight moves earlier came 30.Rxf1, played with 3:34 on White's clock: Stockfish had Black clearly better before it (−2.21) and winning after it (−3.65). The engine preferred 30.e6, and 30...Qg6+, its answer to the move played, was the move on the board.\n\nChina won the match 3–1.\n\nReplay the attack move by move, then try 30.e6 against the engine.",
+      "words": {
+        "ar": {
+          "headline": "مات في f3: الأولمبياد ينتهي لـWei Yi بمات في 38 نقلة",
+          "body": "مات من GM Wei Yi (الصين، 2752) على GM Abdimalik Abdisalimov (أوزبكستان 2، 2548) في 38 نقلة، في الجولة الأخيرة من أولمبياد الشطرنج السادس والأربعين لـFIDE في سمرقند. كانت النقلة الأخيرة ⁨38...Qxf3#⁩.\n\nقبل ثماني نقلات جاءت ⁨30.Rxf1⁩، وفي ساعة الأبيض ⁨3:34⁩: كان Stockfish يرى أفضلية واضحة للأسود قبلها (⁨−2.21⁩) ووضعًا رابحًا بعدها (⁨−3.65⁩). فضّل المحرك ⁨30.e6⁩، وكان رده على النقلة التي لُعبت، ⁨30...Qg6+⁩، هو نقلة الدور.\n\nفازت الصين بالمباراة ⁨3–1⁩.\n\nأعد عرض الهجوم نقلة بنقلة، ثم جرّب ⁨30.e6⁩ ضد المحرك."
+        },
+        "cs": {
+          "headline": "Mat na f3: Wei Yi končí olympiádu matem ve 38 tazích",
+          "body": "GM Wei Yi (Čína, 2752) dává mat GM Abdimalik Abdisalimov (Uzbekistán 2, 2548) ve 38 tazích v posledním kole 46. šachové olympiády FIDE v Samarkandu. Poslední tah: 38...Qxf3#.\n\nO osm tahů dřív přišlo 30.Rxf1, s 3:34 na hodinách bílého: Stockfish viděl předtím jasnou výhodu černého (−2,21) a potom výhru (−3,65). Engine dával přednost 30.e6 a jeho odpověď na zahraný tah, 30...Qg6+, přišla v partii.\n\nČína vyhrává zápas 3–1.\n\nPřehraj si útok tah po tahu a pak zkus 30.e6 proti enginu."
+        },
+        "da": {
+          "headline": "Mat på f3: Wei Yi slutter olympiaden med mat i 38 træk",
+          "body": "GM Wei Yi (Kina, 2752) satte GM Abdimalik Abdisalimov (Usbekistan 2, 2548) mat i 38 træk i sidste runde af den 46. FIDE-skakolympiade i Samarkand. Sidste træk var 38...Qxf3#.\n\nOtte træk før kom 30.Rxf1, med 3:34 tilbage på hvids ur: Stockfish så sort klart bedre før (−2,21) og til gevinst efter (−3,65). Motoren foretrak 30.e6, og dens svar på det spillede træk, 30...Qg6+, var trækket i partiet.\n\nKina vandt matchen 3–1.\n\nAfspil angrebet træk for træk, og prøv så 30.e6 mod motoren."
+        },
+        "de": {
+          "headline": "Matt auf f3: Wei Yi beendet die Olympiade mit einem Matt in 38 Zügen",
+          "body": "GM Wei Yi (China, 2752) hat in der letzten Runde der 46. FIDE-Schacholympiade in Samarkand GM Abdimalik Abdisalimov (Usbekistan 2, 2548) in 38 Zügen mattgesetzt. Der letzte Zug war 38...Qxf3#.\n\nAcht Züge zuvor kam 30.Rxf1, gespielt mit 3:34 auf der Uhr von Weiß: Stockfish sah Schwarz davor klar besser (−2,21) und danach auf Gewinn (−3,65). Die Engine zog 30.e6 vor, und ihre Antwort auf den gespielten Zug, 30...Qg6+, war der Zug in der Partie.\n\nChina gewann den Kampf 3:1.\n\nDen Angriff Zug für Zug nachspielen, dann 30.e6 gegen die Engine probieren."
+        },
+        "el": {
+          "headline": "Ματ στο f3: Wei Yi κλείνει την Ολυμπιάδα με ματ σε 38 κινήσεις",
+          "body": "GM Wei Yi (Κίνα, 2752): ματ σε GM Abdimalik Abdisalimov (Ουζμπεκιστάν 2, 2548) σε 38 κινήσεις, στον τελευταίο γύρο της 46ης Σκακιστικής Ολυμπιάδας της FIDE στη Σαμαρκάνδη. Η τελευταία κίνηση ήταν το 38...Qxf3#.\n\nΟκτώ κινήσεις νωρίτερα ήρθε το 30.Rxf1, με 3:34 στο ρολόι των λευκών: το Stockfish έβλεπε καθαρό πλεονέκτημα των μαύρων πριν (−2,21) και κερδισμένη θέση μετά (−3,65). Η μηχανή προτιμούσε το 30.e6, και η απάντησή της στην κίνηση που παίχτηκε, 30...Qg6+, ήταν αυτή της παρτίδας.\n\nΗ Κίνα κέρδισε τον αγώνα 3–1.\n\nΞαναδές την επίθεση κίνηση προς κίνηση και μετά δοκίμασε το 30.e6 απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Mate en f3: Wei Yi cierra la Olimpiada con un mate en 38 jugadas",
+          "body": "GM Wei Yi (China, 2752) dio mate a GM Abdimalik Abdisalimov (Uzbekistán 2, 2548) en 38 jugadas en la última ronda de la 46.ª Olimpiada de Ajedrez de la FIDE en Samarcanda. La última jugada fue 38...Qxf3#.\n\nOcho jugadas antes llegó 30.Rxf1, con 3:34 en el reloj de las blancas: Stockfish veía clara ventaja de las negras antes (−2,21) y posición ganadora después (−3,65). El motor prefería 30.e6, y su respuesta a la jugada hecha, 30...Qg6+, fue la de la partida.\n\nChina ganó el match 3–1.\n\nRevive el ataque jugada a jugada y luego prueba 30.e6 contra el motor."
+        },
+        "fi": {
+          "headline": "Matti f3:een: Wei Yi päättää olympialaiset matilla 38 siirrossa",
+          "body": "GM Wei Yi (Kiina, 2752) teki matin GM Abdimalik Abdisalimoville (Uzbekistan 2, 2548) 38 siirrossa 46. FIDE:n shakkiolympialaisten viimeisellä kierroksella Samarkandissa. Viimeinen siirto oli 38...Qxf3#.\n\nKahdeksan siirtoa aiemmin tuli 30.Rxf1, valkean kellossa 3:34 jäljellä: Stockfishin mukaan mustalla oli selvä etu ennen sitä (−2,21) ja voittoasema sen jälkeen (−3,65). Moottori piti parempana siirtoa 30.e6, ja sen vastaus pelattuun siirtoon, 30...Qg6+, oli pelin siirto.\n\nKiina voitti ottelun 3–1.\n\nToista hyökkäys siirto siirrolta ja kokeile sitten 30.e6 moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Mat en f3 : Wei Yi termine l’Olympiade par un mat en 38 coups",
+          "body": "GM Wei Yi (Chine, 2752) a maté GM Abdimalik Abdisalimov (Ouzbékistan 2, 2548) en 38 coups lors de la dernière ronde de la 46e Olympiade d’échecs FIDE à Samarcande. Le dernier coup : 38...Qxf3#.\n\nHuit coups plus tôt venait 30.Rxf1, joué avec 3:34 à la pendule des Blancs : Stockfish voyait les Noirs nettement mieux avant (−2,21) et gagnants après (−3,65). Le moteur préférait 30.e6, et sa réponse au coup joué, 30...Qg6+, est celle de la partie.\n\nLa Chine a gagné le match 3–1.\n\nRejouez l’attaque coup par coup, puis essayez 30.e6 contre le moteur."
+        },
+        "he": {
+          "headline": "מט ב־f3: סיום האולימפיאדה של Wei Yi במט ב־38 מסעים",
+          "body": "מט של GM Wei Yi (סין, 2752) ל־GM Abdimalik Abdisalimov (אוזבקיסטן 2, 2548) ב־38 מסעים, בסיבוב האחרון של אולימפיאדת השחמט ה־46 של FIDE בסמרקנד. המסע האחרון: ⁨38...Qxf3#⁩.\n\nשמונה מסעים קודם לכן הגיע ⁨30.Rxf1⁩, עם ⁨3:34⁩ בשעון של הלבן: לפי Stockfish, לשחור היה יתרון ברור לפניו (⁨−2.21⁩) ועמדה מנצחת אחריו (⁨−3.65⁩). המנוע העדיף ⁨30.e6⁩, והתשובה שלו למסע שנעשה, ⁨30...Qg6+⁩, היא זו שנעשתה במשחק.\n\nסין ניצחה במפגש ⁨3–1⁩.\n\nצפו בהתקפה מסע אחר מסע, ואז נסו את ⁨30.e6⁩ מול המנוע."
+        },
+        "hi": {
+          "headline": "f3 पर मात: Wei Yi ने ओलंपियाड 38 चालों में मात के साथ ख़त्म किया",
+          "body": "समरकंद में 46वें FIDE शतरंज ओलंपियाड के आख़िरी राउंड में GM Wei Yi (चीन, 2752) ने GM Abdimalik Abdisalimov (उज़्बेकिस्तान 2, 2548) को 38 चालों में मात दी। आख़िरी चाल थी 38...Qxf3#।\n\nआठ चालें पहले 30.Rxf1 आई, सफ़ेद की घड़ी में 3:34 बाक़ी रहते: Stockfish के अनुसार इससे पहले काले को साफ़ बढ़त थी (−2.21) और इसके बाद जीत की स्थिति (−3.65)। इंजन 30.e6 को बेहतर मानता था, और चली गई चाल पर उसका जवाब, 30...Qg6+, ही बाज़ी में खेला गया।\n\nचीन ने मुक़ाबला 3–1 से जीता।\n\nहमले को चाल-दर-चाल देखें, फिर इंजन के ख़िलाफ़ 30.e6 आज़माएँ।"
+        },
+        "hu": {
+          "headline": "Matt f3-on: Wei Yi 38 lépéses mattal zárja az olimpiát",
+          "body": "GM Wei Yi (Kína, 2752) 38 lépésben mattot adott GM Abdimalik Abdisalimovnak (Üzbegisztán 2, 2548) a 46. FIDE sakkolimpia utolsó fordulójában Szamarkandban. Az utolsó lépés 38...Qxf3# volt.\n\nNyolc lépéssel korábban jött 30.Rxf1, világos óráján 3:34-gyel: a Stockfish szerint előtte sötét egyértelmű előnyben volt (−2,21), utána nyerő állásban (−3,65). A motor 30.e6-ot tartotta jobbnak, és válasza a megtett lépésre, 30...Qg6+, volt a játszma lépése.\n\nKína 3–1-re nyerte a mérkőzést.\n\nJátszd vissza a támadást lépésről lépésre, aztán próbáld ki 30.e6-ot a motor ellen."
+        },
+        "id": {
+          "headline": "Skakmat di f3: Wei Yi menutup Olimpiade dengan mat dalam 38 langkah",
+          "body": "Di babak terakhir Olimpiade Catur FIDE ke-46 di Samarkand, GM Wei Yi (Tiongkok, 2752) men-skakmat GM Abdimalik Abdisalimov (Uzbekistan 2, 2548) dalam 38 langkah. Langkah terakhirnya 38...Qxf3#.\n\nDelapan langkah sebelumnya datang 30.Rxf1, dengan sisa 3:34 di jam Putih: Stockfish menilai Hitam unggul jelas sebelumnya (−2,21) dan menang sesudahnya (−3,65). Mesin lebih memilih 30.e6, dan jawabannya atas langkah yang dimainkan, 30...Qg6+, adalah langkah dalam partai.\n\nTiongkok memenangi pertandingan 3–1.\n\nPutar ulang serangannya langkah demi langkah, lalu coba 30.e6 melawan mesin."
+        },
+        "it": {
+          "headline": "Matto in f3: Wei Yi chiude le Olimpiadi con un matto in 38 mosse",
+          "body": "GM Wei Yi (Cina, 2752) ha dato matto a GM Abdimalik Abdisalimov (Uzbekistan 2, 2548) in 38 mosse nell’ultimo turno della 46ª Olimpiade degli scacchi FIDE a Samarcanda. L’ultima mossa è stata 38...Qxf3#.\n\nOtto mosse prima era arrivata 30.Rxf1, con 3:34 sull’orologio del Bianco: Stockfish vedeva il Nero chiaramente meglio prima (−2,21) e vincente dopo (−3,65). Il motore preferiva 30.e6, e la sua risposta alla mossa giocata, 30...Qg6+, è stata quella della partita.\n\nLa Cina ha vinto il match 3–1.\n\nRivedi l’attacco mossa per mossa, poi prova 30.e6 contro il motore."
+        },
+        "ja": {
+          "headline": "f3でチェックメイト：Wei Yiが38手のメイトでオリンピアードを締めくくる",
+          "body": "サマルカンドで行われた第46回FIDEチェス・オリンピアード最終ラウンドで、GM Wei Yi（中国、2752）がGM Abdimalik Abdisalimov（ウズベキスタン2、2548）を38手でチェックメイトしました。最後の手は38...Qxf3#です。\n\nその8手前に指されたのが30.Rxf1。白の残り時間は3:34でした。Stockfishはその前を黒の明確な優勢（−2.21）、その後を黒の勝勢（−3.65）と評価。エンジンは30.e6を推し、指された手への応手30...Qg6+がそのまま対局で指されました。\n\n中国はマッチを3–1で制しました。\n\n攻撃を一手ずつ再生して、エンジン相手に30.e6を試してみましょう。"
+        },
+        "ko": {
+          "headline": "f3에서 체크메이트: Wei Yi, 38수 메이트로 올림피아드를 마무리",
+          "body": "사마르칸트에서 열린 제46회 FIDE 체스 올림피아드 마지막 라운드에서 GM Wei Yi(중국, 2752)가 GM Abdimalik Abdisalimov(우즈베키스탄 2, 2548)를 38수 만에 체크메이트했습니다. 마지막 수는 38...Qxf3#였습니다.\n\n그보다 8수 전, 백의 남은 시간 3:34에 30.Rxf1가 나왔습니다. Stockfish는 그 전을 흑의 뚜렷한 우세(−2.21), 그 후를 흑이 이기는 형세(−3.65)로 보았습니다. 엔진은 30.e6를 더 좋게 보았고, 둔 수에 대한 응수 30...Qg6+가 그대로 대국에서 나왔습니다.\n\n중국은 매치를 3–1로 이겼습니다.\n\n공격을 한 수씩 다시 보고, 엔진을 상대로 30.e6를 두어 보세요."
+        },
+        "ms": {
+          "headline": "Mat di f3: Wei Yi menutup Olimpiad dengan mat dalam 38 langkah",
+          "body": "Dalam pusingan terakhir Olimpiad Catur FIDE ke-46 di Samarkand, GM Wei Yi (China, 2752) mematkan GM Abdimalik Abdisalimov (Uzbekistan 2, 2548) dalam 38 langkah. Langkah terakhir ialah 38...Qxf3#.\n\nLapan langkah sebelumnya tiba 30.Rxf1, dengan baki 3:34 pada jam Putih: Stockfish menilai Hitam jelas mendahului sebelumnya (−2,21) dan menang selepasnya (−3,65). Enjin lebih memilih 30.e6, dan jawapannya kepada langkah yang dimainkan, 30...Qg6+, ialah langkah dalam permainan.\n\nChina memenangi perlawanan 3–1.\n\nMain semula serangan itu langkah demi langkah, kemudian cuba 30.e6 menentang enjin."
+        },
+        "nl": {
+          "headline": "Mat op f3: Wei Yi sluit de Olympiade af met mat in 38 zetten",
+          "body": "GM Wei Yi (China, 2752) zette GM Abdimalik Abdisalimov (Oezbekistan 2, 2548) mat in 38 zetten in de laatste ronde van de 46e FIDE Schaakolympiade in Samarkand. De laatste zet was 38...Qxf3#.\n\nAcht zetten eerder kwam 30.Rxf1, met 3:34 op de klok van wit: Stockfish zag zwart ervoor duidelijk beter (−2,21) en erna gewonnen (−3,65). De engine gaf de voorkeur aan 30.e6, en het antwoord op de gespeelde zet, 30...Qg6+, was de zet in de partij.\n\nChina won de match met 3–1.\n\nSpeel de aanval zet voor zet na en probeer dan 30.e6 tegen de engine."
+        },
+        "no": {
+          "headline": "Matt på f3: Wei Yi avslutter olympiaden med matt på 38 trekk",
+          "body": "GM Wei Yi (Kina, 2752) satte GM Abdimalik Abdisalimov (Usbekistan 2, 2548) matt på 38 trekk i siste runde av den 46. FIDE-sjakkolympiaden i Samarkand. Siste trekk var 38...Qxf3#.\n\nÅtte trekk før kom 30.Rxf1, med 3:34 igjen på hvits klokke: Stockfish så svart klart bedre før (−2,21) og til gevinst etter (−3,65). Motoren foretrakk 30.e6, og svaret på trekket som ble spilt, 30...Qg6+, var trekket i partiet.\n\nKina vant matchen 3–1.\n\nSpill av angrepet trekk for trekk, og prøv så 30.e6 mot motoren."
+        },
+        "pl": {
+          "headline": "Mat na f3: Wei Yi kończy olimpiadę matem w 38 ruchach",
+          "body": "GM Wei Yi (Chiny, 2752) matuje GM Abdimalik Abdisalimov (Uzbekistan 2, 2548) w 38 ruchach w ostatniej rundzie 46. Olimpiady Szachowej FIDE w Samarkandzie. Ostatni ruch to 38...Qxf3#.\n\nOsiem ruchów wcześniej padło 30.Rxf1, przy 3:34 na zegarze białych: Stockfish widział przed nim wyraźną przewagę czarnych (−2,21), a po nim wygraną (−3,65). Silnik wolał 30.e6, a jego odpowiedź na zagrany ruch, 30...Qg6+, padła w partii.\n\nChiny wygrywają mecz 3–1.\n\nOdtwórz atak ruch po ruchu, potem spróbuj 30.e6 przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Mate em f3: Wei Yi fecha a Olimpíada com mate em 38 lances",
+          "body": "GM Wei Yi (China, 2752) deu mate em GM Abdimalik Abdisalimov (Uzbequistão 2, 2548) em 38 lances na última rodada da 46ª Olimpíada de Xadrez da FIDE em Samarcanda. O último lance foi 38...Qxf3#.\n\nOito lances antes veio 30.Rxf1, com 3:34 no relógio das brancas: o Stockfish via clara vantagem das pretas antes (−2,21) e posição vencedora depois (−3,65). O motor preferia 30.e6, e sua resposta ao lance jogado, 30...Qg6+, foi a da partida.\n\nA China venceu o match por 3–1.\n\nReveja o ataque lance a lance e depois tente 30.e6 contra o motor."
+        },
+        "ro": {
+          "headline": "Mat pe f3: Wei Yi încheie Olimpiada cu mat în 38 de mutări",
+          "body": "GM Wei Yi (China, 2752) a dat mat în partida contra GM Abdimalik Abdisalimov (Uzbekistan 2, 2548), în 38 de mutări, în ultima rundă a celei de-a 46-a Olimpiade de Șah FIDE, la Samarkand. Ultima mutare a fost 38...Qxf3#.\n\nCu opt mutări mai devreme a venit 30.Rxf1, cu 3:34 pe ceasul Albului: Stockfish vedea un avantaj clar al Negrului înainte (−2,21) și o poziție câștigătoare după (−3,65). Motorul prefera 30.e6, iar răspunsul său la mutarea jucată, 30...Qg6+, a fost mutarea din partidă.\n\nChina a câștigat meciul cu 3–1.\n\nRevezi atacul mutare cu mutare, apoi încearcă 30.e6 contra motorului."
+        },
+        "ru": {
+          "headline": "Мат на f3: Wei Yi завершает олимпиаду матом на 38-м ходу",
+          "body": "GM Wei Yi (Китай, 2752) ставит мат GM Abdimalik Abdisalimov (Узбекистан 2, 2548) на 38-м ходу в последнем туре 46-й шахматной олимпиады ФИДЕ в Самарканде. Последний ход — 38...Qxf3#.\n\nЗа восемь ходов до этого был сделан ход 30.Rxf1, с 3:34 на часах белых: до него Stockfish давал чёрным явный перевес (−2,21), после — выигрыш (−3,65). Движок предпочитал 30.e6, а его ответ на сделанный ход, 30...Qg6+, и был сыгран в партии.\n\nКитай выиграл матч 3–1.\n\nПосмотрите атаку ход за ходом, а затем попробуйте 30.e6 против движка."
+        },
+        "sv": {
+          "headline": "Matt på f3: Wei Yi avslutar olympiaden med matt på 38 drag",
+          "body": "GM Wei Yi (Kina, 2752) gjorde matt på GM Abdimalik Abdisalimov (Uzbekistan 2, 2548) på 38 drag i sista ronden av den 46:e FIDE-schackolympiaden i Samarkand. Sista draget var 38...Qxf3#.\n\nÅtta drag tidigare kom 30.Rxf1, med 3:34 kvar på vits klocka: Stockfish såg svart tydligt bättre före (−2,21) och på vinst efter (−3,65). Motorn föredrog 30.e6, och dess svar på det spelade draget, 30...Qg6+, var draget i partiet.\n\nKina vann matchen med 3–1.\n\nSpela upp angreppet drag för drag och prova sedan 30.e6 mot motorn."
+        },
+        "th": {
+          "headline": "รุกจนที่ f3: Wei Yi ปิดโอลิมปิกด้วยการรุกจนใน 38 ตา",
+          "body": "ในรอบสุดท้ายของหมากรุกโอลิมปิก FIDE ครั้งที่ 46 ที่ซามาร์คันด์ GM Wei Yi (จีน, 2752) รุกจน GM Abdimalik Abdisalimov (อุซเบกิสถาน 2, 2548) ใน 38 ตา ตาสุดท้ายคือ 38...Qxf3#\n\nแปดตาก่อนหน้านั้นมี 30.Rxf1 ตอนที่นาฬิกาฝ่ายขาวเหลือ 3:34 Stockfish มองว่าก่อนหน้านั้นฝ่ายดำได้เปรียบชัดเจน (−2.21) และหลังจากนั้นอยู่ในสถานะชนะ (−3.65) เอนจินชอบ 30.e6 มากกว่า และการตอบต่อตาที่เดิน คือ 30...Qg6+ ก็คือตาที่เดินจริงในเกม\n\nจีนชนะแมตช์ 3–1\n\nดูการบุกทีละตา แล้วลอง 30.e6 กับเอนจิน"
+        },
+        "tr": {
+          "headline": "f3'te mat: Wei Yi olimpiyatı 38 hamlede matla kapattı",
+          "body": "GM Wei Yi (Çin, 2752), 46. FIDE Satranç Olimpiyatı'nın Semerkant'taki son turunda GM Abdimalik Abdisalimov'u (Özbekistan 2, 2548) 38 hamlede mat etti. Son hamle 38...Qxf3# oldu.\n\nSekiz hamle önce, beyazın saatinde 3:34 kala 30.Rxf1 geldi: Stockfish öncesinde siyahı açık farkla üstün (−2,21), sonrasında kazanan konumda (−3,65) görüyordu. Motor 30.e6'yı tercih ediyordu ve oynanan hamleye yanıtı olan 30...Qg6+ oyunda oynandı.\n\nÇin maçı 3–1 kazandı.\n\nAtağı hamle hamle izle, sonra motora karşı 30.e6'yı dene."
+        },
+        "vi": {
+          "headline": "Chiếu hết ở f3: Wei Yi khép lại Olympiad bằng đòn chiếu hết sau 38 nước",
+          "body": "Ở vòng cuối Olympiad Cờ vua FIDE lần thứ 46 tại Samarkand, GM Wei Yi (Trung Quốc, 2752) chiếu hết GM Abdimalik Abdisalimov (Uzbekistan 2, 2548) sau 38 nước. Nước cuối là 38...Qxf3#.\n\nTám nước trước đó là 30.Rxf1, khi đồng hồ Trắng còn 3:34: Stockfish thấy Đen ưu thế rõ trước đó (−2,21) và thế thắng sau đó (−3,65). Engine thích 30.e6 hơn, và nước đáp của nó với nước đã đi, 30...Qg6+, chính là nước trong ván.\n\nTrung Quốc thắng trận 3–1.\n\nXem lại đòn tấn công từng nước, rồi thử 30.e6 với engine."
+        },
+        "zh-Hans": {
+          "headline": "f3将杀：Wei Yi以38步将杀结束奥林匹克之旅",
+          "body": "在撒马尔罕举行的第46届FIDE国际象棋奥林匹克最后一轮中，GM Wei Yi（中国，2752）用38步将杀了GM Abdimalik Abdisalimov（乌兹别克斯坦2队，2548）。最后一步是38...Qxf3#。\n\n八步之前出现了30.Rxf1，当时白方钟上剩3:34：Stockfish认为此前黑方明显占优（−2.21），此后黑方胜势（−3.65）。引擎更倾向30.e6，而它对实战着法的应着30...Qg6+正是对局中的走法。\n\n中国以3–1赢得这场团体赛。\n\n一步一步回放这次进攻，然后对着引擎试试30.e6。"
+        },
+        "zh-Hant": {
+          "headline": "f3將殺：Wei Yi以38步將殺結束奧林匹克之旅",
+          "body": "在撒馬爾罕舉行的第46屆FIDE西洋棋奧林匹克最後一輪中，GM Wei Yi（中國，2752）以38步將殺了GM Abdimalik Abdisalimov（烏茲別克2隊，2548）。最後一步是38...Qxf3#。\n\n八步之前出現了30.Rxf1，當時白方鐘上剩3:34：Stockfish認為此前黑方明顯佔優（−2.21），此後黑方勝勢（−3.65）。引擎更傾向30.e6，而它對實戰著法的應著30...Qg6+正是對局中的走法。\n\n中國以3–1贏得這場團體賽。\n\n一步一步回放這次進攻，然後對著引擎試試30.e6。"
+        },
+        "bg": {
+          "headline": "Мат на f3: Wei Yi завършва олимпиадата с мат в 38 хода",
+          "body": "GM Wei Yi (Китай, 2752) матира GM Abdimalik Abdisalimov (Узбекистан 2, 2548) за 38 хода в последния кръг на 46-ата шахматна олимпиада на ФИДЕ в Самарканд. Последният ход беше 38...Qxf3#.\n\nОсем хода по-рано дойде 30.Rxf1, изигран с 3:34 на часовника на белите: Stockfish даваше ясно предимство на черните преди него (−2,21) и печеливша позиция след него (−3,65). Енджинът предпочиташе 30.e6, а отговорът му на изиграния ход, 30...Qg6+, беше ходът на дъската.\n\nКитай спечели мача с 3–1.\n\nПреиграйте атаката ход по ход, после опитайте 30.e6 срещу енджина."
+        }
+      },
+      "fen": "3r2k1/pp3pp1/1q5p/4P3/4P3/1PQ2PK1/r2B2PP/2R2R2 b - - 0 30",
+      "last": {
+        "from": "d1",
+        "to": "f1"
+      },
+      "url": "https://brasspawn.com/today/2026-09-27-abdisalimov-wei-yi-olympiad-r11",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-11/QJSVWmNu/jjtnfXkb"
+      },
+      "updatedAt": "2026-09-27T13:06:55.172Z"
+    },
+    {
+      "id": "2026-09-27-zhu-jiner-pham-olympiad-r11",
+      "status": "approved",
+      "date": "2026-09-27",
+      "rank": 0,
+      "weight": 300,
+      "event": {
+        "name": "46th FIDE Chess Olympiad Samarkand 2026",
+        "short": "Olympiad",
+        "section": "Women",
+        "round": 11,
+        "location": "Samarkand, Uzbekistan",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-women-matches-1-25/round-11/mcDuUC43"
+      },
+      "white": {
+        "name": "Zhu Jiner",
+        "short": "Zhu Jiner",
+        "title": "GM",
+        "elo": 2550,
+        "team": "China"
+      },
+      "black": {
+        "name": "Le Thao Nguyen Pham",
+        "short": "Pham",
+        "title": "IM",
+        "elo": 2348,
+        "team": "Vietnam"
+      },
+      "result": "1-0",
+      "opening": {
+        "eco": "D15",
+        "name": "Slav Defense: Chebanenko Variation"
+      },
+      "moves": "d4 d5 c4 c6 Nf3 Nf6 Nc3 a6 e3 b5 b3 Bg4 h3 Bxf3 Qxf3 e6 Bd3 Be7 O-O O-O Bb2 Nbd7 Rac1 Qb8 Ba1 Rc8 Qe2 Ra7 a4 dxc4 bxc4 b4 Nb1 c5 Nd2 e5 dxe5 Nxe5 Bf5 Re8 Nb3 Bf8 Rcd1 Qb6 a5 Qc6 Rd2 g6 Bc2 Rd7 f4 Rxd2 Nxd2 Ned7 e4 Nh5 Qf2 Bh6 g3 Qc7 Nb3 Nf8 Be5 Rxe5 fxe5 Ne6 Bd1 Nhg7 Bg4 Bg5 h4 Bd8 Kh2 h5 Bh3 Qe7 Rd1 Bc7 Rd5 g5 Qf6 Qe8 Bxe6 Nxe6 hxg5 Bd8 Qf5 Be7 g6 Kg7 gxf7 Qxf7 Rd7 Kf8 Ra7 Nd4 Nxd4 cxd4 Kg2 Kg8 Qxf7+ Kxf7 Rxa6 d3 Kf3 Bc5 Rb6 Ke7 Rb5",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 76,
+        "played": "Qe7",
+        "better": "Kf8",
+        "reply": "Rd1",
+        "replyPlayed": true,
+        "before": {
+          "cp": 157,
+          "mate": null
+        },
+        "after": {
+          "cp": 241,
+          "mate": null
+        },
+        "clock": 350
+      },
+      "headline": "Zhu Jiner wins, China beat Vietnam 3–1 and finish first in the women's Olympiad",
+      "body": "GM Zhu Jiner (China, 2550) beat IM Le Thao Nguyen Pham (Vietnam, 2348) in 55 moves in the final round of the 46th FIDE Chess Olympiad in Samarkand, and China won the match 3–1.\n\nBy the count of the relayed games, China finish first in the women's section on 20 match points, two ahead of Kazakhstan.\n\nStockfish picks out 38...Qe7, played with 5:50 on Black's clock: White clearly better before it (+1.57), further ahead after it (+2.41). The engine wanted 38...Kf8, and 39.Rd1, its best reply, came at once.\n\nWhy the king move? Replay the game, then try 38...Kf8 against the engine.",
+      "words": {
+        "ar": {
+          "headline": "فوز Zhu Jiner: الصين تهزم فيتنام ⁨3–1⁩ وتنهي أولمبياد السيدات في الصدارة",
+          "body": "فوز GM Zhu Jiner (الصين، 2550) على IM Le Thao Nguyen Pham (فيتنام، 2348) في 55 نقلة، في الجولة الأخيرة من أولمبياد الشطرنج السادس والأربعين لـFIDE في سمرقند، وفازت الصين بالمباراة ⁨3–1⁩.\n\nوفق عدّ الأدوار المنقولة، تنهي الصين منافسات السيدات في الصدارة برصيد 20 نقطة مباراة، متقدمة بنقطتين على كازاخستان.\n\nيشير Stockfish إلى ⁨38...Qe7⁩، التي لُعبت وفي ساعة الأسود ⁨5:50⁩: أفضلية واضحة للأبيض قبلها (⁨+1.57⁩)، وأكبر بعدها (⁨+2.41⁩). أراد المحرك ⁨38...Kf8⁩، وجاء ⁨39.Rd1⁩، أفضل رد له، على الفور.\n\nلماذا نقلة ملك؟ أعد عرض الدور، ثم جرّب ⁨38...Kf8⁩ ضد المحرك."
+        },
+        "cs": {
+          "headline": "Zhu Jiner vyhrává, Čína poráží Vietnam 3–1 a končí ženskou olympiádu první",
+          "body": "GM Zhu Jiner (Čína, 2550) poráží IM Le Thao Nguyen Pham (Vietnam, 2348) v 55 tazích v posledním kole 46. šachové olympiády FIDE v Samarkandu a Čína vyhrává zápas 3–1.\n\nPodle sčítání přenášených partií končí Čína v ženském turnaji první s 20 zápasovými body, dva před Kazachstánem.\n\nStockfish ukazuje na 38...Qe7, zahrané s 5:50 na hodinách černého: předtím jasná výhoda bílého (+1,57), potom ještě větší (+2,41). Engine chtěl 38...Kf8 a 39.Rd1, jeho nejlepší odpověď, přišla hned.\n\nProč tah králem? Přehraj si partii a pak zkus 38...Kf8 proti enginu."
+        },
+        "da": {
+          "headline": "Zhu Jiner vinder, Kina slår Vietnam 3–1 og slutter som nummer ét hos kvinderne",
+          "body": "GM Zhu Jiner (Kina, 2550) slog IM Le Thao Nguyen Pham (Vietnam, 2348) i 55 træk i sidste runde af den 46. FIDE-skakolympiade i Samarkand, og Kina vandt matchen 3–1.\n\nTalt ud fra de transmitterede partier slutter Kina som nummer ét i kvindeturneringen med 20 matchpoint, to foran Kasakhstan.\n\nStockfish udpeger 38...Qe7, spillet med 5:50 tilbage på sorts ur: hvid klart bedre før (+1,57), endnu mere efter (+2,41). Motoren ville have 38...Kf8, og 39.Rd1, dens bedste svar, kom med det samme.\n\nHvorfor et kongetræk? Afspil partiet, og prøv så 38...Kf8 mod motoren."
+        },
+        "de": {
+          "headline": "Zhu Jiner gewinnt, China schlägt Vietnam 3:1 und beendet die Frauen-Olympiade auf Platz eins",
+          "body": "GM Zhu Jiner (China, 2550) hat in der letzten Runde der 46. FIDE-Schacholympiade in Samarkand IM Le Thao Nguyen Pham (Vietnam, 2348) in 55 Zügen geschlagen, und China gewann den Kampf 3:1.\n\nGezählt aus den übertragenen Partien, beendet China das Frauenturnier mit 20 Mannschaftspunkten auf Platz eins, zwei vor Kasachstan.\n\nStockfish hebt 38...Qe7 hervor, gespielt mit 5:50 auf der Uhr von Schwarz: Weiß davor klar besser (+1,57), danach noch deutlicher (+2,41). Die Engine wollte 38...Kf8, und 39.Rd1, ihre beste Antwort, kam sofort.\n\nWarum ein Königszug? Nachspielen, dann 38...Kf8 gegen die Engine probieren."
+        },
+        "el": {
+          "headline": "Νίκη Zhu Jiner: η Κίνα κερδίζει 3–1 το Βιετνάμ και τερματίζει πρώτη στην Ολυμπιάδα γυναικών",
+          "body": "GM Zhu Jiner (Κίνα, 2550): νίκη επί IM Le Thao Nguyen Pham (Βιετνάμ, 2348) σε 55 κινήσεις, στον τελευταίο γύρο της 46ης Σκακιστικής Ολυμπιάδας της FIDE στη Σαμαρκάνδη, και η Κίνα κέρδισε τον αγώνα 3–1.\n\nΣύμφωνα με την καταμέτρηση των παρτίδων που μεταδόθηκαν, η Κίνα τερματίζει πρώτη στο τουρνουά γυναικών με 20 βαθμούς αγώνα, δύο μπροστά από το Καζακστάν.\n\nΤο Stockfish ξεχωρίζει το 38...Qe7, που παίχτηκε με 5:50 στο ρολόι των μαύρων: καθαρό πλεονέκτημα των λευκών πριν (+1,57), ακόμη μεγαλύτερο μετά (+2,41). Η μηχανή ήθελε 38...Kf8, και το 39.Rd1, η καλύτερη απάντησή της, ήρθε αμέσως.\n\nΓιατί κίνηση του βασιλιά; Ξαναδές την παρτίδα και μετά δοκίμασε το 38...Kf8 απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Gana Zhu Jiner: China vence 3–1 a Vietnam y termina primera en la Olimpiada femenina",
+          "body": "GM Zhu Jiner (China, 2550) venció a IM Le Thao Nguyen Pham (Vietnam, 2348) en 55 jugadas en la última ronda de la 46.ª Olimpiada de Ajedrez de la FIDE en Samarcanda, y China ganó el match 3–1.\n\nSegún el recuento de las partidas retransmitidas, China termina primera del torneo femenino con 20 puntos de match, dos por delante de Kazajistán.\n\nStockfish señala 38...Qe7, jugada con 5:50 en el reloj de las negras: clara ventaja blanca antes (+1,57) y aún mayor después (+2,41). El motor quería 38...Kf8, y 39.Rd1, su mejor respuesta, llegó enseguida.\n\n¿Por qué una jugada de rey? Revive la partida y luego prueba 38...Kf8 contra el motor."
+        },
+        "fi": {
+          "headline": "Zhu Jiner voittaa, Kiina kaataa Vietnamin 3–1 ja päättää naisten olympialaiset kärjessä",
+          "body": "GM Zhu Jiner (Kiina, 2550) voitti IM Le Thao Nguyen Phamin (Vietnam, 2348) 55 siirrossa 46. FIDE:n shakkiolympialaisten viimeisellä kierroksella Samarkandissa, ja Kiina voitti ottelun 3–1.\n\nLähetettyjen pelien perusteella laskettuna Kiina päättää naisten turnauksen kärjessä 20 ottelupisteellä, kaksi Kazakstanin edellä.\n\nStockfish nostaa esiin siirron 38...Qe7, joka pelattiin mustan kellossa 5:50 jäljellä: valkealla selvä etu ennen sitä (+1,57), vielä suurempi sen jälkeen (+2,41). Moottori halusi 38...Kf8, ja 39.Rd1, sen paras vastaus, tuli heti.\n\nMiksi kuninkaan siirto? Toista peli ja kokeile sitten 38...Kf8 moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Zhu Jiner gagne, la Chine bat le Viêt Nam 3–1 et termine première chez les femmes",
+          "body": "GM Zhu Jiner (Chine, 2550) a battu IM Le Thao Nguyen Pham (Viêt Nam, 2348) en 55 coups lors de la dernière ronde de la 46e Olympiade d’échecs FIDE à Samarcande, et la Chine a gagné le match 3–1.\n\nSelon le décompte des parties retransmises, la Chine termine première du tournoi féminin avec 20 points de match, deux devant le Kazakhstan.\n\nStockfish désigne 38...Qe7, joué avec 5:50 à la pendule des Noirs : les Blancs nettement mieux avant (+1,57), encore davantage après (+2,41). Le moteur voulait 38...Kf8, et 39.Rd1, sa meilleure réponse, a suivi aussitôt.\n\nPourquoi un coup de roi ? Rejouez la partie, puis essayez 38...Kf8 contre le moteur."
+        },
+        "he": {
+          "headline": "ניצחון ל־Zhu Jiner: סין מנצחת את וייטנאם ⁨3–1⁩ ומסיימת ראשונה באולימפיאדת הנשים",
+          "body": "ניצחון ל־GM Zhu Jiner (סין, 2550) על IM Le Thao Nguyen Pham (וייטנאם, 2348) ב־55 מסעים, בסיבוב האחרון של אולימפיאדת השחמט ה־46 של FIDE בסמרקנד, וסין ניצחה במפגש ⁨3–1⁩.\n\nלפי ספירת המשחקים ששודרו, סין מסיימת ראשונה בטורניר הנשים עם 20 נקודות משחק, שתיים לפני קזחסטן.\n\nStockfish מצביע על ⁨38...Qe7⁩, שנעשה עם ⁨5:50⁩ בשעון של השחור: יתרון ברור ללבן לפניו (⁨+1.57⁩), ועוד גדול יותר אחריו (⁨+2.41⁩). המנוע רצה ⁨38...Kf8⁩, ו־⁨39.Rd1⁩, התשובה הטובה ביותר שלו, הגיעה מיד.\n\nלמה מסע מלך? צפו במשחק, ואז נסו את ⁨38...Kf8⁩ מול המנוע."
+        },
+        "hi": {
+          "headline": "Zhu Jiner की जीत: चीन ने वियतनाम को 3–1 से हराया और महिला ओलंपियाड में पहले स्थान पर रहा",
+          "body": "समरकंद में 46वें FIDE शतरंज ओलंपियाड के आख़िरी राउंड में GM Zhu Jiner (चीन, 2550) ने IM Le Thao Nguyen Pham (वियतनाम, 2348) को 55 चालों में हराया, और चीन ने मुक़ाबला 3–1 से जीता।\n\nप्रसारित बाज़ियों की गिनती के अनुसार चीन महिला वर्ग में 20 मैच अंकों के साथ पहले स्थान पर है, कज़ाख़स्तान से दो आगे।\n\nStockfish 38...Qe7 की ओर इशारा करता है, जो काले की घड़ी में 5:50 बाक़ी रहते चली गई: इससे पहले सफ़ेद को साफ़ बढ़त थी (+1.57), इसके बाद और ज़्यादा (+2.41)। इंजन 38...Kf8 चाहता था, और उसका सबसे अच्छा जवाब, 39.Rd1, तुरंत आया।\n\nराजा की चाल क्यों? बाज़ी देखें, फिर इंजन के ख़िलाफ़ 38...Kf8 आज़माएँ।"
+        },
+        "hu": {
+          "headline": "Zhu Jiner nyer, Kína 3–1-re veri Vietnámot és elsőként zárja a női olimpiát",
+          "body": "GM Zhu Jiner (Kína, 2550) 55 lépésben legyőzte IM Le Thao Nguyen Phamot (Vietnám, 2348) a 46. FIDE sakkolimpia utolsó fordulójában Szamarkandban, Kína pedig 3–1-re nyerte a mérkőzést.\n\nA közvetített játszmák alapján számolva Kína 20 csapatponttal az első a női versenyben, két ponttal Kazahsztán előtt.\n\nA Stockfish 38...Qe7-et emeli ki, amely sötét óráján 5:50-nel jött: előtte világos egyértelmű előnyben volt (+1,57), utána még nagyobban (+2,41). A motor 38...Kf8-at akarta, és 39.Rd1, a legjobb válasza, azonnal jött.\n\nMiért királylépés? Játszd vissza, aztán próbáld ki 38...Kf8-at a motor ellen."
+        },
+        "id": {
+          "headline": "Zhu Jiner menang, Tiongkok kalahkan Vietnam 3–1 dan finis teratas di Olimpiade putri",
+          "body": "Di babak terakhir Olimpiade Catur FIDE ke-46 di Samarkand, GM Zhu Jiner (Tiongkok, 2550) mengalahkan IM Le Thao Nguyen Pham (Vietnam, 2348) dalam 55 langkah, dan Tiongkok memenangi pertandingan 3–1.\n\nMenurut hitungan partai yang disiarkan, Tiongkok finis teratas di bagian putri dengan 20 poin pertandingan, dua di depan Kazakhstan.\n\nStockfish menunjuk 38...Qe7, yang dimainkan dengan sisa 5:50 di jam Hitam: Putih unggul jelas sebelumnya (+1,57), makin besar sesudahnya (+2,41). Mesin menginginkan 38...Kf8, dan 39.Rd1, jawaban terbaiknya, langsung datang.\n\nKenapa langkah raja? Putar ulang partainya, lalu coba 38...Kf8 melawan mesin."
+        },
+        "it": {
+          "headline": "Vince Zhu Jiner: la Cina batte il Vietnam 3–1 e chiude prima alle Olimpiadi femminili",
+          "body": "GM Zhu Jiner (Cina, 2550) ha battuto IM Le Thao Nguyen Pham (Vietnam, 2348) in 55 mosse nell’ultimo turno della 46ª Olimpiade degli scacchi FIDE a Samarcanda, e la Cina ha vinto il match 3–1.\n\nSecondo il conteggio delle partite trasmesse, la Cina chiude prima nel torneo femminile con 20 punti match, due davanti al Kazakistan.\n\nStockfish indica 38...Qe7, giocata con 5:50 sull’orologio del Nero: Bianco chiaramente meglio prima (+1,57), ancora di più dopo (+2,41). Il motore voleva 38...Kf8, e 39.Rd1, la sua migliore risposta, è arrivata subito.\n\nPerché una mossa di Re? Rivedi la partita, poi prova 38...Kf8 contro il motore."
+        },
+        "ja": {
+          "headline": "Zhu Jinerが勝利、中国がベトナムに3–1で勝ち女子オリンピアードで首位に",
+          "body": "サマルカンドで行われた第46回FIDEチェス・オリンピアード最終ラウンドで、GM Zhu Jiner（中国、2550）がIM Le Thao Nguyen Pham（ベトナム、2348）に55手で勝ち、中国はマッチを3–1で制しました。\n\n中継された対局から数えると、中国はマッチポイント20で女子の部の首位。カザフスタンに2点差です。\n\nStockfishが挙げるのは38...Qe7。黒の残り時間5:50で指された手で、その前は白の明確な優勢（+1.57）、その後はさらに差が広がりました（+2.41）。エンジンが望んだのは38...Kf8で、最善の応手39.Rd1がすぐに返されました。\n\nなぜキングの手なのか？対局を再生して、エンジン相手に38...Kf8を試してみましょう。"
+        },
+        "ko": {
+          "headline": "Zhu Jiner 승리, 중국이 베트남을 3–1로 꺾고 여자 올림피아드 1위로",
+          "body": "사마르칸트에서 열린 제46회 FIDE 체스 올림피아드 마지막 라운드에서 GM Zhu Jiner(중국, 2550)가 IM Le Thao Nguyen Pham(베트남, 2348)을 55수 만에 이겼고, 중국은 매치를 3–1로 이겼습니다.\n\n중계된 대국으로 세면 중국은 매치 포인트 20으로 여자부 1위, 카자흐스탄보다 2점 앞섭니다.\n\nStockfish가 짚는 수는 흑의 남은 시간 5:50에 둔 38...Qe7입니다. 그 전에는 백의 뚜렷한 우세(+1.57), 그 후에는 차이가 더 벌어졌습니다(+2.41). 엔진은 38...Kf8를 원했고, 최선의 응수 39.Rd1이 곧바로 나왔습니다.\n\n왜 킹을 움직일까요? 대국을 다시 보고, 엔진을 상대로 38...Kf8를 두어 보세요."
+        },
+        "ms": {
+          "headline": "Zhu Jiner menang, China tewaskan Vietnam 3–1 dan tamat di tangga teratas Olimpiad wanita",
+          "body": "Dalam pusingan terakhir Olimpiad Catur FIDE ke-46 di Samarkand, GM Zhu Jiner (China, 2550) menewaskan IM Le Thao Nguyen Pham (Vietnam, 2348) dalam 55 langkah, dan China memenangi perlawanan 3–1.\n\nMengikut kiraan permainan yang disiarkan, China tamat di tempat pertama bahagian wanita dengan 20 mata perlawanan, dua di hadapan Kazakhstan.\n\nStockfish menunjuk kepada 38...Qe7, yang dimainkan dengan baki 5:50 pada jam Hitam: Putih jelas mendahului sebelumnya (+1,57), lebih besar selepasnya (+2,41). Enjin mahukan 38...Kf8, dan 39.Rd1, jawapan terbaiknya, tiba serta-merta.\n\nKenapa langkah raja? Main semula permainan itu, kemudian cuba 38...Kf8 menentang enjin."
+        },
+        "nl": {
+          "headline": "Zhu Jiner wint, China verslaat Vietnam met 3–1 en eindigt als eerste bij de vrouwen",
+          "body": "GM Zhu Jiner (China, 2550) versloeg IM Le Thao Nguyen Pham (Vietnam, 2348) in 55 zetten in de laatste ronde van de 46e FIDE Schaakolympiade in Samarkand, en China won de match met 3–1.\n\nGeteld uit de uitgezonden partijen eindigt China als eerste in het vrouwentoernooi met 20 matchpunten, twee voor Kazachstan.\n\nStockfish wijst 38...Qe7 aan, gespeeld met 5:50 op de klok van zwart: wit ervoor duidelijk beter (+1,57), erna nog meer (+2,41). De engine wilde 38...Kf8, en 39.Rd1, het beste antwoord, kwam meteen.\n\nWaarom een koningszet? Speel de partij na en probeer dan 38...Kf8 tegen de engine."
+        },
+        "no": {
+          "headline": "Zhu Jiner vinner, Kina slår Vietnam 3–1 og ender som nummer én hos kvinnene",
+          "body": "GM Zhu Jiner (Kina, 2550) slo IM Le Thao Nguyen Pham (Vietnam, 2348) på 55 trekk i siste runde av den 46. FIDE-sjakkolympiaden i Samarkand, og Kina vant matchen 3–1.\n\nTalt fra de sendte partiene ender Kina som nummer én i kvinneturneringen med 20 matchpoeng, to foran Kasakhstan.\n\nStockfish peker ut 38...Qe7, spilt med 5:50 igjen på svarts klokke: hvit klart bedre før (+1,57), enda mer etter (+2,41). Motoren ville ha 38...Kf8, og 39.Rd1, det beste svaret, kom med en gang.\n\nHvorfor et kongetrekk? Spill av partiet, og prøv så 38...Kf8 mot motoren."
+        },
+        "pl": {
+          "headline": "Zhu Jiner wygrywa, Chiny biją Wietnam 3–1 i kończą olimpiadę kobiet na pierwszym miejscu",
+          "body": "GM Zhu Jiner (Chiny, 2550) pokonuje IM Le Thao Nguyen Pham (Wietnam, 2348) w 55 ruchach w ostatniej rundzie 46. Olimpiady Szachowej FIDE w Samarkandzie, a Chiny wygrywają mecz 3–1.\n\nWedług zliczenia transmitowanych partii Chiny kończą turniej kobiet na pierwszym miejscu z 20 punktami meczowymi, dwa przed Kazachstanem.\n\nStockfish wskazuje 38...Qe7, zagrane przy 5:50 na zegarze czarnych: przed nim wyraźna przewaga białych (+1,57), po nim jeszcze większa (+2,41). Silnik chciał 38...Kf8, a 39.Rd1, jego najlepsza odpowiedź, padła od razu.\n\nDlaczego ruch królem? Odtwórz partię, potem spróbuj 38...Kf8 przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Zhu Jiner vence, a China bate o Vietnã por 3–1 e termina em primeiro na Olimpíada feminina",
+          "body": "GM Zhu Jiner (China, 2550) venceu IM Le Thao Nguyen Pham (Vietnã, 2348) em 55 lances na última rodada da 46ª Olimpíada de Xadrez da FIDE em Samarcanda, e a China venceu o match por 3–1.\n\nPela contagem das partidas transmitidas, a China termina em primeiro no torneio feminino, com 20 pontos de match, dois à frente do Cazaquistão.\n\nO Stockfish aponta 38...Qe7, jogado com 5:50 no relógio das pretas: clara vantagem branca antes (+1,57), ainda maior depois (+2,41). O motor queria 38...Kf8, e 39.Rd1, sua melhor resposta, veio na hora.\n\nPor que um lance de rei? Reveja a partida e depois tente 38...Kf8 contra o motor."
+        },
+        "ro": {
+          "headline": "Zhu Jiner câștigă, China învinge Vietnamul cu 3–1 și termină prima la Olimpiada feminină",
+          "body": "GM Zhu Jiner (China, 2550) a câștigat contra IM Le Thao Nguyen Pham (Vietnam, 2348) în 55 de mutări, în ultima rundă a celei de-a 46-a Olimpiade de Șah FIDE, la Samarkand, iar China a câștigat meciul cu 3–1.\n\nDupă numărătoarea partidelor transmise, China termină pe primul loc la feminin, cu 20 de puncte de meci, la două puncte înaintea Kazahstanului.\n\nStockfish indică 38...Qe7, jucată cu 5:50 pe ceasul Negrului: avantaj clar al Albului înainte (+1,57), și mai mare după (+2,41). Motorul voia 38...Kf8, iar 39.Rd1, cel mai bun răspuns, a venit imediat.\n\nDe ce o mutare de rege? Revezi partida, apoi încearcă 38...Kf8 contra motorului."
+        },
+        "ru": {
+          "headline": "Победа Zhu Jiner: Китай обыгрывает Вьетнам 3–1 и заканчивает женскую олимпиаду первым",
+          "body": "GM Zhu Jiner (Китай, 2550) обыгрывает IM Le Thao Nguyen Pham (Вьетнам, 2348) за 55 ходов в последнем туре 46-й шахматной олимпиады ФИДЕ в Самарканде, а Китай выигрывает матч 3–1.\n\nПо подсчёту транслировавшихся партий Китай занимает первое место в женском турнире с 20 командными очками, на два опережая Казахстан.\n\nStockfish выделяет ход 38...Qe7, сделанный с 5:50 на часах чёрных: до него у белых явный перевес (+1,57), после — ещё больше (+2,41). Движок хотел 38...Kf8, а 39.Rd1, его лучший ответ, последовал сразу.\n\nПочему ход королём? Посмотрите партию, а затем попробуйте 38...Kf8 против движка."
+        },
+        "sv": {
+          "headline": "Zhu Jiner vinner, Kina slår Vietnam med 3–1 och slutar etta i damolympiaden",
+          "body": "GM Zhu Jiner (Kina, 2550) besegrade IM Le Thao Nguyen Pham (Vietnam, 2348) på 55 drag i sista ronden av den 46:e FIDE-schackolympiaden i Samarkand, och Kina vann matchen med 3–1.\n\nRäknat på de sända partierna slutar Kina etta i damturneringen med 20 matchpoäng, två före Kazakstan.\n\nStockfish pekar ut 38...Qe7, spelat med 5:50 kvar på svarts klocka: vit tydligt bättre före (+1,57), ännu mer efter (+2,41). Motorn ville ha 38...Kf8, och 39.Rd1, dess bästa svar, kom direkt.\n\nVarför ett kungsdrag? Spela upp partiet och prova sedan 38...Kf8 mot motorn."
+        },
+        "th": {
+          "headline": "Zhu Jiner ชนะ จีนชนะเวียดนาม 3–1 และจบอันดับหนึ่งในโอลิมปิกหญิง",
+          "body": "ในรอบสุดท้ายของหมากรุกโอลิมปิก FIDE ครั้งที่ 46 ที่ซามาร์คันด์ GM Zhu Jiner (จีน, 2550) ชนะ IM Le Thao Nguyen Pham (เวียดนาม, 2348) ใน 55 ตา และจีนชนะแมตช์ 3–1\n\nนับจากเกมที่ถ่ายทอด จีนจบอันดับหนึ่งในประเภทหญิงด้วย 20 แต้มแมตช์ นำคาซัคสถาน 2 แต้ม\n\nStockfish ชี้ที่ 38...Qe7 ซึ่งเดินตอนที่นาฬิกาฝ่ายดำเหลือ 5:50 ก่อนหน้านั้นฝ่ายขาวได้เปรียบชัดเจน (+1.57) หลังจากนั้นยิ่งมากขึ้น (+2.41) เอนจินต้องการ 38...Kf8 และการตอบที่ดีที่สุด 39.Rd1 ก็มาทันที\n\nทำไมต้องเดินคิง? ดูเกม แล้วลอง 38...Kf8 กับเอนจิน"
+        },
+        "tr": {
+          "headline": "Zhu Jiner kazandı, Çin Vietnam'ı 3–1 yendi ve kadınlar olimpiyatını birinci bitirdi",
+          "body": "GM Zhu Jiner (Çin, 2550), 46. FIDE Satranç Olimpiyatı'nın Semerkant'taki son turunda IM Le Thao Nguyen Pham'ı (Vietnam, 2348) 55 hamlede yendi ve Çin maçı 3–1 kazandı.\n\nYayınlanan oyunlara göre sayıldığında Çin, kadınlar turnuvasını 20 maç puanıyla birinci bitiriyor; Kazakistan'ın iki puan önünde.\n\nStockfish, siyahın saatinde 5:50 kala oynanan 38...Qe7'yi öne çıkarıyor: öncesinde beyaz açık farkla üstün (+1,57), sonrasında daha da fazla (+2,41). Motor 38...Kf8 istiyordu ve en iyi yanıtı olan 39.Rd1 hemen geldi.\n\nNeden bir şah hamlesi? Oyunu izle, sonra motora karşı 38...Kf8'i dene."
+        },
+        "vi": {
+          "headline": "Zhu Jiner thắng, Trung Quốc hạ Việt Nam 3–1 và về nhất Olympiad nữ",
+          "body": "Ở vòng cuối Olympiad Cờ vua FIDE lần thứ 46 tại Samarkand, GM Zhu Jiner (Trung Quốc, 2550) thắng IM Le Thao Nguyen Pham (Việt Nam, 2348) sau 55 nước, và Trung Quốc thắng trận 3–1.\n\nTheo số ván được phát sóng, Trung Quốc đứng đầu nội dung nữ với 20 điểm trận, hơn Kazakhstan 2 điểm.\n\nStockfish chỉ ra 38...Qe7, được đi khi đồng hồ Đen còn 5:50: Trắng ưu thế rõ trước đó (+1,57), còn lớn hơn sau đó (+2,41). Engine muốn 38...Kf8, và nước đáp tốt nhất 39.Rd1 đến ngay.\n\nVì sao lại là nước Vua? Xem lại ván cờ, rồi thử 38...Kf8 với engine."
+        },
+        "zh-Hans": {
+          "headline": "Zhu Jiner获胜，中国3–1击败越南，女子奥林匹克排名第一",
+          "body": "在撒马尔罕举行的第46届FIDE国际象棋奥林匹克最后一轮中，GM Zhu Jiner（中国，2550）用55步击败了IM Le Thao Nguyen Pham（越南，2348），中国以3–1赢得团体赛。\n\n按转播对局统计，中国以20个团体分位列女子组第一，领先哈萨克斯坦2分。\n\nStockfish指出的是38...Qe7，走于黑方钟上剩5:50时：此前白方明显占优（+1.57），此后优势更大（+2.41）。引擎想走38...Kf8，最佳应着39.Rd1随即走出。\n\n为什么是王的走法？回放这盘棋，然后对着引擎试试38...Kf8。"
+        },
+        "zh-Hant": {
+          "headline": "Zhu Jiner獲勝，中國3–1擊敗越南，女子奧林匹克排名第一",
+          "body": "在撒馬爾罕舉行的第46屆FIDE西洋棋奧林匹克最後一輪中，GM Zhu Jiner（中國，2550）以55步擊敗了IM Le Thao Nguyen Pham（越南，2348），中國以3–1贏得團體賽。\n\n按轉播對局統計，中國以20個團體分位列女子組第一，領先哈薩克2分。\n\nStockfish指出的是38...Qe7，走於黑方鐘上剩5:50時：此前白方明顯佔優（+1.57），此後優勢更大（+2.41）。引擎想走38...Kf8，最佳應著39.Rd1隨即走出。\n\n為什麼是王的走法？回放這盤棋，然後對著引擎試試38...Kf8。"
+        },
+        "bg": {
+          "headline": "Zhu Jiner печели, Китай бие Виетнам с 3–1 и завършва първи при жените",
+          "body": "GM Zhu Jiner (Китай, 2550) победи IM Le Thao Nguyen Pham (Виетнам, 2348) за 55 хода в последния кръг на 46-ата шахматна олимпиада на ФИДЕ в Самарканд, а Китай спечели мача с 3–1.\n\nСпоред преброяването на предаваните партии Китай завършва първи при жените с 20 мачови точки, две пред Казахстан.\n\nStockfish посочва 38...Qe7, изигран с 5:50 на часовника на черните: ясно предимство за белите преди него (+1,57), още по-голямо след него (+2,41). Енджинът искаше 38...Kf8, а 39.Rd1, най-добрият му отговор, дойде веднага.\n\nЗащо ход с царя? Преиграйте партията, после опитайте 38...Kf8 срещу енджина."
+        }
+      },
+      "fen": "3b2k1/4qpn1/p3n1p1/P1p1P2p/1pP1P2P/1N4PB/5Q1K/5R2 w - - 2 39",
+      "last": {
+        "from": "c7",
+        "to": "e7"
+      },
+      "url": "https://brasspawn.com/today/2026-09-27-zhu-jiner-pham-olympiad-r11",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-women-matches-1-25/round-11/mcDuUC43/2ckzLlGQ"
+      },
+      "updatedAt": "2026-09-27T13:07:06.207Z"
+    },
+    {
+      "id": "2026-09-27-nurman-maltsevskaya-olympiad-r11",
+      "status": "approved",
+      "date": "2026-09-27",
+      "rank": 1,
+      "weight": 297,
+      "event": {
+        "name": "46th FIDE Chess Olympiad Samarkand 2026",
+        "short": "Olympiad",
+        "section": "Women",
+        "round": 11,
+        "location": "Samarkand, Uzbekistan",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-women-matches-1-25/round-11/mcDuUC43"
+      },
+      "white": {
+        "name": "Alua Nurman",
+        "short": "Nurman",
+        "title": "IM",
+        "elo": 2455,
+        "team": "Kazakhstan"
+      },
+      "black": {
+        "name": "Aleksandra Maltsevskaya",
+        "short": "Maltsevskaya",
+        "title": "IM",
+        "elo": 2363,
+        "team": "Poland"
+      },
+      "result": "0-1",
+      "opening": {
+        "eco": "B22",
+        "name": "Sicilian Defense: Alapin Variation"
+      },
+      "moves": "e4 c5 c3 Nf6 e5 Nd5 Bc4 e6 d4 d6 Nf3 cxd4 cxd4 dxe5 dxe5 b6 O-O Bb7 Qd4 Nd7 Nbd2 Qc7 Ne4 Bc5 Nxc5 bxc5 Qd1 Nxe5 Nxe5 Qxe5 Bb5+ Ke7 Re1 Qf6 Be3 Rhc8 Rc1 Qxb2 Bxc5+ Rxc5 Rxc5 Qb4 Qc1 Kd6 Rc6+ Bxc6 Qxc6+ Ke7 Qxa8 Qxe1+ Bf1 Qa5 Qb7+ Qc7 Qb1 g6 g3 a5 Bg2 Nc3 Qc2 Qc5 Qd2 a4 h4 a3 Qc2 h5 Kh2 Kf8 Qd2 Kg7 Qc2 Qb4 Qd2 Nd5 Qd3 Nf6 Bf3 Qb2 Qe2 Nd5 Kg2 Nb4",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 67,
+        "played": "Qc2",
+        "better": "h5",
+        "reply": "h5",
+        "replyPlayed": true,
+        "before": {
+          "cp": -157,
+          "mate": null
+        },
+        "after": {
+          "cp": -293,
+          "mate": null
+        },
+        "clock": 233
+      },
+      "headline": "Maltsevskaya beats Nurman, 92 points higher, as Poland hold Kazakhstan 2–2",
+      "body": "IM Aleksandra Maltsevskaya (Poland, 2363) beat IM Alua Nurman (Kazakhstan, 2455) with Black in 42 moves in the last round of the 46th FIDE Chess Olympiad in Samarkand.\n\nStockfish points to 34.Qc2, played with 3:53 on White's clock: Black clearly better before it (−1.57), winning after it (−2.93). The engine wanted 34.h5; instead it was Black who played 34...h5, the engine's best reply.\n\nElnaz Kaliakhmet won for Kazakhstan in the same match, which ended 2–2. Kazakhstan finish second in the women's section on 18 match points, by the count of the relayed games.\n\nReplay it, then try 34.h5 against the engine.",
+      "words": {
+        "ar": {
+          "headline": "فوز Maltsevskaya على Nurman رغم فارق 92 نقطة تصنيف، وبولندا توقف كازاخستان عند ⁨2–2⁩",
+          "body": "فوز IM Aleksandra Maltsevskaya (بولندا، 2363) على IM Alua Nurman (كازاخستان، 2455) بالقطع السوداء في 42 نقلة، في الجولة الأخيرة من أولمبياد الشطرنج السادس والأربعين لـFIDE في سمرقند.\n\nيشير Stockfish إلى ⁨34.Qc2⁩، التي لُعبت وفي ساعة الأبيض ⁨3:53⁩: أفضلية واضحة للأسود قبلها (⁨−1.57⁩)، ووضع رابح بعدها (⁨−2.93⁩). أراد المحرك ⁨34.h5⁩، لكن الأسود هو من لعب ⁨34...h5⁩، أفضل رد للمحرك.\n\nوفي المباراة نفسها فوز لكازاخستان من Elnaz Kaliakhmet، وانتهت المباراة ⁨2–2⁩. تنهي كازاخستان منافسات السيدات في المركز الثاني برصيد 18 نقطة مباراة، وفق عدّ الأدوار المنقولة.\n\nأعد عرضه، ثم جرّب ⁨34.h5⁩ ضد المحرك."
+        },
+        "cs": {
+          "headline": "Maltsevskaya poráží Nurman navzdory o 92 bodů nižšímu ratingu a Polsko drží Kazachstán na 2–2",
+          "body": "IM Aleksandra Maltsevskaya (Polsko, 2363) poráží černými IM Alua Nurman (Kazachstán, 2455) ve 42 tazích v posledním kole 46. šachové olympiády FIDE v Samarkandu.\n\nStockfish ukazuje na 34.Qc2, zahrané s 3:53 na hodinách bílého: předtím jasná výhoda černého (−1,57), potom výhra (−2,93). Engine chtěl 34.h5 – místo toho hrál h5 černý: 34...h5, nejlepší odpověď enginu.\n\nVe stejném zápase vyhrává za Kazachstán Elnaz Kaliakhmet a zápas končí 2–2. Kazachstán končí v ženském turnaji druhý s 18 zápasovými body, podle sčítání přenášených partií.\n\nPřehraj si ji a pak zkus 34.h5 proti enginu."
+        },
+        "da": {
+          "headline": "Maltsevskaya slår Nurman trods 92 ratingpoint mindre, og Polen holder Kasakhstan til 2–2",
+          "body": "IM Aleksandra Maltsevskaya (Polen, 2363) slog IM Alua Nurman (Kasakhstan, 2455) med sort i 42 træk i sidste runde af den 46. FIDE-skakolympiade i Samarkand.\n\nStockfish udpeger 34.Qc2, spillet med 3:53 tilbage på hvids ur: sort klart bedre før (−1,57), til gevinst efter (−2,93). Motoren ville have 34.h5; i stedet var det sort, der spillede 34...h5, motorens bedste svar.\n\nI samme match vandt Elnaz Kaliakhmet for Kasakhstan, og det endte 2–2. Kasakhstan slutter som nummer to i kvindeturneringen med 18 matchpoint, talt ud fra de transmitterede partier.\n\nAfspil det, og prøv så 34.h5 mod motoren."
+        },
+        "de": {
+          "headline": "Maltsevskaya schlägt Nurman trotz 92 Elo weniger – Polen hält Kasachstan beim 2:2",
+          "body": "IM Aleksandra Maltsevskaya (Polen, 2363) hat in der letzten Runde der 46. FIDE-Schacholympiade in Samarkand mit Schwarz IM Alua Nurman (Kasachstan, 2455) in 42 Zügen geschlagen.\n\nStockfish zeigt auf 34.Qc2, gespielt mit 3:53 auf der Uhr von Weiß: Schwarz davor klar besser (−1,57), danach auf Gewinn (−2,93). Die Engine wollte 34.h5 – stattdessen zog Schwarz 34...h5, die beste Antwort der Engine.\n\nIm selben Kampf gewann Elnaz Kaliakhmet für Kasachstan, und es endete 2:2. Kasachstan beendet das Frauenturnier mit 18 Mannschaftspunkten auf Platz zwei – gezählt aus den übertragenen Partien.\n\nNachspielen, dann 34.h5 gegen die Engine probieren."
+        },
+        "el": {
+          "headline": "Maltsevskaya νικά Nurman με 92 βαθμούς λιγότερους, και η Πολωνία κρατά το Καζακστάν στο 2–2",
+          "body": "IM Aleksandra Maltsevskaya (Πολωνία, 2363): νίκη με τα μαύρα επί IM Alua Nurman (Καζακστάν, 2455) σε 42 κινήσεις, στον τελευταίο γύρο της 46ης Σκακιστικής Ολυμπιάδας της FIDE στη Σαμαρκάνδη.\n\nΤο Stockfish ξεχωρίζει το 34.Qc2, που παίχτηκε με 3:53 στο ρολόι των λευκών: καθαρό πλεονέκτημα των μαύρων πριν (−1,57), κερδισμένη θέση μετά (−2,93). Η μηχανή ήθελε 34.h5· αντί γι’ αυτό, τα μαύρα έπαιξαν 34...h5, την καλύτερη απάντηση της μηχανής.\n\nΣτον ίδιο αγώνα, νίκη για το Καζακστάν από Elnaz Kaliakhmet, και ο αγώνας έληξε 2–2. Το Καζακστάν τερματίζει δεύτερο στο τουρνουά γυναικών με 18 βαθμούς αγώνα, σύμφωνα με την καταμέτρηση των παρτίδων που μεταδόθηκαν.\n\nΞαναδές την και μετά δοκίμασε το 34.h5 απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Maltsevskaya vence a Nurman con 92 puntos menos de Elo y Polonia empata 2–2 con Kazajistán",
+          "body": "IM Aleksandra Maltsevskaya (Polonia, 2363) venció a IM Alua Nurman (Kazajistán, 2455) con negras en 42 jugadas en la última ronda de la 46.ª Olimpiada de Ajedrez de la FIDE en Samarcanda.\n\nStockfish señala 34.Qc2, jugada con 3:53 en el reloj de las blancas: clara ventaja negra antes (−1,57) y posición ganadora después (−2,93). El motor quería 34.h5; en cambio fueron las negras las que jugaron 34...h5, su mejor respuesta.\n\nEn el mismo match ganó Elnaz Kaliakhmet para Kazajistán, y terminó 2–2. Kazajistán termina segundo en el torneo femenino con 18 puntos de match, según el recuento de las partidas retransmitidas.\n\nRevívela y luego prueba 34.h5 contra el motor."
+        },
+        "fi": {
+          "headline": "Maltsevskaya voittaa Nurmanin 92 pistettä alempana, ja Puola pitää Kazakstanin tasoissa 2–2",
+          "body": "IM Aleksandra Maltsevskaya (Puola, 2363) voitti IM Alua Nurmanin (Kazakstan, 2455) mustilla 42 siirrossa 46. FIDE:n shakkiolympialaisten viimeisellä kierroksella Samarkandissa.\n\nStockfish nostaa esiin siirron 34.Qc2, joka pelattiin valkean kellossa 3:53 jäljellä: mustalla selvä etu ennen sitä (−1,57), voittoasema sen jälkeen (−2,93). Moottori halusi 34.h5; sen sijaan musta pelasi 34...h5, moottorin parhaan vastauksen.\n\nSamassa ottelussa Elnaz Kaliakhmet voitti Kazakstanille, ja ottelu päättyi 2–2. Kazakstan päättää naisten turnauksen toisena 18 ottelupisteellä, lähetettyjen pelien perusteella laskettuna.\n\nToista peli ja kokeile sitten 34.h5 moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Maltsevskaya bat Nurman malgré 92 points Elo de moins, et la Pologne tient le Kazakhstan 2–2",
+          "body": "IM Aleksandra Maltsevskaya (Pologne, 2363) a battu IM Alua Nurman (Kazakhstan, 2455) avec les Noirs en 42 coups lors de la dernière ronde de la 46e Olympiade d’échecs FIDE à Samarcande.\n\nStockfish désigne 34.Qc2, joué avec 3:53 à la pendule des Blancs : les Noirs nettement mieux avant (−1,57), gagnants après (−2,93). Le moteur voulait 34.h5 ; ce sont finalement les Noirs qui ont joué 34...h5, sa meilleure réponse.\n\nDans le même match, Elnaz Kaliakhmet a gagné pour le Kazakhstan, et le score final est de 2–2. Le Kazakhstan termine deuxième du tournoi féminin avec 18 points de match, selon le décompte des parties retransmises.\n\nRejouez-la, puis essayez 34.h5 contre le moteur."
+        },
+        "he": {
+          "headline": "ניצחון ל־Maltsevskaya על Nurman למרות 92 נקודות דירוג פחות, ופולין עוצרת את קזחסטן על ⁨2–2⁩",
+          "body": "ניצחון ל־IM Aleksandra Maltsevskaya (פולין, 2363) על IM Alua Nurman (קזחסטן, 2455) עם הכלים השחורים ב־42 מסעים, בסיבוב האחרון של אולימפיאדת השחמט ה־46 של FIDE בסמרקנד.\n\nStockfish מצביע על ⁨34.Qc2⁩, שנעשה עם ⁨3:53⁩ בשעון של הלבן: יתרון ברור לשחור לפניו (⁨−1.57⁩), עמדה מנצחת אחריו (⁨−2.93⁩). המנוע רצה ⁨34.h5⁩; במקום זאת השחור שיחק ⁨34...h5⁩, התשובה הטובה ביותר של המנוע.\n\nבאותו מפגש נרשם ניצחון לקזחסטן של Elnaz Kaliakhmet, והמפגש הסתיים ⁨2–2⁩. קזחסטן מסיימת שנייה בטורניר הנשים עם 18 נקודות משחק, לפי ספירת המשחקים ששודרו.\n\nצפו בו, ואז נסו את ⁨34.h5⁩ מול המנוע."
+        },
+        "hi": {
+          "headline": "92 रेटिंग अंक कम होते हुए Maltsevskaya ने Nurman को हराया, और पोलैंड ने कज़ाख़स्तान को 2–2 पर रोका",
+          "body": "समरकंद में 46वें FIDE शतरंज ओलंपियाड के आख़िरी राउंड में IM Aleksandra Maltsevskaya (पोलैंड, 2363) ने काले मोहरों से IM Alua Nurman (कज़ाख़स्तान, 2455) को 42 चालों में हराया।\n\nStockfish 34.Qc2 की ओर इशारा करता है, जो सफ़ेद की घड़ी में 3:53 बाक़ी रहते चली गई: इससे पहले काले को साफ़ बढ़त थी (−1.57), इसके बाद जीत की स्थिति (−2.93)। इंजन 34.h5 चाहता था; इसके बजाय h5 काले ने खेला: 34...h5, इंजन का सबसे अच्छा जवाब।\n\nउसी मुक़ाबले में कज़ाख़स्तान के लिए Elnaz Kaliakhmet ने जीत दर्ज की, और मुक़ाबला 2–2 रहा। प्रसारित बाज़ियों की गिनती के अनुसार कज़ाख़स्तान महिला वर्ग में 18 मैच अंकों के साथ दूसरे स्थान पर है।\n\nबाज़ी देखें, फिर इंजन के ख़िलाफ़ 34.h5 आज़माएँ।"
+        },
+        "hu": {
+          "headline": "Maltsevskaya 92 ponttal alacsonyabb értékszámmal legyőzi Nurmant, Lengyelország 2–2-t ér el Kazahsztán ellen",
+          "body": "IM Aleksandra Maltsevskaya (Lengyelország, 2363) sötéttel 42 lépésben legyőzte IM Alua Nurmant (Kazahsztán, 2455) a 46. FIDE sakkolimpia utolsó fordulójában Szamarkandban.\n\nA Stockfish 34.Qc2-t emeli ki, amely világos óráján 3:53-mal jött: előtte sötét egyértelmű előnyben volt (−1,57), utána nyerő állásban (−2,93). A motor 34.h5-öt akarta; ehelyett sötét lépett 34...h5-öt, a motor legjobb válaszát.\n\nUgyanebben a mérkőzésben Elnaz Kaliakhmet nyert Kazahsztánnak, és 2–2 lett a vége. Kazahsztán 18 csapatponttal a második a női versenyben, a közvetített játszmák alapján számolva.\n\nJátszd vissza, aztán próbáld ki 34.h5-öt a motor ellen."
+        },
+        "id": {
+          "headline": "Rating 92 poin lebih rendah, Maltsevskaya kalahkan Nurman; Polandia tahan Kazakhstan 2–2",
+          "body": "Di babak terakhir Olimpiade Catur FIDE ke-46 di Samarkand, IM Aleksandra Maltsevskaya (Polandia, 2363) mengalahkan IM Alua Nurman (Kazakhstan, 2455) dengan bidak hitam dalam 42 langkah.\n\nStockfish menunjuk 34.Qc2, yang dimainkan dengan sisa 3:53 di jam Putih: Hitam unggul jelas sebelumnya (−1,57), menang sesudahnya (−2,93). Mesin menginginkan 34.h5; justru Hitam yang memainkan 34...h5, jawaban terbaik mesin.\n\nDi pertandingan yang sama, Elnaz Kaliakhmet menang untuk Kazakhstan, dan hasilnya 2–2. Menurut hitungan partai yang disiarkan, Kazakhstan finis kedua di bagian putri dengan 18 poin pertandingan.\n\nPutar ulang, lalu coba 34.h5 melawan mesin."
+        },
+        "it": {
+          "headline": "Maltsevskaya batte Nurman con 92 punti Elo in meno e la Polonia ferma il Kazakistan sul 2–2",
+          "body": "IM Aleksandra Maltsevskaya (Polonia, 2363) ha battuto IM Alua Nurman (Kazakistan, 2455) con il Nero in 42 mosse nell’ultimo turno della 46ª Olimpiade degli scacchi FIDE a Samarcanda.\n\nStockfish indica 34.Qc2, giocata con 3:53 sull’orologio del Bianco: Nero chiaramente meglio prima (−1,57), vincente dopo (−2,93). Il motore voleva 34.h5; invece è stato il Nero a giocare 34...h5, la sua migliore risposta.\n\nNello stesso match Elnaz Kaliakhmet ha vinto per il Kazakistan, e il risultato è stato 2–2. Il Kazakistan chiude secondo nel torneo femminile con 18 punti match, secondo il conteggio delle partite trasmesse.\n\nRivedila, poi prova 34.h5 contro il motore."
+        },
+        "ja": {
+          "headline": "レーティング差92を覆しMaltsevskayaがNurmanに勝利、ポーランドはカザフスタンと2–2",
+          "body": "サマルカンドで行われた第46回FIDEチェス・オリンピアード最終ラウンドで、IM Aleksandra Maltsevskaya（ポーランド、2363）が黒番でIM Alua Nurman（カザフスタン、2455）に42手で勝ちました。\n\nStockfishが挙げるのは34.Qc2。白の残り時間3:53で指された手で、その前は黒の明確な優勢（−1.57）、その後は黒の勝勢（−2.93）です。エンジンは34.h5を望みましたが、実際にh5を指したのは黒の側でした：34...h5、エンジンの最善の応手です。\n\n同じマッチではElnaz Kaliakhmetがカザフスタンに白星をもたらし、2–2に。中継された対局から数えると、カザフスタンはマッチポイント18で女子の部2位です。\n\n再生してから、エンジン相手に34.h5を試してみましょう。"
+        },
+        "ko": {
+          "headline": "레이팅 92점 차를 넘어 Maltsevskaya가 Nurman에게 승리, 폴란드는 카자흐스탄과 2–2",
+          "body": "사마르칸트에서 열린 제46회 FIDE 체스 올림피아드 마지막 라운드에서 IM Aleksandra Maltsevskaya(폴란드, 2363)가 흑으로 IM Alua Nurman(카자흐스탄, 2455)을 42수 만에 이겼습니다.\n\nStockfish가 짚는 수는 백의 남은 시간 3:53에 둔 34.Qc2입니다. 그 전에는 흑의 뚜렷한 우세(−1.57), 그 후에는 흑이 이기는 형세(−2.93)였습니다. 엔진은 34.h5를 원했지만, 정작 h5를 둔 쪽은 흑이었습니다: 엔진의 최선의 응수 34...h5.\n\n같은 매치에서 Elnaz Kaliakhmet이 카자흐스탄에 승리를 안겼고, 매치는 2–2로 끝났습니다. 중계된 대국으로 세면 카자흐스탄은 매치 포인트 18로 여자부 2위입니다.\n\n다시 본 뒤, 엔진을 상대로 34.h5를 두어 보세요."
+        },
+        "ms": {
+          "headline": "Penarafan 92 mata lebih rendah, Maltsevskaya tewaskan Nurman; Poland ikat Kazakhstan 2–2",
+          "body": "Dalam pusingan terakhir Olimpiad Catur FIDE ke-46 di Samarkand, IM Aleksandra Maltsevskaya (Poland, 2363) menewaskan IM Alua Nurman (Kazakhstan, 2455) dengan buah hitam dalam 42 langkah.\n\nStockfish menunjuk kepada 34.Qc2, yang dimainkan dengan baki 3:53 pada jam Putih: Hitam jelas mendahului sebelumnya (−1,57), menang selepasnya (−2,93). Enjin mahukan 34.h5; sebaliknya Hitam yang memainkan 34...h5, jawapan terbaik enjin.\n\nDalam perlawanan yang sama, Elnaz Kaliakhmet menang untuk Kazakhstan, dan keputusannya 2–2. Mengikut kiraan permainan yang disiarkan, Kazakhstan tamat di tempat kedua bahagian wanita dengan 18 mata perlawanan.\n\nMain semula, kemudian cuba 34.h5 menentang enjin."
+        },
+        "nl": {
+          "headline": "Maltsevskaya verslaat Nurman ondanks 92 ratingpunten minder, Polen houdt Kazachstan op 2–2",
+          "body": "IM Aleksandra Maltsevskaya (Polen, 2363) versloeg IM Alua Nurman (Kazachstan, 2455) met zwart in 42 zetten in de laatste ronde van de 46e FIDE Schaakolympiade in Samarkand.\n\nStockfish wijst 34.Qc2 aan, gespeeld met 3:53 op de klok van wit: zwart ervoor duidelijk beter (−1,57), erna gewonnen (−2,93). De engine wilde 34.h5; in plaats daarvan speelde zwart 34...h5, het beste antwoord van de engine.\n\nIn dezelfde match won Elnaz Kaliakhmet voor Kazachstan, en het werd 2–2. Kazachstan eindigt als tweede in het vrouwentoernooi met 18 matchpunten, geteld uit de uitgezonden partijen.\n\nSpeel hem na en probeer dan 34.h5 tegen de engine."
+        },
+        "no": {
+          "headline": "Maltsevskaya slår Nurman tross 92 ratingpoeng mindre, og Polen holder Kasakhstan til 2–2",
+          "body": "IM Aleksandra Maltsevskaya (Polen, 2363) slo IM Alua Nurman (Kasakhstan, 2455) med svart på 42 trekk i siste runde av den 46. FIDE-sjakkolympiaden i Samarkand.\n\nStockfish peker ut 34.Qc2, spilt med 3:53 igjen på hvits klokke: svart klart bedre før (−1,57), til gevinst etter (−2,93). Motoren ville ha 34.h5; i stedet var det svart som spilte 34...h5, motorens beste svar.\n\nI samme match vant Elnaz Kaliakhmet for Kasakhstan, og det endte 2–2. Kasakhstan ender som nummer to i kvinneturneringen med 18 matchpoeng, talt fra de sendte partiene.\n\nSpill det av, og prøv så 34.h5 mot motoren."
+        },
+        "pl": {
+          "headline": "Maltsevskaya pokonuje Nurman mimo 92 punktów rankingu mniej, a Polska remisuje z Kazachstanem 2–2",
+          "body": "IM Aleksandra Maltsevskaya (Polska, 2363) pokonuje czarnymi IM Alua Nurman (Kazachstan, 2455) w 42 ruchach w ostatniej rundzie 46. Olimpiady Szachowej FIDE w Samarkandzie.\n\nStockfish wskazuje 34.Qc2, zagrane przy 3:53 na zegarze białych: przed nim wyraźna przewaga czarnych (−1,57), po nim wygrana (−2,93). Silnik chciał 34.h5 – zamiast tego to czarne zagrały 34...h5, najlepszą odpowiedź silnika.\n\nW tym samym meczu dla Kazachstanu wygrywa Elnaz Kaliakhmet i mecz kończy się 2–2. Kazachstan kończy turniej kobiet na drugim miejscu z 18 punktami meczowymi, według zliczenia transmitowanych partii.\n\nOdtwórz ją, potem spróbuj 34.h5 przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Maltsevskaya vence Nurman com 92 pontos de rating a menos, e a Polônia segura o Cazaquistão em 2–2",
+          "body": "IM Aleksandra Maltsevskaya (Polônia, 2363) venceu IM Alua Nurman (Cazaquistão, 2455) de pretas em 42 lances na última rodada da 46ª Olimpíada de Xadrez da FIDE em Samarcanda.\n\nO Stockfish aponta 34.Qc2, jogado com 3:53 no relógio das brancas: clara vantagem das pretas antes (−1,57), posição vencedora depois (−2,93). O motor queria 34.h5; em vez disso, foram as pretas que jogaram 34...h5, sua melhor resposta.\n\nNo mesmo match, Elnaz Kaliakhmet venceu pelo Cazaquistão, e o placar ficou em 2–2. O Cazaquistão termina em segundo no torneio feminino, com 18 pontos de match, pela contagem das partidas transmitidas.\n\nReveja e depois tente 34.h5 contra o motor."
+        },
+        "ro": {
+          "headline": "Maltsevskaya câștigă contra Nurman, cu 92 de puncte de rating mai puțin, iar Polonia ține Kazahstanul la 2–2",
+          "body": "IM Aleksandra Maltsevskaya (Polonia, 2363) a câștigat cu negrele contra IM Alua Nurman (Kazahstan, 2455) în 42 de mutări, în ultima rundă a celei de-a 46-a Olimpiade de Șah FIDE, la Samarkand.\n\nStockfish indică 34.Qc2, jucată cu 3:53 pe ceasul Albului: avantaj clar al Negrului înainte (−1,57), poziție câștigătoare după (−2,93). Motorul voia 34.h5; în schimb Negrul a jucat 34...h5, cel mai bun răspuns al motorului.\n\nÎn același meci, Elnaz Kaliakhmet a câștigat pentru Kazahstan, iar scorul final a fost 2–2. După numărătoarea partidelor transmise, Kazahstanul termină pe locul doi la feminin, cu 18 puncte de meci.\n\nRevezi-o, apoi încearcă 34.h5 contra motorului."
+        },
+        "ru": {
+          "headline": "Maltsevskaya обыгрывает Nurman вопреки разнице в 92 пункта, а Польша и Казахстан — 2–2",
+          "body": "IM Aleksandra Maltsevskaya (Польша, 2363) чёрными обыгрывает IM Alua Nurman (Казахстан, 2455) за 42 хода в последнем туре 46-й шахматной олимпиады ФИДЕ в Самарканде.\n\nStockfish выделяет ход 34.Qc2, сделанный с 3:53 на часах белых: до него у чёрных явный перевес (−1,57), после — выигрыш (−2,93). Движок хотел 34.h5 — а в партии h5 сыграли чёрные: 34...h5, лучший ответ по мнению движка.\n\nВ том же матче за Казахстан побеждает Elnaz Kaliakhmet, и матч заканчивается 2–2. Казахстан занимает второе место в женском турнире с 18 командными очками, по подсчёту транслировавшихся партий.\n\nПосмотрите партию, а затем попробуйте 34.h5 против движка."
+        },
+        "sv": {
+          "headline": "Maltsevskaya besegrar Nurman trots 92 ratingpoäng mindre, och Polen håller Kazakstan till 2–2",
+          "body": "IM Aleksandra Maltsevskaya (Polen, 2363) besegrade IM Alua Nurman (Kazakstan, 2455) med svart på 42 drag i sista ronden av den 46:e FIDE-schackolympiaden i Samarkand.\n\nStockfish pekar ut 34.Qc2, spelat med 3:53 kvar på vits klocka: svart tydligt bättre före (−1,57), på vinst efter (−2,93). Motorn ville ha 34.h5; i stället var det svart som spelade 34...h5, motorns bästa svar.\n\nI samma match vann Elnaz Kaliakhmet för Kazakstan, och det slutade 2–2. Kazakstan slutar tvåa i damturneringen med 18 matchpoäng, räknat på de sända partierna.\n\nSpela upp det och prova sedan 34.h5 mot motorn."
+        },
+        "th": {
+          "headline": "เรตติ้งต่ำกว่า 92 แต่ Maltsevskaya ชนะ Nurman และโปแลนด์ยันคาซัคสถานไว้ที่ 2–2",
+          "body": "ในรอบสุดท้ายของหมากรุกโอลิมปิก FIDE ครั้งที่ 46 ที่ซามาร์คันด์ IM Aleksandra Maltsevskaya (โปแลนด์, 2363) ถือฝ่ายดำชนะ IM Alua Nurman (คาซัคสถาน, 2455) ใน 42 ตา\n\nStockfish ชี้ที่ 34.Qc2 ซึ่งเดินตอนที่นาฬิกาฝ่ายขาวเหลือ 3:53 ก่อนหน้านั้นฝ่ายดำได้เปรียบชัดเจน (−1.57) หลังจากนั้นอยู่ในสถานะชนะ (−2.93) เอนจินต้องการ 34.h5 แต่กลายเป็นฝ่ายดำที่เดิน h5 คือ 34...h5 ซึ่งเป็นการตอบที่ดีที่สุดของเอนจิน\n\nในแมตช์เดียวกัน Elnaz Kaliakhmet ชนะให้คาซัคสถาน และแมตช์จบที่ 2–2 นับจากเกมที่ถ่ายทอด คาซัคสถานจบอันดับสองในประเภทหญิงด้วย 18 แต้มแมตช์\n\nดูเกม แล้วลอง 34.h5 กับเอนจิน"
+        },
+        "tr": {
+          "headline": "Maltsevskaya, 92 puan düşük reytingle Nurman'ı yendi; Polonya Kazakistan'ı 2–2'de tuttu",
+          "body": "IM Aleksandra Maltsevskaya (Polonya, 2363), 46. FIDE Satranç Olimpiyatı'nın Semerkant'taki son turunda siyah taşlarla IM Alua Nurman'ı (Kazakistan, 2455) 42 hamlede yendi.\n\nStockfish, beyazın saatinde 3:53 kala oynanan 34.Qc2'yi öne çıkarıyor: öncesinde siyah açık farkla üstün (−1,57), sonrasında kazanan konumda (−2,93). Motor 34.h5 istiyordu; bunun yerine h5'i siyah oynadı: 34...h5, motorun en iyi yanıtı.\n\nAynı maçta Elnaz Kaliakhmet Kazakistan adına kazandı ve maç 2–2 bitti. Kazakistan, yayınlanan oyunlara göre sayıldığında kadınlar turnuvasını 18 maç puanıyla ikinci bitiriyor.\n\nOyunu izle, sonra motora karşı 34.h5'i dene."
+        },
+        "vi": {
+          "headline": "Kém 92 điểm hệ số, Maltsevskaya vẫn thắng Nurman; Ba Lan cầm hòa Kazakhstan 2–2",
+          "body": "Ở vòng cuối Olympiad Cờ vua FIDE lần thứ 46 tại Samarkand, IM Aleksandra Maltsevskaya (Ba Lan, 2363) cầm quân Đen thắng IM Alua Nurman (Kazakhstan, 2455) sau 42 nước.\n\nStockfish chỉ ra 34.Qc2, được đi khi đồng hồ Trắng còn 3:53: Đen ưu thế rõ trước đó (−1,57), thế thắng sau đó (−2,93). Engine muốn 34.h5; thay vào đó, chính Đen đi 34...h5, nước đáp tốt nhất của engine.\n\nTrong cùng trận đấu, Elnaz Kaliakhmet thắng cho Kazakhstan, và trận kết thúc 2–2. Theo số ván được phát sóng, Kazakhstan về nhì nội dung nữ với 18 điểm trận.\n\nXem lại, rồi thử 34.h5 với engine."
+        },
+        "zh-Hans": {
+          "headline": "等级分低92分，Maltsevskaya击败Nurman；波兰与哈萨克斯坦战成2–2",
+          "body": "在撒马尔罕举行的第46届FIDE国际象棋奥林匹克最后一轮中，IM Aleksandra Maltsevskaya（波兰，2363）执黑用42步击败了IM Alua Nurman（哈萨克斯坦，2455）。\n\nStockfish指出的是34.Qc2，走于白方钟上剩3:53时：此前黑方明显占优（−1.57），此后黑方胜势（−2.93）。引擎想让白方走34.h5；结果走出h5的却是黑方：34...h5，正是引擎的最佳应着。\n\n同一场团体赛中，Elnaz Kaliakhmet为哈萨克斯坦拿下一分，比赛以2–2结束。按转播对局统计，哈萨克斯坦以18个团体分位列女子组第二。\n\n回放这盘棋，然后对着引擎试试34.h5。"
+        },
+        "zh-Hant": {
+          "headline": "等級分低92分，Maltsevskaya擊敗Nurman；波蘭與哈薩克戰成2–2",
+          "body": "在撒馬爾罕舉行的第46屆FIDE西洋棋奧林匹克最後一輪中，IM Aleksandra Maltsevskaya（波蘭，2363）執黑以42步擊敗了IM Alua Nurman（哈薩克，2455）。\n\nStockfish指出的是34.Qc2，走於白方鐘上剩3:53時：此前黑方明顯佔優（−1.57），此後黑方勝勢（−2.93）。引擎想讓白方走34.h5；結果走出h5的卻是黑方：34...h5，正是引擎的最佳應著。\n\n同一場團體賽中，Elnaz Kaliakhmet為哈薩克拿下一分，比賽以2–2結束。按轉播對局統計，哈薩克以18個團體分位列女子組第二。\n\n回放這盤棋，然後對著引擎試試34.h5。"
+        },
+        "bg": {
+          "headline": "Maltsevskaya побеждава Nurman въпреки 92 точки по-нисък рейтинг, а Полша стига 2–2 с Казахстан",
+          "body": "IM Aleksandra Maltsevskaya (Полша, 2363) победи IM Alua Nurman (Казахстан, 2455) с черните за 42 хода в последния кръг на 46-ата шахматна олимпиада на ФИДЕ в Самарканд.\n\nStockfish посочва 34.Qc2, изигран с 3:53 на часовника на белите: ясно предимство за черните преди него (−1,57), печеливша позиция след него (−2,93). Енджинът искаше 34.h5 — а вместо това черните изиграха 34...h5, най-добрия отговор според енджина.\n\nВ същия мач Elnaz Kaliakhmet спечели за Казахстан и мачът завърши 2–2. Казахстан завършва втори при жените с 18 мачови точки, според преброяването на предаваните партии.\n\nПреиграйте я, после опитайте 34.h5 срещу енджина."
+        }
+      },
+      "fen": "8/4kp1p/4p1p1/2q5/7P/p1n3P1/P1Q2PB1/6K1 b - - 1 34",
+      "last": {
+        "from": "d2",
+        "to": "c2"
+      },
+      "url": "https://brasspawn.com/today/2026-09-27-nurman-maltsevskaya-olympiad-r11",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-women-matches-1-25/round-11/mcDuUC43/La5SJg0K"
+      },
+      "updatedAt": "2026-09-27T13:07:24.782Z"
+    }
+  ]
+}

@@ -84,7 +84,10 @@ function languages(story, made) {
     const wrong = unsafe(`${own.headline}\n${own.body}`, lang);
     if (wrong.length) found.push(`${lang}: ${wrong.join(', ')}`);
     if (label && !own.body.includes(label) && !own.headline.includes(label)) found.push(`${lang}: never mentions ${label}`);
-    const lede = own.lede ?? own.body.split(/(?<=[.!?。！？।])\s*/u)[0];
+    // The first sentence of the first paragraph: a stop followed by a space,
+    // but not one after a digit ("der 46. FIDE-Schacholympiade", "+2.27",
+    // "30...g4"), or a CJK or Devanagari stop, which needs no space.
+    const lede = own.lede ?? own.body.split('\n\n')[0].split(/(?<=(?<!\d)[.!?])\s+|(?<=[。！？।])/u)[0].trim();
     words[lang] = { headline: own.headline, lede, body: own.body };
   }
   return { words, found };
@@ -137,6 +140,14 @@ if (!approved.length) {
       approved[i] = { ...story, url: pages.at(-1) };
     } catch (error) {
       console.error(`✗ page for ${story.id}: ${error.message}`);
+      continue;
+    }
+    // And in every other language: the collector renders a story's languages
+    // once per build, so the pages it made from its own words would stay.
+    try {
+      await site.translations(story);
+    } catch (error) {
+      console.error(`✗ languages for ${story.id}: ${error.message}`);
     }
   }
   await store.write(approved, state.days);

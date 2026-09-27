@@ -20,7 +20,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { LANGS } from './article.mjs';
 import { pageStory, pageURL } from './page-story.mjs';
-import { reportURL } from './reports.mjs';
+import { REPORTS, reportURL } from './reports.mjs';
 import { openS3 } from './s3.mjs';
 import { inLanguage } from './store.mjs';
 
@@ -245,7 +245,12 @@ export async function publishPages({ store, site, days, log = console.error, tra
     log(`  ${changed.length} stories given their page's address, ${written.length} of them a new page`);
   }
   const byId = new Map(changed.map((story) => [story.id, story]));
-  await site.lists(stories.map((story) => byId.get(story.id) ?? story), translated ?? (await store.pages()).done);
+  // The Olympiad's reports stay in the sitemap: the ones whose pages are
+  // rendered, as the reports' index dates them.
+  const pages = await store.pages();
+  const index = await store.getPrivate(`${REPORTS}/index.json`).catch(() => null);
+  const reports = (index?.reports ?? []).filter(({ id }) => pages.reports?.[id]).map(({ id, date }) => ({ id, date }));
+  await site.lists(stories.map((story) => byId.get(story.id) ?? story), translated ?? pages.done, reports);
   return written;
 }
 
