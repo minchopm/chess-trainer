@@ -10,9 +10,7 @@
     ]
   },
   "identifier" : "953B8193",
-  "nonRenewingSubscriptions" : [
-
-  ],
+  "nonRenewingSubscriptions" : [],
   "products" : [
     {
       "displayPrice" : "39.99",
@@ -183,30 +181,22 @@
     "_developerTeamID" : "8293TNMX6S",
     "_disableDialogs" : false,
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 808986390.73067403,
+    "_lastSynchronizedDate" : 808986390.730674,
     "_locale" : "en_US",
     "_renewalBillingIssuesEnabled" : false,
+    "_storeKitErrors" : [],
     "_storefront" : "USA",
-    "_storeKitErrors" : [
-
-    ],
     "_timeRate" : 0
   },
   "subscriptionGroups" : [
     {
       "id" : "22324080",
-      "localizations" : [
-
-      ],
+      "localizations" : [],
       "name" : "brasspawn.pro",
       "subscriptions" : [
         {
-          "adHocOffers" : [
-
-          ],
-          "codeOffers" : [
-
-          ],
+          "adHocOffers" : [],
+          "codeOffers" : [],
           "displayPrice" : "3.99",
           "familyShareable" : false,
           "groupNumber" : 1,
@@ -369,9 +359,174 @@
           "referenceName" : "Brass Pawn Pro Monthly",
           "subscriptionGroupID" : "22324080",
           "type" : "RecurringSubscription",
-          "winbackOffers" : [
-
-          ]
+          "winbackOffers" : []
+        },
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "19.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6803789122",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Sınırsız problem, alıştırma ve tur",
+              "displayName" : "Yıllık",
+              "locale" : "tr"
+            },
+            {
+              "description" : "Teka-teki, latihan dan pusingan tanpa had",
+              "displayName" : "Tahunan",
+              "locale" : "ms"
+            },
+            {
+              "description" : "Soal, latihan, dan sesi tanpa batas",
+              "displayName" : "Tahunan",
+              "locale" : "id"
+            },
+            {
+              "description" : "Korlátlan feladvány, gyakorlat és kör",
+              "displayName" : "Éves",
+              "locale" : "hu"
+            },
+            {
+              "description" : "Bài tập, luyện tập và lượt không giới hạn",
+              "displayName" : "Hằng năm",
+              "locale" : "vi"
+            },
+            {
+              "description" : "Tehtäviä, harjoituksia ja kierroksia rajatta",
+              "displayName" : "Vuosittain",
+              "locale" : "fi"
+            },
+            {
+              "description" : "Exerciții, finaluri și runde fără limită",
+              "displayName" : "Anual",
+              "locale" : "ro"
+            },
+            {
+              "description" : "Onbeperkt puzzels, oefeningen en runs",
+              "displayName" : "Jaarlijks",
+              "locale" : "nl"
+            },
+            {
+              "description" : "Exercícios, finais e séries sem limite",
+              "displayName" : "Anual",
+              "locale" : "pt_BR"
+            },
+            {
+              "description" : "Esercizi, finali e run senza limiti",
+              "displayName" : "Annuale",
+              "locale" : "it"
+            },
+            {
+              "description" : "Ejercicios, finales y series sin límite",
+              "displayName" : "Anual",
+              "locale" : "es_ES"
+            },
+            {
+              "description" : "Problèmes, exercices et runs sans limite",
+              "displayName" : "Annuel",
+              "locale" : "fr"
+            },
+            {
+              "description" : "Problèmes, exercices et runs sans limite",
+              "displayName" : "Annuel",
+              "locale" : "fr_CA"
+            },
+            {
+              "description" : "Zadania, ćwiczenia i serie bez limitu",
+              "displayName" : "Rocznie",
+              "locale" : "pl"
+            },
+            {
+              "description" : "Unbegrenzt Aufgaben, Übungen und Läufe",
+              "displayName" : "Jährlich",
+              "locale" : "de"
+            },
+            {
+              "description" : "Unlimited puzzles, drills and Rush runs.",
+              "displayName" : "Yearly",
+              "locale" : "en_CA"
+            },
+            {
+              "description" : "Unlimited puzzles, drills and Rush runs.",
+              "displayName" : "Yearly",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "Uppgifter, övningar och rundor utan gräns",
+              "displayName" : "Årsvis",
+              "locale" : "sv"
+            },
+            {
+              "description" : "Opgaver, øvelser og runder uden grænser",
+              "displayName" : "Årligt",
+              "locale" : "da"
+            },
+            {
+              "description" : "Úlohy, cvičení a série bez omezení",
+              "displayName" : "Ročně",
+              "locale" : "cs"
+            },
+            {
+              "description" : "Ασκήσεις, φινάλε και γύροι χωρίς όριο",
+              "displayName" : "Ετήσια",
+              "locale" : "el"
+            },
+            {
+              "description" : "Задачи, упражнения и серии без ограничений",
+              "displayName" : "Ежегодно",
+              "locale" : "ru"
+            },
+            {
+              "description" : "תרגילים, סופים וסבבים ללא הגבלה",
+              "displayName" : "שנתי",
+              "locale" : "he"
+            },
+            {
+              "description" : "ألغاز وتمارين وجولات بلا حدود",
+              "displayName" : "سنويًا",
+              "locale" : "ar"
+            },
+            {
+              "description" : "पहेलियाँ, अभ्यास और दौर बिना सीमा",
+              "displayName" : "वार्षिक",
+              "locale" : "hi"
+            },
+            {
+              "description" : "แบบฝึก ดริล และรอบไม่จำกัด",
+              "displayName" : "รายปี",
+              "locale" : "th"
+            },
+            {
+              "description" : "习题、练习和冲刺不限量",
+              "displayName" : "按年",
+              "locale" : "zh_Hans"
+            },
+            {
+              "description" : "問題・ドリル・ラッシュが無制限",
+              "displayName" : "年額",
+              "locale" : "ja"
+            },
+            {
+              "description" : "習題、練習與衝刺不限量",
+              "displayName" : "每年",
+              "locale" : "zh_Hant"
+            },
+            {
+              "description" : "문제·드릴·러시 무제한",
+              "displayName" : "연간",
+              "locale" : "ko"
+            }
+          ],
+          "productID" : "com.artesoft.brasspawn.pro.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Brass Pawn Pro Yearly",
+          "subscriptionGroupID" : "22324080",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : []
         }
       ]
     }

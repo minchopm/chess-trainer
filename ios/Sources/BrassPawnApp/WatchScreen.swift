@@ -83,9 +83,16 @@ struct ReplayViewer: View {
     /// Offered when the game can be taken over. Handed the half-move reached,
     /// so the board picks it up exactly where the viewer is standing.
     var onContinue: ((Int) -> Void)?
+    /// Whether taking the game over is Pro's — a story from Today older than a
+    /// day. Somebody without Pro is shown the lock, and asked, rather than
+    /// taken to the board.
+    var continueNeedsPro = false
     let onDismiss: () -> Void
 
     @State private var player: GamePlayer?
+    @State private var showsPaywall = false
+
+    private var continueLocked: Bool { continueNeedsPro && !app.store.isPro }
     @State private var index = 0
     @State private var isPlaying = false
     @State private var scrubbing = false
@@ -103,12 +110,22 @@ struct ReplayViewer: View {
     private var continueRow: some View {
         if let onContinue {
             Button {
-                onContinue(index)
+                if continueLocked {
+                    showsPaywall = true
+                } else {
+                    onContinue(index)
+                }
             } label: {
                 Label {
                     Text(L.t("watch.continueHere", "Play on from here"))
                 } icon: {
-                    BrassIcon("arrow.turn.down.right", size: 15)
+                    if continueLocked {
+                        Image(systemName: "lock.fill")
+                            .font(.system(size: 12, weight: .semibold))
+                            .accessibilityLabel(L.t("store.title", "Brass Pawn Pro"))
+                    } else {
+                        BrassIcon("arrow.turn.down.right", size: 15)
+                    }
                 }
                 .appFont(.footnote)
                 .foregroundStyle(Theatre.brass)
@@ -129,6 +146,7 @@ struct ReplayViewer: View {
             transport
         }
         .background(Theatre.ink.ignoresSafeArea())
+        .appCover(isPresented: $showsPaywall) { PaywallView(playingOn: true) }
         .onAppear(perform: build)
         .onChange(of: app.progress.appearance.showsCoordinates) { _, showing in
             player?.stage.setCoordinates(showing)

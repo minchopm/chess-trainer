@@ -13,7 +13,9 @@ import SwiftUI
 struct TodayScreen: View {
     @Environment(TodayFeed.self) private var feed
     @Environment(Navigator.self) private var navigator
+    @Environment(AppModel.self) private var app
     @State private var open: FeedStory?
+    @State private var showsPaywall = false
     /// The move a link asked for, for the story it opened.
     @State private var openAt: Int?
 
@@ -33,6 +35,7 @@ struct TodayScreen: View {
         .appCover(item: $open, onDismiss: { openAt = nil }) { story in
             StoryScreen(story: story, replayFrom: openAt)
         }
+        .appCover(isPresented: $showsPaywall) { PaywallView() }
     }
 
     /// A story asked for by a link — brasspawn://today/<id>, from the site.
@@ -129,6 +132,7 @@ struct TodayScreen: View {
                         .onAppear { Task { await feed.loadEarlier() } }
                         .id(feed.unreadDays.first?.date)
                 }
+                support
                 Text(L.t("today.privacy", "Opening Today downloads the latest games from brasspawn.com, and earlier days as you scroll back. Nothing about you is sent, and nothing is kept."))
                     .appFont(.caption2)
                     .foregroundStyle(Theatre.ivoryFaint)
@@ -141,6 +145,35 @@ struct TodayScreen: View {
             .frame(maxWidth: .infinity)
         }
         .refreshable { await feed.refresh(force: true) }
+    }
+
+    /// A word at the foot of the list, after the stories rather than before
+    /// them: they are free, and anybody who has enjoyed them can support the
+    /// app. For somebody who already does, a thank-you instead of the ask.
+    @ViewBuilder
+    private var support: some View {
+        if app.store.isPro {
+            Text(L.t("store.supportThanks", "Thank you for supporting Brass Pawn."))
+                .appFont(.footnote)
+                .foregroundStyle(Theatre.ivoryDim)
+                .padding(.top, 18)
+                .padding(.horizontal, 4)
+        } else {
+            VStack(alignment: .leading, spacing: 10) {
+                Text(L.t("today.supportLine", "The stories in Today are free and have no ads. If you enjoy them, you can support Brass Pawn."))
+                    .appFont(.footnote)
+                    .foregroundStyle(Theatre.ivoryDim)
+                    .fixedSize(horizontal: false, vertical: true)
+                Button { showsPaywall = true } label: {
+                    Text(L.t("store.support", "Support Brass Pawn"))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
+                }
+                .buttonStyle(PillButtonStyle(emphasis: .ghost))
+            }
+            .padding(.top, 18)
+            .padding(.horizontal, 4)
+        }
     }
 
     /// "Friday 25 September", in the reader's language — read in UTC, which is
@@ -260,8 +293,13 @@ struct StoryScreen: View {
     @State private var replaying = false
     @State private var handedOver = false
     @State private var shareImage: Image?
+    @State private var showsPaywall = false
 
     private var orientation: PieceColor { story.winner == .black ? .black : .white }
+
+    /// Playing on from this story needs Pro: it is older than a day, and the
+    /// reader does not have it. Reading and replaying it never do.
+    private var playOnLocked: Bool { !app.store.isPro && !story.isRecent() }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -282,23 +320,29 @@ struct StoryScreen: View {
                             actions.padding(.vertical, 12)
                         }
                         .frame(width: side)
-                        reading
+                        reading(width: 640)
                             .frame(maxWidth: 560)
                     }
                     .padding(.horizontal, 24)
                     .frame(maxWidth: .infinity)
                 } else {
+                    // The board as wide as the screen allows, and no more than
+                    // three fifths of its height, which leaves the story room
+                    // to be read under it: the whole width on a phone, and on
+                    // an iPad held upright a board that fills it rather than a
+                    // phone's board in the middle of a tablet.
+                    let side = max(240, min(geometry.size.width - 20, geometry.size.height * 0.6))
                     VStack(spacing: 0) {
                         board
-                            .aspectRatio(1, contentMode: .fit)
-                            .frame(maxWidth: 560)
-                            .padding(.horizontal, 10)
+                            .frame(width: side, height: side)
                         caption
                         actions
+                            .frame(maxWidth: min(side, 720))
                             .padding(.horizontal, 14)
                             .padding(.vertical, 10)
-                        reading
+                        reading(width: max(640, side))
                     }
+                    .frame(maxWidth: .infinity)
                 }
             }
         }
@@ -331,9 +375,11 @@ struct StoryScreen: View {
                     replaying = false
                     carryOn(from: ply)
                 },
+                continueNeedsPro: !story.isRecent(),
                 onDismiss: { replaying = false }
             )
         }
+        .appCover(isPresented: $showsPaywall) { PaywallView(playingOn: true) }
     }
 
     private var board: some View {
@@ -354,9 +400,17 @@ struct StoryScreen: View {
         }
     }
 
-    private var reading: some View {
+    private func reading(width: CGFloat) -> some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
+                if playOnLocked {
+                    // Said before it is run into: what stays free, and what
+                    // the lock on the button is.
+                    Text(L.t("today.playOnPro", "Replaying is free. Playing on from a story older than a day is part of Brass Pawn Pro."))
+                        .appFont(.caption)
+                        .foregroundStyle(Theatre.brass)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
                 words
                 facts
                 Text(L.t("today.source", "Moves from the official broadcast, relayed by Lichess. Evaluations by Stockfish. Brass Pawn is not affiliated with the event or the players."))
@@ -365,7 +419,7 @@ struct StoryScreen: View {
             }
             .padding(.horizontal, 16)
             .padding(.bottom, 40)
-            .frame(maxWidth: 640, alignment: .leading)
+            .frame(maxWidth: width, alignment: .leading)
             .frame(maxWidth: .infinity)
         }
     }
@@ -382,12 +436,23 @@ struct StoryScreen: View {
             .buttonStyle(PillButtonStyle(emphasis: .solid))
 
             Button {
-                carryOn(from: story.focusPly)
+                if playOnLocked {
+                    showsPaywall = true
+                } else {
+                    carryOn(from: story.focusPly)
+                }
             } label: {
-                Text(L.t("today.tryIt", "Try it yourself"))
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.8)
-                    .frame(maxWidth: .infinity)
+                HStack(spacing: 6) {
+                    if playOnLocked {
+                        Image(systemName: "lock.fill")
+                            .font(.system(size: 10, weight: .semibold))
+                            .accessibilityLabel(L.t("store.title", "Brass Pawn Pro"))
+                    }
+                    Text(L.t("today.tryIt", "Try it yourself"))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
+                }
+                .frame(maxWidth: .infinity)
             }
             .buttonStyle(PillButtonStyle(emphasis: .ghost))
 
@@ -405,7 +470,6 @@ struct StoryScreen: View {
                 .accessibilityLabel(L.t("today.share", "Share"))
             }
         }
-        .frame(maxWidth: 560)
     }
 
     @ViewBuilder
@@ -457,7 +521,10 @@ struct StoryScreen: View {
             Text(label.uppercased())
                 .appFont(size: 8).tracking(1.2)
                 .foregroundStyle(Theatre.ivoryFaint)
-                .frame(width: 92, alignment: .leading)
+                // One line: "SCHLÜSSELZUG" broken after its Z reads as two words.
+                .lineLimit(1)
+                .minimumScaleFactor(0.75)
+                .frame(width: 104, alignment: .leading)
             Text(verbatim: value)
                 .appFont(.footnote)
                 .foregroundStyle(Theatre.ivory)

@@ -233,6 +233,19 @@ public struct FeedStory: Codable, Sendable, Hashable, Identifiable {
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter.date(from: date)
     }
+
+    /// Whether the story is the last day's: open to everybody, replayed and
+    /// played on from, until a whole day has passed since the end of its
+    /// round's day — in UTC, the calendar `date` is written in, so a round that
+    /// finishes late in the evening still has its full day. After that anybody
+    /// can still read and replay it; playing on from it is Pro's.
+    ///
+    /// A story whose date cannot be read is treated as recent: the rule is
+    /// there to keep the newest games free, never to lock one by mistake.
+    public func isRecent(at now: Date = Date()) -> Bool {
+        guard let day else { return true }
+        return now < day.addingTimeInterval(2 * 86_400)
+    }
 }
 
 extension FeedStory.Score {

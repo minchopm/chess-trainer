@@ -124,6 +124,24 @@ struct FeedTests {
         #expect(story.focus.position.isCheckmate)
     }
 
+    @Test("a story is the last day's until a whole day after its round's day, in UTC")
+    func recentUntilADayAfterTheRound() throws {
+        let story = try #require(try FeedFile.decode(file(story())).stories.first)
+        let at = { (text: String) in try #require(ISO8601DateFormatter().date(from: text)) }
+        // Played on 25 September: all of the 25th and the 26th are its day.
+        #expect(story.isRecent(at: try at("2026-09-25T18:00:00Z")))
+        #expect(story.isRecent(at: try at("2026-09-26T23:59:59Z")))
+        #expect(!story.isRecent(at: try at("2026-09-27T00:00:00Z")))
+        #expect(!story.isRecent(at: try at("2026-10-10T12:00:00Z")))
+    }
+
+    @Test("a story whose date cannot be read is never locked")
+    func unreadableDateIsRecent() throws {
+        let odd = story().replacingOccurrences(of: #""date":"2026-09-25""#, with: #""date":"soon""#)
+        let story = try #require(try FeedFile.decode(file(odd)).stories.first)
+        #expect(story.isRecent(at: Date.distantFuture))
+    }
+
     @Test("moves are labelled the way the commentary writes them")
     func moveLabels() {
         #expect(FeedStory.label(ply: 3, san: "g4") == "2.g4")

@@ -8,27 +8,30 @@ import UIKit
 
 /// What the app sells, and whether this person has bought it.
 ///
-/// Two products rather than a tier list: a month at a time for someone trying
-/// the trainer out, and a one-off unlock for someone who has decided. There is
-/// no annual plan in between, because a third price is a third decision to make
-/// at the moment the player wants to solve a puzzle.
+/// Three products: a month at a time for someone trying the trainer out, a
+/// year for someone who means to stay and would rather pay once a year, and a
+/// one-off unlock for someone who has decided. They are offered as a way of
+/// supporting the app as much as of buying the training — Brass Pawn is open
+/// source and has no ads, and this is what pays for it.
 @MainActor
 @Observable
 public final class SubscriptionStore {
     public enum ProductID {
         public static let monthly = "com.artesoft.brasspawn.pro.monthly"
+        public static let yearly = "com.artesoft.brasspawn.pro.yearly"
         public static let lifetime = "com.artesoft.brasspawn.pro.lifetime"
-        public static let all = [monthly, lifetime]
+        public static let all = [monthly, yearly, lifetime]
     }
 
     public enum Activity: Equatable { case loading, purchasing, restoring, managing }
 
     /// True once anything on the list has been bought. The lifetime unlock and
-    /// the subscription grant exactly the same thing; nothing downstream needs
-    /// to know which one paid for it.
+    /// the two subscriptions grant exactly the same thing; nothing downstream
+    /// needs to know which one paid for it.
     public private(set) var isPro = false
     public private(set) var isCheckingEntitlement = true
     public private(set) var monthly: Product?
+    public private(set) var yearly: Product?
     public private(set) var lifetime: Product?
     public private(set) var activity: Activity?
     public private(set) var message: String?
@@ -84,7 +87,7 @@ public final class SubscriptionStore {
     }
 
     public func loadProducts() async {
-        guard monthly == nil || lifetime == nil else { return }
+        guard monthly == nil || yearly == nil || lifetime == nil else { return }
         activity = .loading
         defer {
             activity = nil
@@ -94,8 +97,9 @@ public final class SubscriptionStore {
         do {
             let products = try await Product.products(for: ProductID.all)
             monthly = products.first { $0.id == ProductID.monthly }
+            yearly = products.first { $0.id == ProductID.yearly }
             lifetime = products.first { $0.id == ProductID.lifetime }
-            if monthly == nil, lifetime == nil {
+            if monthly == nil, yearly == nil, lifetime == nil {
                 show(L.t("store.unavailable", "The store is unavailable right now. Please try again."), error: true)
             }
         } catch {
@@ -119,7 +123,7 @@ public final class SubscriptionStore {
                 await transaction.finish()
                 await refreshEntitlement()
                 if isPro {
-                    show(L.t("store.thankYou", "Thank you — the training is unlocked."))
+                    show(L.t("store.thankYouSupport", "Thank you for supporting Brass Pawn — the training is unlocked."))
                 }
             case .pending:
                 show(L.t("store.pending", "The purchase is waiting for approval."))

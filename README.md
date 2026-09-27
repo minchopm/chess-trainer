@@ -200,9 +200,15 @@ the training.
 
 A free account gets five puzzles, one Rush run and three each of the positional
 exercises, endgame drills and games to judge, every day, resetting at midnight.
-Brass Pawn Pro removes the limits — $3.99 a month, or a one-off unlock. There
-is no annual plan in between, because a third price is a third decision to make
-at the moment somebody wants to solve a puzzle.
+Brass Pawn Pro removes the limits — $3.99 a month, $19.99 a year, or a one-off
+unlock, all three the same access. It is offered as supporting the app as much
+as buying the training, because that is what it is: the app is open source, has
+no ads and no account, and Pro is what pays for it.
+
+Today is free to read and replay, every story. Playing on from a story against
+the engine is free for the last day's stories — until a whole day has passed
+since the end of the round's day, in UTC — and part of Pro for older ones, which
+show a lock on the button rather than a surprise behind it.
 
 Metered rather than locked, deliberately. Nobody pays for a trainer they have
 not used, and a mode that refuses to open teaches nothing about what is behind
@@ -216,6 +222,12 @@ Reckless under the AGPLv3 — and a proprietary advertising SDK compiled into th
 same binary would make the combined work undistributable under either. Selling
 the app is fine; copyleft has never forbidden charging. Bolting a closed SDK
 onto it is not.
+
+What is sold is the app's own work, never somebody else's: the games in Today
+come from the official broadcasts and the puzzles from the Lichess database
+(CC0), and reading and replaying them stays free. Pro sells the training and
+playing on against the engine, and anyone may build the app from this source
+without the paywall — which the licence allows and nothing here tries to stop.
 
 ### Languages
 

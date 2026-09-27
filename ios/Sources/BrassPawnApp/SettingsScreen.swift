@@ -119,6 +119,10 @@ struct SettingsScreen: View {
                     section(L.t("settings.coordinates", "Coordinates")) { CoordinatesSwitch() }
                     section(L.t("settings.training", "Training")) { SummarySwitch() }
                     section(L.t("settings.font", "Application font")) { TypefaceChoice() }
+                    // Support, asked for once and plainly, next to About —
+                    // where somebody who likes the app goes looking for who
+                    // made it.
+                    section(L.t("store.title", "Brass Pawn Pro")) { ProUpsellRow() }
                     // About carries the licences and the address to write to.
                     // It used to be reachable only from the paywall, which put
                     // the way of getting in touch behind the way of paying.

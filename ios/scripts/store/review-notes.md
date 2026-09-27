@@ -58,16 +58,21 @@ click from the main menu.
 - The **training modes are free five attempts a day each**, with no purchase and
   no account, which is enough to see every screen and every paid feature working.
 - The **paywall** is reached from the card icon in the top-right corner of the
-  main menu, or by using up a day's free attempts in any training mode. It offers a monthly subscription and
-  a one-off lifetime unlock. Playing — against the engine and against a person —
-  is free and unlimited, and always will be; what is sold is the training.
+  main menu, from Settings › Brass Pawn Pro, from the foot of the Today list, or
+  by using up a day's free attempts in any training mode. It offers a monthly and
+  a yearly subscription and a one-off lifetime unlock, which all give the same
+  access. Playing — against the engine and against a person — is free and
+  unlimited, and always will be; what is sold is the training.
 - **Multiplayer** needs Game Center signed in on the Mac, and a second player. If
   no opponent is found, that is matchmaking having nobody to match with, not an
   error.
 - **Today** is the TODAY plate on the main menu. A story opens on its key move;
   **Replay** steps through the game and **Try it yourself** continues it on the
   free board. A game's page on brasspawn.com opens the same game in the app,
-  at the move the reader had reached there.
+  at the move the reader had reached there. Every story is free to read and
+  replay; continuing one on the board is free for the last day's stories and
+  part of Pro for older ones, which show a lock on that button and open the
+  paywall.
 - The **photograph** feature is Play → Board → **Photo**. It reads a position off
   a picture of a real board, on the device. On a Mac without a camera, it offers
   the photo library instead.

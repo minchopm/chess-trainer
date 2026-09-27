@@ -2,26 +2,34 @@ import ChessTraining
 import StoreKit
 import SwiftUI
 
-/// The one screen that asks for money.
+/// The one screen that asks for money — put as supporting the app, which is
+/// what it is: Brass Pawn is open source, with no ads and no account, and Pro
+/// is what pays for it. What Pro unlocks is said plainly under that.
 ///
-/// It appears when a free day's training runs out, never before — nobody buys
-/// a trainer they have not used, and being asked on the way in is the fastest
-/// way to be deleted. Everything Apple requires to be visible before a purchase
-/// is on this screen rather than a tap away: what it costs, how long that
-/// covers, that a subscription renews itself, and how to get out of it.
+/// It appears when a free day's training runs out, when somebody wants to play
+/// on from a story older than a day, and when it is asked for — never on the
+/// way in: nobody buys a trainer they have not used, and being asked on launch
+/// is the fastest way to be deleted. Everything Apple requires to be visible
+/// before a purchase is on this screen rather than a tap away: what it costs,
+/// how long that covers, that a subscription renews itself, and how to get out
+/// of it.
 struct PaywallView: View {
     @Environment(AppModel.self) private var app
     @Environment(\.dismiss) private var dismiss
     @Environment(\.openURL) private var openURL
     @State private var showsAbout = false
-    @State private var selectedOffer: Offer = .monthly
+    @State private var selectedOffer: Offer = .yearly
     /// What the player just ran out of, so the screen can say so.
     var activity: TrainingActivity?
+    /// Opened from a story older than a day, whose game somebody wanted to
+    /// play on from.
+    var playingOn = false
 
     private var store: SubscriptionStore { app.store }
 
     private enum Offer {
         case monthly
+        case yearly
         case lifetime
     }
 
@@ -50,7 +58,7 @@ struct PaywallView: View {
             Text(L.t("store.purchases", "Purchases"))
                 .appFont(size: 20, weight: .semibold)
                 .foregroundStyle(Theatre.ivory)
-            Text(L.t("store.headerSubtitle", "Unlimited training"))
+            Text(L.t("store.support", "Support Brass Pawn"))
                 .appFont(.caption)
                 .foregroundStyle(Theatre.ivoryDim)
         }
@@ -67,7 +75,8 @@ struct PaywallView: View {
     }
 
     private var runOutText: String {
-        guard let activity else { return L.t("store.unlockTraining", "Unlock the training") }
+        if playingOn { return L.t("store.playOnLocked", "Playing on from an older story is part of Pro.") }
+        guard let activity else { return L.t("store.support", "Support Brass Pawn") }
         return switch activity {
         // No counts in the words. The number lives in `dailyFreeLimit` and is
         // shown from it; spelled out here it goes stale the moment the limit
@@ -87,9 +96,7 @@ struct PaywallView: View {
                     Text(runOutText)
                         .appFont(.title3, weight: .semibold)
                         .foregroundStyle(Theatre.ivory)
-                    Text(selectedOffer == .monthly
-                         ? L.t("store.monthlyPlan", "Monthly Pro plan")
-                         : L.t("store.lifetimePlan", "One-off lifetime unlock"))
+                    Text(planName)
                         .appFont(.caption)
                         .foregroundStyle(Theatre.ivoryDim)
                 }
@@ -104,13 +111,17 @@ struct PaywallView: View {
                         .minimumScaleFactor(0.85)
                         .layoutPriority(1)
                         .foregroundStyle(Theatre.brassHot)
-                    Text(selectedOffer == .monthly
-                         ? L.t("store.perMonthShort", "per month")
-                         : L.t("store.onceShort", "once"))
+                    Text(period)
                         .appFont(.caption2)
                         .foregroundStyle(Theatre.ivoryDim)
                 }
             }
+
+            // Why it costs anything at all, before what it buys.
+            Text(L.t("store.supportBody", "Brass Pawn is open source, with no ads, no account and no tracking. Pro takes the daily limits off the training and pays for the work that keeps the app going."))
+                .appFont(.footnote)
+                .foregroundStyle(Theatre.ivoryDim)
+                .fixedSize(horizontal: false, vertical: true)
 
             Rectangle()
                 .fill(Theatre.ruleSoft)
@@ -120,6 +131,7 @@ struct PaywallView: View {
                 row("infinity", L.t("store.unlimitedPuzzles", "All 14,351 puzzles, without a daily limit"))
                 row("timer", L.t("store.unlimitedRush", "Rush runs without a daily limit"))
                 row("square.grid.3x3.middle.filled", L.t("store.unlimitedRest", "Unlimited positional, endgame and Guess the Elo training"))
+                row("play.rectangle", L.t("store.playOnStories", "Play on from any story in Today, not only the last day’s"))
             }
         }
         .padding(16)
@@ -148,9 +160,9 @@ struct PaywallView: View {
 
     @ViewBuilder
     private var planPicker: some View {
-        if store.monthly == nil, store.lifetime == nil, store.hasAttemptedLoad {
+        if !hasProducts, store.hasAttemptedLoad {
             EmptyView()
-        } else if store.monthly == nil && store.lifetime == nil {
+        } else if !hasProducts {
             HStack(spacing: 8) {
                 BrassActivityIndicator(size: 15)
                 Text(L.t("store.loadingPrices", "Loading prices…")).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
@@ -167,6 +179,15 @@ struct PaywallView: View {
                         price: monthly.displayPrice
                     )
                 }
+                if let yearly = store.yearly {
+                    planOption(
+                        .yearly,
+                        title: L.t("store.yearly", "Yearly"),
+                        detail: L.t("store.perMonthEquivalent", "%@ a month",
+                                    (yearly.price / 12).formatted(yearly.priceFormatStyle)),
+                        price: yearly.displayPrice
+                    )
+                }
                 if let lifetime = store.lifetime {
                     planOption(
                         .lifetime,
@@ -178,13 +199,14 @@ struct PaywallView: View {
             }
             .onAppear { normaliseSelectedOffer() }
             .onChange(of: store.monthly?.id) { _, _ in normaliseSelectedOffer() }
+            .onChange(of: store.yearly?.id) { _, _ in normaliseSelectedOffer() }
             .onChange(of: store.lifetime?.id) { _, _ in normaliseSelectedOffer() }
         }
     }
 
     @ViewBuilder
     private var purchaseAction: some View {
-        if store.monthly == nil, store.lifetime == nil, store.hasAttemptedLoad {
+        if !hasProducts, store.hasAttemptedLoad {
             Button {
                 Task { await store.loadProducts() }
             } label: {
@@ -201,9 +223,9 @@ struct PaywallView: View {
                     if store.isBusy {
                         BrassActivityIndicator(size: 15)
                     }
-                    Text(selectedOffer == .monthly
-                         ? L.t("store.subscribe", "Subscribe")
-                         : L.t("store.unlock", "Unlock forever"))
+                    Text(selectedOffer == .lifetime
+                         ? L.t("store.unlock", "Unlock forever")
+                         : L.t("store.subscribe", "Subscribe"))
                     Spacer()
                     Text(product.displayPrice).monospacedDigit()
                 }
@@ -258,7 +280,9 @@ struct PaywallView: View {
     private var footer: some View {
         VStack(alignment: .leading, spacing: 12) {
             // Required in the app itself, not only in the App Store listing.
-            Text(L.t("store.renewalTerms", "The monthly plan renews each month until you cancel it. Cancel any time in Settings › Apple Account › Subscriptions, at least a day before it renews. The one-off unlock is a single payment and never renews."))
+            Text(store.yearly == nil
+                 ? L.t("store.renewalTerms", "The monthly plan renews each month until you cancel it. Cancel any time in Settings › Apple Account › Subscriptions, at least a day before it renews. The one-off unlock is a single payment and never renews.")
+                 : L.t("store.renewalTermsPlans", "The monthly and yearly plans renew automatically at the end of each period until you cancel them. Cancel any time in Settings › Apple Account › Subscriptions, at least a day before the renewal date. The one-off unlock is a single payment and never renews."))
                 .appFont(.caption).foregroundStyle(Theatre.ivoryDim)
 
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 8) {
@@ -300,20 +324,48 @@ struct PaywallView: View {
         }
     }
 
+    private var hasProducts: Bool {
+        store.monthly != nil || store.yearly != nil || store.lifetime != nil
+    }
+
+    private func product(_ offer: Offer) -> Product? {
+        switch offer {
+        case .monthly: store.monthly
+        case .yearly: store.yearly
+        case .lifetime: store.lifetime
+        }
+    }
+
+    /// The offer chosen, or the first one the store has when that one is not
+    /// on sale here.
     private var selectedProduct: Product? {
+        product(selectedOffer) ?? store.yearly ?? store.monthly ?? store.lifetime
+    }
+
+    private var planName: String {
         switch selectedOffer {
-        case .monthly:
-            store.monthly ?? store.lifetime
-        case .lifetime:
-            store.lifetime ?? store.monthly
+        case .monthly: L.t("store.monthlyPlan", "Monthly Pro plan")
+        case .yearly: L.t("store.yearlyPlan", "Yearly Pro plan")
+        case .lifetime: L.t("store.lifetimePlan", "One-off lifetime unlock")
+        }
+    }
+
+    private var period: String {
+        switch selectedOffer {
+        case .monthly: L.t("store.perMonthShort", "per month")
+        case .yearly: L.t("store.perYearShort", "per year")
+        case .lifetime: L.t("store.onceShort", "once")
         }
     }
 
     private func normaliseSelectedOffer() {
-        if selectedOffer == .monthly, store.monthly == nil, store.lifetime != nil {
-            selectedOffer = .lifetime
-        } else if selectedOffer == .lifetime, store.lifetime == nil, store.monthly != nil {
+        guard product(selectedOffer) == nil else { return }
+        if store.yearly != nil {
+            selectedOffer = .yearly
+        } else if store.monthly != nil {
             selectedOffer = .monthly
+        } else if store.lifetime != nil {
+            selectedOffer = .lifetime
         }
     }
 
@@ -383,27 +435,33 @@ private struct SubscriptionActionButtonStyle: ButtonStyle {
     }
 }
 
-/// The row that keeps the offer visible without nagging: one line in Progress,
-/// where somebody looking at their rating is already thinking about improving.
+/// The row that keeps the offer visible without nagging: one line in Settings,
+/// asking for support rather than announcing a price. For somebody who already
+/// has Pro, a thank-you in its place.
 struct ProUpsellRow: View {
     @Environment(AppModel.self) private var app
     @State private var showsPaywall = false
 
     var body: some View {
         if app.store.isPro {
-            HStack {
-                Text(L.t("store.title", "Brass Pawn Pro"))
-                Spacer()
-                Text(L.t("store.active", "Active"))
-                    .foregroundStyle(Theatre.brass)
+            VStack(alignment: .leading, spacing: 4) {
+                HStack {
+                    Text(L.t("store.title", "Brass Pawn Pro"))
+                    Spacer()
+                    Text(L.t("store.active", "Active"))
+                        .foregroundStyle(Theatre.brass)
+                }
+                .appFont(.subheadline)
+                Text(L.t("store.supportThanks", "Thank you for supporting Brass Pawn."))
+                    .appFont(.caption)
+                    .foregroundStyle(Theatre.ivoryDim)
             }
-            .appFont(.subheadline)
         } else {
             Button { showsPaywall = true } label: {
                 HStack {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(L.t("store.title", "Brass Pawn Pro")).appFont(.body)
-                        Text(L.t("store.upsell", "Unlimited puzzles, drills and runs"))
+                        Text(L.t("store.support", "Support Brass Pawn")).appFont(.body)
+                        Text(L.t("store.supportUpsell", "Unlimited training, and play on from any story in Today"))
                             .appFont(.caption).foregroundStyle(Theatre.ivoryDim)
                     }
                     Spacer()

@@ -25,11 +25,16 @@ finished games, each at the move where the evaluation turned), Progress (ratings
 No credentials, no sample files, no setup. Every mode is one click from the main
 menu. Training modes give five free attempts each per day, with no purchase and
 no account, which is enough to see every paid screen working. The paywall is the
-card icon at the top right of the main menu, or appears when a day's free
-attempts run out; it offers a monthly subscription and a lifetime unlock.
-Playing — against the engine and against a person — is free and unlimited.
+card icon at the top right of the main menu, Settings > Brass Pawn Pro, the foot
+of the Today list, or appears when a day's free attempts run out; it offers a
+monthly and a yearly subscription and a lifetime unlock, all three giving the
+same access. Playing — against the engine and against a person — is free and
+unlimited.
 Today is the TODAY plate on the main menu: a story opens on its key move, Replay
-steps through the game, Try it yourself continues it on the free board.
+steps through the game, Try it yourself continues it on the free board. Every
+story can be read and replayed for free; continuing one on the board is free
+for the last day's stories and part of Pro for older ones, which show a lock on
+that button and open the paywall.
 Multiplayer needs Game Center signed in and a second player; if none is found,
 that is matchmaking with nobody to match, not an error.
 

@@ -13,11 +13,19 @@ import SwiftUI
 struct ClipScreen: View {
     @Bindable var model: ClipModel
     @State private var showsStoreOverlay = false
+    /// How wide the board — and the column of words and buttons round it —
+    /// may be: see `column(for:)`.
+    @State private var column: CGFloat = 520
 
     var body: some View {
         ZStack {
             Theatre.ink.ignoresSafeArea()
-            content
+            GeometryReader { geometry in
+                content
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .onAppear { column = Self.column(for: geometry.size) }
+                    .onChange(of: geometry.size) { _, size in column = Self.column(for: size) }
+            }
         }
         .preferredColorScheme(.dark)
         .appStoreOverlay(isPresented: $showsStoreOverlay) {
@@ -28,6 +36,15 @@ struct ClipScreen: View {
             showsStoreOverlay = true
             model.offerWasShown()
         }
+    }
+
+    /// The board as big as the screen lets it be: its width, less the margins,
+    /// and no taller than the height leaves once the words above it and the
+    /// button below have theirs. On an iPhone that is the width, as it always
+    /// was; on an iPad a board that fills the screen rather than a phone's
+    /// board in the middle of it.
+    static func column(for size: CGSize) -> CGFloat {
+        max(260, min(size.width - 36, size.height - 330))
     }
 
     @ViewBuilder
@@ -88,7 +105,7 @@ struct ClipScreen: View {
                 .foregroundStyle(Theatre.brass)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .frame(maxWidth: 520, alignment: .leading)
+        .frame(maxWidth: column, alignment: .leading)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.top, 12)
     }
@@ -102,7 +119,7 @@ struct ClipScreen: View {
                 orientation: story.winner == .black ? .black : .white,
                 lastMove: entry.move.map { ($0.from, $0.to) }
             )
-            .frame(maxWidth: 520)
+            .frame(maxWidth: column)
             .allowsHitTesting(false)
 
             Text(caption(story, ply: ply))
@@ -130,7 +147,7 @@ struct ClipScreen: View {
                 stepButton("forward.fill", to: ply + 1)
                 stepButton("forward.end.fill", to: model.storyLine.count - 1)
             }
-            .frame(maxWidth: 520)
+            .frame(maxWidth: column)
         }
     }
 
@@ -218,7 +235,7 @@ struct ClipScreen: View {
                 lastMove: model.lastMove,
                 onMove: { from, to, kind in model.play(from: from, to: to, promotion: kind) }
             )
-            .frame(maxWidth: 520)
+            .frame(maxWidth: column)
 
             verdict
                 .frame(height: 22)
@@ -293,7 +310,7 @@ struct ClipScreen: View {
                 .padding(.top, 2)
             }
         }
-        .frame(maxWidth: 520)
+        .frame(maxWidth: column)
     }
 
     // MARK: - Footer
@@ -309,6 +326,6 @@ struct ClipScreen: View {
                 .frame(maxWidth: .infinity)
         }
         .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
-        .frame(maxWidth: 520)
+        .frame(maxWidth: column)
     }
 }

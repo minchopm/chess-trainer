@@ -224,6 +224,12 @@ public struct RootView: View {
             // that a screenshot taken meanwhile catches the menu instead.
             #if DEBUG
             applyScreenshotScene()
+            // A story to open straight into, to look at it: -story <id>. The
+            // link would do the same, behind a dialog asking whether to open it.
+            let arguments = ProcessInfo.processInfo.arguments
+            if let flag = arguments.firstIndex(of: "-story"), flag + 1 < arguments.count {
+                open(story: FeedLink.Target(id: arguments[flag + 1]))
+            }
             #endif
             // A game somebody opened in the clip before installing: the app
             // they installed from it opens on the same game, once.
