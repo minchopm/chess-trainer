@@ -122,7 +122,15 @@ application that merely embeds them.
 
 ## The pieces and the board
 
-Drawn for this app. The 3D pieces are built from measured coordinates in
-`Sources/BoardScene`, not imported from a model: the reference model consulted
-while shaping the knight is CC-BY-NC, which a paid app cannot use, so nothing of
-it is in the binary.
+Made for this app, from nothing: no ready-made set of pieces, board or texture
+went into it.
+
+- The **3D pieces** are built from measured coordinates in `Sources/BoardScene`,
+  not imported from a model: the reference model consulted while shaping the
+  knight is CC-BY-NC, which a paid app cannot use, so nothing of it is in the
+  binary.
+- The **carved sets** of the flat board — the piece images in
+  `Resources/BoardAssets.xcassets/Pieces` — and the **maple and walnut
+  squares** are renders of this project's own models, built in Blender.
+- The **sounds** are synthesised, not recorded: a burst of noise for the contact
+  and two decaying tones for the board under it.
