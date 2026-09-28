@@ -103,7 +103,13 @@ export class Board {
     };
   });
   protected readonly round = computed(() => this.config().dimension === '3d');
-  protected readonly background = computed(() => placeholder(this.config()));
+  /** Whether a flat board has been drawn over the placeholder yet. */
+  private readonly painted = signal(false);
+  // The two colours stand in for the board until it is drawn, and then go:
+  // the placeholder's squares are an eighth of the whole frame, the drawn
+  // board's an eighth of what the rim leaves, so the rim would show the
+  // placeholder's squares through it, out of step with the board's.
+  protected readonly background = computed(() => (this.painted() ? 'transparent' : placeholder(this.config())));
 
   constructor() {
     afterNextRender(() => {
@@ -142,7 +148,7 @@ export class Board {
         void this.drawRound(position, config, side, current);
       } else {
         const canvas = this.flatCanvas()?.nativeElement;
-        if (canvas) void draw(canvas, side, position, config, current);
+        if (canvas) void draw(canvas, side, position, config, current).then(() => this.painted.set(true));
       }
     });
   }
