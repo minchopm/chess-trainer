@@ -14,7 +14,7 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Gioca · Allenati · Guarda',
-    lede: 'Tattica, giudizio posizionale, tecnica dei finali e gioco guidato, con il motore che gira sul dispositivo stesso. Nessun account, e nulla raccolto, se non il fatto che sei online, quando giochi online.',
+    lede: 'Tattica, giudizio posizionale, tecnica dei finali e gioco guidato, con il motore che gira sul dispositivo stesso. Nessun account, e nulla raccolto, se non ciò che serve al gioco online: il fatto che sei online e gli amici che aggiungi.',
     privacy:
       "A parte il gioco online, l'app non raccoglie nulla e non invia nulla su di te. L'unica cosa che scarica è il feed quotidiano, quando apri Oggi. I tuoi punteggi di allenamento e la cronologia restano solo su questo dispositivo, e cancellare l'app li cancella.",
     freeSoftware:

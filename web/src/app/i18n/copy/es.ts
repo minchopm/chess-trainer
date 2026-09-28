@@ -14,7 +14,7 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Juega · Entrena · Observa',
-    lede: 'Táctica, juicio posicional, técnica de finales y juego con entrenador, con el motor funcionando en el propio dispositivo. Sin cuenta, y sin recoger nada, salvo decir que estás en línea mientras juegas en línea.',
+    lede: 'Táctica, juicio posicional, técnica de finales y juego con entrenador, con el motor funcionando en el propio dispositivo. Sin cuenta, y sin recoger nada, salvo lo que necesita el juego en línea: que estás en línea y los amigos que añadas.',
     privacy:
       'Aparte del juego en línea, la app no recoge nada ni envía nada sobre ti. Lo único que descarga es el feed diario, al abrir Hoy. Tus valoraciones de entrenamiento y tu historial se guardan solo en este dispositivo, y borrar la app los borra.',
     freeSoftware:

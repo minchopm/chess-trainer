@@ -14,7 +14,7 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Spela · Träna · Se',
-    lede: 'Taktik, positionsbedömning, slutspelsteknik och spel med tränare, med motorn på själva enheten. Inget konto, och inget samlas in — utom att du är online, när du spelar online.',
+    lede: 'Taktik, positionsbedömning, slutspelsteknik och spel med tränare, med motorn på själva enheten. Inget konto, och inget samlas in — utom det onlinespel behöver: att du är online, och vännerna du lägger till.',
     privacy:
       'Utöver onlinespel samlar appen inte in något och skickar inget om dig. Det enda den laddar ner är det dagliga flödet, när du öppnar I dag. Dina träningsratingar och din historik sparas bara på den här enheten, och tar du bort appen försvinner de.',
     freeSoftware:

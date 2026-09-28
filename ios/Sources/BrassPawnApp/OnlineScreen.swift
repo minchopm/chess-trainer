@@ -25,6 +25,10 @@ struct OnlineScreen: View {
     @State private var invitation: Invitation?
     /// The rank list, the players or the friends, when one is open.
     @State private var people: PeopleScreen.Kind?
+    /// The friend a game is offered to through `OnlineService`, while the
+    /// offer waits for an answer — and what gives up on it after two minutes.
+    @State private var offeredTo: String?
+    @State private var offerWait: Task<Void, Never>?
 
     /// Drives the clock display. The clock itself works from timestamps, so
     /// this only decides how often the numbers are redrawn — not how they are
@@ -64,8 +68,27 @@ struct OnlineScreen: View {
         .appCover(item: $people) { kind in
             PeopleScreen(kind: kind, clock: timeControl) { player, control in invite(player, on: control) }
         }
+        // A friend's game the player said yes to, from the banner anywhere in
+        // the app: straight into the pool the friend is waiting in.
+        .onChange(of: app.acceptedFriendGame, initial: true) { _, offer in
+            guard let offer else { return }
+            app.acceptedFriendGame = nil
+            guard matchmaker.session == nil else { return }
+            if isSearching { matchmaker.cancelSearch() }
+            withdrawOffer()
+            timeControl = offer.clock
+            search(offer.clock, invitation: Invitation(name: offer.alias, playerID: offer.id, minutes: offer.minutes))
+        }
+        .onChange(of: matchmaker.session == nil) { _, idle in
+            if !idle {
+                offerWait?.cancel()
+                offerWait = nil
+                offeredTo = nil
+            }
+        }
         .onDisappear {
             matchmaker.cancelSearch()
+            withdrawOffer()
             activity.release()
         }
         #if canImport(UIKit)
@@ -126,7 +149,10 @@ struct OnlineScreen: View {
                 }
 
                 if isSearching {
-                    Button(role: .destructive) { matchmaker.cancelSearch() } label: {
+                    Button(role: .destructive) {
+                        matchmaker.cancelSearch()
+                        withdrawOffer()
+                    } label: {
                         HStack(spacing: 8) {
                             BrassActivityIndicator(size: 15)
                             if let invitee = matchmaker.invitee {
@@ -139,14 +165,7 @@ struct OnlineScreen: View {
                     }
                     .buttonStyle(PillButtonStyle(emphasis: .danger))
                 } else {
-                    Button {
-                        matchmaker.findOpponent(
-                            timeControl: timeControl,
-                            rating: app.progress.rating(.online(minutes: timeControl.minutes)),
-                            games: app.progress.gamesPlayed(.online(minutes: timeControl.minutes)),
-                            deviation: app.progress.deviation(.online(minutes: timeControl.minutes))
-                        )
-                    } label: {
+                    Button { search(timeControl) } label: {
                         Text(matchmaker.isAuthenticated
                              ? L.t("online.findOpponent", "Find opponent")
                              : L.t("online.signIn", "Sign in to Game Center"))
@@ -192,11 +211,13 @@ struct OnlineScreen: View {
                         }
                     }
                 }
-                // Three lists, three ways in: each is its own screen.
+                // Three lists, three ways in: each is its own screen. The
+                // friends say how many requests and games wait for an answer.
                 HStack(spacing: 8) {
                     ForEach([PeopleScreen.Kind.ranks, .players, .friends]) { kind in
+                        let waiting = kind == .friends ? boards.incoming.count + app.friendInvites.count : 0
                         Button { people = kind } label: {
-                            Text(kind.title)
+                            Text(verbatim: waiting > 0 ? "\(kind.title) · \(waiting)" : kind.title)
                                 .lineLimit(1)
                                 .minimumScaleFactor(0.8)
                                 .frame(maxWidth: .infinity)
@@ -208,11 +229,58 @@ struct OnlineScreen: View {
         }
     }
 
+    /// Look for a game on a clock: in its pool, or with an invitation, in the
+    /// pool of the one person it is from or to.
+    private func search(_ control: TimeControl, invitation: Invitation? = nil) {
+        let pool = RatedPool.online(minutes: control.minutes)
+        matchmaker.findOpponent(
+            timeControl: control,
+            rating: app.progress.rating(pool),
+            games: app.progress.gamesPlayed(pool),
+            deviation: app.progress.deviation(pool),
+            invitation: invitation
+        )
+    }
+
     /// Invite one player, on a clock — through Game Center, as a notification
     /// on their devices; the lobby shows it going out, and a yes starts the game.
+    ///
+    /// A friend Game Center has not handed this device — known to it only by
+    /// their key in `OnlineService` — is offered the game there instead, and
+    /// sees it while the app is open: both then look in a pool of their own,
+    /// derived from this player's key and the clock, as a link's invitation
+    /// does. Either way it is a friendly game.
     private func invite(_ player: BoardPlayer, on control: TimeControl) {
         timeControl = control
-        matchmaker.invite(player, on: control, from: app.boards)
+        withdrawOffer()
+        guard app.boards.player(player.id) == nil, app.boards.friendState(of: player) == .friend,
+              let key = player.key, let mine = app.service.myKey else {
+            matchmaker.invite(player, on: control, from: app.boards)
+            return
+        }
+        if isSearching { matchmaker.cancelSearch() }
+        search(control, invitation: Invitation(name: player.alias, playerID: mine, minutes: control.minutes))
+        offeredTo = key
+        let alias = player.alias
+        offerWait = Task {
+            let sent = await app.service.offer(to: key, minutes: control.minutes)
+            if sent { try? await Task.sleep(for: .seconds(Self.offerWait)) }
+            guard !Task.isCancelled else { return }
+            if matchmaker.session == nil, matchmaker.invitee == alias { matchmaker.gaveUp(on: alias) }
+            offeredTo = nil
+        }
+    }
+
+    /// How long an offer to a friend waits: the service keeps it two minutes.
+    private static let offerWait: Double = 125
+
+    /// A game offered to a friend, taken back: the search was cancelled, or
+    /// the lobby left.
+    private func withdrawOffer() {
+        offerWait?.cancel()
+        offerWait = nil
+        if let key = offeredTo { Task { await app.service.cancelOffer(to: key) } }
+        offeredTo = nil
     }
 
     // MARK: - Invitations
@@ -237,13 +305,7 @@ struct OnlineScreen: View {
                 Button(L.t("online.accept", "Accept")) {
                     let control = TimeControl(rawValue: invitation.minutes) ?? .five
                     timeControl = control
-                    matchmaker.findOpponent(
-                        timeControl: control,
-                        rating: app.progress.rating(.online(minutes: control.minutes)),
-                        games: app.progress.gamesPlayed(.online(minutes: control.minutes)),
-                        deviation: app.progress.deviation(.online(minutes: control.minutes)),
-                        invitation: invitation
-                    )
+                    search(control, invitation: invitation)
                 }
                 .buttonStyle(PillButtonStyle(emphasis: .solid))
                 .disabled(isSearching || !matchmaker.isAuthenticated)
@@ -308,6 +370,14 @@ struct OnlineScreen: View {
         case .friends:
             app.boards.fillWithSamples()
             people = .friends
+        case .friendOffer:
+            app.boards.fillWithSamples()
+            // After Game Center has failed to sign in on the simulator, which
+            // clears whatever was on offer.
+            Task { @MainActor in
+                try? await Task.sleep(for: .seconds(2))
+                app.heard([FriendInvite(id: String(repeating: "c", count: 32), alias: "Ana P.", minutes: 10)])
+            }
         case .onlineRematch:
             guard matchmaker.session == nil else { return }
             matchmaker.startLoopbackMatch(timeControl: timeControl,

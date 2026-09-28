@@ -4,6 +4,7 @@ import { generateKeyPairSync, sign } from 'node:crypto';
 import { test } from 'node:test';
 
 import { playerKey, verifyIdentity } from './identity.mjs';
+import { INVITE_S, memoryFriends, openFriends } from './friends.mjs';
 import { LASTS_S, memoryTable, openPresence } from './presence.mjs';
 
 // ---------------------------------------------------------------- identity
@@ -56,4 +57,70 @@ test('presence: here for five minutes, gone when told, and nothing else', async 
   await assert.rejects(presence.here(ANN, { status: 'looking', minutes: 7 }), /no such clock/);
   const row = [...db.rows.values()][0] ?? (await presence.here(ANN, { status: 'online' }), [...db.rows.values()][0]);
   assert.deepEqual(Object.keys(row).sort(), ['player', 'status', 'until'], 'nothing kept but who, what and until when');
+});
+
+// ---------------------------------------------------------------- friends
+
+function friendsSetup() {
+  let clock = Date.UTC(2026, 8, 28, 12);
+  const db = memoryFriends();
+  return { db, friends: openFriends({ db, now: () => clock }), later: (ms) => (clock += ms) };
+}
+
+test('friends: asked, accepted, listed on both sides', async () => {
+  const { friends } = friendsSetup();
+  assert.deepEqual(await friends.request(ANN, { alias: 'Ann', to: BO, toAlias: 'Bo' }), { status: 'asked' });
+  assert.deepEqual((await friends.list(ANN)).outgoing.map((f) => [f.id, f.alias]), [[BO, 'Bo']]);
+  assert.deepEqual((await friends.list(BO)).incoming.map((f) => [f.id, f.alias]), [[ANN, 'Ann']]);
+  assert.deepEqual(await friends.accept(BO, { alias: 'Bo', from: ANN }), { status: 'friends' });
+  assert.deepEqual((await friends.list(ANN)).friends.map((f) => f.alias), ['Bo']);
+  assert.deepEqual((await friends.list(BO)).friends.map((f) => f.alias), ['Ann']);
+  assert.equal((await friends.list(ANN)).outgoing.length, 0);
+});
+
+test('friends: asking somebody who already asked is a yes', async () => {
+  const { friends } = friendsSetup();
+  await friends.request(ANN, { alias: 'Ann', to: BO, toAlias: 'Bo' });
+  assert.deepEqual(await friends.request(BO, { alias: 'Bo', to: ANN, toAlias: 'Ann' }), { status: 'friends' });
+  assert.equal((await friends.list(ANN)).friends.length, 1);
+});
+
+test('friends: removed, declined or taken back, from both sides', async () => {
+  const { friends, db } = friendsSetup();
+  await friends.request(ANN, { alias: 'Ann', to: BO, toAlias: 'Bo' });
+  await friends.remove(BO, { other: ANN }); // declined
+  assert.equal(db.rows.size, 0);
+  await friends.request(ANN, { alias: 'Ann', to: BO, toAlias: 'Bo' });
+  await friends.accept(BO, { alias: 'Bo', from: ANN });
+  await friends.remove(ANN, { other: BO }); // unfriended
+  assert.equal(db.rows.size, 0);
+  await assert.rejects(friends.accept(BO, { alias: 'Bo', from: ANN }), /no request/);
+});
+
+test('friends: a game offered to a friend, answered, or gone in two minutes', async () => {
+  const { friends, later } = friendsSetup();
+  await assert.rejects(friends.invite(ANN, { alias: 'Ann', to: BO, minutes: 5 }), /no friend/);
+  await friends.request(ANN, { alias: 'Ann', to: BO, toAlias: 'Bo' });
+  await friends.accept(BO, { alias: 'Bo', from: ANN });
+  await friends.invite(ANN, { alias: 'Ann', to: BO, minutes: 5 });
+  assert.deepEqual((await friends.invites(BO)).invites, [{ id: ANN, alias: 'Ann', minutes: 5 }]);
+  await friends.answer(BO, { from: ANN });
+  assert.deepEqual((await friends.invites(BO)).invites, []);
+  await friends.invite(ANN, { alias: 'Ann', to: BO, minutes: 10 });
+  later((INVITE_S + 1) * 1000);
+  assert.deepEqual((await friends.invites(BO)).invites, [], 'gone');
+  await friends.invite(ANN, { alias: 'Ann', to: BO, minutes: 3 });
+  await friends.cancel(ANN, { to: BO });
+  assert.deepEqual((await friends.list(BO)).invites, [], 'taken back');
+  await assert.rejects(friends.invite(ANN, { alias: 'Ann', to: BO, minutes: 7 }), /no such clock/);
+});
+
+test('friends: nobody is their own friend, and nicknames are plain', async () => {
+  const { friends } = friendsSetup();
+  await assert.rejects(friends.request(ANN, { alias: 'Ann', to: ANN, toAlias: 'Ann' }), /that is you/);
+  await assert.rejects(friends.request(ANN, { alias: 'Ann', to: 'not-a-key', toAlias: 'Bo' }), /no player/);
+  await assert.rejects(friends.request(ANN, { alias: '   ', to: BO, toAlias: 'Bo' }), /no nickname/);
+  await friends.request(ANN, { alias: 'Ann\u0007' + 'x'.repeat(60), to: BO, toAlias: 'Bo' });
+  const [asker] = (await friends.list(BO)).incoming;
+  assert.equal(asker.alias, 'Ann' + 'x'.repeat(37));
 });

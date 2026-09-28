@@ -14,7 +14,7 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Hraj · Trénuj · Sleduj',
-    lede: 'Taktika, poziční úsudek, technika koncovek a hra s trenérem, s enginem běžícím přímo v zařízení. Bez účtu a nic se nesbírá — kromě toho, že jsi online, když hraješ online.',
+    lede: 'Taktika, poziční úsudek, technika koncovek a hra s trenérem, s enginem běžícím přímo v zařízení. Bez účtu a nic se nesbírá — kromě toho, co potřebuje hra online: že jsi online, a přátel, které si přidáš.',
     privacy:
       'Kromě online hry aplikace nic nesbírá a nic o tobě neposílá. Jediné, co stahuje, je denní přehled, když otevřeš Dnes. Tréninkové ratingy a historie jsou uložené jen v tomto zařízení a smazáním aplikace se smažou.',
     freeSoftware:

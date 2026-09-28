@@ -1386,193 +1386,193 @@
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "تكتيك وتقدير للمواقع وتقنية النهايات ولعب مع مدرّب، والمحرك يعمل على الجهاز نفسه. بلا حساب، ولا يُجمع شيء — سوى حالة الوجود على التطبيق أثناء اللعب عبر الإنترنت."
+            "value": "تكتيك وتقدير للمواقع وتقنية النهايات ولعب مع مدرّب، والمحرك يعمل على الجهاز نفسه. بلا حساب، ولا يُجمع شيء — سوى ما يحتاجه اللعب عبر الإنترنت: حالة الوجود على التطبيق، والأصدقاء الذين تتم إضافتهم."
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktika, poziční úsudek, technika koncovek a hra s trenérem, s enginem běžícím přímo v zařízení. Bez účtu a nic se nesbírá — kromě toho, že jsi online, když hraješ online."
+            "value": "Taktika, poziční úsudek, technika koncovek a hra s trenérem, s enginem běžícím přímo v zařízení. Bez účtu a nic se nesbírá — kromě toho, co potřebuje hra online: že jsi online, a přátel, které si přidáš."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, positionel vurdering, slutspilsteknik og spil med træner, med motoren på selve enheden. Ingen konto, og intet indsamles — ud over at du er online, når du spiller online."
+            "value": "Taktik, positionel vurdering, slutspilsteknik og spil med træner, med motoren på selve enheden. Ingen konto, og intet indsamles — ud over det, onlinespil kræver: at du er online, og de venner, du får."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, Stellungsbeurteilung, Endspieltechnik und Spiel mit Trainer, mit der Engine direkt auf dem Gerät. Kein Konto, und nichts wird erhoben – außer, beim Online-Spiel, dass du online bist."
+            "value": "Taktik, Stellungsbeurteilung, Endspieltechnik und Spiel mit Trainer, mit der Engine direkt auf dem Gerät. Kein Konto, und nichts wird erhoben – außer dem, was das Online-Spiel braucht: dass du online bist, und die Freunde, die du hinzufügst."
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Τακτική, κρίση θέσης, τεχνική φινάλε και παιχνίδι με προπονητή, με τη μηχανή να τρέχει στην ίδια τη συσκευή. Χωρίς λογαριασμό, και τίποτα δεν συλλέγεται — πέρα από την ένδειξη σύνδεσης, όταν παίζεις διαδικτυακά."
+            "value": "Τακτική, κρίση θέσης, τεχνική φινάλε και παιχνίδι με προπονητή, με τη μηχανή να τρέχει στην ίδια τη συσκευή. Χωρίς λογαριασμό, και τίποτα δεν συλλέγεται — πέρα από όσα χρειάζεται το διαδικτυακό παιχνίδι: την ένδειξη σύνδεσης και τις φιλίες που δημιουργούνται."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected — apart from saying you are online, while you play online."
+            "value": "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected — apart from what online play needs: that you are online, and the friends you make."
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected — apart from saying you are online, while you play online."
+            "value": "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected — apart from what online play needs: that you are online, and the friends you make."
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected — apart from saying you are online, while you play online."
+            "value": "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected — apart from what online play needs: that you are online, and the friends you make."
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "Táctica, juicio posicional, técnica de finales y juego con entrenador, con el motor funcionando en el propio dispositivo. Sin cuenta, y sin recoger nada, salvo decir que estás en línea mientras juegas en línea."
+            "value": "Táctica, juicio posicional, técnica de finales y juego con entrenador, con el motor funcionando en el propio dispositivo. Sin cuenta, y sin recoger nada, salvo lo que necesita el juego en línea: que estás en línea y los amigos que añadas."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktiikkaa, asema-arviointia, loppupelitekniikkaa ja valmennettua pelaamista, moottori laitteessa itsessään. Ei tiliä, eikä mitään kerätä — paitsi tieto siitä, että olet paikalla, kun pelaat verkossa."
+            "value": "Taktiikkaa, asema-arviointia, loppupelitekniikkaa ja valmennettua pelaamista, moottori laitteessa itsessään. Ei tiliä, eikä mitään kerätä — paitsi mitä verkkopelaaminen tarvitsee: tieto siitä, että olet paikalla, ja lisäämäsi kaverit."
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactique, jugement positionnel, technique des finales et parties commentées, avec le moteur qui tourne sur l’appareil lui-même. Aucun compte, et rien n’est collecté — sauf, quand vous jouez en ligne, le fait que vous êtes en ligne."
+            "value": "Tactique, jugement positionnel, technique des finales et parties commentées, avec le moteur qui tourne sur l’appareil lui-même. Aucun compte, et rien n’est collecté — sauf ce que le jeu en ligne demande : le fait que vous êtes en ligne, et les amis que vous ajoutez."
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactique, jugement positionnel, technique des finales et parties commentées, avec le moteur qui tourne sur l’appareil lui-même. Aucun compte, et rien n’est collecté — sauf, quand vous jouez en ligne, le fait que vous êtes en ligne."
+            "value": "Tactique, jugement positionnel, technique des finales et parties commentées, avec le moteur qui tourne sur l’appareil lui-même. Aucun compte, et rien n’est collecté — sauf ce que le jeu en ligne demande : le fait que vous êtes en ligne, et les amis que vous ajoutez."
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "טקטיקה, שיפוט עמדה, טכניקת סיומים ומשחק מודרך, והמנוע רץ במכשיר עצמו. בלי חשבון, ושום דבר לא נאסף — מלבד מצב הנוכחות, בזמן משחק מקוון."
+            "value": "טקטיקה, שיפוט עמדה, טכניקת סיומים ומשחק מודרך, והמנוע רץ במכשיר עצמו. בלי חשבון, ושום דבר לא נאסף — מלבד מה שמשחק מקוון צריך: מצב הנוכחות ורשימת החברים באפליקציה."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "टैक्टिक्स, पोज़ीशन की समझ, एंडगेम तकनीक और कोच के साथ खेल — इंजन डिवाइस पर ही चलता है। कोई खाता नहीं, और कुछ इकट्ठा नहीं होता — सिवाय यह बताने के कि आप ऑनलाइन हैं, जब आप ऑनलाइन खेलते हैं।"
+            "value": "टैक्टिक्स, पोज़ीशन की समझ, एंडगेम तकनीक और कोच के साथ खेल — इंजन डिवाइस पर ही चलता है। कोई खाता नहीं, और कुछ इकट्ठा नहीं होता — सिवाय उसके जो ऑनलाइन खेल को चाहिए: कि आप ऑनलाइन हैं, और आपके बनाए मित्र।"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktika, pozíciós ítélőképesség, végjátéktechnika és edzővel játszás, a motor magán az eszközön fut. Nincs fiók, és semmit nem gyűjtünk — azon kívül, hogy online vagy, amikor online játszol."
+            "value": "Taktika, pozíciós ítélőképesség, végjátéktechnika és edzővel játszás, a motor magán az eszközön fut. Nincs fiók, és semmit nem gyűjtünk — azon kívül, amit az online játék igényel: hogy online vagy, és a barátaidat, akiket felveszel."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, penilaian posisi, teknik akhir permainan, dan bermain dengan pelatih, dengan mesin yang berjalan di perangkat itu sendiri. Tanpa akun, dan tidak ada yang dikumpulkan — selain memberi tahu bahwa kamu daring, saat kamu bermain daring."
+            "value": "Taktik, penilaian posisi, teknik akhir permainan, dan bermain dengan pelatih, dengan mesin yang berjalan di perangkat itu sendiri. Tanpa akun, dan tidak ada yang dikumpulkan — selain yang dibutuhkan permainan daring: bahwa kamu daring, dan teman yang kamu tambahkan."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tattica, giudizio posizionale, tecnica dei finali e gioco guidato, con il motore che gira sul dispositivo stesso. Nessun account, e nulla raccolto, se non il fatto che sei online, quando giochi online."
+            "value": "Tattica, giudizio posizionale, tecnica dei finali e gioco guidato, con il motore che gira sul dispositivo stesso. Nessun account, e nulla raccolto, se non ciò che serve al gioco online: il fatto che sei online e gli amici che aggiungi."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "タクティクス、局面判断、終盤技術、コーチ付きの対局。エンジンはデバイス上で動きます。アカウント不要で、オンライン対局中にオンラインであることを伝える以外、何も収集しません。"
+            "value": "タクティクス、局面判断、終盤技術、コーチ付きの対局。エンジンはデバイス上で動きます。アカウント不要で、オンライン対局に必要なこと（オンラインであることと、追加したフレンド）以外は何も収集しません。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "전술, 포지션 판단, 엔드게임 기술, 코치와 함께하는 대국. 엔진은 기기 안에서 실행됩니다. 계정이 필요 없고, 온라인으로 둘 때 온라인임을 알리는 것 외에는 아무것도 수집하지 않습니다."
+            "value": "전술, 포지션 판단, 엔드게임 기술, 코치와 함께하는 대국. 엔진은 기기 안에서 실행됩니다. 계정이 필요 없고, 온라인 대국에 필요한 것(온라인 상태와 추가한 친구) 외에는 아무것도 수집하지 않습니다."
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, penilaian kedudukan, teknik akhir permainan dan bermain dengan jurulatih, dengan enjin berjalan pada peranti itu sendiri. Tiada akaun, dan tiada apa dikumpul — selain memberitahu bahawa anda dalam talian, semasa anda bermain dalam talian."
+            "value": "Taktik, penilaian kedudukan, teknik akhir permainan dan bermain dengan jurulatih, dengan enjin berjalan pada peranti itu sendiri. Tiada akaun, dan tiada apa dikumpul — selain yang diperlukan permainan dalam talian: bahawa anda dalam talian, dan rakan yang anda tambah."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactiek, positioneel inzicht, eindspeltechniek en spelen met coaching, met de engine op het apparaat zelf. Geen account, en niets verzameld — behalve dat je online bent, als je online speelt."
+            "value": "Tactiek, positioneel inzicht, eindspeltechniek en spelen met coaching, met de engine op het apparaat zelf. Geen account, en niets verzameld — behalve wat online spelen nodig heeft: dat je online bent, en de vrienden die je toevoegt."
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktikk, posisjonsvurdering, sluttspillteknikk og spill med trener, med motoren på selve enheten. Ingen konto, og ingenting samles inn — bortsett fra at du er pålogget, når du spiller på nett."
+            "value": "Taktikk, posisjonsvurdering, sluttspillteknikk og spill med trener, med motoren på selve enheten. Ingen konto, og ingenting samles inn — bortsett fra det nettspill trenger: at du er pålogget, og vennene du legger til."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktyka, ocena pozycji, technika końcówek i gra z trenerem, z silnikiem działającym na samym urządzeniu. Bez konta i bez zbierania czegokolwiek — poza informacją, że jesteś online, gdy grasz online."
+            "value": "Taktyka, ocena pozycji, technika końcówek i gra z trenerem, z silnikiem działającym na samym urządzeniu. Bez konta i bez zbierania czegokolwiek — poza tym, czego wymaga gra online: informacją, że jesteś online, i znajomymi, których dodasz."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tática, julgamento posicional, técnica de finais e jogo com treinador, com o motor rodando no próprio aparelho. Sem conta, e nada coletado — além de dizer que você está on-line, enquanto joga on-line."
+            "value": "Tática, julgamento posicional, técnica de finais e jogo com treinador, com o motor rodando no próprio aparelho. Sem conta, e nada coletado — além do que o jogo on-line precisa: dizer que você está on-line, e os amigos que você adicionar."
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactică, judecată pozițională, tehnica finalurilor și joc cu antrenor, cu motorul rulând chiar pe dispozitiv. Fără cont și nimic colectat — în afară de a spune că ești online, când joci online."
+            "value": "Tactică, judecată pozițională, tehnica finalurilor și joc cu antrenor, cu motorul rulând chiar pe dispozitiv. Fără cont și nimic colectat — în afară de ce cere jocul online: că ești online și prietenii pe care îi adaugi."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Тактика, позиционная оценка, техника эндшпиля и игра с тренером — движок работает прямо на устройстве. Без аккаунта, и ничего не собирается — кроме того, что вы онлайн, пока играете онлайн."
+            "value": "Тактика, позиционная оценка, техника эндшпиля и игра с тренером — движок работает прямо на устройстве. Без аккаунта, и ничего не собирается — кроме того, что нужно для онлайн-игры: что вы онлайн, и друзей, которых вы добавите."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, positionsbedömning, slutspelsteknik och spel med tränare, med motorn på själva enheten. Inget konto, och inget samlas in — utom att du är online, när du spelar online."
+            "value": "Taktik, positionsbedömning, slutspelsteknik och spel med tränare, med motorn på själva enheten. Inget konto, och inget samlas in — utom det onlinespel behöver: att du är online, och vännerna du lägger till."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "แทคติก การประเมินตำแหน่ง เทคนิคช่วงท้ายเกม และการเล่นกับโค้ช โดยเอนจินทำงานบนอุปกรณ์เอง ไม่ต้องมีบัญชี และไม่เก็บอะไรเลย นอกจากการบอกว่าคุณออนไลน์ขณะเล่นออนไลน์"
+            "value": "แทคติก การประเมินตำแหน่ง เทคนิคช่วงท้ายเกม และการเล่นกับโค้ช โดยเอนจินทำงานบนอุปกรณ์เอง ไม่ต้องมีบัญชี และไม่เก็บอะไรเลย นอกจากสิ่งที่การเล่นออนไลน์ต้องใช้ คือการบอกว่าคุณออนไลน์ และเพื่อนที่คุณเพิ่ม"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, pozisyon değerlendirmesi, oyun sonu tekniği ve eğitmenli oyun; motor doğrudan cihazda çalışır. Hesap yok ve hiçbir şey toplanmaz — çevrimiçi oynarken çevrimiçi olduğunu söylemek dışında."
+            "value": "Taktik, pozisyon değerlendirmesi, oyun sonu tekniği ve eğitmenli oyun; motor doğrudan cihazda çalışır. Hesap yok ve hiçbir şey toplanmaz — çevrimiçi oyunun gerektirdikleri dışında: çevrimiçi olduğun ve eklediğin arkadaşlar."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Chiến thuật, đánh giá thế cờ, kỹ thuật tàn cuộc và chơi có huấn luyện, với engine chạy ngay trên thiết bị. Không cần tài khoản, và không thu thập gì — ngoài việc cho biết bạn đang trực tuyến, khi bạn chơi trực tuyến."
+            "value": "Chiến thuật, đánh giá thế cờ, kỹ thuật tàn cuộc và chơi có huấn luyện, với engine chạy ngay trên thiết bị. Không cần tài khoản, và không thu thập gì — ngoài những gì chơi trực tuyến cần: việc bạn đang trực tuyến, và danh sách bạn bè bạn thêm."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "战术、局面判断、残局技术和有教练的对局，引擎就在设备上运行。无需账户，除了在线对局时告知你在线之外，不收集任何东西。"
+            "value": "战术、局面判断、残局技术和有教练的对局，引擎就在设备上运行。无需账户，除了在线对局所需的——你在线的状态和你添加的好友——之外，不收集任何东西。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "戰術、局面判斷、殘局技術和有教練的對局，引擎就在裝置上執行。不需帳號，除了線上對局時告知你在線上之外，不收集任何東西。"
+            "value": "戰術、局面判斷、殘局技術和有教練的對局，引擎就在裝置上執行。不需帳號，除了線上對局所需的——你在線上的狀態和你加入的好友——之外，不收集任何東西。"
           }
         }
       }
@@ -2371,193 +2371,193 @@
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "اللعب عبر الإنترنت هو الاستثناء. يُحفظ تصنيفك عبر الإنترنت في كل توقيت في قوائم تصنيف Game Center، حيث يراه اللاعبون الآخرون بجانب اسمك المستعار بحسب ما تسمح به؛ وهذه القوائم ملك Apple. وما دام التطبيق على الشاشة، يُبلغ أيضًا خدمة صغيرة لدينا بحالتك — على التطبيق، أو بحث عن مباراة، أو في مباراة — ليرى الآخرون أنك متاح للعب، مع إثبات Game Center للهوية، الذي يُحفظ على شكل رمز مشفّر فقط ويُنسى بعد خمس دقائق من المغادرة. الإعدادات ← إظهار حالة وجودي في التطبيق يوقف ذلك."
+            "value": "اللعب عبر الإنترنت هو الاستثناء. يُحفظ تصنيفك عبر الإنترنت في كل توقيت في قوائم تصنيف Game Center، حيث يراه اللاعبون الآخرون بجانب اسمك المستعار بحسب ما تسمح به؛ وهذه القوائم ملك Apple. وما دام التطبيق على الشاشة، يُبلغ أيضًا خدمة صغيرة لدينا بحالتك — على التطبيق، أو بحث عن مباراة، أو في مباراة — ليرى الآخرون أنك متاح للعب، مع إثبات Game Center للهوية، الذي يُحفظ على شكل رمز مشفّر فقط ويُنسى بعد خمس دقائق من المغادرة. الإعدادات ← إظهار حالة وجودي في التطبيق يوقف ذلك. ويُحفظ الأصدقاء في التطبيق هناك أيضًا — بالرموز المشفّرة نفسها ومع الاسمين المستعارين — إلى أن تتم إزالة الصداقة من أي من الطرفين."
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Online hra je výjimka. Tvůj online rating v každém tempu je v žebříčcích Game Center, kde ho ostatní hráči vidí vedle tvé přezdívky, jak dovolíš; ty patří Applu. Dokud je aplikace na obrazovce, říká také naší malé službě, že jsi online, hledáš partii nebo hraješ, aby ostatní viděli, že můžeš hrát — s potvrzením Game Center, kdo jsi, uloženým jen jako zašifrovaný kód a zapomenutým pět minut po odchodu. Nastavení → Ukazovat, že jsem online to vypne."
+            "value": "Online hra je výjimka. Tvůj online rating v každém tempu je v žebříčcích Game Center, kde ho ostatní hráči vidí vedle tvé přezdívky, jak dovolíš; ty patří Applu. Dokud je aplikace na obrazovce, říká také naší malé službě, že jsi online, hledáš partii nebo hraješ, aby ostatní viděli, že můžeš hrát — s potvrzením Game Center, kdo jsi, uloženým jen jako zašifrovaný kód a zapomenutým pět minut po odchodu. Nastavení → Ukazovat, že jsem online to vypne. Přátelé, které si v aplikaci přidáš, jsou tam uloženi také — pod stejnými zašifrovanými kódy a s přezdívkami vás obou — dokud jeden z vás toho druhého neodebere."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Onlinespil er undtagelsen. Din onlinerating på hver betænkningstid står på Game Centers ranglister, hvor andre spillere ser den ved siden af dit kaldenavn, som du tillader; de er Apples. Mens appen er på skærmen, fortæller den også en lille tjeneste hos os, at du er online, søger et parti eller spiller et, så andre kan se, at du er der for at spille — med Game Centers bevis på, hvem du er, kun gemt som en krypteret kode og glemt fem minutter efter, du går. Indstillinger → Vis, når jeg er online slår det fra."
+            "value": "Onlinespil er undtagelsen. Din onlinerating på hver betænkningstid står på Game Centers ranglister, hvor andre spillere ser den ved siden af dit kaldenavn, som du tillader; de er Apples. Mens appen er på skærmen, fortæller den også en lille tjeneste hos os, at du er online, søger et parti eller spiller et, så andre kan se, at du er der for at spille — med Game Centers bevis på, hvem du er, kun gemt som en krypteret kode og glemt fem minutter efter, du går. Indstillinger → Vis, når jeg er online slår det fra. Venner, du får i appen, gemmes der også — under de samme krypterede koder og med jeres kaldenavne — indtil en af jer fjerner den anden."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Das Online-Spiel ist die Ausnahme. Deine Online-Wertung für jede Bedenkzeit steht in den Ranglisten von Game Center, wo andere Spieler sie neben deinem Spitznamen sehen, so wie du es erlaubst; diese gehören Apple. Solange die App auf deinem Bildschirm ist, sagt sie außerdem einem kleinen Dienst von uns, dass du online bist, eine Partie suchst oder spielst, damit andere sehen, dass du zum Spielen da bist – mit dem Nachweis von Game Center, wer du bist, nur als verschlüsselter Code gespeichert und fünf Minuten nach dem Verlassen vergessen. Einstellungen → Zeigen, wenn ich online bin schaltet das aus."
+            "value": "Das Online-Spiel ist die Ausnahme. Deine Online-Wertung für jede Bedenkzeit steht in den Ranglisten von Game Center, wo andere Spieler sie neben deinem Spitznamen sehen, so wie du es erlaubst; diese gehören Apple. Solange die App auf deinem Bildschirm ist, sagt sie außerdem einem kleinen Dienst von uns, dass du online bist, eine Partie suchst oder spielst, damit andere sehen, dass du zum Spielen da bist – mit dem Nachweis von Game Center, wer du bist, nur als verschlüsselter Code gespeichert und fünf Minuten nach dem Verlassen vergessen. Einstellungen → Zeigen, wenn ich online bin schaltet das aus. Freunde, die du in der App hinzufügst, werden dort ebenfalls gespeichert – unter denselben verschlüsselten Codes und mit euren beiden Spitznamen –, bis einer von euch den anderen entfernt."
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Το διαδικτυακό παιχνίδι είναι η εξαίρεση. Η διαδικτυακή σου βαθμολογία σε κάθε χρόνο βρίσκεται στις λίστες του Game Center, όπου οι άλλοι παίκτες τη βλέπουν δίπλα στο ψευδώνυμό σου, όπως επιτρέπεις· αυτές ανήκουν στην Apple. Όσο η εφαρμογή είναι στην οθόνη σου, λέει επίσης σε μια μικρή υπηρεσία μας την κατάστασή σου — σε σύνδεση, σε αναζήτηση παρτίδας ή σε παρτίδα — ώστε οι άλλοι να βλέπουν ότι μπορείς να παίξεις, με την απόδειξη του Game Center για την ταυτότητά σου, που φυλάσσεται μόνο ως κρυπτογραφημένος κωδικός και ξεχνιέται πέντε λεπτά αφού φύγεις. Ρυθμίσεις → Εμφάνιση της παρουσίας μου το απενεργοποιεί."
+            "value": "Το διαδικτυακό παιχνίδι είναι η εξαίρεση. Η διαδικτυακή σου βαθμολογία σε κάθε χρόνο βρίσκεται στις λίστες του Game Center, όπου οι άλλοι παίκτες τη βλέπουν δίπλα στο ψευδώνυμό σου, όπως επιτρέπεις· αυτές ανήκουν στην Apple. Όσο η εφαρμογή είναι στην οθόνη σου, λέει επίσης σε μια μικρή υπηρεσία μας την κατάστασή σου — σε σύνδεση, σε αναζήτηση παρτίδας ή σε παρτίδα — ώστε οι άλλοι να βλέπουν ότι μπορείς να παίξεις, με την απόδειξη του Game Center για την ταυτότητά σου, που φυλάσσεται μόνο ως κρυπτογραφημένος κωδικός και ξεχνιέται πέντε λεπτά αφού φύγεις. Ρυθμίσεις → Εμφάνιση της παρουσίας μου το απενεργοποιεί. Οι φιλίες στην εφαρμογή φυλάσσονται επίσης εκεί — με τους ίδιους κρυπτογραφημένους κωδικούς και τα δύο ψευδώνυμα — μέχρι να αφαιρεθούν από τη μία ή την άλλη πλευρά."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Online play is the exception. Your online rating on each clock is kept on Game Center's rank lists, where other players see it beside your nickname, as you allow; those are Apple's. While the app is on your screen, it also tells a small service of ours that you are online, looking for a game or in one, so that other players can see you are there to play — with Game Center's proof of who you are, kept only as a scrambled code, and forgotten five minutes after you leave. Settings → Show when I'm online turns it off."
+            "value": "Online play is the exception. Your online rating on each clock is kept on Game Center's rank lists, where other players see it beside your nickname, as you allow; those are Apple's. While the app is on your screen, it also tells a small service of ours that you are online, looking for a game or in one, so that other players can see you are there to play — with Game Center's proof of who you are, kept only as a scrambled code, and forgotten five minutes after you leave. Settings → Show when I'm online turns it off. Friends you make in the app are kept there too — under the same scrambled codes, with the nicknames you both had — until either of you removes the other."
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Online play is the exception. Your online rating on each clock is kept on Game Center's rank lists, where other players see it beside your nickname, as you allow; those are Apple's. While the app is on your screen, it also tells a small service of ours that you are online, looking for a game or in one, so that other players can see you are there to play — with Game Center's proof of who you are, kept only as a scrambled code, and forgotten five minutes after you leave. Settings → Show when I'm online turns it off."
+            "value": "Online play is the exception. Your online rating on each clock is kept on Game Center's rank lists, where other players see it beside your nickname, as you allow; those are Apple's. While the app is on your screen, it also tells a small service of ours that you are online, looking for a game or in one, so that other players can see you are there to play — with Game Center's proof of who you are, kept only as a scrambled code, and forgotten five minutes after you leave. Settings → Show when I'm online turns it off. Friends you make in the app are kept there too — under the same scrambled codes, with the nicknames you both had — until either of you removes the other."
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "Online play is the exception. Your online rating on each clock is kept on Game Center's rank lists, where other players see it beside your nickname, as you allow; those are Apple's. While the app is on your screen, it also tells a small service of ours that you are online, looking for a game or in one, so that other players can see you are there to play — with Game Center's proof of who you are, kept only as a scrambled code, and forgotten five minutes after you leave. Settings → Show when I'm online turns it off."
+            "value": "Online play is the exception. Your online rating on each clock is kept on Game Center's rank lists, where other players see it beside your nickname, as you allow; those are Apple's. While the app is on your screen, it also tells a small service of ours that you are online, looking for a game or in one, so that other players can see you are there to play — with Game Center's proof of who you are, kept only as a scrambled code, and forgotten five minutes after you leave. Settings → Show when I'm online turns it off. Friends you make in the app are kept there too — under the same scrambled codes, with the nicknames you both had — until either of you removes the other."
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "El juego en línea es la excepción. Tu valoración en línea en cada reloj está en las listas de Game Center, donde otros jugadores la ven junto a tu apodo, según lo permitas; esas listas son de Apple. Mientras la app está en tu pantalla, también le dice a un pequeño servicio nuestro que estás en línea, buscando partida o jugando, para que otros vean que estás para jugar, con la prueba de Game Center de quién eres, guardada solo como un código cifrado y olvidada cinco minutos después de que te vayas. Ajustes → Mostrar cuando estoy en línea lo desactiva."
+            "value": "El juego en línea es la excepción. Tu valoración en línea en cada reloj está en las listas de Game Center, donde otros jugadores la ven junto a tu apodo, según lo permitas; esas listas son de Apple. Mientras la app está en tu pantalla, también le dice a un pequeño servicio nuestro que estás en línea, buscando partida o jugando, para que otros vean que estás para jugar, con la prueba de Game Center de quién eres, guardada solo como un código cifrado y olvidada cinco minutos después de que te vayas. Ajustes → Mostrar cuando estoy en línea lo desactiva. Los amigos que añades en la app también se guardan allí, con los mismos códigos cifrados y los apodos de los dos, hasta que uno de vosotros quita al otro."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Verkkopelaaminen on poikkeus. Verkkoratingisi kullakin ajalla on Game Centerin listoilla, joilla muut pelaajat näkevät sen nimimerkkisi vieressä, sen mukaan kuin sallit; listat ovat Applen. Kun sovellus on näytölläsi, se kertoo myös pienelle palvelullemme, että olet paikalla, etsit peliä tai pelaat, jotta muut näkevät sinun olevan valmis pelaamaan — Game Centerin todisteen kanssa siitä, kuka olet; se säilytetään vain salattuna koodina ja unohdetaan viisi minuuttia lähtösi jälkeen. Asetukset → Näytä, kun olen paikalla poistaa sen käytöstä."
+            "value": "Verkkopelaaminen on poikkeus. Verkkoratingisi kullakin ajalla on Game Centerin listoilla, joilla muut pelaajat näkevät sen nimimerkkisi vieressä, sen mukaan kuin sallit; listat ovat Applen. Kun sovellus on näytölläsi, se kertoo myös pienelle palvelullemme, että olet paikalla, etsit peliä tai pelaat, jotta muut näkevät sinun olevan valmis pelaamaan — Game Centerin todisteen kanssa siitä, kuka olet; se säilytetään vain salattuna koodina ja unohdetaan viisi minuuttia lähtösi jälkeen. Asetukset → Näytä, kun olen paikalla poistaa sen käytöstä. Sovelluksessa lisätyt kaverit säilytetään siellä myös — samoina salattuina koodeina ja molempien nimimerkkien kanssa — kunnes jompikumpi poistaa toisen."
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Le jeu en ligne est l’exception. Votre classement en ligne sur chaque cadence figure dans les classements de Game Center, où les autres joueurs le voient à côté de votre pseudo, selon ce que vous autorisez ; ils appartiennent à Apple. Tant que l’app est à l’écran, elle indique aussi à un petit service à nous que vous êtes en ligne, en recherche de partie ou en train de jouer, pour que les autres voient que vous êtes là pour jouer — avec la preuve de Game Center de qui vous êtes, gardée seulement sous forme de code brouillé, et oubliée cinq minutes après votre départ. Réglages → Indiquer quand je suis en ligne le désactive."
+            "value": "Le jeu en ligne est l’exception. Votre classement en ligne sur chaque cadence figure dans les classements de Game Center, où les autres joueurs le voient à côté de votre pseudo, selon ce que vous autorisez ; ils appartiennent à Apple. Tant que l’app est à l’écran, elle indique aussi à un petit service à nous que vous êtes en ligne, en recherche de partie ou en train de jouer, pour que les autres voient que vous êtes là pour jouer — avec la preuve de Game Center de qui vous êtes, gardée seulement sous forme de code brouillé, et oubliée cinq minutes après votre départ. Réglages → Indiquer quand je suis en ligne le désactive. Les amis que vous ajoutez dans l’app y sont aussi gardés — sous les mêmes codes brouillés, avec vos deux pseudos — jusqu’à ce que l’un de vous retire l’autre."
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Le jeu en ligne est l’exception. Votre classement en ligne sur chaque cadence figure dans les classements de Game Center, où les autres joueurs le voient à côté de votre pseudo, selon ce que vous autorisez ; ils appartiennent à Apple. Tant que l’app est à l’écran, elle indique aussi à un petit service à nous que vous êtes en ligne, en recherche de partie ou en train de jouer, pour que les autres voient que vous êtes là pour jouer — avec la preuve de Game Center de qui vous êtes, gardée seulement sous forme de code brouillé, et oubliée cinq minutes après votre départ. Réglages → Indiquer quand je suis en ligne le désactive."
+            "value": "Le jeu en ligne est l’exception. Votre classement en ligne sur chaque cadence figure dans les classements de Game Center, où les autres joueurs le voient à côté de votre pseudo, selon ce que vous autorisez ; ils appartiennent à Apple. Tant que l’app est à l’écran, elle indique aussi à un petit service à nous que vous êtes en ligne, en recherche de partie ou en train de jouer, pour que les autres voient que vous êtes là pour jouer — avec la preuve de Game Center de qui vous êtes, gardée seulement sous forme de code brouillé, et oubliée cinq minutes après votre départ. Réglages → Indiquer quand je suis en ligne le désactive. Les amis que vous ajoutez dans l’app y sont aussi gardés — sous les mêmes codes brouillés, avec vos deux pseudos — jusqu’à ce que l’un de vous retire l’autre."
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "משחק מקוון הוא היוצא מן הכלל. הדירוג המקוון בכל שעון נשמר בטבלאות הדירוג של Game Center, שם שחקנים אחרים רואים אותו לצד הכינוי, כפי שמותר; הטבלאות האלה של Apple. כל עוד האפליקציה על המסך, היא גם מודיעה לשירות קטן שלנו על המצב — באפליקציה, בחיפוש משחק או במשחק — כדי ששחקנים אחרים יראו שאפשר לשחק, עם ההוכחה של Game Center לזהות; היא נשמרת רק כקוד מוצפן ונשכחת חמש דקות אחרי היציאה. הגדרות ← הצגת הנוכחות שלי באפליקציה מכבה את זה."
+            "value": "משחק מקוון הוא היוצא מן הכלל. הדירוג המקוון בכל שעון נשמר בטבלאות הדירוג של Game Center, שם שחקנים אחרים רואים אותו לצד הכינוי, כפי שמותר; הטבלאות האלה של Apple. כל עוד האפליקציה על המסך, היא גם מודיעה לשירות קטן שלנו על המצב — באפליקציה, בחיפוש משחק או במשחק — כדי ששחקנים אחרים יראו שאפשר לשחק, עם ההוכחה של Game Center לזהות; היא נשמרת רק כקוד מוצפן ונשכחת חמש דקות אחרי היציאה. הגדרות ← הצגת הנוכחות שלי באפליקציה מכבה את זה. גם החברויות באפליקציה נשמרות שם — באותם קודים מוצפנים ועם שני הכינויים — עד שאחד הצדדים מסיר אותן."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "ऑनलाइन खेल अपवाद है। हर घड़ी पर आपकी ऑनलाइन रेटिंग Game Center की रैंक सूचियों में रहती है, जहाँ दूसरे खिलाड़ी उसे आपके उपनाम के साथ देखते हैं, जितनी आप अनुमति दें; वे सूचियाँ Apple की हैं। जब तक ऐप आपकी स्क्रीन पर है, वह हमारी एक छोटी सेवा को यह भी बताता है कि आप ऑनलाइन हैं, बाज़ी ढूँढ़ रहे हैं या खेल रहे हैं, ताकि दूसरे देख सकें कि आप खेलने को मौजूद हैं — Game Center के सबूत के साथ कि आप कौन हैं, जो सिर्फ़ एक गुप्त कोड के रूप में रखा जाता है और जाने के पाँच मिनट बाद भुला दिया जाता है। सेटिंग्स → दिखाएँ कि मैं ऑनलाइन हूँ इसे बंद करता है।"
+            "value": "ऑनलाइन खेल अपवाद है। हर घड़ी पर आपकी ऑनलाइन रेटिंग Game Center की रैंक सूचियों में रहती है, जहाँ दूसरे खिलाड़ी उसे आपके उपनाम के साथ देखते हैं, जितनी आप अनुमति दें; वे सूचियाँ Apple की हैं। जब तक ऐप आपकी स्क्रीन पर है, वह हमारी एक छोटी सेवा को यह भी बताता है कि आप ऑनलाइन हैं, बाज़ी ढूँढ़ रहे हैं या खेल रहे हैं, ताकि दूसरे देख सकें कि आप खेलने को मौजूद हैं — Game Center के सबूत के साथ कि आप कौन हैं, जो सिर्फ़ एक गुप्त कोड के रूप में रखा जाता है और जाने के पाँच मिनट बाद भुला दिया जाता है। सेटिंग्स → दिखाएँ कि मैं ऑनलाइन हूँ इसे बंद करता है। ऐप में बनाए मित्र भी वहीं रखे जाते हैं — उन्हीं गुप्त कोड के रूप में, दोनों के उपनामों के साथ — जब तक आप दोनों में से कोई दूसरे को हटा न दे।"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Az online játék a kivétel. Az online értékszámod minden időbeosztáson a Game Center ranglistáin van, ahol a többiek a beceneved mellett látják, ahogy engeded; ezek az Apple-éi. Amíg az alkalmazás a képernyődön van, egy kis szolgáltatásunknak is jelzi, hogy online vagy, játszmát keresel vagy játszol, hogy mások lássák, játszani jöttél — a Game Center igazolásával arról, ki vagy, amelyet csak titkosított kódként őrzünk, és öt perccel a kilépés után elfelejtünk. Beállítások → Mutassa, ha online vagyok kikapcsolja."
+            "value": "Az online játék a kivétel. Az online értékszámod minden időbeosztáson a Game Center ranglistáin van, ahol a többiek a beceneved mellett látják, ahogy engeded; ezek az Apple-éi. Amíg az alkalmazás a képernyődön van, egy kis szolgáltatásunknak is jelzi, hogy online vagy, játszmát keresel vagy játszol, hogy mások lássák, játszani jöttél — a Game Center igazolásával arról, ki vagy, amelyet csak titkosított kódként őrzünk, és öt perccel a kilépés után elfelejtünk. Beállítások → Mutassa, ha online vagyok kikapcsolja. Az alkalmazásban felvett barátokat is ott őrizzük — ugyanazokkal a titkosított kódokkal és mindkettőtök becenevével —, amíg egyikőtök el nem távolítja a másikat."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Permainan daring adalah pengecualian. Rating daringmu di tiap waktu disimpan di daftar peringkat Game Center, tempat pemain lain melihatnya di samping nama panggilanmu, sesuai izinmu; daftar itu milik Apple. Selama aplikasi ada di layarmu, aplikasi juga memberi tahu layanan kecil kami bahwa kamu daring, mencari partai, atau sedang bermain, agar orang lain melihat kamu siap bermain — dengan bukti Game Center tentang siapa kamu, yang hanya disimpan sebagai kode acak dan dilupakan lima menit setelah kamu pergi. Pengaturan → Tunjukkan saat aku daring mematikannya."
+            "value": "Permainan daring adalah pengecualian. Rating daringmu di tiap waktu disimpan di daftar peringkat Game Center, tempat pemain lain melihatnya di samping nama panggilanmu, sesuai izinmu; daftar itu milik Apple. Selama aplikasi ada di layarmu, aplikasi juga memberi tahu layanan kecil kami bahwa kamu daring, mencari partai, atau sedang bermain, agar orang lain melihat kamu siap bermain — dengan bukti Game Center tentang siapa kamu, yang hanya disimpan sebagai kode acak dan dilupakan lima menit setelah kamu pergi. Pengaturan → Tunjukkan saat aku daring mematikannya. Teman yang kamu tambahkan di aplikasi juga disimpan di sana — dengan kode acak yang sama dan nama panggilan kalian berdua — sampai salah satu dari kalian menghapus yang lain."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Il gioco online è l'eccezione. Il tuo punteggio online per ogni cadenza è nelle classifiche di Game Center, dove gli altri giocatori lo vedono accanto al tuo nickname, come permetti; sono di Apple. Finché l'app è sul tuo schermo, dice anche a un nostro piccolo servizio che sei online, in cerca di una partita o in gioco, così gli altri vedono che sei lì per giocare — con la prova di Game Center di chi sei, conservata solo come codice cifrato e dimenticata cinque minuti dopo che esci. Impostazioni → Mostra quando sono online lo disattiva."
+            "value": "Il gioco online è l'eccezione. Il tuo punteggio online per ogni cadenza è nelle classifiche di Game Center, dove gli altri giocatori lo vedono accanto al tuo nickname, come permetti; sono di Apple. Finché l'app è sul tuo schermo, dice anche a un nostro piccolo servizio che sei online, in cerca di una partita o in gioco, così gli altri vedono che sei lì per giocare — con la prova di Game Center di chi sei, conservata solo come codice cifrato e dimenticata cinque minuti dopo che esci. Impostazioni → Mostra quando sono online lo disattiva. Anche gli amici che aggiungi nell'app sono conservati lì — con gli stessi codici cifrati e i nickname di entrambi — finché uno dei due non rimuove l'altro."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "オンライン対局だけは例外です。各持ち時間のオンラインレーティングは Game Center のランキングに保存され、ほかのプレイヤーはあなたが許可した範囲でニックネームの横にそれを見られます。ランキングは Apple のものです。また、アプリが画面に表示されている間は、あなたがオンライン中・対局相手を探し中・対局中であることを当社の小さなサービスに伝え、ほかのプレイヤーが対局できる相手を見つけられるようにします。Game Center による本人確認付きですが、暗号化したコードとしてのみ保持し、アプリを離れて5分で消えます。設定 → オンライン中であることを表示 でオフにできます。"
+            "value": "オンライン対局だけは例外です。各持ち時間のオンラインレーティングは Game Center のランキングに保存され、ほかのプレイヤーはあなたが許可した範囲でニックネームの横にそれを見られます。ランキングは Apple のものです。また、アプリが画面に表示されている間は、あなたがオンライン中・対局相手を探し中・対局中であることを当社の小さなサービスに伝え、ほかのプレイヤーが対局できる相手を見つけられるようにします。Game Center による本人確認付きですが、暗号化したコードとしてのみ保持し、アプリを離れて5分で消えます。設定 → オンライン中であることを表示 でオフにできます。アプリで追加したフレンドも、同じ暗号化したコードと双方のニックネームで保存され、どちらかが削除するまで残ります。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "온라인 대국만은 예외입니다. 시간별 온라인 레이팅은 Game Center 순위표에 저장되며, 다른 플레이어가 허용한 범위에서 닉네임 옆에 그것을 봅니다. 이 순위표는 Apple의 것입니다. 앱이 화면에 있는 동안에는 당신이 온라인인지, 대국을 찾는 중인지, 대국 중인지를 저희의 작은 서비스에 알려 다른 사람이 당신이 둘 수 있음을 알 수 있게 합니다. Game Center 본인 증명과 함께 보내지만 암호화된 코드로만 보관하고, 앱을 떠나고 5분이 지나면 잊힙니다. 설정 → 온라인 상태 표시에서 끌 수 있습니다."
+            "value": "온라인 대국만은 예외입니다. 시간별 온라인 레이팅은 Game Center 순위표에 저장되며, 다른 플레이어가 허용한 범위에서 닉네임 옆에 그것을 봅니다. 이 순위표는 Apple의 것입니다. 앱이 화면에 있는 동안에는 당신이 온라인인지, 대국을 찾는 중인지, 대국 중인지를 저희의 작은 서비스에 알려 다른 사람이 당신이 둘 수 있음을 알 수 있게 합니다. Game Center 본인 증명과 함께 보내지만 암호화된 코드로만 보관하고, 앱을 떠나고 5분이 지나면 잊힙니다. 설정 → 온라인 상태 표시에서 끌 수 있습니다. 앱에서 추가한 친구도 같은 암호화된 코드와 두 사람의 닉네임으로 그곳에 보관되며, 어느 한쪽이 삭제할 때까지 남습니다."
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Permainan dalam talian ialah pengecualian. Rating dalam talian anda bagi setiap masa disimpan dalam senarai kedudukan Game Center, tempat pemain lain melihatnya di sebelah nama samaran anda, mengikut izin anda; senarai itu milik Apple. Selagi aplikasi berada pada skrin anda, ia juga memberitahu satu perkhidmatan kecil kami bahawa anda dalam talian, mencari permainan atau sedang bermain, supaya orang lain nampak anda sedia bermain — dengan bukti Game Center tentang siapa anda, yang disimpan hanya sebagai kod rawak dan dilupakan lima minit selepas anda pergi. Tetapan → Tunjukkan apabila saya dalam talian mematikannya."
+            "value": "Permainan dalam talian ialah pengecualian. Rating dalam talian anda bagi setiap masa disimpan dalam senarai kedudukan Game Center, tempat pemain lain melihatnya di sebelah nama samaran anda, mengikut izin anda; senarai itu milik Apple. Selagi aplikasi berada pada skrin anda, ia juga memberitahu satu perkhidmatan kecil kami bahawa anda dalam talian, mencari permainan atau sedang bermain, supaya orang lain nampak anda sedia bermain — dengan bukti Game Center tentang siapa anda, yang disimpan hanya sebagai kod rawak dan dilupakan lima minit selepas anda pergi. Tetapan → Tunjukkan apabila saya dalam talian mematikannya. Rakan yang anda tambah dalam aplikasi juga disimpan di sana — dengan kod rawak yang sama dan nama samaran kedua-dua pihak — sehingga salah seorang membuang yang lain."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Online spelen is de uitzondering. Je onlinerating per bedenktijd staat op de ranglijsten van Game Center, waar andere spelers hem naast je bijnaam zien, zoals jij toestaat; die zijn van Apple. Zolang de app op je scherm staat, vertelt hij ook een kleine dienst van ons dat je online bent, een partij zoekt of er een speelt, zodat anderen zien dat je er bent om te spelen — met het bewijs van Game Center wie je bent, alleen bewaard als versleutelde code en vijf minuten nadat je weggaat vergeten. Instellingen → Laten zien dat ik online ben zet het uit."
+            "value": "Online spelen is de uitzondering. Je onlinerating per bedenktijd staat op de ranglijsten van Game Center, waar andere spelers hem naast je bijnaam zien, zoals jij toestaat; die zijn van Apple. Zolang de app op je scherm staat, vertelt hij ook een kleine dienst van ons dat je online bent, een partij zoekt of er een speelt, zodat anderen zien dat je er bent om te spelen — met het bewijs van Game Center wie je bent, alleen bewaard als versleutelde code en vijf minuten nadat je weggaat vergeten. Instellingen → Laten zien dat ik online ben zet het uit. Vrienden die je in de app toevoegt, worden daar ook bewaard — onder dezelfde versleutelde codes, met jullie beide bijnamen — totdat een van jullie de ander verwijdert."
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nettspill er unntaket. Nettratingen din på hver betenkningstid står på Game Centers rankinglister, der andre spillere ser den ved siden av kallenavnet ditt, slik du tillater; de er Apples. Mens appen er på skjermen, forteller den også en liten tjeneste hos oss at du er pålogget, søker et parti eller spiller et, så andre ser at du er der for å spille — med Game Centers bevis på hvem du er, lagret bare som en kryptert kode og glemt fem minutter etter at du går. Innstillinger → Vis når jeg er pålogget slår det av."
+            "value": "Nettspill er unntaket. Nettratingen din på hver betenkningstid står på Game Centers rankinglister, der andre spillere ser den ved siden av kallenavnet ditt, slik du tillater; de er Apples. Mens appen er på skjermen, forteller den også en liten tjeneste hos oss at du er pålogget, søker et parti eller spiller et, så andre ser at du er der for å spille — med Game Centers bevis på hvem du er, lagret bare som en kryptert kode og glemt fem minutter etter at du går. Innstillinger → Vis når jeg er pålogget slår det av. Venner du legger til i appen, lagres der også — under de samme krypterte kodene og med kallenavnene deres — til en av dere fjerner den andre."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gra online to wyjątek. Twój ranking online w każdym tempie jest na listach rankingowych Game Center, gdzie inni gracze widzą go obok twojego pseudonimu, na ile pozwalasz; te listy należą do Apple. Gdy aplikacja jest na ekranie, mówi też naszej małej usłudze, że jesteś online, szukasz partii albo grasz, żeby inni widzieli, że możesz grać — z potwierdzeniem Game Center, kim jesteś, przechowywanym tylko jako zaszyfrowany kod i zapominanym pięć minut po wyjściu. Ustawienia → Pokazuj, że jestem online wyłącza to."
+            "value": "Gra online to wyjątek. Twój ranking online w każdym tempie jest na listach rankingowych Game Center, gdzie inni gracze widzą go obok twojego pseudonimu, na ile pozwalasz; te listy należą do Apple. Gdy aplikacja jest na ekranie, mówi też naszej małej usłudze, że jesteś online, szukasz partii albo grasz, żeby inni widzieli, że możesz grać — z potwierdzeniem Game Center, kim jesteś, przechowywanym tylko jako zaszyfrowany kod i zapominanym pięć minut po wyjściu. Ustawienia → Pokazuj, że jestem online wyłącza to. Znajomi dodani w aplikacji też są tam przechowywani — pod tymi samymi zaszyfrowanymi kodami, z pseudonimami was obojga — dopóki jedno z was nie usunie drugiego."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O jogo on-line é a exceção. Seu rating on-line em cada relógio fica nas listas do Game Center, onde outros jogadores o veem ao lado do seu apelido, como você permitir; essas listas são da Apple. Enquanto o app estiver na sua tela, ele também avisa um pequeno serviço nosso de que você está on-line, procurando partida ou jogando, para que outros vejam que você está lá para jogar — com a prova do Game Center de quem você é, guardada só como um código embaralhado e esquecida cinco minutos depois que você sai. Ajustes → Mostrar quando estou on-line desativa isso."
+            "value": "O jogo on-line é a exceção. Seu rating on-line em cada relógio fica nas listas do Game Center, onde outros jogadores o veem ao lado do seu apelido, como você permitir; essas listas são da Apple. Enquanto o app estiver na sua tela, ele também avisa um pequeno serviço nosso de que você está on-line, procurando partida ou jogando, para que outros vejam que você está lá para jogar — com a prova do Game Center de quem você é, guardada só como um código embaralhado e esquecida cinco minutos depois que você sai. Ajustes → Mostrar quando estou on-line desativa isso. Os amigos que você adiciona no app também ficam guardados lá — com os mesmos códigos embaralhados e os apelidos dos dois — até que um de vocês remova o outro."
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Jocul online este excepția. Ratingul tău online pe fiecare timp de gândire e păstrat în clasamentele Game Center, unde ceilalți jucători îl văd lângă porecla ta, după cum permiți; acestea sunt ale Apple. Cât timp aplicația e pe ecran, îi spune și unui mic serviciu al nostru că ești online, cauți o partidă sau joci una, ca ceilalți să vadă că ești acolo să joci — cu dovada Game Center despre cine ești, păstrată doar ca un cod criptat și uitată la cinci minute după ce pleci. Setări → Arată când sunt online oprește asta."
+            "value": "Jocul online este excepția. Ratingul tău online pe fiecare timp de gândire e păstrat în clasamentele Game Center, unde ceilalți jucători îl văd lângă porecla ta, după cum permiți; acestea sunt ale Apple. Cât timp aplicația e pe ecran, îi spune și unui mic serviciu al nostru că ești online, cauți o partidă sau joci una, ca ceilalți să vadă că ești acolo să joci — cu dovada Game Center despre cine ești, păstrată doar ca un cod criptat și uitată la cinci minute după ce pleci. Setări → Arată când sunt online oprește asta. Prietenii pe care îi adaugi în aplicație sunt păstrați tot acolo — sub aceleași coduri criptate, cu poreclele amândurora — până când unul dintre voi îl elimină pe celălalt."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Онлайн-игра — исключение. Ваш онлайн-рейтинг на каждом контроле хранится в рейтинг-листах Game Center, где другие игроки видят его рядом с вашим ником — в той мере, в какой вы разрешаете; эти листы принадлежат Apple. Пока приложение на экране, оно также сообщает нашему небольшому сервису, что вы онлайн, ищете партию или играете, чтобы другие видели, что вы готовы играть, — с подтверждением Game Center, кто вы; оно хранится только в виде зашифрованного кода и забывается через пять минут после выхода. Настройки → Показывать, что я онлайн — отключает это."
+            "value": "Онлайн-игра — исключение. Ваш онлайн-рейтинг на каждом контроле хранится в рейтинг-листах Game Center, где другие игроки видят его рядом с вашим ником — в той мере, в какой вы разрешаете; эти листы принадлежат Apple. Пока приложение на экране, оно также сообщает нашему небольшому сервису, что вы онлайн, ищете партию или играете, чтобы другие видели, что вы готовы играть, — с подтверждением Game Center, кто вы; оно хранится только в виде зашифрованного кода и забывается через пять минут после выхода. Настройки → Показывать, что я онлайн — отключает это. Друзья, добавленные в приложении, тоже хранятся там — под теми же зашифрованными кодами и с никами обоих — пока один из вас не удалит другого."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Onlinespel är undantaget. Din onlinerating på varje betänketid finns på Game Centers rankinglistor, där andra spelare ser den bredvid ditt smeknamn, så som du tillåter; de är Apples. Medan appen är på skärmen berättar den också för en liten tjänst hos oss att du är online, söker ett parti eller spelar ett, så att andra ser att du är där för att spela — med Game Centers bevis på vem du är, sparat bara som en krypterad kod och glömt fem minuter efter att du lämnat. Inställningar → Visa när jag är online stänger av det."
+            "value": "Onlinespel är undantaget. Din onlinerating på varje betänketid finns på Game Centers rankinglistor, där andra spelare ser den bredvid ditt smeknamn, så som du tillåter; de är Apples. Medan appen är på skärmen berättar den också för en liten tjänst hos oss att du är online, söker ett parti eller spelar ett, så att andra ser att du är där för att spela — med Game Centers bevis på vem du är, sparat bara som en krypterad kod och glömt fem minuter efter att du lämnat. Inställningar → Visa när jag är online stänger av det. Vänner du lägger till i appen sparas också där — under samma krypterade koder och med era båda smeknamn — tills någon av er tar bort den andra."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "การเล่นออนไลน์เป็นข้อยกเว้น เรตติ้งออนไลน์ของคุณในแต่ละเวลาถูกเก็บไว้ในตารางอันดับของ Game Center ซึ่งผู้เล่นอื่นเห็นข้างชื่อเล่นของคุณตามที่คุณอนุญาต ตารางเหล่านี้เป็นของ Apple ขณะที่แอปอยู่บนหน้าจอ แอปยังบอกบริการเล็ก ๆ ของเราว่าคุณออนไลน์ กำลังหาเกม หรือกำลังเล่น เพื่อให้คนอื่นเห็นว่าคุณพร้อมเล่น พร้อมหลักฐานจาก Game Center ว่าคุณเป็นใคร ซึ่งเก็บไว้เป็นรหัสที่เข้ารหัสแล้วเท่านั้น และจะถูกลืมห้านาทีหลังจากคุณออกไป การตั้งค่า → แสดงเมื่อฉันออนไลน์ ใช้ปิดได้"
+            "value": "การเล่นออนไลน์เป็นข้อยกเว้น เรตติ้งออนไลน์ของคุณในแต่ละเวลาถูกเก็บไว้ในตารางอันดับของ Game Center ซึ่งผู้เล่นอื่นเห็นข้างชื่อเล่นของคุณตามที่คุณอนุญาต ตารางเหล่านี้เป็นของ Apple ขณะที่แอปอยู่บนหน้าจอ แอปยังบอกบริการเล็ก ๆ ของเราว่าคุณออนไลน์ กำลังหาเกม หรือกำลังเล่น เพื่อให้คนอื่นเห็นว่าคุณพร้อมเล่น พร้อมหลักฐานจาก Game Center ว่าคุณเป็นใคร ซึ่งเก็บไว้เป็นรหัสที่เข้ารหัสแล้วเท่านั้น และจะถูกลืมห้านาทีหลังจากคุณออกไป การตั้งค่า → แสดงเมื่อฉันออนไลน์ ใช้ปิดได้ เพื่อนที่คุณเพิ่มในแอปก็เก็บไว้ที่นั่นเช่นกัน ด้วยรหัสที่เข้ารหัสแบบเดียวกันและชื่อเล่นของทั้งสองฝ่าย จนกว่าฝ่ายใดฝ่ายหนึ่งจะลบอีกฝ่ายออก"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Çevrimiçi oyun bir istisnadır. Her süredeki çevrimiçi puanın Game Center'ın sıralama listelerinde tutulur; diğer oyuncular onu takma adının yanında, izin verdiğin kadarıyla görür; bu listeler Apple'ındır. Uygulama ekranındayken ayrıca küçük bir hizmetimize çevrimiçi olduğunu, oyun aradığını ya da oynadığını söyler; böylece diğerleri oynamaya hazır olduğunu görür — Game Center'ın kim olduğuna dair kanıtıyla; bu yalnızca şifrelenmiş bir kod olarak saklanır ve ayrıldıktan beş dakika sonra unutulur. Ayarlar → Çevrimiçi olduğumu göster bunu kapatır."
+            "value": "Çevrimiçi oyun bir istisnadır. Her süredeki çevrimiçi puanın Game Center'ın sıralama listelerinde tutulur; diğer oyuncular onu takma adının yanında, izin verdiğin kadarıyla görür; bu listeler Apple'ındır. Uygulama ekranındayken ayrıca küçük bir hizmetimize çevrimiçi olduğunu, oyun aradığını ya da oynadığını söyler; böylece diğerleri oynamaya hazır olduğunu görür — Game Center'ın kim olduğuna dair kanıtıyla; bu yalnızca şifrelenmiş bir kod olarak saklanır ve ayrıldıktan beş dakika sonra unutulur. Ayarlar → Çevrimiçi olduğumu göster bunu kapatır. Uygulamada eklediğin arkadaşlar da orada tutulur — aynı şifrelenmiş kodlarla ve ikinizin takma adıyla — biriniz diğerini çıkarana kadar."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Chơi trực tuyến là ngoại lệ. Hệ số trực tuyến của bạn ở mỗi thể thức thời gian được lưu trên bảng xếp hạng của Game Center, nơi người chơi khác thấy nó cạnh biệt danh của bạn, theo mức bạn cho phép; các bảng đó thuộc về Apple. Khi ứng dụng ở trên màn hình, nó cũng báo cho một dịch vụ nhỏ của chúng tôi rằng bạn đang trực tuyến, đang tìm ván hoặc đang chơi, để người khác thấy bạn sẵn sàng chơi — kèm bằng chứng của Game Center về bạn là ai, chỉ được giữ dưới dạng mã đã mã hóa và bị quên năm phút sau khi bạn rời đi. Cài đặt → Hiển thị khi tôi trực tuyến để tắt."
+            "value": "Chơi trực tuyến là ngoại lệ. Hệ số trực tuyến của bạn ở mỗi thể thức thời gian được lưu trên bảng xếp hạng của Game Center, nơi người chơi khác thấy nó cạnh biệt danh của bạn, theo mức bạn cho phép; các bảng đó thuộc về Apple. Khi ứng dụng ở trên màn hình, nó cũng báo cho một dịch vụ nhỏ của chúng tôi rằng bạn đang trực tuyến, đang tìm ván hoặc đang chơi, để người khác thấy bạn sẵn sàng chơi — kèm bằng chứng của Game Center về bạn là ai, chỉ được giữ dưới dạng mã đã mã hóa và bị quên năm phút sau khi bạn rời đi. Cài đặt → Hiển thị khi tôi trực tuyến để tắt. Bạn bè bạn thêm trong ứng dụng cũng được giữ ở đó — dưới cùng các mã đã mã hóa, kèm biệt danh của cả hai — cho đến khi một trong hai người xóa người kia."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "在线对局是唯一的例外。你在每种用时下的在线等级分保存在 Game Center 的排行榜上，其他玩家按你允许的方式在你的昵称旁看到它；这些排行榜属于 Apple。当应用显示在你的屏幕上时，它还会告诉我们的一个小服务：你在线、正在找对局或正在下棋，好让别人看到你有空下棋——附带 Game Center 的身份证明，只以加密代码的形式保存，并在你离开五分钟后被遗忘。设置 → 显示我在线 可以关闭它。"
+            "value": "在线对局是唯一的例外。你在每种用时下的在线等级分保存在 Game Center 的排行榜上，其他玩家按你允许的方式在你的昵称旁看到它；这些排行榜属于 Apple。当应用显示在你的屏幕上时，它还会告诉我们的一个小服务：你在线、正在找对局或正在下棋，好让别人看到你有空下棋——附带 Game Center 的身份证明，只以加密代码的形式保存，并在你离开五分钟后被遗忘。设置 → 显示我在线 可以关闭它。在应用中添加的好友也保存在那里——使用同样的加密代码，附带双方的昵称——直到其中一方将对方移除。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "線上對局是唯一的例外。你在每種用時下的線上等級分保存在 Game Center 的排行榜上，其他玩家依你允許的方式在你的暱稱旁看到它；這些排行榜屬於 Apple。當 App 顯示在你的螢幕上時，它還會告訴我們的一個小服務：你在線上、正在找對局或正在下棋，好讓別人看到你有空下棋——附帶 Game Center 的身分證明，只以加密代碼的形式保存，並在你離開五分鐘後被遺忘。設定 → 顯示我在線上 可以關閉它。"
+            "value": "線上對局是唯一的例外。你在每種用時下的線上等級分保存在 Game Center 的排行榜上，其他玩家依你允許的方式在你的暱稱旁看到它；這些排行榜屬於 Apple。當 App 顯示在你的螢幕上時，它還會告訴我們的一個小服務：你在線上、正在找對局或正在下棋，好讓別人看到你有空下棋——附帶 Game Center 的身分證明，只以加密代碼的形式保存，並在你離開五分鐘後被遺忘。設定 → 顯示我在線上 可以關閉它。在 App 中加入的好友也保存在那裡——使用同樣的加密代碼，附帶雙方的暱稱——直到其中一方將對方移除。"
           }
         }
       }
@@ -44129,85 +44129,85 @@
         }
       }
     },
-    "online.addFriend": {
+    "online.addAsFriend": {
       "extractionState": "manual",
       "localizations": {
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "إضافة صديق"
+            "value": "إضافة إلى الأصدقاء"
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Přidat přítele"
+            "value": "Přidat do přátel"
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tilføj en ven"
+            "value": "Tilføj som ven"
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Freund hinzufügen"
+            "value": "Zu Freunden hinzufügen"
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Προσθήκη φίλου"
+            "value": "Προσθήκη στους φίλους"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Add a friend"
+            "value": "Add as friend"
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Add a friend"
+            "value": "Add as friend"
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "Add a friend"
+            "value": "Add as friend"
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "Añadir un amigo"
+            "value": "Añadir a amigos"
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lisää kaveri"
+            "value": "Lisää kaveriksi"
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ajouter un ami"
+            "value": "Ajouter aux amis"
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ajouter un ami"
+            "value": "Ajouter aux amis"
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "הוספת חבר"
+            "value": "הוספה לחברים"
           }
         },
         "hi": {
@@ -44219,25 +44219,25 @@
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Barát hozzáadása"
+            "value": "Hozzáadás barátként"
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tambah teman"
+            "value": "Tambah sebagai teman"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aggiungi un amico"
+            "value": "Aggiungi agli amici"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "フレンドを追加"
+            "value": "フレンドに追加"
           }
         },
         "ko": {
@@ -44249,61 +44249,61 @@
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tambah rakan"
+            "value": "Tambah sebagai rakan"
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Vriend toevoegen"
+            "value": "Toevoegen als vriend"
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Legg til en venn"
+            "value": "Legg til som venn"
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dodaj znajomego"
+            "value": "Dodaj do znajomych"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Adicionar um amigo"
+            "value": "Adicionar aos amigos"
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Adaugă un prieten"
+            "value": "Adaugă la prieteni"
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Добавить друга"
+            "value": "Добавить в друзья"
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lägg till en vän"
+            "value": "Lägg till som vän"
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "เพิ่มเพื่อน"
+            "value": "เพิ่มเป็นเพื่อน"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Arkadaş ekle"
+            "value": "Arkadaş olarak ekle"
           }
         },
         "vi": {
@@ -44315,13 +44315,13 @@
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "添加好友"
+            "value": "加为好友"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "加入好友"
+            "value": "加為好友"
           }
         }
       }
@@ -44519,6 +44519,203 @@
           "stringUnit": {
             "state": "translated",
             "value": "返回大廳"
+          }
+        }
+      }
+    },
+    "online.cancelRequest": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سحب الطلب"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vzít žádost zpět"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Træk anmodningen tilbage"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anfrage zurückziehen"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ανάκληση αιτήματος"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Take the request back"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Take the request back"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Take the request back"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retirar la solicitud"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Peru pyyntö"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retirer la demande"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retirer la demande"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ביטול הבקשה"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अनुरोध वापस लें"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kérés visszavonása"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tarik permintaan"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ritira la richiesta"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "リクエストを取り消す"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "요청 취소"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tarik balik permintaan"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verzoek intrekken"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trekk tilbake forespørselen"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wycofaj zaproszenie"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retirar o pedido"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retrage cererea"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отозвать запрос"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dra tillbaka förfrågan"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ถอนคำขอ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İsteği geri al"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rút lại lời mời"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "撤回请求"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "撤回請求"
           }
         }
       }
@@ -45902,6 +46099,400 @@
         }
       }
     },
+    "online.friendInvite": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دعوة من %1$@ إلى مباراة %2$@."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ tě zve na partii %2$@."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ inviterer dig til et %2$@-parti."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ lädt dich zu einer %2$@-Partie ein."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πρόσκληση από %1$@ για παρτίδα %2$@."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ invites you to a %2$@ game."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ invites you to a %2$@ game."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ invites you to a %2$@ game."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ te invita a una partida de %2$@."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ kutsuu sinut %2$@ peliin."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ t’invite à une partie de %2$@."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ t’invite à une partie de %2$@."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הזמנה מ-%1$@ למשחק של %2$@."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ की ओर से %2$@ की बाज़ी का निमंत्रण।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ meghív egy %2$@ játszmára."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ mengundangmu ke partai %2$@."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ ti invita a una partita da %2$@."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@さんから%2$@の対局の招待です。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 님이 %2$@ 대국에 초대했습니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ menjemput anda ke permainan %2$@."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ nodigt je uit voor een partij van %2$@."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ inviterer deg til et %2$@-parti."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ zaprasza cię na partię %2$@."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ convida você para uma partida de %2$@."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ te invită la o partidă de %2$@."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ приглашает вас на партию %2$@."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ bjuder in dig till ett %2$@-parti."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ ชวนคุณเล่นเกม %2$@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ seni %2$@ bir oyuna davet ediyor."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ mời bạn chơi một ván %2$@."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 邀请你下一局 %2$@ 的棋。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ 邀請你下一局 %2$@ 的棋。"
+          }
+        }
+      }
+    },
+    "online.friendRequests": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الطلبات"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Žádosti"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anmodninger"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anfragen"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αιτήματα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Requests"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Requests"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Requests"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solicitudes"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pyynnöt"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demandes"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demandes"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "בקשות"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अनुरोध"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kérések"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permintaan"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Richieste"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "リクエスト"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "요청"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permintaan"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verzoeken"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forespørsler"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zaproszenia"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pedidos"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cereri"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запросы"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Förfrågningar"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "คำขอ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İstekler"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lời mời"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "请求"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "請求"
+          }
+        }
+      }
+    },
     "online.friendlyNote": {
       "extractionState": "manual",
       "localizations": {
@@ -46296,593 +46887,593 @@
         }
       }
     },
-    "online.friendsDenied": {
+    "online.friendsHow": {
       "extractionState": "manual",
       "localizations": {
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "لا يستطيع Brass Pawn رؤية أصدقاء Game Center. الإعدادات ← Game Center ← الأصدقاء تسمح بذلك."
+            "value": "الزر في كل سطر من الترتيب وقائمة اللاعبين يرسل طلب صداقة. بعد قبوله يظهر الاسم هنا وتصبح المباراة على بُعد نقرة. المباريات بين الأصدقاء ودّية ولا تُحتسب في التصنيف."
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn nesmí vidět tvé přátele z Game Center. Nastavení → Game Center → Přátelé to povolí."
+            "value": "Tlačítkem v každém řádku žebříčku a seznamu hráčů pošleš žádost o přátelství. Jakmile ji druhý přijme, jméno se objeví tady a partie je na jedno klepnutí. Partie mezi přáteli jsou přátelské a do ratingu se nepočítají."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn må ikke se dine Game Center-venner. Indstillinger → Game Center → Venner tillader det."
+            "value": "Knappen på hver række i ranglisten og blandt spillerne sender en venneanmodning. Når den er accepteret, står navnet her, og et parti er et tryk væk. Partier mellem venner er venskabspartier og giver ikke rating."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn darf deine Game-Center-Freunde nicht sehen. Einstellungen → Game Center → Freunde erlaubt es."
+            "value": "Mit der Taste in jeder Zeile der Rangliste und der Spielerliste schickst du eine Freundschaftsanfrage. Sobald sie angenommen ist, steht der Name hier, und eine Partie ist nur einen Tipp entfernt. Partien unter Freunden sind Freundschaftspartien und werden nicht gewertet."
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Το Brass Pawn δεν έχει πρόσβαση στους φίλους σου στο Game Center. Ρυθμίσεις → Game Center → Φίλοι το επιτρέπει."
+            "value": "Το κουμπί σε κάθε γραμμή της κατάταξης και της λίστας παικτών στέλνει αίτημα φιλίας. Μόλις γίνει αποδεκτό, το όνομα εμφανίζεται εδώ και μια παρτίδα είναι ένα πάτημα μακριά. Οι παρτίδες μεταξύ φίλων είναι φιλικές και δεν βαθμολογούνται."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn may not see your Game Center friends. Settings → Game Center → Friends lets it."
+            "value": "The button on each row of the rank list and the players sends a friend request. Once it is accepted, the name appears here and a game is a tap away. Games between friends are friendly games, not rated."
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn may not see your Game Center friends. Settings → Game Center → Friends lets it."
+            "value": "The button on each row of the rank list and the players sends a friend request. Once it is accepted, the name appears here and a game is a tap away. Games between friends are friendly games, not rated."
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn may not see your Game Center friends. Settings → Game Center → Friends lets it."
+            "value": "The button on each row of the rank list and the players sends a friend request. Once it is accepted, the name appears here and a game is a tap away. Games between friends are friendly games, not rated."
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn no puede ver tus amigos de Game Center. Ajustes → Game Center → Amigos lo permite."
+            "value": "El botón de cada fila de la clasificación y de la lista de jugadores envía una solicitud de amistad. Cuando se acepta, el nombre aparece aquí y una partida está a un toque. Las partidas entre amigos son amistosas y no cuentan para la valoración."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn ei saa nähdä Game Center -kavereitasi. Asetukset → Game Center → Kaverit sallii sen."
+            "value": "Rankingin ja pelaajalistan jokaisen rivin painike lähettää kaveripyynnön. Kun se hyväksytään, nimi näkyy täällä ja peli on napautuksen päässä. Kavereiden väliset pelit ovat ystävyysotteluita, eikä niitä lasketa ratingiin."
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn n’a pas accès à vos amis Game Center. Réglages → Game Center → Amis le permet."
+            "value": "Le bouton de chaque ligne du classement et de la liste des joueurs envoie une demande d’ami. Une fois acceptée, le nom apparaît ici et une partie est à un toucher. Les parties entre amis sont amicales et ne sont pas classées."
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn n’a pas accès à vos amis Game Center. Réglages → Game Center → Amis le permet."
+            "value": "Le bouton de chaque ligne du classement et de la liste des joueurs envoie une demande d’ami. Une fois acceptée, le nom apparaît ici et une partie est à un toucher. Les parties entre amis sont amicales et ne sont pas classées."
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "ל־Brass Pawn אין גישה לחברים ב־Game Center. הגדרות ← Game Center ← חברים מאפשרות זאת."
+            "value": "הכפתור בכל שורה בדירוג וברשימת השחקנים שולח בקשת חברות. אחרי שהבקשה מאושרת, השם מופיע כאן ומשחק נמצא במרחק הקשה אחת. משחקים בין חברים הם משחקי ידידות ואינם מדורגים."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn आपके Game Center मित्रों को नहीं देख सकता। सेटिंग्स → Game Center → मित्र इसकी अनुमति देता है।"
+            "value": "रैंक सूची और खिलाड़ियों की सूची की हर पंक्ति का बटन मित्रता अनुरोध भेजता है। स्वीकार होते ही नाम यहाँ दिखता है और बाज़ी बस एक टैप दूर होती है। मित्रों के बीच की बाज़ियाँ दोस्ताना होती हैं, उनकी रेटिंग नहीं होती।"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "A Brass Pawn nem láthatja a Game Center-barátaidat. Beállítások → Game Center → Barátok engedélyezi."
+            "value": "A ranglista és a játékosok listájának minden sorában lévő gomb barátkérést küld. Ha elfogadják, a név itt jelenik meg, és egy játszma csak egy koppintás. A barátok közötti játszmák barátságosak, nem értékeltek."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn tidak boleh melihat teman Game Center-mu. Pengaturan → Game Center → Teman mengizinkannya."
+            "value": "Tombol di setiap baris peringkat dan daftar pemain mengirim permintaan pertemanan. Setelah diterima, namanya muncul di sini dan partai tinggal satu ketukan. Partai antarteman adalah partai persahabatan dan tidak dihitung ratingnya."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn non può vedere i tuoi amici di Game Center. Impostazioni → Game Center → Amici lo consente."
+            "value": "Il pulsante su ogni riga della classifica e dell’elenco dei giocatori invia una richiesta di amicizia. Una volta accettata, il nome compare qui e una partita è a un tocco. Le partite tra amici sono amichevoli e non valgono punti."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn は Game Center のフレンドを表示できません。設定 → Game Center → フレンド で許可できます。"
+            "value": "ランキングとプレイヤー一覧の各行のボタンでフレンドリクエストを送れます。承認されると名前がここに表示され、ワンタップで対局できます。フレンド同士の対局は親善対局で、レーティングには反映されません。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn이 Game Center 친구를 볼 수 없습니다. 설정 → Game Center → 친구에서 허용할 수 있습니다."
+            "value": "순위와 플레이어 목록의 각 행에 있는 버튼으로 친구 요청을 보냅니다. 수락되면 이름이 여기에 표시되고 한 번의 탭으로 대국할 수 있습니다. 친구 간 대국은 친선 대국이며 레이팅에 반영되지 않습니다."
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn tidak dibenarkan melihat rakan Game Center anda. Tetapan → Game Center → Rakan membenarkannya."
+            "value": "Butang pada setiap baris kedudukan dan senarai pemain menghantar permintaan rakan. Setelah diterima, nama itu muncul di sini dan permainan hanya satu ketikan jauhnya. Permainan antara rakan ialah perlawanan persahabatan dan tidak diberi rating."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn mag je Game Center-vrienden niet zien. Instellingen → Game Center → Vrienden staat het toe."
+            "value": "Met de knop op elke rij van de ranglijst en de spelerslijst stuur je een vriendschapsverzoek. Zodra het is geaccepteerd, staat de naam hier en is een partij één tik verwijderd. Partijen tussen vrienden zijn vriendschappelijk en tellen niet voor de rating."
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn får ikke se Game Center-vennene dine. Innstillinger → Game Center → Venner tillater det."
+            "value": "Knappen på hver rad i ranglisten og blant spillerne sender en venneforespørsel. Når den er godtatt, står navnet her, og et parti er ett trykk unna. Partier mellom venner er vennskapspartier og gir ikke rating."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn nie ma dostępu do twoich znajomych z Game Center. Ustawienia → Game Center → Znajomi na to pozwala."
+            "value": "Przycisk w każdym wierszu rankingu i listy graczy wysyła zaproszenie do znajomych. Po jego przyjęciu nazwa pojawia się tutaj, a partia jest na jedno dotknięcie. Partie między znajomymi są towarzyskie i nie liczą się do rankingu."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Brass Pawn não pode ver seus amigos do Game Center. Ajustes → Game Center → Amigos permite."
+            "value": "O botão em cada linha do ranking e da lista de jogadores envia um pedido de amizade. Quando aceito, o nome aparece aqui e uma partida fica a um toque. Partidas entre amigos são amistosas e não valem rating."
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn nu are voie să vadă prietenii tăi din Game Center. Setări → Game Center → Prieteni permite asta."
+            "value": "Butonul de pe fiecare rând din clasament și din lista jucătorilor trimite o cerere de prietenie. După ce e acceptată, numele apare aici și o partidă e la o atingere distanță. Partidele între prieteni sunt amicale și nu contează pentru rating."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn не может видеть ваших друзей в Game Center. Настройки → Game Center → Друзья разрешает это."
+            "value": "Кнопка в каждой строке рейтинг-листа и списка игроков отправляет запрос в друзья. Когда его примут, имя появится здесь, и до партии останется одно касание. Партии между друзьями товарищеские и не влияют на рейтинг."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn får inte se dina Game Center-vänner. Inställningar → Game Center → Vänner tillåter det."
+            "value": "Knappen på varje rad i rankinglistan och bland spelarna skickar en vänförfrågan. När den accepteras står namnet här och ett parti är ett tryck bort. Partier mellan vänner är vänskapspartier och ger ingen rating."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn ไม่ได้รับอนุญาตให้ดูเพื่อนใน Game Center ของคุณ การตั้งค่า → Game Center → เพื่อน ใช้อนุญาตได้"
+            "value": "ปุ่มในแต่ละแถวของอันดับและรายชื่อผู้เล่นใช้ส่งคำขอเป็นเพื่อน เมื่ออีกฝ่ายยอมรับ ชื่อจะแสดงที่นี่และเล่นได้ในแตะเดียว เกมระหว่างเพื่อนเป็นเกมกระชับมิตรและไม่คิดเรตติ้ง"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn, Game Center arkadaşlarını göremiyor. Ayarlar → Game Center → Arkadaşlar buna izin verir."
+            "value": "Sıralamanın ve oyuncu listesinin her satırındaki düğme arkadaşlık isteği gönderir. İstek kabul edilince isim burada görünür ve bir oyun tek dokunuş uzaklıktadır. Arkadaşlar arasındaki oyunlar dostluk oyunudur ve puana sayılmaz."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn không được xem bạn bè Game Center của bạn. Cài đặt → Game Center → Bạn bè cho phép điều đó."
+            "value": "Nút ở mỗi hàng của bảng xếp hạng và danh sách người chơi gửi lời mời kết bạn. Khi được chấp nhận, tên sẽ hiện ở đây và một ván cờ chỉ cách một lần chạm. Ván giữa bạn bè là ván giao hữu và không tính hệ số."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn 无法查看你的 Game Center 好友。设置 → Game Center → 好友 可以允许。"
+            "value": "排行榜和棋手列表每一行的按钮都可以发送好友请求。对方接受后，名字会出现在这里，一点即可对局。好友之间的对局是友谊赛，不计等级分。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn 無法查看你的 Game Center 好友。設定 → Game Center → 好友 可以允許。"
+            "value": "排行榜和棋手列表每一行的按鈕都可以傳送好友請求。對方接受後，名字會出現在這裡，一點即可對局。好友之間的對局是友誼賽，不計等級分。"
           }
         }
       }
     },
-    "online.friendsEmpty": {
+    "online.friendsSent": {
       "extractionState": "manual",
       "localizations": {
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "لا يلعب أي صديق من Game Center لعبة Brass Pawn بعد."
+            "value": "المُرسلة"
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Zatím žádní přátelé z Game Center nehrají Brass Pawn."
+            "value": "Odeslané"
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ingen Game Center-venner spiller Brass Pawn endnu."
+            "value": "Sendt"
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Noch keine Game-Center-Freunde spielen Brass Pawn."
+            "value": "Gesendet"
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Κανένας φίλος από το Game Center δεν παίζει ακόμη Brass Pawn."
+            "value": "Απεσταλμένα"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "No Game Center friends play Brass Pawn yet."
+            "value": "Sent"
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "No Game Center friends play Brass Pawn yet."
+            "value": "Sent"
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "No Game Center friends play Brass Pawn yet."
+            "value": "Sent"
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ningún amigo de Game Center juega aún a Brass Pawn."
+            "value": "Enviadas"
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kukaan Game Center -kavereistasi ei vielä pelaa Brass Pawnia."
+            "value": "Lähetetyt"
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aucun ami Game Center ne joue encore à Brass Pawn."
+            "value": "Envoyées"
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aucun ami Game Center ne joue encore à Brass Pawn."
+            "value": "Envoyées"
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "עדיין אין חברים מ־Game Center שמשחקים ב־Brass Pawn."
+            "value": "נשלחו"
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "अभी तक Game Center का कोई मित्र Brass Pawn नहीं खेलता।"
+            "value": "भेजे गए"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Még egyik Game Center-barátod sem játszik Brass Pawnnal."
+            "value": "Elküldve"
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Belum ada teman Game Center yang memainkan Brass Pawn."
+            "value": "Terkirim"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nessun amico di Game Center gioca ancora a Brass Pawn."
+            "value": "Inviate"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Brass Pawn をプレイしている Game Center のフレンドはまだいません。"
+            "value": "送信済み"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "아직 Brass Pawn을 하는 Game Center 친구가 없습니다."
+            "value": "보낸 요청"
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Belum ada rakan Game Center yang bermain Brass Pawn."
+            "value": "Dihantar"
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nog geen Game Center-vrienden spelen Brass Pawn."
+            "value": "Verstuurd"
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ingen Game Center-venner spiller Brass Pawn ennå."
+            "value": "Sendt"
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Żaden znajomy z Game Center nie gra jeszcze w Brass Pawn."
+            "value": "Wysłane"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nenhum amigo do Game Center joga Brass Pawn ainda."
+            "value": "Enviados"
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Niciun prieten din Game Center nu joacă încă Brass Pawn."
+            "value": "Trimise"
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Пока никто из друзей Game Center не играет в Brass Pawn."
+            "value": "Отправленные"
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Inga Game Center-vänner spelar Brass Pawn än."
+            "value": "Skickade"
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "ยังไม่มีเพื่อนใน Game Center ที่เล่น Brass Pawn"
+            "value": "ส่งแล้ว"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Henüz hiçbir Game Center arkadaşın Brass Pawn oynamıyor."
+            "value": "Gönderilenler"
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Chưa có bạn Game Center nào chơi Brass Pawn."
+            "value": "Đã gửi"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "还没有 Game Center 好友在玩 Brass Pawn。"
+            "value": "已发送"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "還沒有 Game Center 好友在玩 Brass Pawn。"
+            "value": "已傳送"
           }
         }
       }
     },
-    "online.friendsNote": {
+    "online.fromGameCenter": {
       "extractionState": "manual",
       "localizations": {
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "طلبات الصداقة تمر عبر Game Center: يكتب رسالة لإرسالها، وعند قبولها تصبح الصداقة قائمة هنا أيضًا."
+            "value": "من Game Center"
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Žádosti o přátelství jdou přes Game Center: napíše zprávu, kterou pošleš, a jakmile ji druhý přijme, jste přátelé i tady."
+            "value": "Z Game Center"
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Venneanmodninger går gennem Game Center: det skriver en besked, som du sender, og når den er accepteret, er I også venner her."
+            "value": "Fra Game Center"
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Freundschaftsanfragen laufen über Game Center: Es schreibt eine Nachricht, die du schickst, und sobald sie angenommen ist, seid ihr auch hier befreundet."
+            "value": "Aus Game Center"
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Τα αιτήματα φιλίας περνούν από το Game Center: γράφει ένα μήνυμα για να το στείλεις, και μόλις γίνει αποδεκτό, είστε φίλοι και εδώ."
+            "value": "Από το Game Center"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Friend requests go through Game Center: it writes a message for you to send, and once it is accepted the two of you are friends here too."
+            "value": "From Game Center"
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Friend requests go through Game Center: it writes a message for you to send, and once it is accepted the two of you are friends here too."
+            "value": "From Game Center"
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "Friend requests go through Game Center: it writes a message for you to send, and once it is accepted the two of you are friends here too."
+            "value": "From Game Center"
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "Las solicitudes de amistad pasan por Game Center: redacta un mensaje para que lo envíes y, cuando se acepta, también sois amigos aquí."
+            "value": "De Game Center"
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kaveripyynnöt kulkevat Game Centerin kautta: se kirjoittaa viestin, jonka lähetät, ja kun se hyväksytään, olette kavereita myös täällä."
+            "value": "Game Centeristä"
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Les demandes d’ami passent par Game Center : il rédige un message à envoyer, et une fois accepté, vous êtes aussi amis ici."
+            "value": "De Game Center"
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Les demandes d’ami passent par Game Center : il rédige un message à envoyer, et une fois accepté, vous êtes aussi amis ici."
+            "value": "De Game Center"
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "בקשות חברות עוברות דרך Game Center: הוא מנסח הודעה לשליחה, ואחרי שהיא מתקבלת החברות קיימת גם כאן."
+            "value": "מ-Game Center"
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "मित्रता अनुरोध Game Center से जाते हैं: वह एक संदेश लिखता है जिसे आप भेजते हैं, और स्वीकार होने पर आप यहाँ भी मित्र हो जाते हैं।"
+            "value": "Game Center से"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "A barátkérések a Game Centeren keresztül mennek: üzenetet ír, amelyet elküldesz, és ha elfogadják, itt is barátok vagytok."
+            "value": "A Game Centerből"
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Permintaan pertemanan lewat Game Center: ia menulis pesan untuk kamu kirim, dan setelah diterima, kalian juga berteman di sini."
+            "value": "Dari Game Center"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Le richieste di amicizia passano da Game Center: scrive un messaggio da inviare e, una volta accettato, siete amici anche qui."
+            "value": "Da Game Center"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "フレンドリクエストは Game Center を通じて送ります。送信用のメッセージを Game Center が作成し、承認されるとここでもフレンドになります。"
+            "value": "Game Center から"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "친구 요청은 Game Center를 통해 보냅니다. 보낼 메시지를 Game Center가 작성하고, 수락되면 여기서도 친구가 됩니다."
+            "value": "Game Center에서"
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Permintaan rakan melalui Game Center: ia menulis mesej untuk anda hantar, dan apabila diterima, anda berdua juga berkawan di sini."
+            "value": "Dari Game Center"
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Vriendschapsverzoeken gaan via Game Center: het schrijft een bericht dat jij verstuurt, en zodra het is geaccepteerd zijn jullie hier ook vrienden."
+            "value": "Uit Game Center"
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Venneforespørsler går gjennom Game Center: det skriver en melding som du sender, og når den er godtatt, er dere venner her også."
+            "value": "Fra Game Center"
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Zaproszenia do znajomych idą przez Game Center: przygotowuje wiadomość do wysłania, a po jej przyjęciu jesteście znajomymi także tutaj."
+            "value": "Z Game Center"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Os pedidos de amizade passam pelo Game Center: ele escreve uma mensagem para você enviar e, quando aceita, vocês são amigos aqui também."
+            "value": "Do Game Center"
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cererile de prietenie trec prin Game Center: scrie un mesaj pe care îl trimiți, iar după ce e acceptat sunteți prieteni și aici."
+            "value": "Din Game Center"
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Запросы в друзья идут через Game Center: он составит сообщение, которое вы отправите, и после принятия вы станете друзьями и здесь."
+            "value": "Из Game Center"
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Vänförfrågningar går via Game Center: det skriver ett meddelande som du skickar, och när det accepteras är ni vänner här också."
+            "value": "Från Game Center"
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "คำขอเป็นเพื่อนส่งผ่าน Game Center โดยจะเขียนข้อความให้คุณส่ง และเมื่ออีกฝ่ายยอมรับ ก็เป็นเพื่อนกันที่นี่ด้วย"
+            "value": "จาก Game Center"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Arkadaşlık istekleri Game Center üzerinden gider: senin göndereceğin bir mesaj yazar, kabul edildiğinde burada da arkadaş olursunuz."
+            "value": "Game Center’dan"
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lời mời kết bạn đi qua Game Center: nó soạn một tin nhắn để bạn gửi, và khi được chấp nhận, hai người cũng là bạn ở đây."
+            "value": "Từ Game Center"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "好友请求通过 Game Center 发送：它会写好一条信息供你发送，对方接受后你们在这里也成为好友。"
+            "value": "来自 Game Center"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "好友邀請透過 Game Center 傳送：它會寫好一則訊息供你傳送，對方接受後你們在這裡也成為好友。"
+            "value": "來自 Game Center"
           }
         }
       }
@@ -51024,6 +51615,203 @@
         }
       }
     },
+    "online.noFriendsYet": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا أصدقاء بعد."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zatím žádní přátelé."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen venner endnu."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine Freunde."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν υπάρχουν ακόμα φίλοι."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No friends yet."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No friends yet."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No friends yet."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay amigos."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ei vielä kavereita."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas encore d’amis."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas encore d’amis."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אין עדיין חברים."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी कोई मित्र नहीं।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Még nincsenek barátok."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada teman."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ancora nessun amico."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フレンドはまだいません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "아직 친구가 없습니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada rakan."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen vrienden."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen venner ennå."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Na razie brak znajomych."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum amigo ainda."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Încă niciun prieten."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Друзей пока нет."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inga vänner än."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ยังไม่มีเพื่อน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henüz arkadaş yok."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chưa có bạn bè."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "还没有好友。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "還沒有好友。"
+          }
+        }
+      }
+    },
     "online.noMatch": {
       "extractionState": "manual",
       "localizations": {
@@ -51611,6 +52399,203 @@
           "stringUnit": {
             "state": "translated",
             "value": "還沒有其他人線上對局。從大廳傳送連結邀請別人吧。"
+          }
+        }
+      }
+    },
+    "online.notNow": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ليس الآن"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teď ne"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ikke nu"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht jetzt"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Όχι τώρα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not now"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not now"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not now"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ahora no"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ei nyt"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas maintenant"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pas maintenant"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא עכשיו"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी नहीं"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Most nem"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nanti saja"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non ora"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今はしない"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "나중에"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bukan sekarang"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet nu"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ikke nå"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nie teraz"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agora não"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nu acum"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не сейчас"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inte nu"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไว้ทีหลัง"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şimdi değil"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Để sau"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "以后再说"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "以後再說"
           }
         }
       }
@@ -52990,6 +53975,203 @@
           "stringUnit": {
             "state": "translated",
             "value": "再來一局"
+          }
+        }
+      }
+    },
+    "online.playNow": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بدء اللعب"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hrát"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spil"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spielen"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Παίξε"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Play"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Play"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Play"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jugar"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pelaa"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jouer"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jouer"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לשחק"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "खेलें"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Játék"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Main"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gioca"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "対局する"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "대국하기"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Main"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spelen"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spill"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Graj"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jogar"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Joacă"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Играть"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spela"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เล่น"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oyna"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chơi"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "对局"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "對局"
           }
         }
       }
@@ -55945,6 +57127,400 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在邀請 %@ 再下一局…"
+          }
+        }
+      }
+    },
+    "online.removeFriend": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إزالة من الأصدقاء"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Odebrat z přátel"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fjern ven"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aus Freunden entfernen"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αφαίρεση από τους φίλους"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove friend"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove friend"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove friend"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar de amigos"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Poista kavereista"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retirer des amis"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retirer des amis"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הסרה מהחברים"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मित्रों से हटाएँ"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eltávolítás a barátok közül"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus dari teman"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rimuovi dagli amici"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フレンドから削除"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "친구 삭제"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buang daripada rakan"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verwijderen uit vrienden"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fjern fra venner"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usuń ze znajomych"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remover dos amigos"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elimină din prieteni"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить из друзей"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ta bort från vänner"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ลบออกจากเพื่อน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arkadaşlardan çıkar"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xóa khỏi bạn bè"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "移除好友"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "移除好友"
+          }
+        }
+      }
+    },
+    "online.requestSent": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أُرسل الطلب"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Žádost odeslána"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anmodning sendt"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anfrage gesendet"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το αίτημα στάλθηκε"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Request sent"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Request sent"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Request sent"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solicitud enviada"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pyyntö lähetetty"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demande envoyée"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demande envoyée"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הבקשה נשלחה"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अनुरोध भेजा गया"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kérés elküldve"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permintaan terkirim"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Richiesta inviata"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "リクエストを送信しました"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "요청을 보냈습니다"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permintaan dihantar"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verzoek verstuurd"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forespørsel sendt"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zaproszenie wysłane"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pedido enviado"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerere trimisă"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запрос отправлен"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Förfrågan skickad"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ส่งคำขอแล้ว"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İstek gönderildi"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã gửi lời mời"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "请求已发送"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "請求已傳送"
           }
         }
       }

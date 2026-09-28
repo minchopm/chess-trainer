@@ -5,16 +5,21 @@ import Foundation
 @preconcurrency import GameKit
 #endif
 
-/// Who is online right now: the one thing Game Center cannot say.
+/// The small service of ours behind online play — see `scripts/presence` —
+/// for the two things Game Center cannot do.
 ///
-/// While the app is on screen, signed in, and the player shows it (Settings →
-/// Show when I'm online), it tells a small function of ours — see
-/// `scripts/presence` — that they are here, looking for a game, or in one;
-/// the players list asks it who is. Each word is signed by Game Center, which
-/// is how the function knows it is this player, and lasts five minutes. It
-/// keeps nothing else: the ratings are Game Center's (`OnlineRecord`).
+/// Who is online right now: while the app is on screen, signed in, and the
+/// player shows it (Settings → Show when I'm online), it says they are here,
+/// looking for a game, or in one, and the players list asks who is. Each word
+/// lasts five minutes.
+///
+/// And friends, asked for by the nickname on a list, which Game Center's
+/// friends cannot be: requests, the friends themselves, and games offered to a
+/// friend Game Center cannot send an invitation to. Every request is signed by
+/// Game Center, which is how the service knows it is this player. The ratings
+/// are not here: they are Game Center's (`OnlineRecord`).
 @MainActor
-final class Presence {
+final class OnlineService {
     nonisolated static let endpoint = URL(string: "https://6slkhltuygwkjupda7inipuoae0pxybf.lambda-url.eu-central-1.on.aws")!
 
     /// A player's key there: never the Game Center ID itself.
@@ -27,10 +32,14 @@ final class Presence {
 
     /// This player is on screen, and doing this: here, looking for a game on a
     /// clock, or in one. It lasts five minutes unless said again.
-    func here(_ status: PresenceStatus) async {
+    /// The answer carries any game a friend has offered, so saying it is
+    /// also hearing that.
+    @discardableResult
+    func here(_ status: PresenceStatus) async -> [FriendInvite]? {
         var body: [String: Any] = ["status": status.word]
         if let minutes = status.minutes { body["minutes"] = minutes }
-        _ = try? await postRaw("here", body)
+        guard let data = try? await postRaw("here", body) else { return nil }
+        return (try? JSONDecoder().decode(Offers.self, from: data))?.invites
     }
 
     /// Gone to the background, or no longer showing.
@@ -44,6 +53,72 @@ final class Presence {
               let answer = try? JSONDecoder().decode(OnlineNow.self, from: data) else { return nil }
         return Dictionary(answer.players.compactMap { entry in PresenceStatus(entry).map { (entry.id, $0) } },
                           uniquingKeysWith: { a, _ in a })
+    }
+
+    // MARK: - Friends
+
+    /// This player's friends, the requests both ways, and games offered.
+    func friends() async -> FriendsList? {
+        guard let data = try? await postRaw("friends", [:]) else { return nil }
+        return try? JSONDecoder().decode(FriendsList.self, from: data)
+    }
+
+    /// Just the games offered: cheap enough to ask every few seconds while the
+    /// lobby is open.
+    func invites() async -> [FriendInvite]? {
+        guard let data = try? await postRaw("friends/invites", [:]) else { return nil }
+        return (try? JSONDecoder().decode(Offers.self, from: data))?.invites
+    }
+
+    /// Ask to be friends; if they had asked already, it is a yes.
+    func request(_ key: String, alias: String) async -> Bool {
+        await ok("friends/request", ["alias": myAlias, "to": key, "toAlias": alias])
+    }
+
+    func accept(_ key: String) async -> Bool {
+        await ok("friends/accept", ["alias": myAlias, "from": key])
+    }
+
+    /// No longer friends, a request declined, or one taken back.
+    func remove(_ key: String) async -> Bool {
+        await ok("friends/remove", ["other": key])
+    }
+
+    /// Offer a friend a game on a clock. It waits two minutes for an answer.
+    func offer(to key: String, minutes: Int) async -> Bool {
+        await ok("friends/invite", ["alias": myAlias, "to": key, "minutes": minutes])
+    }
+
+    /// An offered game answered, yes or no.
+    func answer(_ key: String) async {
+        _ = await ok("friends/answer", ["from": key])
+    }
+
+    /// An offered game taken back.
+    func cancelOffer(to key: String) async {
+        _ = await ok("friends/cancel", ["to": key])
+    }
+
+    /// This player's nickname, as their friends will see it.
+    var myAlias: String {
+        #if canImport(GameKit)
+        GKLocalPlayer.local.alias
+        #else
+        ""
+        #endif
+    }
+
+    /// This player's own key.
+    var myKey: String? {
+        #if canImport(GameKit)
+        GKLocalPlayer.local.isAuthenticated ? Self.key(teamPlayerID: GKLocalPlayer.local.teamPlayerID) : nil
+        #else
+        nil
+        #endif
+    }
+
+    private func ok(_ path: String, _ body: [String: Any]) async -> Bool {
+        (try? await postRaw(path, body)) != nil
     }
 
     // MARK: -
@@ -130,4 +205,30 @@ private struct OnlineNow: Decodable {
         let minutes: Int?
     }
     let players: [Entry]
+}
+
+/// A game a friend offered: who, and on what clock.
+struct FriendInvite: Decodable, Equatable, Identifiable {
+    /// The friend's key.
+    let id: String
+    let alias: String
+    let minutes: Int
+
+    var clock: TimeControl { TimeControl(rawValue: minutes) ?? .five }
+}
+
+/// A player's friends, as the service keeps them.
+struct FriendsList: Decodable {
+    struct Entry: Decodable {
+        let id: String
+        let alias: String
+    }
+    let friends: [Entry]
+    let incoming: [Entry]
+    let outgoing: [Entry]
+    let invites: [FriendInvite]
+}
+
+private struct Offers: Decodable {
+    let invites: [FriendInvite]
 }

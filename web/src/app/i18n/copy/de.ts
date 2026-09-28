@@ -14,7 +14,7 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Spielen · Trainieren · Zusehen',
-    lede: 'Taktik, Stellungsbeurteilung, Endspieltechnik und Spiel mit Trainer, mit der Engine direkt auf dem Gerät. Kein Konto, und nichts wird erhoben – außer, beim Online-Spiel, dass du online bist.',
+    lede: 'Taktik, Stellungsbeurteilung, Endspieltechnik und Spiel mit Trainer, mit der Engine direkt auf dem Gerät. Kein Konto, und nichts wird erhoben – außer dem, was das Online-Spiel braucht: dass du online bist, und die Freunde, die du hinzufügst.',
     privacy:
       'Abgesehen vom Online-Spiel erhebt die App nichts und sendet nichts über dich. Das Einzige, was sie herunterlädt, ist der tägliche Feed, wenn du Heute öffnest. Deine Trainingswertungen und dein Verlauf werden nur auf diesem Gerät gespeichert, und wer die App löscht, löscht sie mit.',
     freeSoftware:

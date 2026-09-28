@@ -14,7 +14,7 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Jogar · Treinar · Assistir',
-    lede: 'Tática, julgamento posicional, técnica de finais e jogo com treinador, com o motor rodando no próprio aparelho. Sem conta, e nada coletado — além de dizer que você está on-line, enquanto joga on-line.',
+    lede: 'Tática, julgamento posicional, técnica de finais e jogo com treinador, com o motor rodando no próprio aparelho. Sem conta, e nada coletado — além do que o jogo on-line precisa: dizer que você está on-line, e os amigos que você adicionar.',
     privacy:
       'Fora o jogo on-line, o app não coleta nada e não envia nada sobre você. A única coisa que ele baixa é o feed diário, quando você abre Hoje. Seus ratings de treino e seu histórico ficam só neste aparelho, e apagar o app apaga tudo.',
     freeSoftware:

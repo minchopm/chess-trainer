@@ -14,7 +14,7 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Oyna · Çalış · İzle',
-    lede: 'Taktik, pozisyon değerlendirmesi, oyun sonu tekniği ve eğitmenli oyun; motor doğrudan cihazda çalışır. Hesap yok ve hiçbir şey toplanmaz — çevrimiçi oynarken çevrimiçi olduğunu söylemek dışında.',
+    lede: 'Taktik, pozisyon değerlendirmesi, oyun sonu tekniği ve eğitmenli oyun; motor doğrudan cihazda çalışır. Hesap yok ve hiçbir şey toplanmaz — çevrimiçi oyunun gerektirdikleri dışında: çevrimiçi olduğun ve eklediğin arkadaşlar.',
     privacy:
       "Çevrimiçi oyun dışında uygulama hiçbir şey toplamaz ve senin hakkında hiçbir şey göndermez. İndirdiği tek şey, Bugün'ü açtığında günlük akıştır. Antrenman puanların ve geçmişin yalnızca bu cihazda tutulur; uygulamayı silmek onları da siler.",
     freeSoftware:

@@ -14,7 +14,7 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Játék · Edzés · Nézés',
-    lede: 'Taktika, pozíciós ítélőképesség, végjátéktechnika és edzővel játszás, a motor magán az eszközön fut. Nincs fiók, és semmit nem gyűjtünk — azon kívül, hogy online vagy, amikor online játszol.',
+    lede: 'Taktika, pozíciós ítélőképesség, végjátéktechnika és edzővel játszás, a motor magán az eszközön fut. Nincs fiók, és semmit nem gyűjtünk — azon kívül, amit az online játék igényel: hogy online vagy, és a barátaidat, akiket felveszel.',
     privacy:
       'Az online játékon kívül az alkalmazás semmit nem gyűjt, és semmit nem küld rólad. Egyedül a napi hírfolyamot tölti le, amikor megnyitod a Ma lapot. Az edzés-értékszámaid és az előzményeid csak ezen az eszközön vannak, és az alkalmazás törlése törli őket.',
     freeSoftware:

@@ -14,7 +14,7 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Play · Train · Watch',
-    lede: 'Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected — apart from saying you are online, while you play online.',
+    lede: 'Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected — apart from what online play needs: that you are online, and the friends you make.',
     privacy:
       'Apart from online play, the app collects nothing and sends nothing about you. The one thing it downloads is the daily feed, when you open Today. Your training ratings and history are stored only on this device, and deleting the app deletes them.',
     freeSoftware:

@@ -18,6 +18,13 @@
 	     ID), and what the player is doing with its clock (Gameplay Content,
 	     multiplayer matching). Linked to that ID, for app functionality only,
 	     never for tracking, and gone five minutes after the player leaves.
+
+	     The same service keeps the player's friends in the app: a request, a
+	     friendship and a game offered, between two hashed IDs, with the Game
+	     Center nickname of each. That is the player's social graph (Contacts),
+	     linked, for app functionality only, kept until either side removes
+	     it; a game offered goes after two minutes. Game Center's own friends
+	     are read on the device, to be asked, and sent nowhere.
 	     See PRIVACY.md, which says the same in prose.
 
 	     UserDefaults is read and written by ReviewManager, for this app's own
@@ -47,6 +54,18 @@
 		<dict>
 			<key>NSPrivacyCollectedDataType</key>
 			<string>NSPrivacyCollectedDataTypeGameplayContent</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<true/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+			</array>
+		</dict>
+		<dict>
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypeContacts</string>
 			<key>NSPrivacyCollectedDataTypeLinked</key>
 			<true/>
 			<key>NSPrivacyCollectedDataTypeTracking</key>

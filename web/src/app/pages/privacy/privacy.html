@@ -1,7 +1,7 @@
 <bp-page-head
   slug="Legal"
   title="Privacy Policy"
-  lede="Brass Pawn collects nothing outside online play. This page says so in the detail a policy is supposed to have, and names the places where data does exist: Apple's, for purchases and Game Center, and ours, for saying who is online."
+  lede="Brass Pawn collects nothing outside online play. This page says so in the detail a policy is supposed to have, and names the places where data does exist: Apple's, for purchases and Game Center, and ours, for saying who is online and keeping the friends you make."
   meta="Effective 28 September 2026 · Applies to Brass Pawn for iPhone, iPad and Mac"
 />
 
@@ -15,10 +15,13 @@
         ratings and history live on your device and are deleted with the app.
       </p>
       <p>
-        The one exception is <strong>who is online</strong>. While the app is on your screen it
+        The exceptions are <strong>who is online</strong> and <strong>your friends</strong>. While
+        the app is on your screen it
         tells a small service of ours that you are online, looking for a game or in one, so other
         players can see you are there to play — with Game Center’s proof of who you are, kept only as
-        a scrambled code, and forgotten five minutes after you leave. Details in
+        a scrambled code, and forgotten five minutes after you leave. The friends you make in the app
+        are kept there too, under the same scrambled codes and with your two nicknames, until either
+        of you removes the other. Details in
         <a [routerLink]="[]" fragment="presence">section 6</a>. Your online ratings are kept on Game
         Center’s leaderboards, which are Apple’s.
       </p>
@@ -43,7 +46,9 @@
 
     <h2 id="collect">2. What we collect</h2>
     <p>
-      Nothing, apart from saying who is online (<a [routerLink]="[]" fragment="presence"
+      Nothing, apart from saying who is online and keeping the friends you make in the app (<a
+        [routerLink]="[]"
+        fragment="presence"
         >section 6</a
       >). The app makes no analytics calls, carries no advertising, contains no third-party
       tracking or attribution SDK of any kind, and has no account system. It does not read your
@@ -101,6 +106,13 @@
             <td>Signed-in players, beside your nickname; off in Settings</td>
           </tr>
           <tr>
+            <td>Your friends in the app — requests, friendships and games offered — as the two players’
+              one-way codes, the Game Center nickname each of you had, and when</td>
+            <td>Kept by our service until declined, taken back or removed; a game offered, two
+              minutes</td>
+            <td>You and the other player</td>
+          </tr>
+          <tr>
             <td>
               Your online rating on each clock, how sure it is, your number of rated games and the day
               of the last one
@@ -143,8 +155,11 @@
         and the licence text. Nothing opens on its own.
       </li>
       <li>
-        <strong>Who is online.</strong> While the app is on screen it says, every three minutes, that
-        you are online, unless you have turned that off, and the list of players asks who is (<a
+        <strong>Who is online, and friends.</strong> While the app is on screen it says, every three
+        minutes, that you are online, unless you have turned that off, and the list of players asks
+        who is. It also asks for your friends, and — every twenty seconds, if you have any — whether
+        one has offered you a game, and sends a request, an answer or a game offered when you tap
+        one (<a
           [routerLink]="[]"
           fragment="presence"
           >section 6</a
@@ -184,15 +199,16 @@
     </p>
     <p>
       If you allow it — Game Center asks the first time you open Friends — the app reads your Game
-      Center friends, to show the ones who play and let you invite them. They are read on the device
-      and sent nowhere. A friend request is written and sent by Game Center itself.
+      Center friends, to show the ones who play so that you can ask them to be friends here too.
+      They are read on the device and sent nowhere; only a request you choose to send leaves it
+      (<a [routerLink]="[]" fragment="friends">section 6</a>).
     </p>
     <p>
       Apple’s handling of Game Center data is governed by
       <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s privacy policy</a>.
     </p>
 
-    <h2 id="presence">6. Who is online</h2>
+    <h2 id="presence">6. Who is online, and friends</h2>
     <p>
       Game Center can say who played this week, but not who has the app open now. So the app tells a
       small service of ours — a function on Amazon Web Services, in Frankfurt, in the European
@@ -213,10 +229,23 @@
       reaches Amazon, as any web request’s does. Nothing else is sent. The function’s logs are
       deleted after fourteen days.
     </p>
+    <h3 id="friends">Friends</h3>
     <p>
-      It is for saying who is online, and nothing else: nothing in it is sold, shared or used for
+      Game Center makes friends through Messages, with somebody in your contacts, and has no way to
+      ask a player on a list by nickname. So the app keeps friends of its own, on the same service.
+    </p>
+    <p>
+      When you ask somebody to be friends, the service keeps the request under both players’
+      scrambled codes, with the Game Center nickname each of you had then — so each list can say who
+      is who — and when it was made. Once it is accepted it is a friendship, kept the same way.
+      Declining a request, taking it back or removing a friend deletes it on both sides at once. A
+      game offered to a friend is kept, with its clock, for two minutes, and deleted as soon as it
+      is answered or taken back. Only you and the other player see a request or a friendship.
+    </p>
+    <p>
+      Both are for online play, and nothing else: nothing in them is sold, shared or used for
       advertising or tracking. The legal basis is our legitimate interest, and yours, in invitations
-      that reach somebody who is there.
+      that reach somebody who is there, and your own request for the friends you ask for.
     </p>
 
     <h2 id="purchases">7. Purchases</h2>
@@ -260,8 +289,9 @@
     <h2 id="children">10. Children</h2>
     <p>
       Outside online play the app collects no personal data from anyone. Our service keeps only what
-      <a [routerLink]="[]" fragment="presence">section 6</a> describes, for five minutes, and nothing
-      that identifies anybody. It shows no advertising, contains no third-party content, has no chat, no
+      <a [routerLink]="[]" fragment="presence">section 6</a> describes — who is online, for five
+      minutes, and the friends you make, until they are removed — as scrambled codes and Game Center
+      nicknames, never a name, an e-mail address or an Apple Account. It shows no advertising, contains no third-party content, has no chat, no
       user-generated content and no external links other than to the source repository, this website
       and the licence text.
     </p>
@@ -275,8 +305,9 @@
     <h2 id="transfers">11. International transfers and retention</h2>
     <p>
       What our service keeps (<a [routerLink]="[]" fragment="presence">section 6</a>) is held by
-      Amazon Web Services in Frankfurt, in the European Union: each note for five minutes, the logs
-      for fourteen days. Data on your device stays on your device for as long as you keep the app.
+      Amazon Web Services in Frankfurt, in the European Union: each note for five minutes, friend
+      requests and friendships until they are declined, taken back or removed, a game offered for
+      two minutes, and the logs for fourteen days. Data on your device stays on your device for as long as you keep the app.
     </p>
 
     <h2 id="rights">12. Your rights</h2>
@@ -286,8 +317,10 @@
       correction, deletion, portability and objection over personal data a company holds about you.
     </p>
     <p>
-      The only personal data we hold is who is online, for five minutes, and
-      <em>Settings → Show when I’m online</em> stops it. For anything else — a question, an
+      The only personal data we hold is who is online, for five minutes, which
+      <em>Settings → Show when I’m online</em> stops, and the friends you make in the app, which
+      removing a friend — or declining or taking back a request — deletes on both sides. For
+      anything else — a question, an
       objection — write to us. Under the California Consumer Privacy Act we specifically confirm that
       we do not sell or share personal information, and have never done so.
     </p>
@@ -345,7 +378,7 @@
       <li><a [routerLink]="[]" fragment="device">What stays on your device</a></li>
       <li><a [routerLink]="[]" fragment="network">When the app uses the network</a></li>
       <li><a [routerLink]="[]" fragment="gamecenter">Game Center</a></li>
-      <li><a [routerLink]="[]" fragment="presence">Who is online</a></li>
+      <li><a [routerLink]="[]" fragment="presence">Who is online, and friends</a></li>
       <li><a [routerLink]="[]" fragment="purchases">Purchases</a></li>
       <li><a [routerLink]="[]" fragment="crash">Crash reports</a></li>
       <li><a [routerLink]="[]" fragment="chess">The chess content</a></li>

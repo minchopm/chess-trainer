@@ -14,7 +14,7 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Main · Latih · Tonton',
-    lede: 'Taktik, penilaian kedudukan, teknik akhir permainan dan bermain dengan jurulatih, dengan enjin berjalan pada peranti itu sendiri. Tiada akaun, dan tiada apa dikumpul — selain memberitahu bahawa anda dalam talian, semasa anda bermain dalam talian.',
+    lede: 'Taktik, penilaian kedudukan, teknik akhir permainan dan bermain dengan jurulatih, dengan enjin berjalan pada peranti itu sendiri. Tiada akaun, dan tiada apa dikumpul — selain yang diperlukan permainan dalam talian: bahawa anda dalam talian, dan rakan yang anda tambah.',
     privacy:
       'Selain permainan dalam talian, aplikasi ini tidak mengumpul apa-apa dan tidak menghantar apa-apa tentang anda. Satu-satunya yang dimuat turun ialah suapan harian, apabila anda membuka Hari ini. Rating latihan dan sejarah anda hanya disimpan pada peranti ini, dan memadam aplikasi memadamnya.',
     freeSoftware:

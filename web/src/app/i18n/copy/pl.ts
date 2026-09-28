@@ -14,7 +14,7 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Graj · Trenuj · Oglądaj',
-    lede: 'Taktyka, ocena pozycji, technika końcówek i gra z trenerem, z silnikiem działającym na samym urządzeniu. Bez konta i bez zbierania czegokolwiek — poza informacją, że jesteś online, gdy grasz online.',
+    lede: 'Taktyka, ocena pozycji, technika końcówek i gra z trenerem, z silnikiem działającym na samym urządzeniu. Bez konta i bez zbierania czegokolwiek — poza tym, czego wymaga gra online: informacją, że jesteś online, i znajomymi, których dodasz.',
     privacy:
       'Poza grą online aplikacja niczego nie zbiera i niczego o tobie nie wysyła. Jedyne, co pobiera, to codzienny kanał, gdy otwierasz Dziś. Rankingi treningowe i historia są przechowywane tylko na tym urządzeniu, a usunięcie aplikacji je usuwa.',
     freeSoftware:

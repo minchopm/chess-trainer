@@ -14,7 +14,7 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Main · Latih · Tonton',
-    lede: 'Taktik, penilaian posisi, teknik akhir permainan, dan bermain dengan pelatih, dengan mesin yang berjalan di perangkat itu sendiri. Tanpa akun, dan tidak ada yang dikumpulkan — selain memberi tahu bahwa kamu daring, saat kamu bermain daring.',
+    lede: 'Taktik, penilaian posisi, teknik akhir permainan, dan bermain dengan pelatih, dengan mesin yang berjalan di perangkat itu sendiri. Tanpa akun, dan tidak ada yang dikumpulkan — selain yang dibutuhkan permainan daring: bahwa kamu daring, dan teman yang kamu tambahkan.',
     privacy:
       'Selain permainan daring, aplikasi ini tidak mengumpulkan apa pun dan tidak mengirim apa pun tentangmu. Satu-satunya yang diunduh adalah umpan harian, saat kamu membuka Hari ini. Rating latihan dan riwayatmu hanya tersimpan di perangkat ini, dan menghapus aplikasi akan menghapusnya.',
     freeSoftware:

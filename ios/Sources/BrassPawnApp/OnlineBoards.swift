@@ -22,6 +22,9 @@ struct BoardPlayer: Identifiable, Equatable {
     let clock: TimeControl?
     let lastSeen: Date
     let isLocal: Bool
+    /// Their key in `OnlineService`, where known: what a friend request, and
+    /// who is online, go by.
+    var key: String? = nil
 
     func isActive(at now: Date = Date()) -> Bool {
         now.timeIntervalSince(lastSeen) < OnlineBoards.activeWindow
@@ -36,7 +39,7 @@ struct BoardPlayer: Identifiable, Equatable {
 /// `OnlineRecord` — a rating, unlike a high score, is meant to go down as well
 /// as up. The same entry says when it was sent, which is the whole of
 /// "active": seen in the last week, or not. Who has the app on screen right
-/// now Game Center cannot say, so that comes from `Presence`, for the players
+/// now Game Center cannot say, so that comes from `OnlineService`, for the players
 /// who show it; how many are looking for a game on each clock, it can.
 @MainActor
 @Observable
@@ -61,11 +64,19 @@ final class OnlineBoards {
     private(set) var everyone: [BoardPlayer] = []
     /// The people this player has played lately, from Game Center's own record.
     private(set) var recent: [BoardPlayer] = []
-    /// This player's Game Center friends. A friend is a player too, and shows
-    /// in both lists.
+    /// This player's friends — ours, asked for and accepted in the app. A
+    /// friend is a player too, and shows in both lists.
     private(set) var friends: [BoardPlayer] = []
-    enum FriendsAccess { case unknown, allowed, denied }
-    private(set) var friendsAccess = FriendsAccess.unknown
+    /// Requests to this player, and from it, not yet answered.
+    private(set) var incoming: [BoardPlayer] = []
+    private(set) var outgoing: [BoardPlayer] = []
+    /// Game Center friends who play and are not friends here yet: a request
+    /// away. Read once the player lets the app see them.
+    private(set) var gameCenterFriends: [BoardPlayer] = []
+    enum FriendState { case none, friend, asked, askedBy }
+    /// The service's last word on the friends, kept to be matched again with
+    /// the players once the lists have been read.
+    private var friendsList: FriendsList?
     /// Every player met on any list, once each, as last seen.
     private var latest: [String: BoardPlayer] = [:]
     private var loadingMore: Set<TimeControl> = []
@@ -82,18 +93,20 @@ final class OnlineBoards {
     #endif
 
     /// Who is on screen right now, by Game Center player ID — of the players
-    /// the lists and Game Center let this one see. From `Presence`, which
+    /// the lists and Game Center let this one see. From `OnlineService`, which
     /// hears it from each app that shows its player online.
     private(set) var presence: [String: PresenceStatus] = [:]
-    /// Each player's key in `Presence`, to their Game Center player ID.
+    /// Each player's key in `OnlineService`, to their Game Center player ID.
     private var playerIDs: [String: String] = [:]
+    /// Who is online by key, whether or not the lists have met them.
+    private var presenceByKey: [String: PresenceStatus] = [:]
 
     /// Everybody on screen now, looking for a game first.
     func onlineNow() -> [BoardPlayer] {
         var seen = Set<String>()
         return (everyone + recent + friends)
-            .filter { !$0.isLocal && presence[$0.id] != nil && seen.insert($0.id).inserted }
-            .sorted { rank(presence[$0.id]) < rank(presence[$1.id]) }
+            .filter { !$0.isLocal && status(of: $0) != nil && seen.insert($0.id).inserted }
+            .sorted { rank(status(of: $0)) < rank(status(of: $1)) }
     }
 
     private func rank(_ status: PresenceStatus?) -> Int {
@@ -105,7 +118,28 @@ final class OnlineBoards {
         }
     }
 
-    func isFriend(_ id: String) -> Bool { friends.contains { $0.id == id } }
+    /// Whether a player can be invited from here: Game Center can send them
+    /// an invitation, or they are a friend, who can be offered a game.
+    func canInvite(_ player: BoardPlayer) -> Bool {
+        #if canImport(GameKit)
+        if players[player.id] != nil { return true }
+        #endif
+        return player.key != nil && friendState(of: player) == .friend
+    }
+
+    func friendState(of player: BoardPlayer) -> FriendState {
+        let same = { (other: BoardPlayer) in other.id == player.id || (other.key != nil && other.key == player.key) }
+        if friends.contains(where: same) { return .friend }
+        if outgoing.contains(where: same) { return .asked }
+        if incoming.contains(where: same) { return .askedBy }
+        return .none
+    }
+
+    /// What somebody is doing now, if they are online: by Game Center player
+    /// ID where the lists have met them, by key for a friend they have not.
+    func status(of player: BoardPlayer) -> PresenceStatus? {
+        presence[player.id] ?? player.key.flatMap { presenceByKey[$0] }
+    }
 
     /// Whether a clock's list has more than has been read of it.
     func hasMore(on control: TimeControl) -> Bool {
@@ -113,17 +147,18 @@ final class OnlineBoards {
     }
 
     func active(at now: Date = Date()) -> [BoardPlayer] {
-        everyone.filter { !$0.isLocal && presence[$0.id] == nil && $0.isActive(at: now) }
+        everyone.filter { !$0.isLocal && status(of: $0) == nil && $0.isActive(at: now) }
     }
 
     func inactive(at now: Date = Date()) -> [BoardPlayer] {
-        everyone.filter { !$0.isLocal && presence[$0.id] == nil && !$0.isActive(at: now) }
+        everyone.filter { !$0.isLocal && status(of: $0) == nil && !$0.isActive(at: now) }
     }
 
     /// Who is on screen, asked again: whenever the players are looked at, and
     /// every minute while they are.
-    func refreshPresence(using service: Presence) async {
+    func refreshPresence(using service: OnlineService) async {
         guard let online = await service.online() else { return }
+        presenceByKey = online
         presence = Dictionary(
             online.compactMap { key, status in playerIDs[key].map { ($0, status) } },
             uniquingKeysWith: { a, _ in a }
@@ -199,7 +234,8 @@ final class OnlineBoards {
         if let played = try? await GKLocalPlayer.local.loadRecentPlayers() {
             recent = played.prefix(12).map(known)
         }
-        await refreshFriends()
+        // Friends read before the lists were are the players on them now.
+        if let friendsList { take(friendsList) }
         await refreshLooking()
         #endif
     }
@@ -240,11 +276,12 @@ final class OnlineBoards {
     private func absorb(_ entries: [GKLeaderboard.Entry], on control: TimeControl, localID: String) -> [BoardPlayer] {
         entries.filter(\.isOnTheList).map { entry -> BoardPlayer in
             players[entry.player.gamePlayerID] = entry.player
-            playerIDs[Presence.key(teamPlayerID: entry.player.teamPlayerID)] = entry.player.gamePlayerID
+            playerIDs[OnlineService.key(teamPlayerID: entry.player.teamPlayerID)] = entry.player.gamePlayerID
             let player = BoardPlayer(
                 id: entry.player.gamePlayerID, alias: entry.player.alias,
                 rank: entry.rank, rating: entry.score, clock: control,
-                lastSeen: entry.date, isLocal: entry.player.gamePlayerID == localID
+                lastSeen: entry.date, isLocal: entry.player.gamePlayerID == localID,
+                key: OnlineService.key(teamPlayerID: entry.player.teamPlayerID)
             )
             if (latest[player.id]?.lastSeen ?? .distantPast) < player.lastSeen { latest[player.id] = player }
             return player
@@ -255,55 +292,84 @@ final class OnlineBoards {
     /// what the lists say of them, if anything.
     private func known(_ player: GKPlayer) -> BoardPlayer {
         players[player.gamePlayerID] = player
-        playerIDs[Presence.key(teamPlayerID: player.teamPlayerID)] = player.gamePlayerID
+        playerIDs[OnlineService.key(teamPlayerID: player.teamPlayerID)] = player.gamePlayerID
         let listed = latest[player.gamePlayerID]
         return BoardPlayer(
             id: player.gamePlayerID, alias: player.alias, rank: listed?.rank,
             rating: listed?.rating, clock: listed?.clock,
-            lastSeen: listed?.lastSeen ?? .distantPast, isLocal: false
+            lastSeen: listed?.lastSeen ?? .distantPast, isLocal: false,
+            key: OnlineService.key(teamPlayerID: player.teamPlayerID)
         )
     }
     #endif
 
-    /// This player's Game Center friends — asked for once, with Game Center's
-    /// own question, the first time the friends are looked at.
-    func refreshFriends(asking: Bool = false) async {
+    /// The friends, the requests both ways and the games offered, from the
+    /// service; and, once the player lets the app see them, the Game Center
+    /// friends who play, as people to ask. Game Center asks that the first
+    /// time the friends are looked at.
+    func refreshFriends(using service: OnlineService, askingGameCenter: Bool = false) async -> [FriendInvite] {
+        var offers: [FriendInvite] = []
+        if let list = await service.friends() {
+            take(list)
+            offers = list.invites
+        }
         #if canImport(GameKit)
-        guard GKLocalPlayer.local.isAuthenticated else { return }
-        guard let status = try? await GKLocalPlayer.local.loadFriendsAuthorizationStatus() else { return }
-        switch status {
-        case .denied, .restricted:
-            friendsAccess = .denied
-            friends = []
-            return
-        case .notDetermined where !asking:
-            return
-        default:
-            break
+        if GKLocalPlayer.local.isAuthenticated,
+           let status = try? await GKLocalPlayer.local.loadFriendsAuthorizationStatus(),
+           status == .authorized || (status == .notDetermined && askingGameCenter),
+           let theirs = try? await GKLocalPlayer.local.loadFriends() {
+            let ours = Set((friends + incoming + outgoing).compactMap(\.key))
+            gameCenterFriends = theirs.map(known).filter { !ours.contains($0.key ?? "") }.sorted(by: byName)
         }
-        guard let list = try? await GKLocalPlayer.local.loadFriends() else {
-            friendsAccess = .denied
-            return
-        }
-        friendsAccess = .allowed
-        friends = list.map(known).sorted { $0.alias.localizedStandardCompare($1.alias) == .orderedAscending }
         #endif
+        return offers
     }
 
-    /// Game Center's own way of asking somebody to be a friend: a message it
-    /// writes, sent to a contact. Once they accept, they are among the friends.
-    func askForAFriend() {
-        #if targetEnvironment(macCatalyst)
-        // The Mac has no request writer: Game Center's own friends list,
-        // where a friend is added, instead.
-        GKAccessPoint.shared.trigger(state: .localPlayerFriendsList) {}
-        #elseif canImport(GameKit) && canImport(UIKit)
-        guard let scene = UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene })
-                .first(where: { $0.activationState == .foregroundActive }),
-              var top = scene.keyWindow?.rootViewController else { return }
-        while let presented = top.presentedViewController { top = presented }
-        try? GKLocalPlayer.local.presentFriendRequestCreator(from: top)
+    private func take(_ list: FriendsList) {
+        friendsList = list
+        friends = list.friends.map(person).sorted(by: byName)
+        incoming = list.incoming.map(person).sorted(by: byName)
+        outgoing = list.outgoing.map(person).sorted(by: byName)
+        let ours = Set((friends + incoming + outgoing).compactMap(\.key))
+        gameCenterFriends.removeAll { ours.contains($0.key ?? "") }
+    }
+
+    private func byName(_ a: BoardPlayer, _ b: BoardPlayer) -> Bool {
+        a.alias.localizedStandardCompare(b.alias) == .orderedAscending
+    }
+
+    /// Somebody the service names by key: the player the lists have met, if
+    /// they have — with a rating, a picture, and an invitation Game Center can
+    /// deliver — or else the nickname they gave.
+    private func person(_ entry: FriendsList.Entry) -> BoardPlayer {
+        if let id = playerIDs[entry.id], let met = latest[id] ?? recent.first(where: { $0.id == id }) {
+            var known = met
+            known.key = entry.id
+            return known
+        }
+        #if canImport(GameKit)
+        if let id = playerIDs[entry.id], let player = players[id] { return known(player) }
         #endif
+        return BoardPlayer(id: "key:\(entry.id)", alias: entry.alias, rank: nil, rating: nil, clock: nil,
+                           lastSeen: .distantPast, isLocal: false, key: entry.id)
+    }
+
+    /// Ask somebody to be friends — or say yes to them, if they asked.
+    func befriend(_ player: BoardPlayer, using service: OnlineService) async {
+        guard let key = player.key else { return }
+        if friendState(of: player) == .askedBy {
+            _ = await service.accept(key)
+        } else {
+            _ = await service.request(key, alias: player.alias)
+        }
+        _ = await refreshFriends(using: service)
+    }
+
+    /// No longer friends, a request declined, or one taken back.
+    func unfriend(_ player: BoardPlayer, using service: OnlineService) async {
+        guard let key = player.key else { return }
+        _ = await service.remove(key)
+        _ = await refreshFriends(using: service)
     }
 
     /// A rated game just played, on the lists at once. Game Center takes a
@@ -320,7 +386,8 @@ final class OnlineBoards {
                 totals[control, default: 0] += 1
             }
             list.append(BoardPlayer(id: id, alias: alias, rank: nil, rating: rating, clock: control,
-                                    lastSeen: Date(), isLocal: isLocal))
+                                    lastSeen: Date(), isLocal: isLocal,
+                                    key: players[id].map { OnlineService.key(teamPlayerID: $0.teamPlayerID) }))
         }
         place(localID, GKLocalPlayer.local.alias, record.rating, isLocal: true)
         if let opponent, let player = players[opponent.id] {
@@ -329,7 +396,7 @@ final class OnlineBoards {
         list.sort { ($0.rating ?? 0) > ($1.rating ?? 0) }
         list = list.enumerated().map { index, player in
             BoardPlayer(id: player.id, alias: player.alias, rank: index + 1, rating: player.rating,
-                        clock: player.clock, lastSeen: player.lastSeen, isLocal: player.isLocal)
+                        clock: player.clock, lastSeen: player.lastSeen, isLocal: player.isLocal, key: player.key)
         }
         ranks[control] = list
         mine[control] = list.first(where: \.isLocal)
@@ -379,7 +446,8 @@ final class OnlineBoards {
         for (i, name) in names.enumerated() {
             list.append(BoardPlayer(
                 id: "sample-\(i)", alias: name, rank: i + 1, rating: 1890 - i * 47 - (i % 3) * 11,
-                clock: .five, lastSeen: now.addingTimeInterval(-hours[i] * 3600), isLocal: false
+                clock: .five, lastSeen: now.addingTimeInterval(-hours[i] * 3600), isLocal: false,
+                key: String(format: "%032x", i + 1)
             ))
         }
         let me = BoardPlayer(id: "local", alias: "You", rank: 6, rating: 1655, clock: .five,
@@ -387,7 +455,7 @@ final class OnlineBoards {
         list.insert(me, at: 5)
         list = list.enumerated().map { i, p in
             BoardPlayer(id: p.id, alias: p.alias, rank: i + 1, rating: p.rating, clock: p.clock,
-                        lastSeen: p.lastSeen, isLocal: p.isLocal)
+                        lastSeen: p.lastSeen, isLocal: p.isLocal, key: p.key)
         }
         for control in TimeControl.allCases {
             ranks[control] = list
@@ -398,7 +466,11 @@ final class OnlineBoards {
         everyone = list.sorted { $0.lastSeen > $1.lastSeen }
         recent = Array(list.filter { !$0.isLocal }.prefix(2))
         friends = list.filter { ["sample-1", "sample-4", "sample-9"].contains($0.id) }
-        friendsAccess = .allowed
+        incoming = [BoardPlayer(id: "key:sample-in", alias: "queen_side", rank: nil, rating: nil, clock: nil,
+                                lastSeen: .distantPast, isLocal: false, key: String(repeating: "a", count: 32))]
+        outgoing = list.filter { $0.id == "sample-6" }
+        gameCenterFriends = [BoardPlayer(id: "sample-gc", alias: "Mira", rank: nil, rating: nil, clock: nil,
+                                         lastSeen: .distantPast, isLocal: false, key: String(repeating: "b", count: 32))]
         presence = ["sample-0": .looking(.five), "sample-1": .online, "sample-3": .playing(.ten)]
         hasLoaded = true
     }

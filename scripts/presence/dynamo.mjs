@@ -1,8 +1,8 @@
 // DynamoDB over plain HTTPS, signed by hand — no SDK, as s3.mjs does for S3.
 //
-// Only what presence needs: put an item, delete one, scan the table. The JSON
-// protocol, SigV4 with the service called "dynamodb", and the session token
-// Lambda's credentials come with.
+// Only what presence and friends need: put an item, delete one, query a key,
+// scan a table. The JSON protocol, SigV4 with the service called "dynamodb",
+// and the session token Lambda's credentials come with.
 import { createHash, createHmac } from 'node:crypto';
 
 import { credentials } from '../feed/s3.mjs';
@@ -49,6 +49,17 @@ export function openDynamo({ region }) {
   return {
     put: (table, item) => call('PutItem', { TableName: table, Item: item }),
     remove: (table, key) => call('DeleteItem', { TableName: table, Key: key }),
+    /** Every item under one partition key, over as many pages as it takes. */
+    async query(table, request) {
+      const items = [];
+      let start;
+      do {
+        const page = await call('Query', { TableName: table, ...request, ...(start ? { ExclusiveStartKey: start } : {}) });
+        items.push(...(page.Items ?? []));
+        start = page.LastEvaluatedKey;
+      } while (start);
+      return items;
+    },
     /** Every item the filter lets through, over as many pages as it takes. */
     async scan(table, filter) {
       const items = [];

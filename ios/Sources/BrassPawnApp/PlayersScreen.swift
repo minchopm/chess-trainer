@@ -3,9 +3,10 @@ import SwiftUI
 
 /// The people to play online, three ways, each a screen of its own from the
 /// lobby: the rank list for a clock, everybody who plays, and this player's
-/// Game Center friends — a friend is a player too, and is in both. Each list
-/// is read a page at a time as it is scrolled, drawn only as far as it is on
-/// screen, and searched by nickname; each row has an invitation a tap away.
+/// friends — a friend is a player too, and is in both. Each list is read a
+/// page at a time as it is scrolled, drawn only as far as it is on screen,
+/// and searched by nickname; each row has an invitation a tap away, and a
+/// friend request another.
 struct PeopleScreen: View {
     enum Kind: String, Identifiable {
         case ranks, players, friends
@@ -25,6 +26,8 @@ struct PeopleScreen: View {
     let kind: Kind
     @State var clock: TimeControl
     @State private var query = ""
+    /// Rows whose friend request, answer or removal is on its way.
+    @State private var busy: Set<String> = []
     /// Invite a player to a game on a clock. The screen goes, and the lobby
     /// shows the invitation going out.
     let onInvite: (BoardPlayer, TimeControl) -> Void
@@ -46,18 +49,6 @@ struct PeopleScreen: View {
                         LookingNow(count: boards.lookingNow[clock], control: clock)
                     }
 
-                    if kind == .friends {
-                        Button { boards.askForAFriend() } label: {
-                            Label {
-                                Text(L.t("online.addFriend", "Add a friend"))
-                            } icon: {
-                                BrassIcon("person.badge.plus", size: 17)
-                            }
-                            .frame(maxWidth: .infinity)
-                        }
-                        .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
-                    }
-
                     BrassSearchField(placeholder: L.t("online.searchPlayers", "Search by nickname"), text: $query)
 
                     if !boards.hasLoaded && boards.isLoading {
@@ -77,7 +68,7 @@ struct PeopleScreen: View {
                     }
 
                     Text(kind == .friends
-                         ? L.t("online.friendsNote", "Friend requests go through Game Center: it writes a message for you to send, and once it is accepted the two of you are friends here too.")
+                         ? L.t("online.friendsHow", "Anybody on the rank list or among the players can be asked to be friends with the button on their row. Once they say yes, they are here, and a game with them is a tap away. Games with friends are friendly games.")
                          : L.t("online.friendlyNote", "Invitations and rematches are friendly games, and only one game a day against the same opponent is rated: a place on the list is won against whoever the search finds."))
                         .appFont(.caption2)
                         .foregroundStyle(Theatre.ivoryFaint)
@@ -96,16 +87,21 @@ struct PeopleScreen: View {
                 .frame(maxWidth: 720)
                 .frame(maxWidth: .infinity)
             }
-            .refreshable { await boards.refresh() }
+            .refreshable {
+                await boards.refresh()
+                app.heard(await boards.refreshFriends(using: app.service))
+            }
         }
         .background(Theatre.ink.ignoresSafeArea())
         .task { if !boards.hasLoaded { await boards.refresh() } }
-        .task { if kind == .friends { await boards.refreshFriends(asking: true) } }
+        // The friends, for every list: each row says whether its player is
+        // one. Game Center asks about its own friends when these are opened.
+        .task { app.heard(await boards.refreshFriends(using: app.service, askingGameCenter: kind == .friends)) }
         // Who is on screen now: asked on arrival and every minute after,
         // for as long as this is open.
         .task {
             while !Task.isCancelled {
-                await boards.refreshPresence(using: app.presence)
+                await boards.refreshPresence(using: app.service)
                 try? await Task.sleep(for: .seconds(60))
             }
         }
@@ -193,22 +189,27 @@ struct PeopleScreen: View {
         searchFurther(Array(TimeControl.allCases))
     }
 
+    /// Requests to answer first, then the friends — those online now at the
+    /// top — the requests still out, and Game Center's friends who play, a
+    /// request away.
     @ViewBuilder
     private var friends: some View {
-        if boards.friendsAccess == .denied {
-            empty(L.t("online.friendsDenied", "Brass Pawn may not see your Game Center friends. Settings → Game Center → Friends lets it."))
-        } else {
-            let all = boards.friends.filter(matches)
-            let online = all.filter { boards.presence[$0.id] != nil }
-            let rest = all.filter { boards.presence[$0.id] == nil }
-            if all.isEmpty {
-                empty(query.isEmpty
-                      ? L.t("online.friendsEmpty", "No Game Center friends play Brass Pawn yet.")
-                      : L.t("online.noMatch", "Nobody by that nickname among the players read so far."))
-            }
-            section(L.t("online.presence.online", "Online now"), online)
-            section(L.t("online.friends", "Friends"), rest)
+        let all = boards.friends.filter(matches)
+        let online = all.filter { boards.status(of: $0) != nil }
+        let rest = all.filter { boards.status(of: $0) == nil }
+        let incoming = boards.incoming.filter(matches)
+        let outgoing = boards.outgoing.filter(matches)
+        let gameCenter = boards.gameCenterFriends.filter(matches)
+        if all.isEmpty && incoming.isEmpty {
+            empty(query.isEmpty
+                  ? L.t("online.noFriendsYet", "No friends yet.")
+                  : L.t("online.noMatch", "Nobody by that nickname among the players read so far."))
         }
+        section(L.t("online.friendRequests", "Requests"), incoming)
+        section(L.t("online.presence.online", "Online now"), online)
+        section(L.t("online.friends", "Friends"), rest)
+        section(L.t("online.friendsSent", "Sent"), outgoing)
+        section(L.t("online.fromGameCenter", "From Game Center"), gameCenter)
     }
 
     @ViewBuilder
@@ -227,7 +228,15 @@ struct PeopleScreen: View {
         Panel(padding: 6) {
             LazyVStack(spacing: 0) {
                 ForEach(list) { player in
-                    PlayerRow(player: player, showsRank: showsRank, invite: invite(player))
+                    PlayerRow(player: player, showsRank: showsRank, invite: invite(player),
+                              friendship: friendship(player), busy: busy.contains(player.id))
+                        .contextMenu {
+                            if boards.friendState(of: player) == .friend {
+                                Button(role: .destructive) { change(player) { await boards.unfriend(player, using: app.service) } } label: {
+                                    Label(L.t("online.removeFriend", "Remove friend"), systemImage: "person.badge.minus")
+                                }
+                            }
+                        }
                         .onAppear { if player.id == list.last?.id { atEnd?() } }
                     if player.id != list.last?.id { Rule() }
                 }
@@ -237,11 +246,37 @@ struct PeopleScreen: View {
 
     private func invite(_ player: BoardPlayer) -> (() -> Void)? {
         // Nobody in the middle of a game is asked to leave it.
-        if case .playing = boards.presence[player.id] { return nil }
-        guard !player.isLocal, app.matchmaker.session == nil else { return nil }
+        if case .playing = boards.status(of: player) { return nil }
+        guard !player.isLocal, app.matchmaker.session == nil, boards.canInvite(player),
+              boards.friendState(of: player) != .askedBy else { return nil }
         return {
             onInvite(player, clock)
             dismiss()
+        }
+    }
+
+    /// What the row offers about being friends: a request, one sent that can
+    /// be taken back, or one to answer. Nothing for a friend — the badge by
+    /// the name says so, and the row's menu removes them.
+    private func friendship(_ player: BoardPlayer) -> PlayerRow.Friendship? {
+        guard !player.isLocal, player.key != nil else { return nil }
+        let befriend = { change(player) { await boards.befriend(player, using: app.service) } }
+        let unfriend = { change(player) { await boards.unfriend(player, using: app.service) } }
+        switch boards.friendState(of: player) {
+        case .none: return .ask(befriend)
+        case .asked: return .sent(takeBack: unfriend)
+        case .askedBy: return .answer(accept: befriend, decline: unfriend)
+        case .friend: return nil
+        }
+    }
+
+    /// One change to the friends, with the row busy until the service has it.
+    private func change(_ player: BoardPlayer, _ work: @escaping () async -> Void) {
+        guard !busy.contains(player.id) else { return }
+        busy.insert(player.id)
+        Task {
+            await work()
+            busy.remove(player.id)
         }
     }
 
@@ -257,10 +292,23 @@ struct PeopleScreen: View {
 /// One player: their picture or initial, nickname, when they were last seen,
 /// their rating, and the invitation.
 struct PlayerRow: View {
+    /// The row's part in being friends.
+    enum Friendship {
+        /// Ask to be friends.
+        case ask(() -> Void)
+        /// Asked, and waiting: a tap takes it back.
+        case sent(takeBack: () -> Void)
+        /// They asked: yes or no.
+        case answer(accept: () -> Void, decline: () -> Void)
+    }
+
     @Environment(AppModel.self) private var app
     let player: BoardPlayer
     let showsRank: Bool
     let invite: (() -> Void)?
+    var friendship: Friendship? = nil
+    /// A change to the friendship on its way.
+    var busy = false
 
     var body: some View {
         HStack(spacing: 11) {
@@ -278,20 +326,22 @@ struct PlayerRow: View {
                         .appFont(.subheadline, weight: .semibold)
                         .foregroundStyle(Theatre.ivory)
                         .lineLimit(1)
-                    if app.boards.isFriend(player.id) {
+                    if app.boards.friendState(of: player) == .friend {
                         BrassIcon("person.2.fill", size: 11)
                             .foregroundStyle(Theatre.brassHot.opacity(0.8))
                             .accessibilityLabel(L.t("online.friend", "Friend"))
                     }
                 }
-                HStack(spacing: 5) {
-                    Circle()
-                        .fill(dot)
-                        .frame(width: 6, height: 6)
-                    Text(app.boards.presence[player.id]?.label ?? seen)
-                        .appFont(.caption2)
-                        .foregroundStyle(Theatre.ivoryDim)
-                        .lineLimit(1)
+                if let line = app.boards.status(of: player)?.label ?? seen {
+                    HStack(spacing: 5) {
+                        Circle()
+                            .fill(dot)
+                            .frame(width: 6, height: 6)
+                        Text(line)
+                            .appFont(.caption2)
+                            .foregroundStyle(Theatre.ivoryDim)
+                            .lineLimit(1)
+                    }
                 }
             }
             Spacer(minLength: 6)
@@ -300,6 +350,12 @@ struct PlayerRow: View {
                     .appFont(size: 16, weight: .semibold)
                     .monospacedDigit()
                     .foregroundStyle(player.isLocal ? Theatre.brassHot : Theatre.ivory)
+            }
+            if busy {
+                BrassActivityIndicator(size: 15)
+                    .frame(width: 34, height: 34)
+            } else if let friendship {
+                friendButtons(friendship)
             }
             if let invite {
                 // A paper plane rather than the word: "Invite" in capitals is
@@ -329,6 +385,24 @@ struct PlayerRow: View {
     }
 
     @ViewBuilder
+    private func friendButtons(_ friendship: Friendship) -> some View {
+        switch friendship {
+        case .ask(let ask):
+            SquareButton(symbol: "person.badge.plus", label: L.t("online.addAsFriend", "Add as friend") + " " + player.alias,
+                         action: ask)
+        case .sent(let takeBack):
+            SquareButton(symbol: "clock", label: L.t("online.cancelRequest", "Take the request back") + " " + player.alias,
+                         dim: true, action: takeBack)
+                .help(L.t("online.requestSent", "Request sent"))
+        case .answer(let accept, let decline):
+            SquareButton(symbol: "xmark", label: L.t("online.decline", "Decline") + " " + player.alias,
+                         dim: true, action: decline)
+            SquareButton(symbol: "checkmark", label: L.t("online.accept", "Accept") + " " + player.alias,
+                         action: accept)
+        }
+    }
+
+    @ViewBuilder
     private var avatar: some View {
         if let photo = app.boards.photos[player.id] {
             photo.resizable().scaledToFill()
@@ -349,15 +423,19 @@ struct PlayerRow: View {
     /// Green for somebody on screen now, amber for somebody in a game, grey
     /// for everybody else — how long ago they were seen is written beside it.
     private var dot: Color {
-        switch app.boards.presence[player.id] {
+        switch app.boards.status(of: player) {
         case .looking, .online: Theatre.good
         case .playing: Theatre.brassHot
         case nil: Theatre.ivoryFaint.opacity(0.45)
         }
     }
 
-    private var seen: String {
-        guard player.lastSeen > .distantPast else { return L.t("online.playedRecently", "Played recently") }
+    /// Nothing for somebody known only by the nickname they gave — a request,
+    /// a Game Center friend — who has not been seen on any list.
+    private var seen: String? {
+        guard player.lastSeen > .distantPast else {
+            return app.boards.recent.contains { $0.id == player.id } ? L.t("online.playedRecently", "Played recently") : nil
+        }
         let formatter = RelativeDateTimeFormatter()
         formatter.dateTimeStyle = .named
         formatter.unitsStyle = .full
@@ -379,6 +457,27 @@ struct LookingNow: View {
                     .foregroundStyle(Theatre.ivoryDim)
             }
         }
+    }
+}
+
+/// A small square plate with one symbol on it, for a row's actions.
+private struct SquareButton: View {
+    let symbol: String
+    let label: String
+    var dim = false
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: symbol)
+                .font(.system(size: 13, weight: .semibold))
+                .foregroundStyle(dim ? Theatre.ivoryDim : Theatre.brassHot)
+                .frame(width: 34, height: 34)
+                .background { BrassPlateShape(cut: 7).fill(Theatre.ink3) }
+                .overlay { BrassPlateShape(cut: 7).strokeBorder(Theatre.brassDeep.opacity(dim ? 0.4 : 0.7), lineWidth: 0.8) }
+        }
+        .buttonStyle(BrassPressStyle())
+        .accessibilityLabel(label)
     }
 }
 

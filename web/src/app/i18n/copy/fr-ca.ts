@@ -14,7 +14,7 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: "Jouer · S'entraîner · Regarder",
-    lede: 'Tactique, jugement positionnel, technique des finales et parties commentées, avec le moteur qui tourne sur l’appareil lui-même. Aucun compte, et rien n’est collecté — sauf, quand vous jouez en ligne, le fait que vous êtes en ligne.',
+    lede: 'Tactique, jugement positionnel, technique des finales et parties commentées, avec le moteur qui tourne sur l’appareil lui-même. Aucun compte, et rien n’est collecté — sauf ce que le jeu en ligne demande : le fait que vous êtes en ligne, et les amis que vous ajoutez.',
     privacy:
       "En dehors du jeu en ligne, l’app ne collecte rien et n’envoie rien vous concernant. La seule chose qu’elle télécharge est le fil du jour, quand vous ouvrez Aujourd'hui. Vos classements d’entraînement et votre historique restent sur cet appareil, et supprimer l’app les supprime.",
     freeSoftware:

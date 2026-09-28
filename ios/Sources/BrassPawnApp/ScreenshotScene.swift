@@ -68,6 +68,8 @@ enum ScreenshotScene: String {
     /// Everybody, and the friends: the other two lists.
     case playersAll
     case friends
+    /// A friend's game offered, as the banner across the top says it.
+    case friendOffer
     /// An online game just lost to a resignation, with the opponent asking for
     /// another — against the debug loopback.
     case onlineRematch
@@ -83,7 +85,7 @@ enum ScreenshotScene: String {
     var tab: RootView.Tab {
         switch self {
         case .menu, .playSetup, .playCoached, .playMistake, .playValues, .boardEngines, .demo,
-             .onlineDraw, .paywall, .onlineLobby, .players, .playersAll, .friends, .onlineRematch: .play
+             .onlineDraw, .paywall, .onlineLobby, .players, .playersAll, .friends, .friendOffer, .onlineRematch: .play
         case .watchList, .demoWatch: .watch
         case .demoTactics: .tactics
         }
@@ -93,7 +95,7 @@ enum ScreenshotScene: String {
     var playMode: PlayTab.Mode? {
         switch self {
         case .boardEngines: .board
-        case .onlineDraw, .onlineLobby, .players, .playersAll, .friends, .onlineRematch: .online
+        case .onlineDraw, .onlineLobby, .players, .playersAll, .friends, .friendOffer, .onlineRematch: .online
         case .playSetup, .playCoached, .playMistake, .playValues, .demo, .demoTactics: .play
         default: nil
         }
@@ -105,7 +107,7 @@ enum ScreenshotScene: String {
         switch self {
         case .playSetup, .playCoached, .playMistake, .boardEngines, .demo, .onlineDraw: .dimensional
         case .playValues, .demoTactics, .onlineRematch: .flat
-        case .menu, .watchList, .demoWatch, .paywall, .onlineLobby, .players, .playersAll, .friends: nil
+        case .menu, .watchList, .demoWatch, .paywall, .onlineLobby, .players, .playersAll, .friends, .friendOffer: nil
         }
     }
 

@@ -1,7 +1,8 @@
 # Privacy Policy
 
 **Brass Pawn** collects nothing — apart from saying, while you play online, that
-you are online, described under *Who is online* below.
+you are online, and keeping the friends you make in the app, described under
+*Who is online* and *Friends* below.
 
 The app makes no analytics calls, carries no advertising, and contains no
 third-party tracking of any kind. There is no account to create, and outside
@@ -37,9 +38,9 @@ active and inactive players are made, and what lets another player invite you
 to a game. The leaderboards are Apple's.
 
 If you allow it — Game Center asks the first time you open Friends — the app
-reads your Game Center friends, to show the ones who play and let you invite
-them. They are read on the device and sent nowhere. A friend request is written
-and sent by Game Center itself.
+reads your Game Center friends, to show the ones who play so that you can ask
+them to be friends here too. They are read on the device and sent nowhere; only
+a request you choose to send leaves it, as *Friends* describes.
 
 ## Who is online
 
@@ -61,6 +62,25 @@ signature proving it is yours, and the service keeps it only as a scrambled
 code (a one-way hash of it). Your IP address reaches Amazon, as any web
 request's does. Nothing else is sent, and nothing is sold, shared or used for
 advertising or tracking. The function's logs are deleted after fourteen days.
+
+## Friends
+
+Game Center makes friends through Messages, with somebody in your contacts, and
+has no way to ask a player on a list by nickname. So the app keeps friends of
+its own, on the same service.
+
+When you ask somebody to be friends, the service keeps the request under both
+players' scrambled codes, with the Game Center nickname each of you had then —
+so each list can say who is who — and when it was made. Once it is accepted it
+is a friendship, kept the same way. Declining a request, taking it back or
+removing a friend deletes it on both sides at once. A game offered to a friend
+is kept, with its clock, for two minutes, and deleted as soon as it is answered
+or taken back. Only you and the other player see a request or a friendship.
+
+While the app is on your screen and you are signed in to Game Center, it asks
+the service for your friends, and — every twenty seconds, if you have any —
+whether one of them has offered you a game. Nothing in it is sold, shared or
+used for advertising or tracking.
 
 ## Today
 
@@ -99,8 +119,9 @@ ratings and moves, and not their usernames.
 
 Outside online play the app collects no data at all. Online play is through
 Game Center, whose age settings Apple applies; our service keeps only what
-*Who is online* describes, for five minutes, and nothing that identifies
-anybody. It shows no adverts and links out only to the source repository, this
+*Who is online* and *Friends* describe — who is online, for five minutes, and
+the friends you make, until they are removed — as scrambled codes and Game
+Center nicknames, never a name, an e-mail address or an Apple Account. It shows no adverts and links out only to the source repository, this
 site and the licence text.
 
 ## Contact

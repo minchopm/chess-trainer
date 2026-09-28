@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Who is online (presence.mjs) as a Lambda with a function URL, and the table
-# it keeps it in.
+# Who is online (presence.mjs) and the friends (friends.mjs), as a Lambda
+# with a function URL, and the two tables they keep them in.
 #
 #   scripts/presence/deploy.sh              # create or update everything
 #   CODE_ONLY=1 scripts/presence/deploy.sh  # just the code
@@ -10,6 +10,7 @@ set -euo pipefail
 REGION="${PRESENCE_REGION:-eu-central-1}"
 NAME=brasspawn-presence
 TABLE=brasspawn-presence
+FRIENDS=brasspawn-friends
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 
 log() { printf '\033[36m▸\033[0m %s\n' "$*"; }
@@ -20,7 +21,7 @@ run() {
 BUILD="$(mktemp -d)"
 trap 'rm -rf "$BUILD"' EXIT
 mkdir -p "$BUILD/scripts/presence" "$BUILD/scripts/feed"
-for f in identity presence dynamo lambda; do cp "$ROOT/scripts/presence/$f.mjs" "$BUILD/scripts/presence/"; done
+for f in identity presence friends dynamo lambda; do cp "$ROOT/scripts/presence/$f.mjs" "$BUILD/scripts/presence/"; done
 cp "$ROOT/scripts/feed/s3.mjs" "$BUILD/scripts/feed/"   # for its credentials()
 printf '{ "type": "module" }\n' > "$BUILD/package.json"
 (cd "$BUILD" && zip -qr function.zip package.json scripts)
@@ -35,6 +36,7 @@ fi
 ACCOUNT="$(aws sts get-caller-identity --query Account --output text)"
 ROLE_ARN="arn:aws:iam::$ACCOUNT:role/$NAME"
 TABLE_ARN="arn:aws:dynamodb:$REGION:$ACCOUNT:table/$TABLE"
+FRIENDS_ARN="arn:aws:dynamodb:$REGION:$ACCOUNT:table/$FRIENDS"
 
 # One row a player, gone five minutes after they last said so. Paid by the
 # request, which at this size is pennies.
@@ -48,6 +50,18 @@ if ! aws dynamodb describe-table --region "$REGION" --table-name "$TABLE" >/dev/
     --time-to-live-specification Enabled=true,AttributeName=until >/dev/null
 fi
 
+# Friends: a row for each side of each link, and games offered, which go
+# two minutes later.
+if ! aws dynamodb describe-table --region "$REGION" --table-name "$FRIENDS" >/dev/null 2>&1; then
+  log "Creating table $FRIENDS"
+  run dynamodb create-table --region "$REGION" --table-name "$FRIENDS" \
+    --attribute-definitions AttributeName=pk,AttributeType=S AttributeName=sk,AttributeType=S \
+    --key-schema AttributeName=pk,KeyType=HASH AttributeName=sk,KeyType=RANGE --billing-mode PAY_PER_REQUEST >/dev/null
+  [[ "${DRY_RUN:-0}" == "1" ]] || aws dynamodb wait table-exists --region "$REGION" --table-name "$FRIENDS"
+  run dynamodb update-time-to-live --region "$REGION" --table-name "$FRIENDS" \
+    --time-to-live-specification Enabled=true,AttributeName=until >/dev/null
+fi
+
 if ! aws iam get-role --role-name "$NAME" >/dev/null 2>&1; then
   log "Creating role $NAME"
   run iam create-role --role-name "$NAME" --assume-role-policy-document '{
@@ -58,17 +72,19 @@ if ! aws iam get-role --role-name "$NAME" >/dev/null 2>&1; then
     --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
   CREATED_ROLE=1
 fi
-# The table, and nothing else.
+# The two tables, and nothing else.
 run iam put-role-policy --role-name "$NAME" --policy-name presence-table --policy-document "{
   \"Version\": \"2012-10-17\",
   \"Statement\": [
     { \"Effect\": \"Allow\", \"Action\": [\"dynamodb:PutItem\", \"dynamodb:DeleteItem\", \"dynamodb:Scan\"],
-      \"Resource\": \"$TABLE_ARN\" }
+      \"Resource\": \"$TABLE_ARN\" },
+    { \"Effect\": \"Allow\", \"Action\": [\"dynamodb:PutItem\", \"dynamodb:DeleteItem\", \"dynamodb:Query\"],
+      \"Resource\": \"$FRIENDS_ARN\" }
   ]
 }"
 [[ "${CREATED_ROLE:-0}" == "1" && "${DRY_RUN:-0}" != "1" ]] && sleep 12
 
-ENVIRONMENT="Variables={PRESENCE_REGION=$REGION,PRESENCE_TABLE=$TABLE}"
+ENVIRONMENT="Variables={PRESENCE_REGION=$REGION,PRESENCE_TABLE=$TABLE,FRIENDS_TABLE=$FRIENDS}"
 if aws lambda get-function --region "$REGION" --function-name "$NAME" >/dev/null 2>&1; then
   log "Updating $NAME"
   run lambda update-function-code --region "$REGION" --function-name "$NAME" \

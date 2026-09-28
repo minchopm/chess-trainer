@@ -191,6 +191,8 @@ public final class GameCenterMatchmaker: NSObject {
         request.playerGroup = invitation?.playerGroup ?? timeControl.playerGroup
 
         state = .searching(timeControl)
+        // Waiting for somebody in particular: the lobby says whom.
+        invitee = invitation?.name
         status = invitation.map { "Waiting for \($0.name)…" }
             ?? "Looking for a \(timeControl.label) opponent…"
 
@@ -312,6 +314,14 @@ public final class GameCenterMatchmaker: NSObject {
         #else
         return session?.timeControl ?? .five
         #endif
+    }
+
+    /// Nobody answered a game offered to somebody in particular: the search
+    /// stops, and says so.
+    public func gaveUp(on name: String) {
+        guard case .searching = state else { return }
+        cancelSearch()
+        status = L.t("online.inviteDeclined", "%@ cannot play right now.", name)
     }
 
     public func cancelSearch() {

@@ -52,7 +52,7 @@ public final class AppModel {
     /// The rank lists and the players, from Game Center.
     let boards = OnlineBoards()
     /// Who is online right now, which Game Center cannot say.
-    let presence = Presence()
+    let service = OnlineService()
     private let storage: ProgressStorage
 
     public init(storage: ProgressStorage = .documents()) {
@@ -110,7 +110,7 @@ public final class AppModel {
 
     private var onScreen = false
     private var beacon: Task<Void, Never>?
-    /// Whether `Presence` was last told this player is here.
+    /// Whether `OnlineService` was last told this player is here.
     private var saidHere = false
     /// How often "here" is said again while the app stays on screen. What is
     /// said lasts five minutes, so one missed is not a player gone.
@@ -121,6 +121,7 @@ public final class AppModel {
         guard onScreen != active else { return }
         onScreen = active
         sayPresence()
+        watchOffers()
     }
 
     /// Say where this player is — at once, and then every three minutes for
@@ -132,7 +133,7 @@ public final class AppModel {
         guard onScreen, progress.appearance.showsOnline, matchmaker.isAuthenticated else {
             if saidHere {
                 saidHere = false
-                Task { await presence.gone() }
+                Task { await service.gone() }
             }
             return
         }
@@ -140,10 +141,71 @@ public final class AppModel {
         beacon = Task { [weak self] in
             while !Task.isCancelled {
                 guard let self else { return }
-                await self.presence.here(self.presenceStatus)
+                self.heard(await self.service.here(self.presenceStatus))
                 try? await Task.sleep(for: Self.presenceInterval)
             }
         }
+    }
+
+    // MARK: - Games offered by friends
+
+    /// Games friends have offered this player and not had an answer to — heard
+    /// every twenty seconds while the app is on screen, for a player who has
+    /// friends, and with each "here".
+    private(set) var friendInvites: [FriendInvite] = []
+    /// A friend's game the player said yes to, for the online screen to start.
+    var acceptedFriendGame: FriendInvite?
+    /// Offers answered here that the service may not have heard the answer to
+    /// yet, so that a poll in between does not bring one back.
+    private var answered: Set<String> = []
+    private var offerWatch: Task<Void, Never>?
+    /// An offer waits two minutes; asking three times a minute sees it in time.
+    static let offerInterval: Duration = .seconds(20)
+
+    /// Ask after offered games while the app is on screen and signed in —
+    /// only if there are friends to offer one, and never in a game. The
+    /// friends themselves are read at the start and every five minutes after.
+    func watchOffers() {
+        offerWatch?.cancel()
+        offerWatch = nil
+        guard onScreen, matchmaker.isAuthenticated else {
+            friendInvites = []
+            return
+        }
+        offerWatch = Task { [weak self] in
+            var round = 0
+            while !Task.isCancelled {
+                guard let self else { return }
+                if round % 15 == 0 {
+                    self.heard(await self.boards.refreshFriends(using: self.service))
+                } else if !self.boards.friends.isEmpty, self.matchmaker.session == nil {
+                    self.heard(await self.service.invites())
+                }
+                round += 1
+                try? await Task.sleep(for: Self.offerInterval)
+            }
+        }
+    }
+
+    /// What the service says is on offer now. Nothing while a game is being
+    /// played: an offer is not an interruption.
+    func heard(_ offers: [FriendInvite]?) {
+        guard let offers else { return }
+        answered.formIntersection(offers.map(\.id))
+        friendInvites = matchmaker.session == nil ? offers.filter { !answered.contains($0.id) } : []
+    }
+
+    func accept(_ offer: FriendInvite) {
+        friendInvites.removeAll { $0.id == offer.id }
+        answered.insert(offer.id)
+        acceptedFriendGame = offer
+        Task { await service.answer(offer.id) }
+    }
+
+    func decline(_ offer: FriendInvite) {
+        friendInvites.removeAll { $0.id == offer.id }
+        answered.insert(offer.id)
+        Task { await service.answer(offer.id) }
     }
 
     /// Claim one allowance unit. Most modes call this on the first answer or

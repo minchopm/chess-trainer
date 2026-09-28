@@ -52,6 +52,23 @@ public struct RootView: View {
                 .zIndex(1)
             }
 
+            // A game a friend has offered, wherever in the app the player is —
+            // but not over a game being played.
+            if let offer = app.friendInvites.first, app.matchmaker.session == nil {
+                FriendOfferBanner(offer: offer) {
+                    app.accept(offer)
+                    navigator.playMode = .online
+                    navigator.pendingTab = .play
+                    navigator.showsMenu = false
+                } onDecline: {
+                    app.decline(offer)
+                }
+                .frame(maxHeight: .infinity, alignment: .top)
+                .padding(.top, 8)
+                .transition(.move(edge: .top).combined(with: .opacity))
+                .zIndex(2)
+            }
+
             if activity.wantsExit {
                 BrassConfirmationOverlay(
                     title: activity.title ?? "Leave?",
@@ -236,7 +253,10 @@ public struct RootView: View {
         .onChange(of: scenePhase, initial: true) { _, phase in app.setOnScreen(phase == .active) }
         .onChange(of: app.presenceStatus) { _, _ in app.sayPresence() }
         .onChange(of: app.progress.appearance.showsOnline) { _, _ in app.sayPresence() }
-        .onChange(of: app.matchmaker.isAuthenticated) { _, _ in app.sayPresence() }
+        .onChange(of: app.matchmaker.isAuthenticated) { _, _ in
+            app.sayPresence()
+            app.watchOffers()
+        }
         .task {
             // Before the engine, not after. The scene only moves the navigation
             // and the appearance, neither of which waits on anything, while
@@ -543,5 +563,38 @@ struct ProgressScreen: View {
         case .ready: "ready"
         case .failed: "unavailable"
         }
+    }
+}
+
+/// "Ann invites you to a 5 min game": a friend's offer, with a yes and a no.
+private struct FriendOfferBanner: View {
+    let offer: FriendInvite
+    let onPlay: () -> Void
+    let onDecline: () -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(alignment: .top, spacing: 10) {
+                BrassIcon("person.2.fill", size: 18)
+                    .foregroundStyle(Theatre.brassHot)
+                Text(L.t("online.friendInvite", "%1$@ invites you to a %2$@ game.", offer.alias, offer.clock.label))
+                    .appFont(.subheadline, weight: .semibold)
+                    .foregroundStyle(Theatre.ivory)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            HStack(spacing: 8) {
+                Spacer(minLength: 0)
+                Button(action: onDecline) { Text(L.t("online.notNow", "Not now")) }
+                    .buttonStyle(PillButtonStyle(emphasis: .ghost, usesBodySize: true))
+                Button(action: onPlay) { Text(L.t("online.playNow", "Play")) }
+                    .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
+            }
+        }
+        .padding(14)
+        .background { BrassPlateShape(cut: 10).fill(Theatre.ink3) }
+        .overlay { BrassPlateShape(cut: 10).strokeBorder(Theatre.brassDeep.opacity(0.85), lineWidth: 0.8) }
+        .shadow(color: Theatre.shadow.opacity(0.5), radius: 16, y: 6)
+        .frame(maxWidth: 520)
+        .padding(.horizontal, 14)
     }
 }

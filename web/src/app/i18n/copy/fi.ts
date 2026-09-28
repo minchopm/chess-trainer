@@ -14,7 +14,7 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Pelaa · Harjoittele · Katso',
-    lede: 'Taktiikkaa, asema-arviointia, loppupelitekniikkaa ja valmennettua pelaamista, moottori laitteessa itsessään. Ei tiliä, eikä mitään kerätä — paitsi tieto siitä, että olet paikalla, kun pelaat verkossa.',
+    lede: 'Taktiikkaa, asema-arviointia, loppupelitekniikkaa ja valmennettua pelaamista, moottori laitteessa itsessään. Ei tiliä, eikä mitään kerätä — paitsi mitä verkkopelaaminen tarvitsee: tieto siitä, että olet paikalla, ja lisäämäsi kaverit.',
     privacy:
       'Verkkopelaamista lukuun ottamatta sovellus ei kerää mitään eikä lähetä sinusta mitään. Ainoa, mitä se lataa, on päivän syöte, kun avaat Tänään. Harjoitusratingisi ja historiasi tallentuvat vain tähän laitteeseen, ja sovelluksen poistaminen poistaa ne.',
     freeSoftware:
