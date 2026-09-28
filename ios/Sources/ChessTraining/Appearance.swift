@@ -108,6 +108,11 @@ public struct Appearance: Codable, Equatable, Sendable {
     /// the faster they are going. A puzzle that went wrong still stops: there
     /// the panel is the only place the reason is written down.
     public var showsCompletionSummary: Bool
+    /// Whether other players can see that this one is online — here, looking
+    /// for a game, or in one — while the app is on screen. On by default, as
+    /// on any chess site: it is what lets an invitation reach somebody who is
+    /// actually there to play.
+    public var showsOnline: Bool
 
     public init(
         typeface: AppTypeface = .system,
@@ -120,7 +125,8 @@ public struct Appearance: Codable, Equatable, Sendable {
         lightTone: LightTone = .boxwood,
         showsCoordinates: Bool = true,
         engine: EngineChoice = .stockfish,
-        showsCompletionSummary: Bool = true
+        showsCompletionSummary: Bool = true,
+        showsOnline: Bool = true
     ) {
         self.typeface = typeface
         self.pieces = pieces
@@ -133,6 +139,7 @@ public struct Appearance: Codable, Equatable, Sendable {
         self.showsCoordinates = showsCoordinates
         self.engine = engine
         self.showsCompletionSummary = showsCompletionSummary
+        self.showsOnline = showsOnline
     }
 
     public init(from decoder: Decoder) throws {
@@ -152,6 +159,7 @@ public struct Appearance: Codable, Equatable, Sendable {
         engine = try container.decodeIfPresent(EngineChoice.self, forKey: .engine) ?? .stockfish
         showsCompletionSummary = try container.decodeIfPresent(
             Bool.self, forKey: .showsCompletionSummary) ?? true
+        showsOnline = try container.decodeIfPresent(Bool.self, forKey: .showsOnline) ?? true
     }
 }
 

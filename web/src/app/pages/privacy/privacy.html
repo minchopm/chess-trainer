@@ -114,6 +114,11 @@
             <td>Anyone, under the code; your nickname beside it only as Game Center allows</td>
           </tr>
           <tr>
+            <td>That you are online, looking for a game on a clock, or in one</td>
+            <td>Told to our referee while the app is on screen; each note deleted after five minutes</td>
+            <td>Signed-in players, beside your nickname; off in Settings</td>
+          </tr>
+          <tr>
             <td>The online rating the referee settled on, for each clock you have played</td>
             <td>Sent to Game Center’s leaderboards, with your Game Center nickname</td>
             <td>Other players, as your Game Center settings allow, and Apple</td>
@@ -155,8 +160,9 @@
         and the licence text. Nothing opens on its own.
       </li>
       <li>
-        <strong>Rated online games.</strong> When a game that can be rated begins, and when it ends,
-        the app tells our referee (<a [routerLink]="[]" fragment="referee">section 6</a>). Opening the
+        <strong>Rated online games, and who is online.</strong> When a game that can be rated
+        begins, and when it ends, the app tells our referee; while the app is on screen it also says,
+        every three minutes, that you are online, unless you have turned that off (<a [routerLink]="[]" fragment="referee">section 6</a>). Opening the
         multiplayer lobby or the rank list downloads each clock’s list from
         <code>brasspawn.com/media/ratings/v1/</code>, the same files for everybody.
       </li>
@@ -227,9 +233,17 @@
       Center shows that player to the person looking.
     </p>
     <p>
-      <strong>What it is for.</strong> Rating games, and nothing else. Nothing in it is sold, shared
+      <strong>Who is online.</strong> While the app is on your screen and you are signed in to Game
+      Center, it tells the referee that you are here — online, looking for a game on a clock, or in
+      one — again every three minutes, and that you have gone when it leaves the screen. Other
+      signed-in players see it beside your nickname in the list of players, so an invitation reaches
+      somebody who is there to play. Each note lasts five minutes and is then deleted: nothing is
+      kept about when you were online. <em>Settings → Show when I’m online</em> turns it off.
+    </p>
+    <p>
+      <strong>What it is for.</strong> Rating games and saying who is online, and nothing else. Nothing in it is sold, shared
       or used for advertising or tracking. The legal basis is our legitimate interest, and yours, in
-      rank lists that cannot be forged.
+      rank lists that cannot be forged and invitations that reach somebody who is there.
     </p>
     <p>
       <strong>Deleting it.</strong> <em>About → Delete my online ratings</em> in the app removes your

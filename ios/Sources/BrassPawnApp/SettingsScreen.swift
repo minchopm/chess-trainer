@@ -118,6 +118,7 @@ struct SettingsScreen: View {
                     }
                     section(L.t("settings.coordinates", "Coordinates")) { CoordinatesSwitch() }
                     section(L.t("settings.training", "Training")) { SummarySwitch() }
+                    section(L.t("settings.online", "Online play")) { OnlineSwitch() }
                     section(L.t("settings.font", "Application font")) { TypefaceChoice() }
                     // Support, asked for once and plainly, next to About —
                     // where somebody who likes the app goes looking for who
@@ -617,6 +618,27 @@ private struct SummarySwitch: View {
                     set: { on in app.update { $0.appearance.showsCompletionSummary = on } }
                 )
             )
+        }
+    }
+}
+
+/// Whether other players see this one as online. See `Appearance.showsOnline`.
+private struct OnlineSwitch: View {
+    @Environment(AppModel.self) private var app
+
+    var body: some View {
+        Card {
+            BrassToggle(
+                L.t("settings.showOnline", "Show when I'm online"),
+                isOn: Binding(
+                    get: { app.progress.appearance.showsOnline },
+                    set: { on in app.update { $0.appearance.showsOnline = on } }
+                )
+            )
+            Text(L.t("settings.showOnlineNote", "While Brass Pawn is on your screen, players can see that you are online, looking for a game or in one, so an invitation reaches you when you are there to play. It is forgotten five minutes after you leave."))
+                .appFont(.footnote)
+                .foregroundStyle(Theatre.ivoryDim)
+                .fixedSize(horizontal: false, vertical: true)
         }
     }
 }

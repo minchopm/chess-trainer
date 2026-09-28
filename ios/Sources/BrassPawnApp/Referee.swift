@@ -98,6 +98,29 @@ final class Referee {
         (try? await post("forget", [:]))?.status == "forgotten"
     }
 
+    // MARK: - Who is online
+
+    /// This player is on screen, and doing this: here, looking for a game on a
+    /// clock, or in one. It lasts five minutes unless said again.
+    func here(_ status: PresenceStatus) async {
+        var body: [String: Any] = ["status": status.word]
+        if let minutes = status.minutes { body["minutes"] = minutes }
+        _ = try? await postRaw("here", body)
+    }
+
+    /// Gone to the background, or no longer showing.
+    func gone() async {
+        _ = try? await postRaw("gone", [:])
+    }
+
+    /// Everybody on screen right now, by their key on the lists.
+    func online() async -> [String: PresenceStatus]? {
+        guard let data = try? await postRaw("online", [:]),
+              let answer = try? JSONDecoder().decode(OnlineNow.self, from: data) else { return nil }
+        return Dictionary(answer.players.compactMap { entry in PresenceStatus(entry).map { (entry.id, $0) } },
+                          uniquingKeysWith: { a, _ in a })
+    }
+
     /// One clock's list. Served as a file by the site, cached for a minute.
     nonisolated static func standings(_ control: TimeControl) async -> Standings? {
         let url = Self.lists.appendingPathComponent("\(control.minutes).json")
@@ -122,6 +145,10 @@ final class Referee {
     }
 
     private func post(_ path: String, _ body: [String: Any]) async throws -> RefereeVerdict {
+        try JSONDecoder().decode(RefereeVerdict.self, from: await postRaw(path, body))
+    }
+
+    private func postRaw(_ path: String, _ body: [String: Any]) async throws -> Data {
         var body = body
         body["identity"] = try await identity()
         var request = URLRequest(url: Self.endpoint.appendingPathComponent(path))
@@ -131,7 +158,7 @@ final class Referee {
         request.timeoutInterval = 20
         let (data, response) = try await URLSession.shared.data(for: request)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw URLError(.badServerResponse) }
-        return try JSONDecoder().decode(RefereeVerdict.self, from: data)
+        return data
     }
 
     /// Game Center's word for who this player is: signed by Apple, fresh for
@@ -153,4 +180,54 @@ final class Referee {
         throw URLError(.unsupportedURL)
         #endif
     }
+}
+
+/// What a player online is doing, as far as anybody else is told.
+enum PresenceStatus: Equatable, Sendable {
+    case online
+    case looking(TimeControl)
+    case playing(TimeControl)
+
+    var word: String {
+        switch self {
+        case .online: "online"
+        case .looking: "looking"
+        case .playing: "playing"
+        }
+    }
+
+    var minutes: Int? {
+        switch self {
+        case .online: nil
+        case .looking(let clock), .playing(let clock): clock.minutes
+        }
+    }
+
+    fileprivate init?(_ entry: OnlineNow.Entry) {
+        let clock = entry.minutes.flatMap(TimeControl.init(rawValue:))
+        switch (entry.status, clock) {
+        case ("online", _): self = .online
+        case ("looking", let clock?): self = .looking(clock)
+        case ("playing", let clock?): self = .playing(clock)
+        default: return nil
+        }
+    }
+
+    /// How a row on the players list says it.
+    var label: String {
+        switch self {
+        case .online: L.t("online.presence.online", "Online now")
+        case .looking(let clock): L.t("online.presence.looking", "Looking for a %@ game", clock.label)
+        case .playing: L.t("online.presence.playing", "In a game")
+        }
+    }
+}
+
+private struct OnlineNow: Decodable {
+    struct Entry: Decodable {
+        let id: String
+        let status: String
+        let minutes: Int?
+    }
+    let players: [Entry]
 }

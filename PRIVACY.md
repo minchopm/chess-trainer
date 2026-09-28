@@ -63,7 +63,15 @@ the number of games and the day of the last one — at
 list. A code says nothing about who you are: the app puts a nickname beside it
 only where Game Center shows that player to the person looking.
 
-The referee is used only to rate games. Nothing in it is sold, shared or used
+**Who is online.** While the app is on your screen and you are signed in to Game
+Center, it tells the referee that you are here — online, looking for a game on a
+clock, or in one — again every three minutes, and that you have gone when it
+leaves the screen. Other signed-in players see it beside your nickname in the
+list of players, so an invitation reaches somebody who is there to play. Each
+such note lasts five minutes and is then deleted: nothing is kept about when you
+were online. *Settings → Show when I'm online* turns it off.
+
+The referee is used only to rate games and to say who is online. Nothing in it is sold, shared or used
 for advertising or tracking. To have your online ratings removed, write to
 privacy@brasspawn.com.
 

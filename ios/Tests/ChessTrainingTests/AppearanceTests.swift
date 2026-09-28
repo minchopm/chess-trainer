@@ -56,6 +56,16 @@ struct EngineChoiceTests {
         let decoded = try JSONDecoder().decode(Appearance.self, from: Data(json.utf8))
 
         #expect(decoded.engine == .stockfish)
+        #expect(decoded.showsOnline, "shown online unless they say otherwise")
+    }
+
+    @Test("Hiding from the online list is remembered")
+    func showsOnlineRoundTrips() throws {
+        var appearance = Appearance()
+        #expect(appearance.showsOnline)
+        appearance.showsOnline = false
+        let decoded = try JSONDecoder().decode(Appearance.self, from: JSONEncoder().encode(appearance))
+        #expect(!decoded.showsOnline)
     }
 
     /// The one difference between the two that the player can see.

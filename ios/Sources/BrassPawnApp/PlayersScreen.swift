@@ -60,7 +60,7 @@ struct PlayersScreen: View {
                         .padding(.horizontal, 4)
                         .padding(.top, 6)
 
-                    Text(L.t("online.playersNote2", "Nicknames are Game Center's, as each player lets them be shown; ratings are the referee's, from games both players confirmed. Active means seen in the last seven days: Game Center cannot say who has the app open this minute."))
+                    Text(L.t("online.playersNote3", "Nicknames are Game Center's, as each player lets them be shown; ratings are the referee's, from games both players confirmed. Online now means the app is on their screen this minute, for those who show it; active means seen in the last seven days."))
                         .appFont(.caption2)
                         .foregroundStyle(Theatre.ivoryFaint)
                         .fixedSize(horizontal: false, vertical: true)
@@ -76,6 +76,14 @@ struct PlayersScreen: View {
         }
         .background(Theatre.ink.ignoresSafeArea())
         .task { if !boards.hasLoaded { await boards.refresh() } }
+        // Who is on screen now: asked on arrival and every minute after,
+        // for as long as this is open.
+        .task {
+            while !Task.isCancelled {
+                await boards.refreshPresence(using: app.referee)
+                try? await Task.sleep(for: .seconds(60))
+            }
+        }
         .task(id: clock) { await boards.refreshLooking() }
     }
 
@@ -118,14 +126,26 @@ struct PlayersScreen: View {
 
     @ViewBuilder
     private var players: some View {
+        let online = boards.onlineNow()
         let active = boards.active()
         let inactive = boards.inactive()
-        if active.isEmpty && inactive.isEmpty {
+        if online.isEmpty && active.isEmpty && inactive.isEmpty {
             empty(L.t("online.nobodyYet", "Nobody else has played online yet. Invite somebody with a link from the lobby."))
+        }
+        if !online.isEmpty {
+            Slug(text: L.t("online.presence.online", "Online now") + " · \(online.count)")
+                .padding(.horizontal, 4)
+            Panel(padding: 6) {
+                ForEach(online) { player in
+                    PlayerRow(player: player, showsRank: false, invite: invite(player))
+                    if player.id != online.last?.id { Rule() }
+                }
+            }
         }
         if !active.isEmpty {
             Slug(text: L.t("online.activeThisWeek", "Active this week") + " · \(active.count)")
                 .padding(.horizontal, 4)
+                .padding(.top, online.isEmpty ? 0 : 6)
             Panel(padding: 6) {
                 ForEach(active) { player in
                     PlayerRow(player: player, showsRank: false, invite: invite(player))
@@ -147,6 +167,8 @@ struct PlayersScreen: View {
     }
 
     private func invite(_ player: BoardPlayer) -> (() -> Void)? {
+        // Nobody in the middle of a game is asked to leave it.
+        if case .playing = boards.presence[player.id] { return nil }
         guard !player.isLocal, app.matchmaker.session == nil else { return nil }
         return {
             onInvite(player, clock)
@@ -188,9 +210,9 @@ struct PlayerRow: View {
                     .lineLimit(1)
                 HStack(spacing: 5) {
                     Circle()
-                        .fill(player.isActive() ? Theatre.good : Theatre.ivoryFaint.opacity(0.45))
+                        .fill(dot)
                         .frame(width: 6, height: 6)
-                    Text(seen)
+                    Text(app.boards.presence[player.id]?.label ?? seen)
                         .appFont(.caption2)
                         .foregroundStyle(Theatre.ivoryDim)
                         .lineLimit(1)
@@ -248,6 +270,15 @@ struct PlayerRow: View {
     }
 
     /// "5 minutes ago", "yesterday", "3 weeks ago" — in the reader's language.
+    /// Bright for somebody on screen now, green for this week, faint otherwise.
+    private var dot: Color {
+        switch app.boards.presence[player.id] {
+        case .looking, .online: Theatre.brassHot
+        case .playing: Theatre.good
+        case nil: player.isActive() ? Theatre.good.opacity(0.7) : Theatre.ivoryFaint.opacity(0.45)
+        }
+    }
+
     private var seen: String {
         guard player.lastSeen > .distantPast else { return L.t("online.playedRecently", "Played recently") }
         let formatter = RelativeDateTimeFormatter()

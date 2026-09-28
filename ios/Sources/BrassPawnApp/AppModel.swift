@@ -116,6 +116,53 @@ public final class AppModel {
         Task { await boards.submit(rating: rating, for: control) }
     }
 
+    // MARK: - Online now
+
+    /// What this player is doing, as the players list is told it.
+    var presenceStatus: PresenceStatus {
+        if let session = matchmaker.session, case .playing = session.phase { return .playing(session.timeControl) }
+        if case .searching(let control) = matchmaker.state { return .looking(control) }
+        return .online
+    }
+
+    private var onScreen = false
+    private var beacon: Task<Void, Never>?
+    /// Whether the referee was last told this player is here.
+    private var saidHere = false
+    /// How often "here" is said again while the app stays on screen. What is
+    /// said lasts five minutes, so one missed is not a player gone.
+    static let presenceInterval: Duration = .seconds(180)
+
+    /// The app came on screen, or left it.
+    func setOnScreen(_ active: Bool) {
+        guard onScreen != active else { return }
+        onScreen = active
+        sayPresence()
+    }
+
+    /// Say where this player is — at once, and then every three minutes for
+    /// as long as the app is on screen, signed in and showing them online —
+    /// or, when any of that stops being so, that they have gone.
+    func sayPresence() {
+        beacon?.cancel()
+        beacon = nil
+        guard onScreen, progress.appearance.showsOnline, matchmaker.isAuthenticated else {
+            if saidHere {
+                saidHere = false
+                Task { await referee.gone() }
+            }
+            return
+        }
+        saidHere = true
+        beacon = Task { [weak self] in
+            while !Task.isCancelled {
+                guard let self else { return }
+                await self.referee.here(self.presenceStatus)
+                try? await Task.sleep(for: Self.presenceInterval)
+            }
+        }
+    }
+
     /// The player asked for their online ratings to be deleted: gone from the
     /// referee, and from this device, where every clock starts again.
     func forgetOnlineRatings() async -> Bool {

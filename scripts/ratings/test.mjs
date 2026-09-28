@@ -5,6 +5,7 @@ import { test } from 'node:test';
 
 import { NEW_DEVIATION, updated } from './glicko.mjs';
 import { playerKey, verifyIdentity } from './identity.mjs';
+import { LASTS_S, memoryTable, openPresence } from './presence.mjs';
 import { CONFIRM_MS, PUBLIC, STATE, openReferee, report } from './referee.mjs';
 import { memoryStore } from './store.mjs';
 
@@ -202,4 +203,26 @@ test('a new rating is sure of nothing; the referee starts everyone there', async
   await play(referee, 'match-0018-1', ANN, BO);
   const state = store.objects.get(`${STATE}/ratings.json`).body;
   assert.ok(state.clocks[5][ANN].deviation < NEW_DEVIATION);
+});
+
+// ---------------------------------------------------------------- presence
+
+test('presence: here for five minutes, gone when told, and nothing else', async () => {
+  let clock = Date.UTC(2026, 8, 28, 12);
+  const db = memoryTable();
+  const presence = openPresence({ db, now: () => clock });
+  await presence.here(ANN, { status: 'online' });
+  await presence.here(BO, { status: 'looking', minutes: 5 });
+  await presence.here(CY, { status: 'playing', minutes: 10 });
+  assert.deepEqual((await presence.online()).players.sort((a, b) => a.id.localeCompare(b.id)),
+    [{ id: ANN, status: 'online' }, { id: BO, status: 'looking', minutes: 5 }, { id: CY, status: 'playing', minutes: 10 }]
+      .sort((a, b) => a.id.localeCompare(b.id)));
+  await presence.gone(BO);
+  assert.equal((await presence.online()).players.length, 2);
+  clock += (LASTS_S + 1) * 1000;
+  assert.deepEqual((await presence.online()).players, [], 'nobody said it again: nobody is here');
+  await assert.rejects(presence.here(ANN, { status: 'dancing' }), /no status/);
+  await assert.rejects(presence.here(ANN, { status: 'looking', minutes: 7 }), /no such clock/);
+  const row = [...db.rows.values()][0] ?? (await presence.here(ANN, { status: 'online' }), [...db.rows.values()][0]);
+  assert.deepEqual(Object.keys(row).sort(), ['player', 'status', 'until'], 'nothing kept but who, what and until when');
 });

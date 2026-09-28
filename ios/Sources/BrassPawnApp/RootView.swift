@@ -11,6 +11,7 @@ public struct RootView: View {
     /// Built here and not in Today, so leaving the screen and coming back
     /// keeps what was fetched rather than asking again.
     @State private var today = TodayFeed()
+    @Environment(\.scenePhase) private var scenePhase
 
     /// The played games. Built once, here rather than per screen.
     private let history = RootView.openHistory()
@@ -217,6 +218,12 @@ public struct RootView: View {
                                               lightTone: app.progress.appearance.lightTone))
         .environment(\.pieceSet, app.progress.appearance.pieces)
         .environment(\.showsBoardCoordinates, app.progress.appearance.showsCoordinates)
+        // Online now: said while the app is on screen, and only then — a
+        // window behind others, or a phone in a pocket, says nothing.
+        .onChange(of: scenePhase, initial: true) { _, phase in app.setOnScreen(phase == .active) }
+        .onChange(of: app.presenceStatus) { _, _ in app.sayPresence() }
+        .onChange(of: app.progress.appearance.showsOnline) { _, _ in app.sayPresence() }
+        .onChange(of: app.matchmaker.isAuthenticated) { _, _ in app.sayPresence() }
         .task {
             // Before the engine, not after. The scene only moves the navigation
             // and the appearance, neither of which waits on anything, while

@@ -74,12 +74,46 @@ final class OnlineBoards {
     func player(_ id: String) -> GKPlayer? { players[id] }
     #endif
 
+    /// Who is on screen right now, by Game Center player ID — of the players
+    /// the lists and Game Center let this one see. From the referee, which
+    /// hears it from each app that shows its player online.
+    private(set) var presence: [String: PresenceStatus] = [:]
+    /// The referee's key for each player met, to its Game Center player ID.
+    private var playerIDs: [String: String] = [:]
+
+    /// Everybody on screen now, looking for a game first.
+    func onlineNow() -> [BoardPlayer] {
+        var seen = Set<String>()
+        return (everyone + recent)
+            .filter { !$0.isLocal && presence[$0.id] != nil && seen.insert($0.id).inserted }
+            .sorted { rank(presence[$0.id]) < rank(presence[$1.id]) }
+    }
+
+    private func rank(_ status: PresenceStatus?) -> Int {
+        switch status {
+        case .looking: 0
+        case .online: 1
+        case .playing: 2
+        case nil: 3
+        }
+    }
+
     func active(at now: Date = Date()) -> [BoardPlayer] {
-        everyone.filter { !$0.isLocal && $0.isActive(at: now) }
+        everyone.filter { !$0.isLocal && presence[$0.id] == nil && $0.isActive(at: now) }
     }
 
     func inactive(at now: Date = Date()) -> [BoardPlayer] {
-        everyone.filter { !$0.isLocal && !$0.isActive(at: now) }
+        everyone.filter { !$0.isLocal && presence[$0.id] == nil && !$0.isActive(at: now) }
+    }
+
+    /// Who is on screen, asked again: whenever the players are looked at, and
+    /// every minute while they are.
+    func refreshPresence(using referee: Referee) async {
+        guard let online = await referee.online() else { return }
+        presence = Dictionary(
+            online.compactMap { key, status in playerIDs[key].map { ($0, status) } },
+            uniquingKeysWith: { a, _ in a }
+        )
     }
 
     /// This player's rating on one clock, sent to its leaderboard.
@@ -137,6 +171,7 @@ final class OnlineBoards {
             var known: [String: GKLeaderboard.Entry] = [:]
             for entry in entries {
                 players[entry.player.gamePlayerID] = entry.player
+                playerIDs[Referee.key(teamPlayerID: entry.player.teamPlayerID)] = entry.player.gamePlayerID
                 known[Referee.key(teamPlayerID: entry.player.teamPlayerID)] = known[Referee.key(teamPlayerID: entry.player.teamPlayerID)] ?? entry
             }
             guard let list = standings[control]?.players else { continue }
@@ -169,6 +204,7 @@ final class OnlineBoards {
         if let played = try? await GKLocalPlayer.local.loadRecentPlayers() {
             recent = played.prefix(12).map { player in
                 players[player.gamePlayerID] = player
+                playerIDs[Referee.key(teamPlayerID: player.teamPlayerID)] = player.gamePlayerID
                 let known = latest[player.gamePlayerID]
                 return BoardPlayer(
                     id: player.gamePlayerID, alias: player.alias, rank: known?.rank,
@@ -232,6 +268,7 @@ final class OnlineBoards {
         }
         everyone = list.sorted { $0.lastSeen > $1.lastSeen }
         recent = Array(list.filter { !$0.isLocal }.prefix(2))
+        presence = ["sample-0": .looking(.five), "sample-1": .online, "sample-3": .playing(.ten)]
         hasLoaded = true
     }
     #endif

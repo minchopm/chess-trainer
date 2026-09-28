@@ -3625,7 +3625,7 @@
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "משחק מקוון הוא היוצא מן הכלל. כדי לדרג משחק, האפליקציות של שני השחקנים שולחות לשופט שלנו איך הוא התנהל — השעון, הצבעים, המסעים, התוצאה — עם ההוכחה של Game Center למי משחק. השופט שומר את מזהה השחקן ב־Game Center רק כקוד מוצפן, לצד הדירוג בכל שעון והיום של המשחק האחרון: בלי שם, בלי אנשי קשר. טבלאות הדירוג מתפרסמות תחת הקודים האלה; Game Center מציג לשחקנים אחרים את הכינוי לצד הקוד, כפי שמותר."
+            "value": "משחק מקוון הוא היוצא מן הכלל. כדי לדרג משחק, האפליקציות של שני השחקנים שולחות לשופט שלנו איך הוא התנהל — השעון, הצבעים, המסעים, התוצאה — עם ההוכחה של Game Center לזהות השחקנים. השופט שומר את מזהה השחקן ב־Game Center רק כקוד מוצפן, לצד הדירוג בכל שעון והיום של המשחק האחרון: בלי שם, בלי אנשי קשר. טבלאות הדירוג מתפרסמות תחת הקודים האלה; Game Center מציג לשחקנים אחרים את הכינוי לצד הקוד, כפי שמותר."
           }
         },
         "hi": {
@@ -53388,199 +53388,790 @@
         }
       }
     },
-    "online.playersNote2": {
+    "online.playersNote3": {
       "extractionState": "manual",
       "localizations": {
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "الأسماء المستعارة من Game Center، بحسب ما يسمح به كل لاعب؛ والتصنيفات من الحَكَم، من مباريات أكّدها اللاعبان. «نشِط» يعني الظهور خلال الأيام السبعة الأخيرة، فـGame Center لا يعرف من يفتح التطبيق في هذه اللحظة."
+            "value": "الأسماء المستعارة من Game Center بحسب ما يسمح به كل لاعب، والتصنيفات من الحَكَم من مباريات أكّدها الطرفان. «على التطبيق الآن» يعني أن التطبيق على شاشتهم في هذه اللحظة لمن يُظهر ذلك، و«نشِط» يعني الظهور خلال الأيام السبعة الأخيرة."
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Přezdívky jsou z Game Center, jak je každý hráč nechá zobrazit; ratingy jsou od rozhodčího, z partií, které potvrdili oba hráči. Aktivní znamená viděný za posledních sedm dní: Game Center neví, kdo má aplikaci právě otevřenou."
+            "value": "Přezdívky jsou z Game Center, jak je hráč nechá zobrazit; ratingy od rozhodčího, z partií potvrzených oběma hráči. Právě online znamená, že aplikace je teď na obrazovce, u těch, kdo to ukazují; aktivní znamená viděný za posledních sedm dní."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kaldenavne kommer fra Game Center, som hver spiller lader dem vise; ratingen kommer fra dommeren, fra partier begge spillere har bekræftet. Aktiv betyder set inden for de sidste syv dage: Game Center kan ikke se, hvem der har appen åben lige nu."
+            "value": "Kaldenavne kommer fra Game Center, som hver spiller lader dem vise; ratingen fra dommeren, fra partier begge har bekræftet. Online nu betyder, at appen er på deres skærm lige nu, for dem der viser det; aktiv betyder set de sidste syv dage."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Spitznamen stammen aus Game Center, so wie jeder Spieler sie zeigen lässt; die Wertungen stammen vom Schiedsrichter, aus Partien, die beide Spieler bestätigt haben. Aktiv heißt: in den letzten sieben Tagen gesehen – Game Center kann nicht sagen, wer die App gerade geöffnet hat."
+            "value": "Spitznamen stammen aus Game Center, so wie jeder Spieler sie zeigen lässt; die Wertungen vom Schiedsrichter, aus Partien, die beide bestätigt haben. Jetzt online heißt: Die App ist gerade auf dem Bildschirm, bei allen, die das zeigen; aktiv heißt: in den letzten sieben Tagen gesehen."
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Τα ψευδώνυμα είναι του Game Center, όπως επιτρέπει κάθε παίκτης να φαίνονται· οι βαθμολογίες είναι του διαιτητή, από παρτίδες που επιβεβαίωσαν και οι δύο παίκτες. Ενεργός σημαίνει ότι εμφανίστηκε τις τελευταίες επτά ημέρες: το Game Center δεν ξέρει ποιος έχει ανοιχτή την εφαρμογή αυτή τη στιγμή."
+            "value": "Τα ψευδώνυμα είναι του Game Center, όπως επιτρέπει κάθε παίκτης· οι βαθμολογίες του διαιτητή, από παρτίδες που επιβεβαίωσαν και οι δύο. Σε σύνδεση τώρα σημαίνει ότι η εφαρμογή είναι στην οθόνη τους αυτή τη στιγμή, για όσους το δείχνουν· ενεργός σημαίνει ότι εμφανίστηκε τις τελευταίες επτά ημέρες."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nicknames are Game Center's, as each player lets them be shown; ratings are the referee's, from games both players confirmed. Active means seen in the last seven days: Game Center cannot say who has the app open this minute."
+            "value": "Nicknames are Game Center's, as each player lets them be shown; ratings are the referee's, from games both players confirmed. Online now means the app is on their screen this minute, for those who show it; active means seen in the last seven days."
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nicknames are Game Center's, as each player lets them be shown; ratings are the referee's, from games both players confirmed. Active means seen in the last seven days: Game Center cannot say who has the app open this minute."
+            "value": "Nicknames are Game Center's, as each player lets them be shown; ratings are the referee's, from games both players confirmed. Online now means the app is on their screen this minute, for those who show it; active means seen in the last seven days."
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nicknames are Game Center's, as each player lets them be shown; ratings are the referee's, from games both players confirmed. Active means seen in the last seven days: Game Center cannot say who has the app open this minute."
+            "value": "Nicknames are Game Center's, as each player lets them be shown; ratings are the referee's, from games both players confirmed. Online now means the app is on their screen this minute, for those who show it; active means seen in the last seven days."
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "Los apodos son de Game Center, según lo que cada jugador permita mostrar; las valoraciones son del árbitro, de partidas que ambos jugadores confirmaron. Activo significa visto en los últimos siete días: Game Center no puede decir quién tiene la app abierta en este momento."
+            "value": "Los apodos son de Game Center, según lo que cada jugador permita; las valoraciones son del árbitro, de partidas que ambos confirmaron. En línea ahora significa que la app está en su pantalla en este momento, para quienes lo muestran; activo, visto en los últimos siete días."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nimimerkit ovat Game Centerin, sen mukaan kuin kukin pelaaja sallii niiden näkyä; ratingit ovat tuomarin, pelaajien molempien vahvistamista peleistä. Aktiivinen tarkoittaa nähtyä viimeisen seitsemän päivän aikana: Game Center ei tiedä, kenellä sovellus on auki juuri nyt."
+            "value": "Nimimerkit ovat Game Centerin, sen mukaan kuin kukin pelaaja sallii; ratingit tuomarin, molempien vahvistamista peleistä. Paikalla nyt tarkoittaa, että sovellus on juuri nyt pelaajan näytöllä, niillä jotka sen näyttävät; aktiivinen tarkoittaa nähtyä viimeisen seitsemän päivän aikana."
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Les pseudos viennent de Game Center, selon ce que chaque joueur autorise ; les classements viennent de l’arbitre, d’après les parties confirmées par les deux joueurs. Actif signifie vu ces sept derniers jours : Game Center ne peut pas dire qui a l’app ouverte en ce moment."
+            "value": "Les pseudos viennent de Game Center, selon ce que chaque joueur autorise ; les classements de l’arbitre, d’après les parties confirmées par les deux joueurs. En ligne signifie que l’app est à l’écran en ce moment, pour ceux qui l’indiquent ; actif signifie vu ces sept derniers jours."
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Les pseudos viennent de Game Center, selon ce que chaque joueur autorise ; les classements viennent de l’arbitre, d’après les parties confirmées par les deux joueurs. Actif signifie vu ces sept derniers jours : Game Center ne peut pas dire qui a l’app ouverte en ce moment."
+            "value": "Les pseudos viennent de Game Center, selon ce que chaque joueur autorise ; les classements de l’arbitre, d’après les parties confirmées par les deux joueurs. En ligne signifie que l’app est à l’écran en ce moment, pour ceux qui l’indiquent ; actif signifie vu ces sept derniers jours."
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "הכינויים הם של Game Center, כפי שכל שחקן מתיר להציג; הדירוגים הם של השופט, ממשחקים ששני השחקנים אישרו. פעיל פירושו שנראה בשבעת הימים האחרונים: Game Center לא יודע מי פתח את האפליקציה ברגע זה."
+            "value": "הכינויים הם של Game Center, כפי שכל שחקן מתיר; הדירוגים של השופט, ממשחקים ששני הצדדים אישרו. באפליקציה עכשיו פירושו שהאפליקציה על המסך שלהם ברגע זה, אצל מי שמציג זאת; פעיל פירושו שנראה בשבעת הימים האחרונים."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "उपनाम Game Center के हैं, जितना हर खिलाड़ी दिखाने देता है; रेटिंग रेफ़री की हैं, उन बाज़ियों से जिनकी पुष्टि दोनों खिलाड़ियों ने की। सक्रिय का अर्थ है पिछले सात दिनों में दिखे: Game Center यह नहीं बता सकता कि इस पल ऐप किसने खोला है।"
+            "value": "उपनाम Game Center के हैं, जितना हर खिलाड़ी दिखाने देता है; रेटिंग रेफ़री की हैं, दोनों खिलाड़ियों द्वारा पुष्ट बाज़ियों से। अभी ऑनलाइन का अर्थ है कि ऐप इस पल उनकी स्क्रीन पर है, उनके लिए जो यह दिखाते हैं; सक्रिय का अर्थ है पिछले सात दिनों में दिखे।"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "A becenevek a Game Centeréi, ahogy az egyes játékosok engedik mutatni őket; az értékszámok a játékvezetőéi, mindkét játékos által megerősített játszmákból. Aktív: az elmúlt hét napban látott – a Game Center nem tudja, kinél van nyitva az alkalmazás éppen most."
+            "value": "A becenevek a Game Centeréi, ahogy az egyes játékosok engedik; az értékszámok a játékvezetőéi, mindkét fél által megerősített játszmákból. Most online: az alkalmazás éppen a képernyőjükön van, azoknál, akik ezt mutatják; aktív: az elmúlt hét napban látott."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nama panggilan berasal dari Game Center, sesuai izin tiap pemain; rating berasal dari wasit, dari partai yang dikonfirmasi kedua pemain. Aktif berarti terlihat dalam tujuh hari terakhir: Game Center tidak tahu siapa yang sedang membuka aplikasi saat ini."
+            "value": "Nama panggilan berasal dari Game Center, sesuai izin tiap pemain; rating dari wasit, dari partai yang dikonfirmasi kedua pemain. Daring sekarang berarti aplikasi sedang ada di layar mereka saat ini, bagi yang menunjukkannya; aktif berarti terlihat dalam tujuh hari terakhir."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "I nickname sono di Game Center, come ogni giocatore permette di mostrarli; i punteggi sono dell'arbitro, da partite confermate da entrambi i giocatori. Attivo significa visto negli ultimi sette giorni: Game Center non può dire chi ha l'app aperta in questo momento."
+            "value": "I nickname sono di Game Center, come ogni giocatore permette di mostrarli; i punteggi dell'arbitro, da partite confermate da entrambi. Online ora significa che l'app è sul loro schermo in questo momento, per chi lo mostra; attivo, visto negli ultimi sette giorni."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "ニックネームは Game Center のもので、各プレイヤーが許可した範囲で表示されます。レーティングは審判によるもので、双方が確認した対局から算出されます。「アクティブ」は過去7日間に見かけたという意味です。今この瞬間に誰がアプリを開いているかは Game Center にはわかりません。"
+            "value": "ニックネームは各プレイヤーが許可した範囲で Game Center が表示し、レーティングは双方が確認した対局から審判が算出します。「オンライン中」は今この瞬間アプリが画面に表示されていること（表示を許可した人のみ）、「アクティブ」は過去7日間に見かけたことを意味します。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "닉네임은 각 플레이어가 공개를 허용한 범위에서 Game Center가 제공하고, 레이팅은 두 플레이어가 모두 확인한 대국에서 심판이 계산합니다. '활동'은 최근 7일 안에 보였다는 뜻입니다. 지금 이 순간 누가 앱을 열고 있는지는 Game Center가 알 수 없습니다."
+            "value": "닉네임은 각 플레이어가 허용한 범위에서 Game Center가 제공하고, 레이팅은 두 플레이어가 모두 확인한 대국에서 심판이 계산합니다. '지금 온라인'은 앱이 지금 화면에 떠 있다는 뜻이며(표시를 켠 사람만), '활동'은 최근 7일 안에 보였다는 뜻입니다."
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nama samaran daripada Game Center, mengikut izin setiap pemain; rating daripada pengadil, daripada permainan yang disahkan oleh kedua-dua pemain. Aktif bermakna dilihat dalam tujuh hari lepas: Game Center tidak tahu siapa yang sedang membuka aplikasi sekarang."
+            "value": "Nama samaran daripada Game Center, mengikut izin setiap pemain; rating daripada pengadil, daripada permainan yang disahkan kedua-dua pemain. Dalam talian sekarang bermakna aplikasi berada pada skrin mereka ketika ini, bagi yang menunjukkannya; aktif bermakna dilihat dalam tujuh hari lepas."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Bijnamen komen uit Game Center, zoals elke speler ze laat zien; ratings komen van de scheidsrechter, uit partijen die beide spelers bevestigden. Actief betekent gezien in de afgelopen zeven dagen: Game Center kan niet zeggen wie de app op dit moment open heeft."
+            "value": "Bijnamen komen uit Game Center, zoals elke speler ze laat zien; ratings van de scheidsrechter, uit partijen die beide spelers bevestigden. Nu online betekent dat de app op dit moment op hun scherm staat, voor wie dat laat zien; actief betekent gezien in de afgelopen zeven dagen."
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kallenavn kommer fra Game Center, slik hver spiller lar dem vises; ratingen kommer fra dommeren, fra partier begge spillerne har bekreftet. Aktiv betyr sett de siste sju dagene: Game Center kan ikke si hvem som har appen åpen akkurat nå."
+            "value": "Kallenavn kommer fra Game Center, slik hver spiller lar dem vises; ratingen fra dommeren, fra partier begge har bekreftet. Pålogget nå betyr at appen er på skjermen deres akkurat nå, for dem som viser det; aktiv betyr sett de siste sju dagene."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pseudonimy pochodzą z Game Center, zgodnie z tym, na co pozwala każdy gracz; rankingi pochodzą od sędziego, z partii potwierdzonych przez obu graczy. Aktywni to widziani w ciągu ostatnich siedmiu dni: Game Center nie wie, kto ma aplikację otwartą w tej chwili."
+            "value": "Pseudonimy pochodzą z Game Center, zgodnie z tym, na co pozwala gracz; rankingi od sędziego, z partii potwierdzonych przez obu graczy. Teraz online oznacza, że aplikacja jest w tej chwili na ekranie, u tych, którzy to pokazują; aktywni to widziani w ciągu ostatnich siedmiu dni."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Os apelidos são do Game Center, conforme cada jogador permite mostrar; os ratings são do árbitro, de partidas que os dois jogadores confirmaram. Ativo significa visto nos últimos sete dias: o Game Center não sabe quem está com o app aberto neste momento."
+            "value": "Os apelidos são do Game Center, conforme cada jogador permite; os ratings são do árbitro, de partidas que os dois confirmaram. On-line agora significa que o app está na tela da pessoa neste momento, para quem mostra isso; ativo, visto nos últimos sete dias."
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Porecla vine din Game Center, după cum permite fiecare jucător să fie arătată; ratingurile vin de la arbitru, din partide confirmate de ambii jucători. Activ înseamnă văzut în ultimele șapte zile: Game Center nu poate spune cine are aplicația deschisă chiar acum."
+            "value": "Poreclele vin din Game Center, după cum permite fiecare jucător; ratingurile de la arbitru, din partide confirmate de amândoi. Online acum înseamnă că aplicația e pe ecranul lor în acest moment, pentru cei care arată asta; activ înseamnă văzut în ultimele șapte zile."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ники берутся из Game Center — в той мере, в какой игрок разрешает их показывать; рейтинги — от арбитра, по партиям, которые подтвердили оба игрока. «Активные» — те, кто заходил за последние семь дней: Game Center не знает, у кого приложение открыто прямо сейчас."
+            "value": "Ники берутся из Game Center — в той мере, в какой игрок разрешает; рейтинги — от арбитра, по партиям, подтверждённым обоими. «Сейчас онлайн» — приложение открыто на экране в эту минуту, у тех, кто это показывает; «активные» — заходили за последние семь дней."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Smeknamn kommer från Game Center, så som varje spelare låter dem visas; ratingen kommer från domaren, från partier som båda spelarna bekräftat. Aktiv betyder sedd de senaste sju dagarna: Game Center kan inte säga vem som har appen öppen just nu."
+            "value": "Smeknamn kommer från Game Center, så som varje spelare låter dem visas; ratingen från domaren, från partier som båda bekräftat. Online nu betyder att appen är på deras skärm just nu, för dem som visar det; aktiv betyder sedd de senaste sju dagarna."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "ชื่อเล่นมาจาก Game Center ตามที่ผู้เล่นแต่ละคนอนุญาตให้แสดง ส่วนเรตติ้งมาจากกรรมการ จากเกมที่ผู้เล่นทั้งสองยืนยันแล้ว ใช้งานอยู่หมายถึงพบในช่วงเจ็ดวันที่ผ่านมา Game Center ไม่รู้ว่าใครเปิดแอปอยู่ในขณะนี้"
+            "value": "ชื่อเล่นมาจาก Game Center ตามที่ผู้เล่นแต่ละคนอนุญาต ส่วนเรตติ้งมาจากกรรมการ จากเกมที่ทั้งสองฝ่ายยืนยัน ออนไลน์ตอนนี้หมายถึงแอปอยู่บนหน้าจอของเขาในขณะนี้ สำหรับผู้ที่เลือกแสดง ส่วนใช้งานอยู่หมายถึงพบในช่วงเจ็ดวันที่ผ่านมา"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Takma adlar Game Center'ındır, her oyuncunun gösterilmesine izin verdiği kadarıyla; puanlar hakemindir, iki oyuncunun da doğruladığı oyunlardan. Etkin, son yedi günde görülmüş demektir: Game Center şu anda uygulamayı kimin açık tuttuğunu bilemez."
+            "value": "Takma adlar Game Center'ındır, her oyuncunun izin verdiği kadarıyla; puanlar hakemindir, iki tarafın da doğruladığı oyunlardan. Şu an çevrimiçi, uygulamanın şu anda ekranlarında olduğu anlamına gelir (gösterenler için); etkin, son yedi günde görülmüş demektir."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Biệt danh là của Game Center, theo mức mỗi người chơi cho phép hiển thị; hệ số là của trọng tài, từ các ván mà cả hai người chơi đã xác nhận. Hoạt động nghĩa là xuất hiện trong bảy ngày qua: Game Center không biết ai đang mở ứng dụng lúc này."
+            "value": "Biệt danh là của Game Center, theo mức mỗi người chơi cho phép; hệ số là của trọng tài, từ các ván cả hai đã xác nhận. Đang trực tuyến nghĩa là ứng dụng đang ở trên màn hình của họ lúc này, với ai chọn hiển thị; hoạt động nghĩa là xuất hiện trong bảy ngày qua."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "昵称来自 Game Center，按每位玩家允许的方式显示；等级分来自裁判，依据双方都确认过的对局。“活跃”指过去七天内出现过：Game Center 无法知道此刻谁打开着应用。"
+            "value": "昵称来自 Game Center，按每位玩家允许的方式显示；等级分来自裁判，依据双方确认的对局。“正在在线”指此刻应用正显示在对方屏幕上（仅限选择显示的人）；“活跃”指过去七天内出现过。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "暱稱來自 Game Center，依每位玩家允許的方式顯示；等級分來自裁判，依據雙方都確認過的對局。「活躍」指過去七天內出現過：Game Center 無法知道此刻誰開著 App。"
+            "value": "暱稱來自 Game Center，依每位玩家允許的方式顯示；等級分來自裁判，依據雙方確認的對局。「正在線上」指此刻 App 正顯示在對方螢幕上（僅限選擇顯示的人）；「活躍」指過去七天內出現過。"
+          }
+        }
+      }
+    },
+    "online.presence.looking": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بحث عن مباراة %@"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hledá partii %@"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Søger et parti på %@"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sucht eine Partie · %@"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ψάχνει παρτίδα %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Looking for a %@ game"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Looking for a %@ game"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Looking for a %@ game"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Busca una partida de %@"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Etsii peliä: %@"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cherche une partie en %@"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cherche une partie en %@"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "בחיפוש משחק %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ की बाज़ी ढूँढ़ रहे हैं"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ játszmát keres"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mencari partai %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerca una partita da %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@の対局を探し中"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 대국을 찾는 중"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mencari permainan %@"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoekt een partij van %@"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Søker et parti på %@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Szuka partii %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Procurando uma partida de %@"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caută o partidă de %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ищет партию %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Söker ett parti på %@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กำลังหาเกม %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ oyun arıyor"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đang tìm ván %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在找 %@ 对局"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在找 %@ 對局"
+          }
+        }
+      }
+    },
+    "online.presence.online": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "على التطبيق الآن"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Právě online"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online nu"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jetzt online"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Σε σύνδεση τώρα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online now"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online now"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online now"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En línea ahora"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paikalla nyt"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En ligne"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En ligne"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "באפליקציה עכשיו"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी ऑनलाइन"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Most online"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daring sekarang"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online ora"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オンライン中"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "지금 온라인"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dalam talian sekarang"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nu online"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pålogget nå"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teraz online"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On-line agora"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online acum"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сейчас онлайн"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online nu"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ออนไลน์ตอนนี้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şu an çevrimiçi"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đang trực tuyến"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在在线"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在線上"
+          }
+        }
+      }
+    },
+    "online.presence.playing": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "في مباراة"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ve hře"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I et parti"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In einer Partie"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Σε παρτίδα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In a game"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In a game"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In a game"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En una partida"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pelissä"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En partie"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En partie"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "במשחק"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "बाज़ी में"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Játszmában"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sedang bermain"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In partita"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "対局中"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "대국 중"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sedang bermain"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In een partij"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I et parti"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "W trakcie partii"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Em uma partida"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Într-o partidă"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "В партии"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I ett parti"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อยู่ในเกม"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oyunda"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đang chơi"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "对局中"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "對局中"
           }
         }
       }
@@ -89045,6 +89636,203 @@
         }
       }
     },
+    "settings.online": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اللعب عبر الإنترنت"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online hra"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Onlinespil"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online-Spiel"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Διαδικτυακό παιχνίδι"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online play"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online play"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online play"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Juego en línea"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verkkopeli"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jeu en ligne"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jeu en ligne"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "משחק מקוון"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ऑनलाइन खेल"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online játék"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permainan daring"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gioco online"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オンライン対局"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "온라인 대국"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permainan dalam talian"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online spelen"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nettspill"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gra online"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jogo on-line"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Joc online"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Онлайн-игра"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Onlinespel"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เล่นออนไลน์"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çevrimiçi oyun"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chơi trực tuyến"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在线对局"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "線上對局"
+          }
+        }
+      }
+    },
     "settings.onlineRating": {
       "extractionState": "manual",
       "localizations": {
@@ -90639,6 +91427,400 @@
           "stringUnit": {
             "state": "translated",
             "value": "顯示直線與橫線"
+          }
+        }
+      }
+    },
+    "settings.showOnline": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إظهار حالة وجودي في التطبيق"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ukazovat, že jsem online"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vis, når jeg er online"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeigen, wenn ich online bin"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Εμφάνιση της παρουσίας μου"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show when I'm online"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show when I'm online"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show when I'm online"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar cuando estoy en línea"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Näytä, kun olen paikalla"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Indiquer quand je suis en ligne"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Indiquer quand je suis en ligne"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הצגת הנוכחות שלי באפליקציה"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "दिखाएँ कि मैं ऑनलाइन हूँ"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mutassa, ha online vagyok"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tunjukkan saat aku daring"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostra quando sono online"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オンライン中であることを表示"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "온라인 상태 표시"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tunjukkan apabila saya dalam talian"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laten zien dat ik online ben"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vis når jeg er pålogget"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pokazuj, że jestem online"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar quando estou on-line"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arată când sunt online"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показывать, что я онлайн"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visa när jag är online"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "แสดงเมื่อฉันออนไลน์"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çevrimiçi olduğumu göster"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hiển thị khi tôi trực tuyến"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "显示我在线"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "顯示我在線上"
+          }
+        }
+      }
+    },
+    "settings.showOnlineNote": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ما دام Brass Pawn على الشاشة، يرى اللاعبون الآخرون حالتك: على التطبيق، أو بحث عن مباراة، أو في مباراة، فتصل الدعوة في وقت اللعب. تُنسى الحالة بعد خمس دقائق من المغادرة."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dokud je Brass Pawn na obrazovce, ostatní hráči vidí, že jste online, hledáte partii nebo hrajete — pozvánka vás tak zastihne, když můžete hrát. Pět minut po odchodu se to zapomene."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mens Brass Pawn er på skærmen, kan andre spillere se, at du er online, søger et parti eller spiller et, så en invitation når dig, når du er der. Det glemmes fem minutter efter, du går."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solange Brass Pawn auf deinem Bildschirm ist, sehen andere, dass du online bist, eine Partie suchst oder spielst – so erreicht dich eine Einladung, wenn du da bist. Fünf Minuten nachdem du gehst, ist es vergessen."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Όσο το Brass Pawn είναι στην οθόνη σου, οι άλλοι παίκτες βλέπουν την κατάστασή σου — σε σύνδεση, σε αναζήτηση παρτίδας ή σε παρτίδα — ώστε μια πρόσκληση να σε βρει όταν μπορείς να παίξεις. Ξεχνιέται πέντε λεπτά αφού φύγεις."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "While Brass Pawn is on your screen, players can see that you are online, looking for a game or in one, so an invitation reaches you when you are there to play. It is forgotten five minutes after you leave."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "While Brass Pawn is on your screen, players can see that you are online, looking for a game or in one, so an invitation reaches you when you are there to play. It is forgotten five minutes after you leave."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "While Brass Pawn is on your screen, players can see that you are online, looking for a game or in one, so an invitation reaches you when you are there to play. It is forgotten five minutes after you leave."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mientras Brass Pawn esté en tu pantalla, otros jugadores verán que estás en línea, buscando partida o jugando una, para que una invitación te llegue cuando estás para jugar. Se olvida cinco minutos después de que te vayas."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kun Brass Pawn on näytölläsi, muut pelaajat näkevät, että olet paikalla, etsit peliä tai pelaat, jotta kutsu tavoittaa sinut, kun olet valmis pelaamaan. Tieto unohtuu viisi minuuttia lähtösi jälkeen."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tant que Brass Pawn est à l’écran, les autres joueurs voient que vous êtes en ligne, en recherche de partie ou en train de jouer : une invitation vous trouve quand vous êtes là pour jouer. C’est oublié cinq minutes après votre départ."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tant que Brass Pawn est à l’écran, les autres joueurs voient que vous êtes en ligne, en recherche de partie ou en train de jouer : une invitation vous trouve quand vous êtes là pour jouer. C’est oublié cinq minutes après votre départ."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "כל עוד Brass Pawn על המסך, שחקנים אחרים רואים את המצב שלך — באפליקציה, בחיפוש משחק או במשחק — כך הזמנה מגיעה בזמן שאפשר לשחק. המידע נשכח חמש דקות אחרי היציאה."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जब तक Brass Pawn आपकी स्क्रीन पर है, दूसरे खिलाड़ी देख सकते हैं कि आप ऑनलाइन हैं, बाज़ी ढूँढ़ रहे हैं या खेल रहे हैं, ताकि निमंत्रण तब पहुँचे जब आप खेलने को मौजूद हों। जाने के पाँच मिनट बाद यह भुला दिया जाता है।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amíg a Brass Pawn a képernyődön van, a többiek látják, hogy online vagy, játszmát keresel vagy játszol, így a meghívás akkor ér el, amikor ott vagy. Öt perccel azután, hogy kilépsz, elfelejtődik."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selama Brass Pawn ada di layarmu, pemain lain bisa melihat bahwa kamu daring, mencari partai, atau sedang bermain, jadi undangan sampai saat kamu siap bermain. Ini dilupakan lima menit setelah kamu pergi."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finché Brass Pawn è sul tuo schermo, gli altri giocatori vedono che sei online, in cerca di una partita o in gioco, così un invito ti raggiunge quando sei lì per giocare. Viene dimenticato cinque minuti dopo che esci."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn が画面に表示されている間、ほかのプレイヤーはあなたがオンライン中・対局相手を探し中・対局中であることを見られます。そのため、指せるときに招待が届きます。アプリを離れて5分たつと消えます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn이 화면에 있는 동안 다른 플레이어가 당신이 온라인인지, 대국을 찾는 중인지, 대국 중인지 볼 수 있어, 둘 수 있을 때 초대가 도착합니다. 앱을 떠나고 5분이 지나면 잊힙니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selagi Brass Pawn berada pada skrin anda, pemain lain dapat melihat bahawa anda dalam talian, mencari permainan atau sedang bermain, supaya jemputan sampai ketika anda sedia bermain. Ia dilupakan lima minit selepas anda pergi."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zolang Brass Pawn op je scherm staat, zien anderen dat je online bent, een partij zoekt of er een speelt, zodat een uitnodiging je bereikt als je er bent. Vijf minuten nadat je weggaat is het vergeten."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mens Brass Pawn er på skjermen, ser andre spillere at du er pålogget, søker et parti eller spiller et, så en invitasjon når deg når du er der. Det glemmes fem minutter etter at du går."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gdy Brass Pawn jest na ekranie, inni gracze widzą, że jesteś online, szukasz partii albo grasz — dzięki temu zaproszenie trafia do ciebie, kiedy możesz grać. Zostaje zapomniane pięć minut po wyjściu."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enquanto o Brass Pawn estiver na sua tela, outros jogadores veem que você está on-line, procurando partida ou jogando uma, para que um convite chegue quando você estiver lá para jogar. Isso é esquecido cinco minutos depois que você sai."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cât timp Brass Pawn e pe ecran, ceilalți jucători văd că ești online, cauți o partidă sau joci una, ca o invitație să te găsească atunci când ești acolo să joci. Se uită la cinci minute după ce pleci."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пока Brass Pawn на экране, другие игроки видят, что вы онлайн, ищете партию или играете, — так приглашение застанет вас, когда вы готовы играть. Через пять минут после выхода это забывается."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medan Brass Pawn är på skärmen ser andra spelare att du är online, söker ett parti eller spelar ett, så att en inbjudan når dig när du är där. Det glöms bort fem minuter efter att du lämnat."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ขณะที่ Brass Pawn อยู่บนหน้าจอ ผู้เล่นอื่นจะเห็นว่าคุณออนไลน์ กำลังหาเกม หรือกำลังเล่น คำเชิญจึงถึงคุณตอนที่พร้อมเล่น ข้อมูลนี้จะถูกลืมห้านาทีหลังจากคุณออกไป"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn ekranındayken diğer oyuncular çevrimiçi olduğunu, oyun aradığını ya da oynadığını görür; böylece davet oynamaya hazır olduğunda sana ulaşır. Ayrıldıktan beş dakika sonra unutulur."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Khi Brass Pawn đang ở trên màn hình, người chơi khác sẽ thấy bạn đang trực tuyến, đang tìm ván hoặc đang chơi, để lời mời đến đúng lúc bạn sẵn sàng. Điều này bị quên năm phút sau khi bạn rời đi."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当 Brass Pawn 显示在你的屏幕上时，其他玩家能看到你在线、正在找对局或正在下棋，这样邀请会在你有空下棋时送达。你离开五分钟后即被遗忘。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "當 Brass Pawn 顯示在你的螢幕上時，其他玩家能看到你在線上、正在找對局或正在下棋，這樣邀請會在你有空下棋時送達。你離開五分鐘後即被遺忘。"
           }
         }
       }
