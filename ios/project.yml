@@ -212,6 +212,10 @@ targets:
         # not eligible for it, so the pair was a contradiction rather than a
         # choice: two Macs listed, only one of which can happen.
         SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+        # Nor Apple Vision Pro, which would run the iPad build in a window.
+        # Nobody here has one to try it on, and an app not offered there is
+        # better than one offered untested.
+        SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD: NO
         # Apple silicon only. The generic Catalyst destination an archive builds
         # against is "arm64, x86_64", so without this it compiles an Intel half
         # and fails at the link on the engine, which is built for one
