@@ -43,9 +43,11 @@ struct BoardPlayer: Identifiable, Equatable {
 final class OnlineBoards {
     /// How recently somebody has to have been seen to count as active.
     nonisolated static let activeWindow: TimeInterval = 7 * 86_400
-    /// How many of each list are read. Plenty for the app's size; the lists
-    /// say how many there are in all.
+    /// How much of a list is read at a time: a page, and the next one when the
+    /// list is scrolled to its end. The lists say how many there are in all.
     static let pageSize = 100
+    /// How far a search reads before it gives up on finding somebody.
+    static let searchLimit = 2_000
 
     static func leaderboardID(_ control: TimeControl) -> String {
         "brasspawn.online.\(control.minutes)"
@@ -59,6 +61,14 @@ final class OnlineBoards {
     private(set) var everyone: [BoardPlayer] = []
     /// The people this player has played lately, from Game Center's own record.
     private(set) var recent: [BoardPlayer] = []
+    /// This player's Game Center friends. A friend is a player too, and shows
+    /// in both lists.
+    private(set) var friends: [BoardPlayer] = []
+    enum FriendsAccess { case unknown, allowed, denied }
+    private(set) var friendsAccess = FriendsAccess.unknown
+    /// Every player met on any list, once each, as last seen.
+    private var latest: [String: BoardPlayer] = [:]
+    private var loadingMore: Set<TimeControl> = []
     /// How many are looking for a game on each clock right now.
     private(set) var lookingNow: [TimeControl: Int] = [:]
     private(set) var isLoading = false
@@ -81,7 +91,7 @@ final class OnlineBoards {
     /// Everybody on screen now, looking for a game first.
     func onlineNow() -> [BoardPlayer] {
         var seen = Set<String>()
-        return (everyone + recent)
+        return (everyone + recent + friends)
             .filter { !$0.isLocal && presence[$0.id] != nil && seen.insert($0.id).inserted }
             .sorted { rank(presence[$0.id]) < rank(presence[$1.id]) }
     }
@@ -93,6 +103,13 @@ final class OnlineBoards {
         case .playing: 2
         case nil: 3
         }
+    }
+
+    func isFriend(_ id: String) -> Bool { friends.contains { $0.id == id } }
+
+    /// Whether a clock's list has more than has been read of it.
+    func hasMore(on control: TimeControl) -> Bool {
+        (ranks[control]?.count ?? 0) < (totals[control] ?? 0)
     }
 
     func active(at now: Date = Date()) -> [BoardPlayer] {
@@ -147,8 +164,9 @@ final class OnlineBoards {
     }
     #endif
 
-    /// Read everything: every clock's list, the players, the recent opponents
-    /// and how many are waiting on each clock.
+    /// Read everything afresh: the first page of every clock's list, the
+    /// players, the friends, the recent opponents and how many are waiting on
+    /// each clock.
     func refresh() async {
         #if canImport(GameKit)
         guard GKLocalPlayer.local.isAuthenticated, !isLoading else { return }
@@ -161,48 +179,170 @@ final class OnlineBoards {
         let boards = (try? await GKLeaderboard.loadLeaderboards(
             IDs: TimeControl.allCases.map(Self.leaderboardID)
         )) ?? []
-        var latest: [String: BoardPlayer] = [:]
+        latest = [:]
         for control in TimeControl.allCases {
             guard let board = boards.first(where: { $0.baseLeaderboardID == Self.leaderboardID(control) }),
                   let (local, entries, total) = try? await board.loadEntries(
                       for: .global, timeScope: .allTime, range: NSRange(location: 1, length: Self.pageSize)
                   )
             else { continue }
-            let listed = entries.filter(\.isOnTheList).map { entry -> BoardPlayer in
-                players[entry.player.gamePlayerID] = entry.player
-                playerIDs[Presence.key(teamPlayerID: entry.player.teamPlayerID)] = entry.player.gamePlayerID
-                return BoardPlayer(
-                    id: entry.player.gamePlayerID, alias: entry.player.alias,
-                    rank: entry.rank, rating: entry.score, clock: control,
-                    lastSeen: entry.date, isLocal: entry.player.gamePlayerID == localID
-                )
-            }
-            ranks[control] = listed
+            ranks[control] = absorb(entries, on: control, localID: localID)
             totals[control] = total
             mine[control] = local.flatMap {
                 guard $0.isOnTheList else { return nil }
                 return BoardPlayer(id: localID, alias: GKLocalPlayer.local.alias, rank: $0.rank, rating: $0.score,
                                    clock: control, lastSeen: $0.date, isLocal: true)
             }
-            for player in listed where (latest[player.id]?.lastSeen ?? .distantPast) < player.lastSeen {
-                latest[player.id] = player
-            }
         }
         everyone = latest.values.sorted { $0.lastSeen > $1.lastSeen }
 
         if let played = try? await GKLocalPlayer.local.loadRecentPlayers() {
-            recent = played.prefix(12).map { player in
-                players[player.gamePlayerID] = player
-                playerIDs[Presence.key(teamPlayerID: player.teamPlayerID)] = player.gamePlayerID
-                let known = latest[player.gamePlayerID]
-                return BoardPlayer(
-                    id: player.gamePlayerID, alias: player.alias, rank: known?.rank,
-                    rating: known?.rating, clock: known?.clock,
-                    lastSeen: known?.lastSeen ?? .distantPast, isLocal: false
-                )
-            }
+            recent = played.prefix(12).map(known)
         }
+        await refreshFriends()
         await refreshLooking()
+        #endif
+    }
+
+    /// The next page of a clock's list, when the list is scrolled to its end.
+    func loadMore(on control: TimeControl) async {
+        #if canImport(GameKit)
+        guard GKLocalPlayer.local.isAuthenticated, hasMore(on: control), !loadingMore.contains(control) else { return }
+        loadingMore.insert(control)
+        defer { loadingMore.remove(control) }
+        let from = (ranks[control]?.count ?? 0) + 1
+        guard let board = try? await GKLeaderboard.loadLeaderboards(IDs: [Self.leaderboardID(control)]).first,
+              let (_, entries, total) = try? await board.loadEntries(
+                  for: .global, timeScope: .allTime, range: NSRange(location: from, length: Self.pageSize)
+              )
+        else { return }
+        let more = absorb(entries, on: control, localID: GKLocalPlayer.local.gamePlayerID)
+        let have = Set((ranks[control] ?? []).map(\.id))
+        ranks[control, default: []] += more.filter { !have.contains($0.id) }
+        totals[control] = total
+        everyone = latest.values.sorted { $0.lastSeen > $1.lastSeen }
+        #endif
+    }
+
+    /// Read on until the whole of a clock's list is here, or the search limit:
+    /// Game Center cannot look a nickname up, so a search reads the list.
+    func loadEverything(on control: TimeControl) async {
+        while hasMore(on: control), (ranks[control]?.count ?? 0) < Self.searchLimit {
+            let before = ranks[control]?.count ?? 0
+            await loadMore(on: control)
+            if (ranks[control]?.count ?? 0) == before { break }
+        }
+    }
+
+    #if canImport(GameKit)
+    /// Entries turned into players, each remembered — for an invitation, for
+    /// who is online, and for the list of everybody.
+    private func absorb(_ entries: [GKLeaderboard.Entry], on control: TimeControl, localID: String) -> [BoardPlayer] {
+        entries.filter(\.isOnTheList).map { entry -> BoardPlayer in
+            players[entry.player.gamePlayerID] = entry.player
+            playerIDs[Presence.key(teamPlayerID: entry.player.teamPlayerID)] = entry.player.gamePlayerID
+            let player = BoardPlayer(
+                id: entry.player.gamePlayerID, alias: entry.player.alias,
+                rank: entry.rank, rating: entry.score, clock: control,
+                lastSeen: entry.date, isLocal: entry.player.gamePlayerID == localID
+            )
+            if (latest[player.id]?.lastSeen ?? .distantPast) < player.lastSeen { latest[player.id] = player }
+            return player
+        }
+    }
+
+    /// A player known from Game Center — a friend, a recent opponent — with
+    /// what the lists say of them, if anything.
+    private func known(_ player: GKPlayer) -> BoardPlayer {
+        players[player.gamePlayerID] = player
+        playerIDs[Presence.key(teamPlayerID: player.teamPlayerID)] = player.gamePlayerID
+        let listed = latest[player.gamePlayerID]
+        return BoardPlayer(
+            id: player.gamePlayerID, alias: player.alias, rank: listed?.rank,
+            rating: listed?.rating, clock: listed?.clock,
+            lastSeen: listed?.lastSeen ?? .distantPast, isLocal: false
+        )
+    }
+    #endif
+
+    /// This player's Game Center friends — asked for once, with Game Center's
+    /// own question, the first time the friends are looked at.
+    func refreshFriends(asking: Bool = false) async {
+        #if canImport(GameKit)
+        guard GKLocalPlayer.local.isAuthenticated else { return }
+        guard let status = try? await GKLocalPlayer.local.loadFriendsAuthorizationStatus() else { return }
+        switch status {
+        case .denied, .restricted:
+            friendsAccess = .denied
+            friends = []
+            return
+        case .notDetermined where !asking:
+            return
+        default:
+            break
+        }
+        guard let list = try? await GKLocalPlayer.local.loadFriends() else {
+            friendsAccess = .denied
+            return
+        }
+        friendsAccess = .allowed
+        friends = list.map(known).sorted { $0.alias.localizedStandardCompare($1.alias) == .orderedAscending }
+        #endif
+    }
+
+    /// Game Center's own way of asking somebody to be a friend: a message it
+    /// writes, sent to a contact. Once they accept, they are among the friends.
+    func askForAFriend() {
+        #if targetEnvironment(macCatalyst)
+        // The Mac has no request writer: Game Center's own friends list,
+        // where a friend is added, instead.
+        GKAccessPoint.shared.trigger(state: .localPlayerFriendsList) {}
+        #elseif canImport(GameKit) && canImport(UIKit)
+        guard let scene = UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene })
+                .first(where: { $0.activationState == .foregroundActive }),
+              var top = scene.keyWindow?.rootViewController else { return }
+        while let presented = top.presentedViewController { top = presented }
+        try? GKLocalPlayer.local.presentFriendRequestCreator(from: top)
+        #endif
+    }
+
+    /// A rated game just played, on the lists at once. Game Center takes a
+    /// minute or two to hand a new score back, and both devices worked out
+    /// both new ratings from the same two records — so both go in now, and the
+    /// lists are read again once Game Center has caught up.
+    func show(game control: TimeControl, mine record: OnlineRecord, opponent: (id: String, record: OnlineRecord)?) {
+        #if canImport(GameKit)
+        guard GKLocalPlayer.local.isAuthenticated else { return }
+        let localID = GKLocalPlayer.local.gamePlayerID
+        var list = ranks[control] ?? []
+        func place(_ id: String, _ alias: String, _ rating: Int, isLocal: Bool) {
+            if let at = list.firstIndex(where: { $0.id == id }) { list.remove(at: at) } else if isLocal || players[id] != nil {
+                totals[control, default: 0] += 1
+            }
+            list.append(BoardPlayer(id: id, alias: alias, rank: nil, rating: rating, clock: control,
+                                    lastSeen: Date(), isLocal: isLocal))
+        }
+        place(localID, GKLocalPlayer.local.alias, record.rating, isLocal: true)
+        if let opponent, let player = players[opponent.id] {
+            place(opponent.id, player.alias, opponent.record.rating, isLocal: false)
+        }
+        list.sort { ($0.rating ?? 0) > ($1.rating ?? 0) }
+        list = list.enumerated().map { index, player in
+            BoardPlayer(id: player.id, alias: player.alias, rank: index + 1, rating: player.rating,
+                        clock: player.clock, lastSeen: player.lastSeen, isLocal: player.isLocal)
+        }
+        ranks[control] = list
+        mine[control] = list.first(where: \.isLocal)
+        for player in list where player.lastSeen > (latest[player.id]?.lastSeen ?? .distantPast) {
+            latest[player.id] = player
+        }
+        everyone = latest.values.sorted { $0.lastSeen > $1.lastSeen }
+        Task { [weak self] in
+            try? await Task.sleep(for: .seconds(45))
+            await self?.refresh()
+            try? await Task.sleep(for: .seconds(120))
+            await self?.refresh()
+        }
         #endif
     }
 
@@ -257,6 +397,8 @@ final class OnlineBoards {
         }
         everyone = list.sorted { $0.lastSeen > $1.lastSeen }
         recent = Array(list.filter { !$0.isLocal }.prefix(2))
+        friends = list.filter { ["sample-1", "sample-4", "sample-9"].contains($0.id) }
+        friendsAccess = .allowed
         presence = ["sample-0": .looking(.five), "sample-1": .online, "sample-3": .playing(.ten)]
         hasLoaded = true
     }

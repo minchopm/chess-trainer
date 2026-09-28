@@ -86,13 +86,16 @@ public final class AppModel {
     /// held when it began: the new one is written there, and kept here to
     /// show, and the opponent is remembered, so the next game against them
     /// today is a friendly.
-    func recordOnline(_ record: OnlineRecord, result: MatchResult, at control: TimeControl, against opponent: String?) {
+    func recordOnline(_ record: OnlineRecord, result: MatchResult, at control: TimeControl, against opponent: String?,
+                      opponentAfter: OnlineRecord? = nil) {
         update {
             $0.adopt(online: record, at: control)
             $0.tally(online: result.outcome)
             if let opponent { $0.noteRated(against: opponent) }
         }
         ReviewManager.eventCreated()
+        // On the lists now, both of them, rather than when Game Center gets round to it.
+        boards.show(game: control, mine: record, opponent: both(opponent, opponentAfter))
         Task { await boards.submit(record, for: control) }
     }
 
@@ -374,4 +377,10 @@ public struct ProgressStorage: Sendable {
         guard let data = try? JSONEncoder().encode(progress) else { return }
         try? data.write(to: url, options: .atomic)
     }
+}
+
+/// Both, or neither.
+private func both<A, B>(_ a: A?, _ b: B?) -> (id: A, record: B)? {
+    guard let a, let b else { return nil }
+    return (a, b)
 }

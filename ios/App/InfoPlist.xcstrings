@@ -209,6 +209,191 @@
           }
         }
       }
+    },
+    "NSGKFriendListUsageDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar-SA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لعرض أصدقائك في Game Center الذين يلعبون Brass Pawn ودعوتهم إلى مباراة."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aby ukázal tvé přátele z Game Center, kteří hrají Brass Pawn, a mohl je pozvat na partii."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For at vise dine Game Center-venner, der spiller Brass Pawn, og invitere dem til et parti."
+          }
+        },
+        "de-DE" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um deine Game-Center-Freunde zu zeigen, die Brass Pawn spielen, und sie zu einer Partie einzuladen."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Για να δείχνει τους φίλους σου στο Game Center που παίζουν Brass Pawn και να τους προσκαλείς σε παρτίδα."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To show your Game Center friends who play Brass Pawn, and invite them to a game."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para mostrar a tus amigos de Game Center que juegan a Brass Pawn e invitarlos a una partida."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jotta voit nähdä Brass Pawnia pelaavat Game Center -kaverisi ja kutsua heidät peliin."
+          }
+        },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour afficher vos amis Game Center qui jouent à Brass Pawn et les inviter à une partie."
+          }
+        },
+        "fr-FR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour afficher vos amis Game Center qui jouent à Brass Pawn et les inviter à une partie."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "כדי להציג חברים מ־Game Center שמשחקים ב־Brass Pawn ולהזמין אותם למשחק."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brass Pawn खेलने वाले आपके Game Center मित्रों को दिखाने और उन्हें बाज़ी के लिए आमंत्रित करने के लिए।"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hogy megmutassa a Brass Pawnnal játszó Game Center-barátaidat, és meghívhasd őket egy játszmára."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untuk menampilkan teman Game Center-mu yang memainkan Brass Pawn dan mengundang mereka bermain."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per mostrare i tuoi amici di Game Center che giocano a Brass Pawn e invitarli a una partita."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brass Pawn をプレイしている Game Center のフレンドを表示し、対局に招待するために使います。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brass Pawn을 하는 Game Center 친구를 보여 주고 대국에 초대하기 위해 사용합니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untuk menunjukkan rakan Game Center anda yang bermain Brass Pawn dan menjemput mereka bermain."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For å vise Game Center-vennene dine som spiller Brass Pawn, og invitere dem til et parti."
+          }
+        },
+        "nl-NL" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Om je Game Center-vrienden te tonen die Brass Pawn spelen, en ze uit te nodigen voor een partij."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aby pokazać twoich znajomych z Game Center, którzy grają w Brass Pawn, i zaprosić ich do partii."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para mostrar seus amigos do Game Center que jogam Brass Pawn e convidá-los para uma partida."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pentru a-ți arăta prietenii din Game Center care joacă Brass Pawn și a-i invita la o partidă."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чтобы показывать ваших друзей из Game Center, которые играют в Brass Pawn, и приглашать их на партию."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "För att visa dina Game Center-vänner som spelar Brass Pawn och bjuda in dem till ett parti."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เพื่อแสดงเพื่อนใน Game Center ที่เล่น Brass Pawn และชวนมาเล่นด้วยกัน"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brass Pawn oynayan Game Center arkadaşlarını göstermek ve onları bir oyuna davet etmek için."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Để hiển thị bạn bè Game Center đang chơi Brass Pawn và mời họ vào một ván cờ."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用于显示在玩 Brass Pawn 的 Game Center 好友，并邀请他们下棋。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用於顯示在玩 Brass Pawn 的 Game Center 好友，並邀請他們下棋。"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

@@ -44129,6 +44129,203 @@
         }
       }
     },
+    "online.addFriend": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إضافة صديق"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Přidat přítele"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tilføj en ven"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Freund hinzufügen"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προσθήκη φίλου"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add a friend"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add a friend"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add a friend"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir un amigo"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lisää kaveri"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajouter un ami"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajouter un ami"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הוספת חבר"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मित्र जोड़ें"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barát hozzáadása"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah teman"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiungi un amico"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フレンドを追加"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "친구 추가"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tambah rakan"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vriend toevoegen"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Legg til en venn"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dodaj znajomego"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicionar um amigo"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adaugă un prieten"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавить друга"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lägg till en vän"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เพิ่มเพื่อน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arkadaş ekle"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thêm bạn"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "添加好友"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "加入好友"
+          }
+        }
+      }
+    },
     "online.backToTheLobby": {
       "extractionState": "manual",
       "localizations": {
@@ -45508,6 +45705,203 @@
         }
       }
     },
+    "online.friend": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "صديق"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Přítel"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ven"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Freund"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Φίλος"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Friend"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Friend"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Friend"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amigo"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaveri"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ami"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ami"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "חבר"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मित्र"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barát"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teman"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amico"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フレンド"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "친구"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rakan"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vriend"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Venn"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Znajomy"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amigo"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prieten"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Друг"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vän"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เพื่อน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arkadaş"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bạn"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "好友"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "好友"
+          }
+        }
+      }
+    },
     "online.friendlyNote": {
       "extractionState": "manual",
       "localizations": {
@@ -45701,6 +46095,794 @@
           "stringUnit": {
             "state": "translated",
             "value": "邀請和再來一局都是友誼賽，與同一對手每天只有一局計等級分：榜上的名次要在與搜尋配對到的對手的對局中贏得。"
+          }
+        }
+      }
+    },
+    "online.friends": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الأصدقاء"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Přátelé"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Venner"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Freunde"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Φίλοι"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Friends"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Friends"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Friends"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amigos"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaverit"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amis"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amis"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "חברים"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मित्र"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barátok"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teman"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amici"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フレンド"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "친구"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rakan"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vrienden"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Venner"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Znajomi"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amigos"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prieteni"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Друзья"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vänner"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เพื่อน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arkadaşlar"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bạn bè"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "好友"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "好友"
+          }
+        }
+      }
+    },
+    "online.friendsDenied": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يستطيع Brass Pawn رؤية أصدقاء Game Center. الإعدادات ← Game Center ← الأصدقاء تسمح بذلك."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn nesmí vidět tvé přátele z Game Center. Nastavení → Game Center → Přátelé to povolí."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn må ikke se dine Game Center-venner. Indstillinger → Game Center → Venner tillader det."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn darf deine Game-Center-Freunde nicht sehen. Einstellungen → Game Center → Freunde erlaubt es."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το Brass Pawn δεν έχει πρόσβαση στους φίλους σου στο Game Center. Ρυθμίσεις → Game Center → Φίλοι το επιτρέπει."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn may not see your Game Center friends. Settings → Game Center → Friends lets it."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn may not see your Game Center friends. Settings → Game Center → Friends lets it."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn may not see your Game Center friends. Settings → Game Center → Friends lets it."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn no puede ver tus amigos de Game Center. Ajustes → Game Center → Amigos lo permite."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn ei saa nähdä Game Center -kavereitasi. Asetukset → Game Center → Kaverit sallii sen."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn n’a pas accès à vos amis Game Center. Réglages → Game Center → Amis le permet."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn n’a pas accès à vos amis Game Center. Réglages → Game Center → Amis le permet."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ל־Brass Pawn אין גישה לחברים ב־Game Center. הגדרות ← Game Center ← חברים מאפשרות זאת."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn आपके Game Center मित्रों को नहीं देख सकता। सेटिंग्स → Game Center → मित्र इसकी अनुमति देता है।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A Brass Pawn nem láthatja a Game Center-barátaidat. Beállítások → Game Center → Barátok engedélyezi."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn tidak boleh melihat teman Game Center-mu. Pengaturan → Game Center → Teman mengizinkannya."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn non può vedere i tuoi amici di Game Center. Impostazioni → Game Center → Amici lo consente."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn は Game Center のフレンドを表示できません。設定 → Game Center → フレンド で許可できます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn이 Game Center 친구를 볼 수 없습니다. 설정 → Game Center → 친구에서 허용할 수 있습니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn tidak dibenarkan melihat rakan Game Center anda. Tetapan → Game Center → Rakan membenarkannya."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn mag je Game Center-vrienden niet zien. Instellingen → Game Center → Vrienden staat het toe."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn får ikke se Game Center-vennene dine. Innstillinger → Game Center → Venner tillater det."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn nie ma dostępu do twoich znajomych z Game Center. Ustawienia → Game Center → Znajomi na to pozwala."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Brass Pawn não pode ver seus amigos do Game Center. Ajustes → Game Center → Amigos permite."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn nu are voie să vadă prietenii tăi din Game Center. Setări → Game Center → Prieteni permite asta."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn не может видеть ваших друзей в Game Center. Настройки → Game Center → Друзья разрешает это."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn får inte se dina Game Center-vänner. Inställningar → Game Center → Vänner tillåter det."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn ไม่ได้รับอนุญาตให้ดูเพื่อนใน Game Center ของคุณ การตั้งค่า → Game Center → เพื่อน ใช้อนุญาตได้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn, Game Center arkadaşlarını göremiyor. Ayarlar → Game Center → Arkadaşlar buna izin verir."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn không được xem bạn bè Game Center của bạn. Cài đặt → Game Center → Bạn bè cho phép điều đó."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn 无法查看你的 Game Center 好友。设置 → Game Center → 好友 可以允许。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn 無法查看你的 Game Center 好友。設定 → Game Center → 好友 可以允許。"
+          }
+        }
+      }
+    },
+    "online.friendsEmpty": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يلعب أي صديق من Game Center لعبة Brass Pawn بعد."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zatím žádní přátelé z Game Center nehrají Brass Pawn."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen Game Center-venner spiller Brass Pawn endnu."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine Game-Center-Freunde spielen Brass Pawn."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κανένας φίλος από το Game Center δεν παίζει ακόμη Brass Pawn."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Game Center friends play Brass Pawn yet."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Game Center friends play Brass Pawn yet."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Game Center friends play Brass Pawn yet."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ningún amigo de Game Center juega aún a Brass Pawn."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kukaan Game Center -kavereistasi ei vielä pelaa Brass Pawnia."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun ami Game Center ne joue encore à Brass Pawn."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun ami Game Center ne joue encore à Brass Pawn."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "עדיין אין חברים מ־Game Center שמשחקים ב־Brass Pawn."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभी तक Game Center का कोई मित्र Brass Pawn नहीं खेलता।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Még egyik Game Center-barátod sem játszik Brass Pawnnal."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada teman Game Center yang memainkan Brass Pawn."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun amico di Game Center gioca ancora a Brass Pawn."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brass Pawn をプレイしている Game Center のフレンドはまだいません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "아직 Brass Pawn을 하는 Game Center 친구가 없습니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Belum ada rakan Game Center yang bermain Brass Pawn."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen Game Center-vrienden spelen Brass Pawn."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen Game Center-venner spiller Brass Pawn ennå."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Żaden znajomy z Game Center nie gra jeszcze w Brass Pawn."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum amigo do Game Center joga Brass Pawn ainda."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niciun prieten din Game Center nu joacă încă Brass Pawn."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пока никто из друзей Game Center не играет в Brass Pawn."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inga Game Center-vänner spelar Brass Pawn än."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ยังไม่มีเพื่อนใน Game Center ที่เล่น Brass Pawn"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henüz hiçbir Game Center arkadaşın Brass Pawn oynamıyor."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chưa có bạn Game Center nào chơi Brass Pawn."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "还没有 Game Center 好友在玩 Brass Pawn。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "還沒有 Game Center 好友在玩 Brass Pawn。"
+          }
+        }
+      }
+    },
+    "online.friendsNote": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "طلبات الصداقة تمر عبر Game Center: يكتب رسالة لإرسالها، وعند قبولها تصبح الصداقة قائمة هنا أيضًا."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Žádosti o přátelství jdou přes Game Center: napíše zprávu, kterou pošleš, a jakmile ji druhý přijme, jste přátelé i tady."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Venneanmodninger går gennem Game Center: det skriver en besked, som du sender, og når den er accepteret, er I også venner her."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Freundschaftsanfragen laufen über Game Center: Es schreibt eine Nachricht, die du schickst, und sobald sie angenommen ist, seid ihr auch hier befreundet."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τα αιτήματα φιλίας περνούν από το Game Center: γράφει ένα μήνυμα για να το στείλεις, και μόλις γίνει αποδεκτό, είστε φίλοι και εδώ."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Friend requests go through Game Center: it writes a message for you to send, and once it is accepted the two of you are friends here too."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Friend requests go through Game Center: it writes a message for you to send, and once it is accepted the two of you are friends here too."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Friend requests go through Game Center: it writes a message for you to send, and once it is accepted the two of you are friends here too."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las solicitudes de amistad pasan por Game Center: redacta un mensaje para que lo envíes y, cuando se acepta, también sois amigos aquí."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaveripyynnöt kulkevat Game Centerin kautta: se kirjoittaa viestin, jonka lähetät, ja kun se hyväksytään, olette kavereita myös täällä."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les demandes d’ami passent par Game Center : il rédige un message à envoyer, et une fois accepté, vous êtes aussi amis ici."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les demandes d’ami passent par Game Center : il rédige un message à envoyer, et une fois accepté, vous êtes aussi amis ici."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "בקשות חברות עוברות דרך Game Center: הוא מנסח הודעה לשליחה, ואחרי שהיא מתקבלת החברות קיימת גם כאן."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मित्रता अनुरोध Game Center से जाते हैं: वह एक संदेश लिखता है जिसे आप भेजते हैं, और स्वीकार होने पर आप यहाँ भी मित्र हो जाते हैं।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A barátkérések a Game Centeren keresztül mennek: üzenetet ír, amelyet elküldesz, és ha elfogadják, itt is barátok vagytok."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permintaan pertemanan lewat Game Center: ia menulis pesan untuk kamu kirim, dan setelah diterima, kalian juga berteman di sini."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le richieste di amicizia passano da Game Center: scrive un messaggio da inviare e, una volta accettato, siete amici anche qui."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フレンドリクエストは Game Center を通じて送ります。送信用のメッセージを Game Center が作成し、承認されるとここでもフレンドになります。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "친구 요청은 Game Center를 통해 보냅니다. 보낼 메시지를 Game Center가 작성하고, 수락되면 여기서도 친구가 됩니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permintaan rakan melalui Game Center: ia menulis mesej untuk anda hantar, dan apabila diterima, anda berdua juga berkawan di sini."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vriendschapsverzoeken gaan via Game Center: het schrijft een bericht dat jij verstuurt, en zodra het is geaccepteerd zijn jullie hier ook vrienden."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Venneforespørsler går gjennom Game Center: det skriver en melding som du sender, og når den er godtatt, er dere venner her også."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zaproszenia do znajomych idą przez Game Center: przygotowuje wiadomość do wysłania, a po jej przyjęciu jesteście znajomymi także tutaj."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Os pedidos de amizade passam pelo Game Center: ele escreve uma mensagem para você enviar e, quando aceita, vocês são amigos aqui também."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cererile de prietenie trec prin Game Center: scrie un mesaj pe care îl trimiți, iar după ce e acceptat sunteți prieteni și aici."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запросы в друзья идут через Game Center: он составит сообщение, которое вы отправите, и после принятия вы станете друзьями и здесь."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vänförfrågningar går via Game Center: det skriver ett meddelande som du skickar, och när det accepteras är ni vänner här också."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "คำขอเป็นเพื่อนส่งผ่าน Game Center โดยจะเขียนข้อความให้คุณส่ง และเมื่ออีกฝ่ายยอมรับ ก็เป็นเพื่อนกันที่นี่ด้วย"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arkadaşlık istekleri Game Center üzerinden gider: senin göndereceğin bir mesaj yazar, kabul edildiğinde burada da arkadaş olursunuz."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lời mời kết bạn đi qua Game Center: nó soạn một tin nhắn để bạn gửi, và khi được chấp nhận, hai người cũng là bạn ở đây."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "好友请求通过 Game Center 发送：它会写好一条信息供你发送，对方接受后你们在这里也成为好友。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "好友邀請透過 Game Center 傳送：它會寫好一則訊息供你傳送，對方接受後你們在這裡也成為好友。"
           }
         }
       }
@@ -49842,6 +51024,203 @@
         }
       }
     },
+    "online.noMatch": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا أحد بهذا الاسم المستعار بين اللاعبين الذين حُمّلوا حتى الآن."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mezi dosud načtenými hráči nikdo s touto přezdívkou není."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen med det kaldenavn blandt de spillere, der er hentet indtil nu."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niemand mit diesem Spitznamen unter den bisher geladenen Spielern."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κανένας με αυτό το ψευδώνυμο στους παίκτες που φορτώθηκαν μέχρι τώρα."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nobody by that nickname among the players read so far."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nobody by that nickname among the players read so far."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nobody by that nickname among the players read so far."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nadie con ese apodo entre los jugadores cargados hasta ahora."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tähän mennessä ladattujen pelaajien joukossa ei ole ketään tällä nimimerkillä."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personne avec ce pseudo parmi les joueurs chargés jusqu’ici."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personne avec ce pseudo parmi les joueurs chargés jusqu’ici."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "אין אף אחד עם הכינוי הזה בין השחקנים שנטענו עד כה."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अब तक लोड किए गए खिलाड़ियों में इस उपनाम का कोई नहीं है।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Az eddig betöltött játékosok között senki sincs ezzel a becenévvel."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak ada yang bernama panggilan itu di antara pemain yang dimuat sejauh ini."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessuno con quel nickname tra i giocatori caricati finora."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "これまでに読み込んだプレイヤーの中に、そのニックネームの人はいません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "지금까지 불러온 플레이어 중에 그 닉네임은 없습니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiada sesiapa dengan nama samaran itu dalam kalangan pemain yang dimuatkan setakat ini."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niemand met die bijnaam onder de tot nu toe geladen spelers."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen med det kallenavnet blant spillerne som er hentet så langt."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wśród dotąd wczytanych graczy nie ma nikogo o tym pseudonimie."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ninguém com esse apelido entre os jogadores carregados até agora."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nimeni cu această poreclă printre jucătorii încărcați până acum."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Среди загруженных игроков никого с таким ником нет."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen med det smeknamnet bland spelarna som hämtats hittills."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่มีใครใช้ชื่อเล่นนี้ในผู้เล่นที่โหลดมาจนถึงตอนนี้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şimdiye kadar yüklenen oyuncular arasında bu takma adda kimse yok."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không có ai với biệt danh đó trong số người chơi đã tải."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "目前读取的玩家中没有这个昵称的人。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "目前讀取的玩家中沒有這個暱稱的人。"
+          }
+        }
+      }
+    },
     "online.nobodyRanked": {
       "extractionState": "manual",
       "localizations": {
@@ -53388,203 +54767,6 @@
         }
       }
     },
-    "online.rankListAndPlayers": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar-SA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "الترتيب وكل اللاعبين"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Žebříček a všichni hráči"
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rangliste og alle spillere"
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rangliste und alle Spieler"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Κατάταξη και όλοι οι παίκτες"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rank list and all players"
-          }
-        },
-        "en-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rank list and all players"
-          }
-        },
-        "en-US": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rank list and all players"
-          }
-        },
-        "es-ES": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clasificación y todos los jugadores"
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ranking ja kaikki pelaajat"
-          }
-        },
-        "fr-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Classement et tous les joueurs"
-          }
-        },
-        "fr-FR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Classement et tous les joueurs"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "הדירוג וכל השחקנים"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "रैंक सूची और सभी खिलाड़ी"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ranglista és minden játékos"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Peringkat dan semua pemain"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Classifica e tutti i giocatori"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ランキングと全プレイヤー"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "순위와 모든 플레이어"
-          }
-        },
-        "ms": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kedudukan dan semua pemain"
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ranglijst en alle spelers"
-          }
-        },
-        "no": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rangliste og alle spillere"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ranking i wszyscy gracze"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ranking e todos os jogadores"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Clasament și toți jucătorii"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Рейтинг-лист и все игроки"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rankinglista och alla spelare"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "อันดับและผู้เล่นทั้งหมด"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sıralama ve tüm oyuncular"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bảng xếp hạng và tất cả người chơi"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "排行榜与全部棋手"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "排行榜與全部棋手"
-          }
-        }
-      }
-    },
     "online.ratingChange": {
       "extractionState": "manual",
       "localizations": {
@@ -54960,6 +56142,400 @@
           "stringUnit": {
             "state": "translated",
             "value": "認輸"
+          }
+        }
+      }
+    },
+    "online.searchAll": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "البحث بين %lld لاعبًا آخر"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prohledat dalších %lld hráčů"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Søg blandt %lld spillere mere"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld weitere Spieler durchsuchen"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αναζήτηση σε ακόμη %lld παίκτες"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search %lld more players"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search %lld more players"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search %lld more players"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar entre %lld jugadores más"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hae vielä %lld pelaajan joukosta"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chercher parmi %lld autres joueurs"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chercher parmi %lld autres joueurs"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "חיפוש בעוד %lld שחקנים"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld और खिलाड़ियों में खोजें"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keresés további %lld játékos között"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cari di antara %lld pemain lagi"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerca tra altri %lld giocatori"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "さらに %lld 人から検索"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld명 더 검색"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cari dalam %lld pemain lagi"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog %lld spelers doorzoeken"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Søk blant %lld spillere til"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Przeszukaj jeszcze %lld graczy"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar entre mais %lld jogadores"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caută printre încă %lld jucători"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Искать ещё среди %lld игроков"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sök bland %lld spelare till"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ค้นหาในผู้เล่นอีก %lld คน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld oyuncu daha ara"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tìm thêm trong %lld người chơi"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "再搜索 %lld 位玩家"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "再搜尋 %lld 位玩家"
+          }
+        }
+      }
+    },
+    "online.searchPlayers": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "البحث بالاسم المستعار"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hledat podle přezdívky"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Søg på kaldenavn"
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach Spitznamen suchen"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αναζήτηση με ψευδώνυμο"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search by nickname"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search by nickname"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search by nickname"
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar por apodo"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hae nimimerkillä"
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechercher par pseudo"
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechercher par pseudo"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "חיפוש לפי כינוי"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "उपनाम से खोजें"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keresés becenév alapján"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cari dengan nama panggilan"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerca per nickname"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ニックネームで検索"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "닉네임으로 검색"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cari mengikut nama samaran"
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoeken op bijnaam"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Søk etter kallenavn"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Szukaj po pseudonimie"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar por apelido"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caută după poreclă"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поиск по нику"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sök på smeknamn"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ค้นหาด้วยชื่อเล่น"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Takma ada göre ara"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tìm theo biệt danh"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "按昵称搜索"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "依暱稱搜尋"
           }
         }
       }

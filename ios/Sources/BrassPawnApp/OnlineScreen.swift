@@ -23,7 +23,8 @@ struct OnlineScreen: View {
     /// Left by the App Clip, if somebody arrived here from a link. Read
     /// once and taken away, so a declined invitation is not offered again.
     @State private var invitation: Invitation?
-    @State private var showsPlayers = false
+    /// The rank list, the players or the friends, when one is open.
+    @State private var people: PeopleScreen.Kind?
 
     /// Drives the clock display. The clock itself works from timestamps, so
     /// this only decides how often the numbers are redrawn — not how they are
@@ -60,8 +61,8 @@ struct OnlineScreen: View {
             #endif
         }
         .task(id: timeControl) { await app.boards.refreshLooking() }
-        .appCover(isPresented: $showsPlayers) {
-            PlayersScreen(clock: timeControl) { player, control in invite(player, on: control) }
+        .appCover(item: $people) { kind in
+            PeopleScreen(kind: kind, clock: timeControl) { player, control in invite(player, on: control) }
         }
         .onDisappear {
             matchmaker.cancelSearch()
@@ -191,11 +192,18 @@ struct OnlineScreen: View {
                         }
                     }
                 }
-                Button { showsPlayers = true } label: {
-                    Text(L.t("online.rankListAndPlayers", "Rank list and all players"))
-                        .frame(maxWidth: .infinity)
+                // Three lists, three ways in: each is its own screen.
+                HStack(spacing: 8) {
+                    ForEach([PeopleScreen.Kind.ranks, .players, .friends]) { kind in
+                        Button { people = kind } label: {
+                            Text(kind.title)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.8)
+                                .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(PillButtonStyle(emphasis: .ghost, usesBodySize: true))
+                    }
                 }
-                .buttonStyle(PillButtonStyle(emphasis: .ghost))
             }
         }
     }
@@ -293,7 +301,13 @@ struct OnlineScreen: View {
             app.boards.fillWithSamples()
         case .players:
             app.boards.fillWithSamples()
-            showsPlayers = true
+            people = .ranks
+        case .playersAll:
+            app.boards.fillWithSamples()
+            people = .players
+        case .friends:
+            app.boards.fillWithSamples()
+            people = .friends
         case .onlineRematch:
             guard matchmaker.session == nil else { return }
             matchmaker.startLoopbackMatch(timeControl: timeControl,
@@ -627,7 +641,11 @@ struct OnlineScreen: View {
         let theirs = known?.theirs ?? session.opponentAsTheySaid
         guard let (rated, record) = session.settle(mine, against: theirs) else { return }
         settled = rated
-        app.recordOnline(record, result: rated, at: control, against: session.opponent?.playerID)
+        // The opponent's new rating, as their own device works it out from the
+        // same two records — for the lists, until Game Center has theirs.
+        let theirsAfter = theirs.after(1 - rated.score, against: mine)
+        app.recordOnline(record, result: rated, at: control, against: session.opponent?.playerID,
+                         opponentAfter: theirsAfter)
         scoring = .rated(delta: rated.ratingDelta, rating: record.rating)
     }
 

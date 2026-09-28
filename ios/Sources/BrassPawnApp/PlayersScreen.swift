@@ -1,34 +1,41 @@
 import ChessTraining
 import SwiftUI
 
-/// Everybody who plays Brass Pawn online, by their Game Center nickname: the
-/// rank list for a clock, and who has been about this week and who has not —
-/// each with an invitation a tap away, so a game with somebody particular is
-/// not a link sent through Messages and a wait.
-struct PlayersScreen: View {
+/// The people to play online, three ways, each a screen of its own from the
+/// lobby: the rank list for a clock, everybody who plays, and this player's
+/// Game Center friends — a friend is a player too, and is in both. Each list
+/// is read a page at a time as it is scrolled, drawn only as far as it is on
+/// screen, and searched by nickname; each row has an invitation a tap away.
+struct PeopleScreen: View {
+    enum Kind: String, Identifiable {
+        case ranks, players, friends
+        var id: String { rawValue }
+
+        var title: String {
+            switch self {
+            case .ranks: L.t("online.rankList", "Rank list")
+            case .players: L.t("online.players", "Players")
+            case .friends: L.t("online.friends", "Friends")
+            }
+        }
+    }
+
     @Environment(AppModel.self) private var app
     @Environment(\.dismiss) private var dismiss
+    let kind: Kind
     @State var clock: TimeControl
-    @State private var list: Shown = .ranks
+    @State private var query = ""
     /// Invite a player to a game on a clock. The screen goes, and the lobby
     /// shows the invitation going out.
     let onInvite: (BoardPlayer, TimeControl) -> Void
-
-    enum Shown: Hashable { case ranks, players }
 
     private var boards: OnlineBoards { app.boards }
 
     var body: some View {
         VStack(spacing: 0) {
-            BrassNavigationHeader(title: L.t("online.players", "Players"),
-                                  subtitle: L.t("online.gameCenter", "Game Center")) { dismiss() }
+            BrassNavigationHeader(title: kind.title, subtitle: L.t("online.gameCenter", "Game Center")) { dismiss() }
             ScrollView {
-                VStack(alignment: .leading, spacing: 12) {
-                    BrassSegmentedPicker(L.t("online.players", "Players"), selection: $list,
-                                         options: [.ranks, .players]) { option in
-                        Text(option == .ranks ? L.t("online.rankList", "Rank list") : L.t("online.players", "Players"))
-                    }
-
+                LazyVStack(alignment: .leading, spacing: 12) {
                     Card {
                         Text(L.t("online.clock", "Clock")).appFont(.caption).textCase(.uppercase)
                             .foregroundStyle(Theatre.ivoryDim)
@@ -39,6 +46,20 @@ struct PlayersScreen: View {
                         LookingNow(count: boards.lookingNow[clock], control: clock)
                     }
 
+                    if kind == .friends {
+                        Button { boards.askForAFriend() } label: {
+                            Label {
+                                Text(L.t("online.addFriend", "Add a friend"))
+                            } icon: {
+                                BrassIcon("person.badge.plus", size: 17)
+                            }
+                            .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
+                    }
+
+                    BrassSearchField(placeholder: L.t("online.searchPlayers", "Search by nickname"), text: $query)
+
                     if !boards.hasLoaded && boards.isLoading {
                         HStack(spacing: 9) {
                             BrassActivityIndicator(size: 15)
@@ -47,13 +68,17 @@ struct PlayersScreen: View {
                         }
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 20)
-                    } else if list == .ranks {
-                        ranks
                     } else {
-                        players
+                        switch kind {
+                        case .ranks: ranks
+                        case .players: players
+                        case .friends: friends
+                        }
                     }
 
-                    Text(L.t("online.friendlyNote", "Invitations and rematches are friendly games, and only one game a day against the same opponent is rated: a place on the list is won against whoever the search finds."))
+                    Text(kind == .friends
+                         ? L.t("online.friendsNote", "Friend requests go through Game Center: it writes a message for you to send, and once it is accepted the two of you are friends here too.")
+                         : L.t("online.friendlyNote", "Invitations and rematches are friendly games, and only one game a day against the same opponent is rated: a place on the list is won against whoever the search finds."))
                         .appFont(.caption2)
                         .foregroundStyle(Theatre.ivoryFaint)
                         .fixedSize(horizontal: false, vertical: true)
@@ -65,7 +90,6 @@ struct PlayersScreen: View {
                         .foregroundStyle(Theatre.ivoryFaint)
                         .fixedSize(horizontal: false, vertical: true)
                         .padding(.horizontal, 4)
-                        .padding(.top, 6)
                 }
                 .padding(12)
                 .padding(.bottom, 30)
@@ -76,6 +100,7 @@ struct PlayersScreen: View {
         }
         .background(Theatre.ink.ignoresSafeArea())
         .task { if !boards.hasLoaded { await boards.refresh() } }
+        .task { if kind == .friends { await boards.refreshFriends(asking: true) } }
         // Who is on screen now: asked on arrival and every minute after,
         // for as long as this is open.
         .task {
@@ -87,12 +112,35 @@ struct PlayersScreen: View {
         .task(id: clock) { await boards.refreshLooking() }
     }
 
+    // MARK: - Searching
+
+    private func matches(_ player: BoardPlayer) -> Bool {
+        let wanted = query.trimmingCharacters(in: .whitespaces)
+        return wanted.isEmpty || player.alias.localizedStandardContains(wanted)
+    }
+
+    /// Game Center cannot look a nickname up, so a search reads the lists:
+    /// what has been read is searched as it is typed, and this reads the rest.
+    @ViewBuilder
+    private func searchFurther(_ clocks: [TimeControl]) -> some View {
+        let unread = clocks.map { (boards.totals[$0] ?? 0) - (boards.ranks[$0]?.count ?? 0) }.reduce(0, +)
+        if !query.isEmpty, clocks.contains(where: { boards.hasMore(on: $0) }) {
+            Button {
+                Task { for control in clocks { await boards.loadEverything(on: control) } }
+            } label: {
+                Text(L.t("online.searchAll", "Search %lld more players", unread))
+                    .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(PillButtonStyle(emphasis: .ghost, usesBodySize: true))
+        }
+    }
+
     // MARK: - The rank list
 
     @ViewBuilder
     private var ranks: some View {
-        let entries = boards.ranks[clock] ?? []
-        if let me = boards.mine[clock], let rank = me.rank {
+        let entries = (boards.ranks[clock] ?? []).filter(matches)
+        if query.isEmpty, let me = boards.mine[clock], let rank = me.rank {
             Card {
                 HStack(alignment: .firstTextBaseline) {
                     VStack(alignment: .leading, spacing: 3) {
@@ -111,56 +159,77 @@ struct PlayersScreen: View {
             }
         }
         if entries.isEmpty {
-            empty(L.t("online.nobodyRanked", "Nobody has a rating on this clock yet. The first game played on it starts the list."))
+            empty(query.isEmpty
+                  ? L.t("online.nobodyRanked", "Nobody has a rating on this clock yet. The first game played on it starts the list.")
+                  : L.t("online.noMatch", "Nobody by that nickname among the players read so far."))
         } else {
-            Panel(padding: 6) {
-                ForEach(entries) { player in
-                    PlayerRow(player: player, showsRank: true, invite: invite(player))
-                    if player.id != entries.last?.id { Rule() }
-                }
+            rows(entries, showsRank: true) {
+                if query.isEmpty { Task { await boards.loadMore(on: clock) } }
             }
         }
+        searchFurther([clock])
     }
 
-    // MARK: - Active and not
+    // MARK: - Everybody, and the friends
 
     @ViewBuilder
     private var players: some View {
-        let online = boards.onlineNow()
-        let active = boards.active()
-        let inactive = boards.inactive()
+        let online = boards.onlineNow().filter(matches)
+        let active = boards.active().filter(matches)
+        let inactive = boards.inactive().filter(matches)
         if online.isEmpty && active.isEmpty && inactive.isEmpty {
-            empty(L.t("online.nobodyYet", "Nobody else has played online yet. Invite somebody with a link from the lobby."))
+            empty(query.isEmpty
+                  ? L.t("online.nobodyYet", "Nobody else has played online yet. Invite somebody with a link from the lobby.")
+                  : L.t("online.noMatch", "Nobody by that nickname among the players read so far."))
         }
-        if !online.isEmpty {
-            Slug(text: L.t("online.presence.online", "Online now") + " · \(online.count)")
-                .padding(.horizontal, 4)
-            Panel(padding: 6) {
-                ForEach(online) { player in
-                    PlayerRow(player: player, showsRank: false, invite: invite(player))
-                    if player.id != online.last?.id { Rule() }
-                }
+        section(L.t("online.presence.online", "Online now"), online)
+        section(L.t("online.activeThisWeek", "Active this week"), active)
+        section(L.t("online.notSeenThisWeek", "Not seen this week"), inactive) {
+            // The end of everybody read so far: read the next page of every clock.
+            if query.isEmpty {
+                Task { for control in TimeControl.allCases { await boards.loadMore(on: control) } }
             }
         }
-        if !active.isEmpty {
-            Slug(text: L.t("online.activeThisWeek", "Active this week") + " · \(active.count)")
-                .padding(.horizontal, 4)
-                .padding(.top, online.isEmpty ? 0 : 6)
-            Panel(padding: 6) {
-                ForEach(active) { player in
-                    PlayerRow(player: player, showsRank: false, invite: invite(player))
-                    if player.id != active.last?.id { Rule() }
-                }
+        searchFurther(Array(TimeControl.allCases))
+    }
+
+    @ViewBuilder
+    private var friends: some View {
+        if boards.friendsAccess == .denied {
+            empty(L.t("online.friendsDenied", "Brass Pawn may not see your Game Center friends. Settings → Game Center → Friends lets it."))
+        } else {
+            let all = boards.friends.filter(matches)
+            let online = all.filter { boards.presence[$0.id] != nil }
+            let rest = all.filter { boards.presence[$0.id] == nil }
+            if all.isEmpty {
+                empty(query.isEmpty
+                      ? L.t("online.friendsEmpty", "No Game Center friends play Brass Pawn yet.")
+                      : L.t("online.noMatch", "Nobody by that nickname among the players read so far."))
             }
+            section(L.t("online.presence.online", "Online now"), online)
+            section(L.t("online.friends", "Friends"), rest)
         }
-        if !inactive.isEmpty {
-            Slug(text: L.t("online.notSeenThisWeek", "Not seen this week") + " · \(inactive.count)")
+    }
+
+    @ViewBuilder
+    private func section(_ title: String, _ list: [BoardPlayer], atEnd: (() -> Void)? = nil) -> some View {
+        if !list.isEmpty {
+            Slug(text: title + " · \(list.count)")
                 .padding(.horizontal, 4)
                 .padding(.top, 6)
-            Panel(padding: 6) {
-                ForEach(inactive) { player in
-                    PlayerRow(player: player, showsRank: false, invite: invite(player))
-                    if player.id != inactive.last?.id { Rule() }
+            rows(list, showsRank: false, atEnd: atEnd)
+        }
+    }
+
+    /// The rows, drawn only as they come on screen; the last one's arrival is
+    /// the moment to read the next page.
+    private func rows(_ list: [BoardPlayer], showsRank: Bool, atEnd: (() -> Void)? = nil) -> some View {
+        Panel(padding: 6) {
+            LazyVStack(spacing: 0) {
+                ForEach(list) { player in
+                    PlayerRow(player: player, showsRank: showsRank, invite: invite(player))
+                        .onAppear { if player.id == list.last?.id { atEnd?() } }
+                    if player.id != list.last?.id { Rule() }
                 }
             }
         }
@@ -204,10 +273,17 @@ struct PlayerRow: View {
             }
             avatar
             VStack(alignment: .leading, spacing: 2) {
-                Text(verbatim: player.alias)
-                    .appFont(.subheadline, weight: .semibold)
-                    .foregroundStyle(Theatre.ivory)
-                    .lineLimit(1)
+                HStack(spacing: 5) {
+                    Text(verbatim: player.alias)
+                        .appFont(.subheadline, weight: .semibold)
+                        .foregroundStyle(Theatre.ivory)
+                        .lineLimit(1)
+                    if app.boards.isFriend(player.id) {
+                        BrassIcon("person.2.fill", size: 11)
+                            .foregroundStyle(Theatre.brassHot.opacity(0.8))
+                            .accessibilityLabel(L.t("online.friend", "Friend"))
+                    }
+                }
                 HStack(spacing: 5) {
                     Circle()
                         .fill(dot)
@@ -270,12 +346,13 @@ struct PlayerRow: View {
     }
 
     /// "5 minutes ago", "yesterday", "3 weeks ago" — in the reader's language.
-    /// Bright for somebody on screen now, green for this week, faint otherwise.
+    /// Green for somebody on screen now, amber for somebody in a game, grey
+    /// for everybody else — how long ago they were seen is written beside it.
     private var dot: Color {
         switch app.boards.presence[player.id] {
-        case .looking, .online: Theatre.brassHot
-        case .playing: Theatre.good
-        case nil: player.isActive() ? Theatre.good.opacity(0.7) : Theatre.ivoryFaint.opacity(0.45)
+        case .looking, .online: Theatre.good
+        case .playing: Theatre.brassHot
+        case nil: Theatre.ivoryFaint.opacity(0.45)
         }
     }
 

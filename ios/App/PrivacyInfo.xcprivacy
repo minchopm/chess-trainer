@@ -2,19 +2,27 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<!-- Nothing is collected and nothing is tracked. Both engines run on the
-	     device and the progress file never leaves it. Two things cross a
-	     network. An online game travels device to device through Game Center:
-	     Apple carries it, we have no server in the middle and receive none of
-	     it. And opening Today downloads one static file from brasspawn.com —
-	     a GET with no identifier, cookie or cache, answered with the same file
-	     for everybody and logged nowhere — so it collects nothing and is not a
-	     tracking domain. See PRIVACY.md, which says the same in prose.
+	<!-- Nothing is tracked. Both engines run on the device and the progress
+	     file never leaves it. Three things cross a network. An online game
+	     travels device to device through Game Center, and its ratings live on
+	     Game Center's leaderboards: Apple carries both. Opening Today downloads
+	     one static file from brasspawn.com — a GET with no identifier, cookie
+	     or cache, answered with the same file for everybody and logged nowhere —
+	     so it collects nothing and is not a tracking domain.
 
-	     NSPrivacyAccessedAPITypes is deliberately empty. The app calls none of
-	     the APIs that need a declared reason: no UserDefaults (the progress is
-	     a JSON file, chosen for other reasons but with this consequence), no
-	     file timestamps — `attributesOfItem` is used once, to read a network
+	     And while the app is on screen, signed in to Game Center and showing
+	     its player online (Settings → Show when I'm online, on by default), it
+	     tells brasspawn-presence that the player is here, looking for a game
+	     or in one, with Game Center's identity signature. That is collected:
+	     the Game Center team player ID, kept only as a one-way hash (a User
+	     ID), and what the player is doing with its clock (Gameplay Content,
+	     multiplayer matching). Linked to that ID, for app functionality only,
+	     never for tracking, and gone five minutes after the player leaves.
+	     See PRIVACY.md, which says the same in prose.
+
+	     UserDefaults is read and written by ReviewManager, for this app's own
+	     record of when it last asked for an App Store rating: reason CA92.1.
+	     No file timestamps — `attributesOfItem` is used once, to read a network
 	     file's size — no disk space, no boot time, no active keyboard. An
 	     inaccurate declaration would be worse than none; if a future change
 	     reaches for one of those, its reason belongs here. -->
@@ -23,8 +31,42 @@
 	<key>NSPrivacyTrackingDomains</key>
 	<array/>
 	<key>NSPrivacyCollectedDataTypes</key>
-	<array/>
+	<array>
+		<dict>
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypeUserID</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<true/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+			</array>
+		</dict>
+		<dict>
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypeGameplayContent</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<true/>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+			</array>
+		</dict>
+	</array>
 	<key>NSPrivacyAccessedAPITypes</key>
-	<array/>
+	<array>
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>CA92.1</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

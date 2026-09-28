@@ -36,6 +36,11 @@ that is how the app's rank list shows who each player is, how its lists of
 active and inactive players are made, and what lets another player invite you
 to a game. The leaderboards are Apple's.
 
+If you allow it — Game Center asks the first time you open Friends — the app
+reads your Game Center friends, to show the ones who play and let you invite
+them. They are read on the device and sent nowhere. A friend request is written
+and sent by Game Center itself.
+
 ## Who is online
 
 Game Center can say who played this week, but not who has the app open now. So
