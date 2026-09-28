@@ -53,6 +53,13 @@ struct PlayersScreen: View {
                         players
                     }
 
+                    Text(L.t("online.friendlyNote", "Invitations and rematches are friendly games, and only one game a day against the same opponent is rated: a place on the list is won against whoever the search finds."))
+                        .appFont(.caption2)
+                        .foregroundStyle(Theatre.ivoryFaint)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(.horizontal, 4)
+                        .padding(.top, 6)
+
                     Text(L.t("online.playersNote", "Nicknames and ratings are Game Center's, as each player lets them be shown. Active means seen in the last seven days: Game Center cannot say who has the app open this minute."))
                         .appFont(.caption2)
                         .foregroundStyle(Theatre.ivoryFaint)

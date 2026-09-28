@@ -71,7 +71,9 @@ click from the main menu.
   leaderboards' dates; **Invite** beside a player sends a Game Center
   invitation for a game on that clock. When a game ends, **Play again** asks
   the same opponent for another, with the colours swapped, without leaving the
-  match.
+  match. Only games found by the open search change the rating: games from an
+  invitation and rematches are friendly, and only one game a day against the
+  same opponent is rated, so two accounts of one person cannot climb the list.
 - **Today** is the TODAY plate on the main menu. A story opens on its key move;
   **Replay** steps through the game and **Try it yourself** continues it on the
   free board. A game's page on brasspawn.com opens the same game in the app,

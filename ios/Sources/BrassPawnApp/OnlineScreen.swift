@@ -13,6 +13,9 @@ struct OnlineScreen: View {
     private var matchmaker: GameCenterMatchmaker { app.matchmaker }
     @State private var timeControl = TimeControl.five
     @State private var settled: MatchResult?
+    /// Whether the game on the board counts for the rating, decided once as
+    /// it begins — see `decideRating`.
+    @State private var ratingCall: RatingCall?
     /// Left by the App Clip, if somebody arrived here from a link. Read
     /// once and taken away, so a declined invitation is not offered again.
     @State private var invitation: Invitation?
@@ -370,9 +373,9 @@ struct OnlineScreen: View {
         .appCover(isPresented: completionIsPresented(session)) {
             if case .finished(let result) = session.phase {
                 CompletionOverlay(
-                    result: completion(for: settled ?? result, at: session.timeControl),
+                    result: completion(for: settled ?? result, at: session.timeControl, unrated: unratedReason(session)),
                     primaryTitle: L.t("online.backToTheLobby", "Back to the lobby"),
-                    onPrimary: { matchmaker.leaveMatch(); settled = nil },
+                    onPrimary: { matchmaker.leaveMatch(); settled = nil; ratingCall = nil },
                     onRetry: nil,
                     accessory: AnyView(RematchPanel(session: session, hello: { hello(for: session) })),
                     primaryEmphasis: session.opponentLeft || session.rematchDeclined ? .solid : .ghost
@@ -387,13 +390,16 @@ struct OnlineScreen: View {
         .onChange(of: session.moves.count) { _, _ in
             SoundBoard.shared.play(.move)
         }
-        .onAppear { if isPlaying(session) { holdWhilePlaying() } }
+        .onAppear {
+            if isPlaying(session) {
+                decideRating(session)
+                holdWhilePlaying(session)
+            }
+        }
         .onChange(of: isPlaying(session)) { _, playing in
             if playing {
-                activity.hold(
-                    title: L.t("online.leaveTheGame", "Leave the game?"),
-                    reason: L.t("online.leavingAnOnlineGameLoses", "Leaving an online game loses it and costs you rating.")
-                )
+                decideRating(session)
+                holdWhilePlaying(session)
             } else {
                 activity.release()
             }
@@ -463,6 +469,9 @@ struct OnlineScreen: View {
             Text(statusText(session)).appFont(size: 22, weight: .semibold)
             Text(L.t("online.gameSummary", "%@ · %@ · you are %@", session.timeControl.label, session.timeControl.name, L.color(session.myColor)))
                 .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
+            if isPlaying(session), let reason = unratedReason(session) {
+                Text(reason.text).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
+            }
 
             // The offer itself is a modal, not a row in this card — see the
             // overlay on `game`. What stays here is the half that is only news:
@@ -502,11 +511,36 @@ struct OnlineScreen: View {
         )
     }
 
-    private func holdWhilePlaying() {
+    private func holdWhilePlaying(_ session: MatchSession) {
         activity.hold(
             title: L.t("online.leaveTheGame", "Leave the game?"),
-            reason: L.t("online.leavingAnOnlineGameLoses", "Leaving an online game loses it and costs you rating.")
+            reason: unratedReason(session) == nil
+                ? L.t("online.leavingAnOnlineGameLoses", "Leaving an online game loses it and costs you rating.")
+                : L.t("online.leavingAFriendlyGame", "Leaving loses the game, but this one is not rated.")
         )
+    }
+
+    /// Why the game on the board does not count, if it does not. The match
+    /// knows about invitations and rematches; the app remembers whom this
+    /// player has had a rated game against today.
+    private func unratedReason(_ session: MatchSession) -> UnratedReason? {
+        if let call = ratingCall, call.session == ObjectIdentifier(session), call.game == session.gameNumber {
+            return call.reason
+        }
+        if let reason = session.unratedByMatch { return reason }
+        if let opponent = session.opponent?.playerID, !app.progress.canRate(against: opponent) {
+            return .sameOpponentToday
+        }
+        return nil
+    }
+
+    /// Settled as the game begins and kept until it is scored, so the answer
+    /// cannot change halfway — a rated game is itself what makes the next one
+    /// against the same opponent unrated.
+    private func decideRating(_ session: MatchSession) {
+        let game = RatingCall(session: ObjectIdentifier(session), game: session.gameNumber, reason: nil)
+        guard ratingCall?.session != game.session || ratingCall?.game != game.game else { return }
+        ratingCall = RatingCall(session: game.session, game: game.game, reason: unratedReason(session))
     }
 
     private func isPlaying(_ session: MatchSession) -> Bool {
@@ -529,21 +563,29 @@ struct OnlineScreen: View {
     /// Apply the rating exactly once, the moment the game ends.
     private func settleIfFinished() {
         guard let session = matchmaker.session, settled == nil,
-              case .finished = session.phase else { return }
+              case .finished(let finished) = session.phase else { return }
         // The game's own clock, not the lobby's: a game that began from an
         // invitation is on whatever clock the invitation said.
         let control = session.timeControl
-        guard let result = session.settle(
-            rating: app.progress.rating(.online(minutes: control.minutes)),
-            games: app.progress.gamesPlayed(.online(minutes: control.minutes))
-        ) else { return }
+        decideRating(session)
+        let result: MatchResult
+        if unratedReason(session) != nil {
+            // A friendly: the result stands, and nobody's rating moves.
+            result = finished
+        } else {
+            guard let rated = session.settle(
+                rating: app.progress.rating(.online(minutes: control.minutes)),
+                games: app.progress.gamesPlayed(.online(minutes: control.minutes))
+            ) else { return }
+            result = rated
+            app.recordOnline(rated, at: control, against: session.opponent?.playerID)
+        }
         settled = result
-        app.recordOnline(result, at: control)
         activity.release()
         matchmaker.onMatchFinished?(result)
     }
 
-    private func completion(for result: MatchResult, at control: TimeControl) -> CompletionResult {
+    private func completion(for result: MatchResult, at control: TimeControl, unrated: UnratedReason?) -> CompletionResult {
         let verdict: CompletionResult.Verdict = switch result.outcome {
         case .win: .success
         case .draw: .partial
@@ -553,7 +595,7 @@ struct OnlineScreen: View {
             verdict: verdict,
             title: result.headline,
             detail: result.ratingDelta == 0
-                ? nil
+                ? unrated?.text
                 : L.t("online.ratingChange", "Rating %1$@ → %2$lld",
                       "\(result.ratingDelta > 0 ? "+" : "")\(result.ratingDelta)",
                       app.progress.rating(.online(minutes: control.minutes))),
@@ -625,10 +667,20 @@ private struct RematchPanel: View {
                 Text(L.t("online.rematchDetail", "The same clock, colours swapped: you would play %@.", nextColour))
                     .appFont(.footnote)
                     .foregroundStyle(Theatre.ivoryDim)
+                Text(UnratedReason.rematch.text)
+                    .appFont(.footnote)
+                    .foregroundStyle(Theatre.ivoryDim)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .animation(.easeOut(duration: 0.2), value: session.rematchOffered)
         .animation(.easeOut(duration: 0.2), value: session.rematchOfferSent)
     }
+}
+
+/// The rating decided for one game of one match.
+private struct RatingCall {
+    let session: ObjectIdentifier
+    let game: Int
+    let reason: UnratedReason?
 }

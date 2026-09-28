@@ -99,6 +99,10 @@ public final class GameCenterMatchmaker: NSObject {
     public var onInviteAccepted: (() -> Void)?
     /// Who is being invited, while an invitation is out.
     public private(set) var invitee: String?
+    /// Whether the search under way is the open one, among everybody on the
+    /// clock, rather than an invitation — which decides whether its games
+    /// can be rated (`MatchSession.openPool`).
+    private var openPool = true
 
     public override init() { super.init() }
 
@@ -171,6 +175,7 @@ public final class GameCenterMatchmaker: NSObject {
         self.timeControl = timeControl
         localRating = rating
         localGames = games
+        openPool = invitation == nil
 
         let request = GKMatchRequest()
         request.minPlayers = 2
@@ -228,6 +233,7 @@ public final class GameCenterMatchmaker: NSObject {
         if case .searching = state { cancelSearch() }
         self.timeControl = timeControl
         if let lookup = ratingLookup { (localRating, localGames) = lookup(timeControl) }
+        openPool = false
         let request = GKMatchRequest()
         request.minPlayers = 2
         request.maxPlayers = 2
@@ -267,6 +273,7 @@ public final class GameCenterMatchmaker: NSObject {
         let control = TimeControl.fromPlayerGroup(invite.playerGroup) ?? .five
         timeControl = control
         if let lookup = ratingLookup { (localRating, localGames) = lookup(control) }
+        openPool = false
         state = .searching(control)
         status = L.t("online.joining", "Joining %@…", invite.sender.alias)
         onInviteAccepted?()
@@ -420,7 +427,8 @@ public final class GameCenterMatchmaker: NSObject {
             transport: self,
             me: .init(playerID: localPlayerID, name: localName, rating: localRating, games: localGames),
             isHost: isHost,
-            timeControl: timeControl
+            timeControl: timeControl,
+            openPool: openPool
         )
         self.session = session
         state = .connected

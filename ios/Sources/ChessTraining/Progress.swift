@@ -198,6 +198,11 @@ public struct TrainingProgress: Codable, Sendable {
     public var onlineWins = 0
     public var onlineLosses = 0
     public var onlineDraws = 0
+    /// When a rated game was last played against each opponent, by Game
+    /// Center player ID. Only one game a day against the same person counts:
+    /// otherwise two accounts of one's own, playing each other, would climb
+    /// the rank list.
+    public var ratedOpponents: [String: Date] = [:]
     /// How far each recording has been watched, keyed by the game's id.
     public var watched: [String: WatchMark] = [:]
     /// Recordings kept aside, keyed by the game's id.
@@ -214,7 +219,7 @@ public struct TrainingProgress: Codable, Sendable {
     private enum CodingKeys: String, CodingKey {
         case pools, cards, themes, history, games, rushRecords, eloGuesses
         case dailyUsage, appearance, watched, favourites
-        case onlineWins, onlineLosses, onlineDraws
+        case onlineWins, onlineLosses, onlineDraws, ratedOpponents
         case currentStreak, bestStreak, lastActiveDay
         case ratings, onlineRating
     }
@@ -235,6 +240,7 @@ public struct TrainingProgress: Codable, Sendable {
         try container.encode(onlineWins, forKey: .onlineWins)
         try container.encode(onlineLosses, forKey: .onlineLosses)
         try container.encode(onlineDraws, forKey: .onlineDraws)
+        try container.encode(ratedOpponents, forKey: .ratedOpponents)
         try container.encode(currentStreak, forKey: .currentStreak)
         try container.encode(bestStreak, forKey: .bestStreak)
         try container.encodeIfPresent(lastActiveDay, forKey: .lastActiveDay)
@@ -263,6 +269,7 @@ public struct TrainingProgress: Codable, Sendable {
         onlineWins = try container.decodeIfPresent(Int.self, forKey: .onlineWins) ?? 0
         onlineLosses = try container.decodeIfPresent(Int.self, forKey: .onlineLosses) ?? 0
         onlineDraws = try container.decodeIfPresent(Int.self, forKey: .onlineDraws) ?? 0
+        ratedOpponents = try container.decodeIfPresent([String: Date].self, forKey: .ratedOpponents) ?? [:]
         currentStreak = try container.decodeIfPresent(Int.self, forKey: .currentStreak) ?? 0
         bestStreak = try container.decodeIfPresent(Int.self, forKey: .bestStreak) ?? 0
         lastActiveDay = try container.decodeIfPresent(Date.self, forKey: .lastActiveDay)
@@ -333,6 +340,24 @@ public struct TrainingProgress: Codable, Sendable {
     /// The clock is the pool. Somebody who is 1700 at fifteen minutes and 1300
     /// at three is not 1500 at either, and the two only ever meet opponents
     /// from their own pool — matchmaking has always kept them apart.
+    /// How long a rated game against someone keeps the next one unrated.
+    public static let ratedOpponentWindow: TimeInterval = 24 * 3600
+
+    /// Whether a game against this opponent can be rated now: not if a rated
+    /// one was played against them in the last day.
+    public func canRate(against opponent: String, at now: Date = Date()) -> Bool {
+        guard !opponent.isEmpty, let last = ratedOpponents[opponent] else { return true }
+        return now.timeIntervalSince(last) >= Self.ratedOpponentWindow
+    }
+
+    /// A rated game against this opponent, remembered for a day. Anything
+    /// older is dropped, so the record never grows past a day's opponents.
+    public mutating func noteRated(against opponent: String, at now: Date = Date()) {
+        guard !opponent.isEmpty else { return }
+        ratedOpponents = ratedOpponents.filter { now.timeIntervalSince($0.value) < Self.ratedOpponentWindow }
+        ratedOpponents[opponent] = now
+    }
+
     public mutating func record(online result: MatchResult, at control: TimeControl) {
         let pool = RatedPool.online(minutes: control.minutes)
         var held = pools[pool.id] ?? PoolRating(rating: starting(pool))

@@ -77,9 +77,14 @@ public final class AppModel {
         await boards.refresh()
     }
 
-    /// An online game has been scored: its clock's list gets the new rating.
-    func recordOnline(_ result: MatchResult, at control: TimeControl) {
-        update { $0.record(online: result, at: control) }
+    /// An online game has been scored: its clock's list gets the new rating,
+    /// and the opponent is remembered, so the next game against them today is
+    /// a friendly.
+    func recordOnline(_ result: MatchResult, at control: TimeControl, against opponent: String?) {
+        update {
+            $0.record(online: result, at: control)
+            if let opponent { $0.noteRated(against: opponent) }
+        }
         let rating = progress.rating(.online(minutes: control.minutes))
         Task { await boards.submit(rating: rating, for: control) }
     }

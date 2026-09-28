@@ -45311,6 +45311,203 @@
         }
       }
     },
+    "online.friendlyNote": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مباريات الدعوات والثأر ودّية، ولا تُحتسب في التصنيف إلا مباراة واحدة في اليوم ضد الخصم نفسه: المركز في القائمة يُكسب ضد من يجده البحث."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pozvánky a odvety jsou přátelské partie a proti stejnému soupeři se do ratingu počítá jen jedna partie denně: místo v žebříčku se vybojuje proti tomu, koho najde vyhledávání."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitationer og revancher er venskabspartier, og kun ét parti om dagen mod den samme modstander giver rating: en plads på listen vindes mod dem, søgningen finder."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einladungen und Revanchen sind Freundschaftspartien, und gegen denselben Gegner wird nur eine Partie pro Tag gewertet: Einen Platz auf der Liste gewinnt man gegen die, die die Suche findet."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Οι προσκλήσεις και οι ρεβάνς είναι φιλικές παρτίδες, και μόνο μία παρτίδα τη μέρα με τον ίδιο αντίπαλο βαθμολογείται: μια θέση στη λίστα κερδίζεται απέναντι σε όποιον βρει η αναζήτηση."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitations and rematches are friendly games, and only one game a day against the same opponent is rated: a place on the list is won against whoever the search finds."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitations and rematches are friendly games, and only one game a day against the same opponent is rated: a place on the list is won against whoever the search finds."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitations and rematches are friendly games, and only one game a day against the same opponent is rated: a place on the list is won against whoever the search finds."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las invitaciones y las revanchas son partidas amistosas, y solo cuenta para la valoración una partida al día contra el mismo rival: un puesto en la lista se gana contra quien encuentre la búsqueda."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kutsut ja uusintapelit ovat ystävyysotteluita, ja saman vastustajan kanssa ratingiin lasketaan vain yksi peli päivässä: paikka listalla voitetaan niitä vastaan, jotka haku löytää."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les invitations et les revanches sont des parties amicales, et une seule partie par jour contre le même adversaire est classée : une place au classement se gagne contre les adversaires que la recherche trouve."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les invitations et les revanches sont des parties amicales, et une seule partie par jour contre le même adversaire est classée : une place au classement se gagne contre les adversaires que la recherche trouve."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "הזמנות ומשחקים חוזרים הם משחקי ידידות, ורק משחק אחד ביום מול אותו יריב מדורג: מקום ברשימה נכבש מול מי שהחיפוש מוצא."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "निमंत्रण और दोबारा खेली गई बाज़ियाँ दोस्ताना होती हैं, और एक ही प्रतिद्वंद्वी के ख़िलाफ़ दिन में सिर्फ़ एक बाज़ी की रेटिंग होती है: सूची में जगह उनके ख़िलाफ़ जीती जाती है जिन्हें खोज ढूँढ़ती है।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A meghívások és a visszavágók barátságos játszmák, és ugyanazzal az ellenféllel naponta csak egy játszma értékelt: a listán a helyet azok ellen lehet kivívni, akiket a keresés talál."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Undangan dan pertandingan ulang adalah partai persahabatan, dan hanya satu partai sehari melawan lawan yang sama yang dihitung ratingnya: tempat di daftar diraih melawan siapa pun yang ditemukan pencarian."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inviti e rivincite sono amichevoli, e contro lo stesso avversario vale punti una sola partita al giorno: un posto in classifica si conquista contro chi trova la ricerca."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "招待と再戦は親善対局で、同じ相手とのレーティング対局は1日1局までです。リストの順位は、検索で見つかった相手との対局で勝ち取るものです。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "초대와 재대국은 친선 대국이며, 같은 상대와는 하루에 한 판만 레이팅에 반영됩니다. 목록의 순위는 검색으로 만난 상대에게 이겨서 얻는 것입니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jemputan dan perlawanan semula ialah perlawanan persahabatan, dan hanya satu permainan sehari menentang lawan yang sama diberi rating: tempat dalam senarai dimenangi menentang sesiapa yang ditemui carian."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uitnodigingen en revanches zijn vriendschappelijke partijen, en tegen dezelfde tegenstander telt maar één partij per dag voor de rating: een plek op de lijst win je tegen wie de zoekopdracht vindt."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitasjoner og revansjer er vennskapspartier, og bare ett parti om dagen mot samme motstander gir rating: en plass på listen vinnes mot dem søket finner."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zaproszenia i rewanże to partie towarzyskie, a z tym samym przeciwnikiem do rankingu liczy się tylko jedna partia dziennie: miejsce na liście zdobywa się w grze z tymi, których znajdzie wyszukiwanie."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Convites e revanches são partidas amistosas, e só uma partida por dia contra o mesmo adversário vale rating: um lugar na lista se conquista contra quem a busca encontrar."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitațiile și revanșele sunt partide amicale, iar contra aceluiași adversar contează pentru rating o singură partidă pe zi: un loc pe listă se câștigă contra celor pe care îi găsește căutarea."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Приглашения и реванши — товарищеские партии, а с одним и тем же соперником на рейтинг влияет только одна партия в день: место в списке завоёвывается в играх с теми, кого находит поиск."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inbjudningar och revanscher är vänskapspartier, och bara ett parti om dagen mot samma motståndare ger rating: en plats på listan vinns mot dem som sökningen hittar."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "คำเชิญและการแข่งใหม่เป็นเกมกระชับมิตร และคิดเรตติ้งกับคู่แข่งคนเดิมได้วันละเกมเดียว อันดับในรายชื่อต้องได้มาจากการเล่นกับคนที่การค้นหาพบ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Davetler ve rövanşlar dostluk oyunlarıdır ve aynı rakiple günde yalnızca bir oyun puana sayılır: listedeki yer, aramanın bulduğu rakiplere karşı kazanılır."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lời mời và tái đấu là ván giao hữu, và mỗi ngày chỉ một ván với cùng một đối thủ được tính hệ số: vị trí trong danh sách phải giành được trước những người mà tìm kiếm tìm thấy."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "邀请和再来一局都是友谊赛，与同一对手每天只有一局计等级分：榜上的名次要在与搜索匹配到的对手的对局中赢得。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "邀請和再來一局都是友誼賽，與同一對手每天只有一局計等級分：榜上的名次要在與搜尋配對到的對手的對局中贏得。"
+          }
+        }
+      }
+    },
     "online.gameCenter": {
       "extractionState": "manual",
       "localizations": {
@@ -48065,6 +48262,203 @@
           "stringUnit": {
             "state": "translated",
             "value": "要離開這局嗎？"
+          }
+        }
+      }
+    },
+    "online.leavingAFriendlyGame": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المغادرة تعني خسارة المباراة، لكن هذه المباراة غير محتسبة في التصنيف."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Odchod znamená prohru, ale tahle partie se do ratingu nepočítá."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "At forlade partiet er at tabe det, men dette parti er uden rating."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wer die Partie verlässt, verliert sie – aber diese hier ist ohne Wertung."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η αποχώρηση σημαίνει ήττα, αλλά αυτή η παρτίδα δεν βαθμολογείται."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leaving loses the game, but this one is not rated."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leaving loses the game, but this one is not rated."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leaving loses the game, but this one is not rated."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salir supone perder la partida, pero esta no cuenta para la valoración."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Poistuminen tarkoittaa tappiota, mutta tämä peli ei vaikuta ratingiin."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitter la partie, c'est la perdre, mais celle-ci n'est pas classée."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitter la partie, c'est la perdre, mais celle-ci n'est pas classée."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "עזיבה פירושה הפסד, אבל המשחק הזה לא מדורג."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "छोड़ने का अर्थ है बाज़ी हारना, लेकिन इस बाज़ी की रेटिंग नहीं होती।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A kilépés vereséget jelent, de ez a játszma nem értékelt."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keluar berarti kalah, tetapi partai ini tanpa rating."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uscire significa perdere la partita, ma questa non vale punti."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "離れると負けになりますが、この対局はレーティング対象外です。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "나가면 패배로 처리되지만, 이 대국은 레이팅에 반영되지 않습니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keluar bermakna kalah, tetapi permainan ini tanpa rating."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verlaten betekent verliezen, maar deze partij telt niet voor de rating."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Å forlate partiet er å tape det, men dette partiet er uten rating."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wyjście oznacza przegraną, ale ta partia nie liczy się do rankingu."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sair é perder a partida, mas esta não vale rating."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Părăsirea înseamnă înfrângere, dar această partidă nu contează pentru rating."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выход означает поражение, но эта партия не влияет на рейтинг."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Att lämna partiet är att förlora det, men det här partiet är utan rating."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "การออกจากเกมถือว่าแพ้ แต่เกมนี้ไม่คิดเรตติ้ง"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çıkmak oyunu kaybetmektir, ama bu oyun puansız."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rời ván đồng nghĩa với thua, nhưng ván này không tính hệ số."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "离开等于认输，但这一局不计等级分。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "離開等於認輸，但這一局不計等級分。"
           }
         }
       }
@@ -54369,6 +54763,597 @@
           "stringUnit": {
             "state": "translated",
             "value": "登入 Game Center"
+          }
+        }
+      }
+    },
+    "online.unrated.again": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "غير محتسبة في التصنيف: تُحتسب مباراة واحدة فقط في اليوم ضد الخصم نفسه."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nezapočítává se do ratingu: proti stejnému soupeři se počítá jen jedna partie denně."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uden rating: kun ét parti om dagen mod den samme modstander tæller."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ohne Wertung: Pro Tag zählt nur eine Partie gegen denselben Gegner."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Χωρίς βαθμολόγηση: μετράει μόνο μία παρτίδα τη μέρα με τον ίδιο αντίπαλο."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not rated: only one game a day against the same opponent counts."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not rated: only one game a day against the same opponent counts."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not rated: only one game a day against the same opponent counts."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin valoración: solo cuenta una partida al día contra el mismo rival."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ei vaikuta ratingiin: saman vastustajan kanssa lasketaan vain yksi peli päivässä."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non classée : une seule partie par jour contre le même adversaire compte."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non classée : une seule partie par jour contre le même adversaire compte."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא מדורג: רק משחק אחד ביום מול אותו יריב נספר."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रेटिंग नहीं: एक ही प्रतिद्वंद्वी के ख़िलाफ़ दिन में सिर्फ़ एक बाज़ी गिनी जाती है।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nem értékelt: ugyanazzal az ellenféllel naponta csak egy játszma számít."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanpa rating: hanya satu partai sehari melawan lawan yang sama yang dihitung."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senza punteggio: conta una sola partita al giorno contro lo stesso avversario."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レーティング対象外：同じ相手との対局がレーティングに反映されるのは1日1局だけです。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "레이팅 미반영: 같은 상대와는 하루에 한 판만 반영됩니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanpa rating: hanya satu permainan sehari menentang lawan yang sama dikira."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet voor rating: tegen dezelfde tegenstander telt maar één partij per dag."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uten rating: bare ett parti om dagen mot samme motstander teller."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bez rankingu: liczy się tylko jedna partia dziennie z tym samym przeciwnikiem."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem rating: só conta uma partida por dia contra o mesmo adversário."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fără rating: contează o singură partidă pe zi contra aceluiași adversar."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Без рейтинга: с одним и тем же соперником в день учитывается только одна партия."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utan rating: bara ett parti om dagen mot samma motståndare räknas."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่คิดเรตติ้ง: คิดเรตติ้งกับคู่แข่งคนเดิมได้วันละเกมเดียว"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puansız: aynı rakiple günde yalnızca bir oyun sayılır."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không tính hệ số: mỗi ngày chỉ tính một ván với cùng một đối thủ."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不计等级分：与同一对手每天只有一局计入。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不計等級分：與同一對手每天只有一局計入。"
+          }
+        }
+      }
+    },
+    "online.unrated.invitation": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "غير محتسبة في التصنيف: مباريات الدعوات ودّية."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nezapočítává se do ratingu: partie z pozvánky jsou přátelské."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uden rating: partier fra en invitation er venskabskampe."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ohne Wertung: Partien aus einer Einladung sind Freundschaftspartien."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Χωρίς βαθμολόγηση: οι παρτίδες από πρόσκληση είναι φιλικές."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not rated: games from an invitation are friendly."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not rated: games from an invitation are friendly."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not rated: games from an invitation are friendly."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin valoración: las partidas por invitación son amistosas."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ei vaikuta ratingiin: kutsusta pelatut pelit ovat ystävyysotteluita."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non classée : les parties sur invitation sont amicales."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non classée : les parties sur invitation sont amicales."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא מדורג: משחקים מהזמנה הם משחקי ידידות."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रेटिंग नहीं: निमंत्रण से खेली गई बाज़ियाँ दोस्ताना होती हैं।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nem értékelt: a meghívásból játszott játszmák barátságosak."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanpa rating: partai dari undangan adalah partai persahabatan."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senza punteggio: le partite su invito sono amichevoli."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レーティング対象外：招待による対局は親善対局です。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "레이팅 미반영: 초대로 둔 대국은 친선 대국입니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanpa rating: permainan daripada jemputan ialah perlawanan persahabatan."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet voor rating: partijen uit een uitnodiging zijn vriendschappelijk."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uten rating: partier fra en invitasjon er vennskapspartier."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bez rankingu: partie z zaproszenia są towarzyskie."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem rating: partidas por convite são amistosas."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fără rating: partidele din invitație sunt amicale."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Без рейтинга: партии по приглашению — товарищеские."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utan rating: partier från en inbjudan är vänskapspartier."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่คิดเรตติ้ง: เกมจากคำเชิญเป็นเกมกระชับมิตร"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puansız: davetle oynanan oyunlar dostluk oyunudur."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không tính hệ số: ván từ lời mời là ván giao hữu."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不计等级分：通过邀请下的对局是友谊赛。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不計等級分：透過邀請下的對局是友誼賽。"
+          }
+        }
+      }
+    },
+    "online.unrated.rematch": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar-SA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "غير محتسبة في التصنيف: مباراة الثأر ودّية."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nezapočítává se do ratingu: odveta je přátelská partie."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uden rating: en revanche er et venskabsparti."
+          }
+        },
+        "de-DE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ohne Wertung: Eine Revanche ist eine Freundschaftspartie."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Χωρίς βαθμολόγηση: η ρεβάνς είναι φιλική παρτίδα."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not rated: a rematch is a friendly game."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not rated: a rematch is a friendly game."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not rated: a rematch is a friendly game."
+          }
+        },
+        "es-ES": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin valoración: una revancha es una partida amistosa."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ei vaikuta ratingiin: uusintapeli on ystävyysottelu."
+          }
+        },
+        "fr-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non classée : une revanche est une partie amicale."
+          }
+        },
+        "fr-FR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non classée : une revanche est une partie amicale."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "לא מדורג: משחק חוזר הוא משחק ידידות."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रेटिंग नहीं: दोबारा खेली गई बाज़ी दोस्ताना होती है।"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nem értékelt: a visszavágó barátságos játszma."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanpa rating: pertandingan ulang adalah partai persahabatan."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senza punteggio: la rivincita è un'amichevole."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レーティング対象外：再戦は親善対局です。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "레이팅 미반영: 재대국은 친선 대국입니다."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tanpa rating: perlawanan semula ialah perlawanan persahabatan."
+          }
+        },
+        "nl-NL": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet voor rating: een revanche is een vriendschappelijke partij."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uten rating: en revansj er et vennskapsparti."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bez rankingu: rewanż to partia towarzyska."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem rating: uma revanche é uma partida amistosa."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fără rating: revanșa este o partidă amicală."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Без рейтинга: реванш — товарищеская партия."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utan rating: en revansch är ett vänskapsparti."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่คิดเรตติ้ง: การแข่งใหม่เป็นเกมกระชับมิตร"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puansız: rövanş bir dostluk oyunudur."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không tính hệ số: ván tái đấu là ván giao hữu."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不计等级分：再来一局是友谊赛。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不計等級分：再來一局是友誼賽。"
           }
         }
       }

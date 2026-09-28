@@ -27,16 +27,16 @@ private final class Pair {
     let hostTransport = LoopbackTransport()
     let guestTransport = LoopbackTransport()
 
-    init(timeControl: TimeControl = .five) {
+    init(timeControl: TimeControl = .five, openPool: Bool = true) {
         host = MatchSession(
             transport: hostTransport,
             me: .init(playerID: "A", name: "Ann", rating: 1200, games: 0),
-            isHost: true, timeControl: timeControl
+            isHost: true, timeControl: timeControl, openPool: openPool
         )
         guest = MatchSession(
             transport: guestTransport,
             me: .init(playerID: "B", name: "Bo", rating: 1200, games: 0),
-            isHost: false, timeControl: timeControl
+            isHost: false, timeControl: timeControl, openPool: openPool
         )
         hostTransport.peer = guest
         guestTransport.peer = host
@@ -50,8 +50,8 @@ private final class Pair {
 }
 
 @MainActor
-private func makePair(timeControl: TimeControl = .five) -> Pair {
-    Pair(timeControl: timeControl)
+private func makePair(timeControl: TimeControl = .five, openPool: Bool = true) -> Pair {
+    Pair(timeControl: timeControl, openPool: openPool)
 }
 
 @Suite("Online match")
@@ -369,5 +369,40 @@ struct MatchTests {
         pair.begin()
         pair.guest.leave()
         #expect(pair.host.phase == .finished(MatchResult(outcome: .win, reason: .disconnected)))
+    }
+
+    // MARK: - What counts for the rating
+
+    @Test("A game from the open search counts; an invitation's and a rematch's do not")
+    func whichGamesAreRated() {
+        let open = makePair()
+        open.begin()
+        #expect(open.host.unratedByMatch == nil && open.guest.unratedByMatch == nil)
+        open.host.resign()
+        open.guest.offerRematch()
+        open.host.respondToRematch(accept: true)
+        #expect(open.host.gameNumber == 2)
+        #expect(open.host.unratedByMatch == .rematch && open.guest.unratedByMatch == .rematch)
+
+        let invited = makePair(openPool: false)
+        invited.begin()
+        #expect(invited.host.unratedByMatch == .invitation && invited.guest.unratedByMatch == .invitation)
+    }
+
+    @Test("One rated game a day against the same opponent")
+    func oneRatedGameADayPerOpponent() throws {
+        var progress = TrainingProgress()
+        let noon = Date(timeIntervalSince1970: 1_790_000_000)
+        #expect(progress.canRate(against: "B", at: noon))
+        progress.noteRated(against: "B", at: noon)
+        #expect(!progress.canRate(against: "B", at: noon.addingTimeInterval(3600)))
+        #expect(progress.canRate(against: "C", at: noon.addingTimeInterval(3600)), "somebody else still counts")
+        #expect(progress.canRate(against: "B", at: noon.addingTimeInterval(24 * 3600)))
+
+        // Kept on disk, and a day later forgotten rather than kept for ever.
+        let saved = try JSONDecoder().decode(TrainingProgress.self, from: JSONEncoder().encode(progress))
+        #expect(!saved.canRate(against: "B", at: noon.addingTimeInterval(60)))
+        progress.noteRated(against: "C", at: noon.addingTimeInterval(25 * 3600))
+        #expect(progress.ratedOpponents.keys.sorted() == ["C"])
     }
 }

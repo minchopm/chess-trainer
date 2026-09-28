@@ -47,6 +47,20 @@ public final class MatchSession {
     public private(set) var opponentLeft = false
     /// Which game of the match this is — 1, and one more for every rematch.
     public private(set) var gameNumber = 1
+    /// Whether the two were paired by the open search, among everybody on the
+    /// clock. A match from an invitation is not: two people who chose each
+    /// other could be one person with two accounts.
+    public let openPool: Bool
+
+    /// Why this game does not count for the rating, if it does not: the two
+    /// chose each other, or it is a rematch — the same two again, by choice.
+    /// A game against the same opponent twice in one day is the app's to
+    /// decide, because it is the app that remembers.
+    public var unratedByMatch: UnratedReason? {
+        if !openPool { return .invitation }
+        if gameNumber > 1 { return .rematch }
+        return nil
+    }
 
     public let timeControl: TimeControl
     public let isHost: Bool
@@ -80,12 +94,14 @@ public final class MatchSession {
         transport: MatchTransport,
         me: MatchPacket.Hello,
         isHost: Bool,
-        timeControl: TimeControl
+        timeControl: TimeControl,
+        openPool: Bool = true
     ) {
         self.transport = transport
         self.me = me
         self.isHost = isHost
         self.timeControl = timeControl
+        self.openPool = openPool
         self.clock = ChessClock(timeControl: timeControl)
     }
 

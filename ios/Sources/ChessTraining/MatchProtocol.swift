@@ -171,6 +171,24 @@ public struct MatchResult: Equatable, Sendable {
     }
 }
 
+/// Why a game played online leaves the ratings alone.
+///
+/// The rank lists are only worth anything if a place on them has to be won
+/// against whoever the search turns up. So a game two people arranged, a
+/// rematch, and a second game in a day against the same opponent are played
+/// just the same, and scored as a friendly.
+public enum UnratedReason: String, Sendable {
+    case invitation, rematch, sameOpponentToday
+
+    public var text: String {
+        switch self {
+        case .invitation: L.t("online.unrated.invitation", "Not rated: games from an invitation are friendly.")
+        case .rematch: L.t("online.unrated.rematch", "Not rated: a rematch is a friendly game.")
+        case .sameOpponentToday: L.t("online.unrated.again", "Not rated: only one game a day against the same opponent counts.")
+        }
+    }
+}
+
 /// Standard Elo, with K falling as a player's record settles.
 ///
 /// The same numbers on both devices, computed from the ratings the two sides

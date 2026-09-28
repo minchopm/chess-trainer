@@ -40,6 +40,8 @@ that is matchmaking with nobody to match, not an error. Players in the
 multiplayer lobby shows the rank list per clock (five Game Center leaderboards)
 and who has been active this week; Invite sends a Game Center invitation. After
 a game, Play again asks the same opponent for another, colours swapped.
+Invitations and rematches are friendly (unrated), and only one game a day
+against the same opponent is rated.
 
 4. EXTERNAL SERVICES
 One kind of request of our own: opening the Today screen downloads static JSON
