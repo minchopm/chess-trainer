@@ -986,1188 +986,6 @@
         }
       }
     },
-    "about.forgetOnline": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar-SA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "حذف تصنيفاتي عبر الإنترنت"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Smazat moje online ratingy"
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Slet mine onlineratings"
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Meine Online-Wertungen löschen"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Διαγραφή των διαδικτυακών βαθμολογιών μου"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete my online ratings"
-          }
-        },
-        "en-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete my online ratings"
-          }
-        },
-        "en-US": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete my online ratings"
-          }
-        },
-        "es-ES": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Borrar mis valoraciones en línea"
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Poista verkkoratingini"
-          }
-        },
-        "fr-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Supprimer mes classements en ligne"
-          }
-        },
-        "fr-FR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Supprimer mes classements en ligne"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "מחיקת הדירוגים המקוונים שלי"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "मेरी ऑनलाइन रेटिंग मिटाएँ"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Online értékszámaim törlése"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hapus rating daringku"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elimina i miei punteggi online"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "オンラインのレーティングを削除"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "내 온라인 레이팅 삭제"
-          }
-        },
-        "ms": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Padam rating dalam talian saya"
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mijn onlineratings verwijderen"
-          }
-        },
-        "no": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Slett mine nettratinger"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Usuń moje rankingi online"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Apagar meus ratings on-line"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Șterge ratingurile mele online"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Удалить мои онлайн-рейтинги"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Radera mina onlineratingar"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ลบเรตติ้งออนไลน์ของฉัน"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Çevrimiçi puanlarımı sil"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Xóa hệ số trực tuyến của tôi"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "删除我的在线等级分"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "刪除我的線上等級分"
-          }
-        }
-      }
-    },
-    "about.forgetOnlineConfirm": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar-SA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "حذف"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Smazat"
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Slet"
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Löschen"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Διαγραφή"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete"
-          }
-        },
-        "en-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete"
-          }
-        },
-        "en-US": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete"
-          }
-        },
-        "es-ES": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Borrar"
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Poista"
-          }
-        },
-        "fr-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Supprimer"
-          }
-        },
-        "fr-FR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Supprimer"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "מחיקה"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "मिटाएँ"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Törlés"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hapus"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elimina"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "削除"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "삭제"
-          }
-        },
-        "ms": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Padam"
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Verwijder"
-          }
-        },
-        "no": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Slett"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Usuń"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Apagar"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Șterge"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Удалить"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Radera"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ลบ"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sil"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Xóa"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "删除"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "刪除"
-          }
-        }
-      }
-    },
-    "about.forgetOnlineDone": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar-SA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "حُذفت التصنيفات عبر الإنترنت."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vaše online ratingy byly smazány."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dine onlineratings er slettet."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deine Online-Wertungen wurden gelöscht."
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Οι διαδικτυακές βαθμολογίες διαγράφηκαν."
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Your online ratings have been deleted."
-          }
-        },
-        "en-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Your online ratings have been deleted."
-          }
-        },
-        "en-US": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Your online ratings have been deleted."
-          }
-        },
-        "es-ES": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tus valoraciones en línea se han borrado."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Verkkoratingisi on poistettu."
-          }
-        },
-        "fr-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vos classements en ligne ont été supprimés."
-          }
-        },
-        "fr-FR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vos classements en ligne ont été supprimés."
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "הדירוגים המקוונים נמחקו."
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "आपकी ऑनलाइन रेटिंग मिटा दी गई है।"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Az online értékszámaid törölve."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rating daringmu telah dihapus."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "I tuoi punteggi online sono stati eliminati."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "オンラインのレーティングを削除しました。"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "온라인 레이팅이 삭제되었습니다."
-          }
-        },
-        "ms": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rating dalam talian anda telah dipadam."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Je onlineratings zijn verwijderd."
-          }
-        },
-        "no": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nettratingene dine er slettet."
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Twoje rankingi online zostały usunięte."
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Seus ratings on-line foram apagados."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ratingurile tale online au fost șterse."
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ваши онлайн-рейтинги удалены."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dina onlineratingar har raderats."
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ลบเรตติ้งออนไลน์ของคุณแล้ว"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Çevrimiçi puanların silindi."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hệ số trực tuyến của bạn đã được xóa."
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "你的在线等级分已删除。"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "你的線上等級分已刪除。"
-          }
-        }
-      }
-    },
-    "about.forgetOnlineFailed": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar-SA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "تعذّر الحذف الآن. حاول مجددًا عند الاتصال بالإنترنت وتسجيل الدخول إلى Game Center."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Teď je smazat nešlo. Zkuste to znovu, až budete online a přihlášeni do Game Center."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "De kunne ikke slettes lige nu. Prøv igen, når du er online og logget ind i Game Center."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sie konnten gerade nicht gelöscht werden. Versuch es noch einmal, wenn du online und bei Game Center angemeldet bist."
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Δεν ήταν δυνατή η διαγραφή τώρα. Δοκίμασε ξανά με σύνδεση στο διαδίκτυο και στο Game Center."
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "They could not be deleted just now. Try again when you are online and signed in to Game Center."
-          }
-        },
-        "en-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "They could not be deleted just now. Try again when you are online and signed in to Game Center."
-          }
-        },
-        "en-US": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "They could not be deleted just now. Try again when you are online and signed in to Game Center."
-          }
-        },
-        "es-ES": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No se han podido borrar ahora. Inténtalo de nuevo con conexión y la sesión de Game Center iniciada."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Niitä ei voitu poistaa juuri nyt. Yritä uudelleen, kun olet verkossa ja kirjautuneena Game Centeriin."
-          }
-        },
-        "fr-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Impossible de les supprimer pour l’instant. Réessayez une fois en ligne et connecté à Game Center."
-          }
-        },
-        "fr-FR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Impossible de les supprimer pour l’instant. Réessayez une fois en ligne et connecté à Game Center."
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "לא ניתן היה למחוק כרגע. אפשר לנסות שוב עם חיבור לאינטרנט ול־Game Center."
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "अभी मिटाई नहीं जा सकी। ऑनलाइन होने और Game Center में साइन इन होने पर फिर कोशिश करें।"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Most nem sikerült törölni őket. Próbáld újra, amikor online vagy és be vagy jelentkezve a Game Centerbe."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tidak bisa dihapus sekarang. Coba lagi saat kamu daring dan masuk ke Game Center."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Non è stato possibile eliminarli ora. Riprova quando sei online e con l'accesso a Game Center."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "今は削除できませんでした。オンラインで Game Center にサインインしているときにもう一度お試しください。"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "지금은 삭제할 수 없습니다. 온라인 상태에서 Game Center에 로그인한 뒤 다시 시도하세요."
-          }
-        },
-        "ms": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tidak dapat dipadam sekarang. Cuba lagi apabila anda dalam talian dan log masuk ke Game Center."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ze konden nu niet worden verwijderd. Probeer het opnieuw als je online bent en bij Game Center bent ingelogd."
-          }
-        },
-        "no": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "De kunne ikke slettes akkurat nå. Prøv igjen når du er på nett og logget inn i Game Center."
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nie udało się ich teraz usunąć. Spróbuj ponownie, gdy będziesz online i zalogowany w Game Center."
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Não foi possível apagar agora. Tente de novo quando estiver on-line e conectado ao Game Center."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nu au putut fi șterse acum. Încearcă din nou când ești online și conectat la Game Center."
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Сейчас удалить не получилось. Попробуйте снова, когда будете в сети и войдёте в Game Center."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "De kunde inte raderas just nu. Försök igen när du är online och inloggad i Game Center."
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ยังลบไม่ได้ในตอนนี้ ลองอีกครั้งเมื่อออนไลน์และลงชื่อเข้า Game Center แล้ว"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Şu anda silinemedi. Çevrimiçi olduğunda ve Game Center'a giriş yaptığında yeniden dene."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chưa thể xóa lúc này. Hãy thử lại khi bạn có mạng và đã đăng nhập Game Center."
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "暂时无法删除。请在联网并登录 Game Center 后重试。"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "暫時無法刪除。請在連網並登入 Game Center 後重試。"
-          }
-        }
-      }
-    },
-    "about.forgetOnlineMessage": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar-SA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "تُزال من الحَكَم ومن قوائم تصنيفه في كل توقيت. تبدأ المباراة المصنّفة التالية من جديد عند 1200."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Budou odstraněny u rozhodčího a z jeho žebříčků ve všech tempech. Další partie do ratingu začne znovu od 1200."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "De fjernes hos dommeren og fra dens ranglister, på hver betænkningstid. Dit næste ratingparti starter igen fra 1200."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sie werden beim Schiedsrichter und aus seinen Ranglisten entfernt, für jede Bedenkzeit. Deine nächste gewertete Partie beginnt wieder bei 1200."
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Αφαιρούνται από τον διαιτητή και τις λίστες του, σε κάθε χρόνο. Η επόμενη βαθμολογούμενη παρτίδα ξεκινά ξανά από 1200."
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "They are removed from the referee and its rank lists, on every clock. Your next rated game starts again from 1200."
-          }
-        },
-        "en-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "They are removed from the referee and its rank lists, on every clock. Your next rated game starts again from 1200."
-          }
-        },
-        "en-US": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "They are removed from the referee and its rank lists, on every clock. Your next rated game starts again from 1200."
-          }
-        },
-        "es-ES": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Se eliminan del árbitro y de sus listas, en todos los relojes. Tu próxima partida valorada empezará de nuevo en 1200."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ne poistetaan tuomarilta ja sen listoilta kaikilta ajoilta. Seuraava ratingpelisi alkaa taas lukemasta 1200."
-          }
-        },
-        "fr-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ils sont retirés de l’arbitre et de ses classements, sur chaque cadence. Votre prochaine partie classée repartira de 1200."
-          }
-        },
-        "fr-FR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ils sont retirés de l’arbitre et de ses classements, sur chaque cadence. Votre prochaine partie classée repartira de 1200."
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "הם יוסרו מהשופט ומטבלאות הדירוג שלו, בכל שעון. המשחק המדורג הבא יתחיל שוב מ־1200."
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "वे रेफ़री और उसकी रैंक सूचियों से हर घड़ी पर हटा दी जाती हैं। आपकी अगली रेटेड बाज़ी फिर से 1200 से शुरू होगी।"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "A játékvezetőtől és a ranglistáiról is eltűnnek, minden időbeosztáson. A következő értékelt játszmád újra 1200-ról indul."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rating dihapus dari wasit dan daftar peringkatnya, di semua waktu. Partai ber-rating berikutnya dimulai lagi dari 1200."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vengono rimossi dall'arbitro e dalle sue classifiche, per ogni cadenza. La prossima partita valida ripartirà da 1200."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "審判とそのランキングから、すべての持ち時間で削除されます。次のレーティング対局は再び1200から始まります。"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "모든 시간 규칙에서 심판과 순위표에서 삭제됩니다. 다음 레이팅 대국은 다시 1200부터 시작합니다."
-          }
-        },
-        "ms": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ia dibuang daripada pengadil dan senarai kedudukannya, bagi setiap masa. Permainan ber-rating anda yang seterusnya bermula semula dari 1200."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ze worden verwijderd bij de scheidsrechter en van zijn ranglijsten, op elke bedenktijd. Je volgende partij voor rating begint weer bij 1200."
-          }
-        },
-        "no": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "De fjernes hos dommeren og fra rankinglistene, på hver betenkningstid. Neste ratingparti starter igjen fra 1200."
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zostaną usunięte u sędziego i z jego list rankingowych, we wszystkich tempach. Następna partia rankingowa zacznie się znów od 1200."
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eles são removidos do árbitro e das listas dele, em todos os relógios. Sua próxima partida com rating começa de novo em 1200."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sunt eliminate de la arbitru și din clasamentele lui, pe fiecare timp de gândire. Următoarea ta partidă cu rating pornește din nou de la 1200."
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Они будут удалены у арбитра и из его рейтинг-листов на всех контролях. Следующая рейтинговая партия начнётся снова с 1200."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "De tas bort hos domaren och från hans rankinglistor, på varje betänketid. Ditt nästa ratingparti börjar om från 1200."
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "เรตติ้งจะถูกลบออกจากกรรมการและตารางอันดับในทุกเวลา เกมคิดเรตติ้งครั้งถัดไปจะเริ่มใหม่ที่ 1200"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hakemden ve sıralama listelerinden, tüm sürelerde kaldırılır. Bir sonraki puanlı oyunun yeniden 1200'den başlar."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chúng bị xóa khỏi trọng tài và bảng xếp hạng ở mọi thể thức thời gian. Ván tính hệ số tiếp theo sẽ bắt đầu lại từ 1200."
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "它们会从裁判及其排行榜中删除，所有用时都是。你的下一局计分对局将重新从 1200 开始。"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "它們會從裁判及其排行榜中刪除，所有用時都是。你的下一局計分對局將重新從 1200 開始。"
-          }
-        }
-      }
-    },
-    "about.forgetOnlineTitle": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar-SA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "حذف التصنيفات عبر الإنترنت؟"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Smazat online ratingy?"
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Slet dine onlineratings?"
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Online-Wertungen löschen?"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Διαγραφή των διαδικτυακών βαθμολογιών;"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete your online ratings?"
-          }
-        },
-        "en-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete your online ratings?"
-          }
-        },
-        "en-US": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete your online ratings?"
-          }
-        },
-        "es-ES": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "¿Borrar tus valoraciones en línea?"
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Poistetaanko verkkoratingisi?"
-          }
-        },
-        "fr-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Supprimer vos classements en ligne ?"
-          }
-        },
-        "fr-FR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Supprimer vos classements en ligne ?"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "למחוק את הדירוגים המקוונים?"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ऑनलाइन रेटिंग मिटाएँ?"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Törlöd az online értékszámaidat?"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hapus rating daringmu?"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eliminare i punteggi online?"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "オンラインのレーティングを削除しますか？"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "온라인 레이팅을 삭제할까요?"
-          }
-        },
-        "ms": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Padam rating dalam talian anda?"
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Je onlineratings verwijderen?"
-          }
-        },
-        "no": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Slette nettratingene dine?"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Usunąć rankingi online?"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Apagar seus ratings on-line?"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ștergi ratingurile online?"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Удалить онлайн-рейтинги?"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Radera dina onlineratingar?"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ลบเรตติ้งออนไลน์ใช่ไหม"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Çevrimiçi puanların silinsin mi?"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Xóa hệ số trực tuyến?"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "删除在线等级分？"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "刪除線上等級分？"
-          }
-        }
-      }
-    },
     "about.gnuAgplV3": {
       "extractionState": "manual",
       "localizations": {
@@ -2562,199 +1380,199 @@
         }
       }
     },
-    "about.intro2": {
+    "about.intro3": {
       "extractionState": "manual",
       "localizations": {
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "تكتيك وتقدير للمواقع وتقنية النهايات ولعب مع مدرّب، والمحرك يعمل على الجهاز نفسه. بلا حساب، ولا يُجمع شيء غير ما يلزم لتصنيف مباريات اللعب عبر الإنترنت."
+            "value": "تكتيك وتقدير للمواقع وتقنية النهايات ولعب مع مدرّب، والمحرك يعمل على الجهاز نفسه. بلا حساب، ولا يُجمع شيء — سوى حالة الوجود على التطبيق أثناء اللعب عبر الإنترنت."
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktika, poziční úsudek, technika koncovek a hra s trenérem, s enginem běžícím přímo v zařízení. Bez účtu a nic se nesbírá kromě toho, co hodnotí vaše online partie."
+            "value": "Taktika, poziční úsudek, technika koncovek a hra s trenérem, s enginem běžícím přímo v zařízení. Bez účtu a nic se nesbírá — kromě toho, že jste online, když hrajete online."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, positionel vurdering, slutspilsteknik og spil med træner, med motoren på selve enheden. Ingen konto, og intet indsamles ud over det, der giver dine onlinepartier rating."
+            "value": "Taktik, positionel vurdering, slutspilsteknik og spil med træner, med motoren på selve enheden. Ingen konto, og intet indsamles — ud over at du er online, når du spiller online."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, Stellungsbeurteilung, Endspieltechnik und Spiel mit Trainer, mit der Engine direkt auf dem Gerät. Kein Konto, und nichts wird erhoben außer dem, was deine Online-Partien wertet."
+            "value": "Taktik, Stellungsbeurteilung, Endspieltechnik und Spiel mit Trainer, mit der Engine direkt auf dem Gerät. Kein Konto, und nichts wird erhoben – außer, beim Online-Spiel, dass du online bist."
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Τακτική, κρίση θέσης, τεχνική φινάλε και παιχνίδι με προπονητή, με τη μηχανή να τρέχει στην ίδια τη συσκευή. Χωρίς λογαριασμό, και τίποτα δεν συλλέγεται πέρα από ό,τι βαθμολογεί τις διαδικτυακές παρτίδες."
+            "value": "Τακτική, κρίση θέσης, τεχνική φινάλε και παιχνίδι με προπονητή, με τη μηχανή να τρέχει στην ίδια τη συσκευή. Χωρίς λογαριασμό, και τίποτα δεν συλλέγεται — πέρα από την ένδειξη σύνδεσης, όταν παίζεις διαδικτυακά."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected beyond what rates the games you play online."
+            "value": "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected — apart from saying you are online, while you play online."
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected beyond what rates the games you play online."
+            "value": "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected — apart from saying you are online, while you play online."
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected beyond what rates the games you play online."
+            "value": "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected — apart from saying you are online, while you play online."
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "Táctica, juicio posicional, técnica de finales y juego con entrenador, con el motor funcionando en el propio dispositivo. Sin cuenta, y sin recoger nada más allá de lo que valora tus partidas en línea."
+            "value": "Táctica, juicio posicional, técnica de finales y juego con entrenador, con el motor funcionando en el propio dispositivo. Sin cuenta, y sin recoger nada, salvo decir que estás en línea mientras juegas en línea."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktiikkaa, asema-arviointia, loppupelitekniikkaa ja valmennettua pelaamista, moottori laitteessa itsessään. Ei tiliä, eikä mitään kerätä sen lisäksi, mitä verkkopelien ratingiin tarvitaan."
+            "value": "Taktiikkaa, asema-arviointia, loppupelitekniikkaa ja valmennettua pelaamista, moottori laitteessa itsessään. Ei tiliä, eikä mitään kerätä — paitsi tieto siitä, että olet paikalla, kun pelaat verkossa."
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactique, jugement positionnel, technique des finales et parties commentées, avec le moteur qui tourne sur l’appareil lui-même. Aucun compte, et rien n’est collecté au-delà de ce qui classe vos parties en ligne."
+            "value": "Tactique, jugement positionnel, technique des finales et parties commentées, avec le moteur qui tourne sur l’appareil lui-même. Aucun compte, et rien n’est collecté — sauf, quand vous jouez en ligne, le fait que vous êtes en ligne."
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactique, jugement positionnel, technique des finales et parties commentées, avec le moteur qui tourne sur l’appareil lui-même. Aucun compte, et rien n’est collecté au-delà de ce qui classe vos parties en ligne."
+            "value": "Tactique, jugement positionnel, technique des finales et parties commentées, avec le moteur qui tourne sur l’appareil lui-même. Aucun compte, et rien n’est collecté — sauf, quand vous jouez en ligne, le fait que vous êtes en ligne."
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "טקטיקה, שיפוט עמדה, טכניקת סיומים ומשחק מודרך, והמנוע רץ במכשיר עצמו. בלי חשבון, ושום דבר לא נאסף מעבר למה שמדרג משחקים מקוונים."
+            "value": "טקטיקה, שיפוט עמדה, טכניקת סיומים ומשחק מודרך, והמנוע רץ במכשיר עצמו. בלי חשבון, ושום דבר לא נאסף — מלבד מצב הנוכחות, בזמן משחק מקוון."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "टैक्टिक्स, पोज़ीशन की समझ, एंडगेम तकनीक और कोच के साथ खेल — इंजन डिवाइस पर ही चलता है। कोई खाता नहीं, और ऑनलाइन बाज़ियों की रेटिंग के लिए ज़रूरी चीज़ों के अलावा कुछ इकट्ठा नहीं होता।"
+            "value": "टैक्टिक्स, पोज़ीशन की समझ, एंडगेम तकनीक और कोच के साथ खेल — इंजन डिवाइस पर ही चलता है। कोई खाता नहीं, और कुछ इकट्ठा नहीं होता — सिवाय यह बताने के कि आप ऑनलाइन हैं, जब आप ऑनलाइन खेलते हैं।"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktika, pozíciós ítélőképesség, végjátéktechnika és edzővel játszás, a motor magán az eszközön fut. Nincs fiók, és semmit nem gyűjtünk azon túl, ami az online játszmáid értékeléséhez kell."
+            "value": "Taktika, pozíciós ítélőképesség, végjátéktechnika és edzővel játszás, a motor magán az eszközön fut. Nincs fiók, és semmit nem gyűjtünk — azon kívül, hogy online vagy, amikor online játszol."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, penilaian posisi, teknik akhir permainan, dan bermain dengan pelatih, dengan mesin yang berjalan di perangkat itu sendiri. Tanpa akun, dan tidak ada yang dikumpulkan selain yang diperlukan untuk rating partai daring."
+            "value": "Taktik, penilaian posisi, teknik akhir permainan, dan bermain dengan pelatih, dengan mesin yang berjalan di perangkat itu sendiri. Tanpa akun, dan tidak ada yang dikumpulkan — selain memberi tahu bahwa kamu daring, saat kamu bermain daring."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tattica, giudizio posizionale, tecnica dei finali e gioco guidato, con il motore che gira sul dispositivo stesso. Nessun account, e nulla raccolto oltre a ciò che serve a valutare le tue partite online."
+            "value": "Tattica, giudizio posizionale, tecnica dei finali e gioco guidato, con il motore che gira sul dispositivo stesso. Nessun account, e nulla raccolto, se non il fatto che sei online, quando giochi online."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "タクティクス、局面判断、終盤技術、コーチ付きの対局。エンジンはデバイス上で動きます。アカウント不要で、オンライン対局のレーティングに必要なもの以外は何も収集しません。"
+            "value": "タクティクス、局面判断、終盤技術、コーチ付きの対局。エンジンはデバイス上で動きます。アカウント不要で、オンライン対局中にオンラインであることを伝える以外、何も収集しません。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "전술, 포지션 판단, 엔드게임 기술, 코치와 함께하는 대국. 엔진은 기기 안에서 실행됩니다. 계정이 필요 없고, 온라인 대국의 레이팅에 필요한 것 외에는 아무것도 수집하지 않습니다."
+            "value": "전술, 포지션 판단, 엔드게임 기술, 코치와 함께하는 대국. 엔진은 기기 안에서 실행됩니다. 계정이 필요 없고, 온라인으로 둘 때 온라인임을 알리는 것 외에는 아무것도 수집하지 않습니다."
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, penilaian kedudukan, teknik akhir permainan dan bermain dengan jurulatih, dengan enjin berjalan pada peranti itu sendiri. Tiada akaun, dan tiada apa dikumpul selain apa yang diperlukan untuk rating permainan dalam talian."
+            "value": "Taktik, penilaian kedudukan, teknik akhir permainan dan bermain dengan jurulatih, dengan enjin berjalan pada peranti itu sendiri. Tiada akaun, dan tiada apa dikumpul — selain memberitahu bahawa anda dalam talian, semasa anda bermain dalam talian."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactiek, positioneel inzicht, eindspeltechniek en spelen met coaching, met de engine op het apparaat zelf. Geen account, en niets verzameld behalve wat je onlinepartijen rating geeft."
+            "value": "Tactiek, positioneel inzicht, eindspeltechniek en spelen met coaching, met de engine op het apparaat zelf. Geen account, en niets verzameld — behalve dat je online bent, als je online speelt."
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktikk, posisjonsvurdering, sluttspillteknikk og spill med trener, med motoren på selve enheten. Ingen konto, og ingenting samles inn utover det som gir onlinepartiene dine rating."
+            "value": "Taktikk, posisjonsvurdering, sluttspillteknikk og spill med trener, med motoren på selve enheten. Ingen konto, og ingenting samles inn — bortsett fra at du er pålogget, når du spiller på nett."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktyka, ocena pozycji, technika końcówek i gra z trenerem, z silnikiem działającym na samym urządzeniu. Bez konta i bez zbierania czegokolwiek poza tym, co służy rankingowi partii online."
+            "value": "Taktyka, ocena pozycji, technika końcówek i gra z trenerem, z silnikiem działającym na samym urządzeniu. Bez konta i bez zbierania czegokolwiek — poza informacją, że jesteś online, gdy grasz online."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tática, julgamento posicional, técnica de finais e jogo com treinador, com o motor rodando no próprio aparelho. Sem conta, e nada coletado além do que dá rating às suas partidas on-line."
+            "value": "Tática, julgamento posicional, técnica de finais e jogo com treinador, com o motor rodando no próprio aparelho. Sem conta, e nada coletado — além de dizer que você está on-line, enquanto joga on-line."
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tactică, judecată pozițională, tehnica finalurilor și joc cu antrenor, cu motorul rulând chiar pe dispozitiv. Fără cont și nimic colectat în afară de ce e nevoie pentru ratingul partidelor online."
+            "value": "Tactică, judecată pozițională, tehnica finalurilor și joc cu antrenor, cu motorul rulând chiar pe dispozitiv. Fără cont și nimic colectat — în afară de a spune că ești online, când joci online."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Тактика, позиционная оценка, техника эндшпиля и игра с тренером — движок работает прямо на устройстве. Без аккаунта, и ничего не собирается, кроме того, что нужно для рейтинга онлайн-партий."
+            "value": "Тактика, позиционная оценка, техника эндшпиля и игра с тренером — движок работает прямо на устройстве. Без аккаунта, и ничего не собирается — кроме того, что вы онлайн, пока играете онлайн."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, positionsbedömning, slutspelsteknik och spel med tränare, med motorn på själva enheten. Inget konto, och inget samlas in utöver det som ger dina onlinepartier rating."
+            "value": "Taktik, positionsbedömning, slutspelsteknik och spel med tränare, med motorn på själva enheten. Inget konto, och inget samlas in — utom att du är online, när du spelar online."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "แทคติก การประเมินตำแหน่ง เทคนิคช่วงท้ายเกม และการเล่นกับโค้ช โดยเอนจินทำงานบนอุปกรณ์เอง ไม่ต้องมีบัญชี และไม่เก็บอะไรนอกเหนือจากสิ่งที่ใช้คิดเรตติ้งเกมออนไลน์"
+            "value": "แทคติก การประเมินตำแหน่ง เทคนิคช่วงท้ายเกม และการเล่นกับโค้ช โดยเอนจินทำงานบนอุปกรณ์เอง ไม่ต้องมีบัญชี และไม่เก็บอะไรเลย นอกจากการบอกว่าคุณออนไลน์ขณะเล่นออนไลน์"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktik, pozisyon değerlendirmesi, oyun sonu tekniği ve eğitmenli oyun; motor doğrudan cihazda çalışır. Hesap yok ve çevrimiçi oyunlarınızı puanlamak için gerekenin ötesinde hiçbir şey toplanmaz."
+            "value": "Taktik, pozisyon değerlendirmesi, oyun sonu tekniği ve eğitmenli oyun; motor doğrudan cihazda çalışır. Hesap yok ve hiçbir şey toplanmaz — çevrimiçi oynarken çevrimiçi olduğunu söylemek dışında."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Chiến thuật, đánh giá thế cờ, kỹ thuật tàn cuộc và chơi có huấn luyện, với engine chạy ngay trên thiết bị. Không cần tài khoản, và không thu thập gì ngoài những gì cần để tính hệ số các ván trực tuyến."
+            "value": "Chiến thuật, đánh giá thế cờ, kỹ thuật tàn cuộc và chơi có huấn luyện, với engine chạy ngay trên thiết bị. Không cần tài khoản, và không thu thập gì — ngoài việc cho biết bạn đang trực tuyến, khi bạn chơi trực tuyến."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "战术、局面判断、残局技术和有教练的对局，引擎就在设备上运行。无需账户，除了为在线对局计算等级分所需的内容外，不收集任何东西。"
+            "value": "战术、局面判断、残局技术和有教练的对局，引擎就在设备上运行。无需账户，除了在线对局时告知你在线之外，不收集任何东西。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "戰術、局面判斷、殘局技術和有教練的對局，引擎就在裝置上執行。不需帳號，除了為線上對局計算等級分所需的內容外，不收集任何東西。"
+            "value": "戰術、局面判斷、殘局技術和有教練的對局，引擎就在裝置上執行。不需帳號，除了線上對局時告知你在線上之外，不收集任何東西。"
           }
         }
       }
@@ -3547,199 +2365,199 @@
         }
       }
     },
-    "about.onlineReferee": {
+    "about.onlinePresence": {
       "extractionState": "manual",
       "localizations": {
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "اللعب عبر الإنترنت هو الاستثناء. لتصنيف مباراة، يرسل تطبيقا اللاعبين إلى حَكَمنا كيف جرت — الوقت والألوان والنقلات والنتيجة — مع إثبات Game Center لهوية من يلعب. يحتفظ الحَكَم بمعرّف لاعب Game Center على شكل رمز مشفّر فقط، بجانب التصنيف في كل توقيت ويوم آخر مباراة: لا اسم ولا جهات اتصال. تُنشر قوائم التصنيف بهذه الرموز، ويعرض Game Center الاسم المستعار بجانب الرمز لبقية اللاعبين، بحسب ما يُسمح به."
+            "value": "اللعب عبر الإنترنت هو الاستثناء. يُحفظ تصنيفك عبر الإنترنت في كل توقيت في قوائم تصنيف Game Center، حيث يراه اللاعبون الآخرون بجانب اسمك المستعار بحسب ما تسمح به؛ وهذه القوائم ملك Apple. وما دام التطبيق على الشاشة، يُبلغ أيضًا خدمة صغيرة لدينا بحالتك — على التطبيق، أو بحث عن مباراة، أو في مباراة — ليرى الآخرون أنك متاح للعب، مع إثبات Game Center للهوية، الذي يُحفظ على شكل رمز مشفّر فقط ويُنسى بعد خمس دقائق من المغادرة. الإعدادات ← إظهار حالة وجودي في التطبيق يوقف ذلك."
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Online hra je výjimka. Aby se partie započítala do ratingu, aplikace obou hráčů pošlou našemu rozhodčímu její průběh — tempo, barvy, tahy, výsledek — s potvrzením Game Center, kdo hraje. Rozhodčí uchovává vaše ID hráče Game Center jen jako zašifrovaný kód, vedle vašeho ratingu v každém tempu a dne poslední partie: žádné jméno, žádné kontakty. Žebříčky se zveřejňují pod těmito kódy; Game Center ukazuje ostatním hráčům vaši přezdívku vedle vašeho kódu, jak dovolíte."
+            "value": "Online hra je výjimka. Váš online rating v každém tempu je v žebříčcích Game Center, kde ho ostatní hráči vidí vedle vaší přezdívky, jak dovolíte; ty patří Applu. Dokud je aplikace na obrazovce, říká také naší malé službě, že jste online, hledáte partii nebo hrajete, aby ostatní viděli, že můžete hrát — s potvrzením Game Center, kdo jste, uloženým jen jako zašifrovaný kód a zapomenutým pět minut po odchodu. Nastavení → Ukazovat, že jsem online to vypne."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Onlinespil er undtagelsen. For at et parti kan give rating, sender begge spilleres apps vores dommer, hvordan det gik — betænkningstid, farver, træk, resultat — med Game Centers bevis på, hvem der spiller. Dommeren gemmer dit Game Center-spiller-id kun som en krypteret kode, ved siden af din rating på hver betænkningstid og dagen for dit seneste parti: intet navn, ingen kontakter. Ranglisterne offentliggøres under de koder; Game Center viser dit kaldenavn ved siden af din kode for andre spillere, som du tillader."
+            "value": "Onlinespil er undtagelsen. Din onlinerating på hver betænkningstid står på Game Centers ranglister, hvor andre spillere ser den ved siden af dit kaldenavn, som du tillader; de er Apples. Mens appen er på skærmen, fortæller den også en lille tjeneste hos os, at du er online, søger et parti eller spiller et, så andre kan se, at du er der for at spille — med Game Centers bevis på, hvem du er, kun gemt som en krypteret kode og glemt fem minutter efter, du går. Indstillinger → Vis, når jeg er online slår det fra."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Das Online-Spiel ist die Ausnahme. Um eine Partie zu werten, senden die Apps beider Spieler unserem Schiedsrichter ihren Verlauf – Bedenkzeit, Farben, Züge, Ergebnis – mit dem Nachweis von Game Center, wer spielt. Er speichert deine Game-Center-Spieler-ID nur als verschlüsselten Code, zusammen mit deiner Wertung für jede Bedenkzeit und dem Tag deiner letzten Partie: kein Name, keine Kontakte. Die Ranglisten werden unter diesen Codes veröffentlicht; Game Center zeigt anderen Spielern deinen Spitznamen neben deinem, so wie du es erlaubst."
+            "value": "Das Online-Spiel ist die Ausnahme. Deine Online-Wertung für jede Bedenkzeit steht in den Ranglisten von Game Center, wo andere Spieler sie neben deinem Spitznamen sehen, so wie du es erlaubst; diese gehören Apple. Solange die App auf deinem Bildschirm ist, sagt sie außerdem einem kleinen Dienst von uns, dass du online bist, eine Partie suchst oder spielst, damit andere sehen, dass du zum Spielen da bist – mit dem Nachweis von Game Center, wer du bist, nur als verschlüsselter Code gespeichert und fünf Minuten nach dem Verlassen vergessen. Einstellungen → Zeigen, wenn ich online bin schaltet das aus."
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Το διαδικτυακό παιχνίδι είναι η εξαίρεση. Για να βαθμολογηθεί μια παρτίδα, οι εφαρμογές και των δύο παικτών στέλνουν στον διαιτητή μας πώς πήγε — τον χρόνο, τα χρώματα, τις κινήσεις, το αποτέλεσμα — με την απόδειξη του Game Center για το ποιος παίζει. Ο διαιτητής κρατά το αναγνωριστικό παίκτη Game Center μόνο ως κρυπτογραφημένο κωδικό, δίπλα στη βαθμολογία σου σε κάθε χρόνο και την ημέρα της τελευταίας παρτίδας: χωρίς όνομα, χωρίς επαφές. Οι λίστες δημοσιεύονται με αυτούς τους κωδικούς· το Game Center δείχνει στους άλλους παίκτες το ψευδώνυμό σου δίπλα στον κωδικό σου, όπως επιτρέπεις."
+            "value": "Το διαδικτυακό παιχνίδι είναι η εξαίρεση. Η διαδικτυακή σου βαθμολογία σε κάθε χρόνο βρίσκεται στις λίστες του Game Center, όπου οι άλλοι παίκτες τη βλέπουν δίπλα στο ψευδώνυμό σου, όπως επιτρέπεις· αυτές ανήκουν στην Apple. Όσο η εφαρμογή είναι στην οθόνη σου, λέει επίσης σε μια μικρή υπηρεσία μας την κατάστασή σου — σε σύνδεση, σε αναζήτηση παρτίδας ή σε παρτίδα — ώστε οι άλλοι να βλέπουν ότι μπορείς να παίξεις, με την απόδειξη του Game Center για την ταυτότητά σου, που φυλάσσεται μόνο ως κρυπτογραφημένος κωδικός και ξεχνιέται πέντε λεπτά αφού φύγεις. Ρυθμίσεις → Εμφάνιση της παρουσίας μου το απενεργοποιεί."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Online play is the exception. To rate a game, both players' apps send our referee how it went — the clock, the colours, the moves, the result — with Game Center's proof of who is playing. It keeps your Game Center player ID only as a scrambled code, beside your rating on each clock and the day you last played: no name, no contacts. The rank lists are published under those codes; Game Center shows your nickname beside yours to other players, as you allow."
+            "value": "Online play is the exception. Your online rating on each clock is kept on Game Center's rank lists, where other players see it beside your nickname, as you allow; those are Apple's. While the app is on your screen, it also tells a small service of ours that you are online, looking for a game or in one, so that other players can see you are there to play — with Game Center's proof of who you are, kept only as a scrambled code, and forgotten five minutes after you leave. Settings → Show when I'm online turns it off."
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Online play is the exception. To rate a game, both players' apps send our referee how it went — the clock, the colours, the moves, the result — with Game Center's proof of who is playing. It keeps your Game Center player ID only as a scrambled code, beside your rating on each clock and the day you last played: no name, no contacts. The rank lists are published under those codes; Game Center shows your nickname beside yours to other players, as you allow."
+            "value": "Online play is the exception. Your online rating on each clock is kept on Game Center's rank lists, where other players see it beside your nickname, as you allow; those are Apple's. While the app is on your screen, it also tells a small service of ours that you are online, looking for a game or in one, so that other players can see you are there to play — with Game Center's proof of who you are, kept only as a scrambled code, and forgotten five minutes after you leave. Settings → Show when I'm online turns it off."
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "Online play is the exception. To rate a game, both players' apps send our referee how it went — the clock, the colours, the moves, the result — with Game Center's proof of who is playing. It keeps your Game Center player ID only as a scrambled code, beside your rating on each clock and the day you last played: no name, no contacts. The rank lists are published under those codes; Game Center shows your nickname beside yours to other players, as you allow."
+            "value": "Online play is the exception. Your online rating on each clock is kept on Game Center's rank lists, where other players see it beside your nickname, as you allow; those are Apple's. While the app is on your screen, it also tells a small service of ours that you are online, looking for a game or in one, so that other players can see you are there to play — with Game Center's proof of who you are, kept only as a scrambled code, and forgotten five minutes after you leave. Settings → Show when I'm online turns it off."
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "El juego en línea es la excepción. Para valorar una partida, las apps de ambos jugadores envían a nuestro árbitro cómo fue —el reloj, los colores, las jugadas, el resultado— con la prueba de Game Center de quién juega. Guarda tu ID de jugador de Game Center solo como un código cifrado, junto a tu valoración en cada reloj y el día de tu última partida: ni nombre ni contactos. Las listas se publican con esos códigos; Game Center muestra tu apodo junto al tuyo a otros jugadores, según lo permitas."
+            "value": "El juego en línea es la excepción. Tu valoración en línea en cada reloj está en las listas de Game Center, donde otros jugadores la ven junto a tu apodo, según lo permitas; esas listas son de Apple. Mientras la app está en tu pantalla, también le dice a un pequeño servicio nuestro que estás en línea, buscando partida o jugando, para que otros vean que estás para jugar, con la prueba de Game Center de quién eres, guardada solo como un código cifrado y olvidada cinco minutos después de que te vayas. Ajustes → Mostrar cuando estoy en línea lo desactiva."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Verkkopelaaminen on poikkeus. Jotta peli vaikuttaisi ratingiin, molempien pelaajien sovellukset lähettävät tuomarillemme sen kulun — ajan, värit, siirrot, tuloksen — Game Centerin todisteen kanssa siitä, kuka pelaa. Tuomari säilyttää Game Center -pelaajatunnuksesi vain salattuna koodina, ratingisi rinnalla kullakin ajalla ja viimeisimmän pelisi päivän kanssa: ei nimeä, ei yhteystietoja. Listat julkaistaan näillä koodeilla; Game Center näyttää muille pelaajille nimimerkkisi koodisi vieressä, sen mukaan kuin sallit."
+            "value": "Verkkopelaaminen on poikkeus. Verkkoratingisi kullakin ajalla on Game Centerin listoilla, joilla muut pelaajat näkevät sen nimimerkkisi vieressä, sen mukaan kuin sallit; listat ovat Applen. Kun sovellus on näytölläsi, se kertoo myös pienelle palvelullemme, että olet paikalla, etsit peliä tai pelaat, jotta muut näkevät sinun olevan valmis pelaamaan — Game Centerin todisteen kanssa siitä, kuka olet; se säilytetään vain salattuna koodina ja unohdetaan viisi minuuttia lähtösi jälkeen. Asetukset → Näytä, kun olen paikalla poistaa sen käytöstä."
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Le jeu en ligne est l’exception. Pour classer une partie, les apps des deux joueurs envoient à notre arbitre son déroulement — la cadence, les couleurs, les coups, le résultat — avec la preuve de Game Center de qui joue. Il ne garde votre identifiant de joueur Game Center que sous forme de code brouillé, avec votre classement sur chaque cadence et le jour de votre dernière partie : ni nom, ni contacts. Les classements sont publiés sous ces codes ; Game Center affiche votre pseudo à côté du vôtre pour les autres joueurs, selon ce que vous autorisez."
+            "value": "Le jeu en ligne est l’exception. Votre classement en ligne sur chaque cadence figure dans les classements de Game Center, où les autres joueurs le voient à côté de votre pseudo, selon ce que vous autorisez ; ils appartiennent à Apple. Tant que l’app est à l’écran, elle indique aussi à un petit service à nous que vous êtes en ligne, en recherche de partie ou en train de jouer, pour que les autres voient que vous êtes là pour jouer — avec la preuve de Game Center de qui vous êtes, gardée seulement sous forme de code brouillé, et oubliée cinq minutes après votre départ. Réglages → Indiquer quand je suis en ligne le désactive."
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Le jeu en ligne est l’exception. Pour classer une partie, les apps des deux joueurs envoient à notre arbitre son déroulement — la cadence, les couleurs, les coups, le résultat — avec la preuve de Game Center de qui joue. Il ne garde votre identifiant de joueur Game Center que sous forme de code brouillé, avec votre classement sur chaque cadence et le jour de votre dernière partie : ni nom, ni contacts. Les classements sont publiés sous ces codes ; Game Center affiche votre pseudo à côté du vôtre pour les autres joueurs, selon ce que vous autorisez."
+            "value": "Le jeu en ligne est l’exception. Votre classement en ligne sur chaque cadence figure dans les classements de Game Center, où les autres joueurs le voient à côté de votre pseudo, selon ce que vous autorisez ; ils appartiennent à Apple. Tant que l’app est à l’écran, elle indique aussi à un petit service à nous que vous êtes en ligne, en recherche de partie ou en train de jouer, pour que les autres voient que vous êtes là pour jouer — avec la preuve de Game Center de qui vous êtes, gardée seulement sous forme de code brouillé, et oubliée cinq minutes après votre départ. Réglages → Indiquer quand je suis en ligne le désactive."
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "משחק מקוון הוא היוצא מן הכלל. כדי לדרג משחק, האפליקציות של שני השחקנים שולחות לשופט שלנו איך הוא התנהל — השעון, הצבעים, המסעים, התוצאה — עם ההוכחה של Game Center לזהות השחקנים. השופט שומר את מזהה השחקן ב־Game Center רק כקוד מוצפן, לצד הדירוג בכל שעון והיום של המשחק האחרון: בלי שם, בלי אנשי קשר. טבלאות הדירוג מתפרסמות תחת הקודים האלה; Game Center מציג לשחקנים אחרים את הכינוי לצד הקוד, כפי שמותר."
+            "value": "משחק מקוון הוא היוצא מן הכלל. הדירוג המקוון בכל שעון נשמר בטבלאות הדירוג של Game Center, שם שחקנים אחרים רואים אותו לצד הכינוי, כפי שמותר; הטבלאות האלה של Apple. כל עוד האפליקציה על המסך, היא גם מודיעה לשירות קטן שלנו על המצב — באפליקציה, בחיפוש משחק או במשחק — כדי ששחקנים אחרים יראו שאפשר לשחק, עם ההוכחה של Game Center לזהות; היא נשמרת רק כקוד מוצפן ונשכחת חמש דקות אחרי היציאה. הגדרות ← הצגת הנוכחות שלי באפליקציה מכבה את זה."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "ऑनलाइन खेल अपवाद है। किसी बाज़ी की रेटिंग के लिए दोनों खिलाड़ियों के ऐप हमारे रेफ़री को बताते हैं कि बाज़ी कैसी रही — घड़ी, रंग, चालें, नतीजा — साथ में Game Center का सबूत कि कौन खेल रहा है। रेफ़री आपकी Game Center खिलाड़ी ID को सिर्फ़ एक गुप्त कोड के रूप में रखता है, हर घड़ी पर आपकी रेटिंग और आपकी पिछली बाज़ी के दिन के साथ: कोई नाम नहीं, कोई संपर्क नहीं। रैंक सूचियाँ इन्हीं कोड के साथ प्रकाशित होती हैं; Game Center दूसरे खिलाड़ियों को आपके कोड के साथ आपका उपनाम दिखाता है, जितनी आप अनुमति दें।"
+            "value": "ऑनलाइन खेल अपवाद है। हर घड़ी पर आपकी ऑनलाइन रेटिंग Game Center की रैंक सूचियों में रहती है, जहाँ दूसरे खिलाड़ी उसे आपके उपनाम के साथ देखते हैं, जितनी आप अनुमति दें; वे सूचियाँ Apple की हैं। जब तक ऐप आपकी स्क्रीन पर है, वह हमारी एक छोटी सेवा को यह भी बताता है कि आप ऑनलाइन हैं, बाज़ी ढूँढ़ रहे हैं या खेल रहे हैं, ताकि दूसरे देख सकें कि आप खेलने को मौजूद हैं — Game Center के सबूत के साथ कि आप कौन हैं, जो सिर्फ़ एक गुप्त कोड के रूप में रखा जाता है और जाने के पाँच मिनट बाद भुला दिया जाता है। सेटिंग्स → दिखाएँ कि मैं ऑनलाइन हूँ इसे बंद करता है।"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Az online játék a kivétel. Hogy egy játszma értékelt legyen, mindkét játékos alkalmazása elküldi a játékvezetőnknek, hogyan zajlott – az időt, a színeket, a lépéseket, az eredményt –, a Game Center igazolásával arról, ki játszik. A játékvezető a Game Center-játékosazonosítódat csak titkosított kódként őrzi, az egyes időbeosztásokon elért értékszámod és az utolsó játszmád napja mellett: se név, se névjegyek. A ranglisták ezekkel a kódokkal jelennek meg; a Game Center a kódod mellett mutatja a beceneved a többi játékosnak, ahogy engeded."
+            "value": "Az online játék a kivétel. Az online értékszámod minden időbeosztáson a Game Center ranglistáin van, ahol a többiek a beceneved mellett látják, ahogy engeded; ezek az Apple-éi. Amíg az alkalmazás a képernyődön van, egy kis szolgáltatásunknak is jelzi, hogy online vagy, játszmát keresel vagy játszol, hogy mások lássák, játszani jöttél — a Game Center igazolásával arról, ki vagy, amelyet csak titkosított kódként őrzünk, és öt perccel a kilépés után elfelejtünk. Beállítások → Mutassa, ha online vagyok kikapcsolja."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Permainan daring adalah pengecualian. Untuk memberi rating pada sebuah partai, aplikasi kedua pemain mengirimkan jalannya partai kepada wasit kami — waktu, warna, langkah, hasil — bersama bukti Game Center tentang siapa yang bermain. Wasit menyimpan ID pemain Game Center-mu hanya sebagai kode acak, di samping rating-mu di tiap waktu dan hari partai terakhirmu: tanpa nama, tanpa kontak. Daftar peringkat diterbitkan dengan kode-kode itu; Game Center menampilkan nama panggilanmu di samping kodemu kepada pemain lain, sesuai izinmu."
+            "value": "Permainan daring adalah pengecualian. Rating daringmu di tiap waktu disimpan di daftar peringkat Game Center, tempat pemain lain melihatnya di samping nama panggilanmu, sesuai izinmu; daftar itu milik Apple. Selama aplikasi ada di layarmu, aplikasi juga memberi tahu layanan kecil kami bahwa kamu daring, mencari partai, atau sedang bermain, agar orang lain melihat kamu siap bermain — dengan bukti Game Center tentang siapa kamu, yang hanya disimpan sebagai kode acak dan dilupakan lima menit setelah kamu pergi. Pengaturan → Tunjukkan saat aku daring mematikannya."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Il gioco online è l'eccezione. Per valutare una partita, le app di entrambi i giocatori inviano al nostro arbitro com'è andata — la cadenza, i colori, le mosse, il risultato — con la prova di Game Center di chi sta giocando. Conserva il tuo ID giocatore di Game Center solo come codice cifrato, accanto al tuo punteggio per ogni cadenza e al giorno dell'ultima partita: nessun nome, nessun contatto. Le classifiche sono pubblicate con quei codici; Game Center mostra agli altri giocatori il tuo nickname accanto al tuo, come permetti."
+            "value": "Il gioco online è l'eccezione. Il tuo punteggio online per ogni cadenza è nelle classifiche di Game Center, dove gli altri giocatori lo vedono accanto al tuo nickname, come permetti; sono di Apple. Finché l'app è sul tuo schermo, dice anche a un nostro piccolo servizio che sei online, in cerca di una partita o in gioco, così gli altri vedono che sei lì per giocare — con la prova di Game Center di chi sei, conservata solo come codice cifrato e dimenticata cinque minuti dopo che esci. Impostazioni → Mostra quando sono online lo disattiva."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "オンライン対局だけは例外です。対局をレーティングに反映するため、双方のアプリが審判に対局の内容（持ち時間、先後、指し手、結果）を、誰が指しているかを示す Game Center の証明とともに送ります。審判が保持するのは、暗号化したコードとしての Game Center のプレイヤーIDと、各持ち時間のレーティング、最後に対局した日だけです。名前や連絡先は含みません。ランキングはこのコードで公開され、Game Center が他のプレイヤーにあなたのニックネームをコードの横に、許可した範囲で表示します。"
+            "value": "オンライン対局だけは例外です。各持ち時間のオンラインレーティングは Game Center のランキングに保存され、ほかのプレイヤーはあなたが許可した範囲でニックネームの横にそれを見られます。ランキングは Apple のものです。また、アプリが画面に表示されている間は、あなたがオンライン中・対局相手を探し中・対局中であることを当社の小さなサービスに伝え、ほかのプレイヤーが対局できる相手を見つけられるようにします。Game Center による本人確認付きですが、暗号化したコードとしてのみ保持し、アプリを離れて5分で消えます。設定 → オンライン中であることを表示 でオフにできます。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "온라인 대국만은 예외입니다. 대국을 레이팅에 반영하기 위해 두 플레이어의 앱이 심판에게 대국 내용(시간, 색, 수순, 결과)을 누가 두는지 보여 주는 Game Center 증명과 함께 보냅니다. 심판은 Game Center 플레이어 ID를 암호화된 코드로만 보관하며, 시간별 레이팅과 마지막 대국 날짜만 함께 둡니다. 이름이나 연락처는 없습니다. 순위표는 이 코드로 공개되고, Game Center가 다른 플레이어에게 코드 옆에 닉네임을 허용한 범위에서 보여 줍니다."
+            "value": "온라인 대국만은 예외입니다. 시간별 온라인 레이팅은 Game Center 순위표에 저장되며, 다른 플레이어가 허용한 범위에서 닉네임 옆에 그것을 봅니다. 이 순위표는 Apple의 것입니다. 앱이 화면에 있는 동안에는 당신이 온라인인지, 대국을 찾는 중인지, 대국 중인지를 저희의 작은 서비스에 알려 다른 사람이 당신이 둘 수 있음을 알 수 있게 합니다. Game Center 본인 증명과 함께 보내지만 암호화된 코드로만 보관하고, 앱을 떠나고 5분이 지나면 잊힙니다. 설정 → 온라인 상태 표시에서 끌 수 있습니다."
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Permainan dalam talian ialah pengecualian. Untuk memberi rating kepada permainan, aplikasi kedua-dua pemain menghantar kepada pengadil kami perjalanannya — masa, warna, langkah, keputusan — bersama bukti Game Center tentang siapa yang bermain. Pengadil menyimpan ID pemain Game Center anda hanya sebagai kod rawak, di sebelah rating anda bagi setiap masa dan hari permainan terakhir anda: tiada nama, tiada kenalan. Senarai kedudukan diterbitkan dengan kod-kod itu; Game Center menunjukkan nama samaran anda di sebelah kod anda kepada pemain lain, mengikut izin anda."
+            "value": "Permainan dalam talian ialah pengecualian. Rating dalam talian anda bagi setiap masa disimpan dalam senarai kedudukan Game Center, tempat pemain lain melihatnya di sebelah nama samaran anda, mengikut izin anda; senarai itu milik Apple. Selagi aplikasi berada pada skrin anda, ia juga memberitahu satu perkhidmatan kecil kami bahawa anda dalam talian, mencari permainan atau sedang bermain, supaya orang lain nampak anda sedia bermain — dengan bukti Game Center tentang siapa anda, yang disimpan hanya sebagai kod rawak dan dilupakan lima minit selepas anda pergi. Tetapan → Tunjukkan apabila saya dalam talian mematikannya."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Online spelen is de uitzondering. Om een partij te raten sturen de apps van beide spelers onze scheidsrechter hoe die ging — de bedenktijd, de kleuren, de zetten, de uitslag — met het bewijs van Game Center wie er speelt. Die bewaart je Game Center-speler-ID alleen als versleutelde code, naast je rating per bedenktijd en de dag van je laatste partij: geen naam, geen contacten. De ranglijsten worden onder die codes gepubliceerd; Game Center toont andere spelers je bijnaam naast die van jou, zoals jij toestaat."
+            "value": "Online spelen is de uitzondering. Je onlinerating per bedenktijd staat op de ranglijsten van Game Center, waar andere spelers hem naast je bijnaam zien, zoals jij toestaat; die zijn van Apple. Zolang de app op je scherm staat, vertelt hij ook een kleine dienst van ons dat je online bent, een partij zoekt of er een speelt, zodat anderen zien dat je er bent om te spelen — met het bewijs van Game Center wie je bent, alleen bewaard als versleutelde code en vijf minuten nadat je weggaat vergeten. Instellingen → Laten zien dat ik online ben zet het uit."
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Onlinespill er unntaket. For at et parti skal gi rating, sender begge spillernes apper vår dommer hvordan det gikk — betenkningstid, farger, trekk, resultat — med Game Centers bevis på hvem som spiller. Dommeren lagrer Game Center-spiller-ID-en din bare som en kryptert kode, ved siden av ratingen din på hver betenkningstid og dagen for ditt siste parti: ikke navn, ikke kontakter. Rankinglistene publiseres under de kodene; Game Center viser kallenavnet ditt ved siden av koden din for andre spillere, slik du tillater."
+            "value": "Nettspill er unntaket. Nettratingen din på hver betenkningstid står på Game Centers rankinglister, der andre spillere ser den ved siden av kallenavnet ditt, slik du tillater; de er Apples. Mens appen er på skjermen, forteller den også en liten tjeneste hos oss at du er pålogget, søker et parti eller spiller et, så andre ser at du er der for å spille — med Game Centers bevis på hvem du er, lagret bare som en kryptert kode og glemt fem minutter etter at du går. Innstillinger → Vis når jeg er pålogget slår det av."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gra online to wyjątek. Aby partia liczyła się do rankingu, aplikacje obu graczy wysyłają naszemu sędziemu jej przebieg — tempo, kolory, ruchy, wynik — z potwierdzeniem Game Center, kto gra. Sędzia przechowuje twój identyfikator gracza Game Center tylko jako zaszyfrowany kod, obok twojego rankingu w każdym tempie i dnia ostatniej partii: bez imienia, bez kontaktów. Listy rankingowe są publikowane pod tymi kodami; Game Center pokazuje innym graczom twój pseudonim obok twojego kodu, na ile na to pozwalasz."
+            "value": "Gra online to wyjątek. Twój ranking online w każdym tempie jest na listach rankingowych Game Center, gdzie inni gracze widzą go obok twojego pseudonimu, na ile pozwalasz; te listy należą do Apple. Gdy aplikacja jest na ekranie, mówi też naszej małej usłudze, że jesteś online, szukasz partii albo grasz, żeby inni widzieli, że możesz grać — z potwierdzeniem Game Center, kim jesteś, przechowywanym tylko jako zaszyfrowany kod i zapominanym pięć minut po wyjściu. Ustawienia → Pokazuj, że jestem online wyłącza to."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O jogo on-line é a exceção. Para dar rating a uma partida, os apps dos dois jogadores enviam ao nosso árbitro como ela foi — o relógio, as cores, os lances, o resultado — com a prova do Game Center de quem está jogando. Ele guarda seu ID de jogador do Game Center só como um código embaralhado, ao lado do seu rating em cada relógio e do dia da sua última partida: nada de nome, nada de contatos. As listas são publicadas com esses códigos; o Game Center mostra seu apelido ao lado do seu para outros jogadores, como você permitir."
+            "value": "O jogo on-line é a exceção. Seu rating on-line em cada relógio fica nas listas do Game Center, onde outros jogadores o veem ao lado do seu apelido, como você permitir; essas listas são da Apple. Enquanto o app estiver na sua tela, ele também avisa um pequeno serviço nosso de que você está on-line, procurando partida ou jogando, para que outros vejam que você está lá para jogar — com a prova do Game Center de quem você é, guardada só como um código embaralhado e esquecida cinco minutos depois que você sai. Ajustes → Mostrar quando estou on-line desativa isso."
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Jocul online este excepția. Pentru ca o partidă să conteze la rating, aplicațiile ambilor jucători îi trimit arbitrului nostru cum a decurs — timpul, culorile, mutările, rezultatul — cu dovada Game Center despre cine joacă. Arbitrul păstrează ID-ul tău de jucător Game Center doar ca un cod criptat, lângă ratingul tău pe fiecare timp de gândire și ziua ultimei partide: fără nume, fără contacte. Clasamentele sunt publicate sub aceste coduri; Game Center le arată celorlalți jucători porecla ta lângă codul tău, după cum permiți."
+            "value": "Jocul online este excepția. Ratingul tău online pe fiecare timp de gândire e păstrat în clasamentele Game Center, unde ceilalți jucători îl văd lângă porecla ta, după cum permiți; acestea sunt ale Apple. Cât timp aplicația e pe ecran, îi spune și unui mic serviciu al nostru că ești online, cauți o partidă sau joci una, ca ceilalți să vadă că ești acolo să joci — cu dovada Game Center despre cine ești, păstrată doar ca un cod criptat și uitată la cinci minute după ce pleci. Setări → Arată când sunt online oprește asta."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Онлайн-игра — исключение. Чтобы засчитать партию в рейтинг, приложения обоих игроков отправляют нашему арбитру, как она прошла: контроль, цвета, ходы, результат — вместе с подтверждением Game Center, кто играет. Арбитр хранит ваш ID игрока Game Center только в виде зашифрованного кода, рядом с рейтингом на каждом контроле и датой последней партии: ни имени, ни контактов. Рейтинг-листы публикуются под этими кодами; Game Center показывает другим игрокам ваш ник рядом с вашим кодом — в той мере, в какой вы это разрешаете."
+            "value": "Онлайн-игра — исключение. Ваш онлайн-рейтинг на каждом контроле хранится в рейтинг-листах Game Center, где другие игроки видят его рядом с вашим ником — в той мере, в какой вы разрешаете; эти листы принадлежат Apple. Пока приложение на экране, оно также сообщает нашему небольшому сервису, что вы онлайн, ищете партию или играете, чтобы другие видели, что вы готовы играть, — с подтверждением Game Center, кто вы; оно хранится только в виде зашифрованного кода и забывается через пять минут после выхода. Настройки → Показывать, что я онлайн — отключает это."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Onlinespel är undantaget. För att ett parti ska ge rating skickar båda spelarnas appar till vår domare hur det gick — betänketid, färger, drag, resultat — med Game Centers bevis på vem som spelar. Domaren sparar ditt Game Center-spelar-ID bara som en krypterad kod, bredvid din rating på varje betänketid och dagen för ditt senaste parti: inget namn, inga kontakter. Rankinglistorna publiceras under de koderna; Game Center visar ditt smeknamn bredvid din kod för andra spelare, så som du tillåter."
+            "value": "Onlinespel är undantaget. Din onlinerating på varje betänketid finns på Game Centers rankinglistor, där andra spelare ser den bredvid ditt smeknamn, så som du tillåter; de är Apples. Medan appen är på skärmen berättar den också för en liten tjänst hos oss att du är online, söker ett parti eller spelar ett, så att andra ser att du är där för att spela — med Game Centers bevis på vem du är, sparat bara som en krypterad kod och glömt fem minuter efter att du lämnat. Inställningar → Visa när jag är online stänger av det."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "การเล่นออนไลน์เป็นข้อยกเว้น เพื่อคิดเรตติ้งให้เกม แอปของผู้เล่นทั้งสองจะส่งรายละเอียดเกม ได้แก่ เวลา สี ตาเดิน และผล ไปให้กรรมการของเรา พร้อมหลักฐานจาก Game Center ว่าใครเป็นผู้เล่น กรรมการเก็บ ID ผู้เล่น Game Center ของคุณในรูปรหัสที่เข้ารหัสแล้วเท่านั้น คู่กับเรตติ้งในแต่ละเวลาและวันที่เล่นเกมล่าสุด ไม่มีชื่อ ไม่มีรายชื่อติดต่อ ตารางอันดับเผยแพร่ด้วยรหัสเหล่านี้ และ Game Center จะแสดงชื่อเล่นของคุณข้างรหัสให้ผู้เล่นอื่นเห็นตามที่คุณอนุญาต"
+            "value": "การเล่นออนไลน์เป็นข้อยกเว้น เรตติ้งออนไลน์ของคุณในแต่ละเวลาถูกเก็บไว้ในตารางอันดับของ Game Center ซึ่งผู้เล่นอื่นเห็นข้างชื่อเล่นของคุณตามที่คุณอนุญาต ตารางเหล่านี้เป็นของ Apple ขณะที่แอปอยู่บนหน้าจอ แอปยังบอกบริการเล็ก ๆ ของเราว่าคุณออนไลน์ กำลังหาเกม หรือกำลังเล่น เพื่อให้คนอื่นเห็นว่าคุณพร้อมเล่น พร้อมหลักฐานจาก Game Center ว่าคุณเป็นใคร ซึ่งเก็บไว้เป็นรหัสที่เข้ารหัสแล้วเท่านั้น และจะถูกลืมห้านาทีหลังจากคุณออกไป การตั้งค่า → แสดงเมื่อฉันออนไลน์ ใช้ปิดได้"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Çevrimiçi oyun bir istisnadır. Bir oyunu puanlamak için iki oyuncunun uygulaması da hakemimize oyunun nasıl geçtiğini — süreyi, renkleri, hamleleri, sonucu — Game Center'ın kimin oynadığına dair kanıtıyla birlikte gönderir. Hakem Game Center oyuncu kimliğinizi yalnızca şifrelenmiş bir kod olarak, her süredeki puanınız ve son oyununuzun günüyle birlikte saklar: ad yok, kişiler yok. Sıralama listeleri bu kodlarla yayımlanır; Game Center diğer oyunculara takma adınızı kodunuzun yanında, izin verdiğiniz kadarıyla gösterir."
+            "value": "Çevrimiçi oyun bir istisnadır. Her süredeki çevrimiçi puanın Game Center'ın sıralama listelerinde tutulur; diğer oyuncular onu takma adının yanında, izin verdiğin kadarıyla görür; bu listeler Apple'ındır. Uygulama ekranındayken ayrıca küçük bir hizmetimize çevrimiçi olduğunu, oyun aradığını ya da oynadığını söyler; böylece diğerleri oynamaya hazır olduğunu görür — Game Center'ın kim olduğuna dair kanıtıyla; bu yalnızca şifrelenmiş bir kod olarak saklanır ve ayrıldıktan beş dakika sonra unutulur. Ayarlar → Çevrimiçi olduğumu göster bunu kapatır."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Chơi trực tuyến là ngoại lệ. Để tính hệ số cho một ván, ứng dụng của cả hai người chơi gửi cho trọng tài của chúng tôi diễn biến ván — thời gian, màu quân, nước đi, kết quả — kèm bằng chứng của Game Center về người đang chơi. Trọng tài chỉ giữ ID người chơi Game Center của bạn dưới dạng mã đã mã hóa, cùng hệ số của bạn ở mỗi thể thức thời gian và ngày ván gần nhất: không tên, không danh bạ. Bảng xếp hạng được công bố theo các mã đó; Game Center hiển thị biệt danh của bạn cạnh mã cho người chơi khác, theo mức bạn cho phép."
+            "value": "Chơi trực tuyến là ngoại lệ. Hệ số trực tuyến của bạn ở mỗi thể thức thời gian được lưu trên bảng xếp hạng của Game Center, nơi người chơi khác thấy nó cạnh biệt danh của bạn, theo mức bạn cho phép; các bảng đó thuộc về Apple. Khi ứng dụng ở trên màn hình, nó cũng báo cho một dịch vụ nhỏ của chúng tôi rằng bạn đang trực tuyến, đang tìm ván hoặc đang chơi, để người khác thấy bạn sẵn sàng chơi — kèm bằng chứng của Game Center về bạn là ai, chỉ được giữ dưới dạng mã đã mã hóa và bị quên năm phút sau khi bạn rời đi. Cài đặt → Hiển thị khi tôi trực tuyến để tắt."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "在线对局是唯一的例外。为了给对局计算等级分，双方的应用会把对局经过——用时、执色、着法、结果——连同 Game Center 证明谁在下棋的凭证一起发给我们的裁判。裁判只以加密代码的形式保存你的 Game Center 玩家 ID，以及你在每种用时下的等级分和最近一次对局的日期：没有姓名，没有联系人。排行榜以这些代码公布；Game Center 按你允许的方式，在你的代码旁向其他玩家显示你的昵称。"
+            "value": "在线对局是唯一的例外。你在每种用时下的在线等级分保存在 Game Center 的排行榜上，其他玩家按你允许的方式在你的昵称旁看到它；这些排行榜属于 Apple。当应用显示在你的屏幕上时，它还会告诉我们的一个小服务：你在线、正在找对局或正在下棋，好让别人看到你有空下棋——附带 Game Center 的身份证明，只以加密代码的形式保存，并在你离开五分钟后被遗忘。设置 → 显示我在线 可以关闭它。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "線上對局是唯一的例外。為了給對局計算等級分，雙方的 App 會把對局經過——用時、執色、著法、結果——連同 Game Center 證明誰在下棋的憑證一起傳給我們的裁判。裁判只以加密代碼的形式保存你的 Game Center 玩家 ID，以及你在每種用時下的等級分和最近一次對局的日期：沒有姓名，沒有聯絡人。排行榜以這些代碼公布；Game Center 依你允許的方式，在你的代碼旁向其他玩家顯示你的暱稱。"
+            "value": "線上對局是唯一的例外。你在每種用時下的線上等級分保存在 Game Center 的排行榜上，其他玩家依你允許的方式在你的暱稱旁看到它；這些排行榜屬於 Apple。當 App 顯示在你的螢幕上時，它還會告訴我們的一個小服務：你在線上、正在找對局或正在下棋，好讓別人看到你有空下棋——附帶 Game Center 的身分證明，只以加密代碼的形式保存，並在你離開五分鐘後被遺忘。設定 → 顯示我在線上 可以關閉它。"
           }
         }
       }
@@ -53388,199 +52206,199 @@
         }
       }
     },
-    "online.playersNote3": {
+    "online.playersNote4": {
       "extractionState": "manual",
       "localizations": {
         "ar-SA": {
           "stringUnit": {
             "state": "translated",
-            "value": "الأسماء المستعارة من Game Center بحسب ما يسمح به كل لاعب، والتصنيفات من الحَكَم من مباريات أكّدها الطرفان. «على التطبيق الآن» يعني أن التطبيق على شاشتهم في هذه اللحظة لمن يُظهر ذلك، و«نشِط» يعني الظهور خلال الأيام السبعة الأخيرة."
+            "value": "الأسماء المستعارة والتصنيفات من Game Center بحسب ما يسمح به كل لاعب. «على التطبيق الآن» يعني أن التطبيق على شاشتهم في هذه اللحظة لمن يُظهر ذلك، و«نشِط» يعني الظهور خلال الأيام السبعة الأخيرة."
           }
         },
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Přezdívky jsou z Game Center, jak je hráč nechá zobrazit; ratingy od rozhodčího, z partií potvrzených oběma hráči. Právě online znamená, že aplikace je teď na obrazovce, u těch, kdo to ukazují; aktivní znamená viděný za posledních sedm dní."
+            "value": "Přezdívky a ratingy jsou z Game Center, jak je každý hráč nechá zobrazit. Právě online znamená, že aplikace je teď na obrazovce, u těch, kdo to ukazují; aktivní znamená viděný za posledních sedm dní."
           }
         },
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kaldenavne kommer fra Game Center, som hver spiller lader dem vise; ratingen fra dommeren, fra partier begge har bekræftet. Online nu betyder, at appen er på deres skærm lige nu, for dem der viser det; aktiv betyder set de sidste syv dage."
+            "value": "Kaldenavne og ratings kommer fra Game Center, som hver spiller lader dem vise. Online nu betyder, at appen er på deres skærm lige nu, for dem der viser det; aktiv betyder set de sidste syv dage."
           }
         },
         "de-DE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Spitznamen stammen aus Game Center, so wie jeder Spieler sie zeigen lässt; die Wertungen vom Schiedsrichter, aus Partien, die beide bestätigt haben. Jetzt online heißt: Die App ist gerade auf dem Bildschirm, bei allen, die das zeigen; aktiv heißt: in den letzten sieben Tagen gesehen."
+            "value": "Spitznamen und Wertungen stammen aus Game Center, so wie jeder Spieler sie zeigen lässt. Jetzt online heißt: Die App ist gerade auf dem Bildschirm, bei allen, die das zeigen; aktiv heißt: in den letzten sieben Tagen gesehen."
           }
         },
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Τα ψευδώνυμα είναι του Game Center, όπως επιτρέπει κάθε παίκτης· οι βαθμολογίες του διαιτητή, από παρτίδες που επιβεβαίωσαν και οι δύο. Σε σύνδεση τώρα σημαίνει ότι η εφαρμογή είναι στην οθόνη τους αυτή τη στιγμή, για όσους το δείχνουν· ενεργός σημαίνει ότι εμφανίστηκε τις τελευταίες επτά ημέρες."
+            "value": "Τα ψευδώνυμα και οι βαθμολογίες είναι του Game Center, όπως επιτρέπει κάθε παίκτης. Σε σύνδεση τώρα σημαίνει ότι η εφαρμογή είναι στην οθόνη τους αυτή τη στιγμή, για όσους το δείχνουν· ενεργός σημαίνει ότι εμφανίστηκε τις τελευταίες επτά ημέρες."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nicknames are Game Center's, as each player lets them be shown; ratings are the referee's, from games both players confirmed. Online now means the app is on their screen this minute, for those who show it; active means seen in the last seven days."
+            "value": "Nicknames and ratings are Game Center's, as each player lets them be shown. Online now means the app is on their screen this minute, for those who show it; active means seen in the last seven days."
           }
         },
         "en-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nicknames are Game Center's, as each player lets them be shown; ratings are the referee's, from games both players confirmed. Online now means the app is on their screen this minute, for those who show it; active means seen in the last seven days."
+            "value": "Nicknames and ratings are Game Center's, as each player lets them be shown. Online now means the app is on their screen this minute, for those who show it; active means seen in the last seven days."
           }
         },
         "en-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nicknames are Game Center's, as each player lets them be shown; ratings are the referee's, from games both players confirmed. Online now means the app is on their screen this minute, for those who show it; active means seen in the last seven days."
+            "value": "Nicknames and ratings are Game Center's, as each player lets them be shown. Online now means the app is on their screen this minute, for those who show it; active means seen in the last seven days."
           }
         },
         "es-ES": {
           "stringUnit": {
             "state": "translated",
-            "value": "Los apodos son de Game Center, según lo que cada jugador permita; las valoraciones son del árbitro, de partidas que ambos confirmaron. En línea ahora significa que la app está en su pantalla en este momento, para quienes lo muestran; activo, visto en los últimos siete días."
+            "value": "Los apodos y las valoraciones son de Game Center, según lo que cada jugador permita mostrar. En línea ahora significa que la app está en su pantalla en este momento, para quienes lo muestran; activo, visto en los últimos siete días."
           }
         },
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nimimerkit ovat Game Centerin, sen mukaan kuin kukin pelaaja sallii; ratingit tuomarin, molempien vahvistamista peleistä. Paikalla nyt tarkoittaa, että sovellus on juuri nyt pelaajan näytöllä, niillä jotka sen näyttävät; aktiivinen tarkoittaa nähtyä viimeisen seitsemän päivän aikana."
+            "value": "Nimimerkit ja ratingit ovat Game Centerin, sen mukaan kuin kukin pelaaja sallii. Paikalla nyt tarkoittaa, että sovellus on juuri nyt pelaajan näytöllä, niillä jotka sen näyttävät; aktiivinen tarkoittaa nähtyä viimeisen seitsemän päivän aikana."
           }
         },
         "fr-CA": {
           "stringUnit": {
             "state": "translated",
-            "value": "Les pseudos viennent de Game Center, selon ce que chaque joueur autorise ; les classements de l’arbitre, d’après les parties confirmées par les deux joueurs. En ligne signifie que l’app est à l’écran en ce moment, pour ceux qui l’indiquent ; actif signifie vu ces sept derniers jours."
+            "value": "Les pseudos et les classements viennent de Game Center, selon ce que chaque joueur autorise. En ligne signifie que l’app est à l’écran en ce moment, pour ceux qui l’indiquent ; actif signifie vu ces sept derniers jours."
           }
         },
         "fr-FR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Les pseudos viennent de Game Center, selon ce que chaque joueur autorise ; les classements de l’arbitre, d’après les parties confirmées par les deux joueurs. En ligne signifie que l’app est à l’écran en ce moment, pour ceux qui l’indiquent ; actif signifie vu ces sept derniers jours."
+            "value": "Les pseudos et les classements viennent de Game Center, selon ce que chaque joueur autorise. En ligne signifie que l’app est à l’écran en ce moment, pour ceux qui l’indiquent ; actif signifie vu ces sept derniers jours."
           }
         },
         "he": {
           "stringUnit": {
             "state": "translated",
-            "value": "הכינויים הם של Game Center, כפי שכל שחקן מתיר; הדירוגים של השופט, ממשחקים ששני הצדדים אישרו. באפליקציה עכשיו פירושו שהאפליקציה על המסך שלהם ברגע זה, אצל מי שמציג זאת; פעיל פירושו שנראה בשבעת הימים האחרונים."
+            "value": "הכינויים והדירוגים הם של Game Center, כפי שכל שחקן מתיר להציג. באפליקציה עכשיו פירושו שהאפליקציה על המסך שלהם ברגע זה, אצל מי שמציג זאת; פעיל פירושו שנראה בשבעת הימים האחרונים."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "उपनाम Game Center के हैं, जितना हर खिलाड़ी दिखाने देता है; रेटिंग रेफ़री की हैं, दोनों खिलाड़ियों द्वारा पुष्ट बाज़ियों से। अभी ऑनलाइन का अर्थ है कि ऐप इस पल उनकी स्क्रीन पर है, उनके लिए जो यह दिखाते हैं; सक्रिय का अर्थ है पिछले सात दिनों में दिखे।"
+            "value": "उपनाम और रेटिंग Game Center की हैं, जितना हर खिलाड़ी दिखाने देता है। अभी ऑनलाइन का अर्थ है कि ऐप इस पल उनकी स्क्रीन पर है, उनके लिए जो यह दिखाते हैं; सक्रिय का अर्थ है पिछले सात दिनों में दिखे।"
           }
         },
         "hu": {
           "stringUnit": {
             "state": "translated",
-            "value": "A becenevek a Game Centeréi, ahogy az egyes játékosok engedik; az értékszámok a játékvezetőéi, mindkét fél által megerősített játszmákból. Most online: az alkalmazás éppen a képernyőjükön van, azoknál, akik ezt mutatják; aktív: az elmúlt hét napban látott."
+            "value": "A becenevek és az értékszámok a Game Centeréi, ahogy az egyes játékosok engedik mutatni őket. Most online: az alkalmazás éppen a képernyőjükön van, azoknál, akik ezt mutatják; aktív: az elmúlt hét napban látott."
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nama panggilan berasal dari Game Center, sesuai izin tiap pemain; rating dari wasit, dari partai yang dikonfirmasi kedua pemain. Daring sekarang berarti aplikasi sedang ada di layar mereka saat ini, bagi yang menunjukkannya; aktif berarti terlihat dalam tujuh hari terakhir."
+            "value": "Nama panggilan dan rating berasal dari Game Center, sesuai izin tiap pemain. Daring sekarang berarti aplikasi sedang ada di layar mereka saat ini, bagi yang menunjukkannya; aktif berarti terlihat dalam tujuh hari terakhir."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "I nickname sono di Game Center, come ogni giocatore permette di mostrarli; i punteggi dell'arbitro, da partite confermate da entrambi. Online ora significa che l'app è sul loro schermo in questo momento, per chi lo mostra; attivo, visto negli ultimi sette giorni."
+            "value": "I nickname e i punteggi sono di Game Center, come ogni giocatore permette di mostrarli. Online ora significa che l'app è sul loro schermo in questo momento, per chi lo mostra; attivo, visto negli ultimi sette giorni."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "ニックネームは各プレイヤーが許可した範囲で Game Center が表示し、レーティングは双方が確認した対局から審判が算出します。「オンライン中」は今この瞬間アプリが画面に表示されていること（表示を許可した人のみ）、「アクティブ」は過去7日間に見かけたことを意味します。"
+            "value": "ニックネームとレーティングは、各プレイヤーが許可した範囲で Game Center が表示するものです。「オンライン中」は今この瞬間アプリが画面に表示されていること（表示を許可した人のみ）、「アクティブ」は過去7日間に見かけたことを意味します。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "닉네임은 각 플레이어가 허용한 범위에서 Game Center가 제공하고, 레이팅은 두 플레이어가 모두 확인한 대국에서 심판이 계산합니다. '지금 온라인'은 앱이 지금 화면에 떠 있다는 뜻이며(표시를 켠 사람만), '활동'은 최근 7일 안에 보였다는 뜻입니다."
+            "value": "닉네임과 레이팅은 각 플레이어가 공개를 허용한 범위에서 Game Center가 제공합니다. '지금 온라인'은 앱이 지금 화면에 떠 있다는 뜻이며(표시를 켠 사람만), '활동'은 최근 7일 안에 보였다는 뜻입니다."
           }
         },
         "ms": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nama samaran daripada Game Center, mengikut izin setiap pemain; rating daripada pengadil, daripada permainan yang disahkan kedua-dua pemain. Dalam talian sekarang bermakna aplikasi berada pada skrin mereka ketika ini, bagi yang menunjukkannya; aktif bermakna dilihat dalam tujuh hari lepas."
+            "value": "Nama samaran dan rating daripada Game Center, mengikut izin setiap pemain. Dalam talian sekarang bermakna aplikasi berada pada skrin mereka ketika ini, bagi yang menunjukkannya; aktif bermakna dilihat dalam tujuh hari lepas."
           }
         },
         "nl-NL": {
           "stringUnit": {
             "state": "translated",
-            "value": "Bijnamen komen uit Game Center, zoals elke speler ze laat zien; ratings van de scheidsrechter, uit partijen die beide spelers bevestigden. Nu online betekent dat de app op dit moment op hun scherm staat, voor wie dat laat zien; actief betekent gezien in de afgelopen zeven dagen."
+            "value": "Bijnamen en ratings komen uit Game Center, zoals elke speler ze laat zien. Nu online betekent dat de app op dit moment op hun scherm staat, voor wie dat laat zien; actief betekent gezien in de afgelopen zeven dagen."
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kallenavn kommer fra Game Center, slik hver spiller lar dem vises; ratingen fra dommeren, fra partier begge har bekreftet. Pålogget nå betyr at appen er på skjermen deres akkurat nå, for dem som viser det; aktiv betyr sett de siste sju dagene."
+            "value": "Kallenavn og ratinger kommer fra Game Center, slik hver spiller lar dem vises. Pålogget nå betyr at appen er på skjermen deres akkurat nå, for dem som viser det; aktiv betyr sett de siste sju dagene."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pseudonimy pochodzą z Game Center, zgodnie z tym, na co pozwala gracz; rankingi od sędziego, z partii potwierdzonych przez obu graczy. Teraz online oznacza, że aplikacja jest w tej chwili na ekranie, u tych, którzy to pokazują; aktywni to widziani w ciągu ostatnich siedmiu dni."
+            "value": "Pseudonimy i rankingi pochodzą z Game Center, zgodnie z tym, na co pozwala każdy gracz. Teraz online oznacza, że aplikacja jest w tej chwili na ekranie, u tych, którzy to pokazują; aktywni to widziani w ciągu ostatnich siedmiu dni."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Os apelidos são do Game Center, conforme cada jogador permite; os ratings são do árbitro, de partidas que os dois confirmaram. On-line agora significa que o app está na tela da pessoa neste momento, para quem mostra isso; ativo, visto nos últimos sete dias."
+            "value": "Os apelidos e os ratings são do Game Center, conforme cada jogador permite mostrar. On-line agora significa que o app está na tela da pessoa neste momento, para quem mostra isso; ativo, visto nos últimos sete dias."
           }
         },
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Poreclele vin din Game Center, după cum permite fiecare jucător; ratingurile de la arbitru, din partide confirmate de amândoi. Online acum înseamnă că aplicația e pe ecranul lor în acest moment, pentru cei care arată asta; activ înseamnă văzut în ultimele șapte zile."
+            "value": "Poreclele și ratingurile vin din Game Center, după cum permite fiecare jucător. Online acum înseamnă că aplicația e pe ecranul lor în acest moment, pentru cei care arată asta; activ înseamnă văzut în ultimele șapte zile."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ники берутся из Game Center — в той мере, в какой игрок разрешает; рейтинги — от арбитра, по партиям, подтверждённым обоими. «Сейчас онлайн» — приложение открыто на экране в эту минуту, у тех, кто это показывает; «активные» — заходили за последние семь дней."
+            "value": "Ники и рейтинги берутся из Game Center — в той мере, в какой игрок разрешает их показывать. «Сейчас онлайн» — приложение открыто на экране в эту минуту, у тех, кто это показывает; «активные» — заходили за последние семь дней."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Smeknamn kommer från Game Center, så som varje spelare låter dem visas; ratingen från domaren, från partier som båda bekräftat. Online nu betyder att appen är på deras skärm just nu, för dem som visar det; aktiv betyder sedd de senaste sju dagarna."
+            "value": "Smeknamn och ratingar kommer från Game Center, så som varje spelare låter dem visas. Online nu betyder att appen är på deras skärm just nu, för dem som visar det; aktiv betyder sedd de senaste sju dagarna."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "ชื่อเล่นมาจาก Game Center ตามที่ผู้เล่นแต่ละคนอนุญาต ส่วนเรตติ้งมาจากกรรมการ จากเกมที่ทั้งสองฝ่ายยืนยัน ออนไลน์ตอนนี้หมายถึงแอปอยู่บนหน้าจอของเขาในขณะนี้ สำหรับผู้ที่เลือกแสดง ส่วนใช้งานอยู่หมายถึงพบในช่วงเจ็ดวันที่ผ่านมา"
+            "value": "ชื่อเล่นและเรตติ้งมาจาก Game Center ตามที่ผู้เล่นแต่ละคนอนุญาตให้แสดง ออนไลน์ตอนนี้หมายถึงแอปอยู่บนหน้าจอของเขาในขณะนี้ สำหรับผู้ที่เลือกแสดง ส่วนใช้งานอยู่หมายถึงพบในช่วงเจ็ดวันที่ผ่านมา"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Takma adlar Game Center'ındır, her oyuncunun izin verdiği kadarıyla; puanlar hakemindir, iki tarafın da doğruladığı oyunlardan. Şu an çevrimiçi, uygulamanın şu anda ekranlarında olduğu anlamına gelir (gösterenler için); etkin, son yedi günde görülmüş demektir."
+            "value": "Takma adlar ve puanlar Game Center'ındır, her oyuncunun gösterilmesine izin verdiği kadarıyla. Şu an çevrimiçi, uygulamanın şu anda ekranlarında olduğu anlamına gelir (gösterenler için); etkin, son yedi günde görülmüş demektir."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Biệt danh là của Game Center, theo mức mỗi người chơi cho phép; hệ số là của trọng tài, từ các ván cả hai đã xác nhận. Đang trực tuyến nghĩa là ứng dụng đang ở trên màn hình của họ lúc này, với ai chọn hiển thị; hoạt động nghĩa là xuất hiện trong bảy ngày qua."
+            "value": "Biệt danh và hệ số là của Game Center, theo mức mỗi người chơi cho phép hiển thị. Đang trực tuyến nghĩa là ứng dụng đang ở trên màn hình của họ lúc này, với ai chọn hiển thị; hoạt động nghĩa là xuất hiện trong bảy ngày qua."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "昵称来自 Game Center，按每位玩家允许的方式显示；等级分来自裁判，依据双方确认的对局。“正在在线”指此刻应用正显示在对方屏幕上（仅限选择显示的人）；“活跃”指过去七天内出现过。"
+            "value": "昵称和等级分来自 Game Center，按每位玩家允许的方式显示。“正在在线”指此刻应用正显示在对方屏幕上（仅限选择显示的人）；“活跃”指过去七天内出现过。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "暱稱來自 Game Center，依每位玩家允許的方式顯示；等級分來自裁判，依據雙方確認的對局。「正在線上」指此刻 App 正顯示在對方螢幕上（僅限選擇顯示的人）；「活躍」指過去七天內出現過。"
+            "value": "暱稱和等級分來自 Game Center，依每位玩家允許的方式顯示。「正在線上」指此刻 App 正顯示在對方螢幕上（僅限選擇顯示的人）；「活躍」指過去七天內出現過。"
           }
         }
       }
@@ -54763,400 +53581,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "等級分 %1$@ → %2$lld"
-          }
-        }
-      }
-    },
-    "online.ratingConfirming": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar-SA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "جارٍ تأكيد التصنيف…"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Potvrzuje se rating…"
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bekræfter ratingen …"
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wertung wird bestätigt …"
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Επιβεβαίωση βαθμολογίας…"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Confirming the rating…"
-          }
-        },
-        "en-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Confirming the rating…"
-          }
-        },
-        "en-US": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Confirming the rating…"
-          }
-        },
-        "es-ES": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Confirmando la valoración…"
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vahvistetaan ratingia…"
-          }
-        },
-        "fr-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Confirmation du classement…"
-          }
-        },
-        "fr-FR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Confirmation du classement…"
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "מאשרים את הדירוג…"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "रेटिंग की पुष्टि हो रही है…"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Az értékszám megerősítése…"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mengonfirmasi rating…"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Conferma del punteggio…"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "レーティングを確認中…"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "레이팅 확인 중…"
-          }
-        },
-        "ms": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mengesahkan rating…"
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rating wordt bevestigd…"
-          }
-        },
-        "no": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bekrefter ratingen …"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Potwierdzanie rankingu…"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Confirmando o rating…"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Se confirmă ratingul…"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Подтверждаем рейтинг…"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bekräftar ratingen…"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "กำลังยืนยันเรตติ้ง…"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Puan doğrulanıyor…"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Đang xác nhận hệ số…"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "正在确认等级分…"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "正在確認等級分…"
-          }
-        }
-      }
-    },
-    "online.ratingLater": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar-SA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "سيُؤكَّد التصنيف عند وصول نتيجة %@."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rating se potvrdí, až dorazí výsledek od %@."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ratingen bliver bekræftet, når resultatet fra %@ kommer."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Die Wertung wird bestätigt, sobald das Ergebnis von %@ eintrifft."
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Η βαθμολογία θα επιβεβαιωθεί μόλις φτάσει το αποτέλεσμα από %@."
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The rating will be confirmed when %@'s result arrives."
-          }
-        },
-        "en-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The rating will be confirmed when %@'s result arrives."
-          }
-        },
-        "en-US": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The rating will be confirmed when %@'s result arrives."
-          }
-        },
-        "es-ES": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "La valoración se confirmará cuando llegue el resultado de %@."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rating vahvistetaan, kun pelaajan %@ tulos saapuu."
-          }
-        },
-        "fr-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Le classement sera confirmé à l’arrivée du résultat de %@."
-          }
-        },
-        "fr-FR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Le classement sera confirmé à l’arrivée du résultat de %@."
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "הדירוג יאושר כשתגיע התוצאה מ־%@."
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ का नतीजा आने पर रेटिंग की पुष्टि होगी।"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Az értékszám megerősítése akkor történik meg, amikor megérkezik %@ eredménye."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rating akan dikonfirmasi saat hasil dari %@ tiba."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Il punteggio sarà confermato quando arriverà il risultato di %@."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ の結果が届き次第、レーティングが確定します。"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@의 결과가 도착하면 레이팅이 확정됩니다."
-          }
-        },
-        "ms": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rating akan disahkan apabila keputusan daripada %@ tiba."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "De rating wordt bevestigd zodra de uitslag van %@ binnen is."
-          }
-        },
-        "no": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ratingen blir bekreftet når resultatet fra %@ kommer."
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ranking zostanie potwierdzony, gdy nadejdzie wynik od %@."
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "O rating será confirmado quando chegar o resultado de %@."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ratingul va fi confirmat când sosește rezultatul de la %@."
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Рейтинг будет подтверждён, когда придёт результат от %@."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ratingen bekräftas när resultatet från %@ kommer."
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "เรตติ้งจะได้รับการยืนยันเมื่อผลจาก %@ มาถึง"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Puan, %@ tarafının sonucu geldiğinde doğrulanacak."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hệ số sẽ được xác nhận khi kết quả từ %@ đến."
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "等 %@ 的结果送达后，等级分就会确认。"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "等 %@ 的結果送達後，等級分就會確認。"
           }
         }
       }
@@ -57525,203 +55949,6 @@
         }
       }
     },
-    "online.unrated.outdated": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar-SA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "غير محتسبة في التصنيف: يجب تحديث تطبيق الخصم أولًا."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nezapočítává se do ratingu: aplikace soupeře potřebuje nejdřív aktualizovat."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Uden rating: modstanderens app skal opdateres først."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ohne Wertung: Die App deines Gegners muss erst aktualisiert werden."
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Χωρίς βαθμολόγηση: η εφαρμογή του αντιπάλου χρειάζεται πρώτα ενημέρωση."
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Not rated: your opponent's app needs updating first."
-          }
-        },
-        "en-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Not rated: your opponent's app needs updating first."
-          }
-        },
-        "en-US": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Not rated: your opponent's app needs updating first."
-          }
-        },
-        "es-ES": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sin valoración: la app de tu rival necesita actualizarse primero."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ei vaikuta ratingiin: vastustajan sovellus pitää ensin päivittää."
-          }
-        },
-        "fr-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Non classée : l’app de votre adversaire doit d’abord être mise à jour."
-          }
-        },
-        "fr-FR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Non classée : l’app de votre adversaire doit d’abord être mise à jour."
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "לא מדורג: יש לעדכן קודם את האפליקציה של היריב."
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "रेटिंग नहीं: प्रतिद्वंद्वी का ऐप पहले अपडेट होना चाहिए।"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nem értékelt: az ellenfél alkalmazását előbb frissíteni kell."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tanpa rating: aplikasi lawanmu perlu diperbarui dulu."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Senza punteggio: l'app del tuo avversario va prima aggiornata."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "レーティング対象外：相手のアプリを先にアップデートする必要があります。"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "레이팅 미반영: 상대의 앱을 먼저 업데이트해야 합니다."
-          }
-        },
-        "ms": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tanpa rating: aplikasi lawan anda perlu dikemas kini dahulu."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Niet voor rating: de app van je tegenstander moet eerst worden bijgewerkt."
-          }
-        },
-        "no": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Uten rating: motstanderens app må oppdateres først."
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bez rankingu: aplikacja przeciwnika wymaga najpierw aktualizacji."
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sem rating: o app do seu adversário precisa ser atualizado primeiro."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fără rating: aplicația adversarului trebuie mai întâi actualizată."
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Без рейтинга: приложение соперника сначала нужно обновить."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Utan rating: motståndarens app behöver uppdateras först."
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ไม่คิดเรตติ้ง: ต้องอัปเดตแอปของคู่แข่งก่อน"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Puansız: rakibinin uygulamasının önce güncellenmesi gerekiyor."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không tính hệ số: ứng dụng của đối thủ cần được cập nhật trước."
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "不计等级分：对手的应用需要先更新。"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "不計等級分：對手的 App 需要先更新。"
-          }
-        }
-      }
-    },
     "online.unrated.rematch": {
       "extractionState": "manual",
       "localizations": {
@@ -57915,203 +56142,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "不計等級分：再來一局是友誼賽。"
-          }
-        }
-      }
-    },
-    "online.unrated.unconfirmed": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar-SA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "غير محتسبة في التصنيف: تعذّر تأكيد النتيجة من الطرفين."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nezapočítává se do ratingu: výsledek se nepodařilo potvrdit oběma stranami."
-          }
-        },
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Uden rating: resultatet kunne ikke bekræftes af begge sider."
-          }
-        },
-        "de-DE": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ohne Wertung: Das Ergebnis konnte nicht von beiden Seiten bestätigt werden."
-          }
-        },
-        "el": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Χωρίς βαθμολόγηση: το αποτέλεσμα δεν επιβεβαιώθηκε και από τις δύο πλευρές."
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Not rated: the result could not be confirmed by both sides."
-          }
-        },
-        "en-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Not rated: the result could not be confirmed by both sides."
-          }
-        },
-        "en-US": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Not rated: the result could not be confirmed by both sides."
-          }
-        },
-        "es-ES": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sin valoración: el resultado no pudo confirmarse por ambas partes."
-          }
-        },
-        "fi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ei vaikuta ratingiin: tulosta ei voitu vahvistaa kummaltakin puolelta."
-          }
-        },
-        "fr-CA": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Non classée : le résultat n’a pas pu être confirmé par les deux camps."
-          }
-        },
-        "fr-FR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Non classée : le résultat n’a pas pu être confirmé par les deux camps."
-          }
-        },
-        "he": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "לא מדורג: שני הצדדים לא אישרו את התוצאה."
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "रेटिंग नहीं: नतीजे की पुष्टि दोनों पक्षों से नहीं हो सकी।"
-          }
-        },
-        "hu": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nem értékelt: az eredményt nem erősítette meg mindkét fél."
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tanpa rating: hasilnya tidak bisa dikonfirmasi oleh kedua pihak."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Senza punteggio: il risultato non è stato confermato da entrambi."
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "レーティング対象外：結果を双方で確認できませんでした。"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "레이팅 미반영: 결과를 양쪽 모두 확인하지 못했습니다."
-          }
-        },
-        "ms": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tanpa rating: keputusan tidak dapat disahkan oleh kedua-dua pihak."
-          }
-        },
-        "nl-NL": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Niet voor rating: de uitslag kon niet door beide kanten worden bevestigd."
-          }
-        },
-        "no": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Uten rating: resultatet kunne ikke bekreftes av begge sider."
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bez rankingu: wynik nie został potwierdzony przez obie strony."
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sem rating: o resultado não pôde ser confirmado pelos dois lados."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fără rating: rezultatul nu a putut fi confirmat de ambele părți."
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Без рейтинга: результат не удалось подтвердить с обеих сторон."
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Utan rating: resultatet kunde inte bekräftas av båda sidor."
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ไม่คิดเรตติ้ง: ทั้งสองฝ่ายยืนยันผลไม่ได้"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Puansız: sonuç iki tarafça da doğrulanamadı."
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không tính hệ số: kết quả không được cả hai bên xác nhận."
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "不计等级分：结果未能得到双方确认。"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "不計等級分：結果未能得到雙方確認。"
           }
         }
       }

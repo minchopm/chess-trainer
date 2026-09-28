@@ -96,14 +96,14 @@ fetched at launch or in the background, and CloudFront and S3 request logging
 are both off, so nothing is kept about who downloaded it. The stories are
 written from public facts: the moves and results of official broadcasts, and
 Stockfish's evaluations. Nothing is collected by it. The privacy label changed
-with the referee (section 7): *User ID* and *Gameplay Content*, linked to the
+with who-is-online (section 7): *User ID* and *Gameplay Content*, linked to the
 user, for app functionality, not used for tracking.
 
 What else it uses:
 
 | | |
 |---|---|
-| **GameKit (Apple)** | Game Center, for finding an opponent and carrying moves between the two devices in Multiplayer, and the identity signature each rated game is reported to our referee with (section 7). |
+| **GameKit (Apple)** | Game Center, for finding an opponent and carrying moves between the two devices in Multiplayer, the leaderboards the online ratings live on, and the identity signature who-is-online is sent with (section 7). |
 | **StoreKit 2 (Apple)** | The subscription and the lifetime unlock. Payment is entirely Apple's; the app only asks whether a purchase is active. |
 | **Vision (Apple)** | Reading a board off a photograph. On-device, offline. |
 
@@ -150,11 +150,12 @@ to it from About.
 
 The app collects nothing outside online play: no analytics, no advertising, no
 tracking, no account. Training ratings, solved puzzles, review schedule and
-purchase state stay in the app's container. Rated online games are the one
-exception: so that no device can claim a rating, both players' apps report the
-game (clock, colours, moves, result) to our referee with GameKit's identity
-signature; it keeps the Game Center team player ID only as a hash, with the
-ratings. About → Delete my online ratings removes them. Policy: `PRIVACY.md`, and
+purchase state stay in the app's container. The one exception is who is online:
+while the app is on screen, it tells a small service of ours, every three
+minutes, that the player is online, looking for a game or in one, with GameKit's
+identity signature; the Game Center team player ID is kept only as a hash, and
+each note expires after five minutes. Settings → Show when I'm online turns it
+off. Online ratings are on Game Center's leaderboards. Policy: `PRIVACY.md`, and
 https://brasspawn.com/privacy.
 
 ## 8. Content and moderation

@@ -1,7 +1,7 @@
 # Privacy Policy
 
-**Brass Pawn** collects nothing — apart from what it takes to rate the games you
-play online, if you play them, described under *Online ratings* below.
+**Brass Pawn** collects nothing — apart from saying, while you play online, that
+you are online, described under *Who is online* below.
 
 The app makes no analytics calls, carries no advertising, and contains no
 third-party tracking of any kind. There is no account to create, and outside
@@ -25,55 +25,37 @@ privacy policy; we receive none of it.
 Moves and clocks travel directly between the two devices through Game Center
 while you play.
 
-The app also puts your online rating on each clock you have played on Game
-Center's leaderboards — one for each clock — and sends it again when you open
-the app signed in to Game Center. Other players see your Game Center nickname
+Your online rating lives on Game Center's leaderboards — one for each clock. At
+the end of a rated game each player's device works out its own player's new
+rating, from both players' ratings as Game Center held them when the game
+began, and writes it there, with how sure the rating is, how many rated games
+it has and the day of the last one. The app sends it again, unchanged, when you
+open it signed in to Game Center. Other players see your Game Center nickname
 and when you were last seen there, as your Game Center privacy settings allow;
 that is how the app's rank list shows who each player is, how its lists of
 active and inactive players are made, and what lets another player invite you
 to a game. The leaderboards are Apple's.
 
-## Online ratings
+## Who is online
 
-A rating that each device worked out for itself could be made to say anything,
-so the ratings of online games are kept by a referee of ours: a small function
-on Amazon Web Services, in Frankfurt.
+Game Center can say who played this week, but not who has the app open now. So
+the app tells a small service of ours — a function on Amazon Web Services, in
+Frankfurt — when you are there.
 
-**What the app sends it.** When a game that can be rated begins, and when it
-ends, the app sends: your Game Center team player ID — Apple's identifier for
-you in our apps, which is not your name, e-mail or Apple Account — with Apple's
-signature proving it is yours; the game's ID; the clock; your colour; whether
-the game came from the open search, an invitation or a rematch; and, at the
-end, the moves and the result. Your IP address reaches Amazon, as any web
-request's does. Nothing else — no nickname, no photo, no contacts, no device
-details. Friendly games (invitations, rematches) are not sent at all.
-
-**What it keeps.** Your ID only as a scrambled code (a one-way hash of it),
-never the ID itself. Beside that code: your rating, how sure it is, how many
-rated games you have played, and the day of your last rated game, on each
-clock. For a day after a rated game, the pair of codes, so the same two players
-are rated once a day. What was sent about each game — the two reports, the
-moves, the verdict — is deleted after thirty days. The function's logs, which
-name games by their ID and players by their code, are deleted after fourteen
-days.
-
-**What it publishes.** Each clock's list — codes, ratings, how sure each is,
-the number of games and the day of the last one — at
-`https://brasspawn.com/media/ratings/v1/`, which the app reads to show the rank
-list. A code says nothing about who you are: the app puts a nickname beside it
-only where Game Center shows that player to the person looking.
-
-**Who is online.** While the app is on your screen and you are signed in to Game
-Center, it tells the referee that you are here — online, looking for a game on a
+While the app is on your screen and you are signed in to Game Center, it tells
+the service that you are here — online, looking for a game on a
 clock, or in one — again every three minutes, and that you have gone when it
 leaves the screen. Other signed-in players see it beside your nickname in the
 list of players, so an invitation reaches somebody who is there to play. Each
 such note lasts five minutes and is then deleted: nothing is kept about when you
 were online. *Settings → Show when I'm online* turns it off.
 
-The referee is used only to rate games and to say who is online. Nothing in it is sold, shared or used
-for advertising or tracking. To have your online ratings removed, write to
-privacy@brasspawn.com.
+Each note carries your Game Center team player ID — Apple's identifier for you
+in our apps, which is not your name, e-mail or Apple Account — with Apple's
+signature proving it is yours, and the service keeps it only as a scrambled
+code (a one-way hash of it). Your IP address reaches Amazon, as any web
+request's does. Nothing else is sent, and nothing is sold, shared or used for
+advertising or tracking. The function's logs are deleted after fourteen days.
 
 ## Today
 
@@ -111,8 +93,9 @@ ratings and moves, and not their usernames.
 ## Children
 
 Outside online play the app collects no data at all. Online play is through
-Game Center, whose age settings Apple applies; the referee keeps only what is
-described under *Online ratings*, and nothing that identifies anybody. It shows no adverts and links out only to the source repository, this
+Game Center, whose age settings Apple applies; our service keeps only what
+*Who is online* describes, for five minutes, and nothing that identifies
+anybody. It shows no adverts and links out only to the source repository, this
 site and the licence text.
 
 ## Contact

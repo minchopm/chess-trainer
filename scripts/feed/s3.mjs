@@ -142,56 +142,5 @@ export function openS3({ bucket, region }) {
       });
       if (!response.ok) throw new Error(`S3 PUT ${key}: ${response.status} ${await response.text()}`);
     },
-    /** The object's text and its ETag, or null when there is none. */
-    async getTagged(key) {
-      const response = await request('GET', key);
-      if (response.status === 404) return null;
-      if (!response.ok) throw new Error(`S3 GET ${key}: ${response.status} ${await response.text()}`);
-      return { text: await response.text(), etag: response.headers.get('etag') };
-    },
-    /**
-     * Written only while the object is still the one that was read (`ifMatch`,
-     * its ETag), or only if there is none yet (`ifNoneMatch`). False when S3
-     * says somebody got there first — 412, or 409 for a write at the same
-     * instant — which is the caller's cue to read it again.
-     */
-    async putIf(key, body, { ifMatch, ifNoneMatch, contentType, cacheControl } = {}) {
-      const response = await request('PUT', key, {
-        body,
-        headers: {
-          ...(ifMatch ? { 'If-Match': ifMatch } : {}),
-          ...(ifNoneMatch ? { 'If-None-Match': '*' } : {}),
-          ...(contentType ? { 'Content-Type': contentType } : {}),
-          ...(cacheControl ? { 'Cache-Control': cacheControl } : {}),
-        },
-      });
-      if (response.status === 412 || response.status === 409) return false;
-      if (!response.ok) throw new Error(`S3 PUT ${key}: ${response.status} ${await response.text()}`);
-      return true;
-    },
-    /** Every key under a prefix, with when it was last written. */
-    async list(prefix) {
-      const found = [];
-      let token = null;
-      do {
-        const query = [['list-type', '2'], ['prefix', prefix], ...(token ? [['continuation-token', token]] : [])];
-        const response = await request('GET', '', { query });
-        if (!response.ok) throw new Error(`S3 LIST ${prefix}: ${response.status} ${await response.text()}`);
-        const xml = await response.text();
-        for (const [, block] of xml.matchAll(/<Contents>([\s\S]*?)<\/Contents>/g)) {
-          const key = /<Key>([\s\S]*?)<\/Key>/.exec(block)?.[1];
-          const modified = /<LastModified>([\s\S]*?)<\/LastModified>/.exec(block)?.[1];
-          if (key) found.push({ key: key.replace(/&amp;/g, '&'), lastModified: modified ? Date.parse(modified) : 0 });
-        }
-        token = /<IsTruncated>true<\/IsTruncated>/.test(xml)
-          ? /<NextContinuationToken>([\s\S]*?)<\/NextContinuationToken>/.exec(xml)?.[1] ?? null
-          : null;
-      } while (token);
-      return found;
-    },
-    async remove(key) {
-      const response = await request('DELETE', key);
-      if (!response.ok && response.status !== 404) throw new Error(`S3 DELETE ${key}: ${response.status} ${await response.text()}`);
-    },
   };
 }

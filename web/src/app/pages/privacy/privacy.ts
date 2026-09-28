@@ -21,7 +21,7 @@ export class Privacy {
       title: 'Privacy Policy',
       updated: '2026-09-28',
       description:
-        'Brass Pawn collects nothing outside online play, and only what rates those games. No analytics, no advertising, no third-party tracking and no account. The full privacy policy, in plain words.',
+        'Brass Pawn collects nothing outside online play, and there only who is online. No analytics, no advertising, no third-party tracking and no account. The full privacy policy, in plain words.',
     });
   }
 }

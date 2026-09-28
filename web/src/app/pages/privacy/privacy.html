@@ -1,7 +1,7 @@
 <bp-page-head
   slug="Legal"
   title="Privacy Policy"
-  lede="Brass Pawn collects nothing outside online play. This page says so in the detail a policy is supposed to have, and names the places where data does exist: Apple's, for purchases and Game Center, and ours, for the ratings of online games."
+  lede="Brass Pawn collects nothing outside online play. This page says so in the detail a policy is supposed to have, and names the places where data does exist: Apple's, for purchases and Game Center, and ours, for saying who is online."
   meta="Effective 28 September 2026 · Applies to Brass Pawn for iPhone, iPad and Mac"
 />
 
@@ -15,11 +15,12 @@
         ratings and history live on your device and are deleted with the app.
       </p>
       <p>
-        The one exception is <strong>rated online games</strong>. So that no device can claim a
-        rating it did not earn, both players’ apps send our referee the game — the clock, the
-        colours, the moves and the result — with Game Center’s proof of who is playing. It keeps
-        your Game Center ID only as a scrambled code, with your rating on each clock; no name, no
-        contacts. Details in <a [routerLink]="[]" fragment="referee">section 6</a>.
+        The one exception is <strong>who is online</strong>. While the app is on your screen it
+        tells a small service of ours that you are online, looking for a game or in one, so other
+        players can see you are there to play — with Game Center’s proof of who you are, kept only as
+        a scrambled code, and forgotten five minutes after you leave. Details in
+        <a [routerLink]="[]" fragment="presence">section 6</a>. Your online ratings are kept on Game
+        Center’s leaderboards, which are Apple’s.
       </p>
       <p>
         <strong>Purchases</strong> are handled by the App Store, and <strong>online play</strong>
@@ -42,8 +43,7 @@
 
     <h2 id="collect">2. What we collect</h2>
     <p>
-      Nothing, apart from what rates the games you play online (<a [routerLink]="[]"
-        fragment="referee"
+      Nothing, apart from saying who is online (<a [routerLink]="[]" fragment="presence"
         >section 6</a
       >). The app makes no analytics calls, carries no advertising, contains no third-party
       tracking or attribution SDK of any kind, and has no account system. It does not read your
@@ -95,31 +95,16 @@
             <td>You and your opponent</td>
           </tr>
           <tr>
-            <td>
-              Your Game Center team player ID with Apple’s signature, and the clock, colours, moves and
-              result of a rated online game
-            </td>
-            <td>
-              Sent to our referee when the game begins and ends; the ID is kept only as a one-way code,
-              the game’s record for thirty days
-            </td>
-            <td>Us</td>
+            <td>That you are online, looking for a game on a clock, or in one, with your Game Center
+              ID kept only as a one-way code</td>
+            <td>Told to our service while the app is on screen; each note deleted after five minutes</td>
+            <td>Signed-in players, beside your nickname; off in Settings</td>
           </tr>
           <tr>
             <td>
               Your online rating on each clock, how sure it is, your number of rated games and the day
               of the last one
             </td>
-            <td>Kept by our referee under that code, and published on the rank lists</td>
-            <td>Anyone, under the code; your nickname beside it only as Game Center allows</td>
-          </tr>
-          <tr>
-            <td>That you are online, looking for a game on a clock, or in one</td>
-            <td>Told to our referee while the app is on screen; each note deleted after five minutes</td>
-            <td>Signed-in players, beside your nickname; off in Settings</td>
-          </tr>
-          <tr>
-            <td>The online rating the referee settled on, for each clock you have played</td>
             <td>Sent to Game Center’s leaderboards, with your Game Center nickname</td>
             <td>Other players, as your Game Center settings allow, and Apple</td>
           </tr>
@@ -137,10 +122,8 @@
     <p>
       There is no “export my data” button and no “delete my account” button, because there is no
       account and, outside online play, nothing of yours has left the device. Deleting the app is the
-      deletion mechanism. Your online ratings are the exception: the app’s About screen has a
-      button that deletes them from the referee (see <a [routerLink]="[]" fragment="referee"
-        >section 6</a
-      >).
+      deletion mechanism. Your online ratings are on Game Center’s leaderboards, which are Apple’s
+      (see <a [routerLink]="[]" fragment="rights">section 12</a>).
     </p>
 
     <h2 id="network">4. When the app uses the network</h2>
@@ -160,11 +143,12 @@
         and the licence text. Nothing opens on its own.
       </li>
       <li>
-        <strong>Rated online games, and who is online.</strong> When a game that can be rated
-        begins, and when it ends, the app tells our referee; while the app is on screen it also says,
-        every three minutes, that you are online, unless you have turned that off (<a [routerLink]="[]" fragment="referee">section 6</a>). Opening the
-        multiplayer lobby or the rank list downloads each clock’s list from
-        <code>brasspawn.com/media/ratings/v1/</code>, the same files for everybody.
+        <strong>Who is online.</strong> While the app is on screen it says, every three minutes, that
+        you are online, unless you have turned that off, and the list of players asks who is (<a
+          [routerLink]="[]"
+          fragment="presence"
+          >section 6</a
+        >).
       </li>
       <li>
         <strong>Today.</strong> Opening the Today screen downloads
@@ -186,13 +170,14 @@
     </p>
     <p>
       During a game the two devices talk to each other and both run the rules, so a move is played
-      only if it is legal in the position the receiving device already holds. How the game is rated
-      is not left to either device: see <a [routerLink]="[]" fragment="referee">section 6</a>.
+      only if it is legal in the position the receiving device already holds.
     </p>
     <p>
-      The app also puts the online rating the referee settled on, for each clock you have played, on
-      Game Center’s leaderboards — one for each clock — and sends it again when you open the app
-      signed in to Game Center. Other players see your Game Center nickname and when you were last
+      Your online rating lives on Game Center’s leaderboards — one for each clock. At the end of a
+      rated game each device works out its own player’s new rating, from both players’ ratings as
+      Game Center held them when the game began, and writes it there, with how sure it is, how many
+      rated games it has and the day of the last one. The app sends it again, unchanged, when you
+      open it signed in to Game Center. Other players see your Game Center nickname and when you were last
       seen there, as your Game Center privacy settings allow: that is how the app’s rank list shows
       who each player is, how its lists of active and inactive players are made, and what lets
       another player invite you to a game. The leaderboards are Apple’s.
@@ -202,53 +187,31 @@
       <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s privacy policy</a>.
     </p>
 
-    <h2 id="referee">6. Online ratings: the referee</h2>
+    <h2 id="presence">6. Who is online</h2>
     <p>
-      A rating that each device worked out for itself could be made to say anything, so the ratings
-      of online games are kept by a referee of ours: a small function on Amazon Web Services, in
-      Frankfurt, in the European Union.
+      Game Center can say who played this week, but not who has the app open now. So the app tells a
+      small service of ours — a function on Amazon Web Services, in Frankfurt, in the European
+      Union — when you are there.
     </p>
     <p>
-      <strong>What the app sends it.</strong> When a game that can be rated begins, and when it
-      ends: your Game Center team player ID — Apple’s identifier for you in our apps, which is not
-      your name, e-mail address or Apple Account — with Apple’s signature proving it is yours; the
-      game’s ID; the clock; your colour; whether the game came from the open search; and, at the
-      end, the moves and the result. Your IP address reaches Amazon, as any web request’s does.
-      Nothing else: no nickname, no photo, no contacts, no device details. Friendly games — from an
-      invitation, or a rematch — are not sent at all.
+      While the app is on your screen and you are signed in to Game Center, it says that you are here
+      — online, looking for a game on a clock, or in one — again every three minutes, and that you
+      have gone when it leaves the screen. Other signed-in players see it beside your nickname in the
+      list of players, so an invitation reaches somebody who is there to play. Each note lasts five
+      minutes and is then deleted: nothing is kept about when you were online.
+      <em>Settings → Show when I’m online</em> turns it off.
     </p>
     <p>
-      <strong>What it keeps.</strong> Your ID only as a scrambled code, a one-way hash of it, never
-      the ID itself. Beside the code: your rating on each clock, how sure it is, how many rated
-      games you have played and the day of the last one. For a day after a rated game, the two
-      players’ codes, so the same two are rated once a day. What was sent about each game — the two
-      reports, the moves, the verdict — is deleted after thirty days. The function’s logs, which name
-      games by their ID and players by their code, are deleted after fourteen days.
+      Each note carries your Game Center team player ID — Apple’s identifier for you in our apps,
+      which is not your name, e-mail address or Apple Account — with Apple’s signature proving it is
+      yours, and the service keeps it only as a scrambled code, a one-way hash of it. Your IP address
+      reaches Amazon, as any web request’s does. Nothing else is sent. The function’s logs are
+      deleted after fourteen days.
     </p>
     <p>
-      <strong>What it publishes.</strong> Each clock’s list — codes, ratings, how sure each is, the
-      number of games and the day of the last one — at
-      <code>brasspawn.com/media/ratings/v1/</code>, which is what the app reads to show the rank
-      list. A code says nothing about who you are; the app puts a nickname beside it only where Game
-      Center shows that player to the person looking.
-    </p>
-    <p>
-      <strong>Who is online.</strong> While the app is on your screen and you are signed in to Game
-      Center, it tells the referee that you are here — online, looking for a game on a clock, or in
-      one — again every three minutes, and that you have gone when it leaves the screen. Other
-      signed-in players see it beside your nickname in the list of players, so an invitation reaches
-      somebody who is there to play. Each note lasts five minutes and is then deleted: nothing is
-      kept about when you were online. <em>Settings → Show when I’m online</em> turns it off.
-    </p>
-    <p>
-      <strong>What it is for.</strong> Rating games and saying who is online, and nothing else. Nothing in it is sold, shared
-      or used for advertising or tracking. The legal basis is our legitimate interest, and yours, in
-      rank lists that cannot be forged and invitations that reach somebody who is there.
-    </p>
-    <p>
-      <strong>Deleting it.</strong> <em>About → Delete my online ratings</em> in the app removes your
-      ratings from the referee and from every list at once. You can also write to
-      <a [href]="'mailto:' + site.privacyEmail">{{ site.privacyEmail }}</a>.
+      It is for saying who is online, and nothing else: nothing in it is sold, shared or used for
+      advertising or tracking. The legal basis is our legitimate interest, and yours, in invitations
+      that reach somebody who is there.
     </p>
 
     <h2 id="purchases">7. Purchases</h2>
@@ -291,9 +254,9 @@
 
     <h2 id="children">10. Children</h2>
     <p>
-      Outside online play the app collects no personal data from anyone. The referee keeps only
-      what <a [routerLink]="[]" fragment="referee">section 6</a> describes, and nothing that
-      identifies anybody. It shows no advertising, contains no third-party content, has no chat, no
+      Outside online play the app collects no personal data from anyone. Our service keeps only what
+      <a [routerLink]="[]" fragment="presence">section 6</a> describes, for five minutes, and nothing
+      that identifies anybody. It shows no advertising, contains no third-party content, has no chat, no
       user-generated content and no external links other than to the source repository, this website
       and the licence text.
     </p>
@@ -306,10 +269,9 @@
 
     <h2 id="transfers">11. International transfers and retention</h2>
     <p>
-      What the referee keeps (<a [routerLink]="[]" fragment="referee">section 6</a>) is held by
-      Amazon Web Services in Frankfurt, in the European Union: the ratings for as long as the rank
-      lists exist, or until you delete them; each game’s record for thirty days; the logs for
-      fourteen. Data on your device stays on your device for as long as you keep the app.
+      What our service keeps (<a [routerLink]="[]" fragment="presence">section 6</a>) is held by
+      Amazon Web Services in Frankfurt, in the European Union: each note for five minutes, the logs
+      for fourteen days. Data on your device stays on your device for as long as you keep the app.
     </p>
 
     <h2 id="rights">12. Your rights</h2>
@@ -319,8 +281,8 @@
       correction, deletion, portability and objection over personal data a company holds about you.
     </p>
     <p>
-      The only personal data we hold is what the referee keeps, and the app can delete it itself
-      (<em>About → Delete my online ratings</em>). For anything else — a copy of it, a question, an
+      The only personal data we hold is who is online, for five minutes, and
+      <em>Settings → Show when I’m online</em> stops it. For anything else — a question, an
       objection — write to us. Under the California Consumer Privacy Act we specifically confirm that
       we do not sell or share personal information, and have never done so.
     </p>
@@ -378,7 +340,7 @@
       <li><a [routerLink]="[]" fragment="device">What stays on your device</a></li>
       <li><a [routerLink]="[]" fragment="network">When the app uses the network</a></li>
       <li><a [routerLink]="[]" fragment="gamecenter">Game Center</a></li>
-      <li><a [routerLink]="[]" fragment="referee">Online ratings</a></li>
+      <li><a [routerLink]="[]" fragment="presence">Who is online</a></li>
       <li><a [routerLink]="[]" fragment="purchases">Purchases</a></li>
       <li><a [routerLink]="[]" fragment="crash">Crash reports</a></li>
       <li><a [routerLink]="[]" fragment="chess">The chess content</a></li>

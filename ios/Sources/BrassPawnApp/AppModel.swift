@@ -51,8 +51,8 @@ public final class AppModel {
     public let matchmaker = GameCenterMatchmaker()
     /// The rank lists and the players, from Game Center.
     let boards = OnlineBoards()
-    /// Whose ratings the online ones are: the referee's, not this device's.
-    let referee = Referee()
+    /// Who is online right now, which Game Center cannot say.
+    let presence = Presence()
     private let storage: ProgressStorage
 
     public init(storage: ProgressStorage = .documents()) {
@@ -68,52 +68,31 @@ public final class AppModel {
         }
     }
 
-    /// Signed in to Game Center: the referee's lists are read, this device's
-    /// ratings become the referee's — a new phone, or a reinstall, gets them
-    /// back — and each is sent to Game Center again, which is what keeps this
-    /// player among the active ones.
+    /// Signed in to Game Center: this player's record on every clock is read
+    /// from Game Center — which is where it lives, so a new phone or a
+    /// reinstall has it back — and sent again unchanged, which is what keeps
+    /// them among the active players. The lists are read afresh.
     func announceOnline() async {
-        let standings = await syncRatings()
         for control in TimeControl.allCases {
-            let pool = RatedPool.online(minutes: control.minutes)
-            guard progress.gamesPlayed(pool) > 0 else { continue }
-            await boards.submit(rating: progress.rating(pool), for: control)
+            guard let records = await boards.records(on: control, of: []) else { continue }
+            let mine = records.mine
+            update { $0.adopt(online: mine, at: control) }
+            if mine.games > 0 { await boards.submit(mine, for: control) }
         }
-        await boards.refresh(standings: standings)
+        await boards.refresh()
     }
 
-    /// Every clock's list from the referee, and this player's place on each
-    /// taken into the progress. A clock the referee has never rated them on
-    /// goes back to where it starts everybody.
-    func syncRatings() async -> [TimeControl: Standings] {
-        var standings: [TimeControl: Standings] = [:]
-        guard let key = referee.localKey else { return standings }
-        let day = DateFormatter()
-        day.dateFormat = "yyyy-MM-dd"
-        day.timeZone = TimeZone(identifier: "UTC")
-        for control in TimeControl.allCases {
-            guard let list = await Referee.standings(control) else { continue }
-            standings[control] = list
-            let mine = list.players.first { $0.id == key }
-            update {
-                $0.adopt(online: mine?.rating, deviation: mine?.deviation ?? Glicko.newDeviation, games: mine?.games ?? 0,
-                         lastPlayed: mine.flatMap { day.date(from: $0.last) }, at: control)
-            }
-        }
-        return standings
-    }
-
-    /// The referee rated a game: its numbers are this player's now, Game
-    /// Center's list is sent the rating it settled on, and the opponent is
-    /// remembered, so the next game against them today is a friendly.
-    func adoptRefereed(_ verdict: RefereeVerdict, result: MatchResult, at control: TimeControl, against opponent: String?) {
-        guard let rating = verdict.rating else { return }
+    /// A rated game, scored on this device from the two records Game Center
+    /// held when it began: the new one is written there, and kept here to
+    /// show, and the opponent is remembered, so the next game against them
+    /// today is a friendly.
+    func recordOnline(_ record: OnlineRecord, result: MatchResult, at control: TimeControl, against opponent: String?) {
         update {
-            $0.adopt(online: rating, deviation: verdict.deviation ?? Glicko.newDeviation, games: verdict.games ?? 1,
-                     outcome: result.outcome, at: control)
+            $0.adopt(online: record, at: control)
+            $0.tally(online: result.outcome)
             if let opponent { $0.noteRated(against: opponent) }
         }
-        Task { await boards.submit(rating: rating, for: control) }
+        Task { await boards.submit(record, for: control) }
     }
 
     // MARK: - Online now
@@ -127,7 +106,7 @@ public final class AppModel {
 
     private var onScreen = false
     private var beacon: Task<Void, Never>?
-    /// Whether the referee was last told this player is here.
+    /// Whether `Presence` was last told this player is here.
     private var saidHere = false
     /// How often "here" is said again while the app stays on screen. What is
     /// said lasts five minutes, so one missed is not a player gone.
@@ -149,7 +128,7 @@ public final class AppModel {
         guard onScreen, progress.appearance.showsOnline, matchmaker.isAuthenticated else {
             if saidHere {
                 saidHere = false
-                Task { await referee.gone() }
+                Task { await presence.gone() }
             }
             return
         }
@@ -157,32 +136,10 @@ public final class AppModel {
         beacon = Task { [weak self] in
             while !Task.isCancelled {
                 guard let self else { return }
-                await self.referee.here(self.presenceStatus)
+                await self.presence.here(self.presenceStatus)
                 try? await Task.sleep(for: Self.presenceInterval)
             }
         }
-    }
-
-    /// The player asked for their online ratings to be deleted: gone from the
-    /// referee, and from this device, where every clock starts again.
-    func forgetOnlineRatings() async -> Bool {
-        guard await referee.forget() else { return false }
-        update { progress in
-            for control in TimeControl.allCases { progress.adopt(online: nil, at: control) }
-        }
-        await boards.refresh()
-        return true
-    }
-
-    /// A game scored on this device — the debug loopback match only, which
-    /// has nobody at the other end to report to the referee.
-    func recordOnline(_ result: MatchResult, at control: TimeControl, against opponent: String?) {
-        update {
-            $0.record(online: result, at: control)
-            if let opponent { $0.noteRated(against: opponent) }
-        }
-        let rating = progress.rating(.online(minutes: control.minutes))
-        Task { await boards.submit(rating: rating, for: control) }
     }
 
     /// Claim one allowance unit. Most modes call this on the first answer or

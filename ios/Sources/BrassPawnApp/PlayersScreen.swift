@@ -60,7 +60,7 @@ struct PlayersScreen: View {
                         .padding(.horizontal, 4)
                         .padding(.top, 6)
 
-                    Text(L.t("online.playersNote3", "Nicknames are Game Center's, as each player lets them be shown; ratings are the referee's, from games both players confirmed. Online now means the app is on their screen this minute, for those who show it; active means seen in the last seven days."))
+                    Text(L.t("online.playersNote4", "Nicknames and ratings are Game Center's, as each player lets them be shown. Online now means the app is on their screen this minute, for those who show it; active means seen in the last seven days."))
                         .appFont(.caption2)
                         .foregroundStyle(Theatre.ivoryFaint)
                         .fixedSize(horizontal: false, vertical: true)
@@ -80,7 +80,7 @@ struct PlayersScreen: View {
         // for as long as this is open.
         .task {
             while !Task.isCancelled {
-                await boards.refreshPresence(using: app.referee)
+                await boards.refreshPresence(using: app.presence)
                 try? await Task.sleep(for: .seconds(60))
             }
         }

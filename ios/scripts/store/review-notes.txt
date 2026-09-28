@@ -51,7 +51,7 @@ identifier. It is never fetched at launch or in the background, and the
 server keeps no log of it. The stories in it are written from public facts: the
 moves and results of official broadcasts, and Stockfish's evaluations. It uses
 three Apple frameworks: GameKit (Game Center, for Multiplayer — moves pass
-between the two devices; each rated game is also reported to our referee, see 7),
+between the two devices; the ratings live on its leaderboards; see 7),
 StoreKit 2 (the subscription and the unlock), and
 Vision (reading a board off a photograph, on-device). No analytics, advertising,
 attribution, crash reporting or third-party SDK of any kind. No AI service: the
@@ -77,10 +77,11 @@ the app links to from About.
 7. PRIVACY
 The app collects nothing outside online play: no analytics, advertising,
 tracking or account. Training ratings, solved puzzles, review schedule and
-purchase state stay on the device. Rated online games are reported by both
-players' apps to our referee (GameKit identity signature; the Game Center team
-player ID is kept only as a hash, with the ratings), so no device can claim a
-rating. About > Delete my online ratings removes them.
+purchase state stay on the device. The one exception: while the app is on
+screen it tells a small service of ours that the player is online (GameKit
+identity signature; the Game Center team player ID kept only as a hash; each
+note expires after five minutes). Settings > Show when I'm online turns it off.
+Online ratings are on Game Center's leaderboards.
 
 8. CONTENT AND MODERATION
 No user-generated content and no messaging. The Multiplayer protocol carries a

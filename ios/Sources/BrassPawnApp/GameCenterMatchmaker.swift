@@ -73,6 +73,9 @@ public final class GameCenterMatchmaker: NSObject {
 
     #if canImport(GameKit)
     private var match: GKMatch?
+    /// The opponent in the match under way, as Game Center knows them — whose
+    /// rating is read from Game Center rather than taken from what they say.
+    public var opponentPlayer: GKPlayer? { match?.players.first }
     private var timeControl: TimeControl = .five
     private var localRating = Glicko.starting
     private var localGames = 0
@@ -350,7 +353,8 @@ public final class GameCenterMatchmaker: NSObject {
     }
 
 #if DEBUG
-    /// Whether the match is the debug loopback one, which the referee never sees.
+    /// Whether the match is the debug loopback one, which has nobody in Game
+    /// Center at the other end.
     public var isLoopback: Bool { loopback != nil && session === loopback?.mine }
 
     /// A match against a second session in this process, wired to the first.

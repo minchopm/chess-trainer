@@ -293,17 +293,18 @@ struct MatchTests {
         #expect(pair.host.clock.remaining(.black) <= TimeControl.three.seconds)
     }
 
-    @Test("The rating moves by Glicko, once")
+    @Test("The rating moves by Glicko, once, from the two records")
     func rating() throws {
         let pair = makePair()
         pair.begin()
         pair.host.resign()
 
         // Two new players: wide deviations, so the first result moves a lot.
-        let settled = try #require(pair.guest.settle(rating: 1200, deviation: 350))
-        #expect(settled.ratingDelta == 162)
-        #expect(abs((settled.deviation ?? 0) - 290.2) < 0.1, "and the rating is surer for it")
-        #expect(pair.guest.settle(rating: 1362, deviation: 290) == nil)
+        let settled = try #require(pair.guest.settle(.new, against: .new))
+        #expect(settled.result.ratingDelta == 162)
+        #expect(settled.record.rating == 1362 && settled.record.games == 1)
+        #expect(abs(settled.record.deviation - 290.2) < 0.1, "and the rating is surer for it")
+        #expect(pair.guest.settle(settled.record, against: .new) == nil, "once")
     }
 
     @Test("Another game, when both want one, swaps the colours and starts again")
@@ -311,7 +312,7 @@ struct MatchTests {
         let pair = makePair()
         pair.begin(hostPlaysWhite: true)
         pair.host.resign()
-        #expect(pair.guest.settle(rating: 1200, deviation: 350)?.ratingDelta == 162)
+        #expect(pair.guest.settle(.new, against: .new)?.result.ratingDelta == 162)
 
         // The winner asks, with the rating the game left.
         pair.guest.offerRematch(as: .init(playerID: "B", name: "Bo", rating: 1362, games: 1, deviation: 290))
@@ -455,35 +456,45 @@ struct MatchTests {
         #expect(progress.deviation(pool, at: day.addingTimeInterval(60 * 86_400)) > 200)
     }
 
-    // MARK: - The referee's side of it
-
-    @Test("Both sides name the game alike, and keep its moves as UCI")
-    func gameIDAndMoves() {
+    @Test("Both sides keep the moves as UCI, and a rematch starts them again")
+    func movesAsUCI() {
         let pair = makePair()
         pair.begin(hostPlaysWhite: true)
-        #expect(pair.host.gameID != nil)
-        #expect(pair.host.gameID == pair.guest.gameID, "the host deals the match's ID with the colours")
         #expect(pair.host.play(from: Square("e2")!, to: Square("e4")!, promotion: nil))
         #expect(pair.guest.play(from: Square("e7")!, to: Square("e5")!, promotion: nil))
         #expect(pair.host.uciMoves == ["e2e4", "e7e5"] && pair.guest.uciMoves == ["e2e4", "e7e5"])
-        let first = pair.host.gameID
         pair.host.resign()
         pair.guest.offerRematch()
         pair.host.respondToRematch(accept: true)
-        #expect(pair.host.gameID != first && pair.host.gameID == pair.guest.gameID, "a rematch is another game")
         #expect(pair.host.uciMoves.isEmpty)
     }
 
-    @Test("An opponent on a build before the referee: a friendly")
-    func outdatedOpponentIsAFriendly() {
-        let pair = makePair()
-        pair.begin()
-        var old = MatchPacket.Hello(playerID: "B", name: "Bo", rating: 1200, games: 0)
-        old.version = 1
-        pair.host.receive(try! JSONEncoder().encode(MatchPacket.hello(old)))
-        #expect(pair.host.unratedByMatch == .outdatedOpponent)
-        #expect(UnratedReason(referee: "disputed") == .notConfirmed)
-        #expect(UnratedReason(referee: "sameOpponentToday") == .sameOpponentToday)
-        #expect(UnratedReason(referee: nil) == nil)
+    // MARK: - The record in Game Center
+
+    @Test("A record goes into a leaderboard entry's context and comes back")
+    func recordRoundTrips() {
+        let day = Date(timeIntervalSince1970: 20_000 * 86_400)
+        let record = OnlineRecord(rating: 1834, deviation: 72.4, games: 131, lastPlayed: day)
+        let back = OnlineRecord(score: record.rating, context: record.context)
+        #expect(back.rating == 1834 && back.games == 131 && back.deviation == 72 && back.lastPlayed == day)
+        #expect(record.context > 0)
+
+        // Written before the context carried anything: a rating of unknown certainty.
+        let old = OnlineRecord(score: 1500, context: 0)
+        #expect(old.rating == 1500 && old.deviation == Glicko.newDeviation && old.games == 0 && old.lastPlayed == nil)
+        #expect(OnlineRecord(score: 0, context: 0).rating == Glicko.floor)
+        // A rating far past anything real still fits.
+        let huge = OnlineRecord(rating: 4200, deviation: 350, games: 5_000_000, lastPlayed: day)
+        #expect(OnlineRecord(score: huge.rating, context: huge.context).games == (1 << 22) - 1)
+    }
+
+    @Test("A record's deviation widens with the days since its last game")
+    func recordWidensWhenIdle() {
+        let day = Date(timeIntervalSince1970: 20_000 * 86_400)
+        let record = OnlineRecord(rating: 1800, deviation: 50, games: 200, lastPlayed: day)
+        #expect(record.deviation(at: day) == 50)
+        #expect(record.deviation(at: day.addingTimeInterval(60 * 86_400)) > 100)
+        let after = record.after(1, against: OnlineRecord(rating: 1000, deviation: 50, games: 200, lastPlayed: day), at: day)
+        #expect(after.rating == 1800 && after.games == 201 && after.lastPlayed == day, "far below: nothing, but a game played")
     }
 }

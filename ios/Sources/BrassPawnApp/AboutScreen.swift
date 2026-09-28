@@ -5,11 +5,7 @@ import SwiftUI
 /// the rest of the app rather than a platform List or NavigationLink.
 struct AboutScreen: View {
     @Environment(\.dismiss) private var dismiss
-    @Environment(AppModel.self) private var app
     @State private var document: LegalDocument?
-    @State private var confirmsForget = false
-    /// What became of a request to delete the online ratings.
-    @State private var forgetNote: String?
 
     private static let sourceURL = "https://github.com/minchopm/chess-trainer"
     /// Forwarded to a real inbox rather than answered by a mailbox nobody
@@ -34,7 +30,7 @@ struct AboutScreen: View {
                         Text(L.t("about.version", "Version %@", Self.version))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryDim)
-                        Text(L.t("about.intro2", "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected beyond what rates the games you play online."))
+                        Text(L.t("about.intro3", "Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected — apart from saying you are online, while you play online."))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryFaint)
                     }
@@ -87,16 +83,9 @@ struct AboutScreen: View {
                         Text(L.t("about.privacyApart", "Apart from online play, the app collects nothing and sends nothing about you. The one thing it downloads is the daily feed, when you open Today. Your training ratings and history are stored only on this device, and deleting the app deletes them."))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryFaint)
-                        Text(L.t("about.onlineReferee", "Online play is the exception. To rate a game, both players' apps send our referee how it went — the clock, the colours, the moves, the result — with Game Center's proof of who is playing. It keeps your Game Center player ID only as a scrambled code, beside your rating on each clock and the day you last played: no name, no contacts. The rank lists are published under those codes; Game Center shows your nickname beside yours to other players, as you allow."))
+                        Text(L.t("about.onlinePresence", "Online play is the exception. Your online rating on each clock is kept on Game Center's rank lists, where other players see it beside your nickname, as you allow; those are Apple's. While the app is on your screen, it also tells a small service of ours that you are online, looking for a game or in one, so that other players can see you are there to play — with Game Center's proof of who you are, kept only as a scrambled code, and forgotten five minutes after you leave. Settings → Show when I'm online turns it off."))
                             .appFont(.footnote)
                             .foregroundStyle(Theatre.ivoryFaint)
-                        if app.matchmaker.isAuthenticated {
-                            Button(L.t("about.forgetOnline", "Delete my online ratings")) { confirmsForget = true }
-                                .buttonStyle(PillButtonStyle(emphasis: .ghost, usesBodySize: true))
-                        }
-                        if let forgetNote {
-                            Text(forgetNote).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
-                        }
                         BrassLinkButton(
                             title: Self.privacyEmail,
                             destination: URL(string: "mailto:\(Self.privacyEmail)")!
@@ -120,25 +109,6 @@ struct AboutScreen: View {
         .background(Theatre.ink.ignoresSafeArea())
         .appCover(item: $document) { item in
             BundledTextView(resource: item.resource, title: item.title)
-        }
-        .overlay {
-            if confirmsForget {
-                BrassConfirmationOverlay(
-                    title: L.t("about.forgetOnlineTitle", "Delete your online ratings?"),
-                    message: L.t("about.forgetOnlineMessage", "They are removed from the referee and its rank lists, on every clock. Your next rated game starts again from 1200."),
-                    confirmTitle: L.t("about.forgetOnlineConfirm", "Delete"),
-                    cancelTitle: L.t("common.cancel", "Cancel"),
-                    onConfirm: {
-                        confirmsForget = false
-                        Task {
-                            forgetNote = await app.forgetOnlineRatings()
-                                ? L.t("about.forgetOnlineDone", "Your online ratings have been deleted.")
-                                : L.t("about.forgetOnlineFailed", "They could not be deleted just now. Try again when you are online and signed in to Game Center.")
-                        }
-                    },
-                    onCancel: { confirmsForget = false }
-                )
-            }
         }
     }
 

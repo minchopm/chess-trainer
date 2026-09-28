@@ -33,13 +33,9 @@ public final class MatchSession {
     public private(set) var myColor: PieceColor = .white
     public private(set) var clock: ChessClock
     public private(set) var moves: [String] = []          // SAN, for the move list
-    /// The same moves as UCI, which is what the referee plays them in.
+    /// The same moves as UCI: how many were played is what says whether a
+    /// game was played at all.
     public private(set) var uciMoves: [String] = []
-    /// The match's ID, dealt by the host, for the referee. Nil against an
-    /// opponent on a build from before the referee.
-    public private(set) var matchID: String?
-    /// This game of the match, as the referee knows it.
-    public var gameID: String? { matchID.map { "\($0)-\(gameNumber)" } }
     public private(set) var opponent: MatchPacket.Hello?
     /// True while the opponent's draw offer is on the table.
     public private(set) var drawOffered = false
@@ -66,7 +62,6 @@ public final class MatchSession {
     public var unratedByMatch: UnratedReason? {
         if !openPool { return .invitation }
         if gameNumber > 1 { return .rematch }
-        if matchID == nil || (opponent?.version ?? 0) < MatchProtocolVersion.refereed { return .outdatedOpponent }
         return nil
     }
 
@@ -146,11 +141,9 @@ public final class MatchSession {
         // Ours again with it: if the hello this device sent was the one that
         // was dropped, this is the copy the guest shows in the player row.
         send(.hello(me))
-        matchID = UUID().uuidString.lowercased()
         send(.start(MatchPacket.Start(
             youPlay: hostPlaysWhite ? .black : .white,
-            timeControl: timeControl,
-            matchID: matchID
+            timeControl: timeControl
         )))
         startPlaying()
     }
@@ -166,7 +159,6 @@ public final class MatchSession {
             // Only the guest is told what to play, and only once.
             guard !isHost, case .waiting = phase else { return }
             myColor = start.receiverColor
-            matchID = start.matchID
             startPlaying()
 
         case .move(let move):
@@ -336,23 +328,26 @@ public final class MatchSession {
         finish(MatchResult(outcome: .win, reason: .disconnected))
     }
 
-    /// Apply the rating change and hand back the finished result — once per
-    /// game. The opponent's rating and deviation are the ones they said hello
-    /// with.
+    /// Score the finished game — once — from the two players' records as Game
+    /// Center held them when it began, and hand back the result, with the
+    /// change in rating, and this player's record after it.
     @discardableResult
-    public func settle(rating: Int, deviation: Double) -> MatchResult? {
+    public func settle(_ mine: OnlineRecord, against theirs: OnlineRecord, at now: Date = Date())
+        -> (result: MatchResult, record: OnlineRecord)? {
         guard case .finished(var result) = phase, settledGame != gameNumber else { return nil }
         settledGame = gameNumber
-        let updated = Glicko.updated(
-            rating: rating, deviation: deviation,
-            against: opponent?.rating ?? Glicko.starting,
-            opponentDeviation: opponent?.ratingDeviation ?? Glicko.newDeviation,
-            score: result.score
-        )
-        result.ratingDelta = updated.rating - rating
-        result.deviation = updated.deviation
+        let record = mine.after(result.score, against: theirs, at: now)
+        result.ratingDelta = record.rating - mine.rating
+        result.deviation = record.deviation
         phase = .finished(result)
-        return result
+        return (result, record)
+    }
+
+    /// The opponent as they said hello: what to score against when Game
+    /// Center cannot be asked.
+    public var opponentAsTheySaid: OnlineRecord {
+        guard let opponent else { return .new }
+        return OnlineRecord(rating: opponent.rating, deviation: opponent.ratingDeviation, games: opponent.games, lastPlayed: nil)
     }
     /// The game `settle` has already scored.
     private var settledGame: Int?

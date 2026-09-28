@@ -268,12 +268,15 @@ rather than against a library.
 The two devices talk to each other through Game Center, and both run the rules —
 a move is played only if it is legal in the position the receiving device
 already has, so a peer that lies produces a dropped packet rather than an
-illegal board. The rating is not left to either device: both players report the
-game to a referee (`scripts/ratings`, a Lambda with Game Center's identity
-signature on every request), which rates it only on a result both stand behind
-and the moves bear out, by Glicko from its own numbers. Invitations, rematches
-and a second game in a day against the same opponent are friendlies. The rank
-lists are the referee's; Game Center supplies the nicknames.
+illegal board. The ratings are Glicko, as chess.com's, and live on Game
+Center's leaderboards, one per clock: at the end of a rated game each device
+works out its own player's new rating from both players' records as Game Center
+held them when the game began — never from this device's copy, or from what the
+other side says — and writes it there, the deviation, the game count and the
+day of the last game packed into the entry's context (`OnlineRecord`).
+Invitations, rematches, games under two moves and a second game in a day
+against the same opponent are friendlies. Who is online now, which Game Center
+cannot say, comes from a small Lambda (`scripts/presence`).
 
 It also takes moves before your turn: while the engine thinks you can queue a
 short plan — take, recapture, castle — and it plays out move by move as the
