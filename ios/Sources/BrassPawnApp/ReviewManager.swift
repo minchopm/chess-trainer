@@ -6,14 +6,20 @@ import UIKit
 #endif
 
 /// Requests the system's in-app App Store rating prompt after a played session.
-/// The App Store decides whether to display it; this app also waits 120 days
-/// between requests and only asks after activity followed by a menu return.
+/// The App Store decides whether to display it; this app also waits until the
+/// player has finished a few things over a couple of days — a rating asked for
+/// before anybody knows the app is one given about nothing — then 120 days
+/// between requests, and only asks after activity followed by a menu return.
 @MainActor
 enum ReviewManager {
     private static let installDateKey = "rm_installDate"
     private static let createCountKey = "rm_createCount"
     private static let lastPromptKey = "rm_lastPromptDate"
     private static let cooldown: TimeInterval = 120 * 86_400
+    /// Finished games, puzzles, drills or rated online games before the first ask.
+    private static let eventsBeforeAsking = 3
+    /// Days since the app was first opened before the first ask.
+    private static let daysBeforeAsking: TimeInterval = 2 * 86_400
     private static var activitySinceMenu = false
 
     static func appLaunched() {
@@ -35,9 +41,9 @@ enum ReviewManager {
 
         let defaults = UserDefaults.standard
         guard let installed = defaults.object(forKey: installDateKey) as? Date else { return false }
-        let hasPlayed = defaults.integer(forKey: createCountKey) > 0
-        let hasUsedForADay = Date().timeIntervalSince(installed) >= 86_400
-        guard hasPlayed || hasUsedForADay else { return false }
+        let hasPlayedEnough = defaults.integer(forKey: createCountKey) >= eventsBeforeAsking
+        let hasHadTheApp = Date().timeIntervalSince(installed) >= daysBeforeAsking
+        guard hasPlayedEnough && hasHadTheApp else { return false }
         if let last = defaults.object(forKey: lastPromptKey) as? Date,
            Date().timeIntervalSince(last) < cooldown {
             activitySinceMenu = false

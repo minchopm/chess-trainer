@@ -576,7 +576,6 @@ struct PlayScreen: View {
 
             Button(L.t("play.startGame", "Start game")) {
                 recorded = false
-                ReviewManager.eventCreated()
                 Task { await model.start(engine: app.engine) }
             }
             .buttonStyle(PillButtonStyle(emphasis: .solid))
@@ -705,6 +704,8 @@ struct PlayScreen: View {
         guard !recorded, let record = model.finishedGameRecord else { return }
         recorded = true
         app.update { $0.record(game: record) }
+        // A game played to the end, not one begun and walked away from.
+        ReviewManager.eventCreated()
 
         // The progress record is the rating input; this is the game itself, so
         // it can be watched back and picked up again.
