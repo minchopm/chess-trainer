@@ -576,6 +576,7 @@ struct PlayScreen: View {
 
             Button(L.t("play.startGame", "Start game")) {
                 recorded = false
+                ReviewManager.eventCreated()
                 Task { await model.start(engine: app.engine) }
             }
             .buttonStyle(PillButtonStyle(emphasis: .solid))

@@ -92,6 +92,7 @@ public final class AppModel {
             $0.tally(online: result.outcome)
             if let opponent { $0.noteRated(against: opponent) }
         }
+        ReviewManager.eventCreated()
         Task { await boards.submit(record, for: control) }
     }
 
@@ -150,6 +151,7 @@ public final class AppModel {
     public func beginAttempt(_ activity: TrainingActivity, at now: Date = Date()) -> Bool {
         guard hasAllowance(for: activity, at: now) else { return false }
         consume(activity, at: now)
+        ReviewManager.eventCreated()
         return true
     }
 

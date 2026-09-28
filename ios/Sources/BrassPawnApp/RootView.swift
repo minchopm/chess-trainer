@@ -92,6 +92,19 @@ public struct RootView: View {
         .appTypeface(app.progress.appearance.typeface)
         .animation(.easeOut(duration: 0.2), value: activity.wantsExit)
         .modelContainer(history)
+        .onAppear { ReviewManager.appLaunched() }
+        .onChange(of: navigator.showsMenu) { wasShowing, showing in
+            guard !wasShowing, showing else { return }
+            Task { @MainActor in
+                // Let the menu finish its transition before StoreKit presents.
+                try? await Task.sleep(for: .milliseconds(600))
+                guard navigator.showsMenu, scenePhase == .active else { return }
+                #if DEBUG
+                guard ScreenshotScene.requested == nil else { return }
+                #endif
+                ReviewManager.tryRequestReview()
+            }
+        }
         #if DEBUG
         .task { await leaveMenuForPreview() }
         #endif
