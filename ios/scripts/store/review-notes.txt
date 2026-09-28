@@ -36,11 +36,14 @@ story can be read and replayed for free; continuing one on the board is free
 for the last day's stories and part of Pro for older ones, which show a lock on
 that button and open the paywall.
 Multiplayer needs Game Center signed in and a second player; if none is found,
-that is matchmaking with nobody to match, not an error. Players in the
-multiplayer lobby shows the rank list per clock (five Game Center leaderboards)
-and who has been active this week; Invite sends a Game Center invitation. After
+that is matchmaking with nobody to match, not an error. The multiplayer lobby
+opens Rank list (five Game Center leaderboards, one per clock), Players (online
+now, and active this week) and Friends. The paper plane sends a Game Center
+invitation; the person-with-a-plus sends a friend request, accepted or declined
+under Friends > Requests. A friend can be offered a game: a banner on their
+screen for two minutes. After
 a game, Play again asks the same opponent for another, colours swapped.
-Invitations and rematches are friendly (unrated), and only one game a day
+Invitations, games with friends and rematches are friendly (unrated), and only one game a day
 against the same opponent is rated.
 
 4. EXTERNAL SERVICES
@@ -81,10 +84,15 @@ purchase state stay on the device. The one exception: while the app is on
 screen it tells a small service of ours that the player is online (GameKit
 identity signature; the Game Center team player ID kept only as a hash; each
 note expires after five minutes). Settings > Show when I'm online turns it off.
-Online ratings are on Game Center's leaderboards.
+The same service keeps the friends made in the app (two hashes and the two
+Game Center nicknames, until declined or removed). The privacy label declares
+User ID, Gameplay Content and Contacts (the friends list). Online ratings are on
+Game Center's leaderboards.
 
 8. CONTENT AND MODERATION
 No user-generated content and no messaging. The Multiplayer protocol carries a
 move, a resignation, a draw offer, a draw response and a result — there is no
 field a person can type into, so there is nothing to report, block or moderate.
+A friend request carries only the two Game Center nicknames, and either side
+can decline or remove it.
 Opponents are identified by their Game Center nickname, which Apple supplies.

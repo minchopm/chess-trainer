@@ -65,14 +65,19 @@ click from the main menu.
   unlimited, and always will be; what is sold is the training.
 - **Multiplayer** needs Game Center signed in on the Mac, and a second player. If
   no opponent is found, that is matchmaking having nobody to match with, not an
-  error. Under **Players** in the multiplayer lobby are the rank list for each
-  clock — five Game Center leaderboards, one per clock, holding each player's
-  online rating — and the players active this week and not, from the same
-  leaderboards' dates; **Invite** beside a player sends a Game Center
-  invitation for a game on that clock. When a game ends, **Play again** asks
+  error. The multiplayer lobby opens three lists, each its own screen:
+  **Rank list** for each clock — five Game Center leaderboards, one per clock,
+  holding each player's online rating — **Players**, those online now (a green
+  dot) and those active this week and not, from the same leaderboards' dates,
+  and **Friends**. The paper plane beside a player sends a Game Center
+  invitation for a game on that clock. The person-with-a-plus beside a player
+  sends a friend request; the other player accepts or declines it under
+  **Friends → Requests**, and a friend can be removed from the row's menu. A
+  friend can be offered a game from the Friends list: it shows as a banner on
+  the friend's screen for two minutes, and **Play** puts both into the game. When a game ends, **Play again** asks
   the same opponent for another, with the colours swapped, without leaving the
   match. Only games found by the open search change the rating: games from an
-  invitation and rematches are friendly, and only one game a day against the
+  invitation, games with a friend and rematches are friendly, and only one game a day against the
   same opponent is rated, so two accounts of one person cannot climb the list.
 - **Today** is the TODAY plate on the main menu. A story opens on its key move;
   **Replay** steps through the game and **Try it yourself** continues it on the
@@ -150,12 +155,17 @@ to it from About.
 
 The app collects nothing outside online play: no analytics, no advertising, no
 tracking, no account. Training ratings, solved puzzles, review schedule and
-purchase state stay in the app's container. The one exception is who is online:
+purchase state stay in the app's container. The exceptions are who is online and the friends:
 while the app is on screen, it tells a small service of ours, every three
 minutes, that the player is online, looking for a game or in one, with GameKit's
 identity signature; the Game Center team player ID is kept only as a hash, and
 each note expires after five minutes. Settings → Show when I'm online turns it
-off. Online ratings are on Game Center's leaderboards. Policy: `PRIVACY.md`, and
+off. The same service keeps the friends made in the app: a request or a
+friendship between two such hashes, with the two Game Center nicknames, until
+either side declines or removes it, and a game offered for two minutes. The
+privacy label declares User ID, Gameplay Content and Contacts (that friends
+list), linked, for app functionality, no tracking. Online ratings are on Game
+Center's leaderboards. Policy: `PRIVACY.md`, and
 https://brasspawn.com/privacy.
 
 ## 8. Content and moderation
@@ -164,7 +174,9 @@ There is **no user-generated content and no messaging**. The Multiplayer wire
 protocol carries a move, a resignation, a draw offer, a draw response and a
 result — `ios/Sources/ChessTraining/MatchProtocol.swift` is the whole of it.
 There is no field a person can type into, so there is nothing to report, block or
-moderate. Opponents are identified by their Game Center nickname, which Apple
+moderate. A friend request carries nothing typed either — only the two players'
+Game Center nicknames — and either side can decline it or remove the other at
+any time. Opponents are identified by their Game Center nickname, which Apple
 supplies and Apple's own controls cover.
 
 ---
