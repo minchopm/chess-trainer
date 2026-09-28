@@ -38,8 +38,29 @@ struct AboutCopy {
     /// go through Game Center, never made true anyway.
     @Test("the tagline does not assume a phone")
     func taglineIsDeviceNeutral() {
-        for (lang, text) in Self.values("about.tacticsPositionalJudgementEndgameTechnique") where lang.hasPrefix("en") {
+        for (lang, text) in Self.values("about.intro2") where lang.hasPrefix("en") {
             #expect(!text.lowercased().contains("phone"), "\(lang): \(text)")
+        }
+    }
+
+    /// Online ratings are the referee's, so the privacy copy can no longer say
+    /// nothing is collected, or that Game Center has it all: every language
+    /// has to say there is an exception, and what it is.
+    @Test("the privacy copy owns up to the referee, in every language")
+    func privacyNamesTheReferee() {
+        let intro = Self.values("about.intro2")
+        let apart = Self.values("about.privacyApart")
+        let referee = Self.values("about.onlineReferee")
+        #expect(intro.count == 32 && apart.count == 32 && referee.count == 32)
+        for (lang, text) in referee {
+            #expect(text.contains("Game Center"), "\(lang): \(text)")
+        }
+        for key in ["about.gameCenterLists", "about.theAppCollectsNothingSends", "about.tacticsPositionalJudgementEndgameTechnique"] {
+            let url = URL(filePath: #filePath)
+                .deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+                .appending(path: "App/Localizable.xcstrings")
+            let json = try! JSONSerialization.jsonObject(with: Data(contentsOf: url)) as! [String: Any]
+            #expect((json["strings"] as! [String: Any])[key] == nil, "\(key) said nothing was collected")
         }
     }
 }

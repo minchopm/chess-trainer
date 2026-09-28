@@ -4,6 +4,7 @@
 //
 //   POST /begin   { identity, gameID, minutes, openPool, gameNumber, color }
 //   POST /end     { identity, …the same, moves: [uci], outcome, reason }
+//   POST /forget  { identity } — this player's online ratings, removed
 //
 // `identity` is GameKit's identity signature (identity.mjs); the answer to
 // /end is the verdict for this player — rated, with the new rating; unrated
@@ -51,6 +52,7 @@ export const handler = async (event) => {
   try {
     if (path === '/begin') return reply(200, await referee.begin(player, ticket(body)));
     if (path === '/end') return reply(200, await referee.end(player, report(body)));
+    if (path === '/forget') return reply(200, await referee.forget(player));
     return reply(404, { error: 'no such thing' });
   } catch (error) {
     // A malformed request says so; anything else is ours, and logged.

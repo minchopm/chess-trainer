@@ -350,6 +350,9 @@ public final class GameCenterMatchmaker: NSObject {
     }
 
 #if DEBUG
+    /// Whether the match is the debug loopback one, which the referee never sees.
+    public var isLoopback: Bool { loopback != nil && session === loopback?.mine }
+
     /// A match against a second session in this process, wired to the first.
     ///
     /// Game Center cannot be signed into on a simulator, so without this the

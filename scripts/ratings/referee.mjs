@@ -222,6 +222,27 @@ export function openReferee({ store, now = () => Date.now(), log = () => {} }) {
     await store.publish(`${PUBLIC}/${minutes}.json`, { minutes, updated: new Date(now()).toISOString(), players });
   }
 
+  /**
+   * A player's online ratings, gone: off every clock and every list, and out of
+   * the record of whom they played today. Their games' papers expire with
+   * everybody else's, after thirty days.
+   */
+  async function forget(player) {
+    for (let attempt = 0; attempt < 8; attempt++) {
+      const held = await store.get(RATINGS);
+      if (!held) return { status: 'forgotten' };
+      const state = held.body;
+      const changed = Object.entries(state.clocks).filter(([, clock]) => clock[player]).map(([minutes]) => Number(minutes));
+      for (const minutes of changed) delete state.clocks[minutes][player];
+      state.pairs = Object.fromEntries(Object.entries(state.pairs).filter(([pair]) => !pair.split('|').includes(player)));
+      if (!(await store.put(RATINGS, state, { ifMatch: held.etag }))) continue;
+      for (const minutes of changed) await publish(minutes, state.clocks[minutes]);
+      log(`forgot ${player} on ${changed.join(', ') || 'no clock'}`);
+      return { status: 'forgotten' };
+    }
+    throw new Error('the ratings kept changing');
+  }
+
   /** Games whose time to be reported is up, settled on what was said. */
   async function sweep() {
     const settled = [];
@@ -237,7 +258,7 @@ export function openReferee({ store, now = () => Date.now(), log = () => {} }) {
     return settled;
   }
 
-  return { begin, end, settle, sweep };
+  return { begin, end, settle, sweep, forget };
 }
 
 /** Where the board can say, the result has to be what it says. */

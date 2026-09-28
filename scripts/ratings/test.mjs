@@ -186,6 +186,17 @@ test('settled twice at once, counted once', async () => {
   assert.equal(state.clocks[5][ANN].games, 1, 'one game, not two');
 });
 
+test('a player can have their ratings removed', async () => {
+  const { store, referee } = setup();
+  await play(referee, 'match-0019-1', ANN, BO);
+  assert.deepEqual(await referee.forget(ANN), { status: 'forgotten' });
+  const state = store.objects.get(`${STATE}/ratings.json`).body;
+  assert.equal(state.clocks[5][ANN], undefined);
+  assert.ok(state.clocks[5][BO], 'the opponent keeps theirs');
+  assert.deepEqual(Object.keys(state.pairs), [], 'and the pair is forgotten too');
+  assert.deepEqual(store.objects.get(`${PUBLIC}/5.json`).body.players.map((p) => p.id), [BO]);
+});
+
 test('a new rating is sure of nothing; the referee starts everyone there', async () => {
   const { store, referee } = setup();
   await play(referee, 'match-0018-1', ANN, BO);

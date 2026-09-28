@@ -60,7 +60,7 @@ struct PlayersScreen: View {
                         .padding(.horizontal, 4)
                         .padding(.top, 6)
 
-                    Text(L.t("online.playersNote", "Nicknames and ratings are Game Center's, as each player lets them be shown. Active means seen in the last seven days: Game Center cannot say who has the app open this minute."))
+                    Text(L.t("online.playersNote2", "Nicknames are Game Center's, as each player lets them be shown; ratings are the referee's, from games both players confirmed. Active means seen in the last seven days: Game Center cannot say who has the app open this minute."))
                         .appFont(.caption2)
                         .foregroundStyle(Theatre.ivoryFaint)
                         .fixedSize(horizontal: false, vertical: true)

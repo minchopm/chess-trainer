@@ -28,24 +28,27 @@ struct BoardPlayer: Identifiable, Equatable {
     }
 }
 
-/// The rank list and the players, read from Game Center.
+/// The rank lists and the players.
 ///
-/// There is no server of ours behind this and there is not going to be one:
-/// everything here is Game Center's. Each clock has its own leaderboard, and a
-/// player's rating on it is the most recent one they sent — a rating, unlike a
-/// high score, is meant to go down as well as up. The same entry says when it
-/// was sent, which is the whole of "active": seen in the last week, or not.
-/// Game Center cannot say who has the app open this minute, and nothing here
-/// pretends to; what it can say is how many people are looking for a game on
-/// each clock right now, and that is shown too.
+/// The numbers are the referee's (`Referee`): each clock's list is a file it
+/// publishes, in its own order, and no device's word for its own rating is
+/// taken. Game Center says who the people on it are — nickname, picture, the
+/// handle an invitation is sent to, as each player lets them be shown — and
+/// when it last heard from them, which is the whole of "active": seen in the
+/// last week, or not. Game Center's own leaderboards are sent the rating the
+/// referee settled on; what they hold is only ever used to find the player,
+/// never for the number. Game Center cannot say who has the app open this
+/// minute, and nothing here pretends to; what it can say is how many people
+/// are looking for a game on each clock right now, and that is shown too.
 @MainActor
 @Observable
 final class OnlineBoards {
     /// How recently somebody has to have been seen to count as active.
     nonisolated static let activeWindow: TimeInterval = 7 * 86_400
-    /// How many of each list are read. Plenty for the app's size; the lists
-    /// say how many there are in all.
+    /// How much of each Game Center list is read to find the players on the
+    /// referee's: pages of a hundred. Plenty for the app's size.
     static let pageSize = 100
+    static let pages = 3
 
     static func leaderboardID(_ control: TimeControl) -> String {
         "brasspawn.online.\(control.minutes)"
@@ -90,9 +93,13 @@ final class OnlineBoards {
         #endif
     }
 
+    /// The referee's lists, as last read.
+    private(set) var standings: [TimeControl: Standings] = [:]
+
     /// Read everything: every clock's list, the players, the recent opponents
-    /// and how many are waiting on each clock.
-    func refresh() async {
+    /// and how many are waiting on each clock. `fresh` is the referee's lists
+    /// when they have just been read; otherwise they are read here.
+    func refresh(standings fresh: [TimeControl: Standings]? = nil) async {
         #if canImport(GameKit)
         guard GKLocalPlayer.local.isAuthenticated, !isLoading else { return }
         isLoading = true
@@ -100,33 +107,61 @@ final class OnlineBoards {
             isLoading = false
             hasLoaded = true
         }
+        if let fresh {
+            standings.merge(fresh) { $1 }
+        } else {
+            for control in TimeControl.allCases {
+                if let list = await Referee.standings(control) { standings[control] = list }
+            }
+        }
         let localID = GKLocalPlayer.local.gamePlayerID
+        let localKey = Referee.key(teamPlayerID: GKLocalPlayer.local.teamPlayerID)
         let boards = (try? await GKLeaderboard.loadLeaderboards(
             IDs: TimeControl.allCases.map(Self.leaderboardID)
         )) ?? []
         var latest: [String: BoardPlayer] = [:]
         for control in TimeControl.allCases {
-            guard let board = boards.first(where: { $0.baseLeaderboardID == Self.leaderboardID(control) }),
-                  let (local, entries, total) = try? await board.loadEntries(
-                      for: .global, timeScope: .allTime, range: NSRange(location: 1, length: Self.pageSize)
-                  )
-            else { continue }
-            let listed = entries.map { entry -> BoardPlayer in
+            // Who is who, from Game Center: a few pages of it, since its order
+            // is not the one that counts.
+            var entries: [GKLeaderboard.Entry] = []
+            if let board = boards.first(where: { $0.baseLeaderboardID == Self.leaderboardID(control) }) {
+                for page in 0..<Self.pages {
+                    guard let (_, some, _) = try? await board.loadEntries(
+                        for: .global, timeScope: .allTime,
+                        range: NSRange(location: 1 + page * Self.pageSize, length: Self.pageSize)
+                    ) else { break }
+                    entries += some
+                    if some.count < Self.pageSize { break }
+                }
+            }
+            var known: [String: GKLeaderboard.Entry] = [:]
+            for entry in entries {
                 players[entry.player.gamePlayerID] = entry.player
+                known[Referee.key(teamPlayerID: entry.player.teamPlayerID)] = known[Referee.key(teamPlayerID: entry.player.teamPlayerID)] ?? entry
+            }
+            guard let list = standings[control]?.players else { continue }
+            let place = Dictionary(list.enumerated().map { ($1.id, ($0 + 1, $1.rating)) }, uniquingKeysWith: { a, _ in a })
+            // The referee's order, of the players Game Center lets this one see.
+            ranks[control] = list.enumerated().compactMap { index, standing in
+                guard let entry = known[standing.id] else { return nil }
                 return BoardPlayer(
                     id: entry.player.gamePlayerID, alias: entry.player.alias,
-                    rank: entry.rank, rating: entry.score, clock: control,
-                    lastSeen: entry.date, isLocal: entry.player.gamePlayerID == localID
+                    rank: index + 1, rating: standing.rating, clock: control,
+                    lastSeen: entry.date, isLocal: standing.id == localKey
                 )
             }
-            ranks[control] = listed
-            totals[control] = total
-            mine[control] = local.map {
-                BoardPlayer(id: localID, alias: GKLocalPlayer.local.alias, rank: $0.rank, rating: $0.score,
-                            clock: control, lastSeen: $0.date, isLocal: true)
+            totals[control] = list.count
+            mine[control] = place[localKey].map { rank, rating in
+                BoardPlayer(id: localID, alias: GKLocalPlayer.local.alias, rank: rank, rating: rating,
+                            clock: control, lastSeen: known[localKey]?.date ?? Date(), isLocal: true)
             }
-            for player in listed where (latest[player.id]?.lastSeen ?? .distantPast) < player.lastSeen {
-                latest[player.id] = player
+            for (key, entry) in known {
+                let player = BoardPlayer(
+                    id: entry.player.gamePlayerID, alias: entry.player.alias,
+                    rank: place[key]?.0, rating: place[key]?.1, clock: control,
+                    lastSeen: entry.date, isLocal: key == localKey
+                )
+                if (latest[player.id]?.lastSeen ?? .distantPast) < player.lastSeen { latest[player.id] = player }
             }
         }
         everyone = latest.values.sorted { $0.lastSeen > $1.lastSeen }

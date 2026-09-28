@@ -16,6 +16,8 @@ struct OnlineScreen: View {
     /// Whether the game on the board counts for the rating, decided once as
     /// it begins — see `decideRating`.
     @State private var ratingCall: RatingCall?
+    /// What the referee has made of the finished game.
+    @State private var scoring: Scoring?
     /// Left by the App Clip, if somebody arrived here from a link. Read
     /// once and taken away, so a declined invitation is not offered again.
     @State private var invitation: Invitation?
@@ -56,6 +58,9 @@ struct OnlineScreen: View {
             #endif
         }
         .task(id: timeControl) { await app.boards.refreshLooking() }
+        // The referee's word on the last game, if it came after the result
+        // panel had gone: the lists have it.
+        .task(id: matchmaker.session == nil) { if matchmaker.session == nil { _ = await app.syncRatings() } }
         .appCover(isPresented: $showsPlayers) {
             PlayersScreen(clock: timeControl) { player, control in invite(player, on: control) }
         }
@@ -375,9 +380,9 @@ struct OnlineScreen: View {
         .appCover(isPresented: completionIsPresented(session)) {
             if case .finished(let result) = session.phase {
                 CompletionOverlay(
-                    result: completion(for: settled ?? result, at: session.timeControl, unrated: unratedReason(session)),
+                    result: completion(for: settled ?? result, at: session.timeControl, opponent: session.opponent?.name),
                     primaryTitle: L.t("online.backToTheLobby", "Back to the lobby"),
-                    onPrimary: { matchmaker.leaveMatch(); settled = nil; ratingCall = nil },
+                    onPrimary: { matchmaker.leaveMatch(); settled = nil; ratingCall = nil; scoring = nil },
                     onRetry: nil,
                     accessory: AnyView(RematchPanel(session: session, hello: { hello(for: session) })),
                     primaryEmphasis: session.opponentLeft || session.rematchDeclined ? .solid : .ghost
@@ -388,7 +393,10 @@ struct OnlineScreen: View {
         }
         .animation(.easeOut(duration: 0.2), value: session.drawOffered)
         // A rematch is a new game in the same match: its result is its own.
-        .onChange(of: session.gameNumber) { _, _ in settled = nil }
+        .onChange(of: session.gameNumber) { _, _ in
+            settled = nil
+            scoring = nil
+        }
         .onChange(of: session.moves.count) { _, _ in
             SoundBoard.shared.play(.move)
         }
@@ -396,12 +404,14 @@ struct OnlineScreen: View {
             if isPlaying(session) {
                 decideRating(session)
                 holdWhilePlaying(session)
+                beginRefereed(session)
             }
         }
         .onChange(of: isPlaying(session)) { _, playing in
             if playing {
                 decideRating(session)
                 holdWhilePlaying(session)
+                beginRefereed(session)
             } else {
                 activity.release()
             }
@@ -564,6 +574,18 @@ struct OnlineScreen: View {
     }
 
     /// Apply the rating exactly once, the moment the game ends.
+    /// A game that can be rated has begun: the referee is told, by this
+    /// player as by the other, so that a report later has a game to belong to.
+    private func beginRefereed(_ session: MatchSession) {
+        guard unratedReason(session) == nil else { return }
+        #if DEBUG
+        if matchmaker.isLoopback { return }
+        #endif
+        Task { await app.referee.begin(session) }
+    }
+
+    /// The game is over: the result stands at once; the rating is the
+    /// referee's, and comes when both reports are in — a second or two.
     private func settleIfFinished() {
         guard let session = matchmaker.session, settled == nil,
               case .finished(let finished) = session.phase else { return }
@@ -571,24 +593,52 @@ struct OnlineScreen: View {
         // invitation is on whatever clock the invitation said.
         let control = session.timeControl
         decideRating(session)
-        let result: MatchResult
-        if unratedReason(session) != nil {
-            // A friendly: the result stands, and nobody's rating moves.
-            result = finished
-        } else {
-            guard let rated = session.settle(
-                rating: app.progress.rating(.online(minutes: control.minutes)),
-                deviation: app.progress.deviation(.online(minutes: control.minutes))
-            ) else { return }
-            result = rated
-            app.recordOnline(rated, at: control, against: session.opponent?.playerID)
-        }
-        settled = result
+        settled = finished
         activity.release()
-        matchmaker.onMatchFinished?(result)
+        matchmaker.onMatchFinished?(finished)
+        if let reason = unratedReason(session) {
+            // A friendly: nobody's rating moves.
+            scoring = .unrated(reason)
+            return
+        }
+        #if DEBUG
+        if matchmaker.isLoopback {
+            // Nobody at the other end to report to the referee: scored here.
+            let pool = RatedPool.online(minutes: control.minutes)
+            guard let rated = session.settle(rating: app.progress.rating(pool), deviation: app.progress.deviation(pool))
+            else { return }
+            settled = rated
+            app.recordOnline(rated, at: control, against: session.opponent?.playerID)
+            scoring = .rated(delta: rated.ratingDelta, rating: app.progress.rating(pool))
+            return
+        }
+        #endif
+        scoring = .confirming
+        let game = session.gameNumber
+        let opponent = session.opponent?.playerID
+        Task {
+            let verdict = await app.referee.end(session, result: finished)
+            // The rating is kept whatever the screen is doing by now…
+            if let verdict, verdict.isRated {
+                app.adoptRefereed(verdict, result: finished, at: control, against: opponent)
+            }
+            // …and shown only on the game it was about: a rematch may have begun.
+            guard matchmaker.session === session, session.gameNumber == game else { return }
+            if let verdict, verdict.isRated, let rating = verdict.rating {
+                var rated = finished
+                rated.ratingDelta = verdict.delta ?? 0
+                rated.deviation = verdict.deviation
+                settled = rated
+                scoring = .rated(delta: verdict.delta ?? 0, rating: rating)
+            } else if let verdict, !verdict.isPending {
+                scoring = .unrated(UnratedReason(referee: verdict.reason) ?? .notConfirmed)
+            } else {
+                scoring = .later
+            }
+        }
     }
 
-    private func completion(for result: MatchResult, at control: TimeControl, unrated: UnratedReason?) -> CompletionResult {
+    private func completion(for result: MatchResult, at control: TimeControl, opponent: String?) -> CompletionResult {
         let verdict: CompletionResult.Verdict = switch result.outcome {
         case .win: .success
         case .draw: .partial
@@ -597,11 +647,19 @@ struct OnlineScreen: View {
         return CompletionResult(
             verdict: verdict,
             title: result.headline,
-            detail: result.ratingDelta == 0
-                ? unrated?.text
-                : L.t("online.ratingChange", "Rating %1$@ → %2$lld",
-                      "\(result.ratingDelta > 0 ? "+" : "")\(result.ratingDelta)",
-                      app.progress.rating(.online(minutes: control.minutes))),
+            detail: scoring.map { scoring in
+                switch scoring {
+                case .confirming:
+                    L.t("online.ratingConfirming", "Confirming the rating…")
+                case .rated(let delta, let rating):
+                    L.t("online.ratingChange", "Rating %1$@ → %2$lld", "\(delta > 0 ? "+" : "")\(delta)", rating)
+                case .unrated(let reason):
+                    reason.text
+                case .later:
+                    L.t("online.ratingLater", "The rating will be confirmed when %@'s result arrives.",
+                        opponent ?? L.t("online.opponent", "Opponent"))
+                }
+            },
             line: nil
         )
     }
@@ -686,4 +744,14 @@ private struct RatingCall {
     let session: ObjectIdentifier
     let game: Int
     let reason: UnratedReason?
+}
+
+/// Where the rating of a finished game stands.
+private enum Scoring: Equatable {
+    /// Waiting for the referee.
+    case confirming
+    case rated(delta: Int, rating: Int)
+    case unrated(UnratedReason)
+    /// The other player's report has not come yet: the lists will have it.
+    case later
 }

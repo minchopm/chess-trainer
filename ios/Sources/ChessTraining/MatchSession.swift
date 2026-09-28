@@ -33,6 +33,13 @@ public final class MatchSession {
     public private(set) var myColor: PieceColor = .white
     public private(set) var clock: ChessClock
     public private(set) var moves: [String] = []          // SAN, for the move list
+    /// The same moves as UCI, which is what the referee plays them in.
+    public private(set) var uciMoves: [String] = []
+    /// The match's ID, dealt by the host, for the referee. Nil against an
+    /// opponent on a build from before the referee.
+    public private(set) var matchID: String?
+    /// This game of the match, as the referee knows it.
+    public var gameID: String? { matchID.map { "\($0)-\(gameNumber)" } }
     public private(set) var opponent: MatchPacket.Hello?
     /// True while the opponent's draw offer is on the table.
     public private(set) var drawOffered = false
@@ -59,6 +66,7 @@ public final class MatchSession {
     public var unratedByMatch: UnratedReason? {
         if !openPool { return .invitation }
         if gameNumber > 1 { return .rematch }
+        if matchID == nil || (opponent?.version ?? 0) < MatchProtocolVersion.refereed { return .outdatedOpponent }
         return nil
     }
 
@@ -138,9 +146,11 @@ public final class MatchSession {
         // Ours again with it: if the hello this device sent was the one that
         // was dropped, this is the copy the guest shows in the player row.
         send(.hello(me))
+        matchID = UUID().uuidString.lowercased()
         send(.start(MatchPacket.Start(
             youPlay: hostPlaysWhite ? .black : .white,
-            timeControl: timeControl
+            timeControl: timeControl,
+            matchID: matchID
         )))
         startPlaying()
     }
@@ -156,6 +166,7 @@ public final class MatchSession {
             // Only the guest is told what to play, and only once.
             guard !isHost, case .waiting = phase else { return }
             myColor = start.receiverColor
+            matchID = start.matchID
             startPlaying()
 
         case .move(let move):
@@ -370,6 +381,7 @@ public final class MatchSession {
         position = Position()
         ply = 0
         moves = []
+        uciMoves = []
         lastMove = nil
         clock = ChessClock(timeControl: timeControl)
         clock.start()
@@ -381,6 +393,7 @@ public final class MatchSession {
         let san = position.san(for: move)
         position.make(move)
         moves.append(san)
+        uciMoves.append(move.uci)
         lastMove = (from: move.from, to: move.to)
         ply += 1
         clock.press()

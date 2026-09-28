@@ -19,9 +19,9 @@ export class Privacy {
     inject(Seo).apply({
       path: '/privacy',
       title: 'Privacy Policy',
-      updated: '2026-09-27',
+      updated: '2026-09-28',
       description:
-        'Brass Pawn collects nothing. No analytics, no advertising, no third-party tracking and no account. The full privacy policy, in plain words.',
+        'Brass Pawn collects nothing outside online play, and only what rates those games. No analytics, no advertising, no third-party tracking and no account. The full privacy policy, in plain words.',
     });
   }
 }

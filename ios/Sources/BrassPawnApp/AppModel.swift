@@ -51,6 +51,8 @@ public final class AppModel {
     public let matchmaker = GameCenterMatchmaker()
     /// The rank lists and the players, from Game Center.
     let boards = OnlineBoards()
+    /// Whose ratings the online ones are: the referee's, not this device's.
+    let referee = Referee()
     private let storage: ProgressStorage
 
     public init(storage: ProgressStorage = .documents()) {
@@ -66,21 +68,67 @@ public final class AppModel {
         }
     }
 
-    /// Signed in to Game Center: this player's rating on every clock they
-    /// have played is sent again, which is what keeps them among the active
-    /// players, and the lists are read afresh.
+    /// Signed in to Game Center: the referee's lists are read, this device's
+    /// ratings become the referee's — a new phone, or a reinstall, gets them
+    /// back — and each is sent to Game Center again, which is what keeps this
+    /// player among the active ones.
     func announceOnline() async {
+        let standings = await syncRatings()
         for control in TimeControl.allCases {
             let pool = RatedPool.online(minutes: control.minutes)
             guard progress.gamesPlayed(pool) > 0 else { continue }
             await boards.submit(rating: progress.rating(pool), for: control)
         }
-        await boards.refresh()
+        await boards.refresh(standings: standings)
     }
 
-    /// An online game has been scored: its clock's list gets the new rating,
-    /// and the opponent is remembered, so the next game against them today is
-    /// a friendly.
+    /// Every clock's list from the referee, and this player's place on each
+    /// taken into the progress. A clock the referee has never rated them on
+    /// goes back to where it starts everybody.
+    func syncRatings() async -> [TimeControl: Standings] {
+        var standings: [TimeControl: Standings] = [:]
+        guard let key = referee.localKey else { return standings }
+        let day = DateFormatter()
+        day.dateFormat = "yyyy-MM-dd"
+        day.timeZone = TimeZone(identifier: "UTC")
+        for control in TimeControl.allCases {
+            guard let list = await Referee.standings(control) else { continue }
+            standings[control] = list
+            let mine = list.players.first { $0.id == key }
+            update {
+                $0.adopt(online: mine?.rating, deviation: mine?.deviation ?? Glicko.newDeviation, games: mine?.games ?? 0,
+                         lastPlayed: mine.flatMap { day.date(from: $0.last) }, at: control)
+            }
+        }
+        return standings
+    }
+
+    /// The referee rated a game: its numbers are this player's now, Game
+    /// Center's list is sent the rating it settled on, and the opponent is
+    /// remembered, so the next game against them today is a friendly.
+    func adoptRefereed(_ verdict: RefereeVerdict, result: MatchResult, at control: TimeControl, against opponent: String?) {
+        guard let rating = verdict.rating else { return }
+        update {
+            $0.adopt(online: rating, deviation: verdict.deviation ?? Glicko.newDeviation, games: verdict.games ?? 1,
+                     outcome: result.outcome, at: control)
+            if let opponent { $0.noteRated(against: opponent) }
+        }
+        Task { await boards.submit(rating: rating, for: control) }
+    }
+
+    /// The player asked for their online ratings to be deleted: gone from the
+    /// referee, and from this device, where every clock starts again.
+    func forgetOnlineRatings() async -> Bool {
+        guard await referee.forget() else { return false }
+        update { progress in
+            for control in TimeControl.allCases { progress.adopt(online: nil, at: control) }
+        }
+        await boards.refresh()
+        return true
+    }
+
+    /// A game scored on this device — the debug loopback match only, which
+    /// has nobody at the other end to report to the referee.
     func recordOnline(_ result: MatchResult, at control: TimeControl, against opponent: String?) {
         update {
             $0.record(online: result, at: control)

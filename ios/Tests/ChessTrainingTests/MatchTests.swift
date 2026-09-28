@@ -454,4 +454,36 @@ struct MatchTests {
         #expect(progress.deviation(pool, at: day) == 200)
         #expect(progress.deviation(pool, at: day.addingTimeInterval(60 * 86_400)) > 200)
     }
+
+    // MARK: - The referee's side of it
+
+    @Test("Both sides name the game alike, and keep its moves as UCI")
+    func gameIDAndMoves() {
+        let pair = makePair()
+        pair.begin(hostPlaysWhite: true)
+        #expect(pair.host.gameID != nil)
+        #expect(pair.host.gameID == pair.guest.gameID, "the host deals the match's ID with the colours")
+        #expect(pair.host.play(from: Square("e2")!, to: Square("e4")!, promotion: nil))
+        #expect(pair.guest.play(from: Square("e7")!, to: Square("e5")!, promotion: nil))
+        #expect(pair.host.uciMoves == ["e2e4", "e7e5"] && pair.guest.uciMoves == ["e2e4", "e7e5"])
+        let first = pair.host.gameID
+        pair.host.resign()
+        pair.guest.offerRematch()
+        pair.host.respondToRematch(accept: true)
+        #expect(pair.host.gameID != first && pair.host.gameID == pair.guest.gameID, "a rematch is another game")
+        #expect(pair.host.uciMoves.isEmpty)
+    }
+
+    @Test("An opponent on a build before the referee: a friendly")
+    func outdatedOpponentIsAFriendly() {
+        let pair = makePair()
+        pair.begin()
+        var old = MatchPacket.Hello(playerID: "B", name: "Bo", rating: 1200, games: 0)
+        old.version = 1
+        pair.host.receive(try! JSONEncoder().encode(MatchPacket.hello(old)))
+        #expect(pair.host.unratedByMatch == .outdatedOpponent)
+        #expect(UnratedReason(referee: "disputed") == .notConfirmed)
+        #expect(UnratedReason(referee: "sameOpponentToday") == .sameOpponentToday)
+        #expect(UnratedReason(referee: nil) == nil)
+    }
 }

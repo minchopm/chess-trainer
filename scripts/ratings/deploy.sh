@@ -110,5 +110,21 @@ aws lambda add-permission --region "$REGION" --function-name "$NAME" --statement
   --action lambda:InvokeFunction --principal events.amazonaws.com \
   --source-arn "arn:aws:events:$REGION:$ACCOUNT:rule/$RULE" >/dev/null 2>&1 || true
 
+# What the referee keeps about a game — both reports, its moves, the
+# verdict — goes after thirty days; the ratings themselves stay. Merged into
+# the bucket's rules rather than replacing them.
+RULES="$(aws s3api get-bucket-lifecycle-configuration --bucket "$BUCKET" --query Rules --output json 2>/dev/null || echo '[]')"
+LIFECYCLE="$(RULES="$RULES" python3 -c '
+import json, os
+rules = [r for r in json.loads(os.environ["RULES"]) if r.get("ID") != "ratings-games-30-days"]
+rules.append({"ID": "ratings-games-30-days", "Status": "Enabled", "Filter": {"Prefix": "ratings-state/v1/games/"},
+              "Expiration": {"Days": 30}, "NoncurrentVersionExpiration": {"NoncurrentDays": 1}})
+print(json.dumps({"Rules": rules}))')"
+run s3api put-bucket-lifecycle-configuration --bucket "$BUCKET" --lifecycle-configuration "$LIFECYCLE"
+
+# The function's own log: two weeks.
+run logs create-log-group --region "$REGION" --log-group-name "/aws/lambda/$NAME" 2>/dev/null || true
+run logs put-retention-policy --region "$REGION" --log-group-name "/aws/lambda/$NAME" --retention-in-days 14
+
 URL="$(aws lambda get-function-url-config --region "$REGION" --function-name "$NAME" --query FunctionUrl --output text 2>/dev/null || echo '(none yet)')"
 log "Referee at $URL"

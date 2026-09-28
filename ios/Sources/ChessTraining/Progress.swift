@@ -362,6 +362,34 @@ public struct TrainingProgress: Codable, Sendable {
         ratedOpponents[opponent] = now
     }
 
+    /// A rated game, as the referee settled it: its numbers replace this
+    /// device's, which were never more than a guess, and the game is counted.
+    public mutating func adopt(online rating: Int, deviation: Double, games: Int, outcome: MatchResult.Outcome,
+                               at control: TimeControl, now: Date = Date()) {
+        adopt(online: rating, deviation: deviation, games: games, lastPlayed: now, at: control)
+        switch outcome {
+        case .win: onlineWins += 1
+        case .loss: onlineLosses += 1
+        case .draw: onlineDraws += 1
+        }
+    }
+
+    /// The referee's standing for a clock, read from its list: the rating
+    /// that counts, on this device too. Nil puts the clock back where the
+    /// referee starts everybody, which is where a player it has never rated is.
+    public mutating func adopt(online rating: Int?, deviation: Double = Glicko.newDeviation, games: Int = 0,
+                               lastPlayed: Date? = nil, at control: TimeControl) {
+        let pool = RatedPool.online(minutes: control.minutes)
+        guard let rating else {
+            pools[pool.id] = PoolRating(rating: Glicko.starting)
+            return
+        }
+        var held = PoolRating(rating: rating, games: games)
+        held.deviation = deviation
+        held.lastPlayed = lastPlayed
+        pools[pool.id] = held
+    }
+
     public mutating func record(online result: MatchResult, at control: TimeControl, now: Date = Date()) {
         let pool = RatedPool.online(minutes: control.minutes)
         var held = pools[pool.id] ?? PoolRating(rating: starting(pool))

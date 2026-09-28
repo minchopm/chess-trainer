@@ -57,10 +57,14 @@ public enum MatchPacket: Codable, Equatable, Sendable {
         /// worth anything.
         public var youPlay: String
         public var minutes: Int
+        /// The match, as both players name it to the referee. Absent from
+        /// older builds.
+        public var matchID: String?
 
-        public init(youPlay: PieceColor, timeControl: TimeControl) {
+        public init(youPlay: PieceColor, timeControl: TimeControl, matchID: String? = nil) {
             self.youPlay = youPlay == .white ? "white" : "black"
             self.minutes = timeControl.minutes
+            self.matchID = matchID
         }
 
         public var receiverColor: PieceColor { youPlay == "white" ? .white : .black }
@@ -124,7 +128,11 @@ public enum MatchPacket: Codable, Equatable, Sendable {
 }
 
 public enum MatchProtocolVersion {
-    public static let current = 1
+    /// 2: the match has an ID, and the referee rates its games.
+    public static let current = 2
+    /// The first version whose games the referee can rate: an opponent on an
+    /// older build never reports, so a game against them is a friendly.
+    public static let refereed = 2
 }
 
 /// How a match ended, from the local player's point of view.
@@ -188,12 +196,34 @@ public struct MatchResult: Equatable, Sendable {
 /// just the same, and scored as a friendly.
 public enum UnratedReason: String, Sendable {
     case invitation, rematch, sameOpponentToday
+    /// Fewer than two moves: nobody played a game.
+    case aborted
+    /// The opponent's build predates the referee, so it never reports.
+    case outdatedOpponent
+    /// The referee could not stand behind a result: the two reports
+    /// disagreed, the moves did not play to it, or the other never confirmed.
+    case notConfirmed
+
+    /// What the referee's own word for it means here.
+    public init?(referee reason: String?) {
+        switch reason {
+        case "invitation": self = .invitation
+        case "rematch": self = .rematch
+        case "sameOpponentToday": self = .sameOpponentToday
+        case "aborted": self = .aborted
+        case nil: return nil
+        default: self = .notConfirmed
+        }
+    }
 
     public var text: String {
         switch self {
         case .invitation: L.t("online.unrated.invitation", "Not rated: games from an invitation are friendly.")
         case .rematch: L.t("online.unrated.rematch", "Not rated: a rematch is a friendly game.")
         case .sameOpponentToday: L.t("online.unrated.again", "Not rated: only one game a day against the same opponent counts.")
+        case .aborted: L.t("online.unrated.aborted", "Not rated: the game ended before both sides had moved.")
+        case .outdatedOpponent: L.t("online.unrated.outdated", "Not rated: your opponent's app needs updating first.")
+        case .notConfirmed: L.t("online.unrated.unconfirmed", "Not rated: the result could not be confirmed by both sides.")
         }
     }
 }

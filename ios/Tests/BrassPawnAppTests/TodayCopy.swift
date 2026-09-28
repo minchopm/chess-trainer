@@ -26,7 +26,7 @@ struct TodayCopy {
     @Test("About names the screen that downloads the feed")
     func aboutNamesToday() {
         let today = AboutCopy.values("today.title")
-        let about = AboutCopy.values("about.theAppCollectsNothingSends")
+        let about = AboutCopy.values("about.privacyApart")
         for (lang, text) in about {
             #expect(text.contains(today[lang]!), "\(lang) About does not name \(today[lang]!): \(text)")
         }

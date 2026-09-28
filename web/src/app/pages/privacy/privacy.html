@@ -1,8 +1,8 @@
 <bp-page-head
   slug="Legal"
   title="Privacy Policy"
-  lede="Brass Pawn collects nothing. This page says so in the detail a policy is supposed to have, and names the two places where data does exist — both of them Apple's, neither of them ours."
-  meta="Effective 27 September 2026 · Applies to Brass Pawn for iPhone and iPad"
+  lede="Brass Pawn collects nothing outside online play. This page says so in the detail a policy is supposed to have, and names the places where data does exist: Apple's, for purchases and Game Center, and ours, for the ratings of online games."
+  meta="Effective 28 September 2026 · Applies to Brass Pawn for iPhone, iPad and Mac"
 />
 
 <div class="page wrap">
@@ -10,15 +10,20 @@
     <div class="summary">
       <p>
         <strong>The short version.</strong> There is no account, no analytics, no advertising and no
-        third-party SDK. Nothing you do in the app is transmitted to us. The one thing the app
-        fetches from us is the day’s games, when you open Today — the same files for everybody, and
-        we keep no record of who asked. Your ratings and history live on your device and are deleted
-        with the app.
+        third-party SDK. The one thing the app fetches from us is the day’s games, when you open
+        Today — the same files for everybody, and we keep no record of who asked. Your training
+        ratings and history live on your device and are deleted with the app.
       </p>
       <p>
-        Two things are handled by Apple rather than by us: <strong>purchases</strong>, through the
-        App Store, and <strong>online play</strong>, through Game Center. We receive no payment
-        details and no personal information from either.
+        The one exception is <strong>rated online games</strong>. So that no device can claim a
+        rating it did not earn, both players’ apps send our referee the game — the clock, the
+        colours, the moves and the result — with Game Center’s proof of who is playing. It keeps
+        your Game Center ID only as a scrambled code, with your rating on each clock; no name, no
+        contacts. Details in <a [routerLink]="[]" fragment="referee">section 6</a>.
+      </p>
+      <p>
+        <strong>Purchases</strong> are handled by the App Store, and <strong>online play</strong>
+        itself by Game Center. We receive no payment details from either.
       </p>
     </div>
 
@@ -37,15 +42,18 @@
 
     <h2 id="collect">2. What we collect</h2>
     <p>
-      Nothing. The app makes no analytics calls, carries no advertising, contains no third-party
+      Nothing, apart from what rates the games you play online (<a [routerLink]="[]"
+        fragment="referee"
+        >section 6</a
+      >). The app makes no analytics calls, carries no advertising, contains no third-party
       tracking or attribution SDK of any kind, and has no account system. It does not read your
       contacts, photos, location, calendar, microphone, camera, health data, clipboard or
       advertising identifier, and it does not ask for permission to do so, because it has no code
       that would use them.
     </p>
     <p>
-      We do not build a profile of you, we do not sell or share data — we have none to sell — and we
-      do not use anything for advertising or for training any model.
+      We do not build a profile of you, we do not sell or share data, and we do not use anything for
+      advertising or for training any model.
     </p>
 
     <div class="table-scroll">
@@ -62,7 +70,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>Ratings, solved puzzles, review schedule, streaks, statistics</td>
+            <td>Training ratings, solved puzzles, review schedule, streaks, statistics</td>
             <td>The app’s container on your device</td>
             <td>You</td>
           </tr>
@@ -87,7 +95,26 @@
             <td>You and your opponent</td>
           </tr>
           <tr>
-            <td>Your online rating on each clock you have played</td>
+            <td>
+              Your Game Center team player ID with Apple’s signature, and the clock, colours, moves and
+              result of a rated online game
+            </td>
+            <td>
+              Sent to our referee when the game begins and ends; the ID is kept only as a one-way code,
+              the game’s record for thirty days
+            </td>
+            <td>Us</td>
+          </tr>
+          <tr>
+            <td>
+              Your online rating on each clock, how sure it is, your number of rated games and the day
+              of the last one
+            </td>
+            <td>Kept by our referee under that code, and published on the rank lists</td>
+            <td>Anyone, under the code; your nickname beside it only as Game Center allows</td>
+          </tr>
+          <tr>
+            <td>The online rating the referee settled on, for each clock you have played</td>
             <td>Sent to Game Center’s leaderboards, with your Game Center nickname</td>
             <td>Other players, as your Game Center settings allow, and Apple</td>
           </tr>
@@ -97,21 +124,25 @@
 
     <h2 id="device">3. What stays on your device</h2>
     <p>
-      Your ratings, solved puzzles, review schedule, streaks, game history and purchase state are
-      stored in the app’s own container on your device. Deleting the app deletes them. They are
+      Your training ratings, solved puzzles, review schedule, streaks, game history and purchase
+      state are stored in the app’s own container on your device. Deleting the app deletes them. They are
       included in an encrypted device backup if you have one turned on — that backup is between you
       and Apple, and we have no access to it.
     </p>
     <p>
       There is no “export my data” button and no “delete my account” button, because there is no
-      account and nothing of yours has left the device. Deleting the app is the deletion mechanism.
+      account and, outside online play, nothing of yours has left the device. Deleting the app is the
+      deletion mechanism. Your online ratings are the exception: the app’s About screen has a
+      button that deletes them from the referee (see <a [routerLink]="[]" fragment="referee"
+        >section 6</a
+      >).
     </p>
 
     <h2 id="network">4. When the app uses the network</h2>
     <p>
       Training is entirely offline: the engine, the puzzles, the games and your progress are all in
-      the app. The app makes network connections in exactly four situations. Three of them are
-      connections to Apple; the fourth is a download from this site:
+      the app. The app makes network connections in exactly five situations. Three of them are
+      connections to Apple; the others are to us:
     </p>
     <ul>
       <li>
@@ -122,6 +153,12 @@
       <li>
         <strong>Links you tap.</strong> The About screen links to the source repository, this site
         and the licence text. Nothing opens on its own.
+      </li>
+      <li>
+        <strong>Rated online games.</strong> When a game that can be rated begins, and when it ends,
+        the app tells our referee (<a [routerLink]="[]" fragment="referee">section 6</a>). Opening the
+        multiplayer lobby or the rank list downloads each clock’s list from
+        <code>brasspawn.com/media/ratings/v1/</code>, the same files for everybody.
       </li>
       <li>
         <strong>Today.</strong> Opening the Today screen downloads
@@ -142,26 +179,65 @@
       your opponent, because that is what a game between two people needs.
     </p>
     <p>
-      There is no server of ours in the middle. The two devices talk to each other and both run the
-      rules, so a move is played only if it is legal in the position the receiving device already
-      holds. Moves, clocks and results are not recorded by us anywhere.
+      During a game the two devices talk to each other and both run the rules, so a move is played
+      only if it is legal in the position the receiving device already holds. How the game is rated
+      is not left to either device: see <a [routerLink]="[]" fragment="referee">section 6</a>.
     </p>
     <p>
-      If you play online, the app also puts your online rating on each clock you have played on
+      The app also puts the online rating the referee settled on, for each clock you have played, on
       Game Center’s leaderboards — one for each clock — and sends it again when you open the app
-      signed in to Game Center. Other players see your Game Center nickname, your rating and when
-      you were last seen there, as your Game Center privacy settings allow: that is what the app’s
-      rank list and its list of active and inactive players are made from, and what lets another
-      player invite you to a game. The leaderboards are Apple’s, and there is no server of ours
-      behind them.
+      signed in to Game Center. Other players see your Game Center nickname and when you were last
+      seen there, as your Game Center privacy settings allow: that is how the app’s rank list shows
+      who each player is, how its lists of active and inactive players are made, and what lets
+      another player invite you to a game. The leaderboards are Apple’s.
     </p>
     <p>
       Apple’s handling of Game Center data is governed by
-      <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s privacy policy</a>; we
-      receive none of it.
+      <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s privacy policy</a>.
     </p>
 
-    <h2 id="purchases">6. Purchases</h2>
+    <h2 id="referee">6. Online ratings: the referee</h2>
+    <p>
+      A rating that each device worked out for itself could be made to say anything, so the ratings
+      of online games are kept by a referee of ours: a small function on Amazon Web Services, in
+      Frankfurt, in the European Union.
+    </p>
+    <p>
+      <strong>What the app sends it.</strong> When a game that can be rated begins, and when it
+      ends: your Game Center team player ID — Apple’s identifier for you in our apps, which is not
+      your name, e-mail address or Apple Account — with Apple’s signature proving it is yours; the
+      game’s ID; the clock; your colour; whether the game came from the open search; and, at the
+      end, the moves and the result. Your IP address reaches Amazon, as any web request’s does.
+      Nothing else: no nickname, no photo, no contacts, no device details. Friendly games — from an
+      invitation, or a rematch — are not sent at all.
+    </p>
+    <p>
+      <strong>What it keeps.</strong> Your ID only as a scrambled code, a one-way hash of it, never
+      the ID itself. Beside the code: your rating on each clock, how sure it is, how many rated
+      games you have played and the day of the last one. For a day after a rated game, the two
+      players’ codes, so the same two are rated once a day. What was sent about each game — the two
+      reports, the moves, the verdict — is deleted after thirty days. The function’s logs, which name
+      games by their ID and players by their code, are deleted after fourteen days.
+    </p>
+    <p>
+      <strong>What it publishes.</strong> Each clock’s list — codes, ratings, how sure each is, the
+      number of games and the day of the last one — at
+      <code>brasspawn.com/media/ratings/v1/</code>, which is what the app reads to show the rank
+      list. A code says nothing about who you are; the app puts a nickname beside it only where Game
+      Center shows that player to the person looking.
+    </p>
+    <p>
+      <strong>What it is for.</strong> Rating games, and nothing else. Nothing in it is sold, shared
+      or used for advertising or tracking. The legal basis is our legitimate interest, and yours, in
+      rank lists that cannot be forged.
+    </p>
+    <p>
+      <strong>Deleting it.</strong> <em>About → Delete my online ratings</em> in the app removes your
+      ratings from the referee and from every list at once. You can also write to
+      <a [href]="'mailto:' + site.privacyEmail">{{ site.privacyEmail }}</a>.
+    </p>
+
+    <h2 id="purchases">7. Purchases</h2>
     <p>
       The subscription and the one-off unlock are handled entirely by the App Store. We never see
       your name, your payment details or your Apple Account. The app only asks StoreKit whether a
@@ -173,7 +249,7 @@
       nothing that identifies a purchaser.
     </p>
 
-    <h2 id="crash">7. Crash reports and App Store analytics</h2>
+    <h2 id="crash">8. Crash reports and App Store analytics</h2>
     <p>
       We include no crash-reporting or analytics library. However, iOS itself has a setting —
       <em
@@ -190,7 +266,7 @@
       dashboard would be, at best, incomplete.
     </p>
 
-    <h2 id="chess">8. The chess content</h2>
+    <h2 id="chess">9. The chess content</h2>
     <p>
       The bundled puzzles and games come from the
       <a href="https://database.lichess.org/" rel="noopener">Lichess database</a>, released into the
@@ -199,10 +275,11 @@
       their usernames.
     </p>
 
-    <h2 id="children">9. Children</h2>
+    <h2 id="children">10. Children</h2>
     <p>
-      The app collects no personal data from anyone, so there is nothing to collect from a child
-      either. It shows no advertising, contains no third-party content, has no chat, no
+      Outside online play the app collects no personal data from anyone. The referee keeps only
+      what <a [routerLink]="[]" fragment="referee">section 6</a> describes, and nothing that
+      identifies anybody. It shows no advertising, contains no third-party content, has no chat, no
       user-generated content and no external links other than to the source repository, this website
       and the licence text.
     </p>
@@ -213,23 +290,25 @@
       >).
     </p>
 
-    <h2 id="transfers">10. International transfers and retention</h2>
+    <h2 id="transfers">11. International transfers and retention</h2>
     <p>
-      We hold no personal data, so there is none to transfer and none to retain. Data on your device
-      stays on your device for as long as you keep the app.
+      What the referee keeps (<a [routerLink]="[]" fragment="referee">section 6</a>) is held by
+      Amazon Web Services in Frankfurt, in the European Union: the ratings for as long as the rank
+      lists exist, or until you delete them; each game’s record for thirty days; the logs for
+      fourteen. Data on your device stays on your device for as long as you keep the app.
     </p>
 
-    <h2 id="rights">11. Your rights</h2>
+    <h2 id="rights">12. Your rights</h2>
     <p>
       If you are in the European Economic Area, the United Kingdom, Switzerland, California, or
       anywhere else with a data protection or privacy law, those laws give you rights of access,
       correction, deletion, portability and objection over personal data a company holds about you.
     </p>
     <p>
-      We hold none, so there is nothing for us to disclose, correct, delete, port or stop
-      processing. You may still write to us to ask, and we will confirm this in writing. Under the
-      California Consumer Privacy Act we specifically confirm that we do not sell or share personal
-      information, and have never done so.
+      The only personal data we hold is what the referee keeps, and the app can delete it itself
+      (<em>About → Delete my online ratings</em>). For anything else — a copy of it, a question, an
+      objection — write to us. Under the California Consumer Privacy Act we specifically confirm that
+      we do not sell or share personal information, and have never done so.
     </p>
     <p>
       For data Apple holds — your Apple Account, Game Center profile and purchase history — the
@@ -238,7 +317,7 @@
       go.
     </p>
 
-    <h2 id="site">12. This website</h2>
+    <h2 id="site">13. This website</h2>
     <p>
       This site sets no cookies, runs no analytics and embeds no trackers. Every file it loads — the
       page, the styles, the scripts, the typefaces and the images — comes from this domain. No third
@@ -252,7 +331,7 @@
     </p>
     <p>The site is a set of static files. It has no login, no forms and no database.</p>
 
-    <h2 id="changes">13. Changes to this policy</h2>
+    <h2 id="changes">14. Changes to this policy</h2>
     <p>
       If the app ever starts doing something this page does not describe, this page changes first
       and the effective date at the top changes with it. Because the app’s complete source is
@@ -261,7 +340,7 @@
       description of it.
     </p>
 
-    <h2 id="contact">14. Contact</h2>
+    <h2 id="contact">15. Contact</h2>
     <p>
       Questions about this policy, or about anything the app does:
       <a [href]="'mailto:' + site.privacyEmail">{{ site.privacyEmail }}</a
@@ -285,6 +364,7 @@
       <li><a [routerLink]="[]" fragment="device">What stays on your device</a></li>
       <li><a [routerLink]="[]" fragment="network">When the app uses the network</a></li>
       <li><a [routerLink]="[]" fragment="gamecenter">Game Center</a></li>
+      <li><a [routerLink]="[]" fragment="referee">Online ratings</a></li>
       <li><a [routerLink]="[]" fragment="purchases">Purchases</a></li>
       <li><a [routerLink]="[]" fragment="crash">Crash reports</a></li>
       <li><a [routerLink]="[]" fragment="chess">The chess content</a></li>
