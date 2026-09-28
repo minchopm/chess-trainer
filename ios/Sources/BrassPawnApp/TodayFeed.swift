@@ -77,16 +77,22 @@ final class TodayFeed {
             .appendingPathComponent("today-feed-v1.json")
     }
 
+    /// What is on disk, and no request at all: for the menu, which shows the
+    /// newest headline from the last copy that arrived without asking
+    /// brasspawn.com for anything. Only opening Today does that.
+    func readCopyOnDisk() async {
+        guard !readDisk else { return }
+        readDisk = true
+        if let file = Self.cacheFile, let data = try? Data(contentsOf: file),
+           let feed = try? await Self.decoded(data) {
+            show(feed)
+        }
+    }
+
     /// Show what is on disk, then ask for what is new — unless it was asked
     /// for a moment ago.
     func refresh(force: Bool = false) async {
-        if !readDisk {
-            readDisk = true
-            if let file = Self.cacheFile, let data = try? Data(contentsOf: file),
-               let feed = try? await Self.decoded(data) {
-                show(feed)
-            }
-        }
+        await readCopyOnDisk()
         if !force, let fetchedAt, Date().timeIntervalSince(fetchedAt) < 600 { return }
         guard state != .loading else { return }
 

@@ -136,7 +136,10 @@ final class OnlineBoards {
               let (local, entries) = try? await board.loadEntries(for: [GKLocalPlayer.local] + others, timeScope: .allTime)
         else { return nil }
         var found: [String: OnlineRecord] = [:]
-        for entry in entries { found[entry.player.gamePlayerID] = OnlineRecord(score: entry.score, context: entry.context) }
+        for entry in entries {
+            guard let player = entry.who else { continue }
+            found[player.gamePlayerID] = OnlineRecord(score: entry.score, context: entry.context)
+        }
         let mine = local.map { OnlineRecord(score: $0.score, context: $0.context) }
             ?? found[GKLocalPlayer.local.gamePlayerID] ?? .new
         return (mine, found)
@@ -164,20 +167,21 @@ final class OnlineBoards {
                       for: .global, timeScope: .allTime, range: NSRange(location: 1, length: Self.pageSize)
                   )
             else { continue }
-            let listed = entries.map { entry -> BoardPlayer in
-                players[entry.player.gamePlayerID] = entry.player
-                playerIDs[Presence.key(teamPlayerID: entry.player.teamPlayerID)] = entry.player.gamePlayerID
+            let listed = entries.compactMap { entry -> BoardPlayer? in
+                guard let player = entry.who else { return nil }
+                players[player.gamePlayerID] = player
+                playerIDs[Presence.key(teamPlayerID: player.teamPlayerID)] = player.gamePlayerID
                 return BoardPlayer(
-                    id: entry.player.gamePlayerID, alias: entry.player.alias,
+                    id: player.gamePlayerID, alias: player.alias,
                     rank: entry.rank, rating: entry.score, clock: control,
-                    lastSeen: entry.date, isLocal: entry.player.gamePlayerID == localID
+                    lastSeen: entry.submitted ?? .distantPast, isLocal: player.gamePlayerID == localID
                 )
             }
             ranks[control] = listed
             totals[control] = total
             mine[control] = local.map {
                 BoardPlayer(id: localID, alias: GKLocalPlayer.local.alias, rank: $0.rank, rating: $0.score,
-                            clock: control, lastSeen: $0.date, isLocal: true)
+                            clock: control, lastSeen: $0.submitted ?? Date(), isLocal: true)
             }
             for player in listed where (latest[player.id]?.lastSeen ?? .distantPast) < player.lastSeen {
                 latest[player.id] = player
@@ -257,3 +261,15 @@ final class OnlineBoards {
     }
     #endif
 }
+
+#if canImport(GameKit)
+private extension GKLeaderboard.Entry {
+    /// When the entry was written, if Game Center says. It hands back entries
+    /// with no date now and then — this player's own, on a Mac — and `date`,
+    /// which Swift is told can never be nil, stops the app on the spot when it
+    /// is. Read through the Objective-C property instead, where nil is nil.
+    var submitted: Date? { value(forKey: "date") as? Date }
+    /// Whose entry it is — the same caution, for the same reason.
+    var who: GKPlayer? { value(forKey: "player") as? GKPlayer }
+}
+#endif

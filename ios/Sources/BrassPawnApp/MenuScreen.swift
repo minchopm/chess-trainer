@@ -14,6 +14,7 @@ struct MenuScreen: View {
     @Environment(\.scenePhase) private var scenePhase
 
     @Environment(Navigator.self) private var navigator
+    @Environment(TodayFeed.self) private var today
     let carving: Carving
     let onChoose: (RootView.Tab) -> Void
 
@@ -113,47 +114,15 @@ struct MenuScreen: View {
         #endif
     }
 
-    /// Today in the top-left corner; purchases and preferences together in the
-    /// top-right, with settings at the outside edge where it is quickest to find.
+    /// Purchases and preferences together in the top-right, with settings at
+    /// the outside edge where it is quickest to find.
     private var menuActions: some View {
         HStack(spacing: 0) {
-            todayEntry
             Spacer(minLength: 12)
             accountActions
         }
         .padding(.horizontal, 18)
         .padding(.top, 8)
-    }
-
-    /// The day's games, on a plate of its own rather than a seventh square in
-    /// the grid: it is the one thing on this screen that is new every day, and
-    /// the grid is the part that never changes.
-    private var todayEntry: some View {
-        Button {
-            onChoose(.today)
-        } label: {
-            HStack(spacing: 8) {
-                BrassIcon("doc.text", size: 19)
-                Text(L.t("today.title", "Today").uppercased())
-                    .appFont(size: 10, weight: .semibold)
-                    .tracking(2.2)
-                    .lineLimit(1)
-            }
-            .foregroundStyle(Theatre.brassHot.opacity(0.9))
-            .padding(.horizontal, 14)
-            .frame(height: 48)
-            .background {
-                BrassPlateShape(cut: 11)
-                    .fill(Theatre.ink3.opacity(0.94))
-            }
-            .overlay {
-                BrassPlateShape(cut: 11)
-                    .strokeBorder(Theatre.brassDeep.opacity(0.75), lineWidth: 0.8)
-            }
-            .shadow(color: Theatre.shadow.opacity(0.45), radius: 14, y: 5)
-        }
-        .buttonStyle(BrassPressStyle())
-        .accessibilityLabel(L.t("today.title", "Today"))
     }
 
     private var accountActions: some View {
@@ -226,6 +195,7 @@ struct MenuScreen: View {
     @ViewBuilder
     private func choices(compact: Bool) -> some View {
         VStack(spacing: compact ? 9 : 12) {
+            todayEntry(compact: compact)
             playEntry
             VStack(spacing: -1) {
                 HStack(spacing: -1) {
@@ -241,6 +211,56 @@ struct MenuScreen: View {
             }
         }
         .frame(maxWidth: 460)
+    }
+
+    /// The day's games, as a row of its own above Play rather than a seventh
+    /// square in the grid: it is the one thing on this screen that is new every
+    /// day, and it says what it is — the newest headline, from the copy already
+    /// on this device. The menu downloads nothing; Today does, when it is opened.
+    private func todayEntry(compact: Bool) -> some View {
+        let headline = today.stories.first?.headline
+        return Button {
+            onChoose(.today)
+        } label: {
+            HStack(spacing: 12) {
+                BrassIcon("doc.text", size: 21)
+                    .foregroundStyle(Theatre.brassHot.opacity(0.9))
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(L.t("today.title", "Today").uppercased())
+                        .appFont(size: 9, weight: .semibold)
+                        .tracking(2.2)
+                        .foregroundStyle(Theatre.brassHot.opacity(0.9))
+                    Text(headline ?? L.t("menu.todayLine", "Stories from the day's top games"))
+                        .appFont(.footnote)
+                        .foregroundStyle(Theatre.ivory)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                }
+                Spacer(minLength: 6)
+                Image(systemName: "chevron.forward")
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(Theatre.ivoryFaint)
+            }
+            .padding(.horizontal, 16)
+            .frame(maxWidth: .infinity)
+            .frame(height: compact ? 54 : 60)
+            .background {
+                BrassPlateShape(cut: 9)
+                    .fill(LinearGradient(
+                        colors: [Theatre.ink4.opacity(0.96), Theatre.ink2.opacity(0.96)],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ))
+            }
+            .overlay {
+                BrassPlateShape(cut: 9)
+                    .strokeBorder(Theatre.brassDeep.opacity(0.7), lineWidth: 0.8)
+            }
+        }
+        .buttonStyle(BrassPressStyle())
+        .accessibilityLabel(L.t("today.title", "Today"))
+        .accessibilityValue(headline ?? L.t("menu.todayLine", "Stories from the day's top games"))
+        .task { await today.readCopyOnDisk() }
     }
 
     /// An icon over a very small label — a whole row of them fits where two
