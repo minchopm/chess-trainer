@@ -163,7 +163,7 @@ export const pages: Pages = {
         },
         {
           q: 'I bought the unlock and got a new phone.',
-          a: 'Sign in with the same Apple Account and tap Restore purchases on the paywall screen. The app asks StoreKit what you own; nothing is stored on a server of ours because there is no server of ours.',
+          a: 'Sign in with the same Apple Account and tap Restore purchases on the paywall screen. The app asks StoreKit what you own; what you own is kept by the App Store, not by us.',
         },
         {
           q: 'Does Pro change my rating or unlock “better” puzzles?',
@@ -263,7 +263,7 @@ export const pages: Pages = {
         lede: 'Two people, one clock, no engine anywhere near it.',
         body: [
           'Game Center finds you somebody who chose the same time control — 3, 5, 10, 15 or 30 minutes. It is the one mode with no engine in it: no hint, no move values, no coaching, because help that only one side gets is not a game.',
-          'There is no server. The two devices talk to each other and both run the rules, so a move is played only if it is legal in the position the receiving device already holds. A peer that lies produces a dropped packet, not an illegal board.',
+          'Nothing of ours sits between the two players. The two devices talk to each other and both run the rules, so a move is played only if it is legal in the position the receiving device already holds. A peer that lies produces a dropped packet, not an illegal board.',
         ],
         free: 'Free, unlimited, always.',
       },

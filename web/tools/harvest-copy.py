@@ -48,8 +48,8 @@ OUT = ROOT / "src/app/i18n/copy"
 # out of context.
 STRINGS = {
     "slug": "menu.slug",
-    "lede": "about.tacticsPositionalJudgementEndgameTechnique",
-    "privacy": "about.theAppCollectsNothingSends",
+    "lede": "about.intro3",
+    "privacy": "about.privacyApart",
     "freeSoftware": "about.thisApplicationIsFreeSoftware",
     "stockfish": "about.itIncludesStockfishWhichIs",
     "reckless": "about.itAlsoIncludesReckless",
@@ -121,6 +121,17 @@ def load_narration() -> dict[str, dict[str, str]]:
 
 def load_app() -> dict:
     return json.loads((APP / "ios/App/Localizable.xcstrings").read_text())["strings"]
+
+
+def handwritten_lede(loc: dict) -> str | None:
+    """A handwritten language's lede, from its own copy file: the app's
+    catalogue has none for it, and the footer should not fall back to English
+    for the one line it carries."""
+    if not loc.get("handwritten"):
+        return None
+    text = (OUT / f"{loc['slug']}.ts").read_text()
+    found = re.search(r"^    lede: '((?:[^'\\]|\\.)*)',$", text, re.M)
+    return found.group(1).replace("\\'", "'") if found else None
 
 
 def value(strings: dict, key: str, tag: str) -> str | None:
@@ -269,7 +280,7 @@ export const COPY: Record<string, () => Promise<Copy>> = {{
                  ("skip", "inEnglish", "readSource", "elsewhere", "sourceOnGitHub",
                   "reportIssue", "languages", "colApp", "colChess", "colLegal",
                   "licence", "rights", "attribution")},
-              "lede": value(strings, STRINGS["lede"], loc["tag"])})
+              "lede": handwritten_lede(loc) or value(strings, STRINGS["lede"], loc["tag"])})
         + " }"
         for loc in locales
     )

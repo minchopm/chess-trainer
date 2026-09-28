@@ -158,7 +158,7 @@ export const pages: Pages = {
         },
         {
           q: 'J’ai acheté le déverrouillage et j’ai changé de téléphone.',
-          a: 'Connectez-vous avec le même compte Apple et touchez « Restaurer les achats » sur l’écran d’achat. L’application demande à StoreKit ce que vous possédez ; rien n’est stocké sur un serveur à nous, parce qu’il n’y a pas de serveur à nous.',
+          a: 'Connectez-vous avec le même compte Apple et touchez « Restaurer les achats » sur l’écran d’achat. L’application demande à StoreKit ce que vous possédez ; ce que vous possédez, c’est l’App Store qui le garde, pas nous.',
         },
         {
           q: 'Pro change-t-il mon classement ou débloque-t-il de « meilleurs » exercices ?',
@@ -259,7 +259,7 @@ export const pages: Pages = {
         lede: 'Deux personnes, une pendule, et aucun moteur à proximité.',
         body: [
           'Game Center vous trouve quelqu’un qui a choisi la même cadence — 3, 5, 10, 15 ou 30 minutes. C’est le seul mode sans moteur dedans : pas d’indice, pas de valeurs de coups, pas de conseils, parce qu’une aide qu’un seul camp reçoit n’est pas une partie.',
-          'Il n’y a pas de serveur. Les deux appareils se parlent et appliquent tous deux les règles, si bien qu’un coup n’est joué que s’il est légal dans la position que l’appareil qui reçoit détient déjà. Un pair qui ment produit un paquet rejeté, pas un échiquier illégal.',
+          'Rien de chez nous ne se tient entre les deux joueurs. Les deux appareils se parlent et appliquent tous deux les règles, si bien qu’un coup n’est joué que s’il est légal dans la position que l’appareil qui reçoit détient déjà. Un pair qui ment produit un paquet rejeté, pas un échiquier illégal.',
         ],
         free: 'Gratuit, sans limite, toujours.',
       },

@@ -14,9 +14,9 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Hraj · Trénuj · Sleduj',
-    lede: 'Taktika, poziční úsudek, koncovková technika a partie s koučem, s enginem běžícím přímo v zařízení. Žádný účet a nic se neshromažďuje.',
+    lede: 'Taktika, poziční úsudek, technika koncovek a hra s trenérem, s enginem běžícím přímo v zařízení. Bez účtu a nic se nesbírá — kromě toho, že jsi online, když hraješ online.',
     privacy:
-      'Aplikace nic nesbírá a nic o tobě neodesílá. Jediné, co stahuje, je denní přehled, když otevřeš Dnes. Tvoje ratingy a historie zůstávají jen v tomto zařízení a smažou se spolu s aplikací.',
+      'Kromě online hry aplikace nic nesbírá a nic o tobě neposílá. Jediné, co stahuje, je denní přehled, když otevřeš Dnes. Tréninkové ratingy a historie jsou uložené jen v tomto zařízení a smazáním aplikace se smažou.',
     freeSoftware:
       'Tato aplikace je svobodný software pod licencí GNU Affero General Public License verze 3 nebo novější.',
     stockfish:

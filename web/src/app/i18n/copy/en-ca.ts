@@ -14,9 +14,9 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Play · Train · Watch',
-    lede: 'Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected.',
+    lede: 'Tactics, positional judgement, endgame technique and coached play, with the engine running on the device itself. No account, and nothing collected — apart from saying you are online, while you play online.',
     privacy:
-      'The app collects nothing and sends nothing about you. The one thing it downloads is the daily feed, when you open Today. Your ratings and history are stored only on this device, and deleting the app deletes them.',
+      'Apart from online play, the app collects nothing and sends nothing about you. The one thing it downloads is the daily feed, when you open Today. Your training ratings and history are stored only on this device, and deleting the app deletes them.',
     freeSoftware:
       'This application is free software, licensed under the GNU Affero General Public License version 3 or later.',
     stockfish:

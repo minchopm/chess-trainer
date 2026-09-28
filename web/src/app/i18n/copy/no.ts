@@ -14,9 +14,9 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Spill · Tren · Se',
-    lede: 'Taktikk, posisjonsvurdering, sluttspillteknikk og partier med coaching, med motoren som kjører på selve enheten. Ingen konto, og ingenting samles inn.',
+    lede: 'Taktikk, posisjonsvurdering, sluttspillteknikk og spill med trener, med motoren på selve enheten. Ingen konto, og ingenting samles inn — bortsett fra at du er pålogget, når du spiller på nett.',
     privacy:
-      'Appen samler ikke inn noe og sender ingenting om deg. Det eneste den laster ned, er dagens feed, når du åpner I dag. Ratingene og historikken din ligger bare på denne enheten og slettes sammen med appen.',
+      'Utenom onlinespill samler ikke appen inn noe og sender ikke noe om deg. Det eneste den laster ned, er den daglige strømmen, når du åpner I dag. Treningsratingene og historikken din lagres bare på denne enheten, og sletter du appen, slettes de.',
     freeSoftware:
       'Denne appen er fri programvare, lisensiert under GNU Affero General Public License versjon 3 eller nyere.',
     stockfish:

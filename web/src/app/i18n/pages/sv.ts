@@ -158,7 +158,7 @@ export const pages: Pages = {
         },
         {
           q: 'Jag köpte upplåsningen och har en ny telefon.',
-          a: 'Logga in på samma Apple-konto och tryck på ”Återställ köp” på köpskärmen. Appen frågar StoreKit vad du äger; ingenting ligger på en server hos oss, för vi har ingen server.',
+          a: 'Logga in på samma Apple-konto och tryck på ”Återställ köp” på köpskärmen. Appen frågar StoreKit vad du äger; det du äger förvarar App Store, inte vi.',
         },
         {
           q: 'Ändrar Pro min rating eller låser upp ”bättre” övningar?',
@@ -259,7 +259,7 @@ export const pages: Pages = {
         lede: 'Två människor, en klocka, och ingen motor i närheten.',
         body: [
           'Game Center hittar någon som valde samma betänketid — 3, 5, 10, 15 eller 30 minuter. Det är det enda läget utan motor i sig: ingen ledtråd, inga dragvärderingar, ingen coachning, för hjälp som bara den ena sidan får är inte ett parti.',
-          'Det finns ingen server. De två enheterna talar med varandra och båda upprätthåller reglerna, så ett drag spelas bara om det är lagligt i den ställning den mottagande enheten redan har. En motpart som ljuger ger ett kasserat paket, inte ett olagligt bräde.',
+          'Inget av vårt står mellan de två spelarna. De två enheterna talar med varandra och båda upprätthåller reglerna, så ett drag spelas bara om det är lagligt i den ställning den mottagande enheten redan har. En motpart som ljuger ger ett kasserat paket, inte ett olagligt bräde.',
         ],
         free: 'Gratis, obegränsat, alltid.',
       },

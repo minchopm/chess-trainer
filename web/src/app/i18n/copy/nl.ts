@@ -14,9 +14,9 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Spelen · Trainen · Kijken',
-    lede: 'Tactiek, positioneel inzicht, eindspeltechniek en partijen met begeleiding, met de engine op het toestel zelf. Geen account, en er wordt niets verzameld.',
+    lede: 'Tactiek, positioneel inzicht, eindspeltechniek en spelen met coaching, met de engine op het apparaat zelf. Geen account, en niets verzameld — behalve dat je online bent, als je online speelt.',
     privacy:
-      'De app verzamelt niets en verstuurt niets over jou. Het enige wat hij downloadt is de dagelijkse feed, wanneer je Vandaag opent. Je ratings en geschiedenis staan alleen op dit toestel en verdwijnen met de app.',
+      'Buiten online spelen verzamelt de app niets en stuurt ze niets over jou. Het enige wat ze downloadt is de dagelijkse feed, als je Vandaag opent. Je trainingsratings en geschiedenis staan alleen op dit apparaat, en wie de app verwijdert, verwijdert ze.',
     freeSoftware:
       'Deze app is vrije software onder de GNU Affero General Public License versie 3 of later.',
     stockfish:

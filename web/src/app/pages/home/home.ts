@@ -36,7 +36,7 @@ export class Home {
     { value: '15', label: 'endgame drills', note: 'every label engine-verified' },
     { value: '1,624', label: 'rated games', note: 'for Guess the Elo' },
     { value: '31', label: 'languages', note: 'chess vocabulary translated, not guessed' },
-    { value: '0', label: 'accounts or trackers', note: 'nothing about you leaves the device' },
+    { value: '0', label: 'accounts or trackers', note: 'no analytics, no adverts, nothing sold' },
   ] as const;
 
   constructor() {

@@ -14,9 +14,9 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Jogar · Treinar · Assistir',
-    lede: 'Tática, julgamento posicional, técnica de finais e partidas comentadas, com o motor rodando no próprio aparelho. Sem conta, e nada é coletado.',
+    lede: 'Tática, julgamento posicional, técnica de finais e jogo com treinador, com o motor rodando no próprio aparelho. Sem conta, e nada coletado — além de dizer que você está on-line, enquanto joga on-line.',
     privacy:
-      'O aplicativo não coleta nada e não envia nada sobre você. A única coisa que ele baixa é o feed do dia, quando você abre Hoje. Seus ratings e seu histórico ficam só neste aparelho, e somem junto com o aplicativo.',
+      'Fora o jogo on-line, o app não coleta nada e não envia nada sobre você. A única coisa que ele baixa é o feed diário, quando você abre Hoje. Seus ratings de treino e seu histórico ficam só neste aparelho, e apagar o app apaga tudo.',
     freeSoftware:
       'Este aplicativo é software livre, licenciado sob a GNU Affero General Public License versão 3 ou posterior.',
     stockfish:

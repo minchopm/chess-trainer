@@ -158,7 +158,7 @@ export const pages: Pages = {
         },
         {
           q: 'Am cumpărat deblocarea și am telefon nou.',
-          a: 'Autentifică-te cu același cont Apple și atinge „Restaurează achizițiile” pe ecranul de cumpărare. Aplicația întreabă StoreKit ce deții; nimic nu stă pe un server al nostru, pentru că nu avem niciun server.',
+          a: 'Autentifică-te cu același cont Apple și atinge „Restaurează achizițiile” pe ecranul de cumpărare. Aplicația întreabă StoreKit ce deții; ce deții păstrează App Store, nu noi.',
         },
         {
           q: 'Schimbă Pro ratingul meu sau deblochează probleme „mai bune”?',
@@ -259,7 +259,7 @@ export const pages: Pages = {
         lede: 'Doi oameni, un ceas și niciun motor prin apropiere.',
         body: [
           'Game Center găsește pe cineva care a ales același ritm — 3, 5, 10, 15 sau 30 de minute. E singurul mod fără motor în el: fără indiciu, fără evaluări ale mutărilor, fără antrenare, pentru că ajutorul primit de o singură parte nu e o partidă.',
-          'Nu există server. Cele două dispozitive vorbesc între ele și amândouă impun regulile, deci o mutare se joacă doar dacă e legală în poziția pe care dispozitivul care primește o are deja. Un adversar care minte produce un pachet aruncat, nu o tablă ilegală.',
+          'Între cei doi jucători nu stă nimic de-al nostru. Cele două dispozitive vorbesc între ele și amândouă impun regulile, deci o mutare se joacă doar dacă e legală în poziția pe care dispozitivul care primește o are deja. Un adversar care minte produce un pachet aruncat, nu o tablă ilegală.',
         ],
         free: 'Gratuit, nelimitat, întotdeauna.',
       },

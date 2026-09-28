@@ -158,7 +158,7 @@ export const pages: Pages = {
         },
         {
           q: 'Compré el desbloqueo y tengo un teléfono nuevo.',
-          a: 'Inicia sesión con la misma cuenta de Apple y toca «Restaurar compras» en la pantalla de compra. La aplicación le pregunta a StoreKit qué posees; no hay nada guardado en un servidor nuestro porque no hay servidor nuestro.',
+          a: 'Inicia sesión con la misma cuenta de Apple y toca «Restaurar compras» en la pantalla de compra. La aplicación le pregunta a StoreKit qué posees; lo que posees lo guarda el App Store, no nosotros.',
         },
         {
           q: '¿Pro cambia mi valoración o desbloquea ejercicios «mejores»?',
@@ -259,7 +259,7 @@ export const pages: Pages = {
         lede: 'Dos personas, un reloj y ningún motor cerca.',
         body: [
           'Game Center te encuentra a alguien que eligió el mismo ritmo — 3, 5, 10, 15 o 30 minutos. Es el único modo sin motor dentro: sin pistas, sin valores de jugada, sin entrenador, porque una ayuda que solo recibe un bando no es una partida.',
-          'No hay servidor. Los dos dispositivos hablan entre sí y ambos aplican las reglas, así que una jugada solo se realiza si es legal en la posición que el dispositivo receptor ya tiene. Un par que miente produce un paquete descartado, no un tablero ilegal.',
+          'Entre los dos jugadores no hay nada nuestro. Los dos dispositivos hablan entre sí y ambos aplican las reglas, así que una jugada solo se realiza si es legal en la posición que el dispositivo receptor ya tiene. Un par que miente produce un paquete descartado, no un tablero ilegal.',
         ],
         free: 'Gratis, sin límite, siempre.',
       },

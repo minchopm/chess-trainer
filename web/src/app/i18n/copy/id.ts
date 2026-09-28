@@ -14,9 +14,9 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Main · Latih · Tonton',
-    lede: 'Taktik, penilaian posisi, teknik akhir permainan, dan partai berpendamping, dengan mesin berjalan di perangkat itu sendiri. Tanpa akun, dan tidak ada yang dikumpulkan.',
+    lede: 'Taktik, penilaian posisi, teknik akhir permainan, dan bermain dengan pelatih, dengan mesin yang berjalan di perangkat itu sendiri. Tanpa akun, dan tidak ada yang dikumpulkan — selain memberi tahu bahwa kamu daring, saat kamu bermain daring.',
     privacy:
-      'Aplikasi tidak mengumpulkan apa pun dan tidak mengirim apa pun tentang dirimu. Satu-satunya yang diunduhnya adalah umpan harian, saat kamu membuka Hari ini. Rating dan riwayatmu hanya tersimpan di perangkat ini dan ikut terhapus bersama aplikasi.',
+      'Selain permainan daring, aplikasi ini tidak mengumpulkan apa pun dan tidak mengirim apa pun tentangmu. Satu-satunya yang diunduh adalah umpan harian, saat kamu membuka Hari ini. Rating latihan dan riwayatmu hanya tersimpan di perangkat ini, dan menghapus aplikasi akan menghapusnya.',
     freeSoftware:
       'Aplikasi ini adalah perangkat lunak bebas, dilisensikan di bawah GNU Affero General Public License versi 3 atau yang lebih baru.',
     stockfish:

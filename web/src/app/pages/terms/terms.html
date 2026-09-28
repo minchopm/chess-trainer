@@ -159,9 +159,10 @@
       </li>
     </ul>
     <p>
-      Online play has no server of ours, both devices run the rules, and a peer sending an illegal
-      move gets a dropped packet rather than a moved piece. The online rating is therefore honest
-      rather than tamper-proof: a modified build could lie to it. We say so plainly because the
+      In online play both devices run the rules, and a peer sending an illegal move gets a dropped
+      packet rather than a moved piece. Each device works out its own player’s rating and writes it
+      to Game Center, which accepts it only from this app. The online rating is therefore honest
+      rather than tamper-proof: a device altered to lie could still lie to it. We say so plainly because the
       alternative would be pretending otherwise.
     </p>
 

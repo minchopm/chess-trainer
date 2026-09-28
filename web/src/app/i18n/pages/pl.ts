@@ -158,7 +158,7 @@ export const pages: Pages = {
         },
         {
           q: 'Kupiłem odblokowanie i mam nowy telefon.',
-          a: 'Zaloguj się na to samo konto Apple i dotknij „Przywróć zakupy” na ekranie zakupu. Aplikacja pyta StoreKit, co posiadasz; nic nie leży na naszym serwerze, bo nie ma naszego serwera.',
+          a: 'Zaloguj się na to samo konto Apple i dotknij „Przywróć zakupy” na ekranie zakupu. Aplikacja pyta StoreKit, co posiadasz; to, co posiadasz, przechowuje App Store, nie my.',
         },
         {
           q: 'Czy Pro zmienia mój ranking albo odblokowuje „lepsze” zadania?',
@@ -259,7 +259,7 @@ export const pages: Pages = {
         lede: 'Dwoje ludzi, jeden zegar i żadnego silnika w pobliżu.',
         body: [
           'Game Center znajduje kogoś, kto wybrał to samo tempo — 3, 5, 10, 15 albo 30 minut. To jedyny tryb bez silnika: bez podpowiedzi, bez ocen ruchów, bez trenowania, bo pomoc dostawana przez jedną stronę to nie jest partia.',
-          'Nie ma serwera. Dwa urządzenia rozmawiają ze sobą i oba egzekwują reguły, więc ruch zostaje zagrany tylko wtedy, gdy jest legalny w pozycji, którą urządzenie odbierające już ma. Kłamiący przeciwnik daje odrzucony pakiet, a nie nielegalną szachownicę.',
+          'Między dwojgiem graczy nie stoi nic naszego. Dwa urządzenia rozmawiają ze sobą i oba egzekwują reguły, więc ruch zostaje zagrany tylko wtedy, gdy jest legalny w pozycji, którą urządzenie odbierające już ma. Kłamiący przeciwnik daje odrzucony pakiet, a nie nielegalną szachownicę.',
         ],
         free: 'Za darmo, bez limitu, zawsze.',
       },

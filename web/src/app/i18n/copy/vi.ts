@@ -14,9 +14,9 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Chơi · Luyện · Xem',
-    lede: 'Chiến thuật, đánh giá thế cờ, kỹ thuật tàn cuộc và các ván có huấn luyện viên, với engine chạy ngay trên máy. Không cần tài khoản, và không thu thập bất cứ dữ liệu nào.',
+    lede: 'Chiến thuật, đánh giá thế cờ, kỹ thuật tàn cuộc và chơi có huấn luyện, với engine chạy ngay trên thiết bị. Không cần tài khoản, và không thu thập gì — ngoài việc cho biết bạn đang trực tuyến, khi bạn chơi trực tuyến.',
     privacy:
-      'Ứng dụng không thu thập gì và không gửi gì về bạn. Thứ duy nhất nó tải xuống là bản tin hằng ngày, khi bạn mở Hôm nay. Hệ số và lịch sử của bạn chỉ nằm trên máy này và sẽ mất khi gỡ ứng dụng.',
+      'Ngoài chơi trực tuyến, ứng dụng không thu thập gì và không gửi gì về bạn. Thứ duy nhất nó tải xuống là bảng tin hằng ngày, khi bạn mở Hôm nay. Hệ số luyện tập và lịch sử của bạn chỉ được lưu trên thiết bị này, và xóa ứng dụng sẽ xóa chúng.',
     freeSoftware:
       'Ứng dụng này là phần mềm tự do, theo giấy phép GNU Affero General Public License phiên bản 3 hoặc mới hơn.',
     stockfish:

@@ -1392,7 +1392,7 @@
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Taktika, poziční úsudek, technika koncovek a hra s trenérem, s enginem běžícím přímo v zařízení. Bez účtu a nic se nesbírá — kromě toho, že jste online, když hrajete online."
+            "value": "Taktika, poziční úsudek, technika koncovek a hra s trenérem, s enginem běžícím přímo v zařízení. Bez účtu a nic se nesbírá — kromě toho, že jsi online, když hraješ online."
           }
         },
         "da": {
@@ -2377,7 +2377,7 @@
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Online hra je výjimka. Váš online rating v každém tempu je v žebříčcích Game Center, kde ho ostatní hráči vidí vedle vaší přezdívky, jak dovolíte; ty patří Applu. Dokud je aplikace na obrazovce, říká také naší malé službě, že jste online, hledáte partii nebo hrajete, aby ostatní viděli, že můžete hrát — s potvrzením Game Center, kdo jste, uloženým jen jako zašifrovaný kód a zapomenutým pět minut po odchodu. Nastavení → Ukazovat, že jsem online to vypne."
+            "value": "Online hra je výjimka. Tvůj online rating v každém tempu je v žebříčcích Game Center, kde ho ostatní hráči vidí vedle tvé přezdívky, jak dovolíš; ty patří Applu. Dokud je aplikace na obrazovce, říká také naší malé službě, že jsi online, hledáš partii nebo hraješ, aby ostatní viděli, že můžeš hrát — s potvrzením Game Center, kdo jsi, uloženým jen jako zašifrovaný kód a zapomenutým pět minut po odchodu. Nastavení → Ukazovat, že jsem online to vypne."
           }
         },
         "da": {
@@ -2771,7 +2771,7 @@
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kromě online hry aplikace nic nesbírá a nic o vás neposílá. Jediné, co stahuje, je denní přehled, když otevřete Dnes. Tréninkové ratingy a historie jsou uložené jen v tomto zařízení a smazáním aplikace se smažou."
+            "value": "Kromě online hry aplikace nic nesbírá a nic o tobě neposílá. Jediné, co stahuje, je denní přehled, když otevřeš Dnes. Tréninkové ratingy a historie jsou uložené jen v tomto zařízení a smazáním aplikace se smažou."
           }
         },
         "da": {
@@ -2933,7 +2933,7 @@
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Çevrimiçi oyun dışında uygulama hiçbir şey toplamaz ve sizinle ilgili hiçbir şey göndermez. İndirdiği tek şey, Bugün'ü açtığınızda günlük akıştır. Antrenman puanlarınız ve geçmişiniz yalnızca bu cihazda tutulur; uygulamayı silmek onları da siler."
+            "value": "Çevrimiçi oyun dışında uygulama hiçbir şey toplamaz ve senin hakkında hiçbir şey göndermez. İndirdiği tek şey, Bugün'ü açtığında günlük akıştır. Antrenman puanların ve geçmişin yalnızca bu cihazda tutulur; uygulamayı silmek onları da siler."
           }
         },
         "vi": {
@@ -89670,7 +89670,7 @@
         "cs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dokud je Brass Pawn na obrazovce, ostatní hráči vidí, že jste online, hledáte partii nebo hrajete — pozvánka vás tak zastihne, když můžete hrát. Pět minut po odchodu se to zapomene."
+            "value": "Dokud je Brass Pawn na obrazovce, ostatní hráči vidí, že jsi online, hledáš partii nebo hraješ — pozvánka tě tak zastihne, když můžeš hrát. Pět minut po odchodu se to zapomene."
           }
         },
         "da": {

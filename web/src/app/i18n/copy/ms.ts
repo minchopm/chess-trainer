@@ -14,9 +14,9 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Main · Latih · Tonton',
-    lede: 'Taktik, penilaian kedudukan, teknik permainan akhir dan perlawanan berjurulatih, dengan enjin berjalan pada peranti itu sendiri. Tiada akaun, dan tiada apa-apa dikumpul.',
+    lede: 'Taktik, penilaian kedudukan, teknik akhir permainan dan bermain dengan jurulatih, dengan enjin berjalan pada peranti itu sendiri. Tiada akaun, dan tiada apa dikumpul — selain memberitahu bahawa anda dalam talian, semasa anda bermain dalam talian.',
     privacy:
-      'Aplikasi tidak mengumpul apa-apa dan tidak menghantar apa-apa tentang anda. Satu-satunya yang dimuat turun ialah suapan harian, apabila anda membuka Hari ini. Rating dan sejarah anda hanya tersimpan pada peranti ini dan terpadam bersama aplikasi.',
+      'Selain permainan dalam talian, aplikasi ini tidak mengumpul apa-apa dan tidak menghantar apa-apa tentang anda. Satu-satunya yang dimuat turun ialah suapan harian, apabila anda membuka Hari ini. Rating latihan dan sejarah anda hanya disimpan pada peranti ini, dan memadam aplikasi memadamnya.',
     freeSoftware:
       'Aplikasi ini ialah perisian bebas, dilesenkan di bawah GNU Affero General Public License versi 3 atau lebih baharu.',
     stockfish:

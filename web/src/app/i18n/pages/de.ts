@@ -158,7 +158,7 @@ export const pages: Pages = {
         },
         {
           q: 'Ich habe freigeschaltet und ein neues Telefon.',
-          a: 'Melde dich mit demselben Apple-Account an und tippe auf „Käufe wiederherstellen" im Kaufbildschirm. Die App fragt StoreKit, was dir gehört; auf einem Server von uns liegt nichts, weil es keinen Server von uns gibt.',
+          a: 'Melde dich mit demselben Apple-Account an und tippe auf „Käufe wiederherstellen" im Kaufbildschirm. Die App fragt StoreKit, was dir gehört; was dir gehört, verwahrt der App Store, nicht wir.',
         },
         {
           q: 'Ändert Pro meine Wertung oder schaltet „bessere" Aufgaben frei?',
@@ -259,7 +259,7 @@ export const pages: Pages = {
         lede: 'Zwei Menschen, eine Uhr, und keine Engine in der Nähe.',
         body: [
           'Game Center findet jemanden, der dieselbe Bedenkzeit gewählt hat — 3, 5, 10, 15 oder 30 Minuten. Es ist der eine Modus ohne Engine darin: kein Hinweis, keine Zugbewertungen, kein Coaching, denn Hilfe, die nur eine Seite bekommt, ist kein Spiel.',
-          'Es gibt keinen Server. Die beiden Geräte reden miteinander und beide führen die Regeln aus, sodass ein Zug nur dann gespielt wird, wenn er in der Stellung erlaubt ist, die das empfangende Gerät bereits hält. Ein Gegenüber, das lügt, erzeugt ein verworfenes Paket, kein illegales Brett.',
+          'Zwischen den beiden Spielern steht nichts von uns. Die beiden Geräte reden miteinander und beide führen die Regeln aus, sodass ein Zug nur dann gespielt wird, wenn er in der Stellung erlaubt ist, die das empfangende Gerät bereits hält. Ein Gegenüber, das lügt, erzeugt ein verworfenes Paket, kein illegales Brett.',
         ],
         free: 'Gratis, unbegrenzt, immer.',
       },

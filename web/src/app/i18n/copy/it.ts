@@ -14,9 +14,9 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Gioca · Allenati · Guarda',
-    lede: 'Tattica, giudizio posizionale, tecnica di finale e partite commentate, con il motore che gira sul dispositivo stesso. Nessun account e nessun dato raccolto.',
+    lede: 'Tattica, giudizio posizionale, tecnica dei finali e gioco guidato, con il motore che gira sul dispositivo stesso. Nessun account, e nulla raccolto, se non il fatto che sei online, quando giochi online.',
     privacy:
-      "L'app non raccoglie nulla e non invia nulla su di te. L'unica cosa che scarica è il feed del giorno, quando apri Oggi. I tuoi punteggi e la tua cronologia restano solo su questo dispositivo e si cancellano con l'app.",
+      "A parte il gioco online, l'app non raccoglie nulla e non invia nulla su di te. L'unica cosa che scarica è il feed quotidiano, quando apri Oggi. I tuoi punteggi di allenamento e la cronologia restano solo su questo dispositivo, e cancellare l'app li cancella.",
     freeSoftware:
       'Questa applicazione è software libero, con licenza GNU Affero General Public License versione 3 o successiva.',
     stockfish:

@@ -158,7 +158,7 @@ export const pages: Pages = {
         },
         {
           q: 'Saya membeli buka kunci dan kini bertukar telefon.',
-          a: 'Log masuk dengan akaun Apple yang sama dan ketik “Pulihkan pembelian” pada skrin pembelian. Aplikasi bertanya kepada StoreKit apa yang anda miliki; tiada apa-apa tersimpan pada pelayan kami, kerana kami tiada pelayan.',
+          a: 'Log masuk dengan akaun Apple yang sama dan ketik “Pulihkan pembelian” pada skrin pembelian. Aplikasi bertanya kepada StoreKit apa yang anda miliki; apa yang anda miliki disimpan oleh App Store, bukan oleh kami.',
         },
         {
           q: 'Adakah Pro mengubah taraf saya atau membuka teka-teki yang “lebih baik”?',
@@ -259,7 +259,7 @@ export const pages: Pages = {
         lede: 'Dua manusia, satu jam, dan tiada enjin berhampiran.',
         body: [
           'Game Center mencari seseorang yang memilih tempo yang sama — 3, 5, 10, 15 atau 30 minit. Inilah satu-satunya mod tanpa enjin di dalamnya: tiada pembayang, tiada nilai langkah, tiada bimbingan, kerana bantuan yang diterima oleh satu pihak sahaja bukanlah suatu perlawanan.',
-          'Tiada pelayan. Kedua-dua peranti bercakap sesama sendiri dan kedua-duanya menguatkuasakan peraturan, jadi sesuatu langkah hanya dimainkan jika ia sah dalam kedudukan yang sudah ada pada peranti penerima. Lawan yang menipu menghasilkan paket yang dibuang, bukan papan yang tidak sah.',
+          'Tiada apa-apa milik kami di antara kedua-dua pemain. Kedua-dua peranti bercakap sesama sendiri dan kedua-duanya menguatkuasakan peraturan, jadi sesuatu langkah hanya dimainkan jika ia sah dalam kedudukan yang sudah ada pada peranti penerima. Lawan yang menipu menghasilkan paket yang dibuang, bukan papan yang tidak sah.',
         ],
         free: 'Percuma, tanpa had, sentiasa.',
       },

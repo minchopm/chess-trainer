@@ -158,7 +158,7 @@ export const pages: Pages = {
         },
         {
           q: 'Megvettem a feloldást, és új telefonom van.',
-          a: 'Jelentkezz be ugyanazzal az Apple-fiókkal, és koppints a „Vásárlások visszaállítása” gombra a vásárlási képernyőn. Az alkalmazás megkérdezi a StoreKitet, mit birtokolsz; semmi nem fekszik a mi szerverünkön, mert nekünk nincs szerverünk.',
+          a: 'Jelentkezz be ugyanazzal az Apple-fiókkal, és koppints a „Vásárlások visszaállítása” gombra a vásárlási képernyőn. Az alkalmazás megkérdezi a StoreKitet, mit birtokolsz; azt, amit birtokolsz, az App Store tartja nyilván, nem mi.',
         },
         {
           q: 'Megváltoztatja a Pro az értékszámomat, vagy „jobb” feladványokat old fel?',
@@ -259,7 +259,7 @@ export const pages: Pages = {
         lede: 'Két ember, egy óra, és sehol egy motor.',
         body: [
           'A Game Center talál valakit, aki ugyanazt a tempót választotta — 3, 5, 10, 15 vagy 30 perc. Ez az egyetlen mód motor nélkül: nincs tipp, nincsenek lépésértékek, nincs edzés, mert a segítség, amit csak az egyik oldal kap, nem játszma.',
-          'Nincs szerver. A két készülék egymással beszél, és mindkettő betartatja a szabályokat, így egy lépés csak akkor kerül lejátszásra, ha szabályos abban az állásban, amellyel a fogadó készülék már rendelkezik. A hazudó ellenfél eldobott csomagot eredményez, nem szabálytalan táblát.',
+          'A két játékos között semmi sincs tőlünk. A két készülék egymással beszél, és mindkettő betartatja a szabályokat, így egy lépés csak akkor kerül lejátszásra, ha szabályos abban az állásban, amellyel a fogadó készülék már rendelkezik. A hazudó ellenfél eldobott csomagot eredményez, nem szabálytalan táblát.',
         ],
         free: 'Ingyenes, korlátlan, mindig.',
       },

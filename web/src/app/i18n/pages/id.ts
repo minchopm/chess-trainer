@@ -158,7 +158,7 @@ export const pages: Pages = {
         },
         {
           q: 'Saya sudah membeli pembukaannya dan punya ponsel baru.',
-          a: 'Masuk dengan akun Apple yang sama dan ketuk “Pulihkan pembelian” di layar pembelian. Aplikasi bertanya kepada StoreKit apa yang Anda miliki; tidak ada yang tersimpan di server kami, sebab kami tidak punya server.',
+          a: 'Masuk dengan akun Apple yang sama dan ketuk “Pulihkan pembelian” di layar pembelian. Aplikasi bertanya kepada StoreKit apa yang Anda miliki; apa yang Anda miliki disimpan oleh App Store, bukan oleh kami.',
         },
         {
           q: 'Apakah Pro mengubah peringkat saya atau membuka soal yang “lebih baik”?',
@@ -259,7 +259,7 @@ export const pages: Pages = {
         lede: 'Dua manusia, satu jam, dan tak ada mesin di dekatnya.',
         body: [
           'Game Center mencarikan orang yang memilih tempo yang sama — 3, 5, 10, 15, atau 30 menit. Inilah satu-satunya mode tanpa mesin di dalamnya: tanpa petunjuk, tanpa nilai langkah, tanpa pelatihan, sebab bantuan yang hanya didapat satu pihak bukanlah sebuah partai.',
-          'Tidak ada server. Kedua perangkat berbicara satu sama lain dan keduanya menegakkan aturan, jadi sebuah langkah baru dimainkan bila sah dalam posisi yang sudah dimiliki perangkat penerima. Lawan yang berbohong menghasilkan paket yang dibuang, bukan papan yang tidak sah.',
+          'Tak ada apa pun milik kami di antara kedua pemain. Kedua perangkat berbicara satu sama lain dan keduanya menegakkan aturan, jadi sebuah langkah baru dimainkan bila sah dalam posisi yang sudah dimiliki perangkat penerima. Lawan yang berbohong menghasilkan paket yang dibuang, bukan papan yang tidak sah.',
         ],
         free: 'Gratis, tanpa batas, selalu.',
       },

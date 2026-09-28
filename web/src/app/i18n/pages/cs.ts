@@ -158,7 +158,7 @@ export const pages: Pages = {
         },
         {
           q: 'Koupil jsem odemknutí a mám nový telefon.',
-          a: 'Přihlaste se ke stejnému účtu Apple a klepněte na „Obnovit nákupy“ na nákupní obrazovce. Aplikace se zeptá StoreKitu, co vlastníte; nic neleží na našem serveru, protože žádný náš server neexistuje.',
+          a: 'Přihlaste se ke stejnému účtu Apple a klepněte na „Obnovit nákupy“ na nákupní obrazovce. Aplikace se zeptá StoreKitu, co vlastníte; co vlastníte, uchovává App Store, ne my.',
         },
         {
           q: 'Změní Pro moje hodnocení nebo odemkne „lepší“ úlohy?',
@@ -259,7 +259,7 @@ export const pages: Pages = {
         lede: 'Dva lidé, jedny hodiny a žádný engine nablízku.',
         body: [
           'Game Center najde někoho, kdo zvolil stejné tempo — 3, 5, 10, 15 nebo 30 minut. Je to jediný režim bez enginu uvnitř: bez nápovědy, bez hodnocení tahů, bez koučování, protože pomoc, kterou dostává jen jedna strana, není partie.',
-          'Server neexistuje. Dvě zařízení spolu mluví a obě vynucují pravidla, takže tah se odehraje jen tehdy, je-li legální v pozici, kterou přijímající zařízení už má. Lhoucí protějšek dá zahozený paket, ne nelegální šachovnici.',
+          'Mezi oběma hráči nestojí nic našeho. Dvě zařízení spolu mluví a obě vynucují pravidla, takže tah se odehraje jen tehdy, je-li legální v pozici, kterou přijímající zařízení už má. Lhoucí protějšek dá zahozený paket, ne nelegální šachovnici.',
         ],
         free: 'Zdarma, bez omezení, vždy.',
       },

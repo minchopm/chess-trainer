@@ -158,7 +158,7 @@ export const pages: Pages = {
         },
         {
           q: 'Jeg købte oplåsningen og har en ny telefon.',
-          a: 'Log ind på den samme Apple-konto og tryk på „Gendan køb“ på købsskærmen. Appen spørger StoreKit, hvad du ejer; intet ligger på en server hos os, for vi har ingen server.',
+          a: 'Log ind på den samme Apple-konto og tryk på „Gendan køb“ på købsskærmen. Appen spørger StoreKit, hvad du ejer; det, du ejer, gemmer App Store, ikke os.',
         },
         {
           q: 'Ændrer Pro min rating eller låser „bedre“ opgaver op?',
@@ -259,7 +259,7 @@ export const pages: Pages = {
         lede: 'To mennesker, ét ur, og ingen motor i nærheden.',
         body: [
           'Game Center finder en, der valgte den samme betænkningstid — 3, 5, 10, 15 eller 30 minutter. Det er den eneste tilstand uden motor i: ingen hint, ingen trækvurderinger, ingen coaching, for hjælp som kun den ene side får, er ikke et parti.',
-          'Der er ingen server. De to enheder taler sammen, og begge håndhæver reglerne, så et træk bliver kun spillet, hvis det er lovligt i den stilling, den modtagende enhed allerede har. En modpart der lyver, giver en kasseret pakke, ikke et ulovligt bræt.',
+          'Intet af vores står mellem de to spillere. De to enheder taler sammen, og begge håndhæver reglerne, så et træk bliver kun spillet, hvis det er lovligt i den stilling, den modtagende enhed allerede har. En modpart der lyver, giver en kasseret pakke, ikke et ulovligt bræt.',
         ],
         free: 'Gratis, ubegrænset, altid.',
       },

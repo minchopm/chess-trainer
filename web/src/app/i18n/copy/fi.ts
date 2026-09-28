@@ -14,9 +14,9 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Pelaa · Harjoittele · Katso',
-    lede: 'Taktiikkaa, aseman arviointia, loppupelitekniikkaa ja valmennettuja pelejä — moottori pyörii itse laitteessa. Ei tiliä, eikä mitään kerätä.',
+    lede: 'Taktiikkaa, asema-arviointia, loppupelitekniikkaa ja valmennettua pelaamista, moottori laitteessa itsessään. Ei tiliä, eikä mitään kerätä — paitsi tieto siitä, että olet paikalla, kun pelaat verkossa.',
     privacy:
-      'Sovellus ei kerää mitään eikä lähetä sinusta mitään. Ainoa asia, jonka se lataa, on päivän syöte, kun avaat Tänään-näkymän. Ratingisi ja historiasi ovat vain tässä laitteessa ja katoavat sovelluksen mukana.',
+      'Verkkopelaamista lukuun ottamatta sovellus ei kerää mitään eikä lähetä sinusta mitään. Ainoa, mitä se lataa, on päivän syöte, kun avaat Tänään. Harjoitusratingisi ja historiasi tallentuvat vain tähän laitteeseen, ja sovelluksen poistaminen poistaa ne.',
     freeSoftware:
       'Tämä sovellus on vapaa ohjelmisto, lisensoitu GNU Affero General Public License -lisenssin versiolla 3 tai uudemmalla.',
     stockfish:

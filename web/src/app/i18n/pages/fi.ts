@@ -158,7 +158,7 @@ export const pages: Pages = {
         },
         {
           q: 'Ostin avauksen ja minulla on uusi puhelin.',
-          a: 'Kirjaudu samalle Apple-tilille ja napauta ”Palauta ostokset” ostonäytöllä. Sovellus kysyy StoreKitiltä mitä omistat; mitään ei ole meidän palvelimellamme, koska meillä ei ole palvelinta.',
+          a: 'Kirjaudu samalle Apple-tilille ja napauta ”Palauta ostokset” ostonäytöllä. Sovellus kysyy StoreKitiltä mitä omistat; omistuksesi säilyttää App Store, ei me.',
         },
         {
           q: 'Muuttaako Pro arvoani tai avaako ”parempia” tehtäviä?',
@@ -259,7 +259,7 @@ export const pages: Pages = {
         lede: 'Kaksi ihmistä, yksi kello, eikä moottoria lähimaillakaan.',
         body: [
           'Game Center löytää jonkun joka valitsi saman tahdin — 3, 5, 10, 15 tai 30 minuuttia. Se on ainoa tila ilman moottoria sisällään: ei vihjettä, ei siirtojen arvoja, ei valmennusta, sillä apu jonka vain toinen puoli saa, ei ole peli.',
-          'Palvelinta ei ole. Kaksi laitetta puhuvat keskenään ja molemmat valvovat sääntöjä, joten siirto pelataan vain jos se on laillinen siinä asemassa joka vastaanottavalla laitteella jo on. Valehteleva vastapuoli tuottaa hylätyn paketin, ei laitonta lautaa.',
+          'Pelaajien välissä ei ole mitään meidän. Kaksi laitetta puhuvat keskenään ja molemmat valvovat sääntöjä, joten siirto pelataan vain jos se on laillinen siinä asemassa joka vastaanottavalla laitteella jo on. Valehteleva vastapuoli tuottaa hylätyn paketin, ei laitonta lautaa.',
         ],
         free: 'Ilmaista, rajatonta, aina.',
       },

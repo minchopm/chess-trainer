@@ -158,7 +158,7 @@ export const pages: Pages = {
         },
         {
           q: 'Ho comprato lo sblocco e ho cambiato telefono.',
-          a: 'Accedi con lo stesso account Apple e tocca «Ripristina acquisti» nella schermata d’acquisto. L’app chiede a StoreKit che cosa possiedi; non c’è nulla su un nostro server perché non c’è un nostro server.',
+          a: 'Accedi con lo stesso account Apple e tocca «Ripristina acquisti» nella schermata d’acquisto. L’app chiede a StoreKit che cosa possiedi; ciò che possiedi lo conserva l’App Store, non noi.',
         },
         {
           q: 'Pro cambia la mia valutazione o sblocca esercizi «migliori»?',
@@ -259,7 +259,7 @@ export const pages: Pages = {
         lede: 'Due persone, un orologio e nessun motore nei paraggi.',
         body: [
           'Game Center ti trova qualcuno che ha scelto lo stesso tempo di gioco — 3, 5, 10, 15 o 30 minuti. È l’unica modalità senza motore dentro: nessun suggerimento, nessun valore delle mosse, nessun commento, perché un aiuto che riceve una sola parte non è una partita.',
-          'Non c’è un server. I due dispositivi si parlano ed entrambi applicano le regole, così una mossa viene giocata solo se è lecita nella posizione che il dispositivo ricevente già possiede. Un interlocutore che mente produce un pacchetto scartato, non una scacchiera illegale.',
+          'Tra i due giocatori non c’è niente di nostro. I due dispositivi si parlano ed entrambi applicano le regole, così una mossa viene giocata solo se è lecita nella posizione che il dispositivo ricevente già possiede. Un interlocutore che mente produce un pacchetto scartato, non una scacchiera illegale.',
         ],
         free: 'Gratis, senza limiti, sempre.',
       },

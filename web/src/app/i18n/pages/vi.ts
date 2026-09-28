@@ -158,7 +158,7 @@ export const pages: Pages = {
         },
         {
           q: 'Tôi đã mua bản mở khóa và giờ đổi điện thoại.',
-          a: 'Đăng nhập cùng tài khoản Apple đó và chạm “Khôi phục các khoản mua” trên màn hình mua hàng. Ứng dụng hỏi StoreKit xem bạn sở hữu gì; không có gì nằm trên máy chủ của chúng tôi, vì chúng tôi không có máy chủ nào cả.',
+          a: 'Đăng nhập cùng tài khoản Apple đó và chạm “Khôi phục các khoản mua” trên màn hình mua hàng. Ứng dụng hỏi StoreKit xem bạn sở hữu gì; những gì bạn sở hữu do App Store lưu giữ, không phải chúng tôi.',
         },
         {
           q: 'Pro có làm đổi hệ số của tôi hay mở ra những thế cờ “tốt hơn” không?',
@@ -259,7 +259,7 @@ export const pages: Pages = {
         lede: 'Hai con người, một đồng hồ, và không có máy cờ nào bên cạnh.',
         body: [
           'Game Center tìm một người đã chọn cùng thể thức — 3, 5, 10, 15 hoặc 30 phút. Đây là chế độ duy nhất không có máy bên trong: không gợi ý, không đánh giá nước đi, không huấn luyện, vì sự trợ giúp mà chỉ một bên nhận được thì không phải một ván cờ.',
-          'Không có máy chủ. Hai thiết bị nói chuyện với nhau và cả hai đều thi hành luật, nên một nước chỉ được đi nếu nó hợp lệ trong thế cờ mà thiết bị nhận đã có. Một đối thủ nói dối chỉ tạo ra một gói tin bị bỏ, chứ không tạo ra một bàn cờ phạm luật.',
+          'Giữa hai người chơi không có gì của chúng tôi. Hai thiết bị nói chuyện với nhau và cả hai đều thi hành luật, nên một nước chỉ được đi nếu nó hợp lệ trong thế cờ mà thiết bị nhận đã có. Một đối thủ nói dối chỉ tạo ra một gói tin bị bỏ, chứ không tạo ra một bàn cờ phạm luật.',
         ],
         free: 'Miễn phí, không giới hạn, luôn luôn.',
       },

@@ -319,7 +319,7 @@ export const MODES: readonly Mode[] = [
     lede: 'Two people, one clock, no engine anywhere near it.',
     body: [
       'Game Center finds you somebody who chose the same time control — 3, 5, 10, 15 or 30 minutes. It is the one mode with no engine in it: no hint, no move values, no coaching, because help that only one side gets is not a game.',
-      'There is no server. The two devices talk to each other and both run the rules, so a move is played only if it is legal in the position the receiving device already holds. A peer that lies produces a dropped packet, not an illegal board.',
+      'Nothing of ours sits between the two players. The two devices talk to each other and both run the rules, so a move is played only if it is legal in the position the receiving device already holds. A peer that lies produces a dropped packet, not an illegal board.',
     ],
     free: 'Free, unlimited, always.',
   },
@@ -333,11 +333,11 @@ export interface Faq {
 export const FAQ: readonly Faq[] = [
   {
     q: 'Does it need an internet connection?',
-    a: 'No. The engine, the puzzles and your progress are all on the device. The single exception is online play, which needs Game Center to reach the other person.',
+    a: 'No. The engine, the puzzles and your progress are all on the device. It needs one for online play, which goes through Game Center, and for Today, which downloads the day’s games.',
   },
   {
     q: 'Is there an account?',
-    a: 'There is none to create. Your ratings and history live in the app’s own container on your device, and deleting the app deletes them.',
+    a: 'There is none to create. Your training ratings and history live in the app’s own container on your device, and deleting the app deletes them; your online rating is on Game Center, under your Game Center account.',
   },
   {
     q: 'What is free?',

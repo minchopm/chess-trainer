@@ -14,9 +14,9 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Graj · Trenuj · Oglądaj',
-    lede: 'Taktyka, ocena pozycji, technika końcówek i partie z komentarzem, z silnikiem działającym na samym urządzeniu. Bez konta i bez zbierania jakichkolwiek danych.',
+    lede: 'Taktyka, ocena pozycji, technika końcówek i gra z trenerem, z silnikiem działającym na samym urządzeniu. Bez konta i bez zbierania czegokolwiek — poza informacją, że jesteś online, gdy grasz online.',
     privacy:
-      'Aplikacja niczego nie zbiera i niczego o tobie nie wysyła. Jedyne, co pobiera, to dzienny przegląd, gdy otworzysz Dziś. Twoje rankingi i historia są tylko na tym urządzeniu i znikają razem z aplikacją.',
+      'Poza grą online aplikacja niczego nie zbiera i niczego o tobie nie wysyła. Jedyne, co pobiera, to codzienny kanał, gdy otwierasz Dziś. Rankingi treningowe i historia są przechowywane tylko na tym urządzeniu, a usunięcie aplikacji je usuwa.',
     freeSoftware:
       'Ta aplikacja to wolne oprogramowanie na licencji GNU Affero General Public License w wersji 3 lub nowszej.',
     stockfish:

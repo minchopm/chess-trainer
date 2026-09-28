@@ -158,7 +158,7 @@ export const pages: Pages = {
         },
         {
           q: 'Ik heb de ontgrendeling gekocht en een nieuwe telefoon.',
-          a: 'Log in met hetzelfde Apple-account en tik op „Aankopen herstellen” op het koopscherm. De app vraagt StoreKit wat je bezit; er staat niets op een server van ons, want er is geen server van ons.',
+          a: 'Log in met hetzelfde Apple-account en tik op „Aankopen herstellen” op het koopscherm. De app vraagt StoreKit wat je bezit; wat je bezit, bewaart de App Store, niet wij.',
         },
         {
           q: 'Verandert Pro mijn rating of ontgrendelt het „betere” oefeningen?',
@@ -259,7 +259,7 @@ export const pages: Pages = {
         lede: 'Twee mensen, één klok, en geen engine in de buurt.',
         body: [
           'Game Center vindt iemand die hetzelfde tempo koos — 3, 5, 10, 15 of 30 minuten. Het is de ene modus zonder engine erin: geen hint, geen zetwaarden, geen coaching, want hulp die maar één kant krijgt is geen partij.',
-          'Er is geen server. De twee apparaten praten met elkaar en passen allebei de regels toe, dus een zet wordt alleen gespeeld als hij geldig is in de stelling die het ontvangende apparaat al heeft. Een tegenpartij die liegt levert een weggegooid pakket op, geen ongeldig bord.',
+          'Tussen de twee spelers staat niets van ons. De twee apparaten praten met elkaar en passen allebei de regels toe, dus een zet wordt alleen gespeeld als hij geldig is in de stelling die het ontvangende apparaat al heeft. Een tegenpartij die liegt levert een weggegooid pakket op, geen ongeldig bord.',
         ],
         free: 'Gratis, onbeperkt, altijd.',
       },

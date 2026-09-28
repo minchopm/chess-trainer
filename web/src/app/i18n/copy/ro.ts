@@ -14,9 +14,9 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Joacă · Antrenează · Privește',
-    lede: 'Tactică, judecată pozițională, tehnică de final și partide cu antrenor, cu motorul rulând chiar pe dispozitiv. Fără cont și fără colectare de date.',
+    lede: 'Tactică, judecată pozițională, tehnica finalurilor și joc cu antrenor, cu motorul rulând chiar pe dispozitiv. Fără cont și nimic colectat — în afară de a spune că ești online, când joci online.',
     privacy:
-      'Aplicația nu colectează nimic și nu trimite nimic despre tine. Singurul lucru pe care îl descarcă este fluxul zilnic, când deschizi Azi. Ratingurile și istoricul rămân doar pe acest dispozitiv și dispar odată cu aplicația.',
+      'În afară de jocul online, aplicația nu colectează nimic și nu trimite nimic despre tine. Singurul lucru pe care îl descarcă este fluxul zilnic, când deschizi Azi. Ratingurile de antrenament și istoricul sunt păstrate doar pe acest dispozitiv, iar ștergerea aplicației le șterge.',
     freeSoftware:
       'Această aplicație este software liber, licențiat sub GNU Affero General Public License versiunea 3 sau ulterioară.',
     stockfish:

@@ -14,9 +14,9 @@ import type { Copy } from '../types';
 export const copy: Copy = {
   said: {
     slug: 'Játék · Edzés · Nézés',
-    lede: 'Taktika, állásértékelés, végjátéktechnika és edzővel kísért játszmák, a motor pedig magán a készüléken fut. Nincs fiók, és semmit sem gyűjtünk.',
+    lede: 'Taktika, pozíciós ítélőképesség, végjátéktechnika és edzővel játszás, a motor magán az eszközön fut. Nincs fiók, és semmit nem gyűjtünk — azon kívül, hogy online vagy, amikor online játszol.',
     privacy:
-      'Az alkalmazás semmit nem gyűjt, és semmit nem küld rólad. Egyetlen dolgot tölt le: a napi hírfolyamot, amikor megnyitod a Ma nézetet. Az értékszámaid és az előzményeid csak ezen a készüléken vannak, és a törléssel együtt tűnnek el.',
+      'Az online játékon kívül az alkalmazás semmit nem gyűjt, és semmit nem küld rólad. Egyedül a napi hírfolyamot tölti le, amikor megnyitod a Ma lapot. Az edzés-értékszámaid és az előzményeid csak ezen az eszközön vannak, és az alkalmazás törlése törli őket.',
     freeSoftware:
       'Ez az alkalmazás szabad szoftver, a GNU Affero General Public License 3-as vagy későbbi verziója alatt.',
     stockfish:

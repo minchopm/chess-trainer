@@ -158,7 +158,7 @@ export const pages: Pages = {
         },
         {
           q: 'Açmayı satın aldım ve yeni telefonum var.',
-          a: 'Aynı Apple hesabıyla giriş yapın ve satın alma ekranında “Satın almaları geri yükle”ye dokunun. Uygulama neye sahip olduğunuzu StoreKit’e sorar; bizim sunucumuzda hiçbir şey durmuyor, çünkü bizim sunucumuz yok.',
+          a: 'Aynı Apple hesabıyla giriş yapın ve satın alma ekranında “Satın almaları geri yükle”ye dokunun. Uygulama neye sahip olduğunuzu StoreKit’e sorar; sahip olduklarınızı biz değil, App Store saklar.',
         },
         {
           q: 'Pro puanımı değiştirir mi ya da “daha iyi” problemleri açar mı?',
@@ -259,7 +259,7 @@ export const pages: Pages = {
         lede: 'İki insan, bir saat ve yakınlarda hiçbir motor yok.',
         body: [
           'Game Center aynı tempoyu seçmiş birini bulur — 3, 5, 10, 15 ya da 30 dakika. İçinde motor olmayan tek moddur: ipucu yok, hamle değerleri yok, koçluk yok; çünkü yalnızca bir tarafın aldığı yardım parti değildir.',
-          'Sunucu yok. İki cihaz birbiriyle konuşur ve ikisi de kuralları uygular, bu yüzden bir hamle ancak alıcı cihazın zaten sahip olduğu konumda kuralsa oynanır. Yalan söyleyen bir karşı taraf, kuraldışı bir tahta değil, atılan bir paket üretir.',
+          'İki oyuncunun arasında bizden hiçbir şey yok. İki cihaz birbiriyle konuşur ve ikisi de kuralları uygular, bu yüzden bir hamle ancak alıcı cihazın zaten sahip olduğu konumda kuralsa oynanır. Yalan söyleyen bir karşı taraf, kuraldışı bir tahta değil, atılan bir paket üretir.',
         ],
         free: 'Ücretsiz, sınırsız, her zaman.',
       },
