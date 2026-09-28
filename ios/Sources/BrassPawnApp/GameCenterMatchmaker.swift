@@ -74,8 +74,9 @@ public final class GameCenterMatchmaker: NSObject {
     #if canImport(GameKit)
     private var match: GKMatch?
     private var timeControl: TimeControl = .five
-    private var localRating = OnlineElo.starting
+    private var localRating = Glicko.starting
     private var localGames = 0
+    private var localDeviation = Glicko.newDeviation
     private var disconnectWork: Task<Void, Never>?
     private var connectWork: Task<Void, Never>?
     /// How long two paired devices are given to actually reach each other.
@@ -91,7 +92,7 @@ public final class GameCenterMatchmaker: NSObject {
     /// This player's rating and games on a clock — for a match that starts
     /// from an invitation, which can arrive anywhere in the app rather than
     /// from the lobby that knows them.
-    public var ratingLookup: ((TimeControl) -> (rating: Int, games: Int))?
+    public var ratingLookup: ((TimeControl) -> (rating: Int, games: Int, deviation: Double))?
     /// Signed in: time to tell the rank lists this player is still about.
     public var onAuthenticated: (() -> Void)?
     /// An invitation was accepted, from Game Center's own notification: the
@@ -165,6 +166,7 @@ public final class GameCenterMatchmaker: NSObject {
         timeControl: TimeControl,
         rating: Int,
         games: Int,
+        deviation: Double,
         invitation: Invitation? = nil
     ) {
         #if canImport(GameKit)
@@ -175,6 +177,7 @@ public final class GameCenterMatchmaker: NSObject {
         self.timeControl = timeControl
         localRating = rating
         localGames = games
+        localDeviation = deviation
         openPool = invitation == nil
 
         let request = GKMatchRequest()
@@ -232,7 +235,7 @@ public final class GameCenterMatchmaker: NSObject {
         guard isAuthenticated, session == nil else { return }
         if case .searching = state { cancelSearch() }
         self.timeControl = timeControl
-        if let lookup = ratingLookup { (localRating, localGames) = lookup(timeControl) }
+        if let lookup = ratingLookup { (localRating, localGames, localDeviation) = lookup(timeControl) }
         openPool = false
         let request = GKMatchRequest()
         request.minPlayers = 2
@@ -272,7 +275,7 @@ public final class GameCenterMatchmaker: NSObject {
         if case .searching = state { cancelSearch() }
         let control = TimeControl.fromPlayerGroup(invite.playerGroup) ?? .five
         timeControl = control
-        if let lookup = ratingLookup { (localRating, localGames) = lookup(control) }
+        if let lookup = ratingLookup { (localRating, localGames, localDeviation) = lookup(control) }
         openPool = false
         state = .searching(control)
         status = L.t("online.joining", "Joining %@…", invite.sender.alias)
@@ -425,7 +428,8 @@ public final class GameCenterMatchmaker: NSObject {
 
         let session = MatchSession(
             transport: self,
-            me: .init(playerID: localPlayerID, name: localName, rating: localRating, games: localGames),
+            me: .init(playerID: localPlayerID, name: localName, rating: localRating, games: localGames,
+                      deviation: localDeviation),
             isHost: isHost,
             timeControl: timeControl,
             openPool: openPool

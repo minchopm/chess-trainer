@@ -64,8 +64,7 @@ def main():
                     "defaultFormatter": "INTEGER",
                     "submissionType": "MOST_RECENT_SCORE",
                     "scoreSortType": "DESC",
-                    "scoreRangeStart": "0",
-                    "scoreRangeEnd": "4000",
+                    # No range: a rating has no ceiling (see Glicko).
                 },
                 "relationships": {"gameCenterDetail": {"data": {"type": "gameCenterDetails", "id": detail}}},
             }})["data"]["id"]

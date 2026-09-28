@@ -293,15 +293,17 @@ struct MatchTests {
         #expect(pair.host.clock.remaining(.black) <= TimeControl.three.seconds)
     }
 
-    @Test("The rating moves by the usual Elo, once")
-    func rating() {
+    @Test("The rating moves by Glicko, once")
+    func rating() throws {
         let pair = makePair()
         pair.begin()
         pair.host.resign()
 
-        let settled = pair.guest.settle(rating: 1200, games: 0)
-        #expect(settled?.ratingDelta == 20)          // K=40, even ratings, a win
-        #expect(pair.guest.settle(rating: 1220, games: 1) == nil)
+        // Two new players: wide deviations, so the first result moves a lot.
+        let settled = try #require(pair.guest.settle(rating: 1200, deviation: 350))
+        #expect(settled.ratingDelta == 162)
+        #expect(abs((settled.deviation ?? 0) - 290.2) < 0.1, "and the rating is surer for it")
+        #expect(pair.guest.settle(rating: 1362, deviation: 290) == nil)
     }
 
     @Test("Another game, when both want one, swaps the colours and starts again")
@@ -309,10 +311,10 @@ struct MatchTests {
         let pair = makePair()
         pair.begin(hostPlaysWhite: true)
         pair.host.resign()
-        #expect(pair.guest.settle(rating: 1200, games: 0)?.ratingDelta == 20)
+        #expect(pair.guest.settle(rating: 1200, deviation: 350)?.ratingDelta == 162)
 
         // The winner asks, with the rating the game left.
-        pair.guest.offerRematch(as: .init(playerID: "B", name: "Bo", rating: 1220, games: 1))
+        pair.guest.offerRematch(as: .init(playerID: "B", name: "Bo", rating: 1362, games: 1, deviation: 290))
         #expect(pair.guest.rematchOfferSent)
         #expect(pair.host.rematchOffered)
 
@@ -322,7 +324,7 @@ struct MatchTests {
         #expect(pair.host.myColor == .black)
         #expect(pair.guest.myColor == .white)
         #expect(pair.host.gameNumber == 2 && pair.guest.gameNumber == 2)
-        #expect(pair.host.opponent?.rating == 1220, "the new game is scored against the new rating")
+        #expect(pair.host.opponent?.rating == 1362, "the new game is scored against the new rating")
         #expect(pair.host.moves.isEmpty && !pair.guest.rematchOfferSent && !pair.host.rematchOffered)
 
         // And it is a game: White moves first, on both boards.
@@ -404,5 +406,52 @@ struct MatchTests {
         #expect(!saved.canRate(against: "B", at: noon.addingTimeInterval(60)))
         progress.noteRated(against: "C", at: noon.addingTimeInterval(25 * 3600))
         #expect(progress.ratedOpponents.keys.sorted() == ["C"])
+    }
+
+    // MARK: - Glicko
+
+    @Test("Beating somebody far below earns nothing, and drawing with them costs")
+    func glickoFollowsTheGap() {
+        func after(_ rating: Int, against opponent: Int, score: Double) -> Int {
+            Glicko.updated(rating: rating, deviation: 50, against: opponent, opponentDeviation: 50, score: score).rating
+        }
+        #expect(after(2000, against: 1200, score: 1) == 2000, "eight hundred points below: nothing")
+        #expect(after(1800, against: 1500, score: 1) == 1802, "three hundred below: a little")
+        #expect(after(1500, against: 1500, score: 1) == 1507, "an equal: the usual")
+        #expect(after(1500, against: 2300, score: 1) == 1514, "far above: the most")
+        #expect(after(1800, against: 1500, score: 0.5) == 1795, "a draw with somebody below loses points")
+        #expect(after(1500, against: 1500, score: 0.5) == 1500)
+        #expect(after(1500, against: 1800, score: 0.5) == 1505, "and gains them against somebody above")
+    }
+
+    @Test("No ceiling, a floor at a hundred")
+    func glickoHasNoCeiling() {
+        #expect(Glicko.updated(rating: 3000, deviation: 50, against: 3000, opponentDeviation: 50, score: 1).rating == 3007)
+        #expect(Glicko.updated(rating: 4100, deviation: 50, against: 4100, opponentDeviation: 50, score: 1).rating > 4100)
+        #expect(Glicko.updated(rating: 105, deviation: 200, against: 110, opponentDeviation: 50, score: 0).rating == Glicko.floor)
+        #expect(Elo.updated(rating: 3000, games: 200, against: 3000, score: 1) == 3008, "the training ratings have no ceiling either")
+    }
+
+    @Test("A rating grows surer with games and less sure without them")
+    func glickoDeviation() {
+        #expect(Glicko.deviation(games: 0) == Glicko.newDeviation)
+        #expect(Glicko.deviation(games: 500) == Glicko.settledDeviation)
+        #expect(Glicko.deviation(50, idle: 0) == 50)
+        #expect(Glicko.deviation(50, idle: 30 * 86_400) > 100, "a month away")
+        #expect(Glicko.deviation(50, idle: 400 * 86_400) == Glicko.newDeviation, "a year away, and never wider than new")
+
+        var progress = TrainingProgress()
+        let pool = RatedPool.online(minutes: 5)
+        let day = Date(timeIntervalSince1970: 1_790_000_000)
+        #expect(progress.deviation(pool, at: day) == Glicko.newDeviation)
+        progress.record(online: MatchResult(outcome: .win, reason: .checkmate, ratingDelta: 162), at: .five, now: day)
+        #expect(progress.rating(pool) == Glicko.starting + 162)
+        // A result that came without a deviation keeps the one there was.
+        #expect(progress.deviation(pool, at: day) == Glicko.newDeviation)
+        var surer = MatchResult(outcome: .win, reason: .checkmate, ratingDelta: 10)
+        surer.deviation = 200
+        progress.record(online: surer, at: .five, now: day)
+        #expect(progress.deviation(pool, at: day) == 200)
+        #expect(progress.deviation(pool, at: day.addingTimeInterval(60 * 86_400)) > 200)
     }
 }

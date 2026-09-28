@@ -325,18 +325,26 @@ public final class MatchSession {
         finish(MatchResult(outcome: .win, reason: .disconnected))
     }
 
-    /// Apply the rating change and hand back the finished result.
+    /// Apply the rating change and hand back the finished result — once per
+    /// game. The opponent's rating and deviation are the ones they said hello
+    /// with.
     @discardableResult
-    public func settle(rating: Int, games: Int) -> MatchResult? {
-        guard case .finished(var result) = phase, result.ratingDelta == 0 else { return nil }
-        let opponentRating = opponent?.rating ?? OnlineElo.starting
-        let updated = OnlineElo.updated(
-            rating: rating, games: games, against: opponentRating, score: result.score
+    public func settle(rating: Int, deviation: Double) -> MatchResult? {
+        guard case .finished(var result) = phase, settledGame != gameNumber else { return nil }
+        settledGame = gameNumber
+        let updated = Glicko.updated(
+            rating: rating, deviation: deviation,
+            against: opponent?.rating ?? Glicko.starting,
+            opponentDeviation: opponent?.ratingDeviation ?? Glicko.newDeviation,
+            score: result.score
         )
-        result.ratingDelta = updated - rating
+        result.ratingDelta = updated.rating - rating
+        result.deviation = updated.deviation
         phase = .finished(result)
         return result
     }
+    /// The game `settle` has already scored.
+    private var settledGame: Int?
 
     // MARK: - Internals
 

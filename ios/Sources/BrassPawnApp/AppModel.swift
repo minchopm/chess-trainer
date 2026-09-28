@@ -58,7 +58,8 @@ public final class AppModel {
         progress = storage.load() ?? TrainingProgress()
         matchmaker.ratingLookup = { [weak self] control in
             let pool = RatedPool.online(minutes: control.minutes)
-            return (self?.progress.rating(pool) ?? OnlineElo.starting, self?.progress.gamesPlayed(pool) ?? 0)
+            return (self?.progress.rating(pool) ?? Glicko.starting, self?.progress.gamesPlayed(pool) ?? 0,
+                    self?.progress.deviation(pool) ?? Glicko.newDeviation)
         }
         matchmaker.onAuthenticated = { [weak self] in
             Task { await self?.announceOnline() }

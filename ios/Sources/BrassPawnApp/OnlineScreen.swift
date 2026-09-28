@@ -138,7 +138,8 @@ struct OnlineScreen: View {
                         matchmaker.findOpponent(
                             timeControl: timeControl,
                             rating: app.progress.rating(.online(minutes: timeControl.minutes)),
-                            games: app.progress.gamesPlayed(.online(minutes: timeControl.minutes))
+                            games: app.progress.gamesPlayed(.online(minutes: timeControl.minutes)),
+                            deviation: app.progress.deviation(.online(minutes: timeControl.minutes))
                         )
                     } label: {
                         Text(matchmaker.isAuthenticated
@@ -228,6 +229,7 @@ struct OnlineScreen: View {
                         timeControl: control,
                         rating: app.progress.rating(.online(minutes: control.minutes)),
                         games: app.progress.gamesPlayed(.online(minutes: control.minutes)),
+                        deviation: app.progress.deviation(.online(minutes: control.minutes)),
                         invitation: invitation
                     )
                 }
@@ -556,7 +558,8 @@ struct OnlineScreen: View {
             playerID: session.me.playerID,
             name: session.me.name,
             rating: app.progress.rating(rated),
-            games: app.progress.gamesPlayed(rated)
+            games: app.progress.gamesPlayed(rated),
+            deviation: app.progress.deviation(rated)
         )
     }
 
@@ -575,7 +578,7 @@ struct OnlineScreen: View {
         } else {
             guard let rated = session.settle(
                 rating: app.progress.rating(.online(minutes: control.minutes)),
-                games: app.progress.gamesPlayed(.online(minutes: control.minutes))
+                deviation: app.progress.deviation(.online(minutes: control.minutes))
             ) else { return }
             result = rated
             app.recordOnline(rated, at: control, against: session.opponent?.playerID)

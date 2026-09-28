@@ -61,6 +61,10 @@ public enum RatedPool: Hashable, Sendable {
 public struct PoolRating: Codable, Sendable, Equatable {
     public var rating: Int
     public var games: Int
+    /// Online only: how sure the rating is (Glicko's RD) as of `lastPlayed`.
+    /// Absent from files before Glicko, and then taken from the game count.
+    public var deviation: Double?
+    public var lastPlayed: Date?
 
     public init(rating: Int = 1200, games: Int = 0) {
         self.rating = rating
@@ -290,7 +294,7 @@ public struct TrainingProgress: Codable, Sendable {
                 pools[RatedPool.training(mode).id] = PoolRating(rating: rating, games: 0)
             }
             let online = try container.decodeIfPresent(Int.self, forKey: .onlineRating)
-                ?? OnlineElo.starting
+                ?? Glicko.starting
             for control in TimeControl.allCases {
                 pools[RatedPool.online(minutes: control.minutes).id] =
                     PoolRating(rating: online, games: 0)
@@ -358,11 +362,12 @@ public struct TrainingProgress: Codable, Sendable {
         ratedOpponents[opponent] = now
     }
 
-    public mutating func record(online result: MatchResult, at control: TimeControl) {
+    public mutating func record(online result: MatchResult, at control: TimeControl, now: Date = Date()) {
         let pool = RatedPool.online(minutes: control.minutes)
         var held = pools[pool.id] ?? PoolRating(rating: starting(pool))
-        held.rating = min(max(held.rating + result.ratingDelta, OnlineElo.range.lowerBound),
-                          OnlineElo.range.upperBound)
+        held.deviation = result.deviation ?? deviation(pool, at: now)
+        held.lastPlayed = now
+        held.rating = max(held.rating + result.ratingDelta, Glicko.floor)
         held.games += 1
         pools[pool.id] = held
         switch result.outcome {
@@ -394,6 +399,15 @@ public struct TrainingProgress: Codable, Sendable {
 
     public func gamesPlayed(_ pool: RatedPool) -> Int { pools[pool.id]?.games ?? 0 }
 
+    /// How sure an online rating is now: as the last game left it, widened by
+    /// the time since.
+    public func deviation(_ pool: RatedPool, at now: Date = Date()) -> Double {
+        guard let held = pools[pool.id] else { return Glicko.newDeviation }
+        let base = held.deviation ?? Glicko.deviation(games: held.games)
+        guard let last = held.lastPlayed else { return base }
+        return Glicko.deviation(base, idle: now.timeIntervalSince(last))
+    }
+
     /// Moves a pool's rating by one result against a known opponent.
     ///
     /// The same Elo everywhere, so a rating means the same thing whichever
@@ -403,7 +417,7 @@ public struct TrainingProgress: Codable, Sendable {
         _ pool: RatedPool, against opponent: Int, score: Double
     ) -> Int {
         var held = pools[pool.id] ?? PoolRating(rating: starting(pool))
-        held.rating = OnlineElo.updated(
+        held.rating = Elo.updated(
             rating: held.rating, games: held.games, against: opponent, score: score
         )
         held.games += 1
