@@ -136,11 +136,12 @@ final class OnlineBoards {
               let (local, entries) = try? await board.loadEntries(for: [GKLocalPlayer.local] + others, timeScope: .allTime)
         else { return nil }
         var found: [String: OnlineRecord] = [:]
-        for entry in entries {
-            guard let player = entry.who else { continue }
-            found[player.gamePlayerID] = OnlineRecord(score: entry.score, context: entry.context)
+        for entry in entries where entry.isOnTheList {
+            found[entry.player.gamePlayerID] = OnlineRecord(score: entry.score, context: entry.context)
         }
-        let mine = local.map { OnlineRecord(score: $0.score, context: $0.context) }
+        // No entry of one's own — not yet played on this clock — is a new
+        // player's record, not a rating of nought.
+        let mine = local.flatMap { $0.isOnTheList ? OnlineRecord(score: $0.score, context: $0.context) : nil }
             ?? found[GKLocalPlayer.local.gamePlayerID] ?? .new
         return (mine, found)
     }
@@ -167,21 +168,21 @@ final class OnlineBoards {
                       for: .global, timeScope: .allTime, range: NSRange(location: 1, length: Self.pageSize)
                   )
             else { continue }
-            let listed = entries.compactMap { entry -> BoardPlayer? in
-                guard let player = entry.who else { return nil }
-                players[player.gamePlayerID] = player
-                playerIDs[Presence.key(teamPlayerID: player.teamPlayerID)] = player.gamePlayerID
+            let listed = entries.filter(\.isOnTheList).map { entry -> BoardPlayer in
+                players[entry.player.gamePlayerID] = entry.player
+                playerIDs[Presence.key(teamPlayerID: entry.player.teamPlayerID)] = entry.player.gamePlayerID
                 return BoardPlayer(
-                    id: player.gamePlayerID, alias: player.alias,
+                    id: entry.player.gamePlayerID, alias: entry.player.alias,
                     rank: entry.rank, rating: entry.score, clock: control,
-                    lastSeen: entry.submitted ?? .distantPast, isLocal: player.gamePlayerID == localID
+                    lastSeen: entry.date, isLocal: entry.player.gamePlayerID == localID
                 )
             }
             ranks[control] = listed
             totals[control] = total
-            mine[control] = local.map {
-                BoardPlayer(id: localID, alias: GKLocalPlayer.local.alias, rank: $0.rank, rating: $0.score,
-                            clock: control, lastSeen: $0.submitted ?? Date(), isLocal: true)
+            mine[control] = local.flatMap {
+                guard $0.isOnTheList else { return nil }
+                return BoardPlayer(id: localID, alias: GKLocalPlayer.local.alias, rank: $0.rank, rating: $0.score,
+                                   clock: control, lastSeen: $0.date, isLocal: true)
             }
             for player in listed where (latest[player.id]?.lastSeen ?? .distantPast) < player.lastSeen {
                 latest[player.id] = player
@@ -264,12 +265,11 @@ final class OnlineBoards {
 
 #if canImport(GameKit)
 private extension GKLeaderboard.Entry {
-    /// When the entry was written, if Game Center says. It hands back entries
-    /// with no date now and then — this player's own, on a Mac — and `date`,
-    /// which Swift is told can never be nil, stops the app on the spot when it
-    /// is. Read through the Objective-C property instead, where nil is nil.
-    var submitted: Date? { value(forKey: "date") as? Date }
-    /// Whose entry it is — the same caution, for the same reason.
-    var who: GKPlayer? { value(forKey: "player") as? GKPlayer }
+    /// Whether this is an entry at all. For a player who has sent nothing to a
+    /// list, Game Center still hands back an entry of their own — rank 0, an
+    /// anonymous player with no ID, no score, no date — and its `date` and
+    /// `player`, which Swift is told can never be nil, stop the app the moment
+    /// they are read. The rank is a plain number, and says which it is.
+    var isOnTheList: Bool { rank > 0 }
 }
 #endif
