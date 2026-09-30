@@ -1,470 +1,1330 @@
 {
   "date": "2026-09-26",
-  "builtAt": "2026-09-26T11:15:21.924Z",
+  "pulledAt": "2026-09-29T07:30:36.668Z",
   "stories": [
     {
-      "id": "2026-09-25-abdusattorov-caruana-olympiad-r9",
-      "status": "draft",
-      "date": "2026-09-25",
+      "id": "2026-09-26-keymer-vachier-lagrave-olympiad-r10",
+      "status": "approved",
+      "date": "2026-09-26",
+      "rank": 0,
+      "weight": 1064,
       "event": {
         "name": "46th FIDE Chess Olympiad Samarkand 2026",
         "short": "Olympiad",
         "section": "Open",
-        "round": 9,
+        "round": 10,
         "location": "Samarkand, Uzbekistan",
-        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-9/oQds2Dcv"
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-10/WCYaLfnP"
       },
       "white": {
-        "name": "Nodirbek Abdusattorov",
-        "short": "Abdusattorov",
-        "title": "GM",
-        "elo": 2762,
-        "team": "Uzbekistan",
-        "fed": null,
-        "fideId": 14204118
-      },
-      "black": {
-        "name": "Fabiano Caruana",
-        "short": "Caruana",
-        "title": "GM",
-        "elo": 2789,
-        "team": "United States of America",
-        "fed": null,
-        "fideId": 2020009
-      },
-      "result": "1-0",
-      "opening": {
-        "eco": "C24",
-        "name": "Bishop's Opening: Vienna Hybrid"
-      },
-      "moves": "e4 e5 Bc4 Nf6 Nc3 Nc6 d3 Bb4 Bg5 h6 Bxf6 Bxc3+ bxc3 Qxf6 Ne2 Na5 Bb3 O-O O-O d6 Qd2 Qe7 f4 Nxb3 axb3 Bd7 c4 f5 Qe3 fxe4 Qxe4 Bc6 Qe3 Rae8 f5 a6 Ng3 Bd7 Rf2 Rf7 Raf1 Ref8 Qe4 c6 Qe3 d5 cxd5 cxd5 d4 e4 c4 Qg5 Qxg5 hxg5 cxd5 e3 Rf3 Bb5 Re1 e2 Kf2 Rd7 Nxe2 Rxd5 g4 Bxe2 Rxe2 Rxd4 Kg3 Rfd8 h4 gxh4+ Kxh4 Rd3 Rfe3 Kf8 Kh5 a5 Re7 Rxb3 g5 Rb6 g6 Rf6 Kg5 Kg8 Rxg7+ Kxg7 Re7+ Kg8 Kxf6 a4 Rg7+ Kh8 Rxb7 Ra8 Kg5",
-      "plies": 97,
-      "ending": null,
-      "key": {
-        "kind": "mistake",
-        "ply": 80,
-        "played": "Rxb3",
-        "better": "Rh3+",
-        "reply": "g5",
-        "replyPlayed": true,
-        "before": {
-          "cp": 108,
-          "mate": null
-        },
-        "after": {
-          "cp": 440,
-          "mate": null
-        },
-        "clock": 40
-      },
-      "headline": "Abdusattorov beats Caruana in a double-rook ending",
-      "body": "Nodirbek Abdusattorov beat Fabiano Caruana with White in round 9 of the Olympiad in Samarkand, in Uzbekistan's match with the United States. It turned on the last move before the time control: 40...Rxb3, played with 40 seconds left on the clock, took the engine's assessment from a small edge for White to a winning one. The engine preferred 40...Rh3+. The breakthrough came with 44.Rxg7+, and Abdusattorov won in 49 moves.",
-      "source": {
-        "name": "Lichess broadcast",
-        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-9/oQds2Dcv/ptNYi2qt"
-      }
-    },
-    {
-      "id": "2026-09-25-so-sindarov-olympiad-r9",
-      "status": "draft",
-      "date": "2026-09-25",
-      "event": {
-        "name": "46th FIDE Chess Olympiad Samarkand 2026",
-        "short": "Olympiad",
-        "section": "Open",
-        "round": 9,
-        "location": "Samarkand, Uzbekistan",
-        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-9/oQds2Dcv"
-      },
-      "white": {
-        "name": "Wesley So",
-        "short": "So",
-        "title": "GM",
-        "elo": 2774,
-        "team": "United States of America",
-        "fed": null,
-        "fideId": 5202213
-      },
-      "black": {
-        "name": "Javokhir Sindarov",
-        "short": "Sindarov",
-        "title": "GM",
-        "elo": 2778,
-        "team": "Uzbekistan",
-        "fed": null,
-        "fideId": 14205483
-      },
-      "result": "1-0",
-      "opening": {
-        "eco": "B40",
-        "name": "Sicilian Defense: French Variation"
-      },
-      "moves": "e4 c5 Nf3 e6 Be2 Nc6 O-O Nf6 Nc3 d6 d4 cxd4 Nxd4 Be7 Nxc6 bxc6 Qd3 O-O Qg3 a5 b3 Kh8 Bb2 d5 Rad1 Ba6 Bxa6 Rxa6 Kh1 Qb8 f4 Ra7 Rde1 Nh5 Qf3 Nf6 Qg3 Nh5 Qf3 Nf6 e5 Nd7 Na4 g6 g4 c5 f5 d4 c3 dxc3 Nxc3 c4 Ne4 cxb3 f6 Bb4 Re3 Qa8 a3 Bc5 Rxb3 Rc8 Ng5 Kg8 Qxa8 Raxa8 Rd1 Nb6 Bc1 Nd5 Rh3 Rc7 Rxh7 Bf8 Bd2 Rb8 Bxa5 Rc2 Bb4 Nxb4 axb4 Re2 b5 Rb2 Rxf7 Bh6 Rdd7 Bxg5 Rg7+ Kf8 Rh7 Rb1+ Kg2 Rb2+ Kf3 Rb3+",
-      "plies": 96,
-      "ending": null,
-      "key": {
-        "kind": "mistake",
-        "ply": 82,
-        "played": "Re2",
-        "better": "Rc4",
-        "reply": "b5",
-        "replyPlayed": true,
-        "before": {
-          "cp": 156,
-          "mate": null
-        },
-        "after": {
-          "cp": 383,
-          "mate": null
-        },
-        "clock": 1632
-      },
-      "headline": "So beats Sindarov as the United States meet Uzbekistan",
-      "body": "Wesley So beat Javokhir Sindarov with White in round 9, on another board of the same match as Abdusattorov–Caruana. The engine marks 41...Re2 as the moment White's clear advantage became a winning one; it preferred 41...Rc4. White doubled rooks on the seventh rank, and So won in 48 moves.",
-      "source": {
-        "name": "Lichess broadcast",
-        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-9/oQds2Dcv/H37wpez3"
-      }
-    },
-    {
-      "id": "2026-09-25-praggnanandhaa-keymer-olympiad-r9",
-      "status": "draft",
-      "date": "2026-09-25",
-      "event": {
-        "name": "46th FIDE Chess Olympiad Samarkand 2026",
-        "short": "Olympiad",
-        "section": "Open",
-        "round": 9,
-        "location": "Samarkand, Uzbekistan",
-        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-9/oQds2Dcv"
-      },
-      "white": {
-        "name": "R Praggnanandhaa",
-        "short": "Praggnanandhaa",
-        "title": "GM",
-        "elo": 2761,
-        "team": "India",
-        "fed": null,
-        "fideId": 25059530
-      },
-      "black": {
         "name": "Vincent Keymer",
         "short": "Keymer",
         "title": "GM",
         "elo": 2764,
-        "team": "Germany",
-        "fed": null,
-        "fideId": 12940690
+        "team": "Germany"
       },
-      "result": "1/2-1/2",
-      "opening": {
-        "eco": "C84",
-        "name": "Ruy Lopez: Closed, Martinez Variation"
-      },
-      "moves": "e4 e5 Nf3 Nc6 Bb5 a6 Ba4 Nf6 O-O Be7 d3 b5 Bb3 d6 a3 a5 Nc3 a4 Ba2 Rb8 h3 O-O Be3 Qe8 b4 axb3 Bxb3 Bd8 Rb1 Na5 Ba2 c6 d4 Be6 Bxe6 Qxe6 dxe5 dxe5 a4 Nc4 Bc5 Re8 axb5 cxb5 Qe2 Qc6 Bb4 Bb6 Rfd1 Nh5 Kh2 Nf4 Qf1 h6 g3 Nh5 Qe2 Nf6 Kg2 Rbd8 Rxd8 Bxd8 Rd1 Bc7 Nd5 Nxd5 Rxd5 Rd8 Qd3 Rxd5 exd5 Qa8 Bc5 g6 Nd2 Bb6 Bb4 Bd4 Qf3 f5 Nxc4 bxc4 Bd2 h5 g4 hxg4 hxg4 Qb7 Bg5 e4 Qd1 Qb6 gxf5 gxf5 Qh5 Qd6 Qe8+ Kg7 Qc6 Be5 Qb7+ Qc7 Qa8 Qd7 Qc6 Qxc6 dxc6 Bc7 Kh3 Kf7 Kh4 Ke6 Bd2",
-      "plies": 113,
-      "ending": null,
-      "key": null,
-      "headline": "Praggnanandhaa and Keymer draw after 57 moves",
-      "body": "R Praggnanandhaa and Vincent Keymer drew in round 9, India against Germany. It was a Closed Ruy Lopez that went the distance: the queens came off on move 54, and the bishop ending that was left was drawn three moves later.",
-      "source": {
-        "name": "Lichess broadcast",
-        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-9/oQds2Dcv/nKeaZ6En"
-      }
-    },
-    {
-      "id": "2026-09-25-vachier-lagrave-ding-olympiad-r9",
-      "status": "draft",
-      "date": "2026-09-25",
-      "event": {
-        "name": "46th FIDE Chess Olympiad Samarkand 2026",
-        "short": "Olympiad",
-        "section": "Open",
-        "round": 9,
-        "location": "Samarkand, Uzbekistan",
-        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-9/oQds2Dcv"
-      },
-      "white": {
+      "black": {
         "name": "Maxime Vachier-Lagrave",
         "short": "Vachier-Lagrave",
         "title": "GM",
         "elo": 2718,
-        "team": "France",
-        "fed": null,
-        "fideId": 623539
+        "team": "France"
+      },
+      "result": "1/2-1/2",
+      "opening": {
+        "eco": "B50",
+        "name": "Sicilian Defense: Modern Variations"
+      },
+      "moves": "e4 c5 Nf3 d6 Nc3 Nf6 Be2 e5 Bc4 Be7 d3 Nc6 a4 O-O h3 Be6 Nd5 Na5 Nxf6+ Bxf6 Bxe6 fxe6 h4 Nc6 Be3 Nd4 c3 Nxf3+ Qxf3 Qb6 Qe2 d5 c4 Qc6 Bd2 a5 b3 Qb6 Rb1 Rad8 Kd1 dxc4 dxc4 Bxh4 Rxh4 Rxd2+ Qxd2 Rd8 Rh3 Rxd2+ Kxd2 Qd8+ Ke2 Qg5 Rg3 Qh4 Rd1 Qxe4+ Kf1 h5 Re3 Qc2 Rd8+ Kh7 g3 h4 gxh4 Qb1+ Kg2 Qg6+ Rg3 Qe4+ Kh2 Qf5 Rd2 Qf4 Re2 Kg8 Kg2 Qxh4 Rxe5 Qe7 Rgg5 b6 Rg3 Qb7+ Kg1 Kf7 Reg5 Kf8 Rg6 Qe4 R6g4 Qe1+ Kg2 Qe2 Rf4+ Kg8 Rh4 Kf7 Rf3+ Ke7 Rg4 Kd6 Rxg7 Qe4 Rg8 Kc6 Rf8 Qg6+ Rg3 Qe4+ Kh2 Qh7+ Rh3 Qc7+ Kh1 Qe5 Rff3 Qe4 Kh2 Qe5+ Rhg3 Kb7 Re3 Qf5 Kg1 Qb1+ Kg2 Qf5 Rg8 Ka7 Rf3 Qe4 Kg3 Kb7 Rg4 Qe5+ Kg2 Qc7 Rfg3 Ka6 Kg1 Qe5 Rh4 Kb7 Rg6 Qf5 Rh7+ Kc6 Rhh6 Kd7 Rg7+ Kd6 Rgg6 Kd7 Rg7+ Kd6 Rg3 Qb1+ Kh2 Qf5 Kg2 Ke5",
+      "ending": null,
+      "key": {
+        "kind": "swing",
+        "ply": 164,
+        "played": "Ke5",
+        "better": "Qe4+",
+        "reply": "Re3+",
+        "replyPlayed": false,
+        "before": {
+          "cp": 0,
+          "mate": null
+        },
+        "after": {
+          "cp": 705,
+          "mate": null
+        },
+        "clock": 656
+      },
+      "headline": "A draw with a win in it: Stockfish finds +7.05 in the final position",
+      "lede": "GM Vincent Keymer (Germany) and GM Maxime Vachier-Lagrave (France) drew in round 10 of the 46th FIDE Chess Olympiad Samarkand 2026 (Open), after 82 moves.",
+      "body": "GM Vincent Keymer (Germany, 2764) and GM Maxime Vachier-Lagrave (France, 2718) drew in 82 moves, two rooks against a queen. In the position the game ended in, Stockfish finds a win for White.\n\nAfter 82...Ke5, played with 10:56 on Black's clock, it counts +7.05. Its line starts with a rook check, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. It wanted 82...Qe4+ instead. The game went no further: the result was a draw.\n\nGermany won the match 3–1 and went into the last round on 16 match points.\n\nSet up the final position, find 83.Re3+ for yourself, and play out against the engine the win the game never had.",
+      "words": {
+        "ar": {
+          "headline": "تعادل فيه فوز: Stockfish يجد ⁨+7.05⁩ في الوضع الأخير",
+          "body": "تعادل بين GM Vincent Keymer (ألمانيا، 2764) وGM Maxime Vachier-Lagrave (فرنسا، 2718) في 82 نقلة، رخان مقابل وزير. وفي الوضع الذي انتهى عنده الدور، يجد Stockfish فوزًا للأبيض.\n\nبعد ⁨82...Ke5⁩، التي لُعبت وعلى ساعة الأسود 10:56، يحسب Stockfish ⁨+7.05⁩. يبدأ خط Stockfish بكش بالرخ، ⁨83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+⁩. وكان Stockfish يريد ⁨82...Qe4+⁩ بدلًا منها. لم يمضِ الدور أبعد من ذلك: كانت النتيجة تعادلًا.\n\nفازت ألمانيا بالمباراة ⁨3–1⁩ ودخلت الجولة الأخيرة برصيد 16 نقطة مباراة.\n\nاضبط الوضع الأخير، واعثر على ⁨83.Re3+⁩ بنفسك، والعب ضد المحرك الفوز الذي لم يأتِ في الدور."
+        },
+        "bg": {
+          "headline": "Реми, в което имаше победа: Stockfish намира +7,05 в крайната позиция",
+          "body": "GM Vincent Keymer (Германия, 2764) и GM Maxime Vachier-Lagrave (Франция, 2718) завършиха наравно за 82 хода — два топа срещу дама. В позицията, в която партията приключи, Stockfish намира победа за белите.\n\nСлед 82...Ke5, изигран с 10:56 на часовника на черните, оценката на енджина е +7,05. Вариантът на Stockfish започва с шах с топа: 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Вместо това енджинът искаше 82...Qe4+. Партията не продължи: резултатът беше реми.\n\nГермания спечели мача с 3–1 и влезе в последния кръг с 16 мачови точки.\n\nНаредете крайната позиция, намерете сами 83.Re3+ и изиграйте срещу енджина победата, която партията така и не получи."
+        },
+        "cs": {
+          "headline": "Remíza, ve které se skrývala výhra: Stockfish nachází v závěrečné pozici +7,05",
+          "body": "GM Vincent Keymer (Německo, 2764) a GM Maxime Vachier-Lagrave (Francie, 2718) remizují po 82 tazích, dvě věže proti dámě. V pozici, ve které partie skončila, nachází Stockfish výhru bílých.\n\nPo tahu 82...Ke5, zahraném s 10:56 na hodinách černých, ukazuje Stockfish +7,05. Varianta Stockfishe začíná šachem věží, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Místo toho chtěl Stockfish 82...Qe4+. Dál se partie nehrála: výsledkem byla remíza.\n\nNěmecko vyhrálo zápas 3–1 a do posledního kola šlo s 16 zápasovými body.\n\nPostav si závěrečnou pozici, najdi 83.Re3+ a proti enginu dohraj výhru, kterou partie nikdy neměla."
+        },
+        "da": {
+          "headline": "Remis med en gevinst i: Stockfish finder +7,05 i slutstillingen",
+          "body": "GM Vincent Keymer (Tyskland, 2764) og GM Maxime Vachier-Lagrave (Frankrig, 2718) spillede remis i 82 træk, to tårne mod en dronning. I stillingen, partiet sluttede i, finder Stockfish en gevinst til hvid.\n\nEfter 82...Ke5, spillet med 10:56 tilbage på sorts ur, giver Stockfish +7,05. Varianten begynder med et tårnskak, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Motoren ville i stedet have 82...Qe4+. Længere kom partiet ikke: Resultatet blev remis.\n\nTyskland vandt matchen 3–1 og gik ind i sidste runde med 16 matchpoint.\n\nStil slutstillingen op, find 83.Re3+ selv, og spil mod motoren den gevinst ud, partiet aldrig fik."
+        },
+        "de": {
+          "headline": "Ein Remis mit Gewinn darin: Stockfish findet +7,05 in der Schlussstellung",
+          "body": "GM Vincent Keymer (Deutschland, 2764) und GM Maxime Vachier-Lagrave (Frankreich, 2718) trennten sich nach 82 Zügen remis, zwei Türme gegen eine Dame. In der Stellung, in der die Partie endete, findet Stockfish einen Gewinn für Weiß.\n\nNach 82...Ke5, gespielt mit 10:56 auf der Uhr von Schwarz, zeigt Stockfish +7,05. Die Variante der Engine beginnt mit einem Turmschach, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Stattdessen wollte die Engine 82...Qe4+. Weiter ging die Partie nicht: Das Ergebnis war remis.\n\nDeutschland gewann den Kampf 3:1 und ging mit 16 Mannschaftspunkten in die letzte Runde.\n\nDie Schlussstellung aufbauen, 83.Re3+ selbst finden und gegen die Engine den Gewinn ausspielen, den die Partie nie hatte."
+        },
+        "el": {
+          "headline": "Ισοπαλία που έκρυβε νίκη: το Stockfish βρίσκει +7,05 στην τελική θέση",
+          "body": "Οι GM Vincent Keymer (Γερμανία, 2764) και GM Maxime Vachier-Lagrave (Γαλλία, 2718) έκαναν ισοπαλία σε 82 κινήσεις, δύο πύργοι απέναντι σε βασίλισσα. Στη θέση όπου τελείωσε η παρτίδα, το Stockfish βρίσκει νίκη για τα λευκά.\n\nΜετά την 82...Ke5, που παίχτηκε με 10:56 στο ρολόι των μαύρων, το Stockfish δίνει +7,05. Η γραμμή του Stockfish ξεκινά με σαχ πύργου, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Αντί γι' αυτήν, το Stockfish ήθελε την 82...Qe4+. Η παρτίδα δεν προχώρησε παραπέρα: το αποτέλεσμα ήταν ισοπαλία.\n\nΗ Γερμανία κέρδισε τον αγώνα με 3–1 και μπήκε στον τελευταίο γύρο με 16 βαθμούς αγώνα.\n\nΣτήσε την τελική θέση, βρες εσύ την 83.Re3+ και παίξε απέναντι στη μηχανή τη νίκη που η παρτίδα δεν είχε ποτέ."
+        },
+        "es": {
+          "headline": "Unas tablas con victoria dentro: Stockfish encuentra +7,05 en la posición final",
+          "body": "GM Vincent Keymer (Alemania, 2764) y GM Maxime Vachier-Lagrave (Francia, 2718) hicieron tablas en 82 jugadas, dos torres contra dama. En la posición en que terminó la partida, Stockfish encuentra una victoria para las blancas.\n\nTras 82...Ke5, jugada con 10:56 en el reloj de las negras, marca +7,05. Su línea empieza con un jaque de torre, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Quería 82...Qe4+ en su lugar. La partida no siguió: el resultado fue tablas.\n\nAlemania ganó el match 3–1 y llegó a la última ronda con 16 puntos de match.\n\nColoca la posición final, encuentra 83.Re3+ por tu cuenta y juega contra el motor la victoria que la partida nunca tuvo."
+        },
+        "fi": {
+          "headline": "Tasapeli, jossa oli voitto: Stockfish löytää loppuasemasta +7,05",
+          "body": "GM Vincent Keymer (Saksa, 2764) ja GM Maxime Vachier-Lagrave (Ranska, 2718) pelasivat tasapelin 82 siirrossa, kaksi tornia kuningatarta vastaan. Asemasta, johon peli päättyi, Stockfish löytää voiton valkealle.\n\nSiirto 82...Ke5 pelattiin mustan kellossa 10:56 jäljellä, ja sen jälkeen Stockfishin arvio on +7,05. Muunnelma alkaa tornin shakilla, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Moottori halusi sen sijaan 82...Qe4+. Peli ei jatkunut pidemmälle: tulos oli tasapeli.\n\nSaksa voitti ottelun 3–1 ja lähti viimeiselle kierrokselle 16 ottelupisteellä.\n\nAseta loppuasema, löydä itse 83.Re3+ ja pelaa moottoria vastaan loppuun voitto, jota pelissä ei koskaan tullut."
+        },
+        "fr": {
+          "headline": "Une nulle qui cachait un gain : Stockfish trouve +7,05 dans la position finale",
+          "body": "GM Vincent Keymer (Allemagne, 2764) et GM Maxime Vachier-Lagrave (France, 2718) ont fait nulle en 82 coups, deux tours contre une dame. Dans la position où la partie s’est arrêtée, Stockfish trouve un gain pour les Blancs.\n\nAprès 82...Ke5, joué avec 10:56 à la pendule des Noirs, il affiche +7,05. Sa ligne commence par un échec de tour, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Il voulait plutôt 82...Qe4+. La partie ne s’est pas poursuivie : le résultat a été la nulle.\n\nL’Allemagne a gagné le match 3–1 et a abordé la dernière ronde avec 16 points de match.\n\nInstallez la position finale, trouvez 83.Re3+ par vous-même, et jouez contre le moteur le gain que la partie n’a jamais eu."
+        },
+        "he": {
+          "headline": "תיקו עם ניצחון בתוכו: Stockfish מוצא ⁨+7.05⁩ בעמדה הסופית",
+          "body": "GM Vincent Keymer (גרמניה, 2764) ו־GM Maxime Vachier-Lagrave (צרפת, 2718) סיימו בתיקו אחרי 82 מסעים, שני צריחים מול מלכה. בעמדה שבה המשחק הסתיים, Stockfish מוצא ניצחון ללבן.\n\nאחרי ⁨82...Ke5⁩, ששוחק כשבשעון של השחור נותרו ⁨10:56⁩, ההערכה של Stockfish היא ⁨+7.05⁩. הקו של Stockfish מתחיל בשח בצריח, ⁨83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+⁩. המנוע רצה במקום זה ב־⁨82...Qe4+⁩. המשחק לא נמשך: התוצאה הייתה תיקו.\n\nגרמניה ניצחה במפגש ⁨3–1⁩ ונכנסה לסיבוב האחרון עם 16 נקודות משחק.\n\nהציבו את העמדה הסופית, מצאו בעצמכם את ⁨83.Re3+⁩, ושחקו מול המנוע את הניצחון שלא היה במשחק."
+        },
+        "hi": {
+          "headline": "एक ड्रॉ, जिसमें जीत थी: Stockfish को अंतिम स्थिति में +7.05 मिलता है",
+          "body": "GM Vincent Keymer (जर्मनी, 2764) और GM Maxime Vachier-Lagrave (फ़्रांस, 2718) की बाज़ी 82 चालों में ड्रॉ रही, रानी के मुक़ाबले दो हाथी। जिस स्थिति में बाज़ी ख़त्म हुई, उसमें Stockfish को सफ़ेद की जीत मिलती है।\n\n82...Ke5 के बाद, जो काले की घड़ी में 10:56 रहते खेली गई, Stockfish का आकलन +7.05 है। Stockfish की लाइन हाथी की शह से शुरू होती है, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+। Stockfish इसकी जगह 82...Qe4+ चाहता था। बाज़ी आगे नहीं बढ़ी: नतीजा ड्रॉ रहा।\n\nजर्मनी ने मुक़ाबला 3–1 से जीता और 16 मैच अंकों के साथ आख़िरी राउंड में उतरा।\n\nअंतिम स्थिति सेट करें, 83.Re3+ खुद खोजें, और इंजन के ख़िलाफ़ वह जीत खेलें जो बाज़ी में कभी नहीं आई।"
+        },
+        "hu": {
+          "headline": "Döntetlen, amelyben nyerés rejlett: a Stockfish +7,05-öt lát a záróállásban",
+          "body": "GM Vincent Keymer (Németország, 2764) és GM Maxime Vachier-Lagrave (Franciaország, 2718) 82 lépésben döntetlent játszottak, két bástya a vezér ellen. Abban az állásban, amelyben a játszma véget ért, a Stockfish világos nyerését látja.\n\nA 82...Ke5 után, amelyet sötét 10:56-tal az óráján lépett, a Stockfish +7,05-öt mutat. Változata bástyasakkal indul: 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Helyette a 82...Qe4+ lépést akarta. A játszma nem folytatódott: az eredmény döntetlen lett.\n\nNémetország 3–1 arányban megnyerte a mérkőzést, és 16 csapatponttal ment az utolsó fordulóba.\n\nÁllítsd fel a záróállást, találd meg magad a 83.Re3+ lépést, és játszd végig a motor ellen a nyerést, amely a játszmában sosem jött el."
+        },
+        "id": {
+          "headline": "Remis yang menyimpan kemenangan: Stockfish menemukan +7,05 di posisi akhir",
+          "body": "GM Vincent Keymer (Jerman, 2764) dan GM Maxime Vachier-Lagrave (Prancis, 2718) bermain remis dalam 82 langkah, dua benteng melawan menteri. Di posisi tempat partai berakhir, Stockfish menemukan kemenangan untuk Putih.\n\nSesudah 82...Ke5, yang dimainkan dengan sisa 10:56 di jam Hitam, mesin menilai +7,05. Variasinya dimulai dengan skak benteng, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Mesin menginginkan 82...Qe4+ sebagai gantinya. Partai tidak berlanjut: hasilnya remis.\n\nJerman memenangi pertandingan 3–1 dan masuk ke babak terakhir dengan 16 poin pertandingan.\n\nSusun posisi akhirnya, temukan sendiri 83.Re3+, dan mainkan melawan mesin kemenangan yang tidak pernah terjadi di partai itu."
+        },
+        "it": {
+          "headline": "Una patta con dentro una vittoria: Stockfish trova +7,05 nella posizione finale",
+          "body": "GM Vincent Keymer (Germania, 2764) e GM Maxime Vachier-Lagrave (Francia, 2718) hanno pattato in 82 mosse, due Torri contro Donna. Nella posizione in cui la partita si è fermata, Stockfish trova una vittoria per il Bianco.\n\nDopo 82...Ke5, giocata con 10:56 sull’orologio del Nero, segna +7,05. La sua linea comincia con uno scacco di Torre, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Voleva invece 82...Qe4+. La partita non è andata oltre: il risultato è stato patta.\n\nLa Germania ha vinto il match 3–1 ed è arrivata all’ultimo turno con 16 punti match.\n\nImposta la posizione finale, trova tu 83.Re3+ e gioca contro il motore la vittoria che la partita non ha mai avuto."
+        },
+        "ja": {
+          "headline": "勝ちが眠っていた引き分け：最終局面でStockfishは+7.05を示す",
+          "body": "GM Vincent Keymer（ドイツ、2764）とGM Maxime Vachier-Lagrave（フランス、2718）は82手で引き分けました。ルーク二つ対クイーンでした。対局が終わった局面で、Stockfishは白の勝ちを見つけます。\n\n黒の残り時間10:56で指された82...Ke5の後、Stockfishの評価は+7.05です。その読み筋はルークのチェックから始まります。83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+。Stockfishが望んだのは82...Qe4+のほうでした。対局はそこで終わり、結果は引き分けでした。\n\nドイツはマッチを3–1で制し、マッチポイント16で最終ラウンドに臨みました。\n\n最終局面を並べ、83.Re3+を自分で見つけて、対局では実現しなかった勝ちをエンジン相手に指し切ってみましょう。"
+        },
+        "ko": {
+          "headline": "승리가 숨어 있던 무승부: Stockfish, 최종 국면에서 +7.05 찾아내",
+          "body": "GM Vincent Keymer(독일, 2764)와 GM Maxime Vachier-Lagrave(프랑스, 2718)는 82수 만에 비겼습니다. 룩 두 개 대 퀸이었습니다. 대국이 끝난 국면에서 Stockfish는 백의 승리를 찾아냅니다.\n\n흑의 시계에 10:56이 남은 상태에서 나온 82...Ke5 이후 Stockfish의 평가는 +7.05입니다. Stockfish의 수순은 룩 체크로 시작합니다. 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Stockfish가 원한 수는 82...Qe4+였습니다. 대국은 더 이어지지 않았고, 결과는 무승부였습니다.\n\n독일은 매치를 3–1로 이기고 16 매치 포인트로 마지막 라운드에 들어갔습니다.\n\n최종 국면을 세팅하고 83.Re3+를 직접 찾은 뒤, 대국에서는 나오지 않은 승리를 엔진을 상대로 끝까지 두어 보세요."
+        },
+        "ms": {
+          "headline": "Seri yang menyimpan kemenangan: Stockfish menemui +7,05 dalam kedudukan akhir",
+          "body": "GM Vincent Keymer (Jerman, 2764) dan GM Maxime Vachier-Lagrave (Perancis, 2718) seri dalam 82 langkah, dua tir menentang menteri. Dalam kedudukan tempat permainan itu berakhir, Stockfish menemui kemenangan untuk Putih.\n\nSelepas 82...Ke5, yang dimainkan dengan baki 10:56 pada jam Hitam, enjin menilai +7,05. Variasinya bermula dengan sekak tir, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Enjin mahukan 82...Qe4+ sebaliknya. Permainan tidak diteruskan: keputusannya seri.\n\nJerman memenangi perlawanan 3–1 dan memasuki pusingan terakhir dengan 16 mata perlawanan.\n\nSusun kedudukan akhir, cari sendiri 83.Re3+, dan mainkan hingga tamat menentang enjin kemenangan yang tidak pernah berlaku dalam permainan itu."
+        },
+        "nl": {
+          "headline": "Een remise met winst erin: Stockfish vindt +7,05 in de slotstelling",
+          "body": "GM Vincent Keymer (Duitsland, 2764) en GM Maxime Vachier-Lagrave (Frankrijk, 2718) speelden remise in 82 zetten, twee torens tegen een dame. In de stelling waarin de partij eindigde, vindt Stockfish winst voor wit.\n\nNa 82...Ke5, gespeeld met 10:56 op de klok van zwart, geeft Stockfish +7,05. De variant begint met een torenschaak, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. De engine wilde in plaats daarvan 82...Qe4+. Verder ging de partij niet: de uitslag was remise.\n\nDuitsland won de match met 3–1 en ging met 16 matchpunten de laatste ronde in.\n\nZet de slotstelling op, vind 83.Re3+ zelf en speel tegen de engine de winst uit die de partij nooit had."
+        },
+        "no": {
+          "headline": "Remis med en gevinst i seg: Stockfish finner +7,05 i sluttstillingen",
+          "body": "GM Vincent Keymer (Tyskland, 2764) og GM Maxime Vachier-Lagrave (Frankrike, 2718) spilte remis på 82 trekk, to tårn mot dronning. I stillingen partiet endte i, finner Stockfish en gevinst for hvit.\n\nEtter 82...Ke5, spilt med 10:56 igjen på svarts klokke, viser Stockfish +7,05. Varianten begynner med en tårnsjakk, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Motoren ville heller ha 82...Qe4+. Partiet gikk ikke lenger: resultatet ble remis.\n\nTyskland vant matchen 3–1 og gikk inn i siste runde med 16 matchpoeng.\n\nStill opp sluttstillingen, finn 83.Re3+ selv, og spill ut mot motoren gevinsten partiet aldri fikk."
+        },
+        "pl": {
+          "headline": "Remis, w którym kryła się wygrana: Stockfish znajduje +7,05 w końcowej pozycji",
+          "body": "GM Vincent Keymer (Niemcy, 2764) i GM Maxime Vachier-Lagrave (Francja, 2718) remisują w 82 ruchach, dwie wieże przeciwko hetmanowi. W pozycji, na której kończy się partia, Stockfish znajduje wygraną białych.\n\nPo 82...Ke5, zagranym przy 10:56 na zegarze czarnych, ocena silnika to +7,05. Wariant silnika zaczyna się od szacha wieżą: 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Stockfish chciał zamiast tego 82...Qe4+. Dalej partia nie poszła: wynik to remis.\n\nNiemcy wygrywają mecz 3–1 i przystępują do ostatniej rundy z 16 punktami meczowymi.\n\nUstaw końcową pozycję, znajdź 83.Re3+ na własną rękę i rozegraj przeciwko silnikowi wygraną, której w partii nigdy nie było."
+        },
+        "pt-BR": {
+          "headline": "Um empate com uma vitória dentro: o Stockfish encontra +7,05 na posição final",
+          "body": "GM Vincent Keymer (Alemanha, 2764) e GM Maxime Vachier-Lagrave (França, 2718) empataram em 82 lances, com duas torres contra uma dama. Na posição em que a partida terminou, o Stockfish encontra vitória para as brancas.\n\nDepois de 82...Ke5, jogado com 10:56 no relógio das pretas, a avaliação do Stockfish é +7,05. Sua linha começa com um xeque de torre, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. O motor queria 82...Qe4+ em vez disso. A partida não foi adiante: o resultado foi empate.\n\nA Alemanha venceu o match por 3–1 e chegou à última rodada com 16 pontos de match.\n\nMonte a posição final, encontre 83.Re3+ por conta própria e jogue contra o motor a vitória que a partida nunca teve."
+        },
+        "ro": {
+          "headline": "O remiză cu un câștig în ea: Stockfish găsește +7,05 în poziția finală",
+          "body": "GM Vincent Keymer (Germania, 2764) și GM Maxime Vachier-Lagrave (Franța, 2718) au remizat în 82 de mutări, două ture contra unei dame. În poziția în care s-a încheiat partida, Stockfish găsește un câștig pentru Alb.\n\nDupă 82...Ke5, jucată cu 10:56 pe ceasul Negrului, evaluarea lui Stockfish este +7,05. Varianta sa începe cu un șah de tură, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Motorul voia în schimb 82...Qe4+. Partida nu a mers mai departe: rezultatul a fost remiză.\n\nGermania a câștigat meciul cu 3–1 și a intrat în ultima rundă cu 16 puncte de meci.\n\nAșază poziția finală, găsește tu 83.Re3+ și joacă, contra motorului, câștigul pe care partida nu l-a avut niciodată."
+        },
+        "ru": {
+          "headline": "Ничья, в которой был выигрыш: Stockfish находит +7,05 в финальной позиции",
+          "body": "GM Vincent Keymer (Германия, 2764) и GM Maxime Vachier-Lagrave (Франция, 2718) сыграли вничью за 82 хода — две ладьи против ферзя. В позиции, на которой закончилась партия, Stockfish находит выигрыш за белых.\n\nПосле 82...Ke5, сделанного с 10:56 на часах чёрных, Stockfish даёт +7,05. Вариант движка начинается с шаха ладьёй: 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Движок хотел вместо этого 82...Qe4+. Дальше партия не пошла: результат — ничья.\n\nГермания выиграла матч 3–1 и вышла на последний тур с 16 командными очками.\n\nРасставьте финальную позицию, сами найдите 83.Re3+ и доиграйте против движка выигрыш, которого в партии так и не было."
+        },
+        "sv": {
+          "headline": "En remi med en vinst i sig: Stockfish hittar +7,05 i slutställningen",
+          "body": "GM Vincent Keymer (Tyskland, 2764) och GM Maxime Vachier-Lagrave (Frankrike, 2718) spelade remi på 82 drag, två torn mot dam. I ställningen där partiet slutade hittar Stockfish en vinst för vit.\n\nEfter 82...Ke5, spelat med 10:56 kvar på svarts klocka, visar Stockfish +7,05. Varianten börjar med tornschack, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Motorn ville i stället ha 82...Qe4+. Partiet gick inte längre: resultatet blev remi.\n\nTyskland vann matchen med 3–1 och gick in i sista ronden med 16 matchpoäng.\n\nStäll upp slutställningen, hitta 83.Re3+ själv och spela ut mot motorn den vinst som partiet aldrig fick."
+        },
+        "th": {
+          "headline": "เสมอที่ซ่อนทางชนะ: Stockfish พบ +7.05 ในตำแหน่งสุดท้าย",
+          "body": "GM Vincent Keymer (เยอรมนี, 2764) กับ GM Maxime Vachier-Lagrave (ฝรั่งเศส, 2718) เสมอกันใน 82 ตา เรือสองตัวต่อควีน ในตำแหน่งที่เกมจบลง Stockfish พบทางชนะให้ฝ่ายขาว\n\nหลัง 82...Ke5 ซึ่งเดินตอนที่นาฬิกาฝ่ายดำเหลือ 10:56 เอนจินประเมินได้ +7.05 แนวทางของเอนจินเริ่มด้วยการรุกด้วยเรือ 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+ เอนจินต้องการ 82...Qe4+ แทน เกมไม่ได้เดินต่อ: ผลคือเสมอ\n\nเยอรมนีชนะแมตช์ 3–1 และเข้าสู่รอบสุดท้ายด้วย 16 แต้มแมตช์\n\nตั้งตำแหน่งสุดท้าย หา 83.Re3+ ด้วยตัวเอง แล้วเล่นทางชนะที่เกมนี้ไม่เคยได้เล่นให้จบกับเอนจิน"
+        },
+        "tr": {
+          "headline": "İçinde galibiyet olan bir beraberlik: Stockfish son konumda +7,05 buluyor",
+          "body": "GM Vincent Keymer (Almanya, 2764) ile GM Maxime Vachier-Lagrave (Fransa, 2718), tahtada iki kale bir vezire karşıyken 82 hamlede berabere kaldı. Oyunun bittiği konumda Stockfish beyaz için bir galibiyet buluyor.\n\nSiyahın saatinde 10:56 kala oynanan 82...Ke5'ten sonra Stockfish'in değerlendirmesi +7,05. Önerdiği varyant bir kale şahıyla başlıyor: 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Motor bunun yerine 82...Qe4+ istiyordu. Oyun daha ileri gitmedi: sonuç beraberlikti.\n\nAlmanya maçı 3–1 kazandı ve son tura 16 maç puanıyla girdi.\n\nSon konumu kur, 83.Re3+ hamlesini kendin bul ve oyunun hiç yaşamadığı galibiyeti motora karşı oyna."
+        },
+        "vi": {
+          "headline": "Ván hòa có đường thắng bên trong: Stockfish thấy +7,05 ở thế cờ cuối",
+          "body": "GM Vincent Keymer (Đức, 2764) và GM Maxime Vachier-Lagrave (Pháp, 2718) hòa sau 82 nước, hai Xe đấu một Hậu. Ở thế cờ mà ván đấu kết thúc, Stockfish tìm thấy đường thắng cho Trắng.\n\nSau 82...Ke5, được đi khi đồng hồ Đen còn 10:56, engine đánh giá +7,05. Biến của nó bắt đầu bằng một nước chiếu Xe, 83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+. Engine lại muốn 82...Qe4+. Ván cờ không đi tiếp: kết quả là hòa.\n\nĐức thắng trận 3–1 và bước vào vòng cuối với 16 điểm trận.\n\nBày thế cờ cuối, tự tìm ra 83.Re3+, và chơi với engine đến hết đường thắng mà ván cờ chưa từng có."
+        },
+        "zh-Hans": {
+          "headline": "藏着胜机的和棋：Stockfish在最终局面中算出+7.05",
+          "body": "GM Vincent Keymer（德国，2764）与GM Maxime Vachier-Lagrave（法国，2718）82回合弈和，局面是双车对一后。在对局结束时的局面里，Stockfish找到了白方的赢法。\n\n82...Ke5是在黑方棋钟剩10:56时走出的，之后Stockfish的评估是+7.05。Stockfish给出的变化从一步车将开始：83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+。Stockfish想走的是82...Qe4+。对局没有再继续下去：结果是和棋。\n\n德国队以3–1赢下比赛，带着团体分16分进入最后一轮。\n\n摆出最终局面，自己找到83.Re3+，然后对着引擎把这盘棋从未走出的赢法下完。"
+        },
+        "zh-Hant": {
+          "headline": "藏著勝機的和棋：Stockfish在最終局面中算出+7.05",
+          "body": "GM Vincent Keymer（德國，2764）與GM Maxime Vachier-Lagrave（法國，2718）82回合弈和，局面是雙車對一后。在對局結束時的局面裡，Stockfish找到了白方的贏法。\n\n82...Ke5是在黑方棋鐘剩10:56時走出的，之後Stockfish的評估是+7.05。Stockfish給出的變化從一步車將開始：83.Re3+ Qe4+ 84.Rxe4+ Kxe4 85.Rxe6+。Stockfish想走的是82...Qe4+。對局沒有再繼續下去：結果是和棋。\n\n德國隊以3–1贏下比賽，帶著團體分16分進入最後一輪。\n\n擺出最終局面，自己找到83.Re3+，然後對著引擎把這盤棋從未走出的贏法下完。"
+        }
+      },
+      "fen": "8/8/1p2p2R/p1p1kq2/P1P5/1P4R1/5PK1/8 w - - 59 83",
+      "last": {
+        "from": "d6",
+        "to": "e5"
+      },
+      "url": "https://brasspawn.com/today/2026-09-26-keymer-vachier-lagrave-olympiad-r10",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-10/WCYaLfnP/WguIkp5n"
+      },
+      "updatedAt": "2026-09-26T21:11:37.540Z"
+    },
+    {
+      "id": "2026-09-26-kovalenko-ding-olympiad-r10",
+      "status": "approved",
+      "date": "2026-09-26",
+      "rank": 1,
+      "weight": 974,
+      "event": {
+        "name": "46th FIDE Chess Olympiad Samarkand 2026",
+        "short": "Olympiad",
+        "section": "Open",
+        "round": 10,
+        "location": "Samarkand, Uzbekistan",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-10/WCYaLfnP"
+      },
+      "white": {
+        "name": "Igor Kovalenko",
+        "short": "Kovalenko",
+        "title": "GM",
+        "elo": 2642,
+        "team": "Ukraine"
       },
       "black": {
         "name": "Ding Liren",
         "short": "Ding",
         "title": "GM",
         "elo": 2733,
-        "team": "China",
-        "fed": null,
-        "fideId": 8603677
+        "team": "China"
       },
-      "result": "1/2-1/2",
+      "result": "1-0",
       "opening": {
-        "eco": "C84",
-        "name": "Ruy Lopez: Closed, Martinez Variation"
+        "eco": "C85",
+        "name": "Ruy Lopez: Closed, Delayed Exchange"
       },
-      "moves": "e4 e5 Nf3 Nc6 Bb5 a6 Ba4 Nf6 O-O Be7 d3 b5 Bb3 d6 a4 Bd7 Nc3 Na5 Ba2 b4 Ne2 c5 h3 O-O Be3 c4 Nd2 cxd3 cxd3 Rb8 d4 Re8 dxe5 dxe5 Ng3 Bf8 Qe2 b3 Bb1 Rb4 Bd3 Nc6 Bxa6 Nd4 Bxd4 Rxd4 Nxb3 Rb4 Nc1 Rxa4 Rxa4 Bxa4 Bb5 Bxb5 Qxb5 h5 Nd3 h4 Nf5 Nxe4 Nxe5 g6 Nd4 Qb8 Qxb8 Rxb8 Re1 Nd2 b3 Bg7 Nec6 Rb6 Rd1 Ne4 Re1 Nd2 Rd1 Ne4 b4 Nc3 Rd3 Bxd4 Nxd4 Rxb4 Rxc3 Rxd4",
-      "plies": 86,
+      "moves": "e4 e5 Nf3 Nc6 Bb5 a6 Ba4 Nf6 O-O Be7 Bxc6 dxc6 d3 Nd7 Nc3 O-O Be3 Re8 Ne2 Bd6 Nd2 Nf8 a4 Ng6 Nc4 Be6 b3 Qd7 Qd2 Rad8 f3 Bf8 a5 f6 Qc3 c5 Qe1 Qc6 Qg3 Bf7 h4 h5 Rf2 Rd7 Qh2 Qe6 Kh1 f5 exf5 Qxf5 Ng3 Qe6 Ne4 Qc6 Re2 Bd5 Bf2 Rf7 Bg3 Bd6 Ng5 Rfe7 Rae1 Qd7 Ne4 Rf7 Re3 Bc6 Ng5 Rfe7 Ne4 Rf7 R3e2 Bd5 Nc3 Bc6 Kg1 Rfe7 Kf1 Qf5 Ne4 Re6 Ng5 R6e7 Kg1 Kf8 Ne4 Re6 Ne3 Qf7 Ng5 Qd7 Nxe6+ Qxe6 Nc4",
       "ending": null,
-      "key": null,
-      "headline": "Vachier-Lagrave and Ding draw in a rook ending",
-      "body": "Maxime Vachier-Lagrave and Ding Liren drew in round 9, France against China. A Closed Ruy Lopez ended on move 43 in a rook ending with three pawns each, all of them on the kingside.",
+      "key": {
+        "kind": "mistake",
+        "ply": 88,
+        "played": "Re6",
+        "better": "Qd7",
+        "reply": "Ne3",
+        "replyPlayed": true,
+        "before": {
+          "cp": 115,
+          "mate": null
+        },
+        "after": {
+          "cp": 297,
+          "mate": null
+        },
+        "clock": 1261
+      },
+      "headline": "Kovalenko beats Ding, 91 points higher, and Ukraine take China 3–1",
+      "lede": "GM Igor Kovalenko (Ukraine) beat GM Ding Liren (China) in round 10 of the 46th FIDE Chess Olympiad Samarkand 2026 (Open), in 48 moves.",
+      "body": "GM Igor Kovalenko (Ukraine, 2642) beat GM Ding Liren (China, 2733) in 48 moves.\n\nIt turned on 44...Re6. Stockfish wanted 44...Qd7. After the rook went to e6 its count went from a small edge for White (+1.15) to a win (+2.97). 45.Ne3 came straight back, and on move 47 the knight took the rook on e6 with check.\n\nUkraine won the match 3–1 and moved to 16 match points, two behind Uzbekistan with a round left.\n\nGo back to 44...Re6, find the queen move Stockfish wanted, then play it on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "بتصنيف أقل بـ91 نقطة، فوز لـKovalenko على Ding، وأوكرانيا تتغلب على الصين ⁨3–1⁩",
+          "body": "انتهى الدور بفوز GM Igor Kovalenko (أوكرانيا، 2642) على GM Ding Liren (الصين، 2733) في 48 نقلة.\n\nتحوّل الدور عند ⁨44...Re6⁩. أراد Stockfish ⁨44...Qd7⁩. بعد انتقال الرخ إلى e6 انتقل تقييمه من أفضلية صغيرة للأبيض (⁨+1.15⁩) إلى فوز (⁨+2.97⁩). وجاء الرد ⁨45.Ne3⁩ مباشرة، وفي النقلة 47 أخذ الحصان الرخ على e6 مع كش.\n\nفازت أوكرانيا بالمباراة ⁨3–1⁩ ووصلت إلى 16 نقطة مباراة، بفارق نقطتين خلف أوزبكستان قبل جولة من النهاية.\n\nارجع إلى ⁨44...Re6⁩، واعثر على نقلة الوزير التي أرادها Stockfish، ثم تابع اللعب ضد المحرك."
+        },
+        "bg": {
+          "headline": "Kovalenko побеждава Ding с 91 точки по-висок рейтинг, а Украйна бие Китай с 3–1",
+          "body": "GM Igor Kovalenko (Украйна, 2642) победи GM Ding Liren (Китай, 2733) за 48 хода.\n\nПартията се обърна с 44...Re6. Stockfish искаше 44...Qd7. След като топът отиде на e6, оценката на енджина се промени от малко предимство за белите (+1,15) на печеливша позиция (+2,97). Веднага дойде 45.Ne3, а на 47-ия ход конят взе топа на e6 с шах.\n\nУкрайна спечели мача с 3–1 и стигна до 16 мачови точки, две по-малко от Узбекистан кръг преди края.\n\nВърнете се към 44...Re6, намерете хода с дамата, който Stockfish искаше, после продължете партията срещу енджина."
+        },
+        "cs": {
+          "headline": "Partii Kovalenko – Ding vyhrává Kovalenko, o 91 bodů níž, a Ukrajina poráží Čínu 3–1",
+          "body": "V partii GM Igor Kovalenko (Ukrajina, 2642) – GM Ding Liren (Čína, 2733) vyhrává po 48 tazích Kovalenko.\n\nZlom přinesl tah 44...Re6. Stockfish chtěl 44...Qd7. Po přechodu věže na e6 se hodnocení změnilo z malé výhody bílých (+1,15) na výhru (+2,97). Okamžitě přišlo 45.Ne3 a ve 47. tahu vzal jezdec věž na e6 se šachem.\n\nUkrajina vyhrála zápas 3–1 a posunula se na 16 zápasových bodů, kolo před koncem dva body za Uzbekistánem.\n\nVrať se k 44...Re6, najdi tah dámou, který chtěl Stockfish, a pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "Kovalenko slår Ding trods 91 ratingpoint mindre, og Ukraine besejrer Kina 3–1",
+          "body": "GM Igor Kovalenko (Ukraine, 2642) slog GM Ding Liren (Kina, 2733) i 48 træk.\n\nPartiet vendte med 44...Re6. Stockfish ville have 44...Qd7. Efter tårntrækket til e6 gik vurderingen fra en lille fordel til hvid (+1,15) til gevinst (+2,97). 45.Ne3 kom med det samme, og i 47. træk slog springeren tårnet på e6 med skak.\n\nUkraine vandt matchen 3–1 og kom op på 16 matchpoint, to efter Usbekistan med én runde tilbage.\n\nGå tilbage til 44...Re6, find det dronningetræk, Stockfish ville have, og spil så videre mod motoren."
+        },
+        "de": {
+          "headline": "Kovalenko schlägt Ding trotz 91 Elo weniger – die Ukraine besiegt China 3:1",
+          "body": "GM Igor Kovalenko (Ukraine, 2642) schlug GM Ding Liren (China, 2733) in 48 Zügen.\n\nDie Partie kippte mit 44...Re6. Stockfish wollte 44...Qd7. Nach dem Turmzug nach e6 ging die Bewertung von einem kleinen Vorteil für Weiß (+1,15) auf Gewinn (+2,97). 45.Ne3 kam sofort, und im 47. Zug schlug der Springer den Turm auf e6 mit Schach.\n\nDie Ukraine gewann den Kampf 3:1 und kam auf 16 Mannschaftspunkte, zwei hinter Usbekistan, eine Runde vor Schluss.\n\nZurück zu 44...Re6, den Damenzug finden, den Stockfish wollte, dann gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Νίκη Kovalenko επί Ding, 91 βαθμούς ψηλότερα, και η Ουκρανία νικά την Κίνα 3–1",
+          "body": "Νίκη σε 48 κινήσεις για GM Igor Kovalenko (Ουκρανία, 2642) επί GM Ding Liren (Κίνα, 2733).\n\nΗ παρτίδα γύρισε στην 44...Re6. Το Stockfish ήθελε την 44...Qd7. Αφού ο πύργος πήγε στο e6, η εκτίμηση πέρασε από μικρό πλεονέκτημα για τα λευκά (+1,15) σε νίκη (+2,97). Η 45.Ne3 ήρθε αμέσως, και στην 47η κίνηση ο ίππος πήρε τον πύργο στο e6 με σαχ.\n\nΗ Ουκρανία κέρδισε τον αγώνα με 3–1 και ανέβηκε στους 16 βαθμούς αγώνα, δύο πίσω από το Ουζμπεκιστάν, με έναν γύρο να απομένει.\n\nΓύρνα στην 44...Re6, βρες την κίνηση βασίλισσας που ήθελε το Stockfish, μετά συνέχισε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Kovalenko vence a Ding con 91 puntos menos de Elo, y Ucrania gana 3–1 a China",
+          "body": "GM Igor Kovalenko (Ucrania, 2642) venció a GM Ding Liren (China, 2733) en 48 jugadas.\n\nLa partida cambió con 44...Re6. Stockfish quería 44...Qd7. Tras la llegada de la torre a e6 su valoración pasó de una pequeña ventaja blanca (+1,15) a una victoria (+2,97). 45.Ne3 llegó enseguida, y en la jugada 47 el caballo tomó la torre de e6 con jaque.\n\nUcrania ganó el match 3–1 y subió a 16 puntos de match, a dos de Uzbekistán a falta de una ronda.\n\nVuelve a 44...Re6, encuentra la jugada de dama que quería Stockfish y luego sigue contra el motor."
+        },
+        "fi": {
+          "headline": "Kovalenko voittaa 91 pistettä korkeamman Dingin, ja Ukraina kaataa Kiinan 3–1",
+          "body": "GM Igor Kovalenko (Ukraina, 2642) voitti GM Ding Lirenin (Kiina, 2733) 48 siirrossa.\n\nPeli kääntyi siirtoon 44...Re6. Stockfish halusi 44...Qd7. Kun torni meni e6:een, Stockfishin arvio muuttui valkean pienestä edusta (+1,15) voittoasemaksi (+2,97). 45.Ne3 tuli heti, ja siirrolla 47 ratsu löi e6:n tornin shakaten.\n\nUkraina voitti ottelun 3–1 ja nousi 16 ottelupisteeseen, kaksi Uzbekistanin perään, kun jäljellä oli yksi kierros.\n\nPalaa siirtoon 44...Re6, löydä kuningattaren siirto, jota Stockfish halusi, ja jatka sitten peliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Kovalenko bat Ding malgré 91 points Elo de moins, et l’Ukraine s’impose 3–1 face à la Chine",
+          "body": "GM Igor Kovalenko (Ukraine, 2642) a battu GM Ding Liren (Chine, 2733) en 48 coups.\n\nLa partie a basculé sur 44...Re6. Stockfish voulait 44...Qd7. Après l’arrivée de la tour en e6, son évaluation est passée d’un léger avantage pour les Blancs (+1,15) à un gain (+2,97). 45.Ne3 a suivi aussitôt, et au 47e coup le cavalier a pris la tour en e6 avec échec.\n\nL’Ukraine a gagné le match 3–1 et passe à 16 points de match, à deux points de l’Ouzbékistan à une ronde de la fin.\n\nRevenez à 44...Re6, trouvez le coup de dame que voulait Stockfish, puis continuez contre le moteur."
+        },
+        "he": {
+          "headline": "ניצחון ל־Kovalenko על Ding, בדירוג גבוה ב־91 נקודות, ואוקראינה גוברת על סין ⁨3–1⁩",
+          "body": "המשחק הסתיים בניצחון ל־GM Igor Kovalenko (אוקראינה, 2642) על GM Ding Liren (סין, 2733) אחרי 48 מסעים.\n\nנקודת המפנה הייתה ⁨44...Re6⁩. Stockfish רצה ב־⁨44...Qd7⁩. אחרי שהצריח עבר ל־e6 ההערכה עברה מיתרון קטן ללבן (⁨+1.15⁩) לעמדה מנצחת (⁨+2.97⁩). המסע ⁨45.Ne3⁩ בא מיד, ובמסע 47 הפרש לקח את הצריח ב־e6 עם שח.\n\nאוקראינה ניצחה במפגש ⁨3–1⁩ ועלתה ל־16 נקודות משחק, שתי נקודות מאחורי אוזבקיסטן כשנותר סיבוב אחד.\n\nחזרו ל־⁨44...Re6⁩, מצאו את מסע המלכה ש־Stockfish רצה, ואז המשיכו לשחק מול המנוע."
+        },
+        "hi": {
+          "headline": "Kovalenko ने रेटिंग में 91 अंक आगे Ding को हराया, और यूक्रेन ने चीन से मुक़ाबला 3–1 से जीता",
+          "body": "GM Igor Kovalenko (यूक्रेन, 2642) ने GM Ding Liren (चीन, 2733) को 48 चालों में हराया।\n\nबाज़ी 44...Re6 पर पलटी। Stockfish 44...Qd7 चाहता था। हाथी के e6 पर जाने के बाद Stockfish का आकलन सफ़ेद की छोटी बढ़त (+1.15) से जीत की स्थिति (+2.97) पर पहुँच गया। 45.Ne3 तुरंत आया, और चाल 47 पर घोड़े ने शह के साथ e6 पर हाथी ले लिया।\n\nयूक्रेन ने मुक़ाबला 3–1 से जीता और 16 मैच अंकों पर पहुँच गया, एक राउंड बाक़ी रहते उज़्बेकिस्तान से दो अंक पीछे।\n\n44...Re6 पर लौटें, रानी की वह चाल खोजें जो Stockfish चाहता था, फिर इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "Kovalenko nyert a 91 ponttal magasabb értékszámú Ding ellen, Ukrajna 3–1-re verte Kínát",
+          "body": "GM Igor Kovalenko (Ukrajna, 2642) 48 lépésben nyert GM Ding Liren (Kína, 2733) ellen.\n\nA játszma a 44...Re6 lépésnél fordult meg. A Stockfish a 44...Qd7 lépést akarta. Miután a bástya az e6-ra lépett, értékelése világos kis előnyéből (+1,15) nyerésre (+2,97) változott. Azonnal jött a 45.Ne3, és a 47. lépésben a huszár sakkal leütötte az e6-os bástyát.\n\nUkrajna 3–1 arányban megnyerte a mérkőzést, és 16 csapatpontra jött fel, kettővel Üzbegisztán mögött, egy fordulóval a vége előtt.\n\nMenj vissza a 44...Re6 lépéshez, találd meg a vezérlépést, amelyet a Stockfish akart, aztán játszd tovább a motor ellen."
+        },
+        "id": {
+          "headline": "Kovalenko kalahkan Ding, 91 poin lebih tinggi, dan Ukraina tundukkan Tiongkok 3–1",
+          "body": "GM Igor Kovalenko (Ukraina, 2642) mengalahkan GM Ding Liren (Tiongkok, 2733) dalam 48 langkah.\n\nPartai berbalik pada 44...Re6. Stockfish menginginkan 44...Qd7. Sesudah benteng pergi ke e6, penilaiannya berubah dari Putih sedikit unggul (+1,15) menjadi menang (+2,97). 45.Ne3 langsung datang, dan pada langkah 47 kuda mengambil benteng di e6 dengan skak.\n\nUkraina memenangi pertandingan 3–1 dan naik ke 16 poin pertandingan, dua di belakang Uzbekistan dengan satu babak tersisa.\n\nKembali ke 44...Re6, temukan langkah menteri yang diinginkan Stockfish, lalu lanjutkan melawan mesin."
+        },
+        "it": {
+          "headline": "Kovalenko batte Ding con 91 punti Elo in meno, e l’Ucraina supera la Cina 3–1",
+          "body": "GM Igor Kovalenko (Ucraina, 2642) ha battuto GM Ding Liren (Cina, 2733) in 48 mosse.\n\nLa partita è girata su 44...Re6. Stockfish voleva 44...Qd7. Dopo l’arrivo della Torre in e6 la sua valutazione è passata da un piccolo vantaggio del Bianco (+1,15) a una vittoria (+2,97). 45.Ne3 è arrivata subito, e alla mossa 47 il Cavallo ha preso la Torre in e6 con scacco.\n\nL’Ucraina ha vinto il match 3–1 ed è salita a 16 punti match, a due dall’Uzbekistan a un turno dalla fine.\n\nTorna a 44...Re6, trova la mossa di Donna che voleva Stockfish, poi continua contro il motore."
+        },
+        "ja": {
+          "headline": "Kovalenkoが91点上のDingに勝利、ウクライナが中国に3–1",
+          "body": "GM Igor Kovalenko（ウクライナ、2642）がGM Ding Liren（中国、2733）に48手で勝ちました。\n\n分かれ目は44...Re6でした。Stockfishが望んだのは44...Qd7。ルークがe6に入った後、Stockfishの評価は白のわずかな優位（+1.15）から勝勢（+2.97）に変わりました。すぐに45.Ne3が返ってきて、47手目にはナイトがチェックをかけながらe6のルークを取りました。\n\nウクライナはマッチを3–1で制してマッチポイント16となり、残り一ラウンドでウズベキスタンに二ポイント差としました。\n\n44...Re6に戻ってStockfishが望んだクイーンの手を見つけ、そのままエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "Kovalenko, 91점 높은 Ding 꺾어… 우크라이나는 중국에 3–1 승리",
+          "body": "GM Igor Kovalenko(우크라이나, 2642)가 GM Ding Liren(중국, 2733)에게 48수 만에 이겼습니다.\n\n승부를 가른 수는 44...Re6였습니다. Stockfish가 원한 수는 44...Qd7였습니다. 룩이 e6 칸에 들어간 뒤 Stockfish의 평가는 백의 약간의 우세(+1.15)에서 이기는 형세(+2.97)로 바뀌었습니다. 곧바로 45.Ne3가 나왔고, 47수째에는 나이트가 체크와 함께 e6의 룩을 잡았습니다.\n\n우크라이나는 매치를 3–1로 이겨 16 매치 포인트가 되었고, 한 라운드를 남기고 우즈베키스탄에 두 점 뒤졌습니다.\n\n44...Re6로 돌아가 Stockfish가 원한 퀸 수를 찾은 뒤, 엔진을 상대로 이어서 두어 보세요."
+        },
+        "ms": {
+          "headline": "Kovalenko tewaskan Ding, 91 mata lebih tinggi, dan Ukraine tundukkan China 3–1",
+          "body": "GM Igor Kovalenko (Ukraine, 2642) menewaskan GM Ding Liren (China, 2733) dalam 48 langkah.\n\nPermainan berubah pada 44...Re6. Stockfish mahukan 44...Qd7. Selepas tir pergi ke e6, penilaiannya berubah daripada Putih sedikit mendahului (+1,15) kepada menang (+2,97). 45.Ne3 tiba serta-merta, dan pada langkah 47 kuda mengambil tir di e6 dengan sekak.\n\nUkraine memenangi perlawanan 3–1 dan naik ke 16 mata perlawanan, dua di belakang Uzbekistan dengan satu pusingan lagi.\n\nKembali ke 44...Re6, cari langkah menteri yang Stockfish mahukan, kemudian teruskan menentang enjin."
+        },
+        "nl": {
+          "headline": "Kovalenko verslaat Ding ondanks 91 ratingpunten minder, Oekraïne klopt China met 3–1",
+          "body": "GM Igor Kovalenko (Oekraïne, 2642) versloeg GM Ding Liren (China, 2733) in 48 zetten.\n\nDe partij kantelde met 44...Re6. Stockfish wilde 44...Qd7. Na de torenzet naar e6 ging de beoordeling van een klein voordeel voor wit (+1,15) naar winst (+2,97). 45.Ne3 kwam meteen, en op zet 47 sloeg het paard de toren op e6 met schaak.\n\nOekraïne won de match met 3–1 en kwam op 16 matchpunten, twee achter Oezbekistan met nog één ronde te gaan.\n\nGa terug naar 44...Re6, vind de damezet die Stockfish wilde, en speel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "Kovalenko slår Ding, 91 poeng høyere, og Ukraina tar Kina 3–1",
+          "body": "GM Igor Kovalenko (Ukraina, 2642) slo GM Ding Liren (Kina, 2733) på 48 trekk.\n\nPartiet snudde med 44...Re6. Stockfish ville ha 44...Qd7. Etter at tårnet gikk til e6, gikk vurderingen fra liten fordel for hvit (+1,15) til gevinst (+2,97). 45.Ne3 kom med en gang, og i trekk 47 slo springeren tårnet på e6 med sjakk.\n\nUkraina vant matchen 3–1 og gikk opp til 16 matchpoeng, to bak Usbekistan med én runde igjen.\n\nGå tilbake til 44...Re6, finn dronningtrekket Stockfish ville ha, og spill så videre mot motoren."
+        },
+        "pl": {
+          "headline": "Kovalenko pokonuje Ding z rankingiem wyższym o 91 punktów, a Ukraina bije Chiny 3–1",
+          "body": "GM Igor Kovalenko (Ukraina, 2642) pokonuje GM Ding Liren (Chiny, 2733) w 48 ruchach.\n\nPartia odwraca się po 44...Re6. Stockfish chciał 44...Qd7. Po przejściu wieży na e6 ocena silnika zmieniła się z niewielkiej przewagi białych (+1,15) na wygraną (+2,97). Od razu padło 45.Ne3, a w 47. ruchu skoczek wziął wieżę na e6 z szachem.\n\nUkraina wygrywa mecz 3–1 i ma 16 punktów meczowych, dwa mniej niż Uzbekistan na rundę przed końcem.\n\nWróć do 44...Re6, znajdź ruch hetmanem, którego chciał Stockfish, potem graj dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Kovalenko vence Ding, 91 pontos acima, e a Ucrânia vence a China por 3–1",
+          "body": "GM Igor Kovalenko (Ucrânia, 2642) venceu GM Ding Liren (China, 2733) em 48 lances.\n\nA partida virou em 44...Re6. O Stockfish queria 44...Qd7. Depois que a torre foi para e6, sua avaliação passou de uma pequena vantagem das brancas (+1,15) para posição vencedora (+2,97). 45.Ne3 veio logo em seguida, e no lance 47 o cavalo capturou a torre em e6 com xeque.\n\nA Ucrânia venceu o match por 3–1 e chegou a 16 pontos de match, dois atrás do Uzbequistão, faltando uma rodada.\n\nVolte a 44...Re6, encontre o lance de dama que o Stockfish queria e depois continue contra o motor."
+        },
+        "ro": {
+          "headline": "Cu 91 de puncte mai puțin, Kovalenko câștigă contra Ding, iar Ucraina învinge China cu 3–1",
+          "body": "GM Igor Kovalenko (Ucraina, 2642) a câștigat contra GM Ding Liren (China, 2733) în 48 de mutări.\n\nPartida s-a întors la 44...Re6. Stockfish voia 44...Qd7. După ce tura a mers pe e6, evaluarea sa a trecut de la un mic avantaj al Albului (+1,15) la o poziție câștigătoare (+2,97). 45.Ne3 a urmat imediat, iar la mutarea 47 calul a luat tura de pe e6 cu șah.\n\nUcraina a câștigat meciul cu 3–1 și a urcat la 16 puncte de meci, la două puncte în urma Uzbekistanului, cu o rundă rămasă.\n\nÎntoarce-te la 44...Re6, găsește mutarea de damă pe care o voia Stockfish, apoi continuă contra motorului."
+        },
+        "ru": {
+          "headline": "Kovalenko обыгрывает Ding с рейтингом на 91 пункт выше, а Украина берёт верх над Китаем 3–1",
+          "body": "GM Igor Kovalenko (Украина, 2642) обыгрывает GM Ding Liren (Китай, 2733) за 48 ходов.\n\nПерелом — 44...Re6. Stockfish хотел 44...Qd7. После того как ладья встала на e6, оценка движка изменилась с небольшого перевеса белых (+1,15) на выигрыш (+2,97). Сразу последовал 45.Ne3, а на 47-м ходу конь взял ладью на e6 с шахом.\n\nУкраина выиграла матч 3–1 и набрала 16 командных очков — на два меньше, чем у Узбекистана, за тур до конца.\n\nВернитесь к 44...Re6, найдите ход ферзём, который хотел Stockfish, а затем продолжите партию против движка."
+        },
+        "sv": {
+          "headline": "Kovalenko besegrar Ding, 91 poäng högre, och Ukraina tar Kina med 3–1",
+          "body": "GM Igor Kovalenko (Ukraina, 2642) besegrade GM Ding Liren (Kina, 2733) på 48 drag.\n\nPartiet vände på 44...Re6. Stockfish ville ha 44...Qd7. Efter att tornet gått till e6 gick värderingen från liten fördel för vit (+1,15) till vinst (+2,97). 45.Ne3 kom direkt, och i drag 47 slog springaren tornet på e6 med schack.\n\nUkraina vann matchen med 3–1 och gick upp till 16 matchpoäng, två bakom Uzbekistan med en rond kvar.\n\nGå tillbaka till 44...Re6, hitta damdraget Stockfish ville ha och spela sedan vidare mot motorn."
+        },
+        "th": {
+          "headline": "Kovalenko ชนะ Ding ที่เรตติ้งสูงกว่า 91 แต้ม และยูเครนชนะจีน 3–1",
+          "body": "GM Igor Kovalenko (ยูเครน, 2642) ชนะ GM Ding Liren (จีน, 2733) ใน 48 ตา\n\nเกมพลิกที่ 44...Re6 Stockfish ต้องการ 44...Qd7 หลังเรือไปที่ e6 ค่าประเมินของเอนจินเปลี่ยนจากฝ่ายขาวได้เปรียบเล็กน้อย (+1.15) เป็นสถานะชนะ (+2.97) 45.Ne3 มาทันที และในตาที่ 47 อัศวินก็กินเรือที่ e6 พร้อมรุก\n\nยูเครนชนะแมตช์ 3–1 และขึ้นไปมี 16 แต้มแมตช์ ตามหลังอุซเบกิสถานสองแต้มเมื่อเหลืออีกหนึ่งรอบ\n\nย้อนกลับไปที่ 44...Re6 หาตาควีนที่ Stockfish ต้องการ แล้วเล่นต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "Kovalenko, 91 puan yüksek reytingli Ding'i yendi; Ukrayna, Çin'i 3–1 geçti",
+          "body": "GM Igor Kovalenko (Ukrayna, 2642), GM Ding Liren'i (Çin, 2733) 48 hamlede yendi.\n\nOyun 44...Re6 ile döndü. Stockfish 44...Qd7'yi istiyordu. Kale e6'ya gittikten sonra değerlendirmesi beyaz için küçük bir üstünlükten (+1,15) kazanan konuma (+2,97) geçti. 45.Ne3 hemen geldi ve 47. hamlede at, e6'daki kaleyi şah çekerek aldı.\n\nUkrayna maçı 3–1 kazandı ve 16 maç puanına yükseldi; bir tur kala Özbekistan'ın iki puan gerisinde.\n\n44...Re6'ya dön, Stockfish'in istediği vezir hamlesini bul, sonra motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Kém 91 điểm hệ số, Kovalenko thắng Ding, Ukraina hạ Trung Quốc 3–1",
+          "body": "GM Igor Kovalenko (Ukraina, 2642) thắng GM Ding Liren (Trung Quốc, 2733) sau 48 nước.\n\nVán cờ đổi chiều ở 44...Re6. Stockfish muốn 44...Qd7. Sau khi Xe tới e6, đánh giá của engine chuyển từ ưu thế nhỏ cho Trắng (+1,15) sang thế thắng (+2,97). 45.Ne3 đến ngay, và ở nước 47 Mã bắt Xe ở e6 kèm nước chiếu.\n\nUkraina thắng trận 3–1 và lên 16 điểm trận, kém Uzbekistan hai điểm khi còn một vòng.\n\nQuay lại 44...Re6, tìm nước Hậu mà Stockfish muốn, rồi chơi tiếp với engine."
+        },
+        "zh-Hans": {
+          "headline": "Kovalenko击败等级分高91分的Ding，乌克兰队3–1胜中国队",
+          "body": "GM Igor Kovalenko（乌克兰，2642）48回合击败GM Ding Liren（中国，2733）。\n\n转折点是44...Re6。Stockfish想走的是44...Qd7。车走到e6之后，Stockfish的评估从白方小优（+1.15）变为白方胜势（+2.97）。白方随即走出45.Ne3，第47回合，白马将军并吃掉了e6的车。\n\n乌克兰队以3–1赢下比赛，团体分升至16分，在还剩一轮时落后乌兹别克斯坦队两分。\n\n回到44...Re6，找出Stockfish想走的那步后的走法，然后对着引擎继续下。"
+        },
+        "zh-Hant": {
+          "headline": "Kovalenko擊敗等級分高91分的Ding，烏克蘭隊3–1勝中國隊",
+          "body": "GM Igor Kovalenko（烏克蘭，2642）48回合擊敗GM Ding Liren（中國，2733）。\n\n轉折點是44...Re6。Stockfish想走的是44...Qd7。車走到e6之後，Stockfish的評估從白方小優（+1.15）變為白方勝勢（+2.97）。白方隨即走出45.Ne3，第47回合，白馬將軍並吃掉了e6的車。\n\n烏克蘭隊以3–1贏下比賽，團體分升至16分，在還剩一輪時落後烏茲別克隊兩分。\n\n回到44...Re6，找出Stockfish想走的那步后的走法，然後對著引擎繼續下。"
+        }
+      },
+      "fen": "4rk2/1pp3p1/p1bbr1n1/P1p1pq1p/2N1N2P/1P1P1PB1/2P1R1PQ/4R1K1 w - - 38 45",
+      "last": {
+        "from": "e7",
+        "to": "e6"
+      },
+      "url": "https://brasspawn.com/today/2026-09-26-kovalenko-ding-olympiad-r10",
       "source": {
         "name": "Lichess broadcast",
-        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-9/oQds2Dcv/36mjLMBy"
-      }
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-10/WCYaLfnP/mu9rS3Qe"
+      },
+      "updatedAt": "2026-09-26T21:11:37.677Z"
     },
     {
-      "id": "2026-09-25-vakhidov-giri-olympiad-r9",
-      "status": "draft",
-      "date": "2026-09-25",
+      "id": "2026-09-26-sindarov-hovhannisyan-olympiad-r10",
+      "status": "approved",
+      "date": "2026-09-26",
+      "rank": 2,
+      "weight": 928,
       "event": {
         "name": "46th FIDE Chess Olympiad Samarkand 2026",
         "short": "Olympiad",
         "section": "Open",
-        "round": 9,
+        "round": 10,
         "location": "Samarkand, Uzbekistan",
-        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-9/oQds2Dcv"
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-10/WCYaLfnP"
+      },
+      "white": {
+        "name": "Javokhir Sindarov",
+        "short": "Sindarov",
+        "title": "GM",
+        "elo": 2778,
+        "team": "Uzbekistan"
+      },
+      "black": {
+        "name": "Robert Hovhannisyan",
+        "short": "Hovhannisyan",
+        "title": "GM",
+        "elo": 2642,
+        "team": "Armenia"
+      },
+      "result": "1-0",
+      "opening": {
+        "eco": "A06",
+        "name": "Nimzo-Larsen Attack: Classical Variation"
+      },
+      "moves": "Nf3 d5 b3 Nf6 Bb2 Bf5 g3 c5 Bg2 Nc6 O-O Qd7 d4 cxd4 Nxd4 Bh3 Nxc6 bxc6 Bxh3 Qxh3 Bxf6 gxf6 c4 Bg7 cxd5 f5 Nd2 Bxa1 Qxa1 O-O dxc6 Rac8 Qe5 Rxc6 Qxe7 Rfc8 Nf3 Qh6 Qxa7 Rc1 Rxc1 Qxc1+ Kg2 Qc6 a4 Re8 e3 f4 exf4 Rd8 Qe3 Rb8 f5 h6 a5 Qd5 Qf4 Rxb3 Qg4+ Kf8 f6 Rd3 a6 h5 Qc8+ Qd8 Qc5+ Ke8 a7",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 56,
+        "played": "Qd5",
+        "better": "Rb5",
+        "reply": "Qf4",
+        "replyPlayed": true,
+        "before": {
+          "cp": 69,
+          "mate": null
+        },
+        "after": {
+          "cp": 268,
+          "mate": null
+        },
+        "clock": 735
+      },
+      "headline": "One queen move, and the a-pawn walked to a7: Sindarov beats Hovhannisyan in 35",
+      "lede": "GM Javokhir Sindarov (Uzbekistan) beat GM Robert Hovhannisyan (Armenia) in round 10 of the 46th FIDE Chess Olympiad Samarkand 2026 (Open), in 35 moves.",
+      "body": "GM Javokhir Sindarov (Uzbekistan, 2778) beat GM Robert Hovhannisyan (Armenia, 2642) in 35 moves, and Uzbekistan beat Armenia 3½–½ to lead by a point with a round left.\n\nIt turned on 28...Qd5. Stockfish wanted 28...Rb5. After the queen went to d5 its count went from a small edge for White (+0.69) to a win (+2.68), and 29.Qf4 came straight back. From there the white a-pawn went a5, a6, a7.\n\nGo back to 28...Qd5, find the rook move Stockfish wanted, then play the position on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "نقلة وزير واحدة، ومشى بيدق العمود a حتى a7: فوز لـSindarov على Hovhannisyan في 35",
+          "body": "انتهى الدور بفوز GM Javokhir Sindarov (أوزبكستان، 2778) على GM Robert Hovhannisyan (أرمينيا، 2642) في 35 نقلة، وفازت أوزبكستان على أرمينيا ⁨3½–½⁩ لتتصدر بفارق نقطة قبل جولة من النهاية.\n\nتحوّل الدور عند ⁨28...Qd5⁩. أراد Stockfish ⁨28...Rb5⁩. بعد انتقال الوزير إلى d5 انتقل تقييمه من أفضلية صغيرة للأبيض (⁨+0.69⁩) إلى فوز (⁨+2.68⁩)، وجاء الرد ⁨29.Qf4⁩ مباشرة. ومن هناك تقدم بيدق العمود a الأبيض إلى a5 ثم a6 ثم a7.\n\nارجع إلى ⁨28...Qd5⁩، واعثر على نقلة الرخ التي أرادها Stockfish، ثم تابع الوضع ضد المحرك."
+        },
+        "bg": {
+          "headline": "Един ход с дамата и пешката a стигна до a7: Sindarov побеждава Hovhannisyan за 35 хода",
+          "body": "GM Javokhir Sindarov (Узбекистан, 2778) победи GM Robert Hovhannisyan (Армения, 2642) за 35 хода, а Узбекистан победи Армения с 3½–½ и поведе с точка кръг преди края.\n\nПартията се обърна с 28...Qd5. Stockfish искаше 28...Rb5. След като дамата отиде на d5, оценката на енджина се промени от малко предимство за белите (+0,69) на печеливша позиция (+2,68), а 29.Qf4 последва веднага. Оттам бялата пешка a тръгна a5, a6, a7.\n\nВърнете се към 28...Qd5, намерете хода с топа, който Stockfish искаше, после продължете позицията срещу енджина."
+        },
+        "cs": {
+          "headline": "Jeden tah dámou a bílý a-pěšec došel až na a7: partii Sindarov – Hovhannisyan vyhrává Sindarov ve 35 tazích",
+          "body": "V partii GM Javokhir Sindarov (Uzbekistán, 2778) – GM Robert Hovhannisyan (Arménie, 2642) vyhrává po 35 tazích Sindarov a Uzbekistán poráží Arménii 3½–½, takže kolo před koncem vede o bod.\n\nZlom přinesl tah 28...Qd5. Stockfish chtěl 28...Rb5. Po přechodu dámy na d5 se hodnocení změnilo z malé výhody bílých (+0,69) na výhru (+2,68) a okamžitě přišlo 29.Qf4. Odtud šel bílý a-pěšec na a5, a6, a7.\n\nVrať se k 28...Qd5, najdi tah věží, který chtěl Stockfish, a pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "Ét dronningetræk, og a-bonden gik til a7: Sindarov slår Hovhannisyan i 35 træk",
+          "body": "GM Javokhir Sindarov (Usbekistan, 2778) slog GM Robert Hovhannisyan (Armenien, 2642) i 35 træk, og Usbekistan slog Armenien 3½–½ og førte med ét point med én runde tilbage.\n\nPartiet vendte med 28...Qd5. Stockfish ville have 28...Rb5. Efter dronningetrækket til d5 gik vurderingen fra en lille fordel til hvid (+0,69) til gevinst (+2,68), og 29.Qf4 kom med det samme. Derfra gik den hvide a-bonde til a5, a6, a7.\n\nGå tilbage til 28...Qd5, find det tårntræk, Stockfish ville have, og spil så stillingen videre mod motoren."
+        },
+        "de": {
+          "headline": "Ein Damenzug, und der a-Bauer marschierte bis a7: Sindarov schlägt Hovhannisyan in 35 Zügen",
+          "body": "GM Javokhir Sindarov (Usbekistan, 2778) schlug GM Robert Hovhannisyan (Armenien, 2642) in 35 Zügen, und Usbekistan schlug Armenien 3½:½ und führte damit eine Runde vor Schluss mit einem Punkt.\n\nDie Partie kippte mit 28...Qd5. Stockfish wollte 28...Rb5. Nach dem Damenzug nach d5 ging die Bewertung von einem kleinen Vorteil für Weiß (+0,69) auf Gewinn (+2,68), und 29.Qf4 kam sofort. Von da an zog der weiße a-Bauer nach a5, a6, a7.\n\nZurück zu 28...Qd5, den Turmzug finden, den Stockfish wollte, dann die Stellung gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Μία κίνηση βασίλισσας, και το πιόνι a περπάτησε ως το a7: νίκη Sindarov επί Hovhannisyan σε 35",
+          "body": "Νίκη σε 35 κινήσεις για GM Javokhir Sindarov (Ουζμπεκιστάν, 2778) επί GM Robert Hovhannisyan (Αρμενία, 2642), και το Ουζμπεκιστάν νίκησε την Αρμενία με 3½–½ και προηγείται κατά έναν βαθμό, με έναν γύρο να απομένει.\n\nΗ παρτίδα γύρισε στην 28...Qd5. Το Stockfish ήθελε την 28...Rb5. Αφού η βασίλισσα πήγε στο d5, η εκτίμηση πέρασε από μικρό πλεονέκτημα για τα λευκά (+0,69) σε νίκη (+2,68), και η 29.Qf4 ήρθε αμέσως. Από εκεί το λευκό πιόνι a πήγε a5, a6, a7.\n\nΓύρνα στην 28...Qd5, βρες την κίνηση πύργου που ήθελε το Stockfish, μετά συνέχισε τη θέση απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Una jugada de dama y el peón a caminó hasta a7: Sindarov vence a Hovhannisyan en 35",
+          "body": "GM Javokhir Sindarov (Uzbekistán, 2778) venció a GM Robert Hovhannisyan (Armenia, 2642) en 35 jugadas, y Uzbekistán venció a Armenia 3½–½ para liderar por un punto a falta de una ronda.\n\nLa partida cambió con 28...Qd5. Stockfish quería 28...Rb5. Tras la llegada de la dama a d5 su valoración pasó de una pequeña ventaja blanca (+0,69) a una victoria (+2,68), y 29.Qf4 llegó enseguida. Desde ahí el peón a blanco avanzó a a5, a6, a7.\n\nVuelve a 28...Qd5, encuentra la jugada de torre que quería Stockfish y luego sigue la posición contra el motor."
+        },
+        "fi": {
+          "headline": "Yksi kuningattaren siirto, ja a-sotilas käveli a7:ään: Sindarov voittaa Hovhannisyanin 35 siirrossa",
+          "body": "GM Javokhir Sindarov (Uzbekistan, 2778) voitti GM Robert Hovhannisyanin (Armenia, 2642) 35 siirrossa, ja Uzbekistan voitti Armenian 3½–½ ja johti pisteellä, kun jäljellä oli yksi kierros.\n\nPeli kääntyi siirtoon 28...Qd5. Stockfish halusi 28...Rb5. Kun kuningatar meni d5:een, Stockfishin arvio muuttui valkean pienestä edusta (+0,69) voittoasemaksi (+2,68), ja 29.Qf4 tuli heti. Sieltä valkean a-sotilas eteni: a5, a6, a7.\n\nPalaa siirtoon 28...Qd5, löydä tornin siirto, jota Stockfish halusi, ja jatka sitten asemaa moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Un coup de dame, et le pion a s’avance jusqu’en a7 : Sindarov bat Hovhannisyan en 35 coups",
+          "body": "GM Javokhir Sindarov (Ouzbékistan, 2778) a battu GM Robert Hovhannisyan (Arménie, 2642) en 35 coups, et l’Ouzbékistan a battu l’Arménie 3½–½ pour prendre un point d’avance à une ronde de la fin.\n\nLa partie a basculé sur 28...Qd5. Stockfish voulait 28...Rb5. Après l’arrivée de la dame en d5, son évaluation est passée d’un léger avantage pour les Blancs (+0,69) à un gain (+2,68), et 29.Qf4 a suivi aussitôt. Ensuite, le pion a blanc est allé en a5, a6, a7.\n\nRevenez à 28...Qd5, trouvez le coup de tour que voulait Stockfish, puis continuez la position contre le moteur."
+        },
+        "he": {
+          "headline": "מסע מלכה אחד, ורגלי a צעד עד a7: ניצחון ל־Sindarov על Hovhannisyan ב־35",
+          "body": "המשחק הסתיים בניצחון ל־GM Javokhir Sindarov (אוזבקיסטן, 2778) על GM Robert Hovhannisyan (ארמניה, 2642) אחרי 35 מסעים, ואוזבקיסטן גברה על ארמניה ⁨3½–½⁩ ועלתה להובלה בנקודה כשנותר סיבוב אחד.\n\nנקודת המפנה הייתה ⁨28...Qd5⁩. Stockfish רצה ב־⁨28...Rb5⁩. אחרי שהמלכה עברה ל־d5 ההערכה עברה מיתרון קטן ללבן (⁨+0.69⁩) לעמדה מנצחת (⁨+2.68⁩), ו־⁨29.Qf4⁩ בא מיד. משם רגלי a הלבן התקדם ל־a5, a6, a7.\n\nחזרו ל־⁨28...Qd5⁩, מצאו את מסע הצריח ש־Stockfish רצה, ואז המשיכו לשחק את העמדה מול המנוע."
+        },
+        "hi": {
+          "headline": "रानी की एक चाल, और a-प्यादा a7 तक चला: Sindarov ने Hovhannisyan को 35 चालों में हराया",
+          "body": "GM Javokhir Sindarov (उज़्बेकिस्तान, 2778) ने GM Robert Hovhannisyan (आर्मेनिया, 2642) को 35 चालों में हराया, और उज़्बेकिस्तान ने आर्मेनिया को 3½–½ से हराकर एक राउंड बाक़ी रहते एक अंक की बढ़त ले ली।\n\nबाज़ी 28...Qd5 पर पलटी। Stockfish 28...Rb5 चाहता था। रानी के d5 पर जाने के बाद Stockfish का आकलन सफ़ेद की छोटी बढ़त (+0.69) से जीत की स्थिति (+2.68) पर पहुँच गया, और 29.Qf4 तुरंत आया। वहाँ से सफ़ेद a-प्यादा a5, a6, a7 तक गया।\n\n28...Qd5 पर लौटें, हाथी की वह चाल खोजें जो Stockfish चाहता था, फिर इंजन के ख़िलाफ़ इस स्थिति को आगे खेलें।"
+        },
+        "hu": {
+          "headline": "Egy vezérlépés, és az a-gyalog elsétált a7-ig: Sindarov 35 lépésben nyert Hovhannisyan ellen",
+          "body": "GM Javokhir Sindarov (Üzbegisztán, 2778) 35 lépésben nyert GM Robert Hovhannisyan (Örményország, 2642) ellen, Üzbegisztán pedig 3½–½ arányban legyőzte Örményországot, így egy fordulóval a vége előtt egy ponttal vezetett.\n\nA játszma a 28...Qd5 lépésnél fordult meg. A Stockfish a 28...Rb5 lépést akarta. Miután a vezér a d5-re lépett, értékelése világos kis előnyéből (+0,69) nyerésre (+2,68) változott, és azonnal jött a 29.Qf4. Innen a világos a-gyalog a5-re, a6-ra, majd a7-re lépett.\n\nMenj vissza a 28...Qd5 lépéshez, találd meg a bástyalépést, amelyet a Stockfish akart, aztán játszd tovább az állást a motor ellen."
+        },
+        "id": {
+          "headline": "Satu langkah menteri, dan pion a berjalan ke a7: Sindarov kalahkan Hovhannisyan dalam 35",
+          "body": "GM Javokhir Sindarov (Uzbekistan, 2778) mengalahkan GM Robert Hovhannisyan (Armenia, 2642) dalam 35 langkah, dan Uzbekistan mengalahkan Armenia 3½–½ untuk memimpin satu poin dengan satu babak tersisa.\n\nPartai berbalik pada 28...Qd5. Stockfish menginginkan 28...Rb5. Sesudah menteri pergi ke d5, penilaiannya berubah dari Putih sedikit unggul (+0,69) menjadi menang (+2,68), dan 29.Qf4 langsung datang. Dari situ pion a putih berjalan a5, a6, a7.\n\nKembali ke 28...Qd5, temukan langkah benteng yang diinginkan Stockfish, lalu lanjutkan posisinya melawan mesin."
+        },
+        "it": {
+          "headline": "Una mossa di Donna, e il pedone a è andato fino in a7: Sindarov batte Hovhannisyan in 35",
+          "body": "GM Javokhir Sindarov (Uzbekistan, 2778) ha battuto GM Robert Hovhannisyan (Armenia, 2642) in 35 mosse, e l’Uzbekistan ha battuto l’Armenia 3½–½ portandosi in testa di un punto a un turno dalla fine.\n\nLa partita è girata su 28...Qd5. Stockfish voleva 28...Rb5. Dopo l’arrivo della Donna in d5 la sua valutazione è passata da un piccolo vantaggio del Bianco (+0,69) a una vittoria (+2,68), e 29.Qf4 è arrivata subito. Da lì il pedone a bianco è andato in a5, a6, a7.\n\nTorna a 28...Qd5, trova la mossa di Torre che voleva Stockfish, poi continua la posizione contro il motore."
+        },
+        "ja": {
+          "headline": "クイーンの一手で、aポーンはa7まで歩いた。SindarovがHovhannisyanに35手で勝利",
+          "body": "GM Javokhir Sindarov（ウズベキスタン、2778）がGM Robert Hovhannisyan（アルメニア、2642）に35手で勝ち、ウズベキスタンはアルメニアを3½–½で下して、残り一ラウンドで一ポイント差の首位に立ちました。\n\n分かれ目は28...Qd5でした。Stockfishが望んだのは28...Rb5。クイーンがd5に入った後、Stockfishの評価は白のわずかな優位（+0.69）から勝勢（+2.68）に変わり、すぐに29.Qf4が返ってきました。そこから白のaポーンはa5、a6、a7と進みました。\n\n28...Qd5に戻ってStockfishが望んだルークの手を見つけ、そのままエンジン相手にこの局面を指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "퀸 한 수에 a폰이 a7까지 걸어갔다: Sindarov, 35수 만에 Hovhannisyan 꺾다",
+          "body": "GM Javokhir Sindarov(우즈베키스탄, 2778)가 GM Robert Hovhannisyan(아르메니아, 2642)에게 35수 만에 이겼고, 우즈베키스탄은 아르메니아를 3½–½로 꺾어 한 라운드를 남기고 한 점 차 선두에 섰습니다.\n\n승부를 가른 수는 28...Qd5였습니다. Stockfish가 원한 수는 28...Rb5였습니다. 퀸이 d5 칸에 들어간 뒤 Stockfish의 평가는 백의 약간의 우세(+0.69)에서 이기는 형세(+2.68)로 바뀌었고, 곧바로 29.Qf4가 나왔습니다. 이후 백의 a폰은 a5, a6, a7로 나아갔습니다.\n\n28...Qd5로 돌아가 Stockfish가 원한 룩 수를 찾은 뒤, 엔진을 상대로 이 국면을 이어서 두어 보세요."
+        },
+        "ms": {
+          "headline": "Satu langkah menteri, dan bidak a berjalan ke a7: Sindarov tewaskan Hovhannisyan dalam 35",
+          "body": "GM Javokhir Sindarov (Uzbekistan, 2778) menewaskan GM Robert Hovhannisyan (Armenia, 2642) dalam 35 langkah, dan Uzbekistan menewaskan Armenia 3½–½ untuk mendahului satu mata dengan satu pusingan lagi.\n\nPermainan berubah pada 28...Qd5. Stockfish mahukan 28...Rb5. Selepas menteri pergi ke d5, penilaiannya berubah daripada Putih sedikit mendahului (+0,69) kepada menang (+2,68), dan 29.Qf4 tiba serta-merta. Dari situ bidak a putih berjalan a5, a6, a7.\n\nKembali ke 28...Qd5, cari langkah tir yang Stockfish mahukan, kemudian teruskan kedudukan itu menentang enjin."
+        },
+        "nl": {
+          "headline": "Eén damezet, en de a-pion liep naar a7: Sindarov verslaat Hovhannisyan in 35 zetten",
+          "body": "GM Javokhir Sindarov (Oezbekistan, 2778) versloeg GM Robert Hovhannisyan (Armenië, 2642) in 35 zetten, en Oezbekistan versloeg Armenië met 3½–½ en ging met nog één ronde te gaan met een punt voorsprong aan kop.\n\nDe partij kantelde met 28...Qd5. Stockfish wilde 28...Rb5. Na de damezet naar d5 ging de beoordeling van een klein voordeel voor wit (+0,69) naar winst (+2,68), en 29.Qf4 kwam meteen. Vanaf daar ging de witte a-pion naar a5, a6, a7.\n\nGa terug naar 28...Qd5, vind de torenzet die Stockfish wilde, en speel de stelling dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "Ett dronningtrekk, og a-bonden vandret til a7: Sindarov slår Hovhannisyan på 35 trekk",
+          "body": "GM Javokhir Sindarov (Usbekistan, 2778) slo GM Robert Hovhannisyan (Armenia, 2642) på 35 trekk, og Usbekistan slo Armenia 3½–½ og ledet med ett poeng med én runde igjen.\n\nPartiet snudde med 28...Qd5. Stockfish ville ha 28...Rb5. Etter at dronningen gikk til d5, gikk vurderingen fra liten fordel for hvit (+0,69) til gevinst (+2,68), og 29.Qf4 kom med en gang. Derfra gikk den hvite a-bonden a5, a6, a7.\n\nGå tilbake til 28...Qd5, finn tårntrekket Stockfish ville ha, og spill så stillingen videre mot motoren."
+        },
+        "pl": {
+          "headline": "Jeden ruch hetmanem i pionek a dochodzi do a7: Sindarov pokonuje Hovhannisyan w 35 ruchach",
+          "body": "GM Javokhir Sindarov (Uzbekistan, 2778) pokonuje GM Robert Hovhannisyan (Armenia, 2642) w 35 ruchach, a Uzbekistan pokonuje Armenię 3½–½ i na rundę przed końcem prowadzi o punkt.\n\nPartia odwraca się po 28...Qd5. Stockfish chciał 28...Rb5. Po przejściu hetmana na d5 ocena silnika zmieniła się z niewielkiej przewagi białych (+0,69) na wygraną (+2,68), a 29.Qf4 padło od razu. Od tego momentu biały pionek a idzie a5, a6, a7.\n\nWróć do 28...Qd5, znajdź ruch wieżą, którego chciał Stockfish, potem graj dalej tę pozycję przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Um lance de dama, e o peão da coluna a caminhou até a7: Sindarov vence Hovhannisyan em 35",
+          "body": "GM Javokhir Sindarov (Uzbequistão, 2778) venceu GM Robert Hovhannisyan (Armênia, 2642) em 35 lances, e o Uzbequistão venceu a Armênia por 3½–½ para liderar com um ponto de vantagem, faltando uma rodada.\n\nA partida virou em 28...Qd5. O Stockfish queria 28...Rb5. Depois que a dama foi para d5, sua avaliação passou de uma pequena vantagem das brancas (+0,69) para posição vencedora (+2,68), e 29.Qf4 veio logo em seguida. Dali em diante, o peão branco da coluna a foi para a5, a6, a7.\n\nVolte a 28...Qd5, encontre o lance de torre que o Stockfish queria e depois continue a posição contra o motor."
+        },
+        "ro": {
+          "headline": "O mutare de damă, iar pionul a mărșăluit pe coloana a până pe a7: Sindarov câștigă contra Hovhannisyan în 35",
+          "body": "GM Javokhir Sindarov (Uzbekistan, 2778) a câștigat contra GM Robert Hovhannisyan (Armenia, 2642) în 35 de mutări, iar Uzbekistanul a învins Armenia cu 3½–½ și conduce cu un punct avans, cu o rundă rămasă.\n\nPartida s-a întors la 28...Qd5. Stockfish voia 28...Rb5. După ce dama a mers pe d5, evaluarea sa a trecut de la un mic avantaj al Albului (+0,69) la o poziție câștigătoare (+2,68), iar 29.Qf4 a urmat imediat. De acolo, pionul alb a mers pe coloana a: a5, a6, a7.\n\nÎntoarce-te la 28...Qd5, găsește mutarea de tură pe care o voia Stockfish, apoi continuă poziția contra motorului."
+        },
+        "ru": {
+          "headline": "Один ход ферзём — и пешка «a» дошла до a7: Sindarov обыгрывает Hovhannisyan за 35 ходов",
+          "body": "GM Javokhir Sindarov (Узбекистан, 2778) обыгрывает GM Robert Hovhannisyan (Армения, 2642) за 35 ходов, а Узбекистан обыгрывает Армению 3½–½ и за тур до конца лидирует с отрывом в очко.\n\nПерелом — 28...Qd5. Stockfish хотел 28...Rb5. После того как ферзь встал на d5, оценка движка изменилась с небольшого перевеса белых (+0,69) на выигрыш (+2,68), а 29.Qf4 последовал сразу. Дальше белая пешка «a» пошла a5, a6, a7.\n\nВернитесь к 28...Qd5, найдите ход ладьёй, который хотел Stockfish, а затем продолжите позицию против движка."
+        },
+        "sv": {
+          "headline": "Ett damdrag, och a-bonden vandrade till a7: Sindarov besegrar Hovhannisyan på 35 drag",
+          "body": "GM Javokhir Sindarov (Uzbekistan, 2778) besegrade GM Robert Hovhannisyan (Armenien, 2642) på 35 drag, och Uzbekistan besegrade Armenien med 3½–½ och ledde med en poäng med en rond kvar.\n\nPartiet vände på 28...Qd5. Stockfish ville ha 28...Rb5. Efter att damen gått till d5 gick värderingen från liten fördel för vit (+0,69) till vinst (+2,68), och 29.Qf4 kom direkt. Därifrån gick den vita a-bonden a5, a6, a7.\n\nGå tillbaka till 28...Qd5, hitta torndraget Stockfish ville ha och spela sedan vidare ställningen mot motorn."
+        },
+        "th": {
+          "headline": "ตาควีนตาเดียว แล้วเบี้ย a ก็เดินไปถึง a7: Sindarov ชนะ Hovhannisyan ใน 35 ตา",
+          "body": "GM Javokhir Sindarov (อุซเบกิสถาน, 2778) ชนะ GM Robert Hovhannisyan (อาร์เมเนีย, 2642) ใน 35 ตา และอุซเบกิสถานชนะอาร์เมเนีย 3½–½ ขึ้นนำหนึ่งแต้มเมื่อเหลืออีกหนึ่งรอบ\n\nเกมพลิกที่ 28...Qd5 Stockfish ต้องการ 28...Rb5 หลังควีนไปที่ d5 ค่าประเมินของเอนจินเปลี่ยนจากฝ่ายขาวได้เปรียบเล็กน้อย (+0.69) เป็นสถานะชนะ (+2.68) และ 29.Qf4 ก็มาทันที จากนั้นเบี้ย a ของฝ่ายขาวก็เดิน a5, a6, a7\n\nย้อนกลับไปที่ 28...Qd5 หาตาเรือที่ Stockfish ต้องการ แล้วเล่นตำแหน่งนี้ต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "Tek vezir hamlesi ve a piyonu a7'ye yürüdü: Sindarov, Hovhannisyan'ı 35 hamlede yendi",
+          "body": "GM Javokhir Sindarov (Özbekistan, 2778), GM Robert Hovhannisyan'ı (Ermenistan, 2642) 35 hamlede yendi ve Özbekistan, Ermenistan'ı 3½–½ yenerek bir tur kala bir puan öne geçti.\n\nOyun 28...Qd5 ile döndü. Stockfish 28...Rb5'i istiyordu. Vezir d5'e gittikten sonra değerlendirmesi beyaz için küçük bir üstünlükten (+0,69) kazanan konuma (+2,68) geçti ve 29.Qf4 hemen geldi. Oradan beyazın a piyonu a5, a6, a7'ye gitti.\n\n28...Qd5'e dön, Stockfish'in istediği kale hamlesini bul, sonra konumu motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Một nước Hậu, và Tốt a tiến tới a7: Sindarov thắng Hovhannisyan sau 35 nước",
+          "body": "GM Javokhir Sindarov (Uzbekistan, 2778) thắng GM Robert Hovhannisyan (Armenia, 2642) sau 35 nước, và Uzbekistan thắng Armenia 3½–½ để dẫn đầu hơn một điểm khi còn một vòng.\n\nVán cờ đổi chiều ở 28...Qd5. Stockfish muốn 28...Rb5. Sau khi Hậu tới d5, đánh giá của engine chuyển từ ưu thế nhỏ cho Trắng (+0,69) sang thế thắng (+2,68), và 29.Qf4 đến ngay. Từ đó Tốt a của Trắng đi a5, a6, a7.\n\nQuay lại 28...Qd5, tìm nước Xe mà Stockfish muốn, rồi chơi tiếp thế cờ với engine."
+        },
+        "zh-Hans": {
+          "headline": "皇后走了一步，a兵一路走到a7：Sindarov 35回合击败Hovhannisyan",
+          "body": "GM Javokhir Sindarov（乌兹别克斯坦，2778）35回合击败GM Robert Hovhannisyan（亚美尼亚，2642），乌兹别克斯坦队以3½–½战胜亚美尼亚队，在还剩一轮时领先一分。\n\n转折点是28...Qd5。Stockfish想走的是28...Rb5。黑后走到d5之后，Stockfish的评估从白方小优（+0.69）变为白方胜势（+2.68），白方随即走出29.Qf4。此后白方a兵依次走到a5、a6、a7。\n\n回到28...Qd5，找出Stockfish想走的那步车的走法，然后对着引擎继续下这个局面。"
+        },
+        "zh-Hant": {
+          "headline": "皇后走了一步，a兵一路走到a7：Sindarov 35回合擊敗Hovhannisyan",
+          "body": "GM Javokhir Sindarov（烏茲別克，2778）35回合擊敗GM Robert Hovhannisyan（亞美尼亞，2642），烏茲別克隊以3½–½擊敗亞美尼亞隊，在還剩一輪時領先一分。\n\n轉折點是28...Qd5。Stockfish想走的是28...Rb5。黑后走到d5之後，Stockfish的評估從白方小優（+0.69）變為白方勝勢（+2.68），白方隨即走出29.Qf4。此後白方a兵依次走到a5、a6、a7。\n\n回到28...Qd5，找出Stockfish想走的那步車的走法，然後對著引擎繼續下這個局面。"
+        }
+      },
+      "fen": "1r4k1/5p2/7p/P2q1P2/8/1P2QNP1/5PKP/8 w - - 1 29",
+      "last": {
+        "from": "c6",
+        "to": "d5"
+      },
+      "url": "https://brasspawn.com/today/2026-09-26-sindarov-hovhannisyan-olympiad-r10",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-10/WCYaLfnP/pKmNY8dN"
+      },
+      "updatedAt": "2026-09-26T21:11:37.807Z"
+    },
+    {
+      "id": "2026-09-26-martirosyan-abdusattorov-olympiad-r10",
+      "status": "approved",
+      "date": "2026-09-26",
+      "rank": 3,
+      "weight": 912,
+      "event": {
+        "name": "46th FIDE Chess Olympiad Samarkand 2026",
+        "short": "Olympiad",
+        "section": "Open",
+        "round": 10,
+        "location": "Samarkand, Uzbekistan",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-10/WCYaLfnP"
+      },
+      "white": {
+        "name": "Haik M. Martirosyan",
+        "short": "Martirosyan",
+        "title": "GM",
+        "elo": 2664,
+        "team": "Armenia"
+      },
+      "black": {
+        "name": "Nodirbek Abdusattorov",
+        "short": "Abdusattorov",
+        "title": "GM",
+        "elo": 2762,
+        "team": "Uzbekistan"
+      },
+      "result": "0-1",
+      "opening": {
+        "eco": "B01",
+        "name": "Scandinavian Defense: Main Line"
+      },
+      "moves": "e4 d5 exd5 Qxd5 Nc3 Qa5 Nf3 Nf6 Bb5+ c6 Be2 Bf5 O-O e6 d4 Nbd7 Nh4 Bg6 Bf3 O-O-O Qe2 e5 Bd2 exd4 Nd5 Qb5 Qxb5 cxb5 Nxf6 Nxf6 Nxg6 hxg6 a4 b4 a5 Bd6 h3 Nd7 Bd5 Rdf8 Rfd1 Rh5 Bf3 Rb5 a6 b6 Be1 Bc5 c3 bxc3 bxc3 d3 Rxd3 Ne5 Bb7+ Kc7 Rdd1 Rb2 Bd5 g5 Rab1 Rxb1 Rxb1 Nd3 Rd1 Nxe1 Rxe1 Rd8 Bc4 Rd2 Re2 Rd1+ Kh2 Rc1 Bxf7 Rxc3 Rb2 Kd6 Rd2+ Ke7 Bg8 b5 g3 Rf3 Rb2 b4 Kg2 Rf6 Bc4 Kd6 Rd2+ Kc6 Kf1 Be3 Rc2 Bd4 Bb3+ Kb5 Bc4+ Kc5 Bb3+ Bc3 Ra2 Kb5 Ke2 Bd4 f3 Rf5 f4 gxf4 Kd3 Bf6 Ke4 Rc5 gxf4 Rc3 Be6 b3 Rd2 Kb4 Bxb3 Rxb3 Rd7 Rxh3 Rxa7 Kb5 Kf5 Ra3",
+      "ending": null,
+      "key": {
+        "kind": "breakthrough",
+        "ply": 110,
+        "played": "gxf4",
+        "better": null,
+        "reply": "Kd3",
+        "replyPlayed": true,
+        "before": {
+          "cp": -299,
+          "mate": null
+        },
+        "after": {
+          "cp": -300,
+          "mate": null
+        },
+        "clock": 975
+      },
+      "headline": "64 moves with Black: Abdusattorov beats Martirosyan, and Uzbekistan go into the last round on top",
+      "lede": "GM Nodirbek Abdusattorov (Uzbekistan) beat GM Haik M. Martirosyan (Armenia) in round 10 of the 46th FIDE Chess Olympiad Samarkand 2026 (Open), in 64 moves.",
+      "body": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) won with Black in 64 moves, rook and bishop against rook at the end. On the other side of the board: GM Haik M. Martirosyan (Armenia, 2664).\n\n55...gxf4 was the move. Stockfish had Black winning before it (−2.99) and after it (−3.00), and it never swung back. The b-pawn went on to b3, and the black rook took the h-pawn.\n\nUzbekistan won the match 3½–½ and led with 18 match points, one ahead of India, going into round 11. They won that too and finished first, on 20.\n\nGo back to move 55, see what Stockfish saw in 55...gxf4, then play it on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "64 نقلة بالقطع السوداء: فوز لـAbdusattorov على Martirosyan، وأوزبكستان تدخل الجولة الأخيرة في الصدارة",
+          "body": "انتهى الدور بفوز GM Nodirbek Abdusattorov (أوزبكستان، 2762) بالقطع السوداء على GM Haik M. Martirosyan (أرمينيا، 2664) في 64 نقلة، برخ وفيل مقابل رخ في النهاية.\n\nالنقلة كانت ⁨55...gxf4⁩. رأى Stockfish الأسود فائزًا قبلها (⁨−2.99⁩) وبعدها (⁨−3.00⁩)، ولم يتراجع التقييم بعدها قط. تقدم بيدق العمود b حتى b3، وأخذ الرخ الأسود بيدق العمود h.\n\nفازت أوزبكستان بالمباراة ⁨3½–½⁩ وتصدرت برصيد 18 نقطة مباراة، بفارق نقطة أمام الهند، قبل الجولة الحادية عشرة. وفازت أوزبكستان بتلك الجولة أيضًا وأنهت في المركز الأول برصيد 20.\n\nارجع إلى النقلة 55، وانظر ما رآه Stockfish في ⁨55...gxf4⁩، ثم تابع اللعب ضد المحرك.",
+          "lede": "انتهى الدور بفوز GM Nodirbek Abdusattorov (أوزبكستان، 2762) بالقطع السوداء على GM Haik M. Martirosyan (أرمينيا، 2664) في 64 نقلة، برخ وفيل مقابل رخ في النهاية."
+        },
+        "bg": {
+          "headline": "64 хода с черните: Abdusattorov побеждава Martirosyan и Узбекистан влиза в последния кръг начело",
+          "body": "GM Nodirbek Abdusattorov (Узбекистан, 2762) победи GM Haik M. Martirosyan (Армения, 2664) с черните за 64 хода, накрая с топ и офицер срещу топ.\n\nХодът беше 55...gxf4. Stockfish даваше печеливша позиция на черните и преди него (−2,99), и след него (−3,00), и оценката вече не се обърна. Пешката b стигна до b3, а черният топ взе пешката h.\n\nУзбекистан спечели мача с 3½–½ и преди 11-ия кръг водеше с 18 мачови точки, една пред Индия. Отборът спечели и последния мач и завърши първи с 20.\n\nВърнете се към 55-ия ход, вижте какво видя Stockfish в 55...gxf4, после продължете партията срещу енджина.",
+          "lede": "GM Nodirbek Abdusattorov (Узбекистан, 2762) победи GM Haik M. Martirosyan (Армения, 2664) с черните за 64 хода, накрая с топ и офицер срещу топ."
+        },
+        "cs": {
+          "headline": "64 tahů černými: partii Martirosyan – Abdusattorov vyhrává Abdusattorov a Uzbekistán jde do posledního kola v čele",
+          "body": "V partii GM Haik M. Martirosyan (Arménie, 2664) – GM Nodirbek Abdusattorov (Uzbekistán, 2762) vyhrává černými po 64 tazích Abdusattorov; na konci věž a střelec proti věži.\n\nKlíčovým tahem bylo 55...gxf4. Stockfish hodnotil pozici černých jako vyhranou před tahem (−2,99) i po něm (−3,00) a hodnocení se už nikdy neobrátilo. B-pěšec pak došel až na b3 a černá věž vzala h-pěšce.\n\nUzbekistán vyhrál zápas 3½–½ a do 11. kola šel v čele s 18 zápasovými body, o bod před Indií. I ten zápas vyhrál a skončil první, s 20 body.\n\nVrať se k 55. tahu, podívej se, co Stockfish viděl v 55...gxf4, a pak si pozici zahraj dál proti enginu.",
+          "lede": "V partii GM Haik M. Martirosyan (Arménie, 2664) – GM Nodirbek Abdusattorov (Uzbekistán, 2762) vyhrává černými po 64 tazích Abdusattorov; na konci věž a střelec proti věži."
+        },
+        "da": {
+          "headline": "64 træk med sort: Abdusattorov slår Martirosyan, og Usbekistan går i front ind i sidste runde",
+          "body": "GM Nodirbek Abdusattorov (Usbekistan, 2762) slog GM Haik M. Martirosyan (Armenien, 2664) med sort i 64 træk, med tårn og løber mod tårn til sidst.\n\n55...gxf4 var trækket. Stockfish så sort til gevinst før (−2,99) og efter (−3,00), og vurderingen svingede aldrig tilbage. Derefter gik b-bonden videre til b3, og det sorte tårn slog h-bonden.\n\nUsbekistan vandt matchen 3½–½ og førte med 18 matchpoint, ét foran Indien, inden 11. runde. Usbekistan vandt også den og sluttede som nummer ét med 20.\n\nGå tilbage til træk 55, se, hvad Stockfish så i 55...gxf4, og spil så videre mod motoren.",
+          "lede": "GM Nodirbek Abdusattorov (Usbekistan, 2762) slog GM Haik M. Martirosyan (Armenien, 2664) med sort i 64 træk, med tårn og løber mod tårn til sidst."
+        },
+        "de": {
+          "headline": "64 Züge mit Schwarz: Abdusattorov schlägt Martirosyan, und Usbekistan geht an der Spitze in die letzte Runde",
+          "body": "GM Nodirbek Abdusattorov (Usbekistan, 2762) schlug GM Haik M. Martirosyan (Armenien, 2664) mit Schwarz in 64 Zügen, am Ende Turm und Läufer gegen Turm.\n\n55...gxf4 war der Zug. Stockfish sah Schwarz davor auf Gewinn (−2,99) und danach (−3,00), und die Bewertung schlug nie mehr um. Der b-Bauer lief weiter bis b3, und der schwarze Turm schlug den h-Bauern.\n\nUsbekistan gewann den Kampf 3½:½ und führte vor Runde 11 mit 18 Mannschaftspunkten, einen vor Indien. Auch diese Runde gewann Usbekistan und beendete das Turnier auf Platz eins, mit 20.\n\nZurück zu Zug 55, sehen, was Stockfish in 55...gxf4 sah, dann gegen die Engine weiterspielen.",
+          "lede": "GM Nodirbek Abdusattorov (Usbekistan, 2762) schlug GM Haik M. Martirosyan (Armenien, 2664) mit Schwarz in 64 Zügen, am Ende Turm und Läufer gegen Turm."
+        },
+        "el": {
+          "headline": "64 κινήσεις με τα μαύρα: νίκη Abdusattorov επί Martirosyan, και το Ουζμπεκιστάν μπαίνει πρώτο στον τελευταίο γύρο",
+          "body": "Νίκη με τα μαύρα σε 64 κινήσεις για GM Nodirbek Abdusattorov (Ουζμπεκιστάν, 2762) επί GM Haik M. Martirosyan (Αρμενία, 2664), με πύργο και αξιωματικό απέναντι σε πύργο στο τέλος.\n\nΗ κίνηση ήταν η 55...gxf4. Το Stockfish έβλεπε τα μαύρα κερδισμένα πριν από την κίνηση (−2,99) και μετά (−3,00), και η εκτίμηση δεν γύρισε ποτέ. Το πιόνι b προχώρησε ως το b3, και ο μαύρος πύργος πήρε το πιόνι h.\n\nΤο Ουζμπεκιστάν κέρδισε τον αγώνα με 3½–½ και μπήκε στον 11ο γύρο πρώτο, με 18 βαθμούς αγώνα, έναν μπροστά από την Ινδία. Κέρδισε κι εκείνον και τερμάτισε πρώτο, με 20.\n\nΓύρνα στην 55η κίνηση, δες τι είδε το Stockfish στην 55...gxf4, μετά συνέχισε απέναντι στη μηχανή.",
+          "lede": "Νίκη με τα μαύρα σε 64 κινήσεις για GM Nodirbek Abdusattorov (Ουζμπεκιστάν, 2762) επί GM Haik M. Martirosyan (Αρμενία, 2664), με πύργο και αξιωματικό απέναντι σε πύργο στο τέλος."
+        },
+        "es": {
+          "headline": "64 jugadas con negras: Abdusattorov vence a Martirosyan, y Uzbekistán llega líder a la última ronda",
+          "body": "GM Nodirbek Abdusattorov (Uzbekistán, 2762) venció a GM Haik M. Martirosyan (Armenia, 2664) con negras en 64 jugadas, con torre y alfil contra torre al final.\n\nLa jugada fue 55...gxf4. Stockfish veía posición ganadora de las negras antes (−2,99) y después (−3,00), y la valoración nunca se dio la vuelta. El peón b siguió hasta b3, y la torre negra tomó el peón h.\n\nUzbekistán ganó el match 3½–½ y lideraba con 18 puntos de match, uno más que India, antes de la ronda 11. Uzbekistán también ganó esa y terminó primero, con 20.\n\nVuelve a la jugada 55, mira qué vio Stockfish en 55...gxf4 y luego sigue contra el motor.",
+          "lede": "GM Nodirbek Abdusattorov (Uzbekistán, 2762) venció a GM Haik M. Martirosyan (Armenia, 2664) con negras en 64 jugadas, con torre y alfil contra torre al final."
+        },
+        "fi": {
+          "headline": "64 siirtoa mustilla: Abdusattorov voittaa Martirosyanin, ja Uzbekistan lähtee viimeiselle kierrokselle kärjessä",
+          "body": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) voitti GM Haik M. Martirosyanin (Armenia, 2664) mustilla 64 siirrossa, lopussa torni ja lähetti tornia vastaan.\n\n55...gxf4 oli se siirto. Stockfishin mukaan mustalla oli voittoasema sekä ennen sitä (−2,99) että sen jälkeen (−3,00), eikä arvio koskaan kääntynyt takaisin. Sitten b-sotilas eteni b3:een, ja musta torni löi h-sotilaan.\n\nUzbekistan voitti ottelun 3½–½ ja lähti 11. kierrokselle johdossa 18 ottelupisteellä, pisteen Intiaa edellä. Joukkue voitti senkin ja päätti kärjessä 20 pisteellä.\n\nPalaa siirtoon 55, katso, mitä Stockfish näki siirrossa 55...gxf4, ja jatka sitten peliä moottoria vastaan.",
+          "lede": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) voitti GM Haik M. Martirosyanin (Armenia, 2664) mustilla 64 siirrossa, lopussa torni ja lähetti tornia vastaan."
+        },
+        "fr": {
+          "headline": "64 coups avec les Noirs : Abdusattorov bat Martirosyan, et l’Ouzbékistan aborde la dernière ronde en tête",
+          "body": "GM Nodirbek Abdusattorov (Ouzbékistan, 2762) a battu GM Haik M. Martirosyan (Arménie, 2664) avec les Noirs en 64 coups, tour et fou contre tour à la fin.\n\nLe coup : 55...gxf4. Stockfish voyait les Noirs gagnants avant (−2,99) et après (−3,00), et l’évaluation n’a plus jamais basculé. Le pion b a ensuite avancé jusqu’en b3, et la tour noire a pris le pion h.\n\nL’Ouzbékistan a gagné le match 3½–½ et menait avec 18 points de match, un de plus que l’Inde, avant la 11e ronde. L’Ouzbékistan l’a aussi remportée et a terminé premier, avec 20.\n\nRevenez au 55e coup, voyez ce que Stockfish a vu dans 55...gxf4, puis continuez contre le moteur.",
+          "lede": "GM Nodirbek Abdusattorov (Ouzbékistan, 2762) a battu GM Haik M. Martirosyan (Arménie, 2664) avec les Noirs en 64 coups, tour et fou contre tour à la fin."
+        },
+        "he": {
+          "headline": "64 מסעים עם הכלים השחורים: ניצחון ל־Abdusattorov על Martirosyan, ואוזבקיסטן נכנסת לסיבוב האחרון בראש",
+          "body": "המשחק הסתיים בניצחון ל־GM Nodirbek Abdusattorov (אוזבקיסטן, 2762) עם הכלים השחורים על GM Haik M. Martirosyan (ארמניה, 2664) אחרי 64 מסעים, צריח ורץ מול צריח בסוף.\n\nהמסע היה ⁨55...gxf4⁩. לפי Stockfish, לשחור הייתה עמדה מנצחת לפניו (⁨−2.99⁩) ואחריו (⁨−3.00⁩), וההערכה מעולם לא חזרה לאחור. רגלי b התקדם עד b3, והצריח השחור לקח את רגלי h.\n\nאוזבקיסטן ניצחה במפגש ⁨3½–½⁩ והובילה עם 18 נקודות משחק, נקודה אחת לפני הודו, לקראת סיבוב 11. אוזבקיסטן ניצחה גם בו וסיימה ראשונה, עם 20.\n\nחזרו למסע 55, ראו מה Stockfish ראה ב־⁨55...gxf4⁩, ואז המשיכו לשחק מול המנוע.",
+          "lede": "המשחק הסתיים בניצחון ל־GM Nodirbek Abdusattorov (אוזבקיסטן, 2762) עם הכלים השחורים על GM Haik M. Martirosyan (ארמניה, 2664) אחרי 64 מסעים, צריח ורץ מול צריח בסוף."
+        },
+        "hi": {
+          "headline": "काले मोहरों से 64 चालें: Abdusattorov ने Martirosyan को हराया, और उज़्बेकिस्तान शीर्ष पर रहते आख़िरी राउंड में",
+          "body": "GM Nodirbek Abdusattorov (उज़्बेकिस्तान, 2762) ने काले मोहरों से GM Haik M. Martirosyan (आर्मेनिया, 2664) को 64 चालों में हराया, अंत में हाथी और ऊँट बनाम हाथी।\n\nचाल थी 55...gxf4। Stockfish के हिसाब से इससे पहले (−2.99) और बाद में (−3.00) भी काले के लिए जीत की स्थिति थी, और आकलन कभी वापस नहीं पलटा। b-प्यादा b3 तक गया, और काले हाथी ने h-प्यादा ले लिया।\n\nउज़्बेकिस्तान ने मुक़ाबला 3½–½ से जीता और राउंड 11 से पहले 18 मैच अंकों के साथ भारत से एक अंक आगे रहा। टीम ने वह राउंड भी जीता और 20 के साथ पहले स्थान पर रही।\n\nचाल 55 पर लौटें, देखें कि Stockfish ने 55...gxf4 में क्या देखा, फिर इंजन के ख़िलाफ़ आगे खेलें।",
+          "lede": "GM Nodirbek Abdusattorov (उज़्बेकिस्तान, 2762) ने काले मोहरों से GM Haik M. Martirosyan (आर्मेनिया, 2664) को 64 चालों में हराया, अंत में हाथी और ऊँट बनाम हाथी।"
+        },
+        "hu": {
+          "headline": "64 lépés sötéttel: Abdusattorov nyert Martirosyan ellen, és Üzbegisztán az élen megy az utolsó fordulóba",
+          "body": "GM Nodirbek Abdusattorov (Üzbegisztán, 2762) sötéttel, 64 lépésben nyert GM Haik M. Martirosyan (Örményország, 2664) ellen; a végén bástya és futó állt bástya ellen.\n\nAz 55...gxf4 volt a lépés. A Stockfish szerint sötét előtte (−2,99) és utána (−3,00) is nyerő állásban volt, és az értékelés soha nem fordult meg. A b-gyalog továbbment egészen a b3-ig, a sötét bástya pedig leütötte a h-gyalogot.\n\nÜzbegisztán 3½–½ arányban megnyerte a mérkőzést, és 18 csapatponttal, eggyel India előtt vezetett a 11. forduló előtt. Azt is megnyerte, és 20 ponttal az első helyen végzett.\n\nMenj vissza az 55. lépéshez, nézd meg, mit látott a Stockfish az 55...gxf4 lépésben, aztán játszd tovább a motor ellen.",
+          "lede": "GM Nodirbek Abdusattorov (Üzbegisztán, 2762) sötéttel, 64 lépésben nyert GM Haik M. Martirosyan (Örményország, 2664) ellen; a végén bástya és futó állt bástya ellen."
+        },
+        "id": {
+          "headline": "64 langkah dengan bidak hitam: Abdusattorov kalahkan Martirosyan, Uzbekistan masuk babak terakhir di puncak",
+          "body": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) mengalahkan GM Haik M. Martirosyan (Armenia, 2664) dengan bidak hitam dalam 64 langkah, benteng dan gajah melawan benteng di akhir.\n\nLangkah kuncinya 55...gxf4. Stockfish menilai Hitam menang sebelum langkah itu (−2,99) dan sesudahnya (−3,00), dan penilaiannya tidak pernah berbalik. Pion b maju terus ke b3, dan benteng hitam mengambil pion h.\n\nUzbekistan memenangi pertandingan 3½–½ dan memimpin dengan 18 poin pertandingan, satu di depan India, menjelang babak 11. Uzbekistan juga memenangi babak itu dan finis pertama dengan 20.\n\nKembali ke langkah 55, lihat apa yang dilihat Stockfish dalam 55...gxf4, lalu lanjutkan melawan mesin.",
+          "lede": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) mengalahkan GM Haik M. Martirosyan (Armenia, 2664) dengan bidak hitam dalam 64 langkah, benteng dan gajah melawan benteng di akhir."
+        },
+        "it": {
+          "headline": "64 mosse con il Nero: Abdusattorov batte Martirosyan, e l’Uzbekistan va all’ultimo turno in testa",
+          "body": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) ha battuto GM Haik M. Martirosyan (Armenia, 2664) con il Nero in 64 mosse, con Torre e Alfiere contro Torre alla fine.\n\nLa mossa è stata 55...gxf4. Stockfish vedeva il Nero vincente prima (−2,99) e dopo (−3,00), e la valutazione non è mai più tornata indietro. Il pedone b è poi arrivato fino in b3, e la Torre nera ha preso il pedone h.\n\nL’Uzbekistan ha vinto il match 3½–½ ed era in testa con 18 punti match, uno più dell’India, alla vigilia dell’11º turno. Ha vinto anche quello e ha chiuso al primo posto, a 20.\n\nTorna alla mossa 55, guarda che cosa vedeva Stockfish in 55...gxf4, poi continua contro il motore.",
+          "lede": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) ha battuto GM Haik M. Martirosyan (Armenia, 2664) con il Nero in 64 mosse, con Torre e Alfiere contro Torre alla fine."
+        },
+        "ja": {
+          "headline": "黒番で64手：AbdusattorovがMartirosyanに勝ち、ウズベキスタンは首位で最終ラウンドへ",
+          "body": "GM Nodirbek Abdusattorov（ウズベキスタン、2762）が黒番でGM Haik M. Martirosyan（アルメニア、2664）に64手で勝ちました。最後はルークとビショップ対ルークでした。\n\nカギとなった手は55...gxf4でした。Stockfishは、この手の前（−2.99）も後（−3.00）も黒の勝勢と見ていて、その評価が逆に振れることは一度もありませんでした。bポーンはb3まで進み、黒のルークはhポーンを取りました。\n\nウズベキスタンはマッチを3½–½で制し、マッチポイント18でインドに一ポイント差をつけた首位で第11ラウンドを迎えました。ウズベキスタンはそのラウンドにも勝ち、マッチポイント20の首位で大会を終えました。\n\n55手目に戻って、Stockfishが55...gxf4に何を見ていたかを確かめ、そのままエンジン相手に指し継いでみましょう。",
+          "lede": "GM Nodirbek Abdusattorov（ウズベキスタン、2762）が黒番でGM Haik M. Martirosyan（アルメニア、2664）に64手で勝ちました。"
+        },
+        "ko": {
+          "headline": "흑으로 64수: Abdusattorov, Martirosyan 꺾고 우즈베키스탄은 선두로 마지막 라운드에",
+          "body": "GM Nodirbek Abdusattorov(우즈베키스탄, 2762)가 흑으로 GM Haik M. Martirosyan(아르메니아, 2664)에게 64수 만에 이겼습니다. 마지막에는 룩과 비숍 대 룩이었습니다.\n\n핵심 수는 55...gxf4였습니다. Stockfish는 이 수 전(−2.99)에도, 이 수 뒤(−3.00)에도 흑이 이기는 형세로 보았고, 평가는 끝내 반대로 돌아서지 않았습니다. b폰은 b3까지 나아갔고, 흑 룩은 h폰을 잡았습니다.\n\n우즈베키스탄은 매치를 3½–½로 이겨 18 매치 포인트로 인도에 한 점 앞선 선두로 11라운드에 들어갔습니다. 우즈베키스탄은 이 라운드도 이겨 20점으로 선두에서 대회를 마쳤습니다.\n\n55수째로 돌아가 Stockfish가 55...gxf4에서 무엇을 보았는지 확인한 뒤, 엔진을 상대로 이어서 두어 보세요.",
+          "lede": "GM Nodirbek Abdusattorov(우즈베키스탄, 2762)가 흑으로 GM Haik M. Martirosyan(아르메니아, 2664)에게 64수 만에 이겼습니다."
+        },
+        "ms": {
+          "headline": "64 langkah dengan buah hitam: Abdusattorov tewaskan Martirosyan, Uzbekistan memasuki pusingan terakhir di puncak",
+          "body": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) menewaskan GM Haik M. Martirosyan (Armenia, 2664) dengan buah hitam dalam 64 langkah, tir dan gajah menentang tir pada penghujungnya.\n\nLangkah utamanya ialah 55...gxf4. Stockfish menilai Hitam menang sebelumnya (−2,99) dan selepasnya (−3,00), dan penilaian itu tidak pernah berbalik. Bidak b terus mara ke b3, dan tir hitam mengambil bidak h.\n\nUzbekistan memenangi perlawanan 3½–½ dan mendahului dengan 18 mata perlawanan, satu di hadapan India, menjelang pusingan 11. Uzbekistan turut memenangi pusingan itu dan tamat di tempat pertama dengan 20.\n\nKembali ke langkah 55, lihat apa yang Stockfish nampak pada 55...gxf4, kemudian teruskan menentang enjin.",
+          "lede": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) menewaskan GM Haik M. Martirosyan (Armenia, 2664) dengan buah hitam dalam 64 langkah, tir dan gajah menentang tir pada penghujungnya."
+        },
+        "nl": {
+          "headline": "64 zetten met zwart: Abdusattorov verslaat Martirosyan, en Oezbekistan gaat als koploper de laatste ronde in",
+          "body": "GM Nodirbek Abdusattorov (Oezbekistan, 2762) versloeg GM Haik M. Martirosyan (Armenië, 2664) met zwart in 64 zetten, met aan het eind toren en loper tegen toren.\n\n55...gxf4 was de zet. Stockfish zag zwart ervoor gewonnen (−2,99) en erna (−3,00), en de beoordeling sloeg nooit meer om. De b-pion liep door naar b3, en de zwarte toren sloeg de h-pion.\n\nOezbekistan won de match met 3½–½ en ging met 18 matchpunten, één voor India, aan kop ronde 11 in. Oezbekistan won ook die ronde en eindigde als eerste, met 20.\n\nGa terug naar zet 55, bekijk wat Stockfish zag in 55...gxf4, en speel dan verder tegen de engine.",
+          "lede": "GM Nodirbek Abdusattorov (Oezbekistan, 2762) versloeg GM Haik M. Martirosyan (Armenië, 2664) met zwart in 64 zetten, met aan het eind toren en loper tegen toren."
+        },
+        "no": {
+          "headline": "64 trekk med svart: Abdusattorov slår Martirosyan, og Usbekistan går inn i siste runde på topp",
+          "body": "GM Nodirbek Abdusattorov (Usbekistan, 2762) slo GM Haik M. Martirosyan (Armenia, 2664) med svart på 64 trekk, med tårn og løper mot tårn til slutt.\n\n55...gxf4 var trekket. Stockfish så svart til gevinst både før (−2,99) og etter (−3,00), og vurderingen svingte aldri tilbake. Deretter gikk b-bonden videre til b3, og det svarte tårnet slo h-bonden.\n\nUsbekistan vant matchen 3½–½ og gikk inn i 11. runde som leder med 18 matchpoeng, ett foran India. Laget vant den også og endte som nummer én, med 20.\n\nGå tilbake til trekk 55, se hva Stockfish så i 55...gxf4, og spill så videre mot motoren.",
+          "lede": "GM Nodirbek Abdusattorov (Usbekistan, 2762) slo GM Haik M. Martirosyan (Armenia, 2664) med svart på 64 trekk, med tårn og løper mot tårn til slutt."
+        },
+        "pl": {
+          "headline": "64 ruchy czarnymi: Abdusattorov pokonuje Martirosyan, a Uzbekistan wchodzi w ostatnią rundę jako lider",
+          "body": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) pokonuje czarnymi GM Haik M. Martirosyan (Armenia, 2664) w 64 ruchach, na koniec z wieżą i gońcem przeciwko wieży.\n\nChodzi o ruch 55...gxf4. Stockfish widział wygraną czarnych przed nim (−2,99) i po nim (−3,00), a ocena już się nie odwróciła. Pionek b doszedł do b3, a czarna wieża zabrała pionka h.\n\nUzbekistan wygrywa mecz 3½–½ i przed 11. rundą prowadzi z 18 punktami meczowymi, jednym więcej niż Indie. Ostatni mecz też wygrywa i kończy na pierwszym miejscu z 20 punktami.\n\nWróć do 55. ruchu, sprawdź, co Stockfish widział w 55...gxf4, potem graj dalej przeciwko silnikowi.",
+          "lede": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) pokonuje czarnymi GM Haik M. Martirosyan (Armenia, 2664) w 64 ruchach, na koniec z wieżą i gońcem przeciwko wieży."
+        },
+        "pt-BR": {
+          "headline": "64 lances de pretas: Abdusattorov vence Martirosyan, e o Uzbequistão chega à última rodada na liderança",
+          "body": "GM Nodirbek Abdusattorov (Uzbequistão, 2762) venceu GM Haik M. Martirosyan (Armênia, 2664) de pretas em 64 lances, com torre e bispo contra torre no final.\n\nO lance foi 55...gxf4. O Stockfish via posição vencedora das pretas antes dele (−2,99) e depois (−3,00), e a avaliação nunca voltou atrás. O peão da coluna b seguiu até b3, e a torre preta capturou o peão da coluna h.\n\nO Uzbequistão venceu o match por 3½–½ e chegou à 11ª rodada na liderança, com 18 pontos de match, um à frente da Índia. Venceu também essa rodada e terminou em primeiro, com 20.\n\nVolte ao lance 55, veja o que o Stockfish viu em 55...gxf4 e depois continue contra o motor.",
+          "lede": "GM Nodirbek Abdusattorov (Uzbequistão, 2762) venceu GM Haik M. Martirosyan (Armênia, 2664) de pretas em 64 lances, com torre e bispo contra torre no final."
+        },
+        "ro": {
+          "headline": "64 de mutări cu negrele: Abdusattorov câștigă contra Martirosyan, iar Uzbekistanul intră în ultima rundă pe primul loc",
+          "body": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) a câștigat cu negrele contra GM Haik M. Martirosyan (Armenia, 2664) în 64 de mutări, cu tură și nebun contra turei la final.\n\nMutarea a fost 55...gxf4. Stockfish vedea o poziție câștigătoare pentru Negru înainte de ea (−2,99) și după (−3,00), iar evaluarea nu s-a mai întors niciodată. Pionul de pe coloana b a înaintat până pe b3, iar tura neagră a luat pionul de pe coloana h.\n\nUzbekistanul a câștigat meciul cu 3½–½ și conducea cu 18 puncte de meci, cu un punct înaintea Indiei, înainte de runda a 11-a. A câștigat și acea rundă și a terminat pe primul loc, cu 20.\n\nÎntoarce-te la mutarea 55, vezi ce a văzut Stockfish în 55...gxf4, apoi continuă contra motorului.",
+          "lede": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) a câștigat cu negrele contra GM Haik M. Martirosyan (Armenia, 2664) în 64 de mutări, cu tură și nebun contra turei la final."
+        },
+        "ru": {
+          "headline": "64 хода чёрными: Abdusattorov обыгрывает Martirosyan, и Узбекистан выходит на последний тур лидером",
+          "body": "GM Nodirbek Abdusattorov (Узбекистан, 2762) чёрными обыгрывает GM Haik M. Martirosyan (Армения, 2664) за 64 хода — в конце ладья и слон против ладьи.\n\nТот самый ход — 55...gxf4. Stockfish давал чёрным выигрыш и до него (−2,99), и после (−3,00), и оценка так и не качнулась обратно. Пешка «b» дошла до b3, а чёрная ладья забрала пешку «h».\n\nУзбекистан выиграл матч 3½–½ и перед 11-м туром лидировал с 18 командными очками, на одно больше, чем у Индии. Последний матч команда тоже выиграла и заняла первое место с 20 очками.\n\nВернитесь к 55-му ходу, посмотрите, что Stockfish увидел в 55...gxf4, а затем продолжите партию против движка.",
+          "lede": "GM Nodirbek Abdusattorov (Узбекистан, 2762) чёрными обыгрывает GM Haik M. Martirosyan (Армения, 2664) за 64 хода — в конце ладья и слон против ладьи."
+        },
+        "sv": {
+          "headline": "64 drag med svart: Abdusattorov besegrar Martirosyan, och Uzbekistan går in i sista ronden i topp",
+          "body": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) besegrade GM Haik M. Martirosyan (Armenien, 2664) med svart på 64 drag, med torn och löpare mot torn i slutet.\n\n55...gxf4 var draget. Stockfish såg svart på vinst både före (−2,99) och efter (−3,00), och värderingen svängde aldrig tillbaka. Sedan gick b-bonden vidare till b3, och det svarta tornet slog h-bonden.\n\nUzbekistan vann matchen med 3½–½ och gick in i rond 11 som ledare med 18 matchpoäng, en poäng före Indien. Laget vann den också och slutade etta, med 20.\n\nGå tillbaka till drag 55, se vad Stockfish såg i 55...gxf4 och spela sedan vidare mot motorn.",
+          "lede": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) besegrade GM Haik M. Martirosyan (Armenien, 2664) med svart på 64 drag, med torn och löpare mot torn i slutet."
+        },
+        "th": {
+          "headline": "64 ตาด้วยฝ่ายดำ: Abdusattorov ชนะ Martirosyan และอุซเบกิสถานเข้ารอบสุดท้ายที่อันดับหนึ่ง",
+          "body": "GM Nodirbek Abdusattorov (อุซเบกิสถาน, 2762) ถือฝ่ายดำชนะ GM Haik M. Martirosyan (อาร์เมเนีย, 2664) ใน 64 ตา ตอนจบเป็นเรือกับบิชอปต่อเรือ\n\nตาสำคัญคือ 55...gxf4 Stockfish มองว่าฝ่ายดำอยู่ในสถานะชนะทั้งก่อนตานั้น (−2.99) และหลังจากนั้น (−3.00) และค่าประเมินไม่เคยแกว่งกลับอีกเลย เบี้ย b เดินต่อไปถึง b3 และเรือดำกินเบี้ย h\n\nอุซเบกิสถานชนะแมตช์ 3½–½ และนำด้วย 18 แต้มแมตช์ มากกว่าอินเดียหนึ่งแต้ม ก่อนเข้าสู่รอบที่ 11 อุซเบกิสถานชนะรอบนั้นด้วยและจบอันดับหนึ่งด้วย 20 แต้ม\n\nย้อนกลับไปที่ตาที่ 55 ดูว่า Stockfish เห็นอะไรใน 55...gxf4 แล้วเล่นต่อกับเอนจิน",
+          "lede": "GM Nodirbek Abdusattorov (อุซเบกิสถาน, 2762) ถือฝ่ายดำชนะ GM Haik M. Martirosyan (อาร์เมเนีย, 2664) ใน 64 ตา ตอนจบเป็นเรือกับบิชอปต่อเรือ"
+        },
+        "tr": {
+          "headline": "Siyahla 64 hamle: Abdusattorov, Martirosyan'ı yendi; Özbekistan son tura zirvede giriyor",
+          "body": "GM Nodirbek Abdusattorov (Özbekistan, 2762), siyah taşlarla GM Haik M. Martirosyan'ı (Ermenistan, 2664) 64 hamlede yendi; sonda kale ve fil kaleye karşıydı.\n\nHamle 55...gxf4'tü. Stockfish siyahı hamleden önce (−2,99) ve sonra (−3,00) kazanan konumda görüyordu ve değerlendirme bir daha hiç geri dönmedi. Ardından b piyonu b3'e kadar ilerledi ve siyah kale h piyonunu aldı.\n\nÖzbekistan maçı 3½–½ kazandı ve 11. tura 18 maç puanıyla, Hindistan'ın bir puan önünde lider olarak girdi. O turu da kazandı ve 20 puanla birinci bitirdi.\n\n55. hamleye dön, Stockfish'in 55...gxf4'te ne gördüğüne bak, sonra motora karşı sürdür.",
+          "lede": "GM Nodirbek Abdusattorov (Özbekistan, 2762), siyah taşlarla GM Haik M. Martirosyan'ı (Ermenistan, 2664) 64 hamlede yendi; sonda kale ve fil kaleye karşıydı."
+        },
+        "vi": {
+          "headline": "64 nước cầm quân Đen: Abdusattorov thắng Martirosyan, Uzbekistan dẫn đầu trước vòng cuối",
+          "body": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) cầm quân Đen thắng GM Haik M. Martirosyan (Armenia, 2664) sau 64 nước, cuối ván là Xe và Tượng đấu Xe.\n\nNước then chốt là 55...gxf4. Stockfish thấy Đen ở thế thắng trước nước đó (−2,99) lẫn sau nước đó (−3,00), và đánh giá không bao giờ đảo chiều. Tốt b tiến tiếp tới b3, và Xe Đen bắt Tốt h.\n\nUzbekistan thắng trận 3½–½ và dẫn đầu với 18 điểm trận, hơn Ấn Độ một điểm, trước vòng 11. Uzbekistan thắng tiếp cả trận đó và về nhất với 20 điểm.\n\nQuay lại nước 55, xem Stockfish thấy gì ở 55...gxf4, rồi chơi tiếp với engine.",
+          "lede": "GM Nodirbek Abdusattorov (Uzbekistan, 2762) cầm quân Đen thắng GM Haik M. Martirosyan (Armenia, 2664) sau 64 nước, cuối ván là Xe và Tượng đấu Xe."
+        },
+        "zh-Hans": {
+          "headline": "执黑64回合：Abdusattorov击败Martirosyan，乌兹别克斯坦队领跑进入最后一轮",
+          "body": "GM Nodirbek Abdusattorov（乌兹别克斯坦，2762）执黑64回合击败GM Haik M. Martirosyan（亚美尼亚，2664），终局是车象对车。\n\n关键一步是55...gxf4。Stockfish认为，这步棋之前（−2.99）和之后（−3.00）黑方都是胜势，评估始终没有逆转。b兵继续挺进到b3，黑车吃掉了h兵。\n\n乌兹别克斯坦队以3½–½赢下比赛，以团体分18分领先印度队一分，进入第11轮。乌兹别克斯坦队在这一轮也取得胜利，最终以团体分20分获得第一。\n\n回到第55回合，看看Stockfish在55...gxf4中看到了什么，然后对着引擎继续下。",
+          "lede": "GM Nodirbek Abdusattorov（乌兹别克斯坦，2762）执黑64回合击败GM Haik M. Martirosyan（亚美尼亚，2664），终局是车象对车。"
+        },
+        "zh-Hant": {
+          "headline": "執黑64回合：Abdusattorov擊敗Martirosyan，烏茲別克隊領先進入最後一輪",
+          "body": "GM Nodirbek Abdusattorov（烏茲別克，2762）執黑64回合擊敗GM Haik M. Martirosyan（亞美尼亞，2664），終局是車象對車。\n\n關鍵一步是55...gxf4。Stockfish認為，這步棋之前（−2.99）和之後（−3.00）黑方都是勝勢，評估始終沒有逆轉。b兵繼續挺進到b3，黑車吃掉了h兵。\n\n烏茲別克隊以3½–½贏下比賽，以團體分18分領先印度隊一分，進入第11輪。烏茲別克隊在這一輪也取得勝利，最終以團體分20分奪得第一。\n\n回到第55回合，看看Stockfish在55...gxf4中看到了什麼，然後對著引擎繼續下。",
+          "lede": "GM Nodirbek Abdusattorov（烏茲別克，2762）執黑64回合擊敗GM Haik M. Martirosyan（亞美尼亞，2664），終局是車象對車。"
+        }
+      },
+      "fen": "8/p5p1/P7/1k3r2/1p1b1p2/1B4PP/R3K3/8 w - - 0 56",
+      "last": {
+        "from": "g5",
+        "to": "f4"
+      },
+      "url": "https://brasspawn.com/today/2026-09-26-martirosyan-abdusattorov-olympiad-r10",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-10/WCYaLfnP/DSzZ6v2M"
+      },
+      "updatedAt": "2026-09-26T21:11:37.926Z"
+    },
+    {
+      "id": "2026-09-26-vakhidov-praggnanandhaa-olympiad-r10",
+      "status": "approved",
+      "date": "2026-09-26",
+      "rank": 4,
+      "weight": 911,
+      "event": {
+        "name": "46th FIDE Chess Olympiad Samarkand 2026",
+        "short": "Olympiad",
+        "section": "Open",
+        "round": 10,
+        "location": "Samarkand, Uzbekistan",
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-10/WCYaLfnP"
       },
       "white": {
         "name": "Jakhongir Vakhidov",
         "short": "Vakhidov",
         "title": "GM",
         "elo": 2527,
-        "team": "Uzbekistan 2",
-        "fed": null,
-        "fideId": 14201801
+        "team": "Uzbekistan 2"
       },
       "black": {
-        "name": "Anish Giri",
-        "short": "Giri",
+        "name": "R Praggnanandhaa",
+        "short": "Praggnanandhaa",
         "title": "GM",
-        "elo": 2757,
-        "team": "Netherlands",
-        "fed": null,
-        "fideId": 24116068
+        "elo": 2761,
+        "team": "India"
       },
-      "result": "1-0",
+      "result": "0-1",
       "opening": {
-        "eco": "A13",
-        "name": "English Opening: Agincourt Defense"
+        "eco": "A27",
+        "name": "English Opening: King's English Variation, Three Knights System"
       },
-      "moves": "c4 e6 Nc3 f5 Nf3 Nf6 g3 b6 Bg2 Bb7 O-O Bb4 Qc2 a5 b3 O-O Bb2 Bxc3 Qxc3 d6 d4 Be4 Bh3 Qe7 Ng5 Nbd7 Qe3 Rae8 Nxe4 fxe4 f3 e5 d5 exf3 exf3 Nc5 a3 Kh8 Rad1 Qf7 b4 Nb7 Be6 Qh5 g4 Qh4 Qe1 Qxe1 Rfxe1 axb4 axb4 Nd8 Bf5 g6 Bc2 Nf7 h4 Kg7 Ba4 Ra8 Ra1 g5 h5 Rfc8 Bc6 Rxa1 Rxa1 Nd8 Bb5 c6 Ra7+ Kf8 dxc6 Nxc6 Rb7 Nd4 Bxd4 exd4 Rxb6 Ke7 Ra6 Rb8 Ra5 d5 c5 d3 Kf2 d4 Ra7+ Ke6 Bxd3 Rxb4 c6 Rb2+ Ke1 Nd5 c7 Ne7 Bf5+ Ke5 c8=Q Nxc8 Bxc8 Kf4 Rxh7",
-      "plies": 105,
+      "moves": "c4 e5 Nc3 Nc6 Nf3 g6 d4 exd4 Nxd4 Bg7 Nxc6 bxc6 g3 Ne7 Bg2 O-O O-O Rb8 Qc2 c5 b3 d6 Bb2 Bb7 Bxb7 Rxb7 Rad1 Nc6 e3 a5 f4 Qe8 Rfe1 Rb8 Qg2 Ne7 g4 Qc6 e4 Rbe8 Kh1 Bd4 h4 f6 Re2 Rf7 Rde1 Qd7 Rf1 Nc6 Nd5 Nb4 Nxb4 axb4 Rd1 Bxb2 Rxb2 Re6 Re2 Qe8 Rde1 Rfe7 Kg1 Kh8 Kf1 h5 gxh5 gxh5 Qf3 Rg7 Rg2 Ree7 Ree2 Rxg2 Qxg2 Rg7 Qf3 Qg6 Rf2 Kg8 Ke2 Qg4 Rf1 Qxh4 Rh1 Qg4 Qxg4 hxg4 Kf2 Rh7 Rg1 f5 exf5 Kf7 Kg3 Kf6 Rd1 Rg7 Rh1 Kxf5 Rh8 c6 Rc8 Rh7 Rf8+ Ke4 Rf6 d5 Rxc6 dxc4 Rxc5 c3 f5 Rg7 a3 bxa3 Rxc3 Ra7 Rc1 a2 Ra1 Kxf5 Kf2 Ke4 Ke2 g3",
       "ending": null,
       "key": {
         "kind": "mistake",
-        "ply": 86,
-        "played": "d3",
-        "better": "Ke6",
-        "reply": "Ra7+",
-        "replyPlayed": false,
-        "before": {
-          "cp": 211,
-          "mate": null
-        },
-        "after": {
-          "cp": 473,
-          "mate": null
-        },
-        "clock": 1700
-      },
-      "headline": "Vakhidov beats Giri, rated 230 points higher",
-      "body": "Jakhongir Vakhidov, of Uzbekistan's second team, beat Anish Giri with White in round 9 against the Netherlands. Giri is rated 2757 and Vakhidov 2527. The engine marks 43...d3 as the move that decided it, taking White's clear advantage to a winning one; it preferred 43...Ke6. White went on to queen a pawn on c8, and Vakhidov won in 53 moves.",
-      "source": {
-        "name": "Lichess broadcast",
-        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-9/oQds2Dcv/6A45GK49"
-      }
-    },
-    {
-      "id": "2026-09-25-rapport-alekseenko-olympiad-r9",
-      "status": "draft",
-      "date": "2026-09-25",
-      "event": {
-        "name": "46th FIDE Chess Olympiad Samarkand 2026",
-        "short": "Olympiad",
-        "section": "Open",
-        "round": 9,
-        "location": "Samarkand, Uzbekistan",
-        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-9/oQds2Dcv"
-      },
-      "white": {
-        "name": "Richard Rapport",
-        "short": "Rapport",
-        "title": "GM",
-        "elo": 2726,
-        "team": "Hungary",
-        "fed": null,
-        "fideId": 738590
-      },
-      "black": {
-        "name": "Kirill Alekseenko",
-        "short": "Alekseenko",
-        "title": "GM",
-        "elo": 2656,
-        "team": "Austria",
-        "fed": null,
-        "fideId": 4135539
-      },
-      "result": "1-0",
-      "opening": {
-        "eco": "C48",
-        "name": "Four Knights Game: Spanish Variation, Rubinstein Variation, Henneberger Variation"
-      },
-      "moves": "e4 e5 Nf3 Nc6 Nc3 Nf6 Bb5 Nd4 O-O c6 Bd3 Nxf3+ Qxf3 g6 Qg3 d6 Be2 h6 Kh1 g5 Rd1 Bg7 d4 exd4 Rxd4 Nd5 Rxd5 cxd5 Nxd5 Be6 Bf4 Bxd5 exd5 O-O Bxd6 Re8 Bb5 Re4 c3 a6 Bd3 Re8 Rd1 Qd7 c4 Bxb2 h4 g4 Qf4 Bg7 c5 Rad8 a4 Re7 g3 Qe8 Bxe7 Qxe7 d6 Qd7 Be4 Re8 Rb1 Qe6 Bxb7 Rb8 Kh2 Be5 Bd5 Rxb1 Bxe6 Bxf4 gxf4 Kf8 c6",
-      "plies": 75,
-      "ending": null,
-      "key": {
-        "kind": "mistake",
-        "ply": 48,
-        "played": "g4",
-        "better": "Rad8",
-        "reply": "Qf4",
+        "ply": 111,
+        "played": "Rxc5",
+        "better": "bxc4",
+        "reply": "c3",
         "replyPlayed": true,
         "before": {
-          "cp": 149,
+          "cp": -147,
           "mate": null
         },
         "after": {
-          "cp": 332,
+          "cp": -525,
           "mate": null
         },
-        "clock": 539
+        "clock": 73
       },
-      "headline": "Rapport beats Alekseenko in 38 moves",
-      "body": "Richard Rapport beat Kirill Alekseenko with White in round 9, Hungary against Austria. 24...g4, played with nine minutes left on the clock, is where the engine's assessment went from a clear advantage for White to a winning one; it preferred 24...Rad8. Rapport won in 38 moves.",
+      "headline": "1:13 on the clock, one rook capture, and the black pawns ran",
+      "lede": "GM R Praggnanandhaa (India) beat GM Jakhongir Vakhidov (Uzbekistan 2) in round 10 of the 46th FIDE Chess Olympiad Samarkand 2026 (Open), in 63 moves.",
+      "body": "GM Jakhongir Vakhidov (Uzbekistan 2, 2527) had 1 minute 13 seconds left at move 56 and took on c5. Stockfish wanted 56.bxc4. After 56.Rxc5 its count went from a clear advantage for Black (−1.47) to a win (−5.25), and 56...c3 came straight back.\n\nGM R Praggnanandhaa (India, 2761) won in 63 moves, a black pawn reaching a2 on move 60. India beat Uzbekistan 2 3½–½ and moved to 17 match points, one behind Uzbekistan with a round left.\n\nStop at move 56 with a minute on your own clock and look for 56.bxc4, then play it on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "1:13 على الساعة، وأخذ واحد بالرخ، وانطلقت البيادق السوداء",
+          "body": "بقيت دقيقة واحدة و13 ثانية على ساعة GM Jakhongir Vakhidov (أوزبكستان 2، 2527) عند النقلة 56، وأخذ الرخ الأبيض على c5. أراد Stockfish ⁨56.bxc4⁩. بعد ⁨56.Rxc5⁩ انتقل تقييمه من أفضلية واضحة للأسود (⁨−1.47⁩) إلى فوز (⁨−5.25⁩)، وجاء الرد ⁨56...c3⁩ مباشرة.\n\nوانتهى الدور بفوز GM R Praggnanandhaa (الهند، 2761) في 63 نقلة، بعد أن بلغ بيدق أسود a2 في النقلة 60. فازت الهند على أوزبكستان 2 بنتيجة ⁨3½–½⁩ ووصلت إلى 17 نقطة مباراة، بفارق نقطة خلف أوزبكستان قبل جولة من النهاية.\n\nتوقف عند النقلة 56 مع دقيقة على ساعتك، وابحث عن ⁨56.bxc4⁩، ثم تابع اللعب ضد المحرك."
+        },
+        "bg": {
+          "headline": "1:13 на часовника, едно вземане с топа и черните пешки се втурнаха",
+          "body": "GM Jakhongir Vakhidov (Узбекистан 2, 2527) имаше 1 минута и 13 секунди на 56-ия ход и взе на c5. Stockfish искаше 56.bxc4. След 56.Rxc5 оценката на енджина се промени от ясно предимство за черните (−1,47) на печеливша позиция (−5,25), а 56...c3 последва веднага.\n\nGM R Praggnanandhaa (Индия, 2761) спечели за 63 хода, като на 60-ия ход черна пешка стигна до a2. Индия победи Узбекистан 2 с 3½–½ и стигна до 17 мачови точки, една по-малко от Узбекистан кръг преди края.\n\nСпрете на 56-ия ход с минута на своя часовник и потърсете 56.bxc4, после продължете партията срещу енджина."
+        },
+        "cs": {
+          "headline": "1:13 na hodinách, jedno braní věží a černí pěšci se rozběhli",
+          "body": "GM Jakhongir Vakhidov (Uzbekistán 2, 2527) má v 56. tahu na hodinách 1 minutu 13 sekund a bere na c5. Stockfish chtěl 56.bxc4. Po 56.Rxc5 se hodnocení změnilo z jasné výhody černých (−1,47) na výhru (−5,25) a okamžitě přišlo 56...c3.\n\nGM R Praggnanandhaa (Indie, 2761) vyhrává po 63 tazích, černý pěšec dochází v 60. tahu na a2. Indie porazila Uzbekistán 2 3½–½ a posunula se na 17 zápasových bodů, kolo před koncem bod za Uzbekistánem.\n\nZastav v 56. tahu s minutou na vlastních hodinách a hledej 56.bxc4, pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "1:13 på uret, ét tårnslag, og de sorte bønder løb",
+          "body": "GM Jakhongir Vakhidov (Usbekistan 2, 2527) havde 1 minut og 13 sekunder tilbage ved træk 56 og slog på c5. Stockfish ville have 56.bxc4. Efter 56.Rxc5 gik vurderingen fra en klar fordel til sort (−1,47) til gevinst (−5,25), og 56...c3 kom med det samme.\n\nGM R Praggnanandhaa (Indien, 2761) vandt i 63 træk, og en sort bonde nåede a2 i 60. træk. Indien slog Usbekistan 2 med 3½–½ og kom op på 17 matchpoint, ét efter Usbekistan med én runde tilbage.\n\nStop ved træk 56 med et minut på dit eget ur, og led efter 56.bxc4, og spil så videre mod motoren."
+        },
+        "de": {
+          "headline": "1:13 auf der Uhr, ein Turmschlag – und die schwarzen Bauern liefen",
+          "body": "GM Jakhongir Vakhidov (Usbekistan 2, 2527) hatte bei Zug 56 noch 1 Minute 13 Sekunden und schlug auf c5. Stockfish wollte 56.bxc4. Nach 56.Rxc5 ging die Bewertung von klarem Vorteil für Schwarz (−1,47) auf Gewinn (−5,25), und 56...c3 kam sofort.\n\nGM R Praggnanandhaa (Indien, 2761) gewann in 63 Zügen, ein schwarzer Bauer erreichte im 60. Zug a2. Indien schlug Usbekistan 2 mit 3½:½ und kam auf 17 Mannschaftspunkte, einen hinter Usbekistan, eine Runde vor Schluss.\n\nBei Zug 56 anhalten, mit einer Minute auf der eigenen Uhr 56.bxc4 suchen, dann gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "1:13 στο ρολόι, μία αιχμαλωσία με τον πύργο, και τα μαύρα πιόνια έτρεξαν",
+          "body": "GM Jakhongir Vakhidov (Ουζμπεκιστάν 2, 2527) είχε 1 λεπτό και 13 δευτερόλεπτα στο ρολόι στην 56η κίνηση και πήρε στο c5. Το Stockfish ήθελε την 56.bxc4. Μετά την 56.Rxc5 η εκτίμηση πέρασε από καθαρό πλεονέκτημα για τα μαύρα (−1,47) σε νίκη (−5,25), και η 56...c3 ήρθε αμέσως.\n\nΝίκη σε 63 κινήσεις για GM R Praggnanandhaa (Ινδία, 2761), με ένα μαύρο πιόνι να φτάνει στο a2 στην 60ή κίνηση. Η Ινδία νίκησε το Ουζμπεκιστάν 2 με 3½–½ και ανέβηκε στους 17 βαθμούς αγώνα, έναν πίσω από το Ουζμπεκιστάν, με έναν γύρο να απομένει.\n\nΣταμάτα στην 56η κίνηση με ένα λεπτό στο δικό σου ρολόι και ψάξε την 56.bxc4, μετά συνέχισε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "1:13 en el reloj, una captura de torre, y los peones negros corrieron",
+          "body": "GM Jakhongir Vakhidov (Uzbekistán 2, 2527) tenía 1 minuto y 13 segundos en la jugada 56 y tomó en c5. Stockfish quería 56.bxc4. Tras 56.Rxc5 su valoración pasó de una clara ventaja negra (−1,47) a una victoria (−5,25), y 56...c3 llegó enseguida.\n\nGM R Praggnanandhaa (India, 2761) ganó en 63 jugadas, con un peón negro llegando a a2 en la jugada 60. India venció a Uzbekistán 2 3½–½ y subió a 17 puntos de match, a uno de Uzbekistán a falta de una ronda.\n\nDetente en la jugada 56 con un minuto en tu propio reloj y busca 56.bxc4, y luego sigue contra el motor."
+        },
+        "fi": {
+          "headline": "Kellossa 1:13, yksi tornin lyönti, ja mustat sotilaat juoksivat",
+          "body": "GM Jakhongir Vakhidov (Uzbekistan 2, 2527) löi siirrolla 56 c5:ssä, kellossa 1 minuutti 13 sekuntia jäljellä. Stockfish halusi 56.bxc4. Siirron 56.Rxc5 jälkeen Stockfishin arvio muuttui mustan selvästä edusta (−1,47) voittoasemaksi (−5,25), ja 56...c3 tuli heti.\n\nGM R Praggnanandhaa (Intia, 2761) voitti 63 siirrossa, ja musta sotilas ehti a2:een siirrolla 60. Intia voitti Uzbekistan 2:n 3½–½ ja nousi 17 ottelupisteeseen, pisteen Uzbekistanin perään, kun jäljellä oli yksi kierros.\n\nPysähdy siirtoon 56, ota omaan kelloosi minuutti ja etsi 56.bxc4, jatka sitten peliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "1:13 à la pendule, une prise de tour, et les pions noirs ont filé",
+          "body": "GM Jakhongir Vakhidov (Ouzbékistan 2, 2527) avait 1 minute 13 secondes au 56e coup et a pris en c5. Stockfish voulait 56.bxc4. Après 56.Rxc5, son évaluation est passée d’un net avantage pour les Noirs (−1,47) à un gain (−5,25), et 56...c3 a suivi aussitôt.\n\nGM R Praggnanandhaa (Inde, 2761) a gagné en 63 coups, un pion noir atteignant a2 au 60e coup. L’Inde a battu l’Ouzbékistan 2 3½–½ et passe à 17 points de match, à un point de l’Ouzbékistan à une ronde de la fin.\n\nArrêtez-vous au 56e coup avec une minute à votre propre pendule et cherchez 56.bxc4, puis continuez contre le moteur."
+        },
+        "he": {
+          "headline": "⁨1:13⁩ בשעון, לקיחה אחת בצריח, והרגלים השחורים רצו",
+          "body": "ל־GM Jakhongir Vakhidov (אוזבקיסטן 2, 2527) נותרו דקה ו־13 שניות במסע 56, והצריח הלבן לקח ב־c5. Stockfish רצה ב־⁨56.bxc4⁩. אחרי ⁨56.Rxc5⁩ ההערכה עברה מיתרון ברור לשחור (⁨−1.47⁩) לעמדה מנצחת (⁨−5.25⁩), ו־⁨56...c3⁩ בא מיד.\n\nהמשחק הסתיים בניצחון ל־GM R Praggnanandhaa (הודו, 2761) אחרי 63 מסעים, כשרגלי שחור הגיע ל־a2 במסע 60. הודו גברה על אוזבקיסטן 2 בתוצאה ⁨3½–½⁩ ועלתה ל־17 נקודות משחק, נקודה אחת מאחורי אוזבקיסטן כשנותר סיבוב אחד.\n\nעצרו במסע 56 עם דקה בשעון שלכם וחפשו את ⁨56.bxc4⁩, ואז המשיכו לשחק מול המנוע."
+        },
+        "hi": {
+          "headline": "घड़ी पर 1:13, हाथी का एक कैप्चर, और काले प्यादे दौड़ पड़े",
+          "body": "1 मिनट 13 सेकंड बचे रहते GM Jakhongir Vakhidov (उज़्बेकिस्तान 2, 2527) ने चाल 56 पर c5 पर कैप्चर किया। Stockfish 56.bxc4 चाहता था। 56.Rxc5 के बाद Stockfish का आकलन काले की साफ़ बढ़त (−1.47) से जीत की स्थिति (−5.25) पर पहुँच गया, और 56...c3 तुरंत आया।\n\nGM R Praggnanandhaa (भारत, 2761) ने 63 चालों में जीत हासिल की, और चाल 60 पर एक काला प्यादा a2 तक पहुँचा। भारत ने उज़्बेकिस्तान 2 को 3½–½ से हराया और 17 मैच अंकों पर पहुँच गया, एक राउंड बाक़ी रहते उज़्बेकिस्तान से एक अंक पीछे।\n\nचाल 56 पर रुकें, अपनी घड़ी में एक मिनट रखें, और 56.bxc4 खोजें, फिर इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "1:13 az órán, egy bástyaütés, és a sötét gyalogok megindultak",
+          "body": "GM Jakhongir Vakhidov (Üzbegisztán 2, 2527) az 56. lépésnél 1 perc 13 másodperccel az óráján ütött a c5-ön. A Stockfish az 56.bxc4 lépést akarta. Az 56.Rxc5 után értékelése sötét egyértelmű előnyéből (−1,47) nyerésre (−5,25) változott, és azonnal jött az 56...c3.\n\nGM R Praggnanandhaa (India, 2761) 63 lépésben nyert; egy sötét gyalog a 60. lépésben elérte az a2-t. India 3½–½ arányban legyőzte Üzbegisztán 2-t, és 17 csapatpontra jött fel, eggyel Üzbegisztán mögött, egy fordulóval a vége előtt.\n\nÁllj meg az 56. lépésnél egy perccel a saját órádon, és keresd meg az 56.bxc4 lépést, aztán játszd tovább a motor ellen."
+        },
+        "id": {
+          "headline": "1:13 di jam, satu tangkapan benteng, dan pion-pion hitam berlari",
+          "body": "GM Jakhongir Vakhidov (Uzbekistan 2, 2527) punya sisa 1 menit 13 detik pada langkah 56 dan mengambil di c5. Stockfish menginginkan 56.bxc4. Sesudah 56.Rxc5 penilaiannya berubah dari Hitam unggul jelas (−1,47) menjadi menang (−5,25), dan 56...c3 langsung datang.\n\nGM R Praggnanandhaa (India, 2761) menang dalam 63 langkah, dengan sebuah pion hitam mencapai a2 pada langkah 60. India mengalahkan Uzbekistan 2 dengan skor 3½–½ dan naik ke 17 poin pertandingan, satu di belakang Uzbekistan dengan satu babak tersisa.\n\nBerhenti di langkah 56 dengan satu menit di jammu sendiri dan cari 56.bxc4, lalu lanjutkan melawan mesin."
+        },
+        "it": {
+          "headline": "1:13 sull’orologio, una presa di Torre, e i pedoni neri sono corsi avanti",
+          "body": "GM Jakhongir Vakhidov (Uzbekistan 2, 2527) aveva 1 minuto e 13 secondi alla mossa 56 e ha preso in c5. Stockfish voleva 56.bxc4. Dopo 56.Rxc5 la sua valutazione è passata da un chiaro vantaggio del Nero (−1,47) a una vittoria (−5,25), e 56...c3 è arrivata subito.\n\nGM R Praggnanandhaa (India, 2761) ha vinto in 63 mosse, con un pedone nero arrivato in a2 alla mossa 60. L’India ha battuto l’Uzbekistan 2 3½–½ ed è salita a 17 punti match, a uno dall’Uzbekistan a un turno dalla fine.\n\nFermati alla mossa 56 con un minuto sul tuo orologio e cerca 56.bxc4, poi continua contro il motore."
+        },
+        "ja": {
+          "headline": "残り1:13、ルークで一つ取ると、黒のポーンが走り出した",
+          "body": "GM Jakhongir Vakhidov（ウズベキスタン2、2527）は56手目、残り1分13秒でc5の駒を取りました。Stockfishが望んだのは56.bxc4。56.Rxc5の後、Stockfishの評価は黒の明確な優勢（−1.47）から勝勢（−5.25）に変わり、すぐに56...c3が返ってきました。\n\nGM R Praggnanandhaa（インド、2761）が63手で勝ちました。60手目には黒のポーンがa2に到達しました。インドはウズベキスタン2を3½–½で下してマッチポイント17となり、残り一ラウンドでウズベキスタンに一ポイント差としました。\n\n56手目で止め、自分の時計も残り一分にして56.bxc4を探しましょう。それからエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "시계에 1:13, 룩으로 한 번 잡자 흑 폰들이 내달렸다",
+          "body": "GM Jakhongir Vakhidov(우즈베키스탄 2, 2527)는 56수째에 1분 13초를 남기고 c5에서 기물을 잡았습니다. Stockfish가 원한 수는 56.bxc4였습니다. 56.Rxc5 이후 Stockfish의 평가는 흑의 뚜렷한 우세(−1.47)에서 이기는 형세(−5.25)로 바뀌었고, 곧바로 56...c3가 나왔습니다.\n\nGM R Praggnanandhaa(인도, 2761)가 63수 만에 이겼고, 60수째에는 흑 폰이 a2에 도달했습니다. 인도는 우즈베키스탄 2를 3½–½로 꺾고 17 매치 포인트가 되어, 한 라운드를 남기고 우즈베키스탄에 한 점 뒤졌습니다.\n\n56수째에서 멈추고, 자신의 시계에도 1분만 남긴 채 56.bxc4를 찾아보세요. 이어서 엔진을 상대로 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "1:13 pada jam, satu tangkapan tir, dan bidak-bidak hitam berlari",
+          "body": "GM Jakhongir Vakhidov (Uzbekistan 2, 2527) mempunyai baki 1 minit 13 saat pada langkah 56 dan mengambil di c5. Stockfish mahukan 56.bxc4. Selepas 56.Rxc5 penilaiannya berubah daripada Hitam jelas mendahului (−1,47) kepada menang (−5,25), dan 56...c3 tiba serta-merta.\n\nGM R Praggnanandhaa (India, 2761) menang dalam 63 langkah, dengan sebiji bidak hitam sampai ke a2 pada langkah 60. India menewaskan Uzbekistan 2 dengan 3½–½ dan naik ke 17 mata perlawanan, satu di belakang Uzbekistan dengan satu pusingan lagi.\n\nBerhenti pada langkah 56 dengan seminit pada jam anda sendiri dan cari 56.bxc4, kemudian teruskan menentang enjin."
+        },
+        "nl": {
+          "headline": "1:13 op de klok, één slag met de toren, en de zwarte pionnen liepen",
+          "body": "GM Jakhongir Vakhidov (Oezbekistan 2, 2527) had bij zet 56 nog 1 minuut 13 seconden en sloeg op c5. Stockfish wilde 56.bxc4. Na 56.Rxc5 ging de beoordeling van een duidelijk voordeel voor zwart (−1,47) naar winst (−5,25), en 56...c3 kwam meteen.\n\nGM R Praggnanandhaa (India, 2761) won in 63 zetten, met een zwarte pion op a2 op zet 60. India versloeg Oezbekistan 2 met 3½–½ en kwam op 17 matchpunten, één achter Oezbekistan met nog één ronde te gaan.\n\nStop bij zet 56 met een minuut op je eigen klok en zoek 56.bxc4, en speel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "1:13 på klokka, ett tårnslag, og de svarte bøndene løp",
+          "body": "GM Jakhongir Vakhidov (Usbekistan 2, 2527) hadde 1 minutt og 13 sekunder igjen i trekk 56 og slo på c5. Stockfish ville ha 56.bxc4. Etter 56.Rxc5 gikk vurderingen fra klar fordel for svart (−1,47) til gevinst (−5,25), og 56...c3 kom med en gang.\n\nGM R Praggnanandhaa (India, 2761) vant på 63 trekk, og en svart bonde nådde a2 i trekk 60. India slo Usbekistan 2 med 3½–½ og gikk opp til 17 matchpoeng, ett bak Usbekistan med én runde igjen.\n\nStopp ved trekk 56 med ett minutt på din egen klokke og let etter 56.bxc4, og spill så videre mot motoren."
+        },
+        "pl": {
+          "headline": "1:13 na zegarze, jedno bicie wieżą i czarne pionki ruszyły",
+          "body": "GM Jakhongir Vakhidov (Uzbekistan 2, 2527) ma w 56. ruchu 1 minutę 13 sekund na zegarze i bije na c5. Stockfish chciał 56.bxc4. Po 56.Rxc5 ocena silnika zmieniła się z wyraźnej przewagi czarnych (−1,47) na wygraną (−5,25), a 56...c3 padło od razu.\n\nGM R Praggnanandhaa (Indie, 2761) wygrywa w 63 ruchach, a czarny pionek dochodzi do a2 w 60. ruchu. Indie pokonują Uzbekistan 2 3½–½ i mają 17 punktów meczowych, jeden mniej niż Uzbekistan na rundę przed końcem.\n\nZatrzymaj się na 56. ruchu z minutą na własnym zegarze i poszukaj 56.bxc4, potem graj dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "1:13 no relógio, uma captura com a torre, e os peões pretos correram",
+          "body": "GM Jakhongir Vakhidov (Uzbequistão 2, 2527) tinha 1 minuto e 13 segundos no lance 56 e capturou em c5. O Stockfish queria 56.bxc4. Depois de 56.Rxc5, sua avaliação passou de clara vantagem das pretas (−1,47) para posição vencedora (−5,25), e 56...c3 veio logo em seguida.\n\nGM R Praggnanandhaa (Índia, 2761) venceu em 63 lances, com um peão preto chegando a a2 no lance 60. A Índia venceu o Uzbequistão 2 por 3½–½ e chegou a 17 pontos de match, um atrás do Uzbequistão, faltando uma rodada.\n\nPare no lance 56 com um minuto no seu próprio relógio e procure 56.bxc4, depois continue contra o motor."
+        },
+        "ro": {
+          "headline": "1:13 pe ceas, o captură cu tura, iar pionii negri au pornit în fugă",
+          "body": "GM Jakhongir Vakhidov (Uzbekistan 2, 2527) avea 1 minut și 13 secunde la mutarea 56 și a luat pe c5. Stockfish voia 56.bxc4. După 56.Rxc5, evaluarea sa a trecut de la un avantaj clar al Negrului (−1,47) la o poziție câștigătoare (−5,25), iar 56...c3 a urmat imediat.\n\nGM R Praggnanandhaa (India, 2761) a câștigat în 63 de mutări, cu un pion negru ajuns pe a2 la mutarea 60. India a învins Uzbekistan 2 cu 3½–½ și a urcat la 17 puncte de meci, la un punct în urma Uzbekistanului, cu o rundă rămasă.\n\nOprește-te la mutarea 56 cu un minut pe propriul ceas și caută 56.bxc4, apoi continuă contra motorului."
+        },
+        "ru": {
+          "headline": "1:13 на часах, одно взятие ладьёй — и чёрные пешки побежали",
+          "body": "GM Jakhongir Vakhidov (Узбекистан 2, 2527) на 56-м ходу, имея на часах 1 минуту 13 секунд, берёт на c5. Stockfish хотел 56.bxc4. После 56.Rxc5 оценка движка изменилась с явного перевеса чёрных (−1,47) на выигрыш (−5,25), а 56...c3 последовал сразу.\n\nGM R Praggnanandhaa (Индия, 2761) выигрывает за 63 хода — на 60-м ходу чёрная пешка дошла до a2. Индия обыгрывает Узбекистан 2 3½–½ и набирает 17 командных очков — на одно меньше, чем у Узбекистана, за тур до конца.\n\nОстановитесь на 56-м ходу с минутой на своих часах и найдите 56.bxc4, а затем продолжите партию против движка."
+        },
+        "sv": {
+          "headline": "1:13 på klockan, ett tornslag, och de svarta bönderna sprang",
+          "body": "GM Jakhongir Vakhidov (Uzbekistan 2, 2527) hade 1 minut och 13 sekunder kvar vid drag 56 och slog på c5. Stockfish ville ha 56.bxc4. Efter 56.Rxc5 gick värderingen från klar fördel för svart (−1,47) till vinst (−5,25), och 56...c3 kom direkt.\n\nGM R Praggnanandhaa (Indien, 2761) vann på 63 drag, och en svart bonde nådde a2 i drag 60. Indien besegrade Uzbekistan 2 med 3½–½ och gick upp till 17 matchpoäng, en poäng bakom Uzbekistan med en rond kvar.\n\nStanna vid drag 56 med en minut på din egen klocka och leta efter 56.bxc4, och spela sedan vidare mot motorn."
+        },
+        "th": {
+          "headline": "1:13 บนนาฬิกา เรือกินหนึ่งครั้ง แล้วเบี้ยดำก็วิ่ง",
+          "body": "GM Jakhongir Vakhidov (อุซเบกิสถาน 2, 2527) มีเวลาเหลือ 1 นาที 13 วินาทีที่ตาที่ 56 และกินที่ c5 Stockfish ต้องการ 56.bxc4 หลัง 56.Rxc5 ค่าประเมินของเอนจินเปลี่ยนจากฝ่ายดำได้เปรียบชัดเจน (−1.47) เป็นสถานะชนะ (−5.25) และ 56...c3 ก็มาทันที\n\nGM R Praggnanandhaa (อินเดีย, 2761) ชนะใน 63 ตา โดยเบี้ยดำตัวหนึ่งไปถึง a2 ในตาที่ 60 อินเดียชนะอุซเบกิสถาน 2 ด้วยสกอร์ 3½–½ และขึ้นไปมี 17 แต้มแมตช์ ตามหลังอุซเบกิสถานหนึ่งแต้มเมื่อเหลืออีกหนึ่งรอบ\n\nหยุดที่ตาที่ 56 โดยให้นาฬิกาของตัวเองเหลือหนึ่งนาที แล้วหา 56.bxc4 จากนั้นเล่นต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "Saatte 1:13, kaleyle tek bir alış ve siyah piyonlar koştu",
+          "body": "GM Jakhongir Vakhidov (Özbekistan 2, 2527) 56. hamlede saatinde 1 dakika 13 saniye kala c5'te aldı. Stockfish 56.bxc4'ü istiyordu. 56.Rxc5'ten sonra değerlendirmesi siyah için açık bir üstünlükten (−1,47) kazanan konuma (−5,25) geçti ve 56...c3 hemen geldi.\n\nGM R Praggnanandhaa (Hindistan, 2761) 63 hamlede kazandı; bir siyah piyon 60. hamlede a2'ye ulaştı. Hindistan, Özbekistan 2'yi 3½–½ yendi ve 17 maç puanına yükseldi; bir tur kala Özbekistan'ın bir puan gerisinde.\n\nKendi saatinde bir dakikayla 56. hamlede dur ve 56.bxc4'ü ara, sonra motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "1:13 trên đồng hồ, một nước Xe bắt quân, và các Tốt Đen lao lên",
+          "body": "GM Jakhongir Vakhidov (Uzbekistan 2, 2527) còn 1 phút 13 giây ở nước 56 và bắt quân ở c5. Stockfish muốn 56.bxc4. Sau 56.Rxc5, đánh giá của engine chuyển từ ưu thế rõ cho Đen (−1,47) sang thế thắng (−5,25), và 56...c3 đến ngay.\n\nGM R Praggnanandhaa (Ấn Độ, 2761) thắng sau 63 nước, với một Tốt Đen tới a2 ở nước 60. Ấn Độ thắng Uzbekistan 2 với tỉ số 3½–½ và lên 17 điểm trận, kém Uzbekistan một điểm khi còn một vòng.\n\nDừng ở nước 56 với một phút trên đồng hồ của chính mình và tìm 56.bxc4, rồi chơi tiếp với engine."
+        },
+        "zh-Hans": {
+          "headline": "棋钟剩1:13，一步车吃子，黑兵冲了起来",
+          "body": "GM Jakhongir Vakhidov（乌兹别克斯坦2，2527）在第56回合时还剩1分13秒，在c5吃子。Stockfish想走的是56.bxc4。56.Rxc5之后，Stockfish的评估从黑方明显占优（−1.47）变为黑方胜势（−5.25），黑方随即走出56...c3。\n\nGM R Praggnanandhaa（印度，2761）63回合取胜，第60回合一个黑兵走到了a2。印度队以3½–½战胜乌兹别克斯坦2队，团体分升至17分，在还剩一轮时落后乌兹别克斯坦队一分。\n\n在第56回合暂停，自己的棋钟也只留一分钟，找出56.bxc4，然后对着引擎继续下。"
+        },
+        "zh-Hant": {
+          "headline": "棋鐘剩1:13，一步車吃子，黑兵衝了起來",
+          "body": "GM Jakhongir Vakhidov（烏茲別克2，2527）在第56回合時還剩1分13秒，在c5吃子。Stockfish想走的是56.bxc4。56.Rxc5之後，Stockfish的評估從黑方明顯佔優（−1.47）變為黑方勝勢（−5.25），黑方隨即走出56...c3。\n\nGM R Praggnanandhaa（印度，2761）63回合取勝，第60回合一個黑兵走到了a2。印度隊以3½–½擊敗烏茲別克2隊，團體分升至17分，在還剩一輪時落後烏茲別克隊一分。\n\n在第56回合暫停，自己的棋鐘也只留一分鐘，找出56.bxc4，然後對著引擎繼續下。"
+        }
+      },
+      "fen": "8/7r/8/2R5/1pp1kPp1/1P4K1/P7/8 b - - 0 56",
+      "last": {
+        "from": "c6",
+        "to": "c5"
+      },
+      "url": "https://brasspawn.com/today/2026-09-26-vakhidov-praggnanandhaa-olympiad-r10",
       "source": {
         "name": "Lichess broadcast",
-        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-9/oQds2Dcv/MnEq7dJj"
-      }
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-open-matches-1-12/round-10/WCYaLfnP/cw4qBPRh"
+      },
+      "updatedAt": "2026-09-26T21:11:38.029Z"
     },
     {
-      "id": "2026-09-25-zhu-jiner-mkrtchian-olympiad-r9",
-      "status": "draft",
-      "date": "2026-09-25",
+      "id": "2026-09-26-tarasenka-salimova-olympiad-r10",
+      "status": "approved",
+      "date": "2026-09-26",
+      "rank": 0,
+      "weight": 400,
       "event": {
         "name": "46th FIDE Chess Olympiad Samarkand 2026",
         "short": "Olympiad",
         "section": "Women",
-        "round": 9,
+        "round": 10,
         "location": "Samarkand, Uzbekistan",
-        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-women-matches-1-25/round-9/edZfnhoA"
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-women-matches-1-25/round-10/BQmH5Kuj"
       },
       "white": {
-        "name": "Zhu Jiner",
-        "short": "Zhu Jiner",
-        "title": "GM",
-        "elo": 2550,
-        "team": "China",
-        "fed": null,
-        "fideId": 8608059
+        "name": "Aliaksandra Tarasenka",
+        "short": "Tarasenka",
+        "title": "WIM",
+        "elo": 2228,
+        "team": "Belarus"
       },
       "black": {
-        "name": "Lilit Mkrtchian",
-        "short": "Mkrtchian",
+        "name": "Nurgyul Salimova",
+        "short": "Salimova",
         "title": "IM",
-        "elo": 2353,
-        "team": "Armenia",
-        "fed": null,
-        "fideId": 13300601
+        "elo": 2439,
+        "team": "Bulgaria"
       },
       "result": "1-0",
       "opening": {
-        "eco": "E14",
-        "name": "Queen's Indian Defense: Spassky System"
+        "eco": "C26",
+        "name": "Vienna Game: Stanley Variation"
       },
-      "moves": "d4 Nf6 c4 e6 Nf3 b6 e3 Bb7 Bd3 c5 Nc3 cxd4 exd4 d6 O-O Be7 a3 O-O b4 a6 Bb2 Nbd7 Re1 Re8 Rc1 Bf8 Bf1 g6 Nd2 Rc8 Nb3 Rc7 Rc2 Qa8 Bc1 Rec8 Be3 Ne4 Nxe4 Bxe4 Rc1 Bc6 Nd2 Bb7 Bf4 Re8 c5 e5 Bg3 bxc5 bxc5 dxc5 dxe5 Re6 Nc4 Bg7 Qd2 Nf8 Nd6 Bd5 Qa5 Qc6 Qxa6 Qxa6 Bxa6 Ra7 Bc8 Rxa3 Bxe6 Nxe6 Ra1 Rc3 Rec1 Rb3 Rcb1 c4 Rxb3 cxb3 Rd1 Bc6 Nc4 Bh6 Rd6 Bb5 Na3 Be2 Rb6 Bd1 Nc4 Bc1 Na5 Nc5 Rb8+ Kg7 e6 Nxe6 Be5+ Kh6 Nxb3 Ba3 Nd4 Nxd4 Bxd4 Bg4 Bf6 g5 Rg8 Bc1 h4",
-      "plies": 109,
+      "moves": "e4 e5 Bc4 Nf6 Nc3 Bc5 Nge2 Nc6 O-O d6 d3 Na5 Bg5 Nxc4 dxc4 Be6 Qd3 h6 Bxf6 Qxf6 Kh1 O-O Nd5 Qd8 f4 Bxd5 cxd5 exf4 Rxf4 c6 Raf1 Qb6 b3 Rae8 Qf3 Qc7 Ng3 g6 dxc6 bxc6 Rh4 Qd8 Rxh6 Bd4 Nf5 Be5 Qg4 Re6 Rh3 Bg7 Nxg7 Kxg7 Qf4 g5 Qg4 Rg6 Qh5 Rh8 Qxh8+ Qxh8 Rxh8 Kxh8 Rxf7 Re6 Kg1 a5 Rd7 g4 Kf2 Kg8 Kg3 Kf8 Kxg4 Rxe4+ Kf3 Re6 g4 Ke8 Ra7 Re5 h4 Rc5 c4 d5 cxd5 cxd5 h5 Kf8 h6 Kg8 g5 Rc6 Rxa5",
       "ending": null,
       "key": {
-        "kind": "mistake",
-        "ply": 90,
-        "played": "Bc1",
-        "better": "Bg5",
-        "reply": "Rb8+",
-        "replyPlayed": false,
+        "kind": "breakthrough",
+        "ply": 53,
+        "played": "Qf4",
+        "better": null,
+        "reply": "g5",
+        "replyPlayed": true,
         "before": {
-          "cp": 226,
+          "cp": 217,
           "mate": null
         },
         "after": {
-          "cp": 277,
+          "cp": 248,
           "mate": null
         },
-        "clock": 779
+        "clock": 747
       },
-      "headline": "Zhu Jiner beats Mkrtchian in the Women's Olympiad",
-      "body": "Zhu Jiner beat Lilit Mkrtchian with White in round 9 of the Women's Olympiad, China against Armenia. From 45...Bc1 the engine rated White's position as winning and went on rating it so; it preferred 45...Bg5. Zhu Jiner won in 55 moves.",
+      "headline": "Tarasenka does it again: 211 points lower, a win against Bulgaria's Salimova",
+      "lede": "WIM Aliaksandra Tarasenka (Belarus) beat IM Nurgyul Salimova (Bulgaria) in round 10 of the 46th FIDE Chess Olympiad Samarkand 2026 (Women), in 47 moves.",
+      "body": "WIM Aliaksandra Tarasenka (Belarus, 2228) beat IM Nurgyul Salimova (Bulgaria, 2439) in 47 moves, two rounds after beating IM Teodora Injac, 178 points higher. By rating it was the biggest upset of the women's round among the relayed games.\n\n27.Qf4 was the move. Stockfish had White clearly better before it (+2.17) and after it (+2.48), and it never swung back. On move 30 the queen took the rook on h8 with check, the queens came off, and the rook ending was won on move 47.\n\nGo back to 27.Qf4, see what Stockfish saw in it, then play it on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "Tarasenka من جديد: بتصنيف أقل بـ211 نقطة، فوز على Salimova من بلغاريا",
+          "body": "انتهى الدور بفوز WIM Aliaksandra Tarasenka (بيلاروس، 2228) على IM Nurgyul Salimova (بلغاريا، 2439) في 47 نقلة، بعد جولتين من الفوز على IM Teodora Injac، وكان تصنيف Injac أعلى بـ178 نقطة. ووفق التصنيف كانت هذه أكبر مفاجأة في جولة السيدات بين الأدوار المنقولة.\n\nكانت النقلة ⁨27.Qf4⁩. رأى Stockfish الأبيض متفوقًا بوضوح قبلها (⁨+2.17⁩) وبعدها (⁨+2.48⁩)، ولم يتراجع التقييم بعدها قط. في النقلة 30 أخذ الوزير الرخ على h8 مع كش، وخرج الوزيران من الرقعة، وحُسمت نهاية الرخ بالفوز في النقلة 47.\n\nارجع إلى ⁨27.Qf4⁩، وانظر ما رآه Stockfish فيها، ثم تابع اللعب ضد المحرك."
+        },
+        "bg": {
+          "headline": "Tarasenka отново: с 211 точки по-нисък рейтинг, победа над Salimova от България",
+          "body": "WIM Aliaksandra Tarasenka (Беларус, 2228) победи IM Nurgyul Salimova (България, 2439) за 47 хода, два кръга след победата над IM Teodora Injac със 178 точки по-висок рейтинг. По рейтинг това е най-голямата изненада в кръга при жените сред предаваните партии.\n\nХодът беше 27.Qf4. Stockfish даваше ясно предимство на белите и преди него (+2,17), и след него (+2,48), и оценката вече не се обърна. На 30-ия ход дамата взе топа на h8 с шах, дамите бяха разменени, а топовият ендшпил беше спечелен на 47-ия ход.\n\nВърнете се към 27.Qf4, вижте какво видя Stockfish в него, после продължете партията срещу енджина."
+        },
+        "cs": {
+          "headline": "Tarasenka znovu vyhrává o 211 bodů níž, Salimova z Bulharska prohrává",
+          "body": "V partii WIM Aliaksandra Tarasenka (Bělorusko, 2228) – IM Nurgyul Salimova (Bulharsko, 2439) vyhrává po 47 tazích Tarasenka, dvě kola po výhře v partii IM Teodora Injac – Tarasenka, kde byl rating na druhé straně o 178 bodů vyšší. Podle ratingu to bylo mezi přenášenými partiemi největší překvapení kola žen.\n\nKlíčovým tahem bylo 27.Qf4. Stockfish viděl jasnou výhodu bílých před tahem (+2,17) i po něm (+2,48) a hodnocení se už nikdy neobrátilo. Ve 30. tahu vzala dáma věž na h8 se šachem, dámy šly z šachovnice a věžová koncovka byla ve 47. tahu vyhrána.\n\nVrať se k 27.Qf4, podívej se, co v tom tahu Stockfish viděl, a pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "Tarasenka gør det igen: 211 ratingpoint lavere, en sejr over Bulgariens Salimova",
+          "body": "WIM Aliaksandra Tarasenka (Belarus, 2228) slog IM Nurgyul Salimova (Bulgarien, 2439) i 47 træk, to runder efter sejren over IM Teodora Injac, 178 ratingpoint højere. Målt på rating var det den største overraskelse i runden hos kvinderne blandt de transmitterede partier.\n\n27.Qf4 var trækket. Stockfish så hvid klart bedre før (+2,17) og efter (+2,48), og vurderingen svingede aldrig tilbage. I 30. træk slog dronningen tårnet på h8 med skak, dronningerne blev byttet af, og tårnslutspillet blev vundet i 47. træk.\n\nGå tilbage til 27.Qf4, se, hvad Stockfish så i trækket, og spil så videre mod motoren."
+        },
+        "de": {
+          "headline": "Tarasenka schafft es wieder: 211 Elo weniger, ein Sieg gegen Bulgariens Salimova",
+          "body": "WIM Aliaksandra Tarasenka (Belarus, 2228) schlug IM Nurgyul Salimova (Bulgarien, 2439) in 47 Zügen, zwei Runden nach dem Sieg gegen IM Teodora Injac, 178 Elo höher. Nach Wertung war es die größte Überraschung der Frauenrunde unter den übertragenen Partien.\n\n27.Qf4 war der Zug. Stockfish sah Weiß davor klar besser (+2,17) und danach (+2,48), und die Bewertung schlug nie mehr um. Im 30. Zug schlug die Dame den Turm auf h8 mit Schach, die Damen wurden getauscht, und das Turmendspiel war im 47. Zug gewonnen.\n\nZurück zu 27.Qf4, sehen, was Stockfish darin sah, dann gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Tarasenka ξανά: 211 βαθμούς χαμηλότερα, νίκη επί Salimova από τη Βουλγαρία",
+          "body": "Νίκη σε 47 κινήσεις για WIM Aliaksandra Tarasenka (Λευκορωσία, 2228) επί IM Nurgyul Salimova (Βουλγαρία, 2439), δύο γύρους μετά τη νίκη επί IM Teodora Injac, 178 βαθμούς ψηλότερα. Με βάση τη βαθμολογία, ήταν η μεγαλύτερη έκπληξη του γύρου των γυναικών ανάμεσα στις παρτίδες που μεταδόθηκαν.\n\nΗ κίνηση ήταν η 27.Qf4. Το Stockfish έβλεπε καθαρό πλεονέκτημα για τα λευκά πριν από την κίνηση (+2,17) και μετά (+2,48), και η εκτίμηση δεν γύρισε ποτέ. Στην 30ή κίνηση η βασίλισσα πήρε τον πύργο στο h8 με σαχ, οι βασίλισσες βγήκαν από τη σκακιέρα, και το φινάλε πύργων κερδήθηκε στην 47η κίνηση.\n\nΓύρνα στην 27.Qf4, δες τι είδε σε αυτή την κίνηση το Stockfish, μετά συνέχισε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Tarasenka lo vuelve a hacer: con 211 puntos menos de Elo, victoria contra Salimova, de Bulgaria",
+          "body": "WIM Aliaksandra Tarasenka (Bielorrusia, 2228) venció a IM Nurgyul Salimova (Bulgaria, 2439) en 47 jugadas, dos rondas después de vencer a IM Teodora Injac, que tenía 178 puntos más de Elo. Por Elo, fue la mayor sorpresa de la ronda femenina entre las partidas retransmitidas.\n\nLa jugada fue 27.Qf4. Stockfish veía clara ventaja de las blancas antes (+2,17) y después (+2,48), y la valoración nunca se dio la vuelta. En la jugada 30 la dama tomó la torre de h8 con jaque, se cambiaron las damas, y el final de torres se ganó en la jugada 47.\n\nVuelve a 27.Qf4, mira qué vio Stockfish en ella y luego sigue contra el motor."
+        },
+        "fi": {
+          "headline": "Tarasenka tekee sen taas: 211 pistettä alempana voitto Bulgarian Salimovasta",
+          "body": "WIM Aliaksandra Tarasenka (Valko-Venäjä, 2228) voitti IM Nurgyul Salimovan (Bulgaria, 2439) 47 siirrossa. Kaksi kierrosta aiemmin Tarasenka oli voittanut 178 pistettä korkeamman IM Teodora Injacin. Ratingin perusteella tämä peli oli naisten kierroksen suurin yllätys lähetettyjen pelien joukossa.\n\n27.Qf4 oli se siirto. Stockfishin mukaan valkealla oli selvä etu sekä ennen sitä (+2,17) että sen jälkeen (+2,48), eikä arvio koskaan kääntynyt takaisin. Siirrolla 30 kuningatar löi h8:n tornin shakaten, kuningattaret vaihdettiin pois, ja torniloppupeli voitettiin siirrolla 47.\n\nPalaa siirtoon 27.Qf4, katso, mitä Stockfish näki siinä, ja jatka sitten peliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Tarasenka recommence : avec 211 points Elo de moins, victoire contre Salimova (Bulgarie)",
+          "body": "WIM Aliaksandra Tarasenka (Biélorussie, 2228) a battu IM Nurgyul Salimova (Bulgarie, 2439) en 47 coups, deux rondes après avoir battu IM Teodora Injac, qui comptait 178 points Elo de plus. Au classement Elo, c’était la plus grosse surprise de la ronde féminine parmi les parties retransmises.\n\nLe coup : 27.Qf4. Stockfish voyait les Blancs nettement mieux avant (+2,17) et après (+2,48), et l’évaluation n’a plus jamais basculé. Au 30e coup, la dame a pris la tour en h8 avec échec, les dames ont été échangées, et la finale de tours a été gagnée au 47e coup.\n\nRevenez à 27.Qf4, voyez ce que Stockfish y a vu, puis continuez contre le moteur."
+        },
+        "he": {
+          "headline": "Tarasenka שוב: בדירוג נמוך ב־211 נקודות, ניצחון על Salimova מבולגריה",
+          "body": "המשחק הסתיים בניצחון ל־WIM Aliaksandra Tarasenka (בלארוס, 2228) על IM Nurgyul Salimova (בולגריה, 2439) אחרי 47 מסעים, שני סיבובים אחרי ניצחון על IM Teodora Injac, בדירוג גבוה ב־178 נקודות. לפי הדירוג זו הייתה ההפתעה הגדולה ביותר בסיבוב הנשים מבין המשחקים שהועברו בשידור.\n\nהמסע היה ⁨27.Qf4⁩. לפי Stockfish, ללבן היה יתרון ברור לפניו (⁨+2.17⁩) ואחריו (⁨+2.48⁩), וההערכה מעולם לא חזרה לאחור. במסע 30 המלכה לקחה את הצריח ב־h8 עם שח, המלכות ירדו מהלוח, וסיום הצריחים הוכרע בניצחון במסע 47.\n\nחזרו ל־⁨27.Qf4⁩, ראו מה Stockfish ראה בו, ואז המשיכו לשחק מול המנוע."
+        },
+        "hi": {
+          "headline": "Tarasenka ने फिर यही किया: रेटिंग में 211 अंक पीछे, Salimova (बुल्गारिया) पर जीत",
+          "body": "WIM Aliaksandra Tarasenka (बेलारूस, 2228) ने IM Nurgyul Salimova (बुल्गारिया, 2439) को 47 चालों में हराया, रेटिंग में 178 अंक आगे IM Teodora Injac को हराने के दो राउंड बाद। रेटिंग के हिसाब से प्रसारित बाज़ियों में यह महिला राउंड का सबसे बड़ा उलटफेर था।\n\nचाल थी 27.Qf4। Stockfish के हिसाब से इससे पहले (+2.17) और बाद में (+2.48) भी सफ़ेद को साफ़ बढ़त थी, और आकलन कभी वापस नहीं पलटा। चाल 30 पर रानी ने शह के साथ h8 पर हाथी लिया, रानियाँ बोर्ड से हटीं, और हाथियों का एंडगेम चाल 47 पर जीत लिया गया।\n\n27.Qf4 पर लौटें, देखें कि Stockfish ने इसमें क्या देखा, फिर इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "Tarasenka újra: 211 ponttal alacsonyabb értékszámmal nyert a bolgár Salimova ellen",
+          "body": "WIM Aliaksandra Tarasenka (Fehéroroszország, 2228) 47 lépésben nyert IM Nurgyul Salimova (Bulgária, 2439) ellen, két fordulóval azután, hogy a 178 ponttal magasabb értékszámú IM Teodora Injac ellen is nyert. Értékszám alapján ez volt a női forduló legnagyobb meglepetése a közvetített játszmák között.\n\nA 27.Qf4 volt a lépés. A Stockfish szerint világos előtte (+2,17) és utána (+2,48) is egyértelműen jobban állt, és az értékelés soha nem fordult meg. A 30. lépésben a vezér sakkal leütötte a h8-as bástyát, lekerültek a vezérek, és a bástyavégjáték a 47. lépésben nyeréssel zárult.\n\nMenj vissza a 27.Qf4 lépéshez, nézd meg, mit látott benne a Stockfish, aztán játszd tovább a motor ellen."
+        },
+        "id": {
+          "headline": "Tarasenka mengulanginya: rating 211 poin lebih rendah, menang atas Salimova dari Bulgaria",
+          "body": "WIM Aliaksandra Tarasenka (Belarus, 2228) mengalahkan IM Nurgyul Salimova (Bulgaria, 2439) dalam 47 langkah, dua babak setelah mengalahkan IM Teodora Injac, yang 178 poin lebih tinggi. Menurut rating, ini kejutan terbesar di babak putri di antara partai yang disiarkan.\n\nLangkah kuncinya 27.Qf4. Stockfish menilai Putih unggul jelas sebelum langkah itu (+2,17) dan sesudahnya (+2,48), dan penilaiannya tidak pernah berbalik. Pada langkah 30 menteri mengambil benteng di h8 dengan skak, menteri-menteri ditukar, dan akhir permainan benteng dimenangi pada langkah 47.\n\nKembali ke 27.Qf4, lihat apa yang dilihat Stockfish di situ, lalu lanjutkan melawan mesin."
+        },
+        "it": {
+          "headline": "Tarasenka si ripete: con 211 punti Elo in meno, una vittoria contro Salimova, della Bulgaria",
+          "body": "WIM Aliaksandra Tarasenka (Bielorussia, 2228) ha battuto IM Nurgyul Salimova (Bulgaria, 2439) in 47 mosse, due turni dopo la vittoria contro IM Teodora Injac, che aveva 178 punti Elo in più. Per Elo è stata la sorpresa più grande del turno femminile tra le partite trasmesse.\n\nLa mossa è stata 27.Qf4. Stockfish vedeva il Bianco chiaramente meglio prima (+2,17) e dopo (+2,48), e la valutazione non è mai più tornata indietro. Alla mossa 30 la Donna ha preso la Torre in h8 con scacco, le Donne sono state cambiate, e il finale di Torri è stato vinto alla mossa 47.\n\nTorna a 27.Qf4, guarda che cosa ci vedeva Stockfish, poi continua contro il motore."
+        },
+        "ja": {
+          "headline": "Tarasenka、再び：211点下からブルガリアのSalimovaに勝利",
+          "body": "WIM Aliaksandra Tarasenka（ベラルーシ、2228）がIM Nurgyul Salimova（ブルガリア、2439）に47手で勝ちました。二ラウンド前には、178点上のIM Teodora Injacに勝っています。レーティングで見れば、中継された対局の中で女子のこのラウンド最大の番狂わせでした。\n\nカギとなった手は27.Qf4でした。Stockfishは、この手の前（+2.17）も後（+2.48）も白の明確な優勢と見ていて、その評価が逆に振れることは一度もありませんでした。30手目にクイーンがチェックをかけながらh8のルークを取り、クイーンが盤上から消え、47手目にルーク・エンディングが勝ちで終わりました。\n\n27.Qf4に戻って、Stockfishがこの手に何を見ていたかを確かめ、そのままエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "Tarasenka, 또 해냈다: 211점 낮은 레이팅으로 불가리아의 Salimova에 승리",
+          "body": "WIM Aliaksandra Tarasenka(벨라루스, 2228)가 IM Nurgyul Salimova(불가리아, 2439)에게 47수 만에 이겼습니다. 두 라운드 전 178점 높은 IM Teodora Injac에게 이긴 데 이은 승리였습니다. 레이팅으로 보면 중계된 대국 가운데 이번 여자부 라운드 최대의 이변이었습니다.\n\n핵심 수는 27.Qf4였습니다. Stockfish는 이 수 전(+2.17)에도, 이 수 뒤(+2.48)에도 백의 뚜렷한 우세로 보았고, 평가는 끝내 반대로 돌아서지 않았습니다. 30수째에 퀸이 체크와 함께 h8의 룩을 잡았고, 퀸이 교환되었으며, 룩 엔드게임은 47수째에 승리로 끝났습니다.\n\n27.Qf4로 돌아가 Stockfish가 이 수에서 무엇을 보았는지 확인한 뒤, 엔진을 상대로 이어서 두어 보세요."
+        },
+        "ms": {
+          "headline": "Tarasenka mengulanginya: penarafan 211 mata lebih rendah, menang ke atas Salimova dari Bulgaria",
+          "body": "WIM Aliaksandra Tarasenka (Belarus, 2228) menewaskan IM Nurgyul Salimova (Bulgaria, 2439) dalam 47 langkah, dua pusingan selepas menewaskan IM Teodora Injac, yang 178 mata lebih tinggi. Mengikut penarafan, ini kejutan terbesar pusingan wanita dalam kalangan permainan yang disiarkan.\n\nLangkah utamanya ialah 27.Qf4. Stockfish menilai Putih jelas mendahului sebelumnya (+2,17) dan selepasnya (+2,48), dan penilaian itu tidak pernah berbalik. Pada langkah 30 menteri mengambil tir di h8 dengan sekak, menteri ditukar, dan akhir permainan tir dimenangi pada langkah 47.\n\nKembali ke 27.Qf4, lihat apa yang Stockfish nampak padanya, kemudian teruskan menentang enjin."
+        },
+        "nl": {
+          "headline": "Tarasenka doet het weer: 211 ratingpunten lager, winst tegen Salimova uit Bulgarije",
+          "body": "WIM Aliaksandra Tarasenka (Belarus, 2228) versloeg IM Nurgyul Salimova (Bulgarije, 2439) in 47 zetten, twee rondes na de zege op IM Teodora Injac, 178 ratingpunten hoger. Op rating was het de grootste verrassing van de ronde bij de vrouwen, onder de uitgezonden partijen.\n\n27.Qf4 was de zet. Stockfish zag wit ervoor duidelijk beter (+2,17) en erna (+2,48), en de beoordeling sloeg nooit meer om. Op zet 30 sloeg de dame de toren op h8 met schaak, de dames gingen van het bord, en het toreneindspel werd gewonnen op zet 47.\n\nGa terug naar 27.Qf4, bekijk wat Stockfish erin zag, en speel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "Tarasenka gjør det igjen: 211 poeng lavere, seier mot Bulgarias Salimova",
+          "body": "WIM Aliaksandra Tarasenka (Belarus, 2228) slo IM Nurgyul Salimova (Bulgaria, 2439) på 47 trekk, to runder etter seieren over IM Teodora Injac, 178 poeng høyere. Målt i rating var det den største overraskelsen i kvinnenes runde blant de sendte partiene.\n\n27.Qf4 var trekket. Stockfish så hvit klart bedre både før (+2,17) og etter (+2,48), og vurderingen svingte aldri tilbake. I trekk 30 slo dronningen tårnet på h8 med sjakk, dronningene ble byttet av, og tårnsluttspillet ble vunnet i trekk 47.\n\nGå tilbake til 27.Qf4, se hva Stockfish så i trekket, og spill så videre mot motoren."
+        },
+        "pl": {
+          "headline": "Tarasenka znowu: 211 punktów rankingu mniej i wygrana z Salimova z Bułgarii",
+          "body": "WIM Aliaksandra Tarasenka (Białoruś, 2228) pokonuje IM Nurgyul Salimova (Bułgaria, 2439) w 47 ruchach, dwie rundy po wygranej z IM Teodora Injac z rankingiem wyższym o 178 punktów. Pod względem rankingu to największa niespodzianka rundy kobiet wśród transmitowanych partii.\n\nChodzi o ruch 27.Qf4. Stockfish widział wyraźną przewagę białych przed nim (+2,17) i po nim (+2,48), a ocena już się nie odwróciła. W 30. ruchu hetman wziął wieżę na h8 z szachem, hetmany zeszły z szachownicy, a końcówka wieżowa została wygrana w 47. ruchu.\n\nWróć do 27.Qf4, sprawdź, co Stockfish w nim widział, potem graj dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Tarasenka repete o feito: com 211 pontos a menos, vitória sobre Salimova, da Bulgária",
+          "body": "WIM Aliaksandra Tarasenka (Belarus, 2228) venceu IM Nurgyul Salimova (Bulgária, 2439) em 47 lances, duas rodadas depois de vencer IM Teodora Injac, 178 pontos acima. Pelo rating, foi a maior zebra da rodada feminina entre as partidas transmitidas.\n\nO lance foi 27.Qf4. O Stockfish via clara vantagem das brancas antes dele (+2,17) e depois (+2,48), e a avaliação nunca voltou atrás. No lance 30, a dama capturou a torre em h8 com xeque, as damas saíram do tabuleiro, e o final de torres foi vencido no lance 47.\n\nVolte a 27.Qf4, veja o que o Stockfish viu nele e depois continue contra o motor."
+        },
+        "ro": {
+          "headline": "Tarasenka reușește din nou: cu 211 puncte mai puțin, victorie contra Salimova, din Bulgaria",
+          "body": "WIM Aliaksandra Tarasenka (Belarus, 2228) a câștigat contra IM Nurgyul Salimova (Bulgaria, 2439) în 47 de mutări, la două runde după victoria contra IM Teodora Injac, care avea cu 178 de puncte mai mult. După rating, a fost cea mai mare surpriză a rundei feminine dintre partidele transmise.\n\nMutarea a fost 27.Qf4. Stockfish vedea un avantaj clar al Albului înainte de ea (+2,17) și după (+2,48), iar evaluarea nu s-a mai întors niciodată. La mutarea 30, dama a luat tura de pe h8 cu șah, damele au ieșit de pe tablă, iar finalul de ture a fost câștigat la mutarea 47.\n\nÎntoarce-te la 27.Qf4, vezi ce a văzut Stockfish în ea, apoi continuă contra motorului."
+        },
+        "ru": {
+          "headline": "Tarasenka снова: на 211 пунктов ниже — и победа над Salimova из Болгарии",
+          "body": "WIM Aliaksandra Tarasenka (Беларусь, 2228) обыгрывает IM Nurgyul Salimova (Болгария, 2439) за 47 ходов — через два тура после победы над IM Teodora Injac с рейтингом на 178 пунктов выше. По рейтингу это самый неожиданный результат женского тура среди транслировавшихся партий.\n\nТот самый ход — 27.Qf4. Stockfish давал белым явный перевес и до него (+2,17), и после (+2,48), и оценка так и не качнулась обратно. На 30-м ходу ферзь взял ладью на h8 с шахом, ферзи ушли с доски, а ладейный эндшпиль был выигран на 47-м ходу.\n\nВернитесь к 27.Qf4, посмотрите, что Stockfish увидел в этом ходе, а затем продолжите партию против движка."
+        },
+        "sv": {
+          "headline": "Tarasenka gör det igen: 211 poäng lägre, seger mot Bulgariens Salimova",
+          "body": "WIM Aliaksandra Tarasenka (Belarus, 2228) besegrade IM Nurgyul Salimova (Bulgarien, 2439) på 47 drag, två ronder efter segern mot IM Teodora Injac, 178 poäng högre. Sett till rating var det den största skrällen i damernas rond bland de sända partierna.\n\n27.Qf4 var draget. Stockfish såg vit tydligt bättre både före (+2,17) och efter (+2,48), och värderingen svängde aldrig tillbaka. I drag 30 slog damen tornet på h8 med schack, damerna byttes av, och tornslutspelet vanns i drag 47.\n\nGå tillbaka till 27.Qf4, se vad Stockfish såg i draget och spela sedan vidare mot motorn."
+        },
+        "th": {
+          "headline": "Tarasenka ทำได้อีกครั้ง: เรตติ้งต่ำกว่า 211 แต่ชนะ Salimova จากบัลแกเรีย",
+          "body": "WIM Aliaksandra Tarasenka (เบลารุส, 2228) ชนะ IM Nurgyul Salimova (บัลแกเรีย, 2439) ใน 47 ตา สองรอบหลังจากชนะ IM Teodora Injac ที่เรตติ้งสูงกว่า 178 แต้ม ตามเรตติ้งแล้ว นี่คือผลพลิกความคาดหมายครั้งใหญ่ที่สุดของรอบนี้ในประเภทหญิง ในบรรดาเกมที่ถ่ายทอด\n\nตาสำคัญคือ 27.Qf4 Stockfish มองว่าฝ่ายขาวได้เปรียบชัดเจนทั้งก่อนตานั้น (+2.17) และหลังจากนั้น (+2.48) และค่าประเมินไม่เคยแกว่งกลับอีกเลย ในตาที่ 30 ควีนกินเรือที่ h8 พร้อมรุก ควีนออกจากกระดาน และช่วงท้ายเกมเรือก็ชนะในตาที่ 47\n\nย้อนกลับไปที่ 27.Qf4 ดูว่า Stockfish เห็นอะไรในตานั้น แล้วเล่นต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "Tarasenka yine yaptı: 211 puan düşük reytingle Bulgaristan'dan Salimova'ya karşı galibiyet",
+          "body": "WIM Aliaksandra Tarasenka (Belarus, 2228), IM Nurgyul Salimova'yı (Bulgaristan, 2439) 47 hamlede yendi; bu galibiyet, 178 puan yüksek reytingli IM Teodora Injac'ı yenmesinden iki tur sonra geldi. Reytinge göre, yayınlanan oyunlar arasında kadınlar turunun en büyük sürprizi buydu.\n\nHamle 27.Qf4'tü. Stockfish beyazı hamleden önce (+2,17) ve sonra (+2,48) açık farkla üstün görüyordu ve değerlendirme bir daha hiç geri dönmedi. 30. hamlede vezir h8'deki kaleyi şah çekerek aldı, vezirler tahtadan çıktı ve kale oyunsonu 47. hamlede kazanıldı.\n\n27.Qf4'e dön, Stockfish'in orada ne gördüğüne bak, sonra motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Tarasenka lại làm được: kém 211 điểm hệ số, thắng Salimova của Bulgaria",
+          "body": "WIM Aliaksandra Tarasenka (Belarus, 2228) thắng IM Nurgyul Salimova (Bulgaria, 2439) sau 47 nước, hai vòng sau ván thắng trước IM Teodora Injac, đối thủ có hệ số cao hơn 178 điểm. Xét theo hệ số, đây là kết quả bất ngờ lớn nhất của vòng đấu nữ trong số các ván được phát sóng.\n\nNước then chốt là 27.Qf4. Stockfish thấy Trắng ưu thế rõ trước nước đó (+2,17) lẫn sau nước đó (+2,48), và đánh giá không bao giờ đảo chiều. Ở nước 30, Hậu bắt Xe ở h8 kèm nước chiếu, hai Hậu được đổi, và tàn cuộc Xe kết thúc với chiến thắng ở nước 47.\n\nQuay lại 27.Qf4, xem Stockfish thấy gì ở nước đó, rồi chơi tiếp với engine."
+        },
+        "zh-Hans": {
+          "headline": "Tarasenka再度做到：等级分低211分，战胜保加利亚的Salimova",
+          "body": "WIM Aliaksandra Tarasenka（白俄罗斯，2228）47回合击败IM Nurgyul Salimova（保加利亚，2439）。两轮之前，Tarasenka击败了等级分高178分的IM Teodora Injac。按等级分计算，这是本轮女子组直播对局中最大的冷门。\n\n关键一步是27.Qf4。Stockfish认为，这步棋之前（+2.17）和之后（+2.48）白方都明显占优，评估始终没有逆转。第30回合，白后将军并吃掉h8的车，双后兑换，车残局在第47回合赢下。\n\n回到27.Qf4，看看Stockfish在这步棋中看到了什么，然后对着引擎继续下。"
+        },
+        "zh-Hant": {
+          "headline": "Tarasenka再度做到：等級分低211分，戰勝保加利亞的Salimova",
+          "body": "WIM Aliaksandra Tarasenka（白俄羅斯，2228）47回合擊敗IM Nurgyul Salimova（保加利亞，2439）。兩輪之前，Tarasenka擊敗了等級分高178分的IM Teodora Injac。按等級分計算，這是本輪女子組轉播對局中最大的冷門。\n\n關鍵一步是27.Qf4。Stockfish認為，這步棋之前（+2.17）和之後（+2.48）白方都明顯佔優，評估始終沒有逆轉。第30回合，白后將軍並吃掉h8的車，雙后兌換，車殘局在第47回合贏下。\n\n回到27.Qf4，看看Stockfish在這步棋中看到了什麼，然後對著引擎繼續下。"
+        }
+      },
+      "fen": "3q1r2/p4pk1/2ppr1p1/8/4PQ2/1P5R/P1P3PP/5R1K b - - 1 27",
+      "last": {
+        "from": "g4",
+        "to": "f4"
+      },
+      "url": "https://brasspawn.com/today/2026-09-26-tarasenka-salimova-olympiad-r10",
       "source": {
         "name": "Lichess broadcast",
-        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-women-matches-1-25/round-9/edZfnhoA/v4cpOii8"
-      }
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-women-matches-1-25/round-10/BQmH5Kuj/o2hPlcfC"
+      },
+      "updatedAt": "2026-09-26T21:11:38.123Z"
     },
     {
-      "id": "2026-09-25-mungunzul-assaubayeva-olympiad-r9",
-      "status": "draft",
-      "date": "2026-09-25",
+      "id": "2026-09-26-assaubayeva-daulyte-cornette-olympiad-r10",
+      "status": "approved",
+      "date": "2026-09-26",
+      "rank": 1,
+      "weight": 286,
       "event": {
         "name": "46th FIDE Chess Olympiad Samarkand 2026",
         "short": "Olympiad",
         "section": "Women",
-        "round": 9,
+        "round": 10,
         "location": "Samarkand, Uzbekistan",
-        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-women-matches-1-25/round-9/edZfnhoA"
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-women-matches-1-25/round-10/BQmH5Kuj"
       },
       "white": {
-        "name": "Bat-Erdene Mungunzul",
-        "short": "Mungunzul",
-        "title": "WIM",
-        "elo": 2402,
-        "team": "Mongolia",
-        "fed": null,
-        "fideId": 4902831
-      },
-      "black": {
         "name": "Bibisara Assaubayeva",
         "short": "Assaubayeva",
         "title": "GM",
         "elo": 2536,
-        "team": "Kazakhstan",
-        "fed": null,
-        "fideId": 13708694
+        "team": "Kazakhstan"
       },
-      "result": "0-1",
+      "black": {
+        "name": "Deimante Daulyte-Cornette",
+        "short": "Daulyte-Cornette",
+        "title": "IM",
+        "elo": 2391,
+        "team": "France"
+      },
+      "result": "1-0",
       "opening": {
-        "eco": "E92",
-        "name": "King's Indian Defense: Petrosian Variation, Stein Defense"
+        "eco": "A13",
+        "name": "English Opening: Agincourt Defense, Bogoljubow Defense"
       },
-      "moves": "d4 Nf6 c4 g6 Nc3 Bg7 e4 d6 Nf3 O-O Be2 e5 d5 a5 Be3 Ng4 Bg5 f6 Bh4 Nh6 Nd2 Na6 f3 Bd7 a3 Nf7 Rb1 Nc5 b4 axb4 axb4 Na4 Na2 Bh6 Qb3 Ng5 Bf2 f5 h4 Nf7 Qc2 Qf6 Bd3 c6 dxc6 bxc6 Nb3 Nd8 h5 Kg7 hxg6 hxg6 Rd1 Ne6 Bf1 Ng5 Na5 c5 Nb7 fxe4 Nxd6 exf3 bxc5 Bc6 g3 Nxc5 Nc3 Rad8 Rxh6 Kxh6 Bxc5 f2+ Qxf2 Nf3+ Ke2 Nd4+ Bxd4 Bf3+ Ke1 exd4 Rxd4 Qe5+ Kd2 Rxd6 Qe3+ Qxe3+ Kxe3 Re8+ Kd3 Rde6 Rf4 Bb7 Rf7 Ba8 g4 Rd8+ Kc2 Re3 Be2 Be4+ Kb2 Rb8+",
-      "plies": 102,
+      "moves": "c4 e6 g3 d5 Bg2 Nf6 Nf3 Bd6 d4 O-O Nc3 Nbd7 O-O dxc4 Qc2 e5 Rd1 Qe7 Bg5 h6 dxe5 hxg5 exd6 cxd6 Nxg5 Nb6 a4 a5 Qd2 d5 Qd4 Ra6 e4 dxe4 Ngxe4 Nxe4 Nxe4 Nd7 Qxc4 Rb6 Qc7 Rxb2 h4 Qe6 Rd6 Qf5 Rad1 Rb4 Rxd7 Bxd7 Qxd7 Qxd7 Rxd7 Rxa4 Rxb7 Ra1+ Kh2 a4 Ra7 a3 Ng5 Rd8 Bd5 Kf8 Rxf7+ Ke8 Bc6+",
       "ending": null,
       "key": {
-        "kind": "mistake",
-        "ply": 99,
-        "played": "Be2",
-        "better": "Rf2",
-        "reply": "Be4+",
-        "replyPlayed": true,
+        "kind": "breakthrough",
+        "ply": 47,
+        "played": "Rad1",
+        "better": null,
+        "reply": "Re8",
+        "replyPlayed": false,
         "before": {
-          "cp": -217,
+          "cp": 302,
           "mate": null
         },
         "after": {
-          "cp": -520,
+          "cp": 259,
           "mate": null
         },
-        "clock": 333
+        "clock": 1273
       },
-      "headline": "Assaubayeva wins with Black against Mungunzul",
-      "body": "Bibisara Assaubayeva beat Bat-Erdene Mungunzul with Black in round 9 of the Women's Olympiad, Kazakhstan against Mongolia. The game turned on 50.Be2, played with under six minutes left: the engine's assessment went from a clear advantage for Black to a winning one, and 50...Be4+ followed at once. The engine preferred 50.Rf2. Assaubayeva won in 51 moves.",
+      "headline": "Two rooks on the d-file: Assaubayeva beats Daulyte-Cornette, and Kazakhstan climb to second",
+      "lede": "GM Bibisara Assaubayeva (Kazakhstan) beat IM Deimante Daulyte-Cornette (France) in round 10 of the 46th FIDE Chess Olympiad Samarkand 2026 (Women), in 34 moves.",
+      "body": "GM Bibisara Assaubayeva (Kazakhstan, 2536) beat IM Deimante Daulyte-Cornette (France, 2391) in 34 moves, and Kazakhstan beat France 2½–1½.\n\n24.Rad1 put the second rook on the d-file, and the next move, 25.Rxd7, took the knight on d7. Stockfish had White winning before (+3.02) and after (+2.59), and it never swung back.\n\nThe win took Kazakhstan to 17 match points, second behind China with a round left. Kazakhstan finished second, on 18.\n\nStop at move 24, see what Stockfish saw in the two rooks, then play it on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "رخّان على العمود d: فوز لـAssaubayeva على Daulyte-Cornette، وكازاخستان تصعد إلى المركز الثاني",
+          "body": "انتهى الدور بفوز GM Bibisara Assaubayeva (كازاخستان، 2536) على IM Deimante Daulyte-Cornette (فرنسا، 2391) في 34 نقلة، وفازت كازاخستان على فرنسا ⁨2½–1½⁩.\n\nوضعت ⁨24.Rad1⁩ الرخ الثاني على العمود d، وأخذت النقلة التالية، ⁨25.Rxd7⁩، الحصان على d7. رأى Stockfish الأبيض فائزًا قبلها (⁨+3.02⁩) وبعدها (⁨+2.59⁩)، ولم يتراجع التقييم بعدها قط.\n\nرفع الفوز رصيد كازاخستان إلى 17 نقطة مباراة، في المركز الثاني خلف الصين قبل جولة من النهاية. وأنهت كازاخستان في المركز الثاني برصيد 18.\n\nتوقف عند النقلة 24، وانظر ما رآه Stockfish في الرخين، ثم تابع اللعب ضد المحرك."
+        },
+        "bg": {
+          "headline": "Два топа на линия d: Assaubayeva побеждава Daulyte-Cornette и Казахстан се изкачва на второ място",
+          "body": "GM Bibisara Assaubayeva (Казахстан, 2536) победи IM Deimante Daulyte-Cornette (Франция, 2391) за 34 хода, а Казахстан победи Франция с 2½–1½.\n\n24.Rad1 постави втория топ на линия d, а следващият ход, 25.Rxd7, взе коня на d7. Stockfish даваше печеливша позиция на белите преди (+3,02) и след (+2,59), и оценката вече не се обърна.\n\nПобедата изведе Казахстан на 17 мачови точки, на второ място след Китай кръг преди края. Казахстан завърши втори с 18.\n\nСпрете на 24-ия ход, вижте какво видя Stockfish в двата топа, после продължете партията срещу енджина."
+        },
+        "cs": {
+          "headline": "Dvě věže na sloupci d: partii Assaubayeva – Daulyte-Cornette vyhrává Assaubayeva a Kazachstán jde na druhé místo",
+          "body": "V partii GM Bibisara Assaubayeva (Kazachstán, 2536) – IM Deimante Daulyte-Cornette (Francie, 2391) vyhrává po 34 tazích Assaubayeva a Kazachstán poráží Francii 2½–1½.\n\nTah 24.Rad1 postavil na sloupec d druhou věž a hned další tah, 25.Rxd7, vzal jezdce na d7. Stockfish viděl výhru bílých předtím (+3,02) i potom (+2,59) a hodnocení se už nikdy neobrátilo.\n\nVýhra posunula Kazachstán na 17 zápasových bodů, kolo před koncem na druhé místo za Čínou. Kazachstán nakonec skončil druhý, s 18 body.\n\nZastav ve 24. tahu, podívej se, co Stockfish viděl v těch dvou věžích, a pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "To tårne på d-linjen: Assaubayeva slår Daulyte-Cornette, og Kasakhstan rykker op som nummer to",
+          "body": "GM Bibisara Assaubayeva (Kasakhstan, 2536) slog IM Deimante Daulyte-Cornette (Frankrig, 2391) i 34 træk, og Kasakhstan slog Frankrig 2½–1½.\n\n24.Rad1 satte det andet tårn på d-linjen, og det næste træk, 25.Rxd7, slog springeren på d7. Stockfish så hvid til gevinst før (+3,02) og efter (+2,59), og vurderingen svingede aldrig tilbage.\n\nSejren bragte Kasakhstan op på 17 matchpoint, nummer to efter Kina med én runde tilbage. Kasakhstan sluttede som nummer to med 18.\n\nStop ved træk 24, se, hvad Stockfish så i de to tårne, og spil så videre mod motoren."
+        },
+        "de": {
+          "headline": "Zwei Türme auf der d-Linie: Assaubayeva schlägt Daulyte-Cornette, und Kasachstan klettert auf Platz zwei",
+          "body": "GM Bibisara Assaubayeva (Kasachstan, 2536) schlug IM Deimante Daulyte-Cornette (Frankreich, 2391) in 34 Zügen, und Kasachstan schlug Frankreich 2½:1½.\n\n24.Rad1 stellte den zweiten Turm auf die d-Linie, und der nächste Zug, 25.Rxd7, schlug den Springer auf d7. Stockfish sah Weiß davor auf Gewinn (+3,02) und danach (+2,59), und die Bewertung schlug nie mehr um.\n\nDer Sieg brachte Kasachstan auf 17 Mannschaftspunkte, Platz zwei hinter China, eine Runde vor Schluss. Kasachstan beendete das Turnier auf Platz zwei, mit 18.\n\nBei Zug 24 anhalten, sehen, was Stockfish in den beiden Türmen sah, dann gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Δύο πύργοι στη στήλη d: νίκη Assaubayeva επί Daulyte-Cornette, και το Καζακστάν ανεβαίνει δεύτερο",
+          "body": "Νίκη σε 34 κινήσεις για GM Bibisara Assaubayeva (Καζακστάν, 2536) επί IM Deimante Daulyte-Cornette (Γαλλία, 2391), και το Καζακστάν νίκησε τη Γαλλία με 2½–1½.\n\nΗ 24.Rad1 έβαλε τον δεύτερο πύργο στη στήλη d, και η επόμενη κίνηση, η 25.Rxd7, πήρε τον ίππο στο d7. Το Stockfish έβλεπε τα λευκά κερδισμένα πριν (+3,02) και μετά (+2,59), και η εκτίμηση δεν γύρισε ποτέ.\n\nΗ νίκη έφερε το Καζακστάν στους 17 βαθμούς αγώνα, δεύτερο πίσω από την Κίνα, με έναν γύρο να απομένει. Το Καζακστάν τερμάτισε δεύτερο, με 18.\n\nΣταμάτα στην 24η κίνηση, δες τι είδε το Stockfish στους δύο πύργους, μετά συνέχισε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Dos torres en la columna d: Assaubayeva vence a Daulyte-Cornette, y Kazajistán sube al segundo puesto",
+          "body": "GM Bibisara Assaubayeva (Kazajistán, 2536) venció a IM Deimante Daulyte-Cornette (Francia, 2391) en 34 jugadas, y Kazajistán venció a Francia 2½–1½.\n\n24.Rad1 puso la segunda torre en la columna d, y la jugada siguiente, 25.Rxd7, tomó el caballo de d7. Stockfish veía posición ganadora de las blancas antes (+3,02) y después (+2,59), y la valoración nunca se dio la vuelta.\n\nLa victoria llevó a Kazajistán a 17 puntos de match, segundo por detrás de China a falta de una ronda. Kazajistán terminó segundo, con 18.\n\nDetente en la jugada 24, mira qué vio Stockfish en las dos torres y luego sigue contra el motor."
+        },
+        "fi": {
+          "headline": "Kaksi tornia d-linjalla: Assaubayeva voittaa Daulyte-Cornetten, ja Kazakstan nousee toiseksi",
+          "body": "GM Bibisara Assaubayeva (Kazakstan, 2536) voitti IM Deimante Daulyte-Cornetten (Ranska, 2391) 34 siirrossa, ja Kazakstan voitti Ranskan 2½–1½.\n\n24.Rad1 toi toisen tornin d-linjalle, ja seuraava siirto, 25.Rxd7, löi d7:n ratsun. Stockfishin mukaan valkealla oli voittoasema sekä ennen (+3,02) että jälkeen (+2,59), eikä arvio koskaan kääntynyt takaisin.\n\nVoitto nosti Kazakstanin 17 ottelupisteeseen ja toiseksi Kiinan jälkeen, kun jäljellä oli yksi kierros. Kazakstan päätti toisena 18 pisteellä.\n\nPysähdy siirtoon 24, katso, mitä Stockfish näki kahdessa tornissa, ja jatka sitten peliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Deux tours sur la colonne d : Assaubayeva bat Daulyte-Cornette, et le Kazakhstan monte à la deuxième place",
+          "body": "GM Bibisara Assaubayeva (Kazakhstan, 2536) a battu IM Deimante Daulyte-Cornette (France, 2391) en 34 coups, et le Kazakhstan a battu la France 2½–1½.\n\n24.Rad1 a placé la deuxième tour sur la colonne d, et le coup suivant, 25.Rxd7, a pris le cavalier en d7. Stockfish voyait les Blancs gagnants avant (+3,02) et après (+2,59), et l’évaluation n’a plus jamais basculé.\n\nLa victoire a porté le Kazakhstan à 17 points de match, deuxième derrière la Chine à une ronde de la fin. Le Kazakhstan a terminé deuxième, avec 18.\n\nArrêtez-vous au 24e coup, voyez ce que Stockfish a vu dans les deux tours, puis continuez contre le moteur."
+        },
+        "he": {
+          "headline": "שני צריחים בטור d: ניצחון ל־Assaubayeva על Daulyte-Cornette, וקזחסטן עולה למקום השני",
+          "body": "המשחק הסתיים בניצחון ל־GM Bibisara Assaubayeva (קזחסטן, 2536) על IM Deimante Daulyte-Cornette (צרפת, 2391) אחרי 34 מסעים, וקזחסטן גברה על צרפת ⁨2½–1½⁩.\n\nהמסע ⁨24.Rad1⁩ הציב את הצריח השני בטור d, והמסע הבא, ⁨25.Rxd7⁩, לקח את הפרש ב־d7. לפי Stockfish, ללבן הייתה עמדה מנצחת לפני (⁨+3.02⁩) ואחרי (⁨+2.59⁩), וההערכה מעולם לא חזרה לאחור.\n\nהניצחון העלה את קזחסטן ל־17 נקודות משחק, במקום השני אחרי סין כשנותר סיבוב אחד. קזחסטן סיימה במקום השני, עם 18.\n\nעצרו במסע 24, ראו מה Stockfish ראה בשני הצריחים, ואז המשיכו לשחק מול המנוע."
+        },
+        "hi": {
+          "headline": "d-फ़ाइल पर दो हाथी: Assaubayeva ने Daulyte-Cornette को हराया, और कज़ाख़स्तान दूसरे स्थान पर पहुँचा",
+          "body": "GM Bibisara Assaubayeva (कज़ाख़स्तान, 2536) ने IM Deimante Daulyte-Cornette (फ़्रांस, 2391) को 34 चालों में हराया, और कज़ाख़स्तान ने फ़्रांस को 2½–1½ से हराया।\n\n24.Rad1 ने दूसरा हाथी d-फ़ाइल पर रखा, और अगली चाल, 25.Rxd7, ने d7 पर घोड़ा लिया। Stockfish के हिसाब से इससे पहले (+3.02) और बाद में (+2.59) भी सफ़ेद के लिए जीत की स्थिति थी, और आकलन कभी वापस नहीं पलटा।\n\nइस जीत से कज़ाख़स्तान 17 मैच अंकों पर पहुँचा, एक राउंड बाक़ी रहते चीन के बाद दूसरे स्थान पर। कज़ाख़स्तान 18 के साथ दूसरे स्थान पर रहा।\n\nचाल 24 पर रुकें, देखें कि Stockfish ने दोनों हाथियों में क्या देखा, फिर इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "Két bástya a d-vonalon: Assaubayeva nyert Daulyte-Cornette ellen, Kazahsztán feljött a második helyre",
+          "body": "GM Bibisara Assaubayeva (Kazahsztán, 2536) 34 lépésben nyert IM Deimante Daulyte-Cornette (Franciaország, 2391) ellen, Kazahsztán pedig 2½–1½ arányban legyőzte Franciaországot.\n\nA 24.Rad1 a második bástyát is a d-vonalra állította, a következő lépés, a 25.Rxd7 pedig leütötte a d7-es huszárt. A Stockfish szerint világos előtte (+3,02) és utána (+2,59) is nyerő állásban volt, és az értékelés soha nem fordult meg.\n\nA győzelemmel Kazahsztán 17 csapatpontra jött fel, a második helyre Kína mögött, egy fordulóval a vége előtt. Kazahsztán végül 18 ponttal a második helyen végzett.\n\nÁllj meg a 24. lépésnél, nézd meg, mit látott a Stockfish a két bástyában, aztán játszd tovább a motor ellen."
+        },
+        "id": {
+          "headline": "Dua benteng di lajur d: Assaubayeva kalahkan Daulyte-Cornette, Kazakhstan naik ke posisi kedua",
+          "body": "GM Bibisara Assaubayeva (Kazakhstan, 2536) mengalahkan IM Deimante Daulyte-Cornette (Prancis, 2391) dalam 34 langkah, dan Kazakhstan mengalahkan Prancis 2½–1½.\n\n24.Rad1 menempatkan benteng kedua di lajur d, dan langkah berikutnya, 25.Rxd7, mengambil kuda di d7. Stockfish menilai Putih menang sebelumnya (+3,02) dan sesudahnya (+2,59), dan penilaiannya tidak pernah berbalik.\n\nKemenangan itu membawa Kazakhstan ke 17 poin pertandingan, kedua di belakang Tiongkok dengan satu babak tersisa. Kazakhstan finis kedua dengan 18.\n\nBerhenti di langkah 24, lihat apa yang dilihat Stockfish pada dua benteng itu, lalu lanjutkan melawan mesin."
+        },
+        "it": {
+          "headline": "Due Torri sulla colonna d: Assaubayeva batte Daulyte-Cornette, e il Kazakistan sale al secondo posto",
+          "body": "GM Bibisara Assaubayeva (Kazakistan, 2536) ha battuto IM Deimante Daulyte-Cornette (Francia, 2391) in 34 mosse, e il Kazakistan ha battuto la Francia 2½–1½.\n\n24.Rad1 ha portato la seconda Torre sulla colonna d, e la mossa successiva, 25.Rxd7, ha preso il Cavallo in d7. Stockfish vedeva il Bianco vincente prima (+3,02) e dopo (+2,59), e la valutazione non è mai più tornata indietro.\n\nLa vittoria ha portato il Kazakistan a 17 punti match, secondo dietro la Cina a un turno dalla fine. Il Kazakistan ha chiuso secondo, a 18.\n\nFermati alla mossa 24, guarda che cosa vedeva Stockfish nelle due Torri, poi continua contro il motore."
+        },
+        "ja": {
+          "headline": "dファイルに二つのルーク：AssaubayevaがDaulyte-Cornetteに勝ち、カザフスタンは二位に浮上",
+          "body": "GM Bibisara Assaubayeva（カザフスタン、2536）がIM Deimante Daulyte-Cornette（フランス、2391）に34手で勝ち、カザフスタンはフランスを2½–1½で下しました。\n\n24.Rad1で二つ目のルークがdファイルに入り、次の25.Rxd7でd7のナイトを取りました。Stockfishは、その前（+3.02）も後（+2.59）も白の勝勢と見ていて、その評価が逆に振れることは一度もありませんでした。\n\nこの勝利でカザフスタンはマッチポイント17となり、残り一ラウンドで中国に次ぐ二位につけました。カザフスタンはマッチポイント18の二位で大会を終えました。\n\n24手目で止めて、Stockfishが二つのルークに何を見ていたかを確かめ、そのままエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "d파일의 두 룩: Assaubayeva, Daulyte-Cornette 꺾고 카자흐스탄은 2위로",
+          "body": "GM Bibisara Assaubayeva(카자흐스탄, 2536)가 IM Deimante Daulyte-Cornette(프랑스, 2391)에게 34수 만에 이겼고, 카자흐스탄은 프랑스를 2½–1½로 꺾었습니다.\n\n24.Rad1로 두 번째 룩이 d파일에 들어섰고, 다음 수 25.Rxd7로 d7의 나이트를 잡았습니다. Stockfish는 이전(+3.02)에도 이후(+2.59)에도 백이 이기는 형세로 보았고, 평가는 끝내 반대로 돌아서지 않았습니다.\n\n이 승리로 카자흐스탄은 17 매치 포인트가 되어, 한 라운드를 남기고 중국에 이어 2위에 올랐습니다. 카자흐스탄은 18점으로 2위를 차지하며 대회를 마쳤습니다.\n\n24수째에서 멈추고 Stockfish가 두 룩에서 무엇을 보았는지 확인한 뒤, 엔진을 상대로 이어서 두어 보세요."
+        },
+        "ms": {
+          "headline": "Dua tir di lajur d: Assaubayeva tewaskan Daulyte-Cornette, Kazakhstan naik ke tempat kedua",
+          "body": "GM Bibisara Assaubayeva (Kazakhstan, 2536) menewaskan IM Deimante Daulyte-Cornette (Perancis, 2391) dalam 34 langkah, dan Kazakhstan menewaskan Perancis 2½–1½.\n\n24.Rad1 meletakkan tir kedua di lajur d, dan langkah seterusnya, 25.Rxd7, mengambil kuda di d7. Stockfish menilai Putih menang sebelumnya (+3,02) dan selepasnya (+2,59), dan penilaian itu tidak pernah berbalik.\n\nKemenangan itu membawa Kazakhstan ke 17 mata perlawanan, di tempat kedua di belakang China dengan satu pusingan lagi. Kazakhstan tamat di tempat kedua dengan 18.\n\nBerhenti pada langkah 24, lihat apa yang Stockfish nampak pada dua tir itu, kemudian teruskan menentang enjin."
+        },
+        "nl": {
+          "headline": "Twee torens op de d-lijn: Assaubayeva verslaat Daulyte-Cornette, en Kazachstan klimt naar de tweede plaats",
+          "body": "GM Bibisara Assaubayeva (Kazachstan, 2536) versloeg IM Deimante Daulyte-Cornette (Frankrijk, 2391) in 34 zetten, en Kazachstan versloeg Frankrijk met 2½–1½.\n\n24.Rad1 zette de tweede toren op de d-lijn, en de volgende zet, 25.Rxd7, sloeg het paard op d7. Stockfish zag wit ervoor gewonnen (+3,02) en erna (+2,59), en de beoordeling sloeg nooit meer om.\n\nDoor de zege kwam Kazachstan op 17 matchpunten, tweede achter China met nog één ronde te gaan. Kazachstan eindigde als tweede, met 18.\n\nStop bij zet 24, bekijk wat Stockfish zag in de twee torens, en speel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "To tårn på d-linjen: Assaubayeva slår Daulyte-Cornette, og Kasakhstan klatrer til andreplass",
+          "body": "GM Bibisara Assaubayeva (Kasakhstan, 2536) slo IM Deimante Daulyte-Cornette (Frankrike, 2391) på 34 trekk, og Kasakhstan slo Frankrike 2½–1½.\n\n24.Rad1 satte det andre tårnet på d-linjen, og neste trekk, 25.Rxd7, slo springeren på d7. Stockfish så hvit til gevinst både før (+3,02) og etter (+2,59), og vurderingen svingte aldri tilbake.\n\nSeieren ga Kasakhstan 17 matchpoeng og andreplassen bak Kina med én runde igjen. Kasakhstan endte som nummer to, med 18.\n\nStopp ved trekk 24, se hva Stockfish så i de to tårnene, og spill så videre mot motoren."
+        },
+        "pl": {
+          "headline": "Dwie wieże na linii d: Assaubayeva pokonuje Daulyte-Cornette, a Kazachstan awansuje na drugie miejsce",
+          "body": "GM Bibisara Assaubayeva (Kazachstan, 2536) pokonuje IM Deimante Daulyte-Cornette (Francja, 2391) w 34 ruchach, a Kazachstan pokonuje Francję 2½–1½.\n\n24.Rad1 stawia drugą wieżę na linii d, a następny ruch, 25.Rxd7, zabiera skoczka na d7. Stockfish widział wygraną białych przed (+3,02) i po (+2,59), a ocena już się nie odwróciła.\n\nTa wygrana daje Kazachstanowi 17 punktów meczowych i drugie miejsce za Chinami na rundę przed końcem. Kazachstan kończy na drugim miejscu z 18 punktami.\n\nZatrzymaj się na 24. ruchu, sprawdź, co Stockfish widział w dwóch wieżach, potem graj dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Duas torres na coluna d: Assaubayeva vence Daulyte-Cornette, e o Cazaquistão sobe para segundo",
+          "body": "GM Bibisara Assaubayeva (Cazaquistão, 2536) venceu IM Deimante Daulyte-Cornette (França, 2391) em 34 lances, e o Cazaquistão venceu a França por 2½–1½.\n\n24.Rad1 colocou a segunda torre na coluna d, e o lance seguinte, 25.Rxd7, capturou o cavalo em d7. O Stockfish via posição vencedora das brancas antes (+3,02) e depois (+2,59), e a avaliação nunca voltou atrás.\n\nA vitória levou o Cazaquistão a 17 pontos de match, em segundo lugar, atrás da China, faltando uma rodada. O Cazaquistão terminou em segundo, com 18.\n\nPare no lance 24, veja o que o Stockfish viu nas duas torres e depois continue contra o motor."
+        },
+        "ro": {
+          "headline": "Două ture pe coloana d: Assaubayeva câștigă contra Daulyte-Cornette, iar Kazahstanul urcă pe locul doi",
+          "body": "GM Bibisara Assaubayeva (Kazahstan, 2536) a câștigat contra IM Deimante Daulyte-Cornette (Franța, 2391) în 34 de mutări, iar Kazahstanul a învins Franța cu 2½–1½.\n\n24.Rad1 a adus a doua tură pe coloana d, iar mutarea următoare, 25.Rxd7, a luat calul de pe d7. Stockfish vedea o poziție câștigătoare pentru Alb înainte (+3,02) și după (+2,59), iar evaluarea nu s-a mai întors niciodată.\n\nVictoria a dus Kazahstanul la 17 puncte de meci, pe locul doi, în urma Chinei, cu o rundă rămasă. Kazahstanul a terminat pe locul doi, cu 18.\n\nOprește-te la mutarea 24, vezi ce a văzut Stockfish în cele două ture, apoi continuă contra motorului."
+        },
+        "ru": {
+          "headline": "Две ладьи на линии d: Assaubayeva обыгрывает Daulyte-Cornette, и Казахстан поднимается на второе место",
+          "body": "GM Bibisara Assaubayeva (Казахстан, 2536) обыгрывает IM Deimante Daulyte-Cornette (Франция, 2391) за 34 хода, а Казахстан обыгрывает Францию 2½–1½.\n\n24.Rad1 ставит вторую ладью на линию d, а следующий ход, 25.Rxd7, забирает коня на d7. Stockfish давал белым выигрыш и до (+3,02), и после (+2,59), и оценка так и не качнулась обратно.\n\nС этой победой у Казахстана 17 командных очков — второе место после Китая за тур до конца. Казахстан финишировал вторым с 18 очками.\n\nОстановитесь на 24-м ходу, посмотрите, что Stockfish увидел в двух ладьях, а затем продолжите партию против движка."
+        },
+        "sv": {
+          "headline": "Två torn på d-linjen: Assaubayeva besegrar Daulyte-Cornette, och Kazakstan klättrar till andra plats",
+          "body": "GM Bibisara Assaubayeva (Kazakstan, 2536) besegrade IM Deimante Daulyte-Cornette (Frankrike, 2391) på 34 drag, och Kazakstan besegrade Frankrike med 2½–1½.\n\n24.Rad1 ställde det andra tornet på d-linjen, och nästa drag, 25.Rxd7, slog springaren på d7. Stockfish såg vit på vinst både före (+3,02) och efter (+2,59), och värderingen svängde aldrig tillbaka.\n\nSegern tog Kazakstan till 17 matchpoäng, tvåa bakom Kina med en rond kvar. Kazakstan slutade tvåa, med 18.\n\nStanna vid drag 24, se vad Stockfish såg i de två tornen och spela sedan vidare mot motorn."
+        },
+        "th": {
+          "headline": "เรือสองตัวบนแนว d: Assaubayeva ชนะ Daulyte-Cornette และคาซัคสถานขึ้นอันดับสอง",
+          "body": "GM Bibisara Assaubayeva (คาซัคสถาน, 2536) ชนะ IM Deimante Daulyte-Cornette (ฝรั่งเศส, 2391) ใน 34 ตา และคาซัคสถานชนะฝรั่งเศส 2½–1½\n\n24.Rad1 ส่งเรือตัวที่สองเข้าแนว d และตาถัดมา 25.Rxd7 กินอัศวินที่ d7 Stockfish มองว่าฝ่ายขาวอยู่ในสถานะชนะทั้งก่อน (+3.02) และหลัง (+2.59) และค่าประเมินไม่เคยแกว่งกลับอีกเลย\n\nชัยชนะนี้ทำให้คาซัคสถานมี 17 แต้มแมตช์ อยู่อันดับสองรองจากจีนเมื่อเหลืออีกหนึ่งรอบ คาซัคสถานจบอันดับสองด้วย 18 แต้ม\n\nหยุดที่ตาที่ 24 ดูว่า Stockfish เห็นอะไรในเรือสองตัวนั้น แล้วเล่นต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "İki kale d hattında: Assaubayeva, Daulyte-Cornette'i yendi; Kazakistan ikinciliğe yükseldi",
+          "body": "GM Bibisara Assaubayeva (Kazakistan, 2536), IM Deimante Daulyte-Cornette'i (Fransa, 2391) 34 hamlede yendi ve Kazakistan, Fransa'yı 2½–1½ yendi.\n\n24.Rad1 ikinci kaleyi d hattına getirdi ve bir sonraki hamle, 25.Rxd7, d7'deki atı aldı. Stockfish beyazı öncesinde (+3,02) ve sonrasında (+2,59) kazanan konumda görüyordu ve değerlendirme bir daha hiç geri dönmedi.\n\nBu galibiyet Kazakistan'ı 17 maç puanına taşıdı; bir tur kala Çin'in arkasında ikinci sıradaydı. Kazakistan 18 puanla ikinci bitirdi.\n\n24. hamlede dur, Stockfish'in iki kalede ne gördüğüne bak, sonra motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Hai Xe trên cột d: Assaubayeva thắng Daulyte-Cornette, Kazakhstan vươn lên thứ nhì",
+          "body": "GM Bibisara Assaubayeva (Kazakhstan, 2536) thắng IM Deimante Daulyte-Cornette (Pháp, 2391) sau 34 nước, và Kazakhstan thắng Pháp 2½–1½.\n\n24.Rad1 đưa Xe thứ hai lên cột d, và nước tiếp theo, 25.Rxd7, bắt Mã ở d7. Stockfish thấy Trắng ở thế thắng trước đó (+3,02) lẫn sau đó (+2,59), và đánh giá không bao giờ đảo chiều.\n\nChiến thắng đưa Kazakhstan lên 17 điểm trận, đứng thứ nhì sau Trung Quốc khi còn một vòng. Kazakhstan kết thúc ở vị trí thứ nhì với 18 điểm.\n\nDừng ở nước 24, xem Stockfish thấy gì ở hai Xe, rồi chơi tiếp với engine."
+        },
+        "zh-Hans": {
+          "headline": "d线双车：Assaubayeva击败Daulyte-Cornette，哈萨克斯坦队升至第二",
+          "body": "GM Bibisara Assaubayeva（哈萨克斯坦，2536）34回合击败IM Deimante Daulyte-Cornette（法国，2391），哈萨克斯坦队以2½–1½战胜法国队。\n\n24.Rad1把第二个车调到d线，下一步25.Rxd7吃掉了d7的马。Stockfish认为，这之前（+3.02）和之后（+2.59）白方都是胜势，评估始终没有逆转。\n\n这场胜利让哈萨克斯坦队团体分达到17分，在还剩一轮时排名第二，仅次于中国队。哈萨克斯坦队最终以团体分18分获得第二。\n\n在第24回合暂停，看看Stockfish在双车上看到了什么，然后对着引擎继续下。"
+        },
+        "zh-Hant": {
+          "headline": "d線雙車：Assaubayeva擊敗Daulyte-Cornette，哈薩克隊升至第二",
+          "body": "GM Bibisara Assaubayeva（哈薩克，2536）34回合擊敗IM Deimante Daulyte-Cornette（法國，2391），哈薩克隊以2½–1½擊敗法國隊。\n\n24.Rad1把第二個車調到d線，下一步25.Rxd7吃掉了d7的馬。Stockfish認為，這之前（+3.02）和之後（+2.59）白方都是勝勢，評估始終沒有逆轉。\n\n這場勝利讓哈薩克隊團體分達到17分，在還剩一輪時排名第二，僅次於中國隊。哈薩克隊最終以團體分18分奪得第二。\n\n在第24回合暫停，看看Stockfish在雙車上看到了什麼，然後對著引擎繼續下。"
+        }
+      },
+      "fen": "2b2rk1/1pQn1pp1/3R4/p4q2/P3N2P/6P1/1r3PB1/3R2K1 b - - 4 24",
+      "last": {
+        "from": "a1",
+        "to": "d1"
+      },
+      "url": "https://brasspawn.com/today/2026-09-26-assaubayeva-daulyte-cornette-olympiad-r10",
       "source": {
         "name": "Lichess broadcast",
-        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-women-matches-1-25/round-9/edZfnhoA/ZRKvFGX9"
-      }
+        "url": "https://lichess.org/broadcast/46th-fide-chess-olympiad-samarkand-2026-women-matches-1-25/round-10/BQmH5Kuj/SlJuXMrh"
+      },
+      "updatedAt": "2026-09-26T21:11:38.224Z"
     }
   ]
 }

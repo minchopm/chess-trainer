@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // The day's drafts as one page to read and approve.
 //
-//   node scripts/feed/review.mjs 2026-09-26     → feed/drafts/2026-09-26.html
+//   node scripts/feed/review.mjs 2026-09-26               → feed/drafts/2026-09-26.html
+//   node scripts/feed/review.mjs 2026-09-26 --lang bg     and each story in Bulgarian beneath
 //
 // A page rather than the JSON because a story is approved on what it says
 // next to the board it is about — and a wrong move number is obvious on a
@@ -15,6 +16,9 @@ import { assessment, moveLabel } from './words.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const date = process.argv[2] ?? new Date().toISOString().slice(0, 10);
+// A second language to read beside the English, for somebody approving the
+// words in the language they read best.
+const also = process.argv.includes('--lang') ? process.argv[process.argv.indexOf('--lang') + 1] : null;
 
 const pieces = {};
 for (const colour of 'wb') {
@@ -56,6 +60,7 @@ const cards = drafts.stories.map((story, index) => {
       <p class="meta"><span class="n">${index + 1}</span><span class="status">${escape(story.status)}</span><code>${escape(story.id)}</code></p>
       <h2>${escape(story.headline)}</h2>
       <p class="body">${escape(story.body)}</p>
+      ${also && story.words?.[also] ? `<div class="also" lang="${escape(also)}"><p class="meta"><span class="status">${escape(also)}</span></p><h2>${escape(story.words[also].headline)}</h2><p class="body">${escape(story.words[also].body)}</p></div>` : ''}
       <dl>${facts.map(([k, v]) => `<dt>${escape(k)}</dt><dd>${escape(v)}</dd>`).join('')}</dl>
       <p class="source"><a href="${escape(story.source.url)}">Game on Lichess</a></p>
     </div>
@@ -85,7 +90,8 @@ const html = `<!doctype html>
   .status { text-transform: uppercase; letter-spacing: .12em; color: var(--brass); }
   .approved .status { color: var(--good); }
   code { font-size: 11px; opacity: .7; overflow-wrap: anywhere; }
-  .body { margin: 0 0 14px; }
+  .body { margin: 0 0 14px; white-space: pre-line; }
+  .also { border-top: 1px solid rgba(138,106,47,.45); padding-top: 12px; margin: 0 0 14px; }
   dl { display: grid; grid-template-columns: max-content 1fr; gap: 3px 14px; font-size: 13px; margin: 0 0 10px; }
   dt { color: var(--dim); }
   dd { margin: 0; }
