@@ -35,11 +35,13 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 /**
  * Stories per event per day. A top-tier event gets five from its open section
  * and two from its women's; a tier below gets three, and only games with a followed
- * player or somebody rated 2680 in them — that tier is every strong national
+ * player or somebody strong in them — that tier is every strong national
  * league and open, and without the bar it would bury the events people follow.
+ * The bar is 2600 in an open event and 2450 in a women's one, where the best
+ * players are rated lower: at 2680 a women's league gave nothing at all.
  */
 const QUOTA = { Women: 2, default: 5 };
-const LOWER_TIER = { quota: 3, elo: 2680 };
+const LOWER_TIER = { quota: 3, elo: 2600, womenElo: 2450 };
 /** Past this, a round whose broadcast has not said it is over is taken to be. */
 const ROUND_OVER_MS = 14 * 3600_000;
 
@@ -108,10 +110,11 @@ export async function collect({
       }
       const quota = top ? (QUOTA[names.section] ?? QUOTA.default) : LOWER_TIER.quota;
       const followed = (g) => lookup(g.tags.White, g.tags.WhiteFideId)?.star || lookup(g.tags.Black, g.tags.BlackFideId)?.star;
+      const bar = /women/i.test(`${names.section ?? ''} ${t.tour.name}`) ? LOWER_TIER.womenElo : LOWER_TIER.elo;
       const chosen = candidates
         .filter(({ game: g }) => {
           const elo = Math.max(Number(g.tags.WhiteElo) || 0, Number(g.tags.BlackElo) || 0);
-          return top ? elo >= minElo : followed(g) || elo >= LOWER_TIER.elo;
+          return top ? elo >= minElo : followed(g) || elo >= bar;
         })
         .map((c) => ({ ...c, score: score(c.game, lookup) }))
         .filter((c) => c.score > 0)
