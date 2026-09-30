@@ -153,6 +153,11 @@
           "locale" : "nl"
         },
         {
+          "description" : "Oppgaver, øvelser og runder uten grense",
+          "displayName" : "Engangskjøp",
+          "locale" : "nb"
+        },
+        {
           "description" : "Korlátlan feladvány, gyakorlat és kör",
           "displayName" : "Egyszeri feloldás",
           "locale" : "hu"
@@ -242,6 +247,11 @@
               "description" : "Onbeperkt puzzels, oefeningen en runs",
               "displayName" : "Maandelijks",
               "locale" : "nl"
+            },
+            {
+              "description" : "Oppgaver, øvelser og runder uten grense",
+              "displayName" : "Månedlig",
+              "locale" : "nb"
             },
             {
               "description" : "Exercícios, finais e séries sem limite",
@@ -409,6 +419,11 @@
               "description" : "Onbeperkt puzzels, oefeningen en runs",
               "displayName" : "Jaarlijks",
               "locale" : "nl"
+            },
+            {
+              "description" : "Oppgaver, øvelser og runder uten grense",
+              "displayName" : "Årlig",
+              "locale" : "nb"
             },
             {
               "description" : "Exercícios, finais e séries sem limite",

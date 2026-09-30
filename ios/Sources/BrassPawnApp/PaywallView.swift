@@ -39,6 +39,9 @@ struct PaywallView: View {
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 14) {
+                    if let ownership = store.ownership {
+                        ownedCard(ownership)
+                    }
                     offerCard
                     planPicker
                     purchaseAction
@@ -148,6 +151,23 @@ struct PaywallView: View {
         }
     }
 
+    /// The plan this person has, what it costs and when it renews or ends —
+    /// before anything else, so a subscriber never has to wonder.
+    private func ownedCard(_ ownership: SubscriptionStore.Ownership) -> some View {
+        HStack(alignment: .top, spacing: 12) {
+            BrassIcon("checkmark.seal.fill", size: 22).foregroundStyle(Theatre.good)
+            VStack(alignment: .leading, spacing: 3) {
+                Text(L.t("store.yourPlan", "Your plan")).appFont(.caption).textCase(.uppercase)
+                    .foregroundStyle(Theatre.ivoryDim)
+                OwnershipLines(ownership: ownership)
+            }
+            Spacer(minLength: 0)
+        }
+        .padding(14)
+        .background { BrassPlateShape(cut: 12).fill(Theatre.ink3) }
+        .overlay { BrassPlateShape(cut: 12).strokeBorder(Theatre.good.opacity(0.7), lineWidth: 0.9) }
+    }
+
     private func row(_ symbol: String, _ text: String) -> some View {
         HStack(alignment: .top, spacing: 10) {
             BrassIcon(symbol, size: 22).foregroundStyle(Theatre.brass)
@@ -174,6 +194,7 @@ struct PaywallView: View {
                 if let monthly = store.monthly {
                     planOption(
                         .monthly,
+                        current: store.ownership?.productID == monthly.id,
                         title: L.t("store.monthly", "Monthly"),
                         detail: L.t("store.renews", "Renews automatically"),
                         price: monthly.displayPrice
@@ -182,6 +203,7 @@ struct PaywallView: View {
                 if let yearly = store.yearly {
                     planOption(
                         .yearly,
+                        current: store.ownership?.productID == yearly.id,
                         title: L.t("store.yearly", "Yearly"),
                         detail: L.t("store.perMonthEquivalent", "%@ a month",
                                     (yearly.price / 12).formatted(yearly.priceFormatStyle)),
@@ -191,6 +213,7 @@ struct PaywallView: View {
                 if let lifetime = store.lifetime {
                     planOption(
                         .lifetime,
+                        current: store.ownership?.productID == lifetime.id,
                         title: L.t("store.lifetime", "One-off"),
                         detail: L.t("store.noRenewal", "No renewal"),
                         price: lifetime.displayPrice
@@ -201,6 +224,7 @@ struct PaywallView: View {
             .onChange(of: store.monthly?.id) { _, _ in normaliseSelectedOffer() }
             .onChange(of: store.yearly?.id) { _, _ in normaliseSelectedOffer() }
             .onChange(of: store.lifetime?.id) { _, _ in normaliseSelectedOffer() }
+            .onChange(of: store.ownership) { _, _ in normaliseSelectedOffer() }
         }
     }
 
@@ -215,7 +239,10 @@ struct PaywallView: View {
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(SubscriptionActionButtonStyle(prominent: false))
-        } else if let product = selectedProduct {
+        } else if store.ownership?.isLifetime == true {
+            // Nothing left to buy.
+            EmptyView()
+        } else if let product = selectedProduct, store.canBuy(product) {
             Button {
                 Task { await store.purchase(product) }
             } label: {
@@ -225,7 +252,9 @@ struct PaywallView: View {
                     }
                     Text(selectedOffer == .lifetime
                          ? L.t("store.unlock", "Unlock forever")
-                         : L.t("store.subscribe", "Subscribe"))
+                         : store.ownership != nil
+                            ? L.t("store.changePlan", "Change plan")
+                            : L.t("store.subscribe", "Subscribe"))
                     Spacer()
                     Text(product.displayPrice).monospacedDigit()
                 }
@@ -236,6 +265,15 @@ struct PaywallView: View {
             .disabled(store.isBusy)
         }
 
+        if let ownership = store.ownership, !ownership.isLifetime {
+            Text(selectedOffer == .lifetime
+                 ? L.t("store.lifetimeWhileSubscribed", "The one-off unlock does not cancel your subscription. Cancel it under Manage subscription.")
+                 : L.t("store.changeNote", "You can change your plan at any time. A switch between monthly and yearly starts at your next renewal."))
+                .appFont(.caption)
+                .foregroundStyle(Theatre.ivoryDim)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+
         if let message = store.message {
             Text(message)
                 .appFont(.footnote)
@@ -243,7 +281,7 @@ struct PaywallView: View {
         }
     }
 
-    private func planOption(_ offer: Offer, title: String, detail: String, price: String) -> some View {
+    private func planOption(_ offer: Offer, current: Bool, title: String, detail: String, price: String) -> some View {
         let selected = selectedOffer == offer
         return Button {
             withAnimation(.easeOut(duration: 0.18)) { selectedOffer = offer }
@@ -257,6 +295,11 @@ struct PaywallView: View {
                     .appFont(size: 18, weight: .semibold)
                     .monospacedDigit()
                 Text(detail).appFont(.caption2).foregroundStyle(Theatre.ivoryDim)
+                if current {
+                    Text(L.t("store.currentPlan", "Current plan"))
+                        .appFont(.caption2, weight: .semibold)
+                        .foregroundStyle(Theatre.good)
+                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(12)
@@ -271,7 +314,9 @@ struct PaywallView: View {
         }
         .overlay {
             BrassPlateShape(cut: 9)
-                .strokeBorder(selected ? Theatre.brassHot.opacity(0.82) : Theatre.brassDeep.opacity(0.42), lineWidth: 0.85)
+                .strokeBorder(current ? Theatre.good.opacity(0.8)
+                              : selected ? Theatre.brassHot.opacity(0.82) : Theatre.brassDeep.opacity(0.42),
+                              lineWidth: 0.85)
         }
         .shadow(color: selected ? Theatre.brassGlow : .clear, radius: 8, y: 2)
         .foregroundStyle(selected ? Theatre.brassHot : Theatre.ivory)
@@ -358,14 +403,16 @@ struct PaywallView: View {
         }
     }
 
+    /// The offer to start on: the one chosen if it is on sale and can be
+    /// bought — for a subscriber, not the plan already held — or else the
+    /// first that can, yearly first.
     private func normaliseSelectedOffer() {
-        guard product(selectedOffer) == nil else { return }
-        if store.yearly != nil {
-            selectedOffer = .yearly
-        } else if store.monthly != nil {
-            selectedOffer = .monthly
-        } else if store.lifetime != nil {
-            selectedOffer = .lifetime
+        if let chosen = product(selectedOffer), store.canBuy(chosen) { return }
+        for offer in [Offer.yearly, .monthly, .lifetime] {
+            if let candidate = product(offer), store.canBuy(candidate) {
+                selectedOffer = offer
+                return
+            }
         }
     }
 
@@ -444,18 +491,30 @@ struct ProUpsellRow: View {
 
     var body: some View {
         if app.store.isPro {
-            VStack(alignment: .leading, spacing: 4) {
-                HStack {
-                    Text(L.t("store.title", "Brass Pawn Pro"))
-                    Spacer()
-                    Text(L.t("store.active", "Active"))
-                        .foregroundStyle(Theatre.brass)
+            // The plan and when it renews or ends, and the way to change it.
+            Button { showsPaywall = true } label: {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        HStack {
+                            Text(L.t("store.title", "Brass Pawn Pro"))
+                            Spacer()
+                            Text(L.t("store.active", "Active"))
+                                .foregroundStyle(Theatre.brass)
+                        }
+                        .appFont(.subheadline)
+                        if let ownership = app.store.ownership {
+                            OwnershipLines(ownership: ownership, compact: true)
+                        }
+                        Text(L.t("store.supportThanks", "Thank you for supporting Brass Pawn."))
+                            .appFont(.caption)
+                            .foregroundStyle(Theatre.ivoryDim)
+                    }
+                    Image(systemName: "chevron.forward").font(.caption).foregroundStyle(Theatre.ivoryFaint)
+                        .padding(.top, 4)
                 }
-                .appFont(.subheadline)
-                Text(L.t("store.supportThanks", "Thank you for supporting Brass Pawn."))
-                    .appFont(.caption)
-                    .foregroundStyle(Theatre.ivoryDim)
             }
+            .buttonStyle(BrassPressStyle())
+            .appCover(isPresented: $showsPaywall) { PaywallView() }
         } else {
             Button { showsPaywall = true } label: {
                 HStack {
@@ -479,6 +538,55 @@ struct ProUpsellRow: View {
             }
             .buttonStyle(BrassPressStyle())
             .appCover(isPresented: $showsPaywall) { PaywallView() }
+        }
+    }
+}
+
+/// A plan in two lines: which it is, and when it renews, ends or changes.
+struct OwnershipLines: View {
+    let ownership: SubscriptionStore.Ownership
+    var compact = false
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(Self.name(ownership.productID))
+                .appFont(compact ? .caption : .subheadline, weight: .semibold)
+                .foregroundStyle(Theatre.ivory)
+            Text(detail)
+                .appFont(.caption)
+                .foregroundStyle(Theatre.ivoryDim)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+
+    private var detail: String {
+        guard !ownership.isLifetime else {
+            return L.t("store.lifetimeOwned", "Yours for good. Thank you for supporting Brass Pawn.")
+        }
+        guard let date = ownership.expires?.formatted(date: .long, time: .omitted) else {
+            return L.t("store.renews", "Renews automatically")
+        }
+        if let next = ownership.nextProductID, ownership.willRenew {
+            return L.t("store.changesOn", "Changes to %1$@ on %2$@", Self.shortName(next), date)
+        }
+        return ownership.willRenew
+            ? L.t("store.renewsOn", "Renews on %@", date)
+            : L.t("store.endsOn", "Ends on %@", date)
+    }
+
+    static func name(_ id: String) -> String {
+        switch id {
+        case SubscriptionStore.ProductID.monthly: L.t("store.monthlyPlan", "Monthly Pro plan")
+        case SubscriptionStore.ProductID.yearly: L.t("store.yearlyPlan", "Yearly Pro plan")
+        default: L.t("store.lifetimePlan", "One-off lifetime unlock")
+        }
+    }
+
+    private static func shortName(_ id: String) -> String {
+        switch id {
+        case SubscriptionStore.ProductID.monthly: L.t("store.monthly", "Monthly")
+        case SubscriptionStore.ProductID.yearly: L.t("store.yearly", "Yearly")
+        default: L.t("store.lifetime", "One-off")
         }
     }
 }

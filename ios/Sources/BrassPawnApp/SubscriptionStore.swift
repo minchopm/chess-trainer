@@ -25,10 +25,26 @@ public final class SubscriptionStore {
 
     public enum Activity: Equatable { case loading, purchasing, restoring, managing }
 
+    /// What this person owns, as the App Store says it: which plan, until
+    /// when, and what happens then. Shown on the paywall and in Settings, so a
+    /// subscriber can see the plan and change it.
+    public struct Ownership: Equatable {
+        public let productID: String
+        /// The end of the period paid for; nil for the one-off unlock.
+        public let expires: Date?
+        /// Whether the subscription renews at the end of it.
+        public let willRenew: Bool
+        /// The plan it moves to at the next renewal, when a change is waiting.
+        public let nextProductID: String?
+
+        public var isLifetime: Bool { productID == ProductID.lifetime }
+    }
+
     /// True once anything on the list has been bought. The lifetime unlock and
     /// the two subscriptions grant exactly the same thing; nothing downstream
     /// needs to know which one paid for it.
     public private(set) var isPro = false
+    public private(set) var ownership: Ownership?
     public private(set) var isCheckingEntitlement = true
     public private(set) var monthly: Product?
     public private(set) var yearly: Product?
@@ -70,20 +86,44 @@ public final class SubscriptionStore {
     }
 
     public func refreshEntitlement() async {
+        #if DEBUG
+        guard !stagedForScreenshot else { isCheckingEntitlement = false; return }
+        #endif
         isCheckingEntitlement = true
         defer { isCheckingEntitlement = false }
 
-        var entitled = false
+        var owned: Ownership?
         for await result in Transaction.currentEntitlements {
             guard case .verified(let transaction) = result,
                   ProductID.all.contains(transaction.productID),
                   transaction.revocationDate == nil,
                   !transaction.isUpgraded
             else { continue }
-            entitled = true
-            break
+            // The one-off unlock outranks a subscription running beside it.
+            if transaction.productID == ProductID.lifetime {
+                owned = Ownership(productID: transaction.productID, expires: nil, willRenew: false, nextProductID: nil)
+                break
+            }
+            var willRenew = true
+            var next: String?
+            if let status = await transaction.subscriptionStatus, case .verified(let renewal) = status.renewalInfo {
+                willRenew = renewal.willAutoRenew
+                if let preference = renewal.autoRenewPreference, preference != transaction.productID { next = preference }
+            }
+            owned = Ownership(productID: transaction.productID, expires: transaction.expirationDate,
+                              willRenew: willRenew, nextProductID: next)
         }
-        isPro = entitled
+        ownership = owned
+        isPro = owned != nil
+    }
+
+    /// Whether this product can be bought now: anything but the plan already
+    /// held, and nothing once the one-off unlock is. A subscriber may move
+    /// between the monthly and the yearly plan, which share one group — the
+    /// App Store makes the change at the next renewal — or buy the unlock.
+    public func canBuy(_ product: Product) -> Bool {
+        guard let ownership else { return true }
+        return !ownership.isLifetime && product.id != ownership.productID
     }
 
     public func loadProducts() async {
@@ -108,7 +148,9 @@ public final class SubscriptionStore {
     }
 
     public func purchase(_ product: Product) async {
-        guard activity == nil, !isPro else { return }
+        guard activity == nil, canBuy(product) else { return }
+        let before = ownership
+        let changingPlan = before != nil && product.id != ProductID.lifetime
         activity = .purchasing
         clear()
         defer { activity = nil }
@@ -122,7 +164,9 @@ public final class SubscriptionStore {
                 }
                 await transaction.finish()
                 await refreshEntitlement()
-                if isPro {
+                if changingPlan {
+                    show(L.t("store.planChanged", "Done. Your new plan starts at your next renewal."))
+                } else if isPro {
                     show(L.t("store.thankYouSupport", "Thank you for supporting Brass Pawn — the training is unlocked."))
                 }
             case .pending:
@@ -137,8 +181,10 @@ public final class SubscriptionStore {
             // the sandbox does, now and then. What the account owns is the
             // answer, not what the call said.
             await refreshEntitlement()
-            if isPro {
-                show(L.t("store.thankYouSupport", "Thank you for supporting Brass Pawn — the training is unlocked."))
+            if isPro, ownership != before {
+                show(changingPlan
+                     ? L.t("store.planChanged", "Done. Your new plan starts at your next renewal.")
+                     : L.t("store.thankYouSupport", "Thank you for supporting Brass Pawn — the training is unlocked."))
             } else {
                 show(L.t("store.purchaseFailed", "Purchase failed: %@", error.localizedDescription), error: true)
             }
@@ -196,6 +242,19 @@ public final class SubscriptionStore {
         }
         #endif
     }
+
+    #if DEBUG
+    /// A monthly subscriber, for `.paywallSubscribed`: the simulator has no
+    /// App Store account to hold one. Never in a release build.
+    private var stagedForScreenshot = false
+    func stageMonthlyForScreenshot() {
+        stagedForScreenshot = true
+        ownership = Ownership(productID: ProductID.monthly,
+                              expires: Calendar.current.date(byAdding: .day, value: 24, to: Date()),
+                              willRenew: true, nextProductID: nil)
+        isPro = true
+    }
+    #endif
 
     private func clear() {
         message = nil

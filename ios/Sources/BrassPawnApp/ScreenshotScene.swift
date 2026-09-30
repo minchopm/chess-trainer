@@ -60,6 +60,9 @@ enum ScreenshotScene: String {
     /// reviewer to read. Reaching it by hand means running a day's free
     /// training out first; this opens it directly.
     case paywall
+    /// The same screen for somebody already on the monthly plan: the plan,
+    /// its renewal date, and the others to change to.
+    case paywallSubscribed
     /// The online lobby with players in it, and the players screen — both
     /// filled with invented players, since Game Center will not sign in on a
     /// simulator to fill them with real ones.
@@ -85,7 +88,7 @@ enum ScreenshotScene: String {
     var tab: RootView.Tab {
         switch self {
         case .menu, .playSetup, .playCoached, .playMistake, .playValues, .boardEngines, .demo,
-             .onlineDraw, .paywall, .onlineLobby, .players, .playersAll, .friends, .friendOffer, .onlineRematch: .play
+             .onlineDraw, .paywall, .paywallSubscribed, .onlineLobby, .players, .playersAll, .friends, .friendOffer, .onlineRematch: .play
         case .watchList, .demoWatch: .watch
         case .demoTactics: .tactics
         }
@@ -107,7 +110,7 @@ enum ScreenshotScene: String {
         switch self {
         case .playSetup, .playCoached, .playMistake, .boardEngines, .demo, .onlineDraw: .dimensional
         case .playValues, .demoTactics, .onlineRematch: .flat
-        case .menu, .watchList, .demoWatch, .paywall, .onlineLobby, .players, .playersAll, .friends, .friendOffer: nil
+        case .menu, .watchList, .demoWatch, .paywall, .paywallSubscribed, .onlineLobby, .players, .playersAll, .friends, .friendOffer: nil
         }
     }
 
@@ -117,7 +120,7 @@ enum ScreenshotScene: String {
         switch self {
         // The paywall is presented over the menu, which is where it is
         // reached from, so the menu stays.
-        case .menu, .demo, .demoWatch, .demoTactics, .paywall: true
+        case .menu, .demo, .demoWatch, .demoTactics, .paywall, .paywallSubscribed: true
         default: false
         }
     }

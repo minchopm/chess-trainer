@@ -105,7 +105,8 @@ struct MenuScreen: View {
         // it, in each language, before it can be submitted. Opened from here
         // because this is where the purchase screen is reached from anyway.
         .task {
-            guard ScreenshotScene.requested == .paywall else { return }
+            guard ScreenshotScene.requested == .paywall || ScreenshotScene.requested == .paywallSubscribed else { return }
+            if ScreenshotScene.requested == .paywallSubscribed { app.store.stageMonthlyForScreenshot() }
             try? await Task.sleep(for: .milliseconds(400))
             showsPurchases = true
             try? await Task.sleep(for: .milliseconds(1400))
