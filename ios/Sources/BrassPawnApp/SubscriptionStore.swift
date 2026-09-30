@@ -114,7 +114,7 @@ public final class SubscriptionStore {
         defer { activity = nil }
 
         do {
-            switch try await product.purchase() {
+            switch try await buy(product) {
             case .success(let verification):
                 guard case .verified(let transaction) = verification else {
                     show(L.t("store.unverified", "That purchase could not be verified."), error: true)
@@ -133,9 +133,36 @@ public final class SubscriptionStore {
                 show(L.t("store.unknownResult", "The App Store returned a result this app does not understand."), error: true)
             }
         } catch {
-            show(L.t("store.purchaseFailed", "Purchase failed: %@", error.localizedDescription), error: true)
+            // The App Store can take the payment and still report an error —
+            // the sandbox does, now and then. What the account owns is the
+            // answer, not what the call said.
+            await refreshEntitlement()
+            if isPro {
+                show(L.t("store.thankYouSupport", "Thank you for supporting Brass Pawn — the training is unlocked."))
+            } else {
+                show(L.t("store.purchaseFailed", "Purchase failed: %@", error.localizedDescription), error: true)
+            }
         }
     }
+
+    /// The purchase, confirmed in the window the paywall is in. Left to find
+    /// one itself, StoreKit guesses, and on an iPad or a Mac it can guess
+    /// wrong and fail with "Unable to Complete Request".
+    private func buy(_ product: Product) async throws -> Product.PurchaseResult {
+        #if canImport(UIKit)
+        if let scene = activeScene {
+            return try await product.purchase(confirmIn: scene)
+        }
+        #endif
+        return try await product.purchase()
+    }
+
+    #if canImport(UIKit)
+    private var activeScene: UIWindowScene? {
+        let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+        return scenes.first { $0.activationState == .foregroundActive } ?? scenes.first
+    }
+    #endif
 
     public func restore() async {
         guard activity == nil else { return }
@@ -157,11 +184,7 @@ public final class SubscriptionStore {
 
     public func manageSubscriptions() async {
         #if canImport(UIKit)
-        guard activity == nil,
-              let scene = UIApplication.shared.connectedScenes
-                  .compactMap({ $0 as? UIWindowScene })
-                  .first(where: { $0.activationState == .foregroundActive })
-        else { return }
+        guard activity == nil, let scene = activeScene else { return }
 
         activity = .managing
         defer { activity = nil }
