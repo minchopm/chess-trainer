@@ -13,11 +13,12 @@ import { copy } from '../../i18n/copy/en';
 import { Showcase } from '../../shared/showcase/showcase';
 import { TodayStrip } from '../today/today-strip';
 import { Hero } from './hero/hero';
+import { MoreApps } from '../../shared/more-apps/more-apps';
 
 @Component({
   selector: 'bp-home',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, Hero, Reveal, Showcase, TodayStrip],
+  imports: [RouterLink, Hero, Reveal, Showcase, TodayStrip, MoreApps],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

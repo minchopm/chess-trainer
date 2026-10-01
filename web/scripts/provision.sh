@@ -210,11 +210,15 @@ FN_ARN="arn:aws:cloudfront::$ACCOUNT:function/$FN_NAME"
 
 # ---------------------------------------------------------- 5. header policy
 
-# Everything the site loads is first-party, so the content policy can name a
-# single origin. The two 'unsafe-inline' entries are unavoidable and narrow:
+# Everything the site loads is first-party except the "More from Arte Soft"
+# block (shared/more-apps): its script and app icons come from arte-soft.com
+# and the pictures of its guide cards from the guide sites, so those, and only
+# those, are named. The two 'unsafe-inline' entries are unavoidable and narrow:
 # Angular writes style attributes for the scroll-driven animation, and the
 # structured data is an inline script in every prerendered page.
-CSP="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'none'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; manifest-src 'self'; media-src 'self'; upgrade-insecure-requests"
+# This script only creates the policy; to change a live one, update it with
+# aws cloudfront update-response-headers-policy.
+CSP="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'none'; img-src 'self' data: https://arte-soft.com https://*.arte-soft.com https://www.cloud-calendars.com https://www.wise-eating.com; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://arte-soft.com; connect-src 'self'; manifest-src 'self'; media-src 'self'; upgrade-insecure-requests"
 HEADERS_NAME="$SLUG-security-headers"
 
 HEADERS="$(aws_read cloudfront list-response-headers-policies --type custom \

@@ -11,6 +11,7 @@ import type { ReportLink, StorySummary } from './feed/types';
 import { feedFolder, listPath, reportPath, STORY_SLUGS, TodayLanguage } from './i18n';
 import { liveStories } from './live';
 import { StoryCard } from './story-card';
+import { MoreApps } from '../../shared/more-apps/more-apps';
 
 /** How many stories the page lists. The rest are one link away, story to story. */
 const SHOWN = 60;
@@ -27,7 +28,7 @@ const SHOWN = 60;
 @Component({
   selector: 'bp-today',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [PageHead, Reveal, StoryCard],
+  imports: [PageHead, Reveal, StoryCard, MoreApps],
   templateUrl: './today.html',
   styleUrl: './today.scss',
 })
