@@ -26,13 +26,17 @@
 	<!-- And the sandbox has to let something in as well, which is what this
 	     file used to say it did not.
 
-	     Finding an opponent goes through Apple's servers, but the match that
-	     comes back does not: `GKMatch` is a direct connection between the two
-	     devices, and each of them has to accept one from the other. A Mac with
-	     the client entitlement alone gets as far as being paired and then
-	     never connects — which is exactly what a Mac and a phone looking for
-	     each other looked like. A phone is not sandboxed and so was never
-	     asked the question. -->
+	     Multiplayer is real-time Game Center: GKMatchmaker finds the
+	     opponent, and the GKMatch then carries the game, the opponent's moves
+	     arriving through GKMatchDelegate. Apple's "Initializing and
+	     configuring Game Center" says it plainly: for Mac targets, enable
+	     both Incoming Connections and Outgoing Connections under App
+	     Sandbox > Network. With the client entitlement alone, a Mac was
+	     paired and then never connected.
+
+	     App Review's automated check flagged this key (2.4.5, 1 October
+	     2026) as unused; the answer, and the review notes, say what it is
+	     for. Keep it. -->
 	<key>com.apple.security.network.server</key>
 	<true/>
 

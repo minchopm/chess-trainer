@@ -168,6 +168,16 @@ list), linked, for app functionality, no tracking. Online ratings are on Game
 Center's leaderboards. Policy: `PRIVACY.md`, and
 https://brasspawn.com/privacy.
 
+## 7a. The Mac's network entitlements
+
+The Mac app has both `com.apple.security.network.client` and
+`com.apple.security.network.server`. Multiplayer is real-time Game Center:
+`GKMatchmaker` finds the opponent and `GKMatch` exchanges the game, the
+opponent's data arriving through `GKMatchDelegate`. Apple's
+[Initializing and configuring Game Center](https://developer.apple.com/documentation/gamekit/initializing-and-configuring-game-center)
+asks Mac targets to enable both Incoming Connections and Outgoing Connections
+under App Sandbox → Network. The app runs no server of its own.
+
 ## 8. Content and moderation
 
 There is **no user-generated content and no messaging**. The Multiplayer wire
