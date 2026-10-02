@@ -4,6 +4,22 @@
 you are online, and keeping the friends you make in the app, described under
 *Who is online* and *Friends* below.
 
+## What the App Store's privacy label means here
+
+Its categories are Apple's, and in Brass Pawn each is narrower than its name:
+
+- **Contacts**: only the friends you add inside Brass Pawn, by their Game
+  Center nickname. The app never reads the contacts on your phone.
+- **Identifiers (User ID)**: a scrambled code made from your Game Center ID, so
+  a friend request or a game reaches the right player. Never your name, e-mail
+  address or Apple Account.
+- **User Content (Gameplay Content)**: whether you are online, looking for a
+  game or in one, deleted five minutes after you leave.
+
+All three come with online friends and "who is online", in version 1.3 and
+later. None of it is used for tracking or advertising, and nothing is shared
+or sold.
+
 The app makes no analytics calls, carries no advertising, and contains no
 third-party tracking of any kind. There is no account to create, and outside
 online play nothing about you is ever sent to us.
