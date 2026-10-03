@@ -469,6 +469,7 @@ extension Carving {
         case .plain: .plain
         case .banded: .banded
         case .parlour: .parlour
+        case .bronze: .bronze
         }
     }
 }

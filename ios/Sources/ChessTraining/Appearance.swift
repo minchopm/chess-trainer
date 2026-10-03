@@ -232,6 +232,8 @@ public enum Carving: String, Codable, CaseIterable, Identifiable, Sendable {
     /// nothing to catch under a domestic lamp. So the choice is of a look
     /// rather than of a set, and there is one control rather than two.
     case parlour
+    /// Tall Staunton pieces in brass and dark bronze, with circular bases.
+    case bronze
     public var id: String { rawValue }
 }
 

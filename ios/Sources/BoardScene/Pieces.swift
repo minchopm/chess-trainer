@@ -46,6 +46,9 @@ public enum PieceStyle: String, Sendable, CaseIterable, Codable {
     /// `ParlourSet`, and `Parlour` for the board it comes with.
     case parlour
 
+    /// Full-size turned Staunton in brass and dark bronze, with circular feet.
+    case bronze
+
     public var isBanded: Bool { self == .banded }
 
     /// The room this set is shown in.
@@ -333,7 +336,7 @@ public enum TurnedPieces {
     public static func node(for kind: PieceKind, style: PieceStyle = .plain) -> SCNNode {
         // The walnut set is a different turning rather than this one dressed
         // differently, so it is built elsewhere and only shares the knight.
-        if style == .parlour { return ParlourSet.node(for: kind) }
+        if style == .parlour || style == .bronze { return ParlourSet.node(for: kind) }
 
         let s = height[kind] ?? 0.7
         let node = SCNNode()

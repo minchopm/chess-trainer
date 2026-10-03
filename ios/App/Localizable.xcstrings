@@ -1,6 +1,13 @@
 {
   "sourceLanguage": "en",
   "strings": {
+    "settings.bronzeSet": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Brass & bronze" } },
+        "bg": { "stringUnit": { "state": "translated", "value": "Месинг и бронз" } }
+      }
+    },
     "about.about": {
       "extractionState": "manual",
       "localizations": {

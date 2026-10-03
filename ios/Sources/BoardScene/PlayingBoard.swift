@@ -363,11 +363,13 @@ final class PieceMaterials {
         let light: UInt32 = switch style {
         case .banded: 0xE8DCC0
         case .parlour: 0xE6D8B4
+        case .bronze: 0xD4A65A
         case .plain: 0xE6DFCD
         }
         let dark: UInt32 = switch style {
         case .banded: 0x14161C
         case .parlour: 0x53321F
+        case .bronze: 0x684331
         case .plain: 0x11131A
         }
 
@@ -409,6 +411,14 @@ final class PieceMaterials {
             material.metalness.contents = oiled ? 0.0 : 0.08
             material.clearCoat.contents = oiled ? 0.20 : 0.75
             material.clearCoatRoughness.contents = oiled ? 0.52 : 0.18
+        }
+        if style == .bronze {
+            for material in [ivory, ivoryLit, ebony, ebonyLit] {
+                material.metalness.contents = 0.78
+                material.roughness.contents = 0.32
+                material.clearCoat.contents = 0.10
+                material.clearCoatRoughness.contents = 0.35
+            }
         }
         ivoryLit.emission.contents = Colour.make(0xD6A95F)
         ivoryLit.emission.intensity = 0.3

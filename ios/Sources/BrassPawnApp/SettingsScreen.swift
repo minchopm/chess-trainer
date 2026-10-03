@@ -768,6 +768,8 @@ struct DimensionChoice: View {
                     .appFont(.footnote)
                     .foregroundStyle(Theatre.ivoryFaint)
 
+                carving(.bronze, L.t("settings.bronzeSet", "Brass & bronze"))
+
                 // The set and the room it stands in are one thing, and neither
                 // survives being described. Three names on three buttons said
                 // nothing about which of them somebody would rather look at for
