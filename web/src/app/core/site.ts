@@ -17,7 +17,7 @@ export const SITE = {
    * it; "Brass Pawn" is ownable and says nothing on its own, so the category has
    * to be said out loud somewhere a search engine reads first.
    */
-  category: 'a chess trainer for iPhone and iPad',
+  category: 'a chess trainer for iPhone, iPad and Mac',
   /** Where this site lives. Used for canonical URLs, sitemap and legal text. */
   origin: 'https://brasspawn.com',
   publisher: 'Mincho Milev',
@@ -66,8 +66,8 @@ export const SITE = {
   /** The App Clip: game invitations and the daily feed's stories open in it. */
   clipBundleId: 'com.arte-soft.brasspawn.Clip',
   platforms: 'iPhone and iPad',
-  minimumOs: 'iOS 17.0 or later',
-  version: '1.1',
+  minimumOs: 'iOS 17.0, iPadOS 17.0 or macOS 14.0 or later',
+  version: '1.3',
   /**
    * The licence of the app as a whole.
    *

@@ -42,6 +42,7 @@ export class SiteHeader {
    * string on the page a screen-reader user hears first.
    */
   protected readonly chrome = computed(() => this.current.locale().chrome);
+  protected readonly localHome = computed(() => '/' + this.current.locale().slug);
 
   private readonly english = [
     { path: '/today', label: 'Today' },

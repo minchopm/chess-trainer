@@ -3,6 +3,7 @@
     <div class="colophon">
       <p class="wordmark">Brass Pawn</p>
       <p class="dim">{{ chrome().lede }}</p>
+      <p><a [routerLink]="guidePath()">{{ currentGuideLabel() }}</a></p>
       <p class="gpl mono">
         {{ chrome().licence }}
         <a [href]="site.repo" rel="noopener">{{ chrome().readSource }}</a>.

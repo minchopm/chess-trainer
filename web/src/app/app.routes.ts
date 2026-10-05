@@ -93,6 +93,11 @@ const localeTodayRoutes: Routes = LOCALES.filter((locale) => STORY_SLUGS.include
  * three.js and the other seven do not.
  */
 export const routes: Routes = [
+  ...LOCALES.map((locale) => ({
+    path: `${locale.slug === 'en' ? '' : locale.slug + '/'}guides/chess-practice`,
+    data: { locale },
+    loadComponent: () => import('./pages/guide/guide').then((m) => m.PracticeGuide),
+  })),
   {
     path: '',
     loadComponent: () => import('./pages/home/home').then((m) => m.Home),

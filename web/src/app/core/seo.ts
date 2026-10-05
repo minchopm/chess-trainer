@@ -250,11 +250,11 @@ export class Seo {
       url: url('/'),
       ...(SITE.appStoreId ? { installUrl: SITE.appStore, downloadUrl: SITE.appStore } : {}),
       description:
-        'A chess training app for iPhone and iPad: tactics, positional judgement, endgame ' +
+        'A chess training app for iPhone, iPad and Mac: tactics, positional judgement, endgame ' +
         'technique, Rush, Guess the Elo, coached play and online games, with Stockfish running ' +
-        'on the device. No account, no analytics and no advertising.',
+        'on the device. Offline training, online play through Game Center, and no advertising.',
       inLanguage: LOCALES,
-      license: 'https://www.gnu.org/licenses/gpl-3.0.html',
+      license: 'https://www.gnu.org/licenses/agpl-3.0.html',
       author: { '@id': url('/#organization') },
       publisher: { '@id': url('/#organization') },
       image: { '@id': url('/#logo') },

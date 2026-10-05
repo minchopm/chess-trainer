@@ -24,7 +24,7 @@
         <!-- Sections of the page already open. `[routerLink]="[]"` keeps the
              address and sets the fragment; a plain href would resolve against
              the base and leave the language behind. -->
-        <a [routerLink]="[]" [fragment]="link.path" (click)="close()">{{ link.label }}</a>
+        <a [routerLink]="localHome()" [fragment]="link.path" (click)="close()">{{ link.label }}</a>
       }
     </nav>
   } @else {
@@ -69,7 +69,7 @@
   @if (inPage()) {
     <nav aria-label="Primary, small screens">
       @for (link of links(); track link.path) {
-        <a [routerLink]="[]" [fragment]="link.path" (click)="close()">{{ link.label }}</a>
+        <a [routerLink]="localHome()" [fragment]="link.path" (click)="close()">{{ link.label }}</a>
       }
       @if (site.appStoreLive) {
         <a [href]="site.appStore" rel="noopener" (click)="close()">{{ cta() }}</a>

@@ -112,6 +112,14 @@ const todayAlternates = [
 
 /** Pages worth indexing, in the order a reader would meet them. */
 const PAGES = [
+  ...locales.map((locale) => ({
+    path: `${locale.slug === 'en' ? '' : '/' + locale.slug}/guides/chess-practice`,
+    priority: '0.8', changefreq: 'monthly', lastmod: '2026-10-02',
+    block: [
+      ...locales.map(l => `    <xhtml:link rel="alternate" hreflang="${l.slug === 'en' ? 'en' : l.tag}" href="${ORIGIN}${l.slug === 'en' ? '' : '/' + l.slug}/guides/chess-practice"/>`),
+      `    <xhtml:link rel="alternate" hreflang="x-default" href="${ORIGIN}/guides/chess-practice"/>`,
+    ].join('\n'),
+  })),
   { path: '/', priority: '1.0', changefreq: 'monthly', translated: true },
   { path: '/training', priority: '0.9', changefreq: 'monthly', alternates: '/training' },
   { path: '/tactics', priority: '0.9', changefreq: 'monthly', alternates: '/tactics' },
@@ -233,9 +241,10 @@ await writeFile(
 
 > ${text('category').replace(/^a /, 'A ')}. Tactics, positional judgement, endgame
 > technique, coached play and a library of master games, with two chess engines
-> running on the device. No account, no analytics and no advertising. The one
-> thing the app downloads is the daily feed of top games, a static file from
-> brasspawn.com, and only when its Today screen is opened.
+> running on the device. No advertising or advertising tracking. Offline training
+> stays on the device. Online play uses Game Center and a developer-operated service
+> for player availability and in-game friendships; this is disclosed in the privacy policy.
+> Today downloads a feed of games when opened. Online features require internet access.
 
 Brass Pawn is published by ${text('publisher')} and is free software under the
 ${text('licence')}. The complete source is at ${text('repo')}.
@@ -262,6 +271,7 @@ at $3.99 a month or $49.99 once. There is no advertising anywhere in the app.
 ## Pages
 
 - [Home](${ORIGIN}/): what the app is, the eight modes, the films, pricing
+- [Chess practice guide](${ORIGIN}/guides/chess-practice): offline practice, engines, puzzles, friends and free versus Pro; available in all ${locales.length} site languages
 - [The training](${ORIGIN}/training): each mode in full, and how a puzzle is mined and verified
 - [Today](${ORIGIN}/today): the finished games from the day's top events, each with the move where Stockfish says it turned
 - [Watch](${ORIGIN}/watch): the ${number('classics')}-game library — what got in, what did not, and taking a position over
@@ -278,7 +288,8 @@ at $3.99 a month or $49.99 once. There is no advertising anywhere in the app.
 
 The product page exists in all ${locales.length} languages at \`${ORIGIN}/<code>\`, for example
 ${locales.filter((l) => l.slug !== 'en').slice(0, 4).map((l) => `${ORIGIN}/${l.slug}`).join(', ')}.
-The pages above are in English only.
+The practice guide is available at /<code>/guides/chess-practice in every site language.
+Some other pages have translations; follow each page's language links for its available editions.
 `,
   'utf8',
 );

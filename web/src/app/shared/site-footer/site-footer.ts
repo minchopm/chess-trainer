@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/c
 import { RouterLink } from '@angular/router';
 
 import { SITE } from '../../core/site';
+import { GUIDE_LABELS } from '../../pages/guide/labels';
 import { CurrentLocale } from '../../i18n/current';
 import { LOCALES } from '../../i18n/locales';
 
@@ -30,6 +31,8 @@ export class SiteFooter {
   protected readonly chrome = computed(() => this.current.locale().chrome);
   protected readonly localised = this.current.localised;
   protected readonly lede = computed(() => this.current.locale().chrome);
+  protected readonly guidePath = computed(() => `${this.current.locale().slug === 'en' ? '' : '/' + this.current.locale().slug}/guides/chess-practice`);
+  protected readonly currentGuideLabel = computed(() => GUIDE_LABELS[this.current.locale().slug]);
 
   protected readonly columns = [
     {
