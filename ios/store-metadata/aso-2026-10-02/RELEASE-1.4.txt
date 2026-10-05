@@ -1,0 +1,26 @@
+Brass Pawn 1.4 (10), iOS and Mac Catalyst
+
+User requested withdrawal of pending Mac review and resubmission of both platforms
+as 1.4 with the latest build functionality. Apple rejected attaching the already
+published iOS 1.3 (9) build to 1.4 (HTTP 409). Both platforms were rebuilt as 1.4 (10).
+
+App source matches build 9 commit 6f983e6. The only subsequent difference in app
+source/config before this rebuild is a comment explaining the unchanged Mac
+network.server entitlement. Runtime functionality and multiplayer protocol are unchanged.
+
+Both archives built successfully with Release configuration, with explicit
+MARKETING_VERSION=1.4 CURRENT_PROJECT_VERSION=10. Project files now retain those
+numbers. App and App Clip version/build numbers are synchronized.
+
+Mac review canceled; existing version renamed 1.4 to preserve metadata/media.
+iOS 1.4 created, 31 descriptions/keywords saved and verified. All 31 locales
+have 17 iOS screenshots across device sizes; Mac has 7 per locale.
+
+Game Center enabled on both 1.4 records. Compatibility includes iOS 1.3,
+iOS 1.4 and Mac 1.4. The API does not list a separate 1.2 record. Existing
+compatibility relationships were retained. No matchmaking/protocol changes made.
+
+Both uploads succeeded on 2026-10-02 at approximately 10:11 UTC.
+Both 1.4 (10) builds are VALID, attached and submitted. Final API readback:
+IOS and MAC_OS: WAITING_FOR_REVIEW.
+iOS App Clip configuration was copied using the 1.3 experience as template.

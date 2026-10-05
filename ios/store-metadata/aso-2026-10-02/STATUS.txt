@@ -1,0 +1,51 @@
+UPDATE: 2 October 2026 — iOS and Mac 1.4 (10) submitted and verified
+WAITING_FOR_REVIEW. Both contain the 31 localized descriptions/keywords.
+Game Center compatibility retained/extended across iOS 1.3, iOS 1.4 and Mac 1.4.
+See RELEASE-1.4.txt for build provenance and details.
+
+Historical status before the 1.4 release work:
+
+Brass Pawn ASO / website update — 2 October 2026
+
+localizations.json contains the reviewed description and keyword payloads for
+all 31 existing App Store locales. Privacy clarification is intentionally in
+English in every description, per the user's request. The rest is localized.
+Terms and privacy links remain at the end.
+
+MAC_OS 1.3: descriptions and keywords PATCHed and read back successfully for
+all 31 localizations. Version remains WAITING_FOR_REVIEW.
+
+IOS 1.3: published (READY_FOR_SALE); Apple returns STATE_ERROR for editing
+description or keywords. No new version has been created yet. The same 31
+translations are ready for the next editable iOS version. The previously
+published English privacy clarification in Promotional Text remains intact.
+
+To apply to an existing editable version, first preview:
+python3 ios/scripts/store/listing/apply_localized_metadata.py --platform IOS --version VERSION
+Then use the same command with --apply. The script saves a backup and verifies
+every change. It does not create versions, attach builds or submit for review.
+
+Do not re-upload the older Desktop/BrassPawn/listing descriptions over these
+payloads: those historical source files contain obsolete free-play/privacy copy.
+
+Website: https://brasspawn.com/guides/chess-practice
+32 localized editions, including Bulgarian; all verified live with HTTP 200.
+Each has rendered text, canonical URL, reciprocal hreflang links, language and
+RTL direction, an App Store link, visible FAQ with matching structured data,
+and a sitemap entry. Relevant localized screenshots are used where available.
+The existing robots policy permits crawling. A request using the OAI-SearchBot
+user agent succeeded; this does not prove actual crawler indexing or ranking.
+IndexNow accepted the sitemap submission (HTTP 200).
+
+Website source: web/src/app/pages/guide/content.json
+Run web/tools/build-practice-guide.mjs to generate the TypeScript copy and labels.
+Production builds run that generator automatically.
+Verification: node web/tools/check-practice-guide.mjs after a production build.
+
+This release improves factual clarity and discoverability. It does not claim
+measured search volume, guaranteed ranking, ChatGPT recommendations or increased
+downloads. No fake reviews, unsupported product claims or competitor keyword
+names were added.
+
+API backups and verification logs:
+/Users/minchomilev/Desktop/StoreFrontDemo/brass-pawn-aso-2026-10-02/

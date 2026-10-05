@@ -1,0 +1,31 @@
+Brass Pawn is a chess trainer for iPhone, iPad and Mac. Improve your chess with move-by-move feedback, adaptive tactics puzzles and endgame practice. Play against an on-device engine, compare candidate moves, or challenge real opponents through Game Center. No ads.
+
+UNDERSTAND YOUR MOVES
+See how your move compares with the engine's preferred move, how the evaluation changes, and the continuation it suggests. Turn on move values to compare legal moves before choosing one. Use the feedback to study mistakes and missed opportunities during practice.
+
+PRACTISE TACTICS AND ENDGAMES
+Train with 14,000 chess puzzles selected around your training needs. Try Puzzle Rush for timed practice, work through 15 endgame drills and 116 positional exercises, or test your judgement with Guess the Elo.
+
+PLAY AND ANALYSE OFFLINE
+Stockfish and Reckless run on your device. Practise against the computer and analyse positions without an internet connection. Switch engines for a second evaluation of the same position. Online matches, leaderboards and the Today feed require internet access.
+
+STUDY REAL CHESS GAMES
+Explore a library of 900 games. Replay the moves, find a position you want to understand, then take over and try your own continuation against the engine. Set up a position manually or paste in a game to continue studying.
+
+PLAY PEOPLE AND INVITE FRIENDS
+Find an opponent through Game Center for a 3, 5, 10, 15 or 30-minute game. Follow the rankings for each time control, see available players and add in-game friends to invite again. Online matches have no engine hints or coaching. Invitations and rematches are friendly games.
+
+IS BRASS PAWN RIGHT FOR YOU?
+Brass Pawn is designed for players who want to practise tactics, compare moves and improve their judgement. If you already know the rules and want more useful feedback from your practice, start with puzzles, coached engine games and endgame drills. Choose a 2D or 3D board and the board and piece styles you prefer.
+
+FREE PLAY AND OPTIONAL PRO
+Play against the computer or online opponents and explore the game library for free. Training includes five daily attempts per activity. Brass Pawn Pro removes the training limits. Choose an available subscription or the one-time unlock. The app has no advertising.
+
+YOUR TRAINING STAYS ON YOUR DEVICE
+Your training progress and chess analysis stay on your device. We do not access your phone's address book or use advertising tracking. Online features use a player identifier, availability and the friends you add inside Brass Pawn to help you find and invite opponents. “Contacts” on the privacy label refers to those in-game friendships. You can disable “Show when I'm online” in Settings and remove in-game friends.
+
+SUBSCRIPTION INFORMATION
+Payment is charged to your Apple Account when you confirm a purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the current period ends. Your account is charged for renewal within the final 24 hours of the period. Manage or cancel subscriptions in your App Store account settings. The one-time unlock does not renew.
+
+Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Privacy Policy: https://brasspawn.com/privacy

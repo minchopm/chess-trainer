@@ -1,0 +1,1118 @@
+[
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "44539afe-6898-4ebf-b2c6-6cc398f3f127",
+    "attributes": {
+      "description": "Casi todo el que juega al ajedrez querría mejorar. Casi nadie tiene a alguien sentado al lado que sepa decir por qué una jugada funcionó.\n\nBrass Pawn es esa silla. Haces una jugada y se lee al instante: se nombra la jugada más fuerte, se dice lo que valía en peones y se despliega la línea que habría seguido. Activa los valores y cada casilla a la que podrías ir lleva su propio número, de modo que sopesas una jugada antes de hacerla en lugar de preguntártelo después.\n\nDOS MOTORES, NO UNO\nStockfish y Reckless vienen dentro de la aplicación. Juega contra cualquiera de los dos, o siéntalos uno frente al otro y mira. Un segundo motor es una segunda opinión, y las posiciones donde discrepan son las que merecen tu tiempo.\n\nCATORCE MIL EJERCICIOS, ELEGIDOS PARA TI\nTáctica sacada de lo que se te resiste, no del azar. Rush, cuando quieras el reloj. Quince finales contra un motor que no dejará escapar unas tablas. Ciento dieciséis ejercicios posicionales. Y Guess the Elo: mil seiscientas partidas reales, y tú dices la fuerza de los jugadores. Es más divertido de lo que suena, y más difícil.\n\nNOVECIENTAS PARTIDAS QUE MERECE LA PENA VER\nTodas decisivas, entre dos jugadores con nombre, y terminadas en menos de veinticinco jugadas o lo bastante famosas como para tener nombre propio. Busca un jugador, mira cómo se desarrolla la partida y, en cuanto tú habrías jugado distinto, tómala y sigue tú.\n\nUN TABLERO QUE APETECE MIRAR\nUn juego fotografiado sobre tablero iluminado, en relieve o plano, con nueve estilos de tablero y cinco juegos de piezas. Monta una posición a mano o pega una partida, y continúa desde ahí.\n\nNADA SALE DEL DISPOSITIVO\nSin cuenta, sin registro, sin analítica, sin publicidad. Los dos motores funcionan en tu teléfono, así que todo va en modo avión. No se recoge nada, lo que da una política de privacidad más corta que la mayoría. Treinta y un idiomas.\n\nLO QUE ES GRATIS\nCinco de cada tipo, para ver si te encaja: cinco ejercicios, cinco finales, cinco partidas contra el motor, y así. A partir de ahí sigue una suscripción, y no hay publicidad en ningún momento.\n\nBrass Pawn es de código abierto, bajo la GNU AGPL v3.\n\nSUSCRIPCIÓN\nJugar es gratis y seguirá siéndolo, sin límite y sin publicidad. Brass Pawn Pro elimina el límite de cinco ejercicios al día; hay una suscripción mensual y una compra única que nunca se renueva.\n\nEl pago se cargará a tu cuenta de Apple al confirmar la compra. La suscripción se renueva automáticamente salvo que se cancele al menos 24 horas antes del final del periodo en curso; el cargo se realiza en las 24 horas previas a la renovación. Puedes gestionarla o cancelarla en los ajustes de tu cuenta de App Store.\n\nTérminos de uso (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPolítica de privacidad: https://brasspawn.com/privacy",
+      "locale": "es-ES",
+      "keywords": "stockfish,apertura,análisis,tablero,sin conexión,elo,aprender,estrategia,partida,juego,mate,nivel",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/44539afe-6898-4ebf-b2c6-6cc398f3f127/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/44539afe-6898-4ebf-b2c6-6cc398f3f127/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/44539afe-6898-4ebf-b2c6-6cc398f3f127/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/44539afe-6898-4ebf-b2c6-6cc398f3f127/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/44539afe-6898-4ebf-b2c6-6cc398f3f127/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/44539afe-6898-4ebf-b2c6-6cc398f3f127/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/44539afe-6898-4ebf-b2c6-6cc398f3f127"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "e09f695c-55a7-4df7-8300-ef74031cde0c",
+    "attributes": {
+      "description": "शतरंज खेलने वाला लगभग हर व्यक्ति बेहतर होना चाहता है। पर लगभग किसी के पास वह व्यक्ति नहीं बैठा होता जो बता सके कि वह चाल क्यों काम आई।\n\nBrass Pawn वही कुर्सी है। आप चाल चलते हैं और वह तुरंत पढ़ी जाती है: बेहतर चाल का नाम, वह प्यादों में कितनी कीमत की थी, और आगे जो लाइन बनती। मूल्य चालू कीजिए और हर वह खाना जहाँ आप जा सकते थे अपना अंक लेकर आता है — आप चाल चलने से पहले तौलते हैं, बाद में सोचते नहीं रह जाते।\n\nदो इंजन, एक नहीं\nStockfish और Reckless, दोनों ऐप के भीतर हैं। किसी एक से खेलिए, या दोनों को आमने-सामने बिठाकर देखिए। दूसरा इंजन दूसरी राय है, और जिन स्थितियों में दोनों असहमत हैं वही आपके समय के लायक हैं।\n\nचौदह हज़ार पहेलियाँ, आपके लिए चुनी हुई\nरणनीति उसी से चुनी जाती है जो आपसे बार-बार छूटता है, यूँ ही नहीं। घड़ी चाहिए तो Rush। पंद्रह अंत-खेल अभ्यास, ऐसे इंजन के सामने जो ड्रॉ निकलने नहीं देता। एक सौ सोलह स्थिति-अभ्यास। और Guess the Elo: सोलह सौ असली बाज़ियाँ, और खिलाड़ी कितने मज़बूत थे यह आप बताते हैं। सुनने से ज़्यादा मज़ेदार, और कठिन भी।\n\nदेखने लायक नौ सौ बाज़ियाँ\nहर एक निर्णायक, दो नामी खिलाड़ियों के बीच, और या तो पच्चीस चालों में समाप्त या इतनी मशहूर कि उसका अपना नाम है। किसी खिलाड़ी को खोजिए, बाज़ी को खुलते देखिए, और जहाँ आप अलग चाल चलते, वहीं से बाज़ी अपने हाथ में लेकर खुद खेलिए।\n\nऐसा बोर्ड जिसे देखने का मन करे\nरोशनी में फ़ोटो खींचा हुआ सेट, उभरा हुआ या सपाट, नौ बोर्ड शैलियों और पाँच मोहरा सेटों के साथ। स्थिति हाथ से लगाइए या कोई बाज़ी चिपकाइए, और वहीं से आगे बढ़िए।\n\nडिवाइस से कुछ भी बाहर नहीं जाता\nन खाता, न साइन-इन, न एनालिटिक्स, न विज्ञापन। दोनों इंजन आपके फ़ोन पर चलते हैं, इसलिए हवाई जहाज़ मोड में भी सब काम करता है। कुछ भी एकत्र नहीं होता, इसलिए गोपनीयता नीति अधिकतर से छोटी है। इकतीस भाषाएँ।\n\nमुफ़्त क्या है\nहर तरह के पाँच, यह देखने भर को कि आपको जँचता है या नहीं: पाँच पहेलियाँ, पाँच अंत-खेल, इंजन के विरुद्ध पाँच बाज़ियाँ, इत्यादि। उसके आगे सदस्यता संभालती है, और कहीं भी विज्ञापन नहीं।\n\nBrass Pawn मुक्त स्रोत है, GNU AGPL v3 के अंतर्गत।\n\nसदस्यता\nखेलना मुफ़्त है और मुफ़्त ही रहेगा — कोई सीमा नहीं, कोई विज्ञापन नहीं। Brass Pawn Pro प्रशिक्षण की रोज़ाना पाँच की सीमा हटा देता है; मासिक सदस्यता है और एक बार का भुगतान भी, जो कभी नवीनीकृत नहीं होता।\n\nखरीद की पुष्टि पर आपके Apple खाते से भुगतान लिया जाएगा। सदस्यता स्वतः नवीनीकृत होती है, जब तक कि मौजूदा अवधि समाप्त होने से कम से कम 24 घंटे पहले रद्द न की जाए; शुल्क नवीनीकरण से पहले के 24 घंटों में लिया जाता है। आप इसे App Store खाता सेटिंग में प्रबंधित या रद्द कर सकते हैं।\n\nउपयोग की शर्तें (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nगोपनीयता नीति: https://brasspawn.com/privacy",
+      "locale": "hi",
+      "keywords": "stockfish,ओपनिंग,विश्लेषण,बोर्ड,ऑफ़लाइन,रेटिंग,कोच,सीखें,खेल,शह और मात,अभ्यास,शुरुआती,चाल",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e09f695c-55a7-4df7-8300-ef74031cde0c/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e09f695c-55a7-4df7-8300-ef74031cde0c/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e09f695c-55a7-4df7-8300-ef74031cde0c/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e09f695c-55a7-4df7-8300-ef74031cde0c/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e09f695c-55a7-4df7-8300-ef74031cde0c/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e09f695c-55a7-4df7-8300-ef74031cde0c/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e09f695c-55a7-4df7-8300-ef74031cde0c"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "a6f8ca8b-22b3-4a9a-86d0-8810d8f368e8",
+    "attributes": {
+      "description": "Satranç oynayan hemen herkes daha iyi olmak ister. Hemen hiç kimsenin yanında, bir hamlenin neden işe yaradığını söyleyebilecek biri oturmaz.\n\nBrass Pawn işte o sandalyedir. Bir hamle yaparsınız ve hemen okunur: daha güçlü hamlenin adı konur, piyon cinsinden ne değerde olduğu söylenir ve gelecek olan varyant açılır. Değerleri açın, gidebileceğiniz her kare kendi sayısını taşısın — hamleyi yaptıktan sonra merak etmek yerine yapmadan önce tartarsınız.\n\nİKİ MOTOR, BİR DEĞİL\nStockfish de Reckless de uygulamanın içinde. İkisinden biriyle oynayın ya da karşı karşıya oturtup izleyin. İkinci motor ikinci bir görüştür ve ikisinin ayrıldığı konumlar zamanınıza değer.\n\nON DÖRT BİN BULMACA, SİZE GÖRE SEÇİLMİŞ\nRastgele değil, sürekli yanıldığınız yerlerden seçilen taktikler. Saat isterseniz Rush. Beraberliği kaçırmayan bir motora karşı on beş son oyun alıştırması. Yüz on altı konum alıştırması. Ve Guess the Elo: bin altı yüz gerçek parti, oyuncuların ne kadar güçlü olduğunu siz söylüyorsunuz. Kulağa geldiğinden daha eğlenceli ve daha zor.\n\nİZLEMEYE DEĞER DOKUZ YÜZ PARTİ\nHepsi sonuçlanmış, adı olan iki oyuncu arasında ve ya yirmi beş hamlede bitmiş ya da kendi adını taşıyacak kadar ünlü. Bir oyuncu arayın, partinin açılışını izleyin ve siz farklı oynayacağınız anda devralıp kendiniz sürdürün.\n\nBAKMAK İSTEYECEĞİNİZ BİR TAHTA\nIşıklı tahtada fotoğraflanmış bir takım, kabartma ya da düz, dokuz tahta biçimi ve beş taş takımıyla. Bir konumu elle kurun ya da bir parti yapıştırın ve oradan devam edin.\n\nCİHAZDAN HİÇBİR ŞEY ÇIKMIYOR\nHesap yok, oturum açma yok, analitik yok, reklam yok. İki motor da telefonunuzda çalışıyor, dolayısıyla uçak modunda her şey işliyor. Hiçbir şey toplanmıyor; gizlilik politikası bu yüzden çoğundan kısa. Otuz bir dil.\n\nÜCRETSİZ OLAN\nSize uyup uymadığını görmenize yetecek kadar, her türden beşer: beş bulmaca, beş son oyun, motora karşı beş parti ve böyle sürüyor. Sonrasını abonelik devralıyor ve hiçbir noktada reklam yok.\n\nBrass Pawn açık kaynaklıdır, GNU AGPL v3 lisansıyla.\n\nABONELİK\nOynamak ücretsizdir ve öyle kalacak — sınır yok, reklam yok. Brass Pawn Pro günde beş alıştırma sınırını kaldırır; aylık abonelik ve hiç yenilenmeyen tek seferlik bir satın alma vardır.\n\nÖdeme, satın alma onaylandığında Apple hesabınızdan tahsil edilir. Abonelik, mevcut dönemin bitiminden en az 24 saat önce iptal edilmediği sürece otomatik olarak yenilenir; ücret yenilemeden önceki 24 saat içinde alınır. App Store hesap ayarlarınızdan yönetebilir veya iptal edebilirsiniz.\n\nKullanım Koşulları (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nGizlilik Politikası: https://brasspawn.com/privacy",
+      "locale": "tr",
+      "keywords": "stockfish,açılış,analiz,tahta,çevrimdışı,elo,öğren,strateji,parti,oyun,mat,derecelendirme",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/a6f8ca8b-22b3-4a9a-86d0-8810d8f368e8/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/a6f8ca8b-22b3-4a9a-86d0-8810d8f368e8/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/a6f8ca8b-22b3-4a9a-86d0-8810d8f368e8/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/a6f8ca8b-22b3-4a9a-86d0-8810d8f368e8/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/a6f8ca8b-22b3-4a9a-86d0-8810d8f368e8/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/a6f8ca8b-22b3-4a9a-86d0-8810d8f368e8/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/a6f8ca8b-22b3-4a9a-86d0-8810d8f368e8"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "21271f2a-c1fb-4a89-80ca-536a67d1475b",
+    "attributes": {
+      "description": "Nästan alla som spelar schack skulle vilja bli bättre. Nästan ingen har någon bredvid sig som kan säga varför ett drag fungerade.\n\nBrass Pawn är den stolen. Du gör ett drag och det läses direkt: det starkare draget får ett namn, vad det var värt i bönder, och varianten som hade följt. Slå på värdena så bär varje ruta du skulle kunna gå till sitt eget tal — du väger ett drag innan du gör det i stället för att undra efteråt.\n\nTVÅ MOTORER, INTE EN\nStockfish och Reckless finns båda i appen. Spela mot vilken som, eller sätt dem mitt emot varandra och titta på. En andra motor är en andra åsikt, och ställningarna där de är oense är de som är värda din tid.\n\nFJORTONTUSEN PROBLEM, VALDA ÅT DIG\nTaktik hämtad ur det du missar, inte ur slumpen. Rush, när du vill ha klockan. Femton slutspelsövningar mot en motor som inte låter remin slinka undan. Etthundrasexton positionsövningar. Och Guess the Elo: sextonhundra verkliga partier, och du säger hur starka spelarna var. Roligare än det låter, och svårare.\n\nNIOHUNDRA PARTIER VÄRDA ATT SE\nAlla avgjorda, mellan två spelare med namn, och antingen slut inom tjugofem drag eller berömda nog att ha ett eget namn. Sök upp en spelare, se partiet växa fram, och i det ögonblick du hade dragit annorlunda tar du över och spelar vidare själv.\n\nETT BRÄDE MAN VILL TITTA PÅ\nEtt fotograferat set på ett upplyst bräde, i relief eller platt, med nio brädstilar och fem pjäsuppsättningar. Ställ upp en ställning för hand eller klistra in ett parti, och fortsätt därifrån.\n\nINGENTING LÄMNAR ENHETEN\nInget konto, ingen inloggning, ingen analys, ingen reklam. Båda motorerna kör på telefonen, så allt fungerar med flygplansläget på. Ingenting samlas in, vilket ger en kortare integritetspolicy än de flesta. Trettioen språk.\n\nVAD SOM ÄR GRATIS\nFem av varje sort, så du hinner se om det passar dig: fem problem, fem slutspel, fem partier mot motorn, och så vidare. Därefter tar en prenumeration vid, och det finns ingen reklam någonstans.\n\nBrass Pawn är öppen källkod, under GNU AGPL v3.\n\nPRENUMERATION\nAtt spela är gratis och förblir gratis — utan gräns och utan reklam. Brass Pawn Pro tar bort gränsen på fem övningar om dagen; det finns en månadsprenumeration och ett engångsköp som aldrig förnyas.\n\nBetalningen dras från ditt Apple-konto när köpet bekräftas. En prenumeration förnyas automatiskt om den inte sägs upp minst 24 timmar före den aktuella periodens slut; debiteringen sker inom 24 timmar före förnyelsen. Du hanterar eller säger upp den i inställningarna för ditt App Store-konto.\n\nAnvändarvillkor (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nIntegritetspolicy: https://brasspawn.com/privacy",
+      "locale": "sv",
+      "keywords": "stockfish,öppning,analys,bräde,offline,elo,lära,strategi,parti,spel,matt,rating,studie",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/21271f2a-c1fb-4a89-80ca-536a67d1475b/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/21271f2a-c1fb-4a89-80ca-536a67d1475b/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/21271f2a-c1fb-4a89-80ca-536a67d1475b/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/21271f2a-c1fb-4a89-80ca-536a67d1475b/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/21271f2a-c1fb-4a89-80ca-536a67d1475b/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/21271f2a-c1fb-4a89-80ca-536a67d1475b/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/21271f2a-c1fb-4a89-80ca-536a67d1475b"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "e92a477e-f595-42ab-a1f7-64014a092706",
+    "attributes": {
+      "description": "幾乎每個下棋的人都想下得更好。幾乎沒有人身邊坐著一位能說清這一步為什麼好的人。\n\nBrass Pawn 就是那個位置。你走一步，它當場讀給你聽：更強的那一步叫什麼，值多少個兵，以及本該出現的變化。打開評估，你能走的每一格都帶著自己的數字——落子之前就能掂量，而不是落子之後才納悶。\n\n兩個引擎，不是一個\nStockfish 和 Reckless 都裝在應用裡。跟其中任何一個下，或者讓它們面對面坐下來，你在旁邊看。第二個引擎就是第二種意見，而它們意見相左的局面，正是值得你花時間的地方。\n\n一萬四千道題，為你挑選\n戰術題取自你反覆出錯的地方，而不是隨機。想要計時，就用 Rush。十五個殘局練習，對手是一台不會讓和棋溜走的引擎。一百一十六道位置題。還有 Guess the Elo：一千六百局真實對局，由你來說棋手有多強。比聽起來有趣，也更難。\n\n九百局值得一看的對局\n局局有勝負，雙方都有名有姓，要麼二十五步之內結束，要麼名氣大到自己有名字。找一位棋手，看著對局展開，到你會走出不同一步的那一刻，就接手自己走下去。\n\n一副想看的棋盤\n燈光下的實物拍攝棋具，立體或平面，九種棋盤、五套棋子。手動擺好局面，或者貼上一局棋譜，從那裡繼續。\n\n什麼都不會離開裝置\n沒有帳號，不用登入，沒有統計，沒有廣告。兩個引擎都在手機上執行，所以開著飛航模式一切照常。什麼都不收集，隱私政策因此比大多數都短。三十一種語言。\n\n免費的部分\n每樣五次，夠你判斷合不合適：五道題、五個殘局、五局對引擎，依此類推。再往後由訂閱接手，全程沒有廣告。\n\nBrass Pawn 是開源軟體，採用 GNU AGPL v3 授權。\n\n訂閱\n對局免費，而且一直免費——沒有限制，沒有廣告。Brass Pawn Pro 解除每天五道訓練題的上限；有按月訂閱，也有永不續訂的一次性買斷。\n\n確認購買時將從您的 Apple 帳戶扣款。訂閱會自動續訂，除非在目前週期結束前至少 24 小時取消；扣款發生在續訂前 24 小時內。您可以在 App Store 帳戶設定中管理或取消。\n\n使用條款（EULA）: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n隱私權政策: https://brasspawn.com/privacy",
+      "locale": "zh-Hant",
+      "keywords": "stockfish,開局,分析,棋盤,離線,等級分,對局,學習,策略,將殺,棋譜,複盤,訓練,入門,新手,提高,中局,自學",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e92a477e-f595-42ab-a1f7-64014a092706/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e92a477e-f595-42ab-a1f7-64014a092706/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e92a477e-f595-42ab-a1f7-64014a092706/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e92a477e-f595-42ab-a1f7-64014a092706/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e92a477e-f595-42ab-a1f7-64014a092706/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e92a477e-f595-42ab-a1f7-64014a092706/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e92a477e-f595-42ab-a1f7-64014a092706"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "f2d400a5-efc3-472c-9541-aaf12889e785",
+    "attributes": {
+      "description": "Aproape toți cei care joacă șah ar vrea să joace mai bine. Aproape nimeni nu are pe cineva lângă el care să poată spune de ce a funcționat o mutare.\n\nBrass Pawn este acel scaun. Faci o mutare și e citită pe loc: mutarea mai bună primește un nume, afli cât valora în pioni și se desfășoară varianta care ar fi urmat. Pornește evaluările și fiecare câmp unde ai putea merge își poartă propriul număr — cântărești o mutare înainte s-o faci, în loc să te întrebi după.\n\nDOUĂ MOTOARE, NU UNUL\nStockfish și Reckless sunt amândouă în aplicație. Joacă împotriva oricăruia sau așază-le față în față și privește. Un al doilea motor e o a doua părere, iar pozițiile în care nu sunt de acord merită timpul tău.\n\nPAISPREZECE MII DE EXERCIȚII, ALESE PENTRU TINE\nTactică luată din ce îți scapă, nu la întâmplare. Rush, când vrei ceasul. Cincisprezece exerciții de final împotriva unui motor care nu lasă remiza să scape. O sută șaisprezece exerciții poziționale. Și Guess the Elo: o mie șase sute de partide reale, iar tu spui cât de puternici erau jucătorii. Mai amuzant decât sună și mai greu.\n\nNOUĂ SUTE DE PARTIDE CARE MERITĂ VĂZUTE\nToate decise, între doi jucători cu nume, și fie terminate în douăzeci și cinci de mutări, fie destul de celebre ca să aibă nume propriu. Caută un jucător, privește partida desfășurându-se și, din clipa în care ai fi mutat altfel, preia-o și continuă tu.\n\nO TABLĂ LA CARE VREI SĂ TE UIȚI\nUn set fotografiat pe tablă luminată, în relief sau plată, cu nouă stiluri de tablă și cinci seturi de piese. Așază o poziție cu mâna sau lipește o partidă și continuă de acolo.\n\nNIMIC NU PĂRĂSEȘTE DISPOZITIVUL\nFără cont, fără autentificare, fără analitice, fără reclame. Ambele motoare rulează pe telefon, așa că totul merge cu modul avion pornit. Nu se colectează nimic, ceea ce face politica de confidențialitate mai scurtă decât majoritatea. Treizeci și una de limbi.\n\nCE ESTE GRATUIT\nCâte cinci din fiecare, cât să vezi dacă ți se potrivește: cinci exerciții, cinci finaluri, cinci partide împotriva motorului și așa mai departe. De acolo preia un abonament și nu există reclame în niciun moment.\n\nBrass Pawn este open source, sub licența GNU AGPL v3.\n\nABONAMENT\nJocul este gratuit și rămâne gratuit — fără limită și fără reclame. Brass Pawn Pro ridică limita de cinci exerciții pe zi; există un abonament lunar și o achiziție unică ce nu se reînnoiește niciodată.\n\nPlata este debitată din contul Apple la confirmarea achiziției. Abonamentul se reînnoiește automat dacă nu este anulat cu cel puțin 24 de ore înainte de sfârșitul perioadei curente; debitarea are loc în ultimele 24 de ore dinaintea reînnoirii. Îl poți gestiona sau anula din setările contului App Store.\n\nTermeni de utilizare (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPolitica de confidențialitate: https://brasspawn.com/privacy",
+      "locale": "ro",
+      "keywords": "stockfish,deschidere,analiză,tablă,offline,elo,învăța,strategie,partidă,joc,mat,clasament",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/f2d400a5-efc3-472c-9541-aaf12889e785/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/f2d400a5-efc3-472c-9541-aaf12889e785/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/f2d400a5-efc3-472c-9541-aaf12889e785/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/f2d400a5-efc3-472c-9541-aaf12889e785/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/f2d400a5-efc3-472c-9541-aaf12889e785/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/f2d400a5-efc3-472c-9541-aaf12889e785/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/f2d400a5-efc3-472c-9541-aaf12889e785"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "7146be6e-3b23-4387-8d86-8bd635051986",
+    "attributes": {
+      "description": "Gần như ai chơi cờ cũng muốn chơi hay hơn. Và gần như không ai có người ngồi bên cạnh đủ sức nói vì sao một nước đi lại hiệu quả.\n\nBrass Pawn chính là chiếc ghế ấy. Bạn đi một nước và nó được đọc ngay: nước mạnh hơn được gọi tên, đáng giá bao nhiêu tốt, và biến sẽ diễn ra. Bật giá trị lên, mỗi ô bạn có thể đi tới đều mang con số của riêng nó — bạn cân nhắc trước khi đi thay vì băn khoăn sau đó.\n\nHAI ENGINE, KHÔNG PHẢI MỘT\nStockfish và Reckless đều nằm trong ứng dụng. Chơi với engine nào cũng được, hoặc đặt chúng đối diện nhau mà xem. Engine thứ hai là ý kiến thứ hai, và những thế cờ chúng bất đồng mới đáng để bạn bỏ thời gian.\n\nMƯỜI BỐN NGHÌN THẾ CỜ, CHỌN CHO BẠN\nChiến thuật lấy từ chỗ bạn hay sai, không phải ngẫu nhiên. Rush, khi bạn muốn có đồng hồ. Mười lăm bài tàn cuộc trước một engine không để hòa cờ trôi qua. Một trăm mười sáu bài thế trận. Và Guess the Elo: một nghìn sáu trăm ván thật, còn bạn nói xem hai kỳ thủ mạnh cỡ nào. Thú vị hơn vẻ ngoài của nó, và khó hơn.\n\nCHÍN TRĂM VÁN CỜ ĐÁNG XEM\nVán nào cũng phân thắng bại, giữa hai kỳ thủ có tên tuổi, và hoặc kết thúc trong hai mươi lăm nước hoặc nổi tiếng đến mức có tên riêng. Tìm một kỳ thủ, xem ván cờ mở ra, và ngay khi bạn sẽ đi khác, hãy tiếp quản và tự đánh tiếp.\n\nMỘT BÀN CỜ ĐÁNG NGẮM\nBộ quân chụp thật trên bàn cờ có ánh sáng, dạng khối hoặc phẳng, với chín kiểu bàn và năm bộ quân. Xếp thế bằng tay hoặc dán một ván cờ vào, rồi đi tiếp từ đó.\n\nKHÔNG GÌ RỜI KHỎI MÁY\nKhông tài khoản, không đăng nhập, không phân tích, không quảng cáo. Cả hai engine chạy trên điện thoại nên mọi thứ hoạt động khi bật chế độ máy bay. Không thu thập gì cả, nên chính sách riêng tư ngắn hơn phần lớn. Ba mươi mốt ngôn ngữ.\n\nPHẦN MIỄN PHÍ\nMỗi loại năm lần, đủ để bạn xem có hợp không: năm thế cờ, năm tàn cuộc, năm ván với engine, và tương tự. Từ đó gói đăng ký tiếp quản, và không có quảng cáo ở bất kỳ đâu.\n\nBrass Pawn là mã nguồn mở, theo giấy phép GNU AGPL v3.\n\nĐĂNG KÝ\nChơi thì miễn phí và sẽ luôn miễn phí — không giới hạn, không quảng cáo. Brass Pawn Pro gỡ giới hạn năm bài luyện mỗi ngày; có gói hằng tháng và một lần mua vĩnh viễn không bao giờ gia hạn.\n\nKhoản thanh toán sẽ được tính vào tài khoản Apple của bạn khi xác nhận mua. Gói đăng ký tự động gia hạn trừ khi bị hủy ít nhất 24 giờ trước khi kỳ hiện tại kết thúc; tiền được trừ trong vòng 24 giờ trước khi gia hạn. Bạn có thể quản lý hoặc hủy trong phần cài đặt tài khoản App Store.\n\nĐiều khoản sử dụng (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nChính sách quyền riêng tư: https://brasspawn.com/privacy",
+      "locale": "vi",
+      "keywords": "stockfish,khai cuộc,phân tích,bàn cờ,ngoại tuyến,elo,học,chiến lược,ván cờ,chiếu hết",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7146be6e-3b23-4387-8d86-8bd635051986/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7146be6e-3b23-4387-8d86-8bd635051986/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7146be6e-3b23-4387-8d86-8bd635051986/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7146be6e-3b23-4387-8d86-8bd635051986/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7146be6e-3b23-4387-8d86-8bd635051986/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7146be6e-3b23-4387-8d86-8bd635051986/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7146be6e-3b23-4387-8d86-8bd635051986"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "bfd8ea52-b4dd-4ca6-83ad-f1d236179409",
+    "attributes": {
+      "description": "Næsten alle, der spiller skak, vil gerne blive bedre. Næsten ingen har nogen siddende ved siden af sig, der kan sige, hvorfor et træk virkede.\n\nBrass Pawn er den stol. Du gør et træk, og det bliver læst med det samme: det stærkere træk får et navn, hvad det var værd i bønder, og varianten der ville være fulgt. Slå værdierne til, og hvert felt du kunne gå til bærer sit eget tal — du vejer et træk, før du gør det, i stedet for at undre dig bagefter.\n\nTO MOTORER, IKKE ÉN\nStockfish og Reckless ligger begge i appen. Spil mod en af dem, eller sæt dem over for hinanden og se på. En anden motor er en anden mening, og de stillinger, hvor de er uenige, er dem, der er din tid værd.\n\nFJORTEN TUSIND OPGAVER, VALGT TIL DIG\nTaktik hentet fra det, du bliver ved med at ramme forkert, ikke fra tilfældet. Rush, når du vil have uret. Femten slutspilsøvelser mod en motor, der ikke lader remisen slippe væk. Ethundredeseksten positionsøvelser. Og Guess the Elo: sekstenhundrede virkelige partier, og du siger, hvor stærke spillerne var. Sjovere end det lyder, og sværere.\n\nNI HUNDREDE PARTIER VÆRD AT SE\nAlle afgjorte, mellem to spillere med navn, og enten slut inden for femogtyve træk eller berømte nok til at have deres eget navn. Slå en spiller op, se partiet folde sig ud, og i det øjeblik du ville have trukket anderledes, overtager du og spiller videre selv.\n\nET BRÆT, MAN GERNE VIL SE PÅ\nEt fotograferet sæt på et oplyst bræt, i relief eller fladt, med ni brætstile og fem brikkesæt. Stil en stilling op i hånden eller indsæt et parti, og fortsæt derfra.\n\nINTET FORLADER ENHEDEN\nIngen konto, intet login, ingen analyse, ingen reklamer. Begge motorer kører på telefonen, så det hele virker med flytilstand slået til. Der indsamles ingenting, hvilket giver en kortere privatlivspolitik end de fleste. Enogtredive sprog.\n\nHVAD DER ER GRATIS\nFem af hver slags, så du kan se, om det passer dig: fem opgaver, fem slutspil, fem partier mod motoren, og så videre. Derfra tager et abonnement over, og der er ikke reklamer på noget tidspunkt.\n\nBrass Pawn er open source, under GNU AGPL v3.\n\nABONNEMENT\nDet er gratis at spille og bliver ved med at være det — uden grænse og uden reklamer. Brass Pawn Pro fjerner grænsen på fem øvelser om dagen; der er et månedsabonnement og et engangskøb, der aldrig fornys.\n\nBetalingen trækkes fra din Apple-konto, når købet bekræftes. Et abonnement fornys automatisk, medmindre det opsiges mindst 24 timer før den aktuelle periodes udløb; beløbet trækkes inden for de sidste 24 timer før fornyelsen. Du kan administrere eller opsige det i indstillingerne for din App Store-konto.\n\nBrugsvilkår (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPrivatlivspolitik: https://brasspawn.com/privacy",
+      "locale": "da",
+      "keywords": "stockfish,åbning,analyse,bræt,offline,elo,lære,strategi,parti,spil,mat,rating,studie",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/bfd8ea52-b4dd-4ca6-83ad-f1d236179409/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/bfd8ea52-b4dd-4ca6-83ad-f1d236179409/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/bfd8ea52-b4dd-4ca6-83ad-f1d236179409/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/bfd8ea52-b4dd-4ca6-83ad-f1d236179409/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/bfd8ea52-b4dd-4ca6-83ad-f1d236179409/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/bfd8ea52-b4dd-4ca6-83ad-f1d236179409/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/bfd8ea52-b4dd-4ca6-83ad-f1d236179409"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "e8b110c1-c25b-48de-8e7c-ecf7f9d908ad",
+    "attributes": {
+      "description": "Melkein jokainen shakkia pelaava haluaisi kehittyä. Melkein kenelläkään ei istu vieressä ketään, joka osaisi sanoa, miksi siirto toimi.\n\nBrass Pawn on se tuoli. Teet siirron, ja se luetaan heti: vahvempi siirto nimetään, kerrotaan mitä se oli arvoltaan sotilaina, ja avataan muunnelma joka olisi seurannut. Kytke arvot päälle, ja jokainen ruutu johon voisit mennä kantaa oman lukunsa — punnitset siirron ennen kuin teet sen sen sijaan että ihmettelisit jälkikäteen.\n\nKAKSI MOOTTORIA, EI YHTÄ\nStockfish ja Reckless ovat molemmat sovelluksen sisällä. Pelaa kumpaa tahansa vastaan tai istuta ne vastakkain ja katso. Toinen moottori on toinen mielipide, ja asemat joissa ne ovat eri mieltä ovat aikasi arvoisia.\n\nNELJÄTOISTA TUHATTA TEHTÄVÄÄ, VALITTUNA SINULLE\nTaktiikkaa siitä mikä sinulta tökkii, ei sattumanvaraisesti. Rush, kun haluat kellon. Viisitoista loppupeliharjoitusta moottoria vastaan joka ei päästä tasapeliä livahtamaan. Satakuusitoista asemaharjoitusta. Ja Guess the Elo: tuhatkuusisataa oikeaa peliä, ja sinä sanot kuinka vahvoja pelaajat olivat. Hauskempaa kuin miltä kuulostaa, ja vaikeampaa.\n\nYHDEKSÄNSATAA PELIÄ JOTKA KANNATTAA KATSOA\nKaikki ratkaistuja, kahden nimeltä mainitun pelaajan välillä, ja joko päättyneet alle kahteenkymmeneenviiteen siirtoon tai kyllin kuuluisia saadakseen oman nimen. Etsi pelaaja, katso pelin edetä, ja heti kun olisit siirtänyt toisin, ota se haltuun ja jatka itse.\n\nLAUTA JOTA HALUAA KATSOA\nValokuvattu nappulasarja valaistulla laudalla, kolmiulotteisena tai tasossa, yhdeksällä lautatyylillä ja viidellä nappulasarjalla. Aseta asema käsin tai liitä peli, ja jatka siitä.\n\nMIKÄÄN EI POISTU LAITTEELTA\nEi tiliä, ei kirjautumista, ei analytiikkaa, ei mainoksia. Molemmat moottorit pyörivät puhelimessa, joten kaikki toimii lentotila päällä. Mitään ei kerätä, mistä seuraa tavallista lyhyempi tietosuojaseloste. Kolmekymmentäyksi kieltä.\n\nMIKÄ ON ILMAISTA\nViisi kutakin lajia, jotta näet sopiiko se sinulle: viisi tehtävää, viisi loppupeliä, viisi peliä moottoria vastaan, ja niin edelleen. Siitä eteenpäin jatkaa tilaus, eikä mainoksia ole missään vaiheessa.\n\nBrass Pawn on avointa lähdekoodia, GNU AGPL v3 -lisenssillä.\n\nTILAUS\nPelaaminen on ilmaista ja pysyy ilmaisena — ilman rajaa ja ilman mainoksia. Brass Pawn Pro poistaa viiden päivittäisen harjoituksen rajan; tarjolla on kuukausitilaus ja kertaosto, joka ei koskaan uusiudu.\n\nMaksu veloitetaan Apple-tililtäsi oston vahvistuksen yhteydessä. Tilaus uusiutuu automaattisesti, ellei sitä peruta vähintään 24 tuntia ennen kuluvan jakson päättymistä; veloitus tapahtuu 24 tunnin sisällä ennen uusiutumista. Voit hallita tai peruuttaa sen App Store -tilisi asetuksissa.\n\nKäyttöehdot (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nTietosuojakäytäntö: https://brasspawn.com/privacy",
+      "locale": "fi",
+      "keywords": "stockfish,avaus,analyysi,lauta,offline,elo,oppia,strategia,peli,matti,luokitus,aloittelija",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e8b110c1-c25b-48de-8e7c-ecf7f9d908ad/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e8b110c1-c25b-48de-8e7c-ecf7f9d908ad/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e8b110c1-c25b-48de-8e7c-ecf7f9d908ad/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e8b110c1-c25b-48de-8e7c-ecf7f9d908ad/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e8b110c1-c25b-48de-8e7c-ecf7f9d908ad/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e8b110c1-c25b-48de-8e7c-ecf7f9d908ad/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e8b110c1-c25b-48de-8e7c-ecf7f9d908ad"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "af39452e-71bd-447f-a11d-21b00e9aa6a0",
+    "attributes": {
+      "description": "几乎每个下棋的人都想下得更好。几乎没有人身边坐着一位能说清这一步为什么好的人。\n\nBrass Pawn 就是那个位置。你走一步，它当场读给你听：更强的那一步叫什么，值多少个兵，以及本该出现的变化。打开评估，你能走的每一格都带着自己的数字——落子之前就能掂量，而不是落子之后才纳闷。\n\n两个引擎，不是一个\nStockfish 和 Reckless 都装在应用里。跟其中任何一个下，或者让它们面对面坐下来，你在旁边看。第二个引擎就是第二种意见，而它们意见相左的局面，正是值得你花时间的地方。\n\n一万四千道题，为你挑选\n战术题取自你反复出错的地方，而不是随机。想要计时，就用 Rush。十五个残局练习，对手是一台不会让和棋溜走的引擎。一百一十六道位置题。还有 Guess the Elo：一千六百局真实对局，由你来说棋手有多强。比听起来有趣，也更难。\n\n九百局值得一看的对局\n局局有胜负，双方都有名有姓，要么二十五步之内结束，要么名气大到自己有名字。找一位棋手，看着对局展开，到你会走出不同一步的那一刻，就接手自己走下去。\n\n一副想看的棋盘\n灯光下的实物拍摄棋具，立体或平面，九种棋盘、五套棋子。手动摆好局面，或者粘贴一局棋谱，从那里继续。\n\n什么都不会离开设备\n没有账号，不用登录，没有统计，没有广告。两个引擎都在手机上运行，所以开着飞行模式一切照常。什么都不收集，隐私政策因此比大多数都短。三十一种语言。\n\n免费的部分\n每样五次，够你判断合不合适：五道题、五个残局、五局对引擎，依此类推。再往后由订阅接手，全程没有广告。\n\nBrass Pawn 是开源软件，采用 GNU AGPL v3 许可。\n\n订阅\n对局免费，而且一直免费——没有限制，没有广告。Brass Pawn Pro 解除每天五道训练题的上限；有按月订阅，也有永不续订的一次性买断。\n\n确认购买时将从您的 Apple 账户扣款。订阅会自动续订，除非在当前周期结束前至少 24 小时取消；扣款发生在续订前 24 小时内。您可以在 App Store 账户设置中管理或取消。\n\n使用条款（EULA）: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n隐私政策: https://brasspawn.com/privacy",
+      "locale": "zh-Hans",
+      "keywords": "stockfish,开局,分析,棋盘,离线,等级分,对局,学习,策略,将杀,棋谱,复盘,训练,入门,新手,提高,中局,自学",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/af39452e-71bd-447f-a11d-21b00e9aa6a0/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/af39452e-71bd-447f-a11d-21b00e9aa6a0/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/af39452e-71bd-447f-a11d-21b00e9aa6a0/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/af39452e-71bd-447f-a11d-21b00e9aa6a0/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/af39452e-71bd-447f-a11d-21b00e9aa6a0/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/af39452e-71bd-447f-a11d-21b00e9aa6a0/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/af39452e-71bd-447f-a11d-21b00e9aa6a0"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "fa28bbe2-6492-48bf-9ce7-0f1431ca84c3",
+    "attributes": {
+      "description": "Hampir semua orang yang bermain catur ingin menjadi lebih baik. Hampir tidak ada yang punya seseorang di sampingnya yang bisa mengatakan mengapa sebuah langkah berhasil.\n\nBrass Pawn adalah kursi itu. Anda melangkah dan langkah itu langsung dibaca: langkah yang lebih kuat disebut namanya, berapa nilainya dalam pion, dan variasi yang akan menyusul. Nyalakan nilai, dan setiap petak yang bisa Anda tuju membawa angkanya sendiri — Anda menimbang sebuah langkah sebelum melangkah, bukan bertanya-tanya sesudahnya.\n\nDUA MESIN, BUKAN SATU\nStockfish dan Reckless keduanya ada di dalam aplikasi. Main melawan salah satunya, atau dudukkan keduanya berhadapan dan tonton. Mesin kedua adalah pendapat kedua, dan posisi tempat keduanya berbeda pendapat adalah yang layak menyita waktu Anda.\n\nEMPAT BELAS RIBU TEKA-TEKI, DIPILIH UNTUK ANDA\nTaktik diambil dari apa yang sering Anda salah, bukan secara acak. Rush, saat Anda ingin ada jam. Lima belas latihan akhir permainan melawan mesin yang tak akan melepaskan remis. Seratus enam belas latihan posisional. Dan Guess the Elo: seribu enam ratus partai sungguhan, dan Anda yang menyebut seberapa kuat pemainnya. Lebih seru daripada kedengarannya, dan lebih sulit.\n\nSEMBILAN RATUS PARTAI YANG LAYAK DITONTON\nSemuanya menentukan, antara dua pemain bernama, dan entah selesai dalam dua puluh lima langkah atau cukup terkenal untuk punya nama sendiri. Cari seorang pemain, tonton partainya berjalan, dan begitu Anda akan melangkah berbeda, ambil alih dan lanjutkan sendiri.\n\nPAPAN YANG INGIN ANDA PANDANGI\nSet yang difoto di atas papan bercahaya, timbul atau datar, dengan sembilan gaya papan dan lima set buah. Susun posisi dengan tangan atau tempelkan sebuah partai, lalu lanjutkan dari sana.\n\nTIDAK ADA YANG MENINGGALKAN PERANGKAT\nTanpa akun, tanpa masuk, tanpa analitik, tanpa iklan. Kedua mesin berjalan di ponsel Anda, jadi semuanya bekerja dengan mode pesawat menyala. Tidak ada yang dikumpulkan, sehingga kebijakan privasinya lebih pendek daripada kebanyakan. Tiga puluh satu bahasa.\n\nYANG GRATIS\nLima dari tiap jenis, cukup untuk melihat apakah cocok: lima teka-teki, lima akhir permainan, lima partai melawan mesin, dan seterusnya. Setelah itu langganan yang melanjutkan, dan tidak ada iklan di titik mana pun.\n\nBrass Pawn bersifat sumber terbuka, di bawah GNU AGPL v3.\n\nLANGGANAN\nBermain itu gratis dan akan tetap gratis — tanpa batas dan tanpa iklan. Brass Pawn Pro menghapus batas lima latihan per hari; tersedia langganan bulanan dan pembelian sekali bayar yang tidak pernah diperpanjang.\n\nPembayaran akan dibebankan ke akun Apple Anda saat pembelian dikonfirmasi. Langganan diperpanjang otomatis kecuali dibatalkan setidaknya 24 jam sebelum periode berjalan berakhir; tagihan ditarik dalam 24 jam sebelum perpanjangan. Anda dapat mengelola atau membatalkannya di pengaturan akun App Store.\n\nKetentuan Penggunaan (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nKebijakan Privasi: https://brasspawn.com/privacy",
+      "locale": "id",
+      "keywords": "stockfish,pembukaan,analisis,papan,luring,elo,belajar,strategi,permainan,skakmat,peringkat",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/fa28bbe2-6492-48bf-9ce7-0f1431ca84c3/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/fa28bbe2-6492-48bf-9ce7-0f1431ca84c3/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/fa28bbe2-6492-48bf-9ce7-0f1431ca84c3/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/fa28bbe2-6492-48bf-9ce7-0f1431ca84c3/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/fa28bbe2-6492-48bf-9ce7-0f1431ca84c3/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/fa28bbe2-6492-48bf-9ce7-0f1431ca84c3/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/fa28bbe2-6492-48bf-9ce7-0f1431ca84c3"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "cbdd41b3-fc9f-4164-a140-d99e1f84c965",
+    "attributes": {
+      "description": "كل من يلعب الشطرنج تقريبًا يودّ أن يتحسّن. وقلّة نادرة من يجلس بجانبها من يقول لها لماذا نجحت تلك النقلة.\n\nBrass Pawn هو ذلك المقعد. تلعب نقلة فتُقرأ في الحال: تُسمّى النقلة الأقوى، ويُقال كم كانت تساوي بالبيادق، وتُفرد الخطة التي كانت ستتبعها. شغّل القيم فتحمل كل خانة تستطيع الذهاب إليها رقمها الخاص — تزن النقلة قبل أن تلعبها بدل أن تتساءل عنها بعدها.\n\nمحرّكان لا محرّك واحد\nStockfish وReckless كلاهما داخل التطبيق. العب ضد أيّهما، أو أجلسهما وجهًا لوجه وشاهد. المحرّك الثاني رأي ثانٍ، والأوضاع التي يختلفان فيها هي التي تستحق وقتك.\n\nأربعة عشر ألف لغز، مختارة لك\nتكتيكات مأخوذة مما يصعب عليك لا من باب الصدفة. وRush حين تريد الساعة. وخمسة عشر تمرين نهايات ضد محرّك لا يترك التعادل يفلت. ومئة وستة عشر تمرينًا في الوضعية. وGuess the Elo: ألف وستمئة مباراة حقيقية، وأنت من يقول كم كان اللاعبان قويين. أمتع مما يبدو، وأصعب.\n\nتسعمئة مباراة تستحق المشاهدة\nكلها حاسمة، بين لاعبَين معروفَين، وإما انتهت في أقل من خمس وعشرين نقلة أو بلغت من الشهرة أن صار لها اسم. ابحث عن لاعب، وشاهد المباراة تجري، وعند أول نقلة كنت ستلعبها بشكل مختلف، تولَّ أنت وأكمل.\n\nرقعة تحب النظر إليها\nطقم مصوَّر على رقعة مضاءة، مجسّمة أو مسطّحة، بتسعة طُرُز للرقعة وخمسة أطقم للقطع. رتّب وضعًا بيدك أو ألصق مباراة، وأكمل من هناك.\n\nلا شيء يغادر جهازك\nلا حساب، ولا تسجيل دخول، ولا تحليلات، ولا إعلانات. المحرّكان يعملان على هاتفك، فكل شيء يعمل ووضع الطيران مفعّل. لا يُجمع شيء، ولذلك جاءت سياسة الخصوصية أقصر من المعتاد. إحدى وثلاثون لغة.\n\nما هو مجاني\nخمسة من كل نوع، لتعرف إن كان يناسبك: خمسة ألغاز، وخمس نهايات، وخمس مباريات ضد المحرّك، وهكذا. بعدها يواصل الاشتراك، ولا إعلان في أي لحظة.\n\nBrass Pawn مفتوح المصدر، بموجب رخصة GNU AGPL v3.\n\nالاشتراك\nاللعب مجاني وسيبقى مجانيًا — بلا حدود وبلا إعلانات. يرفع Brass Pawn Pro حدّ التدريب البالغ خمسة يوميًا؛ هناك اشتراك شهري وشراء لمرة واحدة لا يُجدَّد أبدًا.\n\nيُخصم المبلغ من حساب Apple عند تأكيد الشراء. يتجدّد الاشتراك تلقائيًا ما لم يُلغَ قبل 24 ساعة على الأقل من نهاية الفترة الحالية، ويتم الخصم خلال 24 ساعة قبل التجديد. يمكنك إدارته أو إلغاؤه من إعدادات حساب App Store.\n\nشروط الاستخدام (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nسياسة الخصوصية: https://brasspawn.com/privacy",
+      "locale": "ar-SA",
+      "keywords": "stockfish,افتتاح,تحليل,رقعة,دون إنترنت,تصنيف,تعلم,استراتيجية,مباراة,كش مات,تدريب,مبتدئين",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/cbdd41b3-fc9f-4164-a140-d99e1f84c965/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/cbdd41b3-fc9f-4164-a140-d99e1f84c965/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/cbdd41b3-fc9f-4164-a140-d99e1f84c965/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/cbdd41b3-fc9f-4164-a140-d99e1f84c965/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/cbdd41b3-fc9f-4164-a140-d99e1f84c965/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/cbdd41b3-fc9f-4164-a140-d99e1f84c965/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/cbdd41b3-fc9f-4164-a140-d99e1f84c965"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "20dd1fd9-fa5e-4f1f-89d8-95678821eed6",
+    "attributes": {
+      "description": "Almost everybody who plays chess would like to get better at it. Almost nobody\nhas somebody sitting beside them who can say why a move worked.\n\nBrass Pawn is that seat. Play a move and it is read straight away: the stronger\nmove named, what it was worth in pawns, and the line that would have followed.\nTurn the values on and every square you could move to carries its own number,\nso you can weigh a move before you play it rather than wonder about it after.\n\nTWO ENGINES, NOT ONE\nStockfish and Reckless both live inside the app. Pick one in Settings and it\nplays, grades and labels everything; switch and you have a second opinion on\nthe same position. They are not the same opponent — Stockfish can be asked to\nplay anywhere from about 1400 upwards, Reckless plays at full strength or not\nat all.\n\nFOURTEEN THOUSAND PUZZLES, CHOSEN FOR YOU\nTactics picked from what you have been finding hard rather than at random.\nRush, for when you want the clock. Fifteen endgame drills against an engine\nthat will not let a draw slip past you. A hundred and sixteen positional\nexercises. And Guess the Elo: sixteen hundred real games, and you say how\nstrong the players were. It is more fun than it sounds, and harder.\n\nNINE HUNDRED GAMES WORTH WATCHING\nEvery one decisive, between two named players, and either finished inside\ntwenty-five moves or famous enough to have a name of its own. Look up a player,\nwatch the game unfold, and when you reach a position you would have played\ndifferently, take it over and carry on from there yourself.\n\nSOMEBODY REAL, ON THE CLOCK\nGame Center finds you an opponent who chose the same time control — 3, 5, 10,\n15 or 30 minutes. It is the one mode with no engine anywhere near it: no hints,\nno move values, no coaching, because help that only one side gets is not a\ngame. There is no server; the two devices talk to each other and both run the\nrules.\n\nA BOARD YOU WANT TO LOOK AT\nA photographed set on a lit board, in the round or laid flat, with nine board\nstyles and five piece sets. Set a position up by hand or paste a game in, and\ncarry on from there.\n\nNOTHING LEAVES THE DEVICE\nNo account, no sign-in, no analytics, no advertising. Both engines run on your\nphone, so all of it works with the aeroplane mode on. Nothing is collected,\nwhich makes for a shorter privacy policy than most. Thirty-one languages.\n\nWHAT IS FREE\nPlaying is free and stays free: against the engine, against a real opponent\nover Game Center on the clock, and all nine hundred games in the library, with\nno limit on any of it. The training is what is metered — five a day of each\nkind, enough to see whether it suits you, resetting at nine each morning. A\nsubscription lifts the limit. There is no advertising at any point.\n\nBrass Pawn is open source, under the GNU AGPL v3.\n\nSUBSCRIPTION\nPlaying is free and stays free, with no limit and no advertising. Brass Pawn Pro lifts the five-a-day limit on training; there is a monthly subscription and a one-off unlock that never renews.\n\nPayment is charged to your Apple Account on confirmation of purchase. A subscription renews automatically unless it is cancelled at least 24 hours before the end of the current period, and your account is charged within the 24 hours before it renews. Manage or cancel it in your App Store account settings.\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPrivacy Policy: https://brasspawn.com/privacy",
+      "locale": "en-US",
+      "keywords": "stockfish,elo,opening,analysis,board,offline,rating,coach,play,learn,strategy,game,study,checkmate",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/20dd1fd9-fa5e-4f1f-89d8-95678821eed6/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/20dd1fd9-fa5e-4f1f-89d8-95678821eed6/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/20dd1fd9-fa5e-4f1f-89d8-95678821eed6/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/20dd1fd9-fa5e-4f1f-89d8-95678821eed6/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/20dd1fd9-fa5e-4f1f-89d8-95678821eed6/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/20dd1fd9-fa5e-4f1f-89d8-95678821eed6/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/20dd1fd9-fa5e-4f1f-89d8-95678821eed6"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "c550e82b-4445-44e3-a6fb-e888bd3392cf",
+    "attributes": {
+      "description": "Fast jeder, der Schach spielt, würde gern besser werden. Fast niemand hat jemanden neben sich sitzen, der sagen kann, warum ein Zug funktioniert hat.\n\nBrass Pawn ist dieser Platz. Sie ziehen, und der Zug wird sofort gelesen: der stärkere Zug benannt, sein Wert in Bauern, und die Variante, die gefolgt wäre. Schalten Sie die Werte ein, und jedes Feld, auf das Sie ziehen könnten, trägt seine eigene Zahl — Sie wägen einen Zug ab, bevor Sie ihn machen, statt sich danach zu wundern.\n\nZWEI ENGINES, NICHT EINE\nStockfish und Reckless stecken beide in der App. Spielen Sie gegen eine von beiden, oder setzen Sie sie gegeneinander und schauen zu. Eine zweite Engine ist eine zweite Meinung, und die Stellungen, in denen sie sich uneinig sind, sind Ihre Zeit wert.\n\nVIERZEHNTAUSEND AUFGABEN, FÜR SIE AUSGEWÄHLT\nTaktik nach dem, was Ihnen schwerfällt, statt nach dem Zufall. Rush, wenn Sie die Uhr wollen. Fünfzehn Endspielübungen gegen eine Engine, die kein Remis durchgehen lässt. Hundertsechzehn Stellungsaufgaben. Und Guess the Elo: sechzehnhundert echte Partien, und Sie sagen, wie stark die Spieler waren. Das macht mehr Spaß als es klingt, und ist schwerer.\n\nNEUNHUNDERT PARTIEN, DIE MAN GESEHEN HABEN SOLLTE\nJede entschieden, zwischen zwei benannten Spielern, und entweder in fünfundzwanzig Zügen beendet oder berühmt genug für einen eigenen Namen. Suchen Sie einen Spieler, sehen Sie die Partie laufen, und sobald Sie anders gezogen hätten, übernehmen Sie und spielen selbst weiter.\n\nEIN BRETT, DAS MAN ANSEHEN MÖCHTE\nEin fotografiertes Set auf beleuchtetem Brett, plastisch oder flach, mit neun Brettstilen und fünf Figurensätzen. Stellen Sie eine Position von Hand auf oder fügen Sie eine Partie ein und machen von dort weiter.\n\nNICHTS VERLÄSST DAS GERÄT\nKein Konto, keine Anmeldung, keine Analytik, keine Werbung. Beide Engines laufen auf Ihrem Telefon, alles funktioniert im Flugmodus. Es wird nichts erhoben, was für eine kürzere Datenschutzerklärung sorgt als üblich. Einunddreißig Sprachen.\n\nWAS KOSTENLOS IST\nFünf von jeder Sorte, damit Sie sehen, ob es Ihnen liegt: fünf Aufgaben, fünf Endspiele, fünf Partien gegen die Engine, und so weiter. Danach trägt ein Abonnement es weiter, und Werbung gibt es an keiner Stelle.\n\nBrass Pawn ist quelloffen, unter der GNU AGPL v3.\n\nABONNEMENT\nSpielen ist kostenlos und bleibt es — ohne Begrenzung und ohne Werbung. Brass Pawn Pro hebt das Limit von fünf Übungen pro Tag auf; es gibt ein Monatsabo und eine einmalige Freischaltung, die sich nie verlängert.\n\nDie Zahlung wird bei Kaufbestätigung über Ihren Apple-Account abgerechnet. Ein Abo verlängert sich automatisch, sofern es nicht mindestens 24 Stunden vor Ablauf des laufenden Zeitraums gekündigt wird; die Abbuchung erfolgt innerhalb der letzten 24 Stunden davor. Verwalten oder kündigen können Sie es in den Einstellungen Ihres App-Store-Accounts.\n\nNutzungsbedingungen (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nDatenschutzerklärung: https://brasspawn.com/privacy",
+      "locale": "de-DE",
+      "keywords": "stockfish,eröffnung,analyse,brett,offline,elo,lernen,strategie,partie,spiel,matt,studium,wertung",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c550e82b-4445-44e3-a6fb-e888bd3392cf/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c550e82b-4445-44e3-a6fb-e888bd3392cf/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c550e82b-4445-44e3-a6fb-e888bd3392cf/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c550e82b-4445-44e3-a6fb-e888bd3392cf/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c550e82b-4445-44e3-a6fb-e888bd3392cf/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c550e82b-4445-44e3-a6fb-e888bd3392cf/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c550e82b-4445-44e3-a6fb-e888bd3392cf"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "81f6be0c-8e72-4b7e-b5e6-93cd17e129a2",
+    "attributes": {
+      "description": "Almost everybody who plays chess would like to get better at it. Almost nobody\nhas somebody sitting beside them who can say why a move worked.\n\nBrass Pawn is that seat. Play a move and it is read straight away: the stronger\nmove named, what it was worth in pawns, and the line that would have followed.\nTurn the values on and every square you could move to carries its own number,\nso you can weigh a move before you play it rather than wonder about it after.\n\nTWO ENGINES, NOT ONE\nStockfish and Reckless both live inside the app. Pick one in Settings and it\nplays, grades and labels everything; switch and you have a second opinion on\nthe same position. They are not the same opponent — Stockfish can be asked to\nplay anywhere from about 1400 upwards, Reckless plays at full strength or not\nat all.\n\nFOURTEEN THOUSAND PUZZLES, CHOSEN FOR YOU\nTactics picked from what you have been finding hard rather than at random.\nRush, for when you want the clock. Fifteen endgame drills against an engine\nthat will not let a draw slip past you. A hundred and sixteen positional\nexercises. And Guess the Elo: sixteen hundred real games, and you say how\nstrong the players were. It is more fun than it sounds, and harder.\n\nNINE HUNDRED GAMES WORTH WATCHING\nEvery one decisive, between two named players, and either finished inside\ntwenty-five moves or famous enough to have a name of its own. Look up a player,\nwatch the game unfold, and when you reach a position you would have played\ndifferently, take it over and carry on from there yourself.\n\nSOMEBODY REAL, ON THE CLOCK\nGame Center finds you an opponent who chose the same time control — 3, 5, 10,\n15 or 30 minutes. It is the one mode with no engine anywhere near it: no hints,\nno move values, no coaching, because help that only one side gets is not a\ngame. There is no server; the two devices talk to each other and both run the\nrules.\n\nA BOARD YOU WANT TO LOOK AT\nA photographed set on a lit board, in the round or laid flat, with nine board\nstyles and five piece sets. Set a position up by hand or paste a game in, and\ncarry on from there.\n\nNOTHING LEAVES THE DEVICE\nNo account, no sign-in, no analytics, no advertising. Both engines run on your\nphone, so all of it works with the aeroplane mode on. Nothing is collected,\nwhich makes for a shorter privacy policy than most. Thirty-one languages.\n\nWHAT IS FREE\nPlaying is free and stays free: against the engine, against a real opponent\nover Game Center on the clock, and all nine hundred games in the library, with\nno limit on any of it. The training is what is metered — five a day of each\nkind, enough to see whether it suits you, resetting at nine each morning. A\nsubscription lifts the limit. There is no advertising at any point.\n\nBrass Pawn is open source, under the GNU AGPL v3.\n\nSUBSCRIPTION\nPlaying is free and stays free, with no limit and no advertising. Brass Pawn Pro lifts the five-a-day limit on training; there is a monthly subscription and a one-off unlock that never renews.\n\nPayment is charged to your Apple Account on confirmation of purchase. A subscription renews automatically unless it is cancelled at least 24 hours before the end of the current period, and your account is charged within the 24 hours before it renews. Manage or cancel it in your App Store account settings.\n\nTerms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPrivacy Policy: https://brasspawn.com/privacy",
+      "locale": "en-CA",
+      "keywords": "stockfish,elo,opening,analysis,board,offline,rating,coach,play,learn,strategy,game,study,checkmate",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/81f6be0c-8e72-4b7e-b5e6-93cd17e129a2/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/81f6be0c-8e72-4b7e-b5e6-93cd17e129a2/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/81f6be0c-8e72-4b7e-b5e6-93cd17e129a2/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/81f6be0c-8e72-4b7e-b5e6-93cd17e129a2/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/81f6be0c-8e72-4b7e-b5e6-93cd17e129a2/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/81f6be0c-8e72-4b7e-b5e6-93cd17e129a2/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/81f6be0c-8e72-4b7e-b5e6-93cd17e129a2"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "6b2e5c4f-5214-45eb-b75a-dd0bca9ce43f",
+    "attributes": {
+      "description": "Nesten alle som spiller sjakk vil gjerne bli bedre. Nesten ingen har noen sittende ved siden av seg som kan si hvorfor et trekk virket.\n\nBrass Pawn er den stolen. Du gjør et trekk, og det blir lest med én gang: det sterkere trekket får et navn, hva det var verdt i bønder, og varianten som ville fulgt. Slå på verdiene, og hvert felt du kunne gå til bærer sitt eget tall — du veier et trekk før du gjør det, i stedet for å lure etterpå.\n\nTO MOTORER, IKKE ÉN\nStockfish og Reckless ligger begge i appen. Spill mot hvilken som helst av dem, eller sett dem overfor hverandre og se på. En annen motor er en annen mening, og stillingene der de er uenige er de som er verdt tiden din.\n\nFJORTEN TUSEN OPPGAVER, VALGT TIL DEG\nTaktikk hentet fra det du stadig bommer på, ikke fra tilfeldigheter. Rush, når du vil ha klokka. Femten sluttspillsøvelser mot en motor som ikke lar remisen slippe unna. Ett hundre og seksten posisjonsøvelser. Og Guess the Elo: seksten hundre virkelige partier, og du sier hvor sterke spillerne var. Morsommere enn det høres ut, og vanskeligere.\n\nNI HUNDRE PARTIER VERDT Å SE\nAlle avgjort, mellom to spillere med navn, og enten ferdige innen tjuefem trekk eller berømte nok til å ha sitt eget navn. Slå opp en spiller, se partiet utfolde seg, og i det øyeblikket du ville trukket annerledes, overtar du og spiller videre selv.\n\nET BRETT DU HAR LYST TIL Å SE PÅ\nEt fotografert sett på et opplyst brett, i relieff eller flatt, med ni brettstiler og fem brikkesett. Sett opp en stilling for hånd eller lim inn et parti, og fortsett derfra.\n\nINGENTING FORLATER ENHETEN\nIngen konto, ingen innlogging, ingen analyse, ingen reklame. Begge motorene kjører på telefonen, så alt virker med flymodus på. Ingenting samles inn, noe som gir en kortere personvernerklæring enn de fleste. Trettien språk.\n\nHVA SOM ER GRATIS\nFem av hver sort, nok til å se om det passer deg: fem oppgaver, fem sluttspill, fem partier mot motoren, og så videre. Derfra tar et abonnement over, og det er ingen reklame noe sted.\n\nBrass Pawn er åpen kildekode, under GNU AGPL v3.\n\nABONNEMENT\nDet er gratis å spille og forblir gratis — uten grense og uten reklame. Brass Pawn Pro fjerner grensen på fem øvelser om dagen; det finnes et månedsabonnement og et engangskjøp som aldri fornyes.\n\nBetalingen belastes Apple-kontoen din når kjøpet bekreftes. Et abonnement fornyes automatisk med mindre det sies opp minst 24 timer før inneværende periode utløper; beløpet trekkes innen 24 timer før fornyelsen. Du kan administrere eller si det opp i innstillingene for App Store-kontoen din.\n\nBruksvilkår (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPersonvernerklæring: https://brasspawn.com/privacy",
+      "locale": "no",
+      "keywords": "stockfish,åpning,analyse,brett,offline,elo,lære,strategi,parti,spill,matt,rating,studie",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/6b2e5c4f-5214-45eb-b75a-dd0bca9ce43f/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/6b2e5c4f-5214-45eb-b75a-dd0bca9ce43f/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/6b2e5c4f-5214-45eb-b75a-dd0bca9ce43f/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/6b2e5c4f-5214-45eb-b75a-dd0bca9ce43f/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/6b2e5c4f-5214-45eb-b75a-dd0bca9ce43f/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/6b2e5c4f-5214-45eb-b75a-dd0bca9ce43f/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/6b2e5c4f-5214-45eb-b75a-dd0bca9ce43f"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "5bb0573a-e529-4ca9-b31f-bb9bb0d44f83",
+    "attributes": {
+      "description": "Hampir setiap orang yang bermain catur mahu menjadi lebih baik. Hampir tiada sesiapa pula yang mempunyai seseorang di sebelahnya yang boleh memberitahu mengapa sesuatu langkah berkesan.\n\nBrass Pawn ialah kerusi itu. Anda melangkah dan langkah itu terus dibaca: langkah yang lebih kuat dinamakan, berapa nilainya dalam bidak, dan variasi yang akan menyusul. Hidupkan nilai, dan setiap petak yang boleh anda tuju membawa nombornya sendiri — anda menimbang langkah sebelum melangkah, bukan tertanya-tanya selepasnya.\n\nDUA ENJIN, BUKAN SATU\nStockfish dan Reckless kedua-duanya ada di dalam aplikasi. Bermain menentang mana-mana satu, atau dudukkan keduanya bertentangan dan perhatikan. Enjin kedua ialah pendapat kedua, dan kedudukan yang keduanya tidak sependapat itulah yang berbaloi dengan masa anda.\n\nEMPAT BELAS RIBU TEKA-TEKI, DIPILIH UNTUK ANDA\nTaktik diambil daripada apa yang sering anda silap, bukan secara rawak. Rush, apabila anda mahukan jam. Lima belas latihan penamat menentang enjin yang tidak akan membiarkan seri terlepas. Seratus enam belas latihan kedudukan. Dan Guess the Elo: seribu enam ratus perlawanan sebenar, dan anda yang menyebut sekuat mana pemainnya. Lebih seronok daripada bunyinya, dan lebih sukar.\n\nSEMBILAN RATUS PERLAWANAN YANG BERBALOI DITONTON\nSemuanya menentukan, antara dua pemain bernama, dan sama ada tamat dalam dua puluh lima langkah atau cukup terkenal untuk mempunyai namanya sendiri. Cari seorang pemain, tonton perlawanan itu berlangsung, dan sebaik anda akan melangkah lain, ambil alih dan teruskan sendiri.\n\nPAPAN YANG ANDA MAHU PANDANG\nSet yang difoto di atas papan bercahaya, timbul atau rata, dengan sembilan gaya papan dan lima set buah. Susun kedudukan dengan tangan atau tampalkan satu perlawanan, dan teruskan dari situ.\n\nTIADA APA YANG MENINGGALKAN PERANTI\nTiada akaun, tiada log masuk, tiada analitik, tiada iklan. Kedua-dua enjin berjalan pada telefon anda, jadi semuanya berfungsi dengan mod pesawat dihidupkan. Tiada apa yang dikumpulkan, menjadikan dasar privasi lebih pendek daripada kebanyakan. Tiga puluh satu bahasa.\n\nAPA YANG PERCUMA\nLima setiap satu, cukup untuk melihat sama ada ia sesuai: lima teka-teki, lima penamat, lima perlawanan menentang enjin, dan seterusnya. Selepas itu langganan mengambil alih, dan tiada iklan pada bila-bila masa.\n\nBrass Pawn ialah sumber terbuka, di bawah GNU AGPL v3.\n\nLANGGANAN\nBermain adalah percuma dan akan kekal begitu — tanpa had dan tanpa iklan. Brass Pawn Pro menghapuskan had lima latihan sehari; ada langganan bulanan dan pembelian sekali bayar yang tidak pernah diperbaharui.\n\nBayaran akan dicaj ke akaun Apple anda apabila pembelian disahkan. Langganan diperbaharui secara automatik melainkan dibatalkan sekurang-kurangnya 24 jam sebelum tempoh semasa berakhir; caj dikenakan dalam masa 24 jam sebelum pembaharuan. Anda boleh mengurus atau membatalkannya dalam tetapan akaun App Store.\n\nTerma Penggunaan (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nDasar Privasi: https://brasspawn.com/privacy",
+      "locale": "ms",
+      "keywords": "stockfish,pembukaan,analisis,papan,luar talian,elo,belajar,strategi,permainan,mat,peringkat",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/5bb0573a-e529-4ca9-b31f-bb9bb0d44f83/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/5bb0573a-e529-4ca9-b31f-bb9bb0d44f83/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/5bb0573a-e529-4ca9-b31f-bb9bb0d44f83/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/5bb0573a-e529-4ca9-b31f-bb9bb0d44f83/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/5bb0573a-e529-4ca9-b31f-bb9bb0d44f83/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/5bb0573a-e529-4ca9-b31f-bb9bb0d44f83/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/5bb0573a-e529-4ca9-b31f-bb9bb0d44f83"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "f94e6e30-e17b-479a-8699-46d83c13f23f",
+    "attributes": {
+      "description": "Quase todo mundo que joga xadrez gostaria de melhorar. Quase ninguém tem alguém sentado ao lado capaz de dizer por que um lance funcionou.\n\nO Brass Pawn é essa cadeira. Você joga um lance e ele é lido na hora: o lance mais forte é nomeado, quanto valia em peões, e a linha que teria seguido. Ligue os valores e cada casa para onde você poderia ir carrega o próprio número — você pesa um lance antes de jogá-lo em vez de se perguntar depois.\n\nDOIS MOTORES, NÃO UM\nStockfish e Reckless vêm dentro do aplicativo. Jogue contra qualquer um dos dois, ou sente-os um de frente para o outro e assista. Um segundo motor é uma segunda opinião, e as posições em que eles discordam são as que valem o seu tempo.\n\nQUATORZE MIL EXERCÍCIOS, ESCOLHIDOS PARA VOCÊ\nTáticas tiradas do que vem lhe escapando, não do acaso. Rush, quando você quiser o relógio. Quinze finais contra um motor que não deixa um empate passar. Cento e dezesseis exercícios posicionais. E o Guess the Elo: mil e seiscentas partidas reais, e você diz a força dos jogadores. É mais divertido do que parece, e mais difícil.\n\nNOVECENTAS PARTIDAS QUE VALEM A PENA ASSISTIR\nTodas decisivas, entre dois jogadores com nome, e terminadas em menos de vinte e cinco lances ou famosas o bastante para ter nome próprio. Procure um jogador, veja a partida se desenrolar e, assim que você teria jogado diferente, assuma e siga você.\n\nUM TABULEIRO QUE DÁ VONTADE DE OLHAR\nUm jogo fotografado sobre tabuleiro iluminado, em relevo ou plano, com nove estilos de tabuleiro e cinco jogos de peças. Monte uma posição à mão ou cole uma partida, e continue dali.\n\nNADA SAI DO APARELHO\nSem conta, sem login, sem analytics, sem publicidade. Os dois motores rodam no seu telefone, então tudo funciona em modo avião. Nada é coletado, o que rende uma política de privacidade mais curta que a maioria. Trinta e um idiomas.\n\nO QUE É DE GRAÇA\nCinco de cada tipo, para ver se combina com você: cinco exercícios, cinco finais, cinco partidas contra o motor, e assim por diante. Daí em diante uma assinatura leva adiante, e não há publicidade em momento algum.\n\nO Brass Pawn é código aberto, sob a GNU AGPL v3.\n\nASSINATURA\nJogar é grátis e continuará sendo, sem limite e sem publicidade. O Brass Pawn Pro remove o limite de cinco exercícios por dia; há uma assinatura mensal e uma compra única que nunca se renova.\n\nO pagamento será cobrado da sua conta Apple na confirmação da compra. A assinatura se renova automaticamente, a menos que seja cancelada pelo menos 24 horas antes do fim do período atual; a cobrança ocorre nas 24 horas anteriores à renovação. Você pode gerenciá-la ou cancelá-la nos ajustes da sua conta da App Store.\n\nTermos de uso (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPolítica de Privacidade: https://brasspawn.com/privacy",
+      "locale": "pt-BR",
+      "keywords": "stockfish,abertura,análise,tabuleiro,offline,elo,aprender,estratégia,partida,jogo,mate,nível",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/f94e6e30-e17b-479a-8699-46d83c13f23f/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/f94e6e30-e17b-479a-8699-46d83c13f23f/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/f94e6e30-e17b-479a-8699-46d83c13f23f/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/f94e6e30-e17b-479a-8699-46d83c13f23f/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/f94e6e30-e17b-479a-8699-46d83c13f23f/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/f94e6e30-e17b-479a-8699-46d83c13f23f/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/f94e6e30-e17b-479a-8699-46d83c13f23f"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "cdd1bfc2-6447-42f3-ac26-e342c5c8d45a",
+    "attributes": {
+      "description": "Skoro každý, kdo hraje šachy, by se rád zlepšil. Skoro nikdo nemá vedle sebe někoho, kdo dokáže říct, proč tah fungoval.\n\nBrass Pawn je ta židle. Zahrajete tah a on je hned přečten: silnější tah dostane jméno, dozvíte se, co stál v pěšcích, a rozvine se varianta, která by následovala. Zapněte hodnoty a každé pole, kam byste mohli jít, nese své vlastní číslo — tah zvážíte, ještě než ho zahrajete, místo abyste se divili potom.\n\nDVA ENGINY, NE JEDEN\nStockfish i Reckless jsou oba uvnitř aplikace. Hrajte proti kterémukoli z nich, nebo je posaďte proti sobě a dívejte se. Druhý engine je druhý názor a pozice, ve kterých se neshodnou, stojí za váš čas.\n\nČTRNÁCT TISÍC ÚLOH, VYBRANÝCH PRO VÁS\nTaktika z toho, co vám nejde, ne náhodou. Rush, když chcete hodiny. Patnáct koncovek proti enginu, který nenechá remízu proklouznout. Sto šestnáct poziční úloh. A Guess the Elo: šestnáct set skutečných partií a vy říkáte, jak silní hráči byli. Zábavnější, než to zní, a těžší.\n\nDEVĚT SET PARTIÍ, KTERÉ STOJÍ ZA SLEDOVÁNÍ\nVšechny rozhodnuté, mezi dvěma jmenovanými hráči, a buď skončené do dvaceti pěti tahů, nebo dost slavné na to, aby měly vlastní jméno. Najděte si hráče, sledujte, jak se partie rozvíjí, a ve chvíli, kdy byste táhli jinak, převezměte ji a hrajte dál sami.\n\nŠACHOVNICE, NA KTEROU SE CHCETE DÍVAT\nVyfotografovaná souprava na osvětlené šachovnici, prostorové nebo ploché, s devíti styly šachovnice a pěti sadami figur. Postavte pozici ručně nebo vložte partii a pokračujte odtud.\n\nNIC NEOPOUŠTÍ ZAŘÍZENÍ\nŽádný účet, žádné přihlašování, žádná analytika, žádná reklama. Oba enginy běží na telefonu, takže všechno funguje v režimu letadlo. Nic se nesbírá, díky čemuž jsou zásady ochrany soukromí kratší než obvykle. Jedenatřicet jazyků.\n\nCO JE ZDARMA\nPět od každého druhu, abyste viděli, jestli vám to sedí: pět úloh, pět koncovek, pět partií proti enginu a tak dále. Dál pokračuje předplatné a reklama není nikde.\n\nBrass Pawn je otevřený software pod licencí GNU AGPL v3.\n\nPŘEDPLATNÉ\nHraní je zdarma a zůstane zdarma — bez omezení a bez reklam. Brass Pawn Pro ruší limit pěti cvičení denně; k dispozici je měsíční předplatné a jednorázové odemčení, které se nikdy neobnovuje.\n\nPlatba bude stržena z vašeho účtu Apple při potvrzení nákupu. Předplatné se automaticky obnovuje, pokud není zrušeno nejméně 24 hodin před koncem aktuálního období; částka se strhává během 24 hodin před obnovením. Spravovat nebo zrušit je můžete v nastavení účtu App Store.\n\nPodmínky použití (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nZásady ochrany osobních údajů: https://brasspawn.com/privacy",
+      "locale": "cs",
+      "keywords": "stockfish,zahájení,analýza,šachovnice,offline,elo,učení,strategie,partie,hra,mat,rating",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/cdd1bfc2-6447-42f3-ac26-e342c5c8d45a/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/cdd1bfc2-6447-42f3-ac26-e342c5c8d45a/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/cdd1bfc2-6447-42f3-ac26-e342c5c8d45a/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/cdd1bfc2-6447-42f3-ac26-e342c5c8d45a/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/cdd1bfc2-6447-42f3-ac26-e342c5c8d45a/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/cdd1bfc2-6447-42f3-ac26-e342c5c8d45a/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/cdd1bfc2-6447-42f3-ac26-e342c5c8d45a"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "7df26749-043f-49ae-ae64-c253f0f5d876",
+    "attributes": {
+      "description": "Szinte mindenki, aki sakkozik, szeretne jobb lenni. És szinte senki mellett nem ül valaki, aki meg tudja mondani, miért működött egy lépés.\n\nA Brass Pawn az a szék. Lépsz egyet, és azonnal elolvassák: megnevezik az erősebb lépést, megmondják, mennyit ért gyalogban, és kibontják a folytatást, ami következett volna. Kapcsold be az értékeket, és minden mező, ahová mehetnél, viseli a saját számát — a lépést mérlegeled, mielőtt meglépnéd, ahelyett hogy utána tűnődnél rajta.\n\nKÉT MOTOR, NEM EGY\nA Stockfish és a Reckless is benne van az alkalmazásban. Játssz bármelyikkel, vagy ültesd őket egymással szembe és nézd. A második motor második vélemény, és azok az állások, amelyekben nem értenek egyet, megérik az idődet.\n\nTIZENNÉGYEZER FELADVÁNY, NEKED VÁLOGATVA\nTaktika abból, ami nem megy, nem véletlenszerűen. Rush, ha órát akarsz. Tizenöt végjáték-gyakorlat egy motor ellen, amely nem hagy elcsúszni egy döntetlent. Száztizenhat pozíciós gyakorlat. És a Guess the Elo: ezerhatszáz valódi játszma, és te mondod meg, milyen erősek voltak a játékosok. Szórakoztatóbb, mint amilyennek hangzik, és nehezebb.\n\nKILENCSZÁZ PARTI, AMIT ÉRDEMES VÉGIGNÉZNI\nMind eldöntött, két névvel bíró játékos között, és vagy huszonöt lépésen belül véget ért, vagy elég híres ahhoz, hogy saját neve legyen. Keress rá egy játékosra, nézd, ahogy a parti kibontakozik, és amint másképp léptél volna, vedd át és játszd tovább te.\n\nTÁBLA, AMIT NÉZNI AKARSZ\nFényképezett készlet megvilágított táblán, térben vagy laposan, kilenc táblastílussal és öt bábukészlettel. Állíts fel egy állást kézzel, vagy illessz be egy partit, és onnan folytasd.\n\nSEMMI NEM HAGYJA EL A KÉSZÜLÉKET\nNincs fiók, nincs bejelentkezés, nincs analitika, nincs hirdetés. Mindkét motor a telefonon fut, így minden működik repülőgép üzemmódban is. Semmit nem gyűjtünk, amitől az adatvédelmi tájékoztató rövidebb a szokásosnál. Harmincegy nyelv.\n\nMI AZ, AMI INGYENES\nMindenből öt, hogy lásd, neked való-e: öt feladvány, öt végjáték, öt parti a motor ellen, és így tovább. Onnantól előfizetés viszi tovább, és sehol nincs hirdetés.\n\nA Brass Pawn nyílt forráskódú, GNU AGPL v3 licenc alatt.\n\nELŐFIZETÉS\nA játék ingyenes, és az is marad — korlát és hirdetés nélkül. A Brass Pawn Pro feloldja a napi öt gyakorlat korlátját; van havi előfizetés és egyszeri feloldás, amely soha nem újul meg.\n\nA díj a vásárlás megerősítésekor terheli az Apple-fiókját. Az előfizetés automatikusan megújul, hacsak legalább 24 órával az aktuális időszak vége előtt nem mondja le; a terhelés a megújulás előtti 24 órában történik. Az App Store-fiók beállításaiban kezelheti vagy mondhatja le.\n\nFelhasználási feltételek (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nAdatvédelmi irányelvek: https://brasspawn.com/privacy",
+      "locale": "hu",
+      "keywords": "stockfish,megnyitás,elemzés,tábla,offline,elo,tanulás,stratégia,parti,játék,matt,értékszám",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7df26749-043f-49ae-ae64-c253f0f5d876/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7df26749-043f-49ae-ae64-c253f0f5d876/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7df26749-043f-49ae-ae64-c253f0f5d876/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7df26749-043f-49ae-ae64-c253f0f5d876/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7df26749-043f-49ae-ae64-c253f0f5d876/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7df26749-043f-49ae-ae64-c253f0f5d876/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7df26749-043f-49ae-ae64-c253f0f5d876"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "50014ba3-dbba-404a-a600-9da8f29e6432",
+    "attributes": {
+      "description": "Prawie każdy, kto gra w szachy, chciałby grać lepiej. Prawie nikt nie ma obok kogoś, kto potrafi powiedzieć, dlaczego dany ruch zadziałał.\n\nBrass Pawn to właśnie to krzesło. Wykonujesz ruch, a on zostaje odczytany od razu: silniejszy ruch dostaje nazwę, słyszysz, ile był wart w pionach, i widzisz wariant, który by nastąpił. Włącz oceny, a każde pole, na które mógłbyś pójść, niesie własną liczbę — ważysz ruch, zanim go zagrasz, zamiast zastanawiać się później.\n\nDWA SILNIKI, NIE JEDEN\nStockfish i Reckless są oba w aplikacji. Zagraj z którymkolwiek albo posadź je naprzeciw siebie i patrz. Drugi silnik to druga opinia, a pozycje, w których się nie zgadzają, są warte twojego czasu.\n\nCZTERNAŚCIE TYSIĘCY ZADAŃ, DOBRANYCH DLA CIEBIE\nTaktyka wybrana z tego, co ci nie wychodzi, a nie z przypadku. Rush, gdy chcesz zegar. Piętnaście końcówek przeciw silnikowi, który nie pozwoli remisowi się wymknąć. Sto szesnaście zadań pozycyjnych. I Guess the Elo: tysiąc sześćset prawdziwych partii, a ty mówisz, jak silni byli gracze. Ciekawsze, niż brzmi, i trudniejsze.\n\nDZIEWIĘĆSET PARTII WARTYCH OBEJRZENIA\nWszystkie rozstrzygnięte, między dwoma graczami z nazwiskiem, i albo skończone w dwudziestu pięciu ruchach, albo dość sławne, by mieć własną nazwę. Wyszukaj gracza, patrz, jak partia się rozwija, a gdy zagrałbyś inaczej, przejmij ją i graj dalej sam.\n\nSZACHOWNICA, NA KTÓRĄ CHCE SIĘ PATRZEĆ\nSfotografowany komplet na oświetlonej szachownicy, przestrzennej albo płaskiej, z dziewięcioma stylami szachownicy i pięcioma kompletami bierek. Ustaw pozycję ręcznie albo wklej partię i graj dalej.\n\nNIC NIE OPUSZCZA URZĄDZENIA\nBez konta, bez logowania, bez analityki, bez reklam. Oba silniki działają na telefonie, więc wszystko działa w trybie samolotowym. Nic nie jest zbierane, przez co polityka prywatności jest krótsza niż zwykle. Trzydzieści jeden języków.\n\nCO JEST ZA DARMO\nPo pięć z każdego rodzaju, żeby sprawdzić, czy ci odpowiada: pięć zadań, pięć końcówek, pięć partii z silnikiem i tak dalej. Dalej przejmuje subskrypcja, a reklam nie ma w żadnym momencie.\n\nBrass Pawn jest oprogramowaniem otwartym, na licencji GNU AGPL v3.\n\nSUBSKRYPCJA\nGra jest bezpłatna i taka pozostanie — bez limitu i bez reklam. Brass Pawn Pro znosi limit pięciu ćwiczeń dziennie; dostępna jest subskrypcja miesięczna oraz jednorazowy zakup, który nigdy się nie odnawia.\n\nPłatność zostanie pobrana z konta Apple po potwierdzeniu zakupu. Subskrypcja odnawia się automatycznie, o ile nie zostanie anulowana co najmniej 24 godziny przed końcem bieżącego okresu; obciążenie następuje w ciągu 24 godzin przed odnowieniem. Możesz nią zarządzać lub ją anulować w ustawieniach konta App Store.\n\nWarunki użytkowania (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPolityka prywatności: https://brasspawn.com/privacy",
+      "locale": "pl",
+      "keywords": "stockfish,otwarcie,analiza,szachownica,offline,elo,nauka,strategia,partia,gra,mat,ranking",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/50014ba3-dbba-404a-a600-9da8f29e6432/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/50014ba3-dbba-404a-a600-9da8f29e6432/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/50014ba3-dbba-404a-a600-9da8f29e6432/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/50014ba3-dbba-404a-a600-9da8f29e6432/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/50014ba3-dbba-404a-a600-9da8f29e6432/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/50014ba3-dbba-404a-a600-9da8f29e6432/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/50014ba3-dbba-404a-a600-9da8f29e6432"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "dfddf157-f858-4ccb-a8af-5ae4005dec25",
+    "attributes": {
+      "description": "チェスを指す人のほとんどは、もっと強くなりたいと思っています。そして、なぜその手が良かったのかを隣で言ってくれる人がいる人は、ほとんどいません。\n\nBrass Pawn はその隣の席です。一手指せば、すぐに読み解かれます。より強い手の名前、それが何ポーン分だったか、そして続いたはずの変化。評価値を表示すれば、指せるすべてのマスがそれぞれの数字を持ちます。指した後で悩むのではなく、指す前に量れます。\n\nエンジンは一つではなく二つ\nStockfish と Reckless の両方がアプリの中にあります。どちらかと対局してもよく、向かい合わせに座らせて眺めてもかまいません。二つ目のエンジンは二つ目の意見であり、両者が食い違う局面こそ時間をかける価値があります。\n\n一万四千問、あなたのために選ばれて\n外し続けている種類から選ばれる戦術問題。時計が欲しいときは Rush。引き分けを見逃さないエンジン相手の終盤練習が十五。ポジショナルな課題が百十六。そして Guess the Elo — 実戦千六百局、指し手の強さを当てるのはあなたです。聞こえるより面白く、そして難しい。\n\n見る価値のある九百局\nすべて決着がつき、名前のある二人の対局で、二十五手以内に終わったか、あるいは自分の名を持つほど有名なもの。棋士を探し、対局が進むのを眺め、自分なら違う手を指すという場面で引き取って、そこから自分で指し継げます。\n\n眺めたくなる盤\n照明の当たった盤に置かれた、撮影された駒。立体でも平面でも。盤は九種類、駒は五種類。手で局面を並べても、棋譜を貼り付けてもよく、そこから続けられます。\n\n端末から何も出ていきません\nアカウントなし、サインインなし、解析なし、広告なし。両方のエンジンが端末上で動くので、機内モードのままで全部動きます。何も収集しないので、プライバシーポリシーは普通より短くなります。三十一言語。\n\n無料の範囲\nそれぞれ五回ずつ、自分に合うかを確かめるために。問題五問、終盤五局、エンジンとの対局五局、といった具合です。その先はサブスクリプションが引き継ぎます。広告はどこにも出ません。\n\nBrass Pawn はオープンソースで、GNU AGPL v3 のもとで公開されています。\n\nサブスクリプション\n対局は無料で、これからも無料です。制限も広告もありません。Brass Pawn Pro は 1 日 5 問というトレーニングの上限を解除します。月額プランと、更新のない買い切りの 2 つがあります。\n\n購入確定時に Apple アカウントへ課金されます。サブスクリプションは、現在の期間の終了 24 時間前までに解約しないかぎり自動更新され、更新前の 24 時間以内に課金されます。管理と解約は App Store アカウントの設定から行えます。\n\n利用規約（EULA）: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nプライバシーポリシー: https://brasspawn.com/privacy",
+      "locale": "ja",
+      "keywords": "stockfish,定跡,解析,盤,オフライン,レーティング,コーチ,対局,学習,戦略,棋譜,詰将棋,初心者,上達,序盤,中盤",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/dfddf157-f858-4ccb-a8af-5ae4005dec25/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/dfddf157-f858-4ccb-a8af-5ae4005dec25/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/dfddf157-f858-4ccb-a8af-5ae4005dec25/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/dfddf157-f858-4ccb-a8af-5ae4005dec25/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/dfddf157-f858-4ccb-a8af-5ae4005dec25/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/dfddf157-f858-4ccb-a8af-5ae4005dec25/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/dfddf157-f858-4ccb-a8af-5ae4005dec25"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "aa372e0c-1306-4a53-8b6c-017626a099b3",
+    "attributes": {
+      "description": "Σχεδόν όλοι όσοι παίζουν σκάκι θα ήθελαν να γίνουν καλύτεροι. Σχεδόν κανείς δεν έχει δίπλα του κάποιον που να μπορεί να πει γιατί δούλεψε μια κίνηση.\n\nΤο Brass Pawn είναι αυτή η καρέκλα. Παίζεις μια κίνηση και διαβάζεται αμέσως: ονομάζεται η ισχυρότερη κίνηση, λέγεται τι άξιζε σε πιόνια, και ξεδιπλώνεται η συνέχεια που θα ακολουθούσε. Άναψε τις αξίες και κάθε τετράγωνο όπου θα μπορούσες να πας κρατά τον δικό του αριθμό — ζυγίζεις μια κίνηση πριν την παίξεις αντί να αναρωτιέσαι μετά.\n\nΔΥΟ ΜΗΧΑΝΕΣ, ΟΧΙ ΜΙΑ\nΤο Stockfish και το Reckless βρίσκονται και τα δύο μέσα στην εφαρμογή. Παίξε με όποια θέλεις, ή βάλε τες αντικριστά και κοίτα. Μια δεύτερη μηχανή είναι μια δεύτερη γνώμη, και οι θέσεις όπου διαφωνούν αξίζουν τον χρόνο σου.\n\nΔΕΚΑΤΕΣΣΕΡΙΣ ΧΙΛΙΑΔΕΣ ΓΡΙΦΟΙ, ΔΙΑΛΕΓΜΕΝΟΙ ΓΙΑ ΣΕΝΑ\nΤακτική από αυτά που σου ξεφεύγουν, όχι στην τύχη. Rush, όταν θέλεις το ρολόι. Δεκαπέντε ασκήσεις φινάλε απέναντι σε μηχανή που δεν αφήνει την ισοπαλία να ξεγλιστρήσει. Εκατόν δεκαέξι ασκήσεις θέσης. Και το Guess the Elo: χίλιες εξακόσιες πραγματικές παρτίδες, και εσύ λες πόσο δυνατοί ήταν οι παίκτες. Πιο διασκεδαστικό απ' όσο ακούγεται, και πιο δύσκολο.\n\nΕΝΝΙΑΚΟΣΙΕΣ ΠΑΡΤΙΔΕΣ ΠΟΥ ΑΞΙΖΕΙ ΝΑ ΔΕΙΣ\nΌλες κριμένες, ανάμεσα σε δύο παίκτες με όνομα, και είτε τελειωμένες μέσα σε είκοσι πέντε κινήσεις είτε αρκετά διάσημες ώστε να έχουν δικό τους όνομα. Ψάξε έναν παίκτη, δες την παρτίδα να ξετυλίγεται, και μόλις εσύ θα έπαιζες αλλιώς, ανάλαβέ την και συνέχισε μόνος.\n\nΜΙΑ ΣΚΑΚΙΕΡΑ ΠΟΥ ΘΕΣ ΝΑ ΚΟΙΤΑΣ\nΦωτογραφημένο σετ σε φωτισμένη σκακιέρα, ανάγλυφη ή επίπεδη, με εννιά στυλ σκακιέρας και πέντε σετ κομματιών. Στήσε μια θέση με το χέρι ή επικόλλησε μια παρτίδα και συνέχισε από εκεί.\n\nΤΙΠΟΤΑ ΔΕΝ ΦΕΥΓΕΙ ΑΠΟ ΤΗ ΣΥΣΚΕΥΗ\nΧωρίς λογαριασμό, χωρίς σύνδεση, χωρίς αναλυτικά, χωρίς διαφημίσεις. Και οι δύο μηχανές τρέχουν στο τηλέφωνο, οπότε όλα δουλεύουν με τη λειτουργία πτήσης ανοιχτή. Δεν συλλέγεται τίποτα, πράγμα που κάνει την πολιτική απορρήτου συντομότερη από τις περισσότερες. Τριάντα μία γλώσσες.\n\nΤΙ ΕΙΝΑΙ ΔΩΡΕΑΝ\nΠέντε από το καθένα, για να δεις αν σου ταιριάζει: πέντε γρίφοι, πέντε φινάλε, πέντε παρτίδες με τη μηχανή, και ούτω καθεξής. Από εκεί συνεχίζει μια συνδρομή, και δεν υπάρχει διαφήμιση σε καμία στιγμή.\n\nΤο Brass Pawn είναι ανοιχτού κώδικα, υπό την GNU AGPL v3.\n\nΣΥΝΔΡΟΜΗ\nΤο παιχνίδι είναι δωρεάν και θα παραμείνει — χωρίς όριο και χωρίς διαφημίσεις. Το Brass Pawn Pro αίρει το όριο των πέντε ασκήσεων την ημέρα· υπάρχει μηνιαία συνδρομή και εφάπαξ αγορά που δεν ανανεώνεται ποτέ.\n\nΗ χρέωση γίνεται στον λογαριασμό Apple κατά την επιβεβαίωση της αγοράς. Η συνδρομή ανανεώνεται αυτόματα εκτός αν ακυρωθεί τουλάχιστον 24 ώρες πριν από τη λήξη της τρέχουσας περιόδου· η χρέωση γίνεται εντός 24 ωρών πριν την ανανέωση. Μπορείτε να τη διαχειριστείτε ή να την ακυρώσετε στις ρυθμίσεις του λογαριασμού App Store.\n\nΌροι χρήσης (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nΠολιτική απορρήτου: https://brasspawn.com/privacy",
+      "locale": "el",
+      "keywords": "stockfish,άνοιγμα,ανάλυση,σκακιέρα,offline,elo,μάθηση,στρατηγική,παρτίδα,παιχνίδι,ματ",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/aa372e0c-1306-4a53-8b6c-017626a099b3/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/aa372e0c-1306-4a53-8b6c-017626a099b3/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/aa372e0c-1306-4a53-8b6c-017626a099b3/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/aa372e0c-1306-4a53-8b6c-017626a099b3/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/aa372e0c-1306-4a53-8b6c-017626a099b3/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/aa372e0c-1306-4a53-8b6c-017626a099b3/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/aa372e0c-1306-4a53-8b6c-017626a099b3"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "e25b1bd2-601d-442a-8b5c-6e117d34441d",
+    "attributes": {
+      "description": "แทบทุกคนที่เล่นหมากรุกอยากเล่นให้เก่งขึ้น แต่แทบไม่มีใครมีคนนั่งข้าง ๆ ที่บอกได้ว่าทำไมตานั้นถึงได้ผล\n\nBrass Pawn คือเก้าอี้ตัวนั้น คุณเดินหนึ่งตา แล้วมันอ่านให้ฟังทันที ตาที่ดีกว่าชื่ออะไร มีค่ากี่เบี้ย และแนวที่จะตามมาเป็นอย่างไร เปิดค่าประเมินไว้ ทุกช่องที่คุณเดินไปได้จะมีตัวเลขของตัวเอง คุณจึงชั่งน้ำหนักก่อนเดิน แทนที่จะมาสงสัยทีหลัง\n\nสองเอนจิน ไม่ใช่หนึ่ง\nทั้ง Stockfish และ Reckless อยู่ในแอป เล่นกับตัวไหนก็ได้ หรือจับให้นั่งประจันหน้ากันแล้วดูก็ได้ เอนจินตัวที่สองคือความเห็นที่สอง และตำแหน่งที่ทั้งสองไม่เห็นตรงกันคือตำแหน่งที่คุ้มค่ากับเวลาของคุณ\n\nหนึ่งหมื่นสี่พันโจทย์ คัดมาให้คุณ\nโจทย์แทคติกคัดจากสิ่งที่คุณมักพลาด ไม่ใช่สุ่มมา มี Rush เมื่อคุณอยากได้นาฬิกา บททบทวนเอ็นด์เกมสิบห้าบทกับเอนจินที่ไม่ปล่อยให้เสมอหลุดมือ โจทย์เชิงตำแหน่งหนึ่งร้อยสิบหกข้อ และ Guess the Elo เกมจริงหนึ่งพันหกร้อยเกม แล้วคุณเป็นคนบอกว่าผู้เล่นเก่งแค่ไหน สนุกกว่าที่ฟัง และยากกว่าด้วย\n\nเก้าร้อยเกมที่ควรค่าแก่การดู\nทุกเกมมีผลแพ้ชนะ เป็นเกมระหว่างผู้เล่นที่มีชื่อ และจบภายในยี่สิบห้าตาหรือมีชื่อเสียงพอจะมีชื่อเรียกของตัวเอง ค้นหาผู้เล่น ดูเกมคลี่คลายไป แล้วพอถึงตาที่คุณจะเดินต่าง ก็รับช่วงต่อและเล่นเองได้เลย\n\nกระดานที่อยากมอง\nชุดหมากถ่ายจริงบนกระดานที่มีแสง ทั้งแบบสามมิติและแบบแบน มีกระดานเก้าแบบและชุดหมากห้าชุด จัดตำแหน่งเองด้วยมือ หรือวางเกมลงไปแล้วเล่นต่อจากตรงนั้น\n\nไม่มีอะไรออกจากเครื่อง\nไม่มีบัญชี ไม่ต้องเข้าสู่ระบบ ไม่มีการเก็บสถิติ ไม่มีโฆษณา เอนจินทั้งสองทำงานบนเครื่องของคุณ ทุกอย่างจึงใช้ได้ในโหมดเครื่องบิน ไม่มีการเก็บข้อมูลใด ๆ นโยบายความเป็นส่วนตัวจึงสั้นกว่าที่อื่น รองรับสามสิบเอ็ดภาษา\n\nส่วนที่ฟรี\nอย่างละห้าครั้ง พอให้รู้ว่าเหมาะกับคุณไหม โจทย์ห้าข้อ เอ็นด์เกมห้าบท เล่นกับเอนจินห้าเกม และอื่น ๆ จากนั้นเป็นการสมัครสมาชิก และไม่มีโฆษณาในจุดใดเลย\n\nBrass Pawn เป็นโอเพนซอร์ส ภายใต้สัญญาอนุญาต GNU AGPL v3\n\nการสมัครสมาชิก\nการเล่นฟรีและจะฟรีต่อไป ไม่มีขีดจำกัดและไม่มีโฆษณา Brass Pawn Pro ปลดขีดจำกัดวันละห้าข้อของการฝึก มีทั้งแบบรายเดือนและแบบจ่ายครั้งเดียวที่ไม่ต่ออายุ\n\nระบบจะเรียกเก็บเงินจากบัญชี Apple ของคุณเมื่อยืนยันการซื้อ การสมัครสมาชิกจะต่ออายุอัตโนมัติ เว้นแต่จะยกเลิกอย่างน้อย 24 ชั่วโมงก่อนสิ้นสุดรอบปัจจุบัน และจะเรียกเก็บภายใน 24 ชั่วโมงก่อนต่ออายุ คุณจัดการหรือยกเลิกได้ในการตั้งค่าบัญชี App Store\n\nข้อกำหนดการใช้งาน (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nนโยบายความเป็นส่วนตัว: https://brasspawn.com/privacy",
+      "locale": "th",
+      "keywords": "stockfish,เปิดเกม,วิเคราะห์,กระดาน,ออฟไลน์,เรตติ้ง,ฝึก,กลยุทธ์,รุกจน,เรียน,มือใหม่,เกม,หมากรุก",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e25b1bd2-601d-442a-8b5c-6e117d34441d/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e25b1bd2-601d-442a-8b5c-6e117d34441d/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e25b1bd2-601d-442a-8b5c-6e117d34441d/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e25b1bd2-601d-442a-8b5c-6e117d34441d/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e25b1bd2-601d-442a-8b5c-6e117d34441d/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e25b1bd2-601d-442a-8b5c-6e117d34441d/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e25b1bd2-601d-442a-8b5c-6e117d34441d"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "e0758422-d8c3-4eab-ba20-4e817d7d891e",
+    "attributes": {
+      "description": "Presque tous ceux qui jouent aux échecs aimeraient progresser. Presque personne n'a quelqu'un assis à côté de lui pour dire pourquoi un coup a marché.\n\nBrass Pawn est cette chaise. Vous jouez un coup et il est lu aussitôt : le coup le plus fort est nommé, sa valeur en pions donnée, et la suite qui aurait découlé déroulée. Activez les valeurs et chaque case où vous pourriez aller porte son propre chiffre — vous pesez un coup avant de le jouer plutôt que de vous interroger après.\n\nDEUX MOTEURS, PAS UN\nStockfish et Reckless sont tous deux dans l'application. Jouez contre l'un ou l'autre, ou installez-les l'un en face de l'autre et regardez. Un second moteur est un second avis, et les positions où ils divergent sont celles qui méritent votre temps.\n\nQUATORZE MILLE EXERCICES, CHOISIS POUR VOUS\nDes tactiques tirées de ce qui vous résiste plutôt que du hasard. Rush, quand vous voulez la pendule. Quinze finales contre un moteur qui ne laissera pas filer une nulle. Cent seize exercices positionnels. Et Guess the Elo : seize cents parties réelles, et vous dites la force des joueurs. C'est plus amusant qu'il n'y paraît, et plus difficile.\n\nNEUF CENTS PARTIES QUI VALENT LE DÉTOUR\nChacune décisive, entre deux joueurs nommés, et terminée en moins de vingt-cinq coups ou assez célèbre pour porter un nom. Cherchez un joueur, regardez la partie se dérouler, et dès que vous auriez joué autrement, prenez la main et continuez vous-même.\n\nUN ÉCHIQUIER QU'ON A ENVIE DE REGARDER\nUn jeu photographié sur un échiquier éclairé, en relief ou à plat, avec neuf styles d'échiquier et cinq jeux de pièces. Montez une position à la main ou collez une partie, et repartez de là.\n\nRIEN NE QUITTE L'APPAREIL\nPas de compte, pas de connexion, pas d'analytique, pas de publicité. Les deux moteurs tournent sur votre téléphone : tout fonctionne en mode avion. Rien n'est collecté, ce qui donne une politique de confidentialité plus courte que la plupart. Trente et une langues.\n\nCE QUI EST GRATUIT\nCinq de chaque, le temps de voir si cela vous convient : cinq exercices, cinq finales, cinq parties contre le moteur, et ainsi de suite. Ensuite un abonnement prend le relais, et il n'y a de publicité à aucun moment.\n\nBrass Pawn est un logiciel libre, sous licence GNU AGPL v3.\n\nABONNEMENT\nJouer est gratuit et le restera, sans limite et sans publicité. Brass Pawn Pro lève la limite de cinq exercices par jour ; il existe un abonnement mensuel et un achat unique qui ne se renouvelle jamais.\n\nLe paiement est débité de votre compte Apple à la confirmation de l’achat. Un abonnement se renouvelle automatiquement sauf s’il est annulé au moins 24 heures avant la fin de la période en cours ; le débit intervient dans les 24 heures précédant le renouvellement. Vous pouvez le gérer ou l’annuler dans les réglages de votre compte App Store.\n\nConditions d’utilisation (CLUF): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPolitique de confidentialité: https://brasspawn.com/privacy",
+      "locale": "fr-CA",
+      "keywords": "stockfish,ouverture,analyse,échiquier,hors ligne,elo,apprendre,stratégie,partie,jeu,mat,niveau",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e0758422-d8c3-4eab-ba20-4e817d7d891e/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e0758422-d8c3-4eab-ba20-4e817d7d891e/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e0758422-d8c3-4eab-ba20-4e817d7d891e/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e0758422-d8c3-4eab-ba20-4e817d7d891e/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e0758422-d8c3-4eab-ba20-4e817d7d891e/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e0758422-d8c3-4eab-ba20-4e817d7d891e/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/e0758422-d8c3-4eab-ba20-4e817d7d891e"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "0cbd8ad7-e673-4745-a0c6-5a7c8761e76b",
+    "attributes": {
+      "description": "체스를 두는 사람은 거의 다 더 잘 두고 싶어 합니다. 그런데 옆에 앉아 이 수가 왜 좋았는지 말해 줄 사람이 있는 경우는 거의 없습니다.\n\nBrass Pawn이 그 자리입니다. 한 수를 두면 곧바로 읽어 줍니다. 더 강한 수의 이름, 그것이 폰 몇 개어치였는지, 그리고 이어졌을 변화까지. 평가를 켜면 갈 수 있는 모든 칸이 각자의 숫자를 답니다. 두고 나서 궁금해하는 대신, 두기 전에 저울질할 수 있습니다.\n\n엔진은 하나가 아니라 둘\nStockfish와 Reckless가 모두 앱 안에 있습니다. 둘 중 하나와 두어도 되고, 마주 앉혀 놓고 구경해도 됩니다. 두 번째 엔진은 두 번째 의견이며, 둘의 판단이 갈리는 국면이야말로 시간을 들일 가치가 있습니다.\n\n만 사천 문제, 당신에게 맞춰\n자꾸 틀리는 유형에서 고른 전술 문제. 시계가 필요하면 Rush. 무승부를 놓치지 않는 엔진을 상대로 한 엔드게임 훈련 열다섯 개. 포지션 문제 백열여섯 개. 그리고 Guess the Elo — 실제 대국 천육백 판, 기력을 맞히는 건 당신입니다. 듣기보다 재미있고, 더 어렵습니다.\n\n볼 만한 구백 판\n모두 승부가 난 대국, 이름 있는 두 기사, 스물다섯 수 안에 끝났거나 자기 이름을 가질 만큼 유명한 것들. 기사를 찾아 대국이 펼쳐지는 것을 보다가, 나라면 다르게 두었을 그 순간부터 넘겨받아 직접 이어 두세요.\n\n보고 싶어지는 판\n조명 아래 실물로 촬영한 기물, 입체로도 평면으로도. 판 아홉 가지, 기물 다섯 가지. 손으로 국면을 놓거나 기보를 붙여 넣고 거기서 이어 가세요.\n\n기기 밖으로 나가는 것이 없습니다\n계정도, 로그인도, 분석도, 광고도 없습니다. 두 엔진 모두 휴대폰에서 돌아가므로 비행기 모드에서도 전부 작동합니다. 아무것도 수집하지 않으니 개인정보 처리방침이 보통보다 짧습니다. 서른한 개 언어.\n\n무료인 부분\n종류마다 다섯 번씩, 자신에게 맞는지 보기에 충분합니다. 문제 다섯, 엔드게임 다섯, 엔진과의 대국 다섯, 이런 식으로요. 그다음부터는 구독이 이어받고, 광고는 어디에도 없습니다.\n\nBrass Pawn은 GNU AGPL v3로 공개된 오픈 소스입니다.\n\n구독\n대국은 무료이며 앞으로도 무료입니다. 제한도 광고도 없습니다. Brass Pawn Pro는 하루 다섯 개라는 훈련 제한을 해제합니다. 월 구독과, 갱신되지 않는 일회성 구매가 있습니다.\n\n구매를 확인하면 Apple 계정으로 결제됩니다. 구독은 현재 기간이 끝나기 최소 24시간 전에 취소하지 않으면 자동으로 갱신되며, 갱신 전 24시간 이내에 청구됩니다. App Store 계정 설정에서 관리하거나 취소할 수 있습니다.\n\n이용 약관(EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n개인정보 처리방침: https://brasspawn.com/privacy",
+      "locale": "ko",
+      "keywords": "stockfish,오프닝,분석,체스판,오프라인,레이팅,코치,대국,학습,전략,메이트,기보,초보,입문,실력,묘수",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/0cbd8ad7-e673-4745-a0c6-5a7c8761e76b/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/0cbd8ad7-e673-4745-a0c6-5a7c8761e76b/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/0cbd8ad7-e673-4745-a0c6-5a7c8761e76b/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/0cbd8ad7-e673-4745-a0c6-5a7c8761e76b/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/0cbd8ad7-e673-4745-a0c6-5a7c8761e76b/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/0cbd8ad7-e673-4745-a0c6-5a7c8761e76b/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/0cbd8ad7-e673-4745-a0c6-5a7c8761e76b"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "c6cb8801-00ba-4887-8969-f9edbc46cb2e",
+    "attributes": {
+      "description": "Bijna iedereen die schaakt zou beter willen worden. Bijna niemand heeft iemand naast zich zitten die kan zeggen waarom een zet werkte.\n\nBrass Pawn is die stoel. Je doet een zet en die wordt meteen gelezen: de sterkere zet krijgt een naam, je hoort wat hij waard was in pionnen, en de variant die gevolgd zou zijn. Zet de waarden aan en elk veld waar je heen zou kunnen draagt zijn eigen getal — je weegt een zet af voordat je hem doet in plaats van je er achteraf over te verbazen.\n\nTWEE ENGINES, NIET ÉÉN\nStockfish en Reckless zitten allebei in de app. Speel tegen een van beide, of zet ze tegenover elkaar en kijk toe. Een tweede engine is een tweede mening, en de stellingen waarin ze het oneens zijn, zijn je tijd waard.\n\nVEERTIENDUIZEND PUZZELS, VOOR JOU GEKOZEN\nTactiek uit wat je blijft missen, niet uit het toeval. Rush, als je de klok wilt. Vijftien eindspeloefeningen tegen een engine die geen remise laat lopen. Honderdzestien positionele oefeningen. En Guess the Elo: zestienhonderd echte partijen, en jij zegt hoe sterk de spelers waren. Leuker dan het klinkt, en moeilijker.\n\nNEGENHONDERD PARTIJEN DIE HET BEKIJKEN WAARD ZIJN\nAllemaal beslist, tussen twee spelers met een naam, en binnen vijfentwintig zetten afgelopen of beroemd genoeg voor een eigen naam. Zoek een speler op, kijk hoe de partij zich ontvouwt, en zodra jij anders had gezet, neem je het over en speel je zelf verder.\n\nEEN BORD WAAR JE NAAR WILT KIJKEN\nEen gefotografeerd stel op een verlicht bord, in de ronde of plat, met negen bordstijlen en vijf stukkensets. Zet een stelling met de hand op of plak een partij, en ga van daar verder.\n\nER GAAT NIETS VAN HET APPARAAT AF\nGeen account, geen aanmelding, geen analytics, geen advertenties. Beide engines draaien op je telefoon, dus alles werkt met vliegtuigmodus aan. Er wordt niets verzameld, wat een kortere privacyverklaring oplevert dan gebruikelijk. Eenendertig talen.\n\nWAT GRATIS IS\nVijf van elk, om te zien of het je ligt: vijf puzzels, vijf eindspelen, vijf partijen tegen de engine, enzovoort. Daarna neemt een abonnement het over, en er zijn nergens advertenties.\n\nBrass Pawn is opensource, onder de GNU AGPL v3.\n\nABONNEMENT\nSpelen is gratis en blijft gratis, zonder limiet en zonder advertenties. Brass Pawn Pro heft de limiet van vijf oefeningen per dag op; er is een maandabonnement en een eenmalige ontgrendeling die nooit wordt verlengd.\n\nDe betaling wordt bij aankoopbevestiging van je Apple-account afgeschreven. Een abonnement wordt automatisch verlengd tenzij het minstens 24 uur voor het einde van de lopende periode wordt opgezegd; de afschrijving vindt plaats in de 24 uur daarvoor. Je beheert of zegt het op in de instellingen van je App Store-account.\n\nGebruiksvoorwaarden (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPrivacybeleid: https://brasspawn.com/privacy",
+      "locale": "nl-NL",
+      "keywords": "stockfish,opening,analyse,bord,offline,elo,leren,strategie,partij,spel,mat,studie,rating",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c6cb8801-00ba-4887-8969-f9edbc46cb2e/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c6cb8801-00ba-4887-8969-f9edbc46cb2e/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c6cb8801-00ba-4887-8969-f9edbc46cb2e/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c6cb8801-00ba-4887-8969-f9edbc46cb2e/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c6cb8801-00ba-4887-8969-f9edbc46cb2e/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c6cb8801-00ba-4887-8969-f9edbc46cb2e/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c6cb8801-00ba-4887-8969-f9edbc46cb2e"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "dbfb119d-7455-4d00-bb32-b8cab8809e74",
+    "attributes": {
+      "description": "Presque tous ceux qui jouent aux échecs aimeraient progresser. Presque personne n'a quelqu'un assis à côté de lui pour dire pourquoi un coup a marché.\n\nBrass Pawn est cette chaise. Vous jouez un coup et il est lu aussitôt : le coup le plus fort est nommé, sa valeur en pions donnée, et la suite qui aurait découlé déroulée. Activez les valeurs et chaque case où vous pourriez aller porte son propre chiffre — vous pesez un coup avant de le jouer plutôt que de vous interroger après.\n\nDEUX MOTEURS, PAS UN\nStockfish et Reckless sont tous deux dans l'application. Jouez contre l'un ou l'autre, ou installez-les l'un en face de l'autre et regardez. Un second moteur est un second avis, et les positions où ils divergent sont celles qui méritent votre temps.\n\nQUATORZE MILLE EXERCICES, CHOISIS POUR VOUS\nDes tactiques tirées de ce qui vous résiste plutôt que du hasard. Rush, quand vous voulez la pendule. Quinze finales contre un moteur qui ne laissera pas filer une nulle. Cent seize exercices positionnels. Et Guess the Elo : seize cents parties réelles, et vous dites la force des joueurs. C'est plus amusant qu'il n'y paraît, et plus difficile.\n\nNEUF CENTS PARTIES QUI VALENT LE DÉTOUR\nChacune décisive, entre deux joueurs nommés, et terminée en moins de vingt-cinq coups ou assez célèbre pour porter un nom. Cherchez un joueur, regardez la partie se dérouler, et dès que vous auriez joué autrement, prenez la main et continuez vous-même.\n\nUN ÉCHIQUIER QU'ON A ENVIE DE REGARDER\nUn jeu photographié sur un échiquier éclairé, en relief ou à plat, avec neuf styles d'échiquier et cinq jeux de pièces. Montez une position à la main ou collez une partie, et repartez de là.\n\nRIEN NE QUITTE L'APPAREIL\nPas de compte, pas de connexion, pas d'analytique, pas de publicité. Les deux moteurs tournent sur votre téléphone : tout fonctionne en mode avion. Rien n'est collecté, ce qui donne une politique de confidentialité plus courte que la plupart. Trente et une langues.\n\nCE QUI EST GRATUIT\nCinq de chaque, le temps de voir si cela vous convient : cinq exercices, cinq finales, cinq parties contre le moteur, et ainsi de suite. Ensuite un abonnement prend le relais, et il n'y a de publicité à aucun moment.\n\nBrass Pawn est un logiciel libre, sous licence GNU AGPL v3.\n\nABONNEMENT\nJouer est gratuit et le restera, sans limite et sans publicité. Brass Pawn Pro lève la limite de cinq exercices par jour ; il existe un abonnement mensuel et un achat unique qui ne se renouvelle jamais.\n\nLe paiement est débité de votre compte Apple à la confirmation de l’achat. Un abonnement se renouvelle automatiquement sauf s’il est annulé au moins 24 heures avant la fin de la période en cours ; le débit intervient dans les 24 heures précédant le renouvellement. Vous pouvez le gérer ou l’annuler dans les réglages de votre compte App Store.\n\nConditions d’utilisation (CLUF): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPolitique de confidentialité: https://brasspawn.com/privacy",
+      "locale": "fr-FR",
+      "keywords": "stockfish,ouverture,analyse,échiquier,hors ligne,elo,apprendre,stratégie,partie,jeu,mat,niveau",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/dbfb119d-7455-4d00-bb32-b8cab8809e74/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/dbfb119d-7455-4d00-bb32-b8cab8809e74/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/dbfb119d-7455-4d00-bb32-b8cab8809e74/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/dbfb119d-7455-4d00-bb32-b8cab8809e74/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/dbfb119d-7455-4d00-bb32-b8cab8809e74/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/dbfb119d-7455-4d00-bb32-b8cab8809e74/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/dbfb119d-7455-4d00-bb32-b8cab8809e74"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "7c05fefb-45cb-46f9-a0d6-099d5c15ecc4",
+    "attributes": {
+      "description": "Почти каждый, кто играет в шахматы, хотел бы играть лучше. Почти ни у кого рядом не сидит человек, способный сказать, почему ход сработал.\n\nBrass Pawn — это тот самый стул. Вы делаете ход, и его читают сразу же: называют более сильный ход, говорят, чего он стоил в пешках, и разворачивают вариант, который последовал бы. Включите оценки — и каждое поле, куда вы могли бы пойти, несёт своё число: вы взвешиваете ход до того, как его сделать, а не гадаете после.\n\nДВА ДВИЖКА, А НЕ ОДИН\nStockfish и Reckless оба внутри приложения. Играйте против любого или посадите их друг напротив друга и смотрите. Второй движок — это второе мнение, а позиции, где они расходятся, стоят вашего времени.\n\nЧЕТЫРНАДЦАТЬ ТЫСЯЧ ЗАДАЧ, ПОДОБРАННЫХ ДЛЯ ВАС\nТактика по тому, что вам не даётся, а не наугад. Rush, когда нужны часы. Пятнадцать эндшпильных упражнений против движка, который не упустит ничью. Сто шестнадцать позиционных упражнений. И Guess the Elo: тысяча шестьсот настоящих партий, а силу игроков называете вы. Это интереснее, чем звучит, и труднее.\n\nДЕВЯТЬСОТ ПАРТИЙ, КОТОРЫЕ СТОИТ ПОСМОТРЕТЬ\nВсе результативные, между двумя названными игроками, и либо законченные в двадцать пять ходов, либо достаточно знаменитые, чтобы иметь собственное имя. Найдите игрока, посмотрите, как разворачивается партия, и как только вы сыграли бы иначе — возьмите её и продолжайте сами.\n\nДОСКА, НА КОТОРУЮ ХОЧЕТСЯ СМОТРЕТЬ\nСфотографированный комплект на освещённой доске, объёмной или плоской, с девятью стилями доски и пятью наборами фигур. Составьте позицию вручную или вставьте партию и продолжите с неё.\n\nНИЧЕГО НЕ ПОКИДАЕТ УСТРОЙСТВО\nНи учётной записи, ни входа, ни аналитики, ни рекламы. Оба движка работают на телефоне, так что всё это работает в режиме полёта. Ничего не собирается, отчего политика конфиденциальности короче обычной. Тридцать один язык.\n\nЧТО БЕСПЛАТНО\nПо пять каждого вида, чтобы понять, подходит ли вам: пять задач, пять эндшпилей, пять партий против движка и так далее. Дальше продолжает подписка, и рекламы нет нигде.\n\nBrass Pawn — открытый код, под лицензией GNU AGPL v3.\n\nПОДПИСКА\nИграть бесплатно и останется бесплатно — без ограничений и без рекламы. Brass Pawn Pro снимает ограничение в пять упражнений в день; есть ежемесячная подписка и разовая покупка, которая никогда не продлевается.\n\nОплата списывается с вашего аккаунта Apple при подтверждении покупки. Подписка продлевается автоматически, если её не отменить не менее чем за 24 часа до конца текущего периода; списание происходит в течение 24 часов до продления. Управлять подпиской и отменить её можно в настройках аккаунта App Store.\n\nУсловия использования (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nПолитика конфиденциальности: https://brasspawn.com/privacy",
+      "locale": "ru",
+      "keywords": "stockfish,дебют,анализ,доска,офлайн,эло,учиться,стратегия,партия,игра,мат,рейтинг,разбор",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7c05fefb-45cb-46f9-a0d6-099d5c15ecc4/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7c05fefb-45cb-46f9-a0d6-099d5c15ecc4/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7c05fefb-45cb-46f9-a0d6-099d5c15ecc4/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7c05fefb-45cb-46f9-a0d6-099d5c15ecc4/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7c05fefb-45cb-46f9-a0d6-099d5c15ecc4/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7c05fefb-45cb-46f9-a0d6-099d5c15ecc4/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/7c05fefb-45cb-46f9-a0d6-099d5c15ecc4"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "fa281870-534e-411a-bdc2-43c8dbd915ee",
+    "attributes": {
+      "description": "כמעט כל מי שמשחק שחמט היה רוצה להשתפר. וכמעט לאף אחד לא יושב לידו מישהו שיודע לומר למה מהלך מסוים עבד.\n\nBrass Pawn הוא הכיסא הזה. אתה משחק מהלך והוא נקרא מיד: המהלך החזק יותר מקבל שם, נאמר כמה הוא היה שווה ברגלים, ונפרשת הווריאציה שהייתה נובעת. הדלק את ההערכות וכל משבצת שאליה יכולת ללכת נושאת מספר משלה — אתה שוקל מהלך לפני שאתה משחק אותו, במקום לתהות אחריו.\n\nשני מנועים, לא אחד\nStockfish ו-Reckless נמצאים שניהם בתוך האפליקציה. שחק מול אחד מהם, או הושב אותם זה מול זה והתבונן. מנוע שני הוא דעה שנייה, והעמדות שבהן הם חלוקים הן אלה ששוות את זמנך.\n\nארבעה עשר אלף תרגילים, נבחרים עבורך\nטקטיקה נלקחת ממה שאתה מפספס, לא באקראי. Rush, כשאתה רוצה שעון. חמישה עשר תרגילי סיום מול מנוע שלא ייתן לתיקו לחמוק. מאה ושישה עשר תרגילים עמדתיים. ו-Guess the Elo: אלף ושש מאות משחקים אמיתיים, ואתה אומר כמה חזקים היו השחקנים. מהנה יותר משזה נשמע, וקשה יותר.\n\nתשע מאות משחקים ששווה לראות\nכולם הוכרעו, בין שני שחקנים בעלי שם, והסתיימו בתוך עשרים וחמישה מהלכים או מפורסמים דיים כדי שיהיה להם שם משלהם. חפש שחקן, צפה במשחק נפרש, וברגע שהיית משחק אחרת — קח פיקוד והמשך בעצמך.\n\nלוח שרוצים להסתכל עליו\nמערכת מצולמת על לוח מואר, תלת-ממדי או שטוח, עם תשעה סגנונות לוח וחמש מערכות כלים. הצב עמדה ביד או הדבק משחק, והמשך משם.\n\nשום דבר לא עוזב את המכשיר\nבלי חשבון, בלי התחברות, בלי אנליטיקה, בלי פרסומות. שני המנועים רצים על הטלפון, כך שהכול עובד במצב טיסה. שום דבר לא נאסף, ולכן מדיניות הפרטיות קצרה מהרוב. שלושים ואחת שפות.\n\nמה חינם\nחמישה מכל סוג, כדי לראות אם זה מתאים לך: חמש חידות, חמישה סיומים, חמישה משחקים מול המנוע, וכן הלאה. משם המנוי ממשיך, ואין פרסומות בשום שלב.\n\nBrass Pawn הוא קוד פתוח, תחת רישיון GNU AGPL v3.\n\nמנוי\nהמשחק חינם ויישאר חינם — בלי הגבלה ובלי פרסומות. ‏Brass Pawn Pro מסיר את מגבלת חמשת התרגילים ביום; יש מנוי חודשי ורכישה חד-פעמית שאינה מתחדשת לעולם.\n\nהתשלום ייגבה מחשבון ה-Apple שלך עם אישור הרכישה. המנוי מתחדש אוטומטית אלא אם בוטל לפחות 24 שעות לפני תום התקופה הנוכחית; החיוב מתבצע בתוך 24 השעות שלפני החידוש. אפשר לנהל או לבטל אותו בהגדרות חשבון ה-App Store.\n\nתנאי שימוש (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nמדיניות פרטיות: https://brasspawn.com/privacy",
+      "locale": "he",
+      "keywords": "stockfish,פתיחה,ניתוח,לוח,לא מקוון,דירוג,ללמוד,אסטרטגיה,משחק,מט,אימון,מתחילים,תרגול,קרב",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/fa281870-534e-411a-bdc2-43c8dbd915ee/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/fa281870-534e-411a-bdc2-43c8dbd915ee/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/fa281870-534e-411a-bdc2-43c8dbd915ee/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/fa281870-534e-411a-bdc2-43c8dbd915ee/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/fa281870-534e-411a-bdc2-43c8dbd915ee/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/fa281870-534e-411a-bdc2-43c8dbd915ee/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/fa281870-534e-411a-bdc2-43c8dbd915ee"
+    }
+  },
+  {
+    "type": "appStoreVersionLocalizations",
+    "id": "98f83d14-28a7-436b-9fa5-29500cebf436",
+    "attributes": {
+      "description": "Quasi tutti quelli che giocano a scacchi vorrebbero migliorare. Quasi nessuno ha qualcuno seduto accanto capace di dire perché una mossa ha funzionato.\n\nBrass Pawn è quella sedia. Giochi una mossa e viene letta subito: la mossa più forte viene nominata, quanto valeva in pedoni, e la linea che ne sarebbe seguita. Accendi i valori e ogni casa dove potresti andare porta il proprio numero, così soppesi una mossa prima di farla invece di chiedertelo dopo.\n\nDUE MOTORI, NON UNO\nStockfish e Reckless stanno entrambi dentro l'app. Gioca contro l'uno o l'altro, oppure mettili uno di fronte all'altro e guarda. Un secondo motore è un secondo parere, e le posizioni in cui non concordano sono quelle che valgono il tuo tempo.\n\nQUATTORDICIMILA ESERCIZI, SCELTI PER TE\nTattica presa da ciò che ti resiste, non a caso. Rush, quando vuoi l'orologio. Quindici finali contro un motore che non lascerà scappare una patta. Centosedici esercizi posizionali. E Guess the Elo: milleseicento partite vere, e sei tu a dire quanto erano forti i giocatori. È più divertente di quanto sembri, e più difficile.\n\nNOVECENTO PARTITE CHE VALE LA PENA GUARDARE\nTutte decisive, fra due giocatori con un nome, e o concluse entro venticinque mosse o abbastanza famose da avere un nome proprio. Cerca un giocatore, guarda la partita svolgersi e, appena avresti giocato diversamente, prendila in mano e continua tu.\n\nUNA SCACCHIERA CHE VIENE VOGLIA DI GUARDARE\nUn set fotografato su scacchiera illuminata, in rilievo o in piano, con nove stili di scacchiera e cinque set di pezzi. Componi una posizione a mano o incolla una partita, e riparti da lì.\n\nNIENTE LASCIA IL DISPOSITIVO\nNessun account, nessun accesso, nessuna analitica, nessuna pubblicità. Entrambi i motori girano sul tuo telefono, quindi tutto funziona in modalità aereo. Non viene raccolto nulla, il che rende l'informativa più corta della media. Trentuno lingue.\n\nCOSA È GRATIS\nCinque di ogni tipo, per vedere se fa per te: cinque esercizi, cinque finali, cinque partite contro il motore, e così via. Da lì prosegue un abbonamento, e non c'è pubblicità in nessun momento.\n\nBrass Pawn è open source, sotto GNU AGPL v3.\n\nABBONAMENTO\nGiocare è gratis e lo resterà, senza limiti e senza pubblicità. Brass Pawn Pro toglie il limite di cinque esercizi al giorno; ci sono un abbonamento mensile e uno sblocco una tantum che non si rinnova mai.\n\nIl pagamento viene addebitato sull’account Apple alla conferma dell’acquisto. L’abbonamento si rinnova automaticamente se non viene disdetto almeno 24 ore prima della fine del periodo in corso; l’addebito avviene nelle 24 ore precedenti il rinnovo. Puoi gestirlo o disdirlo nelle impostazioni del tuo account App Store.\n\nCondizioni d’uso (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nInformativa sulla privacy: https://brasspawn.com/privacy",
+      "locale": "it",
+      "keywords": "stockfish,apertura,analisi,scacchiera,offline,elo,imparare,strategia,partita,gioco,matto,livello",
+      "marketingUrl": "https://brasspawn.com",
+      "promotionalText": null,
+      "supportUrl": "https://brasspawn.com/support",
+      "whatsNew": null
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/98f83d14-28a7-436b-9fa5-29500cebf436/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/98f83d14-28a7-436b-9fa5-29500cebf436/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/98f83d14-28a7-436b-9fa5-29500cebf436/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/98f83d14-28a7-436b-9fa5-29500cebf436/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/98f83d14-28a7-436b-9fa5-29500cebf436/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/98f83d14-28a7-436b-9fa5-29500cebf436/searchKeywords"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/98f83d14-28a7-436b-9fa5-29500cebf436"
+    }
+  }
+]

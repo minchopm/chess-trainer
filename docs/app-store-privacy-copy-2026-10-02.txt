@@ -1,0 +1,34 @@
+Brass Pawn — proposed App Store privacy clarification
+Prepared 2 October 2026. Not published.
+
+DESCRIPTION SECTION — replace the outdated “NOTHING LEAVES THE DEVICE” section:
+
+YOUR TRAINING STAYS ON YOUR DEVICE
+Your puzzle progress, training history and chess analysis stay on your device. Both chess engines run locally. No ads. No advertising tracking. No access to your phone's address book.
+
+Online features help you find someone to play: Game Center provides matchmaking and leaderboards. Our online service uses a player identifier and online status to show available opponents, and stores the friends you choose to add inside Brass Pawn so you can invite them again. You can turn off “Show when I'm online” in Settings and remove in-app friends whenever you choose.
+
+The App Store's “Contacts” category refers to these in-game friendships, not the contacts saved on your phone. This information is used for online play, not advertising.
+
+PRIVACY CHOICES URL
+https://brasspawn.com/privacy#label
+The existing page explains the label; it also describes the available controls.
+
+LABEL AUDIT — retain current categories for current implementation
+Contacts: linked to player identity; App Functionality; no tracking. Server stores a social graph of in-game friends and requests.
+User ID: linked; App Functionality; no tracking. Hashed Game Center player identifiers and player nicknames identify players; hashing does not make these anonymous.
+Gameplay Content: linked; App Functionality; no tracking. Online/matchmaking status and invitations support online play.
+
+Do not switch to Data Not Collected for the current implementation.
+Do not remove Contacts while the developer-operated service stores in-game friendships.
+Apple defines Contacts to include a social graph, not only an address book.
+
+Evidence:
+ios/Sources/BrassPawnApp/OnlineService.swift
+scripts/presence/friends.mjs
+scripts/presence/dynamo.mjs
+ios/App/PrivacyInfo.xcprivacy
+https://developer.apple.com/app-store/app-privacy-details/
+
+The older docs/app-privacy.md describes the pre-online-service implementation and must not be used as the current declaration.
+App Store Connect requires sign-in before any metadata can be updated.
