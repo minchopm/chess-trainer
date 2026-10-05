@@ -1,0 +1,750 @@
+{
+  "date": "2026-10-05",
+  "pulledAt": "2026-10-05T19:45:01.770Z",
+  "stories": [
+    {
+      "id": "2026-10-05-dardha-magold-romanian-team-chess-championships-r3",
+      "status": "approved",
+      "date": "2026-10-05",
+      "rank": 0,
+      "weight": 362,
+      "event": {
+        "name": "Romanian Team Chess Championships 2026",
+        "short": "Romanian Team Chess Championships",
+        "section": "Men’s Super league",
+        "round": 3,
+        "location": "Eforie Nord, Romania",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-mens-super-league/round-3/Fb2iQqa6"
+      },
+      "white": {
+        "name": "Daniel Dardha",
+        "short": "Dardha",
+        "title": "GM",
+        "elo": 2612,
+        "team": "ACS SUPERCHESS"
+      },
+      "black": {
+        "name": "Filip Magold",
+        "short": "Magold",
+        "title": "IM",
+        "elo": 2494,
+        "team": "VADOS IFB FINWEST ARAD"
+      },
+      "result": "1-0",
+      "opening": {
+        "eco": "B32",
+        "name": "Sicilian Defense: O'Kelly Variation, Maróczy Bind, Geller Line"
+      },
+      "moves": "e4 c5 Nf3 a6 c4 Nc6 d4 cxd4 Nxd4 e5 Nf5 d5 cxd5 Bxf5 exf5 Nd4 Nc3 Nf6 Bd3 Be7 O-O O-O Re1 Nxd5 Nxd5 Qxd5 Qg4 Bf6 Be4 Qd6 Rd1 Rfd8 Bd2 Qb6 Bc3 Rac8 g3 a5 Kg2 Nb5 Bd2 Nd4 Rab1 Qa6 h4 Kh8 Rbc1 b6 Rc3 Qb5 Bc1 Qa4 a3 Nb3 Be3 Rxc3 Rxd8+ Bxd8 bxc3 Bf6 Qf3 Nc5 Bd5 Nd3 Kh2 e4 Qxe4 Qxe4 Bxe4 Nc5 Bd5 Kg8 Bd2 Na4 c4 Be7 Bc1 Nc5 Be3 Na4 Bc6 Nb2 Bb5 Bxa3 Bxb6 Nd3 Bxa5 Nxf2 Kg2 Bc5 Bc7 Kf8 Kf3 Ke7 g4 f6 Ba4 Nd3 Ke4 Nb4 g5 Na6 gxf6+ gxf6 Kd5 Ba3 Bb6 Nb4+ Kd4 Bb2+ Kc5 Nd3+ Kc6 Bc3 h5 Bd2 Bb5 Nf4 c5 Nxh5 Kb7 Ng7 c6 Bf4 Bd3 Ne8 c7 Kf7 Kc6 Nxc7 Bxc7 Be3 Be2 Kg7 Kd5 Kh6 Ke4 Bc5 Bf4+ Kg7 Kd5 Bb4 Be3 Bc3 Ke4 Kf7 Kf4 Bb4 Bc4+ Ke7 Kg4 Kd6 Bg8 Ke5 Bxh7 Ke4 Bf2 Kd5",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 136,
+        "played": "Kh6",
+        "better": null,
+        "reply": "Ke4",
+        "replyPlayed": true,
+        "before": {
+          "cp": 417,
+          "mate": null
+        },
+        "after": {
+          "cp": 394,
+          "mate": null
+        },
+        "clock": 81
+      },
+      "headline": "Two bishops against one, 79 moves, and Superchess beat Vados 4–2",
+      "body": "GM Daniel Dardha (ACS Superchess, 2612) beat IM Filip Magold (Vados IFB Finwest Arad, 2494) in 79 moves in round 3 of the Romanian Super League, in an ending of two bishops against one.\n\nAt 68...Kh6, played with 1:21 left, Stockfish already counted a win for White (+4.17 before, +3.94 after). Ten moves later, 78.Bxh7 took the pawn on h7.\n\nACS Superchess won the match 4–2 and have three wins from three, level at the top with ACS Arnia Chessit. It was Dardha's second win in two days.\n\nTake the two bishops from 68...Kh6 and try to win it against the engine in fewer moves.",
+      "words": {
+        "ar": {
+          "headline": "فيلان ضد فيل، و79 نقلة، وفريق Superchess يتغلب على Vados ⁨4–2⁩",
+          "body": "انتهى الدور بفوز GM Daniel Dardha (ACS Superchess، 2612) على IM Filip Magold (Vados IFB Finwest Arad، 2494) في 79 نقلة، في الجولة الثالثة من الدوري الروماني الممتاز، في نهاية فيلين ضد فيل.\n\nعند ⁨68...Kh6⁩، التي لُعبت والوقت المتبقي ⁨1:21⁩، كان Stockfish يعدّ الوضع فوزًا للأبيض أصلًا (⁨+4.17⁩ قبلها، و⁨+3.94⁩ بعدها). وبعد عشر نقلات، أخذت ⁨78.Bxh7⁩ البيدق على h7.\n\nفاز فريق ACS Superchess بالمباراة ⁨4–2⁩، وله ثلاثة انتصارات من ثلاث مباريات، متساويًا في الصدارة مع ACS Arnia Chessit. وكان هذا ثاني فوز لـDardha في يومين.\n\nخذ الفيلين من ⁨68...Kh6⁩ وحاول الفوز ضد المحرك في عدد أقل من النقلات."
+        },
+        "bg": {
+          "headline": "Два офицера срещу един, 79 хода и Superchess бие Vados с 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) победи IM Filip Magold (Vados IFB Finwest Arad, 2494) за 79 хода в третия кръг на румънската Суперлига, в ендшпил с два офицера срещу един.\n\nПри 68...Kh6, изигран с 1:21 на часовника, Stockfish вече даваше печеливша позиция за белите (+4,17 преди хода, +3,94 след него). Десет хода по-късно 78.Bxh7 взе пешката на h7.\n\nACS Superchess спечели мача с 4–2 и има три победи от три, наравно на върха с ACS Arnia Chessit. Това беше втората победа на Dardha за два дни.\n\nВземете двата офицера от 68...Kh6 и опитайте да спечелите срещу енджина с по-малко ходове."
+        },
+        "cs": {
+          "headline": "Dva střelci proti jednomu, 79 tahů a Superchess poráží Vados 4–2",
+          "body": "V partii GM Daniel Dardha (ACS Superchess, 2612) – IM Filip Magold (Vados IFB Finwest Arad, 2494) ve 3. kole rumunské superligy vyhrává po 79 tazích Dardha, v koncovce dvou střelců proti jednomu.\n\nU tahu 68...Kh6, zahraného s 1:21 na hodinách, už Stockfish viděl výhru bílých (+4,17 předtím, +3,94 potom). O deset tahů později vzal 78.Bxh7 pěšce na h7.\n\nACS Superchess vyhrává zápas 4–2, má tři výhry ze tří a dělí se o čelo s ACS Arnia Chessit. Dardha vyhrává podruhé za dva dny.\n\nVezmi si dva střelce z pozice po 68...Kh6 a zkus proti enginu vyhrát na méně tahů."
+        },
+        "da": {
+          "headline": "To løbere mod én, 79 træk, og Superchess slår Vados 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) slog IM Filip Magold (Vados IFB Finwest Arad, 2494) i 79 træk i 3. runde af den rumænske superliga, i et slutspil med to løbere mod én.\n\nVed 68...Kh6, spillet med 1:21 tilbage, så Stockfish allerede hvid til gevinst (+4,17 før, +3,94 efter). Ti træk senere slog 78.Bxh7 bonden på h7.\n\nACS Superchess vandt matchen 4–2 og har tre sejre i tre runder, på delt førsteplads med ACS Arnia Chessit. Det var Dardhas anden sejr på to dage.\n\nTag de to løbere fra 68...Kh6, og prøv at vinde mod motoren i færre træk."
+        },
+        "de": {
+          "headline": "Zwei Läufer gegen einen, 79 Züge, und Superchess schlägt Vados 4:2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) schlug IM Filip Magold (Vados IFB Finwest Arad, 2494) in Runde 3 der rumänischen Superliga in 79 Zügen, in einem Endspiel mit zwei Läufern gegen einen.\n\nBei 68...Kh6, gespielt mit 1:21 auf der Uhr, sah Stockfish Weiß schon auf Gewinn (+4,17 davor, +3,94 danach). Zehn Züge später schlug 78.Bxh7 den Bauern auf h7.\n\nACS Superchess gewann den Kampf 4:2, hat drei Siege aus drei Runden und liegt punktgleich mit ACS Arnia Chessit an der Spitze. Es war der zweite Sieg für Dardha in zwei Tagen.\n\nAb 68...Kh6 die zwei Läufer übernehmen und versuchen, gegen die Engine in weniger Zügen zu gewinnen."
+        },
+        "el": {
+          "headline": "Δύο αξιωματικοί κόντρα σε έναν, 79 κινήσεις, και η Superchess νικά τη Vados 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) επικράτησε επί IM Filip Magold (Vados IFB Finwest Arad, 2494) σε 79 κινήσεις στον 3ο γύρο της ρουμανικής Σούπερ Λίγκας, σε φινάλε δύο αξιωματικών κόντρα σε έναν.\n\nΣτην 68...Kh6, που παίχτηκε με 1:21 στο ρολόι, το Stockfish έβλεπε ήδη νίκη για τα λευκά (+4,17 πριν, +3,94 μετά). Δέκα κινήσεις αργότερα, η 78.Bxh7 πήρε το πιόνι στο h7.\n\nΗ ACS Superchess κέρδισε τον αγώνα με 4–2 και έχει τρεις νίκες σε τρεις αγώνες, ισόβαθμη στην κορυφή με την ACS Arnia Chessit. Ήταν η δεύτερη νίκη για Dardha σε δύο ημέρες.\n\nΠάρε τους δύο αξιωματικούς από την 68...Kh6 και προσπάθησε να κερδίσεις απέναντι στη μηχανή σε λιγότερες κινήσεις."
+        },
+        "es": {
+          "headline": "Dos alfiles contra uno, 79 jugadas, y Superchess vence 4–2 a Vados",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) venció a IM Filip Magold (Vados IFB Finwest Arad, 2494) en 79 jugadas en la tercera ronda de la Superliga rumana, en un final de dos alfiles contra uno.\n\nEn 68...Kh6, hecha con 1:21 en el reloj, Stockfish ya daba victoria blanca (+4,17 antes, +3,94 después). Diez jugadas después, 78.Bxh7 tomó el peón de h7.\n\nACS Superchess ganó el match 4–2 y suma tres victorias en tres rondas, compartiendo el liderato con ACS Arnia Chessit. Fue la segunda victoria de Dardha en dos días.\n\nToma los dos alfiles desde 68...Kh6 e intenta ganar contra el motor en menos jugadas."
+        },
+        "fi": {
+          "headline": "Kaksi lähettiä yhtä vastaan, 79 siirtoa, ja Superchess kaataa Vadosin 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) voitti IM Filip Magoldin (Vados IFB Finwest Arad, 2494) 79 siirrossa Romanian superliigan 3. kierroksella loppupelissä, jossa kaksi lähettiä oli yhtä vastaan.\n\nSiirrolla 68...Kh6, joka pelattiin kellossa 1:21 jäljellä, Stockfish arvioi aseman jo voitoksi valkealle (+4,17 ennen, +3,94 jälkeen). Kymmenen siirtoa myöhemmin 78.Bxh7 löi h7:n sotilaan.\n\nACS Superchess voitti ottelun 4–2, ja sillä on kolme voittoa kolmesta, tasoissa kärjessä ACS Arnia Chessitin kanssa. Se oli Dardhan toinen voitto kahdessa päivässä.\n\nOta kaksi lähettiä siirrosta 68...Kh6 ja yritä voittaa moottoria vastaan vähemmillä siirroilla.",
+          "lede": "GM Daniel Dardha (ACS Superchess, 2612) voitti IM Filip Magoldin (Vados IFB Finwest Arad, 2494) 79 siirrossa Romanian superliigan 3. kierroksella loppupelissä, jossa kaksi lähettiä oli yhtä vastaan."
+        },
+        "fr": {
+          "headline": "Deux fous contre un, 79 coups, et Superchess bat Vados 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) a battu IM Filip Magold (Vados IFB Finwest Arad, 2494) en 79 coups lors de la 3e ronde de la Super Ligue roumaine, dans une finale deux fous contre un.\n\nSur 68...Kh6, joué avec 1:21 à la pendule, Stockfish donnait déjà un gain pour les Blancs (+4,17 avant, +3,94 après). Dix coups plus tard, 78.Bxh7 a pris le pion en h7.\n\nACS Superchess a gagné le match 4–2 et compte trois victoires en trois rondes, à égalité en tête avec ACS Arnia Chessit. C’était la deuxième victoire de Dardha en deux jours.\n\nReprenez les deux fous à partir de 68...Kh6 et essayez de gagner contre le moteur en moins de coups."
+        },
+        "he": {
+          "headline": "שני רצים מול אחד, 79 מסעים, ו־Superchess גוברת על Vados ⁨4–2⁩",
+          "body": "המשחק בסיבוב ה־3 של ליגת העל הרומנית הסתיים בניצחון ל־GM Daniel Dardha (ACS Superchess, 2612) על IM Filip Magold (Vados IFB Finwest Arad, 2494) אחרי 79 מסעים, בסיום של שני רצים מול אחד.\n\nב־⁨68...Kh6⁩, ששוחק כשנותרו ⁨1:21⁩, Stockfish כבר העריך עמדה מנצחת ללבן (⁨+4.17⁩ לפני, ⁨+3.94⁩ אחרי). עשרה מסעים אחר כך, ⁨78.Bxh7⁩ לקח את הרגלי ב־h7.\n\nהקבוצה ACS Superchess ניצחה במפגש ⁨4–2⁩, ועם שלושה ניצחונות משלושה מפגשים הקבוצה חולקת את המקום הראשון עם ACS Arnia Chessit. זה היה הניצחון השני של Dardha ביומיים.\n\nקחו את שני הרצים מ־⁨68...Kh6⁩ ונסו לנצח מול המנוע במספר קטן יותר של מסעים."
+        },
+        "hi": {
+          "headline": "एक ऊँट के ख़िलाफ़ दो ऊँट, 79 चालें, और Superchess ने Vados को 4–2 से हराया",
+          "body": "रोमानियाई सुपर लीग के राउंड 3 में GM Daniel Dardha (ACS Superchess, 2612) ने IM Filip Magold (Vados IFB Finwest Arad, 2494) को 79 चालों में हराया, एक ऊँट के ख़िलाफ़ दो ऊँट वाले एंडगेम में।\n\n68...Kh6 पर, जो 1:21 बचे रहते खेला गया, Stockfish पहले ही इसे सफ़ेद की जीत की स्थिति मान रहा था (पहले +4.17, बाद में +3.94)। दस चाल बाद 78.Bxh7 ने h7 पर प्यादा लिया।\n\nACS Superchess ने मुक़ाबला 4–2 से जीता और तीन में से तीन जीतों के साथ ACS Arnia Chessit के बराबर शीर्ष पर है। दो दिन में यह Dardha की दूसरी जीत थी।\n\n68...Kh6 से दो ऊँटों के साथ खेलें और इंजन के ख़िलाफ़ कम चालों में जीतने की कोशिश करें।"
+        },
+        "hu": {
+          "headline": "Két futó egy ellen, 79 lépés, és a Superchess 4–2-re verte a Vadost",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) 79 lépésben nyert IM Filip Magold (Vados IFB Finwest Arad, 2494) ellen a román Szuperliga 3. fordulójában, egy olyan végjátékban, amelyben két futó állt egy ellen.\n\nA 68...Kh6 lépésnél, amely 1:21-gyel az órán született, a Stockfish már világos nyerését látta (előtte +4,17, utána +3,94). Tíz lépéssel később a 78.Bxh7 leütötte a h7-es gyalogot.\n\nAz ACS Superchess 4–2 arányban megnyerte a mérkőzést, három fordulóból három győzelemmel áll, és holtversenyben vezet az ACS Arnia Chessit csapatával. Dardha két nap alatt másodszor nyert.\n\nVedd át a két futót a 68...Kh6 lépéstől, és próbáld meg kevesebb lépésből megnyerni a motor ellen."
+        },
+        "id": {
+          "headline": "Dua gajah lawan satu, 79 langkah, dan Superchess kalahkan Vados 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) mengalahkan IM Filip Magold (Vados IFB Finwest Arad, 2494) dalam 79 langkah di babak 3 Liga Super Rumania, dalam akhir permainan dua gajah lawan satu.\n\nPada 68...Kh6, yang dimainkan dengan sisa 1:21, Stockfish sudah menilai Putih menang (+4,17 sebelumnya, +3,94 sesudahnya). Sepuluh langkah kemudian, 78.Bxh7 mengambil pion di h7.\n\nACS Superchess memenangi pertandingan 4–2 dan mencatat tiga kemenangan dari tiga, sejajar di puncak dengan ACS Arnia Chessit. Itu kemenangan kedua Dardha dalam dua hari.\n\nAmbil kedua gajah itu dari 68...Kh6 dan coba menangkan partainya melawan mesin dalam langkah yang lebih sedikit."
+        },
+        "it": {
+          "headline": "Due Alfieri contro uno, 79 mosse, e Superchess batte Vados 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) ha battuto IM Filip Magold (Vados IFB Finwest Arad, 2494) in 79 mosse nel 3º turno della Superlega rumena, in un finale di due Alfieri contro uno.\n\nSu 68...Kh6, giocata con 1:21 sull’orologio, Stockfish dava già la vittoria al Bianco (+4,17 prima, +3,94 dopo). Dieci mosse più tardi, 78.Bxh7 ha preso il pedone in h7.\n\nACS Superchess ha vinto il match 4–2 e conta tre vittorie su tre, in testa a pari merito con ACS Arnia Chessit. È stata la seconda vittoria di Dardha in due giorni.\n\nRiprendi i due Alfieri da 68...Kh6 e prova a vincere contro il motore in meno mosse."
+        },
+        "ja": {
+          "headline": "ビショップ二つ対一つ、79手、SuperchessがVadosに4–2で勝利",
+          "body": "GM Daniel Dardha（ACS Superchess、2612）が、ルーマニア・スーパーリーグ第3ラウンドで、ビショップ二つ対一つのエンディングの末にIM Filip Magold（Vados IFB Finwest Arad、2494）に79手で勝ちました。\n\n残り1:21で指された68...Kh6の時点で、Stockfishはすでに白の勝勢と見ていました（手の前+4.17、後+3.94）。十手後、78.Bxh7がh7のポーンを取りました。\n\nACS Superchessはマッチを4–2で制して3戦3勝とし、ACS Arnia Chessitと並んで首位に立っています。Dardhaにとっては二日間で二勝目でした。\n\n68...Kh6から二つのビショップを持ち、エンジン相手により少ない手数で勝てるか試してみましょう。"
+        },
+        "ko": {
+          "headline": "비숍 두 개 대 하나, 79수… Superchess, Vados에 4–2 승리",
+          "body": "GM Daniel Dardha(ACS Superchess, 2612)가 루마니아 슈퍼리그 3라운드에서 비숍 두 개 대 하나의 엔드게임 끝에 IM Filip Magold(Vados IFB Finwest Arad, 2494)에게 79수 만에 이겼습니다.\n\n1:21를 남기고 둔 68...Kh6 시점에 Stockfish는 이미 백이 이기는 형세로 보고 있었습니다(이 수 전 +4.17, 이후 +3.94). 열 수 뒤 78.Bxh7가 h7의 폰을 잡았습니다.\n\nACS Superchess는 매치를 4–2로 이겨 3전 전승을 기록했고, ACS Arnia Chessit와 함께 공동 선두에 올라 있습니다. Dardha에게는 이틀 사이 두 번째 승리였습니다.\n\n68...Kh6부터 비숍 두 개를 들고, 엔진을 상대로 더 적은 수 안에 이길 수 있는지 도전해 보세요."
+        },
+        "ms": {
+          "headline": "Dua gajah menentang satu, 79 langkah, dan Superchess tewaskan Vados 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) menewaskan IM Filip Magold (Vados IFB Finwest Arad, 2494) dalam 79 langkah dalam pusingan 3 Liga Super Romania, dalam akhir permainan dua gajah menentang satu.\n\nPada 68...Kh6, yang dimainkan dengan baki 1:21, Stockfish sudah menilai Putih menang (+4,17 sebelumnya, +3,94 selepasnya). Sepuluh langkah kemudian, 78.Bxh7 mengambil bidak di h7.\n\nACS Superchess memenangi perlawanan 4–2 dan mencatat tiga kemenangan daripada tiga, sama mata di tangga teratas dengan ACS Arnia Chessit. Itulah kemenangan kedua Dardha dalam dua hari.\n\nAmbil kedua-dua gajah dari 68...Kh6 dan cuba menang menentang enjin dalam langkah yang lebih sedikit."
+        },
+        "nl": {
+          "headline": "Twee lopers tegen één, 79 zetten, en Superchess verslaat Vados met 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) versloeg IM Filip Magold (Vados IFB Finwest Arad, 2494) in 79 zetten in ronde 3 van de Roemeense Superliga, in een eindspel van twee lopers tegen één.\n\nBij 68...Kh6, gespeeld met nog 1:21, zag Stockfish wit al gewonnen staan (+4,17 ervoor, +3,94 erna). Tien zetten later sloeg 78.Bxh7 de pion op h7.\n\nACS Superchess won de match met 4–2, heeft drie zeges uit drie en staat samen met ACS Arnia Chessit bovenaan. Het was de tweede zege van Dardha in twee dagen.\n\nNeem vanaf 68...Kh6 de twee lopers over en probeer tegen de engine in minder zetten te winnen."
+        },
+        "no": {
+          "headline": "To løpere mot én, 79 trekk, og Superchess slår Vados 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) slo IM Filip Magold (Vados IFB Finwest Arad, 2494) på 79 trekk i 3. runde av den rumenske superligaen, i et sluttspill med to løpere mot én.\n\nVed 68...Kh6, spilt med 1:21 igjen, regnet Stockfish allerede med gevinst for hvit (+4,17 før, +3,94 etter). Ti trekk senere tok 78.Bxh7 bonden på h7.\n\nACS Superchess vant matchen 4–2 og har tre seire på tre runder, i delt ledelse med ACS Arnia Chessit. Det var Dardhas andre seier på to dager.\n\nTa de to løperne fra 68...Kh6, og prøv å vinne mot motoren på færre trekk."
+        },
+        "pl": {
+          "headline": "Dwa gońce przeciwko jednemu, 79 ruchów i Superchess pokonuje Vados 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) pokonuje IM Filip Magold (Vados IFB Finwest Arad, 2494) w 79 ruchach w 3. rundzie rumuńskiej Superligi, w końcówce dwóch gońców przeciwko jednemu.\n\nPrzy 68...Kh6, zagranym z 1:21 na zegarze, Stockfish oceniał już pozycję jako wygraną dla białych (+4,17 przed ruchem, +3,94 po nim). Dziesięć ruchów później 78.Bxh7 zabrało pionka na h7.\n\nACS Superchess wygrywa mecz 4–2, ma trzy zwycięstwa w trzech meczach i dzieli prowadzenie z ACS Arnia Chessit. Dardha wygrywa po raz drugi w ciągu dwóch dni.\n\nWeź dwa gońce od 68...Kh6 i spróbuj wygrać przeciwko silnikowi w mniejszej liczbie ruchów."
+        },
+        "pt-BR": {
+          "headline": "Dois bispos contra um, 79 lances, e o Superchess vence o Vados por 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) venceu IM Filip Magold (Vados IFB Finwest Arad, 2494) em 79 lances na 3ª rodada da Superliga Romena, num final de dois bispos contra um.\n\nEm 68...Kh6, jogado com 1:21 no relógio, o Stockfish já via vitória das brancas (+4,17 antes, +3,94 depois). Dez lances depois, 78.Bxh7 capturou o peão em h7.\n\nO ACS Superchess venceu o match por 4–2 e soma três vitórias em três rodadas, dividindo a liderança com o ACS Arnia Chessit. Foi a segunda vitória de Dardha em dois dias.\n\nPegue os dois bispos a partir de 68...Kh6 e tente vencer contra o motor em menos lances."
+        },
+        "ro": {
+          "headline": "Doi nebuni contra unuia, 79 de mutări, iar Superchess învinge Vados cu 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) a câștigat contra IM Filip Magold (Vados IFB Finwest Arad, 2494) în 79 de mutări, în runda a 3-a a Superligii României, într-un final de doi nebuni contra unuia.\n\nLa 68...Kh6, jucată cu 1:21 rămase, Stockfish vedea deja o poziție câștigătoare pentru Alb (+4,17 înainte, +3,94 după). Zece mutări mai târziu, 78.Bxh7 a luat pionul de pe h7.\n\nACS Superchess a câștigat meciul cu 4–2 și are trei victorii din trei, la egalitate în frunte cu ACS Arnia Chessit. A fost a doua victorie a lui Dardha în două zile.\n\nPreia cei doi nebuni de la 68...Kh6 și încearcă să câștigi contra motorului în mai puține mutări."
+        },
+        "ru": {
+          "headline": "Два слона против одного, 79 ходов — и Superchess обыгрывает Vados 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) обыгрывает IM Filip Magold (Vados IFB Finwest Arad, 2494) за 79 ходов в 3-м туре румынской Суперлиги в эндшпиле двух слонов против одного.\n\nКогда на доске появился 68...Kh6 (на часах оставалось 1:21), Stockfish уже давал белым выигрыш: +4,17 до хода и +3,94 после. Десятью ходами позже 78.Bxh7 взял пешку h7.\n\nACS Superchess выигрывает матч 4–2: у команды три победы в трёх турах и первое место, которое она делит с ACS Arnia Chessit. Для Dardha это вторая победа за два дня.\n\nВозьмите двух слонов в позиции после 68...Kh6 и попробуйте выиграть против движка за меньшее число ходов."
+        },
+        "sv": {
+          "headline": "Två löpare mot en, 79 drag, och Superchess besegrar Vados med 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) besegrade IM Filip Magold (Vados IFB Finwest Arad, 2494) på 79 drag i rond 3 av rumänska superligan, i ett slutspel med två löpare mot en.\n\nVid 68...Kh6, spelat med 1:21 kvar, räknade Stockfish redan med vinst för vit (+4,17 före, +3,94 efter). Tio drag senare tog 78.Bxh7 bonden på h7.\n\nACS Superchess vann matchen med 4–2 och har tre vinster på tre ronder, i delad ledning med ACS Arnia Chessit. Det var Dardhas andra vinst på två dagar.\n\nTa de två löparna från 68...Kh6 och försök vinna mot motorn på färre drag."
+        },
+        "th": {
+          "headline": "บิชอปสองตัวต่อหนึ่ง 79 ตา และ Superchess ชนะ Vados 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) ชนะ IM Filip Magold (Vados IFB Finwest Arad, 2494) ใน 79 ตา ในรอบที่ 3 ของซูเปอร์ลีกโรมาเนีย ในช่วงท้ายเกมบิชอปสองตัวต่อหนึ่งตัว\n\nที่ 68...Kh6 ซึ่งเดินเมื่อเหลือเวลา 1:21 Stockfish ประเมินอยู่แล้วว่าฝ่ายขาวอยู่ในสถานะชนะ (+4.17 ก่อนตานั้น และ +3.94 หลังตานั้น) อีกสิบตาต่อมา 78.Bxh7 ก็กินเบี้ยที่ h7\n\nACS Superchess ชนะแมตช์ 4–2 และชนะครบสามจากสามแมตช์ ครองอันดับหนึ่งร่วมกับ ACS Arnia Chessit นี่เป็นชัยชนะครั้งที่สองในสองวันของ Dardha\n\nรับเล่นฝ่ายบิชอปสองตัวตั้งแต่ 68...Kh6 แล้วลองเอาชนะเอนจินให้ได้ในจำนวนตาที่น้อยกว่านี้"
+        },
+        "tr": {
+          "headline": "Bire karşı iki fil, 79 hamle ve Superchess, Vados'u 4–2 yendi",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612), Romanya Süper Ligi'nin 3. turunda IM Filip Magold'u (Vados IFB Finwest Arad, 2494) bire karşı iki filli oyun sonunda 79 hamlede yendi.\n\nSaatte 1:21 kala oynanan 68...Kh6 hamlesinde Stockfish beyaz için zaten kazanan konum görüyordu (önce +4,17, sonra +3,94). On hamle sonra 78.Bxh7, h7'deki piyonu aldı.\n\nACS Superchess maçı 4–2 kazandı ve üç maçta üç galibiyetle ACS Arnia Chessit ile birlikte zirvede. Bu, Dardha'nın iki günde ikinci galibiyetiydi.\n\nİki fili 68...Kh6 hamlesinden al ve motora karşı daha az hamlede kazanmayı dene.",
+          "lede": "GM Daniel Dardha (ACS Superchess, 2612), Romanya Süper Ligi'nin 3. turunda IM Filip Magold'u (Vados IFB Finwest Arad, 2494) bire karşı iki filli oyun sonunda 79 hamlede yendi."
+        },
+        "vi": {
+          "headline": "Hai Tượng đối một, 79 nước, và Superchess thắng Vados 4–2",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) thắng IM Filip Magold (Vados IFB Finwest Arad, 2494) sau 79 nước ở vòng 3 giải Siêu hạng Romania, trong một tàn cuộc hai Tượng đối một.\n\nỞ 68...Kh6, được đi khi còn 1:21, Stockfish đã đánh giá Trắng ở thế thắng (+4,17 trước nước đó, +3,94 sau nước đó). Mười nước sau, 78.Bxh7 ăn Tốt ở h7.\n\nACS Superchess thắng trận 4–2 và đã thắng cả ba trận, đồng dẫn đầu với ACS Arnia Chessit. Đây là ván thắng thứ hai trong hai ngày của Dardha.\n\nCầm hai Tượng từ 68...Kh6 và thử thắng engine với ít nước hơn."
+        },
+        "zh-Hans": {
+          "headline": "双象对单象，79回合，Superchess 4–2胜Vados",
+          "body": "GM Daniel Dardha（ACS Superchess，2612）在罗马尼亚超级联赛第3轮79回合击败IM Filip Magold（Vados IFB Finwest Arad，2494），决胜的是一个双象对单象的残局。\n\n68...Kh6是在剩1:21时走出的，这时Stockfish已经判定白方胜势（走之前+4.17，走之后+3.94）。十回合之后，78.Bxh7吃掉了h7兵。\n\nACS Superchess以4–2赢下比赛，三战三胜，与ACS Arnia Chessit并列榜首。这是Dardha两天之内的第二场胜利。\n\n从68...Kh6开始执双象，试着用比实战更少的步数战胜引擎。"
+        },
+        "zh-Hant": {
+          "headline": "雙象對單象，79回合，Superchess 4–2勝Vados",
+          "body": "GM Daniel Dardha（ACS Superchess，2612）在羅馬尼亞超級聯賽第3輪79回合擊敗IM Filip Magold（Vados IFB Finwest Arad，2494），決勝的是一個雙象對單象的殘局。\n\n68...Kh6是在剩1:21時走出的，這時Stockfish已經判定白方勝勢（走之前+4.17，走之後+3.94）。十回合之後，78.Bxh7吃掉了h7兵。\n\nACS Superchess以4–2贏下比賽，三戰三勝，與ACS Arnia Chessit並列榜首。這是Dardha兩天之內的第二場勝利。\n\n從68...Kh6開始執雙象，試著用比實戰更少的步數戰勝引擎。"
+        }
+      },
+      "fen": "8/2B4p/5p1k/3K1P2/8/4b3/4B3/8 w - - 5 69",
+      "last": {
+        "from": "g7",
+        "to": "h6"
+      },
+      "url": "https://brasspawn.com/today/2026-10-05-dardha-magold-romanian-team-chess-championships-r3",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-mens-super-league/round-3/Fb2iQqa6/s0V9FJ94"
+      },
+      "updatedAt": "2026-10-05T19:06:20.251Z"
+    },
+    {
+      "id": "2026-10-05-perunovic-bharath-subramaniyam-h-serbian-super-league-r2",
+      "status": "approved",
+      "date": "2026-10-05",
+      "rank": 0,
+      "weight": 456,
+      "event": {
+        "name": "Serbian Super League 2026",
+        "short": "Serbian Super League",
+        "section": "Open",
+        "round": 2,
+        "location": "Vrnjačka Banja - Serbia",
+        "url": "https://lichess.org/broadcast/serbian-super-league-2026-open/round-2/bbKHurKT"
+      },
+      "white": {
+        "name": "Milos Perunovic",
+        "short": "Perunovic",
+        "title": "GM",
+        "elo": 2500,
+        "team": "PTT - Beograd"
+      },
+      "black": {
+        "name": "Bharath Subramaniyam H",
+        "short": "Bharath Subramaniyam H",
+        "title": "GM",
+        "elo": 2603,
+        "team": "RADNIČKI - ZMAJ - Beograd"
+      },
+      "result": "1-0",
+      "opening": {
+        "eco": "B76",
+        "name": "Sicilian Defense: Dragon Variation, Yugoslav Attack, Modern Line"
+      },
+      "moves": "e4 c5 Nf3 d6 d4 cxd4 Nxd4 Nf6 Nc3 g6 Be3 Bg7 f3 Nc6 Qd2 O-O O-O-O d5 exd5 Nxd5 Nxc6 bxc6 Bd4 Bxd4 Qxd4 Qb6 Na4 Qa5 b3 Qc7 h4 Bf5 g4 Be6 Nc5 Rad8 Bc4 Bc8 Bxd5 Rxd5 Qc3 Rfd8 Rde1 h5 Rhg1 Qd6 Nd3 hxg4 fxg4 f6 Kb1 Rd4 Nc5 Kf7 g5 Qd5 h5 Bf5 hxg6+ Kxg6 Rxe7 fxg5 Kb2 g4 Rf1 a5 a4 Qd6 Rfe1 Qh2 Ne6 Bxe6 R1xe6+ Kg5 Rg7+ Kf5 Qe3",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 64,
+        "played": "g4",
+        "better": "Rd6",
+        "reply": "Rf1",
+        "replyPlayed": true,
+        "before": {
+          "cp": 196,
+          "mate": null
+        },
+        "after": {
+          "cp": 310,
+          "mate": null
+        },
+        "clock": 88
+      },
+      "headline": "103 points lower, one move before the time control: Perunovic beats Bharath Subramaniyam H",
+      "body": "GM Milos Perunovic (PTT Beograd, 2500) beat GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) in 39 moves in round 2 of the Serbian Super League, one move before the time control at move 40.\n\nFrom move 32, neither clock showed more than 1:30. Bharath Subramaniyam H played 32...g4 with 1:28 left. Stockfish wanted 32...Rd6, and counted White clearly better before (+1.96) and winning after (+3.10). 33.Rf1, its first choice, came straight back. After 36.Ne6 Bxe6 37.R1xe6+ the black king went to f5, and after 39.Qe3 the result was 1–0.\n\nThe match ended 3–3: on the board beside it, GM Alexandr Predke beat GM Ferenc Berkes for Radnički Zmaj Beograd.\n\nGo back to 32...g4, give yourself 1:28, and find 32...Rd6. Then play the attack on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "تصنيف أقل بـ103 نقاط، وقبل نقلة واحدة من التحكم الزمني: فوز لـPerunovic على Bharath Subramaniyam H",
+          "body": "انتهى الدور بفوز GM Milos Perunovic (PTT Beograd، 2500) على GM Bharath Subramaniyam H (Radnički Zmaj Beograd، 2603) في 39 نقلة، في الجولة الثانية من الدوري الصربي الممتاز، قبل نقلة واحدة من التحكم الزمني عند النقلة الأربعين.\n\nمنذ النقلة 32 لم تُظهر أيٌّ من الساعتين أكثر من ⁨1:30⁩. لُعبت نقلة Bharath Subramaniyam H ⁨32...g4⁩ والوقت المتبقي ⁨1:28⁩. أراد Stockfish ⁨32...Rd6⁩، وعدّ الأبيض متفوقًا بوضوح قبلها (⁨+1.96⁩) وفائزًا بعدها (⁨+3.10⁩). وجاءت ⁨33.Rf1⁩، الخيار الأول للمحرك، مباشرة. وبعد ⁨36.Ne6 Bxe6 37.R1xe6+⁩ ذهب الملك الأسود إلى f5، وبعد ⁨39.Qe3⁩ كانت النتيجة ⁨1–0⁩.\n\nانتهت المباراة ⁨3–3⁩: على الرقعة المجاورة، جاء فوز GM Alexandr Predke على GM Ferenc Berkes لصالح Radnički Zmaj Beograd.\n\nارجع إلى ⁨32...g4⁩، وامنح نفسك ⁨1:28⁩، واعثر على ⁨32...Rd6⁩. ثم تابع الهجوم ضد المحرك."
+        },
+        "bg": {
+          "headline": "103 точки по-нисък рейтинг, един ход преди контролата: Perunovic побеждава Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) победи GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) за 39 хода във втория кръг на сръбската Суперлига, един ход преди контролата на времето на 40-ия ход.\n\nОт 32-ия ход нататък нито един часовник не показа повече от 1:30. Bharath Subramaniyam H изигра 32...g4 с 1:28 на часовника. Stockfish искаше 32...Rd6 и даваше ясно предимство на белите преди хода (+1,96) и печеливша позиция след него (+3,10). Веднага дойде 33.Rf1, първият му избор. След 36.Ne6 Bxe6 37.R1xe6+ черният цар отиде на f5, а след 39.Qe3 резултатът беше 1–0.\n\nМачът завърши 3–3: на съседната дъска GM Alexandr Predke победи GM Ferenc Berkes за Radnički Zmaj Beograd.\n\nВърнете се към 32...g4, дайте си 1:28 и намерете 32...Rd6. После продължете атаката срещу енджина."
+        },
+        "cs": {
+          "headline": "O 103 bodů níž, tah před časovou kontrolou: partii Perunovic – Bharath Subramaniyam H vyhrává Perunovic",
+          "body": "V partii GM Milos Perunovic (PTT Beograd, 2500) – GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) ve 2. kole srbské superligy vyhrává po 39 tazích Perunovic, tah před časovou kontrolou ve 40. tahu.\n\nOd 32. tahu neukazovaly žádné hodiny víc než 1:30. Bharath Subramaniyam H hraje 32...g4 s 1:28 na hodinách. Stockfish chtěl 32...Rd6 a hodnotil pozici předtím jako jasně lepší pro bílé (+1,96) a potom jako vyhranou (+3,10). Okamžitě přišlo 33.Rf1, první volba enginu. Po 36.Ne6 Bxe6 37.R1xe6+ šel černý král na f5 a po 39.Qe3 byl výsledek 1–0.\n\nZápas skončil 3–3: na vedlejší šachovnici vyhrává partii GM Alexandr Predke – GM Ferenc Berkes Predke a bere bod pro Radnički Zmaj Beograd.\n\nVrať se k 32...g4, dej si 1:28 a najdi 32...Rd6. Pak si útok zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "103 ratingpoint lavere, ét træk før tidskontrollen: Perunovic slår Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) slog GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) i 39 træk i 2. runde af den serbiske superliga, ét træk før tidskontrollen ved træk 40.\n\nFra træk 32 viste ingen af urene mere end 1:30. Bharath Subramaniyam H spillede 32...g4 med 1:28 tilbage. Stockfish ville have 32...Rd6 og så hvid klart bedre før (+1,96) og til gevinst efter (+3,10). 33.Rf1, Stockfishs førstevalg, kom med det samme. Efter 36.Ne6 Bxe6 37.R1xe6+ gik den sorte konge til f5, og efter 39.Qe3 var resultatet 1–0.\n\nMatchen endte 3–3: på brættet ved siden af slog GM Alexandr Predke GM Ferenc Berkes for Radnički Zmaj Beograd.\n\nGå tilbage til 32...g4, giv dig selv 1:28, og find 32...Rd6. Spil så angrebet videre mod motoren."
+        },
+        "de": {
+          "headline": "103 Elo weniger, ein Zug vor der Zeitkontrolle: Perunovic schlägt Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) schlug GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) in Runde 2 der serbischen Superliga in 39 Zügen, einen Zug vor der Zeitkontrolle bei Zug 40.\n\nAb Zug 32 zeigte keine der beiden Uhren mehr als 1:30. Bharath Subramaniyam H spielte 32...g4 mit 1:28 auf der Uhr. Stockfish wollte 32...Rd6 und sah Weiß davor klar besser (+1,96), danach auf Gewinn (+3,10). 33.Rf1, die erste Wahl von Stockfish, kam sofort. Nach 36.Ne6 Bxe6 37.R1xe6+ ging der schwarze König nach f5, und nach 39.Qe3 lautete das Ergebnis 1:0.\n\nDer Kampf endete 3:3: Am Nachbarbrett gewann GM Alexandr Predke für Radnički Zmaj Beograd gegen GM Ferenc Berkes.\n\nZurück zu 32...g4, sich 1:28 geben und 32...Rd6 finden. Dann den Angriff gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "103 βαθμούς χαμηλότερα, μία κίνηση πριν από τον έλεγχο χρόνου: νίκη Perunovic επί Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) επικράτησε επί GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) σε 39 κινήσεις στον 2ο γύρο της σερβικής Σούπερ Λίγκας, μία κίνηση πριν από τον έλεγχο χρόνου της 40ής κίνησης.\n\nΑπό την 32η κίνηση και μετά, κανένα ρολόι δεν έδειξε πάνω από 1:30. Bharath Subramaniyam H έπαιξε την 32...g4 με 1:28 στο ρολόι. Το Stockfish ήθελε την 32...Rd6, και έδινε καθαρό πλεονέκτημα στα λευκά πριν (+1,96) και νίκη μετά (+3,10). Η 33.Rf1, η πρώτη επιλογή της μηχανής, ήρθε αμέσως. Μετά την 36.Ne6 Bxe6 37.R1xe6+ ο μαύρος βασιλιάς πήγε στο f5, και μετά την 39.Qe3 το αποτέλεσμα ήταν 1–0.\n\nΟ αγώνας έληξε 3–3: στη διπλανή σκακιέρα, GM Alexandr Predke επικράτησε επί GM Ferenc Berkes για τη Radnički Zmaj Beograd.\n\nΓύρνα στην 32...g4, βάλε 1:28 στο ρολόι σου και βρες την 32...Rd6. Μετά συνέχισε την επίθεση απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Con 103 puntos menos de Elo, una jugada antes del control de tiempo: Perunovic vence a Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) venció a GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) en 39 jugadas en la segunda ronda de la Superliga serbia, una jugada antes del control de tiempo de la jugada 40.\n\nDesde la jugada 32, ningún reloj marcó más de 1:30. Bharath Subramaniyam H jugó 32...g4 con 1:28 en el reloj. Stockfish quería 32...Rd6, y daba clara ventaja a las blancas antes (+1,96) y posición ganadora después (+3,10). 33.Rf1, su primera opción, llegó enseguida. Tras 36.Ne6 Bxe6 37.R1xe6+ el rey negro fue a f5, y tras 39.Qe3 el resultado fue 1–0.\n\nEl match terminó 3–3: en el tablero de al lado, GM Alexandr Predke dio el punto a Radnički Zmaj Beograd al vencer a GM Ferenc Berkes.\n\nVuelve a 32...g4, date 1:28 y encuentra 32...Rd6. Luego sigue el ataque contra el motor."
+        },
+        "fi": {
+          "headline": "103 ratingpistettä alempana, siirtoa ennen aikakontrollia: Perunovic voittaa Bharath Subramaniyam H:n",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) voitti GM Bharath Subramaniyam H:n (Radnički Zmaj Beograd, 2603) 39 siirrossa Serbian superliigan 2. kierroksella, siirtoa ennen siirron 40 aikakontrollia.\n\nSiirrosta 32 lähtien kumpikaan kello ei näyttänyt yli 1:30. Bharath Subramaniyam H pelasi 32...g4 kellossa 1:28 jäljellä. Stockfish halusi 32...Rd6 ja antoi valkealle ennen siirtoa selvän edun (+1,96) ja sen jälkeen voittoaseman (+3,10). Sen ykkösvalinta 33.Rf1 tuli heti. Siirtojen 36.Ne6 Bxe6 37.R1xe6+ jälkeen musta kuningas meni f5:een, ja siirron 39.Qe3 jälkeen tulos oli 1–0.\n\nOttelu päättyi 3–3: viereisellä laudalla GM Alexandr Predke voitti Radnički Zmaj Beogradille GM Ferenc Berkesin.\n\nPalaa siirtoon 32...g4, anna itsellesi 1:28 ja löydä 32...Rd6. Jatka sitten hyökkäystä moottoria vastaan.",
+          "lede": "GM Milos Perunovic (PTT Beograd, 2500) voitti GM Bharath Subramaniyam H:n (Radnički Zmaj Beograd, 2603) 39 siirrossa Serbian superliigan 2. kierroksella, siirtoa ennen siirron 40 aikakontrollia."
+        },
+        "fr": {
+          "headline": "103 points Elo de moins, un coup avant le contrôle de temps : Perunovic bat Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) a battu GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) en 39 coups lors de la 2e ronde de la Superligue serbe, un coup avant le contrôle de temps du 40e coup.\n\nÀ partir du 32e coup, aucune des deux pendules n’a affiché plus de 1:30. Bharath Subramaniyam H a joué 32...g4 avec 1:28 à la pendule. Stockfish voulait 32...Rd6, et donnait les Blancs nettement mieux avant (+1,96) et gagnants après (+3,10). 33.Rf1, son premier choix, a suivi aussitôt. Après 36.Ne6 Bxe6 37.R1xe6+, le roi noir est allé en f5, et après 39.Qe3, le résultat était 1–0.\n\nLe match s’est terminé sur 3–3 : sur l’échiquier voisin, GM Alexandr Predke a battu GM Ferenc Berkes pour Radnički Zmaj Beograd.\n\nRevenez à 32...g4, donnez-vous 1:28 et trouvez 32...Rd6. Puis poursuivez l’attaque contre le moteur."
+        },
+        "he": {
+          "headline": "דירוג נמוך ב־103 נקודות, מסע אחד לפני בקרת הזמן: ניצחון ל־Perunovic על Bharath Subramaniyam H",
+          "body": "המשחק בסיבוב ה־2 של ליגת העל הסרבית הסתיים אחרי 39 מסעים, מסע אחד לפני בקרת הזמן במסע 40, בניצחון ל־GM Milos Perunovic (PTT Beograd, 2500) על GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603).\n\nממסע 32 אף שעון לא הראה יותר מ־⁨1:30⁩. המסע ⁨32...g4⁩ של Bharath Subramaniyam H שוחק כשנותרו ⁨1:28⁩. Stockfish רצה ב־⁨32...Rd6⁩, והעריך יתרון ברור ללבן לפני המסע (⁨+1.96⁩) ועמדה מנצחת אחריו (⁨+3.10⁩). המסע ⁨33.Rf1⁩, הבחירה הראשונה של המנוע, בא מיד. אחרי ⁨36.Ne6 Bxe6 37.R1xe6+⁩ המלך השחור עבר ל־f5, ואחרי ⁨39.Qe3⁩ התוצאה הייתה ⁨1–0⁩.\n\nהמפגש הסתיים ⁨3–3⁩: בלוח הסמוך נרשם ניצחון ל־GM Alexandr Predke על GM Ferenc Berkes, לזכות Radnički Zmaj Beograd.\n\nחזרו ל־⁨32...g4⁩, תנו לעצמכם ⁨1:28⁩ ומצאו את ⁨32...Rd6⁩. ואז המשיכו את ההתקפה מול המנוע."
+        },
+        "hi": {
+          "headline": "रेटिंग में 103 अंक पीछे, टाइम कंट्रोल से एक चाल पहले: Bharath Subramaniyam H पर Perunovic की जीत",
+          "body": "सर्बियाई सुपर लीग के राउंड 2 में GM Milos Perunovic (PTT Beograd, 2500) ने GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) को 39 चालों में हराया, चाल 40 के टाइम कंट्रोल से एक चाल पहले।\n\nचाल 32 से किसी भी घड़ी पर 1:30 से ज़्यादा नहीं थे। 1:28 बचे रहते Bharath Subramaniyam H ने 32...g4 खेला। Stockfish 32...Rd6 चाहता था, और उसके हिसाब से पहले सफ़ेद साफ़ बेहतर था (+1.96) और बाद में जीत की स्थिति में (+3.10)। इंजन की पहली पसंद 33.Rf1 तुरंत आया। 36.Ne6 Bxe6 37.R1xe6+ के बाद काला राजा f5 पर गया, और 39.Qe3 के बाद नतीजा 1–0 रहा।\n\nमुक़ाबला 3–3 पर ख़त्म हुआ: बगल वाले बोर्ड पर Radnički Zmaj Beograd के लिए GM Alexandr Predke ने GM Ferenc Berkes को हराया।\n\n32...g4 पर लौटें, खुद को 1:28 दें, और 32...Rd6 खोजें। फिर हमले को इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "103 ponttal alacsonyabb értékszám, egy lépés az időellenőrzés előtt: Perunovic nyert Bharath Subramaniyam H ellen",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) 39 lépésben nyert GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) ellen a szerb Szuperliga 2. fordulójában, egy lépéssel a 40. lépésnél esedékes időellenőrzés előtt.\n\nA 32. lépéstől egyik óra sem mutatott 1:30-nál többet. Bharath Subramaniyam H 1:28-cal az óráján a 32...g4 lépést játszotta. A Stockfish a 32...Rd6 lépést akarta, és előtte világos egyértelmű előnyét látta (+1,96), utána nyerő állást (+3,10). Azonnal jött a 33.Rf1, az első választása. A 36.Ne6 Bxe6 37.R1xe6+ után a sötét király az f5-re lépett, a 39.Qe3 után pedig az eredmény 1–0 lett.\n\nA mérkőzés 3–3-as döntetlennel zárult: a szomszéd táblán GM Alexandr Predke a Radnički Zmaj Beograd színeiben nyert GM Ferenc Berkes ellen.\n\nMenj vissza a 32...g4 lépéshez, adj magadnak 1:28-at, és találd meg a 32...Rd6 lépést. Aztán vidd tovább a támadást a motor ellen."
+        },
+        "id": {
+          "headline": "103 poin lebih rendah, satu langkah sebelum kontrol waktu: Perunovic kalahkan Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) mengalahkan GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) dalam 39 langkah di babak 2 Liga Super Serbia, satu langkah sebelum kontrol waktu di langkah 40.\n\nSejak langkah 32, tak satu pun jam menunjukkan lebih dari 1:30. Bharath Subramaniyam H memainkan 32...g4 dengan sisa 1:28. Stockfish menginginkan 32...Rd6, dan menilai Putih unggul jelas sebelumnya (+1,96) dan menang sesudahnya (+3,10). 33.Rf1, pilihan pertamanya, langsung datang. Sesudah 36.Ne6 Bxe6 37.R1xe6+ raja hitam pergi ke f5, dan sesudah 39.Qe3 hasilnya 1–0.\n\nPertandingan berakhir 3–3: di papan sebelahnya, GM Alexandr Predke mengalahkan GM Ferenc Berkes untuk Radnički Zmaj Beograd.\n\nKembali ke 32...g4, beri dirimu 1:28, dan temukan 32...Rd6. Lalu lanjutkan serangannya melawan mesin."
+        },
+        "it": {
+          "headline": "103 punti Elo in meno, una mossa prima del controllo del tempo: Perunovic batte Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) ha battuto GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) in 39 mosse nel 2º turno della Superlega serba, una mossa prima del controllo del tempo alla mossa 40.\n\nDalla mossa 32 nessuno dei due orologi ha segnato più di 1:30. Bharath Subramaniyam H ha giocato 32...g4 con 1:28 sull’orologio. Stockfish voleva 32...Rd6, e dava il Bianco chiaramente meglio prima (+1,96) e vincente dopo (+3,10). 33.Rf1, la sua prima scelta, è arrivata subito. Dopo 36.Ne6 Bxe6 37.R1xe6+ il Re nero è andato in f5, e dopo 39.Qe3 il risultato era 1–0.\n\nIl match è finito 3–3: sulla scacchiera accanto, GM Alexandr Predke ha battuto GM Ferenc Berkes per Radnički Zmaj Beograd.\n\nTorna a 32...g4, datti 1:28 e trova 32...Rd6. Poi continua l’attacco contro il motore."
+        },
+        "ja": {
+          "headline": "レーティング103点下、タイムコントロールの一手前、PerunovicがBharath Subramaniyam Hに勝利",
+          "body": "GM Milos Perunovic（PTT Beograd、2500）がセルビア・スーパーリーグ第2ラウンドで、40手目のタイムコントロールの一手前に、GM Bharath Subramaniyam H（Radnički Zmaj Beograd、2603）に39手で勝ちました。\n\n32手目以降、どちらの時計も1:30を超えませんでした。Bharath Subramaniyam Hは残り1:28で32...g4を指しました。Stockfishが望んだのは32...Rd6で、32...g4の前は白の明確な優勢（+1.96）、後は白の勝勢（+3.10）と見ました。すぐに第一候補の33.Rf1が返ってきました。36.Ne6 Bxe6 37.R1xe6+の後、黒のキングはf5へ移り、39.Qe3の後、結果は1–0となりました。\n\nマッチは3–3で終わりました。隣の盤ではRadnički Zmaj BeogradのGM Alexandr PredkeがGM Ferenc Berkesに勝っていました。\n\n32...g4に戻り、自分にも1:28だけ与えて、32...Rd6を見つけましょう。それから攻撃をエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "103점 낮은 Perunovic, 타임 컨트롤 한 수 전 Bharath Subramaniyam H 꺾어",
+          "body": "GM Milos Perunovic(PTT Beograd, 2500)가 세르비아 슈퍼리그 2라운드에서 40수째 타임 컨트롤을 한 수 앞두고 GM Bharath Subramaniyam H(Radnički Zmaj Beograd, 2603)에게 39수 만에 이겼습니다.\n\n32수째부터 양쪽 시계 모두 1:30를 넘지 않았습니다. Bharath Subramaniyam H는 1:28를 남기고 32...g4를 두었습니다. Stockfish가 원한 수는 32...Rd6였고, 32...g4 이후 평가는 백의 뚜렷한 우세(+1.96)에서 이기는 형세(+3.10)으로 바뀌었습니다. 곧바로 첫 번째 후보 수인 33.Rf1가 나왔습니다. 36.Ne6 Bxe6 37.R1xe6+ 이후 흑 킹은 f5로 갔고, 39.Qe3 이후 결과는 1–0이 되었습니다.\n\n매치는 3–3으로 끝났습니다. 바로 옆 보드에서는 Radnički Zmaj Beograd의 GM Alexandr Predke가 GM Ferenc Berkes를 꺾었습니다.\n\n32...g4로 돌아가 스스로에게 1:28를 준 뒤 32...Rd6를 찾아보세요. 이어서 엔진을 상대로 공격을 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "103 mata lebih rendah, satu langkah sebelum kawalan masa: Perunovic tewaskan Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) menewaskan GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) dalam 39 langkah dalam pusingan 2 Liga Super Serbia, satu langkah sebelum kawalan masa pada langkah 40.\n\nDari langkah 32, kedua-dua jam tidak pernah menunjukkan lebih daripada 1:30. Bharath Subramaniyam H memainkan 32...g4 dengan baki 1:28. Stockfish mahukan 32...Rd6, dan menilai Putih jelas mendahului sebelumnya (+1,96) dan menang selepasnya (+3,10). 33.Rf1, pilihan pertamanya, tiba serta-merta. Selepas 36.Ne6 Bxe6 37.R1xe6+ raja hitam pergi ke f5, dan selepas 39.Qe3 keputusannya 1–0.\n\nPerlawanan berakhir 3–3: di papan sebelahnya, GM Alexandr Predke menewaskan GM Ferenc Berkes untuk Radnički Zmaj Beograd.\n\nKembali ke 32...g4, beri diri anda 1:28, dan cari 32...Rd6. Kemudian teruskan serangan itu menentang enjin."
+        },
+        "nl": {
+          "headline": "103 ratingpunten minder, één zet voor de tijdcontrole: Perunovic verslaat Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) versloeg GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) in 39 zetten in ronde 2 van de Servische Superliga, één zet voor de tijdcontrole op zet 40.\n\nVanaf zet 32 gaf geen van beide klokken meer dan 1:30 aan. Bharath Subramaniyam H speelde 32...g4 met nog 1:28. Stockfish wilde 32...Rd6, en zag wit ervoor duidelijk beter staan (+1,96) en erna gewonnen (+3,10). 33.Rf1, de eerste keuze van Stockfish, kwam meteen. Na 36.Ne6 Bxe6 37.R1xe6+ ging de zwarte koning naar f5, en na 39.Qe3 was de uitslag 1–0.\n\nDe match eindigde in 3–3: op het bord ernaast won GM Alexandr Predke voor Radnički Zmaj Beograd van GM Ferenc Berkes.\n\nGa terug naar 32...g4, geef jezelf 1:28 en vind 32...Rd6. Speel de aanval daarna verder tegen de engine."
+        },
+        "no": {
+          "headline": "103 poeng lavere, ett trekk før tidskontrollen: Perunovic slår Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) slo GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) på 39 trekk i 2. runde av den serbiske superligaen, ett trekk før tidskontrollen i trekk 40.\n\nFra trekk 32 viste ingen av klokkene mer enn 1:30. Bharath Subramaniyam H spilte 32...g4 med 1:28 igjen. Stockfish ville ha 32...Rd6 og regnet hvit som klart bedre før (+1,96) og som vinnende etter (+3,10). 33.Rf1, Stockfishs førstevalg, kom med en gang. Etter 36.Ne6 Bxe6 37.R1xe6+ gikk den svarte kongen til f5, og etter 39.Qe3 var resultatet 1–0.\n\nMatchen endte 3–3: på brettet ved siden av slo GM Alexandr Predke GM Ferenc Berkes for Radnički Zmaj Beograd.\n\nGå tilbake til 32...g4, gi deg selv 1:28, og finn 32...Rd6. Spill så angrepet videre mot motoren."
+        },
+        "pl": {
+          "headline": "Ranking niższy o 103 punkty, jeden ruch przed kontrolą czasu: Perunovic pokonuje Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) pokonuje GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) w 39 ruchach w 2. rundzie serbskiej Superligi, jeden ruch przed kontrolą czasu w 40. ruchu.\n\nOd 32. ruchu żaden zegar nie pokazuje więcej niż 1:30. Bharath Subramaniyam H gra 32...g4, mając 1:28 na zegarze. Stockfish chciał 32...Rd6 i oceniał pozycję białych jako wyraźnie lepszą przed tym ruchem (+1,96), a po nim jako wygraną (+3,10). Od razu padło 33.Rf1, pierwszy wybór silnika. Po 36.Ne6 Bxe6 37.R1xe6+ czarny król idzie na f5, a po 39.Qe3 zapisano wynik 1–0.\n\nMecz kończy się remisem 3–3: na sąsiedniej szachownicy GM Alexandr Predke pokonuje GM Ferenc Berkes, zdobywając punkt dla Radnički Zmaj Beograd.\n\nWróć do 32...g4, daj sobie 1:28 i znajdź 32...Rd6. Potem poprowadź atak dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Com 103 pontos de rating a menos, um lance antes do controle de tempo: Perunovic vence Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) venceu GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) em 39 lances na 2ª rodada da Superliga Sérvia, um lance antes do controle de tempo do lance 40.\n\nA partir do lance 32, nenhum relógio passou de 1:30. Bharath Subramaniyam H jogou 32...g4 com 1:28 no relógio. O Stockfish queria 32...Rd6, e via clara vantagem das brancas antes (+1,96) e posição vencedora depois (+3,10). 33.Rf1, sua primeira opção, veio logo em seguida. Depois de 36.Ne6 Bxe6 37.R1xe6+, o rei preto foi para f5, e depois de 39.Qe3 o resultado foi 1–0.\n\nO match terminou 3–3: no tabuleiro ao lado, GM Alexandr Predke venceu GM Ferenc Berkes e marcou o ponto do Radnički Zmaj Beograd.\n\nVolte a 32...g4 e, em 1:28, encontre 32...Rd6. Depois continue o ataque contra o motor."
+        },
+        "ro": {
+          "headline": "Cu 103 puncte mai puțin, la o mutare de controlul de timp: Perunovic câștigă contra Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) a câștigat contra GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) în 39 de mutări, în runda a 2-a a Superligii Serbiei, cu o mutare înainte de controlul de timp de la mutarea 40.\n\nDe la mutarea 32, niciun ceas nu a arătat mai mult de 1:30. Bharath Subramaniyam H a jucat 32...g4 cu 1:28 rămase. Stockfish voia 32...Rd6 și considera Albul clar mai bun înainte (+1,96) și câștigător după (+3,10). 33.Rf1, prima sa alegere, a urmat imediat. După 36.Ne6 Bxe6 37.R1xe6+, regele negru a mers pe f5, iar după 39.Qe3 rezultatul a fost 1–0.\n\nMeciul s-a încheiat 3–3: pe tabla vecină, GM Alexandr Predke a câștigat contra GM Ferenc Berkes pentru Radnički Zmaj Beograd.\n\nÎntoarce-te la 32...g4, dă-ți 1:28 și găsește 32...Rd6. Apoi continuă atacul contra motorului."
+        },
+        "ru": {
+          "headline": "На 103 пункта ниже, за ход до контроля времени: Perunovic обыгрывает Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) обыгрывает GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) за 39 ходов во 2-м туре сербской Суперлиги — за ход до контроля времени на 40-м ходу.\n\nС 32-го хода ни на одних часах не было больше 1:30. Bharath Subramaniyam H играет 32...g4, имея 1:28. Stockfish хотел 32...Rd6 и давал белым явный перевес до хода (+1,96) и выигрыш после (+3,10). Сразу последовал 33.Rf1 — первый выбор движка. После 36.Ne6 Bxe6 37.R1xe6+ чёрный король ушёл на f5, а после 39.Qe3 записан результат 1–0.\n\nМатч закончился 3–3: на соседней доске за Radnički Zmaj Beograd GM Alexandr Predke обыгрывает GM Ferenc Berkes.\n\nВернитесь к 32...g4, дайте себе 1:28 и найдите 32...Rd6. А затем продолжите атаку против движка."
+        },
+        "sv": {
+          "headline": "103 poäng lägre, ett drag före tidskontrollen: Perunovic besegrar Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) besegrade GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) på 39 drag i rond 2 av serbiska superligan, ett drag före tidskontrollen vid drag 40.\n\nFrån drag 32 visade ingen av klockorna mer än 1:30. Bharath Subramaniyam H spelade 32...g4 med 1:28 kvar. Stockfish ville ha 32...Rd6 och räknade vit som klart bättre före (+1,96) och som vinnande efter (+3,10). 33.Rf1, Stockfishs förstaval, kom direkt. Efter 36.Ne6 Bxe6 37.R1xe6+ gick den svarta kungen till f5, och efter 39.Qe3 var resultatet 1–0.\n\nMatchen slutade 3–3: på brädet bredvid besegrade GM Alexandr Predke GM Ferenc Berkes för Radnički Zmaj Beograd.\n\nGå tillbaka till 32...g4, ge dig själv 1:28 och hitta 32...Rd6. Spela sedan vidare angreppet mot motorn."
+        },
+        "th": {
+          "headline": "เรตติ้งต่ำกว่า 103 แต้ม หนึ่งตาก่อนถึงจุดควบคุมเวลา: Perunovic ชนะ Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) ชนะ GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) ใน 39 ตา ในรอบที่ 2 ของซูเปอร์ลีกเซอร์เบีย หนึ่งตาก่อนถึงจุดควบคุมเวลาที่ตาที่ 40\n\nตั้งแต่ตาที่ 32 นาฬิกาของทั้งสองฝ่ายไม่เคยแสดงเกิน 1:30 Bharath Subramaniyam H เดิน 32...g4 เมื่อเหลือเวลา 1:28 Stockfish ต้องการ 32...Rd6 และประเมินว่าฝ่ายขาวได้เปรียบชัดเจนก่อนตานั้น (+1.96) และอยู่ในสถานะชนะหลังตานั้น (+3.10) 33.Rf1 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจินก็มาทันที หลัง 36.Ne6 Bxe6 37.R1xe6+ คิงดำไปที่ f5 และหลัง 39.Qe3 ผลก็คือ 1–0\n\nแมตช์จบที่ 3–3: บนกระดานข้าง ๆ GM Alexandr Predke ชนะ GM Ferenc Berkes ให้ Radnički Zmaj Beograd\n\nย้อนกลับไปที่ 32...g4 ให้เวลาตัวเอง 1:28 แล้วหา 32...Rd6 จากนั้นเล่นการบุกต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "103 puan düşük reyting, zaman kontrolüne bir hamle kala: Perunovic, Bharath Subramaniyam H karşısında kazandı",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500), Sırbistan Süper Ligi'nin 2. turunda GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) karşısında, 40. hamledeki zaman kontrolüne bir hamle kala, 39 hamlede kazandı.\n\n32. hamleden itibaren iki saatten hiçbiri 1:30'un üzerini göstermedi. Bharath Subramaniyam H, 32...g4 hamlesini saatte 1:28 kala oynadı. Stockfish 32...Rd6 hamlesini istiyordu; öncesinde beyazı açık farkla üstün (+1,96), sonrasında kazanan konumda (+3,10) görüyordu. İlk tercihi olan 33.Rf1 hemen geldi. 36.Ne6 Bxe6 37.R1xe6+ sonrasında siyah şah f5'e gitti ve 39.Qe3 sonrasında sonuç 1–0 oldu.\n\nMaç 3–3 bitti: yan masada GM Alexandr Predke, Radnički Zmaj Beograd adına GM Ferenc Berkes'i yendi.\n\n32...g4 hamlesine dön, kendine 1:28 ver ve 32...Rd6 hamlesini bul. Sonra hücumu motora karşı sürdür.",
+          "lede": "GM Milos Perunovic (PTT Beograd, 2500), Sırbistan Süper Ligi'nin 2. turunda GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) karşısında, 40. hamledeki zaman kontrolüne bir hamle kala, 39 hamlede kazandı."
+        },
+        "vi": {
+          "headline": "Kém 103 điểm hệ số, một nước trước mốc kiểm soát thời gian: Perunovic thắng Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic (PTT Beograd, 2500) thắng GM Bharath Subramaniyam H (Radnički Zmaj Beograd, 2603) sau 39 nước ở vòng 2 giải Siêu hạng Serbia, một nước trước mốc kiểm soát thời gian ở nước 40.\n\nTừ nước 32, không đồng hồ nào hiện quá 1:30. Bharath Subramaniyam H đi 32...g4 khi còn 1:28. Stockfish muốn 32...Rd6, và đánh giá Trắng ưu thế rõ trước nước đó (+1,96) và ở thế thắng sau nước đó (+3,10). 33.Rf1, lựa chọn số một của engine, đến ngay. Sau 36.Ne6 Bxe6 37.R1xe6+, Vua Đen đi tới f5, và sau 39.Qe3 kết quả là 1–0.\n\nTrận đấu kết thúc 3–3: ở bàn bên cạnh, GM Alexandr Predke thắng GM Ferenc Berkes cho Radnički Zmaj Beograd.\n\nQuay lại 32...g4, tự cho mình 1:28, và tìm 32...Rd6. Rồi chơi tiếp đợt tấn công với engine."
+        },
+        "zh-Hans": {
+          "headline": "等级分低103分，时限前一步：Perunovic击败Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic（PTT Beograd，2500）在塞尔维亚超级联赛第2轮39回合击败GM Bharath Subramaniyam H（Radnički Zmaj Beograd，2603），距第40回合的时限只差一步。\n\n从第32回合起，双方棋钟都没有超过1:30。Bharath Subramaniyam H在剩1:28时走出32...g4。Stockfish想走的是32...Rd6，并认为这步之前白方明显占优（+1.96），之后白方胜势（+3.10）。白方随即走出Stockfish的首选33.Rf1。36.Ne6 Bxe6 37.R1xe6+之后，黑王走到f5，39.Qe3之后结果为1–0。\n\n两队最终3–3战平：在相邻的棋盘上，GM Alexandr Predke为Radnički Zmaj Beograd击败了GM Ferenc Berkes。\n\n回到32...g4，给自己1:28，找出32...Rd6。然后对着引擎把这波攻势继续下去。"
+        },
+        "zh-Hant": {
+          "headline": "等級分低103分，時限前一步：Perunovic擊敗Bharath Subramaniyam H",
+          "body": "GM Milos Perunovic（PTT Beograd，2500）在塞爾維亞超級聯賽第2輪39回合擊敗GM Bharath Subramaniyam H（Radnički Zmaj Beograd，2603），距第40回合的時限只差一步。\n\n從第32回合起，雙方棋鐘都沒有超過1:30。Bharath Subramaniyam H在剩1:28時走出32...g4。Stockfish想走的是32...Rd6，並認為這步之前白方明顯佔優（+1.96），之後白方勝勢（+3.10）。白方隨即走出Stockfish的首選33.Rf1。36.Ne6 Bxe6 37.R1xe6+之後，黑王走到f5，39.Qe3之後結果為1–0。\n\n兩隊最終3–3戰平：在相鄰的棋盤上，GM Alexandr Predke為Radnički Zmaj Beograd擊敗了GM Ferenc Berkes。\n\n回到32...g4，給自己1:28，找出32...Rd6。然後對著引擎把這波攻勢繼續下去。"
+        }
+      },
+      "fen": "3r4/p3R3/2p3k1/2Nq1b2/3r2p1/1PQ5/PKP5/6R1 w - - 0 33",
+      "last": {
+        "from": "g5",
+        "to": "g4"
+      },
+      "url": "https://brasspawn.com/today/2026-10-05-perunovic-bharath-subramaniyam-h-serbian-super-league-r2",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/serbian-super-league-2026-open/round-2/bbKHurKT/lq5gRZm6"
+      },
+      "updatedAt": "2026-10-05T19:06:41.685Z"
+    },
+    {
+      "id": "2026-10-05-cheparinov-karthikeyan-serbian-super-league-r2",
+      "status": "approved",
+      "date": "2026-10-05",
+      "rank": 1,
+      "weight": 397,
+      "event": {
+        "name": "Serbian Super League 2026",
+        "short": "Serbian Super League",
+        "section": "Open",
+        "round": 2,
+        "location": "Vrnjačka Banja - Serbia",
+        "url": "https://lichess.org/broadcast/serbian-super-league-2026-open/round-2/bbKHurKT"
+      },
+      "white": {
+        "name": "Ivan Cheparinov",
+        "short": "Cheparinov",
+        "title": "GM",
+        "elo": 2631,
+        "team": "RADNIK - Surdulica"
+      },
+      "black": {
+        "name": "Murali Karthikeyan",
+        "short": "Karthikeyan",
+        "title": "GM",
+        "elo": 2647,
+        "team": "JELICA PEP - Goračići"
+      },
+      "result": "0-1",
+      "opening": {
+        "eco": "C50",
+        "name": "Italian Game: Giuoco Pianissimo, Normal"
+      },
+      "moves": "e4 e5 Nf3 Nc6 Bc4 Nf6 d3 Bc5 Bg5 h6 Bh4 Be7 Bg3 d6 a4 O-O Nbd2 g6 c3 Nh5 h3 Bg5 O-O Bf4 Bxf4 Nxf4 a5 Kg7 d4 f5 d5 Ne7 Re1 g5 exf5 Bxf5 Nf1 Qd7 Ng3 Bxh3 gxh3 Nxh3+ Kg2 Ng6 Re4 g4 Ng1 Nxf2 Qc2 Nxe4 Qxe4 Nf4+ Kh1 Qe7 Qc2 Qh4+ Qh2 Qxh2+ Kxh2 h5 Ne4 h4 Re1 Kh6 Ne2 Nh3 Ng1 Ng5",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 47,
+        "played": "Ng1",
+        "better": "Ne1",
+        "reply": "Nxf2",
+        "replyPlayed": true,
+        "before": {
+          "cp": -223,
+          "mate": null
+        },
+        "after": {
+          "cp": -339,
+          "mate": null
+        },
+        "clock": 1188
+      },
+      "headline": "One knight takes on f2, then on e4: Karthikeyan beats Cheparinov in 34",
+      "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), the highest-rated player in the Serbian Super League, beat GM Ivan Cheparinov (Radnik Surdulica, 2631) in 34 moves in round 2.\n\nCheparinov played 24.Ng1 with 19:48 left. Stockfish wanted 24.Ne1, and counted Black clearly better before (−2.23) and winning after (−3.39). 24...Nxf2, its first choice, came straight back, and after 25.Qc2 the same knight took the rook: 25...Nxe4. Then 28...Qh4+ and 29...Qxh2+ took the queens off.\n\nRadnik Surdulica still won the match 3½–2½.\n\nGo back to 24.Ng1 and find 24.Ne1. Then play the ending on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "حصان واحد يأخذ على f2 ثم على e4: فوز لـKarthikeyan على Cheparinov في 34 نقلة",
+          "body": "انتهى الدور بفوز GM Murali Karthikeyan (Jelica PEP Goračići، 2647، أعلى تصنيف في الدوري الصربي الممتاز) على GM Ivan Cheparinov (Radnik Surdulica، 2631) في 34 نقلة في الجولة الثانية.\n\nلُعبت نقلة Cheparinov ⁨24.Ng1⁩ والوقت المتبقي ⁨19:48⁩. أراد Stockfish ⁨24.Ne1⁩، وعدّ الأسود متفوقًا بوضوح قبلها (⁨−2.23⁩) وفائزًا بعدها (⁨−3.39⁩). وجاءت ⁨24...Nxf2⁩، الخيار الأول للمحرك، مباشرة، وبعد ⁨25.Qc2⁩ أخذ الحصان نفسه الرخ: ⁨25...Nxe4⁩. ثم أزالت ⁨28...Qh4+⁩ و⁨29...Qxh2+⁩ الوزيرين عن الرقعة.\n\nومع ذلك فاز فريق Radnik Surdulica بالمباراة ⁨3½–2½⁩.\n\nارجع إلى ⁨24.Ng1⁩ واعثر على ⁨24.Ne1⁩. ثم تابع النهاية ضد المحرك."
+        },
+        "bg": {
+          "headline": "Един кон взима на f2, после на e4: Karthikeyan побеждава Cheparinov за 34 хода",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), с най-висок рейтинг в сръбската Суперлига, победи GM Ivan Cheparinov (Radnik Surdulica, 2631) за 34 хода във втория кръг.\n\nCheparinov изигра 24.Ng1 с 19:48 на часовника. Stockfish искаше 24.Ne1 и даваше ясно предимство на черните преди хода (−2,23) и печеливша позиция след него (−3,39). Веднага дойде 24...Nxf2, първият му избор, а след 25.Qc2 същият кон взе топа: 25...Nxe4. После 28...Qh4+ и 29...Qxh2+ размениха дамите.\n\nRadnik Surdulica все пак спечели мача с 3½–2½.\n\nВърнете се към 24.Ng1 и намерете 24.Ne1. После продължете ендшпила срещу енджина."
+        },
+        "cs": {
+          "headline": "Jeden jezdec bere na f2, pak na e4: partii Cheparinov – Karthikeyan vyhrává po 34 tazích Karthikeyan",
+          "body": "V partii GM Ivan Cheparinov (Radnik Surdulica, 2631) – GM Murali Karthikeyan (Jelica PEP Goračići, 2647) ve 2. kole srbské superligy vyhrává po 34 tazích Karthikeyan, ratingová jednička soutěže.\n\nCheparinov hraje 24.Ng1 s 19:48 na hodinách. Stockfish chtěl 24.Ne1 a hodnotil pozici předtím jako jasně lepší pro černé (−2,23) a potom jako vyhranou (−3,39). Okamžitě přišlo 24...Nxf2, první volba enginu, a po 25.Qc2 vzal tentýž jezdec věž: 25...Nxe4. Pak 28...Qh4+ a 29...Qxh2+ vedly k výměně dam.\n\nZápas přesto vyhrává Radnik Surdulica 3½–2½.\n\nVrať se k 24.Ng1 a najdi 24.Ne1. Pak si koncovku zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "Én springer slår på f2 og så på e4: Karthikeyan slår Cheparinov i 34 træk",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), den højest ratede spiller i den serbiske superliga, slog GM Ivan Cheparinov (Radnik Surdulica, 2631) i 34 træk i 2. runde.\n\nCheparinov spillede 24.Ng1 med 19:48 tilbage. Stockfish ville have 24.Ne1 og så sort klart bedre før (−2,23) og til gevinst efter (−3,39). 24...Nxf2, Stockfishs førstevalg, kom med det samme, og efter 25.Qc2 slog den samme springer tårnet: 25...Nxe4. Derefter tog 28...Qh4+ og 29...Qxh2+ dronningerne af brættet.\n\nRadnik Surdulica vandt alligevel matchen 3½–2½.\n\nGå tilbage til 24.Ng1 og find 24.Ne1. Spil så slutspillet videre mod motoren."
+        },
+        "de": {
+          "headline": "Ein Springer schlägt auf f2, dann auf e4: Karthikeyan besiegt Cheparinov in 34 Zügen",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), mit der höchsten Elo-Zahl der serbischen Superliga, schlug GM Ivan Cheparinov (Radnik Surdulica, 2631) in Runde 2 in 34 Zügen.\n\nCheparinov spielte 24.Ng1 mit 19:48 auf der Uhr. Stockfish wollte 24.Ne1 und sah Schwarz davor klar besser (−2,23), danach auf Gewinn (−3,39). 24...Nxf2, die erste Wahl von Stockfish, kam sofort, und nach 25.Qc2 schlug derselbe Springer den Turm: 25...Nxe4. Dann nahmen 28...Qh4+ und 29...Qxh2+ die Damen vom Brett.\n\nRadnik Surdulica gewann den Kampf trotzdem 3½:2½.\n\nZurück zu 24.Ng1 und 24.Ne1 finden. Dann das Endspiel gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Ένας ίππος παίρνει στο f2, μετά στο e4: νίκη Karthikeyan επί Cheparinov σε 34",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), με το υψηλότερο Elo στη σερβική Σούπερ Λίγκα, επικράτησε επί GM Ivan Cheparinov (Radnik Surdulica, 2631) σε 34 κινήσεις στον 2ο γύρο.\n\nCheparinov έπαιξε την 24.Ng1 με 19:48 στο ρολόι. Το Stockfish ήθελε την 24.Ne1, και έδινε καθαρό πλεονέκτημα στα μαύρα πριν (−2,23) και νίκη μετά (−3,39). Η 24...Nxf2, η πρώτη επιλογή της μηχανής, ήρθε αμέσως, και μετά την 25.Qc2 ο ίδιος ίππος πήρε τον πύργο: 25...Nxe4. Μετά οι 28...Qh4+ και 29...Qxh2+ έβγαλαν τις βασίλισσες από τη σκακιέρα.\n\nΗ Radnik Surdulica κέρδισε παρ' όλα αυτά τον αγώνα με 3½–2½.\n\nΓύρνα στην 24.Ng1 και βρες την 24.Ne1. Μετά συνέχισε το φινάλε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Un caballo toma en f2 y luego en e4: Karthikeyan vence a Cheparinov en 34",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), con el Elo más alto de la Superliga serbia, venció a GM Ivan Cheparinov (Radnik Surdulica, 2631) en 34 jugadas en la segunda ronda.\n\nCheparinov jugó 24.Ng1 con 19:48 en el reloj. Stockfish quería 24.Ne1, y daba clara ventaja a las negras antes (−2,23) y posición ganadora después (−3,39). 24...Nxf2, su primera opción, llegó enseguida, y tras 25.Qc2 el mismo caballo tomó la torre: 25...Nxe4. Luego 28...Qh4+ y 29...Qxh2+ sacaron las damas del tablero.\n\nAun así, Radnik Surdulica ganó el match 3½–2½.\n\nVuelve a 24.Ng1 y encuentra 24.Ne1. Luego sigue el final contra el motor."
+        },
+        "fi": {
+          "headline": "Yksi ratsu lyö f2:ssa ja sitten e4:ssä: Karthikeyan voittaa Cheparinovin 34 siirrossa",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), Serbian superliigan ratingiltaan korkein pelaaja, voitti GM Ivan Cheparinovin (Radnik Surdulica, 2631) 34 siirrossa 2. kierroksella.\n\nCheparinov pelasi 24.Ng1 kellossa 19:48 jäljellä. Stockfish halusi 24.Ne1 ja antoi mustalle ennen siirtoa selvän edun (−2,23) ja sen jälkeen voittoaseman (−3,39). Sen ykkösvalinta 24...Nxf2 tuli heti, ja siirron 25.Qc2 jälkeen sama ratsu löi tornin: 25...Nxe4. Sitten 28...Qh4+ ja 29...Qxh2+ veivät kuningattaret laudalta.\n\nRadnik Surdulica voitti silti ottelun 3½–2½.\n\nPalaa siirtoon 24.Ng1 ja löydä 24.Ne1. Jatka sitten loppupeliä moottoria vastaan.",
+          "lede": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), Serbian superliigan ratingiltaan korkein pelaaja, voitti GM Ivan Cheparinovin (Radnik Surdulica, 2631) 34 siirrossa 2. kierroksella."
+        },
+        "fr": {
+          "headline": "Un cavalier prend en f2, puis en e4 : Karthikeyan bat Cheparinov en 34 coups",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), plus haut Elo de la Superligue serbe, a battu GM Ivan Cheparinov (Radnik Surdulica, 2631) en 34 coups lors de la 2e ronde.\n\nCheparinov a joué 24.Ng1 avec 19:48 à la pendule. Stockfish voulait 24.Ne1, et donnait les Noirs nettement mieux avant (−2,23) et gagnants après (−3,39). 24...Nxf2, son premier choix, a suivi aussitôt, et après 25.Qc2, le même cavalier a pris la tour : 25...Nxe4. Puis 28...Qh4+ et 29...Qxh2+ ont fait disparaître les dames de l’échiquier.\n\nRadnik Surdulica a tout de même gagné le match 3½–2½.\n\nRevenez à 24.Ng1 et trouvez 24.Ne1. Puis reprenez la finale contre le moteur."
+        },
+        "he": {
+          "headline": "פרש אחד לוקח ב־f2 ואז ב־e4: ניצחון ל־Karthikeyan על Cheparinov ב־34 מסעים",
+          "body": "המשחק בסיבוב ה־2 של ליגת העל הסרבית הסתיים בניצחון ל־GM Murali Karthikeyan (Jelica PEP Goračići, 2647, הדירוג הגבוה ביותר בליגה) על GM Ivan Cheparinov (Radnik Surdulica, 2631) אחרי 34 מסעים.\n\nהמסע ⁨24.Ng1⁩ של Cheparinov שוחק כשנותרו ⁨19:48⁩. Stockfish רצה ב־⁨24.Ne1⁩, והעריך יתרון ברור לשחור לפני המסע (⁨−2.23⁩) ועמדה מנצחת אחריו (⁨−3.39⁩). המסע ⁨24...Nxf2⁩, הבחירה הראשונה של המנוע, בא מיד, ואחרי ⁨25.Qc2⁩ אותו פרש לקח את הצריח: ⁨25...Nxe4⁩. אחר כך ⁨28...Qh4+⁩ ו־⁨29...Qxh2+⁩ הורידו את המלכות מהלוח.\n\nלמרות זאת, הקבוצה Radnik Surdulica ניצחה במפגש ⁨3½–2½⁩.\n\nחזרו ל־⁨24.Ng1⁩ ומצאו את ⁨24.Ne1⁩. ואז המשיכו את הסיום מול המנוע."
+        },
+        "hi": {
+          "headline": "एक ही घोड़ा, पहले f2 पर कैप्चर, फिर e4 पर: 34 चालों में Cheparinov पर Karthikeyan की जीत",
+          "body": "सर्बियाई सुपर लीग के राउंड 2 में GM Murali Karthikeyan (Jelica PEP Goračići, 2647) ने GM Ivan Cheparinov (Radnik Surdulica, 2631) को 34 चालों में हराया; लीग में सबसे ऊँची रेटिंग Karthikeyan की है।\n\n19:48 बचे रहते Cheparinov ने 24.Ng1 खेला। Stockfish 24.Ne1 चाहता था, और उसके हिसाब से पहले काला साफ़ बेहतर था (−2.23) और बाद में जीत की स्थिति में (−3.39)। इंजन की पहली पसंद 24...Nxf2 तुरंत आया, और 25.Qc2 के बाद उसी घोड़े ने हाथी लिया: 25...Nxe4। फिर 28...Qh4+ और 29...Qxh2+ से रानियाँ बोर्ड से हट गईं।\n\nफिर भी मुक़ाबला Radnik Surdulica ने 3½–2½ से जीता।\n\n24.Ng1 पर लौटें और 24.Ne1 खोजें। फिर एंडगेम को इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "Egy huszár üt az f2-n, aztán az e4-en: Karthikeyan 34 lépésben nyert Cheparinov ellen",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), a szerb Szuperliga legmagasabb értékszámú játékosa, 34 lépésben nyert GM Ivan Cheparinov (Radnik Surdulica, 2631) ellen a 2. fordulóban.\n\nCheparinov 19:48-cal az óráján a 24.Ng1 lépést játszotta. A Stockfish a 24.Ne1 lépést akarta, és előtte sötét egyértelmű előnyét látta (−2,23), utána nyerő állást (−3,39). Azonnal jött a 24...Nxf2, az első választása, a 25.Qc2 után pedig ugyanez a huszár a bástyát is leütötte: 25...Nxe4. Aztán a 28...Qh4+ és a 29...Qxh2+ levitte a vezéreket.\n\nA Radnik Surdulica ennek ellenére 3½–2½ arányban megnyerte a mérkőzést.\n\nMenj vissza a 24.Ng1 lépéshez, és találd meg a 24.Ne1 lépést. Aztán játszd tovább a végjátékot a motor ellen."
+        },
+        "id": {
+          "headline": "Satu kuda mengambil di f2, lalu di e4: Karthikeyan kalahkan Cheparinov dalam 34 langkah",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), pemain dengan rating tertinggi di Liga Super Serbia, mengalahkan GM Ivan Cheparinov (Radnik Surdulica, 2631) dalam 34 langkah di babak 2.\n\nCheparinov memainkan 24.Ng1 dengan sisa 19:48. Stockfish menginginkan 24.Ne1, dan menilai Hitam unggul jelas sebelumnya (−2,23) dan menang sesudahnya (−3,39). 24...Nxf2, pilihan pertamanya, langsung datang, dan sesudah 25.Qc2 kuda yang sama mengambil benteng: 25...Nxe4. Lalu 28...Qh4+ dan 29...Qxh2+ menyingkirkan kedua menteri dari papan.\n\nRadnik Surdulica tetap memenangi pertandingan 3½–2½.\n\nKembali ke 24.Ng1 dan temukan 24.Ne1. Lalu lanjutkan akhir permainannya melawan mesin."
+        },
+        "it": {
+          "headline": "Un Cavallo prende in f2, poi in e4: Karthikeyan batte Cheparinov in 34 mosse",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), che ha l’Elo più alto della Superlega serba, ha battuto GM Ivan Cheparinov (Radnik Surdulica, 2631) in 34 mosse nel 2º turno.\n\nCheparinov ha giocato 24.Ng1 con 19:48 sull’orologio. Stockfish voleva 24.Ne1, e dava il Nero chiaramente meglio prima (−2,23) e vincente dopo (−3,39). 24...Nxf2, la sua prima scelta, è arrivata subito, e dopo 25.Qc2 lo stesso Cavallo ha preso la Torre: 25...Nxe4. Poi 28...Qh4+ e 29...Qxh2+ hanno tolto le Donne dalla scacchiera.\n\nRadnik Surdulica ha comunque vinto il match 3½–2½.\n\nTorna a 24.Ng1 e trova 24.Ne1. Poi continua il finale contro il motore."
+        },
+        "ja": {
+          "headline": "一つのナイトがf2で、続いてe4で取る。KarthikeyanがCheparinovに34手で勝利",
+          "body": "セルビア・スーパーリーグで最もレーティングの高いGM Murali Karthikeyan（Jelica PEP Goračići、2647）が、第2ラウンドでGM Ivan Cheparinov（Radnik Surdulica、2631）に34手で勝ちました。\n\nCheparinovは残り19:48で24.Ng1を指しました。Stockfishが望んだのは24.Ne1で、24.Ng1の前は黒の明確な優勢（−2.23）、後は黒の勝勢（−3.39）と見ました。すぐに第一候補の24...Nxf2が返ってきて、25.Qc2の後、同じナイトが25...Nxe4でルークを取りました。続いて28...Qh4+と29...Qxh2+で、クイーンが盤上から消えました。\n\nそれでもRadnik Surdulicaはマッチを3½–2½で制しました。\n\n24.Ng1に戻って24.Ne1を見つけましょう。それからエンディングをエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "나이트 하나가 f2, 이어 e4에서 잡았다… Karthikeyan, Cheparinov에 34수 만에 승리",
+          "body": "세르비아 슈퍼리그 최고 레이팅 선수인 GM Murali Karthikeyan(Jelica PEP Goračići, 2647)이 2라운드에서 GM Ivan Cheparinov(Radnik Surdulica, 2631)에게 34수 만에 이겼습니다.\n\nCheparinov는 19:48를 남기고 24.Ng1를 두었습니다. Stockfish가 원한 수는 24.Ne1였고, 24.Ng1 이후 평가는 흑의 뚜렷한 우세(−2.23)에서 이기는 형세(−3.39)로 바뀌었습니다. 곧바로 첫 번째 후보 수인 24...Nxf2가 나왔고, 25.Qc2 이후 같은 나이트가 25...Nxe4로 룩을 잡았습니다. 이어서 28...Qh4+와 29...Qxh2+로 퀸들이 보드에서 사라졌습니다.\n\nRadnik Surdulica는 이 대국을 내주고도 매치를 3½–2½로 이겼습니다.\n\n24.Ng1로 돌아가 24.Ne1를 찾아보세요. 이어서 엔진을 상대로 엔드게임을 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "Satu kuda mengambil di f2, kemudian di e4: Karthikeyan tewaskan Cheparinov dalam 34 langkah",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), pemain dengan rating tertinggi dalam Liga Super Serbia, menewaskan GM Ivan Cheparinov (Radnik Surdulica, 2631) dalam 34 langkah dalam pusingan 2.\n\nCheparinov memainkan 24.Ng1 dengan baki 19:48. Stockfish mahukan 24.Ne1, dan menilai Hitam jelas mendahului sebelumnya (−2,23) dan menang selepasnya (−3,39). 24...Nxf2, pilihan pertamanya, tiba serta-merta, dan selepas 25.Qc2 kuda yang sama mengambil tir: 25...Nxe4. Kemudian 28...Qh4+ dan 29...Qxh2+ mengeluarkan kedua-dua menteri dari papan.\n\nRadnik Surdulica tetap memenangi perlawanan 3½–2½.\n\nKembali ke 24.Ng1 dan cari 24.Ne1. Kemudian teruskan akhir permainan itu menentang enjin."
+        },
+        "nl": {
+          "headline": "Eén paard slaat op f2, dan op e4: Karthikeyan verslaat Cheparinov in 34 zetten",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), met de hoogste rating van de Servische Superliga, versloeg GM Ivan Cheparinov (Radnik Surdulica, 2631) in 34 zetten in ronde 2.\n\nCheparinov speelde 24.Ng1 met nog 19:48. Stockfish wilde 24.Ne1, en zag zwart ervoor duidelijk beter staan (−2,23) en erna gewonnen (−3,39). 24...Nxf2, de eerste keuze van Stockfish, kwam meteen, en na 25.Qc2 sloeg hetzelfde paard de toren: 25...Nxe4. Daarna haalden 28...Qh4+ en 29...Qxh2+ de dames van het bord.\n\nRadnik Surdulica won de match toch met 3½–2½.\n\nGa terug naar 24.Ng1 en vind 24.Ne1. Speel het eindspel daarna verder tegen de engine."
+        },
+        "no": {
+          "headline": "Én springer slår på f2 og så på e4: Karthikeyan slår Cheparinov på 34 trekk",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), den høyest ratede spilleren i den serbiske superligaen, slo GM Ivan Cheparinov (Radnik Surdulica, 2631) på 34 trekk i 2. runde.\n\nCheparinov spilte 24.Ng1 med 19:48 igjen. Stockfish ville ha 24.Ne1 og regnet svart som klart bedre før (−2,23) og som vinnende etter (−3,39). 24...Nxf2, Stockfishs førstevalg, kom med en gang, og etter 25.Qc2 tok den samme springeren tårnet: 25...Nxe4. Deretter tok 28...Qh4+ og 29...Qxh2+ dronningene av brettet.\n\nRadnik Surdulica vant likevel matchen 3½–2½.\n\nGå tilbake til 24.Ng1 og finn 24.Ne1. Spill så sluttspillet videre mot motoren."
+        },
+        "pl": {
+          "headline": "Jeden skoczek bije na f2, potem na e4: Karthikeyan pokonuje Cheparinov w 34 ruchach",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), numer jeden rankingu serbskiej Superligi, pokonuje GM Ivan Cheparinov (Radnik Surdulica, 2631) w 34 ruchach w 2. rundzie.\n\nCheparinov gra 24.Ng1, mając 19:48 na zegarze. Stockfish chciał 24.Ne1 i oceniał pozycję czarnych jako wyraźnie lepszą przed tym ruchem (−2,23), a po nim jako wygraną (−3,39). Od razu padło 24...Nxf2, pierwszy wybór silnika, a po 25.Qc2 ten sam skoczek bierze wieżę: 25...Nxe4. Potem 28...Qh4+ i 29...Qxh2+ zdejmują hetmany z szachownicy.\n\nMimo to Radnik Surdulica wygrywa mecz 3½–2½.\n\nWróć do 24.Ng1 i znajdź 24.Ne1. Potem graj dalej końcówkę przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Um cavalo captura em f2, depois em e4: Karthikeyan vence Cheparinov em 34",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), com o maior rating da Superliga Sérvia, venceu GM Ivan Cheparinov (Radnik Surdulica, 2631) em 34 lances na 2ª rodada.\n\nCheparinov jogou 24.Ng1 com 19:48 no relógio. O Stockfish queria 24.Ne1, e via clara vantagem das pretas antes (−2,23) e posição vencedora depois (−3,39). 24...Nxf2, sua primeira opção, veio logo em seguida, e depois de 25.Qc2 o mesmo cavalo capturou a torre: 25...Nxe4. Depois 28...Qh4+ e 29...Qxh2+ tiraram as damas do tabuleiro.\n\nMesmo assim, o Radnik Surdulica venceu o match por 3½–2½.\n\nVolte a 24.Ng1 e encontre 24.Ne1. Depois continue o final contra o motor."
+        },
+        "ro": {
+          "headline": "Un cal ia pe f2, apoi pe e4: Karthikeyan câștigă contra Cheparinov în 34 de mutări",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), cu cel mai mare rating din Superliga Serbiei, a câștigat contra GM Ivan Cheparinov (Radnik Surdulica, 2631) în 34 de mutări, în runda a 2-a.\n\nCheparinov a jucat 24.Ng1 cu 19:48 rămase. Stockfish voia 24.Ne1 și considera Negrul clar mai bun înainte (−2,23) și câștigător după (−3,39). 24...Nxf2, prima sa alegere, a urmat imediat, iar după 25.Qc2 același cal a luat tura: 25...Nxe4. Apoi 28...Qh4+ și 29...Qxh2+ au scos damele de pe tablă.\n\nRadnik Surdulica a câștigat totuși meciul cu 3½–2½.\n\nÎntoarce-te la 24.Ng1 și găsește 24.Ne1. Apoi continuă finalul contra motorului."
+        },
+        "ru": {
+          "headline": "Один конь берёт на f2, затем на e4: Karthikeyan обыгрывает Cheparinov за 34 хода",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), первый номер рейтинга сербской Суперлиги, обыгрывает GM Ivan Cheparinov (Radnik Surdulica, 2631) за 34 хода во 2-м туре.\n\nCheparinov играет 24.Ng1, имея 19:48. Stockfish хотел 24.Ne1 и давал чёрным явный перевес до хода (−2,23) и выигрыш после (−3,39). Сразу последовал 24...Nxf2 — первый выбор движка, а после 25.Qc2 тот же конь взял ладью: 25...Nxe4. Затем 28...Qh4+ и 29...Qxh2+ привели к размену ферзей.\n\nМатч всё же выигрывает Radnik Surdulica — 3½–2½.\n\nВернитесь к 24.Ng1 и найдите 24.Ne1. А затем продолжите эндшпиль против движка."
+        },
+        "sv": {
+          "headline": "En springare slår på f2 och sedan på e4: Karthikeyan besegrar Cheparinov på 34 drag",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), den högst rankade spelaren i serbiska superligan, besegrade GM Ivan Cheparinov (Radnik Surdulica, 2631) på 34 drag i rond 2.\n\nCheparinov spelade 24.Ng1 med 19:48 kvar. Stockfish ville ha 24.Ne1 och räknade svart som klart bättre före (−2,23) och som vinnande efter (−3,39). 24...Nxf2, Stockfishs förstaval, kom direkt, och efter 25.Qc2 tog samma springare tornet: 25...Nxe4. Sedan tog 28...Qh4+ och 29...Qxh2+ bort damerna.\n\nRadnik Surdulica vann ändå matchen med 3½–2½.\n\nGå tillbaka till 24.Ng1 och hitta 24.Ne1. Spela sedan vidare slutspelet mot motorn."
+        },
+        "th": {
+          "headline": "อัศวินตัวเดียวกินที่ f2 แล้วกินที่ e4: Karthikeyan ชนะ Cheparinov ใน 34 ตา",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) ผู้เล่นที่มีเรตติ้งสูงสุดในซูเปอร์ลีกเซอร์เบีย ชนะ GM Ivan Cheparinov (Radnik Surdulica, 2631) ใน 34 ตา ในรอบที่ 2\n\nCheparinov เดิน 24.Ng1 เมื่อเหลือเวลา 19:48 Stockfish ต้องการ 24.Ne1 และประเมินว่าฝ่ายดำได้เปรียบชัดเจนก่อนตานั้น (−2.23) และอยู่ในสถานะชนะหลังตานั้น (−3.39) 24...Nxf2 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจินก็มาทันที และหลัง 25.Qc2 อัศวินตัวเดิมก็กินเรือ: 25...Nxe4 จากนั้น 28...Qh4+ และ 29...Qxh2+ ก็ทำให้ควีนทั้งสองออกจากกระดาน\n\nถึงอย่างนั้น Radnik Surdulica ก็ยังชนะแมตช์ 3½–2½\n\nย้อนกลับไปที่ 24.Ng1 แล้วหา 24.Ne1 จากนั้นเล่นช่วงท้ายเกมต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "Bir at önce f2'de, sonra e4'te aldı: Karthikeyan, Cheparinov'u 34 hamlede yendi",
+          "body": "Sırbistan Süper Ligi'nin en yüksek reytingli oyuncusu GM Murali Karthikeyan (Jelica PEP Goračići, 2647), 2. turda GM Ivan Cheparinov'u (Radnik Surdulica, 2631) 34 hamlede yendi.\n\nCheparinov 24.Ng1 hamlesini saatte 19:48 kala oynadı. Stockfish 24.Ne1 hamlesini istiyordu; öncesinde siyahı açık farkla üstün (−2,23), sonrasında kazanan konumda (−3,39) görüyordu. İlk tercihi olan 24...Nxf2 hemen geldi ve 25.Qc2 sonrasında aynı at kaleyi aldı: 25...Nxe4. Ardından 28...Qh4+ ve 29...Qxh2+ vezirleri tahtadan çıkardı.\n\nRadnik Surdulica yine de maçı 3½–2½ kazandı.\n\n24.Ng1 hamlesine dön ve 24.Ne1 hamlesini bul. Sonra oyun sonunu motora karşı sürdür.",
+          "lede": "Sırbistan Süper Ligi'nin en yüksek reytingli oyuncusu GM Murali Karthikeyan (Jelica PEP Goračići, 2647), 2. turda GM Ivan Cheparinov'u (Radnik Surdulica, 2631) 34 hamlede yendi."
+        },
+        "vi": {
+          "headline": "Một Mã bắt ở f2, rồi ở e4: Karthikeyan thắng Cheparinov sau 34 nước",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), kỳ thủ có hệ số cao nhất giải Siêu hạng Serbia, thắng GM Ivan Cheparinov (Radnik Surdulica, 2631) sau 34 nước ở vòng 2.\n\nCheparinov đi 24.Ng1 khi còn 19:48. Stockfish muốn 24.Ne1, và đánh giá Đen ưu thế rõ trước nước đó (−2,23) và ở thế thắng sau nước đó (−3,39). 24...Nxf2, lựa chọn số một của engine, đến ngay, và sau 25.Qc2 chính quân Mã đó bắt Xe: 25...Nxe4. Rồi 28...Qh4+ và 29...Qxh2+ đưa hai Hậu rời bàn cờ.\n\nDù vậy Radnik Surdulica vẫn thắng trận 3½–2½.\n\nQuay lại 24.Ng1 và tìm 24.Ne1. Rồi chơi tiếp phần tàn cuộc với engine."
+        },
+        "zh-Hans": {
+          "headline": "同一匹马先吃f2再吃e4：Karthikeyan 34回合击败Cheparinov",
+          "body": "塞尔维亚超级联赛等级分最高的棋手GM Murali Karthikeyan（Jelica PEP Goračići，2647）在第2轮34回合击败GM Ivan Cheparinov（Radnik Surdulica，2631）。\n\nCheparinov在剩19:48时走出24.Ng1。Stockfish想走的是24.Ne1，并认为这步之前黑方明显占优（−2.23），之后黑方胜势（−3.39）。黑方随即走出Stockfish的首选24...Nxf2，25.Qc2之后，同一匹马又吃掉了车：25...Nxe4。接着28...Qh4+和29...Qxh2+，双方的后先后离开了棋盘。\n\nRadnik Surdulica仍以3½–2½赢下了比赛。\n\n回到24.Ng1，找出24.Ne1。然后对着引擎接着下这个残局。"
+        },
+        "zh-Hant": {
+          "headline": "同一匹馬先吃f2再吃e4：Karthikeyan 34回合擊敗Cheparinov",
+          "body": "塞爾維亞超級聯賽等級分最高的棋手GM Murali Karthikeyan（Jelica PEP Goračići，2647）在第2輪34回合擊敗GM Ivan Cheparinov（Radnik Surdulica，2631）。\n\nCheparinov在剩19:48時走出24.Ng1。Stockfish想走的是24.Ne1，並認為這步之前黑方明顯佔優（−2.23），之後黑方勝勢（−3.39）。黑方隨即走出Stockfish的首選24...Nxf2，25.Qc2之後，同一匹馬又吃掉了車：25...Nxe4。接著28...Qh4+和29...Qxh2+，雙方的后先後離開了棋盤。\n\nRadnik Surdulica仍以3½–2½贏下了比賽。\n\n回到24.Ng1，找出24.Ne1。然後對著引擎接著下這個殘局。"
+        }
+      },
+      "fen": "r4r2/pppq2k1/3p2np/P2Pp3/2B1R1p1/2P3Nn/1P3PK1/R2Q2N1 b - - 1 24",
+      "last": {
+        "from": "f3",
+        "to": "g1"
+      },
+      "url": "https://brasspawn.com/today/2026-10-05-cheparinov-karthikeyan-serbian-super-league-r2",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/serbian-super-league-2026-open/round-2/bbKHurKT/Ub5fv8VE"
+      },
+      "updatedAt": "2026-10-05T19:07:00.926Z"
+    },
+    {
+      "id": "2026-10-05-predke-berkes-serbian-super-league-r2",
+      "status": "approved",
+      "date": "2026-10-05",
+      "rank": 2,
+      "weight": 362,
+      "event": {
+        "name": "Serbian Super League 2026",
+        "short": "Serbian Super League",
+        "section": "Open",
+        "round": 2,
+        "location": "Vrnjačka Banja - Serbia",
+        "url": "https://lichess.org/broadcast/serbian-super-league-2026-open/round-2/bbKHurKT"
+      },
+      "white": {
+        "name": "Alexandr Predke",
+        "short": "Predke",
+        "title": "GM",
+        "elo": 2612,
+        "team": "RADNIČKI - ZMAJ - Beograd"
+      },
+      "black": {
+        "name": "Ferenc Berkes",
+        "short": "Berkes",
+        "title": "GM",
+        "elo": 2612,
+        "team": "PTT - Beograd"
+      },
+      "result": "1-0",
+      "opening": {
+        "eco": "C10",
+        "name": "French Defense: Rubinstein Variation, Blackburne Defense"
+      },
+      "moves": "e4 e6 d4 d5 Nc3 dxe4 Nxe4 Nd7 Nf3 Ngf6 Nxf6+ Nxf6 Bd3 c5 Be3 Qc7 Bb5+ Bd7 Bxd7+ Nxd7 d5 exd5 Qxd5 Nf6 Qc4 Bd6 Bg5 Qe7+ Kf1 O-O Re1 Qd8 h4 h6 c3 a6 Qd3 Rc8 Qf5 Be7 Ne5 Rc7 Rh3 c4 Be3 Nd5 Bxh6 Bf6 Ng4 Bxh4 Qh5 f5 Rxh4 fxg4 Bg5 Nf6 Bxf6 Qxf6 Qh7+ Kf7 Rh5",
+      "ending": null,
+      "key": {
+        "kind": "breakthrough",
+        "ply": 49,
+        "played": "Ng4",
+        "better": null,
+        "reply": "Rc5",
+        "replyPlayed": false,
+        "before": {
+          "cp": 229,
+          "mate": null
+        },
+        "after": {
+          "cp": 257,
+          "mate": null
+        },
+        "clock": 352
+      },
+      "headline": "Rated the same, level in material at the end: Predke beats Berkes in 31",
+      "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) beat GM Ferenc Berkes (PTT Beograd, 2612) in 31 moves in round 2 of the Serbian Super League, with the material level when the game ended.\n\n25.Ng4, played with 5:52 left, was Stockfish's first choice too, and its count went from +2.29 to +2.57. Black took the pawn on h4, 25...Bxh4, and two moves later, after 26.Qh5 f5 27.Rxh4, the knight: 27...fxg4. White's attack went on: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish counts the final position as a win for White.\n\nThe match ended 3–3: on the next board, GM Milos Perunovic beat GM Bharath Subramaniyam H for PTT Beograd.\n\nReplay it from 25.Ng4, then play White's attack on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "التصنيف نفسه والمادة متعادلة في النهاية: فوز لـPredke على Berkes في 31 نقلة",
+          "body": "انتهى الدور بفوز GM Alexandr Predke (Radnički Zmaj Beograd، 2612) على GM Ferenc Berkes (PTT Beograd، 2612) في 31 نقلة، في الجولة الثانية من الدوري الصربي الممتاز، والمادة متعادلة عند نهاية الدور.\n\nكانت ⁨25.Ng4⁩، التي لُعبت والوقت المتبقي ⁨5:52⁩، الخيار الأول لـStockfish أيضًا، وارتفع التقييم من ⁨+2.29⁩ إلى ⁨+2.57⁩. أخذ الأسود البيدق على h4، ⁨25...Bxh4⁩، وبعد ⁨26.Qh5 f5 27.Rxh4⁩ أُخذ الحصان: ⁨27...fxg4⁩. واستمر هجوم الأبيض: ⁨28.Bg5⁩، ⁨29.Bxf6⁩، ⁨30.Qh7+⁩، ⁨31.Rh5⁩. ويعدّ Stockfish الوضع النهائي فوزًا للأبيض.\n\nانتهت المباراة ⁨3–3⁩: على الرقعة التالية، جاء فوز GM Milos Perunovic على GM Bharath Subramaniyam H لصالح PTT Beograd.\n\nأعد عرض الدور من ⁨25.Ng4⁩، ثم تابع هجوم الأبيض ضد المحرك."
+        },
+        "bg": {
+          "headline": "Еднакъв рейтинг, равен материал накрая: Predke побеждава Berkes за 31 хода",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) победи GM Ferenc Berkes (PTT Beograd, 2612) за 31 хода във втория кръг на сръбската Суперлига, с равен материал в края на партията.\n\n25.Ng4, изигран с 5:52 на часовника, беше и първият избор на Stockfish, а оценката му се промени от +2,29 на +2,57. Черните взеха пешката на h4, 25...Bxh4, а след 26.Qh5 f5 27.Rxh4 взеха коня: 27...fxg4. Атаката на белите продължи: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish оценява крайната позиция като печеливша за белите.\n\nМачът завърши 3–3: на следващата дъска GM Milos Perunovic победи GM Bharath Subramaniyam H за PTT Beograd.\n\nПреиграйте партията от 25.Ng4, после продължете атаката на белите срещу енджина."
+        },
+        "cs": {
+          "headline": "Stejný rating, na konci vyrovnaný materiál: partii Predke – Berkes vyhrává po 31 tazích Predke",
+          "body": "V partii GM Alexandr Predke (Radnički Zmaj Beograd, 2612) – GM Ferenc Berkes (PTT Beograd, 2612) ve 2. kole srbské superligy vyhrává po 31 tazích Predke; na konci partie je materiál vyrovnaný.\n\n25.Ng4, zahraný s 5:52 na hodinách, byl i první volbou Stockfishe a hodnocení stouplo z +2,29 na +2,57. Černí vzali pěšce na h4, 25...Bxh4, a po 26.Qh5 f5 27.Rxh4 vzali jezdce, 27...fxg4. Útok bílých pokračoval: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Konečnou pozici hodnotí Stockfish jako výhru bílých.\n\nZápas skončil 3–3: na vedlejší šachovnici vyhrává partii GM Milos Perunovic – GM Bharath Subramaniyam H Perunovic a bere bod pro PTT Beograd.\n\nPřehraj si partii od 25.Ng4 a pak si útok bílých zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "Samme rating, lige materiale til sidst: Predke slår Berkes i 31 træk",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) slog GM Ferenc Berkes (PTT Beograd, 2612) i 31 træk i 2. runde af den serbiske superliga, med lige materiale, da partiet sluttede.\n\n25.Ng4, spillet med 5:52 tilbage, var også Stockfishs førstevalg, og vurderingen gik fra +2,29 til +2,57. Sort slog bonden på h4, 25...Bxh4, og efter 26.Qh5 f5 27.Rxh4 slog sort springeren, 27...fxg4. Hvids angreb fortsatte: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish ser slutstillingen som gevinst til hvid.\n\nMatchen endte 3–3: på nabobrættet slog GM Milos Perunovic GM Bharath Subramaniyam H for PTT Beograd.\n\nSpil partiet igennem fra 25.Ng4, og spil så hvids angreb videre mod motoren."
+        },
+        "de": {
+          "headline": "Gleiche Elo-Zahl, am Ende gleiches Material: Predke schlägt Berkes in 31 Zügen",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) schlug GM Ferenc Berkes (PTT Beograd, 2612) in Runde 2 der serbischen Superliga in 31 Zügen, mit ausgeglichenem Material am Ende der Partie.\n\n25.Ng4, gespielt mit 5:52 auf der Uhr, war auch die erste Wahl von Stockfish, und die Bewertung ging von +2,29 auf +2,57. Schwarz schlug den Bauern auf h4, 25...Bxh4, und nach 26.Qh5 f5 27.Rxh4 fiel mit 27...fxg4 der Springer. Der weiße Angriff lief weiter: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish sieht Weiß in der Schlussstellung auf Gewinn.\n\nDer Kampf endete 3:3: Am Nachbarbrett gewann GM Milos Perunovic für PTT Beograd gegen GM Bharath Subramaniyam H.\n\nAb 25.Ng4 nachspielen, dann den weißen Angriff gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Ίδιο Elo, ίσο υλικό στο τέλος: νίκη Predke επί Berkes σε 31",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) επικράτησε επί GM Ferenc Berkes (PTT Beograd, 2612) σε 31 κινήσεις στον 2ο γύρο της σερβικής Σούπερ Λίγκας, με ίσο υλικό όταν τελείωσε η παρτίδα.\n\nΗ 25.Ng4, που παίχτηκε με 5:52 στο ρολόι, ήταν και η πρώτη επιλογή του Stockfish, και η εκτίμηση πήγε από +2,29 σε +2,57. Τα μαύρα πήραν το πιόνι στο h4, 25...Bxh4, και μετά τις 26.Qh5 f5 27.Rxh4 πήραν τον ίππο, 27...fxg4. Η επίθεση των λευκών συνεχίστηκε: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Το Stockfish κρίνει την τελική θέση κερδισμένη για τα λευκά.\n\nΟ αγώνας έληξε 3–3: στην επόμενη σκακιέρα, GM Milos Perunovic επικράτησε επί GM Bharath Subramaniyam H για την PTT Beograd.\n\nΞαναδές την παρτίδα από την 25.Ng4 και μετά συνέχισε την επίθεση των λευκών απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Mismo Elo y material igualado al final: Predke vence a Berkes en 31",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) venció a GM Ferenc Berkes (PTT Beograd, 2612) en 31 jugadas en la segunda ronda de la Superliga serbia, con el material igualado al terminar la partida.\n\n25.Ng4, hecha con 5:52 en el reloj, también era la primera opción de Stockfish, y su valoración pasó de +2,29 a +2,57. Las negras tomaron el peón de h4, 25...Bxh4, y tras 26.Qh5 f5 27.Rxh4 se llevaron el caballo: 27...fxg4. El ataque blanco continuó: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish da la posición final como ganada para las blancas.\n\nEl match terminó 3–3: en el tablero de al lado, GM Milos Perunovic dio el punto a PTT Beograd al vencer a GM Bharath Subramaniyam H.\n\nReprodúcela desde 25.Ng4 y luego sigue el ataque blanco contra el motor."
+        },
+        "fi": {
+          "headline": "Sama rating, tasainen materiaali lopussa: Predke voittaa Berkesin 31 siirrossa",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) voitti GM Ferenc Berkesin (PTT Beograd, 2612) 31 siirrossa Serbian superliigan 2. kierroksella, ja pelin päättyessä materiaali oli tasan.\n\nKellossa 5:52 jäljellä pelattu 25.Ng4 oli myös Stockfishin ykkösvalinta, ja sen arvio muuttui lukemasta +2,29 lukemaan +2,57. Musta löi h4:n sotilaan, 25...Bxh4, ja siirtojen 26.Qh5 f5 27.Rxh4 jälkeen ratsun, 27...fxg4. Valkean hyökkäys jatkui: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish arvioi loppuaseman voitoksi valkealle.\n\nOttelu päättyi 3–3: seuraavalla laudalla GM Milos Perunovic voitti PTT Beogradille GM Bharath Subramaniyam H:n.\n\nToista peli siirrosta 25.Ng4 alkaen ja jatka sitten valkean hyökkäystä moottoria vastaan.",
+          "lede": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) voitti GM Ferenc Berkesin (PTT Beograd, 2612) 31 siirrossa Serbian superliigan 2. kierroksella, ja pelin päättyessä materiaali oli tasan."
+        },
+        "fr": {
+          "headline": "Même Elo, matériel égal à la fin : Predke bat Berkes en 31 coups",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) a battu GM Ferenc Berkes (PTT Beograd, 2612) en 31 coups lors de la 2e ronde de la Superligue serbe, avec un matériel égal à la fin de la partie.\n\n25.Ng4, joué avec 5:52 à la pendule, était aussi le premier choix de Stockfish, et son évaluation est passée de +2,29 à +2,57. Les Noirs ont pris le pion en h4, 25...Bxh4, et après 26.Qh5 f5 27.Rxh4, 27...fxg4 a pris le cavalier. L’attaque blanche a continué : 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish donne la position finale gagnante pour les Blancs.\n\nLe match s’est terminé sur 3–3 : sur l’échiquier voisin, GM Milos Perunovic a battu GM Bharath Subramaniyam H pour PTT Beograd.\n\nRejouez la partie à partir de 25.Ng4, puis poursuivez l’attaque blanche contre le moteur."
+        },
+        "he": {
+          "headline": "אותו דירוג, חומר שווה בסוף: ניצחון ל־Predke על Berkes ב־31 מסעים",
+          "body": "המשחק בסיבוב ה־2 של ליגת העל הסרבית הסתיים בניצחון ל־GM Alexandr Predke (Radnički Zmaj Beograd, 2612) על GM Ferenc Berkes (PTT Beograd, 2612) אחרי 31 מסעים, כשהחומר על הלוח היה שווה בסיום.\n\nהמסע ⁨25.Ng4⁩, ששוחק כשנותרו ⁨5:52⁩, היה גם הבחירה הראשונה של Stockfish, וההערכה עלתה מ־⁨+2.29⁩ ל־⁨+2.57⁩. השחור לקח את הרגלי ב־h4, ⁨25...Bxh4⁩, ואחרי ⁨26.Qh5 f5 27.Rxh4⁩ הפרש נלקח: ⁨27...fxg4⁩. ההתקפה של הלבן נמשכה: ⁨28.Bg5⁩, ⁨29.Bxf6⁩, ⁨30.Qh7+⁩, ⁨31.Rh5⁩. Stockfish מעריך את העמדה הסופית כניצחון ללבן.\n\nהמפגש הסתיים ⁨3–3⁩: בלוח הסמוך נרשם ניצחון ל־GM Milos Perunovic על GM Bharath Subramaniyam H, לזכות PTT Beograd.\n\nשחזרו את המשחק מ־⁨25.Ng4⁩, ואז המשיכו את ההתקפה של הלבן מול המנוע."
+        },
+        "hi": {
+          "headline": "बराबर रेटिंग, अंत में बराबर मोहरे: 31 चालों में Berkes पर Predke की जीत",
+          "body": "सर्बियाई सुपर लीग के राउंड 2 में GM Alexandr Predke (Radnički Zmaj Beograd, 2612) ने GM Ferenc Berkes (PTT Beograd, 2612) को 31 चालों में हराया, और बाज़ी ख़त्म होने पर मोहरों का हिसाब बराबर था।\n\n5:52 बचे रहते खेला गया 25.Ng4 Stockfish की भी पहली पसंद था, और उसका आकलन +2.29 से +2.57 पर गया। काले ने h4 पर प्यादा लिया, 25...Bxh4, और 26.Qh5 f5 27.Rxh4 के बाद घोड़ा लिया, 27...fxg4। सफ़ेद का हमला जारी रहा: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5। Stockfish आख़िरी स्थिति को सफ़ेद की जीत मानता है।\n\nमुक़ाबला 3–3 पर ख़त्म हुआ: अगले बोर्ड पर PTT Beograd के लिए GM Milos Perunovic ने GM Bharath Subramaniyam H को हराया।\n\n25.Ng4 से बाज़ी दोबारा देखें, फिर सफ़ेद के हमले को इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "Azonos értékszám, a végén egyenlő anyag: Predke 31 lépésben nyert Berkes ellen",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) 31 lépésben nyert GM Ferenc Berkes (PTT Beograd, 2612) ellen a szerb Szuperliga 2. fordulójában, és a játszma végén egyenlő volt az anyag.\n\nAz 5:52-vel az órán játszott 25.Ng4 a Stockfish első választása is volt, értékelése pedig +2,29-ről +2,57-re nőtt. Sötét leütötte a h4-es gyalogot, 25...Bxh4, majd a 26.Qh5 f5 27.Rxh4 után elvitte a huszárt: 27...fxg4. Világos támadása folytatódott: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. A Stockfish a záróállást világos számára nyerőnek értékeli.\n\nA mérkőzés 3–3-as döntetlennel zárult: a szomszéd táblán GM Milos Perunovic a PTT Beograd színeiben nyert GM Bharath Subramaniyam H ellen.\n\nJátszd vissza a 25.Ng4 lépéstől, aztán vidd tovább világos támadását a motor ellen."
+        },
+        "id": {
+          "headline": "Rating sama, materi seimbang di akhir: Predke kalahkan Berkes dalam 31 langkah",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) mengalahkan GM Ferenc Berkes (PTT Beograd, 2612) dalam 31 langkah di babak 2 Liga Super Serbia, dengan materi seimbang saat partai berakhir.\n\n25.Ng4, yang dimainkan dengan sisa 5:52, juga pilihan pertama Stockfish, dan penilaiannya berubah dari +2,29 ke +2,57. Hitam mengambil pion di h4, 25...Bxh4, dan sesudah 26.Qh5 f5 27.Rxh4 Hitam mengambil kuda, 27...fxg4. Serangan Putih berlanjut: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish menilai posisi akhir sebagai kemenangan Putih.\n\nPertandingan berakhir 3–3: di papan berikutnya, GM Milos Perunovic mengalahkan GM Bharath Subramaniyam H untuk PTT Beograd.\n\nPutar ulang dari 25.Ng4, lalu lanjutkan serangan Putih melawan mesin."
+        },
+        "it": {
+          "headline": "Stesso Elo, materiale pari alla fine: Predke batte Berkes in 31 mosse",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) ha battuto GM Ferenc Berkes (PTT Beograd, 2612) in 31 mosse nel 2º turno della Superlega serba, con il materiale pari alla fine della partita.\n\n25.Ng4, giocata con 5:52 sull’orologio, era anche la prima scelta di Stockfish, e la sua valutazione è passata da +2,29 a +2,57. Il Nero ha preso il pedone in h4, 25...Bxh4, e dopo 26.Qh5 f5 27.Rxh4, 27...fxg4 ha preso il Cavallo. L’attacco del Bianco è proseguito: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish dà la posizione finale vinta per il Bianco.\n\nIl match è finito 3–3: sulla scacchiera accanto, GM Milos Perunovic ha battuto GM Bharath Subramaniyam H per PTT Beograd.\n\nRigiocala da 25.Ng4, poi continua l’attacco del Bianco contro il motore."
+        },
+        "ja": {
+          "headline": "同じレーティング、終局時も駒割りは互角、PredkeがBerkesに31手で勝利",
+          "body": "GM Alexandr Predke（Radnički Zmaj Beograd、2612）がセルビア・スーパーリーグ第2ラウンドでGM Ferenc Berkes（PTT Beograd、2612）に31手で勝ちました。終局時、駒割りは互角でした。\n\n残り5:52で指された25.Ng4はStockfishの第一候補でもあり、評価は+2.29から+2.57に変わりました。黒は25...Bxh4でh4のポーンを取り、26.Qh5 f5 27.Rxh4の後、27...fxg4でナイトを取りました。白の攻撃は28.Bg5、29.Bxf6、30.Qh7+、31.Rh5と続きました。Stockfishは最終局面を白の勝勢と見ています。\n\nマッチは3–3で終わりました。隣の盤では、PTT BeogradのGM Milos PerunovicがGM Bharath Subramaniyam Hに勝っていました。\n\n25.Ng4から再生し、それから白の攻撃をエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "같은 레이팅, 끝날 때도 기물은 동등… Predke, Berkes에 31수 만에 승리",
+          "body": "GM Alexandr Predke(Radnički Zmaj Beograd, 2612)가 세르비아 슈퍼리그 2라운드에서 GM Ferenc Berkes(PTT Beograd, 2612)에게 31수 만에 이겼습니다. 대국이 끝났을 때 기물은 동등했습니다.\n\n5:52를 남기고 둔 25.Ng4는 Stockfish의 첫 번째 후보 수이기도 했고, 평가는 +2.29에서 +2.57로 바뀌었습니다. 흑은 25...Bxh4로 h4의 폰을 잡았고, 26.Qh5 f5 27.Rxh4 이후 27...fxg4로 나이트를 잡았습니다. 백의 공격은 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5로 이어졌습니다. Stockfish는 최종 국면을 백이 이기는 형세로 봅니다.\n\n매치는 3–3으로 끝났습니다. 옆 보드에서는 PTT Beograd의 GM Milos Perunovic가 GM Bharath Subramaniyam H를 꺾었습니다.\n\n25.Ng4부터 리플레이한 뒤, 엔진을 상대로 백의 공격을 이어서 두어 보세요."
+        },
+        "ms": {
+          "headline": "Rating sama, bahan seimbang di penghujung: Predke tewaskan Berkes dalam 31 langkah",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) menewaskan GM Ferenc Berkes (PTT Beograd, 2612) dalam 31 langkah dalam pusingan 2 Liga Super Serbia, dengan bahan seimbang ketika permainan tamat.\n\n25.Ng4, yang dimainkan dengan baki 5:52, juga pilihan pertama Stockfish, dan penilaiannya berubah daripada +2,29 kepada +2,57. Hitam mengambil bidak di h4, 25...Bxh4, dan selepas 26.Qh5 f5 27.Rxh4 Hitam mengambil kuda, 27...fxg4. Serangan Putih berterusan: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish menilai kedudukan akhir sebagai kemenangan untuk Putih.\n\nPerlawanan berakhir 3–3: di papan seterusnya, GM Milos Perunovic menewaskan GM Bharath Subramaniyam H untuk PTT Beograd.\n\nMain semula dari 25.Ng4, kemudian teruskan serangan Putih menentang enjin."
+        },
+        "nl": {
+          "headline": "Gelijke rating, gelijk materiaal aan het eind: Predke verslaat Berkes in 31 zetten",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) versloeg GM Ferenc Berkes (PTT Beograd, 2612) in 31 zetten in ronde 2 van de Servische Superliga, met gelijk materiaal toen de partij eindigde.\n\n25.Ng4, gespeeld met nog 5:52, was ook de eerste keuze van Stockfish, en de beoordeling ging van +2,29 naar +2,57. Zwart sloeg de pion op h4, 25...Bxh4, en na 26.Qh5 f5 27.Rxh4 viel met 27...fxg4 het paard. De witte aanval ging door: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish ziet wit in de slotstelling gewonnen staan.\n\nDe match eindigde in 3–3: op het bord ernaast won GM Milos Perunovic voor PTT Beograd van GM Bharath Subramaniyam H.\n\nSpeel de partij na vanaf 25.Ng4, en speel de witte aanval daarna verder tegen de engine."
+        },
+        "no": {
+          "headline": "Samme rating, likt materiell til slutt: Predke slår Berkes på 31 trekk",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) slo GM Ferenc Berkes (PTT Beograd, 2612) på 31 trekk i 2. runde av den serbiske superligaen, med likt materiell da partiet var slutt.\n\n25.Ng4, spilt med 5:52 igjen, var også Stockfishs førstevalg, og vurderingen gikk fra +2,29 til +2,57. Svart tok bonden på h4, 25...Bxh4, og etter 26.Qh5 f5 27.Rxh4 tok svart springeren, 27...fxg4. Hvits angrep fortsatte: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish regner sluttstillingen som gevinst for hvit.\n\nMatchen endte 3–3: på nabobrettet slo GM Milos Perunovic GM Bharath Subramaniyam H for PTT Beograd.\n\nSpill gjennom partiet fra 25.Ng4, og spill så hvits angrep videre mot motoren."
+        },
+        "pl": {
+          "headline": "Ten sam ranking, równy materiał na koniec: Predke pokonuje Berkes w 31 ruchach",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) pokonuje GM Ferenc Berkes (PTT Beograd, 2612) w 31 ruchach w 2. rundzie serbskiej Superligi, a gdy partia się kończy, materiał jest równy.\n\n25.Ng4, zagrane przy 5:52 na zegarze, było też pierwszym wyborem Stockfisha, a ocena silnika wzrosła z +2,29 do +2,57. Czarne biorą pionka na h4, 25...Bxh4, a po 26.Qh5 f5 27.Rxh4 zabierają skoczka: 27...fxg4. Atak białych trwa dalej: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish ocenia końcową pozycję jako wygraną dla białych.\n\nMecz kończy się remisem 3–3: na sąsiedniej szachownicy GM Milos Perunovic pokonuje GM Bharath Subramaniyam H, zdobywając punkt dla PTT Beograd.\n\nOdtwórz partię od 25.Ng4, a potem poprowadź atak białych dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Mesmo rating e material igual no fim: Predke vence Berkes em 31",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) venceu GM Ferenc Berkes (PTT Beograd, 2612) em 31 lances na 2ª rodada da Superliga Sérvia, com o material igual quando a partida terminou.\n\n25.Ng4, jogado com 5:52 no relógio, também era a primeira opção do Stockfish, e sua avaliação passou de +2,29 para +2,57. As pretas capturaram o peão em h4, 25...Bxh4, e depois de 26.Qh5 f5 27.Rxh4 capturaram o cavalo: 27...fxg4. O ataque das brancas continuou: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. O Stockfish avalia a posição final como vitória das brancas.\n\nO match terminou 3–3: no tabuleiro seguinte, GM Milos Perunovic venceu GM Bharath Subramaniyam H e marcou o ponto do PTT Beograd.\n\nReveja a partida a partir de 25.Ng4 e depois continue o ataque das brancas contra o motor."
+        },
+        "ro": {
+          "headline": "Același rating, material egal la final: Predke câștigă contra Berkes în 31 de mutări",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) a câștigat contra GM Ferenc Berkes (PTT Beograd, 2612) în 31 de mutări, în runda a 2-a a Superligii Serbiei, cu material egal la sfârșitul partidei.\n\n25.Ng4, jucată cu 5:52 rămase, a fost și prima alegere a lui Stockfish, iar evaluarea sa a crescut de la +2,29 la +2,57. Negrul a luat pionul de pe h4, 25...Bxh4, iar după 26.Qh5 f5 27.Rxh4 a luat calul, 27...fxg4. Atacul Albului a continuat: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish consideră poziția finală câștigătoare pentru Alb.\n\nMeciul s-a încheiat 3–3: pe tabla vecină, GM Milos Perunovic a câștigat contra GM Bharath Subramaniyam H pentru PTT Beograd.\n\nReia partida de la 25.Ng4, apoi continuă atacul Albului contra motorului."
+        },
+        "ru": {
+          "headline": "Одинаковый рейтинг, равный материал в финале: Predke обыгрывает Berkes за 31 ход",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) обыгрывает GM Ferenc Berkes (PTT Beograd, 2612) за 31 ход во 2-м туре сербской Суперлиги; к концу партии материал равный.\n\n25.Ng4, сыгранный при 5:52 на часах, был и первым выбором Stockfish, а оценка движка выросла с +2,29 до +2,57. Чёрные взяли пешку на h4, 25...Bxh4, а после 26.Qh5 f5 27.Rxh4 забрали коня: 27...fxg4. Атака белых продолжалась: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Финальную позицию Stockfish оценивает как выигранную для белых.\n\nМатч закончился 3–3: на соседней доске за PTT Beograd GM Milos Perunovic обыгрывает GM Bharath Subramaniyam H.\n\nПосмотрите партию с 25.Ng4, а затем продолжите атаку белых против движка."
+        },
+        "sv": {
+          "headline": "Samma rating, jämnt material i slutet: Predke besegrar Berkes på 31 drag",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) besegrade GM Ferenc Berkes (PTT Beograd, 2612) på 31 drag i rond 2 av serbiska superligan, med jämnt material när partiet tog slut.\n\n25.Ng4, spelat med 5:52 kvar, var också Stockfishs förstaval, och värderingen gick från +2,29 till +2,57. Svart tog bonden på h4, 25...Bxh4, och efter 26.Qh5 f5 27.Rxh4 tog svart springaren, 27...fxg4. Vits angrepp fortsatte: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish räknar slutställningen som vinst för vit.\n\nMatchen slutade 3–3: på brädet intill besegrade GM Milos Perunovic GM Bharath Subramaniyam H för PTT Beograd.\n\nSpela igenom partiet från 25.Ng4 och spela sedan vidare vits angrepp mot motorn."
+        },
+        "th": {
+          "headline": "เรตติ้งเท่ากัน หมากเท่ากันตอนจบ: Predke ชนะ Berkes ใน 31 ตา",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) ชนะ GM Ferenc Berkes (PTT Beograd, 2612) ใน 31 ตา ในรอบที่ 2 ของซูเปอร์ลีกเซอร์เบีย โดยจำนวนหมากของทั้งสองฝ่ายเท่ากันเมื่อเกมจบ\n\n25.Ng4 ซึ่งเดินเมื่อเหลือเวลา 5:52 ก็เป็นตัวเลือกอันดับแรกของ Stockfish เช่นกัน และค่าประเมินของเอนจินเปลี่ยนจาก +2.29 เป็น +2.57 ฝ่ายดำกินเบี้ยที่ h4 ด้วย 25...Bxh4 และหลัง 26.Qh5 f5 27.Rxh4 ฝ่ายดำก็กินอัศวินด้วย 27...fxg4 การบุกของฝ่ายขาวดำเนินต่อไป: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5 Stockfish ประเมินตำแหน่งสุดท้ายว่าเป็นสถานะชนะของฝ่ายขาว\n\nแมตช์จบที่ 3–3: บนกระดานถัดไป GM Milos Perunovic ชนะ GM Bharath Subramaniyam H ให้ PTT Beograd\n\nดูเกมซ้ำตั้งแต่ 25.Ng4 จากนั้นเล่นการบุกของฝ่ายขาวต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "Aynı reyting, sonda eşit malzeme: Predke, Berkes'i 31 hamlede yendi",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612), Sırbistan Süper Ligi'nin 2. turunda GM Ferenc Berkes'i (PTT Beograd, 2612) 31 hamlede yendi; oyun bittiğinde malzeme eşitti.\n\nSaatte 5:52 kala oynanan 25.Ng4, Stockfish'in de ilk tercihiydi ve değerlendirmesi +2,29'dan +2,57'ye çıktı. Siyah 25...Bxh4 ile h4'teki piyonu aldı ve 26.Qh5 f5 27.Rxh4 sonrasında atı aldı: 27...fxg4. Beyazın hücumu sürdü: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish son konumu beyaz için kazanan konum olarak değerlendiriyor.\n\nMaç 3–3 bitti: bir sonraki masada GM Milos Perunovic, PTT Beograd adına GM Bharath Subramaniyam H karşısında kazandı.\n\nOyunu 25.Ng4 hamlesinden itibaren yeniden izle, sonra beyazın hücumunu motora karşı sürdür.",
+          "lede": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612), Sırbistan Süper Ligi'nin 2. turunda GM Ferenc Berkes'i (PTT Beograd, 2612) 31 hamlede yendi; oyun bittiğinde malzeme eşitti."
+        },
+        "vi": {
+          "headline": "Cùng hệ số, lực lượng cân bằng lúc kết thúc: Predke thắng Berkes sau 31 nước",
+          "body": "GM Alexandr Predke (Radnički Zmaj Beograd, 2612) thắng GM Ferenc Berkes (PTT Beograd, 2612) sau 31 nước ở vòng 2 giải Siêu hạng Serbia, với lực lượng hai bên cân bằng khi ván cờ kết thúc.\n\n25.Ng4, được đi khi còn 5:52, cũng là lựa chọn số một của Stockfish, và đánh giá của engine chuyển từ +2,29 sang +2,57. Đen ăn Tốt ở h4, 25...Bxh4, và sau 26.Qh5 f5 27.Rxh4 thì bắt Mã, 27...fxg4. Đợt tấn công của Trắng tiếp diễn: 28.Bg5, 29.Bxf6, 30.Qh7+, 31.Rh5. Stockfish đánh giá thế cờ cuối cùng là thế thắng cho Trắng.\n\nTrận đấu kết thúc 3–3: ở bàn kế bên, GM Milos Perunovic thắng GM Bharath Subramaniyam H cho PTT Beograd.\n\nXem lại từ 25.Ng4, rồi chơi tiếp đợt tấn công của Trắng với engine."
+        },
+        "zh-Hans": {
+          "headline": "等级分相同，终局子力持平：Predke 31回合击败Berkes",
+          "body": "GM Alexandr Predke（Radnički Zmaj Beograd，2612）在塞尔维亚超级联赛第2轮31回合击败GM Ferenc Berkes（PTT Beograd，2612），对局结束时双方子力相当。\n\n剩5:52时走出的25.Ng4也是Stockfish的首选，Stockfish的评估从+2.29升到+2.57。黑方吃掉h4兵，25...Bxh4，26.Qh5 f5 27.Rxh4之后，黑方吃掉了马：27...fxg4。白方的攻势仍在继续：28.Bg5、29.Bxf6、30.Qh7+、31.Rh5。Stockfish认为最后的局面白方胜势。\n\n两队最终3–3战平：在相邻的棋盘上，GM Milos Perunovic为PTT Beograd击败了GM Bharath Subramaniyam H。\n\n从25.Ng4开始回放，然后对着引擎把白方的攻势继续下去。"
+        },
+        "zh-Hant": {
+          "headline": "等級分相同，終局子力持平：Predke 31回合擊敗Berkes",
+          "body": "GM Alexandr Predke（Radnički Zmaj Beograd，2612）在塞爾維亞超級聯賽第2輪31回合擊敗GM Ferenc Berkes（PTT Beograd，2612），對局結束時雙方子力相當。\n\n剩5:52時走出的25.Ng4也是Stockfish的首選，Stockfish的評估從+2.29升到+2.57。黑方吃掉h4兵，25...Bxh4，26.Qh5 f5 27.Rxh4之後，黑方吃掉了馬：27...fxg4。白方的攻勢仍在繼續：28.Bg5、29.Bxf6、30.Qh7+、31.Rh5。Stockfish認為最後的局面白方勝勢。\n\n兩隊最終3–3戰平：在相鄰的棋盤上，GM Milos Perunovic為PTT Beograd擊敗了GM Bharath Subramaniyam H。\n\n從25.Ng4開始重播，然後對著引擎把白方的攻勢繼續下去。"
+        }
+      },
+      "fen": "3q1rk1/1pr2pp1/p4b1B/3n1Q2/2p3NP/2P4R/PP3PP1/4RK2 b - - 2 25",
+      "last": {
+        "from": "e5",
+        "to": "g4"
+      },
+      "url": "https://brasspawn.com/today/2026-10-05-predke-berkes-serbian-super-league-r2",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/serbian-super-league-2026-open/round-2/bbKHurKT/fkO8BBT4"
+      },
+      "updatedAt": "2026-10-05T19:07:09.143Z"
+    }
+  ]
+}

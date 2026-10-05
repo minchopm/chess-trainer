@@ -1,0 +1,190 @@
+{
+  "date": "2026-09-30",
+  "pulledAt": "2026-10-05T19:44:11.012Z",
+  "stories": [
+    {
+      "id": "2026-09-30-salgado-lopez-peng-ladder-legends-by-lichess",
+      "status": "approved",
+      "date": "2026-09-30",
+      "rank": 0,
+      "weight": 364,
+      "event": {
+        "name": "Ladder Legends by Lichess",
+        "short": "Ladder Legends by Lichess",
+        "section": "GM Salgado López vs GM Peng",
+        "round": null,
+        "location": "lichess.org",
+        "url": "https://lichess.org/broadcast/ladder-legends-by-lichess-gm-salgado-lopez-vs-gm-peng/classical-game/JAsT9PLC"
+      },
+      "white": {
+        "name": "Ivan Salgado Lopez",
+        "short": "Salgado Lopez",
+        "title": "GM",
+        "elo": 2591,
+        "team": null
+      },
+      "black": {
+        "name": "Li Min Peng",
+        "short": "Peng",
+        "title": "GM",
+        "elo": 2568,
+        "team": null
+      },
+      "result": "0-1",
+      "opening": {
+        "eco": "A14",
+        "name": "English Opening: Agincourt Defense, Neo-Catalan Declined"
+      },
+      "moves": "c4 e6 g3 d5 Bg2 Nf6 Nf3 Be7 O-O O-O cxd5 exd5 b3 Ne4 Bb2 Bf6 Qc2 Bxb2 Qxb2 Qf6 Qxf6 Nxf6 b4 Re8 Nc3 a6 a4 Nc6 b5 Na5 Rfd1 Bd7 d3 axb5 axb5 Nb3 Rab1 Ra3 Rb2 Nd4 Nxd4 Rxc3 e3 Ra8 h3 Kf8 Ne2 Rc5 Rdb1 Ra5 Nd4 Rc3 Bf1 Ne8 Ne2 Rxd3 Nf4 Rc3 Nxd5 Rc5 Nf4 b6 e4 Nd6 Nd3 Rcxb5 Nb4 Rc5 f3 Be6 Rd1 Rc3 e5 Rxe5",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 73,
+        "played": "e5",
+        "better": "Be2",
+        "reply": "Rxe5",
+        "replyPlayed": true,
+        "before": {
+          "cp": -179,
+          "mate": null
+        },
+        "after": {
+          "cp": -340,
+          "mate": null
+        },
+        "clock": 108
+      },
+      "headline": "1:48 against 22:50: one pawn push, one rook capture, and Peng beats Salgado Lopez",
+      "body": "GM Li Min Peng (2568) beat GM Ivan Salgado Lopez (2591) in 37 moves in the Ladder Legends classical game on Lichess, with 22:50 on the clock against 1:48.\n\nThe last two moves decided it. With 1:48 left, Salgado Lopez pushed 37.e5. Stockfish wanted 37.Be2: it already counted Black clearly better (−1.79), and after the pawn push it counted a win (−3.40). Peng took on e5 with the rook, the engine's first choice, and the result went down 0–1.\n\nThe clock had been running down for a while. Salgado Lopez went under eight minutes at move 28 and under two at move 32. Peng never had less than 21 minutes.\n\nStop the replay before 37.e5, give yourself 1:48, and find 37.Be2. Then play the position on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "⁨1:48⁩ مقابل ⁨22:50⁩: دفعة بيدق واحدة، وأخذ واحد بالرخ، وفوز لـPeng على Salgado Lopez",
+          "body": "انتهى الدور الكلاسيكي في Ladder Legends على Lichess بفوز GM Li Min Peng (2568) على GM Ivan Salgado Lopez (2591) في 37 نقلة، والساعة تُظهر ⁨22:50⁩ مقابل ⁨1:48⁩.\n\nحسمت النقلتان الأخيرتان الدور. فمع ⁨1:48⁩ متبقية على ساعة Salgado Lopez، جاءت دفعة البيدق ⁨37.e5⁩. أراد Stockfish ⁨37.Be2⁩: كان التقييم أصلًا أفضلية واضحة للأسود (⁨−1.79⁩)، وبعد دفعة البيدق صار فوزًا (⁨−3.40⁩). ثم أخذ رخ Peng على e5، وكانت تلك النقلة الخيار الأول للمحرك، وسُجّلت النتيجة ⁨0–1⁩.\n\nكان الوقت ينفد منذ مدة. نزلت ساعة Salgado Lopez تحت ثماني دقائق عند النقلة 28 وتحت دقيقتين عند النقلة 32. ولم يقلّ وقت Peng قط عن 21 دقيقة.\n\nأوقف العرض قبل ⁨37.e5⁩، وامنح نفسك ⁨1:48⁩، واعثر على ⁨37.Be2⁩. ثم تابع الوضع ضد المحرك."
+        },
+        "bg": {
+          "headline": "1:48 срещу 22:50: един пешечен ход, едно вземане с топа и Peng побеждава Salgado Lopez",
+          "body": "GM Li Min Peng (2568) победи GM Ivan Salgado Lopez (2591) за 37 хода в класическата партия от Ladder Legends в Lichess, с 22:50 на часовника срещу 1:48.\n\nРешиха го последните два хода. С 1:48 на часовника Salgado Lopez изигра 37.e5. Stockfish искаше 37.Be2: енджинът и без това даваше ясно предимство на черните (−1,79), а след пешечния ход — печеливша позиция (−3,40). Peng взе на e5 с топа, първия избор на енджина, и резултатът беше записан 0–1.\n\nЧасовникът се топеше отдавна. Часовникът на Salgado Lopez слезе под осем минути на 28-ия ход и под две на 32-ия. Peng нито веднъж нямаше по-малко от 21 минути.\n\nСпрете преиграването преди 37.e5, дайте си 1:48 и намерете 37.Be2. После продължете позицията срещу енджина."
+        },
+        "cs": {
+          "headline": "Salgado Lopez – Peng: 1:48 proti 22:50, jeden postup pěšcem, jedno braní věží a vyhrává Peng",
+          "body": "V klasické partii Ladder Legends na Lichessu GM Ivan Salgado Lopez (2591) – GM Li Min Peng (2568) vyhrává po 37 tazích Peng, s 22:50 na hodinách proti 1:48.\n\nRozhodly poslední dva tahy. S 1:48 na hodinách táhne Salgado Lopez 37.e5. Stockfish chtěl 37.Be2: už předtím viděl jasnou výhodu černých (−1,79) a po postupu pěšce výhru (−3,40). Peng bere na e5 věží, což je první volba enginu, a zapisuje se výsledek 0–1.\n\nČas docházel už delší dobu. Salgado Lopez klesá ve 28. tahu pod osm minut a ve 32. tahu pod dvě. Peng ani jednou neklesá pod 21 minut.\n\nZastav přehrávání před 37.e5, dej si 1:48 a najdi 37.Be2. Pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "1:48 mod 22:50: ét bondetræk, ét tårnslag, og Peng slår Salgado Lopez",
+          "body": "GM Li Min Peng (2568) slog GM Ivan Salgado Lopez (2591) i 37 træk i Ladder Legends-partiet med klassisk betænkningstid på Lichess, med 22:50 på uret mod 1:48.\n\nDe sidste to træk afgjorde det. Med 1:48 tilbage rykkede Salgado Lopez frem med 37.e5. Stockfish ville have 37.Be2: motoren så allerede sort klart bedre (−1,79), og efter bondetrækket så den sort til gevinst (−3,40). Peng slog på e5 med tårnet, motorens førstevalg, og resultatet blev noteret som 0–1.\n\nUret havde tikket ned et stykke tid. Salgado Lopez kom under otte minutter i 28. træk og under to i 32. træk. Peng havde aldrig mindre end 21 minutter.\n\nStop afspilningen før 37.e5, giv dig selv 1:48, og find 37.Be2. Spil så stillingen videre mod motoren."
+        },
+        "de": {
+          "headline": "1:48 gegen 22:50: ein Bauernzug, ein Turmschlag, und Peng schlägt Salgado Lopez",
+          "body": "GM Li Min Peng (2568) schlug GM Ivan Salgado Lopez (2591) in der klassischen Partie der Ladder Legends auf Lichess in 37 Zügen, mit 22:50 gegen 1:48 auf der Uhr.\n\nDie letzten beiden Züge entschieden die Partie. Mit 1:48 auf der Uhr zog Salgado Lopez 37.e5. Stockfish wollte 37.Be2: Schon vorher stand Schwarz für Stockfish klar besser (−1,79), nach dem Bauernzug auf Gewinn (−3,40). Peng schlug mit dem Turm auf e5, die erste Wahl der Engine, und das Ergebnis lautete 0:1.\n\nDie Uhr lief schon seit einer Weile herunter. Salgado Lopez fiel bei Zug 28 unter acht Minuten und bei Zug 32 unter zwei. Peng hatte nie weniger als 21 Minuten.\n\nDas Nachspielen vor 37.e5 anhalten, sich 1:48 geben und 37.Be2 finden. Dann die Stellung gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "1:48 απέναντι σε 22:50: μία προώθηση πιονιού, μία αιχμαλωσία με πύργο και νίκη Peng επί Salgado Lopez",
+          "body": "GM Li Min Peng (2568) επικράτησε επί GM Ivan Salgado Lopez (2591) σε 37 κινήσεις στην κλασική παρτίδα του Ladder Legends στο Lichess, με 22:50 στο ρολόι απέναντι σε 1:48.\n\nΌλα κρίθηκαν στις δύο τελευταίες κινήσεις. Με 1:48 στο ρολόι, Salgado Lopez προώθησε το πιόνι με την 37.e5. Το Stockfish ήθελε την 37.Be2: έβλεπε ήδη καθαρό πλεονέκτημα για τα μαύρα (−1,79), και μετά την προώθηση του πιονιού έκρινε τη θέση κερδισμένη (−3,40). Peng πήρε στο e5 με τον πύργο, την πρώτη επιλογή της μηχανής, και το αποτέλεσμα γράφτηκε 0–1.\n\nΟ χρόνος λιγόστευε εδώ και αρκετή ώρα. Salgado Lopez έπεσε κάτω από τα οκτώ λεπτά στην 28η κίνηση και κάτω από τα δύο στην 32η. Peng δεν είχε ποτέ λιγότερα από 21 λεπτά.\n\nΣταμάτα την αναπαραγωγή πριν από την 37.e5, βάλε 1:48 στο ρολόι σου και βρες την 37.Be2. Μετά συνέχισε τη θέση απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "1:48 contra 22:50: un avance de peón, una captura con la torre, y Peng vence a Salgado Lopez",
+          "body": "GM Li Min Peng (2568) venció a GM Ivan Salgado Lopez (2591) en 37 jugadas en la partida clásica de Ladder Legends en Lichess, con 22:50 en el reloj frente a 1:48.\n\nLas dos últimas jugadas lo decidieron. Con 1:48 en el reloj, Salgado Lopez avanzó 37.e5. Stockfish quería 37.Be2: ya daba clara ventaja a las negras (−1,79), y tras el avance del peón daba la partida como ganada (−3,40). Peng tomó en e5 con la torre, la primera opción del motor, y el resultado quedó en 0–1.\n\nEl reloj llevaba un buen rato bajando. Salgado Lopez bajó de ocho minutos en la jugada 28 y de dos en la 32. Peng nunca tuvo menos de 21 minutos.\n\nDetén la reproducción antes de 37.e5, date 1:48 y encuentra 37.Be2. Luego sigue la posición contra el motor."
+        },
+        "fi": {
+          "headline": "1:48 vastaan 22:50: yksi sotilaan työntö, yksi tornin lyönti, ja Peng voittaa Salgado Lopezin",
+          "body": "GM Li Min Peng (2568) voitti GM Ivan Salgado Lopezin (2591) 37 siirrossa Ladder Legends -tapahtuman klassisessa pelissä Lichessissä, kellossa 22:50 vastaan 1:48.\n\nKaksi viimeistä siirtoa ratkaisivat. Kellossa 1:48 jäljellä Salgado Lopez työnsi sotilaan, 37.e5. Stockfish halusi 37.Be2: sen mukaan mustalla oli jo selvä etu (−1,79), ja sotilaan työnnön jälkeen se arvioi aseman voitoksi (−3,40). Peng löi tornilla e5:ssä, mikä oli moottorin ykkösvalinta, ja tulokseksi kirjattiin 0–1.\n\nAika oli huvennut jo pitkään. Salgado Lopez putosi alle kahdeksan minuutin siirrolla 28 ja alle kahden siirrolla 32. Pengillä ei ollut kertaakaan alle 21 minuuttia.\n\nPysäytä toisto ennen siirtoa 37.e5, anna itsellesi 1:48 ja löydä 37.Be2. Jatka sitten asemaa moottoria vastaan."
+        },
+        "fr": {
+          "headline": "1:48 contre 22:50 : une poussée de pion, une prise de tour, et Peng bat Salgado Lopez",
+          "body": "GM Li Min Peng (2568) a battu GM Ivan Salgado Lopez (2591) en 37 coups dans la partie classique Ladder Legends sur Lichess, avec 22:50 à la pendule contre 1:48.\n\nLes deux derniers coups ont tout décidé. Avec 1:48 à la pendule, Salgado Lopez a poussé 37.e5. Stockfish voulait 37.Be2 : il donnait déjà les Noirs nettement mieux (−1,79), et après la poussée de pion, gagnants (−3,40). Peng a pris en e5 avec la tour, le premier choix du moteur, et la partie s’est conclue sur 0–1.\n\nLe temps filait depuis un moment. La pendule de Salgado Lopez est descendue sous les huit minutes au 28e coup, puis sous les deux minutes au 32e. Peng n’a jamais eu moins de 21 minutes.\n\nArrêtez-vous avant 37.e5, donnez-vous 1:48 et trouvez 37.Be2. Puis continuez la position contre le moteur."
+        },
+        "he": {
+          "headline": "⁨1:48⁩ מול ⁨22:50⁩: דחיפת רגלי אחת, לקיחה אחת בצריח, וניצחון ל־Peng על Salgado Lopez",
+          "body": "המשחק הקלאסי של Ladder Legends ב־Lichess הסתיים בניצחון ל־GM Li Min Peng (2568) על GM Ivan Salgado Lopez (2591) אחרי 37 מסעים, עם ⁨22:50⁩ בשעון מול ⁨1:48⁩.\n\nשני המסעים האחרונים הכריעו את המשחק. כשבשעון של Salgado Lopez נותרו ⁨1:48⁩, הרגלי הלבן נדחף ב־⁨37.e5⁩. Stockfish רצה ב־⁨37.Be2⁩: כבר לפני כן ההערכה הייתה יתרון ברור לשחור (⁨−1.79⁩), ואחרי דחיפת הרגלי, עמדה מנצחת (⁨−3.40⁩). הצריח של Peng לקח ב־e5, הבחירה הראשונה של המנוע, והתוצאה נרשמה ⁨0–1⁩.\n\nהזמן בשעון הלך ואזל עוד קודם לכן. השעון של Salgado Lopez ירד מתחת לשמונה דקות במסע 28 ומתחת לשתי דקות במסע 32. ל־Peng לא נותרו אף פעם פחות מ־21 דקות.\n\nעצרו את השחזור לפני ⁨37.e5⁩, תנו לעצמכם ⁨1:48⁩ ומצאו את ⁨37.Be2⁩. ואז המשיכו לשחק את העמדה מול המנוע."
+        },
+        "hi": {
+          "headline": "1:48 बनाम 22:50: प्यादे की एक चाल, हाथी का एक कैप्चर, और Salgado Lopez पर Peng की जीत",
+          "body": "Lichess पर Ladder Legends की क्लासिकल बाज़ी में GM Li Min Peng (2568) ने GM Ivan Salgado Lopez (2591) को 37 चालों में हराया, और अंत में घड़ियों पर Peng के 22:50 थे और Salgado Lopez के 1:48।\n\nफ़ैसला आख़िरी दो चालों में हुआ। 1:48 बचे रहते Salgado Lopez ने 37.e5 से प्यादा आगे बढ़ाया। Stockfish 37.Be2 चाहता था: उसके हिसाब से काला पहले ही साफ़ बेहतर था (−1.79), और प्यादे की इस चाल के बाद Stockfish ने इसे काले की जीत की स्थिति माना (−3.40)। Peng ने हाथी से e5 पर प्यादा लिया, जो इंजन की पहली पसंद थी, और नतीजा 0–1 दर्ज हुआ।\n\nघड़ी काफ़ी देर से कम हो रही थी। चाल 28 पर Salgado Lopez की घड़ी आठ मिनट से नीचे गई, और चाल 32 पर दो मिनट से नीचे। Peng की घड़ी पर कभी 21 मिनट से कम नहीं रहे।\n\nबाज़ी को 37.e5 से पहले रोकें, खुद को 1:48 दें, और 37.Be2 खोजें। फिर इंजन के ख़िलाफ़ इस स्थिति को आगे खेलें।"
+        },
+        "hu": {
+          "headline": "1:48 kontra 22:50: egy gyaloglépés, egy bástyaütés, és Peng nyert Salgado Lopez ellen",
+          "body": "GM Li Min Peng (2568) 37 lépésben nyert GM Ivan Salgado Lopez (2591) ellen a Ladder Legends klasszikus játszmájában a Lichessen, és a végén 22:50 állt az óráján, ellenfeléén 1:48.\n\nAz utolsó két lépés döntött. Salgado Lopez 1:48-cal az óráján a 37.e5 lépést játszotta. A Stockfish a 37.Be2 lépést akarta: már addig is sötét egyértelmű előnyét látta (−1,79), a gyaloglépés után pedig nyerést (−3,40). Peng a bástyával ütött az e5-ön, ami a motor első választása volt, és a végeredmény 0–1 lett.\n\nAz idő már jó ideje fogyott. Salgado Lopez a 28. lépésnél nyolc perc alá, a 32. lépésnél két perc alá került. Pengnek egyszer sem volt 21 percnél kevesebb ideje.\n\nÁllítsd meg a visszajátszást a 37.e5 előtt, adj magadnak 1:48-at, és találd meg a 37.Be2 lépést. Aztán játszd tovább az állást a motor ellen."
+        },
+        "id": {
+          "headline": "1:48 lawan 22:50: satu langkah pion, satu tangkapan benteng, dan Peng kalahkan Salgado Lopez",
+          "body": "Dengan 22:50 di jam lawan 1:48, GM Li Min Peng (2568) mengalahkan GM Ivan Salgado Lopez (2591) dalam 37 langkah di partai klasik Ladder Legends di Lichess.\n\nDua langkah terakhir yang menentukan. Dengan sisa 1:48, Salgado Lopez memajukan pion lewat 37.e5. Stockfish menginginkan 37.Be2: mesin sudah menilai Hitam unggul jelas (−1,79), dan sesudah langkah pion itu menilainya menang (−3,40). Peng mengambil di e5 dengan benteng, pilihan pertama mesin, dan hasilnya tercatat 0–1.\n\nJam sudah lama menipis. Salgado Lopez turun di bawah delapan menit pada langkah 28 dan di bawah dua menit pada langkah 32. Peng tidak pernah punya kurang dari 21 menit.\n\nHentikan putaran ulang sebelum 37.e5, beri dirimu 1:48, dan temukan 37.Be2. Lalu lanjutkan posisinya melawan mesin."
+        },
+        "it": {
+          "headline": "1:48 contro 22:50: una spinta di pedone, una presa di Torre, e Peng batte Salgado Lopez",
+          "body": "GM Li Min Peng (2568) ha battuto GM Ivan Salgado Lopez (2591) in 37 mosse nella partita a cadenza classica Ladder Legends su Lichess, con 22:50 sull’orologio contro 1:48.\n\nLe ultime due mosse hanno deciso tutto. Con 1:48 sull’orologio, Salgado Lopez ha spinto 37.e5. Stockfish voleva 37.Be2: dava già il Nero chiaramente meglio (−1,79), e dopo la spinta di pedone dava la posizione vinta per il Nero (−3,40). Peng ha preso in e5 con la Torre, la prima scelta del motore, e il risultato è stato registrato: 0–1.\n\nIl tempo scorreva da un po’. L’orologio di Salgado Lopez è sceso sotto gli otto minuti alla mossa 28 e sotto i due alla mossa 32. Peng non ha mai avuto meno di 21 minuti.\n\nFermati prima di 37.e5, datti 1:48 e trova 37.Be2. Poi continua la posizione contro il motore."
+        },
+        "ja": {
+          "headline": "1:48対22:50、ポーンを突く一手とルークで取る一手で、PengがSalgado Lopezに勝利",
+          "body": "GM Li Min Peng（2568）が、LichessのLadder Legendsのクラシカル戦でGM Ivan Salgado Lopez（2591）に37手で勝ちました。時計は22:50対1:48でした。\n\n勝負を決めたのは最後の二手でした。残り1:48で、Salgado Lopezは37.e5とポーンを突きました。Stockfishが望んだのは37.Be2。この時点ですでに黒の明確な優勢（−1.79）と見ており、ポーンを突いた後は黒の勝勢（−3.40）としました。Pengはエンジンの第一候補どおりルークでe5を取り、結果は0–1と記録されました。\n\n時計はしばらく前から減り続けていました。Salgado Lopezは28手目で残り8分を切り、32手目で2分を切りました。Pengの残りが21分を下回ることは一度もありませんでした。\n\n37.e5の手前で再生を止め、自分にも1:48だけ与えて、37.Be2を見つけましょう。それからエンジン相手にこの局面を指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "1:48 대 22:50, 폰 전진 한 수와 룩으로 잡은 한 수… Peng, Salgado Lopez 꺾어",
+          "body": "GM Li Min Peng(2568)이 Lichess의 Ladder Legends 클래시컬 대국에서 GM Ivan Salgado Lopez(2591)에게 37수 만에 이겼습니다. 시계는 22:50 대 1:48를 가리키고 있었습니다.\n\n승부를 가른 것은 마지막 두 수였습니다. 시계에 1:48가 남은 상태에서 Salgado Lopez가 37.e5로 폰을 밀었습니다. Stockfish가 원한 수는 37.Be2였습니다. Stockfish는 이미 흑의 뚜렷한 우세(−1.79)로 보고 있었고, 폰 전진 이후에는 흑이 이기는 형세(−3.40)으로 보았습니다. Peng은 엔진의 첫 번째 후보 수대로 룩으로 e5를 잡았고, 결과는 0–1로 기록되었습니다.\n\n시계는 한동안 계속 줄어들고 있었습니다. Salgado Lopez는 28수째에 8분 아래로, 32수째에 2분 아래로 내려갔습니다. Peng의 시계는 한 번도 21분 아래로 내려가지 않았습니다.\n\n37.e5 직전에서 리플레이를 멈추고, 스스로에게 1:48를 준 뒤 37.Be2를 찾아보세요. 이어서 엔진을 상대로 이 국면을 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "1:48 berbanding 22:50: satu langkah bidak, satu tangkapan tir, dan Peng tewaskan Salgado Lopez",
+          "body": "Dengan 22:50 pada jam berbanding 1:48, GM Li Min Peng (2568) menewaskan GM Ivan Salgado Lopez (2591) dalam 37 langkah dalam permainan klasik Ladder Legends di Lichess.\n\nDua langkah terakhir yang menentukan. Dengan baki 1:48, Salgado Lopez memajukan bidak dengan 37.e5. Stockfish mahukan 37.Be2: enjin sudah menilai Hitam jelas mendahului (−1,79), dan selepas langkah bidak itu menilainya menang (−3,40). Peng mengambil di e5 dengan tir, pilihan pertama enjin, dan keputusan direkodkan 0–1.\n\nJam sudah lama menyusut. Salgado Lopez jatuh di bawah lapan minit pada langkah 28 dan di bawah dua minit pada langkah 32. Peng tidak pernah mempunyai kurang daripada 21 minit.\n\nHentikan main semula sebelum 37.e5, beri diri anda 1:48, dan cari 37.Be2. Kemudian teruskan kedudukan itu menentang enjin."
+        },
+        "nl": {
+          "headline": "1:48 tegen 22:50: één pionzet, één slag met de toren, en Peng verslaat Salgado Lopez",
+          "body": "GM Li Min Peng (2568) versloeg GM Ivan Salgado Lopez (2591) in 37 zetten in de klassieke partij van Ladder Legends op Lichess, met 22:50 op de klok tegen 1:48.\n\nDe laatste twee zetten gaven de doorslag. Met nog 1:48 speelde Salgado Lopez 37.e5. Stockfish wilde 37.Be2: zwart stond volgens Stockfish al duidelijk beter (−1,79), en na de pionzet gewonnen (−3,40). Peng sloeg met de toren op e5, de eerste keuze van de engine, en de uitslag werd 0–1.\n\nDe klok liep al een tijd terug. Salgado Lopez zakte op zet 28 onder de acht minuten en op zet 32 onder de twee. Peng had nooit minder dan 21 minuten.\n\nZet het naspelen stil vóór 37.e5, geef jezelf 1:48 en vind 37.Be2. Speel de stelling daarna verder tegen de engine."
+        },
+        "no": {
+          "headline": "1:48 mot 22:50: ett bondetrekk, ett tårnslag, og Peng slår Salgado Lopez",
+          "body": "GM Li Min Peng (2568) slo GM Ivan Salgado Lopez (2591) på 37 trekk i Ladder Legends-partiet med klassisk tenketid på Lichess, med 22:50 på klokka mot 1:48.\n\nDe to siste trekkene avgjorde. Med 1:48 igjen spilte Salgado Lopez 37.e5. Stockfish ville ha 37.Be2: motoren regnet allerede svart som klart bedre (−1,79), og etter bondetrekket som gevinst (−3,40). Peng slo på e5 med tårnet, motorens førstevalg, og resultatet ble notert som 0–1.\n\nKlokka hadde tikket ned en stund. Salgado Lopez gikk under åtte minutter i trekk 28 og under to i trekk 32. Peng hadde aldri mindre enn 21 minutter.\n\nStopp avspillingen før 37.e5, gi deg selv 1:48, og finn 37.Be2. Spill så stillingen videre mot motoren."
+        },
+        "pl": {
+          "headline": "1:48 wobec 22:50: jeden ruch pionkiem, jedno bicie wieżą i Peng pokonuje Salgado Lopez",
+          "body": "GM Li Min Peng (2568) pokonuje GM Ivan Salgado Lopez (2591) w 37 ruchach w klasycznej partii Ladder Legends na Lichess, mając na zegarze 22:50 wobec 1:48.\n\nO wyniku przesądzają dwa ostatnie ruchy. Salgado Lopez gra 37.e5, mając na zegarze 1:48. Stockfish chciał 37.Be2: już wcześniej oceniał pozycję czarnych jako wyraźnie lepszą (−1,79), a po ruchu pionkiem jako wygraną (−3,40). Peng bije wieżą na e5, co było pierwszym wyborem silnika, i zapisano wynik 0–1.\n\nCzas na zegarze topniał już wcześniej. Salgado Lopez schodzi poniżej ośmiu minut w 28. ruchu, a poniżej dwóch w 32. ruchu. Peng ani razu nie ma mniej niż 21 minut.\n\nZatrzymaj odtwarzanie przed 37.e5, daj sobie 1:48 i znajdź 37.Be2. Potem graj dalej tę pozycję przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "1:48 contra 22:50: um avanço de peão, uma captura com a torre, e Peng vence Salgado Lopez",
+          "body": "GM Li Min Peng (2568) venceu GM Ivan Salgado Lopez (2591) em 37 lances na partida clássica do Ladder Legends no Lichess, com 22:50 no relógio contra 1:48.\n\nOs dois últimos lances decidiram a partida. Com 1:48 no relógio, Salgado Lopez avançou 37.e5. O Stockfish queria 37.Be2: já via clara vantagem das pretas (−1,79), e depois do avanço do peão avaliou a posição como vencedora (−3,40). Peng capturou em e5 com a torre, a primeira opção do motor, e o resultado foi registrado como 0–1.\n\nO relógio já vinha baixando havia algum tempo. Salgado Lopez ficou com menos de oito minutos no lance 28 e com menos de dois no lance 32. Peng nunca teve menos de 21 minutos.\n\nPare a reprodução antes de 37.e5 e, em 1:48, encontre 37.Be2. Depois continue a posição contra o motor."
+        },
+        "ro": {
+          "headline": "1:48 contra 22:50: o mutare de pion, o captură cu tura, iar Peng câștigă contra Salgado Lopez",
+          "body": "GM Li Min Peng (2568) a câștigat contra GM Ivan Salgado Lopez (2591) în 37 de mutări, în partida clasică Ladder Legends de pe Lichess, cu 22:50 pe ceas față de 1:48.\n\nUltimele două mutări au decis partida. Cu 1:48 rămase, Salgado Lopez a jucat 37.e5. Stockfish voia 37.Be2: considera deja Negrul clar mai bun (−1,79), iar după avansul pionului a văzut o poziție câștigătoare (−3,40). Peng a luat pe e5 cu tura, prima alegere a motorului, iar rezultatul a fost consemnat 0–1.\n\nTimpul se scurgea de ceva vreme. Salgado Lopez a coborât sub opt minute la mutarea 28 și sub două la mutarea 32. Peng nu a avut niciodată mai puțin de 21 de minute.\n\nOprește reluarea înainte de 37.e5, dă-ți 1:48 și găsește 37.Be2. Apoi continuă poziția contra motorului."
+        },
+        "ru": {
+          "headline": "1:48 против 22:50: одно продвижение пешки, одно взятие ладьёй — и Peng обыгрывает Salgado Lopez",
+          "body": "GM Li Min Peng (2568) обыгрывает GM Ivan Salgado Lopez (2591) за 37 ходов в классической партии Ladder Legends на Lichess: на часах 22:50 против 1:48.\n\nВсё решили два последних хода. С 1:48 на часах Salgado Lopez играет 37.e5. Stockfish хотел 37.Be2: движок уже видел у чёрных явный перевес (−1,79), а после продвижения пешки — выигрыш (−3,40). Peng берёт на e5 ладьёй, это первый выбор движка, и записан результат 0–1.\n\nВремя уходило уже давно. Salgado Lopez опускается ниже восьми минут на 28-м ходу и ниже двух — на 32-м. У Peng ни разу не оставалось меньше 21 минуты.\n\nОстановите просмотр перед 37.e5, дайте себе 1:48 и найдите 37.Be2. А затем продолжите позицию против движка."
+        },
+        "sv": {
+          "headline": "1:48 mot 22:50: ett bondedrag, ett tornslag, och Peng besegrar Salgado Lopez",
+          "body": "GM Li Min Peng (2568) besegrade GM Ivan Salgado Lopez (2591) på 37 drag i Ladder Legends-partiet med klassisk betänketid på Lichess, med 22:50 på klockan mot 1:48.\n\nDe två sista dragen avgjorde. Med 1:48 kvar spelade Salgado Lopez fram 37.e5. Stockfish ville ha 37.Be2: motorn räknade redan svart som klart bättre (−1,79), och efter bondedraget som vinst (−3,40). Peng slog på e5 med tornet, motorns förstaval, och resultatet noterades som 0–1.\n\nKlockan hade tickat ner en stund. Salgado Lopez gick under åtta minuter i drag 28 och under två i drag 32. Peng hade aldrig mindre än 21 minuter.\n\nStoppa uppspelningen före 37.e5, ge dig själv 1:48 och hitta 37.Be2. Spela sedan vidare ställningen mot motorn."
+        },
+        "th": {
+          "headline": "1:48 ต่อ 22:50 เบี้ยเดินหนึ่งตา เรือกินหนึ่งครั้ง และ Peng ชนะ Salgado Lopez",
+          "body": "GM Li Min Peng (2568) ชนะ GM Ivan Salgado Lopez (2591) ใน 37 ตา ในเกมคลาสสิกรายการ Ladder Legends บน Lichess โดยมีเวลาบนนาฬิกา 22:50 ต่อ 1:48\n\nสองตาสุดท้ายตัดสินเกม เมื่อเหลือเวลา 1:48 Salgado Lopez เดินเบี้ย 37.e5 Stockfish ต้องการ 37.Be2 โดยเอนจินประเมินอยู่แล้วว่าฝ่ายดำได้เปรียบชัดเจน (−1.79) และหลังเบี้ยเดิน เอนจินประเมินเป็นสถานะชนะ (−3.40) Peng ใช้เรือกินที่ e5 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจิน และผลถูกบันทึกเป็น 0–1\n\nเวลาบนนาฬิกาลดลงมาสักพักแล้ว Salgado Lopez เหลือไม่ถึงแปดนาทีที่ตาที่ 28 และไม่ถึงสองนาทีที่ตาที่ 32 ส่วน Peng ไม่เคยมีเวลาน้อยกว่า 21 นาทีเลย\n\nหยุดการดูเกมก่อน 37.e5 ให้เวลาตัวเอง 1:48 แล้วหา 37.Be2 จากนั้นเล่นตำแหน่งนี้ต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "1:48'e karşı 22:50: bir piyon sürüşü, bir kale alışı ve Peng, Salgado Lopez'i yendi",
+          "body": "GM Li Min Peng (2568), Lichess'teki Ladder Legends klasik oyununda GM Ivan Salgado Lopez'i (2591) saatte 1:48'e karşı 22:50 ile 37 hamlede yendi.\n\nOyunu son iki hamle belirledi. Saatinde 1:48 kala Salgado Lopez 37.e5 ile piyonu sürdü. Stockfish 37.Be2 hamlesini istiyordu: siyahı zaten açık farkla üstün görüyordu (−1,79), piyon sürüşünden sonra ise kazanan konum olarak değerlendirdi (−3,40). Peng e5'te kaleyle aldı, bu da motorun ilk tercihiydi; sonuç 0–1 olarak kayda geçti.\n\nSaat bir süredir eriyordu. Salgado Lopez 28. hamlede sekiz dakikanın, 32. hamlede iki dakikanın altına düştü. Peng'in süresi hiçbir zaman 21 dakikanın altına inmedi.\n\nOyunu 37.e5'ten önce durdur, kendine 1:48 ver ve 37.Be2 hamlesini bul. Sonra konumu motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "1:48 so với 22:50: một nước đẩy Tốt, một nước Xe bắt quân, và Peng thắng Salgado Lopez",
+          "body": "GM Li Min Peng (2568) thắng GM Ivan Salgado Lopez (2591) sau 37 nước trong ván cờ tiêu chuẩn Ladder Legends trên Lichess, với 22:50 trên đồng hồ so với 1:48.\n\nHai nước cuối cùng quyết định ván cờ. Còn 1:48, Salgado Lopez đẩy 37.e5. Stockfish muốn 37.Be2: engine đã đánh giá Đen ưu thế rõ (−1,79), và sau nước đẩy Tốt thì đánh giá là thế thắng (−3,40). Peng dùng Xe bắt ở e5, lựa chọn số một của engine, và kết quả được ghi 0–1.\n\nĐồng hồ đã cạn dần từ trước đó. Salgado Lopez xuống dưới tám phút ở nước 28 và dưới hai phút ở nước 32. Peng chưa lúc nào có ít hơn 21 phút.\n\nDừng phần xem lại trước 37.e5, tự cho mình 1:48, và tìm 37.Be2. Rồi chơi tiếp thế cờ với engine."
+        },
+        "zh-Hans": {
+          "headline": "1:48对22:50：一步冲兵、一步车吃子，Peng击败Salgado Lopez",
+          "body": "GM Li Min Peng（2568）在Lichess的Ladder Legends慢棋对局中37回合击败GM Ivan Salgado Lopez（2591），棋钟上是22:50对1:48。\n\n胜负就在最后两步棋。Salgado Lopez在剩1:48时挺兵37.e5。Stockfish想走的是37.Be2：此前Stockfish已认为黑方明显占优（−1.79），挺兵之后则判为黑方胜势（−3.40）。Peng用车在e5吃子，这正是Stockfish的首选，结果记为0–1。\n\nSalgado Lopez的时间其实早就在一点点减少：第28回合时不到八分钟，第32回合时不到两分钟。Peng的棋钟则始终不少于21分钟。\n\n在37.e5之前暂停回放，给自己1:48，找出37.Be2。然后对着引擎从这个局面继续下。"
+        },
+        "zh-Hant": {
+          "headline": "1:48對22:50：一步衝兵、一步車吃子，Peng擊敗Salgado Lopez",
+          "body": "GM Li Min Peng（2568）在Lichess的Ladder Legends慢棋對局中37回合擊敗GM Ivan Salgado Lopez（2591），棋鐘上是22:50對1:48。\n\n勝負就在最後兩步棋。Salgado Lopez在剩1:48時挺兵37.e5。Stockfish想走的是37.Be2：此前Stockfish已認為黑方明顯佔優（−1.79），挺兵之後則判為黑方勝勢（−3.40）。Peng用車在e5吃子，這正是Stockfish的首選，結果記為0–1。\n\nSalgado Lopez的時間其實早就在一點一點減少：第28回合時不到八分鐘，第32回合時不到兩分鐘。Peng的棋鐘則始終不少於21分鐘。\n\n在37.e5之前暫停重播，給自己1:48，找出37.Be2。然後對著引擎從這個局面繼續下。"
+        }
+      },
+      "fen": "5k2/2p2ppp/1p1nb3/r3P3/1N6/2r2PPP/1R6/3R1BK1 b - - 0 37",
+      "last": {
+        "from": "e4",
+        "to": "e5"
+      },
+      "url": "https://brasspawn.com/today/2026-09-30-salgado-lopez-peng-ladder-legends-by-lichess",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/ladder-legends-by-lichess-gm-salgado-lopez-vs-gm-peng/classical-game/JAsT9PLC/GDTxgrwc"
+      },
+      "updatedAt": "2026-09-30T19:05:33.446Z"
+    }
+  ]
+}
