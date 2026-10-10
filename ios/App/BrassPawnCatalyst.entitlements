@@ -6,8 +6,7 @@
 	     both forced by the platform rather than chosen:
 
 	     The sandbox is not optional. A Mac App Store build is refused without
-	     it, and everything inside it has to be asked for by name — which is
-	     what the four keys below do.
+	     it; the keys below grant the capabilities used by the app.
 
 	     The App Group is gone. It existed so the App Clip could leave an
 	     invitation where the app would find it, and a Mac has no App Clip to
@@ -45,11 +44,10 @@
 	<key>com.apple.security.device.camera</key>
 	<true/>
 
-	<!-- The photo picker, which is the other way into the same feature.
-	     Read-only: the app takes a copy of the picture and never writes back
-	     to the library. -->
-	<key>com.apple.security.assets.pictures.read-only</key>
-	<true/>
+	<!-- PhotoBoardSheet uses the system PhotosPicker and loads only the
+	     selected item's Data through loadTransferable. It does not read the
+	     Pictures folder or retain access to a file URL, so no Pictures,
+	     user-selected file, or security-scoped bookmark entitlement is needed. -->
 
 	<key>com.apple.developer.game-center</key>
 	<true/>

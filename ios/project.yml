@@ -146,6 +146,8 @@ targets:
         # one line and cannot be evasive about it.
         NSCameraUsageDescription: >-
           To read a chess position from a photo of a real board.
+        NSGKFriendListUsageDescription: >-
+          To show your Game Center friends who play Brass Pawn, and invite them to a game.
         UILaunchStoryboardName: LaunchScreen
         # A phone holds one board and one panel; turning it sideways leaves
         # room for neither. An iPad has room for both side by side, so it turns.
@@ -201,6 +203,11 @@ targets:
         # App Review's sandbox could not complete the yearly plan's purchase.
         # 9: a subscriber sees the plan, its renewal date, and can change it.
         CURRENT_PROJECT_VERSION: "10"
+        # The Mac runs ahead of iOS since 1.4: 11 dropped the Pictures folder
+        # entitlement App Review called unused (2.4.5(i)) but came from a beta
+        # Xcode, which App Store Connect refuses; 12 was built without the fix.
+        # 13 is the fix, from a release Xcode.
+        CURRENT_PROJECT_VERSION[sdk=macosx*]: "13"
         SWIFT_VERSION: "6.0"
         # 6 is the Mac. Its presence is what asks for the Mac idiom — native
         # control metrics and a window drawn at its own scale — rather than an

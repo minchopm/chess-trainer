@@ -178,6 +178,13 @@ opponent's data arriving through `GKMatchDelegate`. Apple's
 asks Mac targets to enable both Incoming Connections and Outgoing Connections
 under App Sandbox → Network. The app runs no server of its own.
 
+It also has `com.apple.security.device.camera`: Board → Photo reads a
+position from a picture of a real board, taken with the Mac's camera. Choosing
+an existing picture goes through the system `PhotosPicker`, which runs outside
+the app and hands it only the chosen image, so there is no Pictures folder
+entitlement. App Review flagged `com.apple.security.assets.pictures.read-only`
+as unused (2.4.5(i)), and 1.4 (13) removes it.
+
 ## 8. Content and moderation
 
 There is **no user-generated content and no messaging**. The Multiplayer wire
