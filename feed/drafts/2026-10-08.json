@@ -1,0 +1,742 @@
+{
+  "date": "2026-10-08",
+  "pulledAt": "2026-10-12T11:07:38.210Z",
+  "stories": [
+    {
+      "id": "2026-10-08-batsiashvili-aamuktha-guntaka-romanian-team-chess-championships-r4",
+      "status": "approved",
+      "date": "2026-10-08",
+      "rank": 0,
+      "weight": 209,
+      "event": {
+        "name": "Romanian Team Chess Championships 2026",
+        "short": "Romanian Team Chess Championships",
+        "section": "Women’s Super League",
+        "round": 4,
+        "location": "Eforie Nord, Romania",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-womens-super-league/round-4/vkJDQIGd"
+      },
+      "white": {
+        "name": "Nino Batsiashvili",
+        "short": "Batsiashvili",
+        "title": "GM",
+        "elo": 2459,
+        "team": "CSM Iasi 2020"
+      },
+      "black": {
+        "name": "Aamuktha Guntaka",
+        "short": "Aamuktha Guntaka",
+        "title": "WIM",
+        "elo": 2338,
+        "team": "Universitatea de Vest Timisoara"
+      },
+      "result": "1-0",
+      "opening": {
+        "eco": "D02",
+        "name": "Queen's Pawn Game: London System"
+      },
+      "moves": "d4 Nf6 Nf3 d5 Bf4 c5 e3 Nc6 Nbd2 Bg4 c3 e6 Bb5 Qb6 Qa4 Bxf3 Nxf3 a6 Bxc6+ Qxc6 Qxc6+ bxc6 Ke2 Nh5 Be5 f6 Bc7 Rc8 Ba5 f5 Rhc1 Bd6 c4 O-O dxc5 Bxc5 Rc2 Ba7 Rac1 c5 cxd5 exd5 Bb4 Rb8 Bxc5 Bxc5 Rxc5 Rxb2+ R1c2 Rxc2+ Rxc2 f4 Rc6 fxe3 fxe3 Rf6 Rc5 Rd6 Ng5 Rd8 Rc6 Ra8 Kd3 Nf6 Ne6 Re8 Rxa6 Kf7 Ng5+ Kg6 Nf3 Rb8 a4 Kf5 Nd4+ Kg6 Nb5 h5 Rd6 Ra8 Nc3 Kf7 Kd4 h4 Rb6 g5 h3 g4 Rb4 gxh3 gxh3 Ke6 Kd3 Rh8 a5 Ra8 Rb5 Ke5 e4 Rg8 Nxd5 Rd8 Ke3 Nd7 Nb6+ Ke6 Rd5",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 86,
+        "played": "g5",
+        "better": "h3",
+        "reply": "Rb5",
+        "replyPlayed": false,
+        "before": {
+          "cp": 262,
+          "mate": null
+        },
+        "after": {
+          "cp": 314,
+          "mate": null
+        },
+        "clock": 640
+      },
+      "headline": "A day after the loss to Lu, Batsiashvili wins in 54",
+      "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) beat WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) in 54 moves in round 4 of the Romanian women's Super League, a day after losing to IM Miaoyi Lu.\n\nAamuktha Guntaka played 43...g5 with 10:40 left; Batsiashvili had 51 minutes. Stockfish wanted 43...h3. It already counted White winning (+2.62), and more so after the pawn move (+3.14). From move 49 Aamuktha Guntaka had less than a minute on the clock, and 51.Nxd5 won a pawn.\n\nCSM Iasi 2020 won the match 3–1 and went on to win the league.\n\nGo back to 43...g5 and find 43...h3. Then play the ending on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "بعد يوم من الخسارة أمام Lu، فوز لـBatsiashvili في 54 نقلة",
+          "body": "انتهى الدور بفوز GM Nino Batsiashvili (CSM Iasi 2020، 2459) على WIM Aamuktha Guntaka (Universitatea de Vest Timisoara، 2338) في 54 نقلة، في الجولة الرابعة من الدوري الروماني الممتاز للسيدات، بعد يوم من الخسارة أمام IM Miaoyi Lu.\n\nلُعبت نقلة Aamuktha Guntaka ⁨43...g5⁩ والوقت المتبقي ⁨10:40⁩، مقابل 51 دقيقة على ساعة Batsiashvili. أراد Stockfish ⁨43...h3⁩. وكان Stockfish يعدّ الأبيض فائزًا من قبل (⁨+2.62⁩)، وأكثر من ذلك بعد نقلة البيدق (⁨+3.14⁩). ومنذ النقلة 49 أظهرت ساعة Aamuktha Guntaka أقل من دقيقة، وكسبت ⁨51.Nxd5⁩ بيدقًا.\n\nفاز فريق CSM Iasi 2020 بالمباراة ⁨3–1⁩، ثم بلقب الدوري لاحقًا.\n\nارجع إلى ⁨43...g5⁩ واعثر على ⁨43...h3⁩. ثم تابع لعب النهاية ضد المحرك."
+        },
+        "bg": {
+          "headline": "Ден след загубата от Lu Batsiashvili печели за 54 хода",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) победи WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) за 54 хода в 4-тия кръг на румънската женска Суперлига, ден след загубата от IM Miaoyi Lu.\n\nAamuktha Guntaka изигра 43...g5 с 10:40 на часовника, а Batsiashvili имаше 51 минути. Stockfish искаше 43...h3. Енджинът и преди хода даваше печеливша позиция на белите (+2,62), а след него — още по-голямо предимство (+3,14). От 49-ия ход нататък Aamuktha Guntaka имаше по-малко от минута на часовника, а 51.Nxd5 спечели пешка.\n\nCSM Iasi 2020 спечели мача с 3–1, а после и лигата.\n\nВърнете се към 43...g5 и намерете 43...h3. После продължете ендшпила срещу енджина."
+        },
+        "cs": {
+          "headline": "Den po prohře s Lu vyhrává Batsiashvili po 54 tazích",
+          "body": "V partii GM Nino Batsiashvili (CSM Iasi 2020, 2459) – WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) ve 4. kole ženské rumunské superligy vyhrává po 54 tazích Batsiashvili, den po prohře s IM Miaoyi Lu.\n\nAamuktha Guntaka hraje 43...g5 s 10:40 na hodinách; Batsiashvili má 51 minut. Stockfish chtěl 43...h3 a už předtím hodnotil pozici jako vyhranou pro bílé (+2,62), po tahu pěšcem ještě výrazněji (+3,14). Od 49. tahu má Aamuktha Guntaka na hodinách méně než minutu a 51.Nxd5 bere pěšce.\n\nCSM Iasi 2020 vyhrává zápas 3–1 a nakonec i celou ligu.\n\nVrať se k 43...g5 a najdi 43...h3. Pak si koncovku zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "Dagen efter nederlaget til Lu vinder Batsiashvili i 54 træk",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) slog WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) i 54 træk i 4. runde af den rumænske superliga for kvinder, dagen efter nederlaget til IM Miaoyi Lu.\n\nAamuktha Guntaka spillede 43...g5 med 10:40 tilbage; Batsiashvili havde 51 minutter. Stockfish ville have 43...h3. Motoren så allerede hvid til gevinst (+2,62) og endnu mere efter bondetrækket (+3,14). Fra træk 49 havde Aamuktha Guntaka under et minut på uret, og 51.Nxd5 vandt en bonde.\n\nCSM Iasi 2020 vandt matchen 3–1 og siden også ligaen.\n\nGå tilbage til 43...g5 og find 43...h3. Spil så slutspillet videre mod motoren."
+        },
+        "de": {
+          "headline": "Einen Tag nach der Niederlage gegen Lu gewinnt Batsiashvili in 54 Zügen",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) schlug WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) in Runde 4 der rumänischen Frauen-Superliga in 54 Zügen, einen Tag nach der Niederlage gegen IM Miaoyi Lu.\n\nAamuktha Guntaka spielte 43...g5 mit 10:40 auf der Uhr, Batsiashvili hatte 51 Minuten. Stockfish wollte 43...h3. Stockfish sah Weiß schon vorher auf Gewinn (+2,62), nach dem Bauernzug noch deutlicher (+3,14). Ab Zug 49 hatte Aamuktha Guntaka weniger als eine Minute auf der Uhr, und 51.Nxd5 gewann einen Bauern.\n\nCSM Iasi 2020 gewann den Kampf 3:1 und am Ende die Liga.\n\nZurück zu 43...g5 und 43...h3 finden. Dann das Endspiel gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Μία μέρα μετά την ήττα από Lu, Batsiashvili κερδίζει σε 54 κινήσεις",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) επικράτησε επί WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) σε 54 κινήσεις στον 4ο γύρο της ρουμανικής Σούπερ Λίγκας γυναικών, μία μέρα μετά την ήττα από IM Miaoyi Lu.\n\nAamuktha Guntaka έπαιξε την 43...g5 με 10:40 στο ρολόι, ενώ Batsiashvili είχε 51 λεπτά. Το Stockfish ήθελε την 43...h3. Έκρινε ήδη τη θέση κερδισμένη για τα λευκά (+2,62), και ακόμη περισσότερο μετά την κίνηση του πιονιού (+3,14). Από την 49η κίνηση Aamuktha Guntaka είχε λιγότερο από ένα λεπτό στο ρολόι, και η 51.Nxd5 κέρδισε ένα πιόνι.\n\nΗ CSM Iasi 2020 κέρδισε τον αγώνα με 3–1 και στη συνέχεια κατέκτησε το πρωτάθλημα.\n\nΓύρνα στην 43...g5 και βρες την 43...h3. Μετά συνέχισε το φινάλε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Un día después de perder contra Lu, Batsiashvili gana en 54 jugadas",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) venció a WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) en 54 jugadas en la cuarta ronda de la Superliga femenina rumana, un día después de perder contra IM Miaoyi Lu.\n\nAamuktha Guntaka jugó 43...g5 con 10:40 en el reloj; Batsiashvili tenía 51 minutos. Stockfish quería 43...h3. Ya daba posición ganadora a las blancas (+2,62), y más aún tras la jugada de peón (+3,14). Desde la jugada 49, Aamuktha Guntaka tuvo menos de un minuto en el reloj, y 51.Nxd5 ganó un peón.\n\nCSM Iasi 2020 ganó el match 3–1 y acabó ganando la liga.\n\nVuelve a 43...g5 y encuentra 43...h3. Luego sigue el final contra el motor."
+        },
+        "fi": {
+          "headline": "Päivä Lulle kärsityn tappion jälkeen Batsiashvili voittaa 54 siirrossa",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) voitti WIM Aamuktha Guntakan (Universitatea de Vest Timisoara, 2338) 54 siirrossa Romanian naisten superliigan 4. kierroksella, päivä sen jälkeen, kun Batsiashvilin oli voittanut IM Miaoyi Lu.\n\nAamuktha Guntaka pelasi 43...g5 kellossa 10:40 jäljellä; Batsiashvililla oli 51 minuuttia. Stockfish halusi 43...h3. Se antoi valkealle jo voittoaseman (+2,62) ja sotilassiirron jälkeen vielä selvemmän (+3,14). Siirrosta 49 lähtien Aamuktha Guntakalla oli kellossa alle minuutti, ja 51.Nxd5 voitti sotilaan.\n\nCSM Iasi 2020 voitti ottelun 3–1 ja lopulta koko sarjan.\n\nPalaa siirtoon 43...g5 ja löydä 43...h3. Jatka sitten loppupeliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Au lendemain de la défaite contre Lu, Batsiashvili gagne en 54 coups",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) a battu WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) en 54 coups lors de la 4e ronde de la Superligue roumaine féminine, au lendemain d’une défaite contre IM Miaoyi Lu.\n\nAamuktha Guntaka a joué 43...g5 avec 10:40 à la pendule ; Batsiashvili avait 51 minutes. Stockfish voulait 43...h3, et donnait déjà les Blancs gagnants (+2,62), plus encore après le coup de pion (+3,14). À partir du 49e coup, Aamuktha Guntaka avait moins d’une minute à la pendule, et 51.Nxd5 a gagné un pion.\n\nCSM Iasi 2020 a gagné le match 3–1, puis le championnat.\n\nRevenez à 43...g5 et trouvez 43...h3. Puis continuez la finale contre le moteur."
+        },
+        "he": {
+          "headline": "יום אחרי ההפסד ל־Lu: ניצחון ל־Batsiashvili אחרי 54 מסעים",
+          "body": "המשחק בסיבוב ה־4 של ליגת העל הרומנית לנשים הסתיים בניצחון ל־GM Nino Batsiashvili (CSM Iasi 2020, 2459) על WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) אחרי 54 מסעים, יום אחרי ההפסד ל־IM Miaoyi Lu.\n\nהמסע ⁨43...g5⁩ שוחק כשבשעון של Aamuktha Guntaka נותרו ⁨10:40⁩, ובשעון של Batsiashvili היו 51 דקות. Stockfish רצה ב־⁨43...h3⁩. כבר לפני המסע Stockfish העריך עמדה מנצחת ללבן (⁨+2.62⁩), ואחרי מסע הרגלי עוד יותר (⁨+3.14⁩). ממסע 49 נותרה פחות מדקה בשעון של Aamuktha Guntaka, ו־⁨51.Nxd5⁩ זכה ברגלי.\n\nקבוצת CSM Iasi 2020 ניצחה במפגש ⁨3–1⁩ ובהמשך זכתה בליגה.\n\nחזרו ל־⁨43...g5⁩ ומצאו את ⁨43...h3⁩. ואז המשיכו לשחק את הסיום מול המנוע."
+        },
+        "hi": {
+          "headline": "Lu से हार के एक दिन बाद 54 चालों में Batsiashvili की जीत",
+          "body": "रोमानियाई महिला सुपर लीग के राउंड 4 में GM Nino Batsiashvili (CSM Iasi 2020, 2459) ने WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) को 54 चालों में हराया, IM Miaoyi Lu से हार के एक दिन बाद।\n\n10:40 बचे रहते Aamuktha Guntaka ने 43...g5 खेला; Batsiashvili की घड़ी पर 51 मिनट थे। Stockfish 43...h3 चाहता था। उसके हिसाब से सफ़ेद पहले से जीत की स्थिति में था (+2.62), और प्यादे की इस चाल के बाद और भी ज़्यादा (+3.14)। चाल 49 से Aamuktha Guntaka की घड़ी पर एक मिनट से कम था, और 51.Nxd5 ने एक प्यादा जीता।\n\nCSM Iasi 2020 ने मुक़ाबला 3–1 से जीता और आगे चलकर लीग भी जीती।\n\n43...g5 पर लौटें और 43...h3 खोजें। फिर एंडगेम को इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "Egy nappal a Lu elleni vereség után Batsiashvili 54 lépésben nyert",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) 54 lépésben nyert WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) ellen a román női Szuperliga 4. fordulójában, egy nappal az IM Miaoyi Lu elleni vereség után.\n\nAamuktha Guntaka 10:40-nel az óráján játszotta a 43...g5 lépést; Batsiashvili óráján 51 perc állt. A Stockfish a 43...h3 lépést akarta. Már előtte is világos nyerő állását látta (+2,62), a gyaloglépés után pedig még inkább (+3,14). A 49. lépéstől Aamuktha Guntaka óráján kevesebb mint egy perc volt, és az 51.Nxd5 nyert egy gyalogot.\n\nA CSM Iasi 2020 3–1-re megnyerte a mérkőzést, később pedig a bajnokságot is.\n\nMenj vissza a 43...g5 lépéshez, és találd meg a 43...h3 lépést. Aztán játszd tovább a végjátékot a motor ellen."
+        },
+        "id": {
+          "headline": "Sehari sesudah kalah dari Lu, Batsiashvili menang dalam 54 langkah",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) mengalahkan WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) dalam 54 langkah di babak 4 Liga Super Putri Rumania, sehari sesudah kalah dari IM Miaoyi Lu.\n\nAamuktha Guntaka memainkan 43...g5 dengan sisa 10:40; Batsiashvili punya 51 menit. Stockfish menginginkan 43...h3. Mesin sudah menilai Putih menang (+2,62), dan lebih lagi sesudah langkah pion itu (+3,14). Sejak langkah 49, Aamuktha Guntaka punya kurang dari satu menit di jam, dan 51.Nxd5 memenangi satu pion.\n\nCSM Iasi 2020 memenangi pertandingan 3–1 dan kemudian menjuarai liga.\n\nKembali ke 43...g5 dan temukan 43...h3. Lalu lanjutkan akhir permainannya melawan mesin."
+        },
+        "it": {
+          "headline": "Il giorno dopo la sconfitta con Lu, Batsiashvili vince in 54 mosse",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) ha battuto WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) in 54 mosse nel 4º turno della Superlega rumena femminile, il giorno dopo la sconfitta contro IM Miaoyi Lu.\n\nAamuktha Guntaka ha giocato 43...g5 con 10:40 sull’orologio; Batsiashvili aveva 51 minuti. Stockfish voleva 43...h3, e dava già il Bianco vincente (+2,62), ancora di più dopo la mossa di pedone (+3,14). Dalla mossa 49 Aamuktha Guntaka ha avuto meno di un minuto sull’orologio, e 51.Nxd5 ha vinto un pedone.\n\nCSM Iasi 2020 ha vinto il match 3–1 e poi il campionato.\n\nTorna a 43...g5 e trova 43...h3. Poi continua il finale contro il motore."
+        },
+        "ja": {
+          "headline": "Luに敗れた翌日、Batsiashviliが54手で勝利",
+          "body": "IM Miaoyi Luに敗れた翌日、GM Nino Batsiashvili（CSM Iasi 2020、2459）がルーマニア女子スーパーリーグ第4ラウンドでWIM Aamuktha Guntaka（Universitatea de Vest Timisoara、2338）に54手で勝ちました。\n\nAamuktha Guntakaは残り10:40で43...g5を指しました。Batsiashviliの残りは51分でした。Stockfishが望んだのは43...h3。Stockfishはこの手の前からすでに白の勝勢（+2.62）と見ており、ポーンの手の後は差がさらに広がりました（+3.14）。49手目以降、Aamuktha Guntakaの時計は1分を切っていました。51.Nxd5では白がポーンを1つ得ました。\n\nCSM Iasi 2020はマッチを3–1で制し、その後リーグ優勝を果たしました。\n\n43...g5に戻って43...h3を見つけましょう。それからエンドゲームをエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "Lu에게 진 다음 날, Batsiashvili 54수 만에 승리",
+          "body": "GM Nino Batsiashvili(CSM Iasi 2020, 2459)가 IM Miaoyi Lu에게 진 다음 날, 루마니아 여자 슈퍼리그 4라운드에서 WIM Aamuktha Guntaka(Universitatea de Vest Timisoara, 2338)에게 54수 만에 이겼습니다.\n\nAamuktha Guntaka는 10:40를 남기고 43...g5를 두었고, Batsiashvili에게는 51분이 남아 있었습니다. Stockfish가 원한 수는 43...h3였습니다. Stockfish는 이미 백이 이기는 형세(+2.62)로 보았고, 폰이 움직인 뒤에는 격차가 더 벌어졌습니다(+3.14). 49수째부터 Aamuktha Guntaka의 시계에는 1분도 남지 않았고, 51.Nxd5로 백이 폰 하나를 얻었습니다.\n\nCSM Iasi 2020은 매치를 3–1로 이겼고, 이후 리그 우승을 차지했습니다.\n\n43...g5로 돌아가 43...h3를 찾아보세요. 이어서 엔진을 상대로 엔드게임을 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "Sehari selepas tewas kepada Lu, Batsiashvili menang dalam 54 langkah",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) menewaskan WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) dalam 54 langkah dalam pusingan 4 Liga Super Wanita Romania, sehari selepas tewas kepada IM Miaoyi Lu.\n\nAamuktha Guntaka memainkan 43...g5 dengan baki 10:40; Batsiashvili mempunyai 51 minit. Stockfish mahukan 43...h3. Enjin sudah menilai Putih menang (+2,62), dan lebih lagi selepas langkah bidak itu (+3,14). Dari langkah 49, Aamuktha Guntaka mempunyai kurang daripada seminit pada jam, dan 51.Nxd5 memenangi sebiji bidak.\n\nCSM Iasi 2020 memenangi perlawanan 3–1 dan kemudian menjuarai liga.\n\nKembali ke 43...g5 dan cari 43...h3. Kemudian teruskan permainan akhir itu menentang enjin."
+        },
+        "nl": {
+          "headline": "Een dag na de nederlaag tegen Lu wint Batsiashvili in 54 zetten",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) versloeg WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) in 54 zetten in ronde 4 van de Roemeense Superliga voor vrouwen, een dag na de nederlaag tegen IM Miaoyi Lu.\n\nAamuktha Guntaka speelde 43...g5 met nog 10:40; Batsiashvili had 51 minuten. Stockfish wilde 43...h3. Stockfish zag wit al gewonnen staan (+2,62), en na de pionzet nog duidelijker (+3,14). Vanaf zet 49 had Aamuktha Guntaka minder dan een minuut op de klok, en 51.Nxd5 won een pion.\n\nCSM Iasi 2020 won de match met 3–1 en uiteindelijk ook de competitie.\n\nGa terug naar 43...g5 en vind 43...h3. Speel het eindspel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "Dagen etter tapet mot Lu vinner Batsiashvili på 54 trekk",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) slo WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) på 54 trekk i 4. runde av den rumenske superligaen for kvinner, dagen etter tapet mot IM Miaoyi Lu.\n\nAamuktha Guntaka spilte 43...g5 med 10:40 igjen; Batsiashvili hadde 51 minutter. Stockfish ville ha 43...h3. Motoren regnet allerede hvit som vinnende (+2,62), og enda mer etter bondetrekket (+3,14). Fra trekk 49 hadde Aamuktha Guntaka under ett minutt på klokka, og 51.Nxd5 vant en bonde.\n\nCSM Iasi 2020 vant matchen 3–1 og senere også ligaen.\n\nGå tilbake til 43...g5 og finn 43...h3. Spill så sluttspillet videre mot motoren."
+        },
+        "pl": {
+          "headline": "Dzień po porażce z Lu: Batsiashvili wygrywa w 54 ruchach",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) pokonuje WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) w 54 ruchach w 4. rundzie rumuńskiej Superligi kobiet, dzień po porażce z IM Miaoyi Lu.\n\nAamuktha Guntaka gra 43...g5, mając 10:40 na zegarze; Batsiashvili ma 51 minut. Stockfish chciał 43...h3. Już przed tym ruchem oceniał pozycję jako wygraną dla białych (+2,62), a po ruchu pionem tym bardziej (+3,14). Od 49. ruchu Aamuktha Guntaka ma na zegarze mniej niż minutę, a 51.Nxd5 zdobywa pionka.\n\nCSM Iasi 2020 wygrywa mecz 3–1, a potem całą ligę.\n\nWróć do 43...g5 i znajdź 43...h3. Potem rozegraj końcówkę dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Um dia depois da derrota para Lu, Batsiashvili vence em 54 lances",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) venceu WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) em 54 lances na 4ª rodada da Superliga Feminina Romena, um dia depois de perder para IM Miaoyi Lu.\n\nAamuktha Guntaka jogou 43...g5 com 10:40 no relógio; Batsiashvili tinha 51 minutos. O Stockfish queria 43...h3. O motor já via posição vencedora para as brancas (+2,62), e mais ainda depois do lance de peão (+3,14). A partir do lance 49, Aamuktha Guntaka teve menos de um minuto no relógio, e 51.Nxd5 ganhou um peão.\n\nO CSM Iasi 2020 venceu o match por 3–1 e acabou vencendo a liga.\n\nVolte a 43...g5 e encontre 43...h3. Depois continue o final contra o motor."
+        },
+        "ro": {
+          "headline": "La o zi după înfrângerea cu Lu, Batsiashvili câștigă în 54 de mutări",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) a câștigat contra WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) în 54 de mutări, în runda a 4-a a Superligii feminine a României, la o zi după înfrângerea cu IM Miaoyi Lu.\n\nAamuktha Guntaka a jucat 43...g5 cu 10:40 rămase; Batsiashvili avea 51 de minute. Stockfish voia 43...h3. Considera deja Albul câștigător (+2,62), și încă mai clar după mutarea de pion (+3,14). De la mutarea 49, Aamuktha Guntaka a avut mai puțin de un minut pe ceas, iar 51.Nxd5 a câștigat un pion.\n\nCSM Iasi 2020 a câștigat meciul cu 3–1 și apoi campionatul.\n\nÎntoarce-te la 43...g5 și găsește 43...h3. Apoi continuă finalul contra motorului."
+        },
+        "ru": {
+          "headline": "Через день после поражения от Lu: Batsiashvili выигрывает за 54 хода",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) обыгрывает WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) за 54 хода в 4-м туре женской Суперлиги Румынии — через день после поражения от IM Miaoyi Lu.\n\nAamuktha Guntaka играет 43...g5, имея 10:40; у Batsiashvili — 51 минута. Stockfish хотел 43...h3. Движок уже до этого оценивал позицию как выигранную для белых (+2,62), а после хода пешкой — тем более (+3,14). С 49-го хода у Aamuktha Guntaka на часах было меньше минуты, а 51.Nxd5 выиграл пешку.\n\nCSM Iasi 2020 выигрывает матч 3–1, а затем и всю лигу.\n\nВернитесь к 43...g5 и найдите 43...h3. А затем продолжите эндшпиль против движка."
+        },
+        "sv": {
+          "headline": "Dagen efter förlusten mot Lu vinner Batsiashvili på 54 drag",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) besegrade WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) på 54 drag i rond 4 av rumänska superligan för damer, dagen efter förlusten mot IM Miaoyi Lu.\n\nAamuktha Guntaka spelade 43...g5 med 10:40 kvar; Batsiashvili hade 51 minuter. Stockfish ville ha 43...h3. Motorn räknade redan vit som vinnande (+2,62), och ännu mer efter bondedraget (+3,14). Från drag 49 hade Aamuktha Guntaka mindre än en minut på klockan, och 51.Nxd5 vann en bonde.\n\nCSM Iasi 2020 vann matchen med 3–1 och sedan även ligan.\n\nGå tillbaka till 43...g5 och hitta 43...h3. Spela sedan vidare slutspelet mot motorn."
+        },
+        "th": {
+          "headline": "หนึ่งวันหลังแพ้ Lu: Batsiashvili ชนะใน 54 ตา",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) ชนะ WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) ใน 54 ตา ในรอบที่ 4 ของซูเปอร์ลีกหญิงโรมาเนีย หนึ่งวันหลังจากแพ้ IM Miaoyi Lu\n\nAamuktha Guntaka เดิน 43...g5 เมื่อเหลือเวลา 10:40 ขณะที่ Batsiashvili มี 51 นาที Stockfish ต้องการ 43...h3 เอนจินประเมินว่าฝ่ายขาวอยู่ในสถานะชนะอยู่แล้ว (+2.62) และยิ่งชัดขึ้นหลังเบี้ยเดิน (+3.14) ตั้งแต่ตาที่ 49 Aamuktha Guntaka มีเวลาบนนาฬิกาไม่ถึงหนึ่งนาที และ 51.Nxd5 ได้เบี้ยมาหนึ่งตัว\n\nCSM Iasi 2020 ชนะแมตช์ 3–1 และคว้าแชมป์ลีกในเวลาต่อมา\n\nย้อนกลับไปที่ 43...g5 แล้วหา 43...h3 จากนั้นเล่นช่วงท้ายเกมต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "Lu'ya yenildikten bir gün sonra Batsiashvili 54 hamlede kazandı",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459), Romanya Kadınlar Süper Ligi'nin 4. turunda WIM Aamuktha Guntaka'yı (Universitatea de Vest Timisoara, 2338) 54 hamlede yendi. Bir gün önce Batsiashvili'yi yenen isim ise IM Miaoyi Lu.\n\nAamuktha Guntaka, 43...g5 hamlesini saatte 10:40 kala oynadı; Batsiashvili'nin saatinde 51 dakika vardı. Stockfish 43...h3 hamlesini istiyordu. Beyazı zaten kazanan konumda görüyordu (+2,62), piyon hamlesinden sonra daha da belirgin biçimde (+3,14). 49. hamleden itibaren Aamuktha Guntaka'nın saatinde bir dakikadan az vardı ve 51.Nxd5 bir piyon kazandı.\n\nCSM Iasi 2020 maçı 3–1 kazandı ve ardından ligi de kazandı.\n\n43...g5 hamlesine dön ve 43...h3 hamlesini bul. Sonra oyun sonunu motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Một ngày sau ván thua Lu, Batsiashvili thắng sau 54 nước",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) thắng WIM Aamuktha Guntaka (Universitatea de Vest Timisoara, 2338) sau 54 nước ở vòng 4 giải Siêu hạng nữ Romania, một ngày sau ván thua IM Miaoyi Lu.\n\nAamuktha Guntaka đi 43...g5 khi còn 10:40; Batsiashvili còn 51 phút. Stockfish muốn 43...h3. Engine vốn đã đánh giá Trắng ở thế thắng (+2,62), và càng rõ hơn sau nước Tốt (+3,14). Từ nước 49, Aamuktha Guntaka còn chưa đến một phút trên đồng hồ, và 51.Nxd5 ăn một Tốt.\n\nCSM Iasi 2020 thắng trận 3–1 và sau đó vô địch giải.\n\nQuay lại 43...g5 và tìm 43...h3. Rồi chơi tiếp tàn cuộc với engine."
+        },
+        "zh-Hans": {
+          "headline": "输给Lu的第二天，Batsiashvili用54回合取胜",
+          "body": "GM Nino Batsiashvili（CSM Iasi 2020，2459）在罗马尼亚女子超级联赛第4轮54回合击败WIM Aamuktha Guntaka（Universitatea de Vest Timisoara，2338），前一天刚输给IM Miaoyi Lu。\n\nAamuktha Guntaka在剩10:40时走出43...g5，Batsiashvili则有51分钟。Stockfish想走的是43...h3。Stockfish此前已认为白方胜势（+2.62），走兵之后白方优势更大（+3.14）。从第49回合起，Aamuktha Guntaka的棋钟不足一分钟，51.Nxd5吃掉一兵。\n\nCSM Iasi 2020以3–1赢下比赛，最终夺得联赛冠军。\n\n回到43...g5，找出43...h3。然后对着引擎把残局继续下去。"
+        },
+        "zh-Hant": {
+          "headline": "輸給Lu的隔天，Batsiashvili用54回合取勝",
+          "body": "GM Nino Batsiashvili（CSM Iasi 2020，2459）在羅馬尼亞女子超級聯賽第4輪54回合擊敗WIM Aamuktha Guntaka（Universitatea de Vest Timisoara，2338），前一天才輸給IM Miaoyi Lu。\n\nAamuktha Guntaka在剩10:40時走出43...g5，Batsiashvili則有51分鐘。Stockfish想走的是43...h3。Stockfish此前已認為白方勝勢（+2.62），走兵之後白方優勢更大（+3.14）。從第49回合起，Aamuktha Guntaka的棋鐘不到一分鐘，51.Nxd5吃掉一兵。\n\nCSM Iasi 2020以3–1贏下比賽，最後奪得聯賽冠軍。\n\n回到43...g5，找出43...h3。然後對著引擎把殘局繼續下去。"
+        }
+      },
+      "fen": "r7/5k2/1R3n2/3p2p1/P2K3p/2N1P3/6PP/8 w - - 0 44",
+      "last": {
+        "from": "g7",
+        "to": "g5"
+      },
+      "url": "https://brasspawn.com/today/2026-10-08-batsiashvili-aamuktha-guntaka-romanian-team-chess-championships-r4",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-womens-super-league/round-4/vkJDQIGd/fEAhfImd"
+      },
+      "updatedAt": "2026-10-08T17:05:56.243Z"
+    },
+    {
+      "id": "2026-10-08-adhiban-martirosyan-romanian-team-chess-championships-r6",
+      "status": "approved",
+      "date": "2026-10-08",
+      "rank": 0,
+      "weight": 411,
+      "event": {
+        "name": "Romanian Team Chess Championships 2026",
+        "short": "Romanian Team Chess Championships",
+        "section": "Men’s Super League",
+        "round": 6,
+        "location": "Eforie Nord, Romania",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-mens-super-league/round-6/pe8pd64b"
+      },
+      "white": {
+        "name": "B. Adhiban",
+        "short": "Adhiban",
+        "title": "GM",
+        "elo": 2574,
+        "team": "ACS ARNIA CHESSIT"
+      },
+      "black": {
+        "name": "Haik M. Martirosyan",
+        "short": "Martirosyan",
+        "title": "GM",
+        "elo": 2661,
+        "team": "ACS SUPERCHESS"
+      },
+      "result": "0-1",
+      "opening": {
+        "eco": "E05",
+        "name": "Catalan Opening: Open Defense, Classical Line"
+      },
+      "moves": "d4 Nf6 c4 e6 Nf3 d5 g3 Be7 Bg2 O-O O-O dxc4 Qc2 a6 a4 Bd7 Rd1 Bc6 Bg5 Nbd7 Qxc4 a5 Nc3 h6 Bxf6 Nxf6 Qb3 Bb4 Ne5 Bxg2 Kxg2 Qe7 Nd3 Rfd8 e3 b6 Qc4 c5 dxc5 bxc5 Ne4 Qb7 f3 Nd5 Kf2 Rac8 Rac1 Qd7 Qb5 Qa7 Nf4 Rd7 Nc3 Rb7 Qe2 Bxc3 bxc3 Nb6 Qa2 c4 Rd2 Nd7 Rcd1 Qb8 Kg2 Rb3 Qc2 Ne5 Qe4 Rxc3 Kh3 Rb3 Nh5 Nd3 Nf4 Ne5 Nh5 Rd3 f4 Ng4 Kh4 Rcd8 Rxd3 cxd3 Rxd3 Nf2 Qe5 Qxe5 Rxd8+ Kh7 fxe5 g5#",
+      "ending": "checkmate",
+      "key": {
+        "kind": "mistake",
+        "ply": 69,
+        "played": "Qe4",
+        "better": "h4",
+        "reply": "Rxc3",
+        "replyPlayed": true,
+        "before": {
+          "cp": -175,
+          "mate": null
+        },
+        "after": {
+          "cp": -334,
+          "mate": null
+        },
+        "clock": 351
+      },
+      "headline": "Mate with a pawn, a rook down: Martirosyan finishes Adhiban with 46...g5#",
+      "body": "ACS Superchess, five wins from five, beat third-placed ACS Arnia Chessit 4½–1½ in round 6 of the Romanian Super League, and on board one Martirosyan mated Adhiban with a pawn: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) had Black against GM B. Adhiban (ACS Arnia Chessit, 2574). The game turned on 35.Qe4, played with 5:51 left. Stockfish wanted 35.h4. It counted Black clearly better before (−1.75) and winning after (−3.34), and 35...Rxc3, its first choice, came straight back. By move 40 Adhiban was down to 1:08.\n\nAt the end White was a rook up: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, and then the pawn went to g5, mate. ACS Superchess went on to win all nine matches.\n\nGo back to 35.Qe4 and find 35.h4, or stop at move 46 and find the mate. Then play it on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "كش مات ببيدق مع رخ أقل: ⁨46...g5#⁩ تُنهي الدور بفوز Martirosyan على Adhiban",
+          "body": "فاز فريق ACS Superchess، برصيد خمسة انتصارات من خمس مباريات، على فريق ACS Arnia Chessit صاحب المركز الثالث بنتيجة ⁨4½–1½⁩ في الجولة السادسة من الدوري الروماني الممتاز، وعلى الرقعة الأولى أنهى بيدق Martirosyan الدور أمام Adhiban بكش مات: ⁨46...g5#⁩.\n\nكانت القطع السوداء مع GM Haik M. Martirosyan (ACS Superchess، 2661) أمام GM B. Adhiban (ACS Arnia Chessit، 2574). تحوّل الدور عند ⁨35.Qe4⁩ التي لُعبت والوقت المتبقي ⁨5:51⁩. أراد Stockfish ⁨35.h4⁩، وعدّ الأسود متفوقًا بوضوح قبلها (⁨−1.75⁩) وفائزًا بعدها (⁨−3.34⁩). وجاءت ⁨35...Rxc3⁩، الخيار الأول للمحرك، مباشرة. وبحلول النقلة 40 كان الوقت على ساعة Adhiban ⁨1:08⁩.\n\nفي النهاية كان الأبيض متقدمًا برخ: ⁨44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5⁩، ثم تقدّم البيدق إلى g5، كش مات. وفاز فريق ACS Superchess لاحقًا بالمباريات التسع كلها.\n\nارجع إلى ⁨35.Qe4⁩ واعثر على ⁨35.h4⁩، أو توقف عند النقلة 46 واعثر على الكش مات. ثم تابع اللعب ضد المحرك."
+        },
+        "bg": {
+          "headline": "Мат с пешка и с топ по-малко: Martirosyan завършва срещу Adhiban с 46...g5#",
+          "body": "ACS Superchess, с пет победи от пет мача, победи третия в класирането ACS Arnia Chessit с 4½–1½ в 6-ия кръг на румънската Суперлига, а на първа дъска Martirosyan матира Adhiban с пешка: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) игра с черните срещу GM B. Adhiban (ACS Arnia Chessit, 2574). Партията се обърна с 35.Qe4, изигран с 5:51 на часовника. Stockfish искаше 35.h4. Преди хода енджинът даваше ясно предимство на черните (−1,75), а след него — печеливша позиция (−3,34), и 35...Rxc3, първият му избор, последва веднага. До 40-ия ход на часовника на Adhiban оставаха 1:08.\n\nНакрая белите бяха с топ в повече: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, а после пешката отиде на g5 — мат. ACS Superchess спечели всичките девет мача.\n\nВърнете се към 35.Qe4 и намерете 35.h4 или спрете на 46-ия ход и намерете мата. После продължете партията срещу енджина."
+        },
+        "cs": {
+          "headline": "S věží méně a mat pěšcem: partii Adhiban – Martirosyan ukončuje Martirosyan tahem 46...g5#",
+          "body": "ACS Superchess s pěti výhrami z pěti zápasů poráží ACS Arnia Chessit, třetí v tabulce, 4½–1½ v 6. kole rumunské superligy a na první šachovnici v partii Adhiban – Martirosyan dává Martirosyan mat pěšcem: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) hraje černými proti GM B. Adhiban (ACS Arnia Chessit, 2574). Zlom přišel tahem 35.Qe4, zahraným s 5:51 na hodinách. Stockfish chtěl 35.h4 a hodnotil pozici před tahem jako jasně lepší pro černé (−1,75), po něm jako vyhranou (−3,34). Okamžitě přišlo 35...Rxc3, první volba enginu. Ve 40. tahu má Adhiban na hodinách už jen 1:08.\n\nNa konci mají bílí věž navíc: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5 a pak jde pěšec na g5 – mat. ACS Superchess nakonec vyhrává všech devět zápasů.\n\nVrať se k 35.Qe4 a najdi 35.h4, nebo zastav ve 46. tahu a najdi mat. Pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "Mat med en bonde, et tårn bagud: Martirosyan afgør mod Adhiban med 46...g5#",
+          "body": "ACS Superchess, med fem sejre i fem matcher, slog ACS Arnia Chessit, der lå på tredjepladsen, 4½–1½ i 6. runde af den rumænske superliga, og på førstebrættet satte Martirosyan Adhiban mat med en bonde: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) havde sort mod GM B. Adhiban (ACS Arnia Chessit, 2574). Partiet vendte med 35.Qe4, spillet med 5:51 tilbage. Stockfish ville have 35.h4. Motoren så sort klart bedre før (−1,75) og til gevinst efter (−3,34), og 35...Rxc3, Stockfishs førstevalg, kom med det samme. Ved træk 40 var Adhiban nede på 1:08.\n\nTil sidst havde hvid et tårn mere: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, og så gik bonden til g5, mat. ACS Superchess vandt siden alle ni matcher.\n\nGå tilbage til 35.Qe4 og find 35.h4, eller stop ved træk 46 og find matten. Spil så videre mod motoren."
+        },
+        "de": {
+          "headline": "Bauernmatt mit einem Turm weniger: Martirosyan setzt Adhiban mit 46...g5# matt",
+          "body": "ACS Superchess, fünf Siege aus fünf Kämpfen, schlug in Runde 6 der rumänischen Superliga ACS Arnia Chessit auf Platz drei mit 4½:1½, und am ersten Brett setzte Martirosyan Adhiban mit einem Bauern matt: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) spielte mit Schwarz gegen GM B. Adhiban (ACS Arnia Chessit, 2574). Die Partie kippte mit 35.Qe4, gespielt mit 5:51 auf der Uhr. Stockfish wollte 35.h4. Davor sah Stockfish Schwarz klar besser (−1,75), danach auf Gewinn (−3,34), und 35...Rxc3, die erste Wahl von Stockfish, kam sofort. Bei Zug 40 hatte Adhiban nur noch 1:08.\n\nAm Ende hatte Weiß einen Turm mehr: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, und dann ging der Bauer nach g5, matt. ACS Superchess gewann danach alle neun Kämpfe.\n\nZurück zu 35.Qe4 und 35.h4 finden, oder bei Zug 46 anhalten und das Matt finden. Dann gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Ματ με πιόνι και πύργο λιγότερο: Martirosyan κλείνει την παρτίδα απέναντι σε Adhiban με 46...g5#",
+          "body": "Η ACS Superchess, με πέντε νίκες σε πέντε αγώνες, νίκησε την τρίτη στη βαθμολογία ACS Arnia Chessit με 4½–1½ στον 6ο γύρο της ρουμανικής Σούπερ Λίγκας, και στην πρώτη σκακιέρα Martirosyan έδωσε ματ σε Adhiban με ένα πιόνι: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) είχε τα μαύρα απέναντι σε GM B. Adhiban (ACS Arnia Chessit, 2574). Η παρτίδα γύρισε στην 35.Qe4, που παίχτηκε με 5:51 στο ρολόι. Το Stockfish ήθελε την 35.h4. Έδινε καθαρό πλεονέκτημα στα μαύρα πριν (−1,75) και νίκη μετά (−3,34), και η 35...Rxc3, η πρώτη επιλογή της μηχανής, ήρθε αμέσως. Στην 40ή κίνηση Adhiban είχε μόλις 1:08 στο ρολόι.\n\nΣτο τέλος τα λευκά είχαν έναν πύργο παραπάνω: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, και μετά το πιόνι πήγε στο g5, ματ. Η ACS Superchess κέρδισε στη συνέχεια και τους εννέα αγώνες.\n\nΓύρνα στην 35.Qe4 και βρες την 35.h4, ή σταμάτα στην 46η κίνηση και βρες το ματ. Μετά συνέχισε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Mate de peón con una torre menos: Martirosyan remata a Adhiban con 46...g5#",
+          "body": "ACS Superchess, con cinco victorias en cinco matches, venció 4½–1½ a ACS Arnia Chessit, en tercer lugar, en la sexta ronda de la Superliga rumana, y en el primer tablero Martirosyan dio mate a Adhiban con un peón: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) jugó con negras contra GM B. Adhiban (ACS Arnia Chessit, 2574). La partida cambió con 35.Qe4, hecha con 5:51 en el reloj. Stockfish quería 35.h4. Daba clara ventaja a las negras antes (−1,75) y posición ganadora después (−3,34), y 35...Rxc3, su primera opción, llegó enseguida. En la jugada 40, a Adhiban le quedaban 1:08.\n\nAl final, las blancas tenían una torre de más: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, y entonces el peón fue a g5, mate. ACS Superchess acabó ganando los nueve matches.\n\nVuelve a 35.Qe4 y encuentra 35.h4, o detente en la jugada 46 y encuentra el mate. Luego sigue contra el motor."
+        },
+        "fi": {
+          "headline": "Matti sotilaalla tornin vajaana: Martirosyan päättää pelin Adhibania vastaan siirrolla 46...g5#",
+          "body": "ACS Superchess, viisi voittoa viidestä, voitti kolmantena olevan ACS Arnia Chessitin 4½–1½ Romanian superliigan 6. kierroksella, ja ykköslaudalla Martirosyan matitti Adhibanin sotilaalla: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) pelasi mustilla GM B. Adhibania (ACS Arnia Chessit, 2574) vastaan. Peli kääntyi siirtoon 35.Qe4, joka pelattiin kellossa 5:51 jäljellä. Stockfish halusi 35.h4. Se antoi mustalle ennen siirtoa selvän edun (−1,75) ja sen jälkeen voittoaseman (−3,34), ja sen ykkösvalinta 35...Rxc3 tuli heti. Siirtoon 40 mennessä Adhibanin kellossa oli enää 1:08.\n\nLopussa valkealla oli torni enemmän: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, ja sitten sotilas siirtyi g5:een, matti. ACS Superchess voitti lopulta kaikki yhdeksän otteluaan.\n\nPalaa siirtoon 35.Qe4 ja löydä 35.h4, tai pysähdy siirtoon 46 ja löydä matti. Jatka sitten peliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Mat avec un pion, une tour de moins : Martirosyan conclut contre Adhiban par 46...g5#",
+          "body": "ACS Superchess, cinq victoires en cinq matchs, a battu ACS Arnia Chessit, à la troisième place du classement, 4½–1½ lors de la 6e ronde de la Superligue roumaine, et au premier échiquier Martirosyan a maté Adhiban avec un pion : 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) avait les Noirs contre GM B. Adhiban (ACS Arnia Chessit, 2574). La partie a basculé sur 35.Qe4, joué avec 5:51 à la pendule. Stockfish voulait 35.h4, et donnait les Noirs nettement mieux avant (−1,75) et gagnants après (−3,34). 35...Rxc3, son premier choix, a suivi aussitôt. Au 40e coup, Adhiban n’avait plus que 1:08 à la pendule.\n\nÀ la fin, les Blancs avaient une tour de plus : 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, puis le pion est allé en g5, mat. ACS Superchess a ensuite gagné ses neuf matchs.\n\nRevenez à 35.Qe4 et trouvez 35.h4, ou arrêtez-vous au 46e coup et trouvez le mat. Puis continuez contre le moteur."
+        },
+        "he": {
+          "headline": "מט ברגלי, עם צריח פחות: ⁨46...g5#⁩ מסיים את המשחק בניצחון ל־Martirosyan על Adhiban",
+          "body": "קבוצת ACS Superchess, עם חמישה ניצחונות בחמישה מפגשים, גברה ⁨4½–1½⁩ על ACS Arnia Chessit, הקבוצה במקום השלישי, בסיבוב ה־6 של ליגת העל הרומנית, ובלוח הראשון נתן רגלי של Martirosyan מט ל־Adhiban: ⁨46...g5#⁩.\n\nל־GM Haik M. Martirosyan (ACS Superchess, 2661) היו הכלים השחורים מול GM B. Adhiban (ACS Arnia Chessit, 2574). נקודת המפנה הגיעה ב־⁨35.Qe4⁩, ששוחק כשנותרו ⁨5:51⁩. Stockfish רצה ב־⁨35.h4⁩, והעריך יתרון ברור לשחור לפני המסע (⁨−1.75⁩) ועמדה מנצחת אחריו (⁨−3.34⁩). המסע ⁨35...Rxc3⁩, הבחירה הראשונה של המנוע, בא מיד. עד מסע 40 ירד השעון של Adhiban ל־⁨1:08⁩.\n\nבסיום היה ללבן צריח עודף: ⁨44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5⁩, ואז הרגלי עלה ל־g5, מט. בהמשך ניצחה ACS Superchess בכל תשעת המפגשים.\n\nחזרו ל־⁨35.Qe4⁩ ומצאו את ⁨35.h4⁩, או עצרו במסע 46 ומצאו את המט. ואז המשיכו לשחק מול המנוע."
+        },
+        "hi": {
+          "headline": "एक हाथी कम, फिर भी प्यादे से मात: 46...g5# से Adhiban के ख़िलाफ़ Martirosyan की जीत",
+          "body": "रोमानियाई सुपर लीग के राउंड 6 में पाँच में से पाँच मुक़ाबले जीत चुकी ACS Superchess ने तीसरे स्थान की टीम ACS Arnia Chessit को 4½–1½ से हराया, और बोर्ड एक पर Martirosyan ने Adhiban को प्यादे से मात दी: 46...g5#।\n\nGM B. Adhiban (ACS Arnia Chessit, 2574) के ख़िलाफ़ GM Haik M. Martirosyan (ACS Superchess, 2661) के पास काले मोहरे थे। बाज़ी 35.Qe4 पर पलटी; यह चाल 5:51 बचे रहते खेली गई। Stockfish 35.h4 चाहता था। उसके हिसाब से पहले काला साफ़ बेहतर था (−1.75) और बाद में जीत की स्थिति में (−3.34), और इंजन की पहली पसंद 35...Rxc3 तुरंत आया। चाल 40 तक Adhiban की घड़ी पर सिर्फ़ 1:08 बचे थे।\n\nअंत में सफ़ेद के पास एक हाथी ज़्यादा था: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, और फिर प्यादा g5 पर गया, मात। ACS Superchess ने आगे चलकर सभी नौ मुक़ाबले जीते।\n\n35.Qe4 पर लौटें और 35.h4 खोजें, या चाल 46 पर रुकें और मात खोजें। फिर इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "Matt gyaloggal, bástyahátrányban: Martirosyan a 46...g5# lépéssel zárta le az Adhiban elleni játszmát",
+          "body": "Az öt mérkőzésből öt győzelemmel álló ACS Superchess 4½–1½ arányban legyőzte a harmadik helyen álló ACS Arnia Chessit csapatát a román Szuperliga 6. fordulójában, az első táblán pedig Martirosyan gyaloggal adott mattot Adhibannak: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) sötéttel játszott GM B. Adhiban (ACS Arnia Chessit, 2574) ellen. A játszma a 35.Qe4 lépésnél fordult meg, amely 5:51-gyel az órán született. A Stockfish a 35.h4 lépést akarta. Előtte sötét egyértelmű előnyét látta (−1,75), utána nyerő állást (−3,34), és azonnal jött a 35...Rxc3, az első választása. A 40. lépésre Adhiban órája 1:08-ra fogyott.\n\nA végén világos bástyaelőnyben volt: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, aztán a gyalog a g5-re lépett, és matt. Az ACS Superchess végül mind a kilenc mérkőzését megnyerte.\n\nMenj vissza a 35.Qe4 lépéshez, és találd meg a 35.h4 lépést, vagy állj meg a 46. lépésnél, és találd meg a mattot. Aztán játszd tovább a motor ellen."
+        },
+        "id": {
+          "headline": "Skakmat dengan pion meski kurang satu benteng: Martirosyan tuntaskan Adhiban dengan 46...g5#",
+          "body": "ACS Superchess, dengan lima kemenangan dari lima pertandingan, mengalahkan ACS Arnia Chessit, tim di peringkat ketiga, 4½–1½ di babak 6 Liga Super Rumania, dan di papan satu Martirosyan mengalahkan Adhiban dengan skakmat oleh pion: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) bermain dengan Hitam melawan GM B. Adhiban (ACS Arnia Chessit, 2574). Partai berbalik pada 35.Qe4, yang dimainkan dengan sisa 5:51. Stockfish menginginkan 35.h4. Mesin menilai Hitam unggul jelas sebelumnya (−1,75) dan menang sesudahnya (−3,34), dan 35...Rxc3, pilihan pertamanya, langsung datang. Pada langkah 40, jam Adhiban tinggal 1:08.\n\nDi akhir partai, Putih unggul satu benteng: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, lalu pion maju ke g5, skakmat. ACS Superchess kemudian memenangi kesembilan pertandingannya.\n\nKembali ke 35.Qe4 dan temukan 35.h4, atau berhenti di langkah 46 dan temukan skakmatnya. Lalu lanjutkan melawan mesin."
+        },
+        "it": {
+          "headline": "Matto di pedone con una Torre in meno: Martirosyan chiude contro Adhiban con 46...g5#",
+          "body": "ACS Superchess, cinque vittorie su cinque, ha battuto 4½–1½ ACS Arnia Chessit, al terzo posto, nel 6º turno della Superlega rumena, e in prima scacchiera Martirosyan ha dato matto ad Adhiban con un pedone: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) aveva il Nero contro GM B. Adhiban (ACS Arnia Chessit, 2574). La partita è girata su 35.Qe4, giocata con 5:51 sull’orologio. Stockfish voleva 35.h4, e dava il Nero chiaramente meglio prima (−1,75) e vincente dopo (−3,34). 35...Rxc3, la sua prima scelta, è arrivata subito. Alla mossa 40 Adhiban aveva soltanto 1:08 sull’orologio.\n\nAlla fine il Bianco aveva una Torre in più: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, e poi il pedone è andato in g5, matto. ACS Superchess ha poi vinto tutti e nove i match.\n\nTorna a 35.Qe4 e trova 35.h4, oppure fermati alla mossa 46 e trova il matto. Poi continua contro il motore."
+        },
+        "ja": {
+          "headline": "ルーク1枚少なくてもポーンでメイト、Martirosyanが46...g5#でAdhibanを仕留める",
+          "body": "5戦全勝のACS Superchessがルーマニア・スーパーリーグ第6ラウンドで3位のACS Arnia Chessitを4½–1½で下し、1番ボードではMartirosyanが46...g5#、ポーンによるメイトでAdhibanに勝ちました。\n\nGM Haik M. Martirosyan（ACS Superchess、2661）は黒番で、GM B. Adhiban（ACS Arnia Chessit、2574）と対戦しました。分かれ目は残り5:51で指された35.Qe4でした。Stockfishが望んだのは35.h4。35.Qe4の後、Stockfishの評価は黒の明確な優勢（−1.75）から勝勢（−3.34）に変わり、すぐに第一候補の35...Rxc3が返ってきました。40手目までに、Adhibanの残り時間は1:08になっていました。\n\n最後は白がルーク1枚得でした。44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5と進み、そこからポーンがg5に進んでメイトとなりました。ACS Superchessはその後、全9マッチに勝ちました。\n\n35.Qe4に戻って35.h4を見つけるか、46手目で止めてメイトを見つけましょう。それからエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "룩 하나 적은 채 폰으로 메이트… Martirosyan, 46...g5#로 Adhiban 제압",
+          "body": "다섯 매치 전승의 ACS Superchess가 루마니아 슈퍼리그 6라운드에서 3위 ACS Arnia Chessit를 4½–1½로 꺾었고, 1번 보드에서는 Martirosyan이 46...g5#, 폰으로 Adhiban을 메이트시켰습니다.\n\nGM Haik M. Martirosyan(ACS Superchess, 2661)은 흑을 잡고 GM B. Adhiban(ACS Arnia Chessit, 2574)과 맞섰습니다. 승부를 가른 수는 5:51를 남기고 둔 35.Qe4였습니다. Stockfish가 원한 수는 35.h4였습니다. 35.Qe4 이후 Stockfish의 평가는 흑의 뚜렷한 우세(−1.75)에서 이기는 형세(−3.34)로 바뀌었고, 곧바로 첫 번째 후보 수인 35...Rxc3가 나왔습니다. 40수째에는 Adhiban의 시계가 1:08까지 줄어 있었습니다.\n\n마지막에는 백이 룩 하나를 더 가지고 있었습니다. 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5 이후 폰이 g5로 나아가며 메이트가 되었습니다. ACS Superchess는 이후 아홉 매치를 모두 이겼습니다.\n\n35.Qe4로 돌아가 35.h4를 찾거나, 46수째에서 멈추고 메이트를 찾아보세요. 이어서 엔진을 상대로 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "Sekak mati dengan bidak walaupun kurang satu tir: Martirosyan tamatkan Adhiban dengan 46...g5#",
+          "body": "ACS Superchess, dengan lima kemenangan daripada lima perlawanan, menewaskan ACS Arnia Chessit, pasukan di tempat ketiga, 4½–1½ dalam pusingan 6 Liga Super Romania, dan di papan satu Martirosyan menewaskan Adhiban dengan sekak mati oleh bidak: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) bermain dengan Hitam menentang GM B. Adhiban (ACS Arnia Chessit, 2574). Permainan berubah pada 35.Qe4, yang dimainkan dengan baki 5:51. Stockfish mahukan 35.h4. Enjin menilai Hitam jelas mendahului sebelumnya (−1,75) dan menang selepasnya (−3,34), dan 35...Rxc3, pilihan pertamanya, tiba serta-merta. Menjelang langkah 40, jam Adhiban tinggal 1:08.\n\nPada akhirnya Putih lebih satu tir: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, dan kemudian bidak mara ke g5, sekak mati. ACS Superchess kemudian memenangi kesemua sembilan perlawanan.\n\nKembali ke 35.Qe4 dan cari 35.h4, atau berhenti pada langkah 46 dan cari sekak matinya. Kemudian teruskan menentang enjin."
+        },
+        "nl": {
+          "headline": "Mat met een pion, een toren achter: Martirosyan beslist het tegen Adhiban met 46...g5#",
+          "body": "ACS Superchess, met vijf zeges uit vijf matches, versloeg ACS Arnia Chessit, op de derde plaats, met 4½–1½ in ronde 6 van de Roemeense Superliga, en aan bord één zette Martirosyan Adhiban mat met een pion: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) speelde met zwart tegen GM B. Adhiban (ACS Arnia Chessit, 2574). De partij kantelde met 35.Qe4, gespeeld met nog 5:51. Stockfish wilde 35.h4. Stockfish zag zwart ervoor duidelijk beter staan (−1,75) en erna gewonnen (−3,34), en 35...Rxc3, de eerste keuze van Stockfish, kwam meteen. Bij zet 40 had Adhiban nog maar 1:08.\n\nAan het eind stond wit een toren voor: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, en daarna ging de pion naar g5, mat. ACS Superchess won daarna alle negen matches.\n\nGa terug naar 35.Qe4 en vind 35.h4, of stop bij zet 46 en vind het mat. Speel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "Matt med en bonde, et tårn mindre: Martirosyan avgjør mot Adhiban med 46...g5#",
+          "body": "ACS Superchess, med fem seire på fem matcher, slo ACS Arnia Chessit, som lå på tredjeplass, 4½–1½ i 6. runde av den rumenske superligaen, og på første brett satte Martirosyan Adhiban matt med en bonde: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) hadde svart mot GM B. Adhiban (ACS Arnia Chessit, 2574). Partiet snudde med 35.Qe4, spilt med 5:51 igjen. Stockfish ville ha 35.h4. Motoren regnet svart som klart bedre før (−1,75) og som vinnende etter (−3,34), og 35...Rxc3, Stockfishs førstevalg, kom med en gang. I trekk 40 var Adhiban nede på 1:08.\n\nTil slutt hadde hvit et tårn mer: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, og så gikk bonden til g5, matt. ACS Superchess vant senere alle ni matchene.\n\nGå tilbake til 35.Qe4 og finn 35.h4, eller stopp ved trekk 46 og finn matten. Spill så videre mot motoren."
+        },
+        "pl": {
+          "headline": "Mat pionkiem, z wieżą mniej: Martirosyan kończy partię z Adhiban ruchem 46...g5#",
+          "body": "ACS Superchess, z pięcioma wygranymi w pięciu meczach, pokonuje trzecią w tabeli drużynę ACS Arnia Chessit 4½–1½ w 6. rundzie rumuńskiej Superligi, a na pierwszej szachownicy Martirosyan matuje Adhiban pionkiem: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) gra czarnymi przeciwko GM B. Adhiban (ACS Arnia Chessit, 2574). Partia odwraca się po 35.Qe4, zagranym przy 5:51 na zegarze. Stockfish chciał 35.h4. Przed tym ruchem oceniał pozycję czarnych jako wyraźnie lepszą (−1,75), po nim jako wygraną (−3,34), a od razu padło 35...Rxc3, pierwszy wybór silnika. W 40. ruchu Adhiban ma na zegarze już tylko 1:08.\n\nNa koniec białe mają wieżę więcej: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, a potem pionek idzie na g5 i daje mata. ACS Superchess wygrywa ostatecznie wszystkie dziewięć meczów.\n\nWróć do 35.Qe4 i znajdź 35.h4 albo zatrzymaj się na 46. ruchu i znajdź mata. Potem graj dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Mate de peão com uma torre a menos: Martirosyan liquida Adhiban com 46...g5#",
+          "body": "O ACS Superchess, com cinco vitórias em cinco matches, venceu o ACS Arnia Chessit, em terceiro lugar, por 4½–1½ na 6ª rodada da Superliga Romena, e no primeiro tabuleiro Martirosyan deu mate em Adhiban com um peão: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) jogou de pretas contra GM B. Adhiban (ACS Arnia Chessit, 2574). A partida virou em 35.Qe4, jogado com 5:51 no relógio. O Stockfish queria 35.h4. Via clara vantagem das pretas antes (−1,75) e posição vencedora depois (−3,34), e 35...Rxc3, sua primeira opção, veio logo em seguida. No lance 40, Adhiban tinha apenas 1:08.\n\nNo fim, as brancas tinham uma torre a mais: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, e então o peão foi para g5, mate. O ACS Superchess acabou vencendo os nove matches.\n\nVolte a 35.Qe4 e encontre 35.h4, ou pare no lance 46 e encontre o mate. Depois continue contra o motor."
+        },
+        "ro": {
+          "headline": "Mat cu pionul, cu o tură mai puțin: Martirosyan încheie partida cu Adhiban prin 46...g5#",
+          "body": "ACS Superchess, cu cinci victorii din cinci, a învins echipa ACS Arnia Chessit, aflată pe locul trei, cu 4½–1½ în runda a 6-a a Superligii României, iar la prima masă Martirosyan a câștigat contra Adhiban cu mat de pion: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) a jucat cu negrele contra GM B. Adhiban (ACS Arnia Chessit, 2574). Partida s-a întors la 35.Qe4, jucată cu 5:51 rămase. Stockfish voia 35.h4. Considera Negrul clar mai bun înainte (−1,75) și câștigător după (−3,34), iar 35...Rxc3, prima sa alegere, a urmat imediat. La mutarea 40, Adhiban mai avea doar 1:08.\n\nLa final, Albul avea o tură în plus: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, apoi pionul a mers pe g5, mat. ACS Superchess a câștigat apoi toate cele nouă meciuri.\n\nÎntoarce-te la 35.Qe4 și găsește 35.h4 sau oprește-te la mutarea 46 și găsește matul. Apoi continuă contra motorului."
+        },
+        "ru": {
+          "headline": "С ладьёй меньше — мат пешкой: Martirosyan завершает партию с Adhiban ходом 46...g5#",
+          "body": "ACS Superchess — пять побед в пяти матчах — обыгрывает идущую третьей команду ACS Arnia Chessit 4½–1½ в 6-м туре румынской Суперлиги, а на первой доске Martirosyan ставит Adhiban мат пешкой: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) играет чёрными против GM B. Adhiban (ACS Arnia Chessit, 2574). Перелом — 35.Qe4, сыгранный при 5:51 на часах. Stockfish хотел 35.h4. До хода движок давал чёрным явный перевес (−1,75), после — выигрыш (−3,34), и сразу последовал 35...Rxc3 — первый выбор движка. К 40-му ходу у Adhiban на часах оставалось 1:08.\n\nВ концовке у белых была лишняя ладья: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, а затем пешка пошла на g5 — мат. ACS Superchess в итоге выигрывает все девять матчей.\n\nВернитесь к 35.Qe4 и найдите 35.h4 — или остановитесь на 46-м ходу и найдите мат. А затем продолжите партию против движка."
+        },
+        "sv": {
+          "headline": "Matt med en bonde, ett torn mindre: Martirosyan avgör mot Adhiban med 46...g5#",
+          "body": "ACS Superchess, med fem vinster på fem matcher, besegrade ACS Arnia Chessit, som låg trea, med 4½–1½ i rond 6 av rumänska superligan, och på första brädet satte Martirosyan Adhiban matt med en bonde: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) hade svart mot GM B. Adhiban (ACS Arnia Chessit, 2574). Det vände på 35.Qe4, spelat med 5:51 kvar. Stockfish ville ha 35.h4. Motorn räknade svart som klart bättre före (−1,75) och som vinnande efter (−3,34), och 35...Rxc3, Stockfishs förstaval, kom direkt. Vid drag 40 var Adhiban nere på 1:08.\n\nI slutet hade vit ett torn mer: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, och sedan gick bonden till g5, matt. ACS Superchess vann sedan alla nio matcher.\n\nGå tillbaka till 35.Qe4 och hitta 35.h4, eller stanna vid drag 46 och hitta matten. Spela sedan vidare mot motorn."
+        },
+        "th": {
+          "headline": "รุกจนด้วยเบี้ยทั้งที่เรือน้อยกว่า: Martirosyan ปิดเกม Adhiban ด้วย 46...g5#",
+          "body": "ACS Superchess ซึ่งชนะมาแล้วห้าจากห้าแมตช์ ชนะ ACS Arnia Chessit ทีมอันดับที่สาม 4½–1½ ในรอบที่ 6 ของซูเปอร์ลีกโรมาเนีย และบนกระดานหนึ่ง Martirosyan รุกจน Adhiban ด้วยเบี้ย: 46...g5#\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) ถือฝ่ายดำพบ GM B. Adhiban (ACS Arnia Chessit, 2574) เกมพลิกที่ 35.Qe4 ซึ่งเดินเมื่อเหลือเวลา 5:51 Stockfish ต้องการ 35.h4 เอนจินประเมินว่าฝ่ายดำได้เปรียบชัดเจนก่อนตานั้น (−1.75) และอยู่ในสถานะชนะหลังตานั้น (−3.34) และ 35...Rxc3 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจินก็มาทันที พอถึงตาที่ 40 Adhiban เหลือเวลาเพียง 1:08\n\nตอนจบ ฝ่ายขาวมีเรือมากกว่าหนึ่งตัว: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5 จากนั้นเบี้ยก็เดินไปที่ g5 เป็นการรุกจน และในเวลาต่อมา ACS Superchess ก็ชนะครบทั้งเก้าแมตช์\n\nย้อนกลับไปที่ 35.Qe4 แล้วหา 35.h4 หรือหยุดที่ตาที่ 46 แล้วหาการรุกจน จากนั้นเล่นต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "Bir kale eksikken piyonla mat: Martirosyan, Adhiban karşısındaki oyunu 46...g5# ile bitirdi",
+          "body": "Beş maçta beş galibiyeti olan ACS Superchess, Romanya Süper Ligi'nin 6. turunda üçüncü sıradaki ACS Arnia Chessit'i 4½–1½ yendi; birinci masada Martirosyan, Adhiban'ı bir piyonla mat etti: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661), GM B. Adhiban'a (ACS Arnia Chessit, 2574) karşı siyahla oynadı. Oyun, saatte 5:51 kala oynanan 35.Qe4 ile döndü. Stockfish 35.h4 hamlesini istiyordu. Öncesinde siyahı açık farkla üstün (−1,75), sonrasında kazanan konumda (−3,34) görüyordu ve ilk tercihi olan 35...Rxc3 hemen geldi. 40. hamlede Adhiban'ın saatinde 1:08 kalmıştı.\n\nSonda beyaz bir kale fazlaydı: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, ardından piyon g5'e gitti ve mat. ACS Superchess sonunda dokuz maçın hepsini kazandı.\n\n35.Qe4 hamlesine dön ve 35.h4 hamlesini bul ya da 46. hamlede dur ve matı bul. Sonra motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Chiếu hết bằng Tốt khi kém một Xe: Martirosyan kết thúc ván với Adhiban bằng 46...g5#",
+          "body": "ACS Superchess, đội đã thắng cả năm trận, thắng ACS Arnia Chessit, đội đứng thứ ba, với tỉ số 4½–1½ ở vòng 6 giải Siêu hạng Romania, và ở bàn một Martirosyan chiếu hết Adhiban bằng một Tốt: 46...g5#.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) cầm quân Đen gặp GM B. Adhiban (ACS Arnia Chessit, 2574). Ván cờ đổi chiều ở 35.Qe4, được đi khi còn 5:51. Stockfish muốn 35.h4. Engine đánh giá Đen ưu thế rõ trước nước đó (−1,75) và ở thế thắng sau nước đó (−3,34), và 35...Rxc3, lựa chọn số một của engine, đến ngay. Tới nước 40, Adhiban chỉ còn 1:08.\n\nCuối ván, Trắng hơn một Xe: 44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5, rồi Tốt tiến tới g5, chiếu hết. Sau đó ACS Superchess thắng cả chín trận.\n\nQuay lại 35.Qe4 và tìm 35.h4, hoặc dừng ở nước 46 và tìm nước chiếu hết. Rồi chơi tiếp với engine."
+        },
+        "zh-Hans": {
+          "headline": "少一车，用兵将死：Martirosyan以46...g5#终结Adhiban",
+          "body": "五战全胜的ACS Superchess在罗马尼亚超级联赛第6轮以4½–1½战胜排名第三的ACS Arnia Chessit，第一台上，Martirosyan用兵将死了Adhiban：46...g5#。\n\nGM Haik M. Martirosyan（ACS Superchess，2661）执黑对阵GM B. Adhiban（ACS Arnia Chessit，2574）。这盘棋的转折点是35.Qe4，走这步时还剩5:51。Stockfish想走的是35.h4。Stockfish认为这步之前黑方明显占优（−1.75），之后黑方胜势（−3.34），黑方随即走出Stockfish的首选35...Rxc3。到第40回合，Adhiban的棋钟只剩1:08。\n\n到最后白方多一个车：44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5，随后黑兵走到g5，将死。ACS Superchess最终九场比赛全胜。\n\n回到35.Qe4，找出35.h4；或者停在第46回合，找出杀棋。然后对着引擎继续下。"
+        },
+        "zh-Hant": {
+          "headline": "少一車，用兵將死：Martirosyan以46...g5#終結Adhiban",
+          "body": "五戰全勝的ACS Superchess在羅馬尼亞超級聯賽第6輪以4½–1½擊敗排名第三的ACS Arnia Chessit，第一台上，Martirosyan用兵將死了Adhiban：46...g5#。\n\nGM Haik M. Martirosyan（ACS Superchess，2661）執黑對戰GM B. Adhiban（ACS Arnia Chessit，2574）。這盤棋的轉折點是35.Qe4，走這步時還剩5:51。Stockfish想走的是35.h4。Stockfish認為這步之前黑方明顯佔優（−1.75），之後黑方勝勢（−3.34），黑方隨即走出Stockfish的首選35...Rxc3。到第40回合，Adhiban的棋鐘只剩1:08。\n\n到最後白方多一個車：44.Qe5 Qxe5 45.Rxd8+ Kh7 46.fxe5，隨後黑兵走到g5，將死。ACS Superchess最後九場比賽全勝。\n\n回到35.Qe4，找出35.h4；或者停在第46回合，找出殺棋。然後對著引擎繼續下。"
+        }
+      },
+      "fen": "1qr3k1/5pp1/4p2p/p3n3/P1p1QN2/1rP1PPP1/3R2KP/3R4 b - - 9 35",
+      "last": {
+        "from": "c2",
+        "to": "e4"
+      },
+      "url": "https://brasspawn.com/today/2026-10-08-adhiban-martirosyan-romanian-team-chess-championships-r6",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-mens-super-league/round-6/pe8pd64b/5L3YA9Ws"
+      },
+      "updatedAt": "2026-10-08T19:06:09.919Z"
+    },
+    {
+      "id": "2026-10-08-sadhwani-anton-romanian-team-chess-championships-r6",
+      "status": "approved",
+      "date": "2026-10-08",
+      "rank": 1,
+      "weight": 395,
+      "event": {
+        "name": "Romanian Team Chess Championships 2026",
+        "short": "Romanian Team Chess Championships",
+        "section": "Men’s Super League",
+        "round": 6,
+        "location": "Eforie Nord, Romania",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-mens-super-league/round-6/pe8pd64b"
+      },
+      "white": {
+        "name": "Raunak Sadhwani",
+        "short": "Sadhwani",
+        "title": "GM",
+        "elo": 2645,
+        "team": "VADOS IFB FINWEST ARAD"
+      },
+      "black": {
+        "name": "Teodor Anton",
+        "short": "Anton",
+        "title": "IM",
+        "elo": 2425,
+        "team": "SAH CLUB OLTENIA Craiova"
+      },
+      "result": "1-0",
+      "opening": {
+        "eco": "E11",
+        "name": "Bogo-Indian Defense: Grünfeld Variation"
+      },
+      "moves": "d4 Nf6 c4 e6 Nf3 Bb4+ Nbd2 b6 a3 Bxd2+ Nxd2 Bb7 e3 O-O b3 c5 dxc5 bxc5 Qc2 Qe7 Bb2 d5 Bd3 Nbd7 Rg1 Rfd8 g4 Nf8 O-O-O a5 g5 Ne8 a4 d4 Ne4 Rac8 Qe2 e5 Ba3 Ne6 Qg4 g6 h4 Bxe4 Qxe4 N6g7 exd4 Rxd4 Qe1 Rxh4 Bc2 Nf5 Bxf5 gxf5 Rd5 Qb7 Qc3 Rd4 Rxe5 Rcd8 Bxc5 Re4 Rxe4 fxe4 Qxa5 Rd3 Qb5 Qc8 Rg3 Nd6 Qb6 Rxg3 fxg3 Nf5 g4 Ng3 Qd6 Nf1 Bd4",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 58,
+        "played": "Rd4",
+        "better": "Ng7",
+        "reply": "Rxe5",
+        "replyPlayed": true,
+        "before": {
+          "cp": 116,
+          "mate": null
+        },
+        "after": {
+          "cp": 281,
+          "mate": null
+        },
+        "clock": 141
+      },
+      "headline": "Neither clock had four minutes: Sadhwani beats Anton in 40",
+      "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) beat IM Teodor Anton (Sah Club Oltenia Craiova, 2425) in 40 moves in round 6 of the Romanian Super League, with less than four minutes on either clock from move 32.\n\nAnton played 29...Rd4 with 2:21 left. Stockfish wanted 29...Ng7. It counted a small edge for White before (+1.16) and a win after (+2.81), and 30.Rxe5, its first choice, came straight back. 33.Qxa5 won a pawn, and Stockfish counts the final position as a win for White.\n\nVados IFB Finwest Arad won the match 5–1.\n\nStop at 29...Rd4, give yourself 2:21, and find 29...Ng7. Then play it on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "لم تُظهر أيٌّ من الساعتين أربع دقائق: فوز لـSadhwani على Anton في 40 نقلة",
+          "body": "انتهى الدور بفوز GM Raunak Sadhwani (Vados IFB Finwest Arad، 2645) على IM Teodor Anton (Sah Club Oltenia Craiova، 2425) في 40 نقلة، في الجولة السادسة من الدوري الروماني الممتاز، ومنذ النقلة 32 كان الوقت على كل من الساعتين أقل من أربع دقائق.\n\nلُعبت نقلة Anton ⁨29...Rd4⁩ والوقت المتبقي ⁨2:21⁩. أراد Stockfish ⁨29...Ng7⁩، وانتقل تقييمه من أفضلية صغيرة للأبيض قبلها (⁨+1.16⁩) إلى فوز بعدها (⁨+2.81⁩). وجاءت ⁨30.Rxe5⁩، الخيار الأول للمحرك، مباشرة. وكسبت ⁨33.Qxa5⁩ بيدقًا، ويعدّ Stockfish الوضع النهائي فوزًا للأبيض.\n\nفاز فريق Vados IFB Finwest Arad بالمباراة ⁨5–1⁩.\n\nتوقف عند ⁨29...Rd4⁩، وامنح نفسك ⁨2:21⁩، واعثر على ⁨29...Ng7⁩. ثم تابع اللعب ضد المحرك."
+        },
+        "bg": {
+          "headline": "Нито един часовник с четири минути: Sadhwani побеждава Anton за 40 хода",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) победи IM Teodor Anton (Sah Club Oltenia Craiova, 2425) за 40 хода в 6-ия кръг на румънската Суперлига, като от 32-ия ход нататък нито един часовник не показа четири минути.\n\nAnton изигра 29...Rd4 с 2:21 на часовника. Stockfish искаше 29...Ng7. Преди хода енджинът даваше малко предимство на белите (+1,16), а след него — печеливша позиция (+2,81), и 30.Rxe5, първият му избор, последва веднага. 33.Qxa5 спечели пешка, а Stockfish оценява крайната позиция като печеливша за белите.\n\nVados IFB Finwest Arad спечели мача с 5–1.\n\nСпрете на 29...Rd4, дайте си 2:21 и намерете 29...Ng7. После продължете партията срещу енджина."
+        },
+        "cs": {
+          "headline": "Ani jedny hodiny nemají čtyři minuty: partii Sadhwani – Anton vyhrává Sadhwani po 40 tazích",
+          "body": "V partii GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) – IM Teodor Anton (Sah Club Oltenia Craiova, 2425) v 6. kole rumunské superligy vyhrává po 40 tazích Sadhwani; od 32. tahu ukazují oboje hodiny méně než čtyři minuty.\n\nAnton hraje 29...Rd4 s 2:21 na hodinách. Stockfish chtěl 29...Ng7 a před tahem viděl malou výhodu bílých (+1,16), po něm výhru (+2,81). Okamžitě přišlo 30.Rxe5, první volba enginu. Tah 33.Qxa5 získal pěšce a konečnou pozici hodnotí Stockfish jako výhru bílých.\n\nVados IFB Finwest Arad vyhrává zápas 5–1.\n\nZastav na 29...Rd4, dej si 2:21 a najdi 29...Ng7. Pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "Ingen af urene havde fire minutter: Sadhwani slår Anton i 40 træk",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) slog IM Teodor Anton (Sah Club Oltenia Craiova, 2425) i 40 træk i 6. runde af den rumænske superliga, med under fire minutter på begge ure fra træk 32.\n\nAnton spillede 29...Rd4 med 2:21 tilbage. Stockfish ville have 29...Ng7. Motoren så en lille fordel til hvid før (+1,16) og gevinst efter (+2,81), og 30.Rxe5, Stockfishs førstevalg, kom med det samme. 33.Qxa5 vandt en bonde, og Stockfish vurderer slutstillingen som gevinst til hvid.\n\nVados IFB Finwest Arad vandt matchen 5–1.\n\nStop ved 29...Rd4, giv dig selv 2:21, og find 29...Ng7. Spil så videre mod motoren."
+        },
+        "de": {
+          "headline": "Keine Uhr zeigte vier Minuten: Sadhwani schlägt Anton in 40 Zügen",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) schlug IM Teodor Anton (Sah Club Oltenia Craiova, 2425) in Runde 6 der rumänischen Superliga in 40 Zügen, ab Zug 32 mit weniger als vier Minuten auf beiden Uhren.\n\nAnton spielte 29...Rd4 mit 2:21 auf der Uhr. Stockfish wollte 29...Ng7. Davor sah Stockfish einen kleinen Vorteil für Weiß (+1,16), danach Gewinn (+2,81), und 30.Rxe5, die erste Wahl von Stockfish, kam sofort. 33.Qxa5 gewann einen Bauern, und Stockfish wertet die Schlussstellung als Gewinn für Weiß.\n\nVados IFB Finwest Arad gewann den Kampf 5:1.\n\nBei 29...Rd4 anhalten, sich 2:21 geben und 29...Ng7 finden. Dann gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Κανένα ρολόι δεν είχε τέσσερα λεπτά: νίκη Sadhwani επί Anton σε 40 κινήσεις",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) επικράτησε επί IM Teodor Anton (Sah Club Oltenia Craiova, 2425) σε 40 κινήσεις στον 6ο γύρο της ρουμανικής Σούπερ Λίγκας, με λιγότερα από τέσσερα λεπτά σε κάθε ρολόι από την 32η κίνηση.\n\nAnton έπαιξε την 29...Rd4 με 2:21 στο ρολόι. Το Stockfish ήθελε την 29...Ng7. Έδινε μικρό πλεονέκτημα στα λευκά πριν (+1,16) και νίκη μετά (+2,81), και η 30.Rxe5, η πρώτη επιλογή της μηχανής, ήρθε αμέσως. Η 33.Qxa5 κέρδισε ένα πιόνι, και το Stockfish κρίνει την τελική θέση κερδισμένη για τα λευκά.\n\nΗ Vados IFB Finwest Arad κέρδισε τον αγώνα με 5–1.\n\nΣταμάτα στην 29...Rd4, βάλε 2:21 στο ρολόι σου και βρες την 29...Ng7. Μετά συνέχισε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Ningún reloj llegaba a cuatro minutos: Sadhwani vence a Anton en 40 jugadas",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) venció a IM Teodor Anton (Sah Club Oltenia Craiova, 2425) en 40 jugadas en la sexta ronda de la Superliga rumana, con menos de cuatro minutos en cada reloj desde la jugada 32.\n\nAnton jugó 29...Rd4 con 2:21 en el reloj. Stockfish quería 29...Ng7. Daba una pequeña ventaja a las blancas antes (+1,16) y una victoria después (+2,81), y 30.Rxe5, su primera opción, llegó enseguida. 33.Qxa5 ganó un peón, y Stockfish da la posición final como ganada para las blancas.\n\nVados IFB Finwest Arad ganó el match 5–1.\n\nDetente en 29...Rd4, date 2:21 y encuentra 29...Ng7. Luego sigue contra el motor."
+        },
+        "fi": {
+          "headline": "Kummassakaan kellossa ei ollut neljää minuuttia: Sadhwani voittaa Antonin 40 siirrossa",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) voitti IM Teodor Antonin (Sah Club Oltenia Craiova, 2425) 40 siirrossa Romanian superliigan 6. kierroksella, ja siirrosta 32 lähtien kummassakin kellossa oli alle neljä minuuttia.\n\nAnton pelasi 29...Rd4 kellossa 2:21 jäljellä. Stockfish halusi 29...Ng7. Se antoi valkealle ennen siirtoa pienen edun (+1,16) ja sen jälkeen voittoaseman (+2,81), ja sen ykkösvalinta 30.Rxe5 tuli heti. 33.Qxa5 voitti sotilaan, ja Stockfish arvioi loppuaseman voitoksi valkealle.\n\nVados IFB Finwest Arad voitti ottelun 5–1.\n\nPysähdy siirtoon 29...Rd4, anna itsellesi 2:21 ja löydä 29...Ng7. Jatka sitten peliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Moins de quatre minutes aux deux pendules : Sadhwani bat Anton en 40 coups",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) a battu IM Teodor Anton (Sah Club Oltenia Craiova, 2425) en 40 coups lors de la 6e ronde de la Superligue roumaine, avec moins de quatre minutes à chaque pendule à partir du 32e coup.\n\nAnton a joué 29...Rd4 avec 2:21 à la pendule. Stockfish voulait 29...Ng7, et donnait un léger avantage aux Blancs avant (+1,16) et le gain après (+2,81). 30.Rxe5, son premier choix, a suivi aussitôt. 33.Qxa5 a gagné un pion, et Stockfish donne la position finale gagnante pour les Blancs.\n\nVados IFB Finwest Arad a gagné le match 5–1.\n\nArrêtez-vous sur 29...Rd4, donnez-vous 2:21 et trouvez 29...Ng7. Puis continuez contre le moteur."
+        },
+        "he": {
+          "headline": "אף שעון לא הראה ארבע דקות: ניצחון ל־Sadhwani על Anton אחרי 40 מסעים",
+          "body": "המשחק בסיבוב ה־6 של ליגת העל הרומנית הסתיים בניצחון ל־GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) על IM Teodor Anton (Sah Club Oltenia Craiova, 2425) אחרי 40 מסעים, כשממסע 32 שני השעונים הראו פחות מארבע דקות.\n\nהמסע ⁨29...Rd4⁩ שוחק כשבשעון של Anton נותרו ⁨2:21⁩. Stockfish רצה ב־⁨29...Ng7⁩, והעריך יתרון קטן ללבן לפני המסע (⁨+1.16⁩) ועמדה מנצחת אחריו (⁨+2.81⁩). המסע ⁨30.Rxe5⁩, הבחירה הראשונה של המנוע, בא מיד. המסע ⁨33.Qxa5⁩ זכה ברגלי, ו־Stockfish מעריך את העמדה הסופית כניצחון ללבן.\n\nקבוצת Vados IFB Finwest Arad ניצחה במפגש ⁨5–1⁩.\n\nעצרו ב־⁨29...Rd4⁩, תנו לעצמכם ⁨2:21⁩ ומצאו את ⁨29...Ng7⁩. ואז המשיכו לשחק מול המנוע."
+        },
+        "hi": {
+          "headline": "किसी घड़ी पर चार मिनट भी नहीं: 40 चालों में Anton पर Sadhwani की जीत",
+          "body": "रोमानियाई सुपर लीग के राउंड 6 में GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) ने IM Teodor Anton (Sah Club Oltenia Craiova, 2425) को 40 चालों में हराया, और चाल 32 से दोनों में से किसी घड़ी पर चार मिनट भी नहीं थे।\n\n2:21 बचे रहते Anton ने 29...Rd4 खेला। Stockfish 29...Ng7 चाहता था। उसके हिसाब से पहले सफ़ेद को छोटी बढ़त थी (+1.16) और बाद में जीत की स्थिति (+2.81), और इंजन की पहली पसंद 30.Rxe5 तुरंत आया। 33.Qxa5 ने एक प्यादा जीता, और Stockfish अंतिम स्थिति को सफ़ेद की जीत मानता है।\n\nVados IFB Finwest Arad ने मुक़ाबला 5–1 से जीता।\n\n29...Rd4 पर रुकें, खुद को 2:21 दें, और 29...Ng7 खोजें। फिर इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "Egyik órán sem volt négy perc: Sadhwani 40 lépésben nyert Anton ellen",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) 40 lépésben nyert IM Teodor Anton (Sah Club Oltenia Craiova, 2425) ellen a román Szuperliga 6. fordulójában, és a 32. lépéstől egyik órán sem volt négy percnél több.\n\nAnton 2:21-gyel az óráján játszotta a 29...Rd4 lépést. A Stockfish a 29...Ng7 lépést akarta. Előtte világos kis előnyét látta (+1,16), utána nyerést (+2,81), és azonnal jött a 30.Rxe5, az első választása. A 33.Qxa5 nyert egy gyalogot, és a Stockfish a záróállást világos számára nyerőnek értékeli.\n\nA Vados IFB Finwest Arad 5–1-re megnyerte a mérkőzést.\n\nÁllj meg a 29...Rd4 lépésnél, adj magadnak 2:21-et, és találd meg a 29...Ng7 lépést. Aztán játszd tovább a motor ellen."
+        },
+        "id": {
+          "headline": "Tak satu pun jam punya empat menit: Sadhwani kalahkan Anton dalam 40 langkah",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) mengalahkan IM Teodor Anton (Sah Club Oltenia Craiova, 2425) dalam 40 langkah di babak 6 Liga Super Rumania, dengan kurang dari empat menit di kedua jam sejak langkah 32.\n\nAnton memainkan 29...Rd4 dengan sisa 2:21. Stockfish menginginkan 29...Ng7. Mesin menilai Putih sedikit unggul sebelumnya (+1,16) dan menang sesudahnya (+2,81), dan 30.Rxe5, pilihan pertamanya, langsung datang. 33.Qxa5 memenangi satu pion, dan Stockfish menilai posisi akhir sebagai kemenangan untuk Putih.\n\nVados IFB Finwest Arad memenangi pertandingan 5–1.\n\nBerhenti di 29...Rd4, beri dirimu 2:21, dan temukan 29...Ng7. Lalu lanjutkan melawan mesin."
+        },
+        "it": {
+          "headline": "Nessuno dei due orologi arrivava a quattro minuti: Sadhwani batte Anton in 40 mosse",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) ha battuto IM Teodor Anton (Sah Club Oltenia Craiova, 2425) in 40 mosse nel 6º turno della Superlega rumena, con meno di quattro minuti su entrambi gli orologi dalla mossa 32.\n\nAnton ha giocato 29...Rd4 con 2:21 sull’orologio. Stockfish voleva 29...Ng7, e dava un piccolo vantaggio al Bianco prima (+1,16) e la vittoria dopo (+2,81). 30.Rxe5, la sua prima scelta, è arrivata subito. 33.Qxa5 ha vinto un pedone, e Stockfish dà la posizione finale vinta per il Bianco.\n\nVados IFB Finwest Arad ha vinto il match 5–1.\n\nFermati su 29...Rd4, datti 2:21 e trova 29...Ng7. Poi continua contro il motore."
+        },
+        "ja": {
+          "headline": "どちらの時計も4分を切る中、SadhwaniがAntonに40手で勝利",
+          "body": "32手目以降どちらの時計も残り4分を切る中、GM Raunak Sadhwani（Vados IFB Finwest Arad、2645）がルーマニア・スーパーリーグ第6ラウンドでIM Teodor Anton（Sah Club Oltenia Craiova、2425）に40手で勝ちました。\n\nAntonは残り2:21で29...Rd4を指しました。Stockfishが望んだのは29...Ng7。29...Rd4の後、Stockfishの評価は白のわずかな優位（+1.16）から勝勢（+2.81）に変わり、すぐに第一候補の30.Rxe5が返ってきました。33.Qxa5でポーンを1つ得て、Stockfishは最終局面を白の勝ちと見ています。\n\nVados IFB Finwest Aradはマッチを5–1で制しました。\n\n29...Rd4で止め、自分にも2:21だけ与えて、29...Ng7を見つけましょう。それからエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "양쪽 시계 모두 4분 미만… Sadhwani, Anton에게 40수 만에 승리",
+          "body": "GM Raunak Sadhwani(Vados IFB Finwest Arad, 2645)가 루마니아 슈퍼리그 6라운드에서 IM Teodor Anton(Sah Club Oltenia Craiova, 2425)에게 40수 만에 이겼고, 32수째부터는 양쪽 시계 모두 4분 미만이었습니다.\n\nAnton은 2:21를 남기고 29...Rd4를 두었습니다. Stockfish가 원한 수는 29...Ng7였습니다. 29...Rd4 이후 Stockfish의 평가는 백의 약간의 우세(+1.16)에서 이기는 형세(+2.81)로 바뀌었고, 곧바로 첫 번째 후보 수인 30.Rxe5가 나왔습니다. 33.Qxa5로 백이 폰 하나를 얻었고, Stockfish는 최종 국면을 백의 승리로 봅니다.\n\nVados IFB Finwest Arad는 매치를 5–1로 이겼습니다.\n\n29...Rd4에서 멈추고 스스로에게 2:21를 준 뒤 29...Ng7를 찾아보세요. 이어서 엔진을 상대로 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "Kedua-dua jam di bawah empat minit: Sadhwani tewaskan Anton dalam 40 langkah",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) menewaskan IM Teodor Anton (Sah Club Oltenia Craiova, 2425) dalam 40 langkah dalam pusingan 6 Liga Super Romania, dengan kurang daripada empat minit pada kedua-dua jam dari langkah 32.\n\nAnton memainkan 29...Rd4 dengan baki 2:21. Stockfish mahukan 29...Ng7. Enjin menilai Putih sedikit mendahului sebelumnya (+1,16) dan menang selepasnya (+2,81), dan 30.Rxe5, pilihan pertamanya, tiba serta-merta. 33.Qxa5 memenangi sebiji bidak, dan Stockfish menilai kedudukan akhir sebagai kemenangan untuk Putih.\n\nVados IFB Finwest Arad memenangi perlawanan 5–1.\n\nBerhenti pada 29...Rd4, beri diri anda 2:21, dan cari 29...Ng7. Kemudian teruskan menentang enjin."
+        },
+        "nl": {
+          "headline": "Geen van beide klokken had vier minuten: Sadhwani verslaat Anton in 40 zetten",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) versloeg IM Teodor Anton (Sah Club Oltenia Craiova, 2425) in 40 zetten in ronde 6 van de Roemeense Superliga, met vanaf zet 32 minder dan vier minuten op beide klokken.\n\nAnton speelde 29...Rd4 met nog 2:21. Stockfish wilde 29...Ng7. Stockfish zag ervoor een klein voordeel voor wit (+1,16) en erna winst (+2,81), en 30.Rxe5, de eerste keuze van Stockfish, kwam meteen. 33.Qxa5 won een pion, en Stockfish ziet de slotstelling als winst voor wit.\n\nVados IFB Finwest Arad won de match met 5–1.\n\nStop bij 29...Rd4, geef jezelf 2:21 en vind 29...Ng7. Speel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "Ingen av klokkene hadde fire minutter: Sadhwani slår Anton på 40 trekk",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) slo IM Teodor Anton (Sah Club Oltenia Craiova, 2425) på 40 trekk i 6. runde av den rumenske superligaen, med under fire minutter på begge klokkene fra trekk 32.\n\nAnton spilte 29...Rd4 med 2:21 igjen. Stockfish ville ha 29...Ng7. Motoren så liten fordel for hvit før (+1,16) og gevinst etter (+2,81), og 30.Rxe5, Stockfishs førstevalg, kom med en gang. 33.Qxa5 vant en bonde, og Stockfish regner sluttstillingen som gevinst for hvit.\n\nVados IFB Finwest Arad vant matchen 5–1.\n\nStopp ved 29...Rd4, gi deg selv 2:21, og finn 29...Ng7. Spill så videre mot motoren."
+        },
+        "pl": {
+          "headline": "Na żadnym zegarze nie ma czterech minut: Sadhwani pokonuje Anton w 40 ruchach",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) pokonuje IM Teodor Anton (Sah Club Oltenia Craiova, 2425) w 40 ruchach w 6. rundzie rumuńskiej Superligi, a od 32. ruchu oba zegary pokazują mniej niż cztery minuty.\n\nAnton gra 29...Rd4, mając 2:21 na zegarze. Stockfish chciał 29...Ng7. Przed tym ruchem widział niewielką przewagę białych (+1,16), po nim wygraną (+2,81), a od razu padło 30.Rxe5, pierwszy wybór silnika. 33.Qxa5 zdobywa pionka, a końcową pozycję Stockfish ocenia jako wygraną dla białych.\n\nVados IFB Finwest Arad wygrywa mecz 5–1.\n\nZatrzymaj się na 29...Rd4, daj sobie 2:21 i znajdź 29...Ng7. Potem graj dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Nenhum relógio tinha quatro minutos: Sadhwani vence Anton em 40 lances",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) venceu IM Teodor Anton (Sah Club Oltenia Craiova, 2425) em 40 lances na 6ª rodada da Superliga Romena, com menos de quatro minutos em cada relógio a partir do lance 32.\n\nAnton jogou 29...Rd4 com 2:21 no relógio. O Stockfish queria 29...Ng7. Via uma pequena vantagem das brancas antes (+1,16) e posição vencedora depois (+2,81), e 30.Rxe5, sua primeira opção, veio logo em seguida. 33.Qxa5 ganhou um peão, e o Stockfish avalia a posição final como vitória das brancas.\n\nO Vados IFB Finwest Arad venceu o match por 5–1.\n\nPare em 29...Rd4 e, em 2:21, encontre 29...Ng7. Depois continue contra o motor."
+        },
+        "ro": {
+          "headline": "Niciun ceas nu avea patru minute: Sadhwani câștigă contra Anton în 40 de mutări",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) a câștigat contra IM Teodor Anton (Sah Club Oltenia Craiova, 2425) în 40 de mutări, în runda a 6-a a Superligii României, cu mai puțin de patru minute pe fiecare ceas de la mutarea 32.\n\nAnton a jucat 29...Rd4 cu 2:21 rămase. Stockfish voia 29...Ng7. Vedea un mic avantaj al Albului înainte (+1,16) și o poziție câștigătoare după (+2,81), iar 30.Rxe5, prima sa alegere, a urmat imediat. 33.Qxa5 a câștigat un pion, iar Stockfish consideră poziția finală câștigătoare pentru Alb.\n\nVados IFB Finwest Arad a câștigat meciul cu 5–1.\n\nOprește-te la 29...Rd4, dă-ți 2:21 și găsește 29...Ng7. Apoi continuă contra motorului."
+        },
+        "ru": {
+          "headline": "Ни на одних часах нет и четырёх минут: Sadhwani обыгрывает Anton за 40 ходов",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) обыгрывает IM Teodor Anton (Sah Club Oltenia Craiova, 2425) за 40 ходов в 6-м туре румынской Суперлиги; с 32-го хода ни на одних часах не было и четырёх минут.\n\nAnton играет 29...Rd4, имея 2:21. Stockfish хотел 29...Ng7. До хода движок давал белым небольшой перевес (+1,16), после — выигрыш (+2,81), и сразу последовал 30.Rxe5 — первый выбор движка. Ход 33.Qxa5 выиграл пешку, и финальную позицию Stockfish оценивает как выигранную для белых.\n\nVados IFB Finwest Arad выигрывает матч 5–1.\n\nОстановитесь на 29...Rd4, дайте себе 2:21 и найдите 29...Ng7. А затем продолжите партию против движка."
+        },
+        "sv": {
+          "headline": "Ingen av klockorna hade fyra minuter: Sadhwani besegrar Anton på 40 drag",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) besegrade IM Teodor Anton (Sah Club Oltenia Craiova, 2425) på 40 drag i rond 6 av rumänska superligan, med mindre än fyra minuter på båda klockorna från drag 32.\n\nAnton spelade 29...Rd4 med 2:21 kvar. Stockfish ville ha 29...Ng7. Motorn såg liten fördel för vit före (+1,16) och vinst efter (+2,81), och 30.Rxe5, Stockfishs förstaval, kom direkt. 33.Qxa5 vann en bonde, och Stockfish räknar slutställningen som vinst för vit.\n\nVados IFB Finwest Arad vann matchen med 5–1.\n\nStanna vid 29...Rd4, ge dig själv 2:21 och hitta 29...Ng7. Spela sedan vidare mot motorn."
+        },
+        "th": {
+          "headline": "นาฬิกาทั้งสองฝั่งเหลือไม่ถึงสี่นาที: Sadhwani ชนะ Anton ใน 40 ตา",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) ชนะ IM Teodor Anton (Sah Club Oltenia Craiova, 2425) ใน 40 ตา ในรอบที่ 6 ของซูเปอร์ลีกโรมาเนีย โดยตั้งแต่ตาที่ 32 นาฬิกาทั้งสองฝั่งเหลือเวลาไม่ถึงสี่นาที\n\nAnton เดิน 29...Rd4 เมื่อเหลือเวลา 2:21 Stockfish ต้องการ 29...Ng7 เอนจินประเมินว่าฝ่ายขาวได้เปรียบเล็กน้อยก่อนตานั้น (+1.16) และอยู่ในสถานะชนะหลังตานั้น (+2.81) และ 30.Rxe5 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจินก็มาทันที 33.Qxa5 ได้เบี้ยมาหนึ่งตัว และ Stockfish ประเมินตำแหน่งสุดท้ายว่าฝ่ายขาวชนะ\n\nVados IFB Finwest Arad ชนะแมตช์ 5–1\n\nหยุดที่ 29...Rd4 ให้เวลาตัวเอง 2:21 แล้วหา 29...Ng7 จากนั้นเล่นต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "İki saatte de dört dakika yoktu: Sadhwani, Anton'u 40 hamlede yendi",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645), Romanya Süper Ligi'nin 6. turunda IM Teodor Anton'u (Sah Club Oltenia Craiova, 2425) 40 hamlede yendi; 32. hamleden itibaren iki saatte de dört dakikadan az vardı.\n\nAnton, 29...Rd4 hamlesini saatte 2:21 kala oynadı. Stockfish 29...Ng7 hamlesini istiyordu. Öncesinde beyazı hafif üstün (+1,16), sonrasında kazanan konumda (+2,81) görüyordu ve ilk tercihi olan 30.Rxe5 hemen geldi. 33.Qxa5 bir piyon kazandı ve Stockfish son konumu beyaz için kazanılmış olarak değerlendiriyor.\n\nVados IFB Finwest Arad maçı 5–1 kazandı.\n\n29...Rd4 hamlesinde dur, kendine 2:21 ver ve 29...Ng7 hamlesini bul. Sonra motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Không đồng hồ nào còn bốn phút: Sadhwani thắng Anton sau 40 nước",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) thắng IM Teodor Anton (Sah Club Oltenia Craiova, 2425) sau 40 nước ở vòng 6 giải Siêu hạng Romania, khi từ nước 32 cả hai đồng hồ đều còn chưa đến bốn phút.\n\nAnton đi 29...Rd4 khi còn 2:21. Stockfish muốn 29...Ng7. Engine đánh giá Trắng ưu thế nhỏ trước nước đó (+1,16) và ở thế thắng sau nước đó (+2,81), và 30.Rxe5, lựa chọn số một của engine, đến ngay. 33.Qxa5 ăn một Tốt, và Stockfish đánh giá thế cờ cuối cùng là thắng cho Trắng.\n\nVados IFB Finwest Arad thắng trận 5–1.\n\nDừng ở 29...Rd4, tự cho mình 2:21, và tìm 29...Ng7. Rồi chơi tiếp với engine."
+        },
+        "zh-Hans": {
+          "headline": "双方棋钟都不到四分钟：Sadhwani用40回合击败Anton",
+          "body": "GM Raunak Sadhwani（Vados IFB Finwest Arad，2645）在罗马尼亚超级联赛第6轮40回合击败IM Teodor Anton（Sah Club Oltenia Craiova，2425），从第32回合起，双方棋钟都不到四分钟。\n\nAnton在剩2:21时走出29...Rd4。Stockfish想走的是29...Ng7。Stockfish认为这步之前白方小优（+1.16），之后白方胜势（+2.81），白方随即走出Stockfish的首选30.Rxe5。33.Qxa5吃掉一兵，Stockfish判定最终局面为白方胜势。\n\nVados IFB Finwest Arad以5–1赢下比赛。\n\n停在29...Rd4，给自己2:21，找出29...Ng7。然后对着引擎继续下。"
+        },
+        "zh-Hant": {
+          "headline": "雙方棋鐘都不到四分鐘：Sadhwani用40回合擊敗Anton",
+          "body": "GM Raunak Sadhwani（Vados IFB Finwest Arad，2645）在羅馬尼亞超級聯賽第6輪40回合擊敗IM Teodor Anton（Sah Club Oltenia Craiova，2425），從第32回合起，雙方棋鐘都不到四分鐘。\n\nAnton在剩2:21時走出29...Rd4。Stockfish想走的是29...Ng7。Stockfish認為這步之前白方小優（+1.16），之後白方勝勢（+2.81），白方隨即走出Stockfish的首選30.Rxe5。33.Qxa5吃掉一兵，Stockfish判定終局局面為白方勝勢。\n\nVados IFB Finwest Arad以5–1贏下比賽。\n\n停在29...Rd4，給自己2:21，找出29...Ng7。然後對著引擎繼續下。"
+        }
+      },
+      "fen": "2r1n1k1/1q3p1p/8/p1pRppP1/P1Pr4/BPQ5/5P2/2K3R1 w - - 4 30",
+      "last": {
+        "from": "h4",
+        "to": "d4"
+      },
+      "url": "https://brasspawn.com/today/2026-10-08-sadhwani-anton-romanian-team-chess-championships-r6",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-mens-super-league/round-6/pe8pd64b/kmWRbDpP"
+      },
+      "updatedAt": "2026-10-08T19:06:19.295Z"
+    },
+    {
+      "id": "2026-10-08-schekachikhin-tin-serbian-super-league-r5",
+      "status": "approved",
+      "date": "2026-10-08",
+      "rank": 0,
+      "weight": 352,
+      "event": {
+        "name": "Serbian Super League 2026",
+        "short": "Serbian Super League",
+        "section": "Open",
+        "round": 5,
+        "location": "Vrnjačka Banja, Serbia",
+        "url": "https://lichess.org/broadcast/serbian-super-league-2026-open/round-5/Esq0vpe0"
+      },
+      "white": {
+        "name": "Maksim Schekachikhin",
+        "short": "Schekachikhin",
+        "title": "IM",
+        "elo": 2358,
+        "team": "HERCEGOVAC - Gajdobra"
+      },
+      "black": {
+        "name": "Jingyao Tin",
+        "short": "Tin",
+        "title": "GM",
+        "elo": 2602,
+        "team": "RUDAR - Kostolac"
+      },
+      "result": "0-1",
+      "opening": {
+        "eco": "A28",
+        "name": "English Opening: King's English Variation, Four Knights Variation, Quiet Line"
+      },
+      "moves": "c4 Nf6 Nc3 e5 Nf3 Nc6 e3 Be7 d4 exd4 Nxd4 Nxd4 Qxd4 O-O Be2 Re8 O-O Bd6 Bd2 Be5 Qh4 d5 cxd5 Nxd5 Qxd8 Rxd8 Nxd5 Rxd5 Bc3 Bxc3 bxc3 Rc5 Bf3 Kf8 Rfd1 Ke7 Rab1 Rb8 Rb3 Be6 Ra3 a5 Kf1 b6 Be2 Rd8 Rd4 Rd6 Ke1 g5 h4 h6 hxg5 hxg5 Kd2 g4 Rxd6 Kxd6 Ra4 Rf5 Ke1 Rg5 a3 f5 Rd4+ Ke5 f4+ gxf3 Bxf3 Rg8 Kf2 Rh8 Rd1 Rh4 Rd4 Rh7 g3 Rh8 Bc6 Bb3 Bg2 Be6 Bc6 Rb8 Kf3 b5 Ke2 Rb6 Bf3 c5 Rd2 b4 cxb4 cxb4 axb4 axb4 Rb2 Bd5 Bxd5 Kxd5 Kf3 b3 Kf4 Ke6 e4 Rb4 g4 fxe4 g5 Ke7 Ke3 Kf7 Kf4 Ke6 Kg4 Ke5 Kh5 e3 Kh6 Kf5",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 101,
+        "played": "Kf3",
+        "better": "Kd1",
+        "reply": "b3",
+        "replyPlayed": true,
+        "before": {
+          "cp": -40,
+          "mate": null
+        },
+        "after": {
+          "cp": -454,
+          "mate": null
+        },
+        "clock": 198
+      },
+      "headline": "Black pawns on b3 and e3: Tin wins a second game in two days",
+      "body": "GM Jingyao Tin (Rudar Kostolac, 2602) beat IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) in 60 moves in round 5 of the Serbian Super League, a day after beating Karthikeyan.\n\nIt turned in a rook ending on 51.Kf3, played with 3:18 left. Stockfish wanted 51.Kd1. It counted a small edge for Black before (−0.40) and a win after (−4.54), and 51...b3, its first choice, came straight back. By move 59 black pawns stood on b3 and e3.\n\nRudar Kostolac won the match 4–2. Tin beat Cheparinov the next day, a third win in a row.\n\nGo back to 51.Kf3 and find 51.Kd1. Then play the rook ending on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "بيادق سوداء على b3 وe3: فوز ثانٍ لـTin في يومين",
+          "body": "انتهى الدور بفوز GM Jingyao Tin (Rudar Kostolac، 2602) على IM Maksim Schekachikhin (Hercegovac Gajdobra، 2358) في 60 نقلة، في الجولة الخامسة من الدوري الصربي الممتاز، بعد يوم من الفوز على Karthikeyan.\n\nتحوّل الدور في نهاية رخ عند ⁨51.Kf3⁩ التي لُعبت والوقت المتبقي ⁨3:18⁩. أراد Stockfish ⁨51.Kd1⁩، وانتقل تقييمه من أفضلية صغيرة للأسود قبلها (⁨−0.40⁩) إلى فوز بعدها (⁨−4.54⁩). وجاءت ⁨51...b3⁩، الخيار الأول للمحرك، مباشرة. وبحلول النقلة 59 كانت البيادق السوداء على b3 وe3.\n\nفاز فريق Rudar Kostolac بالمباراة ⁨4–2⁩. وفي اليوم التالي جاء فوز Tin على Cheparinov، الثالث على التوالي.\n\nارجع إلى ⁨51.Kf3⁩ واعثر على ⁨51.Kd1⁩. ثم تابع لعب نهاية الرخ ضد المحرك."
+        },
+        "bg": {
+          "headline": "Черни пешки на b3 и e3: Tin печели втора партия за два дни",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) победи IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) за 60 хода в 5-ия кръг на сръбската Суперлига, ден след победата над Karthikeyan.\n\nПартията се обърна в ендшпил с топове при 51.Kf3, изигран с 3:18 на часовника. Stockfish искаше 51.Kd1. Преди хода енджинът даваше малко предимство на черните (−0,40), а след него — печеливша позиция (−4,54), и 51...b3, първият му избор, последва веднага. На 59-ия ход черни пешки стояха на b3 и e3.\n\nRudar Kostolac спечели мача с 4–2. На следващия ден Tin победи и Cheparinov — трета поредна победа.\n\nВърнете се към 51.Kf3 и намерете 51.Kd1. После изиграйте ендшпила с топове срещу енджина."
+        },
+        "cs": {
+          "headline": "Černí pěšci na b3 a e3: Tin vyhrává druhou partii za dva dny",
+          "body": "V partii IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) – GM Jingyao Tin (Rudar Kostolac, 2602) v 5. kole srbské superligy vyhrává po 60 tazích Tin, den po výhře proti Karthikeyan.\n\nZlom přišel ve věžové koncovce tahem 51.Kf3, zahraným s 3:18 na hodinách. Stockfish chtěl 51.Kd1 a před tahem viděl malou výhodu černých (−0,40), po něm výhru (−4,54). Okamžitě přišlo 51...b3, první volba enginu. V 59. tahu stáli černí pěšci na b3 a e3.\n\nRudar Kostolac vyhrává zápas 4–2. Druhý den bere Tin i partii proti Cheparinov, třetí výhru v řadě.\n\nVrať se k 51.Kf3 a najdi 51.Kd1. Pak si věžovou koncovku zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "Sorte bønder på b3 og e3: Tin vinder sit andet parti på to dage",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) slog IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) i 60 træk i 5. runde af den serbiske superliga, dagen efter sejren over Karthikeyan.\n\nPartiet vendte i et tårnslutspil med 51.Kf3, spillet med 3:18 tilbage. Stockfish ville have 51.Kd1. Motoren så en lille fordel til sort før (−0,40) og gevinst efter (−4,54), og 51...b3, Stockfishs førstevalg, kom med det samme. Ved træk 59 stod der sorte bønder på b3 og e3.\n\nRudar Kostolac vandt matchen 4–2. Tin slog Cheparinov dagen efter, den tredje sejr i træk.\n\nGå tilbage til 51.Kf3 og find 51.Kd1. Spil så tårnslutspillet videre mod motoren."
+        },
+        "de": {
+          "headline": "Schwarze Bauern auf b3 und e3: Tin gewinnt die zweite Partie in zwei Tagen",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) schlug IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) in Runde 5 der serbischen Superliga in 60 Zügen, einen Tag nach dem Sieg gegen Karthikeyan.\n\nDie Partie kippte im Turmendspiel mit 51.Kf3, gespielt mit 3:18 auf der Uhr. Stockfish wollte 51.Kd1. Davor sah Stockfish einen kleinen Vorteil für Schwarz (−0,40), danach Gewinn (−4,54), und 51...b3, die erste Wahl von Stockfish, kam sofort. Bei Zug 59 standen schwarze Bauern auf b3 und e3.\n\nRudar Kostolac gewann den Kampf 4:2. Am nächsten Tag schlug Tin Cheparinov, der dritte Sieg in Folge.\n\nZurück zu 51.Kf3 und 51.Kd1 finden. Dann das Turmendspiel gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Μαύρα πιόνια στο b3 και στο e3: δεύτερη νίκη για Tin σε δύο μέρες",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) επικράτησε επί IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) σε 60 κινήσεις στον 5ο γύρο της σερβικής Σούπερ Λίγκας, μία μέρα μετά τη νίκη επί Karthikeyan.\n\nΗ παρτίδα γύρισε σε φινάλε πύργων, στην 51.Kf3, που παίχτηκε με 3:18 στο ρολόι. Το Stockfish ήθελε την 51.Kd1. Έδινε μικρό πλεονέκτημα στα μαύρα πριν (−0,40) και νίκη μετά (−4,54), και η 51...b3, η πρώτη επιλογή της μηχανής, ήρθε αμέσως. Στην 59η κίνηση υπήρχαν μαύρα πιόνια στο b3 και στο e3.\n\nΗ Rudar Kostolac κέρδισε τον αγώνα με 4–2. Tin επικράτησε επί Cheparinov την επόμενη μέρα, τρίτη συνεχόμενη νίκη.\n\nΓύρνα στην 51.Kf3 και βρες την 51.Kd1. Μετά συνέχισε το φινάλε πύργων απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Peones negros en b3 y e3: Tin gana su segunda partida en dos días",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) venció a IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) en 60 jugadas en la quinta ronda de la Superliga serbia, un día después de vencer a Karthikeyan.\n\nTodo cambió en un final de torres con 51.Kf3, hecha con 3:18 en el reloj. Stockfish quería 51.Kd1. Daba una pequeña ventaja a las negras antes (−0,40) y una victoria después (−4,54), y 51...b3, su primera opción, llegó enseguida. En la jugada 59 había peones negros en b3 y e3.\n\nRudar Kostolac ganó el match 4–2. Tin venció a Cheparinov al día siguiente: su tercera victoria seguida.\n\nVuelve a 51.Kf3 y encuentra 51.Kd1. Luego sigue el final de torres contra el motor."
+        },
+        "fi": {
+          "headline": "Mustat sotilaat b3:ssa ja e3:ssa: Tin voittaa toisen pelin kahdessa päivässä",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) voitti IM Maksim Schekachikhinin (Hercegovac Gajdobra, 2358) 60 siirrossa Serbian superliigan 5. kierroksella, päivä sen jälkeen, kun Tin oli voittanut Karthikeyanin.\n\nPeli kääntyi torniloppupelissä siirtoon 51.Kf3, joka pelattiin kellossa 3:18 jäljellä. Stockfish halusi 51.Kd1. Se antoi mustalle ennen siirtoa pienen edun (−0,40) ja sen jälkeen voittoaseman (−4,54), ja sen ykkösvalinta 51...b3 tuli heti. Siirrolla 59 mustat sotilaat seisoivat b3:ssa ja e3:ssa.\n\nRudar Kostolac voitti ottelun 4–2. Tin voitti seuraavana päivänä Cheparinovin, kolmas voitto peräkkäin.\n\nPalaa siirtoon 51.Kf3 ja löydä 51.Kd1. Jatka sitten torniloppupeliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Des pions noirs en b3 et e3 : Tin gagne une deuxième partie en deux jours",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) a battu IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) en 60 coups lors de la 5e ronde de la Superligue serbe, au lendemain d’une victoire contre Karthikeyan.\n\nLa partie a basculé dans une finale de tours, sur 51.Kf3, joué avec 3:18 à la pendule. Stockfish voulait 51.Kd1, et donnait un léger avantage aux Noirs avant (−0,40) et le gain après (−4,54). 51...b3, son premier choix, a suivi aussitôt. Au 59e coup, des pions noirs se trouvaient en b3 et en e3.\n\nRudar Kostolac a gagné le match 4–2. Le lendemain, Tin a battu Cheparinov, une troisième victoire d’affilée.\n\nRevenez à 51.Kf3 et trouvez 51.Kd1. Puis continuez la finale de tours contre le moteur."
+        },
+        "he": {
+          "headline": "רגלים שחורים ב־b3 וב־e3: ניצחון שני ביומיים ל־Tin",
+          "body": "המשחק בסיבוב ה־5 של ליגת העל הסרבית הסתיים בניצחון ל־GM Jingyao Tin (Rudar Kostolac, 2602) על IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) אחרי 60 מסעים, יום אחרי הניצחון על Karthikeyan.\n\nנקודת המפנה הגיעה בסיום צריחים, ב־⁨51.Kf3⁩, ששוחק כשנותרו ⁨3:18⁩. Stockfish רצה ב־⁨51.Kd1⁩, והעריך יתרון קטן לשחור לפני המסע (⁨−0.40⁩) ועמדה מנצחת אחריו (⁨−4.54⁩). המסע ⁨51...b3⁩, הבחירה הראשונה של המנוע, בא מיד. עד מסע 59 עמדו רגלים שחורים ב־b3 וב־e3.\n\nקבוצת Rudar Kostolac ניצחה במפגש ⁨4–2⁩. למחרת נרשם ניצחון ל־Tin על Cheparinov, השלישי ברציפות.\n\nחזרו ל־⁨51.Kf3⁩ ומצאו את ⁨51.Kd1⁩. ואז המשיכו לשחק את סיום הצריחים מול המנוע."
+        },
+        "hi": {
+          "headline": "b3 और e3 पर काले प्यादे: दो दिन में Tin की दूसरी जीत",
+          "body": "सर्बियाई सुपर लीग के राउंड 5 में GM Jingyao Tin (Rudar Kostolac, 2602) ने IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) को 60 चालों में हराया, Karthikeyan पर जीत के एक दिन बाद।\n\nहाथियों के एंडगेम में बाज़ी 51.Kf3 पर पलटी; यह चाल 3:18 बचे रहते खेली गई। Stockfish 51.Kd1 चाहता था। उसके हिसाब से पहले काले को छोटी बढ़त थी (−0.40) और बाद में जीत की स्थिति (−4.54), और इंजन की पहली पसंद 51...b3 तुरंत आया। चाल 59 तक काले प्यादे b3 और e3 पर खड़े थे।\n\nRudar Kostolac ने मुक़ाबला 4–2 से जीता। अगले दिन Tin ने Cheparinov को हराया, यह लगातार तीसरी जीत थी।\n\n51.Kf3 पर लौटें और 51.Kd1 खोजें। फिर हाथियों के एंडगेम को इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "Sötét gyalogok a b3-on és az e3-on: Tin két nap alatt a második játszmáját nyerte",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) 60 lépésben nyert IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) ellen a szerb Szuperliga 5. fordulójában, egy nappal a Karthikeyan elleni győzelem után.\n\nA játszma egy bástyavégjátékban, az 51.Kf3 lépésnél fordult meg, amely 3:18-cal az órán született. A Stockfish az 51.Kd1 lépést akarta. Előtte sötét kis előnyét látta (−0,40), utána nyerést (−4,54), és azonnal jött az 51...b3, az első választása. Az 59. lépésre sötét gyalogok álltak a b3-on és az e3-on.\n\nA Rudar Kostolac 4–2-re megnyerte a mérkőzést. Tin másnap Cheparinov ellen is nyert, ez volt a harmadik győzelme sorozatban.\n\nMenj vissza az 51.Kf3 lépéshez, és találd meg az 51.Kd1 lépést. Aztán játszd tovább a bástyavégjátékot a motor ellen."
+        },
+        "id": {
+          "headline": "Pion hitam di b3 dan e3: Tin menang lagi, kedua kalinya dalam dua hari",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) mengalahkan IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) dalam 60 langkah di babak 5 Liga Super Serbia, sehari sesudah mengalahkan Karthikeyan.\n\nDalam akhir permainan benteng, partai berbalik pada 51.Kf3, yang dimainkan dengan sisa 3:18. Stockfish menginginkan 51.Kd1. Mesin menilai Hitam sedikit unggul sebelumnya (−0,40) dan menang sesudahnya (−4,54), dan 51...b3, pilihan pertamanya, langsung datang. Pada langkah 59, pion-pion hitam berdiri di b3 dan e3.\n\nRudar Kostolac memenangi pertandingan 4–2. Keesokan harinya Tin mengalahkan Cheparinov, kemenangan ketiga beruntun.\n\nKembali ke 51.Kf3 dan temukan 51.Kd1. Lalu lanjutkan akhir permainan benteng itu melawan mesin."
+        },
+        "it": {
+          "headline": "Pedoni neri in b3 ed e3: Tin vince la seconda partita in due giorni",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) ha battuto IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) in 60 mosse nel 5º turno della Superlega serba, il giorno dopo la vittoria su Karthikeyan.\n\nLa partita è girata in un finale di Torri, su 51.Kf3, giocata con 3:18 sull’orologio. Stockfish voleva 51.Kd1, e dava un piccolo vantaggio al Nero prima (−0,40) e la vittoria dopo (−4,54). 51...b3, la sua prima scelta, è arrivata subito. Alla mossa 59 c’erano pedoni neri in b3 e in e3.\n\nRudar Kostolac ha vinto il match 4–2. Il giorno dopo Tin ha battuto Cheparinov, terza vittoria consecutiva.\n\nTorna a 51.Kf3 e trova 51.Kd1. Poi continua il finale di Torri contro il motore."
+        },
+        "ja": {
+          "headline": "黒のポーンがb3とe3に、Tinが2日で2勝目",
+          "body": "Karthikeyanに勝った翌日、GM Jingyao Tin（Rudar Kostolac、2602）がセルビア・スーパーリーグ第5ラウンドでIM Maksim Schekachikhin（Hercegovac Gajdobra、2358）に60手で勝ちました。\n\n分かれ目はルークエンドゲームでの51.Kf3で、残り3:18で指されました。Stockfishが望んだのは51.Kd1。51.Kf3の後、Stockfishの評価は黒のわずかな優位（−0.40）から勝勢（−4.54）に変わり、すぐに第一候補の51...b3が返ってきました。59手目までに、黒のポーンがb3とe3に並びました。\n\nRudar Kostolacはマッチを4–2で制しました。Tinは翌日Cheparinovにも勝ち、3連勝としました。\n\n51.Kf3に戻って51.Kd1を見つけましょう。それからルークエンドゲームをエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "b3와 e3의 흑 폰… Tin, 이틀 새 두 번째 승리",
+          "body": "GM Jingyao Tin(Rudar Kostolac, 2602)이 Karthikeyan에게 이긴 다음 날, 세르비아 슈퍼리그 5라운드에서 IM Maksim Schekachikhin(Hercegovac Gajdobra, 2358)에게 60수 만에 이겼습니다.\n\n승부를 가른 수는 룩 엔드게임에서 3:18를 남기고 둔 51.Kf3였습니다. Stockfish가 원한 수는 51.Kd1였습니다. 51.Kf3 이후 Stockfish의 평가는 흑의 약간의 우세(−0.40)에서 이기는 형세(−4.54)로 바뀌었고, 곧바로 첫 번째 후보 수인 51...b3가 나왔습니다. 59수째에는 흑 폰들이 b3와 e3에 서 있었습니다.\n\nRudar Kostolac는 매치를 4–2로 이겼습니다. Tin은 다음 날 Cheparinov도 꺾으며 3연승을 이어 갔습니다.\n\n51.Kf3로 돌아가 51.Kd1를 찾아보세요. 이어서 엔진을 상대로 룩 엔드게임을 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "Bidak hitam di b3 dan e3: Tin menang lagi, kali kedua dalam dua hari",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) menewaskan IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) dalam 60 langkah dalam pusingan 5 Liga Super Serbia, sehari selepas menewaskan Karthikeyan.\n\nKedudukan berubah dalam permainan akhir tir pada 51.Kf3, yang dimainkan dengan baki 3:18. Stockfish mahukan 51.Kd1. Enjin menilai Hitam sedikit mendahului sebelumnya (−0,40) dan menang selepasnya (−4,54), dan 51...b3, pilihan pertamanya, tiba serta-merta. Menjelang langkah 59, bidak-bidak hitam berdiri di b3 dan e3.\n\nRudar Kostolac memenangi perlawanan 4–2. Keesokan harinya Tin menewaskan Cheparinov, kemenangan ketiga berturut-turut.\n\nKembali ke 51.Kf3 dan cari 51.Kd1. Kemudian teruskan permainan akhir tir itu menentang enjin."
+        },
+        "nl": {
+          "headline": "Zwarte pionnen op b3 en e3: Tin wint een tweede partij in twee dagen",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) versloeg IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) in 60 zetten in ronde 5 van de Servische Superliga, een dag na de overwinning op Karthikeyan.\n\nDe partij kantelde in een toreneindspel met 51.Kf3, gespeeld met nog 3:18. Stockfish wilde 51.Kd1. Stockfish zag ervoor een klein voordeel voor zwart (−0,40) en erna winst (−4,54), en 51...b3, de eerste keuze van Stockfish, kwam meteen. Bij zet 59 stonden er zwarte pionnen op b3 en e3.\n\nRudar Kostolac won de match met 4–2. Tin versloeg de volgende dag Cheparinov, een derde overwinning op rij.\n\nGa terug naar 51.Kf3 en vind 51.Kd1. Speel het toreneindspel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "Svarte bønder på b3 og e3: Tin vinner sitt andre parti på to dager",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) slo IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) på 60 trekk i 5. runde av den serbiske superligaen, dagen etter seieren over Karthikeyan.\n\nPartiet snudde i et tårnsluttspill med 51.Kf3, spilt med 3:18 igjen. Stockfish ville ha 51.Kd1. Motoren så liten fordel for svart før (−0,40) og gevinst etter (−4,54), og 51...b3, Stockfishs førstevalg, kom med en gang. I trekk 59 sto svarte bønder på b3 og e3.\n\nRudar Kostolac vant matchen 4–2. Tin slo Cheparinov dagen etter, den tredje strake seieren.\n\nGå tilbake til 51.Kf3 og finn 51.Kd1. Spill så tårnsluttspillet videre mot motoren."
+        },
+        "pl": {
+          "headline": "Czarne pionki na b3 i e3: Tin wygrywa drugą partię w dwa dni",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) pokonuje IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) w 60 ruchach w 5. rundzie serbskiej Superligi, dzień po wygranej z Karthikeyan.\n\nPartia odwraca się w końcówce wieżowej po 51.Kf3, zagranym przy 3:18 na zegarze. Stockfish chciał 51.Kd1. Przed tym ruchem widział niewielką przewagę czarnych (−0,40), po nim wygraną (−4,54), a od razu padło 51...b3, pierwszy wybór silnika. W 59. ruchu czarne pionki stoją na b3 i e3.\n\nRudar Kostolac wygrywa mecz 4–2. Następnego dnia Tin pokonuje Cheparinov, co daje trzecią wygraną z rzędu.\n\nWróć do 51.Kf3 i znajdź 51.Kd1. Potem rozegraj końcówkę wieżową dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Peões pretos em b3 e e3: Tin vence a segunda partida em dois dias",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) venceu IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) em 60 lances na 5ª rodada da Superliga Sérvia, um dia depois de vencer Karthikeyan.\n\nA partida virou num final de torres, em 51.Kf3, jogado com 3:18 no relógio. O Stockfish queria 51.Kd1. Via uma pequena vantagem das pretas antes (−0,40) e posição vencedora depois (−4,54), e 51...b3, sua primeira opção, veio logo em seguida. No lance 59, havia peões pretos em b3 e e3.\n\nO Rudar Kostolac venceu o match por 4–2. Tin venceu Cheparinov no dia seguinte: a terceira vitória seguida.\n\nVolte a 51.Kf3 e encontre 51.Kd1. Depois continue o final de torres contra o motor."
+        },
+        "ro": {
+          "headline": "Pioni negri pe b3 și e3: Tin câștigă a doua partidă în două zile",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) a câștigat contra IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) în 60 de mutări, în runda a 5-a a Superligii Serbiei, la o zi după victoria contra Karthikeyan.\n\nPartida s-a întors într-un final de ture, la 51.Kf3, jucată cu 3:18 rămase. Stockfish voia 51.Kd1. Vedea un mic avantaj al Negrului înainte (−0,40) și o poziție câștigătoare după (−4,54), iar 51...b3, prima sa alegere, a urmat imediat. La mutarea 59, pionii negri stăteau pe b3 și e3.\n\nRudar Kostolac a câștigat meciul cu 4–2. A doua zi, Tin a câștigat și contra Cheparinov, a treia victorie la rând.\n\nÎntoarce-te la 51.Kf3 și găsește 51.Kd1. Apoi continuă finalul de ture contra motorului."
+        },
+        "ru": {
+          "headline": "Чёрные пешки на b3 и e3: у Tin вторая победа за два дня",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) обыгрывает IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) за 60 ходов в 5-м туре сербской Суперлиги — через день после победы над Karthikeyan.\n\nПерелом случился в ладейном эндшпиле на ходу 51.Kf3, сыгранном при 3:18 на часах. Stockfish хотел 51.Kd1. До хода движок давал чёрным небольшой перевес (−0,40), после — выигрыш (−4,54), и сразу последовал 51...b3 — первый выбор движка. К 59-му ходу чёрные пешки стояли на b3 и e3.\n\nRudar Kostolac выигрывает матч 4–2. На следующий день Tin обыгрывает Cheparinov — третья победа подряд.\n\nВернитесь к 51.Kf3 и найдите 51.Kd1. А затем продолжите ладейный эндшпиль против движка."
+        },
+        "sv": {
+          "headline": "Svarta bönder på b3 och e3: Tin vinner sitt andra parti på två dagar",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) besegrade IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) på 60 drag i rond 5 av serbiska superligan, dagen efter vinsten mot Karthikeyan.\n\nDet vände i ett tornslutspel på 51.Kf3, spelat med 3:18 kvar. Stockfish ville ha 51.Kd1. Motorn såg liten fördel för svart före (−0,40) och vinst efter (−4,54), och 51...b3, Stockfishs förstaval, kom direkt. Vid drag 59 stod svarta bönder på b3 och e3.\n\nRudar Kostolac vann matchen med 4–2. Tin besegrade Cheparinov dagen efter, en tredje raka vinst.\n\nGå tillbaka till 51.Kf3 och hitta 51.Kd1. Spela sedan vidare tornslutspelet mot motorn."
+        },
+        "th": {
+          "headline": "เบี้ยดำที่ b3 และ e3: Tin ชนะเกมที่สองในสองวัน",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) ชนะ IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) ใน 60 ตา ในรอบที่ 5 ของซูเปอร์ลีกเซอร์เบีย หนึ่งวันหลังจากชนะ Karthikeyan\n\nเกมพลิกในช่วงท้ายเกมเรือ ที่ 51.Kf3 ซึ่งเดินเมื่อเหลือเวลา 3:18 Stockfish ต้องการ 51.Kd1 เอนจินประเมินว่าฝ่ายดำได้เปรียบเล็กน้อยก่อนตานั้น (−0.40) และอยู่ในสถานะชนะหลังตานั้น (−4.54) และ 51...b3 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจินก็มาทันที พอถึงตาที่ 59 เบี้ยดำก็ยืนอยู่ที่ b3 และ e3\n\nRudar Kostolac ชนะแมตช์ 4–2 และวันต่อมา Tin ชนะ Cheparinov เป็นชัยชนะครั้งที่สามติดต่อกัน\n\nย้อนกลับไปที่ 51.Kf3 แล้วหา 51.Kd1 จากนั้นเล่นช่วงท้ายเกมเรือต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "b3 ve e3'te siyah piyonlar: Tin iki günde ikinci kez kazandı",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602), Sırbistan Süper Ligi'nin 5. turunda IM Maksim Schekachikhin'i (Hercegovac Gajdobra, 2358) 60 hamlede yendi; bir gün önce de Karthikeyan'ı yenmişti.\n\nOyun bir kale oyun sonunda, saatte 3:18 kala oynanan 51.Kf3 ile döndü. Stockfish 51.Kd1 hamlesini istiyordu. Öncesinde siyahı hafif üstün (−0,40), sonrasında kazanan konumda (−4,54) görüyordu ve ilk tercihi olan 51...b3 hemen geldi. 59. hamlede siyah piyonlar b3 ve e3'teydi.\n\nRudar Kostolac maçı 4–2 kazandı. Tin ertesi gün Cheparinov'u da yendi; bu, art arda üçüncü galibiyetti.\n\n51.Kf3 hamlesine dön ve 51.Kd1 hamlesini bul. Sonra kale oyun sonunu motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Tốt Đen ở b3 và e3: Tin thắng ván thứ hai trong hai ngày",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) thắng IM Maksim Schekachikhin (Hercegovac Gajdobra, 2358) sau 60 nước ở vòng 5 giải Siêu hạng Serbia, một ngày sau khi thắng Karthikeyan.\n\nVán cờ đổi chiều trong một tàn cuộc Xe, ở 51.Kf3, được đi khi còn 3:18. Stockfish muốn 51.Kd1. Engine đánh giá Đen ưu thế nhỏ trước nước đó (−0,40) và ở thế thắng sau nước đó (−4,54), và 51...b3, lựa chọn số một của engine, đến ngay. Tới nước 59, các Tốt Đen đã đứng ở b3 và e3.\n\nRudar Kostolac thắng trận 4–2. Ngày hôm sau Tin thắng Cheparinov, ván thắng thứ ba liên tiếp.\n\nQuay lại 51.Kf3 và tìm 51.Kd1. Rồi chơi tiếp tàn cuộc Xe với engine."
+        },
+        "zh-Hans": {
+          "headline": "黑兵站上b3和e3：Tin两天内拿下第二胜",
+          "body": "GM Jingyao Tin（Rudar Kostolac，2602）在塞尔维亚超级联赛第5轮60回合击败IM Maksim Schekachikhin（Hercegovac Gajdobra，2358），前一天刚击败Karthikeyan。\n\n转折点出现在车残局中的51.Kf3，走这步时还剩3:18。Stockfish想走的是51.Kd1。Stockfish认为这步之前黑方小优（−0.40），之后黑方胜势（−4.54），黑方随即走出Stockfish的首选51...b3。到第59回合，黑兵已站在b3和e3。\n\nRudar Kostolac以4–2赢下比赛。第二天Tin又击败Cheparinov，取得三连胜。\n\n回到51.Kf3，找出51.Kd1。然后对着引擎把车残局继续下去。"
+        },
+        "zh-Hant": {
+          "headline": "黑兵站上b3和e3：Tin兩天內拿下第二勝",
+          "body": "GM Jingyao Tin（Rudar Kostolac，2602）在塞爾維亞超級聯賽第5輪60回合擊敗IM Maksim Schekachikhin（Hercegovac Gajdobra，2358），前一天才剛擊敗Karthikeyan。\n\n轉折點出現在車殘局中的51.Kf3，走這步時還剩3:18。Stockfish想走的是51.Kd1。Stockfish認為這步之前黑方小優（−0.40），之後黑方勝勢（−4.54），黑方隨即走出Stockfish的首選51...b3。到第59回合，黑兵已站在b3和e3。\n\nRudar Kostolac以4–2贏下比賽。隔天Tin又擊敗Cheparinov，取得三連勝。\n\n回到51.Kf3，找出51.Kd1。然後對著引擎把車殘局繼續下去。"
+        }
+      },
+      "fen": "8/8/1r6/3k1p2/1p6/4PKP1/1R6/8 b - - 1 51",
+      "last": {
+        "from": "e2",
+        "to": "f3"
+      },
+      "url": "https://brasspawn.com/today/2026-10-08-schekachikhin-tin-serbian-super-league-r5",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/serbian-super-league-2026-open/round-5/Esq0vpe0/6oS5ejvF"
+      },
+      "updatedAt": "2026-10-08T19:06:42.841Z"
+    }
+  ]
+}

@@ -1,0 +1,926 @@
+{
+  "date": "2026-10-06",
+  "pulledAt": "2026-10-12T11:05:56.941Z",
+  "stories": [
+    {
+      "id": "2026-10-06-batsiashvili-javakhishvili-romanian-team-chess-championships-r2",
+      "status": "approved",
+      "date": "2026-10-06",
+      "rank": 0,
+      "weight": 209,
+      "event": {
+        "name": "Romanian Team Chess Championships 2026",
+        "short": "Romanian Team Chess Championships",
+        "section": "Women’s Super league",
+        "round": 2,
+        "location": "Eforie Nord, Romania",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-womens-super-league/round-2/HLIy4SEN"
+      },
+      "white": {
+        "name": "Nino Batsiashvili",
+        "short": "Batsiashvili",
+        "title": "GM",
+        "elo": 2459,
+        "team": "CSM Iasi 2020"
+      },
+      "black": {
+        "name": "Lela Javakhishvili",
+        "short": "Javakhishvili",
+        "title": "IM",
+        "elo": 2415,
+        "team": "Gambitul Damei Iasi"
+      },
+      "result": "1-0",
+      "opening": {
+        "eco": "A13",
+        "name": "English Opening: Agincourt Defense, Catalan Defense Accepted"
+      },
+      "moves": "c4 Nf6 Nf3 e6 g3 d5 Bg2 dxc4 O-O Nbd7 Qc2 Nb6 a4 a5 Na3 Bxa3 Rxa3 Nfd5 b3 cxb3 Qxb3 O-O Bb2 Qe7 Rc1 f6 Raa1 Rd8 Ba3 Nb4 d4 Bd7 Rxc7 Qd6 Rc5 Bxa4 Qb1 Bc6 Bc1 Na4 Bf4 Qd7 Rc1 Rac8 Bd2 Bd5 Rxc8 Rxc8 e4 Bc6 Bh3 f5 d5 Nxd5 exd5 Qxd5 Bg2 b6 Qe1 Nc5 Bc3 Qe4 Qf1 Qc2 Rc1 Qa2 Bd4 Be4 Bxc5 Rxc5 Rd1 Rd5 Ra1 Qb3 Ng5 Bxg2 Kxg2 Rd3 Rc1 Rd8 Qe2 Qd5+ Kh3 e5 Qh5 h6 Qg6 hxg5 Rc7 g4+ Kh4 Rd7 Qe8+ Kh7 Rxd7",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 84,
+        "played": "e5",
+        "better": "h6",
+        "reply": "Qh5",
+        "replyPlayed": true,
+        "before": {
+          "cp": 135,
+          "mate": null
+        },
+        "after": {
+          "cp": 611,
+          "mate": null
+        },
+        "clock": 1804
+      },
+      "headline": "From +1.35 to +6.11 with one pawn move: Batsiashvili wins the Iasi derby",
+      "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) beat IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) in 48 moves in round 2 of the Romanian women's Super League, and CSM Iasi 2020 won the match between the two Iasi teams 4–0.\n\nIt turned on 42...e5. Stockfish wanted 42...h6. It counted White clearly better before (+1.35) and winning after (+6.11), and 43.Qh5, its first choice, came straight back. 44.Qg6 and 47.Qe8+ followed, and 48.Rxd7 took the rook. In the final position Stockfish finds mate in nine.\n\nCSM Iasi 2020 went on to win the league, with 10 match points from six matches.\n\nGo back to 42...e5 and find 42...h6. Then play it on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "من ⁨+1.35⁩ إلى ⁨+6.11⁩ بنقلة بيدق واحدة: فوز لـBatsiashvili في ديربي Iasi",
+          "body": "انتهى الدور بفوز GM Nino Batsiashvili (CSM Iasi 2020، 2459) على IM Lela Javakhishvili (Gambitul Damei Iasi، 2415) في 48 نقلة، في الجولة الثانية من الدوري الروماني الممتاز للسيدات، وفاز فريق CSM Iasi 2020 بالمباراة بين فريقي مدينة Iasi بنتيجة ⁨4–0⁩.\n\nتحوّل الدور عند ⁨42...e5⁩. أراد Stockfish ⁨42...h6⁩، وعدّ الأبيض متفوقًا بوضوح قبلها (⁨+1.35⁩) وفائزًا بعدها (⁨+6.11⁩). وجاءت ⁨43.Qh5⁩، الخيار الأول للمحرك، مباشرة. ثم جاءت ⁨44.Qg6⁩ و⁨47.Qe8+⁩، وأخذت ⁨48.Rxd7⁩ الرخ. وفي الوضع النهائي يجد Stockfish كش مات في تسع نقلات.\n\nفاز فريق CSM Iasi 2020 لاحقًا بلقب الدوري، برصيد 10 نقاط مباراة من ست مباريات.\n\nارجع إلى ⁨42...e5⁩ واعثر على ⁨42...h6⁩. ثم تابع اللعب ضد المحرك."
+        },
+        "bg": {
+          "headline": "От +1,35 до +6,11 с един пешечен ход: Batsiashvili печели дербито на Яш",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) победи IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) за 48 хода във втория кръг на румънската женска Суперлига, а CSM Iasi 2020 спечели мача между двата отбора от Яш с 4–0.\n\nПартията се обърна с 42...e5. Stockfish искаше 42...h6. Преди хода енджинът даваше ясно предимство на белите (+1,35), а след него — печеливша позиция (+6,11), и 43.Qh5, първият му избор, последва веднага. Дойдоха 44.Qg6 и 47.Qe8+, а 48.Rxd7 взе топа. В крайната позиция Stockfish намира мат в девет хода.\n\nCSM Iasi 2020 спечели лигата с 10 мачови точки от шест мача.\n\nВърнете се към 42...e5 и намерете 42...h6. После продължете партията срещу енджина."
+        },
+        "cs": {
+          "headline": "Z +1,35 na +6,11 jedním tahem pěšce: Batsiashvili vyhrává derby v Iasi",
+          "body": "V partii GM Nino Batsiashvili (CSM Iasi 2020, 2459) – IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) ve 2. kole ženské rumunské superligy vyhrává po 48 tazích Batsiashvili a CSM Iasi 2020 bere zápas dvou družstev z Iasi 4–0.\n\nZlom přišel tahem 42...e5. Stockfish chtěl 42...h6 a hodnotil pozici před tahem jako jasně lepší pro bílé (+1,35), po něm jako vyhranou (+6,11). Okamžitě přišlo 43.Qh5, první volba enginu. Následovaly 44.Qg6 a 47.Qe8+, tah 48.Rxd7 pak vzal věž. V konečné pozici najde Stockfish mat v devíti tazích.\n\nDružstvo CSM Iasi 2020 nakonec vyhrálo celou ligu s 10 zápasovými body ze šesti zápasů.\n\nVrať se k 42...e5 a najdi 42...h6. Pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "Fra +1,35 til +6,11 med ét bondetræk: Batsiashvili vinder Iasi-derbyet",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) slog IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) i 48 træk i 2. runde af den rumænske superliga for kvinder, og CSM Iasi 2020 vandt matchen mellem de to hold fra Iasi 4–0.\n\nPartiet vendte med 42...e5. Stockfish ville have 42...h6. Motoren så hvid klart bedre før (+1,35) og til gevinst efter (+6,11), og 43.Qh5, Stockfishs førstevalg, kom med det samme. Derefter fulgte 44.Qg6 og 47.Qe8+, og 48.Rxd7 slog tårnet. I slutstillingen finder Stockfish mat i ni træk.\n\nCSM Iasi 2020 vandt siden ligaen med 10 matchpoint fra seks matcher.\n\nGå tilbage til 42...e5 og find 42...h6. Spil så videre mod motoren."
+        },
+        "de": {
+          "headline": "Von +1,35 auf +6,11 mit einem Bauernzug: Batsiashvili gewinnt das Derby von Iasi",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) schlug IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) in Runde 2 der rumänischen Frauen-Superliga in 48 Zügen, und CSM Iasi 2020 gewann das Duell der beiden Teams aus Iasi mit 4:0.\n\nDie Partie kippte mit 42...e5. Stockfish wollte 42...h6. Davor sah Stockfish Weiß klar besser (+1,35), danach auf Gewinn (+6,11), und 43.Qh5, die erste Wahl von Stockfish, kam sofort. Es folgten 44.Qg6 und 47.Qe8+, und 48.Rxd7 schlug den Turm. In der Schlussstellung findet Stockfish ein Matt in neun Zügen.\n\nCSM Iasi 2020 gewann am Ende die Liga, mit 10 Mannschaftspunkten aus sechs Kämpfen.\n\nZurück zu 42...e5 und 42...h6 finden. Dann gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Από +1,35 σε +6,11 με μία κίνηση πιονιού: Batsiashvili κερδίζει το ντέρμπι του Ιασίου",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) επικράτησε επί IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) σε 48 κινήσεις στον 2ο γύρο της ρουμανικής Σούπερ Λίγκας γυναικών, και η CSM Iasi 2020 κέρδισε με 4–0 τον αγώνα ανάμεσα στις δύο ομάδες του Ιασίου.\n\nΗ παρτίδα γύρισε στην 42...e5. Το Stockfish ήθελε την 42...h6. Έδινε καθαρό πλεονέκτημα στα λευκά πριν (+1,35) και νίκη μετά (+6,11), και η 43.Qh5, η πρώτη επιλογή της μηχανής, ήρθε αμέσως. Ακολούθησαν οι 44.Qg6 και 47.Qe8+, και η 48.Rxd7 πήρε τον πύργο. Στην τελική θέση το Stockfish βρίσκει ματ σε εννέα κινήσεις.\n\nΗ CSM Iasi 2020 κατέκτησε στη συνέχεια το πρωτάθλημα, με 10 βαθμούς αγώνα από έξι αγώνες.\n\nΓύρνα στην 42...e5 και βρες την 42...h6. Μετά συνέχισε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "De +1,35 a +6,11 con una jugada de peón: Batsiashvili gana el derbi de Iasi",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) venció a IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) en 48 jugadas en la segunda ronda de la Superliga femenina rumana, y CSM Iasi 2020 ganó 4–0 el match entre los dos equipos de Iasi.\n\nTodo cambió con 42...e5. Stockfish quería 42...h6. Daba clara ventaja a las blancas antes (+1,35) y posición ganadora después (+6,11), y 43.Qh5, su primera opción, llegó enseguida. Siguieron 44.Qg6 y 47.Qe8+, y 48.Rxd7 se llevó la torre. En la posición final, Stockfish encuentra mate en nueve.\n\nCSM Iasi 2020 acabó ganando la liga, con 10 puntos de match en seis matches.\n\nVuelve a 42...e5 y encuentra 42...h6. Luego sigue contra el motor."
+        },
+        "fi": {
+          "headline": "Yksi sotilassiirto, ja +1,35 muuttui lukemaksi +6,11: Batsiashvili voittaa Iasin derbyn",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) voitti IM Lela Javakhishvilin (Gambitul Damei Iasi, 2415) 48 siirrossa Romanian naisten superliigan 2. kierroksella, ja CSM Iasi 2020 voitti kahden iasilaisen joukkueen ottelun 4–0.\n\nPeli kääntyi siirtoon 42...e5. Stockfish halusi 42...h6. Se antoi valkealle ennen siirtoa selvän edun (+1,35) ja sen jälkeen voittoaseman (+6,11), ja sen ykkösvalinta 43.Qh5 tuli heti. Perään tulivat 44.Qg6 ja 47.Qe8+, ja 48.Rxd7 löi tornin. Loppuasemassa Stockfish löytää matin yhdeksässä siirrossa.\n\nCSM Iasi 2020 voitti lopulta koko sarjan 10 ottelupisteellä kuudesta ottelusta.\n\nPalaa siirtoon 42...e5 ja löydä 42...h6. Jatka sitten peliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "De +1,35 à +6,11 sur un coup de pion : Batsiashvili remporte le derby de Iasi",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) a battu IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) en 48 coups lors de la 2e ronde de la Superligue roumaine féminine, et CSM Iasi 2020 a gagné 4–0 le match entre les deux équipes de Iasi.\n\nTout s’est joué sur 42...e5. Stockfish voulait 42...h6, et donnait les Blancs nettement mieux avant (+1,35) et gagnants après (+6,11). 43.Qh5, son premier choix, a suivi aussitôt. Puis sont venus 44.Qg6 et 47.Qe8+, et 48.Rxd7 a pris la tour. Dans la position finale, Stockfish trouve un mat en neuf coups.\n\nCSM Iasi 2020 a ensuite remporté le championnat, avec 10 points de match en six matchs.\n\nRevenez à 42...e5 et trouvez 42...h6. Puis continuez contre le moteur."
+        },
+        "he": {
+          "headline": "מ־⁨+1.35⁩ ל־⁨+6.11⁩ במסע רגלי אחד: ניצחון ל־Batsiashvili בדרבי של Iasi",
+          "body": "המשחק בסיבוב ה־2 של ליגת העל הרומנית לנשים הסתיים בניצחון ל־GM Nino Batsiashvili (CSM Iasi 2020, 2459) על IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) אחרי 48 מסעים, ו־CSM Iasi 2020 ניצחה ⁨4–0⁩ במפגש בין שתי הקבוצות מ־Iasi.\n\nנקודת המפנה הגיעה ב־⁨42...e5⁩. Stockfish רצה ב־⁨42...h6⁩, והעריך יתרון ברור ללבן לפני המסע (⁨+1.35⁩) ועמדה מנצחת אחריו (⁨+6.11⁩). המסע ⁨43.Qh5⁩, הבחירה הראשונה של המנוע, בא מיד. אחריו באו ⁨44.Qg6⁩ ו־⁨47.Qe8+⁩, ו־⁨48.Rxd7⁩ לקח את הצריח. בעמדה הסופית Stockfish מוצא מט בתשעה מסעים.\n\nבהמשך זכתה CSM Iasi 2020 בליגה, עם 10 נקודות משחק משישה מפגשים.\n\nחזרו ל־⁨42...e5⁩ ומצאו את ⁨42...h6⁩. ואז המשיכו לשחק מול המנוע."
+        },
+        "hi": {
+          "headline": "प्यादे की एक चाल, +1.35 से +6.11: Iasi डर्बी में Batsiashvili की जीत",
+          "body": "रोमानियाई महिला सुपर लीग के राउंड 2 में GM Nino Batsiashvili (CSM Iasi 2020, 2459) ने IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) को 48 चालों में हराया, और Iasi की दोनों टीमों के बीच का मुक़ाबला CSM Iasi 2020 ने 4–0 से जीता।\n\nबाज़ी 42...e5 पर पलटी। Stockfish 42...h6 चाहता था। उसके हिसाब से पहले सफ़ेद साफ़ बेहतर था (+1.35) और बाद में जीत की स्थिति में (+6.11), और इंजन की पहली पसंद 43.Qh5 तुरंत आया। फिर 44.Qg6 और 47.Qe8+ आए, और 48.Rxd7 ने हाथी ले लिया। अंतिम स्थिति में Stockfish को नौ चालों में मात दिखती है।\n\nCSM Iasi 2020 ने आगे चलकर छह मुक़ाबलों से 10 मैच अंकों के साथ लीग जीती।\n\n42...e5 पर लौटें और 42...h6 खोजें। फिर इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "+1,35-ről +6,11-re egyetlen gyaloglépéssel: Batsiashvili nyerte a jászvásári derbit",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) 48 lépésben nyert IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) ellen a román női Szuperliga 2. fordulójában, a CSM Iasi 2020 pedig 4–0-ra megnyerte a két jászvásári csapat összecsapását.\n\nA játszma a 42...e5 lépésnél fordult meg. A Stockfish a 42...h6 lépést akarta. Előtte világos egyértelmű előnyét látta (+1,35), utána nyerő állást (+6,11), és azonnal jött a 43.Qh5, az első választása. Következett a 44.Qg6 és a 47.Qe8+, a 48.Rxd7 pedig leütötte a bástyát. A záróállásban a Stockfish kilenclépéses mattot talál.\n\nA CSM Iasi 2020 végül megnyerte a bajnokságot, hat mérkőzésből 10 csapatponttal.\n\nMenj vissza a 42...e5 lépéshez, és találd meg a 42...h6 lépést. Aztán játszd tovább a motor ellen."
+        },
+        "id": {
+          "headline": "Dari +1,35 ke +6,11 dengan satu langkah pion: Batsiashvili menangi derbi Iasi",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) mengalahkan IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) dalam 48 langkah di babak 2 Liga Super Putri Rumania, dan CSM Iasi 2020 memenangi pertandingan antara dua tim asal Iasi itu 4–0.\n\nPartai berbalik pada 42...e5. Stockfish menginginkan 42...h6. Mesin menilai Putih unggul jelas sebelumnya (+1,35) dan menang sesudahnya (+6,11), dan 43.Qh5, pilihan pertamanya, langsung datang. 44.Qg6 dan 47.Qe8+ menyusul, dan 48.Rxd7 mengambil benteng. Pada posisi akhir, Stockfish menemukan skakmat dalam sembilan langkah.\n\nCSM Iasi 2020 kemudian menjuarai liga, dengan 10 poin pertandingan dari enam pertandingan.\n\nKembali ke 42...e5 dan temukan 42...h6. Lalu lanjutkan melawan mesin."
+        },
+        "it": {
+          "headline": "Da +1,35 a +6,11 con una mossa di pedone: Batsiashvili vince il derby di Iasi",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) ha battuto IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) in 48 mosse nel 2º turno della Superlega rumena femminile, e CSM Iasi 2020 ha vinto 4–0 il match tra le due squadre di Iasi.\n\nLa partita è girata su 42...e5. Stockfish voleva 42...h6, e dava il Bianco chiaramente meglio prima (+1,35) e vincente dopo (+6,11). 43.Qh5, la sua prima scelta, è arrivata subito. Poi sono seguite 44.Qg6 e 47.Qe8+, e 48.Rxd7 ha preso la Torre. Nella posizione finale Stockfish trova un matto in nove mosse.\n\nCSM Iasi 2020 ha poi vinto il campionato, con 10 punti match in sei incontri.\n\nTorna a 42...e5 e trova 42...h6. Poi continua contro il motore."
+        },
+        "ja": {
+          "headline": "ポーン一手で+1.35から+6.11へ、Batsiashviliがヤシ・ダービーを制す",
+          "body": "ルーマニア女子スーパーリーグ第2ラウンドで、GM Nino Batsiashvili（CSM Iasi 2020、2459）がIM Lela Javakhishvili（Gambitul Damei Iasi、2415）に48手で勝ち、ヤシの2チームによる対戦はCSM Iasi 2020が4–0で制しました。\n\n分かれ目は42...e5でした。Stockfishが望んだのは42...h6。42...e5の後、Stockfishの評価は白の明確な優勢（+1.35）から勝勢（+6.11）に変わり、すぐに第一候補の43.Qh5が返ってきました。続いて44.Qg6、47.Qe8+と指され、48.Rxd7でルークを取りました。最終局面では、Stockfishが9手でのメイトを見つけています。\n\nCSM Iasi 2020はその後、6マッチでマッチポイント10を挙げてリーグ優勝を果たしました。\n\n42...e5に戻って42...h6を見つけましょう。それからエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "폰 한 수에 +1.35에서 +6.11로… Batsiashvili, 야시 더비 승리",
+          "body": "GM Nino Batsiashvili(CSM Iasi 2020, 2459)가 루마니아 여자 슈퍼리그 2라운드에서 IM Lela Javakhishvili(Gambitul Damei Iasi, 2415)에게 48수 만에 이겼고, 야시의 두 팀이 맞붙은 매치는 CSM Iasi 2020이 4–0으로 이겼습니다.\n\n승부를 가른 수는 42...e5였습니다. Stockfish가 원한 수는 42...h6였습니다. 42...e5 이후 Stockfish의 평가는 백의 뚜렷한 우세(+1.35)에서 이기는 형세(+6.11)로 바뀌었고, 곧바로 첫 번째 후보 수인 43.Qh5가 나왔습니다. 이어서 44.Qg6와 47.Qe8+가 나왔고, 48.Rxd7로 룩을 잡았습니다. 최종 국면에서 Stockfish는 9수 만의 메이트를 찾아냅니다.\n\nCSM Iasi 2020은 이후 여섯 매치에서 매치 포인트 10점을 얻어 리그 우승을 차지했습니다.\n\n42...e5로 돌아가 42...h6를 찾아보세요. 이어서 엔진을 상대로 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "Daripada +1,35 kepada +6,11 dengan satu langkah bidak: Batsiashvili menangi derbi Iasi",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) menewaskan IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) dalam 48 langkah dalam pusingan 2 Liga Super Wanita Romania, dan CSM Iasi 2020 memenangi perlawanan antara dua pasukan Iasi itu 4–0.\n\nPermainan berubah pada 42...e5. Stockfish mahukan 42...h6. Enjin menilai Putih jelas mendahului sebelumnya (+1,35) dan menang selepasnya (+6,11), dan 43.Qh5, pilihan pertamanya, tiba serta-merta. 44.Qg6 dan 47.Qe8+ menyusul, dan 48.Rxd7 mengambil tir. Dalam kedudukan akhir, Stockfish menemui sekak mati dalam sembilan langkah.\n\nCSM Iasi 2020 kemudian menjuarai liga, dengan 10 mata perlawanan daripada enam perlawanan.\n\nKembali ke 42...e5 dan cari 42...h6. Kemudian teruskan menentang enjin."
+        },
+        "nl": {
+          "headline": "Van +1,35 naar +6,11 met één pionzet: Batsiashvili wint de derby van Iasi",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) versloeg IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) in 48 zetten in ronde 2 van de Roemeense Superliga voor vrouwen, en CSM Iasi 2020 won de match tussen de twee teams uit Iasi met 4–0.\n\nDe partij kantelde met 42...e5. Stockfish wilde 42...h6. Stockfish zag wit ervoor duidelijk beter staan (+1,35) en erna gewonnen (+6,11), en 43.Qh5, de eerste keuze van Stockfish, kwam meteen. Daarna volgden 44.Qg6 en 47.Qe8+, en 48.Rxd7 sloeg de toren. In de slotstelling vindt Stockfish mat in negen zetten.\n\nCSM Iasi 2020 won uiteindelijk de competitie, met 10 matchpunten uit zes matches.\n\nGa terug naar 42...e5 en vind 42...h6. Speel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "Fra +1,35 til +6,11 med ett bondetrekk: Batsiashvili vinner Iasi-derbyet",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) slo IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) på 48 trekk i 2. runde av den rumenske superligaen for kvinner, og CSM Iasi 2020 vant matchen mellom de to lagene fra Iasi 4–0.\n\nPartiet snudde med 42...e5. Stockfish ville ha 42...h6. Motoren regnet hvit som klart bedre før (+1,35) og som vinnende etter (+6,11), og 43.Qh5, Stockfishs førstevalg, kom med en gang. Deretter fulgte 44.Qg6 og 47.Qe8+, og 48.Rxd7 tok tårnet. I sluttstillingen finner Stockfish matt i ni trekk.\n\nCSM Iasi 2020 vant senere ligaen, med 10 matchpoeng fra seks matcher.\n\nGå tilbake til 42...e5 og finn 42...h6. Spill så videre mot motoren."
+        },
+        "pl": {
+          "headline": "Z +1,35 na +6,11 jednym ruchem pionem: Batsiashvili wygrywa derby Iasi",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) pokonuje IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) w 48 ruchach w 2. rundzie rumuńskiej Superligi kobiet, a CSM Iasi 2020 wygrywa 4–0 mecz dwóch drużyn z Iasi.\n\nPartia odwraca się po 42...e5. Stockfish chciał 42...h6. Przed tym ruchem oceniał pozycję białych jako wyraźnie lepszą (+1,35), po nim jako wygraną (+6,11), a od razu padło 43.Qh5, pierwszy wybór silnika. Potem padają 44.Qg6 i 47.Qe8+, a 48.Rxd7 bije wieżę. W końcowej pozycji Stockfish widzi mata w dziewięciu ruchach.\n\nOstatecznie CSM Iasi 2020 wygrywa ligę z 10 punktami meczowymi z sześciu meczów.\n\nWróć do 42...e5 i znajdź 42...h6. Potem graj dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "De +1,35 a +6,11 com um lance de peão: Batsiashvili vence o clássico de Iasi",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) venceu IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) em 48 lances na 2ª rodada da Superliga Feminina Romena, e o CSM Iasi 2020 venceu por 4–0 o match entre as duas equipes de Iasi.\n\nA partida virou em 42...e5. O Stockfish queria 42...h6. Via clara vantagem das brancas antes (+1,35) e posição vencedora depois (+6,11), e 43.Qh5, sua primeira opção, veio logo em seguida. Seguiram-se 44.Qg6 e 47.Qe8+, e 48.Rxd7 levou a torre. Na posição final, o Stockfish encontra mate em nove.\n\nO CSM Iasi 2020 acabou vencendo a liga, com 10 pontos de match em seis matches.\n\nVolte a 42...e5 e encontre 42...h6. Depois continue contra o motor."
+        },
+        "ro": {
+          "headline": "De la +1,35 la +6,11 dintr-o singură mutare de pion: Batsiashvili câștigă derbiul ieșean",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) a câștigat contra IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) în 48 de mutări, în runda a 2-a a Superligii feminine a României, iar CSM Iasi 2020 a câștigat cu 4–0 meciul dintre cele două echipe ieșene.\n\nPartida s-a întors la 42...e5. Stockfish voia 42...h6. Considera Albul clar mai bun înainte (+1,35) și câștigător după (+6,11), iar 43.Qh5, prima sa alegere, a urmat imediat. Au venit apoi 44.Qg6 și 47.Qe8+, iar 48.Rxd7 a luat tura. În poziția finală, Stockfish găsește mat în nouă mutări.\n\nCSM Iasi 2020 a câștigat apoi campionatul, cu 10 puncte de meci din șase meciuri.\n\nÎntoarce-te la 42...e5 și găsește 42...h6. Apoi continuă contra motorului."
+        },
+        "ru": {
+          "headline": "С +1,35 до +6,11 одним ходом пешки: Batsiashvili выигрывает дерби Ясс",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) обыгрывает IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) за 48 ходов во 2-м туре женской Суперлиги Румынии, а CSM Iasi 2020 выигрывает матч двух команд из Ясс 4–0.\n\nПерелом — 42...e5. Stockfish хотел 42...h6. До хода движок давал белым явный перевес (+1,35), после — выигрыш (+6,11), и сразу последовал 43.Qh5 — первый выбор движка. Затем пришли 44.Qg6 и 47.Qe8+, а 48.Rxd7 забрал ладью. В финальной позиции Stockfish находит мат в девять ходов.\n\nВ итоге команда CSM Iasi 2020 выиграла лигу, набрав 10 командных очков в шести матчах.\n\nВернитесь к 42...e5 и найдите 42...h6. А затем продолжите партию против движка."
+        },
+        "sv": {
+          "headline": "Från +1,35 till +6,11 med ett bondedrag: Batsiashvili vinner derbyt i Iasi",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) besegrade IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) på 48 drag i rond 2 av rumänska superligan för damer, och CSM Iasi 2020 vann matchen mellan de två lagen från Iasi med 4–0.\n\nDet vände på 42...e5. Stockfish ville ha 42...h6. Motorn räknade vit som klart bättre före (+1,35) och som vinnande efter (+6,11), och 43.Qh5, Stockfishs förstaval, kom direkt. Sedan följde 44.Qg6 och 47.Qe8+, och 48.Rxd7 tog tornet. I slutställningen hittar Stockfish matt i nio drag.\n\nCSM Iasi 2020 vann sedan ligan, med 10 matchpoäng på sex matcher.\n\nGå tillbaka till 42...e5 och hitta 42...h6. Spela sedan vidare mot motorn."
+        },
+        "th": {
+          "headline": "จาก +1.35 เป็น +6.11 ด้วยเบี้ยตาเดียว: Batsiashvili ชนะดาร์บี้เมืองยาช",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) ชนะ IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) ใน 48 ตา ในรอบที่ 2 ของซูเปอร์ลีกหญิงโรมาเนีย และ CSM Iasi 2020 ชนะแมตช์ระหว่างสองทีมจากเมืองยาช 4–0\n\nเกมพลิกที่ 42...e5 Stockfish ต้องการ 42...h6 เอนจินประเมินว่าฝ่ายขาวได้เปรียบชัดเจนก่อนตานั้น (+1.35) และอยู่ในสถานะชนะหลังตานั้น (+6.11) และ 43.Qh5 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจินก็มาทันที ตามด้วย 44.Qg6 และ 47.Qe8+ แล้ว 48.Rxd7 ก็กินเรือ ในตำแหน่งสุดท้าย Stockfish พบการรุกจนในเก้าตา\n\nต่อมา CSM Iasi 2020 คว้าแชมป์ลีก ด้วย 10 แต้มแมตช์จากหกแมตช์\n\nย้อนกลับไปที่ 42...e5 แล้วหา 42...h6 จากนั้นเล่นต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "Tek piyon hamlesiyle +1,35'ten +6,11'e: Iasi derbisini Batsiashvili kazandı",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459), Romanya Kadınlar Süper Ligi'nin 2. turunda IM Lela Javakhishvili'yi (Gambitul Damei Iasi, 2415) 48 hamlede yendi; CSM Iasi 2020 de iki Iasi takımı arasındaki maçı 4–0 kazandı.\n\nOyun 42...e5 ile döndü. Stockfish 42...h6 hamlesini istiyordu. Öncesinde beyazı açık farkla üstün (+1,35), sonrasında kazanan konumda (+6,11) görüyordu ve ilk tercihi olan 43.Qh5 hemen geldi. Ardından 44.Qg6 ve 47.Qe8+ geldi, 48.Rxd7 de kaleyi aldı. Son konumda Stockfish dokuz hamlede mat buluyor.\n\nCSM Iasi 2020 daha sonra altı maçta 10 maç puanıyla ligi kazandı.\n\n42...e5 hamlesine dön ve 42...h6 hamlesini bul. Sonra motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Từ +1,35 lên +6,11 chỉ với một nước Tốt: Batsiashvili thắng trận derby Iasi",
+          "body": "GM Nino Batsiashvili (CSM Iasi 2020, 2459) thắng IM Lela Javakhishvili (Gambitul Damei Iasi, 2415) sau 48 nước ở vòng 2 giải Siêu hạng nữ Romania, và CSM Iasi 2020 thắng trận đấu giữa hai đội của Iasi 4–0.\n\nVán cờ đổi chiều ở 42...e5. Stockfish muốn 42...h6. Engine đánh giá Trắng ưu thế rõ trước nước đó (+1,35) và ở thế thắng sau nước đó (+6,11), và 43.Qh5, lựa chọn số một của engine, đến ngay. Tiếp theo là 44.Qg6 và 47.Qe8+, rồi 48.Rxd7 bắt Xe. Ở thế cờ cuối cùng, Stockfish tìm ra chiếu hết sau chín nước.\n\nSau đó CSM Iasi 2020 vô địch giải, với 10 điểm trận sau sáu trận.\n\nQuay lại 42...e5 và tìm 42...h6. Rồi chơi tiếp với engine."
+        },
+        "zh-Hans": {
+          "headline": "一步走兵，评估从+1.35升到+6.11：Batsiashvili赢下雅西德比",
+          "body": "GM Nino Batsiashvili（CSM Iasi 2020，2459）在罗马尼亚女子超级联赛第2轮48回合击败IM Lela Javakhishvili（Gambitul Damei Iasi，2415），CSM Iasi 2020也以4–0赢下了两支雅西队伍之间的这场比赛。\n\n转折点是42...e5。Stockfish想走的是42...h6。Stockfish认为这步之前白方明显占优（+1.35），之后白方胜势（+6.11），白方随即走出Stockfish的首选43.Qh5。接着是44.Qg6和47.Qe8+，48.Rxd7吃掉了车。在最终局面中，Stockfish算出九步杀。\n\nCSM Iasi 2020最终夺得联赛冠军，六场比赛积10个团体分。\n\n回到42...e5，找出42...h6。然后对着引擎继续下。"
+        },
+        "zh-Hant": {
+          "headline": "一步走兵，評估從+1.35升到+6.11：Batsiashvili贏下雅西德比戰",
+          "body": "GM Nino Batsiashvili（CSM Iasi 2020，2459）在羅馬尼亞女子超級聯賽第2輪48回合擊敗IM Lela Javakhishvili（Gambitul Damei Iasi，2415），CSM Iasi 2020也以4–0贏下了兩支雅西隊伍之間的這場比賽。\n\n轉折點是42...e5。Stockfish想走的是42...h6。Stockfish認為這步之前白方明顯佔優（+1.35），之後白方勝勢（+6.11），白方隨即走出Stockfish的首選43.Qh5。接著是44.Qg6和47.Qe8+，48.Rxd7吃掉了車。在終局局面中，Stockfish算出九步殺。\n\nCSM Iasi 2020最後奪得聯賽冠軍，六場比賽拿下10個團體分。\n\n回到42...e5，找出42...h6。然後對著引擎繼續下。"
+        }
+      },
+      "fen": "3r2k1/6pp/1p6/p2qppN1/8/6PK/4QP1P/2R5 w - - 0 43",
+      "last": {
+        "from": "e6",
+        "to": "e5"
+      },
+      "url": "https://brasspawn.com/today/2026-10-06-batsiashvili-javakhishvili-romanian-team-chess-championships-r2",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-womens-super-league/round-2/HLIy4SEN/NnVdpyyw"
+      },
+      "updatedAt": "2026-10-06T17:05:46.161Z"
+    },
+    {
+      "id": "2026-10-06-raahul-v-s-martirosyan-romanian-team-chess-championships-r4",
+      "status": "approved",
+      "date": "2026-10-06",
+      "rank": 0,
+      "weight": 411,
+      "event": {
+        "name": "Romanian Team Chess Championships 2026",
+        "short": "Romanian Team Chess Championships",
+        "section": "Men’s Super league",
+        "round": 4,
+        "location": "Eforie Nord, Romania",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-mens-super-league/round-4/IiImjXN2"
+      },
+      "white": {
+        "name": "Raahul V S",
+        "short": "Raahul V S",
+        "title": "GM",
+        "elo": 2393,
+        "team": "CSU UNIVERSITATEA DE VEST Timisoara"
+      },
+      "black": {
+        "name": "Haik M. Martirosyan",
+        "short": "Martirosyan",
+        "title": "GM",
+        "elo": 2661,
+        "team": "ACS SUPERCHESS"
+      },
+      "result": "0-1",
+      "opening": {
+        "eco": "A29",
+        "name": "English Opening: King's English Variation, Four Knights Variation, Fianchetto Line"
+      },
+      "moves": "c4 e5 g3 Nf6 Bg2 d5 cxd5 Nxd5 Nf3 Nc6 O-O Nb6 b3 Bd6 Bb2 O-O Nc3 Re8 Ne4 Bf8 Rc1 f5 Nc3 e4 Ne1 Nb4 f3 e3 dxe3 Bc5 Nc2 Nxc2 Rxc2 Bxe3+ Kh1 c6 Bc1 Qe7 Bxe3 Qxe3 f4 Be6 Qd2 Qxd2 Rxd2 a5 e4 a4 e5 axb3 axb3 Ra3 Rb1 Rea8 Rdb2 Rd8 Kg1 Rd3 Ne2 Kf7 Bf1 Nd5 Nc1 Rd4 Nd3 Nc3 Rc1 Ne4 Be2 Ke7 Ne1 Rxb3 Rxb3 Bxb3 Rb1 Nc5 Rc1 b6 Rb1 g6 Kf2 Ra4 Nf3 b5 Ng5 h6 Rc1 Bc4",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 83,
+        "played": "Nf3",
+        "better": "Nd3",
+        "reply": "b5",
+        "replyPlayed": true,
+        "before": {
+          "cp": -196,
+          "mate": null
+        },
+        "after": {
+          "cp": -262,
+          "mate": null
+        },
+        "clock": 148
+      },
+      "headline": "Superchess win 5½–½, and Martirosyan takes board one in 44",
+      "body": "ACS Superchess beat CSU Universitatea de Vest Timisoara 5½–½ in round 4 of the Romanian Super League, and on board one Martirosyan beat GM Raahul V S (2393) in 44 moves.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) had Black. The game turned on 42.Nf3, played with 2:28 left. Stockfish wanted 42.Nd3. It counted Black clearly better before (−1.96) and winning after (−2.62), and 42...b5, its first choice, came straight back.\n\nIt was the first of four wins in five rounds for Martirosyan, who finished unbeaten on 5½/7. ACS Superchess went on to win all nine matches and the title.\n\nGo back to 42.Nf3 and find 42.Nd3. Then play it on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "فريق Superchess يفوز ⁨5½–½⁩، والرقعة الأولى لـMartirosyan في 44 نقلة",
+          "body": "فاز فريق ACS Superchess على CSU Universitatea de Vest Timisoara بنتيجة ⁨5½–½⁩ في الجولة الرابعة من الدوري الروماني الممتاز، وعلى الرقعة الأولى انتهى الدور بفوز Martirosyan على GM Raahul V S (2393) في 44 نقلة.\n\nكانت القطع السوداء مع GM Haik M. Martirosyan (ACS Superchess، 2661). تحوّل الدور عند ⁨42.Nf3⁩ التي لُعبت والوقت المتبقي ⁨2:28⁩. أراد Stockfish ⁨42.Nd3⁩، وعدّ الأسود متفوقًا بوضوح قبلها (⁨−1.96⁩) وفائزًا بعدها (⁨−2.62⁩). وجاءت ⁨42...b5⁩، الخيار الأول للمحرك، مباشرة.\n\nكان ذلك أول أربعة انتصارات لـMartirosyan في خمس جولات، وانتهى رصيد Martirosyan عند ⁨5½/7⁩ دون أي خسارة. وفاز فريق ACS Superchess لاحقًا بالمباريات التسع كلها وباللقب.\n\nارجع إلى ⁨42.Nf3⁩ واعثر على ⁨42.Nd3⁩. ثم تابع اللعب ضد المحرك."
+        },
+        "bg": {
+          "headline": "Superchess печели с 5½–½, а Martirosyan взима първата дъска за 44 хода",
+          "body": "ACS Superchess победи CSU Universitatea de Vest Timisoara с 5½–½ в 4-тия кръг на румънската Суперлига, а на първа дъска Martirosyan победи GM Raahul V S (2393) за 44 хода.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) игра с черните. Партията се обърна с 42.Nf3, изигран с 2:28 на часовника. Stockfish искаше 42.Nd3. Преди хода енджинът даваше ясно предимство на черните (−1,96), а след него — печеливша позиция (−2,62), и 42...b5, първият му избор, последва веднага.\n\nТова беше първата от четири победи в пет кръга за Martirosyan. Martirosyan завърши без загуба с 5½/7, а ACS Superchess спечели всичките девет мача и титлата.\n\nВърнете се към 42.Nf3 и намерете 42.Nd3. После продължете партията срещу енджина."
+        },
+        "cs": {
+          "headline": "Superchess vyhrává 5½–½ a Martirosyan bere první šachovnici po 44 tazích",
+          "body": "ACS Superchess poráží CSU Universitatea de Vest Timisoara 5½–½ ve 4. kole rumunské superligy a na první šachovnici vyhrává partii GM Raahul V S (2393) – Martirosyan po 44 tazích Martirosyan.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) hraje černými. Zlom přišel tahem 42.Nf3, zahraným s 2:28 na hodinách. Stockfish chtěl 42.Nd3 a hodnotil pozici před tahem jako jasně lepší pro černé (−1,96), po něm jako vyhranou (−2,62). Okamžitě přišlo 42...b5, první volba enginu.\n\nJe to první ze čtyř výher, které Martirosyan získává v pěti kolech, a Martirosyan končí bez porážky s 5½/7. ACS Superchess nakonec vyhrává všech devět zápasů i titul.\n\nVrať se k 42.Nf3 a najdi 42.Nd3. Pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "Superchess vinder 5½–½, og Martirosyan tager førstebrættet i 44 træk",
+          "body": "ACS Superchess slog CSU Universitatea de Vest Timisoara 5½–½ i 4. runde af den rumænske superliga, og på førstebrættet slog Martirosyan GM Raahul V S (2393) i 44 træk.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) havde sort. Partiet vendte med 42.Nf3, spillet med 2:28 tilbage. Stockfish ville have 42.Nd3. Motoren så sort klart bedre før (−1,96) og til gevinst efter (−2,62), og 42...b5, Stockfishs førstevalg, kom med det samme.\n\nDet var den første af fire sejre i fem runder for Martirosyan, der sluttede uden nederlag med 5½/7. ACS Superchess vandt siden alle ni matcher og titlen.\n\nGå tilbage til 42.Nf3 og find 42.Nd3. Spil så videre mod motoren."
+        },
+        "de": {
+          "headline": "Superchess gewinnt 5½:½, und Martirosyan holt Brett eins in 44 Zügen",
+          "body": "ACS Superchess gewann in Runde 4 der rumänischen Superliga 5½:½ gegen CSU Universitatea de Vest Timisoara, und am ersten Brett schlug Martirosyan GM Raahul V S (2393) in 44 Zügen.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) spielte mit Schwarz. Die Partie kippte mit 42.Nf3, gespielt mit 2:28 auf der Uhr. Stockfish wollte 42.Nd3. Davor sah Stockfish Schwarz klar besser (−1,96), danach auf Gewinn (−2,62), und 42...b5, die erste Wahl von Stockfish, kam sofort.\n\nEs war für Martirosyan der erste von vier Siegen in fünf Runden, am Ende ungeschlagen mit 5½/7. ACS Superchess gewann danach alle neun Kämpfe und den Titel.\n\nZurück zu 42.Nf3 und 42.Nd3 finden. Dann gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "5½–½ για τη Superchess, και Martirosyan κερδίζει στην πρώτη σκακιέρα σε 44 κινήσεις",
+          "body": "Η ACS Superchess νίκησε τη CSU Universitatea de Vest Timisoara με 5½–½ στον 4ο γύρο της ρουμανικής Σούπερ Λίγκας, και στην πρώτη σκακιέρα Martirosyan επικράτησε επί GM Raahul V S (2393) σε 44 κινήσεις.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) είχε τα μαύρα. Η παρτίδα γύρισε στην 42.Nf3, που παίχτηκε με 2:28 στο ρολόι. Το Stockfish ήθελε την 42.Nd3. Έδινε καθαρό πλεονέκτημα στα μαύρα πριν (−1,96) και νίκη μετά (−2,62), και η 42...b5, η πρώτη επιλογή της μηχανής, ήρθε αμέσως.\n\nΉταν η πρώτη από τέσσερις νίκες σε πέντε γύρους για Martirosyan, που τερμάτισε χωρίς ήττα με 5½/7. Η ACS Superchess κέρδισε στη συνέχεια και τους εννέα αγώνες και τον τίτλο.\n\nΓύρνα στην 42.Nf3 και βρες την 42.Nd3. Μετά συνέχισε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Superchess gana 5½–½, y Martirosyan se impone en el primer tablero en 44 jugadas",
+          "body": "ACS Superchess venció 5½–½ a CSU Universitatea de Vest Timisoara en la cuarta ronda de la Superliga rumana, y en el primer tablero Martirosyan venció a GM Raahul V S (2393) en 44 jugadas.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) jugó con negras. La partida cambió con 42.Nf3, hecha con 2:28 en el reloj. Stockfish quería 42.Nd3. Daba clara ventaja a las negras antes (−1,96) y posición ganadora después (−2,62), y 42...b5, su primera opción, llegó enseguida.\n\nFue la primera de cuatro victorias en cinco rondas para Martirosyan, que terminó sin derrotas con 5½/7. ACS Superchess acabó ganando los nueve matches y el título.\n\nVuelve a 42.Nf3 y encuentra 42.Nd3. Luego sigue contra el motor."
+        },
+        "fi": {
+          "headline": "Superchess voittaa 5½–½, ja Martirosyan vie ykköslaudan 44 siirrossa",
+          "body": "ACS Superchess voitti CSU Universitatea de Vest Timisoaran 5½–½ Romanian superliigan 4. kierroksella, ja ykköslaudalla Martirosyan voitti GM Raahul V S:n (2393) 44 siirrossa.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) pelasi mustilla. Peli kääntyi siirtoon 42.Nf3, joka pelattiin kellossa 2:28 jäljellä. Stockfish halusi 42.Nd3. Se antoi mustalle ennen siirtoa selvän edun (−1,96) ja sen jälkeen voittoaseman (−2,62), ja sen ykkösvalinta 42...b5 tuli heti.\n\nVoitto oli ensimmäinen Martirosyanin neljästä voitosta viidellä kierroksella, ja Martirosyan päätti sarjan tappioitta tuloksella 5½/7. ACS Superchess voitti lopulta kaikki yhdeksän otteluaan ja mestaruuden.\n\nPalaa siirtoon 42.Nf3 ja löydä 42.Nd3. Jatka sitten peliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Superchess s’impose 5½–½, et Martirosyan gagne au premier échiquier en 44 coups",
+          "body": "ACS Superchess a battu CSU Universitatea de Vest Timisoara 5½–½ lors de la 4e ronde de la Superligue roumaine, et au premier échiquier Martirosyan a battu GM Raahul V S (2393) en 44 coups.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) avait les Noirs. La partie a basculé sur 42.Nf3, joué avec 2:28 à la pendule. Stockfish voulait 42.Nd3, et donnait les Noirs nettement mieux avant (−1,96) et gagnants après (−2,62). 42...b5, son premier choix, a suivi aussitôt.\n\nC’était la première de quatre victoires en cinq rondes pour Martirosyan, qui a terminé sans défaite avec 5½/7. ACS Superchess a ensuite gagné ses neuf matchs, et le titre.\n\nRevenez à 42.Nf3 et trouvez 42.Nd3. Puis continuez contre le moteur."
+        },
+        "he": {
+          "headline": "ניצחון ⁨5½–½⁩ ל־Superchess, והלוח הראשון ל־Martirosyan אחרי 44 מסעים",
+          "body": "קבוצת ACS Superchess גברה ⁨5½–½⁩ על CSU Universitatea de Vest Timisoara בסיבוב ה־4 של ליגת העל הרומנית, ובלוח הראשון המשחק הסתיים בניצחון ל־Martirosyan על GM Raahul V S (2393) אחרי 44 מסעים.\n\nל־GM Haik M. Martirosyan (ACS Superchess, 2661) היו הכלים השחורים. נקודת המפנה הגיעה ב־⁨42.Nf3⁩, ששוחק כשנותרו ⁨2:28⁩. Stockfish רצה ב־⁨42.Nd3⁩, והעריך יתרון ברור לשחור לפני המסע (⁨−1.96⁩) ועמדה מנצחת אחריו (⁨−2.62⁩). המסע ⁨42...b5⁩, הבחירה הראשונה של המנוע, בא מיד.\n\nזה היה הראשון מבין ארבעה ניצחונות של Martirosyan בחמישה סיבובים, והמאזן הסופי: ⁨5½/7⁩, ללא הפסד. בהמשך ניצחה ACS Superchess בכל תשעת המפגשים וזכתה בתואר.\n\nחזרו ל־⁨42.Nf3⁩ ומצאו את ⁨42.Nd3⁩. ואז המשיכו לשחק מול המנוע."
+        },
+        "hi": {
+          "headline": "Superchess की 5½–½ से जीत, और बोर्ड एक की बाज़ी 44 चालों में Martirosyan के नाम",
+          "body": "रोमानियाई सुपर लीग के राउंड 4 में ACS Superchess ने CSU Universitatea de Vest Timisoara को 5½–½ से हराया, और बोर्ड एक पर Martirosyan ने GM Raahul V S (2393) को 44 चालों में हराया।\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) के पास काले मोहरे थे। बाज़ी 42.Nf3 पर पलटी; यह चाल 2:28 बचे रहते खेली गई। Stockfish 42.Nd3 चाहता था। उसके हिसाब से पहले काला साफ़ बेहतर था (−1.96) और बाद में जीत की स्थिति में (−2.62), और इंजन की पहली पसंद 42...b5 तुरंत आया।\n\nयह पाँच राउंड में Martirosyan की चार जीतों में से पहली थी, और लीग के अंत में Martirosyan का स्कोर बिना किसी हार के 5½/7 रहा। ACS Superchess ने आगे चलकर सभी नौ मुक़ाबले जीते और ख़िताब भी अपने नाम किया।\n\n42.Nf3 पर लौटें और 42.Nd3 खोजें। फिर इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "A Superchess 5½–½ arányban nyert, Martirosyan pedig 44 lépésben győzött az első táblán",
+          "body": "Az ACS Superchess 5½–½ arányban legyőzte a CSU Universitatea de Vest Timisoara csapatát a román Szuperliga 4. fordulójában, az első táblán pedig Martirosyan 44 lépésben nyert GM Raahul V S (2393) ellen.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) sötéttel játszott. A játszma a 42.Nf3 lépésnél fordult meg, amely 2:28-cal az órán született. A Stockfish a 42.Nd3 lépést akarta. Előtte sötét egyértelmű előnyét látta (−1,96), utána nyerő állást (−2,62), és azonnal jött a 42...b5, az első választása.\n\nEz volt az első Martirosyan öt fordulón belüli négy győzelméből, a végén pedig veretlenül, 5½/7 ponttal zárt. Az ACS Superchess végül mind a kilenc mérkőzését és a bajnoki címet is megnyerte.\n\nMenj vissza a 42.Nf3 lépéshez, és találd meg a 42.Nd3 lépést. Aztán játszd tovább a motor ellen."
+        },
+        "id": {
+          "headline": "Superchess menang 5½–½, dan Martirosyan menangi papan satu dalam 44 langkah",
+          "body": "ACS Superchess mengalahkan CSU Universitatea de Vest Timisoara 5½–½ di babak 4 Liga Super Rumania, dan di papan satu Martirosyan mengalahkan GM Raahul V S (2393) dalam 44 langkah.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) bermain dengan Hitam. Partai berbalik pada 42.Nf3, yang dimainkan dengan sisa 2:28. Stockfish menginginkan 42.Nd3. Mesin menilai Hitam unggul jelas sebelumnya (−1,96) dan menang sesudahnya (−2,62), dan 42...b5, pilihan pertamanya, langsung datang.\n\nItu kemenangan pertama dari empat kemenangan Martirosyan dalam lima babak, dan Martirosyan menyelesaikan liga tanpa kalah dengan 5½/7. ACS Superchess kemudian memenangi kesembilan pertandingannya dan meraih gelar juara.\n\nKembali ke 42.Nf3 dan temukan 42.Nd3. Lalu lanjutkan melawan mesin."
+        },
+        "it": {
+          "headline": "Superchess vince 5½–½, e Martirosyan si prende la prima scacchiera in 44 mosse",
+          "body": "ACS Superchess ha battuto CSU Universitatea de Vest Timisoara 5½–½ nel 4º turno della Superlega rumena, e in prima scacchiera Martirosyan ha battuto GM Raahul V S (2393) in 44 mosse.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) aveva il Nero. La partita è girata su 42.Nf3, giocata con 2:28 sull’orologio. Stockfish voleva 42.Nd3, e dava il Nero chiaramente meglio prima (−1,96) e vincente dopo (−2,62). 42...b5, la sua prima scelta, è arrivata subito.\n\nEra la prima di quattro vittorie in cinque turni per Martirosyan, che ha chiuso senza sconfitte con 5½/7. ACS Superchess ha poi vinto tutti e nove i match, e il titolo.\n\nTorna a 42.Nf3 e trova 42.Nd3. Poi continua contro il motore."
+        },
+        "ja": {
+          "headline": "Superchessが5½–½で勝利、Martirosyanは1番ボードを44手で制す",
+          "body": "ルーマニア・スーパーリーグ第4ラウンドで、ACS SuperchessがCSU Universitatea de Vest Timisoaraを5½–½で下し、1番ボードではMartirosyanがGM Raahul V S（2393）に44手で勝ちました。\n\nGM Haik M. Martirosyan（ACS Superchess、2661）は黒番でした。分かれ目は、残り2:28で指された42.Nf3でした。Stockfishが望んだのは42.Nd3。42.Nf3の後、Stockfishの評価は黒の明確な優勢（−1.96）から勝勢（−2.62）に変わり、すぐに第一候補の42...b5が返ってきました。\n\nこれはMartirosyanが5ラウンドで挙げた4勝のうち最初の1勝で、Martirosyanは無敗のまま5½/7で大会を終えました。ACS Superchessはその後、全9マッチに勝って優勝を果たしました。\n\n42.Nf3に戻って42.Nd3を見つけましょう。それからエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "Superchess 5½–½ 승리… Martirosyan은 1번 보드에서 44수 만에 이겨",
+          "body": "ACS Superchess가 루마니아 슈퍼리그 4라운드에서 CSU Universitatea de Vest Timisoara를 5½–½로 꺾었고, 1번 보드에서는 Martirosyan이 GM Raahul V S(2393)에게 44수 만에 이겼습니다.\n\nGM Haik M. Martirosyan(ACS Superchess, 2661)은 흑을 잡았습니다. 승부를 가른 수는 2:28를 남기고 둔 42.Nf3였습니다. Stockfish가 원한 수는 42.Nd3였습니다. 42.Nf3 이후 Stockfish의 평가는 흑의 뚜렷한 우세(−1.96)에서 이기는 형세(−2.62)로 바뀌었고, 곧바로 첫 번째 후보 수인 42...b5가 나왔습니다.\n\n이 승리는 Martirosyan이 다섯 라운드 동안 거둔 4승 가운데 첫 승이었고, Martirosyan은 무패로 5½/7을 기록하며 대회를 마쳤습니다. ACS Superchess는 이후 아홉 매치를 모두 이기고 우승했습니다.\n\n42.Nf3로 돌아가 42.Nd3를 찾아보세요. 이어서 엔진을 상대로 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "Superchess menang 5½–½, dan Martirosyan menangi papan satu dalam 44 langkah",
+          "body": "ACS Superchess menewaskan CSU Universitatea de Vest Timisoara 5½–½ dalam pusingan 4 Liga Super Romania, dan di papan satu Martirosyan menewaskan GM Raahul V S (2393) dalam 44 langkah.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) bermain dengan Hitam. Permainan berubah pada 42.Nf3, yang dimainkan dengan baki 2:28. Stockfish mahukan 42.Nd3. Enjin menilai Hitam jelas mendahului sebelumnya (−1,96) dan menang selepasnya (−2,62), dan 42...b5, pilihan pertamanya, tiba serta-merta.\n\nItulah yang pertama daripada empat kemenangan Martirosyan dalam lima pusingan, dan Martirosyan menamatkan liga tanpa kalah dengan 5½/7. ACS Superchess kemudian memenangi kesemua sembilan perlawanan dan merangkul gelaran juara.\n\nKembali ke 42.Nf3 dan cari 42.Nd3. Kemudian teruskan menentang enjin."
+        },
+        "nl": {
+          "headline": "Superchess wint met 5½–½, en Martirosyan pakt bord één in 44 zetten",
+          "body": "ACS Superchess won met 5½–½ van CSU Universitatea de Vest Timisoara in ronde 4 van de Roemeense Superliga, en aan bord één versloeg Martirosyan GM Raahul V S (2393) in 44 zetten.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) speelde met zwart. De partij kantelde met 42.Nf3, gespeeld met nog 2:28. Stockfish wilde 42.Nd3. Stockfish zag zwart ervoor duidelijk beter staan (−1,96) en erna gewonnen (−2,62), en 42...b5, de eerste keuze van Stockfish, kwam meteen.\n\nHet was de eerste van vier overwinningen in vijf ronden voor Martirosyan, die ongeslagen eindigde op 5½/7. ACS Superchess won daarna alle negen matches en de titel.\n\nGa terug naar 42.Nf3 en vind 42.Nd3. Speel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "Superchess vinner 5½–½, og Martirosyan tar førstebrettet på 44 trekk",
+          "body": "ACS Superchess slo CSU Universitatea de Vest Timisoara 5½–½ i 4. runde av den rumenske superligaen, og på første brett slo Martirosyan GM Raahul V S (2393) på 44 trekk.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) hadde svart. Partiet snudde med 42.Nf3, spilt med 2:28 igjen. Stockfish ville ha 42.Nd3. Motoren regnet svart som klart bedre før (−1,96) og som vinnende etter (−2,62), og 42...b5, Stockfishs førstevalg, kom med en gang.\n\nDet var den første av fire seire på fem runder for Martirosyan, som endte uten tap med 5½/7. ACS Superchess vant senere alle ni matchene og tittelen.\n\nGå tilbake til 42.Nf3 og finn 42.Nd3. Spill så videre mot motoren."
+        },
+        "pl": {
+          "headline": "Superchess zwycięża 5½–½, a Martirosyan wygrywa na pierwszej szachownicy w 44 ruchach",
+          "body": "ACS Superchess pokonuje CSU Universitatea de Vest Timisoara 5½–½ w 4. rundzie rumuńskiej Superligi, a na pierwszej szachownicy Martirosyan pokonuje GM Raahul V S (2393) w 44 ruchach.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) gra czarnymi. Partia odwraca się po 42.Nf3, zagranym przy 2:28 na zegarze. Stockfish chciał 42.Nd3. Przed tym ruchem oceniał pozycję czarnych jako wyraźnie lepszą (−1,96), po nim jako wygraną (−2,62), a od razu padło 42...b5, pierwszy wybór silnika.\n\nOd tej partii Martirosyan wygrywa cztery razy w pięciu rundach i kończy turniej bez porażki, z wynikiem 5½/7. ACS Superchess wygrywa ostatecznie wszystkie dziewięć meczów i tytuł.\n\nWróć do 42.Nf3 i znajdź 42.Nd3. Potem graj dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Superchess vence por 5½–½, e Martirosyan ganha no primeiro tabuleiro em 44 lances",
+          "body": "O ACS Superchess venceu o CSU Universitatea de Vest Timisoara por 5½–½ na 4ª rodada da Superliga Romena, e no primeiro tabuleiro Martirosyan venceu GM Raahul V S (2393) em 44 lances.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) jogou de pretas. A partida virou em 42.Nf3, jogado com 2:28 no relógio. O Stockfish queria 42.Nd3. Via clara vantagem das pretas antes (−1,96) e posição vencedora depois (−2,62), e 42...b5, sua primeira opção, veio logo em seguida.\n\nFoi a primeira de quatro vitórias de Martirosyan em cinco rodadas, e a campanha terminou sem derrotas, com 5½/7. O ACS Superchess acabou vencendo os nove matches e o título.\n\nVolte a 42.Nf3 e encontre 42.Nd3. Depois continue contra o motor."
+        },
+        "ro": {
+          "headline": "Superchess câștigă cu 5½–½, iar Martirosyan ia punctul la prima masă în 44 de mutări",
+          "body": "ACS Superchess a învins CSU Universitatea de Vest Timisoara cu 5½–½ în runda a 4-a a Superligii României, iar la prima masă Martirosyan a câștigat contra GM Raahul V S (2393) în 44 de mutări.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) a jucat cu negrele. Partida s-a întors la 42.Nf3, jucată cu 2:28 rămase. Stockfish voia 42.Nd3. Considera Negrul clar mai bun înainte (−1,96) și câștigător după (−2,62), iar 42...b5, prima sa alegere, a urmat imediat.\n\nA fost prima dintre cele patru victorii obținute de Martirosyan în cinci runde, iar Martirosyan a încheiat turneul fără nicio înfrângere, cu 5½/7. ACS Superchess a câștigat apoi toate cele nouă meciuri și titlul.\n\nÎntoarce-te la 42.Nf3 și găsește 42.Nd3. Apoi continuă contra motorului."
+        },
+        "ru": {
+          "headline": "Superchess побеждает 5½–½, а Martirosyan выигрывает на первой доске за 44 хода",
+          "body": "ACS Superchess обыгрывает CSU Universitatea de Vest Timisoara 5½–½ в 4-м туре румынской Суперлиги, а на первой доске Martirosyan обыгрывает GM Raahul V S (2393) за 44 хода.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) играет чёрными. Перелом — 42.Nf3, сыгранный при 2:28 на часах. Stockfish хотел 42.Nd3. До хода движок давал чёрным явный перевес (−1,96), после — выигрыш (−2,62), и сразу последовал 42...b5 — первый выбор движка.\n\nЭто первая из четырёх побед Martirosyan за пять туров; итог — 5½/7 и ни одного поражения. ACS Superchess в итоге выигрывает все девять матчей и титул.\n\nВернитесь к 42.Nf3 и найдите 42.Nd3. А затем продолжите партию против движка."
+        },
+        "sv": {
+          "headline": "Superchess vinner med 5½–½, och Martirosyan tar förstabrädet på 44 drag",
+          "body": "ACS Superchess besegrade CSU Universitatea de Vest Timisoara med 5½–½ i rond 4 av rumänska superligan, och på första brädet besegrade Martirosyan GM Raahul V S (2393) på 44 drag.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) hade svart. Det vände på 42.Nf3, spelat med 2:28 kvar. Stockfish ville ha 42.Nd3. Motorn räknade svart som klart bättre före (−1,96) och som vinnande efter (−2,62), och 42...b5, Stockfishs förstaval, kom direkt.\n\nDet var den första av fyra vinster på fem ronder för Martirosyan, som slutade utan förlust på 5½/7. ACS Superchess vann sedan alla nio matcher och titeln.\n\nGå tillbaka till 42.Nf3 och hitta 42.Nd3. Spela sedan vidare mot motorn."
+        },
+        "th": {
+          "headline": "Superchess ชนะ 5½–½ และ Martirosyan เก็บชัยกระดานหนึ่งใน 44 ตา",
+          "body": "ACS Superchess ชนะ CSU Universitatea de Vest Timisoara 5½–½ ในรอบที่ 4 ของซูเปอร์ลีกโรมาเนีย และบนกระดานหนึ่ง Martirosyan ชนะ GM Raahul V S (2393) ใน 44 ตา\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) ถือฝ่ายดำ เกมพลิกที่ 42.Nf3 ซึ่งเดินเมื่อเหลือเวลา 2:28 Stockfish ต้องการ 42.Nd3 เอนจินประเมินว่าฝ่ายดำได้เปรียบชัดเจนก่อนตานั้น (−1.96) และอยู่ในสถานะชนะหลังตานั้น (−2.62) และ 42...b5 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจินก็มาทันที\n\nนี่เป็นชัยชนะครั้งแรกจากสี่ครั้งในห้ารอบของ Martirosyan ซึ่งจบรายการโดยไม่แพ้ใครด้วย 5½/7 ส่วน ACS Superchess ก็ชนะครบทั้งเก้าแมตช์และคว้าแชมป์ไปในที่สุด\n\nย้อนกลับไปที่ 42.Nf3 แล้วหา 42.Nd3 จากนั้นเล่นต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "Superchess 5½–½ kazandı, Martirosyan birinci masada 44 hamlede galip",
+          "body": "ACS Superchess, Romanya Süper Ligi'nin 4. turunda CSU Universitatea de Vest Timisoara'yı 5½–½ yendi; birinci masada Martirosyan, GM Raahul V S (2393) karşısında 44 hamlede kazandı.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) siyahla oynadı. Oyun, saatte 2:28 kala oynanan 42.Nf3 ile döndü. Stockfish 42.Nd3 hamlesini istiyordu. Öncesinde siyahı açık farkla üstün (−1,96), sonrasında kazanan konumda (−2,62) görüyordu ve ilk tercihi olan 42...b5 hemen geldi.\n\nBu, Martirosyan'ın beş turda aldığı dört galibiyetin ilkiydi; Martirosyan ligi 5½/7 ile yenilgisiz tamamladı. ACS Superchess ise dokuz maçın hepsini ve şampiyonluğu kazandı.\n\n42.Nf3 hamlesine dön ve 42.Nd3 hamlesini bul. Sonra motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Superchess thắng 5½–½, Martirosyan giành điểm ở bàn một sau 44 nước",
+          "body": "ACS Superchess thắng CSU Universitatea de Vest Timisoara 5½–½ ở vòng 4 giải Siêu hạng Romania, và ở bàn một Martirosyan thắng GM Raahul V S (2393) sau 44 nước.\n\nGM Haik M. Martirosyan (ACS Superchess, 2661) cầm quân Đen. Ván cờ đổi chiều ở 42.Nf3, được đi khi còn 2:28. Stockfish muốn 42.Nd3. Engine đánh giá Đen ưu thế rõ trước nước đó (−1,96) và ở thế thắng sau nước đó (−2,62), và 42...b5, lựa chọn số một của engine, đến ngay.\n\nĐó là ván thắng đầu tiên trong bốn ván thắng sau năm vòng của Martirosyan, người kết thúc giải bất bại với 5½/7. Sau đó ACS Superchess thắng cả chín trận và giành chức vô địch.\n\nQuay lại 42.Nf3 và tìm 42.Nd3. Rồi chơi tiếp với engine."
+        },
+        "zh-Hans": {
+          "headline": "Superchess以5½–½胜出，Martirosyan在第一台44回合击败对手",
+          "body": "ACS Superchess在罗马尼亚超级联赛第4轮以5½–½战胜CSU Universitatea de Vest Timisoara，第一台上，Martirosyan用44回合击败GM Raahul V S（2393）。\n\nGM Haik M. Martirosyan（ACS Superchess，2661）执黑。这盘棋的转折点是42.Nf3，走这步时还剩2:28。Stockfish想走的是42.Nd3。Stockfish认为这步之前黑方明显占优（−1.96），之后黑方胜势（−2.62），黑方随即走出Stockfish的首选42...b5。\n\n这是Martirosyan五轮四胜中的第一胜，Martirosyan最终以5½/7保持不败。ACS Superchess九场比赛全胜，夺得冠军。\n\n回到42.Nf3，找出42.Nd3。然后对着引擎继续下。"
+        },
+        "zh-Hant": {
+          "headline": "Superchess以5½–½勝出，Martirosyan在第一台44回合擊敗對手",
+          "body": "ACS Superchess在羅馬尼亞超級聯賽第4輪以5½–½擊敗CSU Universitatea de Vest Timisoara，第一台上，Martirosyan用44回合擊敗GM Raahul V S（2393）。\n\nGM Haik M. Martirosyan（ACS Superchess，2661）執黑。這盤棋的轉折點是42.Nf3，走這步時還剩2:28。Stockfish想走的是42.Nd3。Stockfish認為這步之前黑方明顯佔優（−1.96），之後黑方勝勢（−2.62），黑方隨即走出Stockfish的首選42...b5。\n\n這是Martirosyan五輪四勝中的第一勝，Martirosyan最後以5½/7保持不敗。ACS Superchess九場比賽全勝，奪得冠軍。\n\n回到42.Nf3，找出42.Nd3。然後對著引擎繼續下。"
+        }
+      },
+      "fen": "8/4k2p/1pp3p1/2n1Pp2/r4P2/1b3NP1/4BK1P/1R6 b - - 3 42",
+      "last": {
+        "from": "e1",
+        "to": "f3"
+      },
+      "url": "https://brasspawn.com/today/2026-10-06-raahul-v-s-martirosyan-romanian-team-chess-championships-r4",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-mens-super-league/round-4/IiImjXN2/FKVtMbTn"
+      },
+      "updatedAt": "2026-10-06T19:05:41.607Z"
+    },
+    {
+      "id": "2026-10-06-deac-filip-romanian-team-chess-championships-r4",
+      "status": "approved",
+      "date": "2026-10-06",
+      "rank": 1,
+      "weight": 404,
+      "event": {
+        "name": "Romanian Team Chess Championships 2026",
+        "short": "Romanian Team Chess Championships",
+        "section": "Men’s Super league",
+        "round": 4,
+        "location": "Eforie Nord, Romania",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-mens-super-league/round-4/IiImjXN2"
+      },
+      "white": {
+        "name": "Bogdan-Daniel Deac",
+        "short": "Deac",
+        "title": "GM",
+        "elo": 2654,
+        "team": "ACS SUPERCHESS"
+      },
+      "black": {
+        "name": "Lucian-Ioan Filip",
+        "short": "Filip",
+        "title": "IM",
+        "elo": 2293,
+        "team": "CSU UNIVERSITATEA DE VEST Timisoara"
+      },
+      "result": "1-0",
+      "opening": {
+        "eco": "B23",
+        "name": "Sicilian Defense: Closed"
+      },
+      "moves": "e4 c5 Nc3 e6 d4 cxd4 Qxd4 Nc6 Qe3 Nf6 Nf3 Be7 e5 Nd5 Nxd5 exd5 Bd2 d6 exd6 Qxd6 O-O-O O-O Bc3 Bf6 Bxf6 Qxf6 Rxd5 Be6 Rd6 Rfd8 Rxd8+ Rxd8 a3 Nd4 Nxd4 Rxd4 Bd3 g6 Re1 b6 g3 Rd8 h4 Rd5 Be4 Rc5 Rd1 h5 Rd6 Qe5 Qd4 Qxd4 Rxd4 Kg7 b4 Rc7 Kd2 Kf6 Kd3 b5 Rd6 Ke7 Rc6 Rd7+ Ke3 Kf6 Rc5",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 60,
+        "played": "b5",
+        "better": "g5",
+        "reply": "Rd6",
+        "replyPlayed": true,
+        "before": {
+          "cp": 179,
+          "mate": null
+        },
+        "after": {
+          "cp": 278,
+          "mate": null
+        },
+        "clock": 33
+      },
+      "headline": "33 seconds on the clock, 361 points between them: Deac wins in 34",
+      "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) beat IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) in 34 moves on board two in round 4 of the Romanian Super League.\n\nFrom move 26, Filip never had more than 1:22 on the clock; Deac had between five and 18 minutes. Filip played 30...b5 with 33 seconds left. Stockfish wanted 30...g5. It counted White clearly better before (+1.79) and winning after (+2.78), and 31.Rd6, its first choice, came straight back.\n\nACS Superchess won the match 5½–½.\n\nStop at 30...b5, give yourself 33 seconds, and find 30...g5. Then play it on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "33 ثانية على الساعة وفارق 361 نقطة في التصنيف: فوز لـDeac في 34 نقلة",
+          "body": "انتهى الدور على الرقعة الثانية بفوز GM Bogdan-Daniel Deac (ACS Superchess، 2654) على IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara، 2293) في 34 نقلة، في الجولة الرابعة من الدوري الروماني الممتاز.\n\nمنذ النقلة 26 لم تُظهر ساعة Filip أكثر من ⁨1:22⁩، بينما تراوح وقت Deac بين خمس دقائق و18 دقيقة. لُعبت نقلة Filip ⁨30...b5⁩ والوقت المتبقي 33 ثانية. أراد Stockfish ⁨30...g5⁩، وعدّ الأبيض متفوقًا بوضوح قبلها (⁨+1.79⁩) وفائزًا بعدها (⁨+2.78⁩). وجاءت ⁨31.Rd6⁩، الخيار الأول للمحرك، مباشرة.\n\nفاز فريق ACS Superchess بالمباراة ⁨5½–½⁩.\n\nتوقف عند ⁨30...b5⁩، وامنح نفسك 33 ثانية، واعثر على ⁨30...g5⁩. ثم تابع اللعب ضد المحرك."
+        },
+        "bg": {
+          "headline": "33 секунди на часовника, 361 точки разлика: Deac печели за 34 хода",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) победи IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) за 34 хода на втора дъска в 4-тия кръг на румънската Суперлига.\n\nОт 26-ия ход нататък часовникът на Filip нито веднъж не показа повече от 1:22, а Deac имаше между пет и 18 минути. Filip изигра 30...b5 с 33 секунди на часовника. Stockfish искаше 30...g5. Преди хода енджинът даваше ясно предимство на белите (+1,79), а след него — печеливша позиция (+2,78), и 31.Rd6, първият му избор, последва веднага.\n\nACS Superchess спечели мача с 5½–½.\n\nСпрете на 30...b5, дайте си 33 секунди и намерете 30...g5. После продължете партията срещу енджина."
+        },
+        "cs": {
+          "headline": "33 sekund na hodinách, rozdíl 361 bodů: Deac vyhrává po 34 tazích",
+          "body": "V partii GM Bogdan-Daniel Deac (ACS Superchess, 2654) – IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) na druhé šachovnici ve 4. kole rumunské superligy vyhrává po 34 tazích Deac.\n\nOd 26. tahu nemá Filip na hodinách nikdy víc než 1:22, Deac má mezi pěti a 18 minutami. Filip hraje 30...b5 s 33 sekundami na hodinách. Stockfish chtěl 30...g5 a hodnotil pozici před tahem jako jasně lepší pro bílé (+1,79), po něm jako vyhranou (+2,78). Okamžitě přišlo 31.Rd6, první volba enginu.\n\nACS Superchess vyhrává zápas 5½–½.\n\nZastav na 30...b5, dej si 33 sekund a najdi 30...g5. Pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "33 sekunder på uret, 361 ratingpoint imellem: Deac vinder i 34 træk",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) slog IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) i 34 træk på andet bræt i 4. runde af den rumænske superliga.\n\nFra træk 26 havde Filip aldrig mere end 1:22 på uret; Deac havde mellem fem og 18 minutter. Filip spillede 30...b5 med 33 sekunder tilbage. Stockfish ville have 30...g5. Motoren så hvid klart bedre før (+1,79) og til gevinst efter (+2,78), og 31.Rd6, Stockfishs førstevalg, kom med det samme.\n\nACS Superchess vandt matchen 5½–½.\n\nStop ved 30...b5, giv dig selv 33 sekunder, og find 30...g5. Spil så videre mod motoren."
+        },
+        "de": {
+          "headline": "33 Sekunden auf der Uhr, 361 Elo Unterschied: Deac gewinnt in 34 Zügen",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) schlug IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) in Runde 4 der rumänischen Superliga am zweiten Brett in 34 Zügen.\n\nAb Zug 26 hatte Filip nie mehr als 1:22 auf der Uhr, Deac zwischen fünf und 18 Minuten. Filip spielte 30...b5 mit 33 Sekunden auf der Uhr. Stockfish wollte 30...g5. Davor sah Stockfish Weiß klar besser (+1,79), danach auf Gewinn (+2,78), und 31.Rd6, die erste Wahl von Stockfish, kam sofort.\n\nACS Superchess gewann den Kampf 5½:½.\n\nBei 30...b5 anhalten, sich 33 Sekunden geben und 30...g5 finden. Dann gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "33 δευτερόλεπτα στο ρολόι, 361 βαθμοί διαφορά: Deac κερδίζει σε 34 κινήσεις",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) επικράτησε επί IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) σε 34 κινήσεις στη δεύτερη σκακιέρα, στον 4ο γύρο της ρουμανικής Σούπερ Λίγκας.\n\nΑπό την 26η κίνηση και μετά, Filip δεν είχε ποτέ πάνω από 1:22 στο ρολόι, ενώ Deac είχε από πέντε έως 18 λεπτά. Filip έπαιξε την 30...b5 με 33 δευτερόλεπτα στο ρολόι. Το Stockfish ήθελε την 30...g5. Έδινε καθαρό πλεονέκτημα στα λευκά πριν (+1,79) και νίκη μετά (+2,78), και η 31.Rd6, η πρώτη επιλογή της μηχανής, ήρθε αμέσως.\n\nΗ ACS Superchess κέρδισε τον αγώνα με 5½–½.\n\nΣταμάτα στην 30...b5, βάλε 33 δευτερόλεπτα στο ρολόι σου και βρες την 30...g5. Μετά συνέχισε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "33 segundos en el reloj y 361 puntos de diferencia: Deac gana en 34 jugadas",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) venció a IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) en 34 jugadas en el segundo tablero de la cuarta ronda de la Superliga rumana.\n\nDesde la jugada 26, Filip nunca tuvo más de 1:22 en el reloj; Deac tenía entre cinco y 18 minutos. Filip jugó 30...b5 con 33 segundos en el reloj. Stockfish quería 30...g5. Daba clara ventaja a las blancas antes (+1,79) y posición ganadora después (+2,78), y 31.Rd6, su primera opción, llegó enseguida.\n\nACS Superchess ganó el match 5½–½.\n\nDetente en 30...b5, date 33 segundos y encuentra 30...g5. Luego sigue contra el motor."
+        },
+        "fi": {
+          "headline": "Kellossa 33 sekuntia, eroa 361 pistettä: Deac voittaa 34 siirrossa",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) voitti IM Lucian-Ioan Filipin (CSU Universitatea de Vest Timisoara, 2293) 34 siirrossa kakkoslaudalla Romanian superliigan 4. kierroksella.\n\nSiirrosta 26 lähtien Filipillä oli kellossa enintään 1:22; Deacilla oli viidestä 18 minuuttiin. Filip pelasi 30...b5 kellossa 33 sekuntia jäljellä. Stockfish halusi 30...g5. Se antoi valkealle ennen siirtoa selvän edun (+1,79) ja sen jälkeen voittoaseman (+2,78), ja sen ykkösvalinta 31.Rd6 tuli heti.\n\nACS Superchess voitti ottelun 5½–½.\n\nPysähdy siirtoon 30...b5, anna itsellesi 33 sekuntia ja löydä 30...g5. Jatka sitten peliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "33 secondes à la pendule, 361 points d’écart : Deac gagne en 34 coups",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) a battu IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) en 34 coups au deuxième échiquier lors de la 4e ronde de la Superligue roumaine.\n\nÀ partir du 26e coup, Filip n’a jamais eu plus de 1:22 à la pendule ; Deac avait entre cinq et 18 minutes. Filip a joué 30...b5 avec 33 secondes à la pendule. Stockfish voulait 30...g5, et donnait les Blancs nettement mieux avant (+1,79) et gagnants après (+2,78). 31.Rd6, son premier choix, a suivi aussitôt.\n\nACS Superchess a gagné le match 5½–½.\n\nArrêtez-vous sur 30...b5, donnez-vous 33 secondes et trouvez 30...g5. Puis continuez contre le moteur."
+        },
+        "he": {
+          "headline": "33 שניות בשעון ופער דירוג של 361 נקודות: ניצחון ל־Deac אחרי 34 מסעים",
+          "body": "המשחק בלוח השני בסיבוב ה־4 של ליגת העל הרומנית הסתיים בניצחון ל־GM Bogdan-Daniel Deac (ACS Superchess, 2654) על IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) אחרי 34 מסעים.\n\nממסע 26 לא הראה השעון של Filip יותר מ־⁨1:22⁩, ואילו בשעון של Deac היו בין חמש ל־18 דקות. המסע ⁨30...b5⁩ שוחק כשבשעון של Filip נותרו 33 שניות. Stockfish רצה ב־⁨30...g5⁩, והעריך יתרון ברור ללבן לפני המסע (⁨+1.79⁩) ועמדה מנצחת אחריו (⁨+2.78⁩). המסע ⁨31.Rd6⁩, הבחירה הראשונה של המנוע, בא מיד.\n\nקבוצת ACS Superchess ניצחה במפגש ⁨5½–½⁩.\n\nעצרו ב־⁨30...b5⁩, תנו לעצמכם 33 שניות ומצאו את ⁨30...g5⁩. ואז המשיכו לשחק מול המנוע."
+        },
+        "hi": {
+          "headline": "घड़ी पर 33 सेकंड, रेटिंग में 361 अंकों का फ़र्क़: 34 चालों में Deac की जीत",
+          "body": "रोमानियाई सुपर लीग के राउंड 4 में बोर्ड दो पर GM Bogdan-Daniel Deac (ACS Superchess, 2654) ने IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) को 34 चालों में हराया।\n\nचाल 26 से Filip की घड़ी पर कभी 1:22 से ज़्यादा नहीं थे; Deac की घड़ी पर पाँच से 18 मिनट के बीच थे। 33 सेकंड बचे रहते Filip ने 30...b5 खेला। Stockfish 30...g5 चाहता था। उसके हिसाब से पहले सफ़ेद साफ़ बेहतर था (+1.79) और बाद में जीत की स्थिति में (+2.78), और इंजन की पहली पसंद 31.Rd6 तुरंत आया।\n\nACS Superchess ने मुक़ाबला 5½–½ से जीता।\n\n30...b5 पर रुकें, खुद को 33 सेकंड दें, और 30...g5 खोजें। फिर इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "33 másodperc az órán, 361 pont különbség: Deac 34 lépésben nyert",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) 34 lépésben nyert IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) ellen a második táblán, a román Szuperliga 4. fordulójában.\n\nA 26. lépéstől Filip óráján soha nem volt több 1:22-nél, Deac óráján pedig öt és 18 perc között járt az idő. Filip 33 másodperccel az óráján játszotta a 30...b5 lépést. A Stockfish a 30...g5 lépést akarta. Előtte világos egyértelmű előnyét látta (+1,79), utána nyerő állást (+2,78), és azonnal jött a 31.Rd6, az első választása.\n\nAz ACS Superchess 5½–½ arányban nyerte a mérkőzést.\n\nÁllj meg a 30...b5 lépésnél, adj magadnak 33 másodpercet, és találd meg a 30...g5 lépést. Aztán játszd tovább a motor ellen."
+        },
+        "id": {
+          "headline": "33 detik di jam, selisih 361 poin: Deac menang dalam 34 langkah",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) mengalahkan IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) dalam 34 langkah di papan dua pada babak 4 Liga Super Rumania.\n\nSejak langkah 26, Filip tidak pernah punya lebih dari 1:22 di jam; Deac punya antara lima dan 18 menit. Filip memainkan 30...b5 dengan sisa 33 detik. Stockfish menginginkan 30...g5. Mesin menilai Putih unggul jelas sebelumnya (+1,79) dan menang sesudahnya (+2,78), dan 31.Rd6, pilihan pertamanya, langsung datang.\n\nACS Superchess memenangi pertandingan 5½–½.\n\nBerhenti di 30...b5, beri dirimu 33 detik, dan temukan 30...g5. Lalu lanjutkan melawan mesin."
+        },
+        "it": {
+          "headline": "33 secondi sull’orologio, 361 punti di differenza: Deac vince in 34 mosse",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) ha battuto IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) in 34 mosse in seconda scacchiera nel 4º turno della Superlega rumena.\n\nDalla mossa 26 Filip non ha mai avuto più di 1:22 sull’orologio; Deac aveva tra i cinque e i 18 minuti. Filip ha giocato 30...b5 con 33 secondi sull’orologio. Stockfish voleva 30...g5, e dava il Bianco chiaramente meglio prima (+1,79) e vincente dopo (+2,78). 31.Rd6, la sua prima scelta, è arrivata subito.\n\nACS Superchess ha vinto il match 5½–½.\n\nFermati su 30...b5, datti 33 secondi e trova 30...g5. Poi continua contro il motore."
+        },
+        "ja": {
+          "headline": "残り33秒、レーティング差361点、Deacが34手で勝利",
+          "body": "GM Bogdan-Daniel Deac（ACS Superchess、2654）が、ルーマニア・スーパーリーグ第4ラウンドの2番ボードでIM Lucian-Ioan Filip（CSU Universitatea de Vest Timisoara、2293）に34手で勝ちました。\n\n26手目以降、Filipの時計は一度も1:22を超えませんでした。一方、Deacの残り時間は5分から18分の間でした。Filipは残り33秒で30...b5を指しました。Stockfishが望んだのは30...g5。30...b5の後、Stockfishの評価は白の明確な優勢（+1.79）から勝勢（+2.78）に変わり、すぐに第一候補の31.Rd6が返ってきました。\n\nACS Superchessはマッチを5½–½で制しました。\n\n30...b5で止め、自分にも33秒だけ与えて、30...g5を見つけましょう。それからエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "시계에 33초, 레이팅 차 361점… Deac, 34수 만에 승리",
+          "body": "GM Bogdan-Daniel Deac(ACS Superchess, 2654)가 루마니아 슈퍼리그 4라운드 2번 보드에서 IM Lucian-Ioan Filip(CSU Universitatea de Vest Timisoara, 2293)에게 34수 만에 이겼습니다.\n\n26수째부터 Filip의 시계는 한 번도 1:22를 넘지 않았고, Deac의 시계에는 5분에서 18분 사이가 남아 있었습니다. Filip은 33초를 남기고 30...b5를 두었습니다. Stockfish가 원한 수는 30...g5였습니다. 30...b5 이후 Stockfish의 평가는 백의 뚜렷한 우세(+1.79)에서 이기는 형세(+2.78)로 바뀌었고, 곧바로 첫 번째 후보 수인 31.Rd6가 나왔습니다.\n\nACS Superchess는 매치를 5½–½로 이겼습니다.\n\n30...b5에서 멈추고 스스로에게 33초를 준 뒤 30...g5를 찾아보세요. 이어서 엔진을 상대로 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "33 saat pada jam, beza 361 mata: Deac menang dalam 34 langkah",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) menewaskan IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) dalam 34 langkah di papan dua dalam pusingan 4 Liga Super Romania.\n\nDari langkah 26, Filip tidak pernah mempunyai lebih daripada 1:22 pada jam; Deac mempunyai antara lima hingga 18 minit. Filip memainkan 30...b5 dengan baki 33 saat. Stockfish mahukan 30...g5. Enjin menilai Putih jelas mendahului sebelumnya (+1,79) dan menang selepasnya (+2,78), dan 31.Rd6, pilihan pertamanya, tiba serta-merta.\n\nACS Superchess memenangi perlawanan 5½–½.\n\nBerhenti pada 30...b5, beri diri anda 33 saat, dan cari 30...g5. Kemudian teruskan menentang enjin."
+        },
+        "nl": {
+          "headline": "33 seconden op de klok, 361 ratingpunten verschil: Deac wint in 34 zetten",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) versloeg IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) in 34 zetten aan bord twee in ronde 4 van de Roemeense Superliga.\n\nVanaf zet 26 had Filip nooit meer dan 1:22 op de klok; Deac had tussen vijf en 18 minuten. Filip speelde 30...b5 met nog 33 seconden. Stockfish wilde 30...g5. Stockfish zag wit ervoor duidelijk beter staan (+1,79) en erna gewonnen (+2,78), en 31.Rd6, de eerste keuze van Stockfish, kwam meteen.\n\nACS Superchess won de match met 5½–½.\n\nStop bij 30...b5, geef jezelf 33 seconden en vind 30...g5. Speel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "33 sekunder på klokka, 361 poeng imellom: Deac vinner på 34 trekk",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) slo IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) på 34 trekk på andre brett i 4. runde av den rumenske superligaen.\n\nFra trekk 26 hadde Filip aldri mer enn 1:22 på klokka; Deac hadde mellom fem og 18 minutter. Filip spilte 30...b5 med 33 sekunder igjen. Stockfish ville ha 30...g5. Motoren regnet hvit som klart bedre før (+1,79) og som vinnende etter (+2,78), og 31.Rd6, Stockfishs førstevalg, kom med en gang.\n\nACS Superchess vant matchen 5½–½.\n\nStopp ved 30...b5, gi deg selv 33 sekunder, og finn 30...g5. Spill så videre mot motoren."
+        },
+        "pl": {
+          "headline": "33 sekundy na zegarze, 361 punktów różnicy: Deac wygrywa w 34 ruchach",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) pokonuje IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) w 34 ruchach na drugiej szachownicy w 4. rundzie rumuńskiej Superligi.\n\nOd 26. ruchu Filip nie ma na zegarze więcej niż 1:22, a Deac ma od pięciu do 18 minut. Filip gra 30...b5, mając 33 sekundy na zegarze. Stockfish chciał 30...g5. Przed tym ruchem oceniał pozycję białych jako wyraźnie lepszą (+1,79), po nim jako wygraną (+2,78), a od razu padło 31.Rd6, pierwszy wybór silnika.\n\nACS Superchess wygrywa mecz 5½–½.\n\nZatrzymaj się na 30...b5, daj sobie 33 sekundy i znajdź 30...g5. Potem graj dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "33 segundos no relógio, 361 pontos de diferença: Deac vence em 34 lances",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) venceu IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) em 34 lances no segundo tabuleiro da 4ª rodada da Superliga Romena.\n\nA partir do lance 26, Filip nunca teve mais de 1:22 no relógio; Deac tinha entre cinco e 18 minutos. Filip jogou 30...b5 com 33 segundos no relógio. O Stockfish queria 30...g5. Via clara vantagem das brancas antes (+1,79) e posição vencedora depois (+2,78), e 31.Rd6, sua primeira opção, veio logo em seguida.\n\nO ACS Superchess venceu o match por 5½–½.\n\nPare em 30...b5 e, em 33 segundos, encontre 30...g5. Depois continue contra o motor."
+        },
+        "ro": {
+          "headline": "33 de secunde pe ceas, 361 de puncte diferență: Deac câștigă în 34 de mutări",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) a câștigat contra IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) în 34 de mutări, la masa a doua, în runda a 4-a a Superligii României.\n\nDe la mutarea 26, Filip nu a avut niciodată mai mult de 1:22 pe ceas; Deac a avut între cinci și 18 minute. Filip a jucat 30...b5 cu 33 de secunde rămase. Stockfish voia 30...g5. Considera Albul clar mai bun înainte (+1,79) și câștigător după (+2,78), iar 31.Rd6, prima sa alegere, a urmat imediat.\n\nACS Superchess a câștigat meciul cu 5½–½.\n\nOprește-te la 30...b5, dă-ți 33 de secunde și găsește 30...g5. Apoi continuă contra motorului."
+        },
+        "ru": {
+          "headline": "33 секунды на часах и 361 пункт разницы: Deac выигрывает за 34 хода",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) обыгрывает IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) за 34 хода на второй доске в 4-м туре румынской Суперлиги.\n\nС 26-го хода у Filip ни разу не было на часах больше 1:22, у Deac — от пяти до 18 минут. Filip играет 30...b5, имея 33 секунды. Stockfish хотел 30...g5. До хода движок давал белым явный перевес (+1,79), после — выигрыш (+2,78), и сразу последовал 31.Rd6 — первый выбор движка.\n\nACS Superchess выигрывает матч 5½–½.\n\nОстановитесь на 30...b5, дайте себе 33 секунды и найдите 30...g5. А затем продолжите партию против движка."
+        },
+        "sv": {
+          "headline": "33 sekunder på klockan, 361 poäng emellan: Deac vinner på 34 drag",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) besegrade IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) på 34 drag på andra brädet i rond 4 av rumänska superligan.\n\nFrån drag 26 hade Filip aldrig mer än 1:22 på klockan; Deac hade mellan fem och 18 minuter. Filip spelade 30...b5 med 33 sekunder kvar. Stockfish ville ha 30...g5. Motorn räknade vit som klart bättre före (+1,79) och som vinnande efter (+2,78), och 31.Rd6, Stockfishs förstaval, kom direkt.\n\nACS Superchess vann matchen med 5½–½.\n\nStanna vid 30...b5, ge dig själv 33 sekunder och hitta 30...g5. Spela sedan vidare mot motorn."
+        },
+        "th": {
+          "headline": "33 วินาทีบนนาฬิกา เรตติ้งห่างกัน 361 แต้ม: Deac ชนะใน 34 ตา",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) ชนะ IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) ใน 34 ตา บนกระดานที่สอง ในรอบที่ 4 ของซูเปอร์ลีกโรมาเนีย\n\nตั้งแต่ตาที่ 26 Filip ไม่เคยมีเวลาบนนาฬิกาเกิน 1:22 ขณะที่ Deac มีระหว่างห้าถึง 18 นาที Filip เดิน 30...b5 เมื่อเหลือเวลา 33 วินาที Stockfish ต้องการ 30...g5 เอนจินประเมินว่าฝ่ายขาวได้เปรียบชัดเจนก่อนตานั้น (+1.79) และอยู่ในสถานะชนะหลังตานั้น (+2.78) และ 31.Rd6 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจินก็มาทันที\n\nACS Superchess ชนะแมตช์ 5½–½\n\nหยุดที่ 30...b5 ให้เวลาตัวเอง 33 วินาที แล้วหา 30...g5 จากนั้นเล่นต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "Saatte 33 saniye, aralarında 361 puan: Deac 34 hamlede kazandı",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654), Romanya Süper Ligi'nin 4. turunda ikinci masada IM Lucian-Ioan Filip'i (CSU Universitatea de Vest Timisoara, 2293) 34 hamlede yendi.\n\n26. hamleden itibaren Filip'in saatinde hiçbir zaman 1:22'den fazla süre olmadı; Deac'in saatinde ise beş ile 18 dakika arası vardı. Filip, 30...b5 hamlesini saatte 33 saniye kala oynadı. Stockfish 30...g5 hamlesini istiyordu. Öncesinde beyazı açık farkla üstün (+1,79), sonrasında kazanan konumda (+2,78) görüyordu ve ilk tercihi olan 31.Rd6 hemen geldi.\n\nACS Superchess maçı 5½–½ kazandı.\n\n30...b5 hamlesinde dur, kendine 33 saniye ver ve 30...g5 hamlesini bul. Sonra motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "33 giây trên đồng hồ, chênh nhau 361 điểm hệ số: Deac thắng sau 34 nước",
+          "body": "GM Bogdan-Daniel Deac (ACS Superchess, 2654) thắng IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) sau 34 nước ở bàn hai, vòng 4 giải Siêu hạng Romania.\n\nTừ nước 26, Filip không lúc nào có quá 1:22 trên đồng hồ; Deac có từ năm đến 18 phút. Filip đi 30...b5 khi còn 33 giây. Stockfish muốn 30...g5. Engine đánh giá Trắng ưu thế rõ trước nước đó (+1,79) và ở thế thắng sau nước đó (+2,78), và 31.Rd6, lựa chọn số một của engine, đến ngay.\n\nACS Superchess thắng trận 5½–½.\n\nDừng ở 30...b5, tự cho mình 33 giây, và tìm 30...g5. Rồi chơi tiếp với engine."
+        },
+        "zh-Hans": {
+          "headline": "棋钟剩33秒，等级分相差361分：Deac用34回合取胜",
+          "body": "GM Bogdan-Daniel Deac（ACS Superchess，2654）在罗马尼亚超级联赛第4轮第二台34回合击败IM Lucian-Ioan Filip（CSU Universitatea de Vest Timisoara，2293）。\n\n从第26回合起，Filip棋钟上的时间从未超过1:22；Deac的时间则在5到18分钟之间。Filip在剩33秒时走出30...b5。Stockfish想走的是30...g5。Stockfish认为这步之前白方明显占优（+1.79），之后白方胜势（+2.78），白方随即走出Stockfish的首选31.Rd6。\n\nACS Superchess以5½–½赢下比赛。\n\n停在30...b5，给自己33秒，找出30...g5。然后对着引擎继续下。"
+        },
+        "zh-Hant": {
+          "headline": "棋鐘剩33秒，等級分相差361分：Deac用34回合取勝",
+          "body": "GM Bogdan-Daniel Deac（ACS Superchess，2654）在羅馬尼亞超級聯賽第4輪第二台34回合擊敗IM Lucian-Ioan Filip（CSU Universitatea de Vest Timisoara，2293）。\n\n從第26回合起，Filip棋鐘上的時間從未超過1:22；Deac的時間則在5到18分鐘之間。Filip在剩33秒時走出30...b5。Stockfish想走的是30...g5。Stockfish認為這步之前白方明顯佔優（+1.79），之後白方勝勢（+2.78），白方隨即走出Stockfish的首選31.Rd6。\n\nACS Superchess以5½–½贏下比賽。\n\n停在30...b5，給自己33秒，找出30...g5。然後對著引擎繼續下。"
+        }
+      },
+      "fen": "8/p1r2p2/4bkp1/1p5p/1P1RB2P/P2K2P1/2P2P2/8 w - - 0 31",
+      "last": {
+        "from": "b6",
+        "to": "b5"
+      },
+      "url": "https://brasspawn.com/today/2026-10-06-deac-filip-romanian-team-chess-championships-r4",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-mens-super-league/round-4/IiImjXN2/ID1hRm4V"
+      },
+      "updatedAt": "2026-10-06T19:05:47.261Z"
+    },
+    {
+      "id": "2026-10-06-nastore-dardha-romanian-team-chess-championships-r4",
+      "status": "approved",
+      "date": "2026-10-06",
+      "rank": 2,
+      "weight": 362,
+      "event": {
+        "name": "Romanian Team Chess Championships 2026",
+        "short": "Romanian Team Chess Championships",
+        "section": "Men’s Super league",
+        "round": 4,
+        "location": "Eforie Nord, Romania",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-mens-super-league/round-4/IiImjXN2"
+      },
+      "white": {
+        "name": "Pavel-Alexandru Nastore",
+        "short": "Nastore",
+        "title": "FM",
+        "elo": 2353,
+        "team": "CSU UNIVERSITATEA DE VEST Timisoara"
+      },
+      "black": {
+        "name": "Daniel Dardha",
+        "short": "Dardha",
+        "title": "GM",
+        "elo": 2612,
+        "team": "ACS SUPERCHESS"
+      },
+      "result": "0-1",
+      "opening": {
+        "eco": "B46",
+        "name": "Sicilian Defense: Taimanov Variation"
+      },
+      "moves": "e4 c5 Nf3 e6 d4 cxd4 Nxd4 Nc6 Nc3 a6 Be3 Nf6 a3 Be7 Bc4 Qc7 Bb3 O-O f3 Na5 Qe2 d5 Bf2 e5 Nf5 Nxb3 Nxe7+ Qxe7 cxb3 d4 Nd5 Nxd5 exd5 Qd6 O-O Qxd5 Rfe1 f6 Qc4 Qxc4 bxc4 g5 g3 Kf7 Kf1 Rd8 h4 gxh4 gxh4 Be6 Rac1 Rac8 c5 Bb3 f4 Rd5",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 43,
+        "played": "g3",
+        "better": "h4",
+        "reply": "Kf7",
+        "replyPlayed": true,
+        "before": {
+          "cp": -229,
+          "mate": null
+        },
+        "after": {
+          "cp": -298,
+          "mate": null
+        },
+        "clock": 2187
+      },
+      "headline": "Three wins in three days: Dardha beats Nastore in 28",
+      "body": "GM Daniel Dardha (ACS Superchess, 2612) beat FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) in 28 moves in round 4 of the Romanian Super League, a third win in three days after Stanciu and Magold.\n\nThe queens came off on move 20, and the count turned on 22.g3, played with 36:27 left. Stockfish wanted 22.h4. It counted Black clearly better before (−2.29) and winning after (−2.98), and 22...Kf7, its first choice, came straight back. The black bishop reached b3 on move 27, and Stockfish counts the final position as a win for Black.\n\nDardha finished unbeaten on 5½/7, and ACS Superchess won all nine matches.\n\nGo back to 22.g3 and find 22.h4. Then play the ending on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "ثلاثة أيام وثلاثة انتصارات: فوز لـDardha على Nastore في 28 نقلة",
+          "body": "انتهى الدور بفوز GM Daniel Dardha (ACS Superchess، 2612) على FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara، 2353) في 28 نقلة، في الجولة الرابعة من الدوري الروماني الممتاز، وهو الفوز الثالث في ثلاثة أيام بعد الفوز على Stanciu وعلى Magold.\n\nتم تبادل الوزيرين في النقلة 20، وتحوّل التقييم عند ⁨22.g3⁩ التي لُعبت والوقت المتبقي ⁨36:27⁩. أراد Stockfish ⁨22.h4⁩، وعدّ الأسود متفوقًا بوضوح قبلها (⁨−2.29⁩) وفائزًا بعدها (⁨−2.98⁩). وجاءت ⁨22...Kf7⁩، الخيار الأول للمحرك، مباشرة. ووصل الفيل الأسود إلى b3 في النقلة 27، ويعدّ Stockfish الوضع النهائي فوزًا للأسود.\n\nانتهى رصيد Dardha عند ⁨5½/7⁩ دون أي خسارة، وفاز فريق ACS Superchess بالمباريات التسع كلها.\n\nارجع إلى ⁨22.g3⁩ واعثر على ⁨22.h4⁩. ثم تابع لعب النهاية ضد المحرك."
+        },
+        "bg": {
+          "headline": "Три победи за три дни: Dardha побеждава Nastore за 28 хода",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) победи FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) за 28 хода в 4-тия кръг на румънската Суперлига — трета победа за три дни след Stanciu и Magold.\n\nДамите се размениха на 20-ия ход, а оценката се обърна с 22.g3, изигран с 36:27 на часовника. Stockfish искаше 22.h4. Преди хода енджинът даваше ясно предимство на черните (−2,29), а след него — печеливша позиция (−2,98), и 22...Kf7, първият му избор, последва веднага. Черният офицер стигна до b3 на 27-ия ход, а Stockfish оценява крайната позиция като печеливша за черните.\n\nDardha завърши без загуба с 5½/7, а ACS Superchess спечели всичките девет мача.\n\nВърнете се към 22.g3 и намерете 22.h4. После продължете ендшпила срещу енджина."
+        },
+        "cs": {
+          "headline": "Tři výhry za tři dny: partii Nastore – Dardha vyhrává Dardha po 28 tazích",
+          "body": "V partii FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) – GM Daniel Dardha (ACS Superchess, 2612) ve 4. kole rumunské superligy vyhrává po 28 tazích Dardha, třetí výhra za tři dny po výhrách proti Stanciu a Magold.\n\nVe 20. tahu se vyměnily dámy a hodnocení se zlomilo tahem 22.g3, zahraným s 36:27 na hodinách. Stockfish chtěl 22.h4 a hodnotil pozici před tahem jako jasně lepší pro černé (−2,29), po něm jako vyhranou (−2,98). Okamžitě přišlo 22...Kf7, první volba enginu. Černý střelec došel ve 27. tahu na b3 a konečnou pozici hodnotí Stockfish jako výhru černých.\n\nDardha končí bez porážky s 5½/7 a ACS Superchess vyhrává všech devět zápasů.\n\nVrať se k 22.g3 a najdi 22.h4. Pak si koncovku zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "Tre sejre på tre dage: Dardha slår Nastore i 28 træk",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) slog FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) i 28 træk i 4. runde af den rumænske superliga, den tredje sejr på tre dage efter Stanciu og Magold.\n\nDronningerne blev byttet af i 20. træk, og vurderingen vendte med 22.g3, spillet med 36:27 tilbage. Stockfish ville have 22.h4. Motoren så sort klart bedre før (−2,29) og til gevinst efter (−2,98), og 22...Kf7, Stockfishs førstevalg, kom med det samme. Den sorte løber nåede b3 i 27. træk, og Stockfish vurderer slutstillingen som gevinst til sort.\n\nDardha sluttede uden nederlag med 5½/7, og ACS Superchess vandt alle ni matcher.\n\nGå tilbage til 22.g3 og find 22.h4. Spil så slutspillet videre mod motoren."
+        },
+        "de": {
+          "headline": "Drei Siege in drei Tagen: Dardha schlägt Nastore in 28 Zügen",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) schlug FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) in Runde 4 der rumänischen Superliga in 28 Zügen, der dritte Sieg in drei Tagen nach Siegen gegen Stanciu und Magold.\n\nIm 20. Zug wurden die Damen getauscht, und die Bewertung kippte mit 22.g3, gespielt mit 36:27 auf der Uhr. Stockfish wollte 22.h4. Davor sah Stockfish Schwarz klar besser (−2,29), danach auf Gewinn (−2,98), und 22...Kf7, die erste Wahl von Stockfish, kam sofort. Im 27. Zug erreichte der schwarze Läufer b3, und Stockfish wertet die Schlussstellung als Gewinn für Schwarz.\n\nDardha blieb ungeschlagen und kam auf 5½/7, und ACS Superchess gewann alle neun Kämpfe.\n\nZurück zu 22.g3 und 22.h4 finden. Dann das Endspiel gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Τρεις νίκες σε τρεις μέρες: νίκη Dardha επί Nastore σε 28 κινήσεις",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) επικράτησε επί FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) σε 28 κινήσεις στον 4ο γύρο της ρουμανικής Σούπερ Λίγκας, τρίτη νίκη σε τρεις μέρες μετά τις νίκες επί Stanciu και Magold.\n\nΟι βασίλισσες έφυγαν από τη σκακιέρα στην 20ή κίνηση, και η εκτίμηση γύρισε στην 22.g3, που παίχτηκε με 36:27 στο ρολόι. Το Stockfish ήθελε την 22.h4. Έδινε καθαρό πλεονέκτημα στα μαύρα πριν (−2,29) και νίκη μετά (−2,98), και η 22...Kf7, η πρώτη επιλογή της μηχανής, ήρθε αμέσως. Ο μαύρος αξιωματικός έφτασε στο b3 στην 27η κίνηση, και το Stockfish κρίνει την τελική θέση κερδισμένη για τα μαύρα.\n\nDardha τερμάτισε χωρίς ήττα με 5½/7, και η ACS Superchess κέρδισε και τους εννέα αγώνες.\n\nΓύρνα στην 22.g3 και βρες την 22.h4. Μετά συνέχισε το φινάλε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Tres victorias en tres días: Dardha vence a Nastore en 28 jugadas",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) venció a FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) en 28 jugadas en la cuarta ronda de la Superliga rumana, su tercera victoria en tres días después de ganar a Stanciu y a Magold.\n\nLas damas salieron del tablero en la jugada 20, y la valoración cambió con 22.g3, hecha con 36:27 en el reloj. Stockfish quería 22.h4. Daba clara ventaja a las negras antes (−2,29) y posición ganadora después (−2,98), y 22...Kf7, su primera opción, llegó enseguida. El alfil negro llegó a b3 en la jugada 27, y Stockfish da la posición final como ganada para las negras.\n\nDardha terminó sin derrotas con 5½/7, y ACS Superchess ganó los nueve matches.\n\nVuelve a 22.g3 y encuentra 22.h4. Luego sigue el final contra el motor."
+        },
+        "fi": {
+          "headline": "Kolme voittoa kolmessa päivässä: Dardha voittaa Nastoren 28 siirrossa",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) voitti FM Pavel-Alexandru Nastoren (CSU Universitatea de Vest Timisoara, 2353) 28 siirrossa Romanian superliigan 4. kierroksella, kolmas voitto kolmessa päivässä Stanciun ja Magoldin jälkeen.\n\nKuningattaret vaihtuivat pois siirrolla 20, ja arvio kääntyi siirtoon 22.g3, joka pelattiin kellossa 36:27 jäljellä. Stockfish halusi 22.h4. Se antoi mustalle ennen siirtoa selvän edun (−2,29) ja sen jälkeen voittoaseman (−2,98), ja sen ykkösvalinta 22...Kf7 tuli heti. Musta lähetti ehti b3:een siirrolla 27, ja Stockfish arvioi loppuaseman voitoksi mustalle.\n\nDardha päätti sarjan tappioitta tuloksella 5½/7, ja ACS Superchess voitti kaikki yhdeksän otteluaan.\n\nPalaa siirtoon 22.g3 ja löydä 22.h4. Jatka sitten loppupeliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Trois victoires en trois jours : Dardha bat Nastore en 28 coups",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) a battu FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) en 28 coups lors de la 4e ronde de la Superligue roumaine, une troisième victoire en trois jours après Stanciu et Magold.\n\nLes dames ont été échangées au 20e coup, et l’évaluation a basculé sur 22.g3, joué avec 36:27 à la pendule. Stockfish voulait 22.h4, et donnait les Noirs nettement mieux avant (−2,29) et gagnants après (−2,98). 22...Kf7, son premier choix, a suivi aussitôt. Le fou noir a atteint b3 au 27e coup, et Stockfish donne la position finale gagnante pour les Noirs.\n\nDardha a terminé sans défaite avec 5½/7, et ACS Superchess a gagné ses neuf matchs.\n\nRevenez à 22.g3 et trouvez 22.h4. Puis continuez la finale contre le moteur."
+        },
+        "he": {
+          "headline": "שלושה ימים, שלושה ניצחונות ל־Dardha: הפעם על Nastore, אחרי 28 מסעים",
+          "body": "המשחק בסיבוב ה־4 של ליגת העל הרומנית הסתיים בניצחון ל־GM Daniel Dardha (ACS Superchess, 2612) על FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) אחרי 28 מסעים, ניצחון שלישי בשלושה ימים אחרי הניצחונות על Stanciu ועל Magold.\n\nהמלכות הוחלפו במסע 20, ונקודת המפנה בהערכה הגיעה ב־⁨22.g3⁩, ששוחק כשנותרו ⁨36:27⁩. Stockfish רצה ב־⁨22.h4⁩, והעריך יתרון ברור לשחור לפני המסע (⁨−2.29⁩) ועמדה מנצחת אחריו (⁨−2.98⁩). המסע ⁨22...Kf7⁩, הבחירה הראשונה של המנוע, בא מיד. הרץ השחור הגיע ל־b3 במסע 27, ו־Stockfish מעריך את העמדה הסופית כניצחון לשחור.\n\nהמאזן הסופי של Dardha: ⁨5½/7⁩, ללא הפסד, ו־ACS Superchess ניצחה בכל תשעת המפגשים.\n\nחזרו ל־⁨22.g3⁩ ומצאו את ⁨22.h4⁩. ואז המשיכו לשחק את הסיום מול המנוע."
+        },
+        "hi": {
+          "headline": "तीन दिन में तीन जीत: 28 चालों में Nastore पर Dardha की जीत",
+          "body": "रोमानियाई सुपर लीग के राउंड 4 में GM Daniel Dardha (ACS Superchess, 2612) ने FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) को 28 चालों में हराया, और Stanciu और Magold के बाद यह तीन दिन में तीसरी जीत थी।\n\nचाल 20 पर रानियाँ बोर्ड से हट गईं, और आकलन 22.g3 पर पलटा; यह चाल 36:27 बचे रहते खेली गई। Stockfish 22.h4 चाहता था। उसके हिसाब से पहले काला साफ़ बेहतर था (−2.29) और बाद में जीत की स्थिति में (−2.98), और इंजन की पहली पसंद 22...Kf7 तुरंत आया। चाल 27 पर काला ऊँट b3 पर पहुँचा, और Stockfish अंतिम स्थिति को काले की जीत मानता है।\n\nDardha का स्कोर बिना किसी हार के 5½/7 रहा, और ACS Superchess ने सभी नौ मुक़ाबले जीते।\n\n22.g3 पर लौटें और 22.h4 खोजें। फिर एंडगेम को इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "Három győzelem három nap alatt: Dardha 28 lépésben nyert Nastore ellen",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) 28 lépésben nyert FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) ellen a román Szuperliga 4. fordulójában; Stanciu és Magold után ez volt a harmadik győzelme három nap alatt.\n\nA vezérek a 20. lépésben lekerültek a tábláról, és az értékelés a 22.g3 lépésnél fordult meg, amely 36:27-tel az órán született. A Stockfish a 22.h4 lépést akarta. Előtte sötét egyértelmű előnyét látta (−2,29), utána nyerő állást (−2,98), és azonnal jött a 22...Kf7, az első választása. A sötét futó a 27. lépésben a b3-ra ért, és a Stockfish a záróállást sötét számára nyerőnek értékeli.\n\nDardha veretlenül, 5½/7 ponttal zárt, az ACS Superchess pedig mind a kilenc mérkőzését megnyerte.\n\nMenj vissza a 22.g3 lépéshez, és találd meg a 22.h4 lépést. Aztán játszd tovább a végjátékot a motor ellen."
+        },
+        "id": {
+          "headline": "Tiga kemenangan dalam tiga hari: Dardha kalahkan Nastore dalam 28 langkah",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) mengalahkan FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) dalam 28 langkah di babak 4 Liga Super Rumania, kemenangan ketiga dalam tiga hari sesudah menang atas Stanciu dan Magold.\n\nKedua menteri keluar dari papan pada langkah 20, dan penilaian berbalik pada 22.g3, yang dimainkan dengan sisa 36:27. Stockfish menginginkan 22.h4. Mesin menilai Hitam unggul jelas sebelumnya (−2,29) dan menang sesudahnya (−2,98), dan 22...Kf7, pilihan pertamanya, langsung datang. Gajah hitam mencapai b3 pada langkah 27, dan Stockfish menilai posisi akhir sebagai kemenangan untuk Hitam.\n\nDardha menyelesaikan liga tanpa kalah dengan 5½/7, dan ACS Superchess memenangi kesembilan pertandingannya.\n\nKembali ke 22.g3 dan temukan 22.h4. Lalu lanjutkan akhir permainannya melawan mesin."
+        },
+        "it": {
+          "headline": "Tre vittorie in tre giorni: Dardha batte Nastore in 28 mosse",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) ha battuto FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) in 28 mosse nel 4º turno della Superlega rumena, terza vittoria in tre giorni dopo Stanciu e Magold.\n\nLe Donne sono state cambiate alla mossa 20, e la valutazione è girata su 22.g3, giocata con 36:27 sull’orologio. Stockfish voleva 22.h4, e dava il Nero chiaramente meglio prima (−2,29) e vincente dopo (−2,98). 22...Kf7, la sua prima scelta, è arrivata subito. L’Alfiere nero ha raggiunto b3 alla mossa 27, e Stockfish dà la posizione finale vinta per il Nero.\n\nDardha ha chiuso senza sconfitte con 5½/7, e ACS Superchess ha vinto tutti e nove i match.\n\nTorna a 22.g3 e trova 22.h4. Poi continua il finale contro il motore."
+        },
+        "ja": {
+          "headline": "3日で3勝、DardhaがNastoreに28手で勝利",
+          "body": "GM Daniel Dardha（ACS Superchess、2612）がルーマニア・スーパーリーグ第4ラウンドでFM Pavel-Alexandru Nastore（CSU Universitatea de Vest Timisoara、2353）に28手で勝ち、StanciuとMagoldに続いて3日で3勝目を挙げました。\n\n20手目でクイーンが盤上から消え、評価が動いたのは残り36:27で指された22.g3でした。Stockfishが望んだのは22.h4。22.g3の後、Stockfishの評価は黒の明確な優勢（−2.29）から勝勢（−2.98）に変わり、すぐに第一候補の22...Kf7が返ってきました。27手目には黒のビショップがb3に到達し、Stockfishは最終局面を黒の勝ちと見ています。\n\nDardhaは無敗の5½/7で大会を終え、ACS Superchessは全9マッチに勝ちました。\n\n22.g3に戻って22.h4を見つけましょう。それからエンドゲームをエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "사흘 동안 3승… Dardha, Nastore에게 28수 만에 승리",
+          "body": "GM Daniel Dardha(ACS Superchess, 2612)가 루마니아 슈퍼리그 4라운드에서 FM Pavel-Alexandru Nastore(CSU Universitatea de Vest Timisoara, 2353)에게 28수 만에 이기며, Stanciu와 Magold에 이어 사흘 동안 세 번째 승리를 거두었습니다.\n\n20수째에 퀸이 교환되었고, 평가가 바뀐 수는 36:27를 남기고 둔 22.g3였습니다. Stockfish가 원한 수는 22.h4였습니다. 22.g3 이후 Stockfish의 평가는 흑의 뚜렷한 우세(−2.29)에서 이기는 형세(−2.98)로 바뀌었고, 곧바로 첫 번째 후보 수인 22...Kf7가 나왔습니다. 27수째에 흑 비숍이 b3에 도달했고, Stockfish는 최종 국면을 흑의 승리로 봅니다.\n\nDardha는 무패로 5½/7을 기록하며 대회를 마쳤고, ACS Superchess는 아홉 매치를 모두 이겼습니다.\n\n22.g3로 돌아가 22.h4를 찾아보세요. 이어서 엔진을 상대로 엔드게임을 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "Tiga kemenangan dalam tiga hari: Dardha tewaskan Nastore dalam 28 langkah",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) menewaskan FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) dalam 28 langkah dalam pusingan 4 Liga Super Romania, kemenangan ketiga dalam tiga hari selepas menewaskan Stanciu dan Magold.\n\nKedua-dua menteri keluar dari papan pada langkah 20, dan penilaian berubah pada 22.g3, yang dimainkan dengan baki 36:27. Stockfish mahukan 22.h4. Enjin menilai Hitam jelas mendahului sebelumnya (−2,29) dan menang selepasnya (−2,98), dan 22...Kf7, pilihan pertamanya, tiba serta-merta. Gajah hitam sampai ke b3 pada langkah 27, dan Stockfish menilai kedudukan akhir sebagai kemenangan untuk Hitam.\n\nDardha menamatkan liga tanpa kalah dengan 5½/7, dan ACS Superchess memenangi kesemua sembilan perlawanan.\n\nKembali ke 22.g3 dan cari 22.h4. Kemudian teruskan permainan akhir itu menentang enjin."
+        },
+        "nl": {
+          "headline": "Drie overwinningen in drie dagen: Dardha verslaat Nastore in 28 zetten",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) versloeg FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) in 28 zetten in ronde 4 van de Roemeense Superliga, de derde overwinning in drie dagen, na Stanciu en Magold.\n\nOp zet 20 gingen de dames van het bord, en de beoordeling kantelde met 22.g3, gespeeld met nog 36:27. Stockfish wilde 22.h4. Stockfish zag zwart ervoor duidelijk beter staan (−2,29) en erna gewonnen (−2,98), en 22...Kf7, de eerste keuze van Stockfish, kwam meteen. De zwarte loper bereikte b3 op zet 27, en Stockfish ziet de slotstelling als winst voor zwart.\n\nDardha eindigde ongeslagen op 5½/7, en ACS Superchess won alle negen matches.\n\nGa terug naar 22.g3 en vind 22.h4. Speel het eindspel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "Tre seire på tre dager: Dardha slår Nastore på 28 trekk",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) slo FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) på 28 trekk i 4. runde av den rumenske superligaen, den tredje seieren på tre dager etter Stanciu og Magold.\n\nDronningene ble byttet i trekk 20, og vurderingen snudde med 22.g3, spilt med 36:27 igjen. Stockfish ville ha 22.h4. Motoren regnet svart som klart bedre før (−2,29) og som vinnende etter (−2,98), og 22...Kf7, Stockfishs førstevalg, kom med en gang. Den svarte løperen nådde b3 i trekk 27, og Stockfish regner sluttstillingen som gevinst for svart.\n\nDardha endte uten tap med 5½/7, og ACS Superchess vant alle ni matchene.\n\nGå tilbake til 22.g3 og finn 22.h4. Spill så sluttspillet videre mot motoren."
+        },
+        "pl": {
+          "headline": "Trzy wygrane w trzy dni: Dardha pokonuje Nastore w 28 ruchach",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) pokonuje FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) w 28 ruchach w 4. rundzie rumuńskiej Superligi; to trzecia wygrana w trzy dni, po Stanciu i Magold.\n\nHetmany schodzą z szachownicy w 20. ruchu, a ocena przechyla się po 22.g3, zagranym przy 36:27 na zegarze. Stockfish chciał 22.h4. Przed tym ruchem oceniał pozycję czarnych jako wyraźnie lepszą (−2,29), po nim jako wygraną (−2,98), a od razu padło 22...Kf7, pierwszy wybór silnika. Czarny goniec dochodzi do b3 w 27. ruchu, a końcową pozycję Stockfish ocenia jako wygraną dla czarnych.\n\nDardha kończy turniej bez porażki, z wynikiem 5½/7, a ACS Superchess wygrywa wszystkie dziewięć meczów.\n\nWróć do 22.g3 i znajdź 22.h4. Potem rozegraj końcówkę dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Três vitórias em três dias: Dardha vence Nastore em 28 lances",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) venceu FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) em 28 lances na 4ª rodada da Superliga Romena, a terceira vitória em três dias, depois das vitórias sobre Stanciu e Magold.\n\nAs damas saíram do tabuleiro no lance 20, e a avaliação virou em 22.g3, jogado com 36:27 no relógio. O Stockfish queria 22.h4. Via clara vantagem das pretas antes (−2,29) e posição vencedora depois (−2,98), e 22...Kf7, sua primeira opção, veio logo em seguida. O bispo preto chegou a b3 no lance 27, e o Stockfish avalia a posição final como vitória das pretas.\n\nDardha terminou sem derrotas, com 5½/7, e o ACS Superchess venceu os nove matches.\n\nVolte a 22.g3 e encontre 22.h4. Depois continue o final contra o motor."
+        },
+        "ro": {
+          "headline": "Trei victorii în trei zile: Dardha câștigă contra Nastore în 28 de mutări",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) a câștigat contra FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) în 28 de mutări, în runda a 4-a a Superligii României, a treia victorie în trei zile, după cele cu Stanciu și Magold.\n\nDamele au ieșit de pe tablă la mutarea 20, iar evaluarea s-a întors la 22.g3, jucată cu 36:27 rămase. Stockfish voia 22.h4. Considera Negrul clar mai bun înainte (−2,29) și câștigător după (−2,98), iar 22...Kf7, prima sa alegere, a urmat imediat. Nebunul negru a ajuns pe b3 la mutarea 27, iar Stockfish consideră poziția finală câștigătoare pentru Negru.\n\nDardha a încheiat turneul fără nicio înfrângere, cu 5½/7, iar ACS Superchess a câștigat toate cele nouă meciuri.\n\nÎntoarce-te la 22.g3 și găsește 22.h4. Apoi continuă finalul contra motorului."
+        },
+        "ru": {
+          "headline": "Три победы за три дня: Dardha обыгрывает Nastore за 28 ходов",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) обыгрывает FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) за 28 ходов в 4-м туре румынской Суперлиги — третья победа за три дня после побед над Stanciu и Magold.\n\nФерзи разменялись на 20-м ходу, а перелом в оценке случился после 22.g3, сыгранного при 36:27 на часах. Stockfish хотел 22.h4. До хода движок давал чёрным явный перевес (−2,29), после — выигрыш (−2,98), и сразу последовал 22...Kf7 — первый выбор движка. На 27-м ходу чёрный слон дошёл до b3, и финальную позицию Stockfish оценивает как выигранную для чёрных.\n\nDardha заканчивает турнир без поражений с 5½/7, а ACS Superchess выигрывает все девять матчей.\n\nВернитесь к 22.g3 и найдите 22.h4. А затем продолжите эндшпиль против движка."
+        },
+        "sv": {
+          "headline": "Tre vinster på tre dagar: Dardha besegrar Nastore på 28 drag",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) besegrade FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) på 28 drag i rond 4 av rumänska superligan, en tredje vinst på tre dagar efter Stanciu och Magold.\n\nDamerna byttes av i drag 20, och värderingen vände på 22.g3, spelat med 36:27 kvar. Stockfish ville ha 22.h4. Motorn räknade svart som klart bättre före (−2,29) och som vinnande efter (−2,98), och 22...Kf7, Stockfishs förstaval, kom direkt. Den svarta löparen nådde b3 i drag 27, och Stockfish räknar slutställningen som vinst för svart.\n\nDardha slutade utan förlust på 5½/7, och ACS Superchess vann alla nio matcher.\n\nGå tillbaka till 22.g3 och hitta 22.h4. Spela sedan vidare slutspelet mot motorn."
+        },
+        "th": {
+          "headline": "ชนะสามเกมในสามวัน: Dardha ชนะ Nastore ใน 28 ตา",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) ชนะ FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) ใน 28 ตา ในรอบที่ 4 ของซูเปอร์ลีกโรมาเนีย เป็นชัยชนะครั้งที่สามในสามวัน ต่อจาก Stanciu และ Magold\n\nควีนถูกแลกออกจากกระดานในตาที่ 20 และค่าประเมินพลิกที่ 22.g3 ซึ่งเดินเมื่อเหลือเวลา 36:27 Stockfish ต้องการ 22.h4 เอนจินประเมินว่าฝ่ายดำได้เปรียบชัดเจนก่อนตานั้น (−2.29) และอยู่ในสถานะชนะหลังตานั้น (−2.98) และ 22...Kf7 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจินก็มาทันที บิชอปดำไปถึง b3 ในตาที่ 27 และ Stockfish ประเมินตำแหน่งสุดท้ายว่าฝ่ายดำชนะ\n\nDardha จบรายการโดยไม่แพ้ใครด้วย 5½/7 และ ACS Superchess ชนะครบทั้งเก้าแมตช์\n\nย้อนกลับไปที่ 22.g3 แล้วหา 22.h4 จากนั้นเล่นช่วงท้ายเกมต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "Üç günde üç galibiyet: Dardha, Nastore'yi 28 hamlede yendi",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612), Romanya Süper Ligi'nin 4. turunda FM Pavel-Alexandru Nastore'yi (CSU Universitatea de Vest Timisoara, 2353) 28 hamlede yendi; Stanciu ve Magold'un ardından bu, üç günde üçüncü galibiyetti.\n\nVezirler 20. hamlede tahtadan çıktı ve değerlendirme, saatte 36:27 kala oynanan 22.g3 ile döndü. Stockfish 22.h4 hamlesini istiyordu. Öncesinde siyahı açık farkla üstün (−2,29), sonrasında kazanan konumda (−2,98) görüyordu ve ilk tercihi olan 22...Kf7 hemen geldi. Siyah fil 27. hamlede b3'e ulaştı ve Stockfish son konumu siyah için kazanılmış olarak değerlendiriyor.\n\nDardha ligi 5½/7 ile yenilgisiz tamamladı, ACS Superchess de dokuz maçın hepsini kazandı.\n\n22.g3 hamlesine dön ve 22.h4 hamlesini bul. Sonra oyun sonunu motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Ba ván thắng trong ba ngày: Dardha thắng Nastore sau 28 nước",
+          "body": "GM Daniel Dardha (ACS Superchess, 2612) thắng FM Pavel-Alexandru Nastore (CSU Universitatea de Vest Timisoara, 2353) sau 28 nước ở vòng 4 giải Siêu hạng Romania, ván thắng thứ ba trong ba ngày, sau khi đã thắng Stanciu và Magold.\n\nCặp Hậu được đổi ở nước 20, và đánh giá đổi chiều ở 22.g3, được đi khi còn 36:27. Stockfish muốn 22.h4. Engine đánh giá Đen ưu thế rõ trước nước đó (−2,29) và ở thế thắng sau nước đó (−2,98), và 22...Kf7, lựa chọn số một của engine, đến ngay. Tượng Đen tới b3 ở nước 27, và Stockfish đánh giá thế cờ cuối cùng là thắng cho Đen.\n\nDardha kết thúc giải bất bại với 5½/7, và ACS Superchess thắng cả chín trận.\n\nQuay lại 22.g3 và tìm 22.h4. Rồi chơi tiếp tàn cuộc với engine."
+        },
+        "zh-Hans": {
+          "headline": "三天三连胜：Dardha用28回合击败Nastore",
+          "body": "GM Daniel Dardha（ACS Superchess，2612）在罗马尼亚超级联赛第4轮28回合击败FM Pavel-Alexandru Nastore（CSU Universitatea de Vest Timisoara，2353），继Stanciu和Magold之后，三天内取得第三场胜利。\n\n第20回合双方兑后，Stockfish的评估在22.g3处发生转折，走这步时还剩36:27。Stockfish想走的是22.h4。Stockfish认为这步之前黑方明显占优（−2.29），之后黑方胜势（−2.98），黑方随即走出Stockfish的首选22...Kf7。第27回合黑象到达b3，Stockfish判定最终局面为黑方胜势。\n\nDardha最终以5½/7保持不败，ACS Superchess九场比赛全胜。\n\n回到22.g3，找出22.h4。然后对着引擎把残局继续下去。"
+        },
+        "zh-Hant": {
+          "headline": "三天三連勝：Dardha用28回合擊敗Nastore",
+          "body": "GM Daniel Dardha（ACS Superchess，2612）在羅馬尼亞超級聯賽第4輪28回合擊敗FM Pavel-Alexandru Nastore（CSU Universitatea de Vest Timisoara，2353），繼Stanciu和Magold之後，三天內拿下第三場勝利。\n\n第20回合雙方換后，Stockfish的評估在22.g3處出現轉折，走這步時還剩36:27。Stockfish想走的是22.h4。Stockfish認為這步之前黑方明顯佔優（−2.29），之後黑方勝勢（−2.98），黑方隨即走出Stockfish的首選22...Kf7。第27回合黑象抵達b3，Stockfish判定終局局面為黑方勝勢。\n\nDardha最後以5½/7保持不敗，ACS Superchess九場比賽全勝。\n\n回到22.g3，找出22.h4。然後對著引擎把殘局繼續下去。"
+        }
+      },
+      "fen": "r1b2rk1/1p5p/p4p2/4p1p1/2Pp4/P4PP1/1P3B1P/R3R1K1 b - - 0 22",
+      "last": {
+        "from": "g2",
+        "to": "g3"
+      },
+      "url": "https://brasspawn.com/today/2026-10-06-nastore-dardha-romanian-team-chess-championships-r4",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-mens-super-league/round-4/IiImjXN2/Ox4ewMK1"
+      },
+      "updatedAt": "2026-10-06T19:05:55.326Z"
+    },
+    {
+      "id": "2026-10-06-karthikeyan-predke-serbian-super-league-r3",
+      "status": "approved",
+      "date": "2026-10-06",
+      "rank": 0,
+      "weight": 397,
+      "event": {
+        "name": "Serbian Super League 2026",
+        "short": "Serbian Super League",
+        "section": "Open",
+        "round": 3,
+        "location": "Vrnjačka Banja - Serbia",
+        "url": "https://lichess.org/broadcast/serbian-super-league-2026-open/round-3/XRi23cAe"
+      },
+      "white": {
+        "name": "Murali Karthikeyan",
+        "short": "Karthikeyan",
+        "title": "GM",
+        "elo": 2647,
+        "team": "JELICA PEP - Goračići"
+      },
+      "black": {
+        "name": "Alexandr Predke",
+        "short": "Predke",
+        "title": "GM",
+        "elo": 2612,
+        "team": "RADNIČKI - ZMAJ - Beograd"
+      },
+      "result": "1-0",
+      "opening": {
+        "eco": "C02",
+        "name": "French Defense: Advance Variation, Paulsen Attack"
+      },
+      "moves": "e4 e6 d4 d5 e5 c5 c3 Nc6 Nf3 Nge7 h4 Nf5 g4 Nfe7 h5 f6 Na3 fxe5 dxe5 a6 Nc2 Bd7 Bf4 Qb6 Rb1 h6 b4 g5 bxc5 Qc7 Bg3 Bg7 Ncd4 Na5 Bd3 Qxc5 O-O O-O Qd2 Rac8 Nxg5 Qxc3 Qe3 Qc5 Ngxe6 Bxe6 Nxe6 Qxe3 fxe3 Rxf1+ Rxf1 Bh8 g5 Nc4 gxh6 Bxe5 h7+ Kh8 Ng5",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 42,
+        "played": "Qxc3",
+        "better": "hxg5",
+        "reply": "Qe3",
+        "replyPlayed": true,
+        "before": {
+          "cp": 228,
+          "mate": null
+        },
+        "after": {
+          "cp": 365,
+          "mate": null
+        },
+        "clock": 1422
+      },
+      "headline": "A pawn on h7 with check: Karthikeyan beats a second 2600 in two days",
+      "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) beat GM Alexandr Predke (Radnički Zmaj Beograd, 2612) in 30 moves in round 3 of the Serbian Super League, a day after beating GM Ivan Cheparinov.\n\nIt turned on 21...Qxc3, the queen taking a pawn with 23:42 left. Stockfish wanted 21...hxg5. It counted White clearly better before (+2.28) and winning after (+3.65), and 22.Qe3, its first choice, came straight back. The queens came off on move 24, and the white g-pawn went 27.g5, 28.gxh6 and 29.h7+. Stockfish counts the final position as a win for White.\n\nThe match ended 3–3.\n\nGo back to 21...Qxc3 and find 21...hxg5. Then play it on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "بيدق على h7 مع كش: فوز ثانٍ في يومين لـKarthikeyan على تصنيف يتجاوز 2600",
+          "body": "انتهى الدور بفوز GM Murali Karthikeyan (Jelica PEP Goračići، 2647) على GM Alexandr Predke (Radnički Zmaj Beograd، 2612) في 30 نقلة، في الجولة الثالثة من الدوري الصربي الممتاز، بعد يوم من الفوز على GM Ivan Cheparinov.\n\nتحوّل الدور عند ⁨21...Qxc3⁩، إذ أخذ الوزير بيدقًا والوقت المتبقي ⁨23:42⁩. أراد Stockfish ⁨21...hxg5⁩، وعدّ الأبيض متفوقًا بوضوح قبلها (⁨+2.28⁩) وفائزًا بعدها (⁨+3.65⁩). وجاءت ⁨22.Qe3⁩، الخيار الأول للمحرك، مباشرة. وتم تبادل الوزيرين في النقلة 24، وتقدّم بيدق g الأبيض: ⁨27.g5⁩ و⁨28.gxh6⁩ و⁨29.h7+⁩. ويعدّ Stockfish الوضع النهائي فوزًا للأبيض.\n\nانتهت المباراة ⁨3–3⁩.\n\nارجع إلى ⁨21...Qxc3⁩ واعثر على ⁨21...hxg5⁩. ثم تابع اللعب ضد المحرك."
+        },
+        "bg": {
+          "headline": "Пешка на h7 с шах: Karthikeyan побеждава Predke ден след Cheparinov",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) победи GM Alexandr Predke (Radnički Zmaj Beograd, 2612) за 30 хода в 3-тия кръг на сръбската Суперлига, ден след победата над GM Ivan Cheparinov.\n\nПартията се обърна с 21...Qxc3 — дамата взе пешка с 23:42 на часовника. Stockfish искаше 21...hxg5. Преди хода енджинът даваше ясно предимство на белите (+2,28), а след него — печеливша позиция (+3,65), и 22.Qe3, първият му избор, последва веднага. Дамите се размениха на 24-ия ход, а бялата пешка g тръгна: 27.g5, 28.gxh6 и 29.h7+. Stockfish оценява крайната позиция като печеливша за белите.\n\nМачът завърши 3–3.\n\nВърнете се към 21...Qxc3 и намерете 21...hxg5. После продължете партията срещу енджина."
+        },
+        "cs": {
+          "headline": "Pěšec na h7 se šachem: Karthikeyan má za dva dny druhou výhru proti ratingu přes 2600",
+          "body": "V partii GM Murali Karthikeyan (Jelica PEP Goračići, 2647) – GM Alexandr Predke (Radnički Zmaj Beograd, 2612) ve 3. kole srbské superligy vyhrává po 30 tazích Karthikeyan, den po výhře proti GM Ivan Cheparinov.\n\nZlom přišel tahem 21...Qxc3: dáma bere pěšce s 23:42 na hodinách. Stockfish chtěl 21...hxg5 a hodnotil pozici před tahem jako jasně lepší pro bílé (+2,28), po něm jako vyhranou (+3,65). Okamžitě přišlo 22.Qe3, první volba enginu. Ve 24. tahu se vyměnily dámy a bílý g-pěšec postupoval: 27.g5, 28.gxh6 a 29.h7+. Konečnou pozici hodnotí Stockfish jako výhru bílých.\n\nZápas skončil 3–3.\n\nVrať se k 21...Qxc3 a najdi 21...hxg5. Pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "En bonde på h7 med skak: Karthikeyan slår sin anden 2600-spiller på to dage",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) slog GM Alexandr Predke (Radnički Zmaj Beograd, 2612) i 30 træk i 3. runde af den serbiske superliga, dagen efter sejren over GM Ivan Cheparinov.\n\nPartiet vendte med 21...Qxc3, hvor dronningen slog en bonde med 23:42 tilbage. Stockfish ville have 21...hxg5. Motoren så hvid klart bedre før (+2,28) og til gevinst efter (+3,65), og 22.Qe3, Stockfishs førstevalg, kom med det samme. Dronningerne blev byttet af i 24. træk, og den hvide g-bonde gik 27.g5, 28.gxh6 og 29.h7+. Stockfish vurderer slutstillingen som gevinst til hvid.\n\nMatchen endte 3–3.\n\nGå tilbage til 21...Qxc3 og find 21...hxg5. Spil så videre mod motoren."
+        },
+        "de": {
+          "headline": "Ein Bauer auf h7 mit Schach: Karthikeyans zweiter Sieg gegen 2600+ in zwei Tagen",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) schlug GM Alexandr Predke (Radnički Zmaj Beograd, 2612) in Runde 3 der serbischen Superliga in 30 Zügen, einen Tag nach dem Sieg gegen GM Ivan Cheparinov.\n\nDie Partie kippte mit 21...Qxc3: Die Dame schlug einen Bauern, mit 23:42 auf der Uhr. Stockfish wollte 21...hxg5. Davor sah Stockfish Weiß klar besser (+2,28), danach auf Gewinn (+3,65), und 22.Qe3, die erste Wahl von Stockfish, kam sofort. Im 24. Zug wurden die Damen getauscht, und der weiße g-Bauer lief los: 27.g5, 28.gxh6 und 29.h7+. Stockfish wertet die Schlussstellung als Gewinn für Weiß.\n\nDer Kampf endete 3:3.\n\nZurück zu 21...Qxc3 und 21...hxg5 finden. Dann gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Πιόνι στο h7 με σαχ: για δεύτερη μέρα στη σειρά, Karthikeyan νικά αντίπαλο με Elo πάνω από 2600",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) επικράτησε επί GM Alexandr Predke (Radnički Zmaj Beograd, 2612) σε 30 κινήσεις στον 3ο γύρο της σερβικής Σούπερ Λίγκας, μία μέρα μετά τη νίκη επί GM Ivan Cheparinov.\n\nΗ παρτίδα γύρισε στην 21...Qxc3, με τη βασίλισσα να παίρνει ένα πιόνι με 23:42 στο ρολόι. Το Stockfish ήθελε την 21...hxg5. Έδινε καθαρό πλεονέκτημα στα λευκά πριν (+2,28) και νίκη μετά (+3,65), και η 22.Qe3, η πρώτη επιλογή της μηχανής, ήρθε αμέσως. Οι βασίλισσες έφυγαν από τη σκακιέρα στην 24η κίνηση, και το λευκό πιόνι της στήλης g προχώρησε: 27.g5, 28.gxh6 και 29.h7+. Το Stockfish κρίνει την τελική θέση κερδισμένη για τα λευκά.\n\nΟ αγώνας έληξε 3–3.\n\nΓύρνα στην 21...Qxc3 και βρες την 21...hxg5. Μετά συνέχισε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Un peón en h7 con jaque: Karthikeyan gana a dos rivales de más de 2600 en dos días",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) venció a GM Alexandr Predke (Radnički Zmaj Beograd, 2612) en 30 jugadas en la tercera ronda de la Superliga serbia, un día después de vencer a GM Ivan Cheparinov.\n\nTodo cambió con 21...Qxc3, la dama capturando un peón con 23:42 en el reloj. Stockfish quería 21...hxg5. Daba clara ventaja a las blancas antes (+2,28) y posición ganadora después (+3,65), y 22.Qe3, su primera opción, llegó enseguida. Las damas salieron del tablero en la jugada 24, y el peón g blanco avanzó con 27.g5, 28.gxh6 y 29.h7+. Stockfish da la posición final como ganada para las blancas.\n\nEl match terminó 3–3.\n\nVuelve a 21...Qxc3 y encuentra 21...hxg5. Luego sigue contra el motor."
+        },
+        "fi": {
+          "headline": "Sotilas h7:ään shakilla: Karthikeyan voittaa toisen 2600-pelaajan kahdessa päivässä",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) voitti GM Alexandr Predken (Radnički Zmaj Beograd, 2612) 30 siirrossa Serbian superliigan 3. kierroksella, ja edellisenä päivänä Karthikeyanille oli hävinnyt GM Ivan Cheparinov.\n\nPeli kääntyi siirtoon 21...Qxc3, jossa kuningatar löi sotilaan kellossa 23:42 jäljellä. Stockfish halusi 21...hxg5. Se antoi valkealle ennen siirtoa selvän edun (+2,28) ja sen jälkeen voittoaseman (+3,65), ja sen ykkösvalinta 22.Qe3 tuli heti. Kuningattaret vaihtuivat pois siirrolla 24, ja valkean g-sotilas eteni: 27.g5, 28.gxh6 ja 29.h7+. Stockfish arvioi loppuaseman voitoksi valkealle.\n\nOttelu päättyi 3–3.\n\nPalaa siirtoon 21...Qxc3 ja löydä 21...hxg5. Jatka sitten peliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Un pion en h7 avec échec : Karthikeyan bat Predke, deuxième victoire en deux jours face à un Elo de plus de 2600",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) a battu GM Alexandr Predke (Radnički Zmaj Beograd, 2612) en 30 coups lors de la 3e ronde de la Superligue serbe, au lendemain d’une victoire contre GM Ivan Cheparinov.\n\nTout s’est joué sur 21...Qxc3, la dame prenant un pion avec 23:42 à la pendule. Stockfish voulait 21...hxg5, et donnait les Blancs nettement mieux avant (+2,28) et gagnants après (+3,65). 22.Qe3, son premier choix, a suivi aussitôt. Les dames ont été échangées au 24e coup, et le pion g blanc a fait son chemin : 27.g5, 28.gxh6 et 29.h7+. Stockfish donne la position finale gagnante pour les Blancs.\n\nLe match s’est terminé sur 3–3.\n\nRevenez à 21...Qxc3 et trouvez 21...hxg5. Puis continuez contre le moteur."
+        },
+        "he": {
+          "headline": "רגלי ב־h7 עם שח: ניצחון שני ביומיים ל־Karthikeyan מול דירוג 2600 ומעלה",
+          "body": "המשחק בסיבוב ה־3 של ליגת העל הסרבית הסתיים בניצחון ל־GM Murali Karthikeyan (Jelica PEP Goračići, 2647) על GM Alexandr Predke (Radnički Zmaj Beograd, 2612) אחרי 30 מסעים, יום אחרי הניצחון על GM Ivan Cheparinov.\n\nנקודת המפנה הגיעה ב־⁨21...Qxc3⁩: המלכה לקחה רגלי כשנותרו ⁨23:42⁩. Stockfish רצה ב־⁨21...hxg5⁩, והעריך יתרון ברור ללבן לפני המסע (⁨+2.28⁩) ועמדה מנצחת אחריו (⁨+3.65⁩). המסע ⁨22.Qe3⁩, הבחירה הראשונה של המנוע, בא מיד. המלכות הוחלפו במסע 24, ורגלי g הלבן התקדם: ⁨27.g5⁩, ⁨28.gxh6⁩ ו־⁨29.h7+⁩. Stockfish מעריך את העמדה הסופית כניצחון ללבן.\n\nהמפגש הסתיים ⁨3–3⁩.\n\nחזרו ל־⁨21...Qxc3⁩ ומצאו את ⁨21...hxg5⁩. ואז המשיכו לשחק מול המנוע."
+        },
+        "hi": {
+          "headline": "h7 पर शह के साथ प्यादा: 2600 से ऊपर की रेटिंग के ख़िलाफ़ दो दिन में Karthikeyan की दूसरी जीत",
+          "body": "सर्बियाई सुपर लीग के राउंड 3 में GM Murali Karthikeyan (Jelica PEP Goračići, 2647) ने GM Alexandr Predke (Radnički Zmaj Beograd, 2612) को 30 चालों में हराया, GM Ivan Cheparinov पर जीत के एक दिन बाद।\n\nबाज़ी 21...Qxc3 पर पलटी, जब 23:42 बचे रहते रानी ने एक प्यादा लिया। Stockfish 21...hxg5 चाहता था। उसके हिसाब से पहले सफ़ेद साफ़ बेहतर था (+2.28) और बाद में जीत की स्थिति में (+3.65), और इंजन की पहली पसंद 22.Qe3 तुरंत आया। चाल 24 पर रानियाँ बोर्ड से हट गईं, और सफ़ेद g-प्यादा 27.g5, 28.gxh6 और 29.h7+ के रास्ते आगे बढ़ा। Stockfish अंतिम स्थिति को सफ़ेद की जीत मानता है।\n\nमुक़ाबला 3–3 पर ख़त्म हुआ।\n\n21...Qxc3 पर लौटें और 21...hxg5 खोजें। फिर इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "Gyalog a h7-en, sakkal: Karthikeyan két nap alatt a második 2600 feletti ellenfelét győzte le",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) 30 lépésben nyert GM Alexandr Predke (Radnički Zmaj Beograd, 2612) ellen a szerb Szuperliga 3. fordulójában, egy nappal a GM Ivan Cheparinov elleni győzelme után.\n\nA játszma a 21...Qxc3 lépésnél fordult meg: a vezér 23:42-vel az órán leütött egy gyalogot. A Stockfish a 21...hxg5 lépést akarta. Előtte világos egyértelmű előnyét látta (+2,28), utána nyerő állást (+3,65), és azonnal jött a 22.Qe3, az első választása. A vezérek a 24. lépésben lekerültek a tábláról, a világos g-gyalog pedig továbbment: 27.g5, 28.gxh6 és 29.h7+. A Stockfish a záróállást világos számára nyerőnek értékeli.\n\nA mérkőzés 3–3-as döntetlennel zárult.\n\nMenj vissza a 21...Qxc3 lépéshez, és találd meg a 21...hxg5 lépést. Aztán játszd tovább a motor ellen."
+        },
+        "id": {
+          "headline": "Pion di h7 dengan skak: Karthikeyan kalahkan pemain 2600 kedua dalam dua hari",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) mengalahkan GM Alexandr Predke (Radnički Zmaj Beograd, 2612) dalam 30 langkah di babak 3 Liga Super Serbia, sehari sesudah mengalahkan GM Ivan Cheparinov.\n\nPartai berbalik pada 21...Qxc3, saat menteri mengambil pion dengan sisa 23:42. Stockfish menginginkan 21...hxg5. Mesin menilai Putih unggul jelas sebelumnya (+2,28) dan menang sesudahnya (+3,65), dan 22.Qe3, pilihan pertamanya, langsung datang. Kedua menteri keluar dari papan pada langkah 24, dan pion g putih berjalan 27.g5, 28.gxh6, dan 29.h7+. Stockfish menilai posisi akhir sebagai kemenangan untuk Putih.\n\nPertandingan berakhir 3–3.\n\nKembali ke 21...Qxc3 dan temukan 21...hxg5. Lalu lanjutkan melawan mesin."
+        },
+        "it": {
+          "headline": "Un pedone in h7 con scacco: per Karthikeyan seconda vittoria in due giorni contro un Elo sopra 2600",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) ha battuto GM Alexandr Predke (Radnički Zmaj Beograd, 2612) in 30 mosse nel 3º turno della Superlega serba, il giorno dopo la vittoria su GM Ivan Cheparinov.\n\nLa partita è girata su 21...Qxc3, la Donna che prende un pedone con 23:42 sull’orologio. Stockfish voleva 21...hxg5, e dava il Bianco chiaramente meglio prima (+2,28) e vincente dopo (+3,65). 22.Qe3, la sua prima scelta, è arrivata subito. Le Donne sono state cambiate alla mossa 24, e il pedone g bianco è avanzato: 27.g5, 28.gxh6 e 29.h7+. Stockfish dà la posizione finale vinta per il Bianco.\n\nIl match è finito 3–3.\n\nTorna a 21...Qxc3 e trova 21...hxg5. Poi continua contro il motore."
+        },
+        "ja": {
+          "headline": "h7にチェックのポーン、Karthikeyanが2日で2人目の2600台に勝利",
+          "body": "GM Ivan Cheparinovに勝った翌日、GM Murali Karthikeyan（Jelica PEP Goračići、2647）がセルビア・スーパーリーグ第3ラウンドでGM Alexandr Predke（Radnički Zmaj Beograd、2612）に30手で勝ちました。\n\n分かれ目は21...Qxc3で、残り23:42でクイーンがポーンを取った手でした。Stockfishが望んだのは21...hxg5。21...Qxc3の後、Stockfishの評価は白の明確な優勢（+2.28）から勝勢（+3.65）に変わり、すぐに第一候補の22.Qe3が返ってきました。24手目でクイーンが盤上から消え、白のgポーンは27.g5、28.gxh6、29.h7+と進みました。Stockfishは最終局面を白の勝ちと見ています。\n\nマッチは3–3で終わりました。\n\n21...Qxc3に戻って21...hxg5を見つけましょう。それからエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "체크와 함께 h7에 선 폰… Karthikeyan, 이틀 새 두 번째 2600대 꺾어",
+          "body": "GM Murali Karthikeyan(Jelica PEP Goračići, 2647)이 GM Ivan Cheparinov에게 이긴 다음 날, 세르비아 슈퍼리그 3라운드에서 GM Alexandr Predke(Radnički Zmaj Beograd, 2612)에게 30수 만에 이겼습니다.\n\n승부를 가른 수는 21...Qxc3였는데, 23:42를 남기고 퀸이 폰을 잡은 수였습니다. Stockfish가 원한 수는 21...hxg5였습니다. 21...Qxc3 이후 Stockfish의 평가는 백의 뚜렷한 우세(+2.28)에서 이기는 형세(+3.65)로 바뀌었고, 곧바로 첫 번째 후보 수인 22.Qe3가 나왔습니다. 24수째에 퀸이 교환되었고, 백 g폰은 27.g5, 28.gxh6, 29.h7+로 전진했습니다. Stockfish는 최종 국면을 백의 승리로 봅니다.\n\n매치는 3–3으로 끝났습니다.\n\n21...Qxc3로 돌아가 21...hxg5를 찾아보세요. 이어서 엔진을 상대로 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "Bidak di h7 dengan sekak: Karthikeyan tewaskan pemain 2600 kedua dalam dua hari",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) menewaskan GM Alexandr Predke (Radnički Zmaj Beograd, 2612) dalam 30 langkah dalam pusingan 3 Liga Super Serbia, sehari selepas menewaskan GM Ivan Cheparinov.\n\nPermainan berubah pada 21...Qxc3, ketika menteri mengambil bidak dengan baki 23:42. Stockfish mahukan 21...hxg5. Enjin menilai Putih jelas mendahului sebelumnya (+2,28) dan menang selepasnya (+3,65), dan 22.Qe3, pilihan pertamanya, tiba serta-merta. Kedua-dua menteri keluar dari papan pada langkah 24, dan bidak g putih mara 27.g5, 28.gxh6 dan 29.h7+. Stockfish menilai kedudukan akhir sebagai kemenangan untuk Putih.\n\nPerlawanan berakhir 3–3.\n\nKembali ke 21...Qxc3 dan cari 21...hxg5. Kemudian teruskan menentang enjin."
+        },
+        "nl": {
+          "headline": "Een pion op h7 met schaak: Karthikeyan verslaat een tweede 2600'er in twee dagen",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) versloeg GM Alexandr Predke (Radnički Zmaj Beograd, 2612) in 30 zetten in ronde 3 van de Servische Superliga, een dag na de overwinning op GM Ivan Cheparinov.\n\nDe partij kantelde met 21...Qxc3, waarmee de dame een pion sloeg, met nog 23:42 op de klok. Stockfish wilde 21...hxg5. Stockfish zag wit ervoor duidelijk beter staan (+2,28) en erna gewonnen (+3,65), en 22.Qe3, de eerste keuze van Stockfish, kwam meteen. Op zet 24 gingen de dames van het bord, en de witte g-pion liep door: 27.g5, 28.gxh6 en 29.h7+. Stockfish ziet de slotstelling als winst voor wit.\n\nDe match eindigde in 3–3.\n\nGa terug naar 21...Qxc3 en vind 21...hxg5. Speel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "En bonde på h7 med sjakk: Karthikeyan slår sin andre 2600-spiller på to dager",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) slo GM Alexandr Predke (Radnički Zmaj Beograd, 2612) på 30 trekk i 3. runde av den serbiske superligaen, dagen etter seieren over GM Ivan Cheparinov.\n\nPartiet snudde med 21...Qxc3, der dronningen tok en bonde med 23:42 igjen. Stockfish ville ha 21...hxg5. Motoren regnet hvit som klart bedre før (+2,28) og som vinnende etter (+3,65), og 22.Qe3, Stockfishs førstevalg, kom med en gang. Dronningene ble byttet i trekk 24, og den hvite g-bonden gikk 27.g5, 28.gxh6 og 29.h7+. Stockfish regner sluttstillingen som gevinst for hvit.\n\nMatchen endte 3–3.\n\nGå tilbake til 21...Qxc3 og finn 21...hxg5. Spill så videre mot motoren."
+        },
+        "pl": {
+          "headline": "Pionek na h7 z szachem: Karthikeyan drugi raz w dwa dni pokonuje GM z rankingiem 2600+",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) pokonuje GM Alexandr Predke (Radnički Zmaj Beograd, 2612) w 30 ruchach w 3. rundzie serbskiej Superligi, dzień po wygranej z GM Ivan Cheparinov.\n\nPartia odwraca się po 21...Qxc3: hetman bije pionka przy 23:42 na zegarze. Stockfish chciał 21...hxg5. Przed tym ruchem oceniał pozycję białych jako wyraźnie lepszą (+2,28), po nim jako wygraną (+3,65), a od razu padło 22.Qe3, pierwszy wybór silnika. Hetmany schodzą z szachownicy w 24. ruchu, a biały pionek z linii g idzie dalej: 27.g5, 28.gxh6 i 29.h7+. Końcową pozycję Stockfish ocenia jako wygraną dla białych.\n\nMecz kończy się remisem 3–3.\n\nWróć do 21...Qxc3 i znajdź 21...hxg5. Potem graj dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Um peão em h7 com xeque: Karthikeyan vence dois rivais acima de 2600 em dois dias",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) venceu GM Alexandr Predke (Radnički Zmaj Beograd, 2612) em 30 lances na 3ª rodada da Superliga Sérvia, um dia depois de vencer GM Ivan Cheparinov.\n\nA partida virou em 21...Qxc3, a dama capturando um peão com 23:42 no relógio. O Stockfish queria 21...hxg5. Via clara vantagem das brancas antes (+2,28) e posição vencedora depois (+3,65), e 22.Qe3, sua primeira opção, veio logo em seguida. As damas saíram do tabuleiro no lance 24, e o peão g branco avançou com 27.g5, 28.gxh6 e 29.h7+. O Stockfish avalia a posição final como vitória das brancas.\n\nO match terminou 3–3.\n\nVolte a 21...Qxc3 e encontre 21...hxg5. Depois continue contra o motor."
+        },
+        "ro": {
+          "headline": "Un pion pe h7 cu șah: Karthikeyan, două victorii în două zile contra unor GM de peste 2600",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) a câștigat contra GM Alexandr Predke (Radnički Zmaj Beograd, 2612) în 30 de mutări, în runda a 3-a a Superligii Serbiei, la o zi după victoria contra GM Ivan Cheparinov.\n\nPartida s-a întors la 21...Qxc3, cu dama luând un pion cu 23:42 rămase. Stockfish voia 21...hxg5. Considera Albul clar mai bun înainte (+2,28) și câștigător după (+3,65), iar 22.Qe3, prima sa alegere, a urmat imediat. Damele au ieșit de pe tablă la mutarea 24, iar pionul alb de pe coloana g a avansat: 27.g5, 28.gxh6 și 29.h7+. Stockfish consideră poziția finală câștigătoare pentru Alb.\n\nMeciul s-a încheiat 3–3.\n\nÎntoarce-te la 21...Qxc3 și găsește 21...hxg5. Apoi continuă contra motorului."
+        },
+        "ru": {
+          "headline": "Пешка на h7 с шахом: вторая за два дня победа Karthikeyan над рейтингом 2600+",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) обыгрывает GM Alexandr Predke (Radnički Zmaj Beograd, 2612) за 30 ходов в 3-м туре сербской Суперлиги — через день после победы над GM Ivan Cheparinov.\n\nПерелом — 21...Qxc3: ферзь берёт пешку при 23:42 на часах. Stockfish хотел 21...hxg5. До хода движок давал белым явный перевес (+2,28), после — выигрыш (+3,65), и сразу последовал 22.Qe3 — первый выбор движка. На 24-м ходу ферзи разменялись, а белая пешка g пошла вперёд: 27.g5, 28.gxh6 и 29.h7+. Финальную позицию Stockfish оценивает как выигранную для белых.\n\nМатч закончился 3–3.\n\nВернитесь к 21...Qxc3 и найдите 21...hxg5. А затем продолжите партию против движка."
+        },
+        "sv": {
+          "headline": "En bonde på h7 med schack: Karthikeyan besegrar en andra 2600-spelare på två dagar",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) besegrade GM Alexandr Predke (Radnički Zmaj Beograd, 2612) på 30 drag i rond 3 av serbiska superligan, dagen efter vinsten mot GM Ivan Cheparinov.\n\nDet vände på 21...Qxc3, där damen tog en bonde med 23:42 kvar. Stockfish ville ha 21...hxg5. Motorn räknade vit som klart bättre före (+2,28) och som vinnande efter (+3,65), och 22.Qe3, Stockfishs förstaval, kom direkt. Damerna byttes av i drag 24, och den vita g-bonden gick 27.g5, 28.gxh6 och 29.h7+. Stockfish räknar slutställningen som vinst för vit.\n\nMatchen slutade 3–3.\n\nGå tillbaka till 21...Qxc3 och hitta 21...hxg5. Spela sedan vidare mot motorn."
+        },
+        "th": {
+          "headline": "เบี้ยถึง h7 พร้อมรุก: Karthikeyan ชนะผู้เล่นระดับ 2600 คนที่สองในสองวัน",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) ชนะ GM Alexandr Predke (Radnički Zmaj Beograd, 2612) ใน 30 ตา ในรอบที่ 3 ของซูเปอร์ลีกเซอร์เบีย หนึ่งวันหลังจากชนะ GM Ivan Cheparinov\n\nเกมพลิกที่ 21...Qxc3 ซึ่งควีนกินเบี้ยเมื่อเหลือเวลา 23:42 Stockfish ต้องการ 21...hxg5 เอนจินประเมินว่าฝ่ายขาวได้เปรียบชัดเจนก่อนตานั้น (+2.28) และอยู่ในสถานะชนะหลังตานั้น (+3.65) และ 22.Qe3 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจินก็มาทันที ควีนถูกแลกออกจากกระดานในตาที่ 24 และเบี้ย g ขาวก็เดินหน้า 27.g5, 28.gxh6 และ 29.h7+ Stockfish ประเมินตำแหน่งสุดท้ายว่าฝ่ายขาวชนะ\n\nแมตช์จบที่ 3–3\n\nย้อนกลับไปที่ 21...Qxc3 แล้วหา 21...hxg5 จากนั้นเล่นต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "h7'de şah çeken piyon: Karthikeyan iki günde ikinci kez 2600'lük bir rakibi yendi",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647), Sırbistan Süper Ligi'nin 3. turunda GM Alexandr Predke'yi (Radnički Zmaj Beograd, 2612) 30 hamlede yendi. Karthikeyan'ın bir gün önce yendiği rakip ise GM Ivan Cheparinov.\n\nOyun, saatte 23:42 kala vezirin bir piyon aldığı 21...Qxc3 ile döndü. Stockfish 21...hxg5 hamlesini istiyordu. Öncesinde beyazı açık farkla üstün (+2,28), sonrasında kazanan konumda (+3,65) görüyordu ve ilk tercihi olan 22.Qe3 hemen geldi. Vezirler 24. hamlede tahtadan çıktı ve beyazın g piyonu 27.g5, 28.gxh6 ve 29.h7+ ile ilerledi. Stockfish son konumu beyaz için kazanılmış olarak değerlendiriyor.\n\nMaç 3–3 bitti.\n\n21...Qxc3 hamlesine dön ve 21...hxg5 hamlesini bul. Sonra motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Tốt tới h7 kèm nước chiếu: Karthikeyan thắng đối thủ 2600 thứ hai trong hai ngày",
+          "body": "GM Murali Karthikeyan (Jelica PEP Goračići, 2647) thắng GM Alexandr Predke (Radnički Zmaj Beograd, 2612) sau 30 nước ở vòng 3 giải Siêu hạng Serbia, một ngày sau khi thắng GM Ivan Cheparinov.\n\nVán cờ đổi chiều ở 21...Qxc3, Hậu bắt Tốt khi còn 23:42. Stockfish muốn 21...hxg5. Engine đánh giá Trắng ưu thế rõ trước nước đó (+2,28) và ở thế thắng sau nước đó (+3,65), và 22.Qe3, lựa chọn số một của engine, đến ngay. Cặp Hậu được đổi ở nước 24, và Tốt g Trắng đi 27.g5, 28.gxh6 và 29.h7+. Stockfish đánh giá thế cờ cuối cùng là thắng cho Trắng.\n\nTrận đấu kết thúc 3–3.\n\nQuay lại 21...Qxc3 và tìm 21...hxg5. Rồi chơi tiếp với engine."
+        },
+        "zh-Hans": {
+          "headline": "兵到h7将军：Karthikeyan两天内第二次击败2600以上的对手",
+          "body": "GM Murali Karthikeyan（Jelica PEP Goračići，2647）在塞尔维亚超级联赛第3轮30回合击败GM Alexandr Predke（Radnički Zmaj Beograd，2612），前一天刚击败GM Ivan Cheparinov。\n\n转折点是21...Qxc3，黑后吃兵，走这步时还剩23:42。Stockfish想走的是21...hxg5。Stockfish认为这步之前白方明显占优（+2.28），之后白方胜势（+3.65），白方随即走出Stockfish的首选22.Qe3。第24回合双方兑后，白方g兵接连走出27.g5、28.gxh6和29.h7+。Stockfish判定最终局面为白方胜势。\n\n两队最终3–3战平。\n\n回到21...Qxc3，找出21...hxg5。然后对着引擎继续下。"
+        },
+        "zh-Hant": {
+          "headline": "兵到h7將軍：Karthikeyan兩天內第二次擊敗2600以上的對手",
+          "body": "GM Murali Karthikeyan（Jelica PEP Goračići，2647）在塞爾維亞超級聯賽第3輪30回合擊敗GM Alexandr Predke（Radnički Zmaj Beograd，2612），前一天才剛擊敗GM Ivan Cheparinov。\n\n轉折點是21...Qxc3，黑后吃兵，走這步時還剩23:42。Stockfish想走的是21...hxg5。Stockfish認為這步之前白方明顯佔優（+2.28），之後白方勝勢（+3.65），白方隨即走出Stockfish的首選22.Qe3。第24回合雙方換后，白方g兵接連走出27.g5、28.gxh6和29.h7+。Stockfish判定終局局面為白方勝勢。\n\n兩隊最終3–3戰平。\n\n回到21...Qxc3，找出21...hxg5。然後對著引擎繼續下。"
+        }
+      },
+      "fen": "2r2rk1/1p1bn1b1/p3p2p/n2pP1NP/3N2P1/2qB2B1/P2Q1P2/1R3RK1 w - - 0 22",
+      "last": {
+        "from": "c5",
+        "to": "c3"
+      },
+      "url": "https://brasspawn.com/today/2026-10-06-karthikeyan-predke-serbian-super-league-r3",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/serbian-super-league-2026-open/round-3/XRi23cAe/iMJC4mpM"
+      },
+      "updatedAt": "2026-10-06T19:06:31.093Z"
+    }
+  ]
+}

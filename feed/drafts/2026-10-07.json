@@ -1,0 +1,1110 @@
+{
+  "date": "2026-10-07",
+  "pulledAt": "2026-10-12T11:06:37.415Z",
+  "stories": [
+    {
+      "id": "2026-10-07-pranesh-m-raahul-v-s-romanian-team-chess-championships-r5",
+      "status": "approved",
+      "date": "2026-10-07",
+      "rank": 0,
+      "weight": 424,
+      "event": {
+        "name": "Romanian Team Chess Championships 2026",
+        "short": "Romanian Team Chess Championships",
+        "section": "Men’s Super league",
+        "round": 5,
+        "location": "Eforie Nord, Romania",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-mens-super-league/round-5/Oc5aVcML"
+      },
+      "white": {
+        "name": "Pranesh M",
+        "short": "Pranesh M",
+        "title": "GM",
+        "elo": 2674,
+        "team": "VADOS IFB FINWEST ARAD"
+      },
+      "black": {
+        "name": "Raahul V S",
+        "short": "Raahul V S",
+        "title": "GM",
+        "elo": 2393,
+        "team": "CSU UNIVERSITATEA DE VEST Timisoara"
+      },
+      "result": "1-0",
+      "opening": {
+        "eco": "C11",
+        "name": "French Defense: Steinitz Variation, Boleslavsky Variation"
+      },
+      "moves": "e4 e6 d4 d5 Nc3 Nf6 e5 Nfd7 f4 c5 Nf3 Nc6 Be3 Be7 a3 a6 dxc5 Nxc5 b4 Nd7 Bd3 b5 O-O O-O Nd4 Nxd4 Bxd4 Nb6 Qh5 g6 Qh6 f5 g4 Nc4 Rae1 Re8 Re2 Bf8 Qh3 Nxa3 Rg2 Bg7 Qg3 Kf7 h4 Rg8 h5 Bf8 Qh3 Rg7 hxg6+ hxg6 gxf5 exf5 e6+ Bxe6 Qh6 Qd7 Re1 Re8 Bxg7 Bxg7 Qxg6+ Kf8 Bxf5",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 44,
+        "played": "Kf7",
+        "better": "a5",
+        "reply": "h4",
+        "replyPlayed": true,
+        "before": {
+          "cp": 146,
+          "mate": null
+        },
+        "after": {
+          "cp": 309,
+          "mate": null
+        },
+        "clock": 1769
+      },
+      "headline": "h4, h5, hxg6+: Pranesh M wins in 33 with 41 minutes left",
+      "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), the league's highest-rated player, beat GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) in 33 moves in round 5 of the Romanian Super League, and Vados IFB Finwest Arad won the match 5–1.\n\nIt turned on 22...Kf7, played with 29:29 left. Stockfish wanted 22...a5. It counted White clearly better before (+1.46) and winning after (+3.09), and 23.h4, its first choice, came straight back. The h-pawn went on, 24.h5 and 26.hxg6+. Then 28.e6+ gave a pawn, and 32.Qxg6+ and 33.Bxf5 took two. Pranesh M finished with 41 minutes on the clock against 17.\n\nRaahul V S had played Martirosyan the day before: the league's two highest-rated players on consecutive days.\n\nGo back to 22...Kf7 and find 22...a5. Then play the attack on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "⁨h4⁩، ⁨h5⁩، ⁨hxg6+⁩: فوز لـPranesh M في 33 نقلة و41 دقيقة على الساعة",
+          "body": "انتهى الدور بفوز GM Pranesh M (Vados IFB Finwest Arad، 2674، أعلى تصنيف في الدوري) على GM Raahul V S (CSU Universitatea de Vest Timisoara، 2393) في 33 نقلة، في الجولة الخامسة من الدوري الروماني الممتاز، وفاز فريق Vados IFB Finwest Arad بالمباراة ⁨5–1⁩.\n\nتحوّل الدور عند ⁨22...Kf7⁩ التي لُعبت والوقت المتبقي ⁨29:29⁩. أراد Stockfish ⁨22...a5⁩، وعدّ الأبيض متفوقًا بوضوح قبلها (⁨+1.46⁩) وفائزًا بعدها (⁨+3.09⁩). وجاءت ⁨23.h4⁩، الخيار الأول للمحرك، مباشرة. وواصل بيدق h التقدم: ⁨24.h5⁩ و⁨26.hxg6+⁩. ثم قدّمت ⁨28.e6+⁩ بيدقًا، وأخذت ⁨32.Qxg6+⁩ و⁨33.Bxf5⁩ بيدقين. وانتهى الدور و41 دقيقة على ساعة Pranesh M مقابل 17.\n\nوفي اليوم السابق كانت مواجهة Raahul V S مع Martirosyan، أي أمام أعلى تصنيفين في الدوري في يومين متتاليين.\n\nارجع إلى ⁨22...Kf7⁩ واعثر على ⁨22...a5⁩. ثم تابع الهجوم ضد المحرك."
+        },
+        "bg": {
+          "headline": "h4, h5, hxg6+: Pranesh M печели за 33 хода с 41 минути на часовника",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), с най-висок рейтинг в лигата, победи GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) за 33 хода в 5-ия кръг на румънската Суперлига, а Vados IFB Finwest Arad спечели мача с 5–1.\n\nПартията се обърна с 22...Kf7, изигран с 29:29 на часовника. Stockfish искаше 22...a5. Преди хода енджинът даваше ясно предимство на белите (+1,46), а след него — печеливша позиция (+3,09), и 23.h4, първият му избор, последва веднага. Пешката h продължи напред — 24.h5 и 26.hxg6+. После 28.e6+ даде пешка, а 32.Qxg6+ и 33.Bxf5 взеха две. Pranesh M завърши с 41 минути на часовника срещу 17.\n\nДен по-рано Raahul V S игра срещу Martirosyan — срещу двата най-високи рейтинга в лигата в два поредни дни.\n\nВърнете се към 22...Kf7 и намерете 22...a5. После продължете атаката срещу енджина."
+        },
+        "cs": {
+          "headline": "h4, h5, hxg6+: Pranesh M vyhrává po 33 tazích se 41 minutami na hodinách",
+          "body": "V partii GM Pranesh M (Vados IFB Finwest Arad, 2674) – GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) v 5. kole rumunské superligy vyhrává po 33 tazích Pranesh M s nejvyšším ratingem v lize a Vados IFB Finwest Arad bere zápas 5–1.\n\nZlom přišel tahem 22...Kf7, zahraným s 29:29 na hodinách. Stockfish chtěl 22...a5 a hodnotil pozici před tahem jako jasně lepší pro bílé (+1,46), po něm jako vyhranou (+3,09). Okamžitě přišlo 23.h4, první volba enginu. H-pěšec šel dál: 24.h5 a 26.hxg6+. Pak 28.e6+ obětoval pěšce a 32.Qxg6+ a 33.Bxf5 vzaly dva. Pranesh M končí se 41 minutami na hodinách proti 17.\n\nDen předtím hraje Raahul V S proti Martirosyan: dva nejvyšší ratingy ligy ve dvou dnech po sobě.\n\nVrať se k 22...Kf7 a najdi 22...a5. Pak si útok zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "h4, h5, hxg6+: Pranesh M vinder i 33 træk med 41 minutter tilbage",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), ligaens højest ratede spiller, slog GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) i 33 træk i 5. runde af den rumænske superliga, og Vados IFB Finwest Arad vandt matchen 5–1.\n\nPartiet vendte med 22...Kf7, spillet med 29:29 tilbage. Stockfish ville have 22...a5. Motoren så hvid klart bedre før (+1,46) og til gevinst efter (+3,09), og 23.h4, Stockfishs førstevalg, kom med det samme. Så gik h-bonden videre, 24.h5 og 26.hxg6+. Derefter gav 28.e6+ en bonde væk, og 32.Qxg6+ og 33.Bxf5 slog to bønder. Pranesh M sluttede med 41 minutter på uret mod 17.\n\nRaahul V S havde mødt Martirosyan dagen før: ligaens to højest ratede spillere to dage i træk.\n\nGå tilbage til 22...Kf7 og find 22...a5. Spil så angrebet videre mod motoren."
+        },
+        "de": {
+          "headline": "h4, h5, hxg6+: Pranesh M gewinnt in 33 Zügen mit 41 Minuten auf der Uhr",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), mit der höchsten Elo-Zahl der Liga, schlug GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) in Runde 5 der rumänischen Superliga in 33 Zügen, und Vados IFB Finwest Arad gewann den Kampf 5:1.\n\nDie Partie kippte mit 22...Kf7, gespielt mit 29:29 auf der Uhr. Stockfish wollte 22...a5. Davor sah Stockfish Weiß klar besser (+1,46), danach auf Gewinn (+3,09), und 23.h4, die erste Wahl von Stockfish, kam sofort. Der h-Bauer lief weiter, 24.h5 und 26.hxg6+. Dann gab 28.e6+ einen Bauern her, und 32.Qxg6+ und 33.Bxf5 schlugen zwei Bauern. Pranesh M beendete die Partie mit 41 gegen 17 Minuten auf der Uhr.\n\nRaahul V S hatte am Vortag gegen Martirosyan gespielt: an zwei Tagen hintereinander gegen die beiden Elo-Stärksten der Liga.\n\nZurück zu 22...Kf7 und 22...a5 finden. Dann den Angriff gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "h4, h5, hxg6+: Pranesh M κερδίζει σε 33 κινήσεις με 41 λεπτά στο ρολόι",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), με την υψηλότερη βαθμολογία Elo στη λίγκα, επικράτησε επί GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) σε 33 κινήσεις στον 5ο γύρο της ρουμανικής Σούπερ Λίγκας, και η Vados IFB Finwest Arad κέρδισε τον αγώνα με 5–1.\n\nΗ παρτίδα γύρισε στην 22...Kf7, που παίχτηκε με 29:29 στο ρολόι. Το Stockfish ήθελε την 22...a5. Έδινε καθαρό πλεονέκτημα στα λευκά πριν (+1,46) και νίκη μετά (+3,09), και η 23.h4, η πρώτη επιλογή της μηχανής, ήρθε αμέσως. Το πιόνι της στήλης h συνέχισε να προχωρά: 24.h5 και 26.hxg6+. Μετά η 28.e6+ έδωσε ένα πιόνι, και οι 32.Qxg6+ και 33.Bxf5 πήραν δύο. Pranesh M τελείωσε με 41 λεπτά στο ρολόι απέναντι σε 17.\n\nRaahul V S είχε παίξει με Martirosyan την προηγούμενη μέρα: τα δύο υψηλότερα Elo της λίγκας σε διαδοχικές μέρες.\n\nΓύρνα στην 22...Kf7 και βρες την 22...a5. Μετά συνέχισε την επίθεση απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "h4, h5, hxg6+: Pranesh M gana en 33 jugadas con 41 minutos en el reloj",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), el Elo más alto de la liga, venció a GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) en 33 jugadas en la quinta ronda de la Superliga rumana, y Vados IFB Finwest Arad ganó el match 5–1.\n\nTodo cambió con 22...Kf7, hecha con 29:29 en el reloj. Stockfish quería 22...a5. Daba clara ventaja a las blancas antes (+1,46) y posición ganadora después (+3,09), y 23.h4, su primera opción, llegó enseguida. El peón h siguió adelante: 24.h5 y 26.hxg6+. Después 28.e6+ entregó un peón, y 32.Qxg6+ y 33.Bxf5 se llevaron dos. Pranesh M terminó con 41 minutos en el reloj, contra 17.\n\nRaahul V S se había enfrentado a Martirosyan el día anterior: los dos Elos más altos de la liga en días consecutivos.\n\nVuelve a 22...Kf7 y encuentra 22...a5. Luego sigue el ataque contra el motor."
+        },
+        "fi": {
+          "headline": "h4, h5, hxg6+: Pranesh M voittaa 33 siirrossa, kellossa 41 minuuttia",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), sarjan ratingiltaan korkein pelaaja, voitti GM Raahul V S:n (CSU Universitatea de Vest Timisoara, 2393) 33 siirrossa Romanian superliigan 5. kierroksella, ja Vados IFB Finwest Arad voitti ottelun 5–1.\n\nPeli kääntyi siirtoon 22...Kf7, joka pelattiin kellossa 29:29 jäljellä. Stockfish halusi 22...a5. Se antoi valkealle ennen siirtoa selvän edun (+1,46) ja sen jälkeen voittoaseman (+3,09), ja sen ykkösvalinta 23.h4 tuli heti. Valkean h-sotilas jatkoi matkaa: 24.h5 ja 26.hxg6+. Sitten 28.e6+ antoi sotilaan, ja 32.Qxg6+ ja 33.Bxf5 löivät kaksi. Lopussa Pranesh M:llä oli kellossa 41 minuuttia, Raahul V S:llä 17.\n\nRaahul V S oli pelannut Martirosyania vastaan edellisenä päivänä: sarjan kaksi ratingiltaan korkeinta pelaajaa peräkkäisinä päivinä.\n\nPalaa siirtoon 22...Kf7 ja löydä 22...a5. Jatka sitten hyökkäystä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "h4, h5, hxg6+ : Pranesh M gagne en 33 coups avec 41 minutes à la pendule",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), plus haut Elo du championnat, a battu GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) en 33 coups lors de la 5e ronde de la Superligue roumaine, et Vados IFB Finwest Arad a gagné le match 5–1.\n\nLa partie a basculé sur 22...Kf7, joué avec 29:29 à la pendule. Stockfish voulait 22...a5, et donnait les Blancs nettement mieux avant (+1,46) et gagnants après (+3,09). 23.h4, son premier choix, a suivi aussitôt. Le pion h a poursuivi sa route, 24.h5 et 26.hxg6+. Puis 28.e6+ a donné un pion, et 32.Qxg6+ et 33.Bxf5 en ont pris deux. Pranesh M a terminé avec 41 minutes à la pendule, contre 17.\n\nRaahul V S avait affronté Martirosyan la veille : les deux plus hauts Elo du championnat, deux jours d’affilée.\n\nRevenez à 22...Kf7 et trouvez 22...a5. Puis poursuivez l’attaque contre le moteur."
+        },
+        "he": {
+          "headline": "⁨h4⁩, ⁨h5⁩, ⁨hxg6+⁩: ניצחון ל־Pranesh M אחרי 33 מסעים, עם 41 דקות בשעון",
+          "body": "המשחק בסיבוב ה־5 של ליגת העל הרומנית הסתיים בניצחון ל־GM Pranesh M (Vados IFB Finwest Arad, 2674, הדירוג הגבוה ביותר בליגה) על GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) אחרי 33 מסעים, ו־Vados IFB Finwest Arad ניצחה במפגש ⁨5–1⁩.\n\nנקודת המפנה הגיעה ב־⁨22...Kf7⁩, ששוחק כשנותרו ⁨29:29⁩. Stockfish רצה ב־⁨22...a5⁩, והעריך יתרון ברור ללבן לפני המסע (⁨+1.46⁩) ועמדה מנצחת אחריו (⁨+3.09⁩). המסע ⁨23.h4⁩, הבחירה הראשונה של המנוע, בא מיד. רגלי h המשיך קדימה: ⁨24.h5⁩ ו־⁨26.hxg6+⁩. אחר כך ⁨28.e6+⁩ מסר רגלי, ו־⁨32.Qxg6+⁩ ו־⁨33.Bxf5⁩ לקחו שניים. בסיום נותרו 41 דקות בשעון של Pranesh M, מול 17 בשעון השני.\n\nיום קודם לכן היה ל־Raahul V S משחק מול Martirosyan: מול שני הדירוגים הגבוהים ביותר בליגה, בימים רצופים.\n\nחזרו ל־⁨22...Kf7⁩ ומצאו את ⁨22...a5⁩. ואז המשיכו את ההתקפה מול המנוע."
+        },
+        "hi": {
+          "headline": "h4, h5, hxg6+: घड़ी पर 41 मिनट बचे रहते 33 चालों में Pranesh M की जीत",
+          "body": "रोमानियाई सुपर लीग के राउंड 5 में GM Pranesh M (Vados IFB Finwest Arad, 2674) ने GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) को 33 चालों में हराया, और Vados IFB Finwest Arad ने मुक़ाबला 5–1 से जीता। लीग में सबसे ऊँची रेटिंग Pranesh M की ही है।\n\nबाज़ी 22...Kf7 पर पलटी; यह चाल 29:29 बचे रहते खेली गई। Stockfish 22...a5 चाहता था। उसके हिसाब से पहले सफ़ेद साफ़ बेहतर था (+1.46) और बाद में जीत की स्थिति में (+3.09), और इंजन की पहली पसंद 23.h4 तुरंत आया। h-प्यादा आगे बढ़ता गया: 24.h5 और 26.hxg6+। फिर 28.e6+ में एक प्यादा दिया गया, और 32.Qxg6+ और 33.Bxf5 ने दो प्यादे लिए। अंत में Pranesh M की घड़ी पर 41 मिनट थे और Raahul V S की घड़ी पर 17।\n\nएक दिन पहले Raahul V S की बाज़ी Martirosyan के ख़िलाफ़ थी, यानी लगातार दो दिनों में लीग की दो सबसे ऊँची रेटिंगों से टक्कर।\n\n22...Kf7 पर लौटें और 22...a5 खोजें। फिर हमले को इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "h4, h5, hxg6+: Pranesh M 33 lépésben nyert, 41 perccel az óráján",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), a liga legmagasabb értékszámú játékosa, 33 lépésben nyert GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) ellen a román Szuperliga 5. fordulójában, a Vados IFB Finwest Arad pedig 5–1-re megnyerte a mérkőzést.\n\nA játszma a 22...Kf7 lépésnél fordult meg, amely 29:29-cel az órán született. A Stockfish a 22...a5 lépést akarta. Előtte világos egyértelmű előnyét látta (+1,46), utána nyerő állást (+3,09), és azonnal jött a 23.h4, az első választása. A h-gyalog továbbment: 24.h5 és 26.hxg6+. Aztán a 28.e6+ feláldozott egy gyalogot, a 32.Qxg6+ és a 33.Bxf5 pedig kettőt leütött. Pranesh M 41 perccel az óráján fejezte be a játszmát, az ellenfél 17 percével szemben.\n\nRaahul V S egy nappal korábban Martirosyan ellen játszott: két egymást követő napon a liga két legmagasabb értékszámú játékosa ellen.\n\nMenj vissza a 22...Kf7 lépéshez, és találd meg a 22...a5 lépést. Aztán vidd tovább a támadást a motor ellen."
+        },
+        "id": {
+          "headline": "h4, h5, hxg6+: Pranesh M menang dalam 33 langkah dengan sisa 41 menit",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), pemain dengan rating tertinggi di liga, mengalahkan GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) dalam 33 langkah di babak 5 Liga Super Rumania, dan Vados IFB Finwest Arad memenangi pertandingan 5–1.\n\nPartai berbalik pada 22...Kf7, yang dimainkan dengan sisa 29:29. Stockfish menginginkan 22...a5. Mesin menilai Putih unggul jelas sebelumnya (+1,46) dan menang sesudahnya (+3,09), dan 23.h4, pilihan pertamanya, langsung datang. Pion h terus maju, 24.h5 dan 26.hxg6+. Lalu 28.e6+ memberikan satu pion, dan 32.Qxg6+ serta 33.Bxf5 mengambil dua. Di akhir partai, jam Pranesh M menunjukkan 41 menit, jam Raahul V S 17 menit.\n\nSehari sebelumnya Raahul V S bertemu Martirosyan: dua pemain dengan rating tertinggi di liga pada dua hari berturut-turut.\n\nKembali ke 22...Kf7 dan temukan 22...a5. Lalu lanjutkan serangannya melawan mesin."
+        },
+        "it": {
+          "headline": "h4, h5, hxg6+: Pranesh M vince in 33 mosse con 41 minuti sull’orologio",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), l’Elo più alto del campionato, ha battuto GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) in 33 mosse nel 5º turno della Superlega rumena, e Vados IFB Finwest Arad ha vinto il match 5–1.\n\nLa partita è girata su 22...Kf7, giocata con 29:29 sull’orologio. Stockfish voleva 22...a5, e dava il Bianco chiaramente meglio prima (+1,46) e vincente dopo (+3,09). 23.h4, la sua prima scelta, è arrivata subito. Il pedone h ha proseguito, 24.h5 e 26.hxg6+. Poi 28.e6+ ha dato via un pedone, e 32.Qxg6+ e 33.Bxf5 ne hanno presi due. Pranesh M ha chiuso con 41 minuti sull’orologio, contro 17.\n\nRaahul V S aveva affrontato Martirosyan il giorno prima: i due Elo più alti del campionato in due giorni consecutivi.\n\nTorna a 22...Kf7 e trova 22...a5. Poi continua l’attacco contro il motore."
+        },
+        "ja": {
+          "headline": "h4、h5、hxg6+、Pranesh Mが41分を残して33手で勝利",
+          "body": "リーグ最高レーティングのGM Pranesh M（Vados IFB Finwest Arad、2674）がルーマニア・スーパーリーグ第5ラウンドでGM Raahul V S（CSU Universitatea de Vest Timisoara、2393）に33手で勝ち、Vados IFB Finwest Aradはマッチを5–1で制しました。\n\n分かれ目は残り29:29で指された22...Kf7でした。Stockfishが望んだのは22...a5。22...Kf7の後、Stockfishの評価は白の明確な優勢（+1.46）から勝勢（+3.09）に変わり、すぐに第一候補の23.h4が返ってきました。hポーンはさらに24.h5、26.hxg6+と進みました。続いて28.e6+でポーンを1つ差し出し、32.Qxg6+と33.Bxf5で2つ取りました。終局時、Pranesh Mの時計には41分、相手の時計には17分が残っていました。\n\nRaahul V Sは前日にMartirosyanと対戦していました。リーグのレーティング上位2人と、2日続けての対局でした。\n\n22...Kf7に戻って22...a5を見つけましょう。それから攻撃をエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "h4, h5, hxg6+… Pranesh M, 41분 남기고 33수 만에 승리",
+          "body": "리그 최고 레이팅 선수인 GM Pranesh M(Vados IFB Finwest Arad, 2674)이 루마니아 슈퍼리그 5라운드에서 GM Raahul V S(CSU Universitatea de Vest Timisoara, 2393)에게 33수 만에 이겼고, Vados IFB Finwest Arad는 매치를 5–1로 이겼습니다.\n\n승부를 가른 수는 29:29를 남기고 둔 22...Kf7였습니다. Stockfish가 원한 수는 22...a5였습니다. 22...Kf7 이후 Stockfish의 평가는 백의 뚜렷한 우세(+1.46)에서 이기는 형세(+3.09)로 바뀌었고, 곧바로 첫 번째 후보 수인 23.h4가 나왔습니다. h폰은 24.h5, 26.hxg6+로 계속 전진했습니다. 이어서 28.e6+로 폰 하나를 내주었고, 32.Qxg6+와 33.Bxf5로 두 개를 잡았습니다. 대국이 끝났을 때 Pranesh M의 시계에는 41분, 상대의 시계에는 17분이 남아 있었습니다.\n\nRaahul V S는 전날 Martirosyan과 대국했습니다. 이틀 연속으로 리그 레이팅 1, 2위 선수를 상대한 셈입니다.\n\n22...Kf7로 돌아가 22...a5를 찾아보세요. 이어서 엔진을 상대로 공격을 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "h4, h5, hxg6+: Pranesh M menang dalam 33 langkah dengan baki 41 minit",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), pemain dengan penarafan tertinggi dalam liga, menewaskan GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) dalam 33 langkah dalam pusingan 5 Liga Super Romania, dan Vados IFB Finwest Arad memenangi perlawanan 5–1.\n\nPermainan berubah pada 22...Kf7, yang dimainkan dengan baki 29:29. Stockfish mahukan 22...a5. Enjin menilai Putih jelas mendahului sebelumnya (+1,46) dan menang selepasnya (+3,09), dan 23.h4, pilihan pertamanya, tiba serta-merta. Bidak h terus mara, 24.h5 dan 26.hxg6+. Kemudian 28.e6+ memberikan sebiji bidak, dan 32.Qxg6+ serta 33.Bxf5 mengambil dua. Pada akhir permainan, jam Pranesh M menunjukkan 41 minit berbanding 17 minit bagi Raahul V S.\n\nSehari sebelumnya Raahul V S bertemu Martirosyan: dua pemain dengan penarafan tertinggi dalam liga pada dua hari berturut-turut.\n\nKembali ke 22...Kf7 dan cari 22...a5. Kemudian teruskan serangan itu menentang enjin."
+        },
+        "nl": {
+          "headline": "h4, h5, hxg6+: Pranesh M wint in 33 zetten met nog 41 minuten op de klok",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), met de hoogste rating van de competitie, versloeg GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) in 33 zetten in ronde 5 van de Roemeense Superliga, en Vados IFB Finwest Arad won de match met 5–1.\n\nDe partij kantelde met 22...Kf7, gespeeld met nog 29:29. Stockfish wilde 22...a5. Stockfish zag wit ervoor duidelijk beter staan (+1,46) en erna gewonnen (+3,09), en 23.h4, de eerste keuze van Stockfish, kwam meteen. De h-pion liep door, 24.h5 en 26.hxg6+. Daarna gaf 28.e6+ een pion weg, en 32.Qxg6+ en 33.Bxf5 sloegen er twee. Pranesh M eindigde met 41 minuten op de klok, tegen 17.\n\nRaahul V S had de dag ervoor tegen Martirosyan gespeeld: op twee opeenvolgende dagen tegen de twee hoogste ratings van de competitie.\n\nGa terug naar 22...Kf7 en vind 22...a5. Speel de aanval daarna verder tegen de engine."
+        },
+        "no": {
+          "headline": "h4, h5, hxg6+: Pranesh M vinner på 33 trekk med 41 minutter igjen",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), ligaens høyest ratede spiller, slo GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) på 33 trekk i 5. runde av den rumenske superligaen, og Vados IFB Finwest Arad vant matchen 5–1.\n\nPartiet snudde med 22...Kf7, spilt med 29:29 igjen. Stockfish ville ha 22...a5. Motoren regnet hvit som klart bedre før (+1,46) og som vinnende etter (+3,09), og 23.h4, Stockfishs førstevalg, kom med en gang. Så gikk h-bonden videre, 24.h5 og 26.hxg6+. Deretter ga 28.e6+ bort en bonde, og 32.Qxg6+ og 33.Bxf5 tok to bønder. Pranesh M endte med 41 minutter på klokka mot 17.\n\nRaahul V S hadde møtt Martirosyan dagen før: ligaens to høyest ratede spillere to dager på rad.\n\nGå tilbake til 22...Kf7 og finn 22...a5. Spill så angrepet videre mot motoren."
+        },
+        "pl": {
+          "headline": "h4, h5, hxg6+: Pranesh M wygrywa w 33 ruchach z 41 minutami na zegarze",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), numer jeden rankingu ligi, pokonuje GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) w 33 ruchach w 5. rundzie rumuńskiej Superligi, a Vados IFB Finwest Arad wygrywa mecz 5–1.\n\nPartia odwraca się po 22...Kf7, zagranym przy 29:29 na zegarze. Stockfish chciał 22...a5. Przed tym ruchem oceniał pozycję białych jako wyraźnie lepszą (+1,46), po nim jako wygraną (+3,09), a od razu padło 23.h4, pierwszy wybór silnika. Pionek h idzie dalej: 24.h5 i 26.hxg6+. Potem 28.e6+ oddaje pionka, a 32.Qxg6+ i 33.Bxf5 zabierają dwa. Pranesh M kończy partię z 41 minutami na zegarze wobec 17.\n\nDzień wcześniej Raahul V S gra z Martirosyan: dwa najwyższe rankingi ligi w dwa kolejne dni.\n\nWróć do 22...Kf7 i znajdź 22...a5. Potem poprowadź atak dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "h4, h5, hxg6+: Pranesh M vence em 33 lances com 41 minutos no relógio",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), o maior rating da liga, venceu GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) em 33 lances na 5ª rodada da Superliga Romena, e o Vados IFB Finwest Arad venceu o match por 5–1.\n\nA partida virou em 22...Kf7, jogado com 29:29 no relógio. O Stockfish queria 22...a5. Via clara vantagem das brancas antes (+1,46) e posição vencedora depois (+3,09), e 23.h4, sua primeira opção, veio logo em seguida. O peão h seguiu em frente: 24.h5 e 26.hxg6+. Depois 28.e6+ entregou um peão, e 32.Qxg6+ e 33.Bxf5 levaram dois. Pranesh M terminou com 41 minutos no relógio, contra 17.\n\nRaahul V S tinha enfrentado Martirosyan na véspera: os dois maiores ratings da liga em dias seguidos.\n\nVolte a 22...Kf7 e encontre 22...a5. Depois continue o ataque contra o motor."
+        },
+        "ro": {
+          "headline": "h4, h5, hxg6+: Pranesh M câștigă în 33 de mutări, cu 41 de minute pe ceas",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), numărul unu al ligii după rating, a câștigat contra GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) în 33 de mutări, în runda a 5-a a Superligii României, iar Vados IFB Finwest Arad a câștigat meciul cu 5–1.\n\nPartida s-a întors la 22...Kf7, jucată cu 29:29 rămase. Stockfish voia 22...a5. Considera Albul clar mai bun înainte (+1,46) și câștigător după (+3,09), iar 23.h4, prima sa alegere, a urmat imediat. Pionul h a mers mai departe: 24.h5 și 26.hxg6+. Apoi 28.e6+ a dat un pion, iar 32.Qxg6+ și 33.Bxf5 au luat doi. Pranesh M a terminat cu 41 de minute pe ceas, față de 17.\n\nRaahul V S jucase cu Martirosyan cu o zi înainte: primele două ratinguri ale ligii, în zile consecutive.\n\nÎntoarce-te la 22...Kf7 și găsește 22...a5. Apoi continuă atacul contra motorului."
+        },
+        "ru": {
+          "headline": "h4, h5, hxg6+: Pranesh M выигрывает за 33 хода с 41 минутой на часах",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), с самым высоким рейтингом в лиге, обыгрывает GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) за 33 хода в 5-м туре румынской Суперлиги, а Vados IFB Finwest Arad выигрывает матч 5–1.\n\nПерелом — 22...Kf7, сыгранный при 29:29 на часах. Stockfish хотел 22...a5. До хода движок давал белым явный перевес (+1,46), после — выигрыш (+3,09), и сразу последовал 23.h4 — первый выбор движка. Пешка h пошла дальше: 24.h5 и 26.hxg6+. Затем 28.e6+ отдал пешку, а 32.Qxg6+ и 33.Bxf5 забрали две. Pranesh M заканчивает партию с 41 минутой на часах против 17.\n\nНакануне у Raahul V S была партия с Martirosyan: два самых высоких рейтинга лиги два дня подряд.\n\nВернитесь к 22...Kf7 и найдите 22...a5. А затем продолжите атаку против движка."
+        },
+        "sv": {
+          "headline": "h4, h5, hxg6+: Pranesh M vinner på 33 drag med 41 minuter kvar",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), ligans högst rankade spelare, besegrade GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) på 33 drag i rond 5 av rumänska superligan, och Vados IFB Finwest Arad vann matchen med 5–1.\n\nDet vände på 22...Kf7, spelat med 29:29 kvar. Stockfish ville ha 22...a5. Motorn räknade vit som klart bättre före (+1,46) och som vinnande efter (+3,09), och 23.h4, Stockfishs förstaval, kom direkt. Sedan gick h-bonden vidare, 24.h5 och 26.hxg6+. Därefter gav 28.e6+ bort en bonde, och 32.Qxg6+ och 33.Bxf5 tog två bönder. Pranesh M slutade med 41 minuter på klockan mot 17.\n\nRaahul V S hade mött Martirosyan dagen innan: ligans två högst rankade spelare två dagar i rad.\n\nGå tillbaka till 22...Kf7 och hitta 22...a5. Spela sedan vidare angreppet mot motorn."
+        },
+        "th": {
+          "headline": "h4, h5, hxg6+: Pranesh M ชนะใน 33 ตาโดยยังเหลือเวลา 41 นาที",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674) ผู้เล่นเรตติ้งสูงสุดของลีก ชนะ GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) ใน 33 ตา ในรอบที่ 5 ของซูเปอร์ลีกโรมาเนีย และ Vados IFB Finwest Arad ชนะแมตช์ 5–1\n\nเกมพลิกที่ 22...Kf7 ซึ่งเดินเมื่อเหลือเวลา 29:29 Stockfish ต้องการ 22...a5 เอนจินประเมินว่าฝ่ายขาวได้เปรียบชัดเจนก่อนตานั้น (+1.46) และอยู่ในสถานะชนะหลังตานั้น (+3.09) และ 23.h4 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจินก็มาทันที เบี้ย h เดินหน้าต่อ 24.h5 และ 26.hxg6+ จากนั้น 28.e6+ สละเบี้ยหนึ่งตัว ส่วน 32.Qxg6+ และ 33.Bxf5 กินกลับมาสองตัว Pranesh M จบเกมโดยมีเวลาบนนาฬิกา 41 นาที ต่อ 17 นาที\n\nRaahul V S เพิ่งเจอกับ Martirosyan เมื่อวันก่อน: ผู้เล่นเรตติ้งสูงสุดสองคนของลีกในสองวันติดกัน\n\nย้อนกลับไปที่ 22...Kf7 แล้วหา 22...a5 จากนั้นเล่นการบุกต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "h4, h5, hxg6+: Pranesh M, saatinde 41 dakikayla 33 hamlede kazandı",
+          "body": "Ligin en yüksek reytingli oyuncusu GM Pranesh M (Vados IFB Finwest Arad, 2674), Romanya Süper Ligi'nin 5. turunda GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) karşısında 33 hamlede kazandı; Vados IFB Finwest Arad da maçı 5–1 aldı.\n\nOyun, saatte 29:29 kala oynanan 22...Kf7 ile döndü. Stockfish 22...a5 hamlesini istiyordu. Öncesinde beyazı açık farkla üstün (+1,46), sonrasında kazanan konumda (+3,09) görüyordu ve ilk tercihi olan 23.h4 hemen geldi. Beyazın h piyonu yürümeye devam etti: 24.h5 ve 26.hxg6+. Ardından 28.e6+ bir piyon verdi, 32.Qxg6+ ve 33.Bxf5 ise iki piyon aldı. Pranesh M oyunu saatinde 41 dakikayla bitirdi; Raahul V S'nin saatinde 17 dakika vardı.\n\nRaahul V S bir gün önce Martirosyan'la oynamıştı: ligin en yüksek reytingli iki oyuncusu, art arda iki günde.\n\n22...Kf7 hamlesine dön ve 22...a5 hamlesini bul. Sonra hücumu motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "h4, h5, hxg6+: Pranesh M thắng sau 33 nước, còn 41 phút trên đồng hồ",
+          "body": "GM Pranesh M (Vados IFB Finwest Arad, 2674), kỳ thủ có hệ số cao nhất giải, thắng GM Raahul V S (CSU Universitatea de Vest Timisoara, 2393) sau 33 nước ở vòng 5 giải Siêu hạng Romania, và Vados IFB Finwest Arad thắng trận 5–1.\n\nVán cờ đổi chiều ở 22...Kf7, được đi khi còn 29:29. Stockfish muốn 22...a5. Engine đánh giá Trắng ưu thế rõ trước nước đó (+1,46) và ở thế thắng sau nước đó (+3,09), và 23.h4, lựa chọn số một của engine, đến ngay. Tốt h tiếp tục tiến, 24.h5 và 26.hxg6+. Rồi 28.e6+ thí một Tốt, còn 32.Qxg6+ và 33.Bxf5 bắt về hai quân. Pranesh M kết thúc ván với 41 phút trên đồng hồ, so với 17 phút.\n\nRaahul V S đã gặp Martirosyan một ngày trước đó: hai kỳ thủ có hệ số cao nhất giải trong hai ngày liên tiếp.\n\nQuay lại 22...Kf7 và tìm 22...a5. Rồi chơi tiếp đợt tấn công với engine."
+        },
+        "zh-Hans": {
+          "headline": "h4、h5、hxg6+：Pranesh M用33回合取胜，棋钟还剩41分钟",
+          "body": "联赛等级分最高的棋手GM Pranesh M（Vados IFB Finwest Arad，2674）在罗马尼亚超级联赛第5轮33回合击败GM Raahul V S（CSU Universitatea de Vest Timisoara，2393），Vados IFB Finwest Arad以5–1赢下比赛。\n\n转折点是22...Kf7，走这步时还剩29:29。Stockfish想走的是22...a5。Stockfish认为这步之前白方明显占优（+1.46），之后白方胜势（+3.09），白方随即走出Stockfish的首选23.h4。h兵继续前进，24.h5，然后26.hxg6+。接着28.e6+送出一兵，32.Qxg6+和33.Bxf5吃掉两兵。对局结束时，Pranesh M的棋钟还有41分钟，对手为17分钟。\n\nRaahul V S前一天刚与Martirosyan交手：连续两天对阵联赛等级分最高的两名棋手。\n\n回到22...Kf7，找出22...a5。然后对着引擎把这波攻势继续下去。"
+        },
+        "zh-Hant": {
+          "headline": "h4、h5、hxg6+：Pranesh M用33回合取勝，棋鐘還剩41分鐘",
+          "body": "聯賽等級分最高的棋手GM Pranesh M（Vados IFB Finwest Arad，2674）在羅馬尼亞超級聯賽第5輪33回合擊敗GM Raahul V S（CSU Universitatea de Vest Timisoara，2393），Vados IFB Finwest Arad以5–1贏下比賽。\n\n轉折點是22...Kf7，走這步時還剩29:29。Stockfish想走的是22...a5。Stockfish認為這步之前白方明顯佔優（+1.46），之後白方勝勢（+3.09），白方隨即走出Stockfish的首選23.h4。h兵繼續挺進，24.h5，然後26.hxg6+。接著28.e6+送出一兵，32.Qxg6+和33.Bxf5吃掉兩兵。對局結束時，Pranesh M的棋鐘還有41分鐘，對手則是17分鐘。\n\nRaahul V S前一天才和Martirosyan交手：連續兩天對上聯賽等級分最高的兩名棋手。\n\n回到22...Kf7，找出22...a5。然後對著引擎把這波攻勢繼續下去。"
+        }
+      },
+      "fen": "r1bqr3/5kbp/p3p1p1/1p1pPp2/1P1B1PP1/n1NB2Q1/2P3RP/5RK1 w - - 4 23",
+      "last": {
+        "from": "g8",
+        "to": "f7"
+      },
+      "url": "https://brasspawn.com/today/2026-10-07-pranesh-m-raahul-v-s-romanian-team-chess-championships-r5",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-mens-super-league/round-5/Oc5aVcML/IWcWZPAB"
+      },
+      "updatedAt": "2026-10-07T19:06:26.792Z"
+    },
+    {
+      "id": "2026-10-07-filip-sadhwani-romanian-team-chess-championships-r5",
+      "status": "approved",
+      "date": "2026-10-07",
+      "rank": 1,
+      "weight": 395,
+      "event": {
+        "name": "Romanian Team Chess Championships 2026",
+        "short": "Romanian Team Chess Championships",
+        "section": "Men’s Super league",
+        "round": 5,
+        "location": "Eforie Nord, Romania",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-mens-super-league/round-5/Oc5aVcML"
+      },
+      "white": {
+        "name": "Lucian-Ioan Filip",
+        "short": "Filip",
+        "title": "IM",
+        "elo": 2293,
+        "team": "CSU UNIVERSITATEA DE VEST Timisoara"
+      },
+      "black": {
+        "name": "Raunak Sadhwani",
+        "short": "Sadhwani",
+        "title": "GM",
+        "elo": 2645,
+        "team": "VADOS IFB FINWEST ARAD"
+      },
+      "result": "0-1",
+      "opening": {
+        "eco": "E94",
+        "name": "King's Indian Defense: Orthodox Variation, Glek Defense"
+      },
+      "moves": "d4 Nf6 c4 g6 Nc3 Bg7 e4 d6 Be2 O-O Nf3 Na6 O-O e5 Re1 exd4 Nxd4 Nc5 f3 Nh5 Be3 Qh4 Bf2 Qg5 Nd5 c6 Be3 Qd8 Nc3 Qh4 Bf2 Qg5 Bf1 Nf4 Be3 Ncd3 g3 Nxe1 Qxe1 Nh3+ Kh1 Qf6 f4 Bg4 Bg2 g5 Nce2 c5 Nf5 Bxf5 exf5 Rfe8 Nc3 gxf4 Nd5 Qxb2 Rb1 Qxa2 gxf4 Nf2+ Kg1 Ng4",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 49,
+        "played": "Nf5",
+        "better": "Nb5",
+        "reply": "Bxf5",
+        "replyPlayed": true,
+        "before": {
+          "cp": -189,
+          "mate": null
+        },
+        "after": {
+          "cp": -328,
+          "mate": null
+        },
+        "clock": 41
+      },
+      "headline": "41 seconds against 69 minutes: Sadhwani wins in 31",
+      "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) beat IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) in 31 moves in round 5 of the Romanian Super League.\n\nFilip played 25.Nf5 with 41 seconds left; Sadhwani had 69 minutes. Stockfish wanted 25.Nb5. It counted Black clearly better before (−1.89) and winning after (−3.28), and 25...Bxf5, its first choice, came straight back. Then 27...gxf4, 28...Qxb2 and 29...Qxa2 took three pawns, and 30...Nf2+ was check.\n\nVados IFB Finwest Arad won the match 5–1 and finished the league second, behind ACS Superchess.\n\nStop at move 25, give yourself 41 seconds, and find 25.Nb5. Then play it on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "41 ثانية مقابل 69 دقيقة: فوز لـSadhwani في 31 نقلة",
+          "body": "انتهى الدور بفوز GM Raunak Sadhwani (Vados IFB Finwest Arad، 2645) على IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara، 2293) في 31 نقلة، في الجولة الخامسة من الدوري الروماني الممتاز.\n\nلُعبت نقلة Filip ⁨25.Nf5⁩ والوقت المتبقي 41 ثانية، مقابل 69 دقيقة على ساعة Sadhwani. أراد Stockfish ⁨25.Nb5⁩، وعدّ الأسود متفوقًا بوضوح قبلها (⁨−1.89⁩) وفائزًا بعدها (⁨−3.28⁩). وجاءت ⁨25...Bxf5⁩، الخيار الأول للمحرك، مباشرة. ثم أخذت ⁨27...gxf4⁩ و⁨28...Qxb2⁩ و⁨29...Qxa2⁩ ثلاثة بيادق، وكانت ⁨30...Nf2+⁩ كشًّا.\n\nفاز فريق Vados IFB Finwest Arad بالمباراة ⁨5–1⁩ وأنهى الدوري في المركز الثاني، خلف ACS Superchess.\n\nتوقف عند النقلة 25، وامنح نفسك 41 ثانية، واعثر على ⁨25.Nb5⁩. ثم تابع اللعب ضد المحرك."
+        },
+        "bg": {
+          "headline": "41 секунди срещу 69 минути: Sadhwani печели за 31 хода",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) победи IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) за 31 хода в 5-ия кръг на румънската Суперлига.\n\nFilip изигра 25.Nf5 с 41 секунди на часовника, а Sadhwani имаше 69 минути. Stockfish искаше 25.Nb5. Преди хода енджинът даваше ясно предимство на черните (−1,89), а след него — печеливша позиция (−3,28), и 25...Bxf5, първият му избор, последва веднага. После 27...gxf4, 28...Qxb2 и 29...Qxa2 взеха три пешки, а 30...Nf2+ беше шах.\n\nVados IFB Finwest Arad спечели мача с 5–1 и завърши лигата на второ място след ACS Superchess.\n\nСпрете на 25-ия ход, дайте си 41 секунди и намерете 25.Nb5. После продължете партията срещу енджина."
+        },
+        "cs": {
+          "headline": "41 sekund proti 69 minutám: Sadhwani vyhrává po 31 tazích",
+          "body": "V partii IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) – GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) v 5. kole rumunské superligy vyhrává po 31 tazích Sadhwani.\n\nFilip hraje 25.Nf5 se 41 sekundami na hodinách; Sadhwani má 69 minut. Stockfish chtěl 25.Nb5 a hodnotil pozici před tahem jako jasně lepší pro černé (−1,89), po něm jako vyhranou (−3,28). Okamžitě přišlo 25...Bxf5, první volba enginu. Pak 27...gxf4, 28...Qxb2 a 29...Qxa2 vzaly tři pěšce a 30...Nf2+ dal šach.\n\nVados IFB Finwest Arad vyhrává zápas 5–1 a končí v lize na druhém místě, za ACS Superchess.\n\nZastav ve 25. tahu, dej si 41 sekund a najdi 25.Nb5. Pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "41 sekunder mod 69 minutter: Sadhwani vinder i 31 træk",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) slog IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) i 31 træk i 5. runde af den rumænske superliga.\n\nFilip spillede 25.Nf5 med 41 sekunder tilbage; Sadhwani havde 69 minutter. Stockfish ville have 25.Nb5. Motoren så sort klart bedre før (−1,89) og til gevinst efter (−3,28), og 25...Bxf5, Stockfishs førstevalg, kom med det samme. Derefter slog 27...gxf4, 28...Qxb2 og 29...Qxa2 tre bønder, og 30...Nf2+ gav skak.\n\nVados IFB Finwest Arad vandt matchen 5–1 og sluttede på andenpladsen i ligaen efter ACS Superchess.\n\nStop ved træk 25, giv dig selv 41 sekunder, og find 25.Nb5. Spil så videre mod motoren."
+        },
+        "de": {
+          "headline": "41 Sekunden gegen 69 Minuten: Sadhwani gewinnt in 31 Zügen",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) schlug IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) in Runde 5 der rumänischen Superliga in 31 Zügen.\n\nFilip spielte 25.Nf5 mit 41 Sekunden auf der Uhr, Sadhwani hatte 69 Minuten. Stockfish wollte 25.Nb5. Davor sah Stockfish Schwarz klar besser (−1,89), danach auf Gewinn (−3,28), und 25...Bxf5, die erste Wahl von Stockfish, kam sofort. Dann schlugen 27...gxf4, 28...Qxb2 und 29...Qxa2 drei Bauern, und 30...Nf2+ war Schach.\n\nVados IFB Finwest Arad gewann den Kampf 5:1 und beendete die Liga auf Platz zwei, hinter ACS Superchess.\n\nBei Zug 25 anhalten, sich 41 Sekunden geben und 25.Nb5 finden. Dann gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "41 δευτερόλεπτα απέναντι σε 69 λεπτά: Sadhwani κερδίζει σε 31 κινήσεις",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) επικράτησε επί IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) σε 31 κινήσεις στον 5ο γύρο της ρουμανικής Σούπερ Λίγκας.\n\nFilip έπαιξε την 25.Nf5 με 41 δευτερόλεπτα στο ρολόι, ενώ Sadhwani είχε 69 λεπτά. Το Stockfish ήθελε την 25.Nb5. Έδινε καθαρό πλεονέκτημα στα μαύρα πριν (−1,89) και νίκη μετά (−3,28), και η 25...Bxf5, η πρώτη επιλογή της μηχανής, ήρθε αμέσως. Μετά οι 27...gxf4, 28...Qxb2 και 29...Qxa2 πήραν τρία πιόνια, και η 30...Nf2+ ήταν σαχ.\n\nΗ Vados IFB Finwest Arad κέρδισε τον αγώνα με 5–1 και τερμάτισε στη δεύτερη θέση του πρωταθλήματος, πίσω από την ACS Superchess.\n\nΣταμάτα στην 25η κίνηση, βάλε 41 δευτερόλεπτα στο ρολόι σου και βρες την 25.Nb5. Μετά συνέχισε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "41 segundos contra 69 minutos: Sadhwani gana en 31 jugadas",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) venció a IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) en 31 jugadas en la quinta ronda de la Superliga rumana.\n\nFilip jugó 25.Nf5 con 41 segundos en el reloj; Sadhwani tenía 69 minutos. Stockfish quería 25.Nb5. Daba clara ventaja a las negras antes (−1,89) y posición ganadora después (−3,28), y 25...Bxf5, su primera opción, llegó enseguida. Después 27...gxf4, 28...Qxb2 y 29...Qxa2 se llevaron tres peones, y 30...Nf2+ dio jaque.\n\nVados IFB Finwest Arad ganó el match 5–1 y terminó la liga en segundo lugar, por detrás de ACS Superchess.\n\nDetente en la jugada 25, date 41 segundos y encuentra 25.Nb5. Luego sigue contra el motor."
+        },
+        "fi": {
+          "headline": "41 sekuntia vastaan 69 minuuttia: Sadhwani voittaa 31 siirrossa",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) voitti IM Lucian-Ioan Filipin (CSU Universitatea de Vest Timisoara, 2293) 31 siirrossa Romanian superliigan 5. kierroksella.\n\nFilip pelasi 25.Nf5 kellossa 41 sekuntia jäljellä; Sadhwanilla oli 69 minuuttia. Stockfish halusi 25.Nb5. Se antoi mustalle ennen siirtoa selvän edun (−1,89) ja sen jälkeen voittoaseman (−3,28), ja sen ykkösvalinta 25...Bxf5 tuli heti. Sitten 27...gxf4, 28...Qxb2 ja 29...Qxa2 löivät kolme sotilasta, ja 30...Nf2+ oli shakki.\n\nVados IFB Finwest Arad voitti ottelun 5–1 ja sijoittui sarjassa toiseksi ACS Superchessin jälkeen.\n\nPysähdy siirtoon 25, anna itsellesi 41 sekuntia ja löydä 25.Nb5. Jatka sitten peliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "41 secondes contre 69 minutes : Sadhwani gagne en 31 coups",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) a battu IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) en 31 coups lors de la 5e ronde de la Superligue roumaine.\n\nFilip a joué 25.Nf5 avec 41 secondes à la pendule ; Sadhwani avait 69 minutes. Stockfish voulait 25.Nb5, et donnait les Noirs nettement mieux avant (−1,89) et gagnants après (−3,28). 25...Bxf5, son premier choix, a suivi aussitôt. Ensuite, 27...gxf4, 28...Qxb2 et 29...Qxa2 ont pris trois pions, et 30...Nf2+ a donné échec.\n\nVados IFB Finwest Arad a gagné le match 5–1 et a terminé le championnat à la deuxième place, derrière ACS Superchess.\n\nArrêtez-vous au 25e coup, donnez-vous 41 secondes et trouvez 25.Nb5. Puis continuez contre le moteur."
+        },
+        "he": {
+          "headline": "41 שניות מול 69 דקות: ניצחון ל־Sadhwani אחרי 31 מסעים",
+          "body": "המשחק בסיבוב ה־5 של ליגת העל הרומנית הסתיים בניצחון ל־GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) על IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) אחרי 31 מסעים.\n\nהמסע ⁨25.Nf5⁩ שוחק כשבשעון של Filip נותרו 41 שניות, ובשעון של Sadhwani היו 69 דקות. Stockfish רצה ב־⁨25.Nb5⁩, והעריך יתרון ברור לשחור לפני המסע (⁨−1.89⁩) ועמדה מנצחת אחריו (⁨−3.28⁩). המסע ⁨25...Bxf5⁩, הבחירה הראשונה של המנוע, בא מיד. אחר כך ⁨27...gxf4⁩, ⁨28...Qxb2⁩ ו־⁨29...Qxa2⁩ לקחו שלושה רגלים, ו־⁨30...Nf2+⁩ נתן שח.\n\nקבוצת Vados IFB Finwest Arad ניצחה במפגש ⁨5–1⁩ וסיימה את הליגה במקום השני, אחרי ACS Superchess.\n\nעצרו במסע 25, תנו לעצמכם 41 שניות ומצאו את ⁨25.Nb5⁩. ואז המשיכו לשחק מול המנוע."
+        },
+        "hi": {
+          "headline": "41 सेकंड बनाम 69 मिनट: 31 चालों में Sadhwani की जीत",
+          "body": "रोमानियाई सुपर लीग के राउंड 5 में GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) ने IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) को 31 चालों में हराया।\n\n41 सेकंड बचे रहते Filip ने 25.Nf5 खेला; Sadhwani की घड़ी पर 69 मिनट थे। Stockfish 25.Nb5 चाहता था। उसके हिसाब से पहले काला साफ़ बेहतर था (−1.89) और बाद में जीत की स्थिति में (−3.28), और इंजन की पहली पसंद 25...Bxf5 तुरंत आया। फिर 27...gxf4, 28...Qxb2 और 29...Qxa2 ने तीन प्यादे लिए, और 30...Nf2+ के साथ शह दी गई।\n\nVados IFB Finwest Arad ने मुक़ाबला 5–1 से जीता और लीग ACS Superchess के बाद दूसरे स्थान पर ख़त्म की।\n\nचाल 25 पर रुकें, खुद को 41 सेकंड दें, और 25.Nb5 खोजें। फिर इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "41 másodperc 69 perc ellen: Sadhwani 31 lépésben nyert",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) 31 lépésben nyert IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) ellen a román Szuperliga 5. fordulójában.\n\nFilip 41 másodperccel az óráján játszotta a 25.Nf5 lépést; Sadhwani óráján 69 perc állt. A Stockfish a 25.Nb5 lépést akarta. Előtte sötét egyértelmű előnyét látta (−1,89), utána nyerő állást (−3,28), és azonnal jött a 25...Bxf5, az első választása. Ezután a 27...gxf4, a 28...Qxb2 és a 29...Qxa2 három gyalogot ütött le, a 30...Nf2+ pedig sakkot adott.\n\nA Vados IFB Finwest Arad 5–1-re megnyerte a mérkőzést, és a bajnokságot a második helyen zárta, az ACS Superchess mögött.\n\nÁllj meg a 25. lépésnél, adj magadnak 41 másodpercet, és találd meg a 25.Nb5 lépést. Aztán játszd tovább a motor ellen."
+        },
+        "id": {
+          "headline": "41 detik lawan 69 menit: Sadhwani menang dalam 31 langkah",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) mengalahkan IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) dalam 31 langkah di babak 5 Liga Super Rumania.\n\nFilip memainkan 25.Nf5 dengan sisa 41 detik; Sadhwani punya 69 menit. Stockfish menginginkan 25.Nb5. Mesin menilai Hitam unggul jelas sebelumnya (−1,89) dan menang sesudahnya (−3,28), dan 25...Bxf5, pilihan pertamanya, langsung datang. Lalu 27...gxf4, 28...Qxb2, dan 29...Qxa2 mengambil tiga pion, dan 30...Nf2+ memberi skak.\n\nVados IFB Finwest Arad memenangi pertandingan 5–1 dan menutup liga di peringkat kedua, di belakang ACS Superchess.\n\nBerhenti di langkah 25, beri dirimu 41 detik, dan temukan 25.Nb5. Lalu lanjutkan melawan mesin."
+        },
+        "it": {
+          "headline": "41 secondi contro 69 minuti: Sadhwani vince in 31 mosse",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) ha battuto IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) in 31 mosse nel 5º turno della Superlega rumena.\n\nFilip ha giocato 25.Nf5 con 41 secondi sull’orologio; Sadhwani aveva 69 minuti. Stockfish voleva 25.Nb5, e dava il Nero chiaramente meglio prima (−1,89) e vincente dopo (−3,28). 25...Bxf5, la sua prima scelta, è arrivata subito. Poi 27...gxf4, 28...Qxb2 e 29...Qxa2 hanno preso tre pedoni, e 30...Nf2+ ha dato scacco.\n\nVados IFB Finwest Arad ha vinto il match 5–1 e ha chiuso il campionato al secondo posto, dietro ACS Superchess.\n\nFermati alla mossa 25, datti 41 secondi e trova 25.Nb5. Poi continua contro il motore."
+        },
+        "ja": {
+          "headline": "41秒対69分、Sadhwaniが31手で勝利",
+          "body": "GM Raunak Sadhwani（Vados IFB Finwest Arad、2645）がルーマニア・スーパーリーグ第5ラウンドでIM Lucian-Ioan Filip（CSU Universitatea de Vest Timisoara、2293）に31手で勝ちました。\n\nFilipは残り41秒で25.Nf5を指しました。Sadhwaniの残りは69分でした。Stockfishが望んだのは25.Nb5。25.Nf5の後、Stockfishの評価は黒の明確な優勢（−1.89）から勝勢（−3.28）に変わり、すぐに第一候補の25...Bxf5が返ってきました。続いて27...gxf4、28...Qxb2、29...Qxa2で3つのポーンを取り、30...Nf2+でチェックをかけました。\n\nVados IFB Finwest Aradはマッチを5–1で制し、リーグをACS Superchessに次ぐ2位で終えました。\n\n25手目で止め、自分にも41秒だけ与えて、25.Nb5を見つけましょう。それからエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "41초 대 69분… Sadhwani, 31수 만에 승리",
+          "body": "GM Raunak Sadhwani(Vados IFB Finwest Arad, 2645)가 루마니아 슈퍼리그 5라운드에서 IM Lucian-Ioan Filip(CSU Universitatea de Vest Timisoara, 2293)에게 31수 만에 이겼습니다.\n\nFilip은 41초를 남기고 25.Nf5를 두었고, Sadhwani에게는 69분이 남아 있었습니다. Stockfish가 원한 수는 25.Nb5였습니다. 25.Nf5 이후 Stockfish의 평가는 흑의 뚜렷한 우세(−1.89)에서 이기는 형세(−3.28)로 바뀌었고, 곧바로 첫 번째 후보 수인 25...Bxf5가 나왔습니다. 이어서 27...gxf4, 28...Qxb2, 29...Qxa2로 폰 세 개를 잡았고, 30...Nf2+는 체크였습니다.\n\nVados IFB Finwest Arad는 매치를 5–1로 이겼고, 리그를 ACS Superchess에 이어 2위로 마쳤습니다.\n\n25수째에서 멈추고 스스로에게 41초를 준 뒤 25.Nb5를 찾아보세요. 이어서 엔진을 상대로 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "41 saat berbanding 69 minit: Sadhwani menang dalam 31 langkah",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) menewaskan IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) dalam 31 langkah dalam pusingan 5 Liga Super Romania.\n\nFilip memainkan 25.Nf5 dengan baki 41 saat; Sadhwani mempunyai 69 minit. Stockfish mahukan 25.Nb5. Enjin menilai Hitam jelas mendahului sebelumnya (−1,89) dan menang selepasnya (−3,28), dan 25...Bxf5, pilihan pertamanya, tiba serta-merta. Kemudian 27...gxf4, 28...Qxb2 dan 29...Qxa2 mengambil tiga bidak, dan 30...Nf2+ memberi sekak.\n\nVados IFB Finwest Arad memenangi perlawanan 5–1 dan menamatkan liga di tempat kedua, di belakang ACS Superchess.\n\nBerhenti pada langkah 25, beri diri anda 41 saat, dan cari 25.Nb5. Kemudian teruskan menentang enjin."
+        },
+        "nl": {
+          "headline": "41 seconden tegen 69 minuten: Sadhwani wint in 31 zetten",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) versloeg IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) in 31 zetten in ronde 5 van de Roemeense Superliga.\n\nFilip speelde 25.Nf5 met nog 41 seconden; Sadhwani had 69 minuten. Stockfish wilde 25.Nb5. Stockfish zag zwart ervoor duidelijk beter staan (−1,89) en erna gewonnen (−3,28), en 25...Bxf5, de eerste keuze van Stockfish, kwam meteen. Daarna sloegen 27...gxf4, 28...Qxb2 en 29...Qxa2 drie pionnen, en 30...Nf2+ was schaak.\n\nVados IFB Finwest Arad won de match met 5–1 en eindigde in de competitie op de tweede plaats, achter ACS Superchess.\n\nStop bij zet 25, geef jezelf 41 seconden en vind 25.Nb5. Speel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "41 sekunder mot 69 minutter: Sadhwani vinner på 31 trekk",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) slo IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) på 31 trekk i 5. runde av den rumenske superligaen.\n\nFilip spilte 25.Nf5 med 41 sekunder igjen; Sadhwani hadde 69 minutter. Stockfish ville ha 25.Nb5. Motoren regnet svart som klart bedre før (−1,89) og som vinnende etter (−3,28), og 25...Bxf5, Stockfishs førstevalg, kom med en gang. Deretter tok 27...gxf4, 28...Qxb2 og 29...Qxa2 tre bønder, og 30...Nf2+ var sjakk.\n\nVados IFB Finwest Arad vant matchen 5–1 og endte på andreplass i ligaen, bak ACS Superchess.\n\nStopp ved trekk 25, gi deg selv 41 sekunder, og finn 25.Nb5. Spill så videre mot motoren."
+        },
+        "pl": {
+          "headline": "41 sekund wobec 69 minut: Sadhwani wygrywa w 31 ruchach",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) pokonuje IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) w 31 ruchach w 5. rundzie rumuńskiej Superligi.\n\nFilip gra 25.Nf5, mając 41 sekund na zegarze; Sadhwani ma 69 minut. Stockfish chciał 25.Nb5. Przed tym ruchem oceniał pozycję czarnych jako wyraźnie lepszą (−1,89), po nim jako wygraną (−3,28), a od razu padło 25...Bxf5, pierwszy wybór silnika. Potem 27...gxf4, 28...Qxb2 i 29...Qxa2 zabierają trzy pionki, a 30...Nf2+ daje szacha.\n\nVados IFB Finwest Arad wygrywa mecz 5–1 i kończy ligę na drugim miejscu, za ACS Superchess.\n\nZatrzymaj się na 25. ruchu, daj sobie 41 sekund i znajdź 25.Nb5. Potem graj dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "41 segundos contra 69 minutos: Sadhwani vence em 31 lances",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) venceu IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) em 31 lances na 5ª rodada da Superliga Romena.\n\nFilip jogou 25.Nf5 com 41 segundos no relógio; Sadhwani tinha 69 minutos. O Stockfish queria 25.Nb5. Via clara vantagem das pretas antes (−1,89) e posição vencedora depois (−3,28), e 25...Bxf5, sua primeira opção, veio logo em seguida. Depois 27...gxf4, 28...Qxb2 e 29...Qxa2 levaram três peões, e 30...Nf2+ deu xeque.\n\nO Vados IFB Finwest Arad venceu o match por 5–1 e terminou a liga em segundo lugar, atrás do ACS Superchess.\n\nPare no lance 25 e, em 41 segundos, encontre 25.Nb5. Depois continue contra o motor."
+        },
+        "ro": {
+          "headline": "41 de secunde contra 69 de minute: Sadhwani câștigă în 31 de mutări",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) a câștigat contra IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) în 31 de mutări, în runda a 5-a a Superligii României.\n\nFilip a jucat 25.Nf5 cu 41 de secunde rămase; Sadhwani avea 69 de minute. Stockfish voia 25.Nb5. Considera Negrul clar mai bun înainte (−1,89) și câștigător după (−3,28), iar 25...Bxf5, prima sa alegere, a urmat imediat. Apoi 27...gxf4, 28...Qxb2 și 29...Qxa2 au luat trei pioni, iar 30...Nf2+ a dat șah.\n\nVados IFB Finwest Arad a câștigat meciul cu 5–1 și a încheiat campionatul pe locul doi, în urma ACS Superchess.\n\nOprește-te la mutarea 25, dă-ți 41 de secunde și găsește 25.Nb5. Apoi continuă contra motorului."
+        },
+        "ru": {
+          "headline": "41 секунда против 69 минут: Sadhwani выигрывает за 31 ход",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) обыгрывает IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) за 31 ход в 5-м туре румынской Суперлиги.\n\nFilip играет 25.Nf5, имея 41 секунду; у Sadhwani — 69 минут. Stockfish хотел 25.Nb5. До хода движок давал чёрным явный перевес (−1,89), после — выигрыш (−3,28), и сразу последовал 25...Bxf5 — первый выбор движка. Затем 27...gxf4, 28...Qxb2 и 29...Qxa2 забрали три пешки, а 30...Nf2+ дал шах.\n\nVados IFB Finwest Arad выигрывает матч 5–1 и заканчивает лигу на втором месте, позади ACS Superchess.\n\nОстановитесь на 25-м ходу, дайте себе 41 секунду и найдите 25.Nb5. А затем продолжите партию против движка."
+        },
+        "sv": {
+          "headline": "41 sekunder mot 69 minuter: Sadhwani vinner på 31 drag",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) besegrade IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) på 31 drag i rond 5 av rumänska superligan.\n\nFilip spelade 25.Nf5 med 41 sekunder kvar; Sadhwani hade 69 minuter. Stockfish ville ha 25.Nb5. Motorn räknade svart som klart bättre före (−1,89) och som vinnande efter (−3,28), och 25...Bxf5, Stockfishs förstaval, kom direkt. Sedan tog 27...gxf4, 28...Qxb2 och 29...Qxa2 tre bönder, och 30...Nf2+ var schack.\n\nVados IFB Finwest Arad vann matchen med 5–1 och slutade på andra plats i ligan, efter ACS Superchess.\n\nStanna vid drag 25, ge dig själv 41 sekunder och hitta 25.Nb5. Spela sedan vidare mot motorn."
+        },
+        "th": {
+          "headline": "41 วินาทีต่อ 69 นาที: Sadhwani ชนะใน 31 ตา",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) ชนะ IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) ใน 31 ตา ในรอบที่ 5 ของซูเปอร์ลีกโรมาเนีย\n\nFilip เดิน 25.Nf5 เมื่อเหลือเวลา 41 วินาที ขณะที่ Sadhwani มี 69 นาที Stockfish ต้องการ 25.Nb5 เอนจินประเมินว่าฝ่ายดำได้เปรียบชัดเจนก่อนตานั้น (−1.89) และอยู่ในสถานะชนะหลังตานั้น (−3.28) และ 25...Bxf5 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจินก็มาทันที จากนั้น 27...gxf4, 28...Qxb2 และ 29...Qxa2 กินเบี้ยสามตัว และ 30...Nf2+ เป็นการรุก\n\nVados IFB Finwest Arad ชนะแมตช์ 5–1 และจบลีกในอันดับที่สอง ตามหลัง ACS Superchess\n\nหยุดที่ตาที่ 25 ให้เวลาตัวเอง 41 วินาที แล้วหา 25.Nb5 จากนั้นเล่นต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "41 saniyeye karşı 69 dakika: Sadhwani 31 hamlede kazandı",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645), Romanya Süper Ligi'nin 5. turunda IM Lucian-Ioan Filip'i (CSU Universitatea de Vest Timisoara, 2293) 31 hamlede yendi.\n\nFilip, 25.Nf5 hamlesini saatte 41 saniye kala oynadı; Sadhwani'nin saatinde 69 dakika vardı. Stockfish 25.Nb5 hamlesini istiyordu. Öncesinde siyahı açık farkla üstün (−1,89), sonrasında kazanan konumda (−3,28) görüyordu ve ilk tercihi olan 25...Bxf5 hemen geldi. Ardından 27...gxf4, 28...Qxb2 ve 29...Qxa2 üç piyon aldı, 30...Nf2+ ise şah çekti.\n\nVados IFB Finwest Arad maçı 5–1 kazandı ve ligi ACS Superchess'in ardından ikinci sırada tamamladı.\n\n25. hamlede dur, kendine 41 saniye ver ve 25.Nb5 hamlesini bul. Sonra motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "41 giây đấu 69 phút: Sadhwani thắng sau 31 nước",
+          "body": "GM Raunak Sadhwani (Vados IFB Finwest Arad, 2645) thắng IM Lucian-Ioan Filip (CSU Universitatea de Vest Timisoara, 2293) sau 31 nước ở vòng 5 giải Siêu hạng Romania.\n\nFilip đi 25.Nf5 khi còn 41 giây; Sadhwani còn 69 phút. Stockfish muốn 25.Nb5. Engine đánh giá Đen ưu thế rõ trước nước đó (−1,89) và ở thế thắng sau nước đó (−3,28), và 25...Bxf5, lựa chọn số một của engine, đến ngay. Rồi 27...gxf4, 28...Qxb2 và 29...Qxa2 bắt ba Tốt, và 30...Nf2+ là nước chiếu.\n\nVados IFB Finwest Arad thắng trận 5–1 và kết thúc giải ở vị trí thứ hai, sau ACS Superchess.\n\nDừng ở nước 25, tự cho mình 41 giây, và tìm 25.Nb5. Rồi chơi tiếp với engine."
+        },
+        "zh-Hans": {
+          "headline": "41秒对69分钟：Sadhwani用31回合取胜",
+          "body": "GM Raunak Sadhwani（Vados IFB Finwest Arad，2645）在罗马尼亚超级联赛第5轮31回合击败IM Lucian-Ioan Filip（CSU Universitatea de Vest Timisoara，2293）。\n\nFilip在剩41秒时走出25.Nf5，Sadhwani则有69分钟。Stockfish想走的是25.Nb5。Stockfish认为这步之前黑方明显占优（−1.89），之后黑方胜势（−3.28），黑方随即走出Stockfish的首选25...Bxf5。接着27...gxf4、28...Qxb2和29...Qxa2吃掉三个兵，30...Nf2+将军。\n\nVados IFB Finwest Arad以5–1赢下比赛，最终在联赛中位列第二，仅次于ACS Superchess。\n\n停在第25回合，给自己41秒，找出25.Nb5。然后对着引擎继续下。"
+        },
+        "zh-Hant": {
+          "headline": "41秒對69分鐘：Sadhwani用31回合取勝",
+          "body": "GM Raunak Sadhwani（Vados IFB Finwest Arad，2645）在羅馬尼亞超級聯賽第5輪31回合擊敗IM Lucian-Ioan Filip（CSU Universitatea de Vest Timisoara，2293）。\n\nFilip在剩41秒時走出25.Nf5，Sadhwani則有69分鐘。Stockfish想走的是25.Nb5。Stockfish認為這步之前黑方明顯佔優（−1.89），之後黑方勝勢（−3.28），黑方隨即走出Stockfish的首選25...Bxf5。接著27...gxf4、28...Qxb2和29...Qxa2吃掉三個兵，30...Nf2+將軍。\n\nVados IFB Finwest Arad以5–1贏下比賽，最後在聯賽中排名第二，僅次於ACS Superchess。\n\n停在第25回合，給自己41秒，找出25.Nb5。然後對著引擎繼續下。"
+        }
+      },
+      "fen": "r4rk1/pp3pbp/3p1q2/2p2Np1/2P1PPb1/4B1Pn/PP2N1BP/R3Q2K b - - 1 25",
+      "last": {
+        "from": "d4",
+        "to": "f5"
+      },
+      "url": "https://brasspawn.com/today/2026-10-07-filip-sadhwani-romanian-team-chess-championships-r5",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-mens-super-league/round-5/Oc5aVcML/WQDraQli"
+      },
+      "updatedAt": "2026-10-07T19:06:50.582Z"
+    },
+    {
+      "id": "2026-10-07-lu-batsiashvili-romanian-team-chess-championships-r3",
+      "status": "approved",
+      "date": "2026-10-07",
+      "rank": 0,
+      "weight": 268,
+      "event": {
+        "name": "Romanian Team Chess Championships 2026",
+        "short": "Romanian Team Chess Championships",
+        "section": "Women’s Super league",
+        "round": 3,
+        "location": "Eforie Nord, Romania",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-womens-super-league/round-3/cUKPlj9c"
+      },
+      "white": {
+        "name": "Miaoyi Lu",
+        "short": "Lu",
+        "title": "IM",
+        "elo": 2400,
+        "team": "Medicina Timisoara"
+      },
+      "black": {
+        "name": "Nino Batsiashvili",
+        "short": "Batsiashvili",
+        "title": "GM",
+        "elo": 2459,
+        "team": "CSM Iasi 2020"
+      },
+      "result": "1-0",
+      "opening": {
+        "eco": "C45",
+        "name": "Scotch Game: Schmidt Variation"
+      },
+      "moves": "e4 e5 Nf3 Nc6 d4 exd4 Nxd4 Nf6 Nxc6 bxc6 Qe2 a5 Nc3 Bb4 e5 Nd5 Qg4 g6 Bg5 Be7 Nxd5 cxd5 h4 h6 Be3 c5 Bd3 Qb6 Qg3 Ba6 O-O d4 Bf4 c4 Be4 O-O-O Qf3 g5 Bh2 gxh4 c3 Bc5 cxd4 Bxd4 Rfd1 Rhe8 Rxd4 Qxd4 Rd1 Qa7 Qc3 f5 Bd5 Qc5 Rd4 d6 Bxc4 Kb7 e6 Bxc4 Rxc4 Qb6 Qg7+ Ka6 Qf7 Rc8 Rxc8 Rxc8 Bf4 Qxb2 Qxf5 Qd4 Qf7 Rb8 e7 Qe4 Bxd6 Rb1+ Kh2 h3 Qf3 hxg2 Qxe4 g1=Q+ Kh3 Qf1+ Kg3 Qg1+ Qg2 Re1 Qxg1 Rxg1+ Kf4 Rg8 Ke5 Kb7 Ke6 Kc6 f4 h5 f5 h4 f6 h3 f7 Rg6+ Kf5 Kxd6 f8=Q",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 80,
+        "played": "h3",
+        "better": "Re1",
+        "reply": "Qf3",
+        "replyPlayed": true,
+        "before": {
+          "cp": 179,
+          "mate": null
+        },
+        "after": {
+          "cp": 574,
+          "mate": null
+        },
+        "clock": 12
+      },
+      "headline": "Two new queens, one for each side: Lu beats Batsiashvili, and the champions lose their only match",
+      "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) beat GM Nino Batsiashvili (CSM Iasi 2020, 2459) in 55 moves in round 3 of the Romanian women's Super League, and Medicina Timisoara won the match 2½–1½. It was the only match CSM Iasi 2020 lost on the way to the title.\n\nBatsiashvili played 40...h3 with 12 seconds left. Stockfish wanted 40...Re1. It counted White clearly better before (+1.79) and winning after (+5.74), and 41.Qf3, its first choice, came straight back. The black pawn still got through, 41...hxg2 and 42...g1=Q+, but 46.Qxg1 took the new queen. Then the white f-pawn ran from f4 to f8, and 55.f8=Q was the last move.\n\nLu finished unbeaten, on 4½/6.\n\nGo back to 40...h3 and find 40...Re1. Then play it on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "وزيران جديدان، واحد لكل طرف: فوز لـLu على Batsiashvili، والخسارة الوحيدة للفريق البطل",
+          "body": "انتهى الدور بفوز IM Miaoyi Lu (Medicina Timisoara، 2400) على GM Nino Batsiashvili (CSM Iasi 2020، 2459) في 55 نقلة، في الجولة الثالثة من الدوري الروماني الممتاز للسيدات، وفاز فريق Medicina Timisoara بالمباراة ⁨2½–1½⁩. وكانت هذه المباراة الوحيدة التي خسرها فريق CSM Iasi 2020 في الطريق إلى اللقب.\n\nلُعبت نقلة Batsiashvili ⁨40...h3⁩ والوقت المتبقي 12 ثانية. أراد Stockfish ⁨40...Re1⁩، وعدّ الأبيض متفوقًا بوضوح قبلها (⁨+1.79⁩) وفائزًا بعدها (⁨+5.74⁩). وجاءت ⁨41.Qf3⁩، الخيار الأول للمحرك، مباشرة. ومع ذلك عبر البيدق الأسود حتى النهاية، ⁨41...hxg2⁩ و⁨42...g1=Q+⁩، لكنّ ⁨46.Qxg1⁩ أخذت الوزير الجديد. ثم انطلق بيدق f الأبيض من f4 إلى f8، وكانت ⁨55.f8=Q⁩ النقلة الأخيرة.\n\nانتهى رصيد Lu عند ⁨4½/6⁩ دون أي خسارة.\n\nارجع إلى ⁨40...h3⁩ واعثر على ⁨40...Re1⁩. ثم تابع اللعب ضد المحرك."
+        },
+        "bg": {
+          "headline": "Две нови дами, по една за всяка страна: Lu побеждава Batsiashvili, а отборът шампион губи единствения си мач",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) победи GM Nino Batsiashvili (CSM Iasi 2020, 2459) за 55 хода в 3-тия кръг на румънската женска Суперлига, а Medicina Timisoara спечели мача с 2½–1½. Това беше единственият мач, който CSM Iasi 2020 загуби по пътя към титлата.\n\nBatsiashvili изигра 40...h3 с 12 секунди на часовника. Stockfish искаше 40...Re1. Преди хода енджинът даваше ясно предимство на белите (+1,79), а след него — печеливша позиция (+5,74), и 41.Qf3, първият му избор, последва веднага. Черната пешка все пак стигна докрай — 41...hxg2 и 42...g1=Q+, но 46.Qxg1 взе новата дама. После бялата пешка f тръгна от f4 до f8 и 55.f8=Q беше последният ход.\n\nLu завърши без загуба с 4½/6.\n\nВърнете се към 40...h3 и намерете 40...Re1. После продължете партията срещу енджина."
+        },
+        "cs": {
+          "headline": "Dvě nové dámy, pro každou stranu jedna: partii Lu – Batsiashvili vyhrává Lu a vítěz ligy prohrává svůj jediný zápas",
+          "body": "V partii IM Miaoyi Lu (Medicina Timisoara, 2400) – GM Nino Batsiashvili (CSM Iasi 2020, 2459) ve 3. kole ženské rumunské superligy vyhrává po 55 tazích Lu a Medicina Timisoara bere zápas 2½–1½. Pro CSM Iasi 2020 to byla jediná prohra zápasu na cestě k titulu.\n\nBatsiashvili hraje 40...h3 s 12 sekundami na hodinách. Stockfish chtěl 40...Re1 a hodnotil pozici před tahem jako jasně lepší pro bílé (+1,79), po něm jako vyhranou (+5,74). Okamžitě přišlo 41.Qf3, první volba enginu. Černý pěšec se přesto prodral dál, 41...hxg2 a 42...g1=Q+, ale 46.Qxg1 novou dámu vzal. Pak bílý f-pěšec doběhl z f4 až na f8 a 55.f8=Q byl poslední tah partie.\n\nLu končí bez porážky se 4½/6.\n\nVrať se k 40...h3 a najdi 40...Re1. Pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "To nye dronninger, én til hver side: Lu slår Batsiashvili, og mestrene taber deres eneste match",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) slog GM Nino Batsiashvili (CSM Iasi 2020, 2459) i 55 træk i 3. runde af den rumænske superliga for kvinder, og Medicina Timisoara vandt matchen 2½–1½. Det var den eneste match, CSM Iasi 2020 tabte på vej mod titlen.\n\nBatsiashvili spillede 40...h3 med 12 sekunder tilbage. Stockfish ville have 40...Re1. Motoren så hvid klart bedre før (+1,79) og til gevinst efter (+5,74), og 41.Qf3, Stockfishs førstevalg, kom med det samme. Den sorte bonde kom alligevel igennem, 41...hxg2 og 42...g1=Q+, men 46.Qxg1 slog den nye dronning. Derefter løb den hvide f-bonde fra f4 til f8, og 55.f8=Q blev partiets sidste træk.\n\nLu sluttede uden nederlag med 4½/6.\n\nGå tilbage til 40...h3 og find 40...Re1. Spil så videre mod motoren."
+        },
+        "de": {
+          "headline": "Zwei neue Damen, eine pro Seite: Lu schlägt Batsiashvili, und das Meisterteam verliert zum einzigen Mal",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) schlug GM Nino Batsiashvili (CSM Iasi 2020, 2459) in Runde 3 der rumänischen Frauen-Superliga in 55 Zügen, und Medicina Timisoara gewann den Kampf 2½:1½. Es war der einzige Kampf, den CSM Iasi 2020 auf dem Weg zum Titel verlor.\n\nBatsiashvili spielte 40...h3 mit 12 Sekunden auf der Uhr. Stockfish wollte 40...Re1. Davor sah Stockfish Weiß klar besser (+1,79), danach auf Gewinn (+5,74), und 41.Qf3, die erste Wahl von Stockfish, kam sofort. Der schwarze Bauer kam trotzdem durch, 41...hxg2 und 42...g1=Q+, doch 46.Qxg1 schlug die neue Dame. Dann lief der weiße f-Bauer von f4 bis f8, und 55.f8=Q war der letzte Zug.\n\nLu blieb ungeschlagen, mit 4½/6.\n\nZurück zu 40...h3 und 40...Re1 finden. Dann gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Δύο νέες βασίλισσες, μία για κάθε πλευρά: νίκη Lu επί Batsiashvili, και η ομάδα του τίτλου χάνει τον μοναδικό της αγώνα",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) επικράτησε επί GM Nino Batsiashvili (CSM Iasi 2020, 2459) σε 55 κινήσεις στον 3ο γύρο της ρουμανικής Σούπερ Λίγκας γυναικών, και η Medicina Timisoara κέρδισε τον αγώνα με 2½–1½. Ήταν ο μοναδικός αγώνας που έχασε η CSM Iasi 2020 στον δρόμο προς τον τίτλο.\n\nBatsiashvili έπαιξε την 40...h3 με 12 δευτερόλεπτα στο ρολόι. Το Stockfish ήθελε την 40...Re1. Έδινε καθαρό πλεονέκτημα στα λευκά πριν (+1,79) και νίκη μετά (+5,74), και η 41.Qf3, η πρώτη επιλογή της μηχανής, ήρθε αμέσως. Το μαύρο πιόνι πέρασε παρ' όλα αυτά, 41...hxg2 και 42...g1=Q+, αλλά η 46.Qxg1 πήρε τη νέα βασίλισσα. Μετά το λευκό πιόνι της στήλης f έτρεξε από το f4 ως το f8, και η 55.f8=Q ήταν η τελευταία κίνηση.\n\nLu τερμάτισε χωρίς ήττα, με 4½/6.\n\nΓύρνα στην 40...h3 και βρες την 40...Re1. Μετά συνέχισε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Dos damas nuevas, una para cada bando: Lu vence a Batsiashvili y el equipo campeón pierde su único match",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) venció a GM Nino Batsiashvili (CSM Iasi 2020, 2459) en 55 jugadas en la tercera ronda de la Superliga femenina rumana, y Medicina Timisoara ganó el match 2½–1½. Fue el único match que perdió CSM Iasi 2020 en su camino al título.\n\nBatsiashvili jugó 40...h3 con 12 segundos en el reloj. Stockfish quería 40...Re1. Daba clara ventaja a las blancas antes (+1,79) y posición ganadora después (+5,74), y 41.Qf3, su primera opción, llegó enseguida. Aun así, el peón negro pasó, 41...hxg2 y 42...g1=Q+, pero 46.Qxg1 se llevó la nueva dama. Después el peón f blanco corrió de f4 a f8, y 55.f8=Q fue la última jugada.\n\nLu terminó sin derrotas, con 4½/6.\n\nVuelve a 40...h3 y encuentra 40...Re1. Luego sigue contra el motor."
+        },
+        "fi": {
+          "headline": "Kaksi uutta kuningatarta, yksi kummallekin: Lu voittaa Batsiashvilin, ja mestarit häviävät ainoan ottelunsa",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) voitti GM Nino Batsiashvilin (CSM Iasi 2020, 2459) 55 siirrossa Romanian naisten superliigan 3. kierroksella, ja Medicina Timisoara voitti ottelun 2½–1½. Se oli ainoa ottelu, jonka CSM Iasi 2020 hävisi matkalla mestaruuteen.\n\nBatsiashvili pelasi 40...h3 kellossa 12 sekuntia jäljellä. Stockfish halusi 40...Re1. Se antoi valkealle ennen siirtoa selvän edun (+1,79) ja sen jälkeen voittoaseman (+5,74), ja sen ykkösvalinta 41.Qf3 tuli heti. Musta sotilas pääsi silti läpi, 41...hxg2 ja 42...g1=Q+, mutta 46.Qxg1 löi uuden kuningattaren. Sitten valkean f-sotilas juoksi f4:stä f8:aan, ja 55.f8=Q oli viimeinen siirto.\n\nLu päätti sarjan tappioitta tuloksella 4½/6.\n\nPalaa siirtoon 40...h3 ja löydä 40...Re1. Jatka sitten peliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Deux nouvelles dames, une de chaque côté : Lu bat Batsiashvili, et l’équipe championne perd son seul match",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) a battu GM Nino Batsiashvili (CSM Iasi 2020, 2459) en 55 coups lors de la 3e ronde de la Superligue roumaine féminine, et Medicina Timisoara a gagné le match 2½–1½. C’est le seul match que CSM Iasi 2020 a perdu sur la route du titre.\n\nBatsiashvili a joué 40...h3 avec 12 secondes à la pendule. Stockfish voulait 40...Re1, et donnait les Blancs nettement mieux avant (+1,79) et gagnants après (+5,74). 41.Qf3, son premier choix, a suivi aussitôt. Le pion noir est tout de même allé à dame, 41...hxg2 et 42...g1=Q+, mais 46.Qxg1 a pris la nouvelle dame. Puis le pion f blanc a filé de f4 à f8, et 55.f8=Q a été le dernier coup.\n\nLu a terminé sans défaite, avec 4½/6.\n\nRevenez à 40...h3 et trouvez 40...Re1. Puis continuez contre le moteur."
+        },
+        "he": {
+          "headline": "שתי מלכות חדשות, אחת לכל צד: ניצחון ל־Lu על Batsiashvili, וההפסד היחיד של הקבוצה האלופה",
+          "body": "המשחק בסיבוב ה־3 של ליגת העל הרומנית לנשים הסתיים בניצחון ל־IM Miaoyi Lu (Medicina Timisoara, 2400) על GM Nino Batsiashvili (CSM Iasi 2020, 2459) אחרי 55 מסעים, ו־Medicina Timisoara ניצחה במפגש ⁨2½–1½⁩. זה היה המפגש היחיד ש־CSM Iasi 2020 הפסידה בדרך לתואר.\n\nהמסע ⁨40...h3⁩ שוחק כשבשעון של Batsiashvili נותרו 12 שניות. Stockfish רצה ב־⁨40...Re1⁩, והעריך יתרון ברור ללבן לפני המסע (⁨+1.79⁩) ועמדה מנצחת אחריו (⁨+5.74⁩). המסע ⁨41.Qf3⁩, הבחירה הראשונה של המנוע, בא מיד. הרגלי השחור בכל זאת הגיע עד הסוף, ⁨41...hxg2⁩ ו־⁨42...g1=Q+⁩, אבל ⁨46.Qxg1⁩ לקח את המלכה החדשה. אחר כך רגלי f הלבן רץ מ־f4 ל־f8, ו־⁨55.f8=Q⁩ היה המסע האחרון.\n\nהמאזן הסופי של Lu: ⁨4½/6⁩, ללא הפסד.\n\nחזרו ל־⁨40...h3⁩ ומצאו את ⁨40...Re1⁩. ואז המשיכו לשחק מול המנוע."
+        },
+        "hi": {
+          "headline": "दो नई रानियाँ, दोनों तरफ़ एक-एक: Batsiashvili पर Lu की जीत, और चैंपियन टीम की इकलौती हार",
+          "body": "रोमानियाई महिला सुपर लीग के राउंड 3 में IM Miaoyi Lu (Medicina Timisoara, 2400) ने GM Nino Batsiashvili (CSM Iasi 2020, 2459) को 55 चालों में हराया, और Medicina Timisoara ने मुक़ाबला 2½–1½ से जीता। ख़िताब तक के सफ़र में CSM Iasi 2020 की यही इकलौती हार थी।\n\n12 सेकंड बचे रहते Batsiashvili ने 40...h3 खेला। Stockfish 40...Re1 चाहता था। उसके हिसाब से पहले सफ़ेद साफ़ बेहतर था (+1.79) और बाद में जीत की स्थिति में (+5.74), और इंजन की पहली पसंद 41.Qf3 तुरंत आया। काला प्यादा फिर भी आगे निकल गया, 41...hxg2 और 42...g1=Q+, लेकिन 46.Qxg1 ने नई रानी ले ली। फिर सफ़ेद f-प्यादा f4 से f8 तक दौड़ा, और 55.f8=Q आख़िरी चाल थी।\n\nLu का स्कोर बिना किसी हार के 4½/6 रहा।\n\n40...h3 पर लौटें और 40...Re1 खोजें। फिर इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "Két új vezér, mindkét oldalon egy: Lu nyert Batsiashvili ellen, a bajnokcsapat pedig egyetlen vereségét szenvedte el",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) 55 lépésben nyert GM Nino Batsiashvili (CSM Iasi 2020, 2459) ellen a román női Szuperliga 3. fordulójában, a Medicina Timisoara pedig 2½–1½ arányban megnyerte a mérkőzést. Ez volt a CSM Iasi 2020 egyetlen elvesztett mérkőzése a bajnoki címig vezető úton.\n\nBatsiashvili 12 másodperccel az óráján játszotta a 40...h3 lépést. A Stockfish a 40...Re1 lépést akarta. Előtte világos egyértelmű előnyét látta (+1,79), utána nyerő állást (+5,74), és azonnal jött a 41.Qf3, az első választása. A sötét gyalog így is átjutott, 41...hxg2 és 42...g1=Q+, de a 46.Qxg1 leütötte az új vezért. Aztán a világos f-gyalog végigfutott f4-ről f8-ra, és az 55.f8=Q volt az utolsó lépés.\n\nLu veretlenül, 4½/6 ponttal zárt.\n\nMenj vissza a 40...h3 lépéshez, és találd meg a 40...Re1 lépést. Aztán játszd tovább a motor ellen."
+        },
+        "id": {
+          "headline": "Dua menteri baru, satu untuk tiap pihak: Lu kalahkan Batsiashvili, tim juara menelan satu-satunya kekalahan",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) mengalahkan GM Nino Batsiashvili (CSM Iasi 2020, 2459) dalam 55 langkah di babak 3 Liga Super Putri Rumania, dan Medicina Timisoara memenangi pertandingan 2½–1½. Itulah satu-satunya kekalahan CSM Iasi 2020 dalam perjalanan menuju gelar juara.\n\nBatsiashvili memainkan 40...h3 dengan sisa 12 detik. Stockfish menginginkan 40...Re1. Mesin menilai Putih unggul jelas sebelumnya (+1,79) dan menang sesudahnya (+5,74), dan 41.Qf3, pilihan pertamanya, langsung datang. Pion hitam tetap lolos, 41...hxg2 dan 42...g1=Q+, tetapi 46.Qxg1 mengambil menteri baru itu. Lalu pion f putih berlari dari f4 ke f8, dan 55.f8=Q menjadi langkah terakhir.\n\nLu menyelesaikan liga tanpa kalah, dengan 4½/6.\n\nKembali ke 40...h3 dan temukan 40...Re1. Lalu lanjutkan melawan mesin."
+        },
+        "it": {
+          "headline": "Due nuove Donne, una per parte: Lu batte Batsiashvili, e la squadra campione perde il suo unico match",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) ha battuto GM Nino Batsiashvili (CSM Iasi 2020, 2459) in 55 mosse nel 3º turno della Superlega rumena femminile, e Medicina Timisoara ha vinto il match 2½–1½. È stato l’unico match perso da CSM Iasi 2020 sulla strada verso il titolo.\n\nBatsiashvili ha giocato 40...h3 con 12 secondi sull’orologio. Stockfish voleva 40...Re1, e dava il Bianco chiaramente meglio prima (+1,79) e vincente dopo (+5,74). 41.Qf3, la sua prima scelta, è arrivata subito. Il pedone nero è comunque andato a promozione, 41...hxg2 e 42...g1=Q+, ma 46.Qxg1 ha preso la nuova Donna. Poi il pedone f bianco è corso da f4 a f8, e 55.f8=Q è stata l’ultima mossa.\n\nLu ha chiuso senza sconfitte, con 4½/6.\n\nTorna a 40...h3 e trova 40...Re1. Poi continua contro il motore."
+        },
+        "ja": {
+          "headline": "白黒それぞれに新しいクイーン、LuがBatsiashviliに勝ち、優勝チームに唯一のマッチ黒星",
+          "body": "IM Miaoyi Lu（Medicina Timisoara、2400）がルーマニア女子スーパーリーグ第3ラウンドでGM Nino Batsiashvili（CSM Iasi 2020、2459）に55手で勝ち、Medicina Timisoaraがマッチを2½–1½で制しました。これはCSM Iasi 2020が優勝までに喫した唯一のマッチ敗戦でした。\n\nBatsiashviliは残り12秒で40...h3を指しました。Stockfishが望んだのは40...Re1。40...h3の後、Stockfishの評価は白の明確な優勢（+1.79）から勝勢（+5.74）に変わり、すぐに第一候補の41.Qf3が返ってきました。それでも黒のポーンは41...hxg2、42...g1=Q+と進んでクイーンになりましたが、46.Qxg1がその新しいクイーンを取りました。その後、白のfポーンがf4からf8まで走り、55.f8=Qが最終手となりました。\n\nLuは無敗のまま4½/6で大会を終えました。\n\n40...h3に戻って40...Re1を見つけましょう。それからエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "양쪽에 하나씩 새 퀸… Lu, Batsiashvili 꺾고 우승팀에 유일한 매치 패배 안겨",
+          "body": "IM Miaoyi Lu(Medicina Timisoara, 2400)가 루마니아 여자 슈퍼리그 3라운드에서 GM Nino Batsiashvili(CSM Iasi 2020, 2459)에게 55수 만에 이겼고, Medicina Timisoara가 매치를 2½–1½로 이겼습니다. 이는 CSM Iasi 2020이 우승까지 가는 동안 당한 유일한 매치 패배였습니다.\n\nBatsiashvili는 12초를 남기고 40...h3를 두었습니다. Stockfish가 원한 수는 40...Re1였습니다. 40...h3 이후 Stockfish의 평가는 백의 뚜렷한 우세(+1.79)에서 이기는 형세(+5.74)로 바뀌었고, 곧바로 첫 번째 후보 수인 41.Qf3가 나왔습니다. 흑 폰은 41...hxg2, 42...g1=Q+로 끝내 퀸이 되었지만, 46.Qxg1가 새 퀸을 잡았습니다. 이어서 백 f폰이 f4에서 f8까지 달려갔고, 55.f8=Q가 마지막 수였습니다.\n\nLu는 무패로 4½/6을 기록하며 대회를 마쳤습니다.\n\n40...h3로 돌아가 40...Re1를 찾아보세요. 이어서 엔진을 상대로 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "Dua menteri baharu, satu untuk setiap pihak: Lu tewaskan Batsiashvili, satu-satunya kekalahan pasukan juara",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) menewaskan GM Nino Batsiashvili (CSM Iasi 2020, 2459) dalam 55 langkah dalam pusingan 3 Liga Super Wanita Romania, dan Medicina Timisoara memenangi perlawanan 2½–1½. Itulah satu-satunya kekalahan CSM Iasi 2020 dalam perjalanan ke gelaran juara.\n\nBatsiashvili memainkan 40...h3 dengan baki 12 saat. Stockfish mahukan 40...Re1. Enjin menilai Putih jelas mendahului sebelumnya (+1,79) dan menang selepasnya (+5,74), dan 41.Qf3, pilihan pertamanya, tiba serta-merta. Bidak hitam tetap berjaya melepasi, 41...hxg2 dan 42...g1=Q+, tetapi 46.Qxg1 mengambil menteri baharu itu. Kemudian bidak f putih mara dari f4 ke f8, dan 55.f8=Q menjadi langkah terakhir.\n\nLu menamatkan liga tanpa kalah, dengan 4½/6.\n\nKembali ke 40...h3 dan cari 40...Re1. Kemudian teruskan menentang enjin."
+        },
+        "nl": {
+          "headline": "Twee nieuwe dames, één voor elke kant: Lu verslaat Batsiashvili, en het kampioensteam verliest voor de enige keer",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) versloeg GM Nino Batsiashvili (CSM Iasi 2020, 2459) in 55 zetten in ronde 3 van de Roemeense Superliga voor vrouwen, en Medicina Timisoara won de match met 2½–1½. Het was de enige match die CSM Iasi 2020 verloor op weg naar de titel.\n\nBatsiashvili speelde 40...h3 met nog 12 seconden. Stockfish wilde 40...Re1. Stockfish zag wit ervoor duidelijk beter staan (+1,79) en erna gewonnen (+5,74), en 41.Qf3, de eerste keuze van Stockfish, kwam meteen. De zwarte pion kwam er toch door, 41...hxg2 en 42...g1=Q+, maar 46.Qxg1 sloeg de nieuwe dame. Daarna liep de witte f-pion van f4 naar f8, en 55.f8=Q was de laatste zet.\n\nLu eindigde ongeslagen, op 4½/6.\n\nGa terug naar 40...h3 en vind 40...Re1. Speel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "To nye dronninger, én til hver side: Lu slår Batsiashvili, og mesterne taper sin eneste match",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) slo GM Nino Batsiashvili (CSM Iasi 2020, 2459) på 55 trekk i 3. runde av den rumenske superligaen for kvinner, og Medicina Timisoara vant matchen 2½–1½. Det var den eneste matchen CSM Iasi 2020 tapte på veien mot tittelen.\n\nBatsiashvili spilte 40...h3 med 12 sekunder igjen. Stockfish ville ha 40...Re1. Motoren regnet hvit som klart bedre før (+1,79) og som vinnende etter (+5,74), og 41.Qf3, Stockfishs førstevalg, kom med en gang. Den svarte bonden kom likevel gjennom, 41...hxg2 og 42...g1=Q+, men 46.Qxg1 tok den nye dronningen. Deretter løp den hvite f-bonden fra f4 til f8, og 55.f8=Q ble partiets siste trekk.\n\nLu endte uten tap, med 4½/6.\n\nGå tilbake til 40...h3 og finn 40...Re1. Spill så videre mot motoren."
+        },
+        "pl": {
+          "headline": "Dwa nowe hetmany, po jednym dla każdej strony: Lu pokonuje Batsiashvili, a mistrzowska drużyna przegrywa jedyny mecz",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) pokonuje GM Nino Batsiashvili (CSM Iasi 2020, 2459) w 55 ruchach w 3. rundzie rumuńskiej Superligi kobiet, a Medicina Timisoara wygrywa mecz 2½–1½. To jedyny mecz przegrany przez CSM Iasi 2020 w drodze po tytuł.\n\nBatsiashvili gra 40...h3, mając 12 sekund na zegarze. Stockfish chciał 40...Re1. Przed tym ruchem oceniał pozycję białych jako wyraźnie lepszą (+1,79), po nim jako wygraną (+5,74), a od razu padło 41.Qf3, pierwszy wybór silnika. Czarny pionek i tak przechodzi, 41...hxg2 i 42...g1=Q+, ale 46.Qxg1 bije nowego hetmana. Potem biały pionek z linii f biegnie z f4 na f8, a 55.f8=Q to ostatni ruch partii.\n\nLu kończy rozgrywki bez porażki, z wynikiem 4½/6.\n\nWróć do 40...h3 i znajdź 40...Re1. Potem graj dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Duas damas novas, uma para cada lado: Lu vence Batsiashvili, e a equipe campeã perde seu único match",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) venceu GM Nino Batsiashvili (CSM Iasi 2020, 2459) em 55 lances na 3ª rodada da Superliga Feminina Romena, e o Medicina Timisoara venceu o match por 2½–1½. Foi o único match que o CSM Iasi 2020 perdeu a caminho do título.\n\nBatsiashvili jogou 40...h3 com 12 segundos no relógio. O Stockfish queria 40...Re1. Via clara vantagem das brancas antes (+1,79) e posição vencedora depois (+5,74), e 41.Qf3, sua primeira opção, veio logo em seguida. Ainda assim, o peão preto passou, 41...hxg2 e 42...g1=Q+, mas 46.Qxg1 levou a nova dama. Depois o peão f branco correu de f4 a f8, e 55.f8=Q foi o último lance.\n\nLu terminou sem derrotas, com 4½/6.\n\nVolte a 40...h3 e encontre 40...Re1. Depois continue contra o motor."
+        },
+        "ro": {
+          "headline": "Două dame noi, câte una pentru fiecare tabără: Lu câștigă contra Batsiashvili, iar echipa campioană pierde singurul meci din sezon",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) a câștigat contra GM Nino Batsiashvili (CSM Iasi 2020, 2459) în 55 de mutări, în runda a 3-a a Superligii feminine a României, iar Medicina Timisoara a câștigat meciul cu 2½–1½. A fost singurul meci pierdut de CSM Iasi 2020 în drumul spre titlu.\n\nBatsiashvili a jucat 40...h3 cu 12 secunde rămase. Stockfish voia 40...Re1. Considera Albul clar mai bun înainte (+1,79) și câștigător după (+5,74), iar 41.Qf3, prima sa alegere, a urmat imediat. Pionul negru a trecut totuși, 41...hxg2 și 42...g1=Q+, dar 46.Qxg1 a luat noua damă. Apoi pionul alb de pe coloana f a alergat de pe f4 până pe f8, iar 55.f8=Q a fost ultima mutare.\n\nLu a încheiat turneul fără nicio înfrângere, cu 4½/6.\n\nÎntoarce-te la 40...h3 și găsește 40...Re1. Apoi continuă contra motorului."
+        },
+        "ru": {
+          "headline": "Два новых ферзя, по одному у каждой стороны: Lu обыгрывает Batsiashvili, а команда-чемпион проигрывает свой единственный матч",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) обыгрывает GM Nino Batsiashvili (CSM Iasi 2020, 2459) за 55 ходов в 3-м туре женской Суперлиги Румынии, а Medicina Timisoara выигрывает матч 2½–1½. Это единственный матч, проигранный CSM Iasi 2020 на пути к титулу.\n\nBatsiashvili играет 40...h3, имея 12 секунд. Stockfish хотел 40...Re1. До хода движок давал белым явный перевес (+1,79), после — выигрыш (+5,74), и сразу последовал 41.Qf3 — первый выбор движка. Чёрная пешка всё же прорвалась — 41...hxg2 и 42...g1=Q+, — но 46.Qxg1 забрал нового ферзя. Затем белая пешка f прошла с f4 до f8, и 55.f8=Q стал последним ходом партии.\n\nLu заканчивает турнир без поражений — 4½/6.\n\nВернитесь к 40...h3 и найдите 40...Re1. А затем продолжите партию против движка."
+        },
+        "sv": {
+          "headline": "Två nya damer, en för varje sida: Lu besegrar Batsiashvili, och mästarna förlorar sin enda match",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) besegrade GM Nino Batsiashvili (CSM Iasi 2020, 2459) på 55 drag i rond 3 av rumänska superligan för damer, och Medicina Timisoara vann matchen med 2½–1½. Det var den enda match CSM Iasi 2020 förlorade på vägen mot titeln.\n\nBatsiashvili spelade 40...h3 med 12 sekunder kvar. Stockfish ville ha 40...Re1. Motorn räknade vit som klart bättre före (+1,79) och som vinnande efter (+5,74), och 41.Qf3, Stockfishs förstaval, kom direkt. Den svarta bonden tog sig ändå igenom, 41...hxg2 och 42...g1=Q+, men 46.Qxg1 tog den nya damen. Sedan sprang den vita f-bonden från f4 till f8, och 55.f8=Q blev partiets sista drag.\n\nLu slutade utan förlust, på 4½/6.\n\nGå tillbaka till 40...h3 och hitta 40...Re1. Spela sedan vidare mot motorn."
+        },
+        "th": {
+          "headline": "ควีนใหม่สองตัว ฝ่ายละหนึ่ง: Lu ชนะ Batsiashvili และทีมแชมป์แพ้แมตช์เดียวของรายการ",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) ชนะ GM Nino Batsiashvili (CSM Iasi 2020, 2459) ใน 55 ตา ในรอบที่ 3 ของซูเปอร์ลีกหญิงโรมาเนีย และ Medicina Timisoara ชนะแมตช์ 2½–1½ นี่เป็นแมตช์เดียวที่ CSM Iasi 2020 แพ้ระหว่างทางสู่แชมป์\n\nBatsiashvili เดิน 40...h3 เมื่อเหลือเวลา 12 วินาที Stockfish ต้องการ 40...Re1 เอนจินประเมินว่าฝ่ายขาวได้เปรียบชัดเจนก่อนตานั้น (+1.79) และอยู่ในสถานะชนะหลังตานั้น (+5.74) และ 41.Qf3 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจินก็มาทันที เบี้ยดำยังฝ่าเข้าไปได้ด้วย 41...hxg2 และ 42...g1=Q+ แต่ 46.Qxg1 กินควีนใหม่ไป จากนั้นเบี้ย f ขาววิ่งจาก f4 ไปถึง f8 และ 55.f8=Q เป็นตาสุดท้าย\n\nLu จบรายการโดยไม่แพ้ใคร ด้วย 4½/6\n\nย้อนกลับไปที่ 40...h3 แล้วหา 40...Re1 จากนั้นเล่นต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "İki yeni vezir, her renge bir tane: Lu, Batsiashvili'yi yendi, şampiyon takım tek yenilgisini aldı",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400), Romanya Kadınlar Süper Ligi'nin 3. turunda GM Nino Batsiashvili'yi (CSM Iasi 2020, 2459) 55 hamlede yendi ve Medicina Timisoara maçı 2½–1½ kazandı. Bu, CSM Iasi 2020'nin şampiyonluk yolunda kaybettiği tek maçtı.\n\nBatsiashvili, 40...h3 hamlesini saatte 12 saniye kala oynadı. Stockfish 40...Re1 hamlesini istiyordu. Öncesinde beyazı açık farkla üstün (+1,79), sonrasında kazanan konumda (+5,74) görüyordu ve ilk tercihi olan 41.Qf3 hemen geldi. Siyah piyon yine de 41...hxg2 ve 42...g1=Q+ ile vezire çıktı, ama 46.Qxg1 yeni veziri aldı. Ardından beyazın f piyonu f4'ten f8'e koştu ve son hamle 55.f8=Q oldu.\n\nLu ligi 4½/6 ile yenilgisiz tamamladı.\n\n40...h3 hamlesine dön ve 40...Re1 hamlesini bul. Sonra motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Hai Hậu mới, mỗi bên một: Lu thắng Batsiashvili, nhà vô địch thua trận duy nhất",
+          "body": "IM Miaoyi Lu (Medicina Timisoara, 2400) thắng GM Nino Batsiashvili (CSM Iasi 2020, 2459) sau 55 nước ở vòng 3 giải Siêu hạng nữ Romania, và Medicina Timisoara thắng trận 2½–1½. Đó là trận duy nhất CSM Iasi 2020 thua trên đường tới chức vô địch.\n\nBatsiashvili đi 40...h3 khi còn 12 giây. Stockfish muốn 40...Re1. Engine đánh giá Trắng ưu thế rõ trước nước đó (+1,79) và ở thế thắng sau nước đó (+5,74), và 41.Qf3, lựa chọn số một của engine, đến ngay. Tốt Đen vẫn đi tới đích, 41...hxg2 và 42...g1=Q+, nhưng 46.Qxg1 bắt Hậu mới. Rồi Tốt f Trắng chạy từ f4 tới f8, và 55.f8=Q là nước cuối cùng.\n\nLu kết thúc giải bất bại, với 4½/6.\n\nQuay lại 40...h3 và tìm 40...Re1. Rồi chơi tiếp với engine."
+        },
+        "zh-Hans": {
+          "headline": "双方各升一个新后：Lu击败Batsiashvili，冠军队输掉赛季唯一一场比赛",
+          "body": "IM Miaoyi Lu（Medicina Timisoara，2400）在罗马尼亚女子超级联赛第3轮55回合击败GM Nino Batsiashvili（CSM Iasi 2020，2459），Medicina Timisoara以2½–1½赢下比赛。这是CSM Iasi 2020在夺冠路上输掉的唯一一场比赛。\n\nBatsiashvili在剩12秒时走出40...h3。Stockfish想走的是40...Re1。Stockfish认为这步之前白方明显占优（+1.79），之后白方胜势（+5.74），白方随即走出Stockfish的首选41.Qf3。黑兵仍然冲到了底线，41...hxg2，然后42...g1=Q+，但46.Qxg1吃掉了这个新后。接着白方f兵从f4一路冲到f8，55.f8=Q是全局最后一步。\n\nLu以4½/6的成绩保持不败。\n\n回到40...h3，找出40...Re1。然后对着引擎继续下。"
+        },
+        "zh-Hant": {
+          "headline": "雙方各升出一個新后：Lu擊敗Batsiashvili，冠軍隊輸掉整個賽季唯一一場比賽",
+          "body": "IM Miaoyi Lu（Medicina Timisoara，2400）在羅馬尼亞女子超級聯賽第3輪55回合擊敗GM Nino Batsiashvili（CSM Iasi 2020，2459），Medicina Timisoara以2½–1½贏下比賽。這是CSM Iasi 2020在奪冠路上輸掉的唯一一場比賽。\n\nBatsiashvili在剩12秒時走出40...h3。Stockfish想走的是40...Re1。Stockfish認為這步之前白方明顯佔優（+1.79），之後白方勝勢（+5.74），白方隨即走出Stockfish的首選41.Qf3。黑兵還是衝到了底線，41...hxg2，然後42...g1=Q+，但46.Qxg1吃掉了這個新后。接著白方f兵從f4一路衝到f8，55.f8=Q是全局最後一步。\n\nLu以4½/6的成績保持不敗。\n\n回到40...h3，找出40...Re1。然後對著引擎繼續下。"
+        }
+      },
+      "fen": "8/4PQ2/k2B3p/p7/4q3/7p/P4PPK/1r6 w - - 0 41",
+      "last": {
+        "from": "h4",
+        "to": "h3"
+      },
+      "url": "https://brasspawn.com/today/2026-10-07-lu-batsiashvili-romanian-team-chess-championships-r3",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/romanian-team-chess-championships-2026-womens-super-league/round-3/cUKPlj9c/w2ABUbzb"
+      },
+      "updatedAt": "2026-10-07T19:07:04.620Z"
+    },
+    {
+      "id": "2026-10-07-indjic-simonovic-serbian-super-league-r4",
+      "status": "approved",
+      "date": "2026-10-07",
+      "rank": 0,
+      "weight": 627,
+      "event": {
+        "name": "Serbian Super League 2026",
+        "short": "Serbian Super League",
+        "section": "Open",
+        "round": 4,
+        "location": "Vrnjačka Banja - Serbia",
+        "url": "https://lichess.org/broadcast/serbian-super-league-2026-open/round-4/NgWe1cgu"
+      },
+      "white": {
+        "name": "Aleksandar Indjic",
+        "short": "Indjic",
+        "title": "GM",
+        "elo": 2606,
+        "team": "RADNIK - Surdulica"
+      },
+      "black": {
+        "name": "Aleksandar Simonovic",
+        "short": "Simonovic",
+        "title": "IM",
+        "elo": 2335,
+        "team": "PARTIZAN - Beograd"
+      },
+      "result": "0-1",
+      "opening": {
+        "eco": "E73",
+        "name": "King's Indian Defense: Semi-Averbakh System"
+      },
+      "moves": "d4 Nf6 c4 g6 Nc3 Bg7 e4 d6 Be2 O-O Be3 e5 d5 Na6 Nf3 Ng4 Bg5 f6 Bh4 Nh6 Nd2 Nc5 f3 a5 b3 Nf7 O-O Bd7 Qc2 Bh6 Bf2 f5 Rab1 Bf4 Rfd1 Ng5 Rf1 Nh3+ gxh3 Qg5+ Kh1 Bxd2 h4 Qh6 Bd3 Be3 Bg3 fxe4 Nxe4 Nxd3 Qxd3 Bh3 Qe2 Bxf1 Rxf1 b6 Kg2 Rf5 Re1 Bf4 Rd1 Raf8 Rd3 Qg7 Kf1 Qe7 Qg2 Bh6 Ke2 Kh8 Qh3 Qf7 Qg4 Qd7 h5 gxh5 Qh3 Qf7 Bh4 Qg6 Qg3 Rf4 Qxg6 hxg6 Bg3 R4f5 h3 Bc1 Bh4 g5 Be1 Kg7 Ng3 R5f7 Ne4 Kg6 Rc3 Ba3 Rd3 Bb4 Bg3 a4 Nf2 Ra8",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 47,
+        "played": "Bg3",
+        "better": "Bxe3",
+        "reply": "fxe4",
+        "replyPlayed": true,
+        "before": {
+          "cp": -230,
+          "mate": null
+        },
+        "after": {
+          "cp": -281,
+          "mate": null
+        },
+        "clock": 1603
+      },
+      "headline": "271 points lower: Simonovic beats Indjic, and Partizan hold Radnik 3–3",
+      "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) beat GM Aleksandar Indjic (Radnik Surdulica, 2606) in 52 moves in round 4 of the Serbian Super League.\n\nIt turned on 24.Bg3, played with 26:43 left. Stockfish wanted 24.Bxe3. It counted Black clearly better before (−2.30) and winning after (−2.81), and 24...fxe4, its first choice, came straight back. 27...Bxf1 won the exchange, and Stockfish counts the final position as a win for Black.\n\nOn the board above, IM Roman Shogdzhiev beat GM Ivan Cheparinov, so Radnik Surdulica lost both top boards and still drew the match 3–3. After eight rounds Radnik Surdulica lead the league.\n\nGo back to 24.Bg3 and find 24.Bxe3. Then play it on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "تصنيف أقل بـ271 نقطة: فوز لـSimonovic على Indjic، وتعادل Partizan مع Radnik ⁨3–3⁩",
+          "body": "انتهى الدور بفوز IM Aleksandar Simonovic (Partizan Beograd، 2335) على GM Aleksandar Indjic (Radnik Surdulica، 2606) في 52 نقلة، في الجولة الرابعة من الدوري الصربي الممتاز.\n\nتحوّل الدور عند ⁨24.Bg3⁩ التي لُعبت والوقت المتبقي ⁨26:43⁩. أراد Stockfish ⁨24.Bxe3⁩، وعدّ الأسود متفوقًا بوضوح قبلها (⁨−2.30⁩) وفائزًا بعدها (⁨−2.81⁩). وجاءت ⁨24...fxe4⁩، الخيار الأول للمحرك، مباشرة. وكسبت ⁨27...Bxf1⁩ الجودة، ويعدّ Stockfish الوضع النهائي فوزًا للأسود.\n\nعلى الرقعة الأعلى، جاء فوز IM Roman Shogdzhiev على GM Ivan Cheparinov، فخسر فريق Radnik Surdulica الرقعتين الأوليين ومع ذلك تعادل في المباراة ⁨3–3⁩. وبعد ثماني جولات يتصدر فريق Radnik Surdulica الدوري.\n\nارجع إلى ⁨24.Bg3⁩ واعثر على ⁨24.Bxe3⁩. ثم تابع اللعب ضد المحرك."
+        },
+        "bg": {
+          "headline": "271 точки по-нисък рейтинг: Simonovic побеждава Indjic, а Partizan удържа Radnik с 3–3",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) победи GM Aleksandar Indjic (Radnik Surdulica, 2606) за 52 хода в 4-тия кръг на сръбската Суперлига.\n\nПартията се обърна с 24.Bg3, изигран с 26:43 на часовника. Stockfish искаше 24.Bxe3. Преди хода енджинът даваше ясно предимство на черните (−2,30), а след него — печеливша позиция (−2,81), и 24...fxe4, първият му избор, последва веднага. 27...Bxf1 спечели качество, а Stockfish оценява крайната позиция като печеливша за черните.\n\nНа дъската над тази IM Roman Shogdzhiev победи GM Ivan Cheparinov, така че Radnik Surdulica загуби на първите две дъски и въпреки това завърши мача 3–3. След осем кръга Radnik Surdulica води в класирането.\n\nВърнете се към 24.Bg3 и намерете 24.Bxe3. После продължете партията срещу енджина."
+        },
+        "cs": {
+          "headline": "O 271 bodů níž: partii Indjic – Simonovic vyhrává Simonovic a Partizan remizuje s Radnik 3–3",
+          "body": "V partii GM Aleksandar Indjic (Radnik Surdulica, 2606) – IM Aleksandar Simonovic (Partizan Beograd, 2335) ve 4. kole srbské superligy vyhrává po 52 tazích Simonovic.\n\nZlom přišel tahem 24.Bg3, zahraným s 26:43 na hodinách. Stockfish chtěl 24.Bxe3 a hodnotil pozici před tahem jako jasně lepší pro černé (−2,30), po něm jako vyhranou (−2,81). Okamžitě přišlo 24...fxe4, první volba enginu. Tah 27...Bxf1 získal kvalitu a konečnou pozici hodnotí Stockfish jako výhru černých.\n\nO šachovnici výš vyhrává partii IM Roman Shogdzhiev – GM Ivan Cheparinov Shogdzhiev, takže Radnik Surdulica prohrává na obou horních šachovnicích, a přesto remizuje zápas 3–3. Po osmi kolech Radnik Surdulica vede ligu.\n\nVrať se k 24.Bg3 a najdi 24.Bxe3. Pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "271 ratingpoint lavere: Simonovic slår Indjic, og Partizan holder Radnik til 3–3",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) slog GM Aleksandar Indjic (Radnik Surdulica, 2606) i 52 træk i 4. runde af den serbiske superliga.\n\nPartiet vendte med 24.Bg3, spillet med 26:43 tilbage. Stockfish ville have 24.Bxe3. Motoren så sort klart bedre før (−2,30) og til gevinst efter (−2,81), og 24...fxe4, Stockfishs førstevalg, kom med det samme. 27...Bxf1 vandt kvaliteten, og Stockfish vurderer slutstillingen som gevinst til sort.\n\nPå brættet ovenover slog IM Roman Shogdzhiev GM Ivan Cheparinov, så Radnik Surdulica tabte begge topbrætter og spillede alligevel matchen 3–3. Efter otte runder fører Radnik Surdulica ligaen.\n\nGå tilbage til 24.Bg3 og find 24.Bxe3. Spil så videre mod motoren."
+        },
+        "de": {
+          "headline": "271 Elo weniger: Simonovic schlägt Indjic, und Partizan holt gegen Radnik ein 3:3",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) schlug GM Aleksandar Indjic (Radnik Surdulica, 2606) in Runde 4 der serbischen Superliga in 52 Zügen.\n\nDie Partie kippte mit 24.Bg3, gespielt mit 26:43 auf der Uhr. Stockfish wollte 24.Bxe3. Davor sah Stockfish Schwarz klar besser (−2,30), danach auf Gewinn (−2,81), und 24...fxe4, die erste Wahl von Stockfish, kam sofort. 27...Bxf1 gewann die Qualität, und Stockfish wertet die Schlussstellung als Gewinn für Schwarz.\n\nEin Brett darüber schlug IM Roman Shogdzhiev GM Ivan Cheparinov. So verlor Radnik Surdulica beide Spitzenbretter und holte trotzdem ein 3:3. Nach acht Runden führt Radnik Surdulica die Liga an.\n\nZurück zu 24.Bg3 und 24.Bxe3 finden. Dann gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "271 βαθμούς χαμηλότερα: νίκη Simonovic επί Indjic, και η Partizan κρατά τη Radnik στο 3–3",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) επικράτησε επί GM Aleksandar Indjic (Radnik Surdulica, 2606) σε 52 κινήσεις στον 4ο γύρο της σερβικής Σούπερ Λίγκας.\n\nΗ παρτίδα γύρισε στην 24.Bg3, που παίχτηκε με 26:43 στο ρολόι. Το Stockfish ήθελε την 24.Bxe3. Έδινε καθαρό πλεονέκτημα στα μαύρα πριν (−2,30) και νίκη μετά (−2,81), και η 24...fxe4, η πρώτη επιλογή της μηχανής, ήρθε αμέσως. Η 27...Bxf1 κέρδισε ποιότητα, και το Stockfish κρίνει την τελική θέση κερδισμένη για τα μαύρα.\n\nΜία σκακιέρα πιο πάνω, IM Roman Shogdzhiev επικράτησε επί GM Ivan Cheparinov, έτσι η Radnik Surdulica έχασε και τις δύο πρώτες σκακιέρες και παρ' όλα αυτά έφερε ισοπαλία 3–3 στον αγώνα. Μετά από οκτώ γύρους, η Radnik Surdulica βρίσκεται στην κορυφή της βαθμολογίας.\n\nΓύρνα στην 24.Bg3 και βρες την 24.Bxe3. Μετά συνέχισε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Con 271 puntos menos de Elo: Simonovic vence a Indjic, y Partizan le arranca un 3–3 a Radnik",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) venció a GM Aleksandar Indjic (Radnik Surdulica, 2606) en 52 jugadas en la cuarta ronda de la Superliga serbia.\n\nTodo cambió con 24.Bg3, hecha con 26:43 en el reloj. Stockfish quería 24.Bxe3. Daba clara ventaja a las negras antes (−2,30) y posición ganadora después (−2,81), y 24...fxe4, su primera opción, llegó enseguida. 27...Bxf1 ganó la calidad, y Stockfish da la posición final como ganada para las negras.\n\nEn el tablero de arriba, IM Roman Shogdzhiev venció a GM Ivan Cheparinov, así que Radnik Surdulica perdió los dos primeros tableros y aun así empató el match 3–3. Tras ocho rondas, Radnik Surdulica lidera la liga.\n\nVuelve a 24.Bg3 y encuentra 24.Bxe3. Luego sigue contra el motor."
+        },
+        "fi": {
+          "headline": "271 pistettä alempana: Simonovic voittaa Indjicin, ja Partizan pitää Radnikin tasoissa 3–3",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) voitti GM Aleksandar Indjicin (Radnik Surdulica, 2606) 52 siirrossa Serbian superliigan 4. kierroksella.\n\nPeli kääntyi siirtoon 24.Bg3, joka pelattiin kellossa 26:43 jäljellä. Stockfish halusi 24.Bxe3. Se antoi mustalle ennen siirtoa selvän edun (−2,30) ja sen jälkeen voittoaseman (−2,81), ja sen ykkösvalinta 24...fxe4 tuli heti. 27...Bxf1 voitti laadun, ja Stockfish arvioi loppuaseman voitoksi mustalle.\n\nYlemmällä laudalla IM Roman Shogdzhiev voitti GM Ivan Cheparinovin, joten Radnik Surdulica hävisi kaksi kärkilautaa ja pelasi silti ottelun tasan 3–3. Kahdeksan kierroksen jälkeen Radnik Surdulica johtaa sarjaa.\n\nPalaa siirtoon 24.Bg3 ja löydä 24.Bxe3. Jatka sitten peliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "271 points Elo de moins : Simonovic bat Indjic, et Partizan accroche Radnik 3–3",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) a battu GM Aleksandar Indjic (Radnik Surdulica, 2606) en 52 coups lors de la 4e ronde de la Superligue serbe.\n\nLa partie a basculé sur 24.Bg3, joué avec 26:43 à la pendule. Stockfish voulait 24.Bxe3, et donnait les Noirs nettement mieux avant (−2,30) et gagnants après (−2,81). 24...fxe4, son premier choix, a suivi aussitôt. 27...Bxf1 a gagné la qualité, et Stockfish donne la position finale gagnante pour les Noirs.\n\nUn échiquier plus haut, IM Roman Shogdzhiev a battu GM Ivan Cheparinov : Radnik Surdulica a donc perdu les deux premiers échiquiers et a tout de même fait match nul 3–3. Après huit rondes, Radnik Surdulica est en tête du championnat.\n\nRevenez à 24.Bg3 et trouvez 24.Bxe3. Puis continuez contre le moteur."
+        },
+        "he": {
+          "headline": "דירוג נמוך ב־271 נקודות: ניצחון ל־Simonovic על Indjic, ותיקו ⁨3–3⁩ בין Partizan ל־Radnik",
+          "body": "המשחק בסיבוב ה־4 של ליגת העל הסרבית הסתיים בניצחון ל־IM Aleksandar Simonovic (Partizan Beograd, 2335) על GM Aleksandar Indjic (Radnik Surdulica, 2606) אחרי 52 מסעים.\n\nנקודת המפנה הגיעה ב־⁨24.Bg3⁩, ששוחק כשנותרו ⁨26:43⁩. Stockfish רצה ב־⁨24.Bxe3⁩, והעריך יתרון ברור לשחור לפני המסע (⁨−2.30⁩) ועמדה מנצחת אחריו (⁨−2.81⁩). המסע ⁨24...fxe4⁩, הבחירה הראשונה של המנוע, בא מיד. המסע ⁨27...Bxf1⁩ זכה באיכות, ו־Stockfish מעריך את העמדה הסופית כניצחון לשחור.\n\nבלוח שמעל נרשם ניצחון ל־IM Roman Shogdzhiev על GM Ivan Cheparinov, כך ש־Radnik Surdulica הפסידה בשני הלוחות העליונים ובכל זאת סיימה את המפגש בתיקו ⁨3–3⁩. אחרי שמונה סיבובים Radnik Surdulica בראש הליגה.\n\nחזרו ל־⁨24.Bg3⁩ ומצאו את ⁨24.Bxe3⁩. ואז המשיכו לשחק מול המנוע."
+        },
+        "hi": {
+          "headline": "रेटिंग में 271 अंक पीछे: Indjic पर Simonovic की जीत, और Partizan ने Radnik को 3–3 पर रोका",
+          "body": "सर्बियाई सुपर लीग के राउंड 4 में IM Aleksandar Simonovic (Partizan Beograd, 2335) ने GM Aleksandar Indjic (Radnik Surdulica, 2606) को 52 चालों में हराया।\n\nबाज़ी 24.Bg3 पर पलटी; यह चाल 26:43 बचे रहते खेली गई। Stockfish 24.Bxe3 चाहता था। उसके हिसाब से पहले काला साफ़ बेहतर था (−2.30) और बाद में जीत की स्थिति में (−2.81), और इंजन की पहली पसंद 24...fxe4 तुरंत आया। 27...Bxf1 से एक्सचेंज जीता गया, और Stockfish अंतिम स्थिति को काले की जीत मानता है।\n\nऊपर वाले बोर्ड पर IM Roman Shogdzhiev ने GM Ivan Cheparinov को हराया, इसलिए Radnik Surdulica ने ऊपर के दोनों बोर्ड गँवाए और फिर भी मुक़ाबला 3–3 से बराबर रखा। आठ राउंड के बाद लीग में Radnik Surdulica सबसे आगे है।\n\n24.Bg3 पर लौटें और 24.Bxe3 खोजें। फिर इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "271 ponttal alacsonyabb értékszám: Simonovic nyert Indjic ellen, a Partizan pedig 3–3-at ért el a Radnik ellen",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) 52 lépésben nyert GM Aleksandar Indjic (Radnik Surdulica, 2606) ellen a szerb Szuperliga 4. fordulójában.\n\nA játszma a 24.Bg3 lépésnél fordult meg, amely 26:43-mal az órán született. A Stockfish a 24.Bxe3 lépést akarta. Előtte sötét egyértelmű előnyét látta (−2,30), utána nyerő állást (−2,81), és azonnal jött a 24...fxe4, az első választása. A 27...Bxf1 megnyerte a minőséget, és a Stockfish a záróállást sötét számára nyerőnek értékeli.\n\nEgy táblával feljebb IM Roman Shogdzhiev nyert GM Ivan Cheparinov ellen, így a Radnik Surdulica mindkét első táblán vesztett, a mérkőzés mégis 3–3-as döntetlennel zárult. Nyolc forduló után a Radnik Surdulica vezeti a bajnokságot.\n\nMenj vissza a 24.Bg3 lépéshez, és találd meg a 24.Bxe3 lépést. Aztán játszd tovább a motor ellen."
+        },
+        "id": {
+          "headline": "271 poin lebih rendah: Simonovic kalahkan Indjic, dan Partizan menahan Radnik 3–3",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) mengalahkan GM Aleksandar Indjic (Radnik Surdulica, 2606) dalam 52 langkah di babak 4 Liga Super Serbia.\n\nPartai berbalik pada 24.Bg3, yang dimainkan dengan sisa 26:43. Stockfish menginginkan 24.Bxe3. Mesin menilai Hitam unggul jelas sebelumnya (−2,30) dan menang sesudahnya (−2,81), dan 24...fxe4, pilihan pertamanya, langsung datang. 27...Bxf1 menang kualitas, dan Stockfish menilai posisi akhir sebagai kemenangan untuk Hitam.\n\nDi papan di atasnya, IM Roman Shogdzhiev mengalahkan GM Ivan Cheparinov, sehingga Radnik Surdulica kalah di dua papan teratas tetapi tetap bermain imbang 3–3. Sesudah delapan babak, Radnik Surdulica memimpin liga.\n\nKembali ke 24.Bg3 dan temukan 24.Bxe3. Lalu lanjutkan melawan mesin."
+        },
+        "it": {
+          "headline": "271 punti Elo in meno: Simonovic batte Indjic, e Partizan ferma Radnik sul 3–3",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) ha battuto GM Aleksandar Indjic (Radnik Surdulica, 2606) in 52 mosse nel 4º turno della Superlega serba.\n\nLa partita è girata su 24.Bg3, giocata con 26:43 sull’orologio. Stockfish voleva 24.Bxe3, e dava il Nero chiaramente meglio prima (−2,30) e vincente dopo (−2,81). 24...fxe4, la sua prima scelta, è arrivata subito. 27...Bxf1 ha vinto la qualità, e Stockfish dà la posizione finale vinta per il Nero.\n\nUna scacchiera più su, IM Roman Shogdzhiev ha battuto GM Ivan Cheparinov: Radnik Surdulica ha perso le prime due scacchiere e ha comunque pareggiato il match 3–3. Dopo otto turni Radnik Surdulica guida il campionato.\n\nTorna a 24.Bg3 e trova 24.Bxe3. Poi continua contro il motore."
+        },
+        "ja": {
+          "headline": "レーティング271点下のSimonovicがIndjicに勝利、PartizanはRadnikと3–3で引き分け",
+          "body": "IM Aleksandar Simonovic（Partizan Beograd、2335）がセルビア・スーパーリーグ第4ラウンドでGM Aleksandar Indjic（Radnik Surdulica、2606）に52手で勝ちました。\n\n分かれ目は残り26:43で指された24.Bg3でした。Stockfishが望んだのは24.Bxe3。24.Bg3の後、Stockfishの評価は黒の明確な優勢（−2.30）から勝勢（−2.81）に変わり、すぐに第一候補の24...fxe4が返ってきました。27...Bxf1で黒がエクスチェンジを得て、Stockfishは最終局面を黒の勝ちと見ています。\n\n一つ上のボードではIM Roman ShogdzhievがGM Ivan Cheparinovに勝ちました。Radnik Surdulicaは上位2ボードをともに落としながらも、マッチを3–3の引き分けに持ち込みました。8ラウンドを終えて、Radnik Surdulicaがリーグ首位に立っています。\n\n24.Bg3に戻って24.Bxe3を見つけましょう。それからエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "271점 낮은 Simonovic, Indjic 꺾어… Partizan, Radnik와 3–3",
+          "body": "IM Aleksandar Simonovic(Partizan Beograd, 2335)가 세르비아 슈퍼리그 4라운드에서 GM Aleksandar Indjic(Radnik Surdulica, 2606)에게 52수 만에 이겼습니다.\n\n승부를 가른 수는 26:43를 남기고 둔 24.Bg3였습니다. Stockfish가 원한 수는 24.Bxe3였습니다. 24.Bg3 이후 Stockfish의 평가는 흑의 뚜렷한 우세(−2.30)에서 이기는 형세(−2.81)로 바뀌었고, 곧바로 첫 번째 후보 수인 24...fxe4가 나왔습니다. 27...Bxf1로 흑이 익스체인지를 얻었고, Stockfish는 최종 국면을 흑의 승리로 봅니다.\n\n바로 위 보드에서는 IM Roman Shogdzhiev가 GM Ivan Cheparinov를 꺾었습니다. Radnik Surdulica는 상위 두 보드를 모두 내주고도 매치를 3–3 무승부로 마쳤습니다. 8라운드를 마친 현재 Radnik Surdulica가 리그 선두를 달리고 있습니다.\n\n24.Bg3로 돌아가 24.Bxe3를 찾아보세요. 이어서 엔진을 상대로 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "271 mata lebih rendah: Simonovic tewaskan Indjic, dan Partizan ikat Radnik 3–3",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) menewaskan GM Aleksandar Indjic (Radnik Surdulica, 2606) dalam 52 langkah dalam pusingan 4 Liga Super Serbia.\n\nPermainan berubah pada 24.Bg3, yang dimainkan dengan baki 26:43. Stockfish mahukan 24.Bxe3. Enjin menilai Hitam jelas mendahului sebelumnya (−2,30) dan menang selepasnya (−2,81), dan 24...fxe4, pilihan pertamanya, tiba serta-merta. 27...Bxf1 memenangi tir untuk gajah, dan Stockfish menilai kedudukan akhir sebagai kemenangan untuk Hitam.\n\nDi papan atasnya, IM Roman Shogdzhiev menewaskan GM Ivan Cheparinov, maka Radnik Surdulica tewas di kedua-dua papan teratas tetapi masih seri 3–3. Selepas lapan pusingan, Radnik Surdulica mendahului liga.\n\nKembali ke 24.Bg3 dan cari 24.Bxe3. Kemudian teruskan menentang enjin."
+        },
+        "nl": {
+          "headline": "271 ratingpunten minder: Simonovic verslaat Indjic, en Partizan houdt Radnik op 3–3",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) versloeg GM Aleksandar Indjic (Radnik Surdulica, 2606) in 52 zetten in ronde 4 van de Servische Superliga.\n\nDe partij kantelde met 24.Bg3, gespeeld met nog 26:43. Stockfish wilde 24.Bxe3. Stockfish zag zwart ervoor duidelijk beter staan (−2,30) en erna gewonnen (−2,81), en 24...fxe4, de eerste keuze van Stockfish, kwam meteen. 27...Bxf1 won de kwaliteit, en Stockfish ziet de slotstelling als winst voor zwart.\n\nOp het bord erboven versloeg IM Roman Shogdzhiev GM Ivan Cheparinov, dus Radnik Surdulica verloor beide topborden en speelde de match toch met 3–3 gelijk. Na acht ronden staat Radnik Surdulica bovenaan in de competitie.\n\nGa terug naar 24.Bg3 en vind 24.Bxe3. Speel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "271 poeng lavere: Simonovic slår Indjic, og Partizan spiller 3–3 mot Radnik",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) slo GM Aleksandar Indjic (Radnik Surdulica, 2606) på 52 trekk i 4. runde av den serbiske superligaen.\n\nPartiet snudde med 24.Bg3, spilt med 26:43 igjen. Stockfish ville ha 24.Bxe3. Motoren regnet svart som klart bedre før (−2,30) og som vinnende etter (−2,81), og 24...fxe4, Stockfishs førstevalg, kom med en gang. 27...Bxf1 vant kvaliteten, og Stockfish regner sluttstillingen som gevinst for svart.\n\nPå brettet over slo IM Roman Shogdzhiev GM Ivan Cheparinov, så Radnik Surdulica tapte på begge toppbrettene og spilte likevel 3–3 i matchen. Etter åtte runder leder Radnik Surdulica ligaen.\n\nGå tilbake til 24.Bg3 og finn 24.Bxe3. Spill så videre mot motoren."
+        },
+        "pl": {
+          "headline": "Ranking niższy o 271 punktów: Simonovic pokonuje Indjic, a Partizan remisuje z Radnik 3–3",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) pokonuje GM Aleksandar Indjic (Radnik Surdulica, 2606) w 52 ruchach w 4. rundzie serbskiej Superligi.\n\nPartia odwraca się po 24.Bg3, zagranym przy 26:43 na zegarze. Stockfish chciał 24.Bxe3. Przed tym ruchem oceniał pozycję czarnych jako wyraźnie lepszą (−2,30), po nim jako wygraną (−2,81), a od razu padło 24...fxe4, pierwszy wybór silnika. 27...Bxf1 wygrywa jakość, a końcową pozycję Stockfish ocenia jako wygraną dla czarnych.\n\nNa szachownicy wyżej IM Roman Shogdzhiev pokonuje GM Ivan Cheparinov, więc Radnik Surdulica przegrywa na obu pierwszych szachownicach, a mimo to remisuje mecz 3–3. Po ośmiu rundach Radnik Surdulica prowadzi w lidze.\n\nWróć do 24.Bg3 i znajdź 24.Bxe3. Potem graj dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Com 271 pontos de rating a menos: Simonovic vence Indjic, e o Partizan arranca um 3–3 do Radnik",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) venceu GM Aleksandar Indjic (Radnik Surdulica, 2606) em 52 lances na 4ª rodada da Superliga Sérvia.\n\nA partida virou em 24.Bg3, jogado com 26:43 no relógio. O Stockfish queria 24.Bxe3. Via clara vantagem das pretas antes (−2,30) e posição vencedora depois (−2,81), e 24...fxe4, sua primeira opção, veio logo em seguida. 27...Bxf1 ganhou a qualidade, e o Stockfish avalia a posição final como vitória das pretas.\n\nNo tabuleiro de cima, IM Roman Shogdzhiev venceu GM Ivan Cheparinov, e assim o Radnik Surdulica perdeu os dois primeiros tabuleiros e ainda empatou o match por 3–3. Depois de oito rodadas, o Radnik Surdulica lidera a liga.\n\nVolte a 24.Bg3 e encontre 24.Bxe3. Depois continue contra o motor."
+        },
+        "ro": {
+          "headline": "Cu 271 de puncte mai puțin: Simonovic câștigă contra Indjic, iar Partizan remizează cu Radnik, 3–3",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) a câștigat contra GM Aleksandar Indjic (Radnik Surdulica, 2606) în 52 de mutări, în runda a 4-a a Superligii Serbiei.\n\nPartida s-a întors la 24.Bg3, jucată cu 26:43 rămase. Stockfish voia 24.Bxe3. Considera Negrul clar mai bun înainte (−2,30) și câștigător după (−2,81), iar 24...fxe4, prima sa alegere, a urmat imediat. 27...Bxf1 a câștigat calitatea, iar Stockfish consideră poziția finală câștigătoare pentru Negru.\n\nLa masa superioară, IM Roman Shogdzhiev a câștigat contra GM Ivan Cheparinov, așa că Radnik Surdulica a pierdut la primele două mese și tot a remizat meciul, 3–3. După opt runde, Radnik Surdulica conduce campionatul.\n\nÎntoarce-te la 24.Bg3 și găsește 24.Bxe3. Apoi continuă contra motorului."
+        },
+        "ru": {
+          "headline": "На 271 пункт ниже: Simonovic обыгрывает Indjic, а Partizan удерживает ничью с Radnik — 3–3",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) обыгрывает GM Aleksandar Indjic (Radnik Surdulica, 2606) за 52 хода в 4-м туре сербской Суперлиги.\n\nПерелом — 24.Bg3, сыгранный при 26:43 на часах. Stockfish хотел 24.Bxe3. До хода движок давал чёрным явный перевес (−2,30), после — выигрыш (−2,81), и сразу последовал 24...fxe4 — первый выбор движка. Ход 27...Bxf1 выиграл качество, и финальную позицию Stockfish оценивает как выигранную для чёрных.\n\nДоской выше IM Roman Shogdzhiev обыгрывает GM Ivan Cheparinov, так что Radnik Surdulica проигрывает на обеих первых досках — и всё равно сводит матч вничью 3–3. После восьми туров Radnik Surdulica возглавляет лигу.\n\nВернитесь к 24.Bg3 и найдите 24.Bxe3. А затем продолжите партию против движка."
+        },
+        "sv": {
+          "headline": "271 poäng lägre: Simonovic besegrar Indjic, och Partizan spelar 3–3 mot Radnik",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) besegrade GM Aleksandar Indjic (Radnik Surdulica, 2606) på 52 drag i rond 4 av serbiska superligan.\n\nDet vände på 24.Bg3, spelat med 26:43 kvar. Stockfish ville ha 24.Bxe3. Motorn räknade svart som klart bättre före (−2,30) och som vinnande efter (−2,81), och 24...fxe4, Stockfishs förstaval, kom direkt. 27...Bxf1 vann kvaliteten, och Stockfish räknar slutställningen som vinst för svart.\n\nPå brädet ovanför besegrade IM Roman Shogdzhiev GM Ivan Cheparinov, så Radnik Surdulica förlorade på båda toppbrädena och spelade ändå 3–3 i matchen. Efter åtta ronder leder Radnik Surdulica ligan.\n\nGå tillbaka till 24.Bg3 och hitta 24.Bxe3. Spela sedan vidare mot motorn."
+        },
+        "th": {
+          "headline": "เรตติ้งต่ำกว่า 271 แต้ม: Simonovic ชนะ Indjic และ Partizan ยันเสมอ Radnik 3–3",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) ชนะ GM Aleksandar Indjic (Radnik Surdulica, 2606) ใน 52 ตา ในรอบที่ 4 ของซูเปอร์ลีกเซอร์เบีย\n\nเกมพลิกที่ 24.Bg3 ซึ่งเดินเมื่อเหลือเวลา 26:43 Stockfish ต้องการ 24.Bxe3 เอนจินประเมินว่าฝ่ายดำได้เปรียบชัดเจนก่อนตานั้น (−2.30) และอยู่ในสถานะชนะหลังตานั้น (−2.81) และ 24...fxe4 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจินก็มาทันที 27...Bxf1 ได้เปรียบแลกเปลี่ยน และ Stockfish ประเมินตำแหน่งสุดท้ายว่าฝ่ายดำชนะ\n\nบนกระดานถัดขึ้นไป IM Roman Shogdzhiev ชนะ GM Ivan Cheparinov ทำให้ Radnik Surdulica แพ้ทั้งสองกระดานบนสุด แต่ก็ยังเสมอแมตช์ 3–3 ได้ หลังผ่านไปแปดรอบ Radnik Surdulica เป็นจ่าฝูงของลีก\n\nย้อนกลับไปที่ 24.Bg3 แล้วหา 24.Bxe3 จากนั้นเล่นต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "271 puan düşük reyting: Simonovic, Indjic'i yendi; Partizan, Radnik'i 3–3 durdurdu",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335), Sırbistan Süper Ligi'nin 4. turunda GM Aleksandar Indjic'i (Radnik Surdulica, 2606) 52 hamlede yendi.\n\nOyun, saatte 26:43 kala oynanan 24.Bg3 ile döndü. Stockfish 24.Bxe3 hamlesini istiyordu. Öncesinde siyahı açık farkla üstün (−2,30), sonrasında kazanan konumda (−2,81) görüyordu ve ilk tercihi olan 24...fxe4 hemen geldi. 27...Bxf1 kalite kazandı ve Stockfish son konumu siyah için kazanılmış olarak değerlendiriyor.\n\nBir üst masada IM Roman Shogdzhiev, GM Ivan Cheparinov'u yendi; böylece Radnik Surdulica ilk iki masayı kaybetmesine rağmen maçı 3–3 berabere bitirdi. Sekiz turun ardından Radnik Surdulica ligin lideri.\n\n24.Bg3 hamlesine dön ve 24.Bxe3 hamlesini bul. Sonra motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Kém 271 điểm hệ số: Simonovic thắng Indjic, Partizan cầm hòa Radnik 3–3",
+          "body": "IM Aleksandar Simonovic (Partizan Beograd, 2335) thắng GM Aleksandar Indjic (Radnik Surdulica, 2606) sau 52 nước ở vòng 4 giải Siêu hạng Serbia.\n\nVán cờ đổi chiều ở 24.Bg3, được đi khi còn 26:43. Stockfish muốn 24.Bxe3. Engine đánh giá Đen ưu thế rõ trước nước đó (−2,30) và ở thế thắng sau nước đó (−2,81), và 24...fxe4, lựa chọn số một của engine, đến ngay. 27...Bxf1 được chất, và Stockfish đánh giá thế cờ cuối cùng là thắng cho Đen.\n\nỞ bàn trên, IM Roman Shogdzhiev thắng GM Ivan Cheparinov, nên Radnik Surdulica thua cả hai bàn đầu mà vẫn hòa trận 3–3. Sau tám vòng, Radnik Surdulica dẫn đầu giải.\n\nQuay lại 24.Bg3 và tìm 24.Bxe3. Rồi chơi tiếp với engine."
+        },
+        "zh-Hans": {
+          "headline": "等级分低271分：Simonovic击败Indjic，Partizan以3–3逼平Radnik",
+          "body": "IM Aleksandar Simonovic（Partizan Beograd，2335）在塞尔维亚超级联赛第4轮52回合击败GM Aleksandar Indjic（Radnik Surdulica，2606）。\n\n转折点是24.Bg3，走这步时还剩26:43。Stockfish想走的是24.Bxe3。Stockfish认为这步之前黑方明显占优（−2.30），之后黑方胜势（−2.81），黑方随即走出Stockfish的首选24...fxe4。27...Bxf1得半子，Stockfish判定最终局面为黑方胜势。\n\n在上一台，IM Roman Shogdzhiev击败了GM Ivan Cheparinov，因此Radnik Surdulica前两台皆负，但仍以3–3战平。八轮过后，Radnik Surdulica位居联赛榜首。\n\n回到24.Bg3，找出24.Bxe3。然后对着引擎继续下。"
+        },
+        "zh-Hant": {
+          "headline": "等級分低271分：Simonovic擊敗Indjic，Partizan以3–3逼平Radnik",
+          "body": "IM Aleksandar Simonovic（Partizan Beograd，2335）在塞爾維亞超級聯賽第4輪52回合擊敗GM Aleksandar Indjic（Radnik Surdulica，2606）。\n\n轉折點是24.Bg3，走這步時還剩26:43。Stockfish想走的是24.Bxe3。Stockfish認為這步之前黑方明顯佔優（−2.30），之後黑方勝勢（−2.81），黑方隨即走出Stockfish的首選24...fxe4。27...Bxf1取得交換優勢，Stockfish判定終局局面為黑方勝勢。\n\n在上一台，IM Roman Shogdzhiev擊敗了GM Ivan Cheparinov，因此Radnik Surdulica前兩台都輸，但仍以3–3戰平。八輪過後，Radnik Surdulica高居聯賽榜首。\n\n回到24.Bg3，找出24.Bxe3。然後對著引擎繼續下。"
+        }
+      },
+      "fen": "r4rk1/1ppb3p/3p2pq/p1nPpp2/2P1P2P/1PNBbPB1/P1Q4P/1R3R1K b - - 4 24",
+      "last": {
+        "from": "f2",
+        "to": "g3"
+      },
+      "url": "https://brasspawn.com/today/2026-10-07-indjic-simonovic-serbian-super-league-r4",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/serbian-super-league-2026-open/round-4/NgWe1cgu/V5wRNl9X"
+      },
+      "updatedAt": "2026-10-07T19:07:20.918Z"
+    },
+    {
+      "id": "2026-10-07-shogdzhiev-cheparinov-serbian-super-league-r4",
+      "status": "approved",
+      "date": "2026-10-07",
+      "rank": 1,
+      "weight": 567,
+      "event": {
+        "name": "Serbian Super League 2026",
+        "short": "Serbian Super League",
+        "section": "Open",
+        "round": 4,
+        "location": "Vrnjačka Banja - Serbia",
+        "url": "https://lichess.org/broadcast/serbian-super-league-2026-open/round-4/NgWe1cgu"
+      },
+      "white": {
+        "name": "Roman Shogdzhiev",
+        "short": "Shogdzhiev",
+        "title": "IM",
+        "elo": 2445,
+        "team": "PARTIZAN - Beograd"
+      },
+      "black": {
+        "name": "Ivan Cheparinov",
+        "short": "Cheparinov",
+        "title": "GM",
+        "elo": 2631,
+        "team": "RADNIK - Surdulica"
+      },
+      "result": "1-0",
+      "opening": {
+        "eco": "C84",
+        "name": "Ruy Lopez: Closed, Martinez Variation"
+      },
+      "moves": "e4 e5 Nf3 Nc6 Bb5 a6 Ba4 Nf6 O-O Be7 d3 b5 Bb3 d6 c3 O-O h3 Na5 Bc2 c5 d4 d5 dxe5 Nxe4 Nbd2 Bf5 Re1 Nc6 Nxe4 dxe4 Bf4 Qxd1 Raxd1 Rad8 Nd2 g5 Bh2 b4 Bxe4 bxc3 bxc3 Bxe4 Nxe4 Rxd1 Rxd1 Rb8 e6 Rd8 exf7+ Kxf7 Rb1 Rd5 Kf1 Na5 Ke2 Nc4 Rb7 h5 f3 Ke6 Rc7 Rd8 Rc6+ Kd5 Rxa6 Rd7 Kd3 Nb2+ Kc2 Nc4 Kd3 Nb2+ Kc2 Nc4 Nf6+ Bxf6 Rxf6 g4 hxg4 hxg4 fxg4 Rg7 Bf4 Rxg4 g3 Rg7 Rf5+ Kc6 Kd3 Nb2+ Ke4 Na4 Be5 Nxc3+ Kd3 Ra7 Bxc3 Rxa2 g4 Rg2 Rg5 Ra2 Rg8 Kd5",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 94,
+        "played": "Nxc3+",
+        "better": "Rg8",
+        "reply": "Kd3",
+        "replyPlayed": true,
+        "before": {
+          "cp": 230,
+          "mate": null
+        },
+        "after": {
+          "cp": 434,
+          "mate": null
+        },
+        "clock": 4590
+      },
+      "headline": "186 points lower, 4:34 against 76 minutes: Shogdzhiev beats Cheparinov",
+      "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) beat GM Ivan Cheparinov (Radnik Surdulica, 2631) in 52 moves on board one in round 4 of the Serbian Super League.\n\nCheparinov had 76 minutes for 47...Nxc3+; Shogdzhiev had 4:34. Stockfish wanted 47...Rg8. It counted White clearly better before (+2.30) and winning after (+4.34), and 48.Kd3, its first choice, came straight back. 49.Bxc3 took the knight, and the game ended with White a bishop up.\n\nIt was the first of three wins over 2600-rated grandmasters for Shogdzhiev in five rounds: Cheparinov in round 4, Bharath Subramaniyam H in round 6 and Tin in round 8.\n\nGo back to 47...Nxc3+ and find 47...Rg8. Then play it on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "تصنيف أقل بـ186 نقطة، و⁨4:34⁩ مقابل 76 دقيقة: فوز لـShogdzhiev على Cheparinov",
+          "body": "انتهى الدور على الرقعة الأولى بفوز IM Roman Shogdzhiev (Partizan Beograd، 2445) على GM Ivan Cheparinov (Radnik Surdulica، 2631) في 52 نقلة، في الجولة الرابعة من الدوري الصربي الممتاز.\n\nلُعبت ⁨47...Nxc3+⁩ والوقت المتبقي 76 دقيقة على ساعة Cheparinov، مقابل ⁨4:34⁩ على ساعة Shogdzhiev. أراد Stockfish ⁨47...Rg8⁩، وعدّ الأبيض متفوقًا بوضوح قبلها (⁨+2.30⁩) وفائزًا بعدها (⁨+4.34⁩). وجاءت ⁨48.Kd3⁩، الخيار الأول للمحرك، مباشرة. وأخذت ⁨49.Bxc3⁩ الحصان، وانتهى الدور والأبيض متقدم بفيل.\n\nكان ذلك أول ثلاثة انتصارات لـShogdzhiev في خمس جولات في مواجهات أمام GM بتصنيف يتجاوز 2600: Cheparinov في الجولة الرابعة، وBharath Subramaniyam H في الجولة السادسة، وTin في الجولة الثامنة.\n\nارجع إلى ⁨47...Nxc3+⁩ واعثر على ⁨47...Rg8⁩. ثم تابع اللعب ضد المحرك."
+        },
+        "bg": {
+          "headline": "186 точки по-нисък рейтинг, 4:34 срещу 76 минути: Shogdzhiev побеждава Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) победи GM Ivan Cheparinov (Radnik Surdulica, 2631) за 52 хода на първа дъска в 4-тия кръг на сръбската Суперлига.\n\nCheparinov имаше 76 минути за 47...Nxc3+, а Shogdzhiev — 4:34. Stockfish искаше 47...Rg8. Преди хода енджинът даваше ясно предимство на белите (+2,30), а след него — печеливша позиция (+4,34), и 48.Kd3, първият му избор, последва веднага. 49.Bxc3 взе коня и партията завърши с офицер в повече за белите.\n\nТова беше първата от три победи на Shogdzhiev над гросмайстори с рейтинг над 2600 за пет кръга: Cheparinov в 4-тия кръг, Bharath Subramaniyam H в 6-ия и Tin в 8-ия.\n\nВърнете се към 47...Nxc3+ и намерете 47...Rg8. После продължете партията срещу енджина."
+        },
+        "cs": {
+          "headline": "O 186 bodů níž, 4:34 proti 76 minutám: partii Shogdzhiev – Cheparinov vyhrává Shogdzhiev",
+          "body": "V partii IM Roman Shogdzhiev (Partizan Beograd, 2445) – GM Ivan Cheparinov (Radnik Surdulica, 2631) na první šachovnici ve 4. kole srbské superligy vyhrává po 52 tazích Shogdzhiev.\n\nCheparinov hraje 47...Nxc3+ se 76 minutami na hodinách; Shogdzhiev má 4:34. Stockfish chtěl 47...Rg8 a hodnotil pozici před tahem jako jasně lepší pro bílé (+2,30), po něm jako vyhranou (+4,34). Okamžitě přišlo 48.Kd3, první volba enginu. Tah 49.Bxc3 vzal jezdce a partie skončila s bílými o střelce výš.\n\nShogdzhiev tím získává první ze tří výher nad GM s ratingem přes 2600 v pěti kolech: Cheparinov ve 4. kole, Bharath Subramaniyam H v 6. kole a Tin v 8. kole.\n\nVrať se k 47...Nxc3+ a najdi 47...Rg8. Pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "186 ratingpoint lavere, 4:34 mod 76 minutter: Shogdzhiev slår Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) slog GM Ivan Cheparinov (Radnik Surdulica, 2631) i 52 træk på førstebrættet i 4. runde af den serbiske superliga.\n\nCheparinov havde 76 minutter på uret ved 47...Nxc3+; Shogdzhiev havde 4:34. Stockfish ville have 47...Rg8. Motoren så hvid klart bedre før (+2,30) og til gevinst efter (+4,34), og 48.Kd3, Stockfishs førstevalg, kom med det samme. 49.Bxc3 slog springeren, og partiet endte med en løber mere til hvid.\n\nDet var den første af tre sejre over 2600-ratede stormestre for Shogdzhiev på fem runder: Cheparinov i 4. runde, Bharath Subramaniyam H i 6. runde og Tin i 8. runde.\n\nGå tilbage til 47...Nxc3+ og find 47...Rg8. Spil så videre mod motoren."
+        },
+        "de": {
+          "headline": "186 Elo weniger, 4:34 gegen 76 Minuten: Shogdzhiev schlägt Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) schlug GM Ivan Cheparinov (Radnik Surdulica, 2631) in Runde 4 der serbischen Superliga am ersten Brett in 52 Zügen.\n\nCheparinov hatte für 47...Nxc3+ noch 76 Minuten, Shogdzhiev 4:34. Stockfish wollte 47...Rg8. Davor sah Stockfish Weiß klar besser (+2,30), danach auf Gewinn (+4,34), und 48.Kd3, die erste Wahl von Stockfish, kam sofort. 49.Bxc3 schlug den Springer, und die Partie endete mit einem Läufer mehr für Weiß.\n\nEs war für Shogdzhiev der erste von drei Siegen gegen GMs mit über 2600 Elo in fünf Runden: Cheparinov in Runde 4, Bharath Subramaniyam H in Runde 6 und Tin in Runde 8.\n\nZurück zu 47...Nxc3+ und 47...Rg8 finden. Dann gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "186 βαθμούς χαμηλότερα, 4:34 απέναντι σε 76 λεπτά: νίκη Shogdzhiev επί Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) επικράτησε επί GM Ivan Cheparinov (Radnik Surdulica, 2631) σε 52 κινήσεις στην πρώτη σκακιέρα, στον 4ο γύρο της σερβικής Σούπερ Λίγκας.\n\nCheparinov είχε 76 λεπτά στο ρολόι για την 47...Nxc3+, ενώ Shogdzhiev είχε 4:34. Το Stockfish ήθελε την 47...Rg8. Έδινε καθαρό πλεονέκτημα στα λευκά πριν (+2,30) και νίκη μετά (+4,34), και η 48.Kd3, η πρώτη επιλογή της μηχανής, ήρθε αμέσως. Η 49.Bxc3 πήρε τον ίππο, και η παρτίδα τελείωσε με τα λευκά έναν αξιωματικό πάνω.\n\nΉταν η πρώτη από τρεις νίκες σε πέντε γύρους για Shogdzhiev επί γκρανμάστερ με Elo άνω των 2600: Cheparinov στον 4ο γύρο, Bharath Subramaniyam H στον 6ο και Tin στον 8ο.\n\nΓύρνα στην 47...Nxc3+ και βρες την 47...Rg8. Μετά συνέχισε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Con 186 puntos menos de Elo y 4:34 contra 76 minutos: Shogdzhiev vence a Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) venció a GM Ivan Cheparinov (Radnik Surdulica, 2631) en 52 jugadas en el primer tablero de la cuarta ronda de la Superliga serbia.\n\nCheparinov tenía 76 minutos para 47...Nxc3+; Shogdzhiev tenía 4:34. Stockfish quería 47...Rg8. Daba clara ventaja a las blancas antes (+2,30) y posición ganadora después (+4,34), y 48.Kd3, su primera opción, llegó enseguida. 49.Bxc3 se llevó el caballo, y la partida terminó con las blancas con un alfil de más.\n\nFue la primera de tres victorias de Shogdzhiev contra GM de 2600 o más en cinco rondas: Cheparinov en la cuarta ronda, Bharath Subramaniyam H en la sexta y Tin en la octava.\n\nVuelve a 47...Nxc3+ y encuentra 47...Rg8. Luego sigue contra el motor."
+        },
+        "fi": {
+          "headline": "186 pistettä alempana, 4:34 vastaan 76 minuuttia: Shogdzhiev voittaa Cheparinovin",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) voitti GM Ivan Cheparinovin (Radnik Surdulica, 2631) 52 siirrossa ykköslaudalla Serbian superliigan 4. kierroksella.\n\nCheparinovilla oli kellossa 76 minuuttia, kun 47...Nxc3+ pelattiin; Shogdzhievilla oli 4:34. Stockfish halusi 47...Rg8. Se antoi valkealle ennen siirtoa selvän edun (+2,30) ja sen jälkeen voittoaseman (+4,34), ja sen ykkösvalinta 48.Kd3 tuli heti. 49.Bxc3 löi ratsun, ja pelin lopussa valkealla oli lähetti enemmän.\n\nVoitto oli ensimmäinen Shogdzhievin kolmesta voitosta 2600-ratingin suurmestareista viiden kierroksen aikana: Cheparinov 4. kierroksella, Bharath Subramaniyam H 6. kierroksella ja Tin 8. kierroksella.\n\nPalaa siirtoon 47...Nxc3+ ja löydä 47...Rg8. Jatka sitten peliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "186 points Elo de moins, 4:34 contre 76 minutes : Shogdzhiev bat Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) a battu GM Ivan Cheparinov (Radnik Surdulica, 2631) en 52 coups au premier échiquier lors de la 4e ronde de la Superligue serbe.\n\nCheparinov avait 76 minutes pour 47...Nxc3+ ; Shogdzhiev avait 4:34. Stockfish voulait 47...Rg8, et donnait les Blancs nettement mieux avant (+2,30) et gagnants après (+4,34). 48.Kd3, son premier choix, a suivi aussitôt. 49.Bxc3 a pris le cavalier, et la partie s’est terminée avec un fou de plus pour les Blancs.\n\nC’était la première de trois victoires en cinq rondes de Shogdzhiev contre des GM à plus de 2600 : Cheparinov à la 4e ronde, Bharath Subramaniyam H à la 6e et Tin à la 8e.\n\nRevenez à 47...Nxc3+ et trouvez 47...Rg8. Puis continuez contre le moteur."
+        },
+        "he": {
+          "headline": "דירוג נמוך ב־186 נקודות, ⁨4:34⁩ מול 76 דקות: ניצחון ל־Shogdzhiev על Cheparinov",
+          "body": "המשחק בלוח הראשון בסיבוב ה־4 של ליגת העל הסרבית הסתיים בניצחון ל־IM Roman Shogdzhiev (Partizan Beograd, 2445) על GM Ivan Cheparinov (Radnik Surdulica, 2631) אחרי 52 מסעים.\n\nכשהמסע ⁨47...Nxc3+⁩ שוחק, נותרו 76 דקות בשעון של Cheparinov ו־⁨4:34⁩ בשעון של Shogdzhiev. Stockfish רצה ב־⁨47...Rg8⁩, והעריך יתרון ברור ללבן לפני המסע (⁨+2.30⁩) ועמדה מנצחת אחריו (⁨+4.34⁩). המסע ⁨48.Kd3⁩, הבחירה הראשונה של המנוע, בא מיד. המסע ⁨49.Bxc3⁩ לקח את הפרש, והמשחק הסתיים עם רץ עודף ללבן.\n\nזה היה הראשון מבין שלושה ניצחונות של Shogdzhiev בחמישה סיבובים מול GM בדירוג 2600 ומעלה: Cheparinov בסיבוב ה־4, Bharath Subramaniyam H בסיבוב ה־6 ו־Tin בסיבוב ה־8.\n\nחזרו ל־⁨47...Nxc3+⁩ ומצאו את ⁨47...Rg8⁩. ואז המשיכו לשחק מול המנוע."
+        },
+        "hi": {
+          "headline": "रेटिंग में 186 अंक पीछे, 76 मिनट के सामने 4:34: Cheparinov पर Shogdzhiev की जीत",
+          "body": "सर्बियाई सुपर लीग के राउंड 4 में बोर्ड एक पर IM Roman Shogdzhiev (Partizan Beograd, 2445) ने GM Ivan Cheparinov (Radnik Surdulica, 2631) को 52 चालों में हराया।\n\n47...Nxc3+ के समय Cheparinov की घड़ी पर 76 मिनट थे; Shogdzhiev की घड़ी पर 4:34। Stockfish 47...Rg8 चाहता था। उसके हिसाब से पहले सफ़ेद साफ़ बेहतर था (+2.30) और बाद में जीत की स्थिति में (+4.34), और इंजन की पहली पसंद 48.Kd3 तुरंत आया। 49.Bxc3 ने घोड़ा ले लिया, और बाज़ी ख़त्म होने पर सफ़ेद के पास एक ऊँट ज़्यादा था।\n\nयह पाँच राउंड में ग्रैंडमास्टरों के ख़िलाफ़ Shogdzhiev की तीन जीतों में से पहली थी, और तीनों की रेटिंग 2600 से ऊपर थी: राउंड 4 में Cheparinov, राउंड 6 में Bharath Subramaniyam H और राउंड 8 में Tin।\n\n47...Nxc3+ पर लौटें और 47...Rg8 खोजें। फिर इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "186 ponttal alacsonyabb értékszám, 4:34 a 76 perc ellen: Shogdzhiev nyert Cheparinov ellen",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) 52 lépésben nyert GM Ivan Cheparinov (Radnik Surdulica, 2631) ellen az első táblán, a szerb Szuperliga 4. fordulójában.\n\nCheparinov órája 76 percet mutatott a 47...Nxc3+ lépésnél, Shogdzhievé 4:34-et. A Stockfish a 47...Rg8 lépést akarta. Előtte világos egyértelmű előnyét látta (+2,30), utána nyerő állást (+4,34), és azonnal jött a 48.Kd3, az első választása. A 49.Bxc3 leütötte a huszárt, és a játszma végén világosnak egy futóval több volt.\n\nEz volt az első Shogdzhiev három győzelméből, amelyet öt fordulón belül 2600 feletti értékszámú nagymesterek ellen aratott: Cheparinov a 4., Bharath Subramaniyam H a 6., Tin a 8. fordulóban.\n\nMenj vissza a 47...Nxc3+ lépéshez, és találd meg a 47...Rg8 lépést. Aztán játszd tovább a motor ellen."
+        },
+        "id": {
+          "headline": "186 poin lebih rendah, 4:34 lawan 76 menit: Shogdzhiev kalahkan Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) mengalahkan GM Ivan Cheparinov (Radnik Surdulica, 2631) dalam 52 langkah di papan satu pada babak 4 Liga Super Serbia.\n\nCheparinov memainkan 47...Nxc3+ dengan 76 menit di jam; Shogdzhiev punya 4:34. Stockfish menginginkan 47...Rg8. Mesin menilai Putih unggul jelas sebelumnya (+2,30) dan menang sesudahnya (+4,34), dan 48.Kd3, pilihan pertamanya, langsung datang. 49.Bxc3 mengambil kuda, dan partai berakhir dengan Putih unggul satu gajah.\n\nItu kemenangan pertama dari tiga kemenangan Shogdzhiev atas grandmaster ber-rating 2600-an dalam lima babak: Cheparinov di babak 4, Bharath Subramaniyam H di babak 6, dan Tin di babak 8.\n\nKembali ke 47...Nxc3+ dan temukan 47...Rg8. Lalu lanjutkan melawan mesin."
+        },
+        "it": {
+          "headline": "186 punti Elo in meno, 4:34 contro 76 minuti: Shogdzhiev batte Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) ha battuto GM Ivan Cheparinov (Radnik Surdulica, 2631) in 52 mosse in prima scacchiera nel 4º turno della Superlega serba.\n\nCheparinov aveva 76 minuti per 47...Nxc3+; Shogdzhiev aveva 4:34. Stockfish voleva 47...Rg8, e dava il Bianco chiaramente meglio prima (+2,30) e vincente dopo (+4,34). 48.Kd3, la sua prima scelta, è arrivata subito. 49.Bxc3 ha preso il Cavallo, e la partita è finita con il Bianco in vantaggio di un Alfiere.\n\nEra la prima di tre vittorie in cinque turni di Shogdzhiev contro GM sopra 2600: Cheparinov al 4º turno, Bharath Subramaniyam H al 6º e Tin all’8º.\n\nTorna a 47...Nxc3+ e trova 47...Rg8. Poi continua contro il motore."
+        },
+        "ja": {
+          "headline": "レーティング186点下、4:34対76分、ShogdzhievがCheparinovに勝利",
+          "body": "IM Roman Shogdzhiev（Partizan Beograd、2445）がセルビア・スーパーリーグ第4ラウンドの1番ボードでGM Ivan Cheparinov（Radnik Surdulica、2631）に52手で勝ちました。\n\n47...Nxc3+が指されたとき、Cheparinovの時計には76分、Shogdzhievの時計には4:34が残っていました。Stockfishが望んだのは47...Rg8。47...Nxc3+の後、Stockfishの評価は白の明確な優勢（+2.30）から勝勢（+4.34）に変わり、すぐに第一候補の48.Kd3が返ってきました。49.Bxc3でナイトを取り、対局は白のビショップ1枚得で終わりました。\n\nこれはShogdzhievが5ラウンドの間にレーティング2600台のグランドマスターから挙げた3勝のうち、最初の1勝でした。第4ラウンドでCheparinov、第6ラウンドでBharath Subramaniyam H、第8ラウンドでTinに勝っています。\n\n47...Nxc3+に戻って47...Rg8を見つけましょう。それからエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "186점 낮은 Shogdzhiev, 4:34 대 76분… Cheparinov 꺾어",
+          "body": "IM Roman Shogdzhiev(Partizan Beograd, 2445)가 세르비아 슈퍼리그 4라운드 1번 보드에서 GM Ivan Cheparinov(Radnik Surdulica, 2631)에게 52수 만에 이겼습니다.\n\n47...Nxc3+가 나왔을 때 Cheparinov의 시계에는 76분, Shogdzhiev의 시계에는 4:34가 남아 있었습니다. Stockfish가 원한 수는 47...Rg8였습니다. 47...Nxc3+ 이후 Stockfish의 평가는 백의 뚜렷한 우세(+2.30)에서 이기는 형세(+4.34)로 바뀌었고, 곧바로 첫 번째 후보 수인 48.Kd3가 나왔습니다. 49.Bxc3로 나이트를 잡았고, 대국은 백이 비숍 하나를 더 가진 채 끝났습니다.\n\n이 승리는 Shogdzhiev가 다섯 라운드 동안 레이팅 2600대 그랜드마스터를 상대로 거둔 3승 가운데 첫 승이었습니다. 4라운드에서 Cheparinov, 6라운드에서 Bharath Subramaniyam H, 8라운드에서 Tin을 꺾었습니다.\n\n47...Nxc3+로 돌아가 47...Rg8를 찾아보세요. 이어서 엔진을 상대로 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "186 mata lebih rendah, 4:34 berbanding 76 minit: Shogdzhiev tewaskan Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) menewaskan GM Ivan Cheparinov (Radnik Surdulica, 2631) dalam 52 langkah di papan satu dalam pusingan 4 Liga Super Serbia.\n\nCheparinov memainkan 47...Nxc3+ dengan 76 minit pada jam; Shogdzhiev mempunyai 4:34. Stockfish mahukan 47...Rg8. Enjin menilai Putih jelas mendahului sebelumnya (+2,30) dan menang selepasnya (+4,34), dan 48.Kd3, pilihan pertamanya, tiba serta-merta. 49.Bxc3 mengambil kuda, dan permainan berakhir dengan Putih lebih satu gajah.\n\nItulah yang pertama daripada tiga kemenangan Shogdzhiev ke atas grandmaster berpenarafan 2600-an dalam lima pusingan: Cheparinov dalam pusingan 4, Bharath Subramaniyam H dalam pusingan 6 dan Tin dalam pusingan 8.\n\nKembali ke 47...Nxc3+ dan cari 47...Rg8. Kemudian teruskan menentang enjin."
+        },
+        "nl": {
+          "headline": "186 ratingpunten minder, 4:34 tegen 76 minuten: Shogdzhiev verslaat Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) versloeg GM Ivan Cheparinov (Radnik Surdulica, 2631) in 52 zetten aan bord één in ronde 4 van de Servische Superliga.\n\nCheparinov had 76 minuten voor 47...Nxc3+; Shogdzhiev had 4:34. Stockfish wilde 47...Rg8. Stockfish zag wit ervoor duidelijk beter staan (+2,30) en erna gewonnen (+4,34), en 48.Kd3, de eerste keuze van Stockfish, kwam meteen. 49.Bxc3 sloeg het paard, en de partij eindigde met wit een loper voor.\n\nHet was voor Shogdzhiev de eerste van drie overwinningen in vijf ronden op GM's met een rating boven 2600: Cheparinov in ronde 4, Bharath Subramaniyam H in ronde 6 en Tin in ronde 8.\n\nGa terug naar 47...Nxc3+ en vind 47...Rg8. Speel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "186 poeng lavere, 4:34 mot 76 minutter: Shogdzhiev slår Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) slo GM Ivan Cheparinov (Radnik Surdulica, 2631) på 52 trekk på første brett i 4. runde av den serbiske superligaen.\n\nCheparinov hadde 76 minutter på klokka ved 47...Nxc3+; Shogdzhiev hadde 4:34. Stockfish ville ha 47...Rg8. Motoren regnet hvit som klart bedre før (+2,30) og som vinnende etter (+4,34), og 48.Kd3, Stockfishs førstevalg, kom med en gang. 49.Bxc3 tok springeren, og partiet endte med en løper mer for hvit.\n\nDet var den første av tre seire over 2600-ratede stormestere for Shogdzhiev på fem runder: Cheparinov i 4. runde, Bharath Subramaniyam H i 6. runde og Tin i 8. runde.\n\nGå tilbake til 47...Nxc3+ og finn 47...Rg8. Spill så videre mot motoren."
+        },
+        "pl": {
+          "headline": "Ranking niższy o 186 punktów, 4:34 wobec 76 minut: Shogdzhiev pokonuje Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) pokonuje GM Ivan Cheparinov (Radnik Surdulica, 2631) w 52 ruchach na pierwszej szachownicy w 4. rundzie serbskiej Superligi.\n\nPrzy 47...Nxc3+ Cheparinov ma na zegarze 76 minut, a Shogdzhiev 4:34. Stockfish chciał 47...Rg8. Przed tym ruchem oceniał pozycję białych jako wyraźnie lepszą (+2,30), po nim jako wygraną (+4,34), a od razu padło 48.Kd3, pierwszy wybór silnika. 49.Bxc3 bije skoczka, a w chwili zakończenia partii białe mają gońca więcej.\n\nOd tej partii Shogdzhiev wygrywa w pięciu rundach trzy razy z GM z rankingiem ponad 2600: Cheparinov w 4. rundzie, Bharath Subramaniyam H w 6. rundzie i Tin w 8. rundzie.\n\nWróć do 47...Nxc3+ i znajdź 47...Rg8. Potem graj dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "186 pontos de rating a menos, 4:34 contra 76 minutos: Shogdzhiev vence Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) venceu GM Ivan Cheparinov (Radnik Surdulica, 2631) em 52 lances no primeiro tabuleiro da 4ª rodada da Superliga Sérvia.\n\nCheparinov tinha 76 minutos para 47...Nxc3+; Shogdzhiev tinha 4:34. O Stockfish queria 47...Rg8. Via clara vantagem das brancas antes (+2,30) e posição vencedora depois (+4,34), e 48.Kd3, sua primeira opção, veio logo em seguida. 49.Bxc3 levou o cavalo, e a partida terminou com as brancas com um bispo a mais.\n\nFoi a primeira de três vitórias de Shogdzhiev sobre GMs de 2600 ou mais em cinco rodadas: Cheparinov na 4ª rodada, Bharath Subramaniyam H na 6ª e Tin na 8ª.\n\nVolte a 47...Nxc3+ e encontre 47...Rg8. Depois continue contra o motor."
+        },
+        "ro": {
+          "headline": "Cu 186 de puncte mai puțin, 4:34 contra 76 de minute: Shogdzhiev câștigă contra Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) a câștigat contra GM Ivan Cheparinov (Radnik Surdulica, 2631) în 52 de mutări, la prima masă, în runda a 4-a a Superligii Serbiei.\n\nCheparinov avea 76 de minute la 47...Nxc3+; Shogdzhiev avea 4:34. Stockfish voia 47...Rg8. Considera Albul clar mai bun înainte (+2,30) și câștigător după (+4,34), iar 48.Kd3, prima sa alegere, a urmat imediat. 49.Bxc3 a luat calul, iar partida s-a încheiat cu Albul având un nebun în plus.\n\nA fost prima dintre cele trei victorii obținute de Shogdzhiev în cinci runde contra unor GM cu rating de peste 2600: Cheparinov în runda a 4-a, Bharath Subramaniyam H în runda a 6-a și Tin în runda a 8-a.\n\nÎntoarce-te la 47...Nxc3+ și găsește 47...Rg8. Apoi continuă contra motorului."
+        },
+        "ru": {
+          "headline": "На 186 пунктов ниже, 4:34 против 76 минут: Shogdzhiev обыгрывает Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) обыгрывает GM Ivan Cheparinov (Radnik Surdulica, 2631) за 52 хода на первой доске в 4-м туре сербской Суперлиги.\n\nCheparinov играет 47...Nxc3+, имея 76 минут; у Shogdzhiev — 4:34. Stockfish хотел 47...Rg8. До хода движок давал белым явный перевес (+2,30), после — выигрыш (+4,34), и сразу последовал 48.Kd3 — первый выбор движка. 49.Bxc3 забрал коня, и партия закончилась с лишним слоном у белых.\n\nЭто первая из трёх побед Shogdzhiev за пять туров над GM с рейтингом 2600+: Cheparinov в 4-м туре, Bharath Subramaniyam H в 6-м и Tin в 8-м.\n\nВернитесь к 47...Nxc3+ и найдите 47...Rg8. А затем продолжите партию против движка."
+        },
+        "sv": {
+          "headline": "186 poäng lägre, 4:34 mot 76 minuter: Shogdzhiev besegrar Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) besegrade GM Ivan Cheparinov (Radnik Surdulica, 2631) på 52 drag på första brädet i rond 4 av serbiska superligan.\n\nCheparinov hade 76 minuter på klockan vid 47...Nxc3+; Shogdzhiev hade 4:34. Stockfish ville ha 47...Rg8. Motorn räknade vit som klart bättre före (+2,30) och som vinnande efter (+4,34), och 48.Kd3, Stockfishs förstaval, kom direkt. 49.Bxc3 tog springaren, och partiet slutade med en löpare mer för vit.\n\nDet var den första av tre vinster mot 2600-rankade stormästare för Shogdzhiev på fem ronder: Cheparinov i rond 4, Bharath Subramaniyam H i rond 6 och Tin i rond 8.\n\nGå tillbaka till 47...Nxc3+ och hitta 47...Rg8. Spela sedan vidare mot motorn."
+        },
+        "th": {
+          "headline": "เรตติ้งต่ำกว่า 186 แต้ม เวลา 4:34 ต่อ 76 นาที: Shogdzhiev ชนะ Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) ชนะ GM Ivan Cheparinov (Radnik Surdulica, 2631) ใน 52 ตา บนกระดานหนึ่ง ในรอบที่ 4 ของซูเปอร์ลีกเซอร์เบีย\n\nCheparinov มีเวลา 76 นาทีตอนเดิน 47...Nxc3+ ขณะที่ Shogdzhiev มี 4:34 Stockfish ต้องการ 47...Rg8 เอนจินประเมินว่าฝ่ายขาวได้เปรียบชัดเจนก่อนตานั้น (+2.30) และอยู่ในสถานะชนะหลังตานั้น (+4.34) และ 48.Kd3 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจินก็มาทันที 49.Bxc3 กินม้า และเกมจบลงโดยฝ่ายขาวมีบิชอปมากกว่าหนึ่งตัว\n\nนี่เป็นชัยชนะครั้งแรกจากสามครั้งในห้ารอบที่ Shogdzhiev ชนะแกรนด์มาสเตอร์เรตติ้ง 2600: Cheparinov ในรอบที่ 4, Bharath Subramaniyam H ในรอบที่ 6 และ Tin ในรอบที่ 8\n\nย้อนกลับไปที่ 47...Nxc3+ แล้วหา 47...Rg8 จากนั้นเล่นต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "186 puan düşük reyting, 76 dakikaya karşı 4:34: Shogdzhiev, Cheparinov'u yendi",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445), Sırbistan Süper Ligi'nin 4. turunda birinci masada GM Ivan Cheparinov'u (Radnik Surdulica, 2631) 52 hamlede yendi.\n\nCheparinov 47...Nxc3+ hamlesini oynarken saatinde 76 dakika vardı; Shogdzhiev'in saatinde ise 4:34. Stockfish 47...Rg8 hamlesini istiyordu. Öncesinde beyazı açık farkla üstün (+2,30), sonrasında kazanan konumda (+4,34) görüyordu ve ilk tercihi olan 48.Kd3 hemen geldi. 49.Bxc3 atı aldı ve oyun beyazın bir fil fazlasıyla bitti.\n\nBu, Shogdzhiev'in beş turda 2600 reytingli büyükustalara karşı aldığı üç galibiyetin ilkiydi: 4. turda Cheparinov, 6. turda Bharath Subramaniyam H ve 8. turda Tin.\n\n47...Nxc3+ hamlesine dön ve 47...Rg8 hamlesini bul. Sonra motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Kém 186 điểm, 4:34 đấu 76 phút: Shogdzhiev thắng Cheparinov",
+          "body": "IM Roman Shogdzhiev (Partizan Beograd, 2445) thắng GM Ivan Cheparinov (Radnik Surdulica, 2631) sau 52 nước ở bàn một, vòng 4 giải Siêu hạng Serbia.\n\nCheparinov còn 76 phút cho nước 47...Nxc3+; Shogdzhiev còn 4:34. Stockfish muốn 47...Rg8. Engine đánh giá Trắng ưu thế rõ trước nước đó (+2,30) và ở thế thắng sau nước đó (+4,34), và 48.Kd3, lựa chọn số một của engine, đến ngay. 49.Bxc3 bắt Mã, và ván cờ kết thúc khi Trắng hơn một Tượng.\n\nĐó là ván thắng đầu tiên trong ba ván thắng của Shogdzhiev trước các đại kiện tướng hệ số 2600 trong năm vòng: Cheparinov ở vòng 4, Bharath Subramaniyam H ở vòng 6 và Tin ở vòng 8.\n\nQuay lại 47...Nxc3+ và tìm 47...Rg8. Rồi chơi tiếp với engine."
+        },
+        "zh-Hans": {
+          "headline": "等级分低186分，4:34对76分钟：Shogdzhiev击败Cheparinov",
+          "body": "IM Roman Shogdzhiev（Partizan Beograd，2445）在塞尔维亚超级联赛第4轮第一台52回合击败GM Ivan Cheparinov（Radnik Surdulica，2631）。\n\nCheparinov走47...Nxc3+时还有76分钟，Shogdzhiev则是4:34。Stockfish想走的是47...Rg8。Stockfish认为这步之前白方明显占优（+2.30），之后白方胜势（+4.34），白方随即走出Stockfish的首选48.Kd3。49.Bxc3吃掉了马，对局结束时白方多一个象。\n\n这是Shogdzhiev在五轮内三次击败等级分2600以上特级大师中的第一次：第4轮Cheparinov，第6轮Bharath Subramaniyam H，第8轮Tin。\n\n回到47...Nxc3+，找出47...Rg8。然后对着引擎继续下。"
+        },
+        "zh-Hant": {
+          "headline": "等級分低186分，4:34對76分鐘：Shogdzhiev擊敗Cheparinov",
+          "body": "IM Roman Shogdzhiev（Partizan Beograd，2445）在塞爾維亞超級聯賽第4輪第一台52回合擊敗GM Ivan Cheparinov（Radnik Surdulica，2631）。\n\nCheparinov走47...Nxc3+時還有76分鐘，Shogdzhiev則是4:34。Stockfish想走的是47...Rg8。Stockfish認為這步之前白方明顯佔優（+2.30），之後白方勝勢（+4.34），白方隨即走出Stockfish的首選48.Kd3。49.Bxc3吃掉了馬，對局結束時白方多一個象。\n\n這是Shogdzhiev在五輪內三度擊敗等級分2600以上特級大師的第一次：第4輪Cheparinov，第6輪Bharath Subramaniyam H，第8輪Tin。\n\n回到47...Nxc3+，找出47...Rg8。然後對著引擎繼續下。"
+        }
+      },
+      "fen": "8/6r1/2k5/2p1BR2/4K3/2n3P1/P7/8 w - - 0 48",
+      "last": {
+        "from": "a4",
+        "to": "c3"
+      },
+      "url": "https://brasspawn.com/today/2026-10-07-shogdzhiev-cheparinov-serbian-super-league-r4",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/serbian-super-league-2026-open/round-4/NgWe1cgu/32q62d9U"
+      },
+      "updatedAt": "2026-10-07T19:07:29.034Z"
+    },
+    {
+      "id": "2026-10-07-tin-karthikeyan-serbian-super-league-r4",
+      "status": "approved",
+      "date": "2026-10-07",
+      "rank": 2,
+      "weight": 442,
+      "event": {
+        "name": "Serbian Super League 2026",
+        "short": "Serbian Super League",
+        "section": "Open",
+        "round": 4,
+        "location": "Vrnjačka Banja - Serbia",
+        "url": "https://lichess.org/broadcast/serbian-super-league-2026-open/round-4/NgWe1cgu"
+      },
+      "white": {
+        "name": "Jingyao Tin",
+        "short": "Tin",
+        "title": "GM",
+        "elo": 2602,
+        "team": "RUDAR - Kostolac"
+      },
+      "black": {
+        "name": "Murali Karthikeyan",
+        "short": "Karthikeyan",
+        "title": "GM",
+        "elo": 2647,
+        "team": "JELICA PEP - Goračići"
+      },
+      "result": "1-0",
+      "opening": {
+        "eco": "D43",
+        "name": "Semi-Slav Defense: Anti-Moscow Gambit"
+      },
+      "moves": "d4 d5 c4 e6 Nf3 Nf6 Nc3 c6 Bg5 h6 Bh4 dxc4 e4 g5 Bg3 b5 Be2 Bg7 Qc2 O-O Rd1 Nh5 e5 Nd7 Ne4 f5 exf6 Ndxf6 Ne5 Nxg3 hxg3 Nxe4 Qxe4 Qd5 Qe3 Qxg2 Rh5 c5 Ng4 cxd4 Rxd4 e5 Nxh6+ Bxh6 Rxg5+ Kh7 Rh4 Qg1+ Bf1 Qxf2+ Qxf2 Rxf2 Kxf2 Bd7 Bg2 Rf8+ Ke2 Rf6 Be4+ Kh8 g4",
+      "ending": null,
+      "key": {
+        "kind": "mistake",
+        "ply": 40,
+        "played": "cxd4",
+        "better": "Rf5",
+        "reply": "Rxd4",
+        "replyPlayed": true,
+        "before": {
+          "cp": 213,
+          "mate": null
+        },
+        "after": {
+          "cp": 400,
+          "mate": null
+        },
+        "clock": 694
+      },
+      "headline": "The league's highest-rated player loses: Tin beats Karthikeyan in 31",
+      "body": "GM Jingyao Tin (Rudar Kostolac, 2602) beat GM Murali Karthikeyan (Jelica PEP Goračići, 2647), the highest-rated player in the Serbian Super League, in 31 moves in round 4.\n\nIt turned on 20...cxd4, played with 11:34 left. Stockfish wanted 20...Rf5. It counted White clearly better before (+2.13) and winning after (+4.00), and 21.Rxd4, its first choice, came straight back. 22.Nxh6+ and 23.Rxg5+ followed, the queens came off on move 26, and Karthikeyan was down to 1:59 by move 27.\n\nJelica PEP Goračići still won the match 3½–2½. It was the first of three wins in a row for Tin, over Karthikeyan, Schekachikhin and Cheparinov.\n\nGo back to 20...cxd4 and find 20...Rf5. Then play it on against the engine.",
+      "words": {
+        "ar": {
+          "headline": "خسارة لأعلى تصنيف في الدوري: فوز لـTin على Karthikeyan في 31 نقلة",
+          "body": "انتهى الدور بفوز GM Jingyao Tin (Rudar Kostolac، 2602) على GM Murali Karthikeyan (Jelica PEP Goračići، 2647، أعلى تصنيف في الدوري) في 31 نقلة، في الجولة الرابعة من الدوري الصربي الممتاز.\n\nتحوّل الدور عند ⁨20...cxd4⁩ التي لُعبت والوقت المتبقي ⁨11:34⁩. أراد Stockfish ⁨20...Rf5⁩، وعدّ الأبيض متفوقًا بوضوح قبلها (⁨+2.13⁩) وفائزًا بعدها (⁨+4.00⁩). وجاءت ⁨21.Rxd4⁩، الخيار الأول للمحرك، مباشرة. ثم جاءت ⁨22.Nxh6+⁩ و⁨23.Rxg5+⁩، وتم تبادل الوزيرين في النقلة 26، وبحلول النقلة 27 كان الوقت على ساعة Karthikeyan ⁨1:59⁩.\n\nومع ذلك فاز فريق Jelica PEP Goračići بالمباراة ⁨3½–2½⁩. وكان ذلك أول ثلاثة انتصارات متتالية لـTin، على Karthikeyan وSchekachikhin وCheparinov.\n\nارجع إلى ⁨20...cxd4⁩ واعثر على ⁨20...Rf5⁩. ثم تابع اللعب ضد المحرك."
+        },
+        "bg": {
+          "headline": "Най-високият рейтинг в лигата губи: Tin побеждава Karthikeyan за 31 хода",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) победи GM Murali Karthikeyan (Jelica PEP Goračići, 2647), с най-висок рейтинг в сръбската Суперлига, за 31 хода в 4-тия кръг.\n\nПартията се обърна с 20...cxd4, изигран с 11:34 на часовника. Stockfish искаше 20...Rf5. Преди хода енджинът даваше ясно предимство на белите (+2,13), а след него — печеливша позиция (+4,00), и 21.Rxd4, първият му избор, последва веднага. Последваха 22.Nxh6+ и 23.Rxg5+, дамите се размениха на 26-ия ход, а на 27-ия ход на часовника на Karthikeyan оставаха 1:59.\n\nJelica PEP Goračići все пак спечели мача с 3½–2½. Това беше първата от три поредни победи на Tin — над Karthikeyan, Schekachikhin и Cheparinov.\n\nВърнете се към 20...cxd4 и намерете 20...Rf5. После продължете партията срещу енджина."
+        },
+        "cs": {
+          "headline": "Prohrává nejvyšší rating ligy: partii Tin – Karthikeyan vyhrává Tin po 31 tazích",
+          "body": "V partii GM Jingyao Tin (Rudar Kostolac, 2602) – GM Murali Karthikeyan (Jelica PEP Goračići, 2647) ve 4. kole srbské superligy vyhrává po 31 tazích Tin; Karthikeyan má nejvyšší rating celé soutěže.\n\nZlom přišel tahem 20...cxd4, zahraným s 11:34 na hodinách. Stockfish chtěl 20...Rf5 a hodnotil pozici před tahem jako jasně lepší pro bílé (+2,13), po něm jako vyhranou (+4,00). Okamžitě přišlo 21.Rxd4, první volba enginu. Následovaly 22.Nxh6+ a 23.Rxg5+, ve 26. tahu se vyměnily dámy a ve 27. tahu má Karthikeyan na hodinách už jen 1:59.\n\nJelica PEP Goračići přesto vyhrává zápas 3½–2½. Tin tím začíná sérii tří výher v řadě: Karthikeyan, Schekachikhin a Cheparinov.\n\nVrať se k 20...cxd4 a najdi 20...Rf5. Pak si pozici zahraj dál proti enginu."
+        },
+        "da": {
+          "headline": "Ligaens højest ratede spiller taber: Tin slår Karthikeyan i 31 træk",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) slog GM Murali Karthikeyan (Jelica PEP Goračići, 2647), den højest ratede spiller i den serbiske superliga, i 31 træk i 4. runde.\n\nPartiet vendte med 20...cxd4, spillet med 11:34 tilbage. Stockfish ville have 20...Rf5. Motoren så hvid klart bedre før (+2,13) og til gevinst efter (+4,00), og 21.Rxd4, Stockfishs førstevalg, kom med det samme. 22.Nxh6+ og 23.Rxg5+ fulgte, dronningerne blev byttet af i 26. træk, og Karthikeyan var nede på 1:59 ved træk 27.\n\nJelica PEP Goračići vandt alligevel matchen 3½–2½. Det var den første af tre sejre i træk for Tin, over Karthikeyan, Schekachikhin og Cheparinov.\n\nGå tilbage til 20...cxd4 og find 20...Rf5. Spil så videre mod motoren."
+        },
+        "de": {
+          "headline": "Die Elo-Nummer eins der Liga verliert: Tin schlägt Karthikeyan in 31 Zügen",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) schlug GM Murali Karthikeyan (Jelica PEP Goračići, 2647), mit der höchsten Elo-Zahl der serbischen Superliga, in Runde 4 in 31 Zügen.\n\nDie Partie kippte mit 20...cxd4, gespielt mit 11:34 auf der Uhr. Stockfish wollte 20...Rf5. Davor sah Stockfish Weiß klar besser (+2,13), danach auf Gewinn (+4,00), und 21.Rxd4, die erste Wahl von Stockfish, kam sofort. Es folgten 22.Nxh6+ und 23.Rxg5+, im 26. Zug wurden die Damen getauscht, und bei Zug 27 hatte Karthikeyan nur noch 1:59 auf der Uhr.\n\nJelica PEP Goračići gewann den Kampf trotzdem 3½:2½. Für Tin war es der erste von drei Siegen in Folge, gegen Karthikeyan, Schekachikhin und Cheparinov.\n\nZurück zu 20...cxd4 und 20...Rf5 finden. Dann gegen die Engine weiterspielen."
+        },
+        "el": {
+          "headline": "Ήττα για το υψηλότερο Elo της λίγκας: νίκη Tin επί Karthikeyan σε 31 κινήσεις",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) επικράτησε επί GM Murali Karthikeyan (Jelica PEP Goračići, 2647), που έχει το υψηλότερο Elo της σερβικής Σούπερ Λίγκας, σε 31 κινήσεις στον 4ο γύρο.\n\nΗ παρτίδα γύρισε στην 20...cxd4, που παίχτηκε με 11:34 στο ρολόι. Το Stockfish ήθελε την 20...Rf5. Έδινε καθαρό πλεονέκτημα στα λευκά πριν (+2,13) και νίκη μετά (+4,00), και η 21.Rxd4, η πρώτη επιλογή της μηχανής, ήρθε αμέσως. Ακολούθησαν οι 22.Nxh6+ και 23.Rxg5+, οι βασίλισσες έφυγαν από τη σκακιέρα στην 26η κίνηση, και στην 27η κίνηση Karthikeyan είχε μόλις 1:59 στο ρολόι.\n\nΗ Jelica PEP Goračići κέρδισε παρ' όλα αυτά τον αγώνα με 3½–2½. Ήταν η πρώτη από τρεις διαδοχικές νίκες για Tin, επί Karthikeyan, Schekachikhin και Cheparinov.\n\nΓύρνα στην 20...cxd4 και βρες την 20...Rf5. Μετά συνέχισε απέναντι στη μηχανή."
+        },
+        "es": {
+          "headline": "Cae el Elo más alto de la liga: Tin vence a Karthikeyan en 31 jugadas",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) venció a GM Murali Karthikeyan (Jelica PEP Goračići, 2647), el Elo más alto de la Superliga serbia, en 31 jugadas en la cuarta ronda.\n\nTodo cambió con 20...cxd4, hecha con 11:34 en el reloj. Stockfish quería 20...Rf5. Daba clara ventaja a las blancas antes (+2,13) y posición ganadora después (+4,00), y 21.Rxd4, su primera opción, llegó enseguida. Siguieron 22.Nxh6+ y 23.Rxg5+, las damas salieron del tablero en la jugada 26, y en la jugada 27 a Karthikeyan le quedaban 1:59.\n\nAun así, Jelica PEP Goračići ganó el match 3½–2½. Fue la primera de tres victorias seguidas de Tin, ante Karthikeyan, Schekachikhin y Cheparinov.\n\nVuelve a 20...cxd4 y encuentra 20...Rf5. Luego sigue contra el motor."
+        },
+        "fi": {
+          "headline": "Sarjan ratingiltaan korkein pelaaja häviää: Tin voittaa Karthikeyanin 31 siirrossa",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) voitti Serbian superliigan ratingiltaan korkeimman pelaajan, GM Murali Karthikeyanin (Jelica PEP Goračići, 2647), 31 siirrossa 4. kierroksella.\n\nPeli kääntyi siirtoon 20...cxd4, joka pelattiin kellossa 11:34 jäljellä. Stockfish halusi 20...Rf5. Se antoi valkealle ennen siirtoa selvän edun (+2,13) ja sen jälkeen voittoaseman (+4,00), ja sen ykkösvalinta 21.Rxd4 tuli heti. Perään tulivat 22.Nxh6+ ja 23.Rxg5+, kuningattaret vaihtuivat pois siirrolla 26, ja siirrolla 27 Karthikeyanin kellossa oli enää 1:59.\n\nJelica PEP Goračići voitti silti ottelun 3½–2½. Voitto oli ensimmäinen Tinin kolmesta peräkkäisestä voitosta: Karthikeyanista, Schekachikhinista ja Cheparinovista.\n\nPalaa siirtoon 20...cxd4 ja löydä 20...Rf5. Jatka sitten peliä moottoria vastaan."
+        },
+        "fr": {
+          "headline": "Le plus haut Elo du championnat s’incline : Tin bat Karthikeyan en 31 coups",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) a battu GM Murali Karthikeyan (Jelica PEP Goračići, 2647), plus haut Elo de la Superligue serbe, en 31 coups lors de la 4e ronde.\n\nLa partie a basculé sur 20...cxd4, joué avec 11:34 à la pendule. Stockfish voulait 20...Rf5, et donnait les Blancs nettement mieux avant (+2,13) et gagnants après (+4,00). 21.Rxd4, son premier choix, a suivi aussitôt. Puis sont venus 22.Nxh6+ et 23.Rxg5+, les dames ont été échangées au 26e coup, et Karthikeyan n’avait plus que 1:59 au 27e coup.\n\nJelica PEP Goračići a tout de même gagné le match 3½–2½. C’était la première de trois victoires d’affilée pour Tin, contre Karthikeyan, Schekachikhin et Cheparinov.\n\nRevenez à 20...cxd4 et trouvez 20...Rf5. Puis continuez contre le moteur."
+        },
+        "he": {
+          "headline": "ניצחון ל־Tin על Karthikeyan, הדירוג הגבוה ביותר בליגה, אחרי 31 מסעים",
+          "body": "המשחק בסיבוב ה־4 של ליגת העל הסרבית הסתיים בניצחון ל־GM Jingyao Tin (Rudar Kostolac, 2602) על GM Murali Karthikeyan (Jelica PEP Goračići, 2647, הדירוג הגבוה ביותר בליגה) אחרי 31 מסעים.\n\nנקודת המפנה הגיעה ב־⁨20...cxd4⁩, ששוחק כשנותרו ⁨11:34⁩. Stockfish רצה ב־⁨20...Rf5⁩, והעריך יתרון ברור ללבן לפני המסע (⁨+2.13⁩) ועמדה מנצחת אחריו (⁨+4.00⁩). המסע ⁨21.Rxd4⁩, הבחירה הראשונה של המנוע, בא מיד. אחריו באו ⁨22.Nxh6+⁩ ו־⁨23.Rxg5+⁩, המלכות הוחלפו במסע 26, ועד מסע 27 ירד השעון של Karthikeyan ל־⁨1:59⁩.\n\nקבוצת Jelica PEP Goračići בכל זאת ניצחה במפגש ⁨3½–2½⁩. זה היה הראשון מבין שלושה ניצחונות רצופים של Tin: על Karthikeyan, על Schekachikhin ועל Cheparinov.\n\nחזרו ל־⁨20...cxd4⁩ ומצאו את ⁨20...Rf5⁩. ואז המשיכו לשחק מול המנוע."
+        },
+        "hi": {
+          "headline": "लीग की सबसे ऊँची रेटिंग के हिस्से हार: 31 चालों में Karthikeyan पर Tin की जीत",
+          "body": "सर्बियाई सुपर लीग के राउंड 4 में GM Jingyao Tin (Rudar Kostolac, 2602) ने GM Murali Karthikeyan (Jelica PEP Goračići, 2647) को 31 चालों में हराया, और लीग में सबसे ऊँची रेटिंग Karthikeyan की ही है।\n\nबाज़ी 20...cxd4 पर पलटी; यह चाल 11:34 बचे रहते खेली गई। Stockfish 20...Rf5 चाहता था। उसके हिसाब से पहले सफ़ेद साफ़ बेहतर था (+2.13) और बाद में जीत की स्थिति में (+4.00), और इंजन की पहली पसंद 21.Rxd4 तुरंत आया। फिर 22.Nxh6+ और 23.Rxg5+ आए, चाल 26 पर रानियाँ बोर्ड से हट गईं, और चाल 27 तक Karthikeyan की घड़ी पर 1:59 ही बचे थे।\n\nफिर भी Jelica PEP Goračići ने मुक़ाबला 3½–2½ से जीता। यह Tin की लगातार तीन जीतों में से पहली थी: Karthikeyan, Schekachikhin और Cheparinov पर।\n\n20...cxd4 पर लौटें और 20...Rf5 खोजें। फिर इंजन के ख़िलाफ़ आगे खेलें।"
+        },
+        "hu": {
+          "headline": "Vesztett a liga legmagasabb értékszámú játékosa: Tin 31 lépésben nyert Karthikeyan ellen",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) a 4. fordulóban 31 lépésben nyert a szerb Szuperliga legmagasabb értékszámú játékosa, GM Murali Karthikeyan (Jelica PEP Goračići, 2647) ellen.\n\nA játszma a 20...cxd4 lépésnél fordult meg, amely 11:34-gyel az órán született. A Stockfish a 20...Rf5 lépést akarta. Előtte világos egyértelmű előnyét látta (+2,13), utána nyerő állást (+4,00), és azonnal jött a 21.Rxd4, az első választása. Következett a 22.Nxh6+ és a 23.Rxg5+, a vezérek a 26. lépésben lekerültek a tábláról, és a 27. lépésre Karthikeyan órája 1:59-re fogyott.\n\nA Jelica PEP Goračići így is 3½–2½ arányban megnyerte a mérkőzést. Ez volt az első Tin három egymást követő győzelméből: Karthikeyan, Schekachikhin és Cheparinov ellen.\n\nMenj vissza a 20...cxd4 lépéshez, és találd meg a 20...Rf5 lépést. Aztán játszd tovább a motor ellen."
+        },
+        "id": {
+          "headline": "Pemain dengan rating tertinggi di liga kalah: Tin kalahkan Karthikeyan dalam 31 langkah",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) mengalahkan GM Murali Karthikeyan (Jelica PEP Goračići, 2647), pemain dengan rating tertinggi di Liga Super Serbia, dalam 31 langkah di babak 4.\n\nPartai berbalik pada 20...cxd4, yang dimainkan dengan sisa 11:34. Stockfish menginginkan 20...Rf5. Mesin menilai Putih unggul jelas sebelumnya (+2,13) dan menang sesudahnya (+4,00), dan 21.Rxd4, pilihan pertamanya, langsung datang. 22.Nxh6+ dan 23.Rxg5+ menyusul, kedua menteri keluar dari papan pada langkah 26, dan pada langkah 27 jam Karthikeyan tinggal 1:59.\n\nJelica PEP Goračići tetap memenangi pertandingan 3½–2½. Itu kemenangan pertama dari tiga kemenangan beruntun Tin, atas Karthikeyan, Schekachikhin, dan Cheparinov.\n\nKembali ke 20...cxd4 dan temukan 20...Rf5. Lalu lanjutkan melawan mesin."
+        },
+        "it": {
+          "headline": "Cade l’Elo più alto del campionato: Tin batte Karthikeyan in 31 mosse",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) ha battuto GM Murali Karthikeyan (Jelica PEP Goračići, 2647), l’Elo più alto della Superlega serba, in 31 mosse nel 4º turno.\n\nLa partita è girata su 20...cxd4, giocata con 11:34 sull’orologio. Stockfish voleva 20...Rf5, e dava il Bianco chiaramente meglio prima (+2,13) e vincente dopo (+4,00). 21.Rxd4, la sua prima scelta, è arrivata subito. Poi sono seguite 22.Nxh6+ e 23.Rxg5+, le Donne sono state cambiate alla mossa 26, e alla mossa 27 Karthikeyan aveva soltanto 1:59 sull’orologio.\n\nJelica PEP Goračići ha comunque vinto il match 3½–2½. Era la prima di tre vittorie consecutive per Tin, su Karthikeyan, Schekachikhin e Cheparinov.\n\nTorna a 20...cxd4 e trova 20...Rf5. Poi continua contro il motore."
+        },
+        "ja": {
+          "headline": "リーグ最高レーティングの選手が敗れる、TinがKarthikeyanに31手で勝利",
+          "body": "GM Jingyao Tin（Rudar Kostolac、2602）が第4ラウンドで、セルビア・スーパーリーグ最高レーティングのGM Murali Karthikeyan（Jelica PEP Goračići、2647）に31手で勝ちました。\n\n分かれ目は残り11:34で指された20...cxd4でした。Stockfishが望んだのは20...Rf5。20...cxd4の後、Stockfishの評価は白の明確な優勢（+2.13）から勝勢（+4.00）に変わり、すぐに第一候補の21.Rxd4が返ってきました。続いて22.Nxh6+、23.Rxg5+と指され、26手目でクイーンが盤上から消えました。27手目までに、Karthikeyanの残り時間は1:59になっていました。\n\nそれでもマッチはJelica PEP Goračićiが3½–2½で制しました。これはTinにとって、Karthikeyan、Schekachikhin、Cheparinovに続けて勝った3連勝の始まりでした。\n\n20...cxd4に戻って20...Rf5を見つけましょう。それからエンジン相手に指し継いでみましょう。"
+        },
+        "ko": {
+          "headline": "리그 최고 레이팅 선수의 패배… Tin, Karthikeyan에게 31수 만에 승리",
+          "body": "GM Jingyao Tin(Rudar Kostolac, 2602)이 4라운드에서 세르비아 슈퍼리그 최고 레이팅 선수인 GM Murali Karthikeyan(Jelica PEP Goračići, 2647)에게 31수 만에 이겼습니다.\n\n승부를 가른 수는 11:34를 남기고 둔 20...cxd4였습니다. Stockfish가 원한 수는 20...Rf5였습니다. 20...cxd4 이후 Stockfish의 평가는 백의 뚜렷한 우세(+2.13)에서 이기는 형세(+4.00)로 바뀌었고, 곧바로 첫 번째 후보 수인 21.Rxd4가 나왔습니다. 이어서 22.Nxh6+와 23.Rxg5+가 나왔고, 26수째에 퀸이 교환되었으며, 27수째에는 Karthikeyan의 시계가 1:59까지 줄어 있었습니다.\n\n이 패배에도 Jelica PEP Goračići는 매치를 3½–2½로 이겼습니다. 이 승리는 Tin이 Karthikeyan, Schekachikhin, Cheparinov를 차례로 꺾은 3연승의 시작이었습니다.\n\n20...cxd4로 돌아가 20...Rf5를 찾아보세요. 이어서 엔진을 상대로 계속 두어 보세요."
+        },
+        "ms": {
+          "headline": "Pemain berpenarafan tertinggi liga tewas: Tin tewaskan Karthikeyan dalam 31 langkah",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) menewaskan GM Murali Karthikeyan (Jelica PEP Goračići, 2647), pemain dengan penarafan tertinggi dalam Liga Super Serbia, dalam 31 langkah dalam pusingan 4.\n\nPermainan berubah pada 20...cxd4, yang dimainkan dengan baki 11:34. Stockfish mahukan 20...Rf5. Enjin menilai Putih jelas mendahului sebelumnya (+2,13) dan menang selepasnya (+4,00), dan 21.Rxd4, pilihan pertamanya, tiba serta-merta. 22.Nxh6+ dan 23.Rxg5+ menyusul, kedua-dua menteri keluar dari papan pada langkah 26, dan menjelang langkah 27 jam Karthikeyan tinggal 1:59.\n\nJelica PEP Goračići tetap memenangi perlawanan 3½–2½. Itulah yang pertama daripada tiga kemenangan berturut-turut bagi Tin, ke atas Karthikeyan, Schekachikhin dan Cheparinov.\n\nKembali ke 20...cxd4 dan cari 20...Rf5. Kemudian teruskan menentang enjin."
+        },
+        "nl": {
+          "headline": "De nummer één op rating verliest: Tin verslaat Karthikeyan in 31 zetten",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) versloeg GM Murali Karthikeyan (Jelica PEP Goračići, 2647), met de hoogste rating van de Servische Superliga, in 31 zetten in ronde 4.\n\nDe partij kantelde met 20...cxd4, gespeeld met nog 11:34. Stockfish wilde 20...Rf5. Stockfish zag wit ervoor duidelijk beter staan (+2,13) en erna gewonnen (+4,00), en 21.Rxd4, de eerste keuze van Stockfish, kwam meteen. Daarna volgden 22.Nxh6+ en 23.Rxg5+, op zet 26 gingen de dames van het bord, en bij zet 27 had Karthikeyan nog maar 1:59 op de klok.\n\nJelica PEP Goračići won de match toch met 3½–2½. Voor Tin was het de eerste van drie overwinningen op rij, op Karthikeyan, Schekachikhin en Cheparinov.\n\nGa terug naar 20...cxd4 en vind 20...Rf5. Speel dan verder tegen de engine."
+        },
+        "no": {
+          "headline": "Ligaens høyest ratede spiller taper: Tin slår Karthikeyan på 31 trekk",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) slo GM Murali Karthikeyan (Jelica PEP Goračići, 2647), den høyest ratede spilleren i den serbiske superligaen, på 31 trekk i 4. runde.\n\nPartiet snudde med 20...cxd4, spilt med 11:34 igjen. Stockfish ville ha 20...Rf5. Motoren regnet hvit som klart bedre før (+2,13) og som vinnende etter (+4,00), og 21.Rxd4, Stockfishs førstevalg, kom med en gang. 22.Nxh6+ og 23.Rxg5+ fulgte, dronningene ble byttet i trekk 26, og Karthikeyan var nede på 1:59 i trekk 27.\n\nJelica PEP Goračići vant likevel matchen 3½–2½. Det var den første av tre strake seire for Tin, over Karthikeyan, Schekachikhin og Cheparinov.\n\nGå tilbake til 20...cxd4 og finn 20...Rf5. Spill så videre mot motoren."
+        },
+        "pl": {
+          "headline": "Numer jeden rankingu ligi przegrywa: Tin pokonuje Karthikeyan w 31 ruchach",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) pokonuje w 31 ruchach w 4. rundzie GM Murali Karthikeyan (Jelica PEP Goračići, 2647), numer jeden rankingu serbskiej Superligi.\n\nPartia odwraca się po 20...cxd4, zagranym przy 11:34 na zegarze. Stockfish chciał 20...Rf5. Przed tym ruchem oceniał pozycję białych jako wyraźnie lepszą (+2,13), po nim jako wygraną (+4,00), a od razu padło 21.Rxd4, pierwszy wybór silnika. Potem padają 22.Nxh6+ i 23.Rxg5+, hetmany schodzą z szachownicy w 26. ruchu, a w 27. ruchu Karthikeyan ma na zegarze już tylko 1:59.\n\nJelica PEP Goračići i tak wygrywa mecz 3½–2½. Od tej partii Tin wygrywa trzy razy z rzędu: z Karthikeyan, Schekachikhin i Cheparinov.\n\nWróć do 20...cxd4 i znajdź 20...Rf5. Potem graj dalej przeciwko silnikowi."
+        },
+        "pt-BR": {
+          "headline": "Cai o maior rating da liga: Tin vence Karthikeyan em 31 lances",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) venceu GM Murali Karthikeyan (Jelica PEP Goračići, 2647), o maior rating da Superliga Sérvia, em 31 lances na 4ª rodada.\n\nA partida virou em 20...cxd4, jogado com 11:34 no relógio. O Stockfish queria 20...Rf5. Via clara vantagem das brancas antes (+2,13) e posição vencedora depois (+4,00), e 21.Rxd4, sua primeira opção, veio logo em seguida. Seguiram-se 22.Nxh6+ e 23.Rxg5+, as damas saíram do tabuleiro no lance 26, e no lance 27 Karthikeyan tinha apenas 1:59.\n\nMesmo assim, o Jelica PEP Goračići venceu o match por 3½–2½. Foi a primeira de três vitórias seguidas de Tin, sobre Karthikeyan, Schekachikhin e Cheparinov.\n\nVolte a 20...cxd4 e encontre 20...Rf5. Depois continue contra o motor."
+        },
+        "ro": {
+          "headline": "Numărul unu al ligii pierde: Tin câștigă contra Karthikeyan în 31 de mutări",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) a câștigat în 31 de mutări, în runda a 4-a, contra GM Murali Karthikeyan (Jelica PEP Goračići, 2647), numărul unu al Superligii Serbiei după rating.\n\nPartida s-a întors la 20...cxd4, jucată cu 11:34 rămase. Stockfish voia 20...Rf5. Considera Albul clar mai bun înainte (+2,13) și câștigător după (+4,00), iar 21.Rxd4, prima sa alegere, a urmat imediat. Au urmat 22.Nxh6+ și 23.Rxg5+, damele au ieșit de pe tablă la mutarea 26, iar la mutarea 27 Karthikeyan mai avea doar 1:59.\n\nJelica PEP Goračići a câștigat totuși meciul cu 3½–2½. A fost prima dintre cele trei victorii consecutive obținute de Tin, contra Karthikeyan, Schekachikhin și Cheparinov.\n\nÎntoarce-te la 20...cxd4 și găsește 20...Rf5. Apoi continuă contra motorului."
+        },
+        "ru": {
+          "headline": "Проигрывает самый высокий рейтинг лиги: Tin обыгрывает Karthikeyan за 31 ход",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) обыгрывает GM Murali Karthikeyan (Jelica PEP Goračići, 2647) — самый высокий рейтинг сербской Суперлиги — за 31 ход в 4-м туре.\n\nПерелом — 20...cxd4, сыгранный при 11:34 на часах. Stockfish хотел 20...Rf5. До хода движок давал белым явный перевес (+2,13), после — выигрыш (+4,00), и сразу последовал 21.Rxd4 — первый выбор движка. Затем пришли 22.Nxh6+ и 23.Rxg5+, на 26-м ходу ферзи разменялись, а к 27-му ходу у Karthikeyan на часах оставалось 1:59.\n\nJelica PEP Goračići всё равно выигрывает матч 3½–2½. Для Tin это первая из трёх побед подряд — над Karthikeyan, Schekachikhin и Cheparinov.\n\nВернитесь к 20...cxd4 и найдите 20...Rf5. А затем продолжите партию против движка."
+        },
+        "sv": {
+          "headline": "Ligans högst rankade spelare förlorar: Tin besegrar Karthikeyan på 31 drag",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) besegrade GM Murali Karthikeyan (Jelica PEP Goračići, 2647), den högst rankade spelaren i serbiska superligan, på 31 drag i rond 4.\n\nDet vände på 20...cxd4, spelat med 11:34 kvar. Stockfish ville ha 20...Rf5. Motorn räknade vit som klart bättre före (+2,13) och som vinnande efter (+4,00), och 21.Rxd4, Stockfishs förstaval, kom direkt. 22.Nxh6+ och 23.Rxg5+ följde, damerna byttes av i drag 26, och Karthikeyan var nere på 1:59 vid drag 27.\n\nJelica PEP Goračići vann ändå matchen med 3½–2½. Det var den första av tre raka vinster för Tin, mot Karthikeyan, Schekachikhin och Cheparinov.\n\nGå tillbaka till 20...cxd4 och hitta 20...Rf5. Spela sedan vidare mot motorn."
+        },
+        "th": {
+          "headline": "ผู้เล่นเรตติ้งสูงสุดของลีกแพ้: Tin ชนะ Karthikeyan ใน 31 ตา",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) ชนะ GM Murali Karthikeyan (Jelica PEP Goračići, 2647) ผู้เล่นเรตติ้งสูงสุดของซูเปอร์ลีกเซอร์เบีย ใน 31 ตา ในรอบที่ 4\n\nเกมพลิกที่ 20...cxd4 ซึ่งเดินเมื่อเหลือเวลา 11:34 Stockfish ต้องการ 20...Rf5 เอนจินประเมินว่าฝ่ายขาวได้เปรียบชัดเจนก่อนตานั้น (+2.13) และอยู่ในสถานะชนะหลังตานั้น (+4.00) และ 21.Rxd4 ซึ่งเป็นตัวเลือกอันดับแรกของเอนจินก็มาทันที ตามด้วย 22.Nxh6+ และ 23.Rxg5+ ควีนถูกแลกออกจากกระดานในตาที่ 26 และพอถึงตาที่ 27 Karthikeyan เหลือเวลาเพียง 1:59\n\nถึงอย่างนั้น Jelica PEP Goračići ก็ยังชนะแมตช์ 3½–2½ นี่เป็นชัยชนะครั้งแรกจากสามเกมติดต่อกันของ Tin ซึ่งชนะ Karthikeyan, Schekachikhin และ Cheparinov\n\nย้อนกลับไปที่ 20...cxd4 แล้วหา 20...Rf5 จากนั้นเล่นต่อกับเอนจิน"
+        },
+        "tr": {
+          "headline": "Ligin en yüksek reytingli oyuncusu kaybetti: Tin, Karthikeyan'ı 31 hamlede yendi",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602), 4. turda Sırbistan Süper Ligi'nin en yüksek reytingli oyuncusu GM Murali Karthikeyan'ı (Jelica PEP Goračići, 2647) 31 hamlede yendi.\n\nOyun, saatte 11:34 kala oynanan 20...cxd4 ile döndü. Stockfish 20...Rf5 hamlesini istiyordu. Öncesinde beyazı açık farkla üstün (+2,13), sonrasında kazanan konumda (+4,00) görüyordu ve ilk tercihi olan 21.Rxd4 hemen geldi. Ardından 22.Nxh6+ ve 23.Rxg5+ geldi, vezirler 26. hamlede tahtadan çıktı ve 27. hamlede Karthikeyan'ın saatinde 1:59 kalmıştı.\n\nJelica PEP Goračići yine de maçı 3½–2½ kazandı. Bu, Tin'in art arda üç galibiyetinin ilkiydi: Karthikeyan, Schekachikhin ve Cheparinov karşısında.\n\n20...cxd4 hamlesine dön ve 20...Rf5 hamlesini bul. Sonra motora karşı sürdür."
+        },
+        "vi": {
+          "headline": "Kỳ thủ có hệ số cao nhất giải để thua: Tin thắng Karthikeyan sau 31 nước",
+          "body": "GM Jingyao Tin (Rudar Kostolac, 2602) thắng GM Murali Karthikeyan (Jelica PEP Goračići, 2647), kỳ thủ có hệ số cao nhất giải Siêu hạng Serbia, sau 31 nước ở vòng 4.\n\nVán cờ đổi chiều ở 20...cxd4, được đi khi còn 11:34. Stockfish muốn 20...Rf5. Engine đánh giá Trắng ưu thế rõ trước nước đó (+2,13) và ở thế thắng sau nước đó (+4,00), và 21.Rxd4, lựa chọn số một của engine, đến ngay. Tiếp theo là 22.Nxh6+ và 23.Rxg5+, cặp Hậu được đổi ở nước 26, và tới nước 27 Karthikeyan chỉ còn 1:59.\n\nDù vậy Jelica PEP Goračići vẫn thắng trận 3½–2½. Đó là ván thắng đầu tiên trong chuỗi ba ván thắng liên tiếp của Tin, trước Karthikeyan, Schekachikhin và Cheparinov.\n\nQuay lại 20...cxd4 và tìm 20...Rf5. Rồi chơi tiếp với engine."
+        },
+        "zh-Hans": {
+          "headline": "联赛等级分最高的棋手落败：Tin用31回合击败Karthikeyan",
+          "body": "GM Jingyao Tin（Rudar Kostolac，2602）在塞尔维亚超级联赛第4轮31回合击败联赛等级分最高的棋手GM Murali Karthikeyan（Jelica PEP Goračići，2647）。\n\n转折点是20...cxd4，走这步时还剩11:34。Stockfish想走的是20...Rf5。Stockfish认为这步之前白方明显占优（+2.13），之后白方胜势（+4.00），白方随即走出Stockfish的首选21.Rxd4。接着是22.Nxh6+和23.Rxg5+，第26回合双方兑后，到第27回合，Karthikeyan的棋钟只剩1:59。\n\nJelica PEP Goračići仍以3½–2½赢下比赛。这是Tin三连胜中的第一场，三场依次战胜Karthikeyan、Schekachikhin和Cheparinov。\n\n回到20...cxd4，找出20...Rf5。然后对着引擎继续下。"
+        },
+        "zh-Hant": {
+          "headline": "聯賽等級分最高的棋手落敗：Tin用31回合擊敗Karthikeyan",
+          "body": "GM Jingyao Tin（Rudar Kostolac，2602）在塞爾維亞超級聯賽第4輪31回合擊敗聯賽等級分最高的棋手GM Murali Karthikeyan（Jelica PEP Goračići，2647）。\n\n轉折點是20...cxd4，走這步時還剩11:34。Stockfish想走的是20...Rf5。Stockfish認為這步之前白方明顯佔優（+2.13），之後白方勝勢（+4.00），白方隨即走出Stockfish的首選21.Rxd4。接著是22.Nxh6+和23.Rxg5+，第26回合雙方換后，到第27回合，Karthikeyan的棋鐘只剩1:59。\n\nJelica PEP Goračići仍以3½–2½贏下比賽。這是Tin三連勝的第一場，三場依序擊敗Karthikeyan、Schekachikhin和Cheparinov。\n\n回到20...cxd4，找出20...Rf5。然後對著引擎繼續下。"
+        }
+      },
+      "fen": "r1b2rk1/p5b1/4p2p/1p4pR/2pp2N1/4Q1P1/PP2BPq1/3RK3 w - - 0 21",
+      "last": {
+        "from": "c5",
+        "to": "d4"
+      },
+      "url": "https://brasspawn.com/today/2026-10-07-tin-karthikeyan-serbian-super-league-r4",
+      "source": {
+        "name": "Lichess broadcast",
+        "url": "https://lichess.org/broadcast/serbian-super-league-2026-open/round-4/NgWe1cgu/fVHakrl1"
+      },
+      "updatedAt": "2026-10-07T19:07:46.254Z"
+    }
+  ]
+}
