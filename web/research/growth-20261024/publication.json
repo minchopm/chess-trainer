@@ -1,0 +1,24 @@
+{
+  "published": "2026-10-24",
+  "origin": "https://brasspawn.com",
+  "articles": 100,
+  "words": 48833,
+  "diagramsWithLegalContinuations": 23,
+  "coreSitemapUrls": 114,
+  "newsSitemapUrls": 257,
+  "englishOnlyIndexing": true,
+  "indexnowStatus": 200,
+  "indexnowUrls": 371,
+  "googleSitemapPutStatuses": [
+    204,
+    204,
+    204
+  ],
+  "cloudfrontDistribution": "E1K81IYSMEAXO9",
+  "invalidation": "I6H1UI1ANB83UBQXPAX3ZR6P93",
+  "invalidationStatus": "Completed",
+  "media": "Existing S3 media preserved; no new image/video downloads",
+  "appChanges": "None",
+  "browserVerification": "HTTP/source checks only; interactive browser unavailable in Work settings",
+  "seoLimits": "Research prioritises observed intent and current GSC; no volume estimates, exhaustive competitor ranking coverage, or Google/ChatGPT ranking promises."
+}

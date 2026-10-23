@@ -1,0 +1,89 @@
+{
+  "checked": "2026-10-24",
+  "publicSource": "https://itunes.apple.com/lookup?id=6803566012&country=us",
+  "publicVersion": "1.4",
+  "websiteVersionStale": "site.ts says 1.3; public listing says 1.4",
+  "appStoreId": 6803566012,
+  "facts": [
+    "15 built-in endgame drills, not a comprehensive curriculum for all 30 topics",
+    "14,000 tactics puzzles,116 positional exercises,1,600 Guess the Elo games,900 watchable games per current listing",
+    "Stockfish and Reckless run locally; online matches and Today feed need connection",
+    "Online Game Center play has no engine assistance; friendly invitations/rematches unrated",
+    "Computer games, online play and game library free; training five daily attempts per activity; Pro removes limits",
+    "Training stored locally; online features use player identifier, availability, in-game friendships; not addressbook access"
+  ],
+  "codeSources": [
+    "web/src/app/core/site.ts",
+    "data/endgames.json",
+    "ios/Sources/BrassPawnApp/EndgameScreen.swift",
+    "ios/Sources/BrassPawnApp/OnlineService.swift"
+  ],
+  "endgameDrills": [
+    {
+      "id": "eg-mate-queen",
+      "name": "Queen versus lone king"
+    },
+    {
+      "id": "eg-mate-rook",
+      "name": "Rook versus lone king"
+    },
+    {
+      "id": "eg-promote-and-mate",
+      "name": "Queen the pawn, then finish"
+    },
+    {
+      "id": "eg-kp-rook-pawn-corner",
+      "name": "Rook pawn in the corner"
+    },
+    {
+      "id": "eg-kp-king-in-front",
+      "name": "King and pawn: king in front on the sixth"
+    },
+    {
+      "id": "eg-kp-blocked-draw",
+      "name": "Blocked pawns and the wrong king"
+    },
+    {
+      "id": "eg-kp-opposition-draw",
+      "name": "King and pawn: holding the opposition"
+    },
+    {
+      "id": "eg-mate-two-bishops",
+      "name": "Two bishops versus lone king"
+    },
+    {
+      "id": "eg-bishop-wrong-rook-pawn",
+      "name": "Bishop and the wrong rook pawn"
+    },
+    {
+      "id": "eg-kp-outside-passer",
+      "name": "Outside passed pawn"
+    },
+    {
+      "id": "eg-kp-breakthrough",
+      "name": "Three-pawn breakthrough"
+    },
+    {
+      "id": "eg-rook-king-in-front",
+      "name": "Rook and pawn: king in front of the pawn"
+    },
+    {
+      "id": "eg-knight-vs-connected-pawns",
+      "name": "Knight against connected pawns"
+    },
+    {
+      "id": "eg-queen-vs-bishop-pawn",
+      "name": "Queen versus pawn on the seventh"
+    },
+    {
+      "id": "eg-opposite-bishops",
+      "name": "Opposite-coloured bishops"
+    }
+  ],
+  "boundaries": [
+    "No claim that a custom FEN editor ships in native app",
+    "No claim that Lucena/Philidor or all pawn topics are individually built-in drills",
+    "No rating improvement or result guarantee",
+    "Online support service exists; old no-service README/site claims must not override current public privacy wording"
+  ]
+}

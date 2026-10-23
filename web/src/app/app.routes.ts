@@ -1,3 +1,4 @@
+import { GUIDE_INDEX } from './pages/articles/guide-index';
 import { isDevMode } from '@angular/core';
 import { Routes } from '@angular/router';
 
@@ -93,6 +94,8 @@ const localeTodayRoutes: Routes = LOCALES.filter((locale) => STORY_SLUGS.include
  * three.js and the other seven do not.
  */
 export const routes: Routes = [
+ {path:'articles',loadComponent:()=>import('./pages/articles/articles').then(m=>m.ArticlesPage)},
+ ...GUIDE_INDEX.map(g=>({path:'articles/'+g.slug,loadComponent:()=>import('./pages/articles/articles').then(m=>m.GuideArticlePage),resolve:{guide:()=>import('./pages/articles/guide-data').then(m=>m.GUIDES.find(x=>x.slug===g.slug))}})),
   ...LOCALES.map((locale) => ({
     path: `${locale.slug === 'en' ? '' : locale.slug + '/'}guides/chess-practice`,
     data: { locale },

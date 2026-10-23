@@ -1,0 +1,18 @@
+{
+  "property": "sc-domain:brasspawn.com",
+  "submissions": [
+    {
+      "sitemap": "https://brasspawn.com/sitemap.xml",
+      "status": 204
+    },
+    {
+      "sitemap": "https://brasspawn.com/sitemap-pages.xml",
+      "status": 204
+    },
+    {
+      "sitemap": "https://brasspawn.com/sitemap-today.xml",
+      "status": 204
+    }
+  ],
+  "note": "Submission accepted does not guarantee indexing or ranking."
+}

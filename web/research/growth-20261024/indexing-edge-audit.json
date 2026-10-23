@@ -1,0 +1,27 @@
+{
+  "function": "brasspawn-english-indexing",
+  "distribution": "E1K81IYSMEAXO9",
+  "tests": [
+    {
+      "path": "/de/today/sample/index.html",
+      "noindex": true
+    },
+    {
+      "path": "/ja",
+      "noindex": true
+    },
+    {
+      "path": "/bg/articles/test",
+      "noindex": true
+    },
+    {
+      "path": "/articles/king-pawn-opposition",
+      "noindex": false
+    },
+    {
+      "path": "/",
+      "noindex": false
+    }
+  ],
+  "preserved_request_router": true
+}

@@ -198,7 +198,7 @@
   color: var(--ivory);
 }
 
-@media (max-width: 860px) {
+@media (max-width: 72rem) {
   .nav,
   .cta {
     display: none;
@@ -216,7 +216,7 @@
 
 /* On a narrow bar the burger already stands where this would; the picker moves
    into the sheet, which is where the rest of the navigation goes too. */
-@media (max-width: 60rem) {
+@media (max-width: 72rem) {
   .bar .lang {
     display: none;
   }
@@ -227,7 +227,7 @@
   padding-inline: var(--gutter);
 }
 
-@media (min-width: 60.0625rem) {
+@media (min-width: 72.0625rem) {
   .lang--sheet {
     display: none;
   }

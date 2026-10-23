@@ -1,0 +1,1653 @@
+[
+  {
+    "slug": "king-pawn-opposition",
+    "title": "King and pawn opposition: decide who must give way",
+    "keyword": "king and pawn opposition",
+    "cluster": "endgames",
+    "description": "Opposition is a way to win access for your king, not a position to collect. Learn when facing the other king helps and when a pawn move changes the answer.",
+    "lede": "Opposition is a way to win access for your king, not a position to collect. Learn when facing the other king helps and when a pawn move changes the answer.",
+    "sections": [
+      {
+        "heading": "Start with the destination",
+        "paragraphs": [
+          "Opposition describes a relationship between kings: in its simplest form they face one another on the same file or rank with one intervening square. The player who must move cannot approach directly. That can force a concession, but the useful question is which entry square becomes available afterward.",
+          "In a king-and-pawn ending, identify the squares your king needs to escort the pawn before choosing a move. Taking opposition while moving away from those squares can achieve nothing. A rook pawn near its promotion corner is an important warning: the defender may retain a drawing refuge even when the attacking king looks dominant."
+        ]
+      },
+      {
+        "heading": "Separate king moves from pawn reserves",
+        "paragraphs": [
+          "A pawn move can transfer the obligation to move without changing the kings' relationship. That is why counting only king steps is unreliable. Before using a reserve pawn move, check whether the pawn remains protected and whether its advance removes a square the king needed.",
+          "Run the calculation in both directions. Ask what happens if the defender steps left and then if the defender steps right. If your plan only works against one voluntary retreat, you have not established the opposition's practical value. The opponent chooses the least helpful legal reply."
+        ]
+      },
+      {
+        "heading": "A two-turn study session",
+        "paragraphs": [
+          "Open an opposition exercise from a reliable practice collection. Before moving, write the side to move, the pawn's file and rank, and two candidate king destinations. Predict which legal reply denies entry. Play the position once, then restart with the other colour and defend the same critical squares.",
+          "Afterward, change only the side to move using a study board that supports legal setup. Do not assume the result changes automatically; test whether a spare pawn move restores the original relationship. This controlled comparison teaches tempo more clearly than memorising a winning route."
+        ]
+      },
+      {
+        "heading": "Self-check: describe the concession",
+        "paragraphs": [
+          "You understand the exercise when you can explain the square the defender abandoned and why the attacking king can use it. Saying 'I took opposition' is incomplete. Record whether the king entered ahead of the pawn, beside it, or not at all, and identify the first irreversible pawn move.",
+          "On a later attempt, stop before the critical decision and make the prediction again without replaying the solution. If you still choose correctly after the board is reflected, you are recognising the geometry. If not, return to the entry squares rather than repeating the same move sequence faster.",
+          "Distinguish the opponent's forced retreat from a voluntary one. During review, temporarily ignore the move actually played and find the most stubborn legal reply. A plan that still reaches its intended entry square against that reply is much stronger evidence of understanding than an easy conversion against an obliging defence."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn includes king-and-pawn drills with opposition themes. Use their feedback to test decisions against an engine; the app's 15-drill collection does not cover every possible opposition position.",
+    "sources": [
+      {
+        "label": "Lichess interactive endgame practice",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: understanding endgames",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "rule-of-the-square",
+      "key-squares-pawn-endings",
+      "triangulation-king-endgame"
+    ]
+  },
+  {
+    "slug": "rule-of-the-square",
+    "title": "Rule of the square: count a pawn race correctly",
+    "keyword": "rule of the square chess",
+    "cluster": "endgames",
+    "description": "The rule of the square helps judge whether a king can catch a lone pawn. Learn its assumptions before applying it to a crowded pawn race.",
+    "lede": "The rule of the square helps judge whether a king can catch a lone pawn. Learn its assumptions before applying it to a crowded pawn race.",
+    "sections": [
+      {
+        "heading": "What the square measures",
+        "paragraphs": [
+          "For an unobstructed pawn running toward promotion, compare the remaining pawn advances with the defending king's available steps. The familiar imaginary square is a visual shortcut for that race. It helps you avoid calculating every move when the relevant squares are empty and neither king can interfere.",
+          "The side to move matters. Count from the actual position, and account for an available initial two-square pawn move. A pawn still on its starting rank can cover two ranks in one move if the path is clear. Treating it like a pawn that can advance only one square gives the defender an extra tempo that does not exist."
+        ]
+      },
+      {
+        "heading": "When the shortcut is not enough",
+        "paragraphs": [
+          "Other pieces, a supporting king and blocked routes can invalidate a simple race count. A king may seem close enough but be forbidden from crossing a controlled square. A pawn may appear unstoppable but need a preparatory move to escape a blockade. Checks elsewhere can also change the timing.",
+          "Promotion is not always the end of the calculation. Check whether the newly promoted piece can be captured immediately and whether promoting creates a tactical problem for the king. The square rule answers a narrow catching question; it does not certify that an entire ending is won."
+        ]
+      },
+      {
+        "heading": "Train counting before drawing",
+        "paragraphs": [
+          "Use a physical board or an external legal study board with one pawn and a defending king. Predict the catch by counting moves first, then visualise the square and compare the answers. Play both sides to verify the route. Repeat with the other side to move and with the pawn one rank farther forward.",
+          "For the next round, add a supporting king or a blocked route and state explicitly why the original shortcut needs more calculation. Keep these examples separate from the clean ones. The goal is to recognise the rule's conditions rather than apply a diagonal shape to every position containing a pawn."
+        ]
+      },
+      {
+        "heading": "A useful error log",
+        "paragraphs": [
+          "Record errors under three headings: tempo, route and promotion. Tempo means you counted the wrong player first or missed a double advance. Route means you allowed the king through an attacked square. Promotion means you stopped calculating before the new piece's safety was settled.",
+          "Retest one example from each category later without moving the pieces. Explain how the defending king reaches the pawn and where it would fail if placed one square farther away. A correct reason transfers to a new board; a remembered yes-or-no answer usually does not.",
+          "Try making the prediction with your eyes away from the board, then return to verify each step. This separates visual familiarity from counting skill. If the two methods disagree, locate the first mismatched move instead of repeatedly drawing the square until the preferred answer appears."
+        ]
+      }
+    ],
+    "appFit": "Use this as preparation for Brass Pawn's pawn-ending exercises. There is no claim that a standalone rule-of-the-square editor or drill is included; external study setup supplies the controlled comparisons.",
+    "sources": [
+      {
+        "label": "Lichess interactive endgame practice",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: understanding endgames",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "key-squares-pawn-endings",
+      "triangulation-king-endgame",
+      "distant-opposition"
+    ]
+  },
+  {
+    "slug": "key-squares-pawn-endings",
+    "title": "Key squares in pawn endings: give your king a target",
+    "keyword": "key squares pawn endgame",
+    "cluster": "endgames",
+    "description": "Key squares turn a vague plan to push a pawn into a king destination. Practise reaching useful squares while checking rook-pawn and tempo exceptions.",
+    "lede": "Key squares turn a vague plan to push a pawn into a king destination. Practise reaching useful squares while checking rook-pawn and tempo exceptions.",
+    "sections": [
+      {
+        "heading": "Choose squares before pushes",
+        "paragraphs": [
+          "A key square is a square whose occupation by the attacking king can secure the pawn's promotion under the relevant conditions. Its value comes from the resulting legal possibilities, not from a coloured diagram. Begin with the pawn's location, the defending king's access and the side to move.",
+          "For elementary king-and-pawn positions, reliable lessons show key-square patterns that depend on the pawn's rank. Learn a pattern together with its assumptions. Rook pawns require separate treatment because the edge of the board removes escape routes and can give the defender a promotion-corner refuge."
+        ]
+      },
+      {
+        "heading": "A destination can be inaccessible",
+        "paragraphs": [
+          "Knowing a desirable square does not mean the king can reach it. The defending king may hold opposition, block a crossing or attack the pawn if the king walks away. Compare at least two routes and count the defender's moves along each route.",
+          "A common practical mistake is to advance the pawn merely because the king has no obvious forward move. That advance changes the geometry and may remove a reserve tempo. Ask whether a waiting king move keeps more options, and whether the pawn's new square creates a real threat rather than just looking closer to promotion."
+        ]
+      },
+      {
+        "heading": "Build a target-and-route worksheet",
+        "paragraphs": [
+          "Select a key-square exercise in the official Lichess practice collection. Before revealing feedback, mark the target squares on paper and write a short route toward one of them. Add the defender's most restrictive response at each stage. Play the exercise, then switch sides and try to keep the king out.",
+          "On your second pass, explain the failure of the most tempting pawn push. Do not simply label it a draw or a mistake: identify the entry square or tempo it loses. Finally reflect the position across the board in a legal study setup and solve it again. The pawn's file changes while the underlying geometry remains comparable."
+        ]
+      },
+      {
+        "heading": "Recognise a completed lesson",
+        "paragraphs": [
+          "A successful session ends with a conditional statement: if the king reaches this square while the pawn remains safe, this plan becomes possible. It should also name a condition that would break the conclusion, such as a rook pawn, a blocked route or a changed move order.",
+          "Keep the exercise diagram or source link beside that statement. Return after a gap and calculate from the starting position without moving pieces. If you can identify a target but not defend it against the opponent's reply, spend the next session on the route rather than learning another key-square pattern.",
+          "When a defending king attacks the pawn, pause the route calculation and check whether the attacker must return. A target square loses practical meaning if reaching it costs the pawn it was meant to support. Keep the pawn's safety on the worksheet beside the king's destination throughout the exercise."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn's small king-and-pawn catalogue gives practical follow-up against an engine. Use external key-square studies for variants not present among its 15 built-in endgame drills.",
+    "sources": [
+      {
+        "label": "Lichess: Key Squares practice",
+        "url": "https://lichess.org/practice/pawn-endgames/key-squares/xebrDvFe"
+      },
+      {
+        "label": "Chess.com: endgame study",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "triangulation-king-endgame",
+      "distant-opposition",
+      "outside-passed-pawn"
+    ]
+  },
+  {
+    "slug": "triangulation-king-endgame",
+    "title": "Triangulation in king endings: lose a move with a purpose",
+    "keyword": "triangulation chess endgame",
+    "cluster": "endgames",
+    "description": "Triangulation can return a king to a useful square with the turn reversed. First establish why the opponent cannot copy the manoeuvre.",
+    "lede": "Triangulation can return a king to a useful square with the turn reversed. First establish why the opponent cannot copy the manoeuvre.",
+    "sections": [
+      {
+        "heading": "The point is a changed obligation",
+        "paragraphs": [
+          "Triangulation is a king manoeuvre that spends an extra move to recreate a useful relationship with the other player obliged to move. It matters when that obligation forces a concession. Merely moving around a triangle is not a plan unless the final position improves because of whose turn it is.",
+          "Before considering the manoeuvre, state the target position and the defensive problem. Perhaps the defender must abandon a pawn or let the king through. If the defender has a harmless waiting move, reversing the turn may accomplish nothing. Count available pawn moves as well as king moves."
+        ]
+      },
+      {
+        "heading": "Why symmetry breaks",
+        "paragraphs": [
+          "Successful triangulation usually depends on unequal freedom. The attacking king has a safe extra square; the defending king has to remain within a smaller set of squares to fulfil its job. Check every proposed waiting square for pawn attacks and the opposing king's control.",
+          "Do not sacrifice the actual objective to complete the pattern. A route that abandons your pawn, lets the other king escape or allows a counter-promotion is not justified by arriving back at the start. Track the position after the opponent's strongest reply, not only after the reply that preserves your drawing of a triangle."
+        ]
+      },
+      {
+        "heading": "Practise the before-and-after test",
+        "paragraphs": [
+          "Choose a published triangulation study from a recognised lesson collection. Pause immediately before the manoeuvre and list the defender's acceptable squares. Then play the manoeuvre while checking whether that list changes. At the end, compare the entire board and the side to move with the earlier position.",
+          "Write a one-sentence explanation of the forced concession. Repeat from the defender's side and look for an alternative waiting move. If the exercise has a refutation for that attempt, follow it until the original defensive task fails. This defence-first pass prevents learning a cooperative sequence that an opponent would never choose."
+        ]
+      },
+      {
+        "heading": "Keep tempo concepts separate",
+        "paragraphs": [
+          "Triangulation, opposition and zugzwang are related but not interchangeable words. Opposition describes a king relationship. Triangulation is a manoeuvre. Zugzwang describes a position in which having to move is harmful. Naming the role of each concept makes the calculation easier to audit.",
+          "For a later self-test, find a superficially similar position where the defender does have a spare move. Explain why the manoeuvre no longer forces progress. That counterexample is valuable: it tells you when to abandon the attractive geometric idea and search for a different plan rather than repeating the same circuit.",
+          "One useful written annotation is a pair of positions labelled same pieces, different turn. Compare every piece, not just the kings. If a pawn advanced during the manoeuvre, the board has changed, so your explanation must include that structural change rather than attributing the entire result to a lost tempo."
+        ]
+      }
+    ],
+    "appFit": "Use Brass Pawn's pawn and zugzwang-related drills as complementary practice. Triangulation is a study topic here, not a promise of a dedicated built-in triangulation course.",
+    "sources": [
+      {
+        "label": "Lichess interactive endgame practice",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: understanding endgames",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "distant-opposition",
+      "outside-passed-pawn",
+      "protected-passed-pawn"
+    ]
+  },
+  {
+    "slug": "distant-opposition",
+    "title": "Distant opposition: plan the approach, not just the spacing",
+    "keyword": "distant opposition chess",
+    "cluster": "endgames",
+    "description": "Distant opposition connects far-apart kings to a future entry square. Learn to check the approach and spare pawn moves before relying on parity.",
+    "lede": "Distant opposition connects far-apart kings to a future entry square. Learn to check the approach and spare pawn moves before relying on parity.",
+    "sections": [
+      {
+        "heading": "Distance must serve an entry",
+        "paragraphs": [
+          "Kings separated by more than a single square can still influence who yields when they approach. Distant opposition is a way to reason about that future meeting. It is useful only when the meeting concerns a square worth reaching or holding; parity alone is not a winning condition.",
+          "Start by identifying the zone of conflict: a pawn, an entry file or a route to a promotion square. Mark which squares each king must preserve. Then trace an approach that keeps the relevant relationship instead of assuming that a straight march will maintain it automatically."
+        ]
+      },
+      {
+        "heading": "A diagonal step can change the problem",
+        "paragraphs": [
+          "The other king need not walk toward you on the same file. It may shift to a different route, attack a pawn or wait until you commit. Follow those alternatives before declaring that you hold opposition at a distance. The edge of the board can also remove a useful sidestep.",
+          "Pawn reserves make a purely visual count unreliable. Either side may be able to change the move order without moving its king. Ask which reserve moves are genuinely safe. A pawn push that permits capture is not a free tempo, and a move that locks the position may change the target rather than simply reverse the turn."
+        ]
+      },
+      {
+        "heading": "Use a route comparison drill",
+        "paragraphs": [
+          "Choose a legal pawn-ending study with separated kings from a trusted instructional source. Draw two candidate routes for the attacking king and identify the defender's best interception square for each. Calculate until the kings actually meet; do not stop when they look symmetrical at a distance.",
+          "Play the position, restart and choose the other route. Record where the two plans diverge and whether a pawn move explains the difference. On the following day, solve from the defender's perspective: choose which king approach you want to prevent and describe the square you are prepared to concede instead."
+        ]
+      },
+      {
+        "heading": "Self-check for overgeneralisation",
+        "paragraphs": [
+          "You should be able to explain both the useful parity relationship and its limitation in the particular ending. If your explanation contains only an odd or even number of squares, it is missing the actual objective. Add the entry square and the opposing move that threatens to change the route.",
+          "Keep one failed distant-opposition attempt in your notes. Identify whether the failure came from a diagonal approach, a reserve pawn move or an irrelevant target. Revisiting a failed plan is often more informative than repeating a successful march in the same diagram, because it tests whether you can recognise when the technique applies.",
+          "When testing the approach, compare legal king distance with visual distance. A diagonal route can be as short as a straight one, but attacked squares may force a detour. Draw the actual permitted path before counting its moves; otherwise a neat parity argument can conceal an impossible king journey."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn provides selected pawn-ending drills, not an exhaustive distant-opposition generator. Study the geometry externally and use the app's available endings to practise disciplined king calculation.",
+    "sources": [
+      {
+        "label": "Lichess interactive endgame practice",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: understanding endgames",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "outside-passed-pawn",
+      "protected-passed-pawn",
+      "wrong-bishop-rook-pawn"
+    ]
+  },
+  {
+    "slug": "outside-passed-pawn",
+    "title": "Outside passed pawn: calculate the diversion before pushing",
+    "keyword": "outside passed pawn endgame",
+    "cluster": "endgames",
+    "description": "An outside passer can draw the defending king away from the main pawn mass. Count the king race before trading that pawn for activity.",
+    "lede": "An outside passer can draw the defending king away from the main pawn mass. Count the king race before trading that pawn for activity.",
+    "sections": [
+      {
+        "heading": "A passer can be a decoy",
+        "paragraphs": [
+          "An outside passed pawn stands away from the main concentration of pawns. Its practical strength may come from the defender's need to stop it, allowing your king to cross toward vulnerable pawns elsewhere. The pawn need not survive for the plan to work, but its sacrifice needs a calculated return.",
+          "Begin by marking the defending king's route to the passer and your king's route toward the other wing. Count captures and pawn pushes as moves, not just empty-board king steps. If the defender can stop the passer with a piece or counter-race immediately, the diversion may not buy enough time."
+        ]
+      },
+      {
+        "heading": "Do not manufacture the wrong race",
+        "paragraphs": [
+          "Advancing the passer too soon can bring it into easy reach or remove a useful waiting move. Moving your king first may be better if the opponent has no immediate threat. Conversely, delaying the pawn can let the defender centralise and cover both tasks. Timing depends on the actual routes.",
+          "Check the ending that remains after the decoy is captured. Winning a pawn on the other wing is not sufficient if the opponent promotes first or reaches a drawing king-and-pawn position. Continue the calculation until a stable advantage or a recognisable defensive mechanism appears."
+        ]
+      },
+      {
+        "heading": "Train both versions of the plan",
+        "paragraphs": [
+          "In an outside-passer exercise, write two candidate plans: push immediately, or improve the king first. For each, describe the defender's fastest useful response. Play one plan against resistance, then restart and compare the other. Keep the same starting position so that the timing difference remains visible.",
+          "Next defend the exercise yourself. Try refusing the decoy and racing toward the opposing pawns. If the passer then promotes, identify exactly when stopping it became compulsory. This teaches the threat behind the diversion rather than assuming that the defender must chase every advanced pawn."
+        ]
+      },
+      {
+        "heading": "Measure the useful distance",
+        "paragraphs": [
+          "After the session, record how many moves the outside pawn demanded and what your king achieved during those moves. A useful note names a captured pawn, an entry square or a blocked counter-race. 'Outside passers are strong' does not tell you what to reproduce next time.",
+          "When reviewing your own games, look for an opportunity to create a passer through an exchange, but do not make the exchange merely to obtain the label. Compare the resulting king routes and the number of vulnerable pawns. Sometimes keeping a pawn majority intact offers more possibilities than committing to one faraway runner.",
+          "In your review, separate the move that created the passer from the move that used it. The first may have been a pawn exchange several turns earlier. Recognising that earlier decision makes the lesson useful before a race becomes forced, when you can still choose which wing keeps a majority."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn includes an Outside passed pawn drill. Use it to compare timing choices against the defending engine; one built-in example does not establish that every outside passer wins.",
+    "sources": [
+      {
+        "label": "Lichess interactive endgame practice",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: understanding endgames",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "protected-passed-pawn",
+      "wrong-bishop-rook-pawn",
+      "rook-behind-passed-pawn"
+    ]
+  },
+  {
+    "slug": "protected-passed-pawn",
+    "title": "Protected passed pawns: use the king freedom they create",
+    "keyword": "protected passed pawn chess",
+    "cluster": "endgames",
+    "description": "A protected passer can tie down a defender and free your king. Learn to distinguish a lasting restriction from a pawn that only looks untouchable.",
+    "lede": "A protected passer can tie down a defender and free your king. Learn to distinguish a lasting restriction from a pawn that only looks untouchable.",
+    "sections": [
+      {
+        "heading": "Protection changes the defensive workload",
+        "paragraphs": [
+          "A protected passed pawn has another pawn defending it. While its support remains, the opposing king cannot legally capture it, because that would move into check. The passer can therefore restrict the king's activity. That restriction may give your king time to attack elsewhere or improve its position.",
+          "Do not confuse protected with invulnerable. A piece can blockade the pawn, attack its base or exchange the supporting pawn. The defending king may also approach from a different route. Inspect the whole pawn chain and ask what happens if its base is lost, rather than looking only at the advanced pawn."
+        ]
+      },
+      {
+        "heading": "Blockade and counterplay come first",
+        "paragraphs": [
+          "Before pushing, identify the best blockading square. Advancing can make a passer more dangerous, but it can also fix it on a square the opponent can hold comfortably. In a king ending, check whether the supporting pawn is left behind or whether an exchange produces a drawn rook-pawn ending.",
+          "The other wing matters. A protected passer can be an excellent restraint while still failing to win if there is no second target. Conversely, the defender may create a faster passer elsewhere. A clear plan names both the restriction and the activity it buys; a purely static description is not enough."
+        ]
+      },
+      {
+        "heading": "Make the defender choose",
+        "paragraphs": [
+          "Select a legal study or a position from a completed game containing a protected passer. Before moving, list the defender's duties: blockade, protection of another pawn and prevention of king entry. Try improving your king while leaving the passer untouched. Note when a defender finally has to abandon a duty.",
+          "Then replay with an early pawn advance and compare the available squares. On a study board, remove no pieces casually: preserve a legal position and verify any modified example. The purpose is to isolate the effect of the push, not create a diagram whose result you merely assume."
+        ]
+      },
+      {
+        "heading": "Review the supporting pawn",
+        "paragraphs": [
+          "Your self-check should explain why capturing or undermining the passer's support does or does not work. Follow the resulting pawn exchange to the next stable ending. If the argument ends at 'it is defended', calculate one more move: the opponent may be willing to trade a piece or pawn for a useful fortress.",
+          "In your notes, distinguish three outcomes: the passer promoted, the passer distracted a defender, or the passer simply remained blocked. All three can occur in sound play. This distinction prevents a strong positional idea becoming an automatic instruction to push whenever two friendly pawns form a chain.",
+          "An advanced pawn can also restrict your own bishop or king, so include friendly obstruction in the assessment. Trace one route for each king before and after a proposed push. The useful advance is the one whose new restrictions favour your plan, not automatically the one that moves a pawn closer to the edge."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn's selected endgames and engine games can reinforce pawn calculation. A dedicated protected-passer drill is not promised; use the article as a study companion to supported training modes.",
+    "sources": [
+      {
+        "label": "Lichess interactive endgame practice",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: understanding endgames",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "wrong-bishop-rook-pawn",
+      "rook-behind-passed-pawn",
+      "active-king-endgame"
+    ]
+  },
+  {
+    "slug": "wrong-bishop-rook-pawn",
+    "title": "Wrong bishop and rook pawn: recognise the promotion-corner fortress",
+    "keyword": "wrong bishop rook pawn",
+    "cluster": "endgames",
+    "description": "An extra bishop may not win with a rook pawn when it cannot control the promotion corner. Check the king placement before agreeing to a simplification.",
+    "lede": "An extra bishop may not win with a rook pawn when it cannot control the promotion corner. Check the king placement before agreeing to a simplification.",
+    "sections": [
+      {
+        "heading": "The missing square matters",
+        "paragraphs": [
+          "In the familiar wrong-bishop ending, the attacking side has a rook pawn and a bishop that does not control its promotion square. If the defending king reaches the appropriate promotion corner and the attacker cannot drive it away, the extra material can be insufficient to force progress.",
+          "The key word is if. A defender stranded far from the corner may still lose. Additional pawns, another piece or a blocked king route can alter the assessment. Learn the fortress as a concrete relationship among the bishop's colour, the rook pawn's promotion square and the defending king's access."
+        ]
+      },
+      {
+        "heading": "Avoid creating the fortress yourself",
+        "paragraphs": [
+          "The practical mistake often happens before the final diagram. A player exchanges all other pawns, expecting an extra bishop to settle matters, and leaves only the wrong rook pawn. Before trading, inspect the simplified position and ask which square the bishop will never be able to control.",
+          "The defender should look for exchanges that remove alternative winning plans. Keeping the king near the promotion corner matters more than chasing an irrelevant pawn. However, do not follow a fortress recipe while allowing the king to be cut off before it arrives. Calculate the route and the timing."
+        ]
+      },
+      {
+        "heading": "Study the attack and the refuge",
+        "paragraphs": [
+          "Use a recognised wrong-bishop rook-pawn exercise. First defend it: keep the king's legal route toward the corner in view and avoid leaving it voluntarily. Then take the attacking side and test checks, king approaches and pawn pushes. Record why each plausible attempt fails to force the king away.",
+          "For contrast, examine a published example where the defending king cannot reach the corner. Identify the blocked route or lost tempo. Do not assume that changing the bishop alone is the only factor. King placement can matter before the textbook fortress has formed."
+        ]
+      },
+      {
+        "heading": "A pre-exchange checklist",
+        "paragraphs": [
+          "Before simplifying a bishop ending, ask whether the remaining pawn is on an edge file, whether your bishop controls its promotion square and whether the opposing king can reach that square. If the answers suggest the fortress, search for a different pawn to preserve or a way to prevent the king's arrival.",
+          "After practice, explain the difference between a fortress and stalemate. The position may allow legal king moves while offering no way to force promotion. Understanding that distinction helps you avoid wasteful checks and recognise the defensive objective earlier, while there are still choices about which material to exchange.",
+          "To test the fortress explanation, try to name an attacking resource other than checks: a king approach, a pawn move or a waiting move. If the defence survives, say why the corner remains accessible or secure. The exercise should establish the defensive mechanism rather than merely show that random checks fail."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn includes Bishop and the wrong rook pawn. It is a suitable defensive practice example; its result should not be generalised to positions with different king access or extra material.",
+    "sources": [
+      {
+        "label": "Lichess interactive endgame practice",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: understanding endgames",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "rook-behind-passed-pawn",
+      "active-king-endgame",
+      "rook-endgame-activity"
+    ]
+  },
+  {
+    "slug": "rook-behind-passed-pawn",
+    "title": "Rook behind a passed pawn: a principle with tactical exceptions",
+    "keyword": "rook behind passed pawn",
+    "cluster": "endgames",
+    "description": "A rook often works well behind a passed pawn, friendly or enemy. Check checking distance, king safety and concrete threats before following the slogan.",
+    "lede": "A rook often works well behind a passed pawn, friendly or enemy. Check checking distance, king safety and concrete threats before following the slogan.",
+    "sections": [
+      {
+        "heading": "Why the rear position helps",
+        "paragraphs": [
+          "Behind a friendly passed pawn, a rook can keep supporting the pawn as it advances. Behind an enemy passer, a rook can attack along the same file and make the opposing king or rook remain tied to its defence. This is a useful starting preference in many rook endings.",
+          "It is not a compulsory placement. A rook may need to check from the side, cut off a king or defend against an immediate promotion threat. Determine the rook's job before choosing a square. The best-looking file is irrelevant if moving there loses the rook or permits a decisive check."
+        ]
+      },
+      {
+        "heading": "Distance and access can outweigh the rule",
+        "paragraphs": [
+          "A rook close to the enemy king may have no safe checking distance. A rook behind its own pawn on the seventh rank may be restricted if the pawn cannot advance. In some positions the king must escape checks first, or the rook must gain a useful rank before it can support progress.",
+          "Assess the opponent's active resources each time you move the rook. Can their king attack it with tempo? Can their rook reach your pawns from the side? Can an exchange lead to a pawn ending you have not calculated? The principle should reduce the candidate list, not end the calculation."
+        ]
+      },
+      {
+        "heading": "Compare three rook jobs",
+        "paragraphs": [
+          "Take a rook ending from a completed game or a published practice lesson. Identify one rear-support idea, one king-cutoff idea and one checking idea. For each, state what the opponent can do immediately. Play the most promising candidate without engine hints, then use analysis after the attempt to inspect the alternatives.",
+          "Replay from the defending side. Try keeping the rook active rather than passively holding one pawn. Note whether the attacker can advance safely while you check. If the ending offers no genuine passed pawn, do not force this exercise into it; choose a position where the file relationship is relevant."
+        ]
+      },
+      {
+        "heading": "Turn the slogan into a question",
+        "paragraphs": [
+          "At the end of the session, write 'Behind the pawn, unless…' and finish with a concrete exception from your board. An immediate tactic, insufficient checking distance or a required blockade is more useful than a vague statement that everything depends on the position.",
+          "In later games, use the principle as a candidate generator. Once you spot a possible rear placement, check its route, safety and purpose. If you choose a different square, be able to name the urgent job it performs. That habit preserves the value of a classical principle without making your rook predictable or passive.",
+          "Write down which rook exchange you would accept before beginning the practice continuation. Revisit that decision when the kings move. An exchange that was harmless earlier can become decisive after a king gains a square, so the rook's best placement cannot be assessed independently of the ending the exchange would produce."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn offers a small rook-ending selection and offline engine games. This article supplies a decision framework, not a claim that every rook-behind-pawn case appears in the drill catalogue.",
+    "sources": [
+      {
+        "label": "Lichess interactive endgame practice",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: understanding endgames",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "active-king-endgame",
+      "rook-endgame-activity",
+      "lucena-position-training"
+    ]
+  },
+  {
+    "slug": "active-king-endgame",
+    "title": "Activate your king in the endgame without walking into tactics",
+    "keyword": "active king endgame",
+    "cluster": "endgames",
+    "description": "An active king can escort pawns and attack weaknesses. Check remaining checks and entry squares before treating the centre as automatically safe.",
+    "lede": "An active king can escort pawns and attack weaknesses. Check remaining checks and entry squares before treating the centre as automatically safe.",
+    "sections": [
+      {
+        "heading": "Activity is a job, not a location",
+        "paragraphs": [
+          "In an ending, the king often becomes a fighting piece because fewer enemy pieces can organise a mating attack. It can escort a passer, attack pawns or block the opposing king. Moving toward the centre is useful when it brings one of those tasks closer.",
+          "A central square is not automatically an active square. A king can stand in the middle while tied to a weak pawn, or approach the action along a route that gives the opponent checks with tempo. Identify a target and calculate a safe route rather than moving centrally because a general rule says to."
+        ]
+      },
+      {
+        "heading": "Count the opponent’s forcing moves",
+        "paragraphs": [
+          "Before each king advance, inspect checks, captures and pawn breaks. Rooks and queens can still make an exposed king vulnerable, even with little material left. A king that moves away from its pawns may allow a tactical capture or a promotion race that cannot be stopped in time.",
+          "Compare activity with restriction. Sometimes the best king move prevents the opposing king from entering rather than threatening a pawn immediately. Holding a useful square can be more valuable than collecting a distant pawn. The move should improve your position relative to the opponent's next plan, not only shorten your own route."
+        ]
+      },
+      {
+        "heading": "Practise a route with a deadline",
+        "paragraphs": [
+          "Choose an endgame position from a game you have finished. Name the pawn or square you want the king to reach and count the minimum legal moves required. Then give the opponent a plan of equal length: a pawn push, a king invasion or a series of checks. Compare the two timelines.",
+          "Play the position once with an early king activation and once with a preparatory defensive move. Do not judge only by the eventual game result. Find the first moment the king gained useful access or allowed counterplay. This produces a specific lesson about timing rather than a general instruction to be more active."
+        ]
+      },
+      {
+        "heading": "Evaluate the king after exchanges",
+        "paragraphs": [
+          "When considering a piece exchange, ask where both kings will stand in the resulting position. A trade that removes checking danger may transform a passive king into the strongest piece. Another trade may expose your pawns while the opposing king is already close enough to attack them.",
+          "A good self-check is to explain one king move without using the word active. Say which square it controls, what it protects, or which pawn it threatens. Repeat the exercise with colours reversed. If the explanation remains concrete, you are learning a usable endgame skill rather than replacing calculation with a positional label.",
+          "Do not let the phrase endgame obscure the pieces still present. Before a king route, count the opponent's checking pieces and their open lines. In some positions the king should improve by one defensive square first. Useful activity can begin with removing a tactical obstacle rather than marching directly toward the centre."
+        ]
+      }
+    ],
+    "appFit": "Use Brass Pawn's pawn endings and selected piece endings to practise king decisions against an engine. The app's feedback complements calculation; it does not turn every central king move into the correct choice.",
+    "sources": [
+      {
+        "label": "Lichess interactive endgame practice",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: understanding endgames",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "rook-endgame-activity",
+      "lucena-position-training",
+      "philidor-rook-defence"
+    ]
+  },
+  {
+    "slug": "rook-endgame-activity",
+    "title": "Rook endgame activity: decide what your rook must do",
+    "keyword": "rook endgame activity",
+    "cluster": "endgames",
+    "description": "In rook endings, an active defender can matter more than one saved pawn. Compare checks, king cutoffs and targets before accepting a passive rook.",
+    "lede": "In rook endings, an active defender can matter more than one saved pawn. Compare checks, king cutoffs and targets before accepting a passive rook.",
+    "sections": [
+      {
+        "heading": "Name the rook’s most urgent job",
+        "paragraphs": [
+          "A rook can check, cut off a king, support a passer or attack pawns from a distance. In practical endings those jobs often compete. Begin by identifying the opponent's immediate threat and the task your rook must perform to prevent it. Only then look for a more ambitious square.",
+          "Activity is not the same as moving the rook frequently. Repeated checks that drive the king toward its goal can help the opponent. A quiet rook move that cuts off the king may create a lasting restriction. Judge the move by the opponent's useful replies, not by how forcing it looks."
+        ]
+      },
+      {
+        "heading": "A pawn can be too expensive to defend",
+        "paragraphs": [
+          "Keeping a rook tied to a pawn can leave the opposing king free to advance. Before choosing passive defence, calculate whether giving up the pawn would allow perpetual checking chances, a blockade or an attack on the opponent's remaining pawns. None of these resources is guaranteed, but they deserve comparison.",
+          "Likewise, activity does not excuse losing a pawn without compensation. Check the resulting king positions, passed pawns and checking distance. A rook sacrifice of time or material needs a concrete defensive mechanism. The statement that all rook endings are drawn is neither a rule nor an analysis method."
+        ]
+      },
+      {
+        "heading": "Train a passive-versus-active comparison",
+        "paragraphs": [
+          "Find a rook ending from a completed game where you defended a pawn for several moves. Replay from the first defensive decision. Write one active alternative and the opponent's strongest response. Play the alternative without hints, then compare it with the original route using analysis after the attempt.",
+          "Record when your rook gained a target, checking distance or a cutoff. If it gained none of these, the alternative may have been movement without activity. Switch sides and test whether the attacker can simply improve the king while your rook shuffles. That is a useful sign that the defender needs a more concrete source of counterplay."
+        ]
+      },
+      {
+        "heading": "A position-based self-check",
+        "paragraphs": [
+          "At each review point, name three squares your rook controls that matter to the opponent's plan. Then name one square it needs but cannot reach. This makes activity visible in terms of access and restrictions rather than a numerical engine evaluation alone.",
+          "For the next session, choose a different pawn structure so that the same rook manoeuvre cannot be copied mechanically. Compare the jobs rather than the moves: which king must be cut off, where checks remain safe and which pawn can become a target. Improvement comes from recognising those jobs under changing conditions.",
+          "Check whether the rook can switch jobs without losing a tempo. A rook that both checks from a distance and attacks a pawn may keep the opponent constrained. If moving to defend one pawn destroys both opportunities, include that loss of flexibility when judging the apparent safety of the defensive move."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn's limited rook-ending drills and local engine games can support this comparison. They are practice tools, not a complete catalogue of theoretical rook-ending positions.",
+    "sources": [
+      {
+        "label": "Lichess interactive endgame practice",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: understanding endgames",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "lucena-position-training",
+      "philidor-rook-defence",
+      "queen-versus-pawn-ending"
+    ]
+  },
+  {
+    "slug": "lucena-position-training",
+    "title": "Lucena position training: understand why the bridge works",
+    "keyword": "Lucena position training",
+    "cluster": "endgames",
+    "description": "Lucena study is about sheltering a king from rook checks so a pawn can promote. Learn the prerequisites before memorising a bridge-building sequence.",
+    "lede": "Lucena study is about sheltering a king from rook checks so a pawn can promote. Learn the prerequisites before memorising a bridge-building sequence.",
+    "sections": [
+      {
+        "heading": "Confirm the mechanism before the name",
+        "paragraphs": [
+          "The standard Lucena lesson concerns a rook-and-pawn ending in which the stronger king stands in front of a pawn near promotion and needs shelter from the defending rook's checks. A bridge-building manoeuvre lets the stronger rook interpose at the right moment. The geometry matters more than the label.",
+          "Check the pawn file, both kings, the defending rook's checking distance and the stronger rook's access. Rook pawns bring important differences, and not every position with a pawn on the seventh rank is a textbook Lucena win. Start with a verified lesson position rather than assuming the result from its resemblance to a diagram."
+        ]
+      },
+      {
+        "heading": "Understand what the preparation buys",
+        "paragraphs": [
+          "The stronger rook's preparatory move is useful because it creates a future shelter square while preserving the pawn. The king then steps out under controlled conditions. If the defender checks, the rook can eventually block a line without losing the promotion threat.",
+          "Do not memorise a fixed number of checks or a universal rank for every position. The king's route and rook placement must fit the board. At each stage ask whether the pawn remains safe and whether the rook can interpose legally. A bridge that leaves the rook unprotected or permits a king attack is not a valid execution."
+        ]
+      },
+      {
+        "heading": "A three-pass practice routine",
+        "paragraphs": [
+          "Use the Basic Rook Endgames lesson linked below. First study the attacking method slowly, explaining the purpose of the rook preparation. Next restart as the defender and choose the checks that make the attacking king prove its shelter. Finally repeat as the attacker without consulting the line.",
+          "Write the position's key conditions before each pass. If you cannot identify why the defending king cannot approach or why the checking rook lacks a better resource, revisit the lesson. Do not replace those conditions with an engine score; a score will not remind you how to build shelter in a later game."
+        ]
+      },
+      {
+        "heading": "Test recognition outside the diagram",
+        "paragraphs": [
+          "After learning the basic case, use a published variation with a changed king or rook placement. Predict whether the same bridge idea remains available, then verify with the lesson or a reliable tablebase where applicable. Treat the result of one exact position as evidence for that position only.",
+          "Your self-check is an explanation of when the king can leave the pawn, what check the defender wants and where the rook will interpose. If you can answer those questions before moving, the technique is becoming portable. If you can only reproduce a sequence, vary the defensive checks and practise again.",
+          "Do not rush the first attempt against a clock. Learn the coordination slowly, then add a modest time limit only after the mechanism is clear. Faster reproduction is useful when it preserves the conditions; speed that hides an unexamined defensive reply simply makes the same uncertainty harder to notice."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn contains a rook-and-pawn drill, but its catalogue does not advertise a complete Lucena course. Use the linked official practice lesson for the named technique and the app for complementary calculation.",
+    "sources": [
+      {
+        "label": "Lichess: Basic Rook Endgames, Lucena and Philidor",
+        "url": "https://lichess.org/practice/rook-endgames/basic-rook-endgames/pqUSUw8Y"
+      },
+      {
+        "label": "Chess.com: endgame learning methods",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "philidor-rook-defence",
+      "queen-versus-pawn-ending",
+      "bishop-versus-knight-endgames"
+    ]
+  },
+  {
+    "slug": "philidor-rook-defence",
+    "title": "Philidor rook defence: wait on the right rank, then check",
+    "keyword": "Philidor rook endgame defence",
+    "cluster": "endgames",
+    "description": "The Philidor defensive method changes when the pawn advances. Practise the trigger for switching from restriction to checks rather than waiting blindly.",
+    "lede": "The Philidor defensive method changes when the pawn advances. Practise the trigger for switching from restriction to checks rather than waiting blindly.",
+    "sections": [
+      {
+        "heading": "Know which Philidor lesson you mean",
+        "paragraphs": [
+          "The name Philidor appears in several chess contexts. Here it means a defensive method in a rook-and-pawn ending, not an opening or a smothered-mate pattern. The defender uses a rook to restrict the attacking king and changes the plan when the advancing pawn blocks that king's shelter.",
+          "Study an exact lesson position first. The defender needs the king placed appropriately relative to the pawn and the rook able to restrict the attacking king. A rook on a familiar rank does not save every position. If the attacking king has already penetrated, a different defensive method may be required."
+        ]
+      },
+      {
+        "heading": "Watch for the transition",
+        "paragraphs": [
+          "The waiting rook's job is to prevent useful king entry. When the pawn advances far enough to interfere with its own king's shelter, checks from behind can become effective. The defender must recognise the change and move the rook at the appropriate time.",
+          "Two errors are common: checking too early and allowing the king forward, or waiting too long after the pawn changes the position. Instead of counting a memorised series of moves, ask what shields the attacking king from checks now. If the answer changes after a pawn push, reassess the rook's job immediately."
+        ]
+      },
+      {
+        "heading": "Practise waiting and switching separately",
+        "paragraphs": [
+          "Open a verified basic rook-ending lesson. Play the defender and state why a quiet rook move holds the entry line. Let the attacker vary king approaches and check that your restriction still works. Restart at the moment the pawn advances and focus only on finding the new checking route.",
+          "Then play the attacking side and try to tempt the defender into premature checks. The exercise is useful even when the attacker cannot force a win: you learn what the defensive formation prevents. Record the move where your plan changes and the specific shelter the attacking king no longer has."
+        ]
+      },
+      {
+        "heading": "Self-check the conditions",
+        "paragraphs": [
+          "Close the solution and list the required king placement, rook access and pawn relationship in your own words. If one of those conditions is missing in a real game, do not force the name Philidor onto the position. Search for active checks, a cutoff or another verified defensive construction.",
+          "On a later attempt, reflect the lesson across the board and defend again. The file letters will differ, but the restriction and checking transition should remain understandable. Evaluate success by whether you maintained the defensive mechanism against varied attempts, not by whether a cooperative opponent repeated the instructional line.",
+          "Mark the defender's switching trigger on the exercise record in words, not only with a move number. A different legal waiting move can shift the move count while leaving the strategic trigger unchanged. Recognising the pawn's effect on shelter is what allows the method to survive those small variations."
+        ]
+      }
+    ],
+    "appFit": "The named Philidor method is taught by the linked Lichess lesson. Brass Pawn's small rook-ending selection offers related practice, but a dedicated Philidor module is not claimed.",
+    "sources": [
+      {
+        "label": "Lichess: Basic Rook Endgames, Lucena and Philidor",
+        "url": "https://lichess.org/practice/rook-endgames/basic-rook-endgames/pqUSUw8Y"
+      },
+      {
+        "label": "Chess.com: endgame principles",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "queen-versus-pawn-ending",
+      "bishop-versus-knight-endgames",
+      "opposite-coloured-bishops"
+    ]
+  },
+  {
+    "slug": "queen-versus-pawn-ending",
+    "title": "Queen versus pawn on the seventh: check the file and the king",
+    "keyword": "queen versus pawn endgame",
+    "cluster": "endgames",
+    "description": "A queen does not automatically defeat a pawn near promotion. Learn to inspect stalemate resources, king distance and the pawn file before choosing checks.",
+    "lede": "A queen does not automatically defeat a pawn near promotion. Learn to inspect stalemate resources, king distance and the pawn file before choosing checks.",
+    "sections": [
+      {
+        "heading": "Material count is not the verdict",
+        "paragraphs": [
+          "A queen is usually far stronger than a pawn, but a pawn close to promotion can create immediate problems when its king supports it and the opposing king is far away. The queen must prevent promotion while finding time to bring her king closer. That timing is the heart of the ending.",
+          "The pawn's file matters. Familiar rook-pawn and bishop-pawn cases can offer stalemate-based defensive resources in particular king configurations. These are not blanket rules that every such pawn draws. The attacking king's distance and the queen's ability to give useful checks can change the result."
+        ]
+      },
+      {
+        "heading": "Separate checking from progress",
+        "paragraphs": [
+          "A check is useful if it drives the defending king into a position where the pawn cannot advance and your king gains a move. Checks that simply repeat the same relationship may achieve nothing. Before choosing one, identify the intended king displacement and the pawn's status afterward.",
+          "When the defender's king moves in front of the pawn, a tempting capture or checking sequence may create stalemate. Always count the defender's legal moves after the proposed queen move. If the defender has no move and is not in check, extra queen power does not help: the game is drawn."
+        ]
+      },
+      {
+        "heading": "Practise the defender’s resource first",
+        "paragraphs": [
+          "Choose a published queen-versus-seventh-rank-pawn lesson and take the pawn side. Find the king squares that preserve promotion threats or stalemate resources. Then switch sides and try to improve the queen's position without removing every legal move. Keep the exact starting position visible in your notes.",
+          "Next use a verified contrasting example with a different pawn file or closer attacking king. Predict the change before checking the source. Do not invent a tablebase verdict for a modified diagram. If you use a tablebase, verify the full position, including side to move, rather than relying on the piece list."
+        ]
+      },
+      {
+        "heading": "A practical review question",
+        "paragraphs": [
+          "After each attempt, ask where the attacking king gained its first useful tempo. If it never gained one, identify whether the queen's checks were unproductive or the defender used a valid fortress. Write the reason in terms of legal moves and pawn threats, not just a win-or-draw label.",
+          "When this ending arises in your games, resist moving instantly because you own the queen. First locate the promotion square, count legal king moves and calculate the shortest useful approach for your king. A short pause for those checks is often more valuable than another forcing move that merely repeats the same position.",
+          "If the queen must give up a checking square to avoid stalemate, identify the safe alternative before moving the king. The attacker is balancing two jobs: limiting promotion and preserving a route to progress. An attractive king approach can fail if it allows the defender a pawn move with check or an immediate promotion threat."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn includes Queen versus pawn on the seventh, with a bishop-pawn example. Treat it as one concrete lesson, not proof that every queen-versus-pawn ending shares its result.",
+    "sources": [
+      {
+        "label": "Lichess interactive endgame practice",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: understanding endgames",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "bishop-versus-knight-endgames",
+      "opposite-coloured-bishops",
+      "avoid-stalemate"
+    ]
+  },
+  {
+    "slug": "bishop-versus-knight-endgames",
+    "title": "Bishop versus knight endgames: compare routes on one wing and two",
+    "keyword": "bishop versus knight endgame",
+    "cluster": "endgames",
+    "description": "Already in a bishop-versus-knight ending? Compare king routes, useful diagonals and knight journeys, then practise both sides of the same position.",
+    "lede": "Already in a bishop-versus-knight ending? Compare king routes, useful diagonals and knight journeys, then practise both sides of the same position.",
+    "sections": [
+      {
+        "heading": "Assign a job to each remaining piece",
+        "paragraphs": [
+          "A bishop can influence distant squares along open diagonals. A knight can change square colour, attack around obstacles and use outposts. In an ending where bishop already faces knight, those properties suggest different routes rather than declaring either piece better in advance. Begin with the pawns, king positions and available targets.",
+          "Name a task for each minor piece: stop a passer, protect a pawn, prevent king entry or support an invasion. Then identify its next useful square. A bishop with a long diagonal may be tied to a pawn; a knight with a secure outpost may still be far from the action. Count the work actually being done."
+        ]
+      },
+      {
+        "heading": "Compare one-wing and two-wing workloads",
+        "paragraphs": [
+          "When all relevant pawns are on one wing, the pieces may be able to defend and attack within a compact area. Trace the knight’s shortest legal route toward a target and compare the bishop’s access to that same area. Check whether pawn attacks remove the apparent outpost before planning several moves around it.",
+          "With targets on both wings, measure how quickly each piece can switch tasks. A bishop can sometimes cross the board in one move, but blocked diagonals can prevent that. A knight may need several moves, yet arrive with a fork or support a king route the bishop cannot challenge. Include the opponent’s useful moves during every journey."
+        ]
+      },
+      {
+        "heading": "Play the same ending from both sides",
+        "paragraphs": [
+          "Choose a legal bishop-versus-knight position from a completed game or a published endgame lesson. Start after the material imbalance already exists. On paper, make two columns: bishop routes and knight routes. Beneath them, add both kings’ nearest useful squares and the pawns each side must protect.",
+          "Play a short continuation with no hints, trying to carry out your chosen route. Record the first point where a pawn threat, king approach or tactical fork forces a change. Restart the exact same position with the other colour. Try to obstruct the route you previously relied on rather than replaying a cooperative continuation.",
+          "Only after both attempts, compare your plans with analysis. If an engine prefers another route, follow the opponent’s strongest reply until the practical difference appears. A numerical evaluation alone does not explain whether your mistake was a wasted tempo, an inaccessible square or an overlooked pawn break."
+        ]
+      },
+      {
+        "heading": "Retest with a different pawn distribution",
+        "paragraphs": [
+          "For the next session, choose a second verified position with pawns on both wings if the first had only one. Keep the study question constant: which piece can fulfil its defensive job and still help the king make progress? Do not assume the second position has the same result merely because the material matches.",
+          "Your self-check should name one useful diagonal, one viable knight route and the key king-entry square for each position. Explain what prevents the slower side from simply following its ideal plan. That makes the comparison about time, access and workload rather than a slogan about bishops or knights.",
+          "Finally, revisit the original ending without your notes and play both sides again. Look for an earlier recognition of the opponent’s route. Progress means noticing and adjusting to that plan while the position still offers choices, even if accurate defence leaves the ending drawn."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn has selected minor-piece endgames, including opposite-coloured bishops and knight-versus-pawns material. It is not a complete bishop-versus-knight course; use this framework when reviewing suitable engine games.",
+    "sources": [
+      {
+        "label": "Lichess interactive endgame practice",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: understanding endgames",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "opposite-coloured-bishops",
+      "avoid-stalemate",
+      "dead-position-insufficient-material"
+    ]
+  },
+  {
+    "slug": "opposite-coloured-bishops",
+    "title": "Opposite-coloured bishop endings: find the blockade, not a slogan",
+    "keyword": "opposite coloured bishops endgame",
+    "cluster": "endgames",
+    "description": "Opposite-coloured bishops often offer defensive resources, but extra passers and king access still matter. Test a blockade against the attacker’s pawn breaks.",
+    "lede": "Opposite-coloured bishops often offer defensive resources, but extra passers and king access still matter. Test a blockade against the attacker’s pawn breaks.",
+    "sections": [
+      {
+        "heading": "Different colours change the defence",
+        "paragraphs": [
+          "When bishops travel on different square colours, one bishop cannot directly challenge the other's diagonal control. That can let a defender hold a blockading square and protect pawns even while down material. It explains many resilient endings, but it does not make every opposite-coloured bishop position drawn.",
+          "First check whether other pieces remain. With rooks or queens still present, an attack on squares the defending bishop cannot cover can be dangerous. Even in a pure bishop ending, widely separated passers, an active king or a successful pawn break may defeat an apparently comfortable blockade."
+        ]
+      },
+      {
+        "heading": "Identify what must never change",
+        "paragraphs": [
+          "A defensive plan should name the critical squares and the pawn structure that keeps them secure. If the king must guard one passer and the bishop must stop another, calculate whether they can maintain those jobs after a pawn sacrifice. Do not allow a breakthrough just to keep the material count unchanged.",
+          "For the attacker, look for two problems that the same defensive setup cannot solve. A king invasion may make a second passer more useful than immediately advancing the first. Before sacrificing a pawn to open a path, verify that your bishop and king can actually use the new squares."
+        ]
+      },
+      {
+        "heading": "Practise the blockade from both sides",
+        "paragraphs": [
+          "Choose a verified opposite-coloured-bishop exercise. Play the defender first and write the squares you intend to hold. Test the attacker's pawn breaks, including a sacrifice that changes which colour the remaining pawns occupy. Stop whenever your bishop's defensive diagonal is interrupted.",
+          "Then take the attacking side and try to create a second entry point rather than pushing the same pawn repeatedly. Record whether the defender's king or bishop becomes overloaded. A failed winning attempt can still teach something precise if you can explain why the original blockade survives every plausible change."
+        ]
+      },
+      {
+        "heading": "A useful post-game diagnosis",
+        "paragraphs": [
+          "If an opposite-coloured-bishop ending slipped away, locate the first change that made the defensive setup impossible. It might be a pawn exchange, a king departure or a diagonal blocked by your own pawn. The final promotion is usually less informative than that earlier structural decision.",
+          "For a later self-test, cover the result of the exercise and describe both sides' plans. The defender should have a clear holding mechanism, and the attacker should have a concrete target or acknowledge the lack of one. Replace the phrase 'opposite bishops draw' with an explanation of what can or cannot be changed on this board.",
+          "Count how many pawn moves the defender can safely allow before the structure changes. A blockade may hold against one push but fail after a second passer appears. Conversely, the attacker may have no safe break at all. This explicit count is more informative than judging the ending from the bishops' colours alone."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn includes an Opposite-coloured bishops drill. Use it to practise the specific defence offered there; the built-in example does not determine the result of all opposite-coloured bishop endings.",
+    "sources": [
+      {
+        "label": "Lichess interactive endgame practice",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: understanding endgames",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "avoid-stalemate",
+      "dead-position-insufficient-material",
+      "fifty-move-rule"
+    ]
+  },
+  {
+    "slug": "avoid-stalemate",
+    "title": "Avoid stalemate: count legal moves before the final squeeze",
+    "keyword": "avoid stalemate chess",
+    "cluster": "endgames",
+    "description": "Stalemate is a draw when the side to move has no legal move and is not in check. Build a legal-move check into queen, rook and promotion endings.",
+    "lede": "Stalemate is a draw when the side to move has no legal move and is not in check. Build a legal-move check into queen, rook and promotion endings.",
+    "sections": [
+      {
+        "heading": "Check is the dividing line",
+        "paragraphs": [
+          "A player with no legal moves is checkmated only if their king is in check. If the king is not in check, the same lack of legal moves is stalemate and the game is drawn. The amount of extra material does not change that distinction.",
+          "The practical risk grows when you remove a defender's last pawn or restrict a lone king with a queen. A move can look powerful because it controls every nearby square, yet fail because it gives no check and leaves no other piece able to move. Count legal moves for the whole side, not just attractive king squares."
+        ]
+      },
+      {
+        "heading": "Keep a safe move available until mate is real",
+        "paragraphs": [
+          "In basic mating endings, coordinate the king and heavy piece rather than trying to shrink the defender's space as fast as possible. Before a non-checking move, identify at least one legal reply unless you have verified a different ending condition. A forcing check still needs a legal follow-up; checks alone do not prove a mating sequence.",
+          "Promotion also deserves a pause. A queen is usually the strongest choice, but in some tactical positions another promoted piece avoids stalemate or delivers a specific check. Calculate the actual legal replies. Do not underpromote automatically just because a study once used that device."
+        ]
+      },
+      {
+        "heading": "Use the no-move audit",
+        "paragraphs": [
+          "Take a basic queen-versus-king or rook-versus-king exercise. Before every quiet move, say whether the opponent is in check and list the legal escape squares. Play until checkmate, then restart near the point where the king became most restricted and try a different legal plan.",
+          "For the defensive pass, look for opportunities to shed remaining material and reduce your legal moves. This is legitimate resource-finding, not a guarantee that a lost ending can be saved. Verify each apparent stalemate on the board: a pawn move or capture elsewhere can mean the game simply continues."
+        ]
+      },
+      {
+        "heading": "A repeatable self-check",
+        "paragraphs": [
+          "Record any stalemate error as the exact missing question. Did you forget a pawn's blocked status, misread a square as attacked or assume that winning the queen ended the task? Naming the observation you skipped helps more than writing 'be careful' beside the game.",
+          "On your next practice session, perform the audit without announcing it aloud and check whether it slows your play only slightly. The aim is a short reliable habit before irreversible moves. A basic ending converted safely is more useful training than a faster run that depends on the defender always having an escape square.",
+          "Check for legal moves by pieces hidden far from the king. A blocked-looking pawn may still capture, and a pinned piece may retain a move along the pin. The no-move audit is a legality question, not a visual impression of confinement. Verify the complete board before treating an apparent stalemate as established."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn's queen and rook mating drills provide suitable practice for the legal-move audit. Its rules enforcement does not replace checking stalemate before you choose a move.",
+    "sources": [
+      {
+        "label": "FIDE Laws: checkmate and stalemate, Article 5",
+        "url": "https://handbook.fide.com/chapter/e012023"
+      },
+      {
+        "label": "Lichess: basic checkmate practice",
+        "url": "https://lichess.org/practice"
+      }
+    ],
+    "related": [
+      "dead-position-insufficient-material",
+      "fifty-move-rule",
+      "threefold-repetition"
+    ]
+  },
+  {
+    "slug": "dead-position-insufficient-material",
+    "title": "Insufficient material and dead positions: what actually ends a game",
+    "keyword": "insufficient material dead position chess",
+    "cluster": "endgames",
+    "description": "A dead position means no legal sequence can produce checkmate. Distinguish that rules test from an ending that is merely drawn with accurate defence.",
+    "lede": "A dead position means no legal sequence can produce checkmate. Distinguish that rules test from an ending that is merely drawn with accurate defence.",
+    "sections": [
+      {
+        "heading": "Possible mate is different from forced mate",
+        "paragraphs": [
+          "Under the FIDE dead-position rule, the question is whether either player can checkmate by any possible series of legal moves. It is not whether a player can force mate against best defence. This distinction explains why a theoretically drawn ending can still be a live game.",
+          "King against king is an easy example of a dead position. Other sparse-material cases need care: the remaining pieces, pawn mobility and board geometry can matter. Do not substitute a rough piece-value total for the legal test. A material label in an app is a shorthand whose implementation may not cover every unusual blocked position."
+        ]
+      },
+      {
+        "heading": "Separate three kinds of draw",
+        "paragraphs": [
+          "Stalemate concerns the player to move having no legal move while not in check. A dead position concerns the impossibility of any eventual mate through legal play. A theoretically drawn position can allow many moves and mating possibilities but still be held against best play. These are different claims with different evidence.",
+          "Timeout adds another question. In over-the-board FIDE play, a flag fall does not award a win when the opponent cannot possibly checkmate by a legal sequence. Online services can apply platform-specific detection rules, so check the service's published implementation rather than assuming every interface resolves rare positions identically."
+        ]
+      },
+      {
+        "heading": "Practise classifying before calculating",
+        "paragraphs": [
+          "Collect a small set of published rule examples, including bare kings, stalemate and an ordinary defendable pawn ending. For each, answer three questions: is the side to move in check, does it have a legal move, and can any legal continuation eventually lead to checkmate? Keep the answers separate.",
+          "For a live but theoretically drawn example, explain the defensive technique that preserves the draw. This highlights the difference between an automatic end condition and a result that still requires decisions. Use official rules for the definition and a verified instructional position for the defensive technique; one source does not replace the other."
+        ]
+      },
+      {
+        "heading": "Know what an evaluation cannot tell you",
+        "paragraphs": [
+          "An engine evaluation near zero is not a dead-position certificate. It usually describes the position under the engine's search assumptions, not every possible legal continuation. Similarly, winning a piece does not prove that mate is possible in a highly restricted ending.",
+          "Your self-check is an explanation that avoids the phrase 'not enough material' unless you specify what mating construction is impossible. In a tournament, ask the arbiter about a disputed rules situation. In an online game, follow the platform's result procedure. Learning the distinction helps you interpret endings accurately without making legal claims from a single score or a familiar piece combination.",
+          "Be particularly careful with the word draw in a study note. Label whether the game ends immediately by rule or whether accurate defence is still necessary. That small annotation changes the training task: one example tests classification, while the other tests your ability to keep making the moves that preserve the result."
+        ]
+      }
+    ],
+    "appFit": "Use Brass Pawn for playing and examining legal endings, while consulting the official rules for unusual dead-position questions. No claim is made that every platform implements every rare automatic-draw case identically.",
+    "sources": [
+      {
+        "label": "FIDE Laws: dead position, Articles 5.2.2 and 6.9",
+        "url": "https://handbook.fide.com/chapter/e012023"
+      },
+      {
+        "label": "Lichess practice: compare live endgame positions",
+        "url": "https://lichess.org/practice"
+      }
+    ],
+    "related": [
+      "fifty-move-rule",
+      "threefold-repetition",
+      "convert-extra-pawn"
+    ]
+  },
+  {
+    "slug": "fifty-move-rule",
+    "title": "The fifty-move rule: count moves, resets and claims correctly",
+    "keyword": "fifty move rule chess",
+    "cluster": "endgames",
+    "description": "The fifty-move rule concerns moves by both players without a pawn move or capture. Learn the claim threshold and distinguish the separate automatic rule.",
+    "lede": "The fifty-move rule concerns moves by both players without a pawn move or capture. Learn the claim threshold and distinguish the separate automatic rule.",
+    "sections": [
+      {
+        "heading": "Count full moves for both players",
+        "paragraphs": [
+          "The familiar fifty-move rule concerns fifty moves by each player without a pawn move or capture. It does not mean fifty individual turns shared between the players. Either a pawn move or a capture restarts the relevant count. A king move, check or rook move does not by itself restart it.",
+          "In over-the-board FIDE play, the fifty-move threshold supports a draw claim under the specified procedure. The seventy-five-move rule is a separate automatic ending provision, with checkmate on the last move taking precedence. Keep the two thresholds distinct rather than treating every draw counter as the same rule."
+        ]
+      },
+      {
+        "heading": "Technique still needs efficient progress",
+        "paragraphs": [
+          "A forced mate can be practically difficult if you have spent many reversible moves without a reset. In basic mating practice, learn a plan that reduces the defender's space while keeping your pieces coordinated. Repeating checks without progress spends the count even if the material advantage is overwhelming.",
+          "Do not make a pawn move merely to reset the counter if it throws away a win. The count is one constraint in the position, not the only objective. Before any irreversible move, calculate the resulting pawn structure and verify that the defender does not gain stalemate, a fortress or a tactical capture."
+        ]
+      },
+      {
+        "heading": "Keep a reset log in practice",
+        "paragraphs": [
+          "Use a completed game score or a basic mating exercise. Mark every capture and pawn move, then count reversible moves between those resets. For one segment, write the count after each player's move. This makes the difference between half-moves and full moves visible without relying entirely on an interface label.",
+          "Then practise the ending with a clear plan: restrict the king, improve your own king and finish the mating net. Review unnecessary repetitions. If an exercise gives a specific starting counter, preserve it; resetting the board to a fresh counter can hide the practical constraint you intended to study."
+        ]
+      },
+      {
+        "heading": "Follow the correct procedure",
+        "paragraphs": [
+          "For an over-the-board claim, consult the competition rules and involve the arbiter as required. Online services may implement automatic detection or a draw button differently, so learn the platform's procedure before playing a critical ending. A display that offers a draw is not the same thing as a universal explanation of the law.",
+          "Self-test by answering what restarts the count, whose moves are counted and how the fifty- and seventy-five-move provisions differ. Then explain a real practice error in which you spent time without progress. The useful lesson combines rules knowledge with a more efficient plan, rather than simply memorising the number fifty.",
+          "A move counter shown by software may use half-moves internally even when the interface describes full moves. Read the label and documentation before interpreting a number. In your own notes, write moves by each player explicitly so that a technical display convention cannot become a mistaken claim about the rule."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn's basic mating drills can help you practise purposeful conversion. Read the official law for claim procedures; the article does not promise identical draw-button behaviour across chess apps.",
+    "sources": [
+      {
+        "label": "FIDE Laws: Articles 9.3 and 9.6.2",
+        "url": "https://handbook.fide.com/chapter/e012023"
+      },
+      {
+        "label": "Lichess basic checkmate practice",
+        "url": "https://lichess.org/practice"
+      }
+    ],
+    "related": [
+      "threefold-repetition",
+      "convert-extra-pawn",
+      "save-worse-endgame"
+    ]
+  },
+  {
+    "slug": "threefold-repetition",
+    "title": "Threefold repetition: identical pieces are not the whole position",
+    "keyword": "threefold repetition chess",
+    "cluster": "endgames",
+    "description": "A repetition requires the same player to move and the same legal possibilities. Check castling and en-passant rights before counting matching diagrams.",
+    "lede": "A repetition requires the same player to move and the same legal possibilities. Check castling and en-passant rights before counting matching diagrams.",
+    "sections": [
+      {
+        "heading": "What must repeat",
+        "paragraphs": [
+          "Threefold repetition is not simply the same sequence of moves appearing three times. The relevant position must occur with the same player to move, the same pieces on the same squares and the same possible moves. Castling rights and a possible en-passant capture can therefore matter even when the board picture looks unchanged.",
+          "The occurrences need not be consecutive. A player may return to the same position after a longer manoeuvre, or reach it through a different move order. Count positions rather than verbal patterns such as 'the rook checked three times'. A repeated check sequence is common, but it is not the definition."
+        ]
+      },
+      {
+        "heading": "Claims and automatic endings differ",
+        "paragraphs": [
+          "In FIDE over-the-board play, three occurrences provide a claim under the relevant procedure. Five occurrences are covered by a separate automatic draw provision. Before making a claim based on an intended move, follow the required process rather than playing first and assuming the procedure is unchanged.",
+          "Online platforms may detect repetition or present a claim option through their own interface. Read the service's rules and controls. A game you believe is drawn still requires the platform or arbiter to resolve it correctly; closing the app is not a draw claim and can create a different practical problem."
+        ]
+      },
+      {
+        "heading": "Build a position ledger",
+        "paragraphs": [
+          "Take a completed game that includes a repeated checking or rook-shuffling sequence. For each suspected repeat, record the move number, side to move, piece placement and any remaining castling or en-passant possibility. Compare those records before declaring that the positions match.",
+          "Next find a board repetition where a king or rook moved earlier and returned. Explain whether castling rights changed across the suspected occurrences. Use the official law to check your answer. This exercise is more useful than memorising one perpetual-check pattern because it trains the hidden state that diagrams alone can omit."
+        ]
+      },
+      {
+        "heading": "Use repetition as a decision, not an accident",
+        "paragraphs": [
+          "When you are worse, a valid repetition can be a concrete defensive resource. When you are better, accepting the same position again may give away your winning chances. Before repeating, ask whether you have a safe alternative and whether the opponent can force the next return.",
+          "For self-check, explain the first and third occurrences without relying on the move sequence's appearance. Then identify a legal alternative that would break the repetition and assess its risk. The aim is to know what result you are choosing, especially under time pressure, rather than noticing after the game that a repeated diagram had legal significance.",
+          "When comparing repeated positions, include the legal state in the saved record rather than relying on a screenshot alone. A still image usually does not prove the history of a king or rook. A complete game score or correctly preserved position record provides the context needed to check those rights."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn's engine games support practising defensive checks and reviewing positions. Use official rules and the app's actual result handling for claims; no universal interface behaviour is assumed.",
+    "sources": [
+      {
+        "label": "FIDE Laws: repetition, Articles 9.2 and 9.6.1",
+        "url": "https://handbook.fide.com/chapter/e012023"
+      },
+      {
+        "label": "Lichess practice: tactical and endgame patterns",
+        "url": "https://lichess.org/practice"
+      }
+    ],
+    "related": [
+      "convert-extra-pawn",
+      "save-worse-endgame",
+      "king-pawn-opposition"
+    ]
+  },
+  {
+    "slug": "convert-extra-pawn",
+    "title": "Convert an extra pawn: create a second problem before simplifying",
+    "keyword": "convert extra pawn chess",
+    "cluster": "endgames",
+    "description": "An extra pawn is an opportunity, not a result. Compare king activity, pawn structure and the ending left by an exchange before trying to simplify.",
+    "lede": "An extra pawn is an opportunity, not a result. Compare king activity, pawn structure and the ending left by an exchange before trying to simplify.",
+    "sections": [
+      {
+        "heading": "Make the advantage usable",
+        "paragraphs": [
+          "An extra pawn matters when it can become a passer, draw a defender away or support a king invasion. First identify where the surplus pawn sits and what prevents it becoming useful. A doubled pawn behind a blockade may contribute less than an equal-material position with a much more active king.",
+          "Compare weaknesses on both sides. If your king is tied to defending a pawn, moving the extra pawn may only open a route for the opponent. Improve the least useful piece or king square before committing the structure. The aim is to reduce the defender's good choices, not to push simply because you own more material."
+        ]
+      },
+      {
+        "heading": "Trade toward a position you understand",
+        "paragraphs": [
+          "Exchanging pieces can reduce counterplay, but the resulting pawn ending may be drawn or even lost. Calculate the king routes, opposition and promotion races before accepting a trade. A favourable material count does not survive every simplification in the form of a favourable result.",
+          "Keeping pawns on both wings can give the defender two tasks, while exchanging too many may leave a fortress. On the other hand, preserving every pawn can expose new targets. Decide which weakness you will attack after the first one is defended. A second useful target can make a stable blockade harder to maintain."
+        ]
+      },
+      {
+        "heading": "Run a conversion review",
+        "paragraphs": [
+          "Choose a completed game where you had one extra pawn and the game continued for several moves. Stop at the first plausible exchange. Write the resulting ending you expect and the defender's main resource. Play the position without hints, then review the exact decision rather than the final result alone.",
+          "For a second attempt, keep the pieces on and improve activity before pushing. Compare the defender's available counterplay in both versions. If neither attempt creates progress, state why: a blocked pawn, a checking rook, king distance or a fortress. This is useful diagnosis even when the correct result is a draw."
+        ]
+      },
+      {
+        "heading": "Measure decisions rather than conversion streaks",
+        "paragraphs": [
+          "Record one irreversible decision per practice game: a pawn push, an exchange or a king commitment. Explain what it improved and what it gave up. A win after an opponent's mistake should not automatically validate the earlier choice, and a draw against accurate defence may reflect the position rather than poor effort.",
+          "Retest the critical position later from the defending side. Try to preserve the resource you identified. If your original plan only wins when that defence is ignored, revise it. Successful conversion practice teaches how an advantage becomes a concrete problem for the defender, not how to expect a win from a plus-one material count.",
+          "Before a pawn push, consider whether it leaves a target behind. A passer that demands your king's permanent protection may not help you invade elsewhere. Test the defender's simplest blockade first; if your plan only works against an unnecessary capture, you have not yet shown how to make the extra pawn count."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn's engine games and limited endgame drills let you practise conversion decisions. Its feedback helps locate mistakes; it does not guarantee that every extra-pawn ending is winning.",
+    "sources": [
+      {
+        "label": "Lichess interactive endgame practice",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: understanding endgames",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "save-worse-endgame",
+      "king-pawn-opposition",
+      "rule-of-the-square"
+    ]
+  },
+  {
+    "slug": "save-worse-endgame",
+    "title": "Save a worse endgame: identify a resource before making threats",
+    "keyword": "save worse chess endgame",
+    "cluster": "endgames",
+    "description": "Good defence begins with a concrete resource: activity, blockade, repetition or stalemate. Choose the resource your position can actually sustain.",
+    "lede": "Good defence begins with a concrete resource: activity, blockade, repetition or stalemate. Choose the resource your position can actually sustain.",
+    "sections": [
+      {
+        "heading": "Assess the position without resigning mentally",
+        "paragraphs": [
+          "Being a pawn down or facing a poor engine evaluation does not remove your choices. Start by naming the opponent's plan and the position they would like to reach. Then look for what makes that plan difficult: an exposed king, a blockading square, active checks or a pawn that can race.",
+          "A defensive resource must be concrete. Hoping the opponent misses a threat is different from maintaining a structure they cannot break. Sometimes active counterplay is the only useful option; sometimes a quiet holding move preserves a fortress. Choose according to the board rather than adopting a permanent attacking or passive style."
+        ]
+      },
+      {
+        "heading": "Know what you can give up",
+        "paragraphs": [
+          "A defender can waste time protecting every pawn and lose all activity. Compare whether sacrificing one pawn lets your rook check safely or brings your king to the right corner. Conversely, giving away material without securing a repeatable mechanism may leave a simpler loss.",
+          "Look at the ending after each proposed exchange. Trading into a dead position, a known fortress or an opposite-coloured-bishop blockade can change the task completely. But exchanging your last active piece may also remove every source of counterplay. Calculate the new position before deciding that fewer pieces must help the defender."
+        ]
+      },
+      {
+        "heading": "Practise one resource at a time",
+        "paragraphs": [
+          "Choose a finished game where you were worse but had not yet lost material decisively. Write one defensive mechanism you want to preserve. Play from that point and stop whenever a move abandons the mechanism. Ask whether another resource replaced it or whether you simply ran out of useful moves.",
+          "Then restart with a different defensive plan, such as active checks instead of pawn protection. Compare how clearly the opponent can improve. Review after the attempt with analysis, looking for the first lost resource. A final blunder is often less instructive than the quiet move that made your defence impossible several turns earlier."
+        ]
+      },
+      {
+        "heading": "A fair measure of defensive progress",
+        "paragraphs": [
+          "Do not judge training only by whether you saved the game. In a genuinely lost position, accurate play may still lose. Better measures are whether you identified the strongest resistance, avoided unnecessary simplification and understood what the opponent had to demonstrate.",
+          "For a later self-test, take the attacking side and try to defeat your chosen defensive mechanism. This exposes wishful thinking quickly. If you can explain the attacker's breakthrough and the defender's best alternative, the session has produced useful knowledge even without a draw. Resilience in chess comes from making specific problems, not from assuming every difficult ending contains a miracle.",
+          "A defensive move can be successful because it narrows the opponent's winning choices, even when it does not create a direct threat. Note which tempting attacking move becomes inaccurate after your defence. This gives the practice session a measurable objective beyond surviving a few more moves without understanding why."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn includes defensive endgame goals and engine games suitable for resistance practice. Some positions remain lost with best play; the app is a training opponent rather than a promise of a saving move.",
+    "sources": [
+      {
+        "label": "Lichess interactive endgame practice",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: understanding endgames",
+        "url": "https://www.chess.com/terms/chess-endgame"
+      }
+    ],
+    "related": [
+      "king-pawn-opposition",
+      "rule-of-the-square",
+      "key-squares-pawn-endings"
+    ]
+  },
+  {
+    "slug": "opening-development-principles",
+    "title": "Opening development principles: improve pieces while answering threats",
+    "keyword": "opening development principles",
+    "cluster": "opening-principles",
+    "description": "Development means giving pieces useful work while keeping your king safe. Learn to compare natural moves instead of following a fixed opening checklist blindly.",
+    "lede": "Development means giving pieces useful work while keeping your king safe. Learn to compare natural moves instead of following a fixed opening checklist blindly.",
+    "sections": [
+      {
+        "heading": "A developed piece needs a useful square",
+        "paragraphs": [
+          "Development brings pieces into the game, but merely moving a knight or bishop does not guarantee improvement. Ask which central squares the piece influences, which friendly pieces it helps and whether the square can be challenged with tempo. A natural-looking move can still overlook a direct threat.",
+          "Begin each turn with the opponent's last move. What changed, and what would they do if you ignored it? Then compare developing candidates. This order prevents a common beginner error: playing a sensible opening move while leaving a piece undefended or allowing an immediate tactical sequence."
+        ]
+      },
+      {
+        "heading": "Avoid spending time without a reason",
+        "paragraphs": [
+          "Moving the same piece repeatedly can delay the rest of the army, but sometimes it is necessary to escape a threat or exploit a concrete opportunity. The useful distinction is purposeful movement versus a sequence that achieves nothing while the opponent develops.",
+          "Pawn moves also spend time and change squares permanently. Before adding another pawn move, ask whether a piece is waiting to enter and whether the pawn advance weakens your king or blocks a bishop. There is no universal quota, but a position with several untouched pieces deserves a clear reason before you launch an attack."
+        ]
+      },
+      {
+        "heading": "Review the first ten decisions",
+        "paragraphs": [
+          "Play a slower practice game from the normal starting position without opening assistance. Afterward, examine the first ten moves you made. For each, write its job: answer a threat, develop a piece, influence the centre or secure the king. A move may serve several jobs, but it should serve at least one concrete purpose.",
+          "Choose one move with a weak explanation and compare two alternatives. Test the opponent's forcing reply before consulting analysis. If a recommendation surprises you, identify the square, threat or piece coordination behind it. Learning that reason is more transferable than memorising one extra opening move."
+        ]
+      },
+      {
+        "heading": "Self-check when the book ends",
+        "paragraphs": [
+          "A practical opening understanding should survive an unfamiliar reply. Ask which piece is least useful, where your king belongs and which central break could change the position. If you can answer these questions, you have a plan even without remembering a named variation.",
+          "Keep one example where you deliberately broke a principle for a concrete reason. Perhaps a second knight move won material or a delayed castle avoided a direct attack. Explain the calculation that justified it. Principles are strong default questions, but chess is decided by legal possibilities on the board rather than by completing a checklist in a prescribed order.",
+          "When two developing moves seem equally natural, compare the opponent's best reply to each before choosing by habit. One move may leave a forcing capture available or block another piece's preferred square. These small coordination differences are where a general principle turns into a practical decision about a particular board."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn's free engine games support opening practice and post-attempt comparison. The app is not presented here as a comprehensive opening repertoire database or a source of assistance during human online games.",
+    "sources": [
+      {
+        "label": "Lichess: learn the chess fundamentals",
+        "url": "https://lichess.org/learn"
+      },
+      {
+        "label": "FIDE Laws: legal piece moves",
+        "url": "https://handbook.fide.com/chapter/e012023"
+      }
+    ],
+    "related": [
+      "opening-memorization-vs-ideas",
+      "defend-early-queen-attacks",
+      "learn-opening-traps"
+    ]
+  },
+  {
+    "slug": "chess-center-control",
+    "title": "Control the centre in chess: compare occupation, influence and breaks",
+    "keyword": "chess center control",
+    "cluster": "opening-principles",
+    "description": "Central control can come from pawns or pieces, and it can change after one exchange. Learn to evaluate the centre before choosing a pawn break.",
+    "lede": "Central control can come from pawns or pieces, and it can change after one exchange. Learn to evaluate the centre before choosing a pawn break.",
+    "sections": [
+      {
+        "heading": "Occupation is only one kind of control",
+        "paragraphs": [
+          "A pawn standing in the centre occupies a valuable square, while a bishop or knight can influence central squares from a distance. Both matter. An advanced pawn centre can offer space but also become a target if it cannot be supported. A restrained centre can be solid but leave pieces without useful routes.",
+          "Look at the central squares individually. Which are occupied, which are attacked and which can become an outpost? Count meaningful defenders rather than every piece that points toward the middle. A pinned piece may not be able to capture legally, and an exchange can open a line toward a king."
+        ]
+      },
+      {
+        "heading": "A pawn break changes more than one file",
+        "paragraphs": [
+          "A central pawn push or capture can open diagonals, release a rook file and expose a king. Before choosing it, inspect the position after the opponent's strongest capture or advance. Do not assess only the square the pawn reaches. Ask which pieces benefit from the changed lines.",
+          "Sometimes maintaining tension preserves more options than resolving it immediately. Sometimes delaying allows the opponent to reinforce a blockade. Compare the piece readiness on both sides: if your rooks and bishops are still disconnected, opening the centre may help the better-developed opponent first."
+        ]
+      },
+      {
+        "heading": "Use a before-and-after board audit",
+        "paragraphs": [
+          "Take a completed opening and stop before a central exchange. Describe the pawn structure and list two pieces whose activity would change after the trade. Calculate the opponent's most forcing response, then play the candidate continuation in practice. Compare your prediction with what actually became active.",
+          "Restart and keep the central tension for one useful developing move if the position allows it. Note whether the opponent can exploit that delay. The exercise is not designed to prove that waiting or exchanging is always better; it makes the consequences of each choice visible."
+        ]
+      },
+      {
+        "heading": "Explain control in terms of access",
+        "paragraphs": [
+          "For self-check, name one square you can use because of central control and one square the opponent cannot use. If your explanation only says you have more central pawns, examine whether those pawns can be attacked or block your own pieces.",
+          "In a later game, recognise when the central situation has changed and update the plan. A bishop that was blocked may suddenly have a long diagonal; a safe king may become exposed. Revisiting those consequences after each pawn break turns central control from a slogan into a continuing assessment of piece access and king safety.",
+          "Do not count a central square as securely controlled if the supporting piece is overloaded. Remove it in your calculation and see what else falls. A centre that depends on one defender can become fragile after a forcing exchange, even though a quick count of attacks suggests that every pawn is adequately supported."
+        ]
+      }
+    ],
+    "appFit": "Use Brass Pawn's computer games and positional exercises to practise evaluating access and activity. No claim is made that every central structure has its own named lesson in the app.",
+    "sources": [
+      {
+        "label": "Lichess: interactive chess fundamentals",
+        "url": "https://lichess.org/learn"
+      },
+      {
+        "label": "Stockfish: official engine project",
+        "url": "https://stockfishchess.org/"
+      }
+    ],
+    "related": [
+      "defend-early-queen-attacks",
+      "learn-opening-traps",
+      "opening-development-principles"
+    ]
+  },
+  {
+    "slug": "when-to-castle",
+    "title": "When to castle: check safety now and after the centre opens",
+    "keyword": "when to castle chess",
+    "cluster": "opening-principles",
+    "description": "Castling often improves king safety and rook coordination. Check legal restrictions and the likely pawn breaks before deciding when and where to castle.",
+    "lede": "Castling often improves king safety and rook coordination. Check legal restrictions and the likely pawn breaks before deciding when and where to castle.",
+    "sections": [
+      {
+        "heading": "Legal does not automatically mean safe",
+        "paragraphs": [
+          "Castling is subject to specific rules: the king and chosen rook must retain their rights, the intervening squares must be clear, and the king cannot castle out of check, through an attacked square or into check. A rook's being attacked is not itself the same restriction as the king crossing an attacked square.",
+          "After checking legality, assess the resulting position. The destination may have weak pawns or an open file aimed at it. Conversely, leaving the king in the centre may be much more dangerous if a central break is coming. Compare the actual threats rather than treating castling as automatically correct or automatically optional."
+        ]
+      },
+      {
+        "heading": "Timing depends on the centre",
+        "paragraphs": [
+          "When the centre can open quickly, delaying castling deserves a concrete justification. Your opponent may gain forcing moves against the king before you connect the rooks. In a closed centre, there may be more time to prepare, but a future pawn break can still change the assessment.",
+          "Do not assume the opponent will wait while you organise a wing attack. Identify their fastest central push or capture and calculate the lines it opens. If castling on the opposite wing, also examine how quickly both sides' pawns and pieces can create threats. The destination is a strategic commitment, not just a two-piece convenience."
+        ]
+      },
+      {
+        "heading": "Compare two king plans",
+        "paragraphs": [
+          "Choose a completed game just before castling was possible. Write the best argument for castling now and the best argument for one preparatory move. For both plans, find the opponent's strongest forcing response. Play a short continuation from each plan in a practice setting, without outside help in a human game.",
+          "Review whether your rook became useful and whether the king faced a new open line. If an engine suggests delaying, inspect the tactical reason rather than turning that one decision into a general rule. A specific threat or development move may explain the recommendation."
+        ]
+      },
+      {
+        "heading": "A short self-check",
+        "paragraphs": [
+          "Before deciding, ask three questions: is castling legal, what changes around the destination, and what happens if the centre opens next move? These questions cover different issues and should be answered separately. A legal move can be unsafe; a strategically appealing move can be temporarily illegal.",
+          "After a loss, avoid blaming castling simply because an attack occurred on that wing. Locate the pawn move, trade or missed defence that opened the route. Likewise, do not credit an uncastled king's survival to sound judgement if the opponent missed a simple break. Review the possibilities that existed, not only the result that happened.",
+          "Keep track of castling rights after moving the king or a rook. Returning the piece to its original square does not restore the lost right. That history matters when reviewing a screenshot or a position without its full game record, so verify rights before suggesting castling as a missed improvement."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn's engine games let you test opening king decisions and compare alternatives afterward. Castling instruction here follows the official rules, without implying that the app contains an exhaustive castling course.",
+    "sources": [
+      {
+        "label": "FIDE Laws: castling, Article 3.8.2",
+        "url": "https://handbook.fide.com/chapter/e012023"
+      },
+      {
+        "label": "Lichess: basic chess instruction",
+        "url": "https://lichess.org/learn"
+      }
+    ],
+    "related": [
+      "learn-opening-traps",
+      "opening-development-principles",
+      "chess-center-control"
+    ]
+  },
+  {
+    "slug": "opening-memorization-vs-ideas",
+    "title": "Opening memorisation versus ideas: build a repertoire you can explain",
+    "keyword": "opening memorization vs understanding",
+    "cluster": "opening-principles",
+    "description": "Build opening knowledge around move purposes, pawn breaks and responses to unfamiliar replies rather than memorising long sequences.",
+    "lede": "Memorised moves are useful when you know their purpose and limits. Build opening notes around decisions, pawn breaks and unfamiliar replies, not long sequences alone.",
+    "sections": [
+      {
+        "heading": "Memory and understanding do different jobs",
+        "paragraphs": [
+          "Memory saves time in familiar positions. Understanding helps when an opponent deviates, changes the move order or chooses a reasonable move your notes omit. A useful repertoire needs enough of both to reach positions you can play without depending on perfect recall.",
+          "For each opening choice, record the job of the move and the alternatives it prevents. If you cannot explain why a bishop belongs on a particular diagonal or why a pawn break is timely, a longer variation will not necessarily solve the problem. It may simply postpone the first unsupported decision."
+        ]
+      },
+      {
+        "heading": "Study positions where the plan changes",
+        "paragraphs": [
+          "A good learning point is often a branching position rather than the end of a long line. Identify the opponent's main sensible choices and how each changes your development or pawn plan. Include a harmless-looking sideline, because that is where understanding is tested most clearly.",
+          "Avoid claiming that one opening guarantees an advantage or eliminates study. A simple system still faces different central structures and tactical threats. Keep notes short enough to revisit and precise enough to explain what you are trying to achieve. Replace decorative variation names with decisions you can recognise over the board."
+        ]
+      },
+      {
+        "heading": "Use a three-question rehearsal",
+        "paragraphs": [
+          "Before a practice game, review one position and answer: what is my least useful piece, which pawn break matters, and what is the opponent threatening? Then play without looking at the notes. After the game, return to the first point where you felt lost rather than copying every engine preference.",
+          "Add one explanation for that position and one candidate reply to the move you faced. If a concrete tactical line is necessary, verify it on a legal board and keep the line attached to its tactical reason. Do not expand the file with several unrelated branches before testing the first lesson again."
+        ]
+      },
+      {
+        "heading": "Measure recall by flexibility",
+        "paragraphs": [
+          "For a self-check, cover the continuation and choose a plan after an unfamiliar but legal opponent move. You do not need to find an engine's first choice every time. You should be able to maintain development, king safety and a coherent central plan while noticing direct tactics.",
+          "Later, compare two games that began in the same opening but produced different pawn structures. Explain why your plan changed. This prevents the opening name becoming a substitute for reading the position. A practical repertoire is a set of understandable choices you can maintain and revise, not a promise that the first ten moves will always happen in the same order.",
+          "Use your own uncertainty as the trigger for adding theory. If a familiar position repeatedly produces the same difficult decision, study it more deeply. If a long variation never appears and does not explain a common plan, keep it out of the daily review until it serves a clear practical purpose."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn can be used for engine practice games and move comparison after your attempt. It is not described as an opening explorer or a full repertoire-management tool.",
+    "sources": [
+      {
+        "label": "Lichess: chess fundamentals",
+        "url": "https://lichess.org/learn"
+      },
+      {
+        "label": "Stockfish: official analysis engine",
+        "url": "https://stockfishchess.org/"
+      }
+    ],
+    "related": [
+      "opening-development-principles",
+      "chess-center-control",
+      "when-to-castle"
+    ]
+  },
+  {
+    "slug": "defend-early-queen-attacks",
+    "title": "Defend early queen attacks without chasing the queen blindly",
+    "keyword": "defend early queen attacks",
+    "cluster": "opening-principles",
+    "description": "Identify the real threat before chasing an early queen, develop with tempo when safe, and check which squares your move leaves undefended.",
+    "lede": "Identify the actual mating or material threat before attacking an early queen. Develop with tempo when it is safe, and check the squares your move leaves behind.",
+    "sections": [
+      {
+        "heading": "Name the threat first",
+        "paragraphs": [
+          "An early queen move can threaten mate, attack a loose pawn or simply invite a developing tempo. Before responding, inspect the queen's lines together with the opponent's bishops and knights. The queen rarely attacks alone; a supporting piece often makes the immediate threat dangerous.",
+          "Do not attack the queen just because it appeared early. A pawn move that chases her can weaken your king or abandon a central square. A piece move that gains a tempo is useful only if the opponent cannot ignore it with a stronger threat. Calculate checks and captures before celebrating the attack."
+        ]
+      },
+      {
+        "heading": "Prefer useful defence where possible",
+        "paragraphs": [
+          "Look for a response that stops the threat while improving a piece or securing the king. This can turn the queen's early activity into a target for later development. Sometimes a quiet defensive move is required; failing to gain a tempo is better than allowing a forced mate.",
+          "Track where the queen can retreat. If your chosen move gives her a more active square with another threat, the chase may not help. Likewise, avoid grabbing a pawn when the queen can invade with check. The position's concrete lines matter more than the general advice that early queen moves are bad."
+        ]
+      },
+      {
+        "heading": "Train recognition without memorising a trap",
+        "paragraphs": [
+          "Take a short completed game or an official beginner lesson containing an early queen attack. Pause before the defender's response and write the threat in plain language. Then list two legal defences and test the attacker's most forcing reply to each.",
+          "After checking the solution, restart one move earlier and ask what warning sign would have alerted you. It might be a bishop pointing at a weak pawn or a queen gaining access to a checking square. Repeating that observation on different examples is more useful than memorising a single move order that an opponent may never play."
+        ]
+      },
+      {
+        "heading": "A self-check for the next opening",
+        "paragraphs": [
+          "Before each move against an active queen, ask which pieces are loose and which checking squares have become available. Once the immediate threat is met, return to development rather than continuing a queen chase with no benefit. The goal is a safe, coordinated position, not a record number of attacks on one piece.",
+          "Review any pawn moves you made to chase the queen. Did they create a lasting weakness or actually win useful time? If a move worked only because the opponent retreated badly, find the stronger retreat during analysis. That distinction helps you learn sound defence rather than draw a confident lesson from a cooperative opponent.",
+          "An attack on the queen can expose a different piece. Before playing it, identify the defenders that move away from key squares. This is especially important when a knight develops with tempo: its new attack may look attractive while its departure removes protection from a mating square near the king."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn's tactics and engine games support threat recognition and opening practice. Its human online games provide no engine assistance, so all outside analysis belongs before or after the match.",
+    "sources": [
+      {
+        "label": "Lichess: interactive chess basics",
+        "url": "https://lichess.org/learn"
+      },
+      {
+        "label": "Lichess: fair-play rules",
+        "url": "https://lichess.org/page/fair-play"
+      }
+    ],
+    "related": [
+      "chess-center-control",
+      "when-to-castle",
+      "opening-memorization-vs-ideas"
+    ]
+  },
+  {
+    "slug": "learn-opening-traps",
+    "title": "Learn opening traps as tactical warnings, not a repertoire",
+    "keyword": "learn chess opening traps",
+    "cluster": "opening-principles",
+    "description": "Study the mistake behind an opening trap and the sound defence, so your opening still works when the opponent avoids the trap.",
+    "lede": "A useful opening trap teaches the mistake that permits it and the sound defence. Study both sides so your opening still works when the opponent avoids the trick.",
+    "sections": [
+      {
+        "heading": "The lesson is the vulnerable relationship",
+        "paragraphs": [
+          "An opening trap is memorable because a natural-looking move permits a tactical punishment. The transferable lesson is usually a loose piece, an overloaded defender, an exposed king or a blocked escape square. Learn that relationship rather than only the sequence that reaches it.",
+          "Ask why the losing move was tempting. Perhaps it followed a development principle while ignoring a direct threat, or captured material before securing the king. Understanding the temptation helps you recognise related mistakes in positions with different piece placement and a different opening name."
+        ]
+      },
+      {
+        "heading": "Find the opponent’s sensible escape",
+        "paragraphs": [
+          "A trap-based repertoire fails if it has no plan after the opponent chooses a sound move. For each trap you study, identify at least one safe alternative and the resulting position. Decide whether your own opening moves remain useful when the tactic never happens.",
+          "Avoid sacrificing material on the assumption that the opponent will accept. Calculate the strongest reply, including declining the sacrifice or returning material. A line that wins against one reply is not proof of a sound attack. The same discipline applies when defending: do not reject a move solely because it appears in a trap story."
+        ]
+      },
+      {
+        "heading": "Use a two-sided trap card",
+        "paragraphs": [
+          "Choose a verified short game or lesson. On one side of a note card, describe the tactical warning and the losing decision without showing the answer. On the other, record the sound defence and the plan that remains after it. Verify any exact move sequence on a legal board before saving it.",
+          "Play the position from both sides without viewing the solution. As the attacker, try to keep a reasonable position after the defender avoids the trick. As the defender, explain the threat before selecting a move. If either side requires the opponent to cooperate, revise the lesson rather than rehearse the same misleading success."
+        ]
+      },
+      {
+        "heading": "Self-check beyond the original move order",
+        "paragraphs": [
+          "When reviewing another game, look for the same tactical relationship without expecting the same moves. A pinned defender or a mating diagonal can arise through several openings. Recognition of the feature is the useful skill; knowing a trap's name is optional.",
+          "Keep the study proportionate. One carefully explained trap, a safe defence and a playable follow-up can teach more than a long list of miniature games skimmed quickly. In your next practice game, prioritise checking the opponent's threat and keeping pieces defended. A sound opening does not depend on the other player falling into the one continuation you hoped to demonstrate.",
+          "After learning the trap, write a reasonable continuation for both sides when no tactic is available. If that task feels much harder than remembering the trick, spend the next session on the ordinary position. Most opponents will offer decisions rather than a demonstration, and your preparation should remain useful in that quieter game."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn's short-game library, tactics and engine games can support tactical study. The app is not presented as a trap repertoire, and analysis must stay outside ongoing human online games.",
+    "sources": [
+      {
+        "label": "Lichess: tactical practice themes",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Lichess: fair-play boundaries",
+        "url": "https://lichess.org/page/fair-play"
+      }
+    ],
+    "related": [
+      "when-to-castle",
+      "opening-memorization-vs-ideas",
+      "defend-early-queen-attacks"
+    ]
+  },
+  {
+    "slug": "chess-engine-assistance-fair-play",
+    "title": "Chess engine assistance and fair play: separate training from matches",
+    "keyword": "chess engine assistance fair play",
+    "cluster": "fair-play",
+    "description": "Learn when engine analysis is appropriate, keep it outside live human matches and check each platform’s fair-play rules.",
+    "lede": "Use engines to learn before or after a human match, not to choose moves during it. Understand the boundaries before opening an analysis board beside a live game.",
+    "sections": [
+      {
+        "heading": "Training and competition have different rules",
+        "paragraphs": [
+          "An engine is a powerful training partner when the exercise explicitly allows it. In a human match, consulting an engine can provide outside assistance that the opponent did not agree to. The fact that software is freely available or runs on your own device does not make its use fair during a game.",
+          "Read the rules of the service or event you are using. Lichess, for example, prohibits external assistance during ongoing real-time human games, including casual ones. Correspondence exceptions for books or databases are limited and do not create a general permission to use an engine. Do not transfer an exception from one format to another."
+        ]
+      },
+      {
+        "heading": "Analysis after a game can still be disciplined",
+        "paragraphs": [
+          "Once a match is finished, first write your own explanation of the critical decisions. Then use an engine to check concrete alternatives. This order makes the tool a test of your thinking rather than a replacement for it. Compare the continuation on the board, not only the evaluation number.",
+          "Avoid posting accusations based solely on a strong move or high accuracy score. Strong play is not itself proof of outside help. If you have a concern, use the platform's reporting process and let its review procedure handle evidence. Public confrontation can distract from your own analysis and harm an opponent unfairly."
+        ]
+      },
+      {
+        "heading": "Create a clean match routine",
+        "paragraphs": [
+          "Before starting a human game, close analysis tools, opening references and any secondary board containing live recommendations. Make sure a shared screen or stream is not displaying advice you can see. Choose a time control that lets you think independently instead of planning to look up an answer when the clock becomes uncomfortable.",
+          "After the result is final, save or revisit the game through the platform's supported workflow. Mark one moment where you were uncertain and analyse it unaided first. Only then compare a candidate with an engine. This routine gives you a clear boundary between competing and studying, and a more useful account of what you actually understood."
+        ]
+      },
+      {
+        "heading": "Self-check the purpose of the tool",
+        "paragraphs": [
+          "Ask whether the information you are about to view could change your decision in a game that is still ongoing. If yes, check the rules before viewing it. Advice from another person, an opening explorer or a tablebase can also cross the boundary even when no engine window is visible.",
+          "For training, record the question you want the engine to answer: whether a sacrifice works, where a defence fails or which square matters. A narrowly framed question produces a clearer lesson than following a best-move arrow through an entire game. Fair play and effective learning support the same habit: make your own decisions first, then examine them honestly.",
+          "The same boundary applies to a friend giving well-meant advice beside you. During an ongoing human game, an unsolicited suggestion can affect your calculation just as a software recommendation can. Set expectations before playing and keep discussion for afterward, when both the competition and the learning process remain clear."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn keeps engine assistance out of human Game Center matches. Use its local engines for permitted practice and analysis, not as a companion that supplies moves for another ongoing human game.",
+    "sources": [
+      {
+        "label": "Lichess: official Fair Play policy",
+        "url": "https://lichess.org/page/fair-play"
+      },
+      {
+        "label": "FIDE Laws: player conduct, Article 11",
+        "url": "https://handbook.fide.com/chapter/e012023"
+      }
+    ],
+    "related": [
+      "online-chess-connection-planning",
+      "king-pawn-opposition",
+      "rule-of-the-square"
+    ]
+  },
+  {
+    "slug": "online-chess-connection-planning",
+    "title": "Online chess connection planning: prepare the device before the clock starts",
+    "keyword": "online chess connection problems",
+    "cluster": "fair-play",
+    "description": "Check your connection, battery and time control before an online chess match, and know the platform’s reconnection rules.",
+    "lede": "A reliable match setup reduces avoidable interruptions. Check connection, battery and time control before starting, and follow the platform’s reconnection rules.",
+    "sections": [
+      {
+        "heading": "The clock makes setup a playing decision",
+        "paragraphs": [
+          "An online chess game depends on more than the board position. Your device needs enough power, a usable connection and an uninterrupted window of time. A fast time control leaves little room to recover from a dropped connection or a system prompt. Choose a format that fits the conditions you actually have.",
+          "Before accepting a match, check that the device is connected and the required account service is available. If you are about to enter a tunnel, change networks or leave Wi-Fi range, postpone a live game. Offline engine practice is a better fit for an uncertain connection than a human match whose opponent is waiting on your clock."
+        ]
+      },
+      {
+        "heading": "Separate a frozen display from a result",
+        "paragraphs": [
+          "A stalled animation or delayed move does not tell you whether the server or peer received the last move. Avoid tapping repeated speculative moves or assuming the game is paused. Follow the platform's supported recovery process and check the actual game state after reconnection.",
+          "Different services handle disconnects, clocks and abandonment differently. Do not assume a universal grace period or guaranteed reconnection window. A technically recoverable connection may still cost time or a game. Read the relevant interface and rules, and distinguish a platform decision from your device's temporary lack of information."
+        ]
+      },
+      {
+        "heading": "Use a pre-match checklist",
+        "paragraphs": [
+          "Check battery, network, audio or notification interruptions and whether another app is likely to demand attention. Select a time control that leaves a realistic margin for thinking. If you are testing a new device setup, use a suitable non-critical session rather than a competitive match as the first connection test.",
+          "After a disruption, note what happened before drawing conclusions: network change, app backgrounding, screen lock, operating-system interruption or a visible service error. Record the approximate time and the last confirmed board state for a support report. Avoid exposing account tokens, private credentials or another player's personal details in screenshots."
+        ]
+      },
+      {
+        "heading": "Know when to switch to offline practice",
+        "paragraphs": [
+          "If the connection is unstable, stop starting new human matches until it is reliable. Offline computer play and stored exercises can preserve a useful practice session without making another person wait. This is a practical planning choice, not a guarantee that all app features work without internet.",
+          "For self-check, identify which part of your planned session needs a live connection: matchmaking, a human opponent, rankings or a fresh feed. Then choose an available offline activity for the same learning goal. A short tactics or endgame session may fit the situation better than repeatedly reconnecting to a game you cannot currently play under fair and predictable conditions.",
+          "If a session repeatedly fails to connect, preserve the useful details for support and stop retrying competitive games indefinitely. A concise report should distinguish matchmaking failure from a game that began and later stalled. That distinction helps investigation without inventing an explanation for a problem the interface has not yet identified."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn's human Game Center matches require a connection; local engine games and stored training work offline. No fixed disconnect grace period or automatic match recovery is promised by this guide.",
+    "sources": [
+      {
+        "label": "Apple: Game Center and real-time play",
+        "url": "https://developer.apple.com/game-center/"
+      },
+      {
+        "label": "Brass Pawn: current App Store listing",
+        "url": "https://apps.apple.com/app/id6803566012"
+      }
+    ],
+    "related": [
+      "chess-engine-assistance-fair-play",
+      "king-pawn-opposition",
+      "rule-of-the-square"
+    ]
+  }
+]

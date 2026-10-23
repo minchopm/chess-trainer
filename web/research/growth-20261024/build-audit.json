@@ -1,0 +1,509 @@
+{
+  "articles": 100,
+  "hubLinks": 100,
+  "sitemapPages": 114,
+  "sitemapEnglishOnly": true,
+  "translatedNoindexSamples": 12,
+  "articlesChecked": [
+    {
+      "slug": "beginner-chess-study-plan",
+      "bytes": 69838,
+      "sha256": "5afbd3c5cafcef3cfbc325aedaea33d04bb7dea7ae878a1f67bf98c389129d92"
+    },
+    {
+      "slug": "adult-beginner-chess-plan",
+      "bytes": 70104,
+      "sha256": "7bc5b722cbfcbd5f7e8446907e908a8ad8be6e9cd4c911e73380a893199e783f"
+    },
+    {
+      "slug": "return-to-chess-training",
+      "bytes": 70023,
+      "sha256": "a95242a3cfc89e25197cd575108cdd563f0fd4d5d4ad01c8892f2420c2abb70e"
+    },
+    {
+      "slug": "ten-minute-chess-routine",
+      "bytes": 69980,
+      "sha256": "4ca7f9e34d2997d45714d7ccde636e19ff20979865931bf86f9cc881e03f4905"
+    },
+    {
+      "slug": "thirty-minute-chess-routine",
+      "bytes": 70018,
+      "sha256": "2b90ea7a950b4ab1f3a304b8bed3ea89dd64ff976fbf142cdaf569bb44d998fa"
+    },
+    {
+      "slug": "weekly-chess-training-plan",
+      "bytes": 69983,
+      "sha256": "573b236f688a45996ba6905759c60d9296bd28593e1f67b7f81ce27d5c03163e"
+    },
+    {
+      "slug": "chess-rating-plateau",
+      "bytes": 69948,
+      "sha256": "3330c558e30d483689ff41e0fa404dd7a41300481d42268ea0b9d94e91f28846"
+    },
+    {
+      "slug": "deliberate-chess-practice",
+      "bytes": 70080,
+      "sha256": "3cf473ddea765b337bb6354a6b2e0b17141943fad42706bea00ec6e2fa6cee29"
+    },
+    {
+      "slug": "puzzle-rating-vs-chess-rating",
+      "bytes": 70166,
+      "sha256": "0be48e4b58f136bd2c0d8f120ff28789854abeaaee455f5d3c9a2dd5c8978937"
+    },
+    {
+      "slug": "blitz-vs-rapid-for-improvement",
+      "bytes": 70195,
+      "sha256": "aacdde33a9542bebbe5f909c468f5ca23e08021b3ce68ba1f1bf9f3ab23bdcf6"
+    },
+    {
+      "slug": "avoid-one-move-chess-blunders",
+      "bytes": 70064,
+      "sha256": "48dd27be24ea4dd9c8ed57b6699dafe30f1d20d928173adcc41c66aa0aa8aa39"
+    },
+    {
+      "slug": "candidate-moves-chess",
+      "bytes": 70118,
+      "sha256": "4d26bdc420021d9013603cf3ac02b02797baa7fd4102e99869ab5b1456a4db7e"
+    },
+    {
+      "slug": "checks-captures-threats-chess",
+      "bytes": 70125,
+      "sha256": "6d4c67e2dd81e0a6b4d4ab5ae5890a4e637a62da1025eb1e606c4a15910535da"
+    },
+    {
+      "slug": "chess-board-coordinates-warmup",
+      "bytes": 70317,
+      "sha256": "080a9332aad1a94d71a9f27618c15de590849d8b04fd016c341c15570740b55d"
+    },
+    {
+      "slug": "chess-thinking-clock-management",
+      "bytes": 70060,
+      "sha256": "422aade7a1ba8868f3f96fcd16c154a81468ed8f8c17f452e680a456bf09d2b9"
+    },
+    {
+      "slug": "analyse-chess-game-without-engine",
+      "bytes": 70146,
+      "sha256": "caa6bff36b428a9605c7089960878a3ac00dcedd014db378fe035fabf875529e"
+    },
+    {
+      "slug": "chess-engine-analysis-workflow",
+      "bytes": 70220,
+      "sha256": "94d2c09c6226ab44db391a1ed48e723a1ee65d4c4769e40068f2549c3f61842f"
+    },
+    {
+      "slug": "centipawns-vs-win-probability",
+      "bytes": 70326,
+      "sha256": "30ea4a2acc8dd18430d0e4bcb4c38fa553d2074a791242588a416635eb413601"
+    },
+    {
+      "slug": "chess-mistake-vs-blunder",
+      "bytes": 69983,
+      "sha256": "04ba7bd00647425eb71d3944c61b2bc3b304131070e7df26f5d714985522380b"
+    },
+    {
+      "slug": "review-lost-chess-games",
+      "bytes": 70214,
+      "sha256": "623306729545612011fec0a8866b718dd3eba8308eac138a676531aae87496fd"
+    },
+    {
+      "slug": "review-won-chess-games",
+      "bytes": 70181,
+      "sha256": "726d6d0faece445d9b3125ef2ed177fcd76c77f0d0201ec8f952f4f43410ff0e"
+    },
+    {
+      "slug": "annotate-own-chess-games",
+      "bytes": 70198,
+      "sha256": "623a48f71136a9aa4b5030367638d1080da9851d2ad152b17adbafc0464b23e5"
+    },
+    {
+      "slug": "spaced-repetition-chess",
+      "bytes": 70007,
+      "sha256": "09d138ec7edb50a7950839d6cad9486f588191f7f834ed62a3ac862988c3a173"
+    },
+    {
+      "slug": "opening-vs-endgame-study",
+      "bytes": 70052,
+      "sha256": "b4b48261df592f9a984683a5b0a329396ebafa0132182eb1ccd1fa92848088b1"
+    },
+    {
+      "slug": "choose-iphone-chess-app",
+      "bytes": 70041,
+      "sha256": "3e9b63c95df6d24c85a4a1fedff2d7a41f9f269c2b98686aa75e562728deaab0"
+    },
+    {
+      "slug": "offline-chess-app-checklist",
+      "bytes": 70237,
+      "sha256": "c762c7ebd0ac19e5d7583ff7932b9a3f5a5d89641e0f117ce5868d9195d36e46"
+    },
+    {
+      "slug": "chess-app-without-ads",
+      "bytes": 70108,
+      "sha256": "180bce978dc85dde9fbe94c0c930b46e9d1237f8f788eb4589924af8a6b6461d"
+    },
+    {
+      "slug": "chess-coach-vs-engine",
+      "bytes": 70332,
+      "sha256": "48ed6bc129622d58115924427b86ecebc4736fe3ff191e532c93c2d51fe0ddcb"
+    },
+    {
+      "slug": "chess-training-vs-online-play",
+      "bytes": 69919,
+      "sha256": "0adbd98a02359e085560ac8241451866b349d21a668a2ee4981c524f299285f6"
+    },
+    {
+      "slug": "game-center-chess-with-friends",
+      "bytes": 70238,
+      "sha256": "b2051f94e41818962626198e61c43bf23e2b0b50d94a5076e92454e0a0bf753e"
+    },
+    {
+      "slug": "ipad-chess-practice-routine",
+      "bytes": 70209,
+      "sha256": "71c15f9ea21e3aa68cb18565dd8bf8f8e6f0c02686f500a1e157873171ad3e98"
+    },
+    {
+      "slug": "mac-chess-analysis-workflow",
+      "bytes": 70131,
+      "sha256": "19b539d6352a24e8896addf01596cf3094ee889605f7e3ad593b490f54c7e463"
+    },
+    {
+      "slug": "choose-chess-computer-strength",
+      "bytes": 70052,
+      "sha256": "f78cf0d66918540fba577d1548f35875e7cbaed020125ba7c861ba4284d3ade3"
+    },
+    {
+      "slug": "guess-the-elo-chess-exercise",
+      "bytes": 70079,
+      "sha256": "354cbae5c203fc40eb681f3be293ffebf0d55e497319e284ed22a8a1fe2c666a"
+    },
+    {
+      "slug": "study-master-games-with-takeover",
+      "bytes": 69989,
+      "sha256": "3029c6208ff78cc0c6ce211ac5cb11e562f0edbcb9a182a427c5dc9aeff018bf"
+    },
+    {
+      "slug": "spot-knight-forks-before-moving",
+      "bytes": 80571,
+      "sha256": "2a886c996acf9d7d141ad78a9d722c700228a2d9fc03a205963508f6e6ef7be9"
+    },
+    {
+      "slug": "pin-versus-skewer-training",
+      "bytes": 80711,
+      "sha256": "b71af4f5ece5798cf24cc0dcb99796292575f0b317f0278509d4116d1ac4bf9d"
+    },
+    {
+      "slug": "discovered-attack-two-threat-checklist",
+      "bytes": 80706,
+      "sha256": "0c9933186e0de2991fa1ea85c45ce8b82d3103218f8b89353f31f3c836fb1fc2"
+    },
+    {
+      "slug": "double-check-legal-defences",
+      "bytes": 80634,
+      "sha256": "05084bf017e2a05f5da29e4e61a4f8f5ccbe3d2e5e699e1dad84a6b964bfdb7c"
+    },
+    {
+      "slug": "overloaded-defender-duties",
+      "bytes": 70663,
+      "sha256": "746642e92942bd10d1025b882da72d813680aadc2270d466f6d1002d2fb51567"
+    },
+    {
+      "slug": "deflection-versus-decoy",
+      "bytes": 80576,
+      "sha256": "7a139b589422e3e7e8437797bb4412aabf844a71718b47cd1691569e920f840e"
+    },
+    {
+      "slug": "remove-the-defender-capture-order",
+      "bytes": 80769,
+      "sha256": "f9580159035d6f89a7a460de390d59b0373c34fb4e61d8d958f8d19336d187ba"
+    },
+    {
+      "slug": "back-rank-weakness-safety-check",
+      "bytes": 80463,
+      "sha256": "761a4970c7112428a98791e93fe5fd85687b8d0f32f91bea0f6fa18b39644e1a"
+    },
+    {
+      "slug": "zwischenzug-before-recapture",
+      "bytes": 80592,
+      "sha256": "795b00c7d175048868d85ce55da136c6cf1b43429956afc58f2ad4183a32073b"
+    },
+    {
+      "slug": "clearance-tactics-lines-and-squares",
+      "bytes": 80783,
+      "sha256": "1cf2df3919b02b5a1fe73a08467795a94a58c02be0415eda2c273ae1cefe791c"
+    },
+    {
+      "slug": "interference-tactics-defensive-lines",
+      "bytes": 81044,
+      "sha256": "cfc51a4fbce4200e3a8383312d11d3e35fc2802a4e9621dfe01861654b65b18d"
+    },
+    {
+      "slug": "xray-attack-line-awareness",
+      "bytes": 80509,
+      "sha256": "6440e9fa8dceab6d9a9ce45e70334dbad2ba82c1ead347ee753b0eef358af486"
+    },
+    {
+      "slug": "hanging-piece-check-before-every-move",
+      "bytes": 81273,
+      "sha256": "84dca5a6ba2939b77e810dce67038b40c05c73e0c6a3ea4b35ea378c6ccc70eb"
+    },
+    {
+      "slug": "trapped-piece-escape-square-audit",
+      "bytes": 80779,
+      "sha256": "d8f0f6f443ee2813d3d1dcb7b76a4ab3a0ed8043bfcf017d32ada2b92ab33ab5"
+    },
+    {
+      "slug": "pawn-fork-prevention",
+      "bytes": 80595,
+      "sha256": "173c9bcce4493472fff4de3480c35969545a89035fdaac3bd9a15a0c9a91c662"
+    },
+    {
+      "slug": "queen-forks-checks-and-loose-targets",
+      "bytes": 80753,
+      "sha256": "f2a76484e68f1f5befc3e7a34a66892dbf4c899616055a1ecb9d3c29237980ef"
+    },
+    {
+      "slug": "quiet-moves-in-tactical-positions",
+      "bytes": 80447,
+      "sha256": "50e9516e85f7b88836be7b564344789cf569a8005ffb66aaebb34fa0dd7228c9"
+    },
+    {
+      "slug": "mating-net-search-escape-squares",
+      "bytes": 80582,
+      "sha256": "22f968a6f79c8d22c317db09650cea04c4e73dca8ac872c6ee1a239719dcffa3"
+    },
+    {
+      "slug": "smothered-mate-recognition-without-sacrifice-autopilot",
+      "bytes": 80962,
+      "sha256": "63b28093577c38854369ba15a16a6367bfd400b2eb21813ce0502ef88b9c6779"
+    },
+    {
+      "slug": "attraction-sacrifice-mating-square",
+      "bytes": 80851,
+      "sha256": "14d568b2060710a9a008daa2eb31d7b473629ffb79fc75eb4022c04dca8e2af8"
+    },
+    {
+      "slug": "double-attack-versus-fork",
+      "bytes": 80530,
+      "sha256": "daa1b08b6f6a4b00bf1113a2933fddb1dc80644e2e1f427ac123d18fdc5af646"
+    },
+    {
+      "slug": "defensive-tactics-find-the-saving-move",
+      "bytes": 80798,
+      "sha256": "d2a8663dcefe78de37299e411480bc1598d2db75e126ba3fe084c497a90d0f84"
+    },
+    {
+      "slug": "calculate-forcing-lines-without-tunnel-vision",
+      "bytes": 81036,
+      "sha256": "f78efc693918d39ea7679e00329dc1e577712c29dd9c8601f1f4fd171ad58714"
+    },
+    {
+      "slug": "find-opponents-best-defence",
+      "bytes": 80831,
+      "sha256": "f1e1cf8641c0b81a66acb1982e365a37c0bf9c36095d2a80e56f32de2b7b9147"
+    },
+    {
+      "slug": "chess-board-visualization-calculation",
+      "bytes": 71191,
+      "sha256": "64d674783fbdf90505049397847fa3dbc7eef97b715fd2b0e8da373309556229"
+    },
+    {
+      "slug": "when-to-stop-calculating-a-chess-line",
+      "bytes": 71110,
+      "sha256": "5d001a06eca035c1b97831c8e59e75e98158a997f54443666ee01e390f9961b6"
+    },
+    {
+      "slug": "evaluate-material-imbalances",
+      "bytes": 71095,
+      "sha256": "519cb12672edf8757048fd59f22748624c4af26d19009c498bf1fce6044b8de4"
+    },
+    {
+      "slug": "rook-open-file-plan",
+      "bytes": 70522,
+      "sha256": "a113ae9c8d81bfe270a7a1d19efd067b5731491eb41f055e2fbb6d3fc7e6429d"
+    },
+    {
+      "slug": "knight-outpost-test",
+      "bytes": 70664,
+      "sha256": "68bcedaf3ef998a34b946cc255c2fb170694d27d08e22c369b8fb4837981787e"
+    },
+    {
+      "slug": "bishop-versus-knight-trade-decision",
+      "bytes": 71432,
+      "sha256": "e80fb76701da6fb892ba0d8782c0fb79a9822bb59413a1c993db70dea8a396e6"
+    },
+    {
+      "slug": "weak-pawns-attackable-targets",
+      "bytes": 70834,
+      "sha256": "d3679c3f47101dae9228c9c84a74e82081a343526bb455b517ae086f2e85904d"
+    },
+    {
+      "slug": "choose-the-right-pawn-break",
+      "bytes": 70698,
+      "sha256": "7e253fc6fb0630703715c9b509e47e7d535b6b42230cc28b9534aaee5a18316e"
+    },
+    {
+      "slug": "king-safety-versus-piece-activity",
+      "bytes": 71051,
+      "sha256": "3c07a352ce05c29dd8a195992e1b6b46f5208bd79e4b6b55dae1b3f1fe9c9efe"
+    },
+    {
+      "slug": "improve-your-worst-piece",
+      "bytes": 70718,
+      "sha256": "f58fa00884a3bfb5e0f032a8cece6f29605a845522702b583ec3210c267c80ad"
+    },
+    {
+      "slug": "positional-exercise-or-forced-tactic",
+      "bytes": 71221,
+      "sha256": "335eed5c994f6613186806a8758abc3db8d8151948f3d9c8631d1c5b20757315"
+    },
+    {
+      "slug": "king-pawn-opposition",
+      "bytes": 70242,
+      "sha256": "10165e0eeab4712ff69fc0cf1f917a4c5dfc1b7844fdef5fb6b112f0456f5fdb"
+    },
+    {
+      "slug": "rule-of-the-square",
+      "bytes": 69975,
+      "sha256": "72030ef03a61a1ea1cfce7cb580cd5b1c4c0602cd04ed9180c2386a6df811a4a"
+    },
+    {
+      "slug": "key-squares-pawn-endings",
+      "bytes": 70223,
+      "sha256": "3ee5f3263ccb5a2c1a6e178e02acafaf8662783fe425f7283d4abf0b38795919"
+    },
+    {
+      "slug": "triangulation-king-endgame",
+      "bytes": 70238,
+      "sha256": "edcf0b0f1c988d74fc5631e4e25582c29128fb6338702dad82a995f1d3c54dc6"
+    },
+    {
+      "slug": "distant-opposition",
+      "bytes": 70207,
+      "sha256": "54b954fa24ba14ce7cb657932f210399e0c38da08305d5ab201a2c530eed29cf"
+    },
+    {
+      "slug": "outside-passed-pawn",
+      "bytes": 70101,
+      "sha256": "83fd5efba29ad0a4261c16b0cc52ffc3cdbf505f11f929f4fa062ae696534ceb"
+    },
+    {
+      "slug": "protected-passed-pawn",
+      "bytes": 70272,
+      "sha256": "d63e39cdd6196b93e130c3758e9340bf901cff05ff261d886475e7c4b42225a1"
+    },
+    {
+      "slug": "wrong-bishop-rook-pawn",
+      "bytes": 70337,
+      "sha256": "a8eca8cc2d6f69a005d0b959f259908ff829b95afce33dc061ecaa5640fdd82c"
+    },
+    {
+      "slug": "rook-behind-passed-pawn",
+      "bytes": 70310,
+      "sha256": "31faf1c5573f042a36f8d24b720465eb6301ae02776044f0fae5b94288471489"
+    },
+    {
+      "slug": "active-king-endgame",
+      "bytes": 70272,
+      "sha256": "4df5d55d77cbffd9cd911aa9ce9ccad2c41f58e903e02fe99b88477b60743d1d"
+    },
+    {
+      "slug": "rook-endgame-activity",
+      "bytes": 70209,
+      "sha256": "7c7fd3826a5a4fbdef4ecc9f6bcc77296d521a20a68f11cffebc14bb538fe7c3"
+    },
+    {
+      "slug": "lucena-position-training",
+      "bytes": 70433,
+      "sha256": "782756fedc95321a46dae0f8f7f91d2302d28d6de577daece09870935d47d284"
+    },
+    {
+      "slug": "philidor-rook-defence",
+      "bytes": 70332,
+      "sha256": "67d18043605b46c47312f8e8dad0f90c275643537bd596c4b6a9ca99e3e5ab49"
+    },
+    {
+      "slug": "queen-versus-pawn-ending",
+      "bytes": 70406,
+      "sha256": "1ee58dc3d71ade888892b3dba2479c93698dc481e94fe5d6ec66f12c48f22895"
+    },
+    {
+      "slug": "bishop-versus-knight-endgames",
+      "bytes": 71002,
+      "sha256": "7ea32388f2883c60179d718084b236f3ad14f0862292380d1becf96d8834f097"
+    },
+    {
+      "slug": "opposite-coloured-bishops",
+      "bytes": 70521,
+      "sha256": "9af787656dd9937860581430331b3af8971bd1bc50875d84f1fecc5554a404ef"
+    },
+    {
+      "slug": "avoid-stalemate",
+      "bytes": 70152,
+      "sha256": "75b59985a118e40bdb470e1b82b7ae5c65bf4c6fffaad829b35db99c085c44bc"
+    },
+    {
+      "slug": "dead-position-insufficient-material",
+      "bytes": 70831,
+      "sha256": "e84142c2d802f7c597079e01594f358f4e4bb13545fbf4699413b4abeafd4889"
+    },
+    {
+      "slug": "fifty-move-rule",
+      "bytes": 70398,
+      "sha256": "58cdaabda95ee8c91b65be2f7d999dd60adc406087bfe51378b44036a00827e1"
+    },
+    {
+      "slug": "threefold-repetition",
+      "bytes": 70415,
+      "sha256": "61d3e3fa4ce6d0616ae700674df26e59ed328fc0c7baa4ef5cb57eec53517a05"
+    },
+    {
+      "slug": "convert-extra-pawn",
+      "bytes": 70362,
+      "sha256": "9cfb1168af94a53e7ac93ac22488bf037eb27e396bf9be5ca0a32ee92aa73836"
+    },
+    {
+      "slug": "save-worse-endgame",
+      "bytes": 70447,
+      "sha256": "9368cbae0858341c15cb6e583a9ddfee6b611d7ffb10e9afa955155ea8a35cad"
+    },
+    {
+      "slug": "opening-development-principles",
+      "bytes": 70697,
+      "sha256": "9202652273d96d185bce2097d4f435c79b74f280894a5b04fc3d31f67b31b783"
+    },
+    {
+      "slug": "chess-center-control",
+      "bytes": 70307,
+      "sha256": "ae801b5a42950329e813a5145d8a8f27072035cb6adc4772eee96fe95994e8b4"
+    },
+    {
+      "slug": "when-to-castle",
+      "bytes": 70311,
+      "sha256": "1f8b443de536977c9b841ad6219e0e9532025214697d7f9646fef11531f644dc"
+    },
+    {
+      "slug": "opening-memorization-vs-ideas",
+      "bytes": 70422,
+      "sha256": "7c65e37d1fc9318fbd4e6cdb297e181ad346716d13855a6a2a257be881a295d3"
+    },
+    {
+      "slug": "defend-early-queen-attacks",
+      "bytes": 70345,
+      "sha256": "fa43c9b7c33c61da7a8e8d8fe6dc6f22708989d73e7a233ce410eb371c064715"
+    },
+    {
+      "slug": "learn-opening-traps",
+      "bytes": 70289,
+      "sha256": "b68c2c23ab610113df084140b7ebb0b26aeb6ef894f67115b06a2bf25fb18870"
+    },
+    {
+      "slug": "chess-engine-assistance-fair-play",
+      "bytes": 70695,
+      "sha256": "5329999900d0d5ab3d50c5709c2564d46566bca532a12f6e800d4efc691d900d"
+    },
+    {
+      "slug": "online-chess-connection-planning",
+      "bytes": 70613,
+      "sha256": "2cfb04ef92243b8474dd7b049ff586823eafc2e0f8005d572760e9aee65095d8"
+    }
+  ]
+}

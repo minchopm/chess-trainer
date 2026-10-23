@@ -1,0 +1,25 @@
+{
+  "articles": 35,
+  "minWords": 470,
+  "maxWords": 508,
+  "totalWords": 17211,
+  "wordCountMethod": "lede + section paragraphs + appFit, Unicode word tokens",
+  "uniqueSlugs": 35,
+  "uniqueKeywords": 35,
+  "uniqueTitles": 35,
+  "uniqueBodyParagraphs": 315,
+  "duplicateBodyParagraphs": 0,
+  "descriptionsOver160": 0,
+  "relatedLinksValid": true,
+  "boardPositionsInvented": 0,
+  "sanVariationsInvented": 0,
+  "sourcesNote": "Official primary learning resources; original diagnostic exercises, not search-volume evidence. No concrete board positions or historical game attribution.",
+  "sourceReview": "Primary lesson/practice URLs verified through browsing on 2026-10-24; further-study links not search-volume claims.",
+  "descriptionMaxChars": 146,
+  "relatedNavigation": "Three manually selected same-batch topics per article.",
+  "topicsByCluster": {
+    "tactics": 22,
+    "calculation": 5,
+    "positional-play": 8
+  }
+}

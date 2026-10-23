@@ -1,0 +1,2263 @@
+[
+  {
+    "slug": "spot-knight-forks-before-moving",
+    "title": "How to spot knight forks before you move",
+    "description": "Train knight-fork detection by finding landing squares, checking both targets and testing the defender’s strongest reply before you move.",
+    "keyword": "knight fork training",
+    "cluster": "tactics",
+    "lede": "A knight fork is easiest to prevent one move before it arrives. Train the destination square and the targets together, rather than hoping to notice the knight after it has checked your king.",
+    "sections": [
+      {
+        "heading": "Start at the targets, not the knight",
+        "paragraphs": [
+          "Find your king, queen and undefended rooks. Ask which squares a knight would need to occupy to attack any two of them. This reverse search is often shorter than imagining every possible knight jump. A fork involving check deserves special attention because you normally cannot save the other target immediately.",
+          "Both targets attacked by one knight must occupy squares of the same colour. That is a useful filter, not a proof of safety: a move by your king or queen can change the geometry, and a different double attack may still exist."
+        ]
+      },
+      {
+        "heading": "Distinguish a picture from a winning line",
+        "paragraphs": [
+          "A knight attacking two pieces has not automatically won material. Check whether the knight can be captured, whether a countercheck interrupts the plan, and whether one target can escape while defending the other. If the king is one target, list every legal response to the check rather than assuming the king must walk away.",
+          "Also count the cost of reaching the fork square. Sacrificing a rook to fork a queen can be excellent, but winning only a pawn after giving up a knight is not a tactical success."
+        ]
+      },
+      {
+        "heading": "Build a prevention habit",
+        "paragraphs": [
+          "Before making a quiet developing move, identify the opponent's next knight jumps that come with check. Then inspect jumps attacking your queen and an undefended piece. This is a focused safety scan, not an instruction to calculate every legal move.",
+          "When reviewing a missed fork, save the position before your mistake. The educational question is which piece placement made the fork possible. Moving the same queen again may have been unnecessary; defending the second target might have solved the problem without disrupting development."
+        ]
+      },
+      {
+        "heading": "Compare checking forks with defended targets",
+        "paragraphs": [
+          "A useful error test is to compare a fork with an ordinary knight attack on one target. Explain what changes when the second target is defended, and what changes when the first target is the king. Neither comparison needs an invented position: replay legal alternatives from your chosen exercise. When you return to mixed puzzles, start by checking your own vulnerable targets. Detecting a possible enemy fork is at least as valuable as spotting one you can play, particularly before moving a defender."
+        ]
+      },
+      {
+        "heading": "Write fork squares and target pairs before solving",
+        "paragraphs": [
+          "Use six knight-fork exercises. Before solving, write the candidate landing square and both intended targets. After solving, explain why the knight survives long enough to collect material. Include one position where the tempting fork fails.",
+          "Repeat the set with the board turned around, looking for the defender's warning signs. Record separately whether you missed the square, overlooked a capture of the knight, or miscounted the exchange. These are different errors and need different corrections."
+        ]
+      }
+    ],
+    "related": [
+      "pawn-fork-prevention",
+      "queen-forks-checks-and-loose-targets",
+      "hanging-piece-check-before-every-move"
+    ],
+    "sources": [
+      {
+        "label": "Lichess practice: The Fork",
+        "url": "https://lichess.org/practice/fundamental-tactics/the-fork/Qj281y1p"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn's tactics library offers positions for calculation practice on your device. Use the motif after the attempt to classify your mistake; a puzzle result does not replace checking the fork's legal replies in your own games.",
+    "exercise": {
+      "fen": "2rr4/p3k1p1/5p2/1B1Pn3/P2RP1PK/2p5/2R2P2/8 b - - 0 37",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Nf3+ · Kg3 · Nxd4",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "pin-versus-skewer-training",
+    "title": "Pin or skewer? Train the difference that changes your calculation",
+    "description": "Compare pins and skewers through legal replies, move order and practical defensive exercises instead of memorising labels alone.",
+    "keyword": "pin vs skewer",
+    "cluster": "tactics",
+    "lede": "A pin asks what happens if the front piece moves. A skewer asks where that front piece can go. This distinction gives you a practical way to calculate beyond merely recognising aligned pieces.",
+    "sections": [
+      {
+        "heading": "Read the line in the correct direction",
+        "paragraphs": [
+          "Trace a rook's file or rank, or a bishop's diagonal, from the attacker through the first opposing piece to the piece behind it. In a typical pin, moving the front piece exposes something more valuable. In a typical skewer, the front target is more valuable and its retreat exposes the rear target.",
+          "A king behind the front piece creates an absolute pin: that piece cannot legally uncover check. A queen behind it creates a relative pin; moving may be costly, but it can still be legal and sometimes strong."
+        ]
+      },
+      {
+        "heading": "Test how the defender breaks the alignment",
+        "paragraphs": [
+          "Do not count a pinned piece as immobile without qualification. It may move along the attacking line, capture the attacker, or participate in a legal exchange. With a relative pin, a counterattack against your king can outweigh the threatened queen.",
+          "Against a skewer, examine every retreat that also protects the rear piece, attacks the line piece, or gives check. The front target may escape in a way that prevents collection. Your calculation needs the second move, not just the attractive alignment."
+        ]
+      },
+      {
+        "heading": "Choose an exercise that tests decisions",
+        "paragraphs": [
+          "A useful comparison set mixes pins and skewers without announcing the label. For each position, decide whether to increase pressure, capture immediately, move the attacker closer, or abandon the idea. The objective is a decision with a reason, rather than a vocabulary quiz.",
+          "When the engine rejects your move, inspect the earliest defensive reply that changes the story. Often the classification was right but the timing was wrong: the opponent could exchange the attacker or move the valuable piece before your threat became forcing."
+        ]
+      },
+      {
+        "heading": "Separate capture legality from recapture support",
+        "paragraphs": [
+          "An absolutely pinned rook, bishop or queen may capture the pinning piece if that capture follows its legal movement and leaves its king safe. A knight cannot capture its own pinner in an ordinary absolute line pin: its jump would leave the pin line open. First establish legality; then assess whether the capture is worthwhile. The pinner's support is a separate question: an enemy recapture may make a legal capture unprofitable. With a skewer, also check whether the front target retreats with tempo. Reconstruct the resulting line after every exchange rather than retaining the original picture."
+        ]
+      },
+      {
+        "heading": "Sort legal movement from sensible movement",
+        "paragraphs": [
+          "Make two columns headed 'front piece can legally move' and 'front piece should move'. Put eight examples into them before solving. The columns need not agree.",
+          "For each successful solution, describe the defender's best attempt to break the line. Then return to one failed example and find a safer move for the attacking side. This prevents the common training mistake of believing every pin or skewer must yield an immediate material win."
+        ]
+      }
+    ],
+    "related": [
+      "xray-attack-line-awareness",
+      "remove-the-defender-capture-order",
+      "interference-tactics-defensive-lines"
+    ],
+    "sources": [
+      {
+        "label": "Lichess practice: The Pin",
+        "url": "https://lichess.org/practice/fundamental-tactics/the-pin/9ogFv8Ac"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn includes motif-tagged tactics and local engine analysis. Its existing tactics overview explains the patterns; use this diagnostic routine to practise deciding when a line attack actually works. It does not guarantee that every alignment contains a combination.",
+    "exercise": {
+      "fen": "r2qk1nr/pn1pbppp/1pp5/8/3QPP2/5N2/PPP3PP/RNB2RK1 b kq - 1 11",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Bc5 · Be3 · Bxd4",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "discovered-attack-two-threat-checklist",
+    "title": "Discovered attack training: give both pieces a job",
+    "description": "Practise discovered attacks by giving the moving piece and the uncovered line piece separate, concrete tactical jobs.",
+    "keyword": "discovered attack training",
+    "cluster": "tactics",
+    "lede": "A discovered attack works because moving one piece activates another. The difficult part is choosing a useful destination for the moving piece without losing the threat uncovered behind it.",
+    "sections": [
+      {
+        "heading": "Identify the battery before choosing a move",
+        "paragraphs": [
+          "Look for your rook, bishop or queen behind one of your own pieces. Follow that line to an opposing target. If the front piece moved, would the rear piece attack anything important? If not, the arrangement may be useful later but it is not yet a tactical threat.",
+          "Name the rear piece's target explicitly. Solvers often notice that a diagonal opens and then forget to check whether the target can simply move to safety. An uncovered attack needs either enough value or enough force to justify the move."
+        ]
+      },
+      {
+        "heading": "Give the departing piece a forcing destination",
+        "paragraphs": [
+          "Now search the front piece's legal moves for checks, captures and direct threats. A checking move can make the uncovered attack especially effective, but only if the opponent cannot answer the check while neutralising the rear threat.",
+          "Keep the two attacks separate in your notes. One line might say 'bishop attacks queen'; the other might say 'knight checks king'. If both notes concern the same target, you may merely be increasing pressure rather than creating the independent problems that make a discovered attack hard to meet."
+        ]
+      },
+      {
+        "heading": "Check the cost of opening the line",
+        "paragraphs": [
+          "Moving the screening piece can expose your own king, abandon a defender, or permit a countercheck. Examine those changes before collecting the target. If your move is not check, the opponent may ignore the queen attack and threaten mate instead.",
+          "In review, compare two destinations for the moving piece. Prefer the one that keeps the combination sound against best defence, not the one with the most dramatic appearance. A modest safe move can win more reliably than a checking sacrifice that lets the opponent escape."
+        ]
+      },
+      {
+        "heading": "Check both roles after the defender replies",
+        "paragraphs": [
+          "When the front piece moves with check, verify that the checking line stays open after the defender replies. A king capture might remove the piece you expected to collect a target with later. Conversely, a modest move attacking an undefended rook may be enough when the rear piece attacks the queen. Compare the defender's urgent choices directly. The strength comes from incompatible replies, not from giving check at all costs or uncovering any diagonal. Keep both roles visible throughout the actual continuation."
+        ]
+      },
+      {
+        "heading": "Describe the two pieces’ jobs before moving",
+        "paragraphs": [
+          "Take five discovered-attack puzzles and pause before moving. Write two sentences: what the rear piece attacks, and what the front piece does. Calculate the strongest reply to each sentence separately, then ask whether one reply solves both problems.",
+          "After the session, choose a missed position and remove the motif label. Explain the battery to another person or aloud. If you cannot name both roles without the answer displayed, repeat that position later rather than adding more puzzles immediately."
+        ]
+      }
+    ],
+    "related": [
+      "double-check-legal-defences",
+      "clearance-tactics-lines-and-squares",
+      "xray-attack-line-awareness"
+    ],
+    "sources": [
+      {
+        "label": "Lichess practice: Discovered Attacks",
+        "url": "https://lichess.org/practice/fundamental-tactics/discovered-attacks/MnsJEWnI"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Use Brass Pawn's local tactics practice to test complete solutions, then classify the two pieces' roles in your own notes. The app's engine feedback is position analysis, not a conversational tutor or proof that every battery wins material.",
+    "exercise": {
+      "fen": "r4rk1/1b3ppp/1p2pq2/3pn3/1P1Q1P2/P1N4P/2P1B1P1/R4RK1 b - - 0 18",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Nf3+ · Rxf3 · Qxd4+",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "double-check-legal-defences",
+    "title": "Double check: why the king must move, and what to calculate next",
+    "description": "Calculate double checks by listing legal king destinations, verifying safe captures and testing the strongest escape before claiming mate.",
+    "keyword": "double check chess defence",
+    "cluster": "tactics",
+    "lede": "In a genuine double check, two pieces attack the king at once. The legal response must be a king move. The useful training question is therefore which king destinations remain safe.",
+    "sections": [
+      {
+        "heading": "Verify that it really is double check",
+        "paragraphs": [
+          "One move can uncover an attack while the moving piece also checks. Confirm that both attacks reach the king legally. Do not confuse two pieces aiming near the king with two actual checks; blockers and occupied lines matter.",
+          "Because a non-king move cannot remove both checks in this situation, the defender must move the king. That move can include a king capture when the destination is safe. Saying 'the king must move' does not mean it can never capture the checking piece."
+        ]
+      },
+      {
+        "heading": "Mark escape squares before declaring mate",
+        "paragraphs": [
+          "Inspect every neighbouring square, including the one occupied by a checking piece. A square controlled by a pinned opposing piece can still be attacked for king-move purposes under the rules; do not treat a pin as permission for your king to enter that attack.",
+          "Friendly pieces, board edges and enemy control all reduce the king's options. Count those restrictions before calculating the follow-up. A beautiful double check that gives the king an open route into safety may be less effective than an ordinary forcing check."
+        ]
+      },
+      {
+        "heading": "Use the forced response to shorten calculation",
+        "paragraphs": [
+          "Once the legal king moves are known, calculate each branch. Some may lead to mate; another may concede material but avoid mate. Your proposed combination must survive the best of them. Do not spend time analysing irrelevant blocking or interposing moves.",
+          "From the defending side, search for the least damaging legal destination rather than emotionally rejecting all moves that look exposed. An ugly king square may be the only way to survive. The point of the motif is to narrow the legal tree, not to guarantee a winning attack."
+        ]
+      },
+      {
+        "heading": "Recognise the warning before the double check",
+        "paragraphs": [
+          "For prevention, study the move before the double check. A king and another valuable piece aligned behind a screening piece can invite discovered threats. Exchanging that screening piece or changing the king's square may remove the idea. Do not make a defensive move without checking its tactical cost: a seemingly safe king move can enter another line. The point of backward review is to identify the warning configuration while normal choices remain, rather than waiting for the king's replies to become forced."
+        ]
+      },
+      {
+        "heading": "List every legal king destination",
+        "paragraphs": [
+          "For four double-check positions, draw a simple list of king destinations without calculating any attacking continuation. Cross off each illegal destination and state the reason: occupied, attacked, or off the board.",
+          "Only then solve the exercise. Compare your list with the actual defensive moves. A missing legal square is a board-reading error; choosing the wrong continuation after finding all squares is a calculation error. Keep separate totals so the next training session addresses the real weakness."
+        ]
+      }
+    ],
+    "related": [
+      "discovered-attack-two-threat-checklist",
+      "mating-net-search-escape-squares",
+      "smothered-mate-recognition-without-sacrifice-autopilot"
+    ],
+    "sources": [
+      {
+        "label": "Lichess practice: Double Check",
+        "url": "https://lichess.org/practice/fundamental-tactics/double-check/RUQASaZm"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn can provide tactical positions and on-device engine checking. Use the board to verify the legal king replies yourself before consulting feedback. Offline practice does not authorise using analysis assistance during an online game.",
+    "exercise": {
+      "fen": "r4r2/1p2N1bk/p2p2p1/4n1pN/P3P2Q/7B/2q5/R4R1K w - - 0 25",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Nf6#",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "overloaded-defender-duties",
+    "title": "Find an overloaded defender by listing its jobs",
+    "description": "Find overloaded defenders by listing incompatible duties, checking alternative defenders and calculating sacrifice refusals.",
+    "keyword": "overloaded defender chess",
+    "cluster": "tactics",
+    "lede": "An overloaded defender appears busy, but the tactic depends on incompatible duties. Train yourself to list those duties and prove that the piece cannot satisfy both after a forcing move.",
+    "sections": [
+      {
+        "heading": "Write duties as concrete dependencies",
+        "paragraphs": [
+          "Choose an opposing piece that guards two important points. Describe each job precisely: protecting a rook, preventing a mating move, blocking an open file, or supporting a pawn's recapture. 'It defends the kingside' is too vague to calculate.",
+          "Two duties do not automatically mean overload. The defender may meet both threats with one capture or move, or another piece may take over one job. The test is whether your forcing move makes the duties conflict in a specific legal continuation."
+        ]
+      },
+      {
+        "heading": "Choose which duty to challenge first",
+        "paragraphs": [
+          "Try threatening the job that demands the most immediate response. A mating threat can make a material duty impossible to maintain. A forcing capture may compel the defender to leave a critical square. Compare the move orders rather than assuming either order wins.",
+          "After the defender moves, recount the remaining protection. An apparent overloaded rook may have been guarding a piece that the king can also defend. The combination needs the dependency that actually disappears, not the one that looks impressive in a diagram."
+        ]
+      },
+      {
+        "heading": "Review the failed defence, not only the sacrifice",
+        "paragraphs": [
+          "When a solution involves a sacrifice, write why declining it fails. If the opponent can safely refuse, the idea may be a speculative attack rather than a forced overload. A puzzle's intended solution does not remove your obligation to test alternatives.",
+          "For prevention, look at your own pieces before choosing an active move. If one queen is your only answer to mate and also protects loose material, moving another defender away can create the combination for your opponent. Reducing duties can be better than adding another attack."
+        ]
+      },
+      {
+        "heading": "Update defensive duties after exchanges",
+        "paragraphs": [
+          "Include your own defensive pieces in the audit after every exchange. A queen doing one job may acquire a second when a rook disappears. Likewise, exchanging an attacking bishop can relieve an overload without winning material immediately. Distinguish a permanent structural burden from a temporary tactical conflict. The first suggests a longer plan; the second may require action now. Your opponent may otherwise reorganise or provide a replacement defender, making a previously promising combination disappear before you have a chance to use it."
+        ]
+      },
+      {
+        "heading": "Build a two-duty table for the defender",
+        "paragraphs": [
+          "Take six positions with several defensive pieces. Before solving, create a two-row duty table for the suspected defender. Predict which job it must abandon after your candidate move.",
+          "Then check the strongest refusal and the strongest acceptance of any sacrifice. Mark a solution complete only when you can explain both. On a later day, revisit one example from the defender's perspective and choose a quiet move that would have removed the overload before the tactic became available."
+        ]
+      }
+    ],
+    "related": [
+      "deflection-versus-decoy",
+      "remove-the-defender-capture-order",
+      "defensive-tactics-find-the-saving-move"
+    ],
+    "sources": [
+      {
+        "label": "Lichess practice: Overloaded Pieces",
+        "url": "https://lichess.org/practice/fundamental-tactics/overloaded-pieces/o734CNqp"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn's tactics library can supply examples for this exercise, while local engine analysis helps challenge the proposed move order. Keep your duty table outside the app if useful; do not assume the trainer stores this custom annotation format."
+  },
+  {
+    "slug": "deflection-versus-decoy",
+    "title": "Deflection or decoy? Separate leaving a square from reaching one",
+    "description": "Distinguish deflection from decoy through practical exercises about abandoned defensive duties and dangerous destination squares.",
+    "keyword": "deflection vs decoy chess",
+    "cluster": "tactics",
+    "lede": "Deflection focuses on a defender leaving its job. Decoy or attraction focuses on an enemy piece arriving on a bad square. The same combination can contain both, but the calculation questions differ.",
+    "sections": [
+      {
+        "heading": "Ask what must disappear or arrive",
+        "paragraphs": [
+          "For a deflection, name the square, piece or line that loses protection. The defender's destination matters mainly because it no longer does that job. For a decoy, name the destination you want the opposing piece to occupy and explain why that square is vulnerable.",
+          "This is a training distinction rather than a rigid naming contest. Different teaching collections may label an overlapping combination differently. Your analysis is useful if it identifies the mechanism, even when a database's motif tag uses another accepted term."
+        ]
+      },
+      {
+        "heading": "Calculate refusal before celebrating acceptance",
+        "paragraphs": [
+          "A tempting sacrifice often assumes the opponent captures. First ask what happens if they decline and make their strongest forcing move. If you cannot punish refusal, describe the idea honestly as an option that needs further evaluation.",
+          "When the capture is forced, check which piece must accept. A queen and a rook taking the same offered piece can lead to very different geometry. The target square only matters if the actual accepting piece is vulnerable to the next move."
+        ]
+      },
+      {
+        "heading": "Use the distinction to repair your own position",
+        "paragraphs": [
+          "If you are defending against deflection, reinforce the abandoned duty or provide a second defender. If you are threatened with a decoy, preserve an alternative legal response that avoids the dangerous square. These are different preventive measures.",
+          "In post-game review, write the tactic as a dependency sentence: 'If this defender leaves, this square becomes available,' or 'If this piece lands here, this follow-up works.' That sentence is more transferable than remembering the sacrifice's visual shape without understanding why it succeeds."
+        ]
+      },
+      {
+        "heading": "Test every accepting piece, not your favourite",
+        "paragraphs": [
+          "Ask whether the sacrifice still works when the target piece has a different legal capture available. Do not alter a board and present it as a real game; inspect alternatives already present in your exercise. If the idea relies on one particular piece accepting, explain why other captures fail. This prevents proving only your favourite branch while ignoring the defender's actual choice. A good study note contains the reason for refusing or accepting the offer, not just the beautiful move you wanted to play."
+        ]
+      },
+      {
+        "heading": "Write the leaving-square and arriving-square cases",
+        "paragraphs": [
+          "Mix three deflection and three attraction exercises. Before solving, write either a 'leaves' sentence or an 'arrives' sentence. If both apply, explain both, but identify which one makes the final move possible.",
+          "Include a failed sacrifice in your set. Find the refusal or alternative capture that breaks it. Your target is accurate classification after calculation, not speed at assigning a label. Finish by proposing a defensive improvement one move before the combination."
+        ]
+      }
+    ],
+    "related": [
+      "overloaded-defender-duties",
+      "attraction-sacrifice-mating-square",
+      "interference-tactics-defensive-lines"
+    ],
+    "sources": [
+      {
+        "label": "Lichess practice: Deflection",
+        "url": "https://lichess.org/practice/advanced-tactics/deflection/kdKpaYLW"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn supports motif-based tactical practice with local analysis. Use that feedback to test your dependency sentence, rather than treating a motif label as proof. The app does not promise that every attractive sacrifice is sound.",
+    "exercise": {
+      "fen": "5rk1/5ppp/1Q6/5b2/8/8/P4PPP/3rRK2 b - - 0 27",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Bd3+ · Kg1 · Rxe1#",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "remove-the-defender-capture-order",
+    "title": "Remove the defender: choose the right capture order",
+    "description": "Train removal-of-the-defender combinations by comparing capture orders, checking refusal and counting the material after the full sequence.",
+    "keyword": "remove the defender chess",
+    "cluster": "tactics",
+    "lede": "Removing a defender is a move-order problem. Capturing the protector first may expose the target, but changing the order can lose a tempo, open a counterattack or leave the material count unchanged.",
+    "sections": [
+      {
+        "heading": "Map the defender and the actual target",
+        "paragraphs": [
+          "Select the piece you want to win, then identify what protects it. If several pieces defend it, removing only one may accomplish nothing. Count legal recaptures rather than simply counting nearby pieces; pinned defenders and blocked lines require individual checking.",
+          "Next identify what your first capture gives up. Sacrificing a bishop to remove a pawn that guards another bishop might only exchange equal material. A useful tactic has a concrete payoff after the entire sequence, including the opponent's strongest reply."
+        ]
+      },
+      {
+        "heading": "Compare both capture orders",
+        "paragraphs": [
+          "Calculate 'defender first, target second' and 'target first, defender second' where both are legal. Note which order includes check, which allows an intermediate move, and which changes the line of a rook or bishop. The forcing order is not always the capture with the largest immediate value.",
+          "Do not assume the opponent must recapture your first sacrifice. If your piece can remain attacked while they create a stronger threat, the removal plan needs a response to that threat. A sequence is only forced when alternatives are accounted for."
+        ]
+      },
+      {
+        "heading": "Recount after every exchange",
+        "paragraphs": [
+          "A removed defender may reveal a second defender behind it. A recapturing pawn can open a rook's file. These changes are why a static attacker-versus-defender count is only a starting point. Update the board in your mind after each move.",
+          "For defence, ask whether your most important piece is protected only once and whether that sole protector can be traded off with tempo. Adding a second defender, exchanging the attacking piece, or moving the target can all break the dependency before material is lost."
+        ]
+      },
+      {
+        "heading": "Why the checking capture order may be wrong",
+        "paragraphs": [
+          "A checking capture of the defender narrows the reply, yet not every checking order is best. The check may force the king onto a square that protects your target. Conversely, a non-checking capture can work because it threatens mate. Compare resulting defensive geometry rather than ranking orders solely by whether they give check. Your final explanation should say what protection disappears and why no useful replacement arrives in time. Include any lost tempo that makes the difference between two otherwise similar-looking capture sequences."
+        ]
+      },
+      {
+        "heading": "Compare both capture orders with a material ledger",
+        "paragraphs": [
+          "Solve five positions with a target protected by one critical piece. Write both candidate capture orders before moving, even if one looks obviously inferior. Explain the earliest difference between the two lines.",
+          "Keep a final material ledger: pieces given, pieces won, and any remaining immediate threat. If your answer wins a queen but loses two rooks and another piece, the ledger should make that visible. Repeat failed examples until the move order, rather than the motif name, is what you remember."
+        ]
+      }
+    ],
+    "related": [
+      "overloaded-defender-duties",
+      "zwischenzug-before-recapture",
+      "hanging-piece-check-before-every-move"
+    ],
+    "sources": [
+      {
+        "label": "Lichess practice: Undermining",
+        "url": "https://lichess.org/practice/advanced-tactics/undermining/udx042D6"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Use Brass Pawn's tactics positions and local engine checks to examine capture order. Its feedback can reveal a tactical refutation; you still need to track the final material and legal replies. Keep engine assistance away from ongoing online play.",
+    "exercise": {
+      "fen": "r4rk1/2n1ppbp/nq1p2p1/p1pP4/P1B1P3/2N4P/1P3PP1/1RBQ1RK1 b - - 2 16",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Bxc3 · bxc3 · Qxb1",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "back-rank-weakness-safety-check",
+    "title": "Back-rank weakness: test the escape square before pushing a pawn",
+    "description": "Diagnose back-rank threats by checking safe king exits, invasion squares and the cost of creating breathing room.",
+    "keyword": "back rank weakness chess",
+    "cluster": "tactics",
+    "lede": "A crowded back rank is a warning, not a diagnosis. Before making a pawn move for breathing room, check whether your king can actually use the new square and whether the move creates a different weakness.",
+    "sections": [
+      {
+        "heading": "Count usable exits, not empty squares",
+        "paragraphs": [
+          "Identify the squares beside and in front of your king. A square is an escape only if it is legal and safe when the checking line arrives. Enemy bishops, knights and pawns can control a square even when the checking rook is far away.",
+          "Also notice which friendly pieces obstruct the king. A rook may be both a defender and a barrier. Trading it away could remove protection; moving it sideways might create an exit. The whole arrangement determines whether a back-rank threat is real."
+        ]
+      },
+      {
+        "heading": "Test the invasion route",
+        "paragraphs": [
+          "Find the opposing rook or queen that could reach your back rank. Ask what controls its entry square, what can block the check, and whether the invading piece can be captured. A protected back rank can remain safe without an immediate pawn push.",
+          "The most dangerous combinations often remove the entry-square defender first. Look for exchanges with check or attacks on the defending rook. A tactic may win material because the rook cannot abandon its defensive duty, even when there is no immediate mate."
+        ]
+      },
+      {
+        "heading": "Choose useful breathing room",
+        "paragraphs": [
+          "A pawn move that creates a king exit can be sensible, but it also spends a tempo and changes pawn control. Before making it, inspect the resulting diagonal, nearby dark or light squares, and the opponent's forcing replies. Do not turn 'make luft' into an automatic move.",
+          "Sometimes the better solution is an active rook exchange, a king move, or reinforcement of the invasion square. Compare these options in context. The goal is to remove a concrete mating threat while maintaining the position's other responsibilities."
+        ]
+      },
+      {
+        "heading": "When the back rank ties down a rook",
+        "paragraphs": [
+          "Ask whether the back-rank weakness ties down a rook even without forced mate. The opponent may win a pawn or seize a file because that rook cannot leave its defensive post. Analyse the threat behind this restriction before deciding the rook is passive by choice. The lesson is broader than recognising mate: a vulnerable king reduces the usefulness of pieces elsewhere. An otherwise ordinary exchange may become impossible because it abandons the back rank, so compare the rook's defensive duty before seeking a more active square."
+        ]
+      },
+      {
+        "heading": "Draw an escape map and test two repairs",
+        "paragraphs": [
+          "For six back-rank exercises, write an escape-square map before solving. Include at least one position where the obvious pawn push fails and one where no pawn push is needed.",
+          "After finding the tactic, return to the defender's previous move and list two possible repairs. Evaluate which repair also improves another piece or stops a second threat. This turns a familiar mating pattern into practical prevention training rather than a collection of rook sacrifices remembered without context."
+        ]
+      }
+    ],
+    "related": [
+      "mating-net-search-escape-squares",
+      "defensive-tactics-find-the-saving-move",
+      "king-safety-versus-piece-activity"
+    ],
+    "sources": [
+      {
+        "label": "Lichess: guided practice in tactical patterns",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn's tactics practice can help recognise back-rank patterns, and local analysis can test preventive moves. A successful puzzle streak does not mean every blocked-in king is losing; inspect entry squares and legal exits in each position.",
+    "exercise": {
+      "fen": "6k1/3q1ppp/p7/1p6/8/1Pb1pQ2/2P2PPP/6K1 w - - 0 36",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Qa8+ · Qc8 · Qxc8#",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "zwischenzug-before-recapture",
+    "title": "Zwischenzug training: pause before the automatic recapture",
+    "description": "Find zwischenzugs by pausing before recapture, testing forcing interruptions and comparing the final position with the direct exchange.",
+    "keyword": "zwischenzug chess training",
+    "cluster": "tactics",
+    "lede": "An in-between move interrupts an expected sequence. To find one, briefly suspend the urge to recapture and ask whether a stronger forcing move changes the order of events.",
+    "sections": [
+      {
+        "heading": "Recognise the moment that invites autopilot",
+        "paragraphs": [
+          "The classic trigger is an exchange: your opponent captures, and a recapture seems obvious. Pause there. Look for checks, attacks on the queen, mating threats and captures that create a more urgent problem. This pause is particularly valuable when both sides have loose pieces.",
+          "An in-between move is not automatically better than recapturing. You must still account for the originally captured material and the newly exposed piece. The intermediate action earns its name from the sequence; it earns its strength only from calculation."
+        ]
+      },
+      {
+        "heading": "Make sure the inserted move demands a reply",
+        "paragraphs": [
+          "Check is forcing, but it may give the king an improved square or allow a countercheck. An attack on the queen may fail if the opponent can give mate. List the most urgent reply instead of assuming the enemy will cooperate with your preferred order.",
+          "After that reply, ask whether your original recapture remains available. A defender may have moved away, a line may have opened, or the attacked piece may have escaped with tempo. The successful zwischenzug changes one of these details in your favour."
+        ]
+      },
+      {
+        "heading": "Practise from both sides of the exchange",
+        "paragraphs": [
+          "When reviewing a game, stop just before every apparently forced recapture. Search for an intermediate move for each side, not only for yourself. This reveals whether your original combination relied on the opponent responding automatically.",
+          "A useful annotation describes the reason for the interruption: improving the king's location before recapture, removing a defender with check, or forcing a queen onto a less useful square. Avoid writing only 'nice zwischenzug'. That label does not tell you what to notice next time."
+        ]
+      },
+      {
+        "heading": "Let the opponent insert an intermediate move",
+        "paragraphs": [
+          "Check whether your own exchange contains an automatic assumption. When you capture something, insert a pause and let the defender look for their zwischenzug. If a countercheck wins your queen, the original exchange was unsound even though the straightforward recapture favoured you. Practise this reversal deliberately. Many missed in-between moves arise from treating the opponent's recapture as a rule rather than one candidate. Saving the refutation in your notes is more useful than replaying the cooperative line that made your first idea look good."
+        ]
+      },
+      {
+        "heading": "Compare the interrupted exchange with direct recapture",
+        "paragraphs": [
+          "Choose five exchange positions and write the direct recapture as your baseline. Then allow yourself one minute to search only for inserted forcing moves. Compare the final positions after the direct and interrupted sequences.",
+          "Record whether the in-between move gains material, improves placement, or merely looks clever. Include one example where recapturing immediately is correct. The exercise succeeds when you can reject an attractive interruption for a concrete reason, not when you invent a zwischenzug in every position."
+        ]
+      }
+    ],
+    "related": [
+      "remove-the-defender-capture-order",
+      "defensive-tactics-find-the-saving-move",
+      "find-opponents-best-defence"
+    ],
+    "sources": [
+      {
+        "label": "Lichess practice: Zwischenzug",
+        "url": "https://lichess.org/practice/fundamental-tactics/zwischenzug/ITWY4GN2"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Use Brass Pawn's tactical exercises to check complete move orders on your device. Analyse the opponent's intermediate moves as carefully as your own. The trainer's intended line is a prompt for calculation, not permission to ignore alternative legal replies.",
+    "exercise": {
+      "fen": "8/pkp2p2/3b4/1P3Np1/1n2P3/8/P4P1r/1K5R w - - 0 27",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Nxd6+ · cxd6 · Rxh2",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "clearance-tactics-lines-and-squares",
+    "title": "Clearance tactics: which square or line needs to become free?",
+    "description": "Learn clearance tactics by identifying a needed square or line, comparing candidate moves and checking what becomes undefended.",
+    "keyword": "clearance tactics chess",
+    "cluster": "tactics",
+    "lede": "Clearance combinations move a friendly obstruction out of the way. Find the desired destination or attacking line first, then ask whether the clearing move gains enough time to make the plan work.",
+    "sections": [
+      {
+        "heading": "Name the obstruction precisely",
+        "paragraphs": [
+          "A piece can block a rook's file, a bishop's diagonal, or a square needed by a knight or queen. Start with the move you wish you could play. What friendly piece prevents it? This backward question often reveals candidates that a normal capture search misses.",
+          "Distinguish clearance from a discovered attack. Both may open a line, but a clearance can free a destination for a later move rather than uncover an immediate attack. Identifying the future move keeps the combination connected to an actual purpose."
+        ]
+      },
+      {
+        "heading": "Compare safe and forcing clearance moves",
+        "paragraphs": [
+          "The obstructing piece might have a safe retreat, a checking move, or a capture that offers a sacrifice. Calculate the simplest move first. Sacrificing material is justified only if the follow-up works against best defence; it is not a requirement of the motif.",
+          "A quiet retreat may give the opponent time to remove your target. Conversely, a checking clearance can force an unfavourable king move that changes the intended mating net. Follow the resulting board, not the picture you hoped to create."
+        ]
+      },
+      {
+        "heading": "Check what the clearing piece leaves undefended",
+        "paragraphs": [
+          "The moving piece may have protected your king, a critical pawn or the eventual invasion square. Opening one useful line while abandoning another can invalidate the combination. State both consequences before selecting the move.",
+          "In defence, look for your opponent's pieces that seem awkwardly placed in front of stronger pieces. Their move may be purposeful even if it appears to retreat or sacrifice material. Ask what becomes available behind them before grabbing the offered piece or dismissing the move as passive."
+        ]
+      },
+      {
+        "heading": "Clearance can also create a defensive retreat",
+        "paragraphs": [
+          "Sometimes clearance makes a retreat possible rather than starting an attack. A friendly piece may obstruct the only safe square for a queen or prevent a rook from defending the king. Include this defensive form when reviewing games. It broadens the skill beyond mating puzzles. The same question still applies: which route needs to become available, and does the clearing move leave enough time and protection to use it safely? Calculate the opponent's strongest response before assuming that removing the obstruction solves the whole problem."
+        ]
+      },
+      {
+        "heading": "Name the route and test two clearing moves",
+        "paragraphs": [
+          "For five clearance exercises, finish the sentence 'I need this square or line because…' before choosing a move. Write one safe clearance candidate and one forcing candidate where legal.",
+          "Calculate the defender's strongest reply to each. After solving, identify what the clearing piece previously defended. If that detail was irrelevant, say why; if it breaks the tactic, preserve the failed line in your notes. This exercise trains both the attractive opening of a route and the cost of making it."
+        ]
+      }
+    ],
+    "related": [
+      "discovered-attack-two-threat-checklist",
+      "interference-tactics-defensive-lines",
+      "quiet-moves-in-tactical-positions"
+    ],
+    "sources": [
+      {
+        "label": "Lichess practice: Clearance",
+        "url": "https://lichess.org/practice/advanced-tactics/clearance/Grmtwuft"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn provides tactical positions suitable for studying clearance and related motifs. Its local engine can challenge a proposed sacrifice, but it does not remove the need to check the clearing piece's defensive duties or the resulting move order.",
+    "exercise": {
+      "fen": "5r1k/1b3p1P/n3p3/p2pPnN1/3P2Q1/Pqp5/5P2/2KR3R w - - 0 35",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Nxf7+ · Rxf7 · Qg8#",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "interference-tactics-defensive-lines",
+    "title": "Interference tactics: interrupt the line that holds the defence together",
+    "description": "Practise interference by tracing a defensive line, testing every relevant capture of the obstacle and checking whether the target stays protected.",
+    "keyword": "interference chess tactics",
+    "cluster": "tactics",
+    "lede": "Interference puts an obstacle on an enemy defensive line. The key is not the sacrificed piece itself, but which defender can no longer reach the square it was protecting.",
+    "sections": [
+      {
+        "heading": "Draw the defensive connection",
+        "paragraphs": [
+          "Identify two opposing pieces linked along a file, rank or diagonal. One protects a target or controls a critical entry square. Ask whether your piece can legally land between the defender and its job. This is a relationship to verify, not merely an empty square to occupy.",
+          "If the defender is a knight, blocking a line will not stop its jump. Interference concerns line movement, so be precise about which rook, bishop or queen loses contact and which threat that loss enables."
+        ]
+      },
+      {
+        "heading": "Test every way the obstacle can be removed",
+        "paragraphs": [
+          "A sacrifice on the interference square may be capturable by several pieces. Calculate each relevant capture. One capture might open a mating line; another might leave the threatened piece fully defended. The tactic must survive the defender choosing the best remover.",
+          "Also test refusal. The opponent might create a forcing threat elsewhere, move the target, or exchange the attacking piece instead of taking the obstacle. An interference idea becomes a combination only when these practical defensive resources have been considered."
+        ]
+      },
+      {
+        "heading": "Understand why the square matters",
+        "paragraphs": [
+          "After solving, ask what happens if the interfering piece moves one square away. If the line reconnects, you have identified the mechanism. If the solution still works for another reason, the combination may depend primarily on a different motif.",
+          "From the defending side, avoid arranging several critical jobs along one easily interrupted route. Creating an alternative defender or moving the vulnerable target can make a spectacular-looking interference sacrifice harmless. The useful lesson is the fragile defensive connection rather than the unusual sacrifice shape."
+        ]
+      },
+      {
+        "heading": "Reconstruct the defensive line after each capture",
+        "paragraphs": [
+          "Putting your own piece on an enemy line does not win automatically. If the opponent captures and the original defender still protects the target along another route, the interference achieved nothing. Reconstruct the line after every recapture. When a combination succeeds against several accepting pieces, identify the different weakness created by each capture. This branch-by-branch explanation matters in complicated examples, where a sentence about blocking a bishop can conceal a missing defensive alternative. Do not stop calculating when the diagram first looks like the intended motif."
+        ]
+      },
+      {
+        "heading": "Trace the defensive connection through every branch",
+        "paragraphs": [
+          "Select four interference exercises. For each, draw an imaginary arrow from the line defender to its responsibility. State exactly where your candidate cuts that arrow.",
+          "List acceptance by each available capturing piece and one plausible refusal. Mark the first line in which the original defence no longer works. If another defender replaces it, adjust the plan instead of forcing the intended answer. Revisit the position from the opposite side and find a preventive move that gives the target independent protection."
+        ]
+      }
+    ],
+    "related": [
+      "deflection-versus-decoy",
+      "clearance-tactics-lines-and-squares",
+      "overloaded-defender-duties"
+    ],
+    "sources": [
+      {
+        "label": "Lichess practice: Interference",
+        "url": "https://lichess.org/practice/advanced-tactics/interference/g1fxVZu9"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Use Brass Pawn's tactics library for calculation practice and local engine analysis for refutation checks. Custom arrow annotations described here are a study method, not a claim about an in-app drawing feature. Keep training separate from live online games.",
+    "exercise": {
+      "fen": "r6r/3qkp1p/3pp1p1/p1p3P1/1p6/4PQ2/PPP3P1/R3K2R w KQ - 0 23",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Qf6+ · Ke8 · Qxh8+",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "xray-attack-line-awareness",
+    "title": "X-ray attacks: read what lies behind the first piece",
+    "description": "Train x-ray awareness by tracking blocked lines, activating exchanges and newly revealed attackers or defenders.",
+    "keyword": "x ray attack chess",
+    "cluster": "tactics",
+    "lede": "An x-ray attack matters when a line piece can influence something beyond an intervening piece after a change. Train the hidden alignment without pretending that a rook or bishop can currently move through an occupied square.",
+    "sections": [
+      {
+        "heading": "Separate present attacks from future contact",
+        "paragraphs": [
+          "Follow a rook, bishop or queen's line until it meets a piece, then inspect what lies behind that blocker. The rear target is not necessarily attacked directly now. Its relevance depends on a capture, exchange or move that opens the route.",
+          "Write the opening event in words. Perhaps the blocker can be exchanged with check, or a recapture will place a valuable piece on the line. Without that event, the x-ray is a positional clue rather than an immediate tactical win."
+        ]
+      },
+      {
+        "heading": "Calculate the exchange that activates the line",
+        "paragraphs": [
+          "When a capture occurs on an aligned square, update every line piece affected by the removal. A rook behind another rook may become a recapturer. A bishop behind a pawn may begin defending an important square. The apparent material count can change abruptly once the blocker disappears.",
+          "Do not double-count a rear defender while its line remains blocked. Equally, do not forget it after an exchange has opened the route. The exercise is about recalculating the board state at the correct moment."
+        ]
+      },
+      {
+        "heading": "Turn line awareness into a safety check",
+        "paragraphs": [
+          "Before placing a queen behind a piece on an opposing rook's file, inspect forcing exchanges of that piece. Before capturing a defended piece, check whether its departure uncovers a second recapturer. These short questions catch many hidden tactical dependencies.",
+          "In analysis, compare the position before and after the critical exchange. Name the newly active attacker or defender. That explanation is more useful than writing 'x-ray' next to a move and leaving the reason implicit, especially when several line pieces share the same file or diagonal."
+        ]
+      },
+      {
+        "heading": "Find hidden recapturers behind the front piece",
+        "paragraphs": [
+          "A rear piece can matter defensively as well as offensively. Before announcing that a rook is undefended, inspect whether exchanging the front defender reveals another rook behind it. Before deciding a capture is safe, look for a queen newly connected to your king. These checks do not require predicting a long combination. They require updating line geometry after a small change. Short accurate exchange exercises are therefore useful even when they seem easier than the elaborate tactics you usually prefer to solve during a training session."
+        ]
+      },
+      {
+        "heading": "Update blocked lines after each exchange",
+        "paragraphs": [
+          "Choose five positions with at least two line pieces facing along a file or diagonal. Before solving, list which lines are blocked and what specific exchange could open each one.",
+          "After every move in your chosen line, update the list. Stop if you have mentally allowed a piece to move through an occupied square. Use the board to reconstruct that branch, then calculate again without moving pieces. This targets a visualization error that quick motif recognition alone does not fix."
+        ]
+      }
+    ],
+    "related": [
+      "pin-versus-skewer-training",
+      "discovered-attack-two-threat-checklist",
+      "remove-the-defender-capture-order"
+    ],
+    "sources": [
+      {
+        "label": "Lichess practice: X-Ray",
+        "url": "https://lichess.org/practice/fundamental-tactics/x-ray/lyVYjhPG"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn's local engine analysis and tactics positions can help test x-ray calculations. Follow actual legal moves on the board; an engine evaluation is not a substitute for identifying the precise exchange that brings a hidden attacker or defender into play.",
+    "exercise": {
+      "fen": "3R1n1k/pQ4pp/8/8/8/7P/PPr1qrP1/5R1K w - - 2 32",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Rxf8+ · Rxf8 · Rxf8#",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "hanging-piece-check-before-every-move",
+    "title": "Loose pieces and exchange counting: when is a capture profitable?",
+    "description": "Count attackers and defenders through actual exchange sequences, then connect loose pieces to forks, discovered attacks and overloaded defenders.",
+    "keyword": "counting attackers and defenders chess",
+    "cluster": "tactics",
+    "lede": "Counting attackers and defenders helps locate vulnerable pieces, but totals alone do not decide an exchange. Follow the legal capture sequence, compare piece values and notice when two loose targets create a combination.",
+    "sections": [
+      {
+        "heading": "Inventory the legal attackers and defenders",
+        "paragraphs": [
+          "Choose one target square and list the pieces that can legally capture on it. Then list the defenders that could recapture after the first capture. Identify blocked lines separately: a rook behind a pawn is not an immediate attacker merely because it points in the right direction.",
+          "Count legal moves, not visual arrows. An absolutely pinned piece may be unable to make the intended capture if it exposes its king. A defender that can move legally may still be tactically unavailable because its departure permits mate. Keep legality and the tactical cost of moving as separate questions."
+        ]
+      },
+      {
+        "heading": "Replace the totals with a capture sequence",
+        "paragraphs": [
+          "Two attackers against one defender does not automatically win material. Piece values and capture order matter. Calculate the cheapest relevant capture, the strongest recapture and the next capture, updating the board each time. A queen cannot profitably collect a protected pawn merely because another attacker also aims at it.",
+          "After each exchange, inspect newly opened lines. A rook or bishop that was blocked can become an additional recapturer. Check intermediate moves as well: a countercheck or attack on the queen can interrupt the sequence. Your ledger should show the material remaining after the forcing action finishes, not a temporary gain halfway through it."
+        ]
+      },
+      {
+        "heading": "Connect loose targets to tactical patterns",
+        "paragraphs": [
+          "A loose piece is a useful tactical clue even when nobody can take it immediately. Two undefended targets may allow a fork; a queen and rook aligned behind a screening piece may invite a discovered attack. Name the mechanism that turns the lack of protection into a concrete threat.",
+          "An insufficiently defended piece can be vulnerable without being undefended. Conversely, an undefended piece may be safe because no enemy piece can attack it effectively. This distinction keeps the exercise focused on profitable captures and tactical connections rather than labelling every isolated piece a blunder."
+        ]
+      },
+      {
+        "heading": "Compare an offered piece with a genuinely free piece",
+        "paragraphs": [
+          "An intentional offer differs from an overlooked loose piece only after compensation is checked. Follow the legal continuation until the material is recovered or the attacking consequence becomes clear. State honestly if the evaluation remains uncertain. In a failed capture, identify whether you missed a hidden recapturer, a stronger capture order, a countercheck or a mating threat. These diagnoses are more informative than writing that you counted badly, because each points to a different flaw in the exchange sequence."
+        ]
+      },
+      {
+        "heading": "Practise a target-square exchange ledger",
+        "paragraphs": [
+          "Select five target squares from completed positions. For each, write the immediate legal attackers, legal recapturers and any line piece that becomes active only after an exchange. Predict the final material result before moving pieces.",
+          "Check the sequence, then choose two loose pieces elsewhere on the same board and look for a possible double attack connecting them. Include one tempting capture that fails. Record its precise refutation instead of accepting a raw attacker-versus-defender total as proof."
+        ]
+      }
+    ],
+    "related": [
+      "spot-knight-forks-before-moving",
+      "pawn-fork-prevention",
+      "find-opponents-best-defence"
+    ],
+    "sources": [
+      {
+        "label": "Lichess: guided practice in tactical patterns",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn's tactics positions and local analysis can help test capture sequences and loose-piece combinations. Keep your exchange ledger in your own notes if useful; this guide does not claim a dedicated attacker-count display. Use analysis for training and completed games, not during online play.",
+    "exercise": {
+      "fen": "r2qr1k1/1p3pbp/p1p1b1p1/P7/1NNP4/2P3P1/3Q2BP/4RR1K b - - 0 31",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Bxc4 · Rxe8+ · Qxe8",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "trapped-piece-escape-square-audit",
+    "title": "Trapped-piece tactics: audit every escape before attacking",
+    "description": "Audit trapped-piece positions through legal escapes, checking routes, exchanges and defensive sacrifices before committing to the attack.",
+    "keyword": "trapped piece chess tactics",
+    "cluster": "tactics",
+    "lede": "A trapped piece has no satisfactory way out, but 'no squares' must be calculated. Check captures, exchanges, sacrifices and counterthreats before spending several moves trying to win it.",
+    "sections": [
+      {
+        "heading": "List destinations instead of judging appearance",
+        "paragraphs": [
+          "A bishop behind its own pawns may look trapped while still having a useful exchange. A queen near the edge may have a checking escape. Start by listing every legal destination and explain which are unsafe, blocked or tactically inadequate.",
+          "For knights, include captures and backward jumps; for line pieces, inspect the full file or diagonal. Do not confuse limited mobility with inevitable loss. A restricted piece can sometimes defend an important square while waiting for a pawn break that releases it."
+        ]
+      },
+      {
+        "heading": "Check the tempo of your trapping move",
+        "paragraphs": [
+          "The move that attacks the piece may open its escape route, abandon control of a key square or give the opponent a forcing counterattack. Recalculate the destination list after your proposed move. A pawn push is especially double-edged because its control changes permanently.",
+          "If the trapped piece can sacrifice itself for enough material or create a mating attack, winning it may not be the best outcome. Evaluate the resulting position rather than counting only the piece you expect to capture."
+        ]
+      },
+      {
+        "heading": "Defend the route before the crisis",
+        "paragraphs": [
+          "When your own piece has few useful squares, improve its mobility before it is attacked. An exchange, retreat or pawn move can preserve flexibility. Avoid sending a queen to collect a pawn without checking the route back.",
+          "After a failed trapping attempt, identify the overlooked escape category. Was it a capture of the attacking pawn, a countercheck, an exchange of defenders, or a sacrifice for compensation? Recording the category teaches a wider lesson than memorising the particular square used in one puzzle."
+        ]
+      },
+      {
+        "heading": "Include ugly but effective escape routes",
+        "paragraphs": [
+          "For a queen near the edge, examine checking routes especially carefully. For a bishop behind pawns, inspect exchanges opening a diagonal. For a knight, consider sacrifices removing the attacking pawn. Each piece has different escape resources, so one generic destination count is insufficient. Include moves that lose a little material but avoid losing the entire piece. A defender can choose an ugly but effective escape instead of the clean retreat you expected. That choice belongs in the calculation even when it makes the puzzle less visually satisfying."
+        ]
+      },
+      {
+        "heading": "List the restricted piece’s escapes before attacking",
+        "paragraphs": [
+          "Choose five restricted-piece positions. Draw an escape list before looking for a trapping move. Next, calculate the opponent's strongest forcing move and add any new route it creates.",
+          "Include one position where the best choice is to leave the restricted piece alone and improve your position elsewhere. Explain why winning it immediately costs too much. In a later session, switch sides and find the earliest move that would have avoided the trap without losing development time unnecessarily."
+        ]
+      }
+    ],
+    "related": [
+      "pawn-fork-prevention",
+      "queen-forks-checks-and-loose-targets",
+      "positional-exercise-or-forced-tactic"
+    ],
+    "sources": [
+      {
+        "label": "Lichess: guided practice in tactical patterns",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn's tactics and on-device analysis can help check trapping lines. Use engine feedback to test escapes and compensation, not as a reason to assume every awkwardly placed piece is tactically lost or that a pawn grab is automatically safe.",
+    "exercise": {
+      "fen": "rnb1k2r/pp2npb1/2pp1q2/4pP2/6B1/3P1N1P/PPP5/RNBQ1K1R w kq - 3 12",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Bg5 · Qxf5 · Bxf5",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "pawn-fork-prevention",
+    "title": "Pawn forks: calculate the push, the capture and the reply",
+    "description": "Practise pawn forks by verifying direction, safe landing squares, legal captures and whether both targets are genuinely vulnerable.",
+    "keyword": "pawn fork chess training",
+    "cluster": "tactics",
+    "lede": "A pawn fork gains power from a small attacker threatening valuable pieces. Its reliability depends on whether the pawn can reach the fork square safely and survive the opponent's strongest response.",
+    "sections": [
+      {
+        "heading": "Look at the square in front of the pawn",
+        "paragraphs": [
+          "A pawn fork usually appears after a pawn advances and attacks two pieces diagonally. Identify the proposed landing square, check that the advance is legal, and verify both targets. Unlike a knight, a pawn cannot jump over a blocker to reach its destination.",
+          "Also inspect whether capturing rather than advancing would create the fork. Pawn direction matters: imagine the board from the pawn's side, especially when solving with Black. A mistaken attack direction can make an attractive-looking pattern entirely imaginary."
+        ]
+      },
+      {
+        "heading": "Account for every capture of the pawn",
+        "paragraphs": [
+          "After the fork, can either target capture the pawn? Can another piece remove it? If the pawn is defended, calculate the exchange rather than assuming the protection settles everything. A capture with check can change who has time to collect the second target.",
+          "When a double-step pawn move is involved, check whether an en passant capture is legally available immediately. That rare defensive resource should not be ignored merely because the fork resembles a familiar one-step pattern. Work from legal options rather than visual similarity."
+        ]
+      },
+      {
+        "heading": "Prevent forks without surrendering useful space",
+        "paragraphs": [
+          "Two valuable pieces on the same rank can be vulnerable to a pawn advancing between them, but geometry alone is not enough. Ask whether the opponent can actually push safely. Sometimes controlling the landing square solves the problem without retreating both pieces.",
+          "In review, identify why your pieces became vulnerable together. An unnecessary piece regrouping might have invited the pawn push, or a defender may have moved away. A prevention note should name that change rather than advising vaguely to 'watch the pawns'."
+        ]
+      },
+      {
+        "heading": "Check whether the pawn can legally reach the fork",
+        "paragraphs": [
+          "The fork square can be a tactical target before the pawn gets there. A pin may prevent the push, or advancing may expose the king to a rook. Check these legality and safety questions before analysing the attacked pieces. From the defending side, a timely exchange of one target may remove the whole threat. This can be more efficient than retreating both pieces, especially when the exchange also improves development. Compare that active repair with a passive retreat rather than assuming both targets must simply move away."
+        ]
+      },
+      {
+        "heading": "Alternate pawn directions and audit captures",
+        "paragraphs": [
+          "Solve six pawn-fork exercises, alternating the side to move. Before solving, mark the pawn's forward direction and write every legal way to remove it after the proposed fork.",
+          "Then examine one failed fork where the pawn push creates a hole or loses a central pawn. Record both the immediate tactical result and the structural cost. Repeat the exercise without the theme label, so the landing-square check becomes part of your normal calculation instead of a response to a hint."
+        ]
+      }
+    ],
+    "related": [
+      "spot-knight-forks-before-moving",
+      "hanging-piece-check-before-every-move",
+      "zwischenzug-before-recapture"
+    ],
+    "sources": [
+      {
+        "label": "Lichess practice: The Fork",
+        "url": "https://lichess.org/practice/fundamental-tactics/the-fork/Qj281y1p"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Use Brass Pawn's tactical positions for pawn geometry and capture-order practice. The local engine can challenge a proposed push, but you should still verify pawn direction and special legal captures yourself. These are training exercises, not assistance for an ongoing online game.",
+    "exercise": {
+      "fen": "4k3/5p1p/p2P2pb/4N3/1p2P3/8/PP6/1K6 w - - 3 41",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "d7+ · Kd8 · Nxf7+ · Kxd7 · Nxh6",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "queen-forks-checks-and-loose-targets",
+    "title": "Queen forks: use checks and loose targets without overextending",
+    "description": "Find sound queen forks by searching checking squares, identifying loose targets and verifying the queen’s safety after collection.",
+    "keyword": "queen fork chess",
+    "cluster": "tactics",
+    "lede": "A queen fork can attack targets along different lines from one square. To find a sound one, combine geometric search with king safety and a clear account of the queen's escape route.",
+    "sections": [
+      {
+        "heading": "Search from the more forcing target",
+        "paragraphs": [
+          "Begin with checks available to your queen. For each checking square, inspect the queen's other ranks, files and diagonals for an undefended rook, minor piece or mating threat. A check can buy time to collect the second target, but only after the king's legal replies are considered.",
+          "Next examine non-checking double attacks involving the enemy queen or an immediate mate threat. A fork without check may still work, although the defender has more freedom to counterattack, exchange queens or move one target while protecting the other."
+        ]
+      },
+      {
+        "heading": "Keep the queen's own safety in view",
+        "paragraphs": [
+          "A queen can appear to attack everything while standing on a square where a knight or pawn can take it. Before counting targets, verify the destination is safe. Check discovered attacks and pinned defenders, not only obvious direct captures.",
+          "After the first target moves, calculate the collection move. The queen may be unable to take the second target because of mate, a pin or a tactical trap. A convincing fork includes the route through the next move, not merely an impressive position after the first one."
+        ]
+      },
+      {
+        "heading": "Judge the fork against simpler moves",
+        "paragraphs": [
+          "Do not send the queen far from your king to win a pawn if a central exchange or development move is stronger. Tactical opportunities have positional costs. Compare the concrete material gain with the opponent's forcing threats and the time needed to bring the queen back.",
+          "For defence, reducing loose pieces often removes several queen-fork possibilities at once. In post-game review, note whether the fork was caused by an exposed king, an undefended rook or a missed queen entry square. That identifies the useful repair."
+        ]
+      },
+      {
+        "heading": "Separate a queen fork from a slower threat",
+        "paragraphs": [
+          "Compare a queen fork with a move creating a threat without attacking material immediately. The former relies on collecting one target after the other is saved; the latter may need an extra tempo and allow counterplay. Making the distinction stops you overestimating an attractive queen placement. Use concrete verbs such as checks, captures or threatens mate. Saying the queen is everywhere establishes no legal way to gain anything. In review, identify the actual forced concession and whether the queen remains safe after collecting it."
+        ]
+      },
+      {
+        "heading": "Verify the queen can collect the second target",
+        "paragraphs": [
+          "Take five queen-fork puzzles and write the destination square, the two targets and the opponent's best forcing reply. Explain why collecting the second target remains safe after that reply.",
+          "Add one position where a checking queen move attacks a rook but is still wrong. Find the defensive resource that defeats it. Finish by moving back one turn and choosing a defensive improvement that reduces the number of loose targets rather than merely blocking one particular check."
+        ]
+      }
+    ],
+    "related": [
+      "spot-knight-forks-before-moving",
+      "double-attack-versus-fork",
+      "mating-net-search-escape-squares"
+    ],
+    "sources": [
+      {
+        "label": "Lichess practice: The Fork",
+        "url": "https://lichess.org/practice/fundamental-tactics/the-fork/Qj281y1p"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn's tactics library and local engine analysis support testing queen-fork lines. The exercise does not imply an in-app guarantee of safe queen activity; inspect the resulting king safety and collection move yourself before accepting a material gain.",
+    "exercise": {
+      "fen": "r5k1/7p/2p1p1PQ/4P3/p1qP2R1/Pp3P2/1P6/1K1R4 b - - 2 31",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Qc2+ · Ka1 · Qxd1+ · Qc1 · Qxc1#",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "quiet-moves-in-tactical-positions",
+    "title": "Finding the quiet move in a tactical position",
+    "description": "Find quiet tactical moves by diagnosing failed checks, repairing the attack and testing active defensive replies.",
+    "keyword": "quiet move chess tactics",
+    "cluster": "tactics",
+    "lede": "Not every winning tactic starts with check or capture. A quiet move can make an unavoidable threat, but it requires more defensive checking because the opponent is free to act.",
+    "sections": [
+      {
+        "heading": "Use forcing moves as a diagnostic first",
+        "paragraphs": [
+          "List sensible checks and captures, then find why they fail. A quiet candidate often repairs the specific defect: controlling an escape square, protecting an attacking piece, or blocking a defensive line. This is more productive than searching randomly for a subtle move.",
+          "Describe the intended next move in one sentence. If you cannot state the threat, you may be making a positional improvement rather than calculating a tactic. That can still be good chess, but the opponent's freedom must be evaluated honestly."
+        ]
+      },
+      {
+        "heading": "Test a wider family of defensive replies",
+        "paragraphs": [
+          "Because your move is not forcing by check or capture, inspect the opponent's own checks, captures and threats before assuming they will defend passively. Then consider exchanging your key attacker, opening an escape square or returning material to avoid mate.",
+          "A quiet move is strong when these replies do not resolve the central problem. It is not strong merely because the engine's answer is unexpected. Your explanation should show the common reason several defensive attempts fail, while noting any important distinct branches."
+        ]
+      },
+      {
+        "heading": "Separate prophylaxis from waiting",
+        "paragraphs": [
+          "A quiet move may prevent the only useful defensive resource. Name that resource and explain how your move stops it. Simply maintaining pressure and hoping the opponent makes a mistake is a different idea.",
+          "When reviewing your failed candidate, ask whether the threat was too slow or the defender had a counterattack. If you consistently miss quiet solutions after calculating only checks, build a habit of revisiting the escape squares and defenders that made those checks fail. The failed forcing lines become clues rather than wasted effort."
+        ]
+      },
+      {
+        "heading": "Use the failed immediate attack as a clue",
+        "paragraphs": [
+          "Quiet tactical moves often make sense only after a defender's resource is identified. The attack may need a supporting piece protected or an escape square covered before a checking line works. Do not invent a move sequence to fit that story. Use the legal branches in your exercise and compare the failed immediate attack with the prepared one. The difference should explain why the quiet move is necessary and which defensive option it removes. Otherwise, you may remember the answer while missing the problem that made it useful."
+        ]
+      },
+      {
+        "heading": "Repair a failed check with a quiet move",
+        "paragraphs": [
+          "Use four tactical exercises known to contain a quiet first move. First calculate one plausible check and write the precise reason it does not work. Then look for a move that fixes that reason.",
+          "For your final candidate, write at least three different defensive ideas: a countercheck, an exchange and an escape-square creation where legal. After the session, hide the quiet-move label and repeat later. Solving because the theme announced subtlety is different from noticing the need yourself."
+        ]
+      }
+    ],
+    "related": [
+      "clearance-tactics-lines-and-squares",
+      "mating-net-search-escape-squares",
+      "find-opponents-best-defence"
+    ],
+    "sources": [
+      {
+        "label": "Lichess: guided practice in tactical patterns",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn's motif-tagged tactics can help practise quiet solutions. Use local analysis to challenge the opponent's active replies, not only passive defences. A tactical exercise tests a position with a point; a normal game does not promise one exists.",
+    "exercise": {
+      "fen": "8/8/8/8/6Pp/8/4K1k1/8 w - - 1 64",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "g5 · h3 · g6",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "mating-net-search-escape-squares",
+    "title": "Build a mating net by counting escape squares",
+    "description": "Build mating nets through escape-square maps, supporting-piece roles and a complete audit of legal defensive replies.",
+    "keyword": "mating net chess training",
+    "cluster": "tactics",
+    "lede": "A mating net restricts the king until a decisive check becomes possible. Train the king's legal escape squares and the roles of supporting pieces, rather than collecting checks without a destination.",
+    "sections": [
+      {
+        "heading": "Map the king's current freedom",
+        "paragraphs": [
+          "List neighbouring squares, friendly blockers and enemy control. Separate a square that is physically empty from one the king can legally enter. Pawn control matters even if the pawn cannot advance, and a pinned enemy piece can still attack a square for king-safety purposes.",
+          "Now inspect routes beyond the first ring of squares. A check may drive the king away from danger if it opens a path toward defenders. The aim is a net that tightens, not a sequence of impressive-looking checks that escorts the king to safety."
+        ]
+      },
+      {
+        "heading": "Assign different jobs to attacking pieces",
+        "paragraphs": [
+          "One piece may deliver checks while another controls exits. Avoid moving the supporting piece merely because it can also give check. If it leaves an escape square unguarded, the whole construction may fail.",
+          "Look for a quiet move that improves coverage, but test counterchecks and exchanges carefully before choosing it. A mating threat that takes another move to execute gives the defender time to make their own threat. The urgency of the position determines whether net-building is possible."
+        ]
+      },
+      {
+        "heading": "Prove mate against the best escape",
+        "paragraphs": [
+          "For each candidate check, enumerate legal king moves, captures of the checking piece and possible blocks when the checking line allows them. Calculate the most promising defensive branch first. One surviving exit refutes a claimed forced mate.",
+          "If no mate is forced, consider whether the attack wins material or produces a safer ending. Avoid treating that as failure. A sound attack can end with a favourable exchange; forcing a nonexistent mate may throw away the actual advantage you earned."
+        ]
+      },
+      {
+        "heading": "Know when the king chase has no forced finish",
+        "paragraphs": [
+          "When the king escapes your first attempt, resist adding checks indefinitely. Return to the position before the chase and ask which route was insufficiently controlled. You may need another attacker, an exchange of a defender or a different target. Sometimes no forced mate exists. Writing that conclusion is productive analysis. It prevents sacrificing more material merely because the initial attack looked promising and you feel committed to finishing it. Compare a safe transition to material gain with the speculative continuation before choosing which result to pursue."
+        ]
+      },
+      {
+        "heading": "Assign each attacker an escape-control role",
+        "paragraphs": [
+          "Choose five attacking positions. Before calculating a checking line, write an escape map and label which attacking piece controls each usable square. Then identify the defender's best exchange of an attacker.",
+          "After solving, remove one supporting piece in your imagination and explain which escape appears. Do not analyse this altered position as a legal game continuation; use it only as a role-identification exercise. Finish by describing whether the original line forces mate or merely gains a concrete advantage."
+        ]
+      }
+    ],
+    "related": [
+      "smothered-mate-recognition-without-sacrifice-autopilot",
+      "attraction-sacrifice-mating-square",
+      "double-check-legal-defences"
+    ],
+    "sources": [
+      {
+        "label": "Lichess: guided practice in tactical patterns",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn's tactical exercises and local analysis can test mating lines. Use the board to confirm every legal defensive option, and distinguish a forced mate from an engine advantage. The app is a trainer, not a guarantee that a king attack must succeed.",
+    "exercise": {
+      "fen": "r3q2k/p1pn4/1p1p1pp1/3P1NQ1/2P3p1/8/PP2PP2/R3K3 w Q - 0 24",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Qh6+ · Kg8 · Qg7#",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "smothered-mate-recognition-without-sacrifice-autopilot",
+    "title": "Smothered mate: recognise the cage before sacrificing",
+    "description": "Recognise smothered mates by checking the king’s cage, legal knight captures and alternatives to the tempting sacrifice.",
+    "keyword": "smothered mate pattern training",
+    "cluster": "tactics",
+    "lede": "A smothered mate relies on a king boxed in by its own pieces and checked by a knight. The famous sacrifice shape is secondary; the cage and legal escapes determine whether it works.",
+    "sections": [
+      {
+        "heading": "Inspect the king's own blockers",
+        "paragraphs": [
+          "Find which friendly pieces or pawns occupy the king's neighbouring squares. Then identify the knight's potential checking squares. The king must lack a legal capture or escape after the check; a familiar corner arrangement alone proves nothing.",
+          "A defending piece that can capture the knight breaks the idea unless it is legally prevented from doing so. Check pins, intervening pieces and attack lines individually. Do not assume every piece next to the king is helpless simply because the position resembles a known diagram."
+        ]
+      },
+      {
+        "heading": "Check whether the preliminary sacrifice is forced",
+        "paragraphs": [
+          "Some smothered-mate combinations offer a queen to force a rook beside the king. Test whether the opponent must accept with that rook, can capture with the king instead, can decline, or can interpose a different piece earlier. Each alternative changes the cage.",
+          "The knight's route also needs verification. A checking move that drives the king to a different square may ruin the intended finish. Calculate actual legal replies rather than reciting a remembered combination whose move order belongs to another position."
+        ]
+      },
+      {
+        "heading": "Learn the defensive warning",
+        "paragraphs": [
+          "From the defending side, a boxed-in king and an enemy knight near a checking square should trigger a safety review. Creating a safe exit, exchanging the knight or avoiding a forced rook capture may prevent the pattern before the sacrifice appears.",
+          "Not every cramped king needs an immediate pawn move. A pawn push can create another weakness or lose a tempo. Name the specific mating threat and test a repair against it. The preventive lesson is control of the cage, not a rule to push a pawn whenever a knight approaches."
+        ]
+      },
+      {
+        "heading": "Recognise the cage before the sacrifice exists",
+        "paragraphs": [
+          "A smothered-mate pattern can be a warning before any sacrifice is available. A knight approaching a checking square, a pinned pawn and a rook beside the king may combine only after another preparatory move. Identify that preparation in your exercise. If the defender can create a safe exit now, the eventual sacrifice may never work. This connects pattern memory with prevention instead of waiting until the final mating move is forced. Include the defender's available preparation-stopping moves in your review of how the position developed."
+        ]
+      },
+      {
+        "heading": "Mix true smothered mates with failed look-alikes",
+        "paragraphs": [
+          "Use three smothered-mate exercises and two look-alikes where the pattern fails. Before solving each, list every legal response to the final knight check. For a successful example, that list should be empty.",
+          "For the failed examples, identify the one changed detail: an escape square, an unpinned defender, or an alternative capture of the offered piece. Write why that detail matters. This comparison builds reliable recognition while discouraging automatic queen sacrifices based only on visual resemblance."
+        ]
+      }
+    ],
+    "related": [
+      "mating-net-search-escape-squares",
+      "double-check-legal-defences",
+      "attraction-sacrifice-mating-square"
+    ],
+    "sources": [
+      {
+        "label": "Lichess: guided practice in tactical patterns",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn's tactical library can support mating-pattern practice, with engine checking on the device. Verify that the mating move is legal and every defence is excluded; recognising the pattern's name is not the same as proving the combination.",
+    "exercise": {
+      "fen": "2B2rk1/2q1bppp/2np4/p1p1p3/1pP1P3/1P1n4/PB1N1PPP/RQ4RK b - - 1 22",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Nxf2#",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "attraction-sacrifice-mating-square",
+    "title": "Attraction sacrifices: prove the king must enter the mating square",
+    "description": "Test attraction sacrifices by naming the desired destination, calculating refusals and proving the final mating position.",
+    "keyword": "attraction mate chess",
+    "cluster": "tactics",
+    "lede": "An attraction sacrifice tries to bring the king or another defender onto a vulnerable square. Start with the desired destination and work backward, then test every legal way the opponent can avoid it.",
+    "sections": [
+      {
+        "heading": "Define the destination and the follow-up",
+        "paragraphs": [
+          "Name the square you want the enemy king to occupy. Explain why it is worse than its current square: a mating net, a fork, an opened diagonal or blocked escape routes. Without a concrete follow-up, an offered piece is only an invitation to capture.",
+          "Do not conflate attraction with a chase. A series of checks may drive the king along a path, but each choice of destination must be calculated. The opponent selects the safest legal square, not the square that makes your final idea look best."
+        ]
+      },
+      {
+        "heading": "Calculate all responses to the offer",
+        "paragraphs": [
+          "If the sacrifice is check, examine king moves, captures and interpositions permitted by the checking piece. If it is not check, include counterchecks, exchanges and immediate threats elsewhere. The attraction only works if the opponent cannot avoid the damaging destination without another concrete concession.",
+          "When more than one piece can capture, check each resulting position. A rook accepting on the target square may block an escape; a queen accepting may retain enough defensive reach. The identity of the capturing piece is part of the tactic."
+        ]
+      },
+      {
+        "heading": "Do the final mating audit independently",
+        "paragraphs": [
+          "Once the desired position is reached, recalculate the mate from scratch. Check the king's captures and escape squares, the protection of your checking piece and any legal blocks. It is easy to become so attached to the sacrifice that you stop questioning the finish.",
+          "If the sacrifice yields an attack rather than forced mate, describe it that way. A training note should distinguish a verified forced sequence from a promising practical idea. That distinction helps avoid donating material in ordinary games where no puzzle setter guarantees a winning continuation."
+        ]
+      },
+      {
+        "heading": "Explain different accepting branches separately",
+        "paragraphs": [
+          "Compare different reasons an offered piece might be untouchable. One capture may force a king onto a fatal square; another may open a line against a queen or leave a defender overloaded. Record the actual reason in each branch. A combination can mix attraction with other motifs without fitting one pure label. The label should guide search and explanation, not exclude defensive moves because they belong to another chapter. Accurate calculation is more valuable than deciding that the entire sequence must be classified under one name."
+        ]
+      },
+      {
+        "heading": "Name the forced destination and test refusals",
+        "paragraphs": [
+          "Take four attraction exercises. Write the desired destination before the first move, then list two ways the defender might try to refuse it. Calculate those branches before the attractive accepting line.",
+          "After solving, write the exact reason the final square is fatal. Use a verbal feature such as blocked exits or a newly opened diagonal rather than merely saying 'mate follows'. Revisit one unsuccessful attraction attempt from your own completed games and look for the missing forced response."
+        ]
+      }
+    ],
+    "related": [
+      "deflection-versus-decoy",
+      "mating-net-search-escape-squares",
+      "smothered-mate-recognition-without-sacrifice-autopilot"
+    ],
+    "sources": [
+      {
+        "label": "Lichess practice: Attraction",
+        "url": "https://lichess.org/practice/advanced-tactics/attraction/jOZejFWk"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn offers tactical positions and local engine analysis for checking attraction ideas. This study method asks you to justify the forced destination yourself; it does not claim a new sacrifice-generation feature or an assurance that speculative attacks are correct.",
+    "exercise": {
+      "fen": "3r2k1/5p1p/pp3Rp1/8/8/8/5PKP/1B1r2R1 b - - 2 33",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Rxg1+ · Kxg1 · Rd1+ · Kg2 · Rxb1",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "double-attack-versus-fork",
+    "title": "Double attack or fork? Use the wider search when no piece hits twice",
+    "description": "Compare single-piece forks with wider double attacks, then search for a defensive move that answers both threats.",
+    "keyword": "double attack vs fork chess",
+    "cluster": "tactics",
+    "lede": "A fork is one kind of double attack, but two simultaneous problems need not come from the same piece. Widening the search helps you find threats that a piece-by-piece fork scan misses.",
+    "sections": [
+      {
+        "heading": "Describe two separate obligations",
+        "paragraphs": [
+          "A fork usually means a single piece attacks two or more targets. A broader double attack can combine threats from different pieces, or a material attack with a mating threat. State what the defender must answer in each case.",
+          "The vocabulary matters less than the two obligations. 'My queen attacks a rook and my bishop threatens mate' is useful. 'I have lots of pressure' is not. Two attacks on the same well-defended point may simply be increased pressure rather than two incompatible defensive problems."
+        ]
+      },
+      {
+        "heading": "Look for one defensive move that solves both",
+        "paragraphs": [
+          "Before calling a double attack decisive, search for a queen exchange, a checking counterattack, or a retreat that also adds protection. The opponent may move one target while defending the other. A move that looks like two threats can still have a single efficient answer.",
+          "Calculate the threats in priority order. A mating threat is usually more urgent than losing a pawn, but an immediate countercheck can postpone both. Force comes from the actual legal sequence, not from the number of arrows you can draw."
+        ]
+      },
+      {
+        "heading": "Train beyond obvious checking forks",
+        "paragraphs": [
+          "Use positions where a developing move both attacks a piece and opens a rook's file, or where a pawn push creates a direct threat while removing a defender. Explain how the move changes the board in two ways.",
+          "From the defending side, loose pieces and a vulnerable king make double attacks easier. Improving the coordination of one piece may remove several combinations at once. Review the earlier positional decision that created the two weaknesses, rather than remembering only the final tactical blow."
+        ]
+      },
+      {
+        "heading": "Test the move that claims to solve both threats",
+        "paragraphs": [
+          "A double attack can be prevented by coordinating two loose targets, but coordination needs a tactical check. A queen retreat protecting a rook might step into a pin or leave the king unguarded. Test the shared defence as an actual move, not an abstract promise that both pieces will be safe. Describe the relationship that failed: a blocked diagonal, an attacked defender or a countercheck interrupting the defensive actions. This makes the lesson usable when the same coordination problem appears with different pieces in a later game."
+        ]
+      },
+      {
+        "heading": "Find the shared defence to two obligations",
+        "paragraphs": [
+          "Build a mixed set of six exercises: three single-piece forks and three broader double attacks. Before solving, label the two defensive obligations. Then actively search for a move that would answer both.",
+          "After the solution, explain why that shared defence fails or does not exist. Repeat the set without category hints. If you identify forks reliably but miss threats involving two pieces, spend the next session tracing lines opened by a move instead of only the moving piece's attacks."
+        ]
+      }
+    ],
+    "related": [
+      "spot-knight-forks-before-moving",
+      "queen-forks-checks-and-loose-targets",
+      "overloaded-defender-duties"
+    ],
+    "sources": [
+      {
+        "label": "Lichess practice: The Fork",
+        "url": "https://lichess.org/practice/fundamental-tactics/the-fork/Qj281y1p"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn's motif-tagged tactics provide a starting point for this mixed practice. Use local analysis to check whether one defensive move answers both threats. The exercise is about calculation, not a promise that every multi-purpose move wins material.",
+    "exercise": {
+      "fen": "7r/5k2/3R1P2/4p1P1/4R2p/P1P3nN/1P1K4/8 b - - 0 37",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Nxe4+ · Ke3 · Nxd6",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "defensive-tactics-find-the-saving-move",
+    "title": "Defensive tactics: search for the saving move before resigning",
+    "description": "Train defensive tactics with counterchecks, exchanges, material returns and an accurate statement of the opponent’s threat.",
+    "keyword": "defensive tactics chess training",
+    "cluster": "tactics",
+    "lede": "Tactics are not only ways to win material. A forcing exchange, countercheck or intermediate move can save a position that appears lost. Train defensive resources deliberately instead of practising attacks alone.",
+    "sections": [
+      {
+        "heading": "State the threat accurately",
+        "paragraphs": [
+          "Write what the opponent intends and how soon it happens. Distinguish immediate mate from a threat to win a piece. If you misidentify the urgency, you may waste time protecting material while missing mate or give away a queen to stop a harmless threat.",
+          "Check whether the threatened move is legal and whether it actually works. Sometimes the strongest defence is an active move because the opponent's apparent threat fails tactically. Do not assume every dramatic-looking attack must be answered by retreating."
+        ]
+      },
+      {
+        "heading": "Search forcing resources before passive repairs",
+        "paragraphs": [
+          "Look for counterchecks, captures of attacking pieces and exchanges that simplify the position. A zwischenzug can change the move order; a sacrifice can remove a mating piece or open an escape square. Evaluate the resulting position, not just the immediate material loss.",
+          "If no forcing resource works, compare quieter defences such as returning material, blocking a line, moving the king or adding a defender. The best practical repair may accept a small disadvantage to avoid a forced loss. Saving everything is not always possible."
+        ]
+      },
+      {
+        "heading": "Separate survival from equality",
+        "paragraphs": [
+          "An engine may prefer a line that remains worse but avoids mate. Record the achievement precisely: escaped a forced mating net, reduced the material loss, or reached a drawable ending if that assessment is actually verified. Do not label every good defensive move an equaliser.",
+          "After the game, find the last moment when a normal preventive move was available. Tactical survival is valuable, but repeatedly relying on miraculous resources can hide a structural weakness in your play. Work on both the emergency move and the earlier cause of the crisis."
+        ]
+      },
+      {
+        "heading": "Return material when it secures survival",
+        "paragraphs": [
+          "Defensive training should include positions where returning material is correct. Players often reject a sound exchange because it gives back part of an earlier gain, then lose everything to an attack. Compare the concession with the position you can reach afterward. If the smaller advantage is secure and the king safe, the defence may succeed. Use precise descriptions rather than treating material preserved at any cost as the only acceptable outcome. Save a position where voluntary simplification gives a safer result than attempting to keep every pawn."
+        ]
+      },
+      {
+        "heading": "Compare one forcing and one quiet defence",
+        "paragraphs": [
+          "Choose five completed positions where you were under pressure. Write the opponent's threat, one forcing defence and one quiet defence. Compare them before turning on analysis.",
+          "For each position, keep the strongest opponent reply, even if it spoils your first idea. Record whether your final choice saves the game, reduces the damage or fails. In the next session, solve from the attacking side to understand which defensive resource an effective attack must prevent."
+        ]
+      }
+    ],
+    "related": [
+      "back-rank-weakness-safety-check",
+      "zwischenzug-before-recapture",
+      "find-opponents-best-defence"
+    ],
+    "sources": [
+      {
+        "label": "Lichess: guided practice in tactical patterns",
+        "url": "https://lichess.org/practice"
+      },
+      {
+        "label": "Chess.com: official tactics lessons",
+        "url": "https://www.chess.com/lessons/tactics"
+      }
+    ],
+    "appFit": "Brass Pawn's local engine and training positions can help examine defensive resources after play. Feedback is position-based rather than a conversational coach. Do not consult analysis while playing an online opponent; use completed games and dedicated training sessions.",
+    "exercise": {
+      "fen": "8/8/8/8/3r2p1/4k1P1/2R3K1/8 b - - 3 64",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Rd2+ · Rxd2 · Kxd2 · Kf2 · Kd3",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "calculate-forcing-lines-without-tunnel-vision",
+    "title": "Calculate forcing lines without following checks blindly",
+    "description": "Calculate forcing chess lines by selecting purposeful candidates, testing best defence and evaluating a stable final position.",
+    "keyword": "chess calculation forcing moves",
+    "cluster": "calculation",
+    "lede": "Checks, captures and threats are a useful candidate filter, not a command to play the first forcing move. A reliable calculation routine tests urgency, best defence and the position where the forcing sequence ends.",
+    "sections": [
+      {
+        "heading": "Choose candidates with a purpose",
+        "paragraphs": [
+          "Start by asking what changed after the opponent's move. Is a piece loose, a king exposed, or a line newly opened? Then list a small number of forcing candidates tied to those features. Calculating every possible check wastes attention when most have no useful follow-up.",
+          "Rank candidates by what they could achieve: mate, material, safer king or a favourable ending. This gives the search a stopping question. A forcing move that produces no improvement should not remain your favourite merely because it was easy to calculate."
+        ]
+      },
+      {
+        "heading": "Alternate threats with the opponent’s best defence",
+        "paragraphs": [
+          "After each candidate, search the opponent's checks, captures and strongest defensive resource. Do not follow only the reply you hope to see. If one refutation defeats the move, return to the original position rather than polishing a losing branch.",
+          "Keep the board state exact. Identify which pieces have moved, which lines opened and who is to move. When two branches become confused, restart from the original position. Combining a favourable feature from one branch with a move from another creates an imaginary solution."
+        ]
+      },
+      {
+        "heading": "Evaluate the resulting quiet position",
+        "paragraphs": [
+          "A forcing line has value because of the position it reaches. Count the material, inspect king safety, identify remaining immediate threats and consider whose pieces are active. Stop calculating only when these features are stable enough to judge.",
+          "If the line ends while a queen is still attacked or a recapture is pending, the evaluation is premature. Equally, do not extend a clear winning exchange through arbitrary quiet moves simply to make the variation longer. Calculate to a decision, not to a target number of moves."
+        ]
+      },
+      {
+        "heading": "Give each forcing move a concrete purpose",
+        "paragraphs": [
+          "Keep the purpose of each check visible. Does it win development time, expose a target, remove an escape square or force an exchange? A check helping the defender improve the king can be counterproductive. Likewise, a capture may release tension and activate an enemy rook. Write the changed feature after each forcing move. Stop a branch when the sequence no longer serves the original plan. This prevents a long string of legal checks from being mistaken for a coherent attack that improves the position against best defence."
+        ]
+      },
+      {
+        "heading": "Limit candidates and classify calculation errors",
+        "paragraphs": [
+          "Use four tactical positions and limit yourself initially to three candidate moves each. Write the intended result beside each candidate. Calculate the strongest defence to the most promising move before exploring weaker replies.",
+          "After checking, classify the mistake: missing candidate, wrong defensive reply, lost board state or bad final evaluation. This classification makes the next practice task specific. More time spent calculating the same faulty tree is less useful than correcting the particular stage where it broke."
+        ]
+      }
+    ],
+    "related": [
+      "find-opponents-best-defence",
+      "chess-board-visualization-calculation",
+      "when-to-stop-calculating-a-chess-line"
+    ],
+    "sources": [
+      {
+        "label": "Chess.com: Calculation With Dvoretsky",
+        "url": "https://www.chess.com/lessons/calculation-with-dvoretsky"
+      },
+      {
+        "label": "Lichess: analysis board for checking legal branches",
+        "url": "https://lichess.org/analysis"
+      }
+    ],
+    "appFit": "Brass Pawn's tactical exercises and local engine analysis can challenge forcing lines you calculate yourself. The app's answer is feedback after the attempt, not a replacement for selecting candidates and tracking the board. Keep engine use outside live online games.",
+    "exercise": {
+      "fen": "2kr4/pppr4/3q2p1/4Qp2/3P4/1PP1P3/P2RNPPP/3R2K1 b - - 0 22",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Qxe5 · dxe5 · Rxd2 · Rxd2 · Rxd2",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "find-opponents-best-defence",
+    "title": "Find the opponent’s best defence before trusting your combination",
+    "description": "Strengthen calculation by finding the opponent’s best defence, checking hidden assumptions and rejecting unsound combinations early.",
+    "keyword": "chess calculation best defence",
+    "cluster": "calculation",
+    "lede": "A combination that works against a natural reply may fail against a better one. Improve calculation by treating your opponent as a resourceful defender, not a partner helping your idea succeed.",
+    "sections": [
+      {
+        "heading": "Adopt the defender’s objective",
+        "paragraphs": [
+          "After choosing a candidate, stop thinking about your desired finish. Ask what the defender needs: escape mate, exchange queens, preserve a key defender or return material for safety. This often reveals moves that are unattractive in general but necessary in the specific position.",
+          "List forcing counterplay first. A countercheck can interrupt a mating threat; an intermediate capture can change the exchange order. Then search quieter resources such as blocking a line, creating an escape square or moving a target while defending another."
+        ]
+      },
+      {
+        "heading": "Use one refutation efficiently",
+        "paragraphs": [
+          "If a single legal reply defeats your candidate, you do not need to calculate every other response before rejecting it. Save the refutation, return to the initial board and try the next candidate. This prevents emotional attachment to a beautiful but unsound attack.",
+          "When your first move survives, deepen the strongest defensive branch before examining cooperative alternatives. A variation that wins quickly against a blunder teaches less about the move's reliability than the difficult branch where the defender returns material or avoids the obvious capture."
+        ]
+      },
+      {
+        "heading": "Review assumptions rather than only moves",
+        "paragraphs": [
+          "Write the assumption that made your failed line look forced. Examples include 'the queen must capture', 'the king has only one square', or 'this defender cannot move'. Then verify that assumption directly on the board.",
+          "A good calculation note explains why the strongest defence fails, not just what the principal variation was. If you cannot give that explanation after seeing the answer, repeat the position later. The aim is to improve your ability to challenge an idea before playing it in a real game."
+        ]
+      },
+      {
+        "heading": "Reconstruct the strongest defensive resource",
+        "paragraphs": [
+          "Hide the final answer after checking it and reconstruct only the defender's strongest resource. Explain why the winning candidate still works against that move. If you remember the first move but cannot answer the challenge, your knowledge is incomplete. Repeat from the defensive side on another day. This tests whether you learned a robust line or merely associated a diagram with a striking move. Keep the exact point where your original assumption failed, so the review repairs that assumption rather than merely repeating the right answer."
+        ]
+      },
+      {
+        "heading": "Search defensive resources before the attack",
+        "paragraphs": [
+          "Take five puzzles you previously solved incorrectly. Before calculating the attack again, spend a short separate interval finding the defender's resources. Write at least one counterattack and one simplifying idea where legal.",
+          "Then solve and compare the refutations you considered with the actual critical reply. Count a success only when your winning move survives the strongest defence you found. Keep positions where no forced win exists as well; learning to reject a combination is part of tactical strength."
+        ]
+      }
+    ],
+    "related": [
+      "calculate-forcing-lines-without-tunnel-vision",
+      "zwischenzug-before-recapture",
+      "defensive-tactics-find-the-saving-move"
+    ],
+    "sources": [
+      {
+        "label": "Chess.com: Calculation With Dvoretsky",
+        "url": "https://www.chess.com/lessons/calculation-with-dvoretsky"
+      },
+      {
+        "label": "Lichess: analysis board for checking legal branches",
+        "url": "https://lichess.org/analysis"
+      }
+    ],
+    "appFit": "Use Brass Pawn's on-device engine to challenge defensive branches after your own analysis. Its role is to test a position, not to provide human-like dialogue. Training against best defence also does not justify receiving engine assistance during online play.",
+    "exercise": {
+      "fen": "4Rbr1/p4N1p/kpp3p1/8/6P1/5P2/PPP4P/2K5 b - - 1 30",
+      "prompt": "Calculate a candidate continuation without moving the pieces. Look for the tactical idea, consider the opponent’s reply, then compare your calculation with the recorded line.",
+      "line": "Bh6+ · Nxh6 · Rxe8",
+      "source": "Lichess CC0 puzzle database; position from Brass Pawn’s curated training data",
+      "sourceUrl": "https://database.lichess.org/#puzzles"
+    }
+  },
+  {
+    "slug": "chess-board-visualization-calculation",
+    "title": "Board visualization for chess calculation: track changes, not pictures",
+    "description": "Improve board visualization through short legal sequences, accurate change tracking and checks for mixed-up calculation branches.",
+    "keyword": "chess board visualization exercises",
+    "cluster": "calculation",
+    "lede": "Calculation errors often come from an inaccurate imagined board rather than a missed idea. Train the changes after each move: occupied squares, open lines, captured pieces and the side to move.",
+    "sections": [
+      {
+        "heading": "Maintain a small change ledger",
+        "paragraphs": [
+          "Begin with a short legal sequence from a real completed position. After each move, state which square was vacated, which was occupied and whether a capture occurred. Also note newly opened rook, bishop or queen lines. This anchors the imagined position in concrete changes.",
+          "You do not need a photorealistic mental board. Some players rely more on coordinates and relationships. The useful test is whether you can answer legal questions accurately: which piece attacks a square, whether a line is blocked, and whose turn it is."
+        ]
+      },
+      {
+        "heading": "Stop when two branches merge in your mind",
+        "paragraphs": [
+          "When considering an alternative reply, return explicitly to the branching position. Restore the pieces that moved in the previous line before analysing the new one. A common error is retaining an open diagonal from a capture that has not happened in the current branch.",
+          "Keep the initial practice short enough that accuracy is possible. Extending a sequence while forgetting a captured defender trains guessing rather than visualization. Increase length only when you can reconstruct the position consistently without moving the pieces on the board."
+        ]
+      },
+      {
+        "heading": "Test relationships after reconstruction",
+        "paragraphs": [
+          "After a few plies, name every piece attacking a chosen square and list the legal captures for the side to move. These questions reveal errors that a vague impression of the board may conceal. Then replay the sequence physically or on an analysis board to check.",
+          "Record the type of mismatch: a piece left on its starting square, an overlooked capture, a phantom open line or wrong turn order. Use the next exercise to target that specific error. Blind repetition of longer variations is less informative than a short accurate reconstruction."
+        ]
+      },
+      {
+        "heading": "Shorten the line until reconstruction is accurate",
+        "paragraphs": [
+          "Do not confuse a difficult visualization exercise with a useful one. If you lose track after two moves, shorten the line and confirm every changed square. A longer sequence with a guessed final board reinforces inaccurate habits. Use captures first because the changes are concrete, then introduce quiet moves reopening lines or altering defence. Record accuracy before adding speed. You are training a reliable representation of legal positions, not performing a memory trick. The successful progression is from short correct reconstructions toward longer equally reliable ones."
+        ]
+      },
+      {
+        "heading": "Reconstruct short legal branches independently",
+        "paragraphs": [
+          "Choose three completed-game positions with simple forcing sequences. Calculate a brief branch, close your eyes if comfortable, and describe the resulting board changes aloud. Reconstruct it on the board before checking any evaluation.",
+          "Next analyse a different defensive reply from the same starting point. Confirm that no piece placement from the first branch remains by accident. Avoid invented move strings: use recorded legal moves or verify each move on the board before making it a visualization exercise."
+        ]
+      }
+    ],
+    "related": [
+      "calculate-forcing-lines-without-tunnel-vision",
+      "find-opponents-best-defence",
+      "when-to-stop-calculating-a-chess-line"
+    ],
+    "sources": [
+      {
+        "label": "Chess.com: Calculation With Dvoretsky",
+        "url": "https://www.chess.com/lessons/calculation-with-dvoretsky"
+      },
+      {
+        "label": "Lichess: analysis board for checking legal branches",
+        "url": "https://lichess.org/analysis"
+      }
+    ],
+    "appFit": "Brass Pawn's board and local analysis can support replay and checking of positions. This exercise does not claim a dedicated blindfold mode or custom visualization tracker. Use short legal sequences from training or completed games, with accuracy taking priority over length."
+  },
+  {
+    "slug": "when-to-stop-calculating-a-chess-line",
+    "title": "When to stop calculating: look for a stable position",
+    "description": "Learn when to stop calculating by resolving forcing actions, checking stability and distinguishing evaluation errors from missed tactics.",
+    "keyword": "when to stop calculating chess",
+    "cluster": "calculation",
+    "lede": "Stopping too early hides tactics; continuing too long wastes time. A practical stopping point is a position where immediate forcing actions are resolved and you can make a defensible comparison with your alternatives.",
+    "sections": [
+      {
+        "heading": "Do not evaluate in the middle of an exchange",
+        "paragraphs": [
+          "If a piece is attacked, a recapture is pending or a mating threat needs an answer, the position is not quiet enough for a simple material count. Continue through the forcing action before deciding who benefits. A temporary extra rook can disappear on the very next move.",
+          "This resembles the problem addressed by quiescence search in chess engines, but a human routine is not the same algorithm. Use the idea as a warning against judging an unstable position, not as a reason to imitate an engine's search mechanically."
+        ]
+      },
+      {
+        "heading": "Use a short stability checklist",
+        "paragraphs": [
+          "At the end of a line, inspect checks, profitable captures and direct threats for both sides. Then count material and compare king safety, piece activity and pawn structure. If one forcing reply changes the assessment, calculate it before stopping.",
+          "A position need not be completely peaceful. Many middlegames retain threats indefinitely. The question is whether the remaining threats are immediate and concrete enough to overturn your decision. If not, evaluate the position and compare the next candidate rather than extending speculative quiet moves endlessly."
+        ]
+      },
+      {
+        "heading": "Match depth to the decision",
+        "paragraphs": [
+          "A forcing king attack demands more concrete calculation than choosing between two useful rook placements. Spend time where an error is irreversible or tactically decisive. There is no universal number of moves that makes a line sufficiently deep.",
+          "During review, mark where your original calculation stopped and what the first missed move was. If the refutation was an immediate capture, the stability check failed. If the resulting position was quiet but strategically poor, the problem was evaluation. Those diagnoses lead to different exercises."
+        ]
+      },
+      {
+        "heading": "Allocate calculation time to the actual danger",
+        "paragraphs": [
+          "Clock management belongs to this decision too. In a real game, a stable position after a sound exchange may be enough to choose a move without exhausting distant possibilities. A direct mating attack deserves a more exact check. Compare time spent with the consequence of getting the position wrong. This distinguishes useful caution from repeated recalculation caused by uncertainty about the board. Address that uncertainty through shorter, accurate visualization exercises rather than assuming every difficult decision requires a much deeper search of unrelated quiet moves."
+        ]
+      },
+      {
+        "heading": "Explain why the final position is stable",
+        "paragraphs": [
+          "Use five positions from completed games. Calculate one candidate until you believe the result is stable, then write why you stopped. Before checking, search one more time for the opponent's strongest check, capture and threat.",
+          "Compare the final board with your original evaluation. Keep separate notes for premature stopping and unnecessary extension. A useful training result is better judgment about when another move matters, not a longer variation sheet or a claim to calculate a fixed depth every turn."
+        ]
+      }
+    ],
+    "related": [
+      "calculate-forcing-lines-without-tunnel-vision",
+      "chess-board-visualization-calculation",
+      "evaluate-material-imbalances"
+    ],
+    "sources": [
+      {
+        "label": "Chess.com: Calculation With Dvoretsky",
+        "url": "https://www.chess.com/lessons/calculation-with-dvoretsky"
+      },
+      {
+        "label": "Lichess: analysis board for checking legal branches",
+        "url": "https://lichess.org/analysis"
+      }
+    ],
+    "appFit": "Brass Pawn's local analysis can reveal a tactical continuation beyond your stopping point. Use it after your attempt to diagnose the miss. Engine search depth and human calculation length are different measures; neither alone proves that a positional judgment is correct."
+  },
+  {
+    "slug": "evaluate-material-imbalances",
+    "title": "Evaluate material imbalances without relying on a points total",
+    "description": "Evaluate material imbalances using the final inventory, king safety, activity, pawn structure and the opponent’s simplifying resources.",
+    "keyword": "material imbalance chess evaluation",
+    "cluster": "calculation",
+    "lede": "Piece values are a starting estimate, not a verdict. An exchange sacrifice or an uneven set of minor pieces must be judged with king safety, activity, pawn structure and the possibility of simplification.",
+    "sections": [
+      {
+        "heading": "Finish the forcing sequence first",
+        "paragraphs": [
+          "Before evaluating an imbalance, resolve immediate checks, hanging pieces and recaptures. Counting a rook against a bishop while the rook is trapped gives a misleading picture. Write the actual remaining material for both sides, including pawns.",
+          "Use familiar point values to orient yourself, then ask what the pieces can do. A bishop with open diagonals and a secure king can offer different compensation from a bishop blocked behind fixed pawns. The same material balance can support opposite judgments in different positions."
+        ]
+      },
+      {
+        "heading": "Check three practical resources",
+        "paragraphs": [
+          "First inspect king safety: can the side with extra material consolidate, or must it answer a forcing attack? Next inspect activity: do the pieces have useful squares and targets? Finally inspect pawn structure, including passed pawns, weaknesses and potential breaks.",
+          "Do not count vague initiative as permanent compensation. Ask what happens if the opponent exchanges queens or returns a little material. If the attacking chances vanish and the remaining ending is poor, the sacrifice requires a concrete reason to work now rather than a hopeful description."
+        ]
+      },
+      {
+        "heading": "Compare the imbalance with your alternative",
+        "paragraphs": [
+          "A sacrifice need not produce an objectively winning position to be your best move; it may be the best defence in a difficult situation. Equally, a spectacular attack can be unnecessary when a simple exchange preserves a clear advantage. Compare realistic candidate outcomes.",
+          "When checking with an engine, examine the recommended defensive resource and resulting position rather than copying a numerical evaluation. If the engine keeps the balance through a precise sequence you did not see, that is useful information about the practical difficulty, not proof that the compensation was obvious."
+        ]
+      },
+      {
+        "heading": "Identify who can force simplification",
+        "paragraphs": [
+          "Notice which side can choose simplification. A material advantage may be hard to use if the opponent controls every exchange, while compensation can shrink when the defending side forces queen trades. Identify one realistic exchange each player would welcome. This makes evaluation actionable: you know what to seek and avoid. It also prevents treating the imbalance as fixed when the next decision can transform it. Compare those transformed positions instead of carrying the initial material judgment unchanged through every exchange that occurs in your analysis."
+        ]
+      },
+      {
+        "heading": "Write an inventory and test a simplifying move",
+        "paragraphs": [
+          "Choose three completed positions with unequal material. Write the inventory and one sentence each about king safety, activity and pawn structure. Predict which exchanges help each side.",
+          "Then analyse the opponent's most useful simplifying move. Reassess the compensation after that exchange instead of keeping your initial judgment unchanged. Save examples where the same nominal balance leads to different plans. Comparing those differences teaches more than memorising a rule that a particular collection of pieces always beats another."
+        ]
+      }
+    ],
+    "related": [
+      "when-to-stop-calculating-a-chess-line",
+      "bishop-versus-knight-trade-decision",
+      "king-safety-versus-piece-activity"
+    ],
+    "sources": [
+      {
+        "label": "Chess.com: Calculation With Dvoretsky",
+        "url": "https://www.chess.com/lessons/calculation-with-dvoretsky"
+      },
+      {
+        "label": "Lichess: analysis board for checking legal branches",
+        "url": "https://lichess.org/analysis"
+      }
+    ],
+    "appFit": "Brass Pawn's local engine can help test concrete continuations in unbalanced positions, while its training modes offer positions for judgment. Engine feedback does not turn standard point values into guarantees or provide a conversational explanation of every compensation claim."
+  },
+  {
+    "slug": "rook-open-file-plan",
+    "title": "Open files for rooks: find an entry square before doubling",
+    "description": "Use open files with a concrete entry square and target; compare rook doubling, exchanges and the opponent’s challenge.",
+    "keyword": "open files rooks chess",
+    "cluster": "positional-play",
+    "lede": "An open file is useful because it can lead somewhere. Before doubling rooks, find the entry square, evaluate exchanges and check whether the opponent can contest the route.",
+    "sections": [
+      {
+        "heading": "Identify access rather than ownership",
+        "paragraphs": [
+          "A file without pawns is open, but placing a rook there does not mean you control it. Check which squares the rook can reach, what protects those squares and whether an opposing rook can exchange or challenge it. A file with no safe entry may offer little immediate value.",
+          "Distinguish an open file from a half-open one, where only one side has a pawn. The pawn at the far end can be a target, but it can also block invasion. Your plan should state whether you are attacking that pawn or trying to enter behind it."
+        ]
+      },
+      {
+        "heading": "Compare doubling with improving another piece",
+        "paragraphs": [
+          "Doubling can increase pressure, yet it may take several moves. Ask what the opponent will do during that time. A knight outpost, king attack or central pawn break might be more urgent than arranging rooks on a file that remains closed at the far end.",
+          "Before exchanging rooks, inspect which side benefits from simplification. Trading the only opposing rook may leave an invasion; trading your active rook for a passive defender may remove your pressure. The exchange decision depends on resulting access, not just a rule to keep active pieces."
+        ]
+      },
+      {
+        "heading": "Connect the file to a target",
+        "paragraphs": [
+          "A useful rook plan names an entry square and what it attacks afterward: a weak pawn, a king's second rank or a route across the seventh rank. Check the lateral moves available after invasion. Reaching an advanced square without targets or retreat routes may accomplish little.",
+          "If the file cannot be used, consider a pawn break that creates another route. Do not force an invasion through defended squares merely because you invested time in doubling. A plan is allowed to change when the opponent successfully contests its original purpose."
+        ]
+      },
+      {
+        "heading": "Distinguish file pressure from forced invasion",
+        "paragraphs": [
+          "A file can restrain the opponent without allowing immediate invasion. The defender may need to keep a rook passive to stop an entry. Distinguish that restriction from a forced breakthrough. If the defender reorganises easily, the pressure may evaporate. Compare immediate doubling with improving a piece that could support later entry. The better choice depends on the opponent's next action. Explain the cost of maintaining the defensive barrier, rather than claiming the file belongs to you solely because both rooks currently occupy it."
+        ]
+      },
+      {
+        "heading": "Name the rook entry square and its target",
+        "paragraphs": [
+          "Choose four middlegame positions with an open file. Before moving a rook, write a possible entry square, a target after entry and the opponent's best challenge.",
+          "Compare a rook move with one useful non-rook move. Explain which makes more progress over the next two turns. After analysis, note whether your mistake concerned access, move order or evaluation of an exchange. This produces a practical plan instead of the empty instruction 'put rooks on open files'."
+        ]
+      }
+    ],
+    "related": [
+      "knight-outpost-test",
+      "choose-the-right-pawn-break",
+      "improve-your-worst-piece"
+    ],
+    "sources": [
+      {
+        "label": "Chess.com: official strategy lessons",
+        "url": "https://www.chess.com/lessons/strategy"
+      },
+      {
+        "label": "Brass Pawn: positional training and product features",
+        "url": "https://brasspawn.com/training"
+      }
+    ],
+    "appFit": "Brass Pawn's positional exercises and local engine analysis can help compare rook placements. The app has a finite positional library; this guide does not claim every file structure has a dedicated lesson. Check your plan in the actual position after training."
+  },
+  {
+    "slug": "knight-outpost-test",
+    "title": "Is that knight square really an outpost?",
+    "description": "Test knight outposts through pawn challenges, possible exchanges, useful targets and the time needed to reach the square.",
+    "keyword": "knight outpost chess",
+    "cluster": "positional-play",
+    "lede": "A central knight looks impressive, but an outpost must be useful and difficult to challenge. Test pawn attacks, exchanges, supporting pieces and concrete targets before spending time on a knight tour.",
+    "sections": [
+      {
+        "heading": "Check whether a pawn can challenge the square",
+        "paragraphs": [
+          "An outpost is usually a secure advanced square supported by your structure and difficult for opposing pawns to attack. Examine not only current pawn attacks but also legal pawn advances and exchanges that change the picture. A square can be safe now and vulnerable after one thematic break.",
+          "Ask what the opponent gives up by challenging it. A pawn move might dislodge the knight but create a weak square elsewhere. Conversely, an easy pawn advance that gains space and attacks the knight suggests your destination is temporary rather than a durable outpost."
+        ]
+      },
+      {
+        "heading": "Count exchanges and useful targets",
+        "paragraphs": [
+          "A knight cannot be called permanent merely because pawns cannot attack it. The opponent may exchange it with a bishop or another knight. Decide whether that exchange benefits you by changing the pawn structure, opening a file or removing an important defender.",
+          "Then list what the knight attacks from the square. A protected knight with no targets may be less valuable than one on a modest square defending the king or supporting a pawn break. Activity is a relationship to the rest of the position, not a photograph of centralisation."
+        ]
+      },
+      {
+        "heading": "Price the route to the square",
+        "paragraphs": [
+          "A knight tour can take several moves and abandon a defensive responsibility. Before beginning, inspect the opponent's central break and kingside threats. An excellent destination may be too slow if the position is about to open.",
+          "After reaching the square, re-evaluate rather than refusing to move the knight on principle. A tactical opportunity or favourable exchange can justify leaving an outpost. In review, ask whether the knight helped a concrete plan, restricted an opposing piece, or merely looked pleasing while the action happened elsewhere."
+        ]
+      },
+      {
+        "heading": "Evaluate the exchange that removes your outpost",
+        "paragraphs": [
+          "Do not dismiss an exchange because it removes your impressive knight. If the recapture creates a protected passed pawn, opens a useful file or leaves a favourable ending, the outpost may have done its job by provoking that exchange. Evaluate the resulting board rather than defending the knight's status as permanent. Conversely, the opponent may tolerate the knight if it lacks targets. The practical question is what the piece contributes to a concrete plan, including whether exchanging it changes the position in a way you can use."
+        ]
+      },
+      {
+        "heading": "Audit the outpost’s challenge, exchange and targets",
+        "paragraphs": [
+          "Choose five candidate knight squares from completed positions. For each, list a pawn challenge, a possible piece exchange and two useful knight targets. If no target exists, say so explicitly.",
+          "Calculate the route to the square while allowing the opponent active replies. Compare with a simpler developing move. Revisit one example after a pawn break changes the structure, and explain why the same square becomes stronger or weaker. That comparison trains flexible judgment rather than a slogan about central knights."
+        ]
+      }
+    ],
+    "related": [
+      "bishop-versus-knight-trade-decision",
+      "weak-pawns-attackable-targets",
+      "improve-your-worst-piece"
+    ],
+    "sources": [
+      {
+        "label": "Chess.com: official strategy lessons",
+        "url": "https://www.chess.com/lessons/strategy"
+      },
+      {
+        "label": "Brass Pawn: positional training and product features",
+        "url": "https://brasspawn.com/training"
+      }
+    ],
+    "appFit": "Brass Pawn's positional training and local engine can help test a proposed knight route. Use concrete targets and counterplay in your explanation. There is no claim that the app automatically identifies every outpost or that occupying one guarantees an advantage."
+  },
+  {
+    "slug": "bishop-versus-knight-trade-decision",
+    "title": "Bishop or knight? Choose the middlegame exchange from the structure",
+    "description": "Judge bishop-for-knight middlegame trades through recapture structure, bishop-pair activity, king safety and the pawn breaks each side can play.",
+    "keyword": "bishop for knight middlegame exchange",
+    "cluster": "positional-play",
+    "lede": "A middlegame bishop-for-knight trade changes more than the material inventory. Compare the bishop pair, recapture structure, defensive duties and pawn breaks while queens and attacking pieces are still on the board.",
+    "sections": [
+      {
+        "heading": "Look at present mobility and future breaks",
+        "paragraphs": [
+          "Bishops can influence both wings along open diagonals; knights can operate around blocked pawn chains and reach squares unavailable to bishops. These are tendencies, not verdicts. Count actual routes, targets and defensive duties for the pieces you are considering exchanging.",
+          "Inspect pawn breaks that may open the board. A bishop blocked today can become active after a central exchange. A knight that dominates a closed position can lose its secure square when a pawn challenge becomes possible. Judge likely changes rather than freezing the current pawn structure."
+        ]
+      },
+      {
+        "heading": "Evaluate the exchange result, including recaptures",
+        "paragraphs": [
+          "If you trade a bishop for a knight, identify who recaptures and what structure remains. Doubled pawns may be targets, but they can also open a file or strengthen central control. Do not record them as an automatic advantage without checking whether you can attack them.",
+          "Consider whether the remaining bishops have useful diagonals and whether surrendering one gives the opponent an uncontested bishop pair. The pair is a potential resource, not an automatic advantage: inspect the pawn breaks that could open both bishops. Also check king safety, since removing a defensive minor piece can matter more than creating a superficially favourable pawn structure."
+        ]
+      },
+      {
+        "heading": "Inspect the defender you remove from the king",
+        "paragraphs": [
+          "Before exchanging, identify each minor piece's defensive duty. A knight may guard a mating square; a bishop may cover a diagonal leading toward the king. Removing one can justify a trade even when the resulting pawn structure looks healthy. Conversely, exchanging your own key defender may invite an attack that outweighs any structural gain.",
+          "If the exchange is tactically forced, calculate first and evaluate later. Strategic preferences cannot excuse losing material. When the exchange is optional, give the opponent an active reply and compare their attacking routes before and after it. That keeps the decision tied to the present middlegame rather than an imagined distant ending."
+        ]
+      },
+      {
+        "heading": "Compare the central breaks after recapture",
+        "paragraphs": [
+          "Compare the central breaks available after each recapture. A pawn recapture may strengthen one central square while opening a file toward the king; a piece recapture may preserve the structure but leave a bishop restricted. Ask which side can use the changed line first. If retaining the bishop pair matters, identify the break that would activate it rather than praising the pair in the abstract. A trade is a commitment to a new middlegame structure, so include the opponent's most relevant pawn challenge in your comparison."
+        ]
+      },
+      {
+        "heading": "Compare trading with keeping minor-piece tension",
+        "paragraphs": [
+          "Take four positions with an optional minor-piece exchange. Write one reason to trade and one reason to retain the tension. Include the expected recapture and a plausible pawn break.",
+          "Compare the resulting positions through a short legal sequence, then stop and assess activity and targets. Do not demand a forced tactical proof for a positional preference. Keep examples where the same type of exchange has different consequences, so your decision process remains tied to the structure and not the piece names."
+        ]
+      }
+    ],
+    "related": [
+      "knight-outpost-test",
+      "weak-pawns-attackable-targets",
+      "evaluate-material-imbalances"
+    ],
+    "sources": [
+      {
+        "label": "Chess.com: official strategy lessons",
+        "url": "https://www.chess.com/lessons/strategy"
+      },
+      {
+        "label": "Brass Pawn: positional training and product features",
+        "url": "https://brasspawn.com/training"
+      }
+    ],
+    "appFit": "Brass Pawn's positional exercises and on-device analysis can support comparing exchanges. Engine evaluations are a check on your candidate lines; they do not make 'bishops are always better' or 'closed positions belong to knights' reliable universal rules."
+  },
+  {
+    "slug": "weak-pawns-attackable-targets",
+    "title": "Weak pawns: distinguish a structural flaw from an attackable target",
+    "description": "Distinguish weak pawns from attackable targets by finding access routes, fixing the structure and checking defensive counterplay.",
+    "keyword": "weak pawns chess strategy",
+    "cluster": "positional-play",
+    "lede": "A pawn weakness matters when it can be attacked or restricts the opponent. Learn to connect isolated, backward or doubled pawns to realistic routes instead of awarding yourself an advantage for a label.",
+    "sections": [
+      {
+        "heading": "Identify what makes the pawn vulnerable",
+        "paragraphs": [
+          "A pawn may lack support from neighbouring pawns, be fixed on an unfavourable square, or sit on an open file. State the vulnerability precisely. An isolated pawn can still control important central squares and give its owner active piece play.",
+          "Ask whether the pawn can advance safely or be exchanged. If it can dissolve the weakness on favourable terms, a long attack may never get started. A target is more durable when it is fixed and cannot be defended by a simple pawn move."
+        ]
+      },
+      {
+        "heading": "Find the attacking route and count time",
+        "paragraphs": [
+          "Which piece can attack the pawn, and how many moves will it take? A weak pawn on a colour your bishop cannot reach may require rook access or a knight route. If the defender can meet the threat easily while creating counterplay, the weakness may not be decisive.",
+          "Consider a second target. One fixed weakness is often defensible; creating another can force a piece to abandon one duty. Do not create that second target by weakening your own king unless the concrete position justifies the cost."
+        ]
+      },
+      {
+        "heading": "Judge compensation and exchanges",
+        "paragraphs": [
+          "The side with weak pawns may have open files, active pieces or an attack. Evaluate those resources before exchanging into an ending. Simplification can expose a weakness, but trading your active attacker for its passive defender may remove your ability to exploit it.",
+          "In review, name the move that fixed the pawn or made it accessible. This is more useful than writing 'bad structure' beside a position. If you failed to win the pawn, determine whether the route was wrong, the target was temporary or the opponent's activity outweighed the structural problem."
+        ]
+      },
+      {
+        "heading": "A fixed pawn may restrict rather than fall",
+        "paragraphs": [
+          "A pawn that cannot be won can still make a defender passive. Name that restriction rather than promising a capture. If a rook is tied to it, you may improve another piece or create a second target. Check whether the rook has counterplay or the pawn can be sacrificed for compensation. A weakness invites investigation; it does not certify that slow manoeuvring forces a win. Compare the attacking plan with the defender's best active release before devoting several moves to pressure that may not actually increase."
+        ]
+      },
+      {
+        "heading": "Find a legal route to a suspected pawn target",
+        "paragraphs": [
+          "Choose five positions with different pawn structures. Label one suspected weakness and write a legal plan for attacking it. Then give the defender an active move before continuing your plan.",
+          "If you cannot identify an attacking piece or access route, classify the pawn as a possible long-term concern rather than a current target. Revisit the position after a plausible exchange or pawn break and reassess. This trains the connection between structure and action instead of memorising a list of allegedly bad pawns."
+        ]
+      }
+    ],
+    "related": [
+      "rook-open-file-plan",
+      "choose-the-right-pawn-break",
+      "improve-your-worst-piece"
+    ],
+    "sources": [
+      {
+        "label": "Chess.com: official strategy lessons",
+        "url": "https://www.chess.com/lessons/strategy"
+      },
+      {
+        "label": "Brass Pawn: positional training and product features",
+        "url": "https://brasspawn.com/training"
+      }
+    ],
+    "appFit": "Brass Pawn's positional exercises and local engine analysis can help test access routes and defensive activity. A structural label is your starting hypothesis; the trainer does not promise that every isolated or doubled pawn can be won or should be attacked immediately."
+  },
+  {
+    "slug": "choose-the-right-pawn-break",
+    "title": "Choose a pawn break by comparing the lines it opens",
+    "description": "Choose pawn breaks by comparing opened lines, beneficiaries, tactical safety and the option to maintain tension.",
+    "keyword": "pawn breaks chess strategy",
+    "cluster": "positional-play",
+    "lede": "A pawn break is not strong merely because it attacks the centre. Compare which lines open, whose pieces benefit and whether the resulting structure gives the opponent a forcing opportunity.",
+    "sections": [
+      {
+        "heading": "Describe the structural change before moving",
+        "paragraphs": [
+          "Choose a candidate pawn advance that challenges an opposing pawn. Calculate likely captures and identify which file or diagonal opens after each. The same push can produce different structures depending on who captures first.",
+          "Name the piece you expect to improve. A break that activates your bishop may also open a rook's file for the opponent. If you cannot identify a beneficiary, the move may be an unnecessary commitment rather than a purposeful way to improve the position."
+        ]
+      },
+      {
+        "heading": "Prepare the break only as much as needed",
+        "paragraphs": [
+          "A rook behind the opening file, a protected pawn or a safer king may make the break work. But excessive preparation can allow the opponent to stop it. Compare the immediate push with one useful preparatory move, allowing the opponent an active reply in both lines.",
+          "Check tactical details first: pins, hanging pieces, captures with check and vulnerable kings. A strategically desirable break can fail to a concrete tactic. Conversely, a tactical opportunity may allow a break that would normally leave an unacceptable weakness."
+        ]
+      },
+      {
+        "heading": "Keep the tension when neither capture helps",
+        "paragraphs": [
+          "You are not obliged to resolve every pawn contact immediately. Maintaining tension can restrict the opponent and preserve several possible structures. Before capturing, ask who benefits from the released file and whether the recapture improves an enemy piece.",
+          "When reviewing a mistimed break, identify the missing preparation or the wrong exchange order. Avoid concluding vaguely that you should never move that pawn. In a different piece arrangement, the same advance may be the main source of active play and the correct response to a passive position."
+        ]
+      },
+      {
+        "heading": "Exchange the piece that benefits from the break",
+        "paragraphs": [
+          "From the defending side, ask whether an exchange can weaken the opponent's break. Removing the piece that would use the open diagonal may be better than stopping the pawn advance itself. Conversely, preventing the break with a pawn move can create a permanent hole. Compare both approaches concretely. Identify the piece or line giving the break its strength, so you can recognise it in a different opening. This is more transferable than memorising a rule about when a particular central pawn should always advance."
+        ]
+      },
+      {
+        "heading": "Compare two breaks and the option to wait",
+        "paragraphs": [
+          "Take four middlegame positions with at least two possible pawn breaks. For each, sketch the structure after the most natural captures and name the best and worst newly opened lines.",
+          "Then give the opponent the choice to keep the tension instead. Does your intended move still help? Compare that branch before using analysis. Save one example where waiting is best and one where immediate action is necessary. The contrast helps you recognise timing rather than copying a pawn push from a familiar opening."
+        ]
+      }
+    ],
+    "related": [
+      "weak-pawns-attackable-targets",
+      "rook-open-file-plan",
+      "king-safety-versus-piece-activity"
+    ],
+    "sources": [
+      {
+        "label": "Chess.com: official strategy lessons",
+        "url": "https://www.chess.com/lessons/strategy"
+      },
+      {
+        "label": "Brass Pawn: positional training and product features",
+        "url": "https://brasspawn.com/training"
+      }
+    ],
+    "appFit": "Brass Pawn's positional training and local analysis can help compare pawn-break outcomes. Its bundled exercises are finite and do not constitute an opening repertoire for every structure. Use the resulting lines and piece activity to justify a move, rather than relying only on an engine number."
+  },
+  {
+    "slug": "king-safety-versus-piece-activity",
+    "title": "King safety or piece activity? Decide which problem is urgent",
+    "description": "Balance king safety with piece activity by identifying forcing threats and comparing defensive moves with active alternatives.",
+    "keyword": "king safety vs activity chess",
+    "cluster": "positional-play",
+    "lede": "Active pieces can defend a king, and a safe king can free pieces for activity. When the two goals conflict, first identify forcing threats, then compare the real cost of a defensive move.",
+    "sections": [
+      {
+        "heading": "Distinguish danger from an exposed appearance",
+        "paragraphs": [
+          "An uncastled king may be safe in a closed centre; a castled king may face immediate threats on an open file. Inspect actual checks, attacking routes, pawn breaks and the availability of defenders. Appearance alone is not an urgency measure.",
+          "Write the opponent's strongest threat as a move or concrete plan. If it wins material or threatens mate immediately, address it. If it needs several preparatory moves, you may have time for active counterplay. The distinction depends on calculation, not a blanket preference for attack or defence."
+        ]
+      },
+      {
+        "heading": "Compare defensive moves with active alternatives",
+        "paragraphs": [
+          "A defensive move can add an escape square, exchange an attacker, close a line or protect a critical point. Prefer a repair that also improves coordination where possible. A retreat that merely looks safe may abandon the centre and let the attack grow.",
+          "For an active alternative, calculate the opponent's forcing response rather than assuming your threat distracts them. Counterplay helps only if it is fast enough. An attack on a pawn rarely answers an immediate mating threat; a countercheck or queen exchange may do so."
+        ]
+      },
+      {
+        "heading": "Evaluate what happens after the queens leave",
+        "paragraphs": [
+          "A queen exchange can reduce mating danger but may expose a weak ending or leave a badly placed king. Compare the resulting position instead of treating simplification as an automatic cure. In some positions, exchanging one key attacking piece is more useful than exchanging queens.",
+          "After review, identify whether your mistake was underestimating a concrete threat or overreacting to a harmless appearance. The first calls for tactical threat recognition; the second calls for comparing active defences. Both can look like a 'king safety problem' without being the same failure."
+        ]
+      },
+      {
+        "heading": "Reassess king activity after attackers leave",
+        "paragraphs": [
+          "King activity grows in importance as attacking material disappears, but do not switch automatically to an endgame rule after queens leave. Rooks and minor pieces still create mating threats, and an exposed king can lose pawns while crossing the board. Inspect checks along the proposed route. Conversely, refusing to activate a safe king can leave pieces doing work it could perform. Let the actual threats determine when activity becomes safe. Review the remaining attackers individually rather than deciding urgency from the mere presence or absence of queens."
+        ]
+      },
+      {
+        "heading": "Test a protective reply against active counterplay",
+        "paragraphs": [
+          "Choose five positions where you felt torn between defending and activating a piece. Write the opponent's fastest threat and two candidate replies, one protective and one active.",
+          "Calculate the strongest forcing continuation after each, then assess the resulting coordination. Record when the active move truly neutralises danger and when it merely ignores it. Include a quiet position where no emergency exists, so the exercise does not train you to invent a crisis whenever the king looks slightly exposed."
+        ]
+      }
+    ],
+    "related": [
+      "defensive-tactics-find-the-saving-move",
+      "evaluate-material-imbalances",
+      "improve-your-worst-piece"
+    ],
+    "sources": [
+      {
+        "label": "Chess.com: official strategy lessons",
+        "url": "https://www.chess.com/lessons/strategy"
+      },
+      {
+        "label": "Brass Pawn: positional training and product features",
+        "url": "https://brasspawn.com/training"
+      }
+    ],
+    "appFit": "Brass Pawn's local engine and positional exercises can help test urgency and candidate replies. Feedback should be checked against concrete threats. The app does not provide a universal king-safety rule, and online games must remain free of engine assistance."
+  },
+  {
+    "slug": "improve-your-worst-piece",
+    "title": "Improve your worst piece without losing track of the opponent",
+    "description": "Improve your worst piece by identifying its useful job, checking the route and respecting the opponent’s counterplay.",
+    "keyword": "improve worst piece chess",
+    "cluster": "positional-play",
+    "lede": "Improving your worst piece is a useful planning tool when no forcing action is needed. The challenge is defining 'worst' by useful work and finding a route that does not ignore the opponent’s plan.",
+    "sections": [
+      {
+        "heading": "Assess duties as well as mobility",
+        "paragraphs": [
+          "A piece with few legal moves may be doing a vital defensive job. A queen with many squares may have no useful target. Compare activity, coordination, targets and defensive responsibilities before deciding which piece most needs improvement.",
+          "Ask what the piece would ideally accomplish: pressure a weak pawn, support a break, protect the king or exchange a strong opponent. Naming a job makes the destination meaningful. Moving a knight toward the centre without a role can waste time when a wing square offers a concrete task."
+        ]
+      },
+      {
+        "heading": "Plan a route and give the opponent a move",
+        "paragraphs": [
+          "List the legal steps needed to reach the useful square. After each preparatory move, consider the opponent's most relevant pawn break, exchange or threat. A good destination is not enough if the route is too slow.",
+          "Look for a multi-purpose improvement. A rook move may support a central break while defending a pawn; a bishop retreat may preserve an attacker and cover a king square. Compare those benefits with the cost of leaving the piece's current responsibilities behind."
+        ]
+      },
+      {
+        "heading": "Know when to abandon the plan",
+        "paragraphs": [
+          "The opponent may change the structure, exchange the target or create a forcing threat. Reassess after each move rather than completing a planned tour out of loyalty to your earlier decision. Flexible improvement is more useful than executing a route mechanically.",
+          "During review, ask whether the piece gained a useful job at the end. If not, the original diagnosis may have been wrong. Alternatively, the right piece may have taken the wrong route. Distinguishing those cases helps you improve planning rather than merely accumulating examples of centralised pieces."
+        ]
+      },
+      {
+        "heading": "Improve a piece by changing its surroundings",
+        "paragraphs": [
+          "Sometimes the worst piece improves indirectly. Exchanging a blocking pawn may open a bishop's diagonal; trading an opposing knight may release a rook entry square. Include structural options instead of assuming the piece must move. Compare the cost because the exchange may help the opponent too. A successful plan changes useful work through relocation, a pawn break or removing a blocker. The destination is one tool, not the definition of improvement. Explain the new job the piece gains before committing to a long manoeuvre."
+        ]
+      },
+      {
+        "heading": "Rank two pieces by their useful jobs",
+        "paragraphs": [
+          "Choose four quiet middlegame positions. Rank your two least useful pieces and explain each one's current duty. Propose one improvement for each, then let the opponent make an active move before deciding.",
+          "Compare the resulting positions after a short legal continuation. Record the new job created, not just the new square reached. Include one example where leaving a passive defender in place is correct because moving it allows a tactic. That exception keeps the planning rule connected to concrete chess."
+        ]
+      }
+    ],
+    "related": [
+      "knight-outpost-test",
+      "rook-open-file-plan",
+      "positional-exercise-or-forced-tactic"
+    ],
+    "sources": [
+      {
+        "label": "Chess.com: official strategy lessons",
+        "url": "https://www.chess.com/lessons/strategy"
+      },
+      {
+        "label": "Brass Pawn: positional training and product features",
+        "url": "https://brasspawn.com/training"
+      }
+    ],
+    "appFit": "Brass Pawn's positional exercises and local analysis can support comparing improvement plans. The guide describes a thinking routine rather than an automatic worst-piece detector. Use engine feedback to test counterplay, while making your own explanation of the piece's useful role."
+  },
+  {
+    "slug": "positional-exercise-or-forced-tactic",
+    "title": "Positional exercise or forced tactic? Change how you judge the answer",
+    "description": "Use different standards for positional exercises and forced tactics: compare plans in quiet positions and prove concrete tactical lines.",
+    "keyword": "positional chess exercises vs tactics",
+    "cluster": "positional-play",
+    "lede": "A tactic asks for a concrete sequence that works against best defence. A positional exercise may ask for a useful improvement among several reasonable moves. Training becomes clearer when you know which kind of judgment you are practising.",
+    "sections": [
+      {
+        "heading": "Look for the decision the position demands",
+        "paragraphs": [
+          "Checks, loose pieces and exposed kings can make calculation decisive. In a quieter position, the main task may be choosing a pawn break, improving a piece or exchanging a defender. Inspect immediate threats before deciding that a position is purely strategic.",
+          "A motif label is a clue from the training environment, not information available in a normal game. Try describing the position before reading the hint. This helps transfer the skill from a puzzle with a known point to a game where there may be no forced win."
+        ]
+      },
+      {
+        "heading": "Use the right standard of explanation",
+        "paragraphs": [
+          "For a tactic, show the forcing line and the strongest defence. If an alternative reply refutes the idea, the combination is not established. A beautiful first move without the necessary continuation is incomplete.",
+          "For a positional choice, explain the target, improvement and opponent's counterplay. Several moves can be sound, and a small engine preference does not make every alternative a blunder. Compare plans through plausible legal replies rather than demanding a forced win from an ordinary middlegame improvement."
+        ]
+      },
+      {
+        "heading": "Keep two different review records",
+        "paragraphs": [
+          "For tactical errors, record missing candidates, overlooked defences, visualization mistakes and premature evaluations. For positional errors, record the wrong target, an ineffective piece route, a mistimed break or an unfavourable exchange. These categories point to different practice tasks.",
+          "Do not use a positional explanation to excuse a tactical loss. Equally, do not dismiss a useful strategic plan because it lacks a forcing sequence. Strong training connects both: every plan needs a tactical safety check, and every calculated line eventually ends in a position that must be evaluated."
+        ]
+      },
+      {
+        "heading": "Record whether the theme hint supplied the idea",
+        "paragraphs": [
+          "Mixed practice changes how you use hints. In a tactic, a motif label narrows the search and may make the answer much easier. In a positional exercise, the theme explains a plan without proving every alternative bad. Record whether you solved independently, after a theme hint or after seeing the first move. These are different learning outcomes. An honest record is more useful than a perfect score produced by revealing the key idea early. Use that distinction when choosing whether the next session should repeat or expand the set."
+        ]
+      },
+      {
+        "heading": "Grade tactics and positional plans differently",
+        "paragraphs": [
+          "Alternate three tactical exercises with three quieter positions. Before solving, state what would count as a satisfactory answer. After solving, grade the explanation using that standard rather than merely asking whether your first move matched.",
+          "Return to one positional position and find a second reasonable plan. Return to one tactical position and find the critical defensive reply. Comparing those tasks clarifies why variety matters. The aim is better decision-making, not turning every training position into a hunt for a hidden sacrifice."
+        ]
+      }
+    ],
+    "related": [
+      "calculate-forcing-lines-without-tunnel-vision",
+      "when-to-stop-calculating-a-chess-line",
+      "improve-your-worst-piece"
+    ],
+    "sources": [
+      {
+        "label": "Chess.com: official strategy lessons",
+        "url": "https://www.chess.com/lessons/strategy"
+      },
+      {
+        "label": "Brass Pawn: positional training and product features",
+        "url": "https://brasspawn.com/training"
+      }
+    ],
+    "appFit": "Brass Pawn separates tactical and positional training within its bundled library and uses local engine analysis. Expect different learning questions from each mode. Its feedback is position-based and does not guarantee a single human explanation for every reasonable strategic move."
+  }
+]

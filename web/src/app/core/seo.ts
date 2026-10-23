@@ -3,7 +3,7 @@ import { Meta, Title } from '@angular/platform-browser';
 
 import { DEFAULT_LOCALE, LOCALES as LANGUAGES, type Locale, localePath } from '../i18n/locales';
 import { PAGE_LOCALES } from '../i18n/pages';
-import { LIBRARY, LOCALES, PRICING, SITE, url } from './site';
+import { INDEXED_LOCALES, LIBRARY, LOCALES, PRICING, SITE, url } from './site';
 
 /** One step in the trail, in the order a reader would walk it. */
 export interface Crumb {
@@ -133,6 +133,10 @@ export class Seo {
     )) {
       link.remove();
     }
+    // Alternates name pages to index in place of this one. With only English
+    // indexed there are none, and pointing at noindex pages would be a claim
+    // the engines discard.
+    if (INDEXED_LOCALES.length < 2) return;
     // An inner page that exists in some languages names those, and only those.
     // Search engines read hreflang as a claim about a whole group and discard a
     // group whose members disagree about who is in it — so this set must never
@@ -166,7 +170,7 @@ export class Seo {
       // Without max-image-preview:large a result gets a thumbnail rather than
       // the wide card, and max-snippet:-1 lets the description come from the
       // page instead of being truncated to a default.
-      robots: page.noindex
+      robots: page.noindex || !INDEXED_LOCALES.includes(locale.slug)
         ? 'noindex, follow'
         : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
 

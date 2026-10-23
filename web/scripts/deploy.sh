@@ -50,10 +50,13 @@ aws_do() {
     printf '\033[90m  would run: aws %s\033[0m\n' "$*"
     return 0
   fi
-  AWS_ACCESS_KEY_ID="$NG_DEPLOY_AWS_ACCESS_KEY_ID" \
-  AWS_SECRET_ACCESS_KEY="$NG_DEPLOY_AWS_SECRET_ACCESS_KEY" \
-  AWS_DEFAULT_REGION="$NG_DEPLOY_AWS_REGION" \
-    "$AWS_BIN" "$@"
+  if [[ "${USE_AWS_PROFILE:-0}" == "1" ]]; then
+    AWS_DEFAULT_REGION="$NG_DEPLOY_AWS_REGION" "$AWS_BIN" "$@"
+  else
+    AWS_ACCESS_KEY_ID="$NG_DEPLOY_AWS_ACCESS_KEY_ID" \
+    AWS_SECRET_ACCESS_KEY="$NG_DEPLOY_AWS_SECRET_ACCESS_KEY" \
+    AWS_DEFAULT_REGION="$NG_DEPLOY_AWS_REGION" "$AWS_BIN" "$@"
+  fi
 }
 
 # ---------------------------------------------------------------- environment
@@ -69,8 +72,9 @@ ANGULAR_PROJECT="${ANGULAR_PROJECT:-brass-pawn}"
 DIST_DIR="${DIST_DIR:-$ROOT_DIR/dist/$ANGULAR_PROJECT/browser}"
 SITE_DOMAIN="${SITE_DOMAIN:-${NG_DEPLOY_AWS_BUCKET:-}}"
 
-for var in NG_DEPLOY_AWS_ACCESS_KEY_ID NG_DEPLOY_AWS_SECRET_ACCESS_KEY \
-           NG_DEPLOY_AWS_BUCKET NG_DEPLOY_AWS_REGION; do
+required=(NG_DEPLOY_AWS_BUCKET NG_DEPLOY_AWS_REGION)
+[[ "${USE_AWS_PROFILE:-0}" == "1" ]] || required+=(NG_DEPLOY_AWS_ACCESS_KEY_ID NG_DEPLOY_AWS_SECRET_ACCESS_KEY)
+for var in "${required[@]}"; do
   [[ -n "${!var:-}" ]] || die "$var is required. Set it in $ENV_FILE."
 done
 
@@ -332,10 +336,14 @@ if [[ "$INVALIDATE_ONLY" != "1" && "${SKIP_COLLECTOR:-0}" != "1" ]]; then
       # And the stories' pages in the other languages, rendered again by this
       # build now rather than over the next few scheduled runs. Asynchronous:
       # it takes minutes, and the deploy is done.
+      # fileb:// accepts raw JSON in both AWS CLI v1 and v2.
+      page_payload="$(mktemp)"
+      printf '%s' '{"pages":true}' > "$page_payload"
       aws_do lambda invoke --region "${FEED_REGION:-eu-central-1}" --function-name brasspawn-feed-collector \
-        --invocation-type Event --cli-binary-format raw-in-base64-out --payload '{"pages":true}' /dev/null >/dev/null \
+        --invocation-type Event --payload "fileb://$page_payload" /dev/null >/dev/null \
         && log "The collector is rendering every story's other languages with this build." \
         || warn "Could not start the collector's page run; the next scheduled run does it."
+      rm -f "$page_payload"
     else
       warn "The collector kept its old renderer; its new pages will ask for the last build's chunks until: CODE_ONLY=1 scripts/feed/deploy-lambda.sh"
     fi

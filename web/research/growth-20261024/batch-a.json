@@ -1,0 +1,1892 @@
+[
+  {
+    "slug": "beginner-chess-study-plan",
+    "title": "A beginner chess study plan built around real mistakes",
+    "description": "Build a beginner chess study plan from legal moves, safe decisions and short reviews, with a first-week schedule you can actually finish.",
+    "keyword": "beginner chess study plan",
+    "cluster": "study-plans",
+    "lede": "Build a beginner chess study plan from legal moves, safe decisions and short reviews, with a first-week schedule you can actually finish.",
+    "sections": [
+      {
+        "heading": "Start with a playable baseline",
+        "paragraphs": [
+          "If you know how the pieces move but regularly lose pieces, your first study plan should make games understandable before it makes your opening repertoire impressive. Play one untimed practice game or a slow game against another person. Afterwards, find three moments when you were unsure what your opponent threatened. Those positions are your starting material, even if you won.",
+          "Separate a rules problem from a decision problem. Forgetting that a pinned piece cannot legally expose its king calls for a rules exercise. Seeing the legal moves but overlooking an attacked rook calls for a scanning habit. Studying another opening video will not reliably fix either problem."
+        ]
+      },
+      {
+        "heading": "A first week with one job each day",
+        "paragraphs": [
+          "On day one, review checks, legal king moves and how checkmate differs from stalemate. On day two, identify undefended pieces in five ordinary positions. On day three, practise simple captures and recaptures, checking the final material count. Day four is for king-and-rook checkmate practice without a clock; look up a method if you cannot finish it.",
+          "Play a slow game on day five. On day six, revisit its first clear mistake before checking an engine. Day seven is a short retest: solve the positions you previously missed and explain the threat aloud. This is a suggested sequence, not a requirement to study every day or a promise about your rating."
+        ]
+      },
+      {
+        "heading": "Make the work measurable",
+        "paragraphs": [
+          "Keep a small record with four columns: position, what I thought, what I missed, and next exercise. A useful entry says, “I moved my bishop and left the queen undefended.” A less useful entry says, “I am bad at tactics.” The specific description tells you what to look for next time.",
+          "For each puzzle, name the opponent’s strongest reply before moving. If you guessed the right first move but cannot explain the reply, mark the exercise unfinished. Correctness matters, but an explanation distinguishes recognition from luck. Keep the difficulty low enough that you can practise the full sequence rather than repeatedly asking for the solution."
+        ]
+      },
+      {
+        "heading": "Change the plan using game evidence",
+        "paragraphs": [
+          "After two weeks, compare the errors in your games with your practice notes. If pieces are staying safe but you cannot convert extra material, replace one tactics session with an elementary ending. If every game becomes chaotic before castling, study development and king safety through complete examples rather than memorising long variations.",
+          "Do not add five new resources at once. Retain one board, one source of exercises and one way to keep notes. The plan is working when you can explain more decisions independently, even while results remain uneven. Learning to notice a threat consistently is a more useful first milestone than completing a large playlist."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn offers on-device computer games, tactics and endgame drills for this routine. It does not replace a rules course or a human coach; free training activities have daily limits.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "adult-beginner-chess-plan",
+      "return-to-chess-training",
+      "ten-minute-chess-routine"
+    ]
+  },
+  {
+    "slug": "adult-beginner-chess-plan",
+    "title": "Learning chess as an adult: a practical training plan",
+    "description": "An adult beginner chess plan that works around a busy week: short deliberate sessions, slower games and realistic progress checks.",
+    "keyword": "chess study plan for adult beginners",
+    "cluster": "study-plans",
+    "lede": "An adult beginner chess plan that works around a busy week: short deliberate sessions, slower games and realistic progress checks.",
+    "sections": [
+      {
+        "heading": "Choose a routine that survives a busy week",
+        "paragraphs": [
+          "Adult beginners often have a resource problem disguised as a chess problem: dozens of lessons saved and no repeatable time to use them. Start by identifying two reliable study windows and one playing window. Twenty focused minutes twice a week can produce better evidence about your weaknesses than an ambitious daily schedule you abandon after three days.",
+          "Write a personal goal that describes an activity, not a rating deadline. Examples include finishing a slow game without losing a piece to a one-move threat, explaining a basic checkmate, or reviewing a game without immediately opening an engine. Your available time and starting knowledge matter more than comparison with someone who began in childhood."
+        ]
+      },
+      {
+        "heading": "Give each session a complete learning loop",
+        "paragraphs": [
+          "Use the first few minutes to recall one idea from your previous session. Then attempt a small set of positions without hints. Spend the remaining time investigating one error and writing a sentence about it. This structure prevents the common pattern of consuming explanations without checking whether you can apply them.",
+          "Suppose you missed a knight fork. Before finding more fork puzzles, return to the position and name every square the knight attacks. Move the defending piece in your imagination and check whether the fork still works. The exercise is finished when you can distinguish a real threat from a superficially similar position."
+        ]
+      },
+      {
+        "heading": "Use slower games to expose your thinking",
+        "paragraphs": [
+          "Select a time control that gives you enough room to ask what changed after the opponent’s move. Blitz can be enjoyable, but repeatedly running out of thinking time makes it difficult to tell whether an error came from missing knowledge or rushing. Choose the pace deliberately rather than treating the fastest queue as the default training environment.",
+          "After the game, record two things you considered and one thing you never noticed. Adult learners often dismiss obvious mistakes once the answer is visible. Instead, recreate the decision before revealing the answer. Could you identify the warning sign without knowing that a tactic exists? That is the practical skill you want to test."
+        ]
+      },
+      {
+        "heading": "Review progress without making chess another deadline",
+        "paragraphs": [
+          "At the end of a month, compare your notes rather than only your rating. Are you spotting checks earlier? Do you use your clock more deliberately? Can you explain why a trade helps? These observations do not guarantee future gains, but they tell you whether your current exercises match your problems.",
+          "If the routine is draining, reduce the number of positions and keep the review. Missing a day does not create a debt of puzzles. Resume with a manageable session. Enjoyment matters because a sustainable practice habit gives you more chances to identify and correct recurring mistakes than an intense plan you no longer want to follow."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn can support short tactics sessions and computer practice on iPhone, iPad or Mac. Its engine feedback is not a personalised adult-learning curriculum, so keep your own goals and notes.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "return-to-chess-training",
+      "ten-minute-chess-routine",
+      "thirty-minute-chess-routine"
+    ]
+  },
+  {
+    "slug": "return-to-chess-training",
+    "title": "Returning to chess after a long break",
+    "description": "Restart chess with a short diagnostic: refresh rules, test tactical habits and rebuild a repertoire around the positions you still understand.",
+    "keyword": "return to chess after a long break",
+    "cluster": "study-plans",
+    "lede": "Restart chess with a short diagnostic: refresh rules, test tactical habits and rebuild a repertoire around the positions you still understand.",
+    "sections": [
+      {
+        "heading": "Treat your old rating as history",
+        "paragraphs": [
+          "After a long break, some patterns may feel familiar while calculation and clock habits feel rusty. Neither your first win nor your first loss is a reliable measure of everything you remember. Begin with a few practice games and a notebook, rather than choosing a training programme solely from an old rating.",
+          "Check rules you rarely used: castling through check, en passant, promotion and stalemate. Then solve a handful of straightforward tactics without rushing. The aim is to distinguish forgotten knowledge from a slow retrieval process. If you recognise the answer after a prompt, you may need repetition; if the underlying idea is unfamiliar, you need an explanation."
+        ]
+      },
+      {
+        "heading": "Run a three-part diagnostic",
+        "paragraphs": [
+          "First, play a short position with a clear material advantage and try to convert it. Second, review an ordinary middlegame and list both sides' threats. Third, play a complete slower game, noting where you stopped understanding your plan. These tasks test technique, awareness and practical decision-making separately.",
+          "Do not interpret one failed ending as proof that all endgames need equal attention. Identify the exact difficulty: activating the king, avoiding stalemate, choosing a pawn break, or knowing a theoretical position. A narrow diagnosis lets you choose a useful exercise without trying to relearn every chess book you once owned."
+        ]
+      },
+      {
+        "heading": "Rebuild familiar openings through plans",
+        "paragraphs": [
+          "Choose one familiar opening structure for each colour. Replay a few complete games and stop at the first position where you cannot explain the next move. Write down development priorities, pawn breaks and pieces that need improvement. Understanding a normal middlegame is more useful than remembering a sequence whose purpose has disappeared from memory.",
+          "Check concrete lines only after you have identified the position you expect to reach. If an opponent leaves your remembered line, apply the same questions: is the king safe, which pieces remain undeveloped, and what is threatened? Avoid treating every unfamiliar move as an emergency requiring a new repertoire."
+        ]
+      },
+      {
+        "heading": "Use a four-week restart rather than a catch-up sprint",
+        "paragraphs": [
+          "For the first week, prioritise rules and simple tactical awareness. In the second, add complete games and brief reviews. In the third, choose a recurring weakness from those games. In the fourth, repeat the diagnostic positions without your earlier notes. This is a practical framework you can slow down or compress to suit your schedule.",
+          "Keep older achievements as motivation, not an obligation to recover a number immediately. Changes in rating pools, formats and your available time make direct comparisons uncertain. A better sign of readiness is that you can explain your decisions again and recognise when you need to calculate rather than rely on a familiar-looking move."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn provides computer practice, endgame drills and a game library for a restart. Training results are not interchangeable with an old club or online rating, and online matches require internet.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "ten-minute-chess-routine",
+      "thirty-minute-chess-routine",
+      "weekly-chess-training-plan"
+    ]
+  },
+  {
+    "slug": "ten-minute-chess-routine",
+    "title": "A ten-minute chess routine with a clear stopping point",
+    "description": "Use ten minutes for recall, a few carefully solved positions and one reusable lesson instead of racing through an endless puzzle queue.",
+    "keyword": "10 minute chess training routine",
+    "cluster": "study-plans",
+    "lede": "Use ten minutes for recall, a few carefully solved positions and one reusable lesson instead of racing through an endless puzzle queue.",
+    "sections": [
+      {
+        "heading": "Decide what ten minutes can accomplish",
+        "paragraphs": [
+          "Ten minutes is enough for a small practice loop, not a complete game plus a thorough analysis. Choose one outcome before opening an app: identify an opponent’s threat, calculate a forcing line, or reproduce a basic ending. A narrow task protects the session from becoming an unplanned tour through menus and videos.",
+          "Keep the material ready before the timer starts. This might be a position from yesterday’s game or a small collection of missed exercises. If you spend half the session searching for the perfect puzzle, choose the first suitable one and begin. Consistent attention matters more than a carefully branded routine."
+        ]
+      },
+      {
+        "heading": "Minute zero to two: retrieve yesterday’s idea",
+        "paragraphs": [
+          "Start without reading the answer. Recreate the position or describe the feature you missed. Ask what made the winning move possible and what the opponent would do against your first idea. If you cannot recall the reasoning, use today’s session to rebuild it rather than moving on merely because the position looks familiar.",
+          "An example is a loose piece behind a pinned defender. Name the defender, explain what prevents it moving, and check whether the king would still be exposed after a trade. Retrieval here means reconstructing the relationship between pieces, not simply remembering the square on which you clicked yesterday."
+        ]
+      },
+      {
+        "heading": "Minute two to eight: solve with a reply in mind",
+        "paragraphs": [
+          "Attempt one to three positions at a difficulty where you can analyse rather than guess. Before entering a move, state the strongest plausible reply. Continue until the tactical point is resolved or the resulting position can be assessed. If the exercise is too hard, reduce the difficulty next time rather than silently turning the session into a solution-viewing exercise.",
+          "When you miss, compare your line with the actual defence. Was the problem an overlooked legal move, an incorrect material count, or stopping your calculation too early? Record the category in plain language. Spending several minutes on one revealing error can be more useful than completing many positions with no review."
+        ]
+      },
+      {
+        "heading": "Minute eight to ten: leave a test for tomorrow",
+        "paragraphs": [
+          "Write a single question you can answer at the next session. “Why does the queen capture fail?” is a better retrieval prompt than “study tactics.” Save the position using whatever method your tools support, or record enough information to find it again. Do not assume every chess app provides the same bookmarking or export features.",
+          "At the end of the week, check whether your questions repeat. Repeated missed recaptures suggest a counting exercise; repeated failure to see the opponent’s check suggests a threat scan. Ten minutes cannot guarantee improvement, but it can reveal a precise pattern worth addressing. Stop on time so the routine remains usable on a busy day, and reserve longer games for another window."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn can supply short tactics or positional sessions, with local engine checking. Free activities have daily limits; this routine does not require unlimited puzzles or an in-app custom notebook.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "thirty-minute-chess-routine",
+      "weekly-chess-training-plan",
+      "chess-rating-plateau"
+    ]
+  },
+  {
+    "slug": "thirty-minute-chess-routine",
+    "title": "A thirty-minute chess training session that closes the loop",
+    "description": "Divide half an hour between recall, a difficult decision and practical follow-up, with a clear reason for each activity.",
+    "keyword": "30 minute chess training routine",
+    "cluster": "study-plans",
+    "lede": "Divide half an hour between recall, a difficult decision and practical follow-up, with a clear reason for each activity.",
+    "sections": [
+      {
+        "heading": "Pick one decision to improve",
+        "paragraphs": [
+          "Half an hour gives you room to work beyond a quick puzzle, but it disappears quickly if you try to train every phase of chess. Choose a question from a recent game: why did you exchange your active bishop, overlook a back-rank threat, or waste time in a familiar opening? Make that question the centre of the session.",
+          "Set out a board and your notes before beginning. Decide whether you need a fresh exercise or a return to an earlier position. Repeating a position with a new question is useful; repeating an answer you can already recite is not the same challenge. Change the task when familiarity removes the need to think."
+        ]
+      },
+      {
+        "heading": "First five minutes: recover the position",
+        "paragraphs": [
+          "Rebuild the relevant position without an evaluation bar. Describe material, king safety, active pieces and immediate threats. Then state what you would like to achieve. A plan such as improving a passive rook is more testable than “play a good move.” It also provides a reason to compare alternative moves.",
+          "Write two candidates and one concern about each. Avoid opening the engine merely to discover which move ranks first. Your initial assessment is the evidence that later feedback will challenge. Without it, you may understand the answer while forgetting what prevented you finding it independently."
+        ]
+      },
+      {
+        "heading": "Middle fifteen minutes: calculate and test",
+        "paragraphs": [
+          "Spend several minutes analysing your leading candidate against the opponent’s strongest reply. Investigate a second candidate only if it solves a different problem or changes your assessment. Use the board after your initial calculation to check whether your imagined position was accurate.",
+          "Now consult an engine or a reliable explanation. If your choice differs, look for the first disagreement in the line. Do not copy a long variation that you cannot explain. Try the move you expected the opponent to play and see why it is weaker or stronger than the suggested defence. This makes feedback answer your question instead of replacing it."
+        ]
+      },
+      {
+        "heading": "Final ten minutes: transfer and record",
+        "paragraphs": [
+          "Take over the position for a short practice continuation, or find a second position with the same feature. If the original lesson concerned a passive rook, ask whether the second position really calls for activation or whether an immediate threat takes priority. Transfer requires recognising when the rule applies and when it does not.",
+          "Finish with a brief note: the warning sign, the candidate you missed, and the next situation in which you will look for it. Once a week, replace this session with a longer game and review so you can check whether the trained habit appears under normal conditions. The division of minutes is a planning aid, not a formula for a particular rating gain; adjust it when a position needs more explanation."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn supports engine practice and replaying library games into a playable continuation. It supplies chess feedback rather than an automatically personalised thirty-minute study plan.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "weekly-chess-training-plan",
+      "chess-rating-plateau",
+      "deliberate-chess-practice"
+    ]
+  },
+  {
+    "slug": "weekly-chess-training-plan",
+    "title": "Build a weekly chess training plan from your own games",
+    "description": "A weekly chess plan with playing, review and targeted practice, plus a simple method for changing the workload when life gets busy.",
+    "keyword": "weekly chess training plan",
+    "cluster": "study-plans",
+    "lede": "A weekly chess plan with playing, review and targeted practice, plus a simple method for changing the workload when life gets busy.",
+    "sections": [
+      {
+        "heading": "Give the week an anchor game",
+        "paragraphs": [
+          "Start with one complete game at a time control that lets you make considered decisions. That game supplies questions for the rest of the week. Without a practical anchor, it is easy to fill seven days with unrelated puzzles and videos while never checking which skills actually fail in your play.",
+          "Schedule the game first because it usually needs the largest uninterrupted window. Put a short review close enough afterwards that you remember your thinking. If your week contains no suitable playing window, analyse an earlier game instead of squeezing a rushed game into a study slot and calling it deliberate practice."
+        ]
+      },
+      {
+        "heading": "Assign different jobs to different days",
+        "paragraphs": [
+          "A workable five-session example is: game, personal review, tactical follow-up, endgame or strategic follow-up, then retest. Leave the other days flexible. The point is the sequence, not a requirement to study on consecutive days. Each session should create material for the next rather than begin from a blank search box.",
+          "After the review, choose just one recurring problem. If you lost a rook to a fork, practise recognising overloaded defenders and knight threats. If you reached a winning king-and-pawn ending and drew, reconstruct that ending. Avoid assigning an opening lesson simply because opening content is easier to find than your actual problem."
+        ]
+      },
+      {
+        "heading": "Use a small weekly scorecard",
+        "paragraphs": [
+          "Record games reviewed, positions explained without help, and the error you are watching for. These are process measures, not substitutes for playing strength. Their purpose is to show whether the planned work happened and whether you understood it. A high puzzle count is less informative if every wrong answer was skipped.",
+          "Add one concrete transfer check. In the next game, did you look for the opponent’s forcing reply before committing? Note a position where the check helped or where you forgot it. This connects training with play without requiring a rating increase in every reporting period."
+        ]
+      },
+      {
+        "heading": "Keep an emergency version of the plan",
+        "paragraphs": [
+          "When time disappears, preserve one reviewed decision rather than abandoning the whole week. A ten-minute revisit to a difficult position keeps the learning thread intact. Do not create a backlog of unplayed games or hundreds of owed puzzles. The next available session should have a manageable starting point.",
+          "At the end of four weeks, compare your error notes and change one element. More tactical work is sensible if simple threats still dominate; a complete-game study may help if you reach safe middlegames but cannot choose a plan. Keep successful elements stable long enough to judge them. A weekly plan is a repeatable feedback system, not an obligation to train all skills equally or a guarantee of a particular rating."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn can fill the computer-play, tactics, endgame and game-replay portions of a weekly plan. Keep your schedule externally if needed; the app is not a human coach assigning weekly homework.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "chess-rating-plateau",
+      "deliberate-chess-practice",
+      "puzzle-rating-vs-chess-rating"
+    ]
+  },
+  {
+    "slug": "chess-rating-plateau",
+    "title": "What to do when your chess rating stops improving",
+    "description": "Diagnose a chess plateau through recurring decision errors, time use and training transfer before adding more puzzles or changing openings.",
+    "keyword": "chess rating plateau",
+    "cluster": "study-plans",
+    "lede": "Diagnose a chess plateau through recurring decision errors, time use and training transfer before adding more puzzles or changing openings.",
+    "sections": [
+      {
+        "heading": "Check what has actually stopped changing",
+        "paragraphs": [
+          "A flat rating over a short period is not enough to identify a training failure. Results depend on opponents, time controls and the number of games played. Before rebuilding your study routine, compare games from the same playing environment and look for repeated decisions that are not improving.",
+          "Choose a manageable sample of recent games, including wins and losses. Mark the first point where you failed to see a threat, chose a plan without checking a reply, or spent most of your time. Do not select only spectacular blunders. A plateau may involve consistent small decisions that never become obvious in a highlight reel."
+        ]
+      },
+      {
+        "heading": "Separate knowledge, calculation and habits",
+        "paragraphs": [
+          "A knowledge gap means you cannot explain the relevant idea even after reflection. A calculation gap means you know what to examine but lose track of the line. A habit gap means you could solve the problem yet did not perform the necessary check during play. These require different practice.",
+          "For example, repeatedly missing a back-rank mate may call for learning the pattern. Missing it only when rushing may call for a pre-move king-safety check and a slower time control. Solving harder tactics does not automatically repair a routine that skips basic checks under pressure."
+        ]
+      },
+      {
+        "heading": "Run one controlled change",
+        "paragraphs": [
+          "Select one weakness and give it a short trial period. Practise a small set of relevant positions, write the warning sign, and look for it in your next games. Keep your openings and most other training stable so you can tell what changed. Replacing every resource at once makes any conclusion harder to interpret.",
+          "If your problem is calculation, require a written candidate and strongest reply before checking the answer. If it is time use, record where you hesitated and whether the decision deserved that investment. If it is unfamiliar endgames, practise a small family of positions until you can explain the defensive as well as the winning side."
+        ]
+      },
+      {
+        "heading": "Judge transfer before increasing volume",
+        "paragraphs": [
+          "At the end of the trial, ask whether you noticed the trained feature during an ordinary game. One saved position does not prove permanent improvement, but it is more relevant evidence than a higher score on a familiar puzzle set. If the habit still fails, simplify the cue or rehearse it in slower practice.",
+          "You may also need rest or a different balance between study and play. Fatigue and frustration can make otherwise useful work mechanical. A coach or stronger training partner can help identify blind spots that self-review misses. No article can promise that a plateau will end by a deadline; the useful outcome is a clearer explanation of the decisions holding you back and a practical way to test a remedy."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn provides tactics, positional exercises and engine practice to test a targeted weakness. Its training ratings and engine scores do not diagnose a plateau or guarantee changes in your competitive rating.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "deliberate-chess-practice",
+      "puzzle-rating-vs-chess-rating",
+      "blitz-vs-rapid-for-improvement"
+    ]
+  },
+  {
+    "slug": "deliberate-chess-practice",
+    "title": "Deliberate chess practice: turn one mistake into a test",
+    "description": "Make chess practice deliberate by choosing a specific weakness, attempting a position independently and testing whether the lesson transfers.",
+    "keyword": "deliberate chess practice",
+    "cluster": "study-plans",
+    "lede": "Make chess practice deliberate by choosing a specific weakness, attempting a position independently and testing whether the lesson transfers.",
+    "sections": [
+      {
+        "heading": "Give the exercise a purpose before solving",
+        "paragraphs": [
+          "Deliberate practice begins with a specific decision you want to improve. “Get better at chess” is too broad to tell you whether a session worked. “Check whether a defender is pinned before recapturing” gives you an observable action and a reason to choose particular positions.",
+          "Select material that exposes the weakness without overwhelming you. If every position takes twenty minutes and you still cannot explain the answer, reduce the complexity. If you recognise the answer instantly from memory, change the position or the question. The useful difficulty is one that makes you work while leaving room to understand feedback."
+        ]
+      },
+      {
+        "heading": "Commit to a prediction",
+        "paragraphs": [
+          "Before receiving any hint, name your candidate move and the opponent’s strongest reply. Then explain the resulting position in words: material won, an exposed king, an active rook, or a defensible ending. Your prediction creates something concrete to compare with the actual continuation.",
+          "A correct first move can conceal weak reasoning. You might choose a sacrifice because it looks familiar while overlooking a defensive resource. Conversely, a wrong move may come from one repairable counting error. Record the reason rather than treating the result as a complete assessment of your ability."
+        ]
+      },
+      {
+        "heading": "Diagnose the first disagreement",
+        "paragraphs": [
+          "When an engine or explanation challenges your line, find where the lines first differ. Replay that moment slowly. Did you overlook a legal king move? Did a piece stop defending a square after a capture? Did you assume a recapture was forced when the opponent had a check?",
+          "Write a cue that would help you notice the feature in an unfamiliar game. “Check every king escape square before claiming mate” is reusable. “Remember Qh7” usually is not. If the answer remains mysterious after investigation, mark it unresolved and seek a clearer example or a knowledgeable human explanation rather than pretending the number has taught you."
+        ]
+      },
+      {
+        "heading": "Test the idea away from the original answer",
+        "paragraphs": [
+          "Return later without the solution visible. Then try another position sharing the same feature. The second position should not merely repeat the same move on the same square. You want to recognise the relationship between pieces, including a case where the apparent combination fails because a defender can move.",
+          "Finally, look for the cue in ordinary play. Training and competition differ: a puzzle tells you something is available, while a game does not. Keep a note when the cue changes your decision or when you forget it under time pressure. This process does not require a large daily volume, and it does not guarantee a rating gain. It requires honest attempts, specific feedback and a later test that does not supply the answer in advance."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn supplies tactical and positional positions with engine feedback. It can support this loop, but you still need to articulate your reasoning and track unresolved questions yourself.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "puzzle-rating-vs-chess-rating",
+      "blitz-vs-rapid-for-improvement",
+      "avoid-one-move-chess-blunders"
+    ]
+  },
+  {
+    "slug": "puzzle-rating-vs-chess-rating",
+    "title": "Why puzzle rating and playing rating are different",
+    "description": "Understand why a high puzzle rating does not translate directly into game strength, and use puzzles to train decisions rather than chase a number.",
+    "keyword": "puzzle rating vs chess rating",
+    "cluster": "study-plans",
+    "lede": "Understand why a high puzzle rating does not translate directly into game strength, and use puzzles to train decisions rather than chase a number.",
+    "sections": [
+      {
+        "heading": "The two activities ask different questions",
+        "paragraphs": [
+          "A puzzle presents a selected position and strongly suggests that a tactical solution exists. A complete game asks you to discover whether there is a tactic at all, choose plans, manage a clock, defend and convert advantages. Success in one activity can help the other without making their ratings interchangeable.",
+          "Rating systems also depend on their player pools, scoring rules and the difficulty of the material. A puzzle number in one app is not a conversion table for a club rating or another website’s rapid pool. Avoid setting a target playing rating by subtracting an arbitrary amount from a puzzle rating."
+        ]
+      },
+      {
+        "heading": "Look at how you earn correct answers",
+        "paragraphs": [
+          "If you solve with unlimited time, repeated attempts or occasional hints, the result measures a different task from finding a move unaided under a game clock. That does not make slow practice worthless. It means you should describe the conditions accurately when evaluating your progress.",
+          "For a week, record whether you found the entire line before moving, whether you checked the strongest defence, and whether you needed a hint. These details expose useful distinctions. You may recognise motifs well but stop calculation early, or calculate accurately once prompted but fail to search for tactics in normal positions."
+        ]
+      },
+      {
+        "heading": "Build a bridge into games",
+        "paragraphs": [
+          "After solving a puzzle, name the signal that made the tactic possible: an undefended piece, a pinned defender, an exposed king or an overloaded rook. In your next game, look for that signal even when no combination is guaranteed. This changes a remembered answer into a practical search habit.",
+          "Include positions with no immediate tactical win. Ask which move improves the worst piece or removes the opponent’s threat. If every training position contains a winning combination, you may begin forcing tactics in games where patient improvement is appropriate. Quiet positions teach you to recognise the absence of a forcing solution as well as its presence."
+        ]
+      },
+      {
+        "heading": "Use ratings as local feedback",
+        "paragraphs": [
+          "Compare your puzzle results within the same system and similar solving conditions. A change may help you choose a suitable difficulty, but it does not explain why you lost your last game. For that, inspect the moves and your thinking. Did you fail tactically, run out of time, mishandle an ending or choose a poor plan?",
+          "If your puzzle rating rises while your game results remain flat, do not immediately abandon puzzles or double their volume. Review a few games and test whether the trained motifs actually appear. Add slower games, unprompted threat checks or endgame practice where the evidence points. The useful question is not “What rating should I be?” but “Which decisions can I now make reliably without being told there is a puzzle here?”"
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn has separate training activities and online play. Treat their feedback as task-specific; Guess the Elo and puzzle results are not certificates of your own competitive rating.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "blitz-vs-rapid-for-improvement",
+      "avoid-one-move-chess-blunders",
+      "candidate-moves-chess"
+    ]
+  },
+  {
+    "slug": "blitz-vs-rapid-for-improvement",
+    "title": "Blitz or rapid chess: choose a clock for the skill you want",
+    "description": "Choose blitz or rapid by the decision you want to practise, with separate ways to review time pressure and deeper calculation.",
+    "keyword": "blitz vs rapid chess improvement",
+    "cluster": "study-plans",
+    "lede": "Choose blitz or rapid by the decision you want to practise, with separate ways to review time pressure and deeper calculation.",
+    "sections": [
+      {
+        "heading": "A time control is part of the exercise",
+        "paragraphs": [
+          "Blitz and rapid are not simply the same learning task at different speeds. A short clock places more pressure on familiar patterns and quick decisions. A longer clock gives you room to compare candidates and calculate unfamiliar positions. Neither format automatically makes a game educational; the way you review it matters.",
+          "Before joining a queue, decide what you are practising. If you are learning to calculate forcing replies, choose enough time to attempt them. If you are rehearsing a familiar opening plan or managing a low-clock situation, a shorter game may reveal different problems. Do not use a rapid rating and a blitz rating as direct measures of one underlying number."
+        ]
+      },
+      {
+        "heading": "Use rapid to expose your reasoning",
+        "paragraphs": [
+          "In a slower game, identify moments when the position changes sharply: a pawn break, a threatened exchange or an attack on the king. Compare at least two candidates where the choice genuinely matters. Save routine moves from unnecessary overthinking so the clock remains available for difficult decisions.",
+          "Afterwards, review one position where you invested time. What did you calculate, and what did you miss? If you spent several minutes circling between moves without testing an opponent’s reply, more time alone will not fix the process. You need a clearer calculation question, such as whether a forcing move refutes your preferred plan."
+        ]
+      },
+      {
+        "heading": "Use blitz to study decisions under constraint",
+        "paragraphs": [
+          "Review blitz games for recurring quick errors, not just spectacular combinations. Were pieces repeatedly left undefended? Did you premove into a changed position? Did a familiar ending become difficult because you did not know a basic technique? The answer can suggest a slow exercise for your next study session.",
+          "Avoid playing an endless sequence to recover lost rating. A useful stopping point is reached when several games repeat the same error and fatigue prevents you testing a correction. Take one position out of the stream and work on it without a clock. Fast feedback becomes useful when it changes what you practise next."
+        ]
+      },
+      {
+        "heading": "Combine formats without blurring their purposes",
+        "paragraphs": [
+          "One possible week contains a slower anchor game for analysis and a short blitz session to check whether a trained habit survives pressure. Keep notes separate by format. A mistake caused by insufficient time deserves a different response from a position you misunderstood even after prolonged thought.",
+          "Respect the rules of the playing environment. Do not consult an engine or training tool during an online game, regardless of the time control. Use assistance afterwards or in a permitted computer-practice setting. Your aim is a clearer decision process, not a claim that one clock guarantees improvement. Choose the pace that lets you practise the intended skill and still enjoy playing."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn offers several Game Center clock options and separate computer practice. Online matches have no engine assistance; use analysis and hints only in the appropriate practice context.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "avoid-one-move-chess-blunders",
+      "candidate-moves-chess",
+      "checks-captures-threats-chess"
+    ]
+  },
+  {
+    "slug": "avoid-one-move-chess-blunders",
+    "title": "A practical check to avoid one-move chess blunders",
+    "description": "Use a short threat scan before moving: what changed, what is attacked, and what becomes undefended after your intended move?",
+    "keyword": "avoid one move blunders chess",
+    "cluster": "study-plans",
+    "lede": "Use a short threat scan before moving: what changed, what is attacked, and what becomes undefended after your intended move?",
+    "sections": [
+      {
+        "heading": "Start with the opponent’s last move",
+        "paragraphs": [
+          "A one-move blunder often begins before your own move, when you fail to notice what the opponent changed. Identify the moved piece and follow its new lines of attack. Then inspect the square it left: an opened file or diagonal can create a threat elsewhere on the board.",
+          "Do not ask only whether your queen is attacked. Check loose minor pieces, vulnerable rooks and your king’s escape squares. A quiet-looking move may remove a defender or create a fork. The purpose of the scan is to update the position you are thinking about rather than continue a plan designed for the previous move."
+        ]
+      },
+      {
+        "heading": "Inspect the move before playing it",
+        "paragraphs": [
+          "Imagine your intended move on the board and ask what it stops defending. A bishop leaving a diagonal may expose a rook; a pawn advance may uncover a queen attack; a capture may allow a recapture with check. These are concrete questions you can answer without calculating every legal continuation.",
+          "Now look for the opponent’s checks and direct captures. If one is available, follow it until the immediate tactical issue is resolved. Do not reject every move that permits a capture: an exchange can be sound. The question is whether you have counted the sequence correctly and whether either king faces a forcing threat."
+        ]
+      },
+      {
+        "heading": "Practise the check in ordinary positions",
+        "paragraphs": [
+          "Take five positions from recent games, including some with no winning tactic. For each, choose a move and describe what changes after it. Then check the strongest reply. This is closer to real play than solving only positions labelled with a tactical motif, because the board does not promise that a combination exists.",
+          "When you make an error, record its trigger. Examples include moving instantly after a trade, overlooking a backward bishop attack, or relaxing after winning material. A personalised warning such as “pause after every exchange” is more usable than a vague instruction to concentrate harder throughout the entire game."
+        ]
+      },
+      {
+        "heading": "Keep the routine short enough to use",
+        "paragraphs": [
+          "A long checklist can fail under a clock because you stop using it. Begin with three prompts: what is threatened, what becomes loose, and what is the strongest forcing reply? Expand only when a recurring error justifies another question. In familiar safe positions, the check may be brief; complicated positions deserve more time.",
+          "No scan eliminates all blunders. Tiredness, difficult tactics and time pressure still matter, and stronger opponents create threats that require deeper calculation. Judge the routine through your game notes: are the same simple oversights occurring less often? If not, slow the practice down and reconstruct exactly where you skipped the check. The goal is a reliable action before moving, not perfect play or a guaranteed rating increase."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn computer practice can show move feedback after a decision. To test your own blunder check, attempt the move independently before looking at hints or values; online play does not provide assistance.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "candidate-moves-chess",
+      "checks-captures-threats-chess",
+      "chess-board-coordinates-warmup"
+    ]
+  },
+  {
+    "slug": "candidate-moves-chess",
+    "title": "How to choose candidate moves without analysing everything",
+    "description": "Build a short candidate list from forcing moves, urgent defence and piece improvement, then compare replies rather than collecting options.",
+    "keyword": "candidate moves chess",
+    "cluster": "study-plans",
+    "lede": "Build a short candidate list from forcing moves, urgent defence and piece improvement, then compare replies rather than collecting options.",
+    "sections": [
+      {
+        "heading": "Ask what the position demands",
+        "paragraphs": [
+          "Candidate moves are a way to focus calculation, not a rule that every turn needs an arbitrary number of options. If your king is in check, legal responses define the search. If a piece is hanging, saving it or creating a stronger threat may take priority. In a quiet position, the useful candidates may improve a piece or prepare a pawn break.",
+          "Begin with the opponent’s threat and the position’s main imbalance. Is one king exposed? Is a rook trapped? Does a pawn structure make a particular break urgent? A candidate earns attention by addressing something concrete, rather than because it is the first move your hand wants to make."
+        ]
+      },
+      {
+        "heading": "Create a short, varied list",
+        "paragraphs": [
+          "Look for forcing possibilities such as checks and captures, then include a defensive move if needed and a constructive move that improves your position. These categories overlap. A capture can also defend, and a quiet move can create a decisive threat. The categories are prompts, not a ranking that forces every check to be good.",
+          "Write two or three serious options in a training position. For each, state the idea and the most uncomfortable reply you can find. If several moves pursue the same plan in nearly the same way, compare the one with the best concrete justification first. You do not need to calculate interchangeable waiting moves equally."
+        ]
+      },
+      {
+        "heading": "Test replies before adding more moves",
+        "paragraphs": [
+          "Take your leading candidate and search for the opponent’s best response, especially checks, captures and threats that change the plan. If a simple reply defeats it, reject the candidate for a specific reason. If the line remains promising, evaluate the resulting position rather than stopping immediately after your attractive first move.",
+          "A common failure is replacing calculation with list-making: considering six moves, calculating none, and finally playing the original impulse. When that happens, narrow the list. Give each remaining candidate a question to answer, such as “Does this rook trade leave the pawn ending winning?” That question creates a clear stopping point."
+        ]
+      },
+      {
+        "heading": "Review the candidate you never considered",
+        "paragraphs": [
+          "After checking with an engine or stronger player, compare the suggested move with your original list. If it was absent, identify why. Perhaps you ignored a retreat, failed to consider a quiet defence, or assumed a pawn break was impossible. This is often more revealing than finding a mistake several moves deep in a line you did examine.",
+          "Keep a record of these missing categories and practise positions that challenge the same blind spot. Candidate selection improves when you widen the right part of your search, not when you mechanically analyse more moves on every turn. In actual games, adjust the process to the clock and never use external analysis assistance during a live online match."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn positional exercises and local engine practice let you compare your candidate with feedback. The app is not a live online move adviser; keep assisted analysis separate from Game Center matches.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "checks-captures-threats-chess",
+      "chess-board-coordinates-warmup",
+      "chess-thinking-clock-management"
+    ]
+  },
+  {
+    "slug": "checks-captures-threats-chess",
+    "title": "Checks, captures and threats: a useful chess scan, not a rule",
+    "description": "Learn how to scan checks, captures and threats for both players without assuming every forcing move is good or every quiet move is wrong.",
+    "keyword": "checks captures threats chess",
+    "cluster": "study-plans",
+    "lede": "Learn how to scan checks, captures and threats for both players without assuming every forcing move is good or every quiet move is wrong.",
+    "sections": [
+      {
+        "heading": "Scan both sides of the board",
+        "paragraphs": [
+          "Checks, captures and threats provide a compact way to notice forcing possibilities. Begin with the opponent: what checks can they give, what can they capture, and what direct threats have they created? Then repeat the scan for yourself. Looking only for your own combination is a common way to overlook an immediate loss.",
+          "The order helps organise attention, but it does not determine the best move. A check may simply improve the enemy king’s position. A capture may open a dangerous file against you. A quiet defensive move may be stronger than every forcing option. The scan identifies candidates that deserve examination."
+        ]
+      },
+      {
+        "heading": "Follow a forcing line far enough",
+        "paragraphs": [
+          "If a check attracts you, list legal defences rather than assuming the king must move. A piece may capture the attacker or block the line. If a capture looks profitable, count the entire exchange and check for an intermediate move. The opponent need not recapture immediately when a stronger check or threat is available.",
+          "For a threat, name exactly what happens if the opponent ignores it. “Attack the king” is not yet a concrete threat. “The queen and bishop threaten mate on the next move” is a proposition you can test by inspecting escape squares, captures and interpositions. Precision prevents you treating a hopeful idea as a forced result."
+        ]
+      },
+      {
+        "heading": "Use a comparison exercise",
+        "paragraphs": [
+          "Choose a position from a completed game and make two lists: forcing moves for White and forcing moves for Black. Analyse one promising option for the side to move. Then examine an apparently attractive move that fails. Explain the defensive resource that separates them.",
+          "Include quiet positions in the exercise. If no forcing move improves the position, say so and choose a useful developing or defensive move. This is important because a training set containing only tactical wins can encourage you to search for combinations that the actual board does not support."
+        ]
+      },
+      {
+        "heading": "Fit the scan into normal thinking",
+        "paragraphs": [
+          "Use the scan after a trade, a pawn break or a king move, when lines and targets may have changed. In simple positions it can be quick. When both kings are exposed or several pieces are loose, spend longer and calculate concrete replies. The aim is to allocate attention where the board demands it.",
+          "After a mistake, ask whether the scan failed to identify the candidate or whether you found it but calculated incorrectly. Those are different training problems. Missing a backward capture calls for better board awareness; seeing it but miscounting the recapture calls for calculation work. This distinction turns a slogan into a useful diagnostic routine without pretending that three words replace strategic judgement or guarantee error-free chess."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn tactics and computer practice can check forcing lines on your device. Attempt the scan before revealing engine feedback, and do not use training assistance while playing another person online.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "chess-board-coordinates-warmup",
+      "chess-thinking-clock-management",
+      "spaced-repetition-chess"
+    ]
+  },
+  {
+    "slug": "chess-board-coordinates-warmup",
+    "title": "Chess board coordinates: a beginner mental-board warmup",
+    "description": "Learn chess coordinates with short square-finding and knight-path exercises before attempting longer mental calculation.",
+    "keyword": "chess board coordinates exercises",
+    "cluster": "study-plans",
+    "lede": "Practise naming squares, following short knight paths and locating diagonals so chess coordinates become a useful part of your mental board.",
+    "sections": [
+      {
+        "heading": "Orient the board before memorising squares",
+        "paragraphs": [
+          "Chess coordinates give every square a stable address. Files run from a to h and ranks from 1 to 8. With White at the bottom, a1 is at the lower left and h8 at the upper right. When you view the board from Black’s side, those addresses stay the same even though their screen positions change. Start by finding the corners from both viewpoints.",
+          "Use a blank diagram for this warmup, or a board with coordinate labels. This is a geometry exercise rather than a claim about a legal game position. Point to a square, name it, then reverse the task: hear or read an address and locate it. Check the label after answering instead of tracing from a1 every time."
+        ]
+      },
+      {
+        "heading": "Build a small set of reference squares",
+        "paragraphs": [
+          "Find the four central squares: d4, e4, d5 and e5. Then locate a square on the same file, the same rank and a diagonal from each. Move slowly enough to distinguish a file change from a rank change. If you confuse e4 with d5, say both parts of the address aloud and identify the direction in which each coordinate increases.",
+          "Next cover the labels and test a handful of mixed addresses. Record the squares that cause hesitation rather than repeatedly rehearsing only easy corners. Turn the board around and locate the same addresses again. This checks whether you know the square itself or merely remember its position on one screen layout."
+        ]
+      },
+      {
+        "heading": "Follow a short knight path",
+        "paragraphs": [
+          "A knight changes one coordinate by two and the other by one. On an otherwise empty practice diagram, start at b1, imagine a jump to c3, then a jump to e4. State the destination before touching a piece. Afterwards, move a knight through those squares to verify the two jumps. Do not add captures, checks or a tactical story to this simple coordinate exercise.",
+          "Now start from e4 and list the possible knight destinations that remain on the board. Check your list with an actual knight. Keep the exercise untimed at first. If you miss backward jumps, search them separately on the next attempt. The aim is dependable movement geometry, not a speed score or evidence that you can calculate a complicated position."
+        ]
+      },
+      {
+        "heading": "Check a diagonal, then end the warmup",
+        "paragraphs": [
+          "For a line-piece comparison, trace c1, d2, e3 and f4 on the empty diagram. Explain how the file and rank change together. Reverse the path without looking at your original list. Then contrast it with a rook route along one file, where only the rank changes. These short comparisons connect coordinates with piece movement instead of treating square names as isolated facts.",
+          "Finish after a few accurate repetitions and return to ordinary chess practice. Coordinates are a support skill, not a requirement to describe every thought verbally during a game. Some players rely more on visual relationships, and that is fine. Use this warmup when notation or board orientation causes confusion; use a separate calculation exercise when you need to track captures, defenders and alternative branches in a real position."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn provides a board for ordinary chess practice, but this warmup does not claim a dedicated coordinates quiz, empty-board editor or knight-path training mode. Use a physical board or labelled diagram for the geometry tasks.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "candidate-moves-chess",
+      "beginner-chess-study-plan",
+      "ten-minute-chess-routine"
+    ]
+  },
+  {
+    "slug": "chess-thinking-clock-management",
+    "title": "Use your chess clock where the position needs it",
+    "description": "Identify critical chess decisions, avoid repeating unproductive calculation and review where your thinking time actually went.",
+    "keyword": "chess clock time management",
+    "cluster": "study-plans",
+    "lede": "Identify critical chess decisions, avoid repeating unproductive calculation and review where your thinking time actually went.",
+    "sections": [
+      {
+        "heading": "Time is a decision resource",
+        "paragraphs": [
+          "Clock management is not a command to play every move faster. You want to spend time where a decision changes the character of the game and avoid spending it without a clear question. A forcing attack, a major trade or a pawn break may deserve more attention than a familiar recapture.",
+          "Before a game, understand the time control, including whether increment is available. Do not build a plan around extra seconds that the selected format does not provide. Your practical routine must fit the clock you actually have, not a time control you usually play elsewhere."
+        ]
+      },
+      {
+        "heading": "Recognise a critical decision",
+        "paragraphs": [
+          "A position is worth a longer think when several plausible moves lead to meaningfully different outcomes. Examples include entering a pawn ending, accepting a sacrifice or allowing an attack on your king. Name the issue before calculating: “Can I survive the checks after taking the rook?” is clearer than staring at the board hoping a preference appears.",
+          "Use candidate moves to focus the work. If you return to the same line without discovering anything new, pause and identify the unanswered question. You may need to test a different defence, evaluate the final position, or accept that no forced conclusion is available. Repeating the same calculation is not the same as checking it."
+        ]
+      },
+      {
+        "heading": "Build a proportionate safety check",
+        "paragraphs": [
+          "Even when short of time, inspect the opponent’s checks and direct captures before committing. Make the check shorter, not absent. In a position with a loose queen, a brief tactical scan may be more valuable than choosing between two attractive pawn advances.",
+          "Avoid rigid rules such as always moving within a fixed number of seconds. Positions differ. Instead, practise noticing when you are spending time on a routine choice and when you are rushing an irreversible one. With experience, this distinction can become more useful than an elaborate schedule of clock targets for every move number."
+        ]
+      },
+      {
+        "heading": "Analyse the clock alongside the moves",
+        "paragraphs": [
+          "After a completed game, mark one decision where time helped and one where it was wasted. If your interface does not preserve detailed move times, write approximate recollections while the game is fresh. Distinguish a knowledge problem from indecision: you cannot budget your way out of an ending whose basic method you do not know.",
+          "For the next practice game, choose one adjustment. You might spend less time on familiar opening moves or pause before every major exchange. Compare the result through specific decisions rather than whether you happened to win. Never consult an engine while playing another person online. Time-management practice should reveal how you think under the chosen constraints, not create an excuse for outside assistance or a promise that faster play is always stronger."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn offers computer practice and several online clock options. Use assisted practice separately from Game Center games; this guide does not assume the app provides detailed historical clock charts.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "spaced-repetition-chess",
+      "opening-vs-endgame-study",
+      "chess-training-vs-online-play"
+    ]
+  },
+  {
+    "slug": "analyse-chess-game-without-engine",
+    "title": "Analyse your chess game before turning on the engine",
+    "description": "Review your own thoughts first, identify uncertain decisions and bring specific questions to the engine instead of just reading its answers.",
+    "keyword": "analyse chess game without engine",
+    "cluster": "game-review",
+    "lede": "Review your own thoughts first, identify uncertain decisions and bring specific questions to the engine instead of just reading its answers.",
+    "sections": [
+      {
+        "heading": "Preserve what you were thinking",
+        "paragraphs": [
+          "Immediately after a game, write down the moves where you hesitated, changed your plan or felt surprised. Your memory of the decision is useful evidence and becomes harder to recover once an engine shows a convincing answer. Include your intended reply to the opponent’s best move, even if it now looks wrong.",
+          "You do not need to annotate every move. Select a few decision points and record why you chose your move, what you expected, and what you considered instead. If you cannot remember, say so. Inventing a sophisticated explanation afterwards makes it harder to diagnose the actual mistake."
+        ]
+      },
+      {
+        "heading": "Replay the game with a question",
+        "paragraphs": [
+          "Go through the score without an evaluation bar. At each selected moment, describe material, king safety and the immediate threat. Then choose a candidate independently. Ask whether you would make the same decision now, with more time and without the pressure of the game result.",
+          "Focus on the first position you did not understand rather than only the final losing move. A late queen loss may be obvious, while an earlier trade left you defending a position you never evaluated properly. Both matter, but they require different training. Personal analysis helps you distinguish them before a computer labels individual moves."
+        ]
+      },
+      {
+        "heading": "Test your own variation",
+        "paragraphs": [
+          "Play through the line you thought was possible. Check that every move is legal and that you allowed the opponent an active defence. If your idea only works when the opponent cooperates, find the point where you stopped searching for their best reply.",
+          "Write a small number of unresolved questions. For example: does the rook exchange lead to a drawn pawn ending, can the king escape the attack, or is the apparently loose piece tactically defended? These questions make the later engine pass efficient because you have a concrete claim to test."
+        ]
+      },
+      {
+        "heading": "Bring in feedback and keep the distinction",
+        "paragraphs": [
+          "Now use an engine or discuss the position with a stronger player. Compare their answer with your notes, not just with the move you played. An engine may refute the game move and your proposed improvement for different reasons. Follow enough of the line to explain the decisive feature.",
+          "Finish with one practical lesson and one position to revisit. Preserve unresolved questions if the line remains beyond your understanding; a human explanation may be more helpful than additional depth. This process does not make engine analysis unnecessary. It makes the feedback informative by showing what you could and could not find without it. The aim is an accurate account of your decision-making, not an impressive annotation or a guaranteed improvement in your next result."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn computer feedback can help test practice decisions after your own attempt. This workflow does not assume arbitrary external game import or annotation tools; use the game record and board your chosen platform actually provides.",
+    "sources": [
+      {
+        "label": "Chess.com: analysing your own games",
+        "url": "https://www.chess.com/article/view/how-to-analyze-your-chess-games"
+      },
+      {
+        "label": "Lichess: learning from mistakes",
+        "url": "https://lichess.org/page/blind-mode-tutorial"
+      }
+    ],
+    "related": [
+      "review-lost-chess-games",
+      "review-won-chess-games",
+      "annotate-own-chess-games"
+    ]
+  },
+  {
+    "slug": "chess-engine-analysis-workflow",
+    "title": "A chess engine analysis workflow that answers a question",
+    "description": "Use engine analysis to test your candidates, inspect the strongest defence and turn a numerical disagreement into a practical lesson.",
+    "keyword": "chess engine analysis workflow",
+    "cluster": "game-review",
+    "lede": "Use engine analysis to test your candidates, inspect the strongest defence and turn a numerical disagreement into a practical lesson.",
+    "sections": [
+      {
+        "heading": "Enter analysis with a claim to test",
+        "paragraphs": [
+          "Before enabling an engine, write what you believe about the position. Perhaps your bishop sacrifice wins the queen, the rook exchange reaches a safe ending, or a pawn advance prevents the opponent’s attack. A claim gives the engine output a purpose beyond showing a preferred move.",
+          "Check the board, side to move and relevant castling or en passant rights when setting up a position manually in an external analysis tool that supports it. An engine is only analysing the position it receives. A missing pawn or incorrect side to move can produce a persuasive answer to the wrong chess question."
+        ]
+      },
+      {
+        "heading": "Compare moves under similar conditions",
+        "paragraphs": [
+          "Let the analysis settle enough to identify a serious continuation. If you compare your move with another candidate, give each a reasonable opportunity to be analysed rather than contrasting an instant score with a much deeper result. Search values may change as the engine finds new resources.",
+          "Do not assume every displayed difference is equally important. A small numerical preference in a quiet position may matter less for your current training than a forcing line that loses a rook. Start with decisions whose consequences you can explain and which recur in your games."
+        ]
+      },
+      {
+        "heading": "Follow the opponent’s best reply",
+        "paragraphs": [
+          "Play your candidate on the analysis board and inspect the strongest defence. Continue until the immediate tactical question is resolved. If the engine rejects your sacrifice, find how the opponent survives or returns material. If it accepts a quiet move, identify the threat or improvement that makes the move useful.",
+          "Also test the reply you expected during the game. It may be weaker than the engine’s choice, which explains why your plan appeared convincing. Comparing the two replies often reveals the missed defensive resource more clearly than memorising the top line alone."
+        ]
+      },
+      {
+        "heading": "Convert the line into a usable note",
+        "paragraphs": [
+          "Record the move you considered, the refutation or supporting continuation, and the feature you need to recognise. “The pinned knight cannot recapture” is a transferable lesson. A sequence of unexplained moves is harder to use later. If several lines remain unclear, seek a human explanation or a simpler related position.",
+          "Keep analysis outside live online games. An engine is appropriate for permitted study and computer practice, not an advantage against another person. Finally, remember that engines do not reproduce your future human opponents exactly. A best-play evaluation and a practical decision under your clock are related but different questions. Use the engine to challenge assumptions and verify tactics, while keeping responsibility for understanding the resulting position and choosing a realistic training task."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn runs Stockfish or Reckless locally for supported practice and analysis. Choose the available engine in Settings; the engines are alternatives, not a built-in engine-versus-engine tournament or a conversational AI tutor.",
+    "sources": [
+      {
+        "label": "Stockfish: engine settings and behaviour",
+        "url": "https://official-stockfish.github.io/docs/stockfish-wiki/Stockfish-FAQ.html"
+      },
+      {
+        "label": "Chess.com: self-analysis tools",
+        "url": "https://support.chess.com/en/articles/8583757-how-do-i-use-game-analysis"
+      }
+    ],
+    "related": [
+      "review-won-chess-games",
+      "annotate-own-chess-games",
+      "analyse-chess-game-without-engine"
+    ]
+  },
+  {
+    "slug": "centipawns-vs-win-probability",
+    "title": "Centipawns, winning chances and accuracy: read chess scores carefully",
+    "description": "An engine score is not a literal pawn count or a universal win prediction. Learn which comparisons help you understand a chess decision.",
+    "keyword": "centipawns vs win probability chess",
+    "cluster": "game-review",
+    "lede": "An engine score is not a literal pawn count or a universal win prediction. Learn which comparisons help you understand a chess decision.",
+    "sections": [
+      {
+        "heading": "A score summarises an evaluated position",
+        "paragraphs": [
+          "A chess engine’s numerical score expresses its assessment under its evaluation and search system. Positive and negative values normally distinguish the favoured side, but check the interface’s perspective before reading the sign. Some displays follow White; others may orient information differently.",
+          "A centipawn is conventionally a hundredth of a pawn unit, yet a displayed advantage is not a receipt for material you can immediately collect. King safety, activity, structure and concrete tactics all contribute. A side can be materially ahead while the engine prefers the opponent’s attack."
+        ]
+      },
+      {
+        "heading": "Winning chances add a model",
+        "paragraphs": [
+          "Some chess services transform engine scores into a winning-chance scale intended to be more understandable for humans. That transformation depends on a model and its reference data. It is not a personalised prediction for your next game, your exact time control or every possible opponent.",
+          "Lichess explains that its accuracy metric uses changes in modelled winning chances rather than treating equal centipawn losses as equally significant in every position. This helps explain why a numerical drop in an already overwhelming position can mean something different from the same drop in an equal one. Other services need not use the same formula."
+        ]
+      },
+      {
+        "heading": "Accuracy is not your rating",
+        "paragraphs": [
+          "An accuracy percentage describes moves under a particular analysis method. It does not measure all the skills involved in competitive chess and does not provide a direct rating conversion. An easy position with many safe moves is different from a difficult defence requiring repeated precise choices.",
+          "Avoid comparing percentages from different services as if they were marks on the same exam. Engines, search settings and classification formulas can differ. A high score in one short game also cannot establish that a player cheated. Report genuine concerns through the playing platform rather than drawing a conclusion from one percentage."
+        ]
+      },
+      {
+        "heading": "Read the move behind the number",
+        "paragraphs": [
+          "When a score changes sharply, inspect the position before and after the move. Ask which defence or tactical resource appeared or disappeared. Follow the line until you can explain the practical consequence. The useful lesson might be an exposed back rank, an unfavourable trade or a king trapped without escape squares.",
+          "For a study exercise, compare two candidate moves and write a verbal assessment before revealing their scores. Then investigate the first concrete disagreement. This keeps the number connected to chess reasoning. If a small difference remains mysterious, do not invent a strategic story just to match it. Mark it unresolved and prioritise errors whose causes you can identify. Numbers are valuable evidence, but the board and the continuation show what you should practise next."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn offers engine feedback and move grading in practice. Do not assume its displayed labels or percentages use the same thresholds as another service, or that a training score predicts a competitive rating.",
+    "sources": [
+      {
+        "label": "Lichess: accuracy and winning-chance methodology",
+        "url": "https://lichess.org/page/accuracy"
+      },
+      {
+        "label": "Stockfish: frequently asked questions",
+        "url": "https://official-stockfish.github.io/docs/stockfish-wiki/Stockfish-FAQ.html"
+      }
+    ],
+    "related": [
+      "annotate-own-chess-games",
+      "analyse-chess-game-without-engine",
+      "chess-engine-analysis-workflow"
+    ]
+  },
+  {
+    "slug": "chess-mistake-vs-blunder",
+    "title": "Mistake or blunder? Look beyond the chess label",
+    "description": "Move labels vary across analysis tools. Use the concrete consequence and the reason you missed it to choose your next training task.",
+    "keyword": "chess mistake vs blunder",
+    "cluster": "game-review",
+    "lede": "Move labels vary across analysis tools. Use the concrete consequence and the reason you missed it to choose your next training task.",
+    "sections": [
+      {
+        "heading": "A label is a starting point",
+        "paragraphs": [
+          "Analysis tools classify moves to highlight decisions worth reviewing. A blunder label usually signals a serious deterioration under that tool’s method, while a mistake indicates a smaller one. The exact boundaries are not universal chess laws, and two services may classify the same move differently.",
+          "Before worrying about the colour of the label, look at the continuation. Did you lose a piece, miss a forced mate, allow perpetual check, or enter an ending you cannot win? These consequences tell you much more about the decision than arguing whether it deserves one label or another."
+        ]
+      },
+      {
+        "heading": "Find the first concrete change",
+        "paragraphs": [
+          "Return to the position before the flagged move and assess the threats. Then make the move and search for the opponent’s strongest reply. A useful explanation identifies what changed: a defender moved away, an escape square vanished, or a pawn break opened a line toward the king.",
+          "Sometimes the engine’s punishment is difficult to see and requires several precise moves. That is different from leaving a queen en prise. Both can receive severe labels, but your training response should reflect the practical cause. Do not treat every flagged move as equally urgent or equally easy to avoid."
+        ]
+      },
+      {
+        "heading": "Separate the chess error from its cause",
+        "paragraphs": [
+          "The chess error might be allowing a fork. Your cause might be failing to check a knight’s attacks, rushing after a trade, or misremembering where a defender stood. If you only write “missed fork,” you may choose the wrong remedy. Solving more fork puzzles will not necessarily fix a habit of moving before inspecting the opponent’s last move.",
+          "Write a two-part note: consequence and decision failure. For example, “Lost a rook to a fork; I considered only my own threat.” This suggests a pre-move opponent-threat check. Another error, “Lost a rook; I calculated the line but forgot a capture,” suggests a visualisation or counting exercise."
+        ]
+      },
+      {
+        "heading": "Turn one label into a retest",
+        "paragraphs": [
+          "Choose a single flagged position, hide the answer and solve it later. Require an explanation of the opponent’s resource and a safer alternative. Then find a different position with the same warning sign. If you can only reproduce the original engine move, the lesson may still be tied to memory rather than recognition.",
+          "Review wins as well as losses, because an opponent may fail to punish your mistake. Conversely, a game can be lost without one spectacular blunder if several modest decisions create an unpleasant defence. The goal is not to achieve a spotless report at any cost. It is to understand which decisions are repeatedly costing you practical chances and to train a specific way of making them better."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn grades moves in computer practice. Treat those grades as feedback to investigate, not universal labels shared by every chess service or proof that a particular error defines your playing strength.",
+    "sources": [
+      {
+        "label": "Chess.com: what Game Review measures",
+        "url": "https://support.chess.com/en/articles/8584089-how-does-game-review-work"
+      },
+      {
+        "label": "Lichess: why accuracy methods differ",
+        "url": "https://lichess.org/page/accuracy"
+      }
+    ],
+    "related": [
+      "analyse-chess-game-without-engine",
+      "chess-engine-analysis-workflow",
+      "centipawns-vs-win-probability"
+    ]
+  },
+  {
+    "slug": "review-lost-chess-games",
+    "title": "How to review a lost chess game without stopping at the last blunder",
+    "description": "Find the first decision you misunderstood, separate the result from the process and turn a lost game into a small set of practical exercises.",
+    "keyword": "how to review lost chess games",
+    "cluster": "game-review",
+    "lede": "Find the first decision you misunderstood, separate the result from the process and turn a lost game into a small set of practical exercises.",
+    "sections": [
+      {
+        "heading": "Let the result settle before judging yourself",
+        "paragraphs": [
+          "A lost game can make every earlier move look wrong. Begin by recording what you remember while it is fresh, then take a short break if frustration prevents useful analysis. Your task is to explain decisions, not to produce a verdict on your ability as a player.",
+          "Write down the point where you first felt uncertain, the moment you believed the position became difficult, and the final decisive error. These may be three different positions. Keeping them separate prevents the last visible blunder from hiding the earlier problem that put you under pressure."
+        ]
+      },
+      {
+        "heading": "Reconstruct the first difficult choice",
+        "paragraphs": [
+          "Replay the game without an engine until you reach the earliest uncertain position. State your plan, the opponent’s threat and the candidate moves you considered. If you chose a move because it “looked normal,” identify which feature you failed to assess: development, a loose piece, an open file or an ending after exchanges.",
+          "Analyse one alternative before checking feedback. You may discover that the game move was acceptable but the continuation was not, or that your proposed improvement fails for a new reason. Personal analysis creates a record of your understanding rather than a retrospective story built entirely from computer output."
+        ]
+      },
+      {
+        "heading": "Inspect the decisive resource",
+        "paragraphs": [
+          "Now use analysis to test the critical positions. Follow the opponent’s strongest reply until the practical consequence is clear. If the game was already difficult, ask whether the flagged move changed the objective result or merely made your task harder. Not every late error deserves equal training time.",
+          "Look for an actionable cause. Time trouble after repeated indecision suggests a different exercise from failing to know a basic rook ending. An opening surprise may expose a missing plan rather than a missing memorised line. Choose the narrowest explanation supported by the moves and your recollection."
+        ]
+      },
+      {
+        "heading": "Finish with one repair and one retention task",
+        "paragraphs": [
+          "Select a position to solve again later and an exercise addressing its main feature. If the problem was an undefended piece, use a threat-scan drill. If it was converting an ending, play that type of ending from both sides. Avoid assigning yourself a complete new opening repertoire after one uncomfortable game.",
+          "Keep one thing you did well in the notes, especially a decision you can repeat. A review that contains only criticism can overlook useful habits and make future analysis unpleasant. Losses do not automatically teach more than wins; they become useful when you identify what to change and test whether the change works. Preserve unresolved questions for a coach or stronger partner instead of inventing explanations you cannot verify."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn computer practice and endgame drills can address a weakness identified in a lost game. This guide does not assume the app imports every external game; use your available record and analysis board.",
+    "sources": [
+      {
+        "label": "Chess.com: a personal-first game analysis method",
+        "url": "https://www.chess.com/article/view/how-to-analyze-your-chess-games"
+      },
+      {
+        "label": "Lichess: interactive mistake review",
+        "url": "https://lichess.org/page/blind-mode-tutorial"
+      }
+    ],
+    "related": [
+      "chess-engine-analysis-workflow",
+      "centipawns-vs-win-probability",
+      "chess-mistake-vs-blunder"
+    ]
+  },
+  {
+    "slug": "review-won-chess-games",
+    "title": "Review your won chess games: what the result can hide",
+    "description": "Learn from wins by checking missed defences, conversion choices and repeatable good decisions rather than assuming victory means accurate play.",
+    "keyword": "how to analyse won chess games",
+    "cluster": "game-review",
+    "lede": "Learn from wins by checking missed defences, conversion choices and repeatable good decisions rather than assuming victory means accurate play.",
+    "sections": [
+      {
+        "heading": "Winning does not validate every decision",
+        "paragraphs": [
+          "A win records the result of the game, not the soundness of every move. Your opponent may overlook a defence, miss a tactical chance or make a later error that changes the outcome. Reviewing wins helps you separate a good idea from an idea that survived only because it was not challenged.",
+          "Before opening analysis, note the moves you felt proud of and the moments when you were unsure. This preserves your original reasoning. A convincing engine line can otherwise make you forget that your attacking move was a guess rather than a calculated decision."
+        ]
+      },
+      {
+        "heading": "Give the opponent a better defence",
+        "paragraphs": [
+          "At the critical attacking moment, look for the opponent’s strongest check, capture or simplifying exchange. Do not replay only the cooperative line from the game. Ask whether your plan still works if the opponent refuses the sacrifice, returns material or moves the king to an unexpected square.",
+          "If the attack fails against accurate defence, record the warning sign you missed. You do not need to dismiss every practical attacking idea simply because a computer finds a defence. You do need to distinguish “this creates difficult choices” from “this wins by force,” especially when deciding what to repeat in future games."
+        ]
+      },
+      {
+        "heading": "Examine how you converted the advantage",
+        "paragraphs": [
+          "Once you were ahead, did your moves reduce counterplay or create unnecessary complications? Check king safety, loose pieces and passed pawns before celebrating a favourable material count. A queen trade may help, but only if the resulting ending is understood and the opponent’s pawn threats are manageable.",
+          "Choose one conversion decision and compare two candidates. Try to explain which gives the opponent fewer active possibilities without relying solely on a numerical score. The strongest engine move is useful evidence, but a training note should identify a practical principle you can recognise again, such as activating the king before advancing an isolated pawn."
+        ]
+      },
+      {
+        "heading": "Preserve sound habits as well as corrections",
+        "paragraphs": [
+          "Record one decision that your analysis supports and explain why it worked. This might be improving your least active piece, checking an intermediate move before recapturing, or declining a tempting capture to address a mating threat. Good decisions are worth rehearsing, not merely errors worth avoiding.",
+          "Finish by hiding the answer in a critical position and solving it later. Include won games in your normal review sample so your error log does not describe only the situations that happened to end badly. Over time, compare the decisions themselves rather than selecting games by result. A balanced review can reveal both a weakness that victory concealed and a reliable method you should keep using, without turning a single successful game into a claim about your long-term playing strength."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn local engine practice can help investigate attacking and conversion decisions. Its feedback is for study and computer play, not assistance during a live match against another person.",
+    "sources": [
+      {
+        "label": "Chess.com: reviewing games of every result",
+        "url": "https://www.chess.com/article/view/how-to-analyze-your-chess-games"
+      },
+      {
+        "label": "Lichess: interpreting accuracy",
+        "url": "https://lichess.org/page/accuracy"
+      }
+    ],
+    "related": [
+      "centipawns-vs-win-probability",
+      "chess-mistake-vs-blunder",
+      "review-lost-chess-games"
+    ]
+  },
+  {
+    "slug": "annotate-own-chess-games",
+    "title": "How to annotate your own chess game in useful words",
+    "description": "Write chess annotations that preserve decisions, test alternatives and leave a clear lesson, without filling every move with engine variations.",
+    "keyword": "how to annotate chess games",
+    "cluster": "game-review",
+    "lede": "Write chess annotations that preserve decisions, test alternatives and leave a clear lesson, without filling every move with engine variations.",
+    "sections": [
+      {
+        "heading": "Write for your future self",
+        "paragraphs": [
+          "A useful annotation explains what you were trying to do and what the position demanded. It does not need to sound like a published grandmaster collection. Begin with the moves where you made a real choice, felt uncertain or changed your plan. Routine recaptures rarely need an essay unless an alternative mattered.",
+          "Keep your game-time thoughts separate from discoveries made afterwards. “I expected the rook trade to simplify” records your original reasoning. “Later analysis showed the pawn ending was lost” records a correction. Combining them into one confident explanation erases the very misunderstanding you need to study."
+        ]
+      },
+      {
+        "heading": "Use a four-question note",
+        "paragraphs": [
+          "For a critical move, answer four questions: what was threatened, what did I consider, why did I choose this move, and what did I miss? The answers can be short. A specific sentence about an undefended rook is more useful than several lines saying the position was complicated.",
+          "Include a variation only when it supports the explanation. If you claim a capture fails because of a fork, show enough moves to establish the fork and its consequence. Avoid adding a long engine line whose final position you cannot assess. The annotation should make a claim understandable, not demonstrate how much output you copied."
+        ]
+      },
+      {
+        "heading": "Distinguish facts from open questions",
+        "paragraphs": [
+          "Mark uncertain assessments honestly. You might understand that a king attack is dangerous without knowing whether it forces mate. Write the question and test it with an engine or stronger player. If the answer remains unclear, preserve that uncertainty rather than inventing a strategic explanation after reading a score.",
+          "For notation, use the system your intended reader can follow and include the full game score where possible. A standalone comment such as “the knight is strong” loses meaning if you cannot find the position later. If your tool lacks comments or export, a separate notebook with move numbers can still preserve the reasoning."
+        ]
+      },
+      {
+        "heading": "Turn annotations into a small training collection",
+        "paragraphs": [
+          "At the end of the review, choose one position to revisit without the notes visible. Give it a question such as “Which exchange should I avoid?” rather than revealing the answer in the title. Later, compare your new reasoning with the original annotation. This checks whether the lesson survived beyond the review session.",
+          "Periodically scan several annotated games for recurring causes. If you repeatedly misjudge pawn endings after rook trades, that is a clearer study direction than a general label such as poor technique. Keep successful decisions too, so the collection describes what to retain as well as what to repair. Annotating is valuable when it changes the next training task; it need not become a labour-intensive record of every move or a collection of unexplained engine punctuation."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn engine practice can verify chess claims behind your notes. This guide does not claim the app has a full PGN annotation editor; use an external notebook or editor when your preferred workflow requires one.",
+    "sources": [
+      {
+        "label": "Chess.com: self-analysis and saving analysis",
+        "url": "https://support.chess.com/en/articles/8583757-how-do-i-use-game-analysis"
+      },
+      {
+        "label": "Lichess: studies and game tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "chess-mistake-vs-blunder",
+      "review-lost-chess-games",
+      "review-won-chess-games"
+    ]
+  },
+  {
+    "slug": "spaced-repetition-chess",
+    "title": "Spaced repetition for chess: remember ideas, not clicks",
+    "description": "Use spaced repetition to revisit missed chess positions, explain their patterns and test recognition in new positions and ordinary games.",
+    "keyword": "spaced repetition chess training",
+    "cluster": "study-plans",
+    "lede": "Use spaced repetition to revisit missed chess positions, explain their patterns and test recognition in new positions and ordinary games.",
+    "sections": [
+      {
+        "heading": "Decide what you want to remember",
+        "paragraphs": [
+          "Repeating a chess position can reinforce a useful pattern, but it can also train you to remember a move without understanding it. Before adding a position to your review set, identify the idea: an overloaded defender, a king with no escape square, an outside passed pawn or a critical opposition square.",
+          "Write a question that leaves the answer hidden. “Find the opponent’s threat” is a retrieval task; “play the winning knight fork” partly supplies the solution. Your collection should require you to reconstruct a reason, not simply recognise the thumbnail of a puzzle you saw yesterday."
+        ]
+      },
+      {
+        "heading": "Make the first review explanatory",
+        "paragraphs": [
+          "When you miss a position, inspect the strongest defence and explain why your original move failed. Then solve it again without the answer visible. If you still cannot explain the continuation, seek a simpler related example rather than scheduling repeated guesses at a line you do not understand.",
+          "A useful review record separates accuracy from reasoning. You might remember the right square while forgetting that the tactic depends on a pinned pawn. Mark that answer as incomplete. Otherwise, a high success rate can conceal fragile knowledge that disappears when a single defender changes square."
+        ]
+      },
+      {
+        "heading": "Space reviews around actual recall",
+        "paragraphs": [
+          "A practical manual system revisits a missed position soon, then leaves a longer gap after a confident explanation. There is no universally correct interval for every player or motif. If you fail after a long gap, shorten the next interval and revisit the underlying idea. If the answer is effortless, test a related but unfamiliar position.",
+          "Keep the review set manageable. A backlog so large that every session becomes compulsory repetition can crowd out playing and analysis. Retire examples that no longer challenge you, retain positions that reveal recurring errors, and avoid adding every interesting diagram you encounter online."
+        ]
+      },
+      {
+        "heading": "Check whether the pattern transfers",
+        "paragraphs": [
+          "After several successful reviews, change the task. Ask what defensive resource would make the combination fail, or solve another position with the same motif and different piece placement. This helps distinguish understanding from memorising a particular first move.",
+          "Finally, look for the warning sign during your next games. A puzzle announces that a tactical opportunity exists; a normal game does not. Note whether you recognised the feature before receiving any prompt. Spaced repetition is one part of a training routine, alongside complete games and review. It does not make every repeated position equally valuable, and it does not justify a guarantee about rating progress. Its practical value comes from retaining a useful decision rule and recognising when the board calls for it."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn revisits missed tactics through its training system. Pair that repetition with your own explanation and unfamiliar examples; daily free training limits still apply.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "ten-minute-chess-routine",
+      "thirty-minute-chess-routine",
+      "weekly-chess-training-plan"
+    ]
+  },
+  {
+    "slug": "opening-vs-endgame-study",
+    "title": "Should you study chess openings or endgames first?",
+    "description": "Allocate opening and endgame study using the decisions that cost you games, rather than treating either topic as a universal priority.",
+    "keyword": "chess openings vs endgames study",
+    "cluster": "study-plans",
+    "lede": "Allocate opening and endgame study using the decisions that cost you games, rather than treating either topic as a universal priority.",
+    "sections": [
+      {
+        "heading": "Start with the games you actually reach",
+        "paragraphs": [
+          "The right balance between openings and endgames depends on your mistakes, not a slogan about which phase matters most. If you lose pieces before move ten, a long theoretical ending may not address the immediate problem. If you reach favourable simplified positions and repeatedly draw them, more opening memorisation may be equally misplaced.",
+          "Review several recent games and identify where you first stopped understanding the position. Distinguish a tactical blunder in an opening from a lack of opening knowledge. A hanging bishop is not automatically evidence that you need a new repertoire just because it happened early."
+        ]
+      },
+      {
+        "heading": "Define a minimum opening foundation",
+        "paragraphs": [
+          "You need enough opening understanding to develop pieces, protect the king and reach a playable middlegame. Learn the plans and common pawn breaks in a small number of structures. Study complete examples so you can explain what happens after the memorised moves end.",
+          "When checking a specific line, ask why the move is played and what changes if the opponent deviates. A sequence without an idea becomes difficult to use against unfamiliar moves. Expand theory when your games reveal a recurring concrete problem, rather than collecting lines simply because they are popular."
+        ]
+      },
+      {
+        "heading": "Build a usable endgame foundation",
+        "paragraphs": [
+          "Basic mates, king activity and straightforward pawn endings provide practical reference points. Learn a method, then play the position out from both sides. Recognising a diagram is different from converting against active defence, especially when the opponent forces you to choose the correct move order.",
+          "Endgame knowledge also affects earlier decisions. Before exchanging rooks, you need some basis for judging the pawn ending that remains. If you cannot tell whether your king arrives in time, the trade deserves calculation or study. This is one reason endgames need not wait until you routinely play long games."
+        ]
+      },
+      {
+        "heading": "Allocate study from a simple error log",
+        "paragraphs": [
+          "Use three columns: opening understanding, tactical decisions and ending technique. Put each reviewed error in the category that best describes its cause, not merely its move number. After a few weeks, give the largest recurring problem an extra session while retaining a small amount of work in the other areas.",
+          "For example, a player reaching safe middlegames but missing forks may need tactics more urgently than either opening expansion or theoretical rook endings. Another player may need a single pawn structure explained. No fixed percentage fits everyone. Reassess after you have enough games to see whether the change helped you make a specific decision more confidently. A balanced plan is one that addresses your current needs while preserving the foundations needed to understand the rest of the game."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn includes tactics, endgame drills and replayable games. Its bundled material can support these areas, but it is not an exhaustive opening-theory database or a replacement for a structured explanatory course.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "thirty-minute-chess-routine",
+      "weekly-chess-training-plan",
+      "chess-rating-plateau"
+    ]
+  },
+  {
+    "slug": "choose-iphone-chess-app",
+    "title": "How to choose an iPhone chess app for your actual goal",
+    "description": "Compare iPhone chess apps by practice tools, offline behaviour, fair play and free limits, rather than choosing only by a headline rating.",
+    "keyword": "best chess app for iPhone training",
+    "cluster": "app-choice",
+    "lede": "Compare iPhone chess apps by practice tools, offline behaviour, fair play and free limits, rather than choosing only by a headline rating.",
+    "sections": [
+      {
+        "heading": "Define the job before comparing apps",
+        "paragraphs": [
+          "An app for quick online games is not necessarily the best tool for studying a difficult position on a train. Decide whether your main goal is learning rules, solving tactics, analysing practice decisions, playing friends or watching complete games. A shortlist becomes easier when you choose a primary job and one secondary need.",
+          "Write three tasks you want to complete during a normal week. Examples include solving a few puzzles without internet, playing a friend with a clock, and comparing a candidate move with an engine. Test those tasks directly instead of treating a long feature list as proof that an app suits you."
+        ]
+      },
+      {
+        "heading": "Check the board and feedback",
+        "paragraphs": [
+          "On an iPhone, piece recognition and reliable move entry matter. Try a crowded position, a promotion and a short review session. Can you distinguish selected squares and legal-move indicators? Can you return to a previous position without losing your place? Comfort during real use is more informative than a polished store screenshot alone.",
+          "For training feedback, ask whether the app explains the chess idea, displays an engine continuation or merely marks an answer right or wrong. These can all serve different purposes. Do not assume an engine-branded coach is a conversational tutor or that a numeric score supplies the explanation you need."
+        ]
+      },
+      {
+        "heading": "Test connectivity and costs honestly",
+        "paragraphs": [
+          "Open the features you care about before travelling, then test them without a connection. A local engine may work offline while online matches, fresh content or account services still require internet. “Offline” should describe specific activities, not every part of an app.",
+          "Check the current App Store purchase information and in-app terms. Look for daily training limits, recurring subscriptions and one-time unlocks where offered. A free download does not mean every activity is unlimited. Conversely, a limited training tier can still be suitable if your routine is small and the free playing modes meet your needs."
+        ]
+      },
+      {
+        "heading": "Compare a short session, not abstract superlatives",
+        "paragraphs": [
+          "Use the same twenty-minute task in two candidate apps: attempt a few positions, investigate one mistake and play a short continuation. Note where you needed a separate resource. A dedicated lessons platform may suit a new learner better, while a local engine and bundled exercises may suit someone who already understands the rules.",
+          "Keep assisted analysis separate from live matches against people. Fair-play rules matter even if another app can display moves alongside the game. There is no universal winner for every iPhone owner. Choose the tool whose limitations you understand, whose board you can use comfortably and whose feedback supports the activity you intend to repeat."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn is an option for on-device engine practice, bundled training and Game Center play on Apple devices. It has no ads, but free training has daily limits and it does not offer an LLM chat tutor.",
+    "sources": [
+      {
+        "label": "Brass Pawn on the App Store",
+        "url": "https://apps.apple.com/app/brass-pawn/id6803566012"
+      },
+      {
+        "label": "Lichess: published mobile and analysis features",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "game-center-chess-with-friends",
+      "ipad-chess-practice-routine",
+      "mac-chess-analysis-workflow"
+    ]
+  },
+  {
+    "slug": "offline-chess-app-checklist",
+    "title": "Choosing an offline chess app: what should work without internet?",
+    "description": "Check local engines, bundled exercises and saved progress before travelling, and distinguish offline practice from online chess services.",
+    "keyword": "offline chess app iPhone",
+    "cluster": "app-choice",
+    "lede": "Check local engines, bundled exercises and saved progress before travelling, and distinguish offline practice from online chess services.",
+    "sections": [
+      {
+        "heading": "Offline describes an activity, not a whole product",
+        "paragraphs": [
+          "A chess app can analyse on the device while requiring internet for multiplayer or new content. Before relying on it during a journey, list the activities you want available: computer games, tactical exercises, endgame practice, game replay or access to earlier notes. Test each one rather than trusting a single offline label.",
+          "Download and open the app before disconnecting. Complete any required setup while a connection is available. Then close and reopen it without internet. A feature that remains visible in an already-open screen may behave differently after a fresh launch or when it needs additional material."
+        ]
+      },
+      {
+        "heading": "Check where the engine runs",
+        "paragraphs": [
+          "A local engine performs its analysis on your device. A server-based engine needs a connection to receive the position and return its answer. Some products offer both, so inspect the selected mode and test the actual analysis you intend to use.",
+          "For a practical check, start a computer game offline, make several moves and investigate an alternative continuation. Do not infer analysis availability from the fact that the board itself opens. A board display, a puzzle answer and a fully running engine are different functions."
+        ]
+      },
+      {
+        "heading": "Verify the exercises and progress you need",
+        "paragraphs": [
+          "Try a new puzzle, a previously missed position and an endgame drill while disconnected. Confirm whether the relevant material is bundled or downloaded in advance. If a daily feed cannot refresh, distinguish that expected limitation from the availability of the app’s stored library.",
+          "Consider device changes separately. Progress stored locally is not the same as a cloud account that automatically restores every record. Before deleting an app or moving to a new device, read its current support information and check what your backup arrangement preserves. Do not assume offline use implies either cloud sync or permanent data retention."
+        ]
+      },
+      {
+        "heading": "Make a travel test rather than a risky assumption",
+        "paragraphs": [
+          "A short rehearsal is enough to uncover most immediate surprises: launch offline, play the computer, attempt a training task and reopen the app. Keep battery needs in mind because sustained engine analysis uses device resources even without network traffic. You can study a single position carefully instead of running continuous analysis for an entire journey.",
+          "Multiplayer, rankings and fresh online content normally have separate connectivity requirements. An offline practice tool does not create an internet-free match with a distant friend. Once connected again, check any expected updates deliberately. The strongest choice is not the app that makes the broadest claim, but the one whose specific offline tasks you have verified on the device you will carry."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn runs Stockfish or Reckless on-device and includes bundled training and games. Game Center matches, rankings and the Today feed need internet; do not describe the entire app as connection-free.",
+    "sources": [
+      {
+        "label": "Brass Pawn: official practice and offline information",
+        "url": "https://brasspawn.com/guides/chess-practice"
+      },
+      {
+        "label": "Stockfish: official engine documentation",
+        "url": "https://official-stockfish.github.io/docs/stockfish-wiki/Stockfish-FAQ.html"
+      }
+    ],
+    "related": [
+      "ipad-chess-practice-routine",
+      "mac-chess-analysis-workflow",
+      "choose-chess-computer-strength"
+    ]
+  },
+  {
+    "slug": "chess-app-without-ads",
+    "title": "A chess app without ads: evaluate the practice experience",
+    "description": "Compare ad-free chess options without confusing no advertising with unlimited free training, offline access or a particular privacy policy.",
+    "keyword": "chess app without ads",
+    "cluster": "app-choice",
+    "lede": "Compare ad-free chess options without confusing no advertising with unlimited free training, offline access or a particular privacy policy.",
+    "sections": [
+      {
+        "heading": "Separate four different questions",
+        "paragraphs": [
+          "“No ads” describes an advertising choice. It does not automatically mean every feature is free, every activity works offline, or no information is processed. Compare those claims separately so you can choose an app based on its actual behaviour rather than assumptions attached to a short label.",
+          "Start with your normal session. Do you want a quiet ten-minute tactics routine, a computer opponent or games with friends? An app without advertising may still interrupt that routine with training limits or purchase prompts. Those limits are not inherently disqualifying, but you should understand them before relying on the app."
+        ]
+      },
+      {
+        "heading": "Read the free and paid boundaries",
+        "paragraphs": [
+          "Check which activities are unlimited and which have daily allowances. Look for the current subscription and one-time purchase options in the official listing and inside the app. Avoid relying on an old article’s price, since local prices, offers and product arrangements can change.",
+          "Estimate whether the free allowance fits your real use. A small deliberate-practice session can be worthwhile without an endless puzzle queue. If you regularly hit a limit, compare the paid option with alternatives on the tasks you actually need, not only on the largest advertised collection size."
+        ]
+      },
+      {
+        "heading": "Inspect the learning environment",
+        "paragraphs": [
+          "Try solving a position and reviewing a mistake. Does the interface keep the board readable? Can you see the strongest reply without navigating away from your question? Does the feedback explain an idea or only display a score? An ad-free interface is helpful, but it does not by itself make the teaching appropriate for your level.",
+          "Also check accessibility and practical comfort on your device. Piece contrast, text size and predictable controls may matter more during a long session than an attractive promotional image. If you use a tablet or Mac as well as a phone, test those layouts rather than assuming identical behaviour across platforms."
+        ]
+      },
+      {
+        "heading": "Check privacy and connectivity on their own terms",
+        "paragraphs": [
+          "Read the app’s privacy policy and platform disclosures for the activities you use. A multiplayer service may rely on an account or platform identity even when the app displays no advertisements. No ads and no account are separate statements, and a local engine does not prove that every feature remains entirely on-device.",
+          "Finally, test the offline tasks you expect before travelling. Computer play may work without a connection while online matches and fresh content do not. There are reputable ad-free choices with different business models; compare current official information rather than treating a fee or a donation model as evidence of quality by itself. Choose the combination of clear limits, useful feedback and comfortable practice that you are willing to keep using."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn has no ads. Computer games, online play and its game library are free; training has daily allowances and Pro removes those limits. Online features still require a connection.",
+    "sources": [
+      {
+        "label": "Brass Pawn: official feature and free-tier information",
+        "url": "https://brasspawn.com/guides/chess-practice"
+      },
+      {
+        "label": "Lichess: advertising and feature policy",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "mac-chess-analysis-workflow",
+      "choose-chess-computer-strength",
+      "choose-iphone-chess-app"
+    ]
+  },
+  {
+    "slug": "chess-coach-vs-engine",
+    "title": "Chess coach or engine: what kind of feedback do you need?",
+    "description": "Choose between human coaching and engine feedback by the question you need answered: concrete correctness, explanation, habits or a study plan.",
+    "keyword": "chess coach vs engine",
+    "cluster": "app-choice",
+    "lede": "Choose between human coaching and engine feedback by the question you need answered: concrete correctness, explanation, habits or a study plan.",
+    "sections": [
+      {
+        "heading": "An engine and a coach solve different problems",
+        "paragraphs": [
+          "An engine is especially useful for testing concrete moves and revealing defensive resources. A human coach can investigate why you chose a move, adjust an explanation to your understanding and help organise practice around recurring problems. Neither role should be described vaguely enough that a learner expects one to provide everything the other does.",
+          "Before choosing, write your current question. “Does this sacrifice work?” is well suited to concrete analysis. “Why do I repeatedly choose passive positions?” may need a conversation about your thought process and goals. The tool should match the question rather than the popularity of its label."
+        ]
+      },
+      {
+        "heading": "Use an engine for a testable chess claim",
+        "paragraphs": [
+          "Make your own attempt before checking the output. Enter your candidate, inspect the opponent’s strongest reply and follow the line until you can explain the consequence. An evaluation can show that a plan fails, but it does not automatically tell you which part of your reasoning caused the error.",
+          "If the continuation remains opaque, look for the first concrete difference between your calculation and the engine line. A missed intermediate check is a useful discovery. Copying a long sequence without understanding it is not yet a lesson, even when every move is accurate."
+        ]
+      },
+      {
+        "heading": "Use a coach for interpretation and direction",
+        "paragraphs": [
+          "A productive coaching session starts with real games and honest notes about what you considered. Bring a few unresolved decisions rather than only asking for a stronger opening repertoire. A coach can help distinguish missing knowledge from calculation errors, clock habits and psychological reactions to difficult positions.",
+          "Ask what you should practise before the next meeting and how you will know whether the exercise helped. A useful assignment should connect to a demonstrated problem. No responsible coach can guarantee a particular rating increase on a fixed deadline, and an impressive title alone does not establish that an explanation suits your needs."
+        ]
+      },
+      {
+        "heading": "Build a combined workflow when appropriate",
+        "paragraphs": [
+          "First analyse the game yourself. Then use an engine to check concrete claims. Bring the remaining conceptual questions to a coach or stronger training partner. This avoids spending a human session on questions you can already resolve while preserving the value of personalised explanation.",
+          "An app may use the word coach for structured feedback, move labels or prepared comments. Inspect what it actually offers before assuming it includes a conversation with a person or a general-purpose AI tutor. If budget or access rules out coaching, you can still learn from clear lessons, deliberate exercises and thoughtful review. The important distinction is between knowing which move is preferred and understanding how to find an appropriate move yourself in a new position."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn supplies engine feedback and structured practice. It is not a human coaching service or an LLM chat tutor; use outside explanatory resources when a numerical line does not answer your conceptual question.",
+    "sources": [
+      {
+        "label": "Chess.com: personal analysis, stronger-player review and engines",
+        "url": "https://www.chess.com/article/view/how-to-analyze-your-chess-games"
+      },
+      {
+        "label": "Stockfish: official documentation",
+        "url": "https://official-stockfish.github.io/docs/stockfish-wiki/Stockfish-FAQ.html"
+      }
+    ],
+    "related": [
+      "choose-chess-computer-strength",
+      "choose-iphone-chess-app",
+      "offline-chess-app-checklist"
+    ]
+  },
+  {
+    "slug": "chess-training-vs-online-play",
+    "title": "Chess training or online play: give each session a job",
+    "description": "Balance online games and chess study by linking one practical decision to a review and a targeted exercise.",
+    "keyword": "chess training vs playing online",
+    "cluster": "study-plans",
+    "lede": "Balance online games and chess study by linking one practical decision to a review and a targeted exercise.",
+    "sections": [
+      {
+        "heading": "Playing supplies evidence; practice tests a repair",
+        "paragraphs": [
+          "Online games reveal how you choose moves under real conditions. Structured exercises let you isolate one skill and investigate it without the full burden of a game. These activities complement each other, but neither automatically becomes useful just because you spend a long time doing it.",
+          "A player can solve many puzzles without noticing tactics during games. Another can play dozens of games while repeating the same error. The connection between the two is a reviewed decision: something you failed to see, calculate or understand, followed by a specific test of that weakness."
+        ]
+      },
+      {
+        "heading": "Start with one complete game",
+        "paragraphs": [
+          "Choose a time control that fits your training goal and allows meaningful thought. During the game, play independently and follow the platform’s fair-play rules. Do not open an engine, consult another person or use an analysis app for help while facing another player.",
+          "Afterwards, note a few decisions that felt difficult before looking at computer feedback. The most useful position is not necessarily the largest numerical mistake. It might be the first time you had no plan or the trade that created an ending you misunderstood. Keep the question focused enough to investigate in the time you have."
+        ]
+      },
+      {
+        "heading": "Design a follow-up exercise",
+        "paragraphs": [
+          "If the game exposed a loose-piece problem, practise threat scans in ordinary positions. If a pawn ending was mishandled, play that type of ending from both sides. If your opening knowledge ended too early, study the resulting pawn structure and plans rather than adding unrelated theory.",
+          "Before checking a solution, commit to a candidate and a strongest reply. This creates a fair comparison with the feedback. Then write a practical cue for the next game: check the opponent’s forcing move, activate the king before pushing the pawn, or count attackers after an exchange. The cue should describe an action, not a wish to play better."
+        ]
+      },
+      {
+        "heading": "Return to normal play and look for transfer",
+        "paragraphs": [
+          "In your next games, notice whether the cue appears without a puzzle announcing it. Record a position where you used it or forgot it. This is more informative than comparing a training score with a playing rating, since the tasks and rating systems differ.",
+          "Keep room for games played purely for enjoyment. Not every session has to become homework, and excessive review can make the hobby feel like a backlog. For a deliberate session, however, close the loop: play, identify a question, practise and retest. Adjust the balance to the evidence in your games rather than assuming a universal study-to-play ratio. The aim is a routine that changes specific decisions while keeping the distinction between permitted practice assistance and independent online competition clear."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn separates engine-assisted computer practice from Game Center matches. Training has daily free allowances; computer play, online play and the bundled game library are free.",
+    "sources": [
+      {
+        "label": "Chess.com study plan directory",
+        "url": "https://www.chess.com/article/view/study-plan-directory"
+      },
+      {
+        "label": "Lichess learning and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "blitz-vs-rapid-for-improvement",
+      "avoid-one-move-chess-blunders",
+      "candidate-moves-chess"
+    ]
+  },
+  {
+    "slug": "game-center-chess-with-friends",
+    "title": "Playing chess with friends through Game Center",
+    "description": "Prepare a Game Center chess session with a friend: check connectivity, choose a clock and keep assisted practice separate from the match.",
+    "keyword": "Game Center chess with friends",
+    "cluster": "app-choice",
+    "lede": "Prepare a Game Center chess session with a friend: check connectivity, choose a clock and keep assisted practice separate from the match.",
+    "sections": [
+      {
+        "heading": "Check the platform connection first",
+        "paragraphs": [
+          "Game Center is Apple’s gaming identity and social system, not a guarantee that every game exposes the same invitation controls. Both players need the relevant chess app, a working connection and access to Game Center. Check the app’s supported devices and the account settings on each device before planning the session.",
+          "Apple’s current support information describes managing Game Center friends and requests through the Games app and system settings. Exact screens vary with operating-system versions. If a friend request or invitation is missing, check the supported flow for your installed version rather than repeatedly sending requests from different places."
+        ]
+      },
+      {
+        "heading": "Agree on the kind of game",
+        "paragraphs": [
+          "Choose a clock that both players understand and can finish without interruption. A casual practice match and a fast competitive game create different expectations. Agree whether you will discuss positions afterwards, and keep that conversation separate from the actual playing phase.",
+          "In Brass Pawn, friendly invitations and rematches are unrated, and online play has no engine assistance. This makes a friendly game suitable for an agreed practice objective, such as using a pre-move threat check. It does not mean one player should consult an engine while the other is thinking."
+        ]
+      },
+      {
+        "heading": "Troubleshoot the boundary that failed",
+        "paragraphs": [
+          "If the friend does not appear, first confirm the intended Game Center identity. Check whether the friendship request was accepted and whether account restrictions permit multiplayer and connecting with friends. Apple’s controls can restrict those activities independently of whether a chess app opens normally.",
+          "If an invitation arrives but a match does not start, compare the app version, selected format and connection on both devices. Record the step that fails and any visible message before contacting support. Avoid deleting the app as a first response, especially when progress is stored locally. A reinstall may not address an account or network problem and can create a separate data issue."
+        ]
+      },
+      {
+        "heading": "Use the completed game for a shared review",
+        "paragraphs": [
+          "Once the match is finished, choose one position each of you found difficult. Explain what you considered before checking any engine. Comparing two human viewpoints can reveal a threat or plan that neither player’s result alone explains.",
+          "Keep the review constructive: ask what the other player expected rather than announcing that a move was bad. If you use an engine afterwards, investigate the strongest reply and explain the consequence. A friendly chess session can be enjoyable without a formal lesson, but agreeing on the clock and assistance rules beforehand avoids confusion. The app supplies a playing environment; connection quality, platform account settings and the players' expectations remain separate parts of making the session work."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn supports Game Center online matches and in-game friend invitations. Internet is required; friendly invitations and rematches are unrated, and engine assistance is not available in online games.",
+    "sources": [
+      {
+        "label": "Apple: Game Center friends and requests",
+        "url": "https://support.apple.com/en-euro/101638"
+      },
+      {
+        "label": "Apple: Game Center settings and restrictions",
+        "url": "https://support.apple.com/en-euro/guide/iphone/iph3b2f23e83/ios"
+      }
+    ],
+    "related": [
+      "offline-chess-app-checklist",
+      "chess-app-without-ads",
+      "chess-coach-vs-engine"
+    ]
+  },
+  {
+    "slug": "ipad-chess-practice-routine",
+    "title": "Chess practice on iPad: use the space to explain a position",
+    "description": "Use an iPad for careful chess practice, with a readable board, deliberate move entry and a short analysis routine built around one decision.",
+    "keyword": "chess practice app iPad",
+    "cluster": "app-choice",
+    "lede": "Use an iPad for careful chess practice, with a readable board, deliberate move entry and a short analysis routine built around one decision.",
+    "sections": [
+      {
+        "heading": "Let the larger board improve attention",
+        "paragraphs": [
+          "An iPad gives you more display space than a phone, but a larger screen does not automatically create better study. Set the board at a comfortable orientation and choose a layout where pieces, coordinates and feedback are easy to distinguish. The useful test is whether you can inspect the whole position without losing track of the question.",
+          "Try a crowded middlegame before committing to a long session. Make a normal move, revisit a position and check how alternatives are displayed. If you accidentally drag pieces while thinking, adapt your input method or pause before touching the board. Reliable move entry helps keep a calculation exercise about chess rather than interface recovery."
+        ]
+      },
+      {
+        "heading": "Use one position and a separate prediction",
+        "paragraphs": [
+          "Before revealing engine feedback, describe the position and write a candidate move. A nearby notebook can be useful even if your chess app has notes, because it separates your reasoning from the answer. You do not need a complex productivity setup; a move, a reply and a brief assessment are enough.",
+          "Calculate with your hands off the board first, then play through the line to check your visualisation. The larger display can make reconstruction comfortable, but avoid turning every thought into a moved piece before you have tried to hold the position mentally. Choose the method that matches the skill you intend to train."
+        ]
+      },
+      {
+        "heading": "Alternate puzzles with practical continuation",
+        "paragraphs": [
+          "After a tactical exercise, explain the opponent’s strongest defence and the warning sign that made the tactic possible. Then, in a suitable practice mode, continue a position for several moves. Finding a winning first move and handling the resulting position are related but different tasks.",
+          "For endgames, rotate the board or take the other side when the available tools permit it. Understanding the defender’s resources helps you avoid memorising a one-sided sequence. If the app provides only a fixed drill, follow its actual controls rather than assuming it includes a free-form editor or arbitrary setup."
+        ]
+      },
+      {
+        "heading": "Check portability before moving devices",
+        "paragraphs": [
+          "A session on iPad can complement phone or Mac use, but do not assume every record automatically syncs between them. Read the current product information and check how progress is stored. Keep an external note of your study question if you need a reliable way to resume it on another device.",
+          "Test offline practice before travelling, and distinguish the local engine and bundled material from internet-dependent matches or fresh content. The ideal iPad routine is simple: attempt a position independently, test the line, explain the disagreement and leave a question for the next session. Hardware comfort supports that process; it does not replace the need for a clear learning task or guarantee stronger play."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn supports iPad and on-device engines for practice. Online games and the Today feed require internet; do not assume training history is a cross-device cloud notebook.",
+    "sources": [
+      {
+        "label": "Brass Pawn official App Store listing",
+        "url": "https://apps.apple.com/app/brass-pawn/id6803566012"
+      },
+      {
+        "label": "Lichess: mobile chess features for comparison",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "chess-app-without-ads",
+      "chess-coach-vs-engine",
+      "game-center-chess-with-friends"
+    ]
+  },
+  {
+    "slug": "mac-chess-analysis-workflow",
+    "title": "Chess analysis on Mac: organise one question at a time",
+    "description": "Build a focused Mac chess analysis session: verify the position, record candidates and use local engine output to test a concrete claim.",
+    "keyword": "chess analysis app Mac",
+    "cluster": "app-choice",
+    "lede": "Build a focused Mac chess analysis session: verify the position, record candidates and use local engine output to test a concrete claim.",
+    "sections": [
+      {
+        "heading": "Prepare the question before the workspace",
+        "paragraphs": [
+          "A Mac can display a board, notes and reference material comfortably, but extra windows can also make analysis passive. Begin with a single question from a completed game or practice position. For example, can a rook trade be accepted, or does a sacrifice survive the opponent’s best defence?",
+          "Keep your original thinking visible in a short note. This distinguishes what you found independently from what the engine later reveals. If you are reconstructing a position, verify the pieces, side to move and any relevant rights before interpreting a score. A mistaken setup produces analysis of a different chess problem."
+        ]
+      },
+      {
+        "heading": "Calculate before opening the answer",
+        "paragraphs": [
+          "Choose two serious candidates and calculate the strongest reply to the first. Write a short assessment of the resulting position. Only then consult the local engine. A large display makes it easy to watch changing lines, but watching is not the same as attempting the decision yourself.",
+          "When the engine disagrees, follow the first concrete difference. Perhaps an intermediate check changes the recapture order or a king move avoids your intended attack. Resist copying a long variation simply because the interface can show it. The useful result is an explanation you could recognise in another position."
+        ]
+      },
+      {
+        "heading": "Understand local analysis and its limits",
+        "paragraphs": [
+          "An on-device engine performs its search on the Mac rather than requiring a remote analysis server. That can support offline study, but it does not imply that multiplayer, new daily content or every other feature also works without a connection. Verify the activity you intend to use.",
+          "Long analysis can consume device resources. Match the search effort to the question: a clear tactical refutation may not need prolonged calculation, while a complicated ending may remain difficult to understand even after a deeper search. More engine time is not a substitute for knowing what the position is asking."
+        ]
+      },
+      {
+        "heading": "Close with a playable test",
+        "paragraphs": [
+          "After understanding a line, hide the answer and attempt the position again. If the app supports taking over a game position, play a continuation and see whether you can handle the opponent’s active replies. A study note should contain both the feature you learned and the next decision you want to test.",
+          "Do not assume a Mac chess app includes every specialist desktop feature. Check PGN import, arbitrary setup, annotations or tablebase access individually when those tools matter to your workflow. Brass Pawn’s value should be judged on the practice and replay functions it actually offers. Keep all engine-assisted work separate from live online matches against people, regardless of how convenient the desktop workspace makes switching between windows."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn supports Mac and runs its selected engine locally. Its game library can lead into playable practice; do not assume it provides every professional PGN database or analysis-management feature.",
+    "sources": [
+      {
+        "label": "Brass Pawn official App Store listing",
+        "url": "https://apps.apple.com/app/brass-pawn/id6803566012"
+      },
+      {
+        "label": "Stockfish: official engine guidance",
+        "url": "https://official-stockfish.github.io/docs/stockfish-wiki/Stockfish-FAQ.html"
+      }
+    ],
+    "related": [
+      "chess-coach-vs-engine",
+      "game-center-chess-with-friends",
+      "ipad-chess-practice-routine"
+    ]
+  },
+  {
+    "slug": "choose-chess-computer-strength",
+    "title": "Choosing a chess computer strength for useful practice",
+    "description": "Set a computer opponent for the position and skill you want to practise, and avoid treating an engine strength label as an exact human rating.",
+    "keyword": "chess computer strength settings",
+    "cluster": "app-choice",
+    "lede": "Set a computer opponent for the position and skill you want to practise, and avoid treating an engine strength label as an exact human rating.",
+    "sections": [
+      {
+        "heading": "Choose a training task before a number",
+        "paragraphs": [
+          "A computer opponent can serve several purposes: punish tactical mistakes, defend an ending accurately or provide a complete practice game. The best setting depends on that job. A difficult defender is useful when you are testing a known winning method, but repeated overwhelming losses may not help a learner who cannot identify the first mistake.",
+          "Start by stating the skill you want to practise. If it is a pre-move threat check, choose an opponent that still gives you understandable decisions. If it is converting a particular ending, accurate defence may be the point. Do not select a strength merely because it matches a number from another rating pool."
+        ]
+      },
+      {
+        "heading": "Understand what a limited engine does",
+        "paragraphs": [
+          "Stockfish’s official documentation explains that strength controls can make it choose suboptimal moves. A reduced setting is not a complete simulation of a human player with a particular experience, style or pattern of mistakes. A computer can produce a mixture of accurate and deliberately weaker choices.",
+          "Rating labels also depend on calibration and playing conditions. They should not be read as a certificate that beating the engine proves you have reached the same FIDE or online rating. Use the setting to choose a manageable task, then judge the quality of your decisions through the position and your review."
+        ]
+      },
+      {
+        "heading": "Match the engine to its available controls",
+        "paragraphs": [
+          "In Brass Pawn, Stockfish supports limited-strength play, while Reckless is a full-strength alternative without the same limiter. Choosing another engine therefore changes more than a name. Check the selected engine before assuming a strength slider will have the same effect.",
+          "If the opponent is too strong for a complete game to be informative, use a narrower position or review fewer decisions. You can learn from a strong engine’s reply without trying to survive an entire game at that level. Conversely, a very weak opponent may fail to challenge the exact habit you want to test."
+        ]
+      },
+      {
+        "heading": "Review the first useful disagreement",
+        "paragraphs": [
+          "After practice, find the first position where your plan failed or your calculation missed a defence. Explain that moment before raising or lowering the setting. Changing difficulty after every win or loss can obscure whether the practice itself is improving a specific skill.",
+          "For a simple progression, repeat a type of exercise under comparable conditions and look for more accurate decisions, not just more victories. Once you can explain and execute the method, change the position or increase resistance. Keep online games separate: engine assistance belongs in permitted practice, not alongside a live human match. A useful strength setting creates a clear learning problem; it is not an independent measurement of your overall chess ability."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn offers Stockfish with strength limitation and Reckless at full strength. Both run locally; their controls are not interchangeable, and engine labels are not direct human-rating equivalents.",
+    "sources": [
+      {
+        "label": "Stockfish: Skill Level, UCI_Elo and rating context",
+        "url": "https://official-stockfish.github.io/docs/stockfish-wiki/Stockfish-FAQ.html"
+      },
+      {
+        "label": "Brass Pawn official engine information",
+        "url": "https://brasspawn.com/guides/chess-practice"
+      }
+    ],
+    "related": [
+      "game-center-chess-with-friends",
+      "ipad-chess-practice-routine",
+      "mac-chess-analysis-workflow"
+    ]
+  },
+  {
+    "slug": "guess-the-elo-chess-exercise",
+    "title": "Guess the Elo as a chess observation exercise",
+    "description": "Use Guess the Elo to notice decision quality, recurring errors and uncertainty, without treating a single game as proof of a player’s strength.",
+    "keyword": "guess the Elo chess training",
+    "cluster": "study-plans",
+    "lede": "Use Guess the Elo to notice decision quality, recurring errors and uncertainty, without treating a single game as proof of a player’s strength.",
+    "sections": [
+      {
+        "heading": "Make a reasoned estimate, not a snap verdict",
+        "paragraphs": [
+          "Guess the Elo asks you to infer a level from the moves in a game. The useful exercise is not merely choosing a number. It is explaining what you observed: tactical awareness, development, clock-related errors, conversion technique or the ability to respond to threats.",
+          "A single game is an incomplete sample. Players can perform above or below their usual level, and ratings belong to particular systems and time controls. Avoid equating one conspicuous blunder with a precise rating, or assuming a polished opening proves strong play in every phase."
+        ]
+      },
+      {
+        "heading": "Watch for repeated decisions",
+        "paragraphs": [
+          "Pause after a few moves and record an initial impression. Then look for patterns rather than isolated events. Does a player repeatedly leave pieces undefended? Do both sides coordinate their pieces? Are pawn breaks connected to a plan, or do they create weaknesses without a clear purpose?",
+          "Change your estimate when later evidence challenges it. A player may know an opening sequence but mishandle the resulting middlegame; another may make an early mistake and defend resourcefully afterwards. Updating a judgement is part of the exercise. The goal is to explain why the evidence changed, not protect your first guess."
+        ]
+      },
+      {
+        "heading": "Separate difficulty from apparent accuracy",
+        "paragraphs": [
+          "A simple position can allow many reasonable moves, while a complicated attack can demand a unique defence. When assessing a player’s choices, ask how difficult the decisions were. A sequence of obvious recaptures does not supply the same evidence as finding a quiet defensive move under pressure.",
+          "If you consult an engine after watching, use it to inspect specific decisions. Do not convert an accuracy percentage into a personal rating. Analysis methods differ, and a game-wide score can hide both brilliant resources and simple mistakes. Your written observations should remain connected to the board rather than a formula you cannot justify."
+        ]
+      },
+      {
+        "heading": "Finish with a lesson for your own play",
+        "paragraphs": [
+          "After the rating is revealed, compare your reasons with the game. Which feature did you overweight? Perhaps you judged the entire game from an opening mistake or underestimated careful defensive moves. Choose one decision to analyse as if you had been playing it yourself.",
+          "Then attempt a related position without being told the expected level. This transfers the activity from guessing other players' ratings to recognising practical chess features. Do not use a guessed level to mock a player or allege cheating. Treat the game as limited evidence and the exercise as a prompt for careful observation. Its value lies in sharpening what you notice and how honestly you handle uncertainty, not in claiming a reliable rating detector."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn includes Guess the Elo using real rated games. It is an observation and training activity, not a method for certifying your rating or identifying cheating; free daily training limits apply.",
+    "sources": [
+      {
+        "label": "Brass Pawn official training information",
+        "url": "https://brasspawn.com/guides/chess-practice"
+      },
+      {
+        "label": "Lichess: why accuracy is not a direct rating measure",
+        "url": "https://lichess.org/page/accuracy"
+      }
+    ],
+    "related": [
+      "chess-thinking-clock-management",
+      "spaced-repetition-chess",
+      "opening-vs-endgame-study"
+    ]
+  },
+  {
+    "slug": "study-master-games-with-takeover",
+    "title": "Study a master game by taking over the position",
+    "description": "Turn a replayed chess game into active study: predict a move, explain the plan and test your own continuation against resistance.",
+    "keyword": "how to study master chess games",
+    "cluster": "study-plans",
+    "lede": "Turn a replayed chess game into active study: predict a move, explain the plan and test your own continuation against resistance.",
+    "sections": [
+      {
+        "heading": "Stop before the move is revealed",
+        "paragraphs": [
+          "Watching a famous game can be enjoyable while leaving little you can use later. Make the replay active by pausing before an important decision. Describe what changed, identify the opponent’s threat and choose a candidate before seeing the move played in the game.",
+          "You do not need to predict every move. Select moments involving a pawn break, an exchange, an attack or an improvement of a poorly placed piece. A few carefully considered decisions can teach more than replaying a whole collection at speed while assuming the ideas are obvious afterwards."
+        ]
+      },
+      {
+        "heading": "Compare ideas as well as moves",
+        "paragraphs": [
+          "If your candidate differs from the master’s move, explain the purpose of each. One may create a direct threat while another prevents counterplay. The question is not simply whether you matched a famous player’s choice. Several moves may be playable, and historical games contain mistakes as well as instructive decisions.",
+          "Check concrete claims when necessary. A sacrifice that worked in the actual game may face a stronger defence than the opponent chose. An engine can help test that claim after your own analysis, but do not replace the entire study with a list of numerical preferences you cannot explain."
+        ]
+      },
+      {
+        "heading": "Take over at a position you understand",
+        "paragraphs": [
+          "Choose a position where you have a plan and continue against a computer in an appropriate practice mode. This tests whether you can handle active resistance after the attractive first move. You may discover that you understood the attack’s opening idea but not how to bring the remaining pieces into play.",
+          "Set a small objective for the continuation: keep the king safe, improve the inactive rook, or convert an extra pawn without allowing counterplay. If the position becomes overwhelming, return to the original point and study the opponent’s most challenging reply. Repeating the test with a clearer question is more useful than restarting the whole game without reflection."
+        ]
+      },
+      {
+        "heading": "Keep a reusable lesson from the replay",
+        "paragraphs": [
+          "Write the feature that made the plan possible and one condition that would make it fail. For example, a pawn break may work because the king is safe and a rook already controls the file. Without those conditions, copying the move in a different game could be a mistake.",
+          "Later, look for the same relationship in your own games. Master-game study becomes practical when it improves the questions you ask, not merely the names of games you recognise. The exercise does not require agreeing with every historical move or beating a full-strength engine from the chosen position. It requires making an independent decision, testing it and understanding one part of the resulting position more clearly than before."
+        ]
+      }
+    ],
+    "appFit": "Brass Pawn Watch lets you replay bundled games and take over a position against the engine. The library is selected material, not an exhaustive master-game database, and computer resistance differs from the historical opponent.",
+    "sources": [
+      {
+        "label": "Brass Pawn official replay and practice guide",
+        "url": "https://brasspawn.com/guides/chess-practice"
+      },
+      {
+        "label": "Lichess: study and analysis tools",
+        "url": "https://lichess.org/features"
+      }
+    ],
+    "related": [
+      "spaced-repetition-chess",
+      "opening-vs-endgame-study",
+      "chess-training-vs-online-play"
+    ]
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "blocking_findings": [
+    {
+      "slug": "pin-versus-skewer-training",
+      "issue": "Chess inaccuracy in 'A useful comparison to keep': 'A pinned piece may be unable to capture the line piece because that capture would expose its king.' Capturing the pinning piece along the pin line never exposes the king, because it removes the attacker. A pinned piece fails to capture the pinner only when it cannot move along that line (a pinned knight, or a bishop pinned on a file or rank). The sentence also blurs 'line piece' with 'the attacker's support'.",
+      "suggested_correction": "Replace with: 'A pinned piece can capture the pinning piece only if it moves along the pin line. A rook pinned on a file by a rook can take it, but a pinned knight, or a bishop pinned on a file, cannot. If the pinner is supported, check whether that capture simply loses the piece to a recapture.'"
+    },
+    {
+      "slug": "protected-passed-pawn",
+      "issue": "Chess inaccuracy: 'An opposing king often cannot capture it without meeting that protecting pawn.' A king can never capture a protected pawn, because that would be moving into check. The word 'often' turns a rule into a tendency and misleads beginners.",
+      "suggested_correction": "Replace with: 'While its support remains, the opposing king cannot legally capture it. The defender must first eliminate or undermine the protecting pawn, so the passer can restrict the king's activity.'"
+    },
+    {
+      "slug": "defend-early-queen-attacks",
+      "issue": "The description is truncated mid-word with an ellipsis ('...the squares your move leaves beh…'). It would publish as a broken meta description, and it also differs from the full lede.",
+      "suggested_correction": "Shorten it to a complete sentence under about 155 characters, e.g. 'Identify the real threat before chasing an early queen, develop with tempo when it is safe, and check which squares your move leaves undefended.'"
+    },
+    {
+      "slug": "pin-versus-skewer-training",
+      "issue": "Three primary-reference Lichess practice URLs use slugs that look like i18n key fragments ('practicestnamthepin', 'practicestnamdeflection', 'practicestnamclearance') instead of Lichess's canonical practice slugs, e.g. /practice/fundamental-tactics/the-pin/9ogFv8Ac. The same pattern appears in deflection-versus-decoy, clearance-tactics-lines-and-squares and key-squares-pawn-endings ('practicestnamkeysquares').",
+      "suggested_correction": "Fetch each URL and confirm it resolves to the intended study, or replace it with the canonical slug from lichess.org/practice (the-pin, deflection, clearance, key-squares with the same study IDs). Fix the generator that produced these slugs so the other 96 guides are not affected."
+    },
+    {
+      "slug": "bishop-versus-knight-trade-decision",
+      "issue": "Overlapping intent with bishop-versus-knight-endgames (keywords 'bishop vs knight chess decision' and 'bishop versus knight endgame'). The middlegame guide's sections 3 and 4 move into ending assessment (queen exchange, both wings, passers). The endgame guide's 'Evaluate the pawn structure after the trade' covers the same exchange decision with the same bishop-diagonals versus knight-colour tendencies. The two pages will compete and read as duplicates.",
+      "suggested_correction": "Restrict bishop-versus-knight-trade-decision to opening and middlegame exchanges: bishop pair, king safety, recapture structure and pawn breaks. Remove its 'next phase / ending' material and link to the endgame guide instead. Restrict bishop-versus-knight-endgames to positions with queens and rooks gone, covering pawns on both wings, king entry and the conversion of passers."
+    },
+    {
+      "slug": "hanging-piece-check-before-every-move",
+      "issue": "Overlapping intent, judged from the slug/keyword list: 'hanging pieces chess checklist' (The hanging-piece check that belongs before every move) and 'avoid one move blunders chess' (A practical check to avoid one-move chess blunders) both promise a pre-move safety check. Both also overlap the threat scan in checks-captures-threats-chess.",
+      "suggested_correction": "Merge the two into one pre-move blunder-check guide, or give them clearly separate scopes. For example, keep avoid-one-move-chess-blunders on the opponent's immediate replies, and make the hanging-piece page a narrow exercise on counting attackers and defenders of your own pieces and loose-piece patterns. Cross-link rather than repeat the scan."
+    },
+    {
+      "slug": "bishop-versus-knight-trade-decision",
+      "issue": "The app claim 'Brass Pawn's positional exercises' (also in improve-your-worst-piece) and the source 'https://brasspawn.com/training' labelled 'positional training and product features' assert a positional-exercise mode. The stated product scope (engine play, tactics, 15 endgame drills, Guess the Elo, library/takeover, online) does not clearly include one.",
+      "suggested_correction": "If no dedicated positional-exercise mode ships in 1.4, rewrite appFit as, e.g., 'Brass Pawn's engine games and library takeovers let you practise these exchange decisions on-device; there is no dedicated positional drill set.' Then remove the /training source, or confirm that page exists and describes this feature."
+    }
+  ],
+  "nonblocking_notes": [
+    "Verify every app-capability claim against the actual 15 built-in endgame drills before publishing: rook-endgame-activity says 'limited rook-ending drills', bishop-versus-knight-endgames names 'opposite-coloured bishops and knight-versus-pawns material', fifty-move-rule cites 'basic mating drills', and key-squares-pawn-endings cites a 'king-and-pawn catalogue'. If any category is absent, the sentence becomes a false product claim.",
+    "choose-chess-computer-strength: confirm that Reckless in 1.4 really has no strength limiter, and that https://brasspawn.com/guides/chess-practice is live and describes the engines. chess-engine-analysis-workflow: confirm the engine is chosen in Settings and that a free-form analysis mode exists ('supported practice and analysis').",
+    "chess-engine-analysis-workflow: the paragraph on 'setting up any position manually' with castling and en passant rights is fine as generic advice. Because there is no FEN editor or import, add a short clause such as 'in a desktop analysis board or other tool' so readers do not infer that Brass Pawn supports position setup.",
+    "choose-iphone-chess-app: confirm the App Store URL (id6803566012) resolves to Brass Pawn and that 'It has no ads' holds for every tier. The keyword 'best chess app for iPhone training' implies a ranking the page deliberately does not give; consider a non-superlative keyword such as 'how to choose a chess training app for iPhone' for honest intent matching.",
+    "Before mac-chess-analysis-workflow is published, confirm that the Mac 1.4 build has cleared App Review and is live. A Mac guide pointing to an unavailable app would be a misleading availability claim.",
+    "App-choice cluster overlap: choose-iphone-chess-app already has a full offline section and a cost/ads paragraph, which overlap offline-chess-app-checklist and chess-app-without-ads. Make sure those two pages add distinct substance, e.g. an activity-by-activity offline test matrix, or fold them into the iPhone guide.",
+    "Other moderate overlaps to differentiate in the unseen pages: beginner-chess-study-plan vs adult-beginner-chess-plan (adult page should centre on adult-specific constraints such as time, learning from scratch and confidence); deflection-versus-decoy vs attraction-sacrifice-mating-square (the attraction page should stay mate-specific); spot-knight-forks-before-moving / pawn-fork-prevention / queen-forks-checks-and-loose-targets vs double-attack-versus-fork; king-pawn-opposition vs distant-opposition; chess-board-coordinates-warmup vs chess-board-visualization-calculation; positional-exercise-or-forced-tactic vs quiet-moves-in-tactical-positions; ten-minute / thirty-minute / weekly routines (each needs a distinct structure, not rescaled minutes).",
+    "Template signals that read as thin, scaled content: the identical heading 'A useful comparison to keep' appears in every sampled tactics, calculation and positional guide, and its contents often are not a comparison; 'A deliberate practice task' is likewise identical across guides. Give each section a specific heading.",
+    "Template signals in metadata: the lede duplicates the description verbatim in most guides. Several pages share identical related-link triples (puzzle-rating-vs-chess-rating and chess-training-vs-online-play; choose-iphone-chess-app and choose-chess-computer-strength). The whole study-plans cluster cites the same two generic sources (Chess.com study plan directory, lichess.org/features), even where a specific source fits better (e.g. a Lichess puzzle or rating page for the puzzle-rating guide).",
+    "Many guides lean heavily on hedges ('This is not a promise...', 'not a conversational AI tutor', 'not a built-in engine-versus-engine tournament'). The disclaimers are accurate, but repeating them in nearly every appFit reads as defensive. Keep one clear limitation per appFit and drop pre-emptive negations of features nobody asked about.",
+    "Several samples lack a wordCount field (tactics, calculation, positional, endgame, opening). At roughly 475-505 words, guides are at the thin end for 'deep' guide intent. The best candidates for one worked example from a real or study position are pin-versus-skewer-training, key-squares-pawn-endings and fifty-move-rule.",
+    "fifty-move-rule is accurate on FIDE 9.3 and 9.6.2, including checkmate taking precedence on the 75th move. Optionally note that the claim can be made when about to play the move that completes the fifty, by writing it on the scoresheet and declaring the intention to the arbiter.",
+    "Spelling consistency: titles and body use British spelling ('centre', 'analyse', 'practise'), while some keywords use US forms ('chess center control'). Align the visible title and keyword choice deliberately, without adding volume claims.",
+    "defend-early-queen-attacks: confirm that https://lichess.org/page/fair-play resolves. If not, cite Lichess's Terms of Service or fair-play FAQ page directly. Also confirm https://support.chess.com/en/articles/8583757-how-do-i-use-game-analysis in chess-engine-analysis-workflow."
+  ],
+  "verdict": "revise_before_publish: two chess-accuracy errors (pin capture legality, protected-pawn capture), one truncated description, malformed primary-reference Lichess URLs, one confirmed and one likely intent overlap, and an unverified 'positional exercises' app claim must be fixed. The remaining samples are chess-accurate, avoid volume and ranking claims, and keep fair-play and app limits (local engines, daily free training limits, 15 endgame drills, no FEN editor, no LLM tutor) correctly stated."
+}

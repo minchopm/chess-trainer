@@ -1,0 +1,639 @@
+{
+  "checkedAt": "2026-10-23T23:53:47.045086+00:00",
+  "articles": [
+    {
+      "url": "https://brasspawn.com/articles/beginner-chess-study-plan",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/adult-beginner-chess-plan",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/return-to-chess-training",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/ten-minute-chess-routine",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/thirty-minute-chess-routine",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/weekly-chess-training-plan",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/chess-rating-plateau",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/deliberate-chess-practice",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/puzzle-rating-vs-chess-rating",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/blitz-vs-rapid-for-improvement",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/avoid-one-move-chess-blunders",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/candidate-moves-chess",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/checks-captures-threats-chess",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/chess-board-coordinates-warmup",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/chess-thinking-clock-management",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/analyse-chess-game-without-engine",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/chess-engine-analysis-workflow",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/centipawns-vs-win-probability",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/chess-mistake-vs-blunder",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/review-lost-chess-games",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/review-won-chess-games",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/annotate-own-chess-games",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/spaced-repetition-chess",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/opening-vs-endgame-study",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/choose-iphone-chess-app",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/offline-chess-app-checklist",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/chess-app-without-ads",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/chess-coach-vs-engine",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/chess-training-vs-online-play",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/game-center-chess-with-friends",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/ipad-chess-practice-routine",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/mac-chess-analysis-workflow",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/choose-chess-computer-strength",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/guess-the-elo-chess-exercise",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/study-master-games-with-takeover",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/spot-knight-forks-before-moving",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/pin-versus-skewer-training",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/discovered-attack-two-threat-checklist",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/double-check-legal-defences",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/overloaded-defender-duties",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/deflection-versus-decoy",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/remove-the-defender-capture-order",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/back-rank-weakness-safety-check",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/zwischenzug-before-recapture",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/clearance-tactics-lines-and-squares",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/interference-tactics-defensive-lines",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/xray-attack-line-awareness",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/hanging-piece-check-before-every-move",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/trapped-piece-escape-square-audit",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/pawn-fork-prevention",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/queen-forks-checks-and-loose-targets",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/quiet-moves-in-tactical-positions",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/mating-net-search-escape-squares",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/smothered-mate-recognition-without-sacrifice-autopilot",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/attraction-sacrifice-mating-square",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/double-attack-versus-fork",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/defensive-tactics-find-the-saving-move",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/calculate-forcing-lines-without-tunnel-vision",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/find-opponents-best-defence",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/chess-board-visualization-calculation",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/when-to-stop-calculating-a-chess-line",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/evaluate-material-imbalances",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/rook-open-file-plan",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/knight-outpost-test",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/bishop-versus-knight-trade-decision",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/weak-pawns-attackable-targets",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/choose-the-right-pawn-break",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/king-safety-versus-piece-activity",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/improve-your-worst-piece",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/positional-exercise-or-forced-tactic",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/king-pawn-opposition",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/rule-of-the-square",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/key-squares-pawn-endings",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/triangulation-king-endgame",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/distant-opposition",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/outside-passed-pawn",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/protected-passed-pawn",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/wrong-bishop-rook-pawn",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/rook-behind-passed-pawn",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/active-king-endgame",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/rook-endgame-activity",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/lucena-position-training",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/philidor-rook-defence",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/queen-versus-pawn-ending",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/bishop-versus-knight-endgames",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/opposite-coloured-bishops",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/avoid-stalemate",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/dead-position-insufficient-material",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/fifty-move-rule",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/threefold-repetition",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/convert-extra-pawn",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/save-worse-endgame",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/opening-development-principles",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/chess-center-control",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/when-to-castle",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/opening-memorization-vs-ideas",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/defend-early-queen-attacks",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/learn-opening-traps",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/chess-engine-assistance-fair-play",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    },
+    {
+      "url": "https://brasspawn.com/articles/online-chess-connection-planning",
+      "status": 200,
+      "matchesBuild": true,
+      "robotsHeader": null
+    }
+  ],
+  "otherPages": [
+    {
+      "path": "/articles",
+      "status": 200,
+      "xRobotsTag": null
+    },
+    {
+      "path": "/de",
+      "status": 200,
+      "xRobotsTag": "noindex, follow"
+    },
+    {
+      "path": "/bg/guides/chess-practice",
+      "status": 200,
+      "xRobotsTag": "noindex, follow"
+    },
+    {
+      "path": "/ja/today",
+      "status": 200,
+      "xRobotsTag": "noindex, follow"
+    }
+  ],
+  "sitemaps": [
+    {
+      "sitemap": "sitemap-pages.xml",
+      "urls": 114,
+      "englishOnly": true
+    },
+    {
+      "sitemap": "sitemap-today.xml",
+      "urls": 257,
+      "englishOnly": true
+    }
+  ]
+}

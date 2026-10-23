@@ -1,0 +1,24 @@
+{
+  "articles": 100,
+  "words": 48833,
+  "minWords": 445,
+  "maxWords": 559,
+  "uniqueKeywords": 100,
+  "uniqueTitles": 100,
+  "duplicateBodyParagraphs": 0,
+  "verifiedDiagrams": 23,
+  "clusters": {
+    "study-plans": 20,
+    "game-review": 7,
+    "app-choice": 8,
+    "tactics": 22,
+    "calculation": 5,
+    "positional-play": 8,
+    "endgames": 22,
+    "opening-principles": 6,
+    "fair-play": 2
+  },
+  "relatedLinks": 397,
+  "indexing": "English only",
+  "demandEvidence": "Observed competitor topics and Google Search Console; no search volume, difficulty or rank promises."
+}

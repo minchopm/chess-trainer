@@ -54,7 +54,7 @@ const locs = (xml) => [...xml.matchAll(/<loc\b[^>]*>([\s\S]*?)<\/loc>/gi)].map(m
   match[1].trim().replace(/&amp;/g, '&'),
 );
 const xml = await sitemap.text();
-const urlList = [];
+let urlList = [];
 if (/<sitemapindex\b/i.test(xml)) {
   for (const child of locs(xml)) {
     const response = await fetch(child, {
@@ -72,6 +72,10 @@ if (/<sitemapindex\b/i.test(xml)) {
 } else {
   urlList.push(...locs(xml));
 }
+// A cached sitemap must never re-announce translated pages after the site
+// has switched to English-only indexing. Apply the same policy here too.
+const excluded = new Set(JSON.parse(fs.readFileSync(path.join(root, 'tools/locales.json'), 'utf8')).locales.filter(l => l.slug !== 'en').map(l => l.slug));
+urlList = [...new Set(urlList)].filter(url => !excluded.has(new URL(url).pathname.split('/')[1]));
 if (!urlList.length) {
   console.error('cannot submit IndexNow: sitemap contains no <loc> URLs');
   process.exit(1);

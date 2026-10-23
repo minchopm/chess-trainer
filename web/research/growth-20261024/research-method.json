@@ -1,0 +1,27 @@
+{
+  "observed": [
+    {
+      "query": "best chess training app offline tactics endgames iPhone",
+      "url": "https://commonsourcelab.com/en/apps/lina-chess",
+      "observation": "A competing product markets offline engine analysis, motifs and understanding mistakes; this is observed positioning, not a search-volume estimate."
+    },
+    {
+      "query": "how do I get better at chess training puzzles",
+      "url": "https://support.chess.com/en/articles/8608809-how-do-i-get-better-at-chess",
+      "observation": "Official learning routes separate lessons, puzzles, practice, games and human coaching."
+    },
+    {
+      "query": "Lichess practice chess tactics endgames",
+      "url": "https://lichess.org/practice",
+      "observation": "Official practice material groups foundational tactics and endgames."
+    }
+  ],
+  "method": "Live search sampling, competitor-owned educational/product pages, independent Claude/Argon proposals and shipped-product audit.",
+  "notMeasured": [
+    "Exhaustive keyword rankings",
+    "Search volume/difficulty",
+    "ChatGPT recommendation share"
+  ],
+  "editorialSelection": "Distinct practical learner problem, fit to actual app and actionable exercise; no rating-improvement promises or geographic doorway variants.",
+  "designScope": "Preserve existing visual identity and 3D hero; add searchable training library, topic navigation, source links and verified chess diagrams."
+}

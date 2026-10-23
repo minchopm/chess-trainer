@@ -1,0 +1,13 @@
+{
+  "count": 30,
+  "minWords": 483,
+  "maxWords": 559,
+  "totalWords": 15075,
+  "descriptionMax": 160,
+  "allRelatedResolve": true,
+  "exactChessLinesIncluded": false,
+  "fabricatedGames": false,
+  "policy": "Study exercises and original explanations; no rating guarantees, no comprehensive native drill claim.",
+  "checked": "2026-10-24",
+  "scopeRefinement": "bishop-versus-knight-endgames now exclusively studies existing endings, piece/king routes, one-wing versus two-wing targets and playing both sides; exchange-decision intent removed."
+}

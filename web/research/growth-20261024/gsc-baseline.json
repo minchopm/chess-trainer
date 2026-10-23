@@ -1,0 +1,1462 @@
+{
+  "period": [
+    "2026-09-24",
+    "2026-10-23"
+  ],
+  "scope": "Exact Brass Pawn apex/www hosts; query-page data omit anonymised rows",
+  "data": {
+    "rows": [
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442\u043d\u0430\u044f \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 2026 \u0442\u0430\u0431\u043b\u0438\u0446\u0430",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 14,
+        "impressions": 334,
+        "ctr": 0.041916167664670656,
+        "position": 8.691616766467066
+      },
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442\u043d\u0430\u044f \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 2026 \u0442\u0443\u0440\u043d\u0438\u0440\u043d\u0430\u044f \u0442\u0430\u0431\u043b\u0438\u0446\u0430",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 10,
+        "impressions": 142,
+        "ctr": 0.07042253521126761,
+        "position": 7.359154929577465
+      },
+      {
+        "keys": [
+          "olimpiadi scacchi 2026 classifica",
+          "https://brasspawn.com/it/reports/chess-olympiad-2026"
+        ],
+        "clicks": 8,
+        "impressions": 55,
+        "ctr": 0.14545454545454545,
+        "position": 5.418181818181818
+      },
+      {
+        "keys": [
+          "classifica olimpiadi scacchi 2026",
+          "https://brasspawn.com/it/reports/chess-olympiad-2026"
+        ],
+        "clicks": 5,
+        "impressions": 50,
+        "ctr": 0.1,
+        "position": 5.9
+      },
+      {
+        "keys": [
+          "classifica olimpiadi scacchi",
+          "https://brasspawn.com/it/reports/chess-olympiad-2026"
+        ],
+        "clicks": 4,
+        "impressions": 48,
+        "ctr": 0.08333333333333333,
+        "position": 6.354166666666667
+      },
+      {
+        "keys": [
+          "olimpiadi di scacchi 2026 classifica",
+          "https://brasspawn.com/it/reports/chess-olympiad-2026"
+        ],
+        "clicks": 3,
+        "impressions": 27,
+        "ctr": 0.1111111111111111,
+        "position": 6.222222222222222
+      },
+      {
+        "keys": [
+          "classifica olimpiadi di scacchi 2026",
+          "https://brasspawn.com/it/reports/chess-olympiad-2026"
+        ],
+        "clicks": 2,
+        "impressions": 11,
+        "ctr": 0.18181818181818182,
+        "position": 4.818181818181818
+      },
+      {
+        "keys": [
+          "olimpiada szachowa 2026",
+          "https://brasspawn.com/pl/reports/chess-olympiad-2026"
+        ],
+        "clicks": 2,
+        "impressions": 50,
+        "ctr": 0.04,
+        "position": 9.36
+      },
+      {
+        "keys": [
+          "olimpiada szachowa 2026 tabela",
+          "https://brasspawn.com/pl/reports/chess-olympiad-2026"
+        ],
+        "clicks": 2,
+        "impressions": 18,
+        "ctr": 0.1111111111111111,
+        "position": 3.8333333333333335
+      },
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442\u043d\u0430 \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 2026",
+          "https://brasspawn.com/bg/reports/chess-olympiad-2026"
+        ],
+        "clicks": 2,
+        "impressions": 8,
+        "ctr": 0.25,
+        "position": 9.375
+      },
+      {
+        "keys": [
+          "klasemen olimpiade catur 2026",
+          "https://brasspawn.com/id/reports/chess-olympiad-2026"
+        ],
+        "clicks": 1,
+        "impressions": 10,
+        "ctr": 0.1,
+        "position": 4.1
+      },
+      {
+        "keys": [
+          "olimpiada szachowa 2026 tabela",
+          "https://brasspawn.com/pl/reports/chess-olympiad-2026-round-2"
+        ],
+        "clicks": 1,
+        "impressions": 4,
+        "ctr": 0.25,
+        "position": 7.5
+      },
+      {
+        "keys": [
+          "olimpiada szachowa 2026 wyniki",
+          "https://brasspawn.com/pl/reports/chess-olympiad-2026"
+        ],
+        "clicks": 1,
+        "impressions": 7,
+        "ctr": 0.14285714285714285,
+        "position": 5.857142857142857
+      },
+      {
+        "keys": [
+          "olimpiadas de ajedrez 2026 posiciones",
+          "https://brasspawn.com/es/reports/chess-olympiad-2026"
+        ],
+        "clicks": 1,
+        "impressions": 10,
+        "ctr": 0.1,
+        "position": 9.3
+      },
+      {
+        "keys": [
+          "olimpiade catur 2026 klasemen",
+          "https://brasspawn.com/id/reports/chess-olympiad-2026"
+        ],
+        "clicks": 1,
+        "impressions": 13,
+        "ctr": 0.07692307692307693,
+        "position": 4
+      },
+      {
+        "keys": [
+          "olimpiadi scacchi classifica",
+          "https://brasspawn.com/it/reports/chess-olympiad-2026"
+        ],
+        "clicks": 1,
+        "impressions": 46,
+        "ctr": 0.021739130434782608,
+        "position": 7.543478260869565
+      },
+      {
+        "keys": [
+          "sakkolimpia 2026",
+          "https://brasspawn.com/hu/reports/chess-olympiad-2026"
+        ],
+        "clicks": 1,
+        "impressions": 26,
+        "ctr": 0.038461538461538464,
+        "position": 9.192307692307692
+      },
+      {
+        "keys": [
+          "schacholympiade 2026 tabelle",
+          "https://brasspawn.com/de/reports/chess-olympiad-2026"
+        ],
+        "clicks": 1,
+        "impressions": 30,
+        "ctr": 0.03333333333333333,
+        "position": 7.366666666666666
+      },
+      {
+        "keys": [
+          "\u0432\u0441\u0435\u043c\u0438\u0440\u043d\u0430\u044f \u0448\u0430\u0445\u043c\u0430\u0442\u043d\u0430\u044f \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 2026 \u0442\u0430\u0431\u043b\u0438\u0446\u0430",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 1,
+        "impressions": 10,
+        "ctr": 0.1,
+        "position": 9.5
+      },
+      {
+        "keys": [
+          "\u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 \u0448\u0430\u0445\u043c\u0430\u0442\u044b 2026 \u0442\u0430\u0431\u043b\u0438\u0446\u0430",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 1,
+        "impressions": 39,
+        "ctr": 0.02564102564102564,
+        "position": 7.333333333333333
+      },
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442\u043d\u0430\u044f \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 \u0442\u0443\u0440\u043d\u0438\u0440\u043d\u0430\u044f \u0442\u0430\u0431\u043b\u0438\u0446\u0430",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 1,
+        "impressions": 32,
+        "ctr": 0.03125,
+        "position": 7.5625
+      },
+      {
+        "keys": [
+          "\u062a\u0631\u062a\u064a\u0628 \u0627\u0648\u0644\u0645\u0628\u064a\u0627\u062f \u0627\u0644\u0634\u0637\u0631\u0646\u062c",
+          "https://brasspawn.com/ar/reports/chess-olympiad-2026"
+        ],
+        "clicks": 1,
+        "impressions": 5,
+        "ctr": 0.2,
+        "position": 6.6
+      },
+      {
+        "keys": [
+          "acs superchess",
+          "https://brasspawn.com/ru/today/2026-10-05-dardha-magold-romanian-team-chess-championships-r3"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "ajedrez entrenamiento",
+          "https://brasspawn.com/es/guides/chess-practice"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 32
+      },
+      {
+        "keys": [
+          "allenamento scacchi",
+          "https://brasspawn.com/it/guides/chess-practice"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 27
+      },
+      {
+        "keys": [
+          "brass pawn shop",
+          "https://brasspawn.com/hi"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 5.5
+      },
+      {
+        "keys": [
+          "brasssmile.com",
+          "https://brasspawn.com/fi"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "bukszpan po angielsku",
+          "https://brasspawn.com/pl/today/2026-09-07-erigaisi-giri-tech-mahindra-global-chess-league"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 99
+      },
+      {
+        "keys": [
+          "bukszpan po angielsku",
+          "https://brasspawn.com/pl/today/2026-09-24-keymer-abdusattorov-olympiad-r8"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 26
+      },
+      {
+        "keys": [
+          "bukszpan po angielsku",
+          "https://brasspawn.com/pl/today/2026-09-25-vachier-lagrave-ding-olympiad-r9"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 70
+      },
+      {
+        "keys": [
+          "buxxisindarov",
+          "https://brasspawn.com/nl/today/2026-09-23-wei-yi-sindarov-olympiad-r7"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "keys": [
+          "chess motifs",
+          "https://brasspawn.com/tactics"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 55
+      },
+      {
+        "keys": [
+          "chess olympiad 2026 table",
+          "https://brasspawn.com/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "chess practice",
+          "https://brasspawn.com/guides/chess-practice"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 44.5
+      },
+      {
+        "keys": [
+          "classement olympiade echecs",
+          "https://brasspawn.com/fr/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "keys": [
+          "classifica finale",
+          "https://brasspawn.com/it/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "combinative motifs",
+          "https://brasspawn.com/tactics"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 47
+      },
+      {
+        "keys": [
+          "dudin vs gukesh",
+          "https://brasspawn.com/today/2026-09-27-dudin-gukesh-olympiad-r11"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "keys": [
+          "ejercicios de ajedrez",
+          "https://brasspawn.com/es/guides/chess-practice"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 80
+      },
+      {
+        "keys": [
+          "eline roebers",
+          "https://brasspawn.com/today"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 32.5
+      },
+      {
+        "keys": [
+          "entrenamiento ajedrez",
+          "https://brasspawn.com/es/guides/chess-practice"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 38
+      },
+      {
+        "keys": [
+          "entrenar ajedrez",
+          "https://brasspawn.com/es/guides/chess-practice"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 23
+      },
+      {
+        "keys": [
+          "esercizi di scacchi",
+          "https://brasspawn.com/it/guides/chess-practice"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 24.5
+      },
+      {
+        "keys": [
+          "esercizi scacchi",
+          "https://brasspawn.com/it/guides/chess-practice"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 39
+      },
+      {
+        "keys": [
+          "gleb dudin",
+          "https://brasspawn.com/de/today/2026-09-27-dudin-gukesh-olympiad-r11"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 28
+      },
+      {
+        "keys": [
+          "gleb dudin",
+          "https://brasspawn.com/today/2026-09-27-dudin-gukesh-olympiad-r11"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 41
+      },
+      {
+        "keys": [
+          "gleb dudin vs gukesh",
+          "https://brasspawn.com/today/2026-09-27-dudin-gukesh-olympiad-r11"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "keys": [
+          "gukesh vs dudin",
+          "https://brasspawn.com/today/2026-09-27-dudin-gukesh-olympiad-r11"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 9.6
+      },
+      {
+        "keys": [
+          "hot pawn",
+          "https://brasspawn.com/watch"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 24
+      },
+      {
+        "keys": [
+          "in samarkand",
+          "https://brasspawn.com/today/2026-09-25-vachier-lagrave-ding-olympiad-r9"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "iya",
+          "https://brasspawn.com/id/reports/chess-olympiad-2026-round-10"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "keys": [
+          "ja",
+          "https://brasspawn.com/de/today/2026-09-25-paehtz-latifah-olympiad-r9"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "ja",
+          "https://brasspawn.com/nl/today/2026-09-18-giri-cheng-olympiad-r3"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "keys": [
+          "ja",
+          "https://brasspawn.com/today/2026-09-21-ding-keymer-olympiad-r6"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "klasemen",
+          "https://brasspawn.com/id/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 19
+      },
+      {
+        "keys": [
+          "klasemen olimpiade catur",
+          "https://brasspawn.com/id/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "keys": [
+          "mnihal.com",
+          "https://brasspawn.com/th/today/2026-09-12-pranesh-m-nihal-sarin-tech-mahindra-global-chess-league"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 87
+      },
+      {
+        "keys": [
+          "nhanh",
+          "https://brasspawn.com/today/2026-09-18-so-thybo-olympiad-r3"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "olimpiada ajedrez 2026 clasificacion",
+          "https://brasspawn.com/es/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "olimpiada de ajedrez 2026 uzbekistan",
+          "https://brasspawn.com/es/reports/chess-olympiad-2026-round-4"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "keys": [
+          "olimpiada samarkanda",
+          "https://brasspawn.com/pl/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "keys": [
+          "olimpiada szachowa 2026 tabela",
+          "https://brasspawn.com/pl/reports/chess-olympiad-2026-round-10"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "olimpiada szachowa tabela",
+          "https://brasspawn.com/pl/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 6.428571428571429
+      },
+      {
+        "keys": [
+          "olimpiadas ajedrez 2026 clasificacion",
+          "https://brasspawn.com/es/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "keys": [
+          "olimpiadas de ajedrez 2026 tabla de posiciones",
+          "https://brasspawn.com/es/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "olimpiadi scacchi 2026 classifica",
+          "https://brasspawn.com/it/reports/chess-olympiad-2026-round-10"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 10.5
+      },
+      {
+        "keys": [
+          "olimpiadi scacchi 2026 risultati",
+          "https://brasspawn.com/it/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 9.666666666666666
+      },
+      {
+        "keys": [
+          "olimpiadi scacchi 2026 tabellone",
+          "https://brasspawn.com/it/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 6.5
+      },
+      {
+        "keys": [
+          "olympiade echecs 2026 classement",
+          "https://brasspawn.com/fr/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8.5
+      },
+      {
+        "keys": [
+          "olympiades d \u00e9checs classement",
+          "https://brasspawn.com/fr/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 6.8
+      },
+      {
+        "keys": [
+          "olympiades echecs 2026 classement",
+          "https://brasspawn.com/fr/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 8,
+        "ctr": 0,
+        "position": 9.875
+      },
+      {
+        "keys": [
+          "pawn",
+          "https://brasspawn.com/pt-br"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 73
+      },
+      {
+        "keys": [
+          "pawn dansk",
+          "https://brasspawn.com/da/guides/chess-practice"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "pawn trainer",
+          "https://brasspawn.com/bg"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 90
+      },
+      {
+        "keys": [
+          "pawn trainer",
+          "https://brasspawn.com/cs"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 43
+      },
+      {
+        "keys": [
+          "pawn trainer",
+          "https://brasspawn.com/ru"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 100
+      },
+      {
+        "keys": [
+          "pawn trainer",
+          "https://brasspawn.com/training"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 13
+      },
+      {
+        "keys": [
+          "play pawn",
+          "https://brasspawn.com/fr-ca"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 13
+      },
+      {
+        "keys": [
+          "practice chess",
+          "https://brasspawn.com/guides/chess-practice"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 48
+      },
+      {
+        "keys": [
+          "praggnanandhaa last match",
+          "https://brasspawn.com/today/2026-09-27-praggnanandhaa-rapport-olympiad-r11"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "keys": [
+          "rating deviation",
+          "https://brasspawn.com/ratings"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 29
+      },
+      {
+        "keys": [
+          "risultati olimpiadi scacchi",
+          "https://brasspawn.com/it/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "samarkand olimpiada",
+          "https://brasspawn.com/pl/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 5.857142857142857
+      },
+      {
+        "keys": [
+          "satran\u00e7 olimpiyatlar\u0131 2026 puan durumu",
+          "https://brasspawn.com/tr/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 4.8
+      },
+      {
+        "keys": [
+          "satran\u00e7 olimpiyatlar\u0131 2026 s\u0131ralama",
+          "https://brasspawn.com/tr/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "schaakspel ivoor",
+          "https://brasspawn.com/nl/today/2026-09-26-sindarov-hovhannisyan-olympiad-r10"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 75
+      },
+      {
+        "keys": [
+          "schach olympia tabelle",
+          "https://brasspawn.com/de/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "keys": [
+          "schach olympiade 2026",
+          "https://brasspawn.com/de/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9.5
+      },
+      {
+        "keys": [
+          "schach olympiade 2026 deutschland",
+          "https://brasspawn.com/de/reports/chess-olympiad-2026-round-8"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "keys": [
+          "schach olympiade 2026 tabelle",
+          "https://brasspawn.com/de/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "schach olympiade tabelle",
+          "https://brasspawn.com/de/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 15,
+        "ctr": 0,
+        "position": 8.133333333333333
+      },
+      {
+        "keys": [
+          "schacholympiade 2026",
+          "https://brasspawn.com/de/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 12.5
+      },
+      {
+        "keys": [
+          "schacholympiade runde 8",
+          "https://brasspawn.com/de/reports/chess-olympiad-2026-round-8"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "keys": [
+          "schacholympiade runde 9",
+          "https://brasspawn.com/de/reports/chess-olympiad-2026-round-9"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "schacholympiade tabelle",
+          "https://brasspawn.com/de/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 23,
+        "ctr": 0,
+        "position": 6.956521739130435
+      },
+      {
+        "keys": [
+          "shakkiolympialaiset 2026",
+          "https://brasspawn.com/fi/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 11,
+        "ctr": 0,
+        "position": 7.818181818181818
+      },
+      {
+        "keys": [
+          "si buscala",
+          "https://brasspawn.com/es/today/2026-09-26-martirosyan-abdusattorov-olympiad-r10"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "silka kerak",
+          "https://brasspawn.com/today/2026-09-16-christie-abdusattorov-olympiad-r1"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "keys": [
+          "sindarov leko",
+          "https://brasspawn.com/today/2026-09-20-sindarov-leko-olympiad-r5"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9.5
+      },
+      {
+        "keys": [
+          "sindarov vs blohberger",
+          "https://brasspawn.com/today/2026-09-18-sindarov-blohberger-olympiad-r3"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "keys": [
+          "sindarov vs leko",
+          "https://brasspawn.com/today/2026-09-20-sindarov-leko-olympiad-r5"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "keys": [
+          "tabelle schacholympiade",
+          "https://brasspawn.com/de/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 7.666666666666667
+      },
+      {
+        "keys": [
+          "tasapeli englanniksi",
+          "https://brasspawn.com/fi/today/2026-09-12-erigaisi-aronian-tech-mahindra-global-chess-league"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "keys": [
+          "tasapeli englanniksi",
+          "https://brasspawn.com/fi/today/2026-09-13-giri-aronian-tech-mahindra-global-chess-league-r2"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "keys": [
+          "tasapeli englanniksi",
+          "https://brasspawn.com/fi/today/2026-09-13-nepomniachtchi-carlsen-tech-mahindra-global-chess-league-r1"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "tasapeli englanniksi",
+          "https://brasspawn.com/fi/today/2026-09-13-vachier-lagrave-sindarov-tech-mahindra-global-chess-league-r3"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "keys": [
+          "tasapeli englanniksi",
+          "https://brasspawn.com/fi/today/2026-09-19-keymer-duda-olympiad-r4"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "tasapeli englanniksi",
+          "https://brasspawn.com/fi/today/2026-09-20-keymer-caruana-olympiad-r5"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "tasapeli englanniksi",
+          "https://brasspawn.com/fi/today/2026-09-21-erigaisi-sindarov-olympiad-r6"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "keys": [
+          "tasapeli englanniksi",
+          "https://brasspawn.com/fi/today/2026-09-24-keymer-abdusattorov-olympiad-r8"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "tasapeli englanniksi",
+          "https://brasspawn.com/fi/today/2026-09-25-vachier-lagrave-ding-olympiad-r9"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "keys": [
+          "th\u00e0nh t\u00edch nh\u01b0 n\u00e0o",
+          "https://brasspawn.com/today/2026-09-25-vachier-lagrave-ding-olympiad-r9"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 13
+      },
+      {
+        "keys": [
+          "vincent keymar",
+          "https://brasspawn.com/today/2026-09-21-ding-keymer-olympiad-r6"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "what are the details of china winning the women's chess olympiad gold against vietnam?",
+          "https://brasspawn.com/today/2026-09-27-zhu-jiner-pham-olympiad-r11"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "who won",
+          "https://brasspawn.com/today/2026-09-27-abdisalimov-wei-yi-olympiad-r11"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "keys": [
+          "yagiz kaan erdogmus",
+          "https://brasspawn.com/fi/today/2026-08-31-abdusattorov-erdogmus-international-chess-tournament-by-green-hills-resort-masters-r3"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 20
+      },
+      {
+        "keys": [
+          "zsoka gaal",
+          "https://brasspawn.com/today"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "\u043a\u043e\u043c\u0435\u043d\u0442\u0438\u0440\u0430\u0439",
+          "https://brasspawn.com/today/2026-09-23-vitiugov-praggnanandhaa-olympiad-r7"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "\u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 \u043f\u043e \u0448\u0430\u0445\u043c\u0430\u0442\u0430\u043c 2026 \u0442\u0430\u0431\u043b\u0438\u0446\u0430",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "\u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 \u043f\u043e \u0448\u0430\u0445\u043c\u0430\u0442\u0430\u043c \u0442\u0430\u0431\u043b\u0438\u0446\u0430",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "keys": [
+          "\u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 \u0442\u0430\u0431\u043b\u0438\u0446\u0430",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 30
+      },
+      {
+        "keys": [
+          "\u0442\u0430\u0431\u043b\u0438\u0446\u0430 \u0448\u0430\u0445\u043c\u0430\u0442\u043d\u043e\u0439 \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u044b",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 5.333333333333333
+      },
+      {
+        "keys": [
+          "\u0442\u0443\u0440\u043d\u0438\u0440\u043d\u0430\u044f \u0442\u0430\u0431\u043b\u0438\u0446\u0430 \u0448\u0430\u0445\u043c\u0430\u0442\u043d\u0430\u044f \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "keys": [
+          "\u0442\u0443\u0440\u043d\u0438\u0440\u043d\u0430\u044f \u0442\u0430\u0431\u043b\u0438\u0446\u0430 \u0448\u0430\u0445\u043c\u0430\u0442\u043d\u043e\u0439 \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u044b",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 25,
+        "ctr": 0,
+        "position": 6.04
+      },
+      {
+        "keys": [
+          "\u0442\u0443\u0440\u043d\u0438\u0440\u043d\u0430\u044f \u0442\u0430\u0431\u043b\u0438\u0446\u0430 \u0448\u0430\u0445\u043c\u0430\u0442\u043d\u043e\u0439 \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u044b 2026",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 8.25
+      },
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442 \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 2026 \u0442\u0430\u0431\u043b\u0438\u0446\u0430",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 15,
+        "ctr": 0,
+        "position": 8.333333333333332
+      },
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442 \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 2026 \u0442\u0443\u0440\u043d\u0438\u0440\u043d\u0430\u044f \u0442\u0430\u0431\u043b\u0438\u0446\u0430",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442\u043d\u0430\u044f \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 2026 10 \u0442\u0443\u0440",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442\u043d\u0430\u044f \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 2026 11 \u0442\u0443\u0440",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 12
+      },
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442\u043d\u0430\u044f \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 2026 11 \u0442\u0443\u0440",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026-round-11"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442\u043d\u0430\u044f \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 2026 8 \u0442\u0443\u0440",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026-round-8"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8.5
+      },
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442\u043d\u0430\u044f \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 2026 order",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442\u043d\u0430\u044f \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 2026 \u0442\u0430\u0431\u043b\u0438\u0446\u0430 \u0436\u0435\u043d\u0449\u0438\u043d\u044b",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 7.923076923076923
+      },
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442\u043d\u0430\u044f \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 2026 \u0442\u0430\u0431\u043b\u0438\u0446\u0430 \u0436\u0435\u043d\u0449\u0438\u043d\u044b",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026-round-11"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9.5
+      },
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442\u043d\u0430\u044f \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 2026 \u0442\u0443\u0440\u043d\u0438\u0440\u043d\u0430\u044f \u0442\u0430\u0431\u043b\u0438\u0446\u0430",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026-round-11"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442\u043d\u0430\u044f \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 \u0442\u0430\u0431\u043b\u0438\u0446\u0430",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 24,
+        "ctr": 0,
+        "position": 8.666666666666668
+      },
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442\u044b \u043e\u043b\u0438\u043c\u043f\u0438\u0430\u0434\u0430 2026 \u0442\u0430\u0431\u043b\u0438\u0446\u0430",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 15,
+        "ctr": 0,
+        "position": 7.266666666666667
+      },
+      {
+        "keys": [
+          "\u0448\u0430\u0445\u043c\u0430\u0442\u044b \u0441\u0430\u043c\u0430\u0440\u043a\u0430\u043d\u0434 \u0442\u0430\u0431\u043b\u0438\u0446\u0430",
+          "https://brasspawn.com/ru/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "keys": [
+          "\u05d0\u05d5\u05dc\u05d9\u05de\u05e4\u05d9\u05d0\u05d3\u05ea \u05d4\u05e9\u05d7\u05de\u05d8 2026",
+          "https://brasspawn.com/he/reports/chess-olympiad-2026-round-1"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 12
+      },
+      {
+        "keys": [
+          "\u05d0\u05d5\u05dc\u05d9\u05de\u05e4\u05d9\u05d0\u05d3\u05ea \u05d4\u05e9\u05d7\u05de\u05d8 2026",
+          "https://brasspawn.com/he/reports/chess-olympiad-2026-round-2"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "keys": [
+          "\u05d0\u05d5\u05dc\u05d9\u05de\u05e4\u05d9\u05d0\u05d3\u05ea \u05d4\u05e9\u05d7\u05de\u05d8 2026",
+          "https://brasspawn.com/he/reports/chess-olympiad-2026-round-9"
+        ],
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 10.8
+      },
+      {
+        "keys": [
+          "\u0623\u0648\u0644\u0645\u0628\u064a\u0627\u062f \u0627\u0644\u0634\u0637\u0631\u0646\u062c 2026",
+          "https://brasspawn.com/ar/reports/chess-olympiad-2026"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "keys": [
+          "\u0646\u0639\u0645 \u0645\u0647\u062a\u0645",
+          "https://brasspawn.com/today/2026-09-27-abdisalimov-wei-yi-olympiad-r11"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "keys": [
+          "\u897f\u6d0b\u68cb\u7dda\u4e0a\u7df4\u7fd2",
+          "https://brasspawn.com/zh-hant/guides/chess-practice"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 25
+      },
+      {
+        "keys": [
+          "\uccb4\uc2a4 \uc62c\ub9bc\ud53c\uc544\ub4dc 2026 \uc21c\uc704",
+          "https://brasspawn.com/ko/today/2026-09-18-rapport-demchenko-olympiad-r3"
+        ],
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 18
+      }
+    ],
+    "responseAggregationType": "byPage"
+  }
+}

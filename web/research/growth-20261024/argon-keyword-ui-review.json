@@ -1,0 +1,440 @@
+{
+  "meta": {
+    "reviewer": "Argon (Independent Keyword, Competitor & Read-Only UI/Code/Content Audit)",
+    "date": "2026-10-24",
+    "project": "Brass Pawn (https://brasspawn.com)",
+    "repoPath": "/Users/minchomilev/work/Brass Pawn/web",
+    "mode": "read-only-audit-and-research",
+    "indexingPolicy": "ENGLISH ONLY (INDEXED_LOCALES = ['en']). Non-English routes remain published with robots 'noindex, follow' and excluded from sitemap-pages.xml, sitemap-today.xml, and hreflang.",
+    "strictGuardrails": [
+      "No invented search volumes, CPCs, keyword difficulty scores, or ranking promises.",
+      "No guaranteed rating/Elo improvement claims.",
+      "Public App Store release is 1.4 (appStoreId 6803566012).",
+      "No conversational LLM tutor claims (coach feedback is deterministic feature-based prose derived from local Stockfish 18 / Reckless 0.10 evaluations and win-probability drops).",
+      "No engine assistance during human online Game Center matches (online play is strictly two players and one clock; friendly invitations/rematches are unrated).",
+      "No claim that an arbitrary custom FEN / position editor ships in the public app.",
+      "No claim that all 30 endgame/opening/fair-play topics have individual built-in endgame drills (only the exact 15 drills in data/endgames.json ship in the Endgame mode).",
+      "Existing S3 media only; no local media bloat or AI-generated device renders."
+    ]
+  },
+  "primaryCompetitorEvidence": [
+    {
+      "competitor": "Lichess",
+      "urls": [
+        "https://lichess.org/practice",
+        "https://lichess.org/training",
+        "https://lichess.org/training/themes",
+        "https://database.lichess.org/#puzzles"
+      ],
+      "observedStructure": "Organizes interactive Stockfish practice into Checkmates (Piece Checkmates I/II, Checkmate Patterns I–IV), Tactical Motifs (The Pin, The Skewer, The Fork, Discovered Attacks, Double Check, Overloaded Pieces, Deflection, Interference, X-Ray, Zwischenzug, Zugzwang), and Basic Endgames (Pawn, Rook, Bishop, Knight, Queen). Separates themed puzzle solving (/training/themes) from structured engine drills (/practice).",
+      "opportunityForBrassPawn": "Lichess Practice requires browser/web setup for many users and does not combine per-move win-probability verbal grading, spaced repetition on missed puzzles, 116 quiet positional judgement problems, and Guess the Elo in one offline native iPhone/iPad/Mac app."
+    },
+    {
+      "competitor": "Chess.com",
+      "urls": [
+        "https://www.chess.com/lessons",
+        "https://www.chess.com/practice",
+        "https://www.chess.com/puzzles",
+        "https://www.chess.com/terms",
+        "https://support.chess.com/en/articles/8608809-how-do-i-get-better-at-chess"
+      ],
+      "observedStructure": "Separates encyclopedic definitions (/terms), video courses (/lessons), timed Puzzle Rush, and bot drills (/practice). High-tier post-game review features and unlimited puzzles sit behind tiered subscriptions ($7–$17+/mo) and require continuous online connectivity and an account.",
+      "opportunityForBrassPawn": "Target learners searching for offline chess training, no-account/no-ad practice, win-probability move grading (instead of noisy centipawn blunder labels in already-decided positions), and transparent pricing ($3.99/mo or $39.99 one-time unlock, with unlimited free Play vs AI, Online Game Center, and 900 Watch games)."
+    },
+    {
+      "competitor": "Chessable",
+      "urls": [
+        "https://www.chessable.com",
+        "https://www.chessable.com/courses/all/tactics/",
+        "https://www.chessable.com/courses/all/endgames/"
+      ],
+      "observedStructure": "Centers on MoveTrainer spaced repetition for paid book-length opening repertoires, tactical pattern collections, and endgame manuals.",
+      "opportunityForBrassPawn": "Brass Pawn explicitly does not sell opening memorization trees (stated on /training: 'There is no opening training. Deliberately.'). Instead, Brass Pawn owns the transition out of the opening via 116 engine-screened positional judgement exercises and automatic spaced repetition on missed tactical puzzles (1, 4, and 10+ day intervals)."
+    },
+    {
+      "competitor": "Aimchess",
+      "urls": [
+        "https://aimchess.com"
+      ],
+      "observedStructure": "Focuses on importing online games from external accounts to generate blunder-check, time-management, and endgame statistics.",
+      "opportunityForBrassPawn": "Capture searchers looking for how to review their own games, stop blundering pieces, and judge quiet middlegame positions directly on-device without handing over accounts or cloud analytics."
+    },
+    {
+      "competitor": "ChessKing (CT-ART) & Shredder Chess & Lina Chess",
+      "urls": [
+        "https://chesskingtraining.com",
+        "https://www.shredderchess.com",
+        "https://commonsourcelab.com/en/apps/lina-chess"
+      ],
+      "observedStructure": "Desktop/mobile apps emphasizing offline puzzle packs (CT-ART), adaptive Elo computer play (Shredder), or offline engine mistake review (Lina Chess).",
+      "opportunityForBrassPawn": "Brass Pawn differentiates with dual open-source engines compiled locally (Stockfish 18 GPLv3 with strength limiter ~1400–full, plus Reckless 0.10 AGPLv3 at full strength), zero advertising guaranteed by copyleft licensing, and 8 integrated modes."
+    },
+    {
+      "competitor": "Official Rules, Engine & Platform Authorities",
+      "urls": [
+        "https://handbook.fide.com/chapter/E012023",
+        "https://stockfishchess.org",
+        "https://github.com/official-stockfish/Stockfish",
+        "https://github.com/codedeliveryservice/Reckless",
+        "https://developer.apple.com/game-center/"
+      ],
+      "observedStructure": "Primary technical and regulatory sources for FIDE Laws of Chess (stalemate, threefold repetition, 50-move rule, en passant, castling, touch-move), Stockfish 18 search/evaluation architecture, and Apple Game Center multiplayer.",
+      "opportunityForBrassPawn": "Cite these primary sources in articles covering rules, fair play, engine evaluation, and rating math to establish high E-E-A-T trust."
+    }
+  ],
+  "gscBaselineObservations": {
+    "sourceFile": "/Users/minchomilev/work/Brass Pawn/web/research/growth-20261024/gsc-baseline.json",
+    "period": "2026-09-24 to 2026-10-23",
+    "findings": [
+      "Standing English pages already record early organic impressions for 'pawn trainer' (/training, pos 13), 'rating deviation' (/ratings, pos 29), 'chess practice' & 'practice chess' (/guides/chess-practice, pos 44.5–48), and 'chess motifs' & 'combinative motifs' (/tactics, pos 47–55).",
+      "Before INDEXED_LOCALES was restricted to ['en'] on 2026-10-23, the English query 'pawn trainer' was split across /training (pos 13), /cs (pos 43), /bg (pos 90), and /ru (pos 100), confirming that English-only indexing directly eliminates cross-locale self-cannibalization.",
+      "The domain has zero long-tail educational coverage for how-to training workflows (how to calculate forcing moves, how to review mistakes, how to convert king-and-pawn endgames, how to stop hanging pieces), which the 100 English guides under /articles/<slug> directly address."
+    ]
+  },
+  "cannibalizationBoundaries": {
+    "existingPagesToProtect": [
+      {
+        "path": "/tactics",
+        "component": "src/app/pages/motifs/motifs.ts",
+        "currentRole": "Single-page glossary ('The twenty motifs') defining the 20 tactical tags (fork, pin, skewer, discovered attack, discovered check, double check, deflection, attraction, clearance, interference, x-ray, zwischenzug, zugzwang, back-rank mate, smothered mate, hanging piece, trapped piece, quiet move, sacrifice, advanced pawn) with exact puzzle counts from the 14,351-puzzle library and DefinedTermSet + FAQPage schema.",
+        "guardrailForNewArticles": "Do NOT write thin 150-word dictionary definitions of motifs. Every tactical article under /articles/<slug> must be a deep decision-making & calculation guide (e.g., how to spot the setup geometry before it appears, how to verify defender replies, common defensive refutations, and a concrete FEN calculation exercise from data/tactics-lichess.json) and should link back to /tactics as the motif count reference."
+      },
+      {
+        "path": "/guides/chess-practice",
+        "component": "src/app/pages/guide/guide.ts",
+        "currentRole": "High-level product & practice overview ('Chess practice: offline analysis, puzzles and friends') answering four broad FAQs (learning from mistakes, offline practice, playing friends on Game Center, Free vs Pro).",
+        "guardrailForNewArticles": "Keep /guides/chess-practice as the concise product onboarding summary (linked from the /articles header as 'New to Brass Pawn? Start with the app guide →'). New /articles/<slug> pages in the 'study-plans', 'game-review', and 'app-choice' clusters must target specific learner problems (e.g., 30-minute daily adult study routine, offline airplane/commute training, win-probability vs centipawn post-game review, spaced repetition intervals)."
+      },
+      {
+        "path": "/training",
+        "component": "src/app/pages/training/training.ts",
+        "currentRole": "Explains the 8 app modes, the 5-step local Stockfish puzzle-mining pipeline (depth 12 screen -> depth 20 MultiPV >=140cp margin -> unique branch extension -> fresh engine verification), endgame verification, and honest limitations.",
+        "guardrailForNewArticles": "Link to /training when referencing how Brass Pawn mines/verifies puzzles or structures its 8 modes; do not duplicate the pipeline essay verbatim."
+      },
+      {
+        "path": "/ratings",
+        "component": "src/app/pages/ratings/ratings.ts",
+        "currentRole": "Explains rating pools, why puzzle ratings run hundreds of points above OTB/FIDE ratings, and why static Lichess-to-Chess.com-to-FIDE conversion tables are statistically flawed.",
+        "guardrailForNewArticles": "Articles touching rating plateaus, Guess the Elo, or rating anxiety must align with /ratings (never publish fake Elo conversion tables or promise guaranteed Elo gains) and link to /ratings."
+      },
+      {
+        "path": "/engine",
+        "component": "src/app/pages/engine/engine.ts",
+        "currentRole": "Explains local Stockfish 18 (GPLv3) and Reckless 0.10 (AGPLv3), win-probability move grading vs centipawns, verbal positional coaching sentences, and perft move-generator verification.",
+        "guardrailForNewArticles": "Articles on engine analysis and move grading must accurately describe win-probability grading and single-active-engine selection in Settings, linking to /engine."
+      }
+    ]
+  },
+  "batchContentAudit": {
+    "status": "passed",
+    "filesAudited": [
+      "/Users/minchomilev/work/Brass Pawn/web/research/growth-20261024/batch-a.json",
+      "/Users/minchomilev/work/Brass Pawn/web/research/growth-20261024/batch-b.json",
+      "/Users/minchomilev/work/Brass Pawn/web/research/growth-20261024/batch-c.json"
+    ],
+    "metrics": {
+      "totalArticles": 100,
+      "batchACount": 35,
+      "batchBCount": 35,
+      "batchCCount": 30,
+      "uniqueSlugs": 100,
+      "uniqueTitles": 100,
+      "uniqueKeywords": 100,
+      "clusterDistribution": {
+        "study-plans": 20,
+        "game-review": 7,
+        "app-choice": 8,
+        "tactics": 22,
+        "calculation": 5,
+        "positional-play": 8,
+        "endgames": 22,
+        "opening-principles": 6,
+        "fair-play": 2
+      },
+      "wordCountRange": "400 to 478 words per article (excluding headings, lede, appFit, and exercise)",
+      "brokenRelatedLinks": 0,
+      "guidesWithZeroValidRelatedLinks": 0,
+      "nonHttpsSourceUrls": 0
+    },
+    "guardrailVerification": {
+      "noConversationalTutorClaim": "Verified. Articles mentioning 'conversational AI/tutor' or 'chat tutor' (e.g., chess-engine-analysis-workflow, choose-iphone-chess-app, chess-coach-vs-engine) explicitly clarify that Brass Pawn provides deterministic engine feedback and not a conversational tutor.",
+      "noGuaranteedRatingGain": "Verified. Articles explicitly state that rating improvement is never guaranteed.",
+      "noCustomPositionEditorClaim": "Verified. Zero claims of a custom FEN or arbitrary position editor in the native app.",
+      "noFalseEndgameCurriculumClaim": "Verified. lucena-position-training and philidor-rook-defence explicitly state that Brass Pawn has a small 15-drill endgame collection and does not claim a dedicated Lucena or Philidor course, directing readers to the linked Lichess practice lesson for the named position.",
+      "noEngineInOnlineHumanPlay": "Verified. Online Game Center articles accurately state that human matches have no engine assistance."
+    }
+  },
+  "priorityKeywordClusters100": {
+    "summary": {
+      "totalArticles": 100,
+      "distribution": {
+        "practiceAndAppChoice35": {
+          "study-plans": 12,
+          "game-review": 12,
+          "app-choice": 11
+        },
+        "tacticsCalculationPositional35": {
+          "tactics": 15,
+          "calculation": 10,
+          "positional-play": 10
+        },
+        "endgameOpeningFairPlay30": {
+          "endgames": 14,
+          "opening-principles": 8,
+          "fair-play": 8
+        }
+      }
+    },
+    "clusters": [
+      {
+        "clusterId": "study-plans",
+        "macroGroup": "practice-and-app-choice (35)",
+        "count": 12,
+        "intentFocus": "Structured chess training routines by time budget and skill bottleneck, without promising guaranteed Elo gains.",
+        "appFitRule": "Connect to Brass Pawn's 5-a-day free allowance per discipline (resetting at 9:00 AM local time) or unlimited Pro training across Tactics, Positional judgement, Endgames, Rush, and Guess the Elo.",
+        "proposedTopics": [
+          { "slug": "daily-chess-training-routine-30-minutes", "keyword": "30 minute daily chess training routine", "angle": "How to split 30 minutes between 5 slow tactical puzzles, 1 positional problem, and 1 reviewed game." },
+          { "slug": "adult-improver-chess-study-plan", "keyword": "chess study plan for adult improvers", "angle": "High-consistency, low-burnout weekly schedule for busy adults with limited study blocks." },
+          { "slug": "spaced-repetition-chess-tactics-training", "keyword": "spaced repetition chess tactics", "angle": "Why revisiting missed puzzles at 1-day, 4-day, and 10-day intervals beats grinding 100 random puzzles." },
+          { "slug": "slow-tactics-vs-timed-puzzle-rush", "keyword": "slow chess puzzles vs puzzle rush", "angle": "When to train deep calculation (untimed tactics) vs pattern recognition speed (timed Rush runs)." },
+          { "slug": "breaking-a-chess-plateau-training-audit", "keyword": "how to break a chess plateau", "angle": "Diagnosing whether losses come from one-move blunders, quiet middlegame drift, or endgame conversion." },
+          { "slug": "balancing-chess-play-and-tactical-study", "keyword": "ratio of playing chess to studying", "angle": "Why playing without review reinforces bad habits and studying without playing causes board rust." },
+          { "slug": "chess-training-plan-for-beginner-to-intermediate", "keyword": "beginner to intermediate chess training routine", "angle": "Moving from basic piece safety and mate-in-one to multi-move combinations and basic king-and-pawn endings." },
+          { "slug": "how-to-track-weak-tactical-motifs", "keyword": "track weak chess tactical motifs", "angle": "Using per-motif accuracy (e.g., missing deflections or quiet moves) to target weak spots instead of chasing puzzle rating." },
+          { "slug": "pre-game-chess-warmup-routine", "keyword": "chess warmup routine before playing", "angle": "A 10-minute Rush + 3 calculation puzzles warmup to wake up board vision before rated time controls." },
+          { "slug": "choosing-rapid-vs-blitz-for-chess-improvement", "keyword": "rapid vs blitz for chess improvement", "angle": "How 10-, 15-, and 30-minute clocks give enough thinking time to practise calculation compared with 3-minute blitz." },
+          { "slug": "weekend-deep-chess-practice-session", "keyword": "weekend chess study session structure", "angle": "Combining classic master game takeover in Watch with endgame conversion drills against Stockfish." },
+          { "slug": "consistent-chess-habit-five-puzzles-a-day", "keyword": "five chess puzzles a day habit", "angle": "Why five deliberate exercises per mode every morning builds stronger board habits than sporadic weekend binges." }
+        ]
+      },
+      {
+        "clusterId": "game-review",
+        "macroGroup": "practice-and-app-choice (35)",
+        "count": 12,
+        "intentFocus": "Post-game mistake analysis, interpreting engine evaluations, win-probability vs centipawns, and learning from master games.",
+        "appFitRule": "Highlight Play & Coach (move-by-move verbal grading, win-probability drop, post-game accuracy, blunder count, and single costliest moment) and Watch ('Play on from here' takeover against the engine). Never claim a conversational AI chat tutor.",
+        "proposedTopics": [
+          { "slug": "how-to-review-your-chess-games-effectively", "keyword": "how to analyze your own chess games", "angle": "A two-pass review workflow: identify the critical turning point first, then check missed tactical or positional features." },
+          { "slug": "win-probability-vs-centipawns-in-chess-analysis", "keyword": "win probability vs centipawns chess evaluation", "angle": "Why losing 100 centipawns at +9.0 (-1% win chance) is completely different from losing 100 centipawns at +0.2 (-24% win chance)." },
+          { "slug": "finding-the-single-mistake-that-lost-the-game", "keyword": "find the critical mistake in a chess game", "angle": "Focusing post-game study on the single biggest win-probability drop rather than memorizing 15 engine sidelines." },
+          { "slug": "how-to-study-master-games-by-taking-over-positions", "keyword": "how to study master chess games actively", "angle": "Why passive replay teaches little, and how taking over a game at the move you disagree with tests your idea against Stockfish." },
+          { "slug": "learning-from-miniatures-decisive-short-chess-games", "keyword": "studying chess miniatures under 25 moves", "angle": "How decisive games under 25 moves expose opening/early-middlegame punishment patterns clearly." },
+          { "slug": "guess-the-elo-training-move-quality-recognition", "keyword": "how guess the elo improves chess evaluation", "angle": "Training yourself to spot the difference between 1100, 1600, and 2200 move choices in real rated games." },
+          { "slug": "understanding-inaccuracies-mistakes-and-blunders", "keyword": "difference between inaccuracy mistake and blunder in chess", "angle": "How move grades map to win-probability loss and which errors deserve your study time." },
+          { "slug": "why-engine-lines-look-inhuman-and-how-to-read-them", "keyword": "how to understand stockfish engine lines", "angle": "Translating raw engine PV continuations into concrete positional features (open files, outposts, king safety, loose pieces)." },
+          { "slug": "reviewing-lost-endgames-where-the-draw-slipped-away", "keyword": "how to review lost chess endgames", "angle": "Pinpointing the exact move where a theoretical draw turned into a loss against best defence." },
+          { "slug": "comparing-two-chess-engines-on-unclear-positions", "keyword": "comparing two chess engines in analysis", "angle": "Why switching between Stockfish 18 and Reckless 0.10 in Settings offers a second perspective on sharp or unclear positions." },
+          { "slug": "stopping-repeat-blunders-with-a-mistake-log", "keyword": "how to stop making the same chess blunders", "angle": "Categorising your losses into missed opponent checks, undefended pieces, or premature pawn pushes." },
+          { "slug": "using-move-values-during-practice-games", "keyword": "practising chess with move evaluation feedback", "angle": "How playing a practice game first and checking move values teaches cause and effect without becoming dependent on hints." }
+        ]
+      },
+      {
+        "clusterId": "app-choice",
+        "macroGroup": "practice-and-app-choice (35)",
+        "count": 11,
+        "intentFocus": "Commercial/buyer-intent searches for iOS/iPadOS/macOS chess training apps, offline Stockfish play, privacy, ad-free training, and honest rating expectations.",
+        "appFitRule": "State verified v1.4 facts: iPhone, iPad, and Mac (macOS 14+); Stockfish 18 & Reckless 0.10 on-device; 14,351 tactics, 116 positional, 15 endgames, 1,624 Guess the Elo, 900 Watch games; AGPLv3 open source with zero ads; Free unlimited play + 5/day training or Pro ($3.99/mo, $39.99 once).",
+        "proposedTopics": [
+          { "slug": "offline-chess-training-app-iphone-ipad-mac", "keyword": "offline chess training app for iPhone iPad Mac", "angle": "What actually works on a flight or train when the engine, 14,351 puzzles, and 900 games live on the device." },
+          { "slug": "playing-stockfish-at-human-elo-strength-on-ios", "keyword": "play stockfish at custom elo on iPhone", "angle": "How depth-and-width-limited Stockfish (~1400 to full strength) feels different from full-strength Reckless." },
+          { "slug": "why-puzzle-ratings-are-higher-than-otb-and-online-ratings", "keyword": "why is my chess puzzle rating so much higher than rapid", "angle": "Why knowing a tactic exists adds hundreds of points to puzzle ratings compared with clock games." },
+          { "slug": "ad-free-open-source-chess-trainer-agplv3", "keyword": "ad free open source chess app iOS", "angle": "How GPLv3/AGPLv3 copyleft licensing guarantees complete source transparency and zero third-party ad/tracking SDKs." },
+          { "slug": "chess-training-without-an-account-or-cloud-tracking", "keyword": "chess app no account required offline", "angle": "Keeping training ratings and puzzle history in your device container while using Game Center only if you choose online play." },
+          { "slug": "unique-solution-chess-puzzles-how-verification-works", "keyword": "how chess puzzles are verified for one solution", "angle": "Why MultiPV depth-20 margin screening prevents frustrating puzzles where two moves win." },
+          { "slug": "3d-vs-2d-chess-board-training-visualisation", "keyword": "3d vs 2d chessboard for training", "angle": "Switching between 2D diagrams and a 3D board to bridge screen puzzle solving with over-the-board sight." },
+          { "slug": "playing-chess-with-friends-on-apple-game-center", "keyword": "play chess with friends on Game Center iPhone", "angle": "Setting up 3, 5, 10, 15, or 30-minute matches and unrated friendly rematches with zero engine interference." },
+          { "slug": "what-to-look-for-in-a-positional-chess-trainer", "keyword": "positional chess training app exercises", "angle": "Why players need quiet engine-screened positions with no forced tactical win to practise evaluation and planning." },
+          { "slug": "following-top-tournament-chess-games-without-noise", "keyword": "follow top tournament chess games daily", "angle": "How Brass Pawn's Today feed highlights finished top-board games and the exact move where Stockfish says the result turned." },
+          { "slug": "free-vs-paid-chess-training-apps-what-matters", "keyword": "free vs paid chess training app comparison", "angle": "Evaluating metered daily training vs locked paywalls and subscription fatigue vs one-off unlocks." }
+        ]
+      },
+      {
+        "clusterId": "tactics",
+        "macroGroup": "tactics-calculation-positional (35)",
+        "count": 15,
+        "intentFocus": "Actionable pattern recognition and execution guides for tactical themes (distinct from the /tactics glossary definitions), paired with verified CC0 FEN exercises.",
+        "appFitRule": "Reference the exact bundled puzzle count for the motif from src/app/core/site.ts (e.g., 1,799 forks, 1,074 pins, 646 deflections, 1,101 quiet moves), spaced repetition for misses, and motif weakness tracking.",
+        "proposedTopics": [
+          { "slug": "how-to-spot-knight-forks-two-moves-ahead", "keyword": "how to spot knight forks in chess", "angle": "Using same-colour square geometry and attraction sacrifices to engineer knight forks (backed by 1,799 fork puzzles)." },
+          { "slug": "exploiting-absolute-and-relative-pins", "keyword": "how to exploit pins in chess", "angle": "Why pinning a piece is only step one: piling up attackers, advancing pawns, and recognising when a relative pin can break (1,074 puzzles)." },
+          { "slug": "setting-up-discovered-attacks-and-double-checks", "keyword": "discovered attack and double check chess tactics", "angle": "Maximising the unmasking piece's threat and why double check forces a king move (798 discovered attacks, 351 discovered checks, 107 double checks)." },
+          { "slug": "deflection-and-overloaded-defender-tactics", "keyword": "deflection and overloading chess tactics", "angle": "Identifying defenders doing two jobs at once and forcing them to abandon the critical square (646 deflection puzzles)." },
+          { "slug": "attraction-and-decoy-sacrifices-against-the-king", "keyword": "attraction decoy sacrifice chess", "angle": "Dragging a king or queen onto a fatal fork, skewer, or mating square (675 attraction puzzles)." },
+          { "slug": "back-rank-mate-threats-and-luft-decisions", "keyword": "back rank mate patterns and defence", "angle": "Using back-rank weaknesses to win material indirectly and knowing when creating luft weakens the kingside (168 puzzles)." },
+          { "slug": "finding-zwischenzug-in-between-moves-in-exchanges", "keyword": "zwischenzug in between move chess examples", "angle": "Breaking the automatic recapture reflex by checking for intermediate checks and threats first (200 puzzles)." },
+          { "slug": "quiet-moves-in-tactical-combinations", "keyword": "quiet move in chess tactics", "angle": "How to find non-capturing, non-checking moves that seal a mating net or trap a piece after a sacrifice (1,101 puzzles)." },
+          { "slug": "clearance-and-interference-line-tactics", "keyword": "clearance and interference tactics in chess", "angle": "Vacating squares with tempo and severing defensive lines between enemy rooks and queens (265 clearance, 65 interference puzzles)." },
+          { "slug": "skewer-and-x-ray-tactics-along-open-lines", "keyword": "skewer and x ray attack in chess", "angle": "Forcing high-value pieces off files and diagonals and defending/attacking through enemy men (308 skewers, 60 x-rays)." },
+          { "slug": "how-to-stop-leaving-hanging-pieces-in-chess", "keyword": "how to stop hanging pieces in chess", "angle": "A pre-move loose-piece scan for both colours to eliminate the #1 cause of losses under 1800 (503 hanging-piece puzzles)." },
+          { "slug": "trapping-pieces-that-raid-too-early", "keyword": "how to trap pieces in chess", "angle": "Cutting off escape squares step by step against greedy bishops, knights, and queens (196 trapped-piece puzzles)." },
+          { "slug": "smothered-mate-and-corner-mating-nets", "keyword": "smothered mate pattern chess", "angle": "Recognising the f7/g8 knight-and-queen mechanism and counting king escape squares (41 smothered-mate puzzles)." },
+          { "slug": "tactical-sacrifices-calculating-concrete-compensation", "keyword": "when to sacrifice material in chess tactics", "angle": "Verifying whether defenders can return in time before giving up a piece for king exposure (1,318 sacrifice puzzles)." },
+          { "slug": "advanced-pawn-tactics-on-the-sixth-and-seventh-rank", "keyword": "advanced passed pawn tactics chess", "angle": "Using a 7th-rank pawn as a tactical magnet to overload enemy rooks and queens (1,129 advanced-pawn puzzles)." }
+        ]
+      },
+      {
+        "clusterId": "calculation",
+        "macroGroup": "tactics-calculation-positional (35)",
+        "count": 10,
+        "intentFocus": "Concrete board calculation methods: candidate moves, forcing sequences, blunder checking, and defensive resource verification.",
+        "appFitRule": "Connect to untimed Tactics (unique solutions with no guessing branches), Positional judgement, and Play & Coach.",
+        "proposedTopics": [
+          { "slug": "checks-captures-threats-calculation-order", "keyword": "checks captures threats calculation method", "angle": "Applying the CCT checklist for both yourself and your opponent on every turn." },
+          { "slug": "how-to-select-candidate-moves-without-freezing", "keyword": "how to choose candidate moves in chess", "angle": "Pruning your search to 2–3 purposeful candidate moves so you calculate deeply instead of broadly." },
+          { "slug": "calculating-the-opponents-best-defensive-reply", "keyword": "how to see opponent resources in chess calculation", "angle": "Why most calculation errors happen on move 2 of the opponent's defence, not move 1 of your attack." },
+          { "slug": "visualising-the-board-three-plies-ahead", "keyword": "chess board visualisation exercises", "angle": "Keeping track of vacated squares and newly opened lines after a piece moves in your head." },
+          { "slug": "counting-attackers-and-defenders-accurately", "keyword": "counting attackers and defenders chess", "angle": "Why piece value and capture order matter more than a raw headcount of attackers vs defenders." },
+          { "slug": "when-to-calculate-deeply-vs-play-by-principle", "keyword": "when to calculate in chess vs positional play", "angle": "Distinguishing high-tension contact positions that demand exact calculation from quiet manoeuvring positions." },
+          { "slug": "avoiding-hope-chess-and-one-move-threats", "keyword": "what is hope chess and how to stop playing it", "angle": "Testing whether your move still improves your position after the opponent parries your threat." },
+          { "slug": "defensive-calculation-finding-only-moves-under-attack", "keyword": "how to defend difficult positions in chess", "angle": "Staying calm under a kingside attack by eliminating illegal/losing replies and looking for counter-checks." },
+          { "slug": "desperado-and-recapture-order-calculation", "keyword": "desperado piece calculation in chess", "angle": "Selling a doomed piece for maximum material or structural damage when both sides have pieces en prise." },
+          { "slug": "blunder-check-routine-before-touching-a-piece", "keyword": "pre move blunder check chess routine", "angle": "A 5-second final check for opponent checks, captures, and newly unguarded squares." }
+        ]
+      },
+      {
+        "clusterId": "positional-play",
+        "macroGroup": "tactics-calculation-positional (35)",
+        "count": 10,
+        "intentFocus": "Evaluating quiet positions where no forced win exists: outposts, open files, pawn structure, bishop pair, and piece activity.",
+        "appFitRule": "Directly showcase Brass Pawn's Positional judgement mode (116 quiet engine-screened positions where you first assess clearly better / slightly better / balanced, then choose the move, and receive feature-named feedback).",
+        "proposedTopics": [
+          { "slug": "how-to-evaluate-a-quiet-chess-position", "keyword": "how to evaluate a chess position without tactics", "angle": "The two-step discipline trained in Positional judgement: judge who stands better first, then find the move that proves why." },
+          { "slug": "knight-outposts-how-to-create-and-use-them", "keyword": "knight outpost in chess strategy", "angle": "Why a knight on the 5th or 6th rank immune to enemy pawns dominates a passive rook." },
+          { "slug": "open-files-and-rooks-on-the-seventh-rank", "keyword": "how to use open files and seventh rank rooks", "angle": "Contesting open files, doubling heavy pieces, and invading the 7th rank to tie down enemy pieces." },
+          { "slug": "good-bishop-vs-bad-bishop-pawn-color-complexes", "keyword": "good bishop vs bad bishop chess", "angle": "How central pawn chains dictate whether your bishop is an active attacker or a tall pawn." },
+          { "slug": "playing-with-and-against-an-isolated-queen-pawn", "keyword": "isolated queen pawn strategy chess", "angle": "Dynamic piece activity and d4–d5 breaks vs blockading the square in front and trading minor pieces." },
+          { "slug": "doubled-and-backward-pawns-when-they-matter", "keyword": "doubled and backward pawns in chess", "angle": "Telling apart harmless doubled pawns that control central squares from chronic targets on half-open files." },
+          { "slug": "improving-your-worst-placed-piece", "keyword": "improve your worst piece chess principle", "angle": "Finding prophylactic rerouting manoeuvres when no immediate pawn break or tactic is available." },
+          { "slug": "prophylaxis-stopping-the-opponents-plan-first", "keyword": "prophylaxis in chess explained", "angle": "Asking 'what does my opponent want to do next?' in balanced positions before launching your own plan." },
+          { "slug": "when-to-trade-pieces-and-when-to-keep-tension", "keyword": "when to trade pieces in chess", "angle": "Evaluating space, king safety, and pawn structure before releasing central or bishop-for-knight tension." },
+          { "slug": "bishop-pair-advantage-in-open-middlegames", "keyword": "how to use the bishop pair in chess", "angle": "Opening the position with pawn breaks so two bishops outrange a bishop and knight." }
+        ]
+      },
+      {
+        "clusterId": "endgames",
+        "macroGroup": "endgame-opening-fairplay (30)",
+        "count": 14,
+        "intentFocus": "Converting winning endings and holding theoretical draws against best defence.",
+        "appFitRule": "CRITICAL GUARDRAIL: Match the exact 15 built-in drills in data/endgames.json when stating what can be drilled directly in Endgame mode (Queen vs lone king, Rook vs lone king, Queen the pawn then finish, Rook pawn in the corner, King in front on the 6th, Blocked pawns and wrong king, Holding the opposition, Two bishops vs lone king, Bishop and wrong rook pawn, Outside passed pawn, Three-pawn breakthrough, Rook and pawn king in front, Knight vs connected pawns, Queen vs bishop pawn on 7th, Opposite-coloured bishops). For theoretical concepts outside those 15 (e.g., Lucena/Philidor names), teach the concept accurately without claiming a dedicated named Lucena/Philidor drill ships in the 15.",
+        "proposedTopics": [
+          { "slug": "king-and-pawn-endgames-direct-and-distant-opposition", "keyword": "opposition in king and pawn endgames", "angle": "Holding the draw from behind and winning with the king in front on the 6th rank (matches built-in drills eg-kp-opposition-draw and eg-kp-king-in-front)." },
+          { "slug": "rook-vs-lone-king-checkmate-box-method", "keyword": "how to checkmate with a rook and king", "angle": "Cutting off the king, using opposition, and shrinking the box without wasting moves (matches drill eg-mate-rook)." },
+          { "slug": "queen-vs-lone-king-checkmate-without-stalemate", "keyword": "how to checkmate with a queen without stalemate", "angle": "The knight's-distance box technique and avoiding corner stalemate traps (matches drills eg-mate-queen and eg-promote-and-mate)." },
+          { "slug": "rook-pawn-in-the-corner-and-wrong-color-bishop-draws", "keyword": "wrong color bishop rook pawn endgame draw", "angle": "Why an extra rook pawn draws against a cornered king even with a bishop of the wrong colour (matches eg-kp-rook-pawn-corner and eg-bishop-wrong-rook-pawn)." },
+          { "slug": "outside-passed-pawn-decoy-technique", "keyword": "outside passed pawn endgame strategy", "angle": "Using a wing passer to deflect the enemy king and harvest the opposite-side pawns (matches drill eg-kp-outside-passer)." },
+          { "slug": "three-pawn-breakthrough-sacrifice-pattern", "keyword": "three pawn breakthrough chess endgame", "angle": "Calculating the temporary pawn sacrifice that creates an unstoppable runner (matches drill eg-kp-breakthrough)." },
+          { "slug": "two-bishops-vs-lone-king-checkmate-technique", "keyword": "how to checkmate with two bishops", "angle": "Building the diagonal wall and steering the king to the corner within 50 moves (matches drill eg-mate-two-bishops)." },
+          { "slug": "opposite-colored-bishops-endgame-fortress", "keyword": "opposite colored bishops endgame draw fortress", "angle": "How to blockade two extra pawns on your bishop's colour so the stronger side can never break through (matches drill eg-opposite-bishops)." },
+          { "slug": "rook-and-pawn-endgames-defending-with-king-in-front", "keyword": "rook and pawn endgame defending king in front", "angle": "Keeping the defending king on the promotion file and checking from behind/side (matches drill eg-rook-king-in-front)." },
+          { "slug": "queen-vs-seventh-rank-pawn-winning-and-drawing-zones", "keyword": "queen vs pawn on seventh rank endgame", "angle": "Why centre/knight pawns lose to the queen while a bishop or rook pawn on the 7th forces stalemate tricks (matches drill eg-queen-vs-bishop-pawn)." },
+          { "slug": "knight-against-connected-passed-pawns-defence", "keyword": "knight vs two connected passed pawns endgame", "angle": "Overcoming the knight's inability to gain a tempo by blockading from the front with the king (matches drill eg-knight-vs-connected-pawns)." },
+          { "slug": "zugzwang-and-locked-pawns-in-king-endings", "keyword": "zugzwang in pawn endgames", "angle": "Managing reserve tempos and triangulation when locked pawns punish whoever moves first (matches drill eg-kp-blocked-draw + 241 zugzwang puzzles)." },
+          { "slug": "rule-of-the-square-and-king-activation-in-endgames", "keyword": "rule of the square chess endgame", "angle": "Visualising the 4x4/5x5 square instantly to know whether a king catches a runaway passed pawn without counting every ply." },
+          { "slug": "converting-an-extra-pawn-without-allowing-counterplay", "keyword": "how to convert an extra pawn in the endgame", "angle": "Centralising the king, fixing opponent pawns, and avoiding premature pawn pushes that allow draws." }
+        ]
+      },
+      {
+        "clusterId": "opening-principles",
+        "macroGroup": "endgame-opening-fairplay (30)",
+        "count": 8,
+        "intentFocus": "Generalizable opening principles and the transition to the middlegame (explicitly aligned with Brass Pawn's philosophy that opening principles generalise while rote repertoire memorisation is separate).",
+        "appFitRule": "State honestly that Brass Pawn does not include an opening-tree memoriser; instead, it trains the opening-to-middlegame transition through Positional judgement (116 exercises), Tactics, Watch (900 decisive games including <25-move miniatures), and Play & Coach.",
+        "proposedTopics": [
+          { "slug": "chess-opening-principles-that-replace-rote-memorisation", "keyword": "chess opening principles for beginners and intermediates", "angle": "Centre control, minor piece development, king safety, and connecting rooks without memorizing 20 moves of book theory." },
+          { "slug": "transitioning-from-the-opening-to-the-middlegame", "keyword": "transition from opening to middlegame in chess", "angle": "What to do on move 10 when development is finished and no obvious capture exists." },
+          { "slug": "punishing-early-queen-moves-and-flank-grabs", "keyword": "how to punish early queen moves in chess", "angle": "Developing with tempo and opening central files instead of chasing the enemy queen with weakening pawn moves." },
+          { "slug": "castling-timing-kingside-vs-queenside-decisions", "keyword": "when to castle kingside vs queenside in chess", "angle": "Weighing king safety against opposite-side pawn storms and central files." },
+          { "slug": "f2-and-f7-weaknesses-in-open-games", "keyword": "f2 and f7 weakness in chess openings", "angle": "Why f2/f7 is only defended by the king, how Fried Liver / miniature sacrifices target it, and how to defend calmly." },
+          { "slug": "central-pawn-breaks-d4-d5-and-c4-c5-explained", "keyword": "central pawn breaks in chess openings", "angle": "Understanding why c5, d5, e4, and f5 breaks liberate cramped pieces and challenge the centre." },
+          { "slug": "avoiding-premature-pins-and-wasted-piece-moves", "keyword": "moving the same piece twice in the opening", "angle": "When a second move with the same knight or bishop is a tempo loss vs when it wins a concrete concession." },
+          { "slug": "learning-opening-structures-from-short-master-games", "keyword": "learn chess openings from master miniatures", "angle": "Using decisive 20-move games in Watch to see how masters punish slow development." }
+        ]
+      },
+      {
+        "clusterId": "fair-play",
+        "macroGroup": "endgame-opening-fairplay (30)",
+        "count": 8,
+        "intentFocus": "FIDE Laws of Chess, draw rules, notation/FEN literacy, and why human online play must remain 100% engine-free.",
+        "appFitRule": "Highlight Brass Pawn's strict separation: Play & Coach gives move-by-move engine grading against AI, whereas Online Game Center matches have zero engine hints, zero move values, and device-to-device legal move validation.",
+        "proposedTopics": [
+          { "slug": "why-online-chess-against-humans-must-have-no-engine-help", "keyword": "fair play in online chess no engine assistance", "angle": "Why coaching belongs in AI practice games and why human multiplayer requires one clock and zero engine overlays." },
+          { "slug": "stalemate-threefold-repetition-and-fifty-move-draw-rules", "keyword": "chess draw rules stalemate threefold repetition 50 move", "angle": "Exact FIDE criteria for stalemate, threefold repetition (same position and rights, not necessarily consecutive), and the 50-move rule." },
+          { "slug": "en-passant-and-castling-rules-edge-cases-explained", "keyword": "en passant and castling rules in chess", "angle": "Clearing up common misunderstandings: castling through check vs rook attacked, and why en passant expires after one turn." },
+          { "slug": "how-to-read-chess-algebraic-notation-and-fen-strings", "keyword": "how to read chess algebraic notation and FEN", "angle": "Decoding SAN (Nxf7+, O-O-O, e8=Q) and the 6 fields of a Forsyth-Edwards Notation (FEN) string." },
+          { "slug": "perft-testing-how-chess-apps-prove-legal-move-generation", "keyword": "what is perft in chess programming", "angle": "How counting legal move trees to fixed depth proves en passant, castling, and promotion rules have zero bugs." },
+          { "slug": "time-controls-explained-bullet-blitz-rapid-classical", "keyword": "chess time controls explained 3 5 10 15 30 minutes", "angle": "How clock pacing changes between 3-, 5-, 10-, 15-, and 30-minute games and how to avoid flagging in winning positions." },
+          { "slug": "rated-vs-unrated-friendly-chess-matches", "keyword": "rated vs unrated chess games with friends", "angle": "Why friendly invitations and rematches should be unrated so friends of different strengths can play freely." },
+          { "slug": "reporting-and-verifying-ambiguous-chess-puzzles", "keyword": "what makes a chess puzzle invalid or ambiguous", "angle": "How to copy a puzzle FEN and check whether a deeper search reveals a second winning line." }
+        ]
+      }
+    ]
+  },
+  "technicalAndUiAudit": {
+    "status": "completed-read-only",
+    "findings": [
+      {
+        "id": "BP-ERR-01",
+        "severity": "critical",
+        "file": "/Users/minchomilev/work/Brass Pawn/web/tools/postbuild.mjs",
+        "lines": "114-117",
+        "issue": "Fragile `.split('= ')[1]` before `JSON.parse()` on `guide-index.ts` and `guide-data.ts`.",
+        "details": "Lines 115 and 117 use `JSON.parse(guideIndexTs.split('= ')[1].replace(/;\\s*$/, ''))` and `JSON.parse(guideDataTs.split('= ')[1].replace(/;\\s*$/, ''))`. Currently `batch-a.json`, `batch-b.json`, and `batch-c.json` have zero occurrences of `= `, so it will parse cleanly today, but if any future edit or exercise string introduces `= `, `.split('= ')[1]` will truncate the JSON string and crash `postbuild.mjs`.",
+        "recommendation": "Use `guideDataTs.slice(guideDataTs.indexOf('['), guideDataTs.lastIndexOf(']') + 1)` (and the same for `guideIndexTs`)."
+      },
+      {
+        "id": "BP-ERR-02",
+        "severity": "high",
+        "file": "/Users/minchomilev/work/Brass Pawn/web/tools/postbuild.mjs",
+        "lines": "285",
+        "issue": "Price mismatch in generated `llms.txt` (`$49.99 once` vs `$39.99`).",
+        "details": "`tools/postbuild.mjs` line 285 hardcodes `Pro removes the limit at $3.99 a month or $49.99 once.` whereas `src/app/core/site.ts` line 208 (`PRICING.lifetime`) and `src/app/i18n/pages/en.ts` line 61 specify `$39.99`.",
+        "recommendation": "Read `PRICING.monthly` and `PRICING.lifetime` from `site.ts` (or update line 285 to `$39.99 once`) so `llms.txt` never contradicts `/pricing` and JSON-LD `Offer` schema."
+      },
+      {
+        "id": "BP-ERR-03",
+        "severity": "medium",
+        "file": "/Users/minchomilev/work/Brass Pawn/web/src/app/core/site.ts",
+        "lines": "79-81",
+        "issue": "Stale `SITE.version: '1.3'` and incomplete `SITE.platforms: 'iPhone and iPad'`.",
+        "details": "As noted in `product-facts.json`, the live App Store version is `1.4`, while `site.ts` line 81 still emits `softwareVersion: '1.3'` in JSON-LD. Additionally, `site.ts` line 31 and line 80 state `iPhone, iPad and Mac` / `macOS 14.0 or later`, whereas `site.ts` line 79 (`platforms`), `home.html` line 304, and `privacy.html` line 60 omit `Mac`.",
+        "recommendation": "Update `SITE.version` to `'1.4'` and align platform strings to `'iPhone, iPad and Mac'` when touching `site.ts`."
+      },
+      {
+        "id": "BP-ERR-04",
+        "severity": "medium",
+        "file": "/Users/minchomilev/work/Brass Pawn/web/src/app/pages/engine/engine.html",
+        "lines": "17-18, 158-159",
+        "issue": "Legacy claim on `/engine` that the app 'makes no network requests at all'.",
+        "details": "`engine.html` line 158–159 states 'both engines run on your device, and the app makes no network requests at all', which was written before `Today` feed downloads and the v1.3/1.4 online presence/friends service documented in `privacy.html` (Sections 4 and 6). While both engines themselves make zero network requests, the app as a whole does connect for Today, Game Center, StoreKit, and online presence/friends.",
+        "recommendation": "Clarify in `engine.html` that the engines themselves make no network requests, while online play/presence and Today use the network as described in `/privacy`."
+      },
+      {
+        "id": "BP-ERR-05",
+        "severity": "medium",
+        "file": "/Users/minchomilev/work/Brass Pawn/web/src/app/shared/site-footer/site-footer.ts",
+        "lines": "37-67",
+        "issue": "New `/articles` hub is not yet linked from `site-header`, `site-footer`, or core product pages.",
+        "details": "Currently `/articles` is registered in `app.routes.ts` and `tools/postbuild.mjs` (`sitemap-pages.xml` and `llms.txt`), but neither `site-header.ts` (`english` nav array), `site-header.html` (mobile sheet), nor `site-footer.ts` (`columns`) links to `/articles`.",
+        "recommendation": "Add `{ path: '/articles', label: 'Guides' }` (or `'Training guides'`) to `site-footer.ts` under the `Chess` column (and optionally `site-header.ts` / `guide.ts` / `training.html` / `motifs.html`) so crawlers and visitors have strong internal link paths into the 100-article hub."
+      },
+      {
+        "id": "BP-ERR-06",
+        "severity": "low",
+        "file": "/Users/minchomilev/work/Brass Pawn/web/src/app/pages/articles/articles.ts",
+        "lines": "15, 17, 27, 35",
+        "issue": "Accessibility & defensive improvements for `ArticlesPage` and `GuideArticlePage`.",
+        "details": "(1) In `.academy-board` (`role=\"img\"`), the 64 inner `<span>` square elements contain Unicode chess glyphs and coordinate `<small>` tags without `aria-hidden=\"true\"`, which can cause VoiceOver to read 64 squares after the board's `aria-label`. (2) `.academy-topics button` elements omit `type=\"button\"`. (3) The `@if(!filtered().length)` empty state has no one-tap reset button to clear `query` and `topic`. (4) `.academy-prevnext` in `articles.scss` uses `max-width: 45%` side-by-side even on 320px viewports.",
+        "recommendation": "Add `aria-hidden=\"true\"` on the inner square `<span>` inside `.academy-board`, add `type=\"button\"` on `.academy-topics` buttons, add a reset button in `@if(!filtered().length)`, and stack `.academy-prevnext` vertically below `36rem`."
+      },
+      {
+        "id": "BP-ENH-01",
+        "severity": "low",
+        "file": "/Users/minchomilev/work/Brass Pawn/web/research/growth-20261024/add-exercises.cjs",
+        "lines": "4-19",
+        "issue": "Run `add-exercises.cjs` (and optionally extend to `data/positions.json` and `data/endgames.json`) before assembling `guide-data.ts`.",
+        "details": "`batch-a.json`, `batch-b.json`, and `batch-c.json` currently have `0` attached exercises (`exercise` field not yet populated on the batches). Running `node research/growth-20261024/add-exercises.cjs` will attach verified CC0 tactical FENs, and mapping `data/endgames.json` (15 drills) + `data/positions.json` (116 quiet positions) can populate verified boards for endgame and positional guides too.",
+        "recommendation": "Run `add-exercises.cjs` prior to writing `guide-data.ts` so the `.academy-board` diagram component renders on matching guides."
+      }
+    ]
+  }
+}

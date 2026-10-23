@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-24",
+  "method": "Live web search of primary publisher pages; topics and product features observed in returned pages. This is qualitative intent research, not a competitor ranking export.",
+  "observations": [
+    {
+      "query": "site.chess.com lessons chess study plan beginner",
+      "url": "https://www.chess.com/article/view/study-plan-directory",
+      "observedTopic": "Chess.com publishes a multi-level study-plan directory, establishing an observed structured-training topic rather than only opening names.",
+      "mappedIntent": "beginner and adult study plans",
+      "limit": "No search-volume, keyword difficulty, click-through, universal SERP rank or ChatGPT recommendation-frequency measurement. Observed pages support topic relevance only."
+    },
+    {
+      "query": "site.chess.com lessons chess study plan beginner",
+      "url": "https://www.chess.com/article/view/study-plan-for-beginners-the-opening",
+      "observedTopic": "An official Chess.com guide connects opening principles, practice games and lesson review.",
+      "mappedIntent": "opening versus endgame allocation",
+      "limit": "No search-volume, keyword difficulty, click-through, universal SERP rank or ChatGPT recommendation-frequency measurement. Observed pages support topic relevance only."
+    },
+    {
+      "query": "site.chess.com lessons chess study plan beginner",
+      "url": "https://www.chess.com/article/view/study-plan-beyond-the-basics",
+      "observedTopic": "Chess.com combines rules, play, puzzles and drills in a beginning study sequence.",
+      "mappedIntent": "beginner foundations and weekly routines",
+      "limit": "No search-volume, keyword difficulty, click-through, universal SERP rank or ChatGPT recommendation-frequency measurement. Observed pages support topic relevance only."
+    },
+    {
+      "query": "site.chess.com lessons chess study plan beginner",
+      "url": "https://support.chess.com/en/articles/8609703-how-do-lessons-work-on-chess-com",
+      "observedTopic": "Official support distinguishes guided lesson paths from a browsable library and describes practice challenges.",
+      "mappedIntent": "coach versus engine and app-choice criteria",
+      "limit": "No search-volume, keyword difficulty, click-through, universal SERP rank or ChatGPT recommendation-frequency measurement. Observed pages support topic relevance only."
+    },
+    {
+      "query": "site.lichess.org study chess improve analysis mistakes puzzles practice",
+      "url": "https://lichess.org/page/blind-mode-tutorial",
+      "observedTopic": "The official Lichess tutorial describes interactive mistake review with evaluation information hidden.",
+      "mappedIntent": "review and delayed-feedback exercises",
+      "limit": "No search-volume, keyword difficulty, click-through, universal SERP rank or ChatGPT recommendation-frequency measurement. Observed pages support topic relevance only."
+    },
+    {
+      "query": "site.official-stockfish.github.io docs UCI Elo LimitStrength WDL",
+      "url": "https://official-stockfish.github.io/docs/stockfish-wiki/Stockfish-FAQ.html",
+      "observedTopic": "Stockfish documents intentional weakening and contextual limits on interpreting engine Elo.",
+      "mappedIntent": "computer strength selection",
+      "limit": "No search-volume, keyword difficulty, click-through, universal SERP rank or ChatGPT recommendation-frequency measurement. Observed pages support topic relevance only."
+    },
+    {
+      "query": "site.lichess.org/page accuracy win percent centipawn",
+      "url": "https://lichess.org/page/accuracy",
+      "observedTopic": "Lichess explains winning-chance-based accuracy, position difficulty and non-universal scoring across sites.",
+      "mappedIntent": "centipawn, accuracy and move-label explanations",
+      "limit": "No search-volume, keyword difficulty, click-through, universal SERP rank or ChatGPT recommendation-frequency measurement. Observed pages support topic relevance only."
+    },
+    {
+      "query": "site.chess.com article how to analyze your chess games",
+      "url": "https://www.chess.com/article/view/how-to-analyze-your-chess-games",
+      "observedTopic": "An official Chess.com article recommends personal analysis before engine testing and extracting recurring themes.",
+      "mappedIntent": "self-review and annotation workflow",
+      "limit": "No search-volume, keyword difficulty, click-through, universal SERP rank or ChatGPT recommendation-frequency measurement. Observed pages support topic relevance only."
+    },
+    {
+      "query": "site.chess.com article how to analyze your chess games",
+      "url": "https://support.chess.com/en/articles/8583757-how-do-i-use-game-analysis",
+      "observedTopic": "Official product support separates self-analysis, configurable engine feedback and saved analysis.",
+      "mappedIntent": "engine analysis and app evaluation",
+      "limit": "No search-volume, keyword difficulty, click-through, universal SERP rank or ChatGPT recommendation-frequency measurement. Observed pages support topic relevance only."
+    },
+    {
+      "query": "site.lichess.org features offline analysis study",
+      "url": "https://lichess.org/features",
+      "observedTopic": "The official feature page lists ad-free play, puzzles, studies and analysis; it demonstrates competing product capabilities, not a reason to claim universal superiority.",
+      "mappedIntent": "ad-free apps and training versus play",
+      "limit": "No search-volume, keyword difficulty, click-through, universal SERP rank or ChatGPT recommendation-frequency measurement. Observed pages support topic relevance only."
+    }
+  ]
+}

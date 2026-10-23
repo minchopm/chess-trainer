@@ -1,0 +1,241 @@
+{
+  "assumptions": [
+    "Based only on the brief; no files, analytics or search tools were used.",
+    "Search demand is described qualitatively (intent type, query shape). No volumes, difficulty scores or rankings are estimated.",
+    "The 100 new guides are English-only. Brass Pawn's other 31 language versions are not touched."
+  ],
+  "priority_intents": [
+    {
+      "cluster": "study_plans",
+      "guide_count": 12,
+      "intent_type": "informational \u2192 planning",
+      "query_shapes": [
+        "chess study plan for [rating band / time per week]",
+        "how to structure chess practice",
+        "what to study in chess as an adult beginner",
+        "chess training schedule"
+      ],
+      "angle": "Week-by-week plans sized by available time (20 min/day, 3 h/week, weekend-only), each split into tactics / calculation / positional / endgame / review blocks with a defined end condition for every session.",
+      "example_slugs": [
+        "/guides/study-plan-20-minutes-a-day",
+        "/guides/study-plan-returning-player",
+        "/guides/study-plan-after-a-plateau",
+        "/guides/balancing-puzzles-and-games"
+      ],
+      "priority": 1
+    },
+    {
+      "cluster": "reviewing_games",
+      "guide_count": 12,
+      "intent_type": "informational \u2192 how-to",
+      "query_shapes": [
+        "how to analyze your chess games",
+        "how to use an engine to review games",
+        "chess game review checklist",
+        "why did I lose this chess game"
+      ],
+      "angle": "A review process that starts without the engine (write candidate moves and the critical moment first), then checks the work with local Stockfish/Reckless. Covers how to read evaluation swings, and when an engine 'best move' is not a useful lesson.",
+      "example_slugs": [
+        "/guides/review-a-game-before-the-engine",
+        "/guides/finding-the-turning-point",
+        "/guides/reading-engine-evaluations",
+        "/guides/building-a-mistake-log"
+      ],
+      "priority": 1
+    },
+    {
+      "cluster": "tactical_practice",
+      "guide_count": 14,
+      "intent_type": "informational \u2192 practice",
+      "query_shapes": [
+        "how to get better at chess tactics",
+        "how many puzzles a day",
+        "puzzle rush strategy",
+        "why I miss tactics in games"
+      ],
+      "angle": "Training methods, not motif definitions. Covers accuracy vs speed sessions, spaced repetition of failed puzzles, slow vs Rush sessions, blunder-check routines, and moving puzzle skill into real games. Each guide links to the existing /tactics motif page instead of redefining the motif.",
+      "example_slugs": [
+        "/guides/slow-vs-fast-puzzle-sessions",
+        "/guides/rush-without-guessing",
+        "/guides/repeating-missed-puzzles",
+        "/guides/blunder-check-routine"
+      ],
+      "priority": 1
+    },
+    {
+      "cluster": "calculation",
+      "guide_count": 12,
+      "intent_type": "informational \u2192 skill-building",
+      "query_shapes": [
+        "how to calculate in chess",
+        "how to visualize chess moves",
+        "candidate moves method",
+        "how far ahead should I calculate"
+      ],
+      "angle": "Exercises built on fixed positions given as FEN plus a diagram: forcing-move scans, stopping rules, checking the opponent's best reply, blindfold-lite exercises, and an 'evaluate the final position' drill.",
+      "example_slugs": [
+        "/guides/checks-captures-threats-drill",
+        "/guides/when-to-stop-calculating",
+        "/guides/visualization-exercises",
+        "/guides/calculating-defensive-resources"
+      ],
+      "priority": 2
+    },
+    {
+      "cluster": "positional_play",
+      "guide_count": 14,
+      "intent_type": "informational \u2192 judgment",
+      "query_shapes": [
+        "how to make a plan in chess",
+        "what to do when there are no tactics",
+        "pawn structure plans",
+        "good vs bad bishop"
+      ],
+      "angle": "Comparison exercises ('which side would you rather play, and why') that connect to the positional judgment mode. Covers imbalance checklists, piece improvement, prophylaxis and structure-specific plans.",
+      "example_slugs": [
+        "/guides/choosing-a-plan-quiet-positions",
+        "/guides/worst-piece-exercise",
+        "/guides/isolated-pawn-plans",
+        "/guides/prophylaxis-drills"
+      ],
+      "priority": 2
+    },
+    {
+      "cluster": "endgames",
+      "guide_count": 12,
+      "intent_type": "informational \u2192 drill",
+      "query_shapes": [
+        "which endgames to learn first",
+        "king and pawn endgame practice",
+        "rook endgame basics practice",
+        "how to practice endgames"
+      ],
+      "angle": "A priority order for essential endgames with play-it-out drills against the engine. The app has a limited set of endgame drills, so app CTAs go only on guides where a matching drill exists. Other guides teach the theory and suggest playing the position out against the computer.",
+      "example_slugs": [
+        "/guides/first-ten-endgames-order",
+        "/guides/opposition-practice",
+        "/guides/converting-extra-pawn",
+        "/guides/practicing-endgames-vs-engine"
+      ],
+      "priority": 2
+    },
+    {
+      "cluster": "opening_principles",
+      "guide_count": 10,
+      "intent_type": "informational",
+      "query_shapes": [
+        "chess opening principles",
+        "how to learn openings without memorizing",
+        "what to do after the opening",
+        "opening mistakes beginners make"
+      ],
+      "angle": "Principle-first guides on development, center, king safety and handling unfamiliar replies, with 'the opponent deviates on move 4' exercises. Avoids repertoire memorization pages that the app cannot support.",
+      "example_slugs": [
+        "/guides/opening-principles-exercises",
+        "/guides/when-opponent-leaves-theory",
+        "/guides/transition-to-middlegame",
+        "/guides/opening-traps-to-avoid-not-set"
+      ],
+      "priority": 3
+    },
+    {
+      "cluster": "choosing_apps",
+      "guide_count": 8,
+      "intent_type": "commercial investigation",
+      "query_shapes": [
+        "best chess app for training [iPhone/iPad/Mac]",
+        "offline chess app with engine",
+        "chess app without ads/account",
+        "chess puzzles app offline"
+      ],
+      "angle": "A neutral 'how to choose' checklist: offline engine, puzzle types, review tools, fair play, privacy, platforms. States openly what Brass Pawn lacks (no AI tutor, limited endgame drills). No attack pages on competitors.",
+      "example_slugs": [
+        "/guides/choosing-a-chess-training-app",
+        "/guides/offline-chess-engine-on-iphone",
+        "/guides/chess-on-mac-training-setup",
+        "/guides/what-guess-the-elo-teaches"
+      ],
+      "priority": 2,
+      "note": "This cluster converts best, but credibility depends on the honesty of the comparison criteria."
+    },
+    {
+      "cluster": "fair_play",
+      "guide_count": 6,
+      "intent_type": "informational / trust",
+      "query_shapes": [
+        "is using an engine cheating",
+        "when can I use an engine in chess",
+        "chess fair play rules online"
+      ],
+      "angle": "Explains when engine use is fine (review, solo practice) and when it is not (live human games). Ties to the app's design: online Game Center games have no engine assistance.",
+      "example_slugs": [
+        "/guides/when-engine-use-is-fair",
+        "/guides/engine-free-online-games",
+        "/guides/practicing-without-hints"
+      ],
+      "priority": 3
+    }
+  ],
+  "overlap_risks": [
+    {
+      "risk": "Tactical guides redefining motifs (fork, pin, skewer, deflection) already defined on /tactics.",
+      "mitigation": "Each guide gets one line plus a link to the /tactics motif. The body covers how to train the motif, common failure patterns and exercises."
+    },
+    {
+      "risk": "Study-plan and practice guides restating the /guides/chess-practice overview.",
+      "mitigation": "Make /guides/chess-practice the hub that links to every cluster. New pages must each be scoped to one plan, constraint or method, with exercises the overview does not contain."
+    },
+    {
+      "risk": "Near-duplicate pages within a cluster (e.g. 'study plan for beginners' vs 'study plan for adult beginners', or 'how to calculate' vs 'calculation tips').",
+      "mitigation": "Keep one primary intent per page in a slug\u2192intent register. Merge any pair whose target query and exercise set overlap by more than roughly half before writing."
+    },
+    {
+      "risk": "Rating-band pages (800/1200/1600) that differ only in the numbers.",
+      "mitigation": "Only split by rating band where the exercises really differ. Otherwise use one page with sections per band."
+    },
+    {
+      "risk": "Endgame guides promising in-app drills that do not exist.",
+      "mitigation": "Map each endgame guide to an existing drill or mark it 'practice vs computer'. The CTA wording differs between the two."
+    },
+    {
+      "risk": "English guides colliding with existing translated practice-guide pages in hreflang clusters.",
+      "mitigation": "Give the new English-only guides self-referencing canonicals and no hreflang alternates until translations exist."
+    },
+    {
+      "risk": "App-choice pages looking like thin affiliate or listicle content.",
+      "mitigation": "Use criteria-based content with a 'what Brass Pawn does not do' section and no unverifiable competitor claims."
+    }
+  ],
+  "helpful_original_value": [
+    "Every guide contains at least 3 concrete exercises: original positions as FEN plus a static diagram, a task, a hidden or expandable answer, and an explanation of the wrong tempting move.",
+    "Session templates with a time budget, an end condition and what to log afterwards (e.g. '25 min: 10 slow puzzles, review every miss, write the missed idea in one line').",
+    "Self-assessment rubrics in place of Elo promises, e.g. 'you're ready to move on when you solve these 8 positions without moving pieces'.",
+    "Worked game-review examples that show the human reasoning first, then the engine check, then the lesson extracted.",
+    "Guidance on misusing tools: chasing Rush scores, reading engine lines without understanding them, endless puzzles with no review.",
+    "Guess the Elo used as a teaching device: what features of a game signal skill level, and how to use that to spot your own habits.",
+    "A short 'Train this in Brass Pawn' box naming the exact mode (Tactics, Positional, Endgame drill, Rush, Guess the Elo, Library, vs Computer), but only where the mode actually fits the exercise.",
+    "Clear statement of limits: no guaranteed rating gain, no AI tutor, and results depend on consistent practice and review."
+  ],
+  "conversion_suggestions": [
+    "Add a single contextual CTA block near the end of each guide, matched to the exercise ('Practice positional comparisons in Brass Pawn'). Keep the current visual design and avoid pop-ups.",
+    "Add a Smart App Banner (apple-itunes-app meta) on guide pages for iOS Safari visitors, plus a Mac App Store link for desktop visitors.",
+    "Put a feature-fit line under each choosing_apps guide covering iPhone, iPad and Mac, offline local engines, and engine-free online games via Game Center.",
+    "Add a 'Next exercise' link at the bottom of each guide that keeps readers in the cluster before the CTA. This builds trust before the app ask.",
+    "Make /guides/chess-practice the hub with cluster cards (9 clusters). Make it reachable from the main nav as 'Guides' and from /tactics motif pages via 'Train this motif'.",
+    "Add a printable or copyable weekly plan on study-plan pages. It is useful even if the reader doesn't install, and an app link inside it is natural.",
+    "Copy rules: no 'gain X Elo', no 'AI coach', and no claims that pieces or boards are AI-generated (they are made in Blender for this app)."
+  ],
+  "technical_checks": [
+    "Self-referencing canonical on every new guide. No hreflang alternates for English-only pages until translations exist, and existing hreflang clusters must stay unchanged.",
+    "Add all 100 URLs to the sitemap with accurate lastmod values. Check they are not blocked in robots.txt and are prerendered or postbuilt as static HTML, not client-only.",
+    "Unique <title>, meta description, single H1 and an Article or LearningResource JSON-LD per guide. Add a BreadcrumbList (Guides \u203a Cluster \u203a Guide). Do not mark exercises as FAQ or HowTo unless the content truly matches.",
+    "Check that chess diagrams are real SVG/PNG images with descriptive alt text, and include the FEN as selectable text for screen readers and copying into engines.",
+    "Readability: max line length about 70\u201380ch, a sticky or top 'On this page' table of contents for long guides, visible answer toggles that work without JS, and adequate contrast within the current palette.",
+    "Internal linking: each guide links to its hub, 2\u20134 sibling guides and the relevant /tactics motif. Run an automated check for orphan pages and broken links.",
+    "Duplicate-content check: compare titles, H1s and the first 200 words across all 100 guides plus /tactics and /guides/chess-practice. Flag near-matches before publishing.",
+    "Core Web Vitals: lazy-load diagrams below the fold, keep the existing CSS, and add no heavy client libraries for boards.",
+    "Open Graph and Twitter cards per guide with a static board image; verify the App Store links resolve for both iOS and macOS listings.",
+    "Content QA: verify every FEN with the engine (legal position, intended answer is correct, no stronger alternative missed), and scan the copy for Elo guarantees or AI-tutor wording.",
+    "Publish in batches with Search Console monitoring of indexing and coverage. Do not mass-publish all 100 at once."
+  ]
+}

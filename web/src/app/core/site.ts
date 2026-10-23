@@ -7,6 +7,14 @@
  * pages read them.
  */
 
+/**
+ * The languages search engines are asked to index, by slug.
+ *
+ * English only, per the publishing policy. Every other language stays
+ * available to readers, marked noindex, out of the sitemaps and hreflang.
+ */
+export const INDEXED_LOCALES: readonly string[] = ['en'];
+
 export const SITE = {
   name: 'Brass Pawn',
   tagline: 'The training half of getting good.',
@@ -65,9 +73,9 @@ export const SITE = {
   bundleId: 'com.arte-soft.brasspawn',
   /** The App Clip: game invitations and the daily feed's stories open in it. */
   clipBundleId: 'com.arte-soft.brasspawn.Clip',
-  platforms: 'iPhone and iPad',
+  platforms: 'iPhone, iPad and Mac',
   minimumOs: 'iOS 17.0, iPadOS 17.0 or macOS 14.0 or later',
-  version: '1.3',
+  version: '1.4',
   /**
    * The licence of the app as a whole.
    *

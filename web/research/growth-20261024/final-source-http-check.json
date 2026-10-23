@@ -1,0 +1,190 @@
+{
+  "note": "403 can indicate bot protection; not treated as evidence of a missing resource.",
+  "sources": [
+    {
+      "url": "https://apps.apple.com/app/brass-pawn/id6803566012",
+      "status": 200,
+      "finalUrl": "https://apps.apple.com/us/app/brass-pawn-chess-trainer/id6803566012"
+    },
+    {
+      "url": "https://apps.apple.com/app/id6803566012",
+      "status": 200,
+      "finalUrl": "https://apps.apple.com/us/app/brass-pawn-chess-trainer/id6803566012"
+    },
+    {
+      "url": "https://developer.apple.com/game-center/",
+      "status": 200,
+      "finalUrl": "https://developer.apple.com/game-center/"
+    },
+    {
+      "url": "https://handbook.fide.com/chapter/e012023",
+      "status": 200,
+      "finalUrl": "https://handbook.fide.com/chapter/e012023"
+    },
+    {
+      "url": "https://lichess.org/analysis",
+      "status": 200,
+      "finalUrl": "https://lichess.org/analysis"
+    },
+    {
+      "url": "https://lichess.org/features",
+      "status": 200,
+      "finalUrl": "https://lichess.org/features"
+    },
+    {
+      "url": "https://lichess.org/learn",
+      "status": 200,
+      "finalUrl": "https://lichess.org/learn"
+    },
+    {
+      "url": "https://lichess.org/page/accuracy",
+      "status": 200,
+      "finalUrl": "https://lichess.org/page/accuracy"
+    },
+    {
+      "url": "https://lichess.org/page/blind-mode-tutorial",
+      "status": 200,
+      "finalUrl": "https://lichess.org/page/blind-mode-tutorial"
+    },
+    {
+      "url": "https://lichess.org/page/fair-play",
+      "status": 200,
+      "finalUrl": "https://lichess.org/page/fair-play"
+    },
+    {
+      "url": "https://lichess.org/practice",
+      "status": 200,
+      "finalUrl": "https://lichess.org/practice"
+    },
+    {
+      "url": "https://lichess.org/practice/advanced-tactics/attraction/jOZejFWk",
+      "status": 200,
+      "finalUrl": "https://lichess.org/practice/advanced-tactics/attraction/jOZejFWk"
+    },
+    {
+      "url": "https://lichess.org/practice/advanced-tactics/clearance/Grmtwuft",
+      "status": 200,
+      "finalUrl": "https://lichess.org/practice/advanced-tactics/clearance/Grmtwuft"
+    },
+    {
+      "url": "https://lichess.org/practice/advanced-tactics/deflection/kdKpaYLW",
+      "status": 200,
+      "finalUrl": "https://lichess.org/practice/advanced-tactics/deflection/kdKpaYLW"
+    },
+    {
+      "url": "https://lichess.org/practice/advanced-tactics/interference/g1fxVZu9",
+      "status": 200,
+      "finalUrl": "https://lichess.org/practice/advanced-tactics/interference/g1fxVZu9"
+    },
+    {
+      "url": "https://lichess.org/practice/advanced-tactics/undermining/udx042D6",
+      "status": 200,
+      "finalUrl": "https://lichess.org/practice/advanced-tactics/undermining/udx042D6"
+    },
+    {
+      "url": "https://lichess.org/practice/fundamental-tactics/discovered-attacks/MnsJEWnI",
+      "status": 200,
+      "finalUrl": "https://lichess.org/practice/fundamental-tactics/discovered-attacks/MnsJEWnI"
+    },
+    {
+      "url": "https://lichess.org/practice/fundamental-tactics/double-check/RUQASaZm",
+      "status": 200,
+      "finalUrl": "https://lichess.org/practice/fundamental-tactics/double-check/RUQASaZm"
+    },
+    {
+      "url": "https://lichess.org/practice/fundamental-tactics/overloaded-pieces/o734CNqp",
+      "status": 200,
+      "finalUrl": "https://lichess.org/practice/fundamental-tactics/overloaded-pieces/o734CNqp"
+    },
+    {
+      "url": "https://lichess.org/practice/fundamental-tactics/the-fork/Qj281y1p",
+      "status": 200,
+      "finalUrl": "https://lichess.org/practice/fundamental-tactics/the-fork/Qj281y1p"
+    },
+    {
+      "url": "https://lichess.org/practice/fundamental-tactics/the-pin/9ogFv8Ac",
+      "status": 200,
+      "finalUrl": "https://lichess.org/practice/fundamental-tactics/the-pin/9ogFv8Ac"
+    },
+    {
+      "url": "https://lichess.org/practice/fundamental-tactics/x-ray/lyVYjhPG",
+      "status": 200,
+      "finalUrl": "https://lichess.org/practice/fundamental-tactics/x-ray/lyVYjhPG"
+    },
+    {
+      "url": "https://lichess.org/practice/fundamental-tactics/zwischenzug/ITWY4GN2",
+      "status": 200,
+      "finalUrl": "https://lichess.org/practice/fundamental-tactics/zwischenzug/ITWY4GN2"
+    },
+    {
+      "url": "https://lichess.org/practice/pawn-endgames/key-squares/xebrDvFe",
+      "status": 200,
+      "finalUrl": "https://lichess.org/practice/pawn-endgames/key-squares/xebrDvFe"
+    },
+    {
+      "url": "https://lichess.org/practice/rook-endgames/basic-rook-endgames/pqUSUw8Y",
+      "status": 200,
+      "finalUrl": "https://lichess.org/practice/rook-endgames/basic-rook-endgames/pqUSUw8Y"
+    },
+    {
+      "url": "https://official-stockfish.github.io/docs/stockfish-wiki/Stockfish-FAQ.html",
+      "status": 200,
+      "finalUrl": "https://official-stockfish.github.io/docs/stockfish-wiki/Stockfish-FAQ.html"
+    },
+    {
+      "url": "https://stockfishchess.org/",
+      "status": 200,
+      "finalUrl": "https://stockfishchess.org/"
+    },
+    {
+      "url": "https://support.apple.com/en-euro/101638",
+      "status": 200,
+      "finalUrl": "https://support.apple.com/en-euro/101638"
+    },
+    {
+      "url": "https://support.apple.com/en-euro/guide/iphone/iph3b2f23e83/ios",
+      "status": 200,
+      "finalUrl": "https://support.apple.com/en-euro/guide/iphone/iph3b2f23e83/ios"
+    },
+    {
+      "url": "https://support.chess.com/en/articles/8583757-how-do-i-use-game-analysis",
+      "status": 200,
+      "finalUrl": "https://support.chess.com/en/articles/8583757-how-do-i-use-game-analysis"
+    },
+    {
+      "url": "https://support.chess.com/en/articles/8584089-how-does-game-review-work",
+      "status": 200,
+      "finalUrl": "https://support.chess.com/en/articles/8584089-how-does-game-review-work"
+    },
+    {
+      "url": "https://www.chess.com/article/view/how-to-analyze-your-chess-games",
+      "status": 200,
+      "finalUrl": "https://www.chess.com/article/view/how-to-analyze-your-chess-games"
+    },
+    {
+      "url": "https://www.chess.com/article/view/study-plan-directory",
+      "status": 200,
+      "finalUrl": "https://www.chess.com/article/view/study-plan-directory"
+    },
+    {
+      "url": "https://www.chess.com/lessons/calculation-with-dvoretsky",
+      "status": 200,
+      "finalUrl": "https://www.chess.com/lessons/calculation-with-dvoretsky"
+    },
+    {
+      "url": "https://www.chess.com/lessons/strategy",
+      "status": 200,
+      "finalUrl": "https://www.chess.com/lessons/strategy"
+    },
+    {
+      "url": "https://www.chess.com/lessons/tactics",
+      "status": 200,
+      "finalUrl": "https://www.chess.com/lessons/tactics"
+    },
+    {
+      "url": "https://www.chess.com/terms/chess-endgame",
+      "status": 200,
+      "finalUrl": "https://www.chess.com/terms/chess-endgame"
+    }
+  ]
+}

@@ -47,6 +47,7 @@ export class SiteHeader {
   private readonly english = [
     { path: '/today', label: 'Today' },
     { path: '/training', label: 'Training' },
+    { path: '/articles', label: 'Guides' },
     { path: '/tactics', label: 'Tactics' },
     { path: '/engine', label: 'The engine' },
     { path: '/pricing', label: 'Pricing' },

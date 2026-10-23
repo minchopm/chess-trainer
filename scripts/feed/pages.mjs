@@ -33,6 +33,16 @@ export const LANGUAGES = LANGS.filter((lang) => lang !== 'en').map((lang) => ({
   slug: { 'pt-BR': 'pt-br', 'zh-Hans': 'zh-hans', 'zh-Hant': 'zh-hant' }[lang] ?? lang,
 }));
 
+/**
+ * The languages search engines are asked to index: the site's INDEXED_LOCALES
+ * (web/src/app/core/site.ts). English only since 2026-10-23. The other
+ * languages' pages are still written, marked noindex by the renderer, but are
+ * left out of sitemap-today.xml and are not announced to IndexNow.
+ */
+const INDEXED_LANGS = ['en'];
+const indexedURL = (text) =>
+  !LANGUAGES.some(({ slug }) => !INDEXED_LANGS.includes(slug) && text.includes(`brasspawn.com/${slug}/`));
+
 /** A story's page in one of them. */
 export const languageURL = (id, slug) => `https://brasspawn.com/${slug}/today/${id}`;
 
@@ -171,11 +181,13 @@ export function openPages({
           entry(story.url, story),
           ...(translated[story.id] ? LANGUAGES.map(({ slug }) => entry(languageURL(story.id, slug), story)) : []),
         ])
+        .filter(indexedURL)
         .join('\n');
       const reportUrls = reports
         .flatMap(({ id, date }) =>
           ['en', ...LANGUAGES.map((l) => l.lang)].map((lang) => entry(reportURL(id, lang), { date: date ?? new Date().toISOString().slice(0, 10) })),
         )
+        .filter(indexedURL)
         .join('\n');
       await put(
         'sitemap-today.xml',
@@ -188,6 +200,7 @@ export function openPages({
 
     /** Bing and the engines that share its endpoint, told about the new pages. */
     async announce(urls) {
+      urls = urls.filter(indexedURL);
       if (!urls.length) return;
       if (!indexNowKey) {
         log('  IndexNow: no key, nothing sent');

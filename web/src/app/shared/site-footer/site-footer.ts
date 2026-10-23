@@ -51,6 +51,7 @@ export class SiteFooter {
       links: [
         { path: '/today', label: 'Today’s top boards' },
         { path: '/tactics', label: 'The twenty motifs' },
+        { path: '/articles', label: 'Training guides' },
         { path: '/watch', label: 'Nine hundred games' },
         { path: '/ratings', label: 'What a rating measures' },
       ],

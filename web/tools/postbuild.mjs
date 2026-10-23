@@ -111,7 +111,13 @@ const todayAlternates = [
 ].join('\n');
 
 /** Pages worth indexing, in the order a reader would meet them. */
+const guideIndexTs = await readFile(new URL('../src/app/pages/articles/guide-index.ts', import.meta.url), 'utf8');
+const GUIDE_INDEX = JSON.parse(guideIndexTs.slice(guideIndexTs.indexOf('=') + 1).trim().replace(/;\s*$/, ''));
+const guideDataTs = await readFile(new URL('../src/app/pages/articles/guide-data.ts', import.meta.url), 'utf8');
+const GUIDES = JSON.parse(guideDataTs.slice(guideDataTs.indexOf('=') + 1).trim().replace(/;\s*$/, ''));
 const PAGES = [
+  {path:'/articles',priority:'0.8',changefreq:'monthly',lastmod:'2026-10-24'},
+  ...GUIDE_INDEX.map(g=>({path:'/articles/'+g.slug,priority:'0.7',changefreq:'monthly',lastmod:'2026-10-24'})),
   ...locales.map((locale) => ({
     path: `${locale.slug === 'en' ? '' : '/' + locale.slug}/guides/chess-practice`,
     priority: '0.8', changefreq: 'monthly', lastmod: '2026-10-02',
@@ -157,6 +163,16 @@ const PAGES = [
   ),
 ];
 
+// Only the languages search engines are asked to index go in the sitemap: the
+// same list the pages' robots tag reads (INDEXED_LOCALES in core/site.ts). The
+// other languages stay published, marked noindex, and are left out here.
+const siteFacts = await readFile(new URL('../src/app/core/site.ts', import.meta.url), 'utf8');
+const INDEXED = [...siteFacts.split('INDEXED_LOCALES')[1].split(';')[0].matchAll(/'([a-z-]+)'/g)].map((m) => m[1]);
+const NOT_INDEXED = locales.map((l) => l.slug).filter((slug) => !INDEXED.includes(slug));
+const SITEMAP_PAGES = PAGES.filter(
+  (page) => !NOT_INDEXED.some((slug) => page.path === `/${slug}` || page.path.startsWith(`/${slug}/`)),
+);
+
 const today = new Date().toISOString().slice(0, 10);
 
 // The daily feed's stories are not listed here. They have a sitemap of their
@@ -169,13 +185,13 @@ const published = JSON.parse(
 );
 
 // Written by hand rather than by a library, because it is eight lines of XML.
-const body = PAGES.map(
+const body = SITEMAP_PAGES.map(
   (page) => `  <url>
     <loc>${ORIGIN}${page.path === '/' ? '/' : page.path}</loc>
     <lastmod>${page.lastmod ?? today}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
-${page.translated ? ALTERNATES + '\n' : page.alternates ? pageAlternates(page.alternates) + '\n' : page.block ? page.block + '\n' : ''}  </url>`,
+${INDEXED.length < 2 ? '' : page.translated ? ALTERNATES + '\n' : page.alternates ? pageAlternates(page.alternates) + '\n' : page.block ? page.block + '\n' : ''}  </url>`,
 ).join('\n');
 
 await writeFile(
@@ -266,7 +282,7 @@ ${text('licence')}. The complete source is at ${text('repo')}.
 Playing is free and unlimited — against the engine, against a person, and the
 whole ${number('classics')}-game library. The training is metered: five a day of each kind on a
 free account, resetting at nine in the morning local time. Pro removes the limit
-at $3.99 a month or $49.99 once. There is no advertising anywhere in the app.
+at $3.99 a month or $39.99 once. There is no advertising anywhere in the app.
 
 ## Pages
 
@@ -293,6 +309,15 @@ Some other pages have translations; follow each page's language links for its av
 `,
   'utf8',
 );
+
+// English training library; the indexed guides are independent of the news feed.
+const guideList = '\n## English training guides\n\n' + GUIDE_INDEX.map(g=>`- [${g.title}](${ORIGIN}/articles/${g.slug}): ${g.description}`).join('\n') + '\n';
+await writeFile(join(OUT,'llms.txt'), (await readFile(join(OUT,'llms.txt'),'utf8')) + guideList);
+await writeFile(join(OUT,'llms-full.txt'), '# Brass Pawn English training guides\n\n' + GUIDES.map(g=>[
+ `## ${g.title}`,`URL: ${ORIGIN}/articles/${g.slug}`,g.lede,
+ ...g.sections.flatMap(section=>[`### ${section.heading}`,...section.paragraphs,...(section.bullets||[]).map(b=>'- '+b)]),
+ '### Where Brass Pawn fits',g.appFit,'### Sources',...g.sources.map(x=>`- [${x.label}](${x.url})`)
+].join('\n\n')).join('\n\n---\n\n'));
 
 // Most static hosts serve /404.html; Angular prerendered it at /404/index.html.
 try {

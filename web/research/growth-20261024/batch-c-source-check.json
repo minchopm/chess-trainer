@@ -1,0 +1,51 @@
+[
+  {
+    "url": "https://apps.apple.com/app/id6803566012",
+    "status": 200,
+    "resolved": "https://apps.apple.com/us/app/brass-pawn-chess-trainer/id6803566012"
+  },
+  {
+    "url": "https://handbook.fide.com/chapter/e012023",
+    "status": 200,
+    "resolved": "https://handbook.fide.com/chapter/e012023"
+  },
+  {
+    "url": "https://lichess.org/learn",
+    "status": 200,
+    "resolved": "https://lichess.org/learn"
+  },
+  {
+    "url": "https://lichess.org/page/fair-play",
+    "status": 200,
+    "resolved": "https://lichess.org/page/fair-play"
+  },
+  {
+    "url": "https://lichess.org/practice",
+    "status": 200,
+    "resolved": "https://lichess.org/practice"
+  },
+  {
+    "url": "https://lichess.org/practice/pawn-endgames/practicestnamkeysquares/xebrDvFe",
+    "error": "HTTP Error 403: Forbidden",
+    "verification": "Linked from official Lichess /practice index and opened by web tool; direct urllib request met access protection, not evidence of missing page."
+  },
+  {
+    "url": "https://lichess.org/practice/rook-endgames/practicestnambasicrookendgames/pqUSUw8Y",
+    "error": "HTTP Error 403: Forbidden",
+    "verification": "Linked from official Lichess /practice index and opened by web tool; direct urllib request met access protection, not evidence of missing page."
+  },
+  {
+    "url": "https://stockfishchess.org/",
+    "status": 200,
+    "resolved": "https://stockfishchess.org/"
+  },
+  {
+    "url": "https://www.chess.com/terms/chess-endgame",
+    "status": 200,
+    "resolved": "https://www.chess.com/terms/chess-endgame"
+  },
+  {
+    "url": "https://developer.apple.com/game-center/",
+    "verification": "Official Apple page returned in web search; overview of matchmaking and real-time play."
+  }
+]

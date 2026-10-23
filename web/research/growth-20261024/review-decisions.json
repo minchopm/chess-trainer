@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-24",
+  "accepted": [
+    "100 distinct intent pages across nine clusters, English-only indexing",
+    "Argon: protect existing /tactics, /training and /guides/chess-practice intent",
+    "Argon: robust postbuild JSON extraction, correct llms price to existing $39.99 lifetime reference, version/platform consistency",
+    "Argon/Codex: mobile header clearance, navigation collapse, accessible board and filter controls",
+    "Claude: fix absolute-pin capture wording and protected-passer king capture legality",
+    "Claude: replace five truncated metadata descriptions with complete sentences",
+    "Claude: normalise Lichess practice URL slugs",
+    "Claude/Codex: separate board-coordinate warmup from calculation visualisation, middlegame piece exchange from resulting endgame, broad threat scan from loose-piece counting",
+    "Claude: replace generic repeated B section headings"
+  ],
+  "verified_claims": [
+    "Positional exercise mode exists: 116 positions in data/positions.json and public /training",
+    "Public App Store release1.4 supports iPhone/iPad/Mac",
+    "15 built-in endgame drills; broader article topics are supplementary study",
+    "23 CC0 tactical diagrams with every recorded move legally validated"
+  ],
+  "rejected_or_limited": [
+    "Copyleft licensing does not guarantee no advertising: no such causal claim is used in articles",
+    "No competitor price comparisons or claims their tools always require network connectivity",
+    "No exact keyword volumes, difficulty, complete competitor rankings or ChatGPT recommendation frequencies available",
+    "Claude unverified positional-mode concern resolved against existing data and public feature page",
+    "A live smoke test is HTTP/source based; browser interaction unavailable in current Work settings"
+  ],
+  "spend": "Existing subscriptions and local tooling only; no paid generation API calls.",
+  "followupReview": "A second optional Claude follow-up produced no result within five minutes and was stopped; the completed independent Claude review and its corrections are preserved. Corrected cases were rechecked locally."
+}

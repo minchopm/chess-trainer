@@ -1,0 +1,410 @@
+{
+  "source": "Existing CC0 training data",
+  "validator": "chess.js",
+  "note": "Legality of every recorded move was verified. No new engine-win or uniqueness claim is made.",
+  "positions": [
+    {
+      "slug": "spot-knight-forks-before-moving",
+      "puzzleId": "lBl0AT",
+      "theme": "fork",
+      "fen": "2rr4/p3k1p1/5p2/1B1Pn3/P2RP1PK/2p5/2R2P2/8 b - - 0 37",
+      "uci": [
+        "e5f3",
+        "h4g3",
+        "f3d4"
+      ],
+      "san": [
+        "Nf3+",
+        "Kg3",
+        "Nxd4"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "pin-versus-skewer-training",
+      "puzzleId": "lGkdTX",
+      "theme": "pin",
+      "fen": "r2qk1nr/pn1pbppp/1pp5/8/3QPP2/5N2/PPP3PP/RNB2RK1 b kq - 1 11",
+      "uci": [
+        "e7c5",
+        "c1e3",
+        "c5d4"
+      ],
+      "san": [
+        "Bc5",
+        "Be3",
+        "Bxd4"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "discovered-attack-two-threat-checklist",
+      "puzzleId": "lrjPdj",
+      "theme": "discoveredAttack",
+      "fen": "r4rk1/1b3ppp/1p2pq2/3pn3/1P1Q1P2/P1N4P/2P1B1P1/R4RK1 b - - 0 18",
+      "uci": [
+        "e5f3",
+        "f1f3",
+        "f6d4"
+      ],
+      "san": [
+        "Nf3+",
+        "Rxf3",
+        "Qxd4+"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "double-check-legal-defences",
+      "puzzleId": "lQzNpO",
+      "theme": "doubleCheck",
+      "fen": "r4r2/1p2N1bk/p2p2p1/4n1pN/P3P2Q/7B/2q5/R4R1K w - - 0 25",
+      "uci": [
+        "h5f6"
+      ],
+      "san": [
+        "Nf6#"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "deflection-versus-decoy",
+      "puzzleId": "lH3oo6",
+      "theme": "deflection",
+      "fen": "5rk1/5ppp/1Q6/5b2/8/8/P4PPP/3rRK2 b - - 0 27",
+      "uci": [
+        "f5d3",
+        "f1g1",
+        "d1e1"
+      ],
+      "san": [
+        "Bd3+",
+        "Kg1",
+        "Rxe1#"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "remove-the-defender-capture-order",
+      "puzzleId": "lbyvZg",
+      "theme": "capturingDefender",
+      "fen": "r4rk1/2n1ppbp/nq1p2p1/p1pP4/P1B1P3/2N4P/1P3PP1/1RBQ1RK1 b - - 2 16",
+      "uci": [
+        "g7c3",
+        "b2c3",
+        "b6b1"
+      ],
+      "san": [
+        "Bxc3",
+        "bxc3",
+        "Qxb1"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "back-rank-weakness-safety-check",
+      "puzzleId": "lFus1u",
+      "theme": "backRankMate",
+      "fen": "6k1/3q1ppp/p7/1p6/8/1Pb1pQ2/2P2PPP/6K1 w - - 0 36",
+      "uci": [
+        "f3a8",
+        "d7c8",
+        "a8c8"
+      ],
+      "san": [
+        "Qa8+",
+        "Qc8",
+        "Qxc8#"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "zwischenzug-before-recapture",
+      "puzzleId": "lNCVeg",
+      "theme": "intermezzo",
+      "fen": "8/pkp2p2/3b4/1P3Np1/1n2P3/8/P4P1r/1K5R w - - 0 27",
+      "uci": [
+        "f5d6",
+        "c7d6",
+        "h1h2"
+      ],
+      "san": [
+        "Nxd6+",
+        "cxd6",
+        "Rxh2"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "clearance-tactics-lines-and-squares",
+      "puzzleId": "l2lx3d",
+      "theme": "clearance",
+      "fen": "5r1k/1b3p1P/n3p3/p2pPnN1/3P2Q1/Pqp5/5P2/2KR3R w - - 0 35",
+      "uci": [
+        "g5f7",
+        "f8f7",
+        "g4g8"
+      ],
+      "san": [
+        "Nxf7+",
+        "Rxf7",
+        "Qg8#"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "interference-tactics-defensive-lines",
+      "puzzleId": "l6b1M3",
+      "theme": "interference",
+      "fen": "r6r/3qkp1p/3pp1p1/p1p3P1/1p6/4PQ2/PPP3P1/R3K2R w KQ - 0 23",
+      "uci": [
+        "f3f6",
+        "e7e8",
+        "f6h8"
+      ],
+      "san": [
+        "Qf6+",
+        "Ke8",
+        "Qxh8+"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "xray-attack-line-awareness",
+      "puzzleId": "lAcNqr",
+      "theme": "xRayAttack",
+      "fen": "3R1n1k/pQ4pp/8/8/8/7P/PPr1qrP1/5R1K w - - 2 32",
+      "uci": [
+        "d8f8",
+        "f2f8",
+        "f1f8"
+      ],
+      "san": [
+        "Rxf8+",
+        "Rxf8",
+        "Rxf8#"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "hanging-piece-check-before-every-move",
+      "puzzleId": "ldgAoN",
+      "theme": "hangingPiece",
+      "fen": "r2qr1k1/1p3pbp/p1p1b1p1/P7/1NNP4/2P3P1/3Q2BP/4RR1K b - - 0 31",
+      "uci": [
+        "e6c4",
+        "e1e8",
+        "d8e8"
+      ],
+      "san": [
+        "Bxc4",
+        "Rxe8+",
+        "Qxe8"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "trapped-piece-escape-square-audit",
+      "puzzleId": "lQnxoU",
+      "theme": "trappedPiece",
+      "fen": "rnb1k2r/pp2npb1/2pp1q2/4pP2/6B1/3P1N1P/PPP5/RNBQ1K1R w kq - 3 12",
+      "uci": [
+        "c1g5",
+        "f6f5",
+        "g4f5"
+      ],
+      "san": [
+        "Bg5",
+        "Qxf5",
+        "Bxf5"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "pawn-fork-prevention",
+      "puzzleId": "lsjIHV",
+      "theme": "fork",
+      "fen": "4k3/5p1p/p2P2pb/4N3/1p2P3/8/PP6/1K6 w - - 3 41",
+      "uci": [
+        "d6d7",
+        "e8d8",
+        "e5f7",
+        "d8d7",
+        "f7h6"
+      ],
+      "san": [
+        "d7+",
+        "Kd8",
+        "Nxf7+",
+        "Kxd7",
+        "Nxh6"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "queen-forks-checks-and-loose-targets",
+      "puzzleId": "lhkHN8",
+      "theme": "fork",
+      "fen": "r5k1/7p/2p1p1PQ/4P3/p1qP2R1/Pp3P2/1P6/1K1R4 b - - 2 31",
+      "uci": [
+        "c4c2",
+        "b1a1",
+        "c2d1",
+        "h6c1",
+        "d1c1"
+      ],
+      "san": [
+        "Qc2+",
+        "Ka1",
+        "Qxd1+",
+        "Qc1",
+        "Qxc1#"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "quiet-moves-in-tactical-positions",
+      "puzzleId": "lFZBXZ",
+      "theme": "quietMove",
+      "fen": "8/8/8/8/6Pp/8/4K1k1/8 w - - 1 64",
+      "uci": [
+        "g4g5",
+        "h4h3",
+        "g5g6"
+      ],
+      "san": [
+        "g5",
+        "h3",
+        "g6"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "mating-net-search-escape-squares",
+      "puzzleId": "lFiEF3",
+      "theme": "mateIn2",
+      "fen": "r3q2k/p1pn4/1p1p1pp1/3P1NQ1/2P3p1/8/PP2PP2/R3K3 w Q - 0 24",
+      "uci": [
+        "g5h6",
+        "h8g8",
+        "h6g7"
+      ],
+      "san": [
+        "Qh6+",
+        "Kg8",
+        "Qg7#"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "smothered-mate-recognition-without-sacrifice-autopilot",
+      "puzzleId": "lsDF6J",
+      "theme": "smotheredMate",
+      "fen": "2B2rk1/2q1bppp/2np4/p1p1p3/1pP1P3/1P1n4/PB1N1PPP/RQ4RK b - - 1 22",
+      "uci": [
+        "d3f2"
+      ],
+      "san": [
+        "Nxf2#"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "attraction-sacrifice-mating-square",
+      "puzzleId": "lsxVHP",
+      "theme": "attraction",
+      "fen": "3r2k1/5p1p/pp3Rp1/8/8/8/5PKP/1B1r2R1 b - - 2 33",
+      "uci": [
+        "d1g1",
+        "g2g1",
+        "d8d1",
+        "g1g2",
+        "d1b1"
+      ],
+      "san": [
+        "Rxg1+",
+        "Kxg1",
+        "Rd1+",
+        "Kg2",
+        "Rxb1"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "double-attack-versus-fork",
+      "puzzleId": "lYvSrT",
+      "theme": "fork",
+      "fen": "7r/5k2/3R1P2/4p1P1/4R2p/P1P3nN/1P1K4/8 b - - 0 37",
+      "uci": [
+        "g3e4",
+        "d2e3",
+        "e4d6"
+      ],
+      "san": [
+        "Nxe4+",
+        "Ke3",
+        "Nxd6"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "defensive-tactics-find-the-saving-move",
+      "puzzleId": "lx8Wab",
+      "theme": "defensiveMove",
+      "fen": "8/8/8/8/3r2p1/4k1P1/2R3K1/8 b - - 3 64",
+      "uci": [
+        "d4d2",
+        "c2d2",
+        "e3d2",
+        "g2f2",
+        "d2d3"
+      ],
+      "san": [
+        "Rd2+",
+        "Rxd2",
+        "Kxd2",
+        "Kf2",
+        "Kd3"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "calculate-forcing-lines-without-tunnel-vision",
+      "puzzleId": "l4EP9q",
+      "theme": "advantage",
+      "fen": "2kr4/pppr4/3q2p1/4Qp2/3P4/1PP1P3/P2RNPPP/3R2K1 b - - 0 22",
+      "uci": [
+        "d6e5",
+        "d4e5",
+        "d7d2",
+        "d1d2",
+        "d8d2"
+      ],
+      "san": [
+        "Qxe5",
+        "dxe5",
+        "Rxd2",
+        "Rxd2",
+        "Rxd2"
+      ],
+      "legal": true
+    },
+    {
+      "slug": "find-opponents-best-defence",
+      "puzzleId": "lgK4N4",
+      "theme": "advantage",
+      "fen": "4Rbr1/p4N1p/kpp3p1/8/6P1/5P2/PPP4P/2K5 b - - 1 30",
+      "uci": [
+        "f8h6",
+        "f7h6",
+        "g8e8"
+      ],
+      "san": [
+        "Bh6+",
+        "Nxh6",
+        "Rxe8"
+      ],
+      "legal": true
+    }
+  ]
+}
