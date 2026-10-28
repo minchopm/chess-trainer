@@ -91,7 +91,8 @@ export class Seo {
     root.setAttribute('lang', locale.tag);
     root.setAttribute('dir', locale.dir);
 
-    for (const [key, content] of Object.entries(this.tags(page, full, canonical))) {
+    const tags = this.tags(page, full, canonical);
+    for (const [key, content] of Object.entries(tags)) {
       if (!content) continue;
       // Open Graph's own keys, article:* included, are properties; the rest are names.
       const property = /^(og|article):/.test(key);
@@ -100,6 +101,8 @@ export class Seo {
         property ? `property="${key}"` : `name="${key}"`,
       );
     }
+    // Only a page Google is told to skip carries it; walking on to one it indexes takes it away.
+    if (!tags['googlebot']) this.meta.removeTag('name="googlebot"');
 
     this.setLink('canonical', canonical);
     this.setAlternates(page);
@@ -170,9 +173,13 @@ export class Seo {
       // Without max-image-preview:large a result gets a thumbnail rather than
       // the wide card, and max-snippet:-1 lets the description come from the
       // page instead of being truncated to a default.
-      robots: page.noindex || !INDEXED_LOCALES.includes(locale.slug)
+      robots: page.noindex
         ? 'noindex, follow'
         : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
+      // A language kept out of the index is kept out of Google's only (Mincho,
+      // 2026-10-28): Bing and ChatGPT search may still index it. Google reads
+      // both tags and obeys the stricter one.
+      googlebot: !page.noindex && !INDEXED_LOCALES.includes(locale.slug) ? 'noindex, follow' : '',
 
       'og:type': page.published ? 'article' : 'website',
       ...(page.published ? { 'article:published_time': page.published } : {}),

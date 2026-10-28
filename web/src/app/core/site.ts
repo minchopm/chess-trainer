@@ -8,10 +8,11 @@
  */
 
 /**
- * The languages search engines are asked to index, by slug.
+ * The languages Google is asked to index, by slug.
  *
  * English only, per the publishing policy. Every other language stays
- * available to readers, marked noindex, out of the sitemaps and hreflang.
+ * available to readers, marked noindex for Googlebot alone (other search
+ * engines may index it), out of the sitemaps and hreflang.
  */
 export const INDEXED_LOCALES: readonly string[] = ['en'];
 
