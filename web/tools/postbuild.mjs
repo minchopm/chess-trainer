@@ -116,8 +116,8 @@ const GUIDE_INDEX = JSON.parse(guideIndexTs.slice(guideIndexTs.indexOf('=') + 1)
 const guideDataTs = await readFile(new URL('../src/app/pages/articles/guide-data.ts', import.meta.url), 'utf8');
 const GUIDES = JSON.parse(guideDataTs.slice(guideDataTs.indexOf('=') + 1).trim().replace(/;\s*$/, ''));
 const PAGES = [
-  {path:'/articles',priority:'0.8',changefreq:'monthly',lastmod:'2026-10-24'},
-  ...GUIDE_INDEX.map(g=>({path:'/articles/'+g.slug,priority:'0.7',changefreq:'monthly',lastmod:'2026-10-24'})),
+  {path:'/articles',priority:'0.8',changefreq:'monthly',lastmod:'2026-11-04'},
+  ...GUIDE_INDEX.map(g=>({path:'/articles/'+g.slug,priority:'0.7',changefreq:'monthly',lastmod:'2026-11-04'})),
   ...locales.map((locale) => ({
     path: `${locale.slug === 'en' ? '' : '/' + locale.slug}/guides/chess-practice`,
     priority: '0.8', changefreq: 'monthly', lastmod: '2026-10-02',

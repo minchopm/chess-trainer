@@ -449,6 +449,47 @@ section {
   text-transform: uppercase;
 }
 
+/* ── Training notebook ───────────────────────────────────────────────── */
+
+.notebook {
+  border-top: 1px solid var(--rule-soft);
+}
+
+.notebook__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1px;
+  background: var(--rule-soft);
+  border: 1px solid var(--rule-soft);
+  margin-bottom: 1.75rem;
+}
+
+.notebook__card {
+  background: var(--ink);
+  padding: 1.25rem 1.4rem;
+  display: grid;
+  gap: 0.45rem;
+  text-decoration: none;
+  transition: background 180ms ease;
+}
+
+.notebook__card:hover {
+  background: rgba(214, 169, 95, 0.06);
+}
+
+.notebook__topic {
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.notebook__title {
+  color: var(--ivory);
+  font-size: 1rem;
+  line-height: 1.38;
+}
+
 /* ── Narrow ──────────────────────────────────────────────────────────── */
 
 @media (max-width: 900px) {

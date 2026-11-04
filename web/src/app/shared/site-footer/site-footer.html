@@ -43,23 +43,25 @@
   <!-- Every language as a plain link, once, in the footer of every page.
        The picker in the bar is the same thirty-one and is enough for a person;
        this is what makes a crawler that never opens a <details> find them. -->
-  <nav class="languages" [attr.aria-label]="chrome().languages">
-    <h2 class="visually-hidden">{{ chrome().languages }}</h2>
-    <ul>
-      @for (locale of locales; track locale.tag) {
-        <li>
-          <a
-            [routerLink]="locale.slug === 'en' ? '/' : '/' + locale.slug"
-            [attr.hreflang]="locale.tag"
-            [attr.lang]="locale.tag"
-            [attr.dir]="locale.dir"
-            [title]="locale.english"
-            >{{ locale.name }}</a
-          >
-        </li>
-      }
-    </ul>
-  </nav>
+  @if (locales.length > 1) {
+    <nav class="languages" [attr.aria-label]="chrome().languages">
+      <h2 class="visually-hidden">{{ chrome().languages }}</h2>
+      <ul>
+        @for (locale of locales; track locale.tag) {
+          <li>
+            <a
+              [routerLink]="locale.slug === 'en' ? '/' : '/' + locale.slug"
+              [attr.hreflang]="locale.tag"
+              [attr.lang]="locale.tag"
+              [attr.dir]="locale.dir"
+              [title]="locale.english"
+              >{{ locale.name }}</a
+            >
+          </li>
+        }
+      </ul>
+    </nav>
+  }
 
   <div class="baseline">
     <p class="mono">© {{ year }} {{ site.publisher }}. {{ chrome().rights }}</p>

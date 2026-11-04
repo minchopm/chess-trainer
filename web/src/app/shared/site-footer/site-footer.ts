@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { SITE } from '../../core/site';
+import { INDEXED_LOCALES, SITE } from '../../core/site';
 import { GUIDE_LABELS } from '../../pages/guide/labels';
 import { CurrentLocale } from '../../i18n/current';
 import { LOCALES } from '../../i18n/locales';
@@ -19,7 +19,9 @@ export class SiteFooter {
 
   protected readonly site = SITE;
   protected readonly year = SITE.copyrightYear;
-  protected readonly locales = LOCALES;
+  protected readonly locales = LOCALES.filter((l) =>
+    (INDEXED_LOCALES as readonly string[]).includes(l.slug),
+  );
 
   /**
    * The footer's own words, in the language of the page.

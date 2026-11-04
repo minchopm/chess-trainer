@@ -40,13 +40,62 @@ export class Home {
     { value: '0', label: 'accounts or trackers', note: 'no analytics, no adverts, nothing sold' },
   ] as const;
 
+  protected readonly featuredGuides = [
+    {
+      topic: 'Study plans',
+      slug: 'beginner-chess-study-plan',
+      title: 'A beginner chess study plan built around real mistakes',
+    },
+    {
+      topic: 'Game review',
+      slug: 'analyse-chess-game-without-engine',
+      title: 'Analyse your chess game before turning on the engine',
+    },
+    {
+      topic: 'Tactics',
+      slug: 'spot-knight-forks-before-moving',
+      title: 'How to spot knight forks before you move',
+    },
+    {
+      topic: 'Calculation',
+      slug: 'calculate-forcing-lines-without-tunnel-vision',
+      title: 'Calculate forcing lines without following checks blindly',
+    },
+    {
+      topic: 'Positional play',
+      slug: 'rook-open-file-plan',
+      title: 'Open files for rooks: find an entry square before doubling',
+    },
+    {
+      topic: 'Endgames',
+      slug: 'king-pawn-opposition',
+      title: 'King and pawn opposition: decide who must give way',
+    },
+    {
+      topic: 'Opening principles',
+      slug: 'opening-development-principles',
+      title: 'Opening development principles: improve pieces while answering threats',
+    },
+    {
+      topic: 'Apps & practice',
+      slug: 'choose-iphone-chess-app',
+      title: 'How to choose an iPhone chess app for your actual goal',
+    },
+    {
+      topic: 'Rules & fair play',
+      slug: 'chess-engine-assistance-fair-play',
+      title: 'Chess engine assistance and fair play: separate training from matches',
+    },
+  ] as const;
+
   constructor() {
     inject(Seo).apply({
       path: '/',
       title: SITE.name,
+      seoTitle: 'Brass Pawn — Chess Trainer, Tactics & Offline Engine for iOS',
       description:
         '14,351 tactics puzzles, 900 master games, engine-verified endgames and coached play, with two chess engines running on your iPhone. No account, no adverts.',
-      updated: '2026-08-19',
+      updated: '2026-11-04',
       // This page is the English member of the translated set and the
       // x-default. hreflang is reciprocal — a group whose pages do not all
       // name each other is discarded whole — so the root has to declare the

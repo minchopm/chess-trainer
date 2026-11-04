@@ -20,6 +20,8 @@ export interface PageMeta {
    */
   readonly translatedIn?: readonly string[];
   readonly title: string;
+  /** Optional full <title> override (keeps `title` short for breadcrumbs). */
+  readonly seoTitle?: string;
   readonly description: string;
   /** Route path, e.g. '/privacy'. '/' for the home page. */
   readonly path: string;
@@ -118,9 +120,11 @@ export class Seo {
    * that would have won it.
    */
   private headline(page: PageMeta): string {
+    if (page.seoTitle) return page.seoTitle;
     if (page.path === '/') return `${SITE.name} — ${SITE.category}`;
     if (page.translated) return `${SITE.name} — ${page.title}`;
-    return `${page.title} — ${SITE.name}`;
+    const withBrand = `${page.title} — ${SITE.name}`;
+    return withBrand.length <= 60 ? withBrand : page.title;
   }
 
   /**

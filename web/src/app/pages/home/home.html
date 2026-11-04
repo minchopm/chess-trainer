@@ -264,6 +264,33 @@
   </div>
 </section>
 
+<!-- ── Training notebook ───────────────────────────────────────────────── -->
+<section class="notebook" id="notebook">
+  <div class="page">
+    <header class="section-head" ctReveal>
+      <p class="slug">Training notebook</p>
+      <h2>One hundred practical chess guides.</h2>
+      <p class="lede measure">
+        Nine places to begin — one for each part of the game — written around real board decisions,
+        worked FEN positions and honest habits rather than memorised traps.
+      </p>
+    </header>
+
+    <div class="notebook__grid">
+      @for (guide of featuredGuides; track guide.slug; let i = $index) {
+        <a class="notebook__card" [routerLink]="'/articles/' + guide.slug" [ctReveal]="(i % 3) * 60">
+          <span class="notebook__topic mono">{{ guide.topic }}</span>
+          <span class="notebook__title">{{ guide.title }}</span>
+        </a>
+      }
+    </div>
+
+    <p class="more" ctReveal>
+      <a routerLink="/articles">Browse all 100 chess training guides →</a>
+    </p>
+  </div>
+</section>
+
 <bp-more-apps />
 
 <!-- ── Questions ───────────────────────────────────────────────────────── -->
