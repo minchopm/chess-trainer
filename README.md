@@ -1,5 +1,7 @@
 # Brass Pawn
 
+**[brasspawn.com](https://brasspawn.com/)** · **[App Store (iPhone, iPad & Mac)](https://apps.apple.com/us/app/brass-pawn-chess-trainer/id6803566012)** · **[Chess Guides](https://brasspawn.com/guides)** · **[Chess Trainer Comparisons](https://brasspawn.com/compare)** · **[Arte Soft](https://arte-soft.com/)**
+
 A local chess training system. Real board, real rules, Stockfish 18 as the coach.
 Four modes — tactics, positional judgement, endgame technique, and coached play —
 with an Elo-style rating and spaced repetition so the work compounds instead of
@@ -16,6 +18,13 @@ npm start          # → http://localhost:5173
 The bundled set is already generated and verified — **14,351 tactics puzzles**
 (evenly spread from 760 to 2899), 116 positional exercises, and 14 endgame
 drills. The app works immediately, offline.
+
+On iPhone, iPad, and Mac, **[Brass Pawn: Chess Trainer](https://brasspawn.com/)**
+ships natively on the [App Store](https://apps.apple.com/us/app/brass-pawn-chess-trainer/id6803566012)
+with on-device Stockfish 18 and Reckless, win-probability move grading, 1,624
+Guess the Elo games, 900 decisive master games, and 32 interface languages. See
+**[brasspawn.com/compare](https://brasspawn.com/compare)** for factual feature
+and offline comparisons against online chess platforms and desktop engines.
 
 ---
 
