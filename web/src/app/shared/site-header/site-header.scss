@@ -37,7 +37,7 @@
 .bar {
   display: flex;
   align-items: center;
-  gap: clamp(1rem, 3vw, 2.5rem);
+  gap: clamp(0.85rem, 2.2vw, 2rem);
   height: 4.25rem;
 }
 
@@ -67,7 +67,7 @@
 
 .nav {
   display: flex;
-  gap: clamp(1rem, 2.4vw, 2.25rem);
+  gap: clamp(0.8rem, 1.75vw, 1.65rem);
 }
 
 .nav a {
@@ -179,7 +179,7 @@
 }
 
 :host(.is-open) .sheet {
-  max-height: 26rem;
+  max-height: 31rem;
 }
 
 .sheet nav {
@@ -198,7 +198,7 @@
   color: var(--ivory);
 }
 
-@media (max-width: 72rem) {
+@media (max-width: 76rem) {
   .nav,
   .cta {
     display: none;
@@ -216,7 +216,7 @@
 
 /* On a narrow bar the burger already stands where this would; the picker moves
    into the sheet, which is where the rest of the navigation goes too. */
-@media (max-width: 72rem) {
+@media (max-width: 76rem) {
   .bar .lang {
     display: none;
   }
@@ -227,7 +227,7 @@
   padding-inline: var(--gutter);
 }
 
-@media (min-width: 72.0625rem) {
+@media (min-width: 76.0625rem) {
   .lang--sheet {
     display: none;
   }

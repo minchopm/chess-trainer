@@ -1,4 +1,5 @@
 import { GUIDE_INDEX } from './pages/articles/guide-index';
+import { COMPARE_SLUGS } from './pages/compare/compare-slugs';
 import { isDevMode } from '@angular/core';
 import { Routes } from '@angular/router';
 
@@ -94,6 +95,8 @@ const localeTodayRoutes: Routes = LOCALES.filter((locale) => STORY_SLUGS.include
  * three.js and the other seven do not.
  */
 export const routes: Routes = [
+ {path:'compare',loadComponent:()=>import('./pages/compare/compare').then(m=>m.CompareHubPage)},
+ ...COMPARE_SLUGS.map(slug=>({path:'compare/'+slug,loadComponent:()=>import('./pages/compare/compare').then(m=>m.CompareDetailPage),resolve:{page:()=>import('./pages/compare/compare-loader').then(m=>m.loadComparePage(slug))}})),
  {path:'articles',loadComponent:()=>import('./pages/articles/articles').then(m=>m.ArticlesPage)},
  ...GUIDE_INDEX.map(g=>({path:'articles/'+g.slug,loadComponent:()=>import('./pages/articles/articles').then(m=>m.GuideArticlePage),resolve:{guide:()=>import('./pages/articles/guide-data').then(m=>m.GUIDES.find(x=>x.slug===g.slug))}})),
   ...LOCALES.map((locale) => ({

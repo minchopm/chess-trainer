@@ -48,6 +48,7 @@ export class SiteHeader {
     { path: '/today', label: 'Today' },
     { path: '/training', label: 'Training' },
     { path: '/articles', label: 'Guides' },
+    { path: '/compare', label: 'Compare' },
     { path: '/tactics', label: 'Tactics' },
     { path: '/engine', label: 'The engine' },
     { path: '/pricing', label: 'Pricing' },

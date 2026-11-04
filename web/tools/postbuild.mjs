@@ -3,8 +3,23 @@
  * redirects, a sitemap, and a 404 page at the path servers actually look for.
  */
 import { copyFile, mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises';
+import { createRequire } from 'node:module';
 import { dirname, join, resolve } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import vm from 'node:vm';
+
+const require = createRequire(import.meta.url);
+const ts = require('typescript');
+
+const loadTsModule = async (relUrl) => {
+  const code = await readFile(new URL(relUrl, import.meta.url), 'utf8');
+  const transpiled = ts.transpileModule(code, {
+    compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 },
+  }).outputText;
+  const mod = { exports: {} };
+  vm.runInNewContext(transpiled, { module: mod, exports: mod.exports, require });
+  return mod.exports;
+};
 
 const OUT = 'dist/brass-pawn/browser';
 const ORIGIN = 'https://brasspawn.com';
@@ -115,7 +130,28 @@ const guideIndexTs = await readFile(new URL('../src/app/pages/articles/guide-ind
 const GUIDE_INDEX = JSON.parse(guideIndexTs.slice(guideIndexTs.indexOf('=') + 1).trim().replace(/;\s*$/, ''));
 const guideDataTs = await readFile(new URL('../src/app/pages/articles/guide-data.ts', import.meta.url), 'utf8');
 const GUIDES = JSON.parse(guideDataTs.slice(guideDataTs.indexOf('=') + 1).trim().replace(/;\s*$/, ''));
+const {
+  COMPARE_CATEGORIES,
+  COMPARE_HUB_ARCHETYPE_TABLE,
+  COMPARE_HUB_FAQS,
+  COMPARE_HUB_META,
+  COMPARE_INDEX,
+} = await loadTsModule('../src/app/pages/compare/compare-index.ts');
+const { COMPARE_BATCH_1 } = await loadTsModule('../src/app/pages/compare/data/batch-1.ts');
+const { COMPARE_BATCH_2 } = await loadTsModule('../src/app/pages/compare/data/batch-2.ts');
+const { COMPARE_BATCH_3 } = await loadTsModule('../src/app/pages/compare/data/batch-3.ts');
+const COMPARE_BY_SLUG = new Map(
+  [...COMPARE_BATCH_1, ...COMPARE_BATCH_2, ...COMPARE_BATCH_3].map((entry) => [entry.slug, entry]),
+);
+
 const PAGES = [
+  { path: '/compare', priority: '0.8', changefreq: 'monthly', lastmod: '2026-11-04' },
+  ...COMPARE_INDEX.map((c) => ({
+    path: `/compare/${c.slug}`,
+    priority: '0.7',
+    changefreq: 'monthly',
+    lastmod: '2026-11-04',
+  })),
   {path:'/articles',priority:'0.8',changefreq:'monthly',lastmod:'2026-11-04'},
   ...GUIDE_INDEX.map(g=>({path:'/articles/'+g.slug,priority:'0.7',changefreq:'monthly',lastmod:'2026-11-04'})),
   ...locales.map((locale) => ({
@@ -295,10 +331,12 @@ at $3.99 a month or $39.99 once. There is no advertising anywhere in the app.
 - [What a rating measures](${ORIGIN}/ratings): why a puzzle rating is not a FIDE rating
 - [The engines](${ORIGIN}/engine): both of them, win-probability grading, and what copyleft costs
 - [Pricing](${ORIGIN}/pricing): the whole allowance, free against Pro
+- [App comparisons](${ORIGIN}/compare): side-by-side comparisons against 30 chess apps, engines and training workflows
 - [Support](${ORIGIN}/support): how to reach a human, and the FAQ
 - [Privacy Policy](${ORIGIN}/privacy)
 - [Terms of Service](${ORIGIN}/terms)
 - [Licences and attribution](${ORIGIN}/licences): every third-party component and where its source is
+- [Complete LLM reference](${ORIGIN}/llms-full.txt): full product tables, all 30 multi-table comparisons in GFM Markdown, and all 100 training guides
 
 ## Other languages
 
@@ -310,14 +348,176 @@ Some other pages have translations; follow each page's language links for its av
   'utf8',
 );
 
-// English training library; the indexed guides are independent of the news feed.
-const guideList = '\n## English training guides\n\n' + GUIDE_INDEX.map(g=>`- [${g.title}](${ORIGIN}/articles/${g.slug}): ${g.description}`).join('\n') + '\n';
-await writeFile(join(OUT,'llms.txt'), (await readFile(join(OUT,'llms.txt'),'utf8')) + guideList);
-await writeFile(join(OUT,'llms-full.txt'), '# Brass Pawn English training guides\n\n' + GUIDES.map(g=>[
- `## ${g.title}`,`URL: ${ORIGIN}/articles/${g.slug}`,g.lede,
- ...g.sections.flatMap(section=>[`### ${section.heading}`,...section.paragraphs,...(section.bullets||[]).map(b=>'- '+b)]),
- '### Where Brass Pawn fits',g.appFit,'### Sources',...g.sources.map(x=>`- [${x.label}](${x.url})`)
-].join('\n\n')).join('\n\n---\n\n'));
+// Comparisons and English training library; indexed pages independent of the news feed.
+const escCell = (value) =>
+  String(value ?? '')
+    .replace(/\|/g, '\\|')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+const toGfmTable = (headers, rows) =>
+  [
+    `| ${headers.map(escCell).join(' | ')} |`,
+    `| ${headers.map(() => '---').join(' | ')} |`,
+    ...rows.map((row) => `| ${row.map(escCell).join(' | ')} |`),
+  ].join('\n');
+
+const decodeEntities = (htmlText) =>
+  htmlText
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;|&apos;/gi, "'")
+    .replace(/\s+/g, ' ')
+    .trim();
+
+const extractHtmlTablesAsGfm = async (relHtmlPath) => {
+  const htmlText = await readFile(join(OUT, relHtmlPath), 'utf8').catch(() => '');
+  if (!htmlText) return [];
+  return [...htmlText.matchAll(/<table\b[^>]*>([\s\S]*?)<\/table>/gi)]
+    .map((m) => {
+      const inner = m[1];
+      const trMatches = [...inner.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)];
+      if (!trMatches.length) return null;
+      const parsedRows = trMatches.map((tr) =>
+        [...tr[1].matchAll(/<(?:th|td)\b[^>]*>([\s\S]*?)<\/(?:th|td)>/gi)].map((cell) =>
+          decodeEntities(cell[1]),
+        ),
+      );
+      const [headers, ...rows] = parsedRows.filter((r) => r.length > 0);
+      if (!headers?.length || !rows.length) return null;
+      return toGfmTable(headers, rows);
+    })
+    .filter(Boolean);
+};
+
+const compareCategoryLabel = (id) =>
+  COMPARE_CATEGORIES.find((c) => c.id === id)?.name ?? 'Comparison';
+
+const compareList =
+  '\n## Comparisons\n\n' +
+  `- [All 30 chess app, engine and workflow comparisons](${ORIGIN}/compare): ${COMPARE_HUB_META.description}\n` +
+  COMPARE_INDEX.map(
+    (c) => `- [${c.title}](${ORIGIN}/compare/${c.slug}): ${c.description}`,
+  ).join('\n') +
+  '\n';
+
+const guideList =
+  '\n## English training guides\n\n' +
+  GUIDE_INDEX.map((g) => `- [${g.title}](${ORIGIN}/articles/${g.slug}): ${g.description}`).join('\n') +
+  '\n';
+
+await writeFile(
+  join(OUT, 'llms.txt'),
+  (await readFile(join(OUT, 'llms.txt'), 'utf8')) + compareList + guideList,
+  'utf8',
+);
+
+const pricingTables = await extractHtmlTablesAsGfm('pricing/index.html');
+const privacyTables = await extractHtmlTablesAsGfm('privacy/index.html');
+const licenceTables = await extractHtmlTablesAsGfm('licences/index.html');
+
+const coreReferenceSection = [
+  '# Brass Pawn — Complete Product, Comparison & Training Reference',
+  `> Canonical domain: ${ORIGIN} | Publisher: ${text('publisher')} | Licence: ${text('licence')} | Source: ${text('repo')}`,
+  '## Verified product, pricing, privacy and component tables',
+  ...(pricingTables.length
+    ? [`### Free vs Pro allowance (${ORIGIN}/pricing)`, ...pricingTables]
+    : []),
+  ...(privacyTables.length
+    ? [`### Privacy & data handling ledger (${ORIGIN}/privacy)`, ...privacyTables]
+    : []),
+  ...(licenceTables.length
+    ? [`### Open-source components & licences (${ORIGIN}/licences)`, ...licenceTables]
+    : []),
+].join('\n\n');
+
+const hubDirectoryTable = toGfmTable(
+  [
+    'Comparison',
+    'Category',
+    'Choose Brass Pawn for',
+    'Choose the alternative for',
+    'Pricing contrast',
+    'Offline support',
+  ],
+  COMPARE_INDEX.map((item) => [
+    `[${item.title}](${ORIGIN}/compare/${item.slug})`,
+    compareCategoryLabel(item.category),
+    item.brassPawnBestFor,
+    item.alternativeBestFor,
+    item.pricingModel,
+    item.offlineSupport,
+  ]),
+);
+
+const compareHubFull = [
+  `# Brass Pawn Comparisons (${ORIGIN}/compare)`,
+  `## ${COMPARE_HUB_META.h1}`,
+  `URL: ${ORIGIN}/compare`,
+  `> **TL;DR:** ${COMPARE_HUB_META.tldr}`,
+  `### ${COMPARE_HUB_ARCHETYPE_TABLE.heading}`,
+  `*${COMPARE_HUB_ARCHETYPE_TABLE.caption}*`,
+  toGfmTable(COMPARE_HUB_ARCHETYPE_TABLE.headers, COMPARE_HUB_ARCHETYPE_TABLE.rows),
+  '### Complete 30-comparison matrix',
+  '*Directory of all 30 Brass Pawn side-by-side comparisons and workflow guides*',
+  hubDirectoryTable,
+  '### Frequently asked questions',
+  ...COMPARE_HUB_FAQS.map((f) => `**${f.q}**\n\n${f.a}`),
+].join('\n\n');
+
+const compareDetailsFull = COMPARE_INDEX.map((summary) => {
+  const detail = COMPARE_BY_SLUG.get(summary.slug);
+  if (!detail) throw new Error(`postbuild: missing comparison content for ${summary.slug}`);
+  return [
+    `## ${summary.h1}`,
+    `URL: ${ORIGIN}/compare/${summary.slug}`,
+    `> **TL;DR:** ${detail.tldr}`,
+    ...detail.tables.flatMap((t) => [
+      `### ${t.heading}`,
+      `*${t.caption}*`,
+      ...(t.intro ? [t.intro] : []),
+      toGfmTable(t.headers, t.rows),
+    ]),
+    ...detail.sections.flatMap((s) => [
+      `### ${s.heading}`,
+      ...s.paragraphs,
+      ...(s.bullets?.length ? [s.bullets.map((b) => `- ${b}`).join('\n')] : []),
+    ]),
+    `### When ${summary.competitor} is the better fit`,
+    detail.honestTradeoffs.map((point) => `- ${point}`).join('\n'),
+    '### Frequently asked questions',
+    ...detail.faqs.map((f) => `**${f.q}**\n\n${f.a}`),
+  ].join('\n\n');
+}).join('\n\n---\n\n');
+
+const guidesFull =
+  '# Brass Pawn English training guides\n\n' +
+  GUIDES.map((g) =>
+    [
+      `## ${g.title}`,
+      `URL: ${ORIGIN}/articles/${g.slug}`,
+      g.lede,
+      ...g.sections.flatMap((section) => [
+        `### ${section.heading}`,
+        ...section.paragraphs,
+        ...(section.bullets || []).map((b) => '- ' + b),
+      ]),
+      '### Where Brass Pawn fits',
+      g.appFit,
+      '### Sources',
+      ...g.sources.map((x) => `- [${x.label}](${x.url})`),
+    ].join('\n\n'),
+  ).join('\n\n---\n\n');
+
+await writeFile(
+  join(OUT, 'llms-full.txt'),
+  [coreReferenceSection, compareHubFull, compareDetailsFull, guidesFull].join('\n\n---\n\n') + '\n',
+  'utf8',
+);
 
 // Most static hosts serve /404.html; Angular prerendered it at /404/index.html.
 try {

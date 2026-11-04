@@ -1,6 +1,30 @@
 User-agent: *
 Allow: /
 
-# Answer engines are welcome, and there is a file written for them.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Answer engines are welcome, and structured summaries live at /llms.txt and /llms-full.txt.
 # See https://llmstxt.org
 Sitemap: https://brasspawn.com/sitemap.xml

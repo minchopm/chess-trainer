@@ -44,6 +44,7 @@ export class SiteFooter {
         { path: '/training', label: 'Training' },
         { path: '/engine', label: 'The engine' },
         { path: '/pricing', label: 'Pricing' },
+        { path: '/compare', label: 'App comparisons' },
         { path: '/support', label: 'Support & FAQ' },
       ],
     },
