@@ -1,0 +1,16 @@
+# Gradle & Kotlin build outputs
+.gradle/
+.kotlin/
+build/
+*/build/
+app/.cxx/
+
+# Local SDK configuration
+local.properties
+
+# IDE files
+*.iml
+.idea/
+
+# Local emulator QA screenshots
+shots/

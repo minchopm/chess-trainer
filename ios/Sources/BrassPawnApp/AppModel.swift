@@ -49,15 +49,17 @@ public final class AppModel {
     public let store = SubscriptionStore()
     /// Game Center identity and matchmaking for online play.
     public let matchmaker = GameCenterMatchmaker()
-    /// The rank lists and the players, from Game Center.
+    /// Rank lists, player directory and friends from the online service.
     let boards = OnlineBoards()
-    /// Who is online right now, which Game Center cannot say.
+    /// Brass Pawn cross-platform online service (`/brasspawn/v1/`).
     let service = OnlineService()
     private let storage: ProgressStorage
+    private var recordedServerGames: Set<String> = []
 
     public init(storage: ProgressStorage = .documents()) {
         self.storage = storage
         progress = storage.load() ?? TrainingProgress()
+        matchmaker.service = service
         matchmaker.ratingLookup = { [weak self] control in
             let pool = RatedPool.online(minutes: control.minutes)
             return (self?.progress.rating(pool) ?? Glicko.starting, self?.progress.gamesPlayed(pool) ?? 0,
@@ -66,26 +68,95 @@ public final class AppModel {
         matchmaker.onAuthenticated = { [weak self] in
             Task { await self?.announceOnline() }
         }
-    }
-
-    /// Signed in to Game Center: this player's record on every clock is read
-    /// from Game Center — which is where it lives, so a new phone or a
-    /// reinstall has it back — and sent again unchanged, which is what keeps
-    /// them among the active players. The lists are read afresh.
-    func announceOnline() async {
-        for control in TimeControl.allCases {
-            guard let records = await boards.records(on: control, of: []) else { continue }
-            let mine = records.mine
-            update { $0.adopt(online: mine, at: control) }
-            if mine.games > 0 { await boards.submit(mine, for: control) }
+        matchmaker.onServerResult = { [weak self] result, session in
+            self?.recordServerOnlineResult(result, session: session)
         }
-        await boards.refresh()
+        service.onEvent = { [weak self] event in
+            self?.handleServiceEvent(event)
+        }
     }
 
-    /// A rated game, scored on this device from the two records Game Center
-    /// held when it began: the new one is written there, and kept here to
-    /// show, and the opponent is remembered, so the next game against them
-    /// today is a friendly.
+    private func handleServiceEvent(_ event: OnlineEvent) {
+        matchmaker.handleServiceEvent(event)
+        switch event {
+        case .friendsChanged:
+            Task { [weak self] in
+                guard let self else { return }
+                self.heard(await self.boards.refreshFriends(using: self.service))
+            }
+        case .invited(let invite):
+            guard matchmaker.session == nil, !answered.contains(invite.id) else { return }
+            if !friendInvites.contains(where: { $0.id == invite.id }) {
+                friendInvites.append(invite)
+            }
+        default:
+            break
+        }
+    }
+
+    /// Signed in to Game Center (or debug test player): log into `/brasspawn/v1/login`,
+    /// start the `/events` long-poll, perform one-off rating carry-over from Game Center
+    /// leaderboards where the service holds 0 games, and refresh lists & friends.
+    func announceOnline() async {
+        guard let login = try? await service.signIn() else { return }
+        if onScreen || matchmaker.session != nil {
+            service.startEvents()
+        }
+        let merged = await OnlineAPI.importRatingsIfNeeded(
+            serverRecords: login.records,
+            api: service.api
+        ) { [boards] control in
+            await boards.gameCenterRecord(on: control)
+        }
+        service.updateRecords(merged)
+        for control in TimeControl.allCases {
+            let record = merged[control.minutes] ?? .new
+            update { $0.adopt(online: record, at: control) }
+            if record.games > 0 {
+                await boards.submit(record, for: control)
+            }
+        }
+        sayPresence()
+        watchOffers()
+        await boards.refresh(using: service)
+        heard(await boards.refreshFriends(using: service))
+    }
+
+    /// Record a game result decided and scored by `/brasspawn/v1/`, and mirror
+    /// rated scores to Game Center leaderboards best-effort.
+    func recordServerOnlineResult(_ result: OnlineGameResult, session: MatchSession?) {
+        let gameKey = "\(result.match)#\(result.game)"
+        guard recordedServerGames.insert(gameKey).inserted else { return }
+        let control = TimeControl(rawValue: result.minutes) ?? session?.timeControl ?? .five
+        let myColor = session?.myColor ?? .white
+        let outcome: MatchResult.Outcome = switch result.winner {
+        case "white": myColor == .white ? .win : .loss
+        case "black": myColor == .black ? .win : .loss
+        default: .draw
+        }
+        let opponentID = matchmaker.serviceMatch?.info.opponent.id ?? session?.opponent?.playerID
+        update {
+            $0.adopt(online: result.record, at: control)
+            if result.unrated != "aborted" && result.unrated != "void" {
+                $0.tally(online: outcome)
+            }
+            if result.rated, let opponentID {
+                $0.noteRated(against: opponentID)
+            }
+        }
+        ReviewManager.eventCreated()
+        if result.rated {
+            let displayAlias = service.alias.isEmpty ? matchmaker.localName : service.alias
+            boards.show(game: control, mine: result.record, account: service.account, alias: displayAlias)
+            Task { await boards.submit(result.record, for: control) }
+            Task { [weak self] in
+                guard let self else { return }
+                await self.boards.refresh(using: self.service)
+            }
+        }
+    }
+
+    /// Fallback local scoring for friendly Game Center / debug loopback matches.
     func recordOnline(_ record: OnlineRecord, result: MatchResult, at control: TimeControl, against opponent: String?,
                       opponentAfter: OnlineRecord? = nil) {
         update {
@@ -94,9 +165,23 @@ public final class AppModel {
             if let opponent { $0.noteRated(against: opponent) }
         }
         ReviewManager.eventCreated()
-        // On the lists now, both of them, rather than when Game Center gets round to it.
-        boards.show(game: control, mine: record, opponent: both(opponent, opponentAfter))
+        let displayAlias = service.alias.isEmpty ? matchmaker.localName : service.alias
+        boards.show(game: control, mine: record, account: service.account, alias: displayAlias)
         Task { await boards.submit(record, for: control) }
+    }
+
+    func deleteOnlineAccount() async {
+        matchmaker.leaveMatch()
+        let deleted = await service.deleteAccount()
+        guard deleted else { return }
+        matchmaker.resetAfterAccountDeletion()
+        boards.reset()
+        friendInvites = []
+        update { progress in
+            for control in TimeControl.allCases {
+                progress.adopt(online: .new, at: control)
+            }
+        }
     }
 
     // MARK: - Online now
@@ -112,25 +197,29 @@ public final class AppModel {
     private var beacon: Task<Void, Never>?
     /// Whether `OnlineService` was last told this player is here.
     private var saidHere = false
-    /// How often "here" is said again while the app stays on screen. What is
-    /// said lasts five minutes, so one missed is not a player gone.
-    static let presenceInterval: Duration = .seconds(180)
+    /// Refresh presence every minute while on screen; each "here" lasts five minutes.
+    static let presenceInterval: Duration = .seconds(60)
 
     /// The app came on screen, or left it.
     func setOnScreen(_ active: Bool) {
         guard onScreen != active else { return }
         onScreen = active
+        if active {
+            if service.isSignedIn { service.startEvents() }
+        } else if matchmaker.session == nil {
+            matchmaker.cancelSearch()
+            service.stopEvents()
+        }
         sayPresence()
         watchOffers()
     }
 
-    /// Say where this player is — at once, and then every three minutes for
-    /// as long as the app is on screen, signed in and showing them online —
-    /// or, when any of that stops being so, that they have gone.
+    /// Say where this player is — at once, and then periodically while the app is
+    /// on screen, signed in and showing them online — or that they have gone.
     func sayPresence() {
         beacon?.cancel()
         beacon = nil
-        guard onScreen, progress.appearance.showsOnline, matchmaker.isAuthenticated else {
+        guard onScreen, progress.appearance.showsOnline, service.isSignedIn else {
             if saidHere {
                 saidHere = false
                 Task { await service.gone() }
@@ -142,6 +231,7 @@ public final class AppModel {
             while !Task.isCancelled {
                 guard let self else { return }
                 self.heard(await self.service.here(self.presenceStatus))
+                await self.boards.refreshPresence(using: self.service)
                 try? await Task.sleep(for: Self.presenceInterval)
             }
         }
@@ -149,26 +239,15 @@ public final class AppModel {
 
     // MARK: - Games offered by friends
 
-    /// Games friends have offered this player and not had an answer to — heard
-    /// every twenty seconds while the app is on screen, for a player who has
-    /// friends, and with each "here".
     private(set) var friendInvites: [FriendInvite] = []
-    /// A friend's game the player said yes to, for the online screen to start.
-    var acceptedFriendGame: FriendInvite?
-    /// Offers answered here that the service may not have heard the answer to
-    /// yet, so that a poll in between does not bring one back.
     private var answered: Set<String> = []
     private var offerWatch: Task<Void, Never>?
-    /// An offer waits two minutes; asking three times a minute sees it in time.
-    static let offerInterval: Duration = .seconds(20)
+    static let offerInterval: Duration = .seconds(30)
 
-    /// Ask after offered games while the app is on screen and signed in —
-    /// only if there are friends to offer one, and never in a game. The
-    /// friends themselves are read at the start and every five minutes after.
     func watchOffers() {
         offerWatch?.cancel()
         offerWatch = nil
-        guard onScreen, matchmaker.isAuthenticated else {
+        guard onScreen, service.isSignedIn else {
             friendInvites = []
             return
         }
@@ -176,7 +255,7 @@ public final class AppModel {
             var round = 0
             while !Task.isCancelled {
                 guard let self else { return }
-                if round % 15 == 0 {
+                if round % 10 == 0 {
                     self.heard(await self.boards.refreshFriends(using: self.service))
                 } else if !self.boards.friends.isEmpty, self.matchmaker.session == nil {
                     self.heard(await self.service.invites())
@@ -187,8 +266,6 @@ public final class AppModel {
         }
     }
 
-    /// What the service says is on offer now. Nothing while a game is being
-    /// played: an offer is not an interruption.
     func heard(_ offers: [FriendInvite]?) {
         guard let offers else { return }
         answered.formIntersection(offers.map(\.id))
@@ -198,14 +275,19 @@ public final class AppModel {
     func accept(_ offer: FriendInvite) {
         friendInvites.removeAll { $0.id == offer.id }
         answered.insert(offer.id)
-        acceptedFriendGame = offer
-        Task { await service.answer(offer.id) }
+        service.startEvents()
+        Task {
+            let ok = await service.answer(offer.id, accept: true)
+            if !ok {
+                matchmaker.notice = "unknown"
+            }
+        }
     }
 
     func decline(_ offer: FriendInvite) {
         friendInvites.removeAll { $0.id == offer.id }
         answered.insert(offer.id)
-        Task { await service.answer(offer.id) }
+        Task { await service.answer(offer.id, accept: false) }
     }
 
     /// Claim one allowance unit. Most modes call this on the first answer or
@@ -254,6 +336,12 @@ public final class AppModel {
         }.value
         isLibraryLoaded = true
 
+        // Game Center, quietly: a player who is signed in on the device is
+        // signed in here without being asked, so an invitation can reach them
+        // — including the one whose notification opened the app. Nobody is
+        // asked to sign in until they open online play.
+        if case .signedOut = matchmaker.state { matchmaker.authenticate() }
+
         // The big network is the one over 50 MB; the small one is a few MB.
         // Sizes rather than names, because the names are pinned to the engine
         // version and change with every Stockfish release.
@@ -265,11 +353,6 @@ public final class AppModel {
         }
 
         await store.prepare()
-        // Game Center, quietly: a player who is signed in on the device is
-        // signed in here without being asked, so an invitation can reach them
-        // — including the one whose notification opened the app. Nobody is
-        // asked to sign in until they open online play.
-        if case .signedOut = matchmaker.state { matchmaker.authenticate() }
 
         networks = (big: big, small: small)
         await useEngine(progress.appearance.engine)
@@ -439,10 +522,4 @@ public struct ProgressStorage: Sendable {
         guard let data = try? JSONEncoder().encode(progress) else { return }
         try? data.write(to: url, options: .atomic)
     }
-}
-
-/// Both, or neither.
-private func both<A, B>(_ a: A?, _ b: B?) -> (id: A, record: B)? {
-    guard let a, let b else { return nil }
-    return (a, b)
 }

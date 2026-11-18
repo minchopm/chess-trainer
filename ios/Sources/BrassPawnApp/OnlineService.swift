@@ -1,234 +1,283 @@
 import ChessTraining
-import CryptoKit
 import Foundation
+import Observation
 #if canImport(GameKit)
 @preconcurrency import GameKit
 #endif
 
-/// The small service of ours behind online play — see `scripts/presence` —
-/// for the two things Game Center cannot do.
-///
-/// Who is online right now: while the app is on screen, signed in, and the
-/// player shows it (Settings → Show when I'm online), it says they are here,
-/// looking for a game, or in one, and the players list asks who is. Each word
-/// lasts five minutes.
-///
-/// And friends, asked for by the nickname on a list, which Game Center's
-/// friends cannot be: requests, the friends themselves, and games offered to a
-/// friend Game Center cannot send an invitation to. Every request is signed by
-/// Game Center, which is how the service knows it is this player. The ratings
-/// are not here: they are Game Center's (`OnlineRecord`).
+typealias PresenceStatus = OnlinePresence
+typealias FriendInvite = OnlineFriendInvite
+
+/// High-level online service wrapper around `OnlineAPI` (`/brasspawn/v1/`):
+/// manages Game Center identity login, session refresh, and the `/events`
+/// long-poll loop.
 @MainActor
-final class OnlineService {
-    nonisolated static let endpoint = URL(string: "https://6slkhltuygwkjupda7inipuoae0pxybf.lambda-url.eu-central-1.on.aws")!
+@Observable
+public final class OnlineService {
+    public let api: OnlineAPI
 
-    /// A player's key there: never the Game Center ID itself.
-    nonisolated static func key(teamPlayerID: String) -> String {
-        let digest = SHA256.hash(data: Data("brasspawn:\(teamPlayerID)".utf8))
-        return String(digest.map { String(format: "%02x", $0) }.joined().prefix(32))
+    public private(set) var account: String?
+    public private(set) var alias: String = ""
+    public private(set) var records: [Int: OnlineRecord] = [:]
+    public private(set) var isConnecting = false
+    public private(set) var offlineReason: String?
+
+    /// Invoked on the main actor for every event delivered by `/events`.
+    public var onEvent: ((OnlineEvent) -> Void)?
+
+    private var eventTask: Task<Void, Never>?
+    private var cursor: Int64 = 0
+    private var hasSyncedCursor = false
+
+    public init(api: OnlineAPI = OnlineAPI()) {
+        self.api = api
+        self.api.reauthenticator = { [weak self] in
+            guard let self else { throw OnlineError(status: 401, code: "session") }
+            return try await self.performLogin()
+        }
     }
 
-    // MARK: - Who is online
+    public var isSignedIn: Bool {
+        account != nil && api.session != nil
+    }
 
-    /// This player is on screen, and doing this: here, looking for a game on a
-    /// clock, or in one. It lasts five minutes unless said again.
-    /// The answer carries any game a friend has offered, so saying it is
-    /// also hearing that.
+    /// Deterministic 32-hex account key for a Game Center `teamPlayerID`.
+    nonisolated public static func key(teamPlayerID: String) -> String {
+        OnlineConfiguration.gameCenterAccountID(teamPlayerID: teamPlayerID)
+    }
+
+    /// This player's 32-hex account ID on the service.
+    public var myKey: String? {
+        if let account, !account.isEmpty { return account }
+        #if canImport(GameKit)
+        if GKLocalPlayer.local.isAuthenticated {
+            return Self.key(teamPlayerID: GKLocalPlayer.local.teamPlayerID)
+        }
+        #endif
+        return nil
+    }
+
+    public func record(for control: TimeControl) -> OnlineRecord {
+        records[control.minutes] ?? .new
+    }
+
+    public func updateRecords(_ updated: [Int: OnlineRecord]) {
+        records = updated
+    }
+
+    public func updateRecord(_ record: OnlineRecord, minutes: Int) {
+        records[minutes] = record
+    }
+
+    // MARK: - Sign-in & Events
+
     @discardableResult
-    func here(_ status: PresenceStatus) async -> [FriendInvite]? {
-        var body: [String: Any] = ["status": status.word]
-        if let minutes = status.minutes { body["minutes"] = minutes }
-        guard let data = try? await postRaw("here", body) else { return nil }
-        return (try? JSONDecoder().decode(Offers.self, from: data))?.invites
+    public func signIn() async throws -> OnlineLogin {
+        isConnecting = true
+        offlineReason = nil
+        defer { isConnecting = false }
+        do {
+            let login = try await api.reauthenticate()
+            if !hasSyncedCursor {
+                if let prime = try? await api.events(after: Int64.max / 2, waitSeconds: 0) {
+                    cursor = prime.next
+                }
+                hasSyncedCursor = true
+            }
+            applyLogin(login)
+            return login
+        } catch let error as OnlineError {
+            offlineReason = error.code
+            throw error
+        } catch {
+            offlineReason = "network"
+            throw error
+        }
     }
 
-    /// Gone to the background, or no longer showing.
-    func gone() async {
-        _ = try? await postRaw("gone", [:])
+    private func performLogin() async throws -> OnlineLogin {
+        let (loginAlias, proof) = try await buildIdentityProof()
+        let login = try await api.login(alias: loginAlias, gameCenter: proof)
+        if hasSyncedCursor {
+            applyLogin(login)
+        }
+        return login
     }
 
-    /// Everybody on screen right now, by their key on the lists.
-    func online() async -> [String: PresenceStatus]? {
-        guard let data = try? await postRaw("online", [:]),
-              let answer = try? JSONDecoder().decode(OnlineNow.self, from: data) else { return nil }
-        return Dictionary(answer.players.compactMap { entry in PresenceStatus(entry).map { (entry.id, $0) } },
-                          uniquingKeysWith: { a, _ in a })
+    private func applyLogin(_ login: OnlineLogin) {
+        account = login.account
+        if !login.alias.isEmpty {
+            alias = login.alias
+        }
+        records = login.records
+        offlineReason = nil
     }
 
-    // MARK: - Friends
-
-    /// This player's friends, the requests both ways, and games offered.
-    func friends() async -> FriendsList? {
-        guard let data = try? await postRaw("friends", [:]) else { return nil }
-        return try? JSONDecoder().decode(FriendsList.self, from: data)
-    }
-
-    /// Just the games offered: cheap enough to ask every few seconds while the
-    /// lobby is open.
-    func invites() async -> [FriendInvite]? {
-        guard let data = try? await postRaw("friends/invites", [:]) else { return nil }
-        return (try? JSONDecoder().decode(Offers.self, from: data))?.invites
-    }
-
-    /// Ask to be friends; if they had asked already, it is a yes.
-    func request(_ key: String, alias: String) async -> Bool {
-        await ok("friends/request", ["alias": myAlias, "to": key, "toAlias": alias])
-    }
-
-    func accept(_ key: String) async -> Bool {
-        await ok("friends/accept", ["alias": myAlias, "from": key])
-    }
-
-    /// No longer friends, a request declined, or one taken back.
-    func remove(_ key: String) async -> Bool {
-        await ok("friends/remove", ["other": key])
-    }
-
-    /// Offer a friend a game on a clock. It waits two minutes for an answer.
-    func offer(to key: String, minutes: Int) async -> Bool {
-        await ok("friends/invite", ["alias": myAlias, "to": key, "minutes": minutes])
-    }
-
-    /// An offered game answered, yes or no.
-    func answer(_ key: String) async {
-        _ = await ok("friends/answer", ["from": key])
-    }
-
-    /// An offered game taken back.
-    func cancelOffer(to key: String) async {
-        _ = await ok("friends/cancel", ["to": key])
-    }
-
-    /// This player's nickname, as their friends will see it.
-    var myAlias: String {
-        #if canImport(GameKit)
-        GKLocalPlayer.local.alias
-        #else
-        ""
+    private func buildIdentityProof() async throws -> (alias: String, proof: GameCenterProof) {
+        #if DEBUG
+        if let testPlayer = OnlineDebugOptions.current.testPlayer {
+            let bundleID = Bundle.main.bundleIdentifier ?? "com.arte-soft.brasspawn"
+            let validBundle = (bundleID == "com.arte-soft.brasspawn" || bundleID == "com.arte-soft.brasspawn.Clip")
+                ? bundleID
+                : "com.arte-soft.brasspawn"
+            return (testPlayer, OnlineDebugOptions.testProof(for: testPlayer, bundleID: validBundle))
+        }
         #endif
-    }
-
-    /// This player's own key.
-    var myKey: String? {
-        #if canImport(GameKit)
-        GKLocalPlayer.local.isAuthenticated ? Self.key(teamPlayerID: GKLocalPlayer.local.teamPlayerID) : nil
-        #else
-        nil
-        #endif
-    }
-
-    private func ok(_ path: String, _ body: [String: Any]) async -> Bool {
-        (try? await postRaw(path, body)) != nil
-    }
-
-    // MARK: -
-
-    private func postRaw(_ path: String, _ body: [String: Any]) async throws -> Data {
-        var body = body
-        body["identity"] = try await identity()
-        var request = URLRequest(url: Self.endpoint.appendingPathComponent(path))
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = try JSONSerialization.data(withJSONObject: body)
-        request.timeoutInterval = 15
-        let (data, response) = try await URLSession.shared.data(for: request)
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw URLError(.badServerResponse) }
-        return data
-    }
-
-    /// Game Center's word for who this player is: signed by Apple, fresh for
-    /// each request, so it cannot be kept and sent again later.
-    private func identity() async throws -> [String: Any] {
         #if canImport(GameKit)
         let local = GKLocalPlayer.local
-        guard local.isAuthenticated else { throw URLError(.userAuthenticationRequired) }
+        guard local.isAuthenticated else {
+            throw OnlineError(status: 401, code: "gamecenter-unauthenticated")
+        }
         let (url, signature, salt, timestamp) = try await local.fetchItemsForIdentityVerificationSignature()
-        return [
-            "playerID": local.teamPlayerID,
-            "bundleID": Bundle.main.bundleIdentifier ?? "",
-            "publicKeyURL": url.absoluteString,
-            "signature": signature.base64EncodedString(),
-            "salt": salt.base64EncodedString(),
-            "timestamp": timestamp,
-        ]
+        let rawBundle = Bundle.main.bundleIdentifier ?? "com.arte-soft.brasspawn"
+        let bundleID = (rawBundle == "com.arte-soft.brasspawn" || rawBundle == "com.arte-soft.brasspawn.Clip")
+            ? rawBundle
+            : "com.arte-soft.brasspawn"
+        let proof = GameCenterProof(
+            playerID: local.teamPlayerID,
+            bundleID: bundleID,
+            publicKeyURL: url.absoluteString,
+            signature: signature.base64EncodedString(),
+            salt: salt.base64EncodedString(),
+            timestamp: timestamp
+        )
+        return (local.alias, proof)
         #else
-        throw URLError(.unsupportedURL)
+        throw OnlineError(status: 403, code: "gamecenter-unavailable")
         #endif
     }
-}
 
-/// What a player online is doing, as far as anybody else is told.
-enum PresenceStatus: Equatable, Sendable {
-    case online
-    case looking(TimeControl)
-    case playing(TimeControl)
-
-    var word: String {
-        switch self {
-        case .online: "online"
-        case .looking: "looking"
-        case .playing: "playing"
+    /// Start the `/events` long-poll if not already running.
+    public func startEvents() {
+        guard eventTask == nil, isSignedIn else { return }
+        eventTask = Task { @MainActor [weak self] in
+            var failures = 0
+            while !Task.isCancelled {
+                guard let self else { return }
+                do {
+                    let batch = try await self.api.events(after: self.cursor, waitSeconds: 25)
+                    self.cursor = batch.next
+                    failures = 0
+                    self.offlineReason = nil
+                    for event in batch.events {
+                        if case .result(let res) = event {
+                            self.records[res.minutes] = res.record
+                        }
+                        self.onEvent?(event)
+                    }
+                } catch is CancellationError {
+                    return
+                } catch let error as OnlineError {
+                    if error.status == 401 {
+                        do {
+                            let login = try await self.api.reauthenticate()
+                            self.applyLogin(login)
+                            continue
+                        } catch {
+                            try? await Task.sleep(for: .seconds(4))
+                        }
+                    } else {
+                        try? await Task.sleep(for: .seconds(2))
+                    }
+                } catch {
+                    failures += 1
+                    let backoff = min(failures, 8)
+                    try? await Task.sleep(for: .seconds(backoff))
+                }
+            }
         }
     }
 
-    var minutes: Int? {
-        switch self {
-        case .online: nil
-        case .looking(let clock), .playing(let clock): clock.minutes
+    public func stopEvents() {
+        eventTask?.cancel()
+        eventTask = nil
+    }
+
+    // MARK: - Presence, Lists & Friends
+
+    @discardableResult
+    func here(_ status: PresenceStatus) async -> [FriendInvite]? {
+        guard isSignedIn else { return nil }
+        return try? await api.here(status)
+    }
+
+    func gone() async {
+        guard isSignedIn else { return }
+        try? await api.gone()
+    }
+
+    func online() async -> [String: PresenceStatus]? {
+        guard isSignedIn else { return nil }
+        return try? await api.online()
+    }
+
+    func friends() async -> OnlineFriends? {
+        guard isSignedIn else { return nil }
+        return try? await api.friends()
+    }
+
+    func invites() async -> [FriendInvite]? {
+        guard isSignedIn else { return nil }
+        return try? await api.friendInvites()
+    }
+
+    func request(_ id: String) async -> Bool {
+        guard isSignedIn else { return false }
+        return (try? await api.requestFriend(to: id)) != nil
+    }
+
+    func accept(_ id: String) async -> Bool {
+        guard isSignedIn else { return false }
+        return (try? await api.acceptFriend(from: id)) != nil
+    }
+
+    func remove(_ id: String) async -> Bool {
+        guard isSignedIn else { return false }
+        return (try? await api.removeFriend(id)) != nil
+    }
+
+    func offer(to id: String, minutes: Int) async -> Bool {
+        guard isSignedIn else { return false }
+        return (try? await api.offerGame(to: id, minutes: minutes)) != nil
+    }
+
+    @discardableResult
+    func answer(_ id: String, accept: Bool) async -> Bool {
+        guard isSignedIn else { return false }
+        return (try? await api.answerOffer(from: id, accept: accept)) != nil
+    }
+
+    func cancelOffer(to id: String) async {
+        guard isSignedIn else { return }
+        try? await api.cancelOffer(to: id)
+    }
+
+    func leaderboard(minutes: Int, scope: String = "top", limit: Int = 100) async -> OnlineLeaderboard? {
+        guard isSignedIn else { return nil }
+        return try? await api.leaderboard(minutes: minutes, scope: scope, limit: limit)
+    }
+
+    func records(minutes: Int, ids: [String]) async -> [String: OnlinePlayer]? {
+        guard isSignedIn else { return nil }
+        return try? await api.records(minutes: minutes, ids: ids)
+    }
+
+    func searchPlayers(alias: String) async -> [OnlinePlayer]? {
+        guard isSignedIn else { return nil }
+        return try? await api.searchPlayers(alias: alias)
+    }
+
+    func deleteAccount() async -> Bool {
+        guard isSignedIn else { return false }
+        stopEvents()
+        let deleted = (try? await api.deleteAccount()) != nil
+        if deleted {
+            account = nil
+            alias = ""
+            records = [:]
+            cursor = 0
+            hasSyncedCursor = false
         }
+        return deleted
     }
-
-    fileprivate init?(_ entry: OnlineNow.Entry) {
-        let clock = entry.minutes.flatMap(TimeControl.init(rawValue:))
-        switch (entry.status, clock) {
-        case ("online", _): self = .online
-        case ("looking", let clock?): self = .looking(clock)
-        case ("playing", let clock?): self = .playing(clock)
-        default: return nil
-        }
-    }
-
-    /// How a row on the players list says it.
-    var label: String {
-        switch self {
-        case .online: L.t("online.presence.online", "Online now")
-        case .looking(let clock): L.t("online.presence.looking", "Looking for a %@ game", clock.label)
-        case .playing: L.t("online.presence.playing", "In a game")
-        }
-    }
-}
-
-private struct OnlineNow: Decodable {
-    struct Entry: Decodable {
-        let id: String
-        let status: String
-        let minutes: Int?
-    }
-    let players: [Entry]
-}
-
-/// A game a friend offered: who, and on what clock.
-struct FriendInvite: Decodable, Equatable, Identifiable {
-    /// The friend's key.
-    let id: String
-    let alias: String
-    let minutes: Int
-
-    var clock: TimeControl { TimeControl(rawValue: minutes) ?? .five }
-}
-
-/// A player's friends, as the service keeps them.
-struct FriendsList: Decodable {
-    struct Entry: Decodable {
-        let id: String
-        let alias: String
-    }
-    let friends: [Entry]
-    let incoming: [Entry]
-    let outgoing: [Entry]
-    let invites: [FriendInvite]
-}
-
-private struct Offers: Decodable {
-    let invites: [FriendInvite]
 }

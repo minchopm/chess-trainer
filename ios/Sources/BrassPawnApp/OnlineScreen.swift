@@ -1,47 +1,62 @@
 import ChessCore
 import ChessTraining
+import Combine
 import SwiftUI
 
-/// Playing a stranger over Game Center.
-///
-/// The one mode with no engine in it. Nothing here suggests a move, grades one,
-/// or puts a number on a square: an opponent is on the other end, and help that
-/// only one side gets is not a game.
+/// Playing a real person on the clock over the Brass Pawn online service (with
+/// Game Center native invitations and App Clip links supported alongside).
 struct OnlineScreen: View {
     @Environment(AppModel.self) private var app
     @Environment(ActivityGuard.self) private var activity
+    @Environment(Navigator.self) private var navigator
     private var matchmaker: GameCenterMatchmaker { app.matchmaker }
+
     @State private var timeControl = TimeControl.five
     @State private var settled: MatchResult?
-    /// Whether the game on the board counts for the rating, decided once as
-    /// it begins — see `decideRating`.
     @State private var ratingCall: RatingCall?
-    /// What the finished game did to the rating, or why it did nothing.
     @State private var scoring: Scoring?
-    /// Both players' records as Game Center held them when the game began.
-    @State private var records: GameRecords?
-    /// Left by the App Clip, if somebody arrived here from a link. Read
-    /// once and taken away, so a declined invitation is not offered again.
     @State private var invitation: Invitation?
-    /// The rank list, the players or the friends, when one is open.
+    @State private var inviteCodeInput = ""
     @State private var people: PeopleScreen.Kind?
-    /// The friend a game is offered to through `OnlineService`, while the
-    /// offer waits for an answer — and what gives up on it after two minutes.
-    @State private var offeredTo: String?
-    @State private var offerWait: Task<Void, Never>?
 
-    /// Drives the clock display. The clock itself works from timestamps, so
-    /// this only decides how often the numbers are redrawn — not how they are
-    /// counted. The instant it hands the matchmaker is the one every clock on
-    /// screen reads from.
+    #if DEBUG
+    @State private var didRunDebugLaunchAction = false
+    @State private var autoMoveCursor = 0
+    @State private var lastAutoPlayedTurn = ""
+    #endif
+
     private let ticker = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
 
     var body: some View {
-        Group {
-            if let session = matchmaker.session {
-                game(session)
-            } else {
-                lobby
+        ZStack {
+            Group {
+                if let session = matchmaker.session {
+                    game(session)
+                } else {
+                    lobby
+                }
+            }
+
+            if let code = matchmaker.notice {
+                BrassModalBackdrop(onBackdropTap: { matchmaker.notice = nil }) {
+                    BrassModalPanel(tint: Theatre.brass) {
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text(L.t("online.playOnline", "Play online"))
+                                .appFont(.title3, weight: .semibold)
+                                .foregroundStyle(Theatre.ivory)
+                            Text(noticeMessage(for: code))
+                                .appFont(.subheadline)
+                                .foregroundStyle(Theatre.ivoryDim)
+                                .fixedSize(horizontal: false, vertical: true)
+                            Button(L.t("common.ok", "OK")) {
+                                matchmaker.notice = nil
+                            }
+                            .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
+                            .frame(maxWidth: .infinity)
+                        }
+                    }
+                }
+                .zIndex(5)
             }
         }
         .onReceive(ticker) { instant in
@@ -49,46 +64,51 @@ struct OnlineScreen: View {
             settleIfFinished()
         }
         .onAppear {
-            // Signed in quietly at launch; asked again here if that did not
-            // work, now that somebody has come to play.
             switch matchmaker.state {
-            case .signedOut, .failed: matchmaker.authenticate()
-            default: break
+            case .signedOut, .failed:
+                matchmaker.authenticate()
+            default:
+                if !app.service.isSignedIn && !app.service.isConnecting {
+                    Task { await app.announceOnline() }
+                } else if app.service.isSignedIn {
+                    app.service.startEvents()
+                }
             }
             if invitation == nil, let waiting = SharedContainer.takeInvitation() {
                 invitation = waiting
                 timeControl = TimeControl(rawValue: waiting.minutes) ?? .five
             }
+            consumePendingInviteCodeIfReady()
             #if DEBUG
             stageDrawOfferForScreenshot()
             stagePlayersForScreenshot()
+            runDebugLaunchActionIfReady()
             #endif
         }
-        .task(id: timeControl) { await app.boards.refreshLooking() }
+        .onChange(of: app.service.isSignedIn) { _, signedIn in
+            if signedIn {
+                app.service.startEvents()
+                consumePendingInviteCodeIfReady()
+                #if DEBUG
+                runDebugLaunchActionIfReady()
+                #endif
+            }
+        }
+        .onChange(of: navigator.pendingInviteCode) { _, _ in
+            consumePendingInviteCodeIfReady()
+        }
+        .task(id: timeControl) {
+            await app.boards.refreshLooking(using: app.service)
+        }
         .appCover(item: $people) { kind in
-            PeopleScreen(kind: kind, clock: timeControl) { player, control in invite(player, on: control) }
-        }
-        // A friend's game the player said yes to, from the banner anywhere in
-        // the app: straight into the pool the friend is waiting in.
-        .onChange(of: app.acceptedFriendGame, initial: true) { _, offer in
-            guard let offer else { return }
-            app.acceptedFriendGame = nil
-            guard matchmaker.session == nil else { return }
-            if isSearching { matchmaker.cancelSearch() }
-            withdrawOffer()
-            timeControl = offer.clock
-            search(offer.clock, invitation: Invitation(name: offer.alias, playerID: offer.id, minutes: offer.minutes))
-        }
-        .onChange(of: matchmaker.session == nil) { _, idle in
-            if !idle {
-                offerWait?.cancel()
-                offerWait = nil
-                offeredTo = nil
+            PeopleScreen(kind: kind, clock: timeControl) { player, control in
+                invite(player, on: control)
             }
         }
         .onDisappear {
-            matchmaker.cancelSearch()
-            withdrawOffer()
+            if people == nil {
+                matchmaker.cancelSearch()
+            }
             activity.release()
         }
         #if canImport(UIKit)
@@ -101,6 +121,33 @@ struct OnlineScreen: View {
         #endif
     }
 
+    private func noticeMessage(for code: String) -> String {
+        switch code {
+        case "unknown", "no-invite", "invite-unknown":
+            L.t("online.codeUnknown", "Nobody is waiting on that code. Ask for a new one.")
+        case "own-code":
+            L.t("online.ownCode", "That is your own invitation code. Share it with somebody else.")
+        case "busy", "in-match":
+            L.t("online.busy", "Finish the game under way first.")
+        default:
+            L.t("online.offline", "The server cannot be reached. Check the connection and try again.")
+        }
+    }
+
+    private func consumePendingInviteCodeIfReady() {
+        if navigator.pendingInviteCode == nil, let stored = SharedContainer.takeInviteCode() {
+            navigator.pendingInviteCode = stored
+        }
+        guard let pending = navigator.pendingInviteCode,
+              app.service.isSignedIn,
+              matchmaker.session == nil,
+              !isSearching
+        else { return }
+        navigator.pendingInviteCode = nil
+        inviteCodeInput = pending
+        matchmaker.joinServiceInvite(code: pending)
+    }
+
     // MARK: - Lobby
 
     private var lobby: some View {
@@ -108,7 +155,7 @@ struct OnlineScreen: View {
             VStack(spacing: 12) {
                 Card {
                     Text(L.t("online.playOnline", "Play online")).appFont(size: 22, weight: .semibold)
-                    Text(L.t("online.aRealOpponentOverGame", "A real opponent over Game Center, on the clock. No hints, no engine, no take-backs."))
+                    Text(L.t("online.intro", "A real opponent, on the clock. No hints, no engine, no take-backs."))
                         .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                 }
 
@@ -125,7 +172,7 @@ struct OnlineScreen: View {
                     ) { control in
                         Text(verbatim: "\(control.minutes)")
                     }
-                    .disabled(isSearching)
+                    .disabled(isSearching || matchmaker.activeInviteCode != nil)
                     Text(L.t("online.clockExplanation", "%@ each — %@. You are only paired with players who chose the same clock.", timeControl.label, timeControl.name.lowercased()))
                         .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                     LookingNow(count: app.boards.lookingNow[timeControl], control: timeControl)
@@ -134,8 +181,8 @@ struct OnlineScreen: View {
                 Card {
                     HStack {
                         VStack(alignment: .leading, spacing: 2) {
-                            Text(matchmaker.localName).appFont(.subheadline, weight: .semibold)
-                            Text(verbatim: "\(app.progress.rating(.online(minutes: timeControl.minutes)))")
+                            Text(displayLocalName).appFont(.subheadline, weight: .semibold)
+                            Text(verbatim: "\(displayedRating(for: timeControl))")
                                 .appFont(size: 22, weight: .semibold).monospacedDigit()
                         }
                         Spacer()
@@ -145,13 +192,30 @@ struct OnlineScreen: View {
                                 .appFont(.subheadline).monospacedDigit().foregroundStyle(Theatre.ivoryDim)
                         }
                     }
-                    Text(matchmaker.status).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
+                    if app.service.isConnecting {
+                        HStack(spacing: 8) {
+                            BrassActivityIndicator(size: 14)
+                            Text(L.t("online.connecting", "Connecting…"))
+                                .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
+                        }
+                    } else if let offline = app.service.offlineReason, !app.service.isSignedIn {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text(L.t("online.offline", "The server cannot be reached. Check the connection and try again."))
+                                .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
+                            Button(L.t("common.tryAgain", "Try again")) {
+                                Task { await app.announceOnline() }
+                            }
+                            .buttonStyle(PillButtonStyle(emphasis: .ghost, usesBodySize: true))
+                        }
+                        .accessibilityIdentifier("offline-\(offline)")
+                    } else {
+                        Text(matchmaker.status).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
+                    }
                 }
 
                 if isSearching {
                     Button(role: .destructive) {
                         matchmaker.cancelSearch()
-                        withdrawOffer()
                     } label: {
                         HStack(spacing: 8) {
                             BrassActivityIndicator(size: 15)
@@ -172,47 +236,78 @@ struct OnlineScreen: View {
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(PillButtonStyle(emphasis: .solid))
+                    .disabled(matchmaker.activeInviteCode != nil)
                 }
 
-                playersCard
                 inviteCard
+                playersCard
+
+                #if DEBUG
+                Button {
+                    matchmaker.startLoopbackMatch(
+                        timeControl: timeControl,
+                        rating: displayedRating(for: timeControl),
+                        games: app.progress.gamesPlayed(.online(minutes: timeControl.minutes))
+                    )
+                } label: {
+                    Text(L.t("online.localTestGame", "Local test game"))
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(PillButtonStyle(emphasis: .quiet, usesBodySize: true))
+                #endif
             }
             .padding(12)
         }
     }
 
+    private var displayLocalName: String {
+        app.service.alias.isEmpty ? matchmaker.localName : app.service.alias
+    }
+
+    private func displayedRating(for control: TimeControl) -> Int {
+        if app.service.isSignedIn, let rec = app.service.records[control.minutes] {
+            return rec.rating
+        }
+        return app.progress.rating(.online(minutes: control.minutes))
+    }
+
     // MARK: - Players
 
-    /// Who to play: the people played lately, then whoever has been about this
-    /// week — each an invitation away — and the way to the rank list.
     @ViewBuilder
     private var playersCard: some View {
         if matchmaker.canInvite || app.boards.hasLoaded {
             let boards = app.boards
-            let recent = Array(boards.recent.prefix(2))
-            let active = Array(boards.active().filter { player in !recent.contains { $0.id == player.id } }
-                .prefix(4 - recent.count))
+            let online = Array(boards.onlineNow().prefix(3))
+            let recent = Array(boards.recent.filter { p in !online.contains { $0.id == p.id } }.prefix(max(0, 3 - online.count)))
+            let active = Array(boards.active().filter { p in
+                !online.contains { $0.id == p.id } && !recent.contains { $0.id == p.id }
+            }.prefix(max(0, 4 - online.count - recent.count)))
+            let preview = online + recent + active
+
             Card {
                 Slug(text: L.t("online.players", "Players"))
-                if !boards.hasLoaded {
+                if !boards.hasLoaded && boards.isLoading {
                     HStack(spacing: 9) {
                         BrassActivityIndicator(size: 15)
-                        Text(L.t("online.loadingPlayers", "Reading the lists from Game Center…"))
+                        Text(L.t("online.loadingLists", "Reading the lists…"))
                             .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                     }
-                } else if recent.isEmpty && active.isEmpty {
+                } else if preview.isEmpty {
                     Text(L.t("online.nobodyYet", "Nobody else has played online yet. Invite somebody with a link from the lobby."))
                         .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                 } else {
                     VStack(spacing: 2) {
-                        ForEach(recent + active) { player in
-                            PlayerRow(player: player, showsRank: false,
-                                      invite: isSearching || matchmaker.session != nil ? nil : { invite(player, on: timeControl) })
+                        ForEach(preview) { player in
+                            PlayerRow(
+                                player: player,
+                                showsRank: false,
+                                invite: isSearching || matchmaker.session != nil || !boards.canInvite(player)
+                                    ? nil
+                                    : { invite(player, on: timeControl) }
+                            )
                         }
                     }
                 }
-                // Three lists, three ways in: each is its own screen. The
-                // friends say how many requests and games wait for an answer.
                 HStack(spacing: 8) {
                     ForEach([PeopleScreen.Kind.ranks, .players, .friends]) { kind in
                         let waiting = kind == .friends ? boards.incoming.count + app.friendInvites.count : 0
@@ -229,65 +324,30 @@ struct OnlineScreen: View {
         }
     }
 
-    /// Look for a game on a clock: in its pool, or with an invitation, in the
-    /// pool of the one person it is from or to.
     private func search(_ control: TimeControl, invitation: Invitation? = nil) {
         let pool = RatedPool.online(minutes: control.minutes)
         matchmaker.findOpponent(
             timeControl: control,
-            rating: app.progress.rating(pool),
+            rating: displayedRating(for: control),
             games: app.progress.gamesPlayed(pool),
             deviation: app.progress.deviation(pool),
             invitation: invitation
         )
     }
 
-    /// Invite one player, on a clock — through Game Center, as a notification
-    /// on their devices; the lobby shows it going out, and a yes starts the game.
-    ///
-    /// A friend Game Center has not handed this device — known to it only by
-    /// their key in `OnlineService` — is offered the game there instead, and
-    /// sees it while the app is open: both then look in a pool of their own,
-    /// derived from this player's key and the clock, as a link's invitation
-    /// does. Either way it is a friendly game.
     private func invite(_ player: BoardPlayer, on control: TimeControl) {
         timeControl = control
-        withdrawOffer()
-        guard app.boards.player(player.id) == nil, app.boards.friendState(of: player) == .friend,
-              let key = player.key, let mine = app.service.myKey else {
-            matchmaker.invite(player, on: control, from: app.boards)
-            return
+        #if canImport(GameKit)
+        matchmaker.invite(player, on: control, from: app.boards)
+        #else
+        if app.boards.friendState(of: player) == .friend, let key = player.key {
+            matchmaker.offerServiceFriend(key: key, alias: player.alias, timeControl: control)
         }
-        if isSearching { matchmaker.cancelSearch() }
-        search(control, invitation: Invitation(name: player.alias, playerID: mine, minutes: control.minutes))
-        offeredTo = key
-        let alias = player.alias
-        offerWait = Task {
-            let sent = await app.service.offer(to: key, minutes: control.minutes)
-            if sent { try? await Task.sleep(for: .seconds(Self.offerWait)) }
-            guard !Task.isCancelled else { return }
-            if matchmaker.session == nil, matchmaker.invitee == alias { matchmaker.gaveUp(on: alias) }
-            offeredTo = nil
-        }
+        #endif
     }
 
-    /// How long an offer to a friend waits: the service keeps it two minutes.
-    private static let offerWait: Double = 125
+    // MARK: - Invitations (Service Codes & App Clip Links)
 
-    /// A game offered to a friend, taken back: the search was cancelled, or
-    /// the lobby left.
-    private func withdrawOffer() {
-        offerWait?.cancel()
-        offerWait = nil
-        if let key = offeredTo { Task { await app.service.cancelOffer(to: key) } }
-        offeredTo = nil
-    }
-
-    // MARK: - Invitations
-
-    /// Somebody arrived here from a link and their invitation survived the
-    /// install. Accepting it searches that invitation's own pool, so the
-    /// opponent found is the person who sent it and nobody else.
     @ViewBuilder
     private func invitationCard(_ invitation: Invitation) -> some View {
         Card {
@@ -316,47 +376,141 @@ struct OnlineScreen: View {
         }
     }
 
-    /// Asking somebody else. The link opens an App Clip for anybody without the
-    /// app — they play a few tactics while it downloads, and the invitation is
-    /// waiting for them here afterwards.
     @ViewBuilder
     private var inviteCard: some View {
-        if matchmaker.canInvite {
-            let mine = Invitation(
-                name: matchmaker.localName,
-                playerID: matchmaker.localPlayerID,
-                minutes: timeControl.minutes
-            )
+        if matchmaker.isAuthenticated || app.service.isSignedIn {
             Card {
                 Slug(text: L.t("online.inviteSomebody", "Invite somebody"))
                 Text(L.t(
-                    "online.inviteExplanation",
-                    "Send a link. Whoever opens it can play a few tactics straight away, with or without the app, and the invitation waits for them here."
+                    "online.serviceInviteExplanation",
+                    "Send the link, or read the code out. Whoever opens it is put straight through to you, on iPhone, iPad, Mac or Android."
                 ))
                 .appFont(.footnote)
                 .foregroundStyle(Theatre.ivoryDim)
-                ShareLink(
-                    item: mine.link,
-                    subject: Text(verbatim: "Brass Pawn"),
-                    message: Text(L.t(
-                        "online.inviteMessage",
-                        "A game of chess, %@ each: %@",
-                        timeControl.label,
-                        mine.link.absoluteString
-                    ))
-                ) {
-                    Text(L.t("online.sendTheLink", "Send the link"))
+
+                if let active = matchmaker.activeInviteCode {
+                    let shareURL = URL(string: active.link) ?? URL(string: "https://brasspawn.com/play?i=\(active.code)")!
+                    let clockLabel = (TimeControl(rawValue: active.minutes) ?? timeControl).label
+                    Text(verbatim: active.code)
+                        .appFont(size: 30, weight: .semibold)
+                        .monospacedDigit()
+                        .tracking(5)
+                        .foregroundStyle(Theatre.brassHot)
+                        .padding(.vertical, 4)
+                    Text(L.t("online.inviteWaiting", "Code %@ — waiting for them to join. Tap to cancel.", active.code))
+                        .appFont(.caption)
+                        .foregroundStyle(Theatre.ivoryDim)
+                    HStack(spacing: 10) {
+                        ShareLink(
+                            item: shareURL,
+                            subject: Text(verbatim: "Brass Pawn"),
+                            message: Text(L.t(
+                                "online.inviteMessage",
+                                "A game of chess, %@ each: %@",
+                                clockLabel,
+                                "\(shareURL.absoluteString) (\(active.code))"
+                            ))
+                        ) {
+                            Text(L.t("online.sendTheLink", "Send the link"))
+                                .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
+
+                        Button(L.t("common.cancel", "Cancel")) {
+                            matchmaker.cancelServiceInvite()
+                        }
+                        .buttonStyle(PillButtonStyle(emphasis: .ghost, usesBodySize: true))
                         .frame(maxWidth: .infinity)
+                    }
+                } else {
+                    Button {
+                        matchmaker.createServiceInvite(timeControl: timeControl)
+                    } label: {
+                        Text(L.t("online.invite", "Invite"))
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(PillButtonStyle(emphasis: .ghost))
+                    .disabled(isSearching)
+
+                    Divider().overlay(Theatre.ruleSoft).padding(.vertical, 2)
+
+                    Text(L.t("online.joinWithCode", "Have a code?"))
+                        .appFont(.caption)
+                        .textCase(.uppercase)
+                        .foregroundStyle(Theatre.ivoryDim)
+
+                    HStack(spacing: 8) {
+                        TextField(
+                            L.t("online.inviteCode", "Invitation code"),
+                            text: Binding(
+                                get: { inviteCodeInput },
+                                set: { raw in
+                                    let filtered = raw.uppercased().unicodeScalars.filter {
+                                        ($0.value >= 65 && $0.value <= 90) || ($0.value >= 48 && $0.value <= 57)
+                                    }
+                                    inviteCodeInput = String(String.UnicodeScalarView(filtered).prefix(6))
+                                }
+                            )
+                        )
+                        .appFont(.subheadline, weight: .semibold)
+                        .monospacedDigit()
+                        .textFieldStyle(.plain)
+                        .autocorrectionDisabled()
+                        #if canImport(UIKit)
+                        .textInputAutocapitalization(.characters)
+                        #endif
+                        .onSubmit {
+                            if inviteCodeInput.count == 6 && !isSearching {
+                                matchmaker.joinServiceInvite(code: inviteCodeInput)
+                            }
+                        }
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 9)
+                        .background { BrassPlateShape(cut: 8).fill(Theatre.ink2) }
+                        .overlay { BrassPlateShape(cut: 8).strokeBorder(Theatre.brassDeep.opacity(0.5), lineWidth: 0.7) }
+
+                        Button {
+                            matchmaker.joinServiceInvite(code: inviteCodeInput)
+                        } label: {
+                            Text(L.t("online.join", "Join"))
+                        }
+                        .buttonStyle(PillButtonStyle(emphasis: .solid, usesBodySize: true))
+                        .disabled(isSearching || inviteCodeInput.count != 6)
+                    }
                 }
-                .buttonStyle(PillButtonStyle(emphasis: .ghost))
-                .disabled(isSearching)
             }
         }
     }
 
     #if DEBUG
-    /// Players to look at, for `.onlineLobby` and `.players`; and a game lost,
-    /// with the opponent asking for another, for `.onlineRematch`.
+    private func runDebugLaunchActionIfReady() {
+        guard !didRunDebugLaunchAction, app.service.isSignedIn else { return }
+        let debug = OnlineDebugOptions.current
+        if let seekMinutes = debug.autoSeekMinutes {
+            didRunDebugLaunchAction = true
+            let control = TimeControl(rawValue: seekMinutes) ?? .five
+            timeControl = control
+            search(control)
+        } else if let joinCode = debug.autoJoinCode {
+            didRunDebugLaunchAction = true
+            inviteCodeInput = joinCode
+            matchmaker.joinServiceInvite(code: joinCode)
+        } else if let inviteMinutes = debug.autoCreateInviteMinutes {
+            didRunDebugLaunchAction = true
+            let control = TimeControl(rawValue: inviteMinutes) ?? .five
+            timeControl = control
+            matchmaker.createServiceInvite(timeControl: control)
+        } else if let rankMinutes = debug.autoShowRanksMinutes {
+            didRunDebugLaunchAction = true
+            let control = TimeControl(rawValue: rankMinutes) ?? .five
+            timeControl = control
+            Task { @MainActor in
+                await app.boards.refresh(using: app.service)
+                people = .ranks
+            }
+        }
+    }
+
     private func stagePlayersForScreenshot() {
         switch ScreenshotScene.requested {
         case .onlineLobby:
@@ -372,8 +526,6 @@ struct OnlineScreen: View {
             people = .friends
         case .friendOffer:
             app.boards.fillWithSamples()
-            // After Game Center has failed to sign in on the simulator, which
-            // clears whatever was on offer.
             Task { @MainActor in
                 try? await Task.sleep(for: .seconds(2))
                 app.heard([FriendInvite(id: String(repeating: "c", count: 32), alias: "Ana P.", minutes: 10)])
@@ -384,7 +536,6 @@ struct OnlineScreen: View {
                                           rating: app.progress.rating(.online(minutes: timeControl.minutes)),
                                           games: 3)
             Task { @MainActor in
-                // Once both sides of the loopback are playing.
                 while !(matchmaker.session.map(isPlaying) ?? false) {
                     try? await Task.sleep(for: .milliseconds(200))
                 }
@@ -396,11 +547,6 @@ struct OnlineScreen: View {
         }
     }
 
-    /// Put a game with a draw on the table on screen, for `.onlineDraw`.
-    ///
-    /// Against the debug loopback, which exists because Game Center will not
-    /// sign in on a simulator. The pause is the opponent thinking: an offer
-    /// that is there before the board is reads as part of the furniture.
     private func stageDrawOfferForScreenshot() {
         guard ScreenshotScene.requested == .onlineDraw, matchmaker.session == nil else { return }
         matchmaker.startLoopbackMatch(
@@ -413,6 +559,62 @@ struct OnlineScreen: View {
             matchmaker.offerDrawFromLoopback()
         }
     }
+
+    private func performAutoMoveIfNeeded(_ session: MatchSession) async {
+        let debug = OnlineDebugOptions.current
+        guard !debug.autoMoves.isEmpty || debug.autoPlayAny else { return }
+        guard case .playing = session.phase, session.isMyTurn else { return }
+        let turnKey = "\(ObjectIdentifier(session))-\(session.gameNumber)-\(session.uciMoves.count)"
+        guard lastAutoPlayedTurn != turnKey else { return }
+
+        try? await Task.sleep(for: .milliseconds(250))
+        guard !Task.isCancelled, case .playing = session.phase, session.isMyTurn else { return }
+        guard lastAutoPlayedTurn != turnKey else { return }
+
+        let legalMoves = session.position.legalMoves()
+        guard !legalMoves.isEmpty else { return }
+
+        if autoMoveCursor < debug.autoMoves.count {
+            let candidateUCI = debug.autoMoves[autoMoveCursor]
+            autoMoveCursor += 1
+            if let parsed = Move(uci: candidateUCI),
+               let legal = legalMoves.first(where: { $0.matchesNotation(of: parsed) }) {
+                lastAutoPlayedTurn = turnKey
+                session.play(from: legal.from, to: legal.to, promotion: legal.promotion)
+                return
+            }
+        }
+
+        // Also check if any remaining scripted move is immediately legal before falling back.
+        while autoMoveCursor < debug.autoMoves.count {
+            let candidateUCI = debug.autoMoves[autoMoveCursor]
+            if let parsed = Move(uci: candidateUCI),
+               let legal = legalMoves.first(where: { $0.matchesNotation(of: parsed) }) {
+                autoMoveCursor += 1
+                lastAutoPlayedTurn = turnKey
+                session.play(from: legal.from, to: legal.to, promotion: legal.promotion)
+                return
+            }
+            if !debug.autoPlayAny {
+                autoMoveCursor += 1
+            } else {
+                break
+            }
+        }
+
+        guard debug.autoPlayAny else { return }
+        // Prefer an immediate checkmate, then a capture, then the first legal move.
+        let chosen = legalMoves.first { move in
+            var next = session.position
+            next.make(move)
+            return next.isCheckmate
+        } ?? legalMoves.first { move in
+            session.position[move.to] != nil
+        } ?? legalMoves[0]
+
+        lastAutoPlayedTurn = turnKey
+        session.play(from: chosen.from, to: chosen.to, promotion: chosen.promotion)
+    }
     #endif
 
     private var isSearching: Bool {
@@ -420,21 +622,27 @@ struct OnlineScreen: View {
         return false
     }
 
-    // MARK: - The game
+    // MARK: - The Game
 
     private func game(_ session: MatchSession) -> some View {
-        TrainingLayout { width in
+        let opponentName = session.opponent?.name
+            ?? matchmaker.serviceMatch?.info.opponent.alias
+            ?? L.t("online.opponent", "Opponent")
+        let opponentRating = session.opponent?.rating
+            ?? matchmaker.serviceMatch?.info.opponent.record.rating
+
+        return TrainingLayout { width in
             BoardStage(
                 width: width,
                 top: PlayerBar(
-                    name: session.opponent?.name ?? "Opponent",
-                    rating: session.opponent?.rating,
+                    name: opponentName,
+                    rating: opponentRating,
                     color: session.myColor.opponent,
                     material: MaterialBalance(session.position)
                 ),
                 bottom: PlayerBar(
-                    name: matchmaker.localName,
-                    rating: app.progress.rating(.online(minutes: session.timeControl.minutes)),
+                    name: displayLocalName,
+                    rating: displayedRating(for: session.timeControl),
                     color: session.myColor,
                     material: MaterialBalance(session.position)
                 )
@@ -452,7 +660,7 @@ struct OnlineScreen: View {
         } notice: {
             drawOffer(session)
         } panel: {
-            statusCard(session)
+            statusCard(session, opponentName: opponentName)
             Card {
                 Text(L.t("online.moves", "Moves")).appFont(.caption).textCase(.uppercase).foregroundStyle(Theatre.ivoryDim)
                 MoveList(moves: session.moves.map { (san: $0, grade: nil) })
@@ -463,66 +671,64 @@ struct OnlineScreen: View {
         .appCover(isPresented: completionIsPresented(session)) {
             if case .finished(let result) = session.phase {
                 CompletionOverlay(
-                    result: completion(for: settled ?? result, at: session.timeControl),
+                    result: completion(for: settled ?? result, session: session),
                     primaryTitle: L.t("online.backToTheLobby", "Back to the lobby"),
-                    onPrimary: { matchmaker.leaveMatch(); settled = nil; ratingCall = nil; scoring = nil; records = nil },
+                    onPrimary: {
+                        matchmaker.leaveMatch()
+                        settled = nil
+                        ratingCall = nil
+                        scoring = nil
+                    },
                     onRetry: nil,
-                    accessory: AnyView(RematchPanel(session: session, hello: { hello(for: session) })),
-                    primaryEmphasis: session.opponentLeft || session.rematchDeclined ? .solid : .ghost
+                    accessory: AnyView(RematchPanel(
+                        session: session,
+                        isClosed: matchmaker.isMatchClosed,
+                        hello: { hello(for: session) }
+                    )),
+                    primaryEmphasis: session.opponentLeft || matchmaker.isMatchClosed || session.rematchDeclined ? .solid : .ghost
                 )
                 .presentationBackground(.clear)
                 .interactiveDismissDisabled()
             }
         }
         .animation(.easeOut(duration: 0.2), value: session.drawOffered)
-        // A rematch is a new game in the same match: its result is its own.
         .onChange(of: session.gameNumber) { _, _ in
             settled = nil
             scoring = nil
-            records = nil
+            #if DEBUG
+            autoMoveCursor = 0
+            lastAutoPlayedTurn = ""
+            #endif
         }
         .onChange(of: session.moves.count) { _, _ in
             SoundBoard.shared.play(.move)
         }
         .onAppear {
+            #if DEBUG
+            autoMoveCursor = 0
+            lastAutoPlayedTurn = ""
+            #endif
             if isPlaying(session) {
                 decideRating(session)
                 holdWhilePlaying(session)
-                readRecords(session)
             }
         }
         .onChange(of: isPlaying(session)) { _, playing in
             if playing {
                 decideRating(session)
                 holdWhilePlaying(session)
-                readRecords(session)
             } else {
                 activity.release()
             }
         }
+        #if DEBUG
+        .task(id: "\(ObjectIdentifier(session))-\(session.gameNumber)-\(isPlaying(session))-\(session.isMyTurn)-\(session.uciMoves.count)") {
+            await performAutoMoveIfNeeded(session)
+        }
+        #endif
         .animation(.spring(duration: 0.35), value: settled)
     }
 
-    /// The offer, at the head of the reading and never over it.
-    ///
-    /// It has been three things. A row inside the status card — under the board
-    /// on a phone, in the column beside it on a Mac, in both cases somewhere
-    /// you find by looking, and on the Mac it was simply missed while the game
-    /// went on. Then the app's usual confirmation, centred over a dimmed
-    /// screen, which takes a tap anywhere as a refusal: the right shape for
-    /// "leave the game?" and the wrong one here, because the clock is still
-    /// running, the board is still the thing being looked at, and a stray click
-    /// should not answer for you. Then a note floated into the top corner of
-    /// the column, which is comfortable on a Mac and lands on the Resign button
-    /// of an iPhone SE — a hundred and fifty points under the board, and a
-    /// notice is most of them.
-    ///
-    /// So it takes the layout's notice slot: the head of the reading column
-    /// wherever that column is, in the flow rather than over it. It pushes the
-    /// reading down, which costs a scroll, and covers nothing at all — not the
-    /// position, not the controls, on any screen the app runs on. The board
-    /// underneath stays playable while you decide, because the clock does not
-    /// stop for a question and neither should the position.
     @ViewBuilder
     private func drawOffer(_ session: MatchSession) -> some View {
         if session.drawOffered {
@@ -560,7 +766,7 @@ struct OnlineScreen: View {
         )
     }
 
-    private func statusCard(_ session: MatchSession) -> some View {
+    private func statusCard(_ session: MatchSession, opponentName: String) -> some View {
         Card {
             Text(statusText(session)).appFont(size: 22, weight: .semibold)
             Text(L.t("online.gameSummary", "%@ · %@ · you are %@", session.timeControl.label, session.timeControl.name, L.color(session.myColor)))
@@ -568,10 +774,11 @@ struct OnlineScreen: View {
             if isPlaying(session), let reason = unratedReason(session) {
                 Text(reason.text).appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
             }
-
-            // The offer itself is a modal, not a row in this card — see the
-            // overlay on `game`. What stays here is the half that is only news:
-            // that your own offer is out and unanswered.
+            if isPlaying(session), !matchmaker.isOpponentConnected {
+                Text(L.t("online.opponentAway", "%@ has lost the connection — waiting for them to come back.", opponentName))
+                    .appFont(.footnote)
+                    .foregroundStyle(Theatre.warn)
+            }
             if session.drawOfferSent {
                 Text(L.t("online.drawOfferedWaitingForAn", "Draw offered — waiting for an answer."))
                     .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
@@ -581,9 +788,14 @@ struct OnlineScreen: View {
 
     private func statusText(_ session: MatchSession) -> String {
         switch session.phase {
-        case .waiting: "Connecting…"
-        case .playing: session.isMyTurn ? "Your move." : "Opponent to move."
-        case .finished(let result): result.headline
+        case .waiting:
+            L.t("online.connecting", "Connecting…")
+        case .playing:
+            session.isMyTurn
+                ? L.t("play.yourMove", "Your move.")
+                : L.t("board.toMove", "%@ to move.", L.color(session.position.sideToMove))
+        case .finished(let result):
+            result.headline
         }
     }
 
@@ -616,23 +828,18 @@ struct OnlineScreen: View {
         )
     }
 
-    /// Why the game on the board does not count, if it does not. The match
-    /// knows about invitations and rematches; the app remembers whom this
-    /// player has had a rated game against today.
     private func unratedReason(_ session: MatchSession) -> UnratedReason? {
         if let call = ratingCall, call.session == ObjectIdentifier(session), call.game == session.gameNumber {
             return call.reason
         }
         if let reason = session.unratedByMatch { return reason }
-        if let opponent = session.opponent?.playerID, !app.progress.canRate(against: opponent) {
+        let opponentID = matchmaker.serviceMatch?.info.opponent.id ?? session.opponent?.playerID
+        if let opponentID, !app.progress.canRate(against: opponentID) {
             return .sameOpponentToday
         }
         return nil
     }
 
-    /// Settled as the game begins and kept until it is scored, so the answer
-    /// cannot change halfway — a rated game is itself what makes the next one
-    /// against the same opponent unrated.
     private func decideRating(_ session: MatchSession) {
         let game = RatingCall(session: ObjectIdentifier(session), game: session.gameNumber, reason: nil)
         guard ratingCall?.session != game.session || ratingCall?.game != game.game else { return }
@@ -644,54 +851,30 @@ struct OnlineScreen: View {
         return false
     }
 
-    /// This side as the opponent should now see it: the rating the game just
-    /// played left, for the next one to be scored against.
     private func hello(for session: MatchSession) -> MatchPacket.Hello {
         let rated = RatedPool.online(minutes: session.timeControl.minutes)
+        let rec = app.service.records[session.timeControl.minutes]
         return MatchPacket.Hello(
             playerID: session.me.playerID,
-            name: session.me.name,
-            rating: app.progress.rating(rated),
-            games: app.progress.gamesPlayed(rated),
-            deviation: app.progress.deviation(rated)
+            name: displayLocalName,
+            rating: rec?.rating ?? app.progress.rating(rated),
+            games: rec?.games ?? app.progress.gamesPlayed(rated),
+            deviation: rec?.deviation ?? app.progress.deviation(rated)
         )
     }
 
-    /// Apply the rating exactly once, the moment the game ends.
-    /// A game that can be rated has begun: both players' records are read
-    /// from Game Center now, before either device has written the result —
-    /// this player's own, and the opponent's as Game Center has it rather
-    /// than as their app says it.
-    private func readRecords(_ session: MatchSession) {
-        guard unratedReason(session) == nil else { return }
-        #if DEBUG
-        if matchmaker.isLoopback { return }
-        #endif
-        #if canImport(GameKit)
-        let control = session.timeControl
-        let game = GameRecords.Key(session: ObjectIdentifier(session), game: session.gameNumber)
-        let opponent = matchmaker.opponentPlayer
-        Task {
-            guard let found = await app.boards.records(on: control, of: opponent.map { [$0] } ?? []) else { return }
-            // Somebody Game Center has nothing for on this clock is new on it.
-            let theirs = opponent.map { found.others[$0.gamePlayerID] ?? .new } ?? session.opponentAsTheySaid
-            records = GameRecords(key: game, mine: found.mine, theirs: theirs)
-        }
-        #endif
-    }
-
-    /// The game is over: scored here, from the records read as it began, and
-    /// written to Game Center.
     private func settleIfFinished() {
         guard let session = matchmaker.session, settled == nil,
               case .finished(let finished) = session.phase else { return }
-        // The game's own clock, not the lobby's: a game that began from an
-        // invitation is on whatever clock the invitation said.
         let control = session.timeControl
         decideRating(session)
         settled = finished
         activity.release()
         matchmaker.onMatchFinished?(finished)
+
+        // Service matches are scored authoritatively by the server (`OnlineGameResult`).
+        guard !matchmaker.isServiceMatch else { return }
+
         var reason = unratedReason(session)
         #if DEBUG
         let loopback = matchmaker.isLoopback
@@ -700,40 +883,55 @@ struct OnlineScreen: View {
         #endif
         if reason == nil, session.uciMoves.count < 2, !loopback { reason = .aborted }
         if let reason {
-            // A friendly: nobody's rating moves.
             scoring = .unrated(reason)
             return
         }
-        let key = GameRecords.Key(session: ObjectIdentifier(session), game: session.gameNumber)
-        let known = records?.key == key ? records : nil
-        // Without Game Center to ask, this device's copy and what the opponent said.
-        let mine = known?.mine ?? app.progress.onlineRecord(control)
-        let theirs = known?.theirs ?? session.opponentAsTheySaid
+        let mine = app.progress.onlineRecord(control)
+        let theirs = session.opponentAsTheySaid
         guard let (rated, record) = session.settle(mine, against: theirs) else { return }
         settled = rated
-        // The opponent's new rating, as their own device works it out from the
-        // same two records — for the lists, until Game Center has theirs.
         let theirsAfter = theirs.after(1 - rated.score, against: mine)
         app.recordOnline(record, result: rated, at: control, against: session.opponent?.playerID,
                          opponentAfter: theirsAfter)
-        scoring = .rated(delta: rated.ratingDelta, rating: record.rating)
+        scoring = .rated(before: mine.rating, after: record.rating, delta: rated.ratingDelta)
     }
 
-    private func completion(for result: MatchResult, at control: TimeControl) -> CompletionResult {
+    private func effectiveScoring(for session: MatchSession) -> Scoring? {
+        if matchmaker.isServiceMatch {
+            if let serverResult = matchmaker.serviceResult, serverResult.game == session.gameNumber {
+                if serverResult.rated {
+                    let after = serverResult.record.rating
+                    let before = after - serverResult.delta
+                    return .rated(before: before, after: after, delta: serverResult.delta)
+                }
+                return .unrated(serverResult.unratedReason)
+            }
+            if let reason = session.unratedByMatch {
+                return .unrated(reason)
+            }
+            return nil
+        }
+        return scoring
+    }
+
+    private func completion(for result: MatchResult, session: MatchSession) -> CompletionResult {
         let verdict: CompletionResult.Verdict = switch result.outcome {
         case .win: .success
         case .draw: .partial
         case .loss: .failure
         }
+        let activeScoring = effectiveScoring(for: session)
         return CompletionResult(
             verdict: verdict,
             title: result.headline,
-            detail: scoring.map { scoring in
-                switch scoring {
-                case .rated(let delta, let rating):
-                    L.t("online.ratingChange", "Rating %1$@ → %2$lld", "\(delta > 0 ? "+" : "")\(delta)", rating)
+            detail: activeScoring.map { item in
+                switch item {
+                case .rated(let before, let after, let delta):
+                    let sign = delta >= 0 ? "+" : "−"
+                    return L.t("online.ratingChange", "Rating %1$@ → %2$lld", "\(before)", after)
+                        + "  (\(sign)\(abs(delta)))"
                 case .unrated(let reason):
-                    reason.text
+                    return reason.text
                 }
             },
             line: nil
@@ -741,13 +939,9 @@ struct OnlineScreen: View {
     }
 }
 
-/// Another game, asked for and answered in the result panel itself. The two
-/// players are still connected to each other, so there is no invitation to
-/// send and nobody to find: one asks, the other says yes, and the board is
-/// set up again with the colours swapped.
 private struct RematchPanel: View {
     let session: MatchSession
-    /// This side as it now stands, rating and all — see `OnlineScreen.hello`.
+    let isClosed: Bool
     let hello: () -> MatchPacket.Hello
 
     private var name: String { session.opponent?.name ?? L.t("online.opponent", "Opponent") }
@@ -755,7 +949,7 @@ private struct RematchPanel: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            if session.opponentLeft {
+            if session.opponentLeft || isClosed {
                 Text(L.t("online.opponentLeft", "%@ has left.", name))
                     .appFont(.subheadline)
                     .foregroundStyle(Theatre.ivoryDim)
@@ -804,9 +998,11 @@ private struct RematchPanel: View {
                 Text(L.t("online.rematchDetail", "The same clock, colours swapped: you would play %@.", nextColour))
                     .appFont(.footnote)
                     .foregroundStyle(Theatre.ivoryDim)
+                    .fixedSize(horizontal: false, vertical: true)
                 Text(UnratedReason.rematch.text)
                     .appFont(.footnote)
                     .foregroundStyle(Theatre.ivoryDim)
+                    .fixedSize(horizontal: false, vertical: true)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -815,27 +1011,13 @@ private struct RematchPanel: View {
     }
 }
 
-/// The rating decided for one game of one match.
 private struct RatingCall {
     let session: ObjectIdentifier
     let game: Int
     let reason: UnratedReason?
 }
 
-/// What a finished game did to the rating.
 private enum Scoring: Equatable {
-    case rated(delta: Int, rating: Int)
+    case rated(before: Int, after: Int, delta: Int)
     case unrated(UnratedReason)
-}
-
-/// Both players' records on the game's clock, as Game Center held them when
-/// the game began, for the game they were read for.
-private struct GameRecords {
-    struct Key: Equatable {
-        let session: ObjectIdentifier
-        let game: Int
-    }
-    let key: Key
-    let mine: OnlineRecord
-    let theirs: OnlineRecord
 }

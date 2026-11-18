@@ -41,6 +41,9 @@ final class Navigator {
     /// Asked to open the camera/photo board scanner directly on the free board.
     var pendingPhotoScan = false
 
+    /// A 6-character service invitation code waiting to be joined on the online screen.
+    var pendingInviteCode: String?
+
     /// Open the free board on a position, with the moves that led to it.
     func continueOnBoard(_ handoff: BoardHandoff) {
         boardHandoff = handoff

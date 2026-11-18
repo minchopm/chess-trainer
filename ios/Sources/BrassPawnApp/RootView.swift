@@ -95,6 +95,8 @@ public struct RootView: View {
             guard let url = activity.webpageURL else { return }
             if let story = FeedLink.target(in: url) {
                 open(story: story)
+            } else if let code = Invitation.inviteCode(in: url) {
+                accept(inviteCode: code)
             } else if let invitation = Invitation(url: url) {
                 accept(invitation)
             }
@@ -102,6 +104,8 @@ public struct RootView: View {
         .onOpenURL { url in
             if let story = FeedLink.target(in: url) {
                 open(story: story)
+            } else if let code = Invitation.inviteCode(in: url) {
+                accept(inviteCode: code)
             } else if let invitation = Invitation(url: url) {
                 accept(invitation)
             }
@@ -140,6 +144,13 @@ public struct RootView: View {
     /// invitation wants the opponent it names, not the engine.
     private func accept(_ invitation: Invitation) {
         SharedContainer.store(invitation)
+        navigator.playMode = .online
+        navigator.pendingTab = .play
+        navigator.showsMenu = false
+    }
+
+    private func accept(inviteCode: String) {
+        navigator.pendingInviteCode = inviteCode
         navigator.playMode = .online
         navigator.pendingTab = .play
         navigator.showsMenu = false
@@ -257,6 +268,10 @@ public struct RootView: View {
             app.sayPresence()
             app.watchOffers()
         }
+        .onChange(of: app.service.isSignedIn) { _, _ in
+            app.sayPresence()
+            app.watchOffers()
+        }
         .task {
             // Before the engine, not after. The scene only moves the navigation
             // and the appearance, neither of which waits on anything, while
@@ -264,6 +279,11 @@ public struct RootView: View {
             // that a screenshot taken meanwhile catches the menu instead.
             #if DEBUG
             applyScreenshotScene()
+            if OnlineDebugOptions.current.opensOnlineAtLaunch {
+                navigator.playMode = .online
+                navigator.showsMenu = false
+                selection = .play
+            }
             // A story to open straight into, to look at it: -story <id>. The
             // link would do the same, behind a dialog asking whether to open it.
             let arguments = ProcessInfo.processInfo.arguments
@@ -282,6 +302,7 @@ public struct RootView: View {
             // A game somebody opened in the clip before installing: the app
             // they installed from it opens on the same game, once.
             if let story = SharedContainer.takeStory() { open(story: story) }
+            if let code = SharedContainer.takeInviteCode() { accept(inviteCode: code) }
             await app.start()
         }
         // A screen that cannot reach the tab state asks for a destination here.

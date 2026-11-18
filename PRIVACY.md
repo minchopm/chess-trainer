@@ -31,27 +31,25 @@ and purchase state are stored in the app's own container on your device. Deletin
 the app deletes them. They are included in an encrypted device backup only if
 you have one; nothing is uploaded anywhere else.
 
-## Game Center
+## Online play, Game Center and Android
 
-Online play uses Apple's Game Center to find an opponent and to carry the moves
-between the two devices. In a match your Game Center nickname and your in-app
-online rating are visible to your opponent, because that is what a game between
-two people needs. Apple's handling of Game Center data is covered by Apple's own
-privacy policy; we receive none of it.
+On iPhone, iPad and Mac, online play uses Apple's Game Center for your identity
+(no separate registration or password) and for direct Game Center invitations
+between Apple devices. On Android, where there is no Game Center, the app makes
+an ECDSA key in the Android Keystore on first use and lets you choose a
+nickname.
 
-Moves and clocks travel directly between the two devices through Game Center
-while you play.
+Open matchmaking, 6-character invitation codes, rank lists, friends and presence
+go through Brass Pawn's own game service (`chat-api.wonek.com`, over encrypted
+QUIC / HTTP/3), so players on iPhone, iPad, Mac and Android can play each other.
+The service checks moves on its own board, computes Glicko ratings per clock,
+and keeps the rank lists and friend links under a one-way hash of your Game
+Center team player ID (or Android device public key) and your nickname. On Apple
+devices your rated score is also written to Game Center's leaderboards.
 
-Your online rating lives on Game Center's leaderboards — one for each clock. At
-the end of a rated game each player's device works out its own player's new
-rating, from both players' ratings as Game Center held them when the game
-began, and writes it there, with how sure the rating is, how many rated games
-it has and the day of the last one. The app sends it again, unchanged, when you
-open it signed in to Game Center. Other players see your Game Center nickname
-and when you were last seen there, as your Game Center privacy settings allow;
-that is how the app's rank list shows who each player is, how its lists of
-active and inactive players are made, and what lets another player invite you
-to a game. The leaderboards are Apple's.
+You can remove everything our online service holds for you (nickname, ratings,
+rank-list entries and friend links) at any time from inside the app under
+*Settings → Delete online account*.
 
 If you allow it — Game Center asks the first time you open Friends — the app
 reads your Game Center friends, to show the ones who play so that you can ask

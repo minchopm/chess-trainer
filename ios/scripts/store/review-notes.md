@@ -13,13 +13,17 @@ is AGPLv3 and its complete source is what Apple is reviewing.
 
 ## 1. Demo account
 
-**Not applicable — the app has no accounts.** There is no registration, no
-sign-in, no profile and no password, so there is nothing to delete either. All
-progress is kept in the app's own container on the device.
+**Not applicable — the app has no username/password registration.** Every
+offline and training mode works signed out.
 
-Multiplayer uses **Apple's Game Center**. Signing in to Game Center on the Mac is
-the only sign-in anywhere in the app, and it is Apple's own, with Apple's own
-account. Every other mode works signed out.
+Multiplayer on iOS and macOS uses **Apple's Game Center** as identity (no
+separate sign-up). Open matchmaking, 6-character invitation codes, rank lists,
+presence and friends run through Brass Pawn's own encrypted HTTP/3 referee
+service (`https://chat-api.wonek.com:5433/brasspawn/v1/`), so players on iPhone,
+iPad, Mac and Android can play each other while direct Game Center invitations
+(`GKMatch`) remain supported between Apple devices. Players who use online play
+can delete their online record, nickname, rank-list entries and friend links at
+any time inside the app under **Settings → Delete online account**.
 
 ## 2. What the app is, and who it is for
 

@@ -343,6 +343,21 @@ public final class MatchSession {
         return (result, record)
     }
 
+    /// Take the server's word for what the finished game did to the rating.
+    ///
+    /// Sets `ratingDelta` and `deviation` on the finished result without
+    /// recomputing them locally, and marks this game as settled so a subsequent
+    /// `settle` does nothing.
+    @discardableResult
+    public func applyServerResult(ratingDelta: Int, deviation: Double?) -> MatchResult? {
+        guard case .finished(var result) = phase else { return nil }
+        settledGame = gameNumber
+        result.ratingDelta = ratingDelta
+        result.deviation = deviation
+        phase = .finished(result)
+        return result
+    }
+
     /// The opponent as they said hello: what to score against when Game
     /// Center cannot be asked.
     public var opponentAsTheySaid: OnlineRecord {

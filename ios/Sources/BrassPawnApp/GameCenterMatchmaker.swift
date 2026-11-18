@@ -9,19 +9,18 @@ import UIKit
 #endif
 import SwiftUI
 
-/// Carries a non-Sendable Game Center object from its callback to the main
-/// actor. Nothing else touches it in between.
+/// Carries a non-Sendable Game Center object from its callback to the main actor.
 private final class UncheckedBox<Value>: @unchecked Sendable {
     let value: Value
     init(_ value: Value) { self.value = value }
 }
 
-/// Game Center: who you are, and finding somebody to play.
+/// Game Center identity + matchmaking coordinator.
 ///
-/// Matchmaking is programmatic rather than through GKMatchmakerViewController.
-/// The only choice this game offers is the clock, and that is already made
-/// before you press the button, so Apple's sheet would add a screen that asks
-/// nothing.
+/// Open matchmaking, invite codes, and friend offers run over the cross-platform
+/// Brass Pawn online service (`OnlineService` / `OnlineMatchDriver`). Native
+/// Game Center `GKInvite` notifications and App Clip `Invitation.playerGroup`
+/// links continue to use `GKMatch` directly as friendly (unrated) games.
 @MainActor
 @Observable
 public final class GameCenterMatchmaker: NSObject {
@@ -35,11 +34,17 @@ public final class GameCenterMatchmaker: NSObject {
     }
 
     public private(set) var state: State = .signedOut
-    public private(set) var localName = "You"
+    public private(set) var localName = L.t("common.you", "You")
     public private(set) var localPlayerID = "local"
-    public private(set) var status = "Sign in to Game Center to play online."
+    public private(set) var status = L.t("online.signInPrompt", "Sign in to Game Center to play online.")
     /// The session for the match in progress, once one is connected.
     public private(set) var session: MatchSession?
+    /// Active service match driver when playing through `/brasspawn/v1/`.
+    public private(set) var serviceMatch: OnlineMatchDriver?
+    /// Active 6-character invitation code waiting in the lobby.
+    public private(set) var activeInviteCode: OnlineInviteCode?
+    /// One-shot error code (`"unknown"`, `"own-code"`, `"busy"`, `"offline"`) for the lobby alert.
+    public var notice: String?
     /// Set when Game Center wants to show its sign-in screen.
     public var pendingAuthController: AuthControllerItem?
 
@@ -50,9 +55,20 @@ public final class GameCenterMatchmaker: NSObject {
         #endif
     }
 
-    /// Called with the result once a match has finished, so the app can record
-    /// it. The session itself has no idea where progress is kept.
+    /// Reference to the online service, wired by `AppModel`.
+    public weak var service: OnlineService?
+
     public var onMatchFinished: ((MatchResult) -> Void)?
+    public var onServerResult: ((OnlineGameResult, MatchSession?) -> Void)?
+    public var ratingLookup: ((TimeControl) -> (rating: Int, games: Int, deviation: Double))?
+    public var onAuthenticated: (() -> Void)?
+    public var onInviteAccepted: (() -> Void)?
+
+    public private(set) var invitee: String?
+    private var offeredFriendKey: String?
+    private var offerWaitTask: Task<Void, Never>?
+    private var openPool = true
+    private var timeControl: TimeControl = .five
 
     public var isAuthenticated: Bool {
         if case .signedOut = state { return false }
@@ -60,53 +76,40 @@ public final class GameCenterMatchmaker: NSObject {
         return true
     }
 
-    /// Whether there is a real Game Center player to put in an invitation.
-    ///
-    /// Stricter than `isAuthenticated`, which is only about the state machine:
-    /// on a simulator with nobody signed in the state settles at `.ready` while
-    /// the player ID is still the placeholder. A link built from the
-    /// placeholder names nobody, so the offer to send one is withheld until
-    /// there is somebody to name.
     public var canInvite: Bool {
-        isAuthenticated && localPlayerID != "local"
+        if service?.isSignedIn == true { return true }
+        return isAuthenticated && localPlayerID != "local"
+    }
+
+    public var isServiceMatch: Bool {
+        serviceMatch != nil && session === serviceMatch?.session
+    }
+
+    public var serviceResult: OnlineGameResult? {
+        serviceMatch?.latestResult
+    }
+
+    public var isOpponentConnected: Bool {
+        serviceMatch?.opponentConnected ?? true
+    }
+
+    public var isMatchClosed: Bool {
+        serviceMatch?.isClosed ?? false
     }
 
     #if canImport(GameKit)
     private var match: GKMatch?
-    /// The opponent in the match under way, as Game Center knows them — whose
-    /// rating is read from Game Center rather than taken from what they say.
     public var opponentPlayer: GKPlayer? { match?.players.first }
-    private var timeControl: TimeControl = .five
     private var localRating = Glicko.starting
     private var localGames = 0
     private var localDeviation = Glicko.newDeviation
     private var disconnectWork: Task<Void, Never>?
     private var connectWork: Task<Void, Never>?
-    /// How long two paired devices are given to actually reach each other.
-    /// Being matched and never connecting is a real outcome — a message beats
-    /// a screen that says Connecting for ever.
     private static let connectGrace: TimeInterval = 20
-    /// How long an opponent may be gone before the game is given to you. Long
-    /// enough for a lift or a tunnel, short enough that nobody sits waiting on
-    /// somebody who has closed the app.
     private static let reconnectGrace: TimeInterval = 45
     #endif
 
-    /// This player's rating and games on a clock — for a match that starts
-    /// from an invitation, which can arrive anywhere in the app rather than
-    /// from the lobby that knows them.
-    public var ratingLookup: ((TimeControl) -> (rating: Int, games: Int, deviation: Double))?
-    /// Signed in: time to tell the rank lists this player is still about.
-    public var onAuthenticated: (() -> Void)?
-    /// An invitation was accepted, from Game Center's own notification: the
-    /// app should be on the online screen for the game that follows.
-    public var onInviteAccepted: (() -> Void)?
-    /// Who is being invited, while an invitation is out.
-    public private(set) var invitee: String?
-    /// Whether the search under way is the open one, among everybody on the
-    /// clock, rather than an invitation — which decides whether its games
-    /// can be rated (`MatchSession.openPool`).
-    private var openPool = true
+    private static let offerTimeoutSeconds: Double = 125
 
     public override init() { super.init() }
 
@@ -114,7 +117,23 @@ public final class GameCenterMatchmaker: NSObject {
     private var _loopback: LoopbackMatch?
 #endif
 
+    // MARK: - Authentication
+
     public func authenticate() {
+        #if DEBUG
+        if let testPlayer = OnlineDebugOptions.current.testPlayer {
+            localPlayerID = "T:test-\(testPlayer)"
+            localName = testPlayer
+            pendingAuthController = nil
+            if session == nil {
+                state = .ready
+                status = L.t("online.signedInAs", "Signed in as %@.", testPlayer)
+            }
+            onAuthenticated?()
+            return
+        }
+        #endif
+
         #if canImport(GameKit)
         state = .authenticating
         GKLocalPlayer.local.authenticateHandler = { [weak self] controller, error in
@@ -123,7 +142,7 @@ public final class GameCenterMatchmaker: NSObject {
                 #if canImport(UIKit)
                 if let controller {
                     self.pendingAuthController = AuthControllerItem(controller: controller)
-                    self.status = "Sign in to Game Center to play online."
+                    self.status = L.t("online.signInPrompt", "Sign in to Game Center to play online.")
                     return
                 }
                 #endif
@@ -134,37 +153,43 @@ public final class GameCenterMatchmaker: NSObject {
                 }
                 guard GKLocalPlayer.local.isAuthenticated else {
                     self.state = .signedOut
-                    self.status = "Game Center sign-in was cancelled."
+                    self.status = L.t("online.signInCancelled", "Game Center sign-in was cancelled.")
                     return
                 }
                 self.localPlayerID = GKLocalPlayer.local.gamePlayerID
                 self.localName = GKLocalPlayer.local.alias
                 self.pendingAuthController = nil
-                // Only while nothing is under way: signing in again mid-game
-                // must not put the lobby back.
                 if case .authenticating = self.state {
                     self.state = .ready
-                    self.status = "Signed in as \(self.localName)."
+                    self.status = L.t("online.signedInAs", "Signed in as %@.", self.localName)
                 }
-                // Invitations sent to this player arrive through the listener,
-                // including the one whose notification opened the app.
                 GKLocalPlayer.local.unregisterAllListeners()
                 GKLocalPlayer.local.register(self)
                 self.onAuthenticated?()
             }
         }
         #else
-        state = .failed("Online play needs Game Center.")
-        status = "Online play needs Game Center."
+        state = .failed(L.t("online.offline", "The server cannot be reached. Check the connection and try again."))
+        status = L.t("online.offline", "The server cannot be reached. Check the connection and try again.")
         #endif
     }
 
-    /// Look for a game.
-    ///
-    /// With an `invitation`, the search happens in that invitation's own pool
-    /// rather than the clock's, so the only person who can be found is the one
-    /// who sent the link. It is the nearest Game Center comes to a named
-    /// opponent: it pairs by pool, never by player.
+    private func ensureServiceReady() async throws -> OnlineService {
+        guard let service else {
+            throw OnlineError(status: 503, code: "unavailable")
+        }
+        if !service.isSignedIn {
+            let login = try await service.signIn()
+            if !login.alias.isEmpty {
+                localName = login.alias
+            }
+        }
+        service.startEvents()
+        return service
+    }
+
+    // MARK: - Open Matchmaking & App Clip Invitations
+
     public func findOpponent(
         timeControl: TimeControl,
         rating: Int,
@@ -172,42 +197,244 @@ public final class GameCenterMatchmaker: NSObject {
         deviation: Double,
         invitation: Invitation? = nil
     ) {
-        #if canImport(GameKit)
         guard isAuthenticated else {
             authenticate()
             return
         }
         self.timeControl = timeControl
-        localRating = rating
-        localGames = games
-        localDeviation = deviation
         openPool = invitation == nil
 
-        let request = GKMatchRequest()
-        request.minPlayers = 2
-        request.maxPlayers = 2
-        // The pool is the clock. Nobody who asked for thirty minutes should be
-        // handed a three-minute game.
-        request.playerGroup = invitation?.playerGroup ?? timeControl.playerGroup
+        // App Clip / legacy base64 link invitations use their dedicated GKMatchmaker pool.
+        if let invitation {
+            #if canImport(GameKit)
+            localRating = rating
+            localGames = games
+            localDeviation = deviation
+            let request = GKMatchRequest()
+            request.minPlayers = 2
+            request.maxPlayers = 2
+            request.playerGroup = invitation.playerGroup
+            state = .searching(timeControl)
+            invitee = invitation.name
+            status = L.t("online.inviting", "Inviting %@…", invitation.name)
+            GKMatchmaker.shared().findMatch(for: request, withCompletionHandler: found)
+            #endif
+            return
+        }
 
+        // Open matchmaking goes through the Brass Pawn backend service (`POST /seek`).
+        guard session == nil else {
+            notice = "busy"
+            return
+        }
+        cancelServiceInvite()
+        withdrawFriendOffer()
+        invitee = nil
         state = .searching(timeControl)
-        // Waiting for somebody in particular: the lobby says whom.
-        invitee = invitation?.name
-        status = invitation.map { "Waiting for \($0.name)…" }
-            ?? "Looking for a \(timeControl.label) opponent…"
+        status = L.t("online.searchingTapToCancel", "Searching — tap to cancel")
 
-        GKMatchmaker.shared().findMatch(for: request, withCompletionHandler: found)
-        #endif
+        Task { @MainActor [weak self] in
+            guard let self else { return }
+            do {
+                let svc = try await self.ensureServiceReady()
+                guard case .searching(let current) = self.state, current == timeControl else { return }
+                try await svc.api.seek(minutes: timeControl.minutes)
+            } catch {
+                if case .searching = self.state {
+                    self.state = .ready
+                }
+                self.recordFailure(error)
+            }
+        }
     }
 
+    // MARK: - Service Invite Codes (`/invite/*`)
+
+    public func createServiceInvite(timeControl: TimeControl) {
+        guard session == nil else {
+            notice = "busy"
+            return
+        }
+        if case .searching = state { cancelSearch() }
+        self.timeControl = timeControl
+        Task { @MainActor [weak self] in
+            guard let self else { return }
+            do {
+                let svc = try await self.ensureServiceReady()
+                let created = try await svc.api.createInvite(minutes: timeControl.minutes)
+                self.activeInviteCode = created
+                #if DEBUG
+                try? Data(created.code.utf8).write(
+                    to: URL.documentsDirectory.appending(path: "debug-invite-code.txt"),
+                    options: .atomic
+                )
+                #endif
+            } catch {
+                self.recordFailure(error)
+            }
+        }
+    }
+
+    public func cancelServiceInvite() {
+        guard activeInviteCode != nil else { return }
+        activeInviteCode = nil
+        Task { try? await service?.api.cancelInvite() }
+    }
+
+    public func joinServiceInvite(code: String) {
+        guard let normalized = Invitation.normalizedInviteCode(code) else {
+            notice = "unknown"
+            return
+        }
+        guard session == nil else {
+            notice = "busy"
+            return
+        }
+        if case .searching = state { cancelSearch() }
+        cancelServiceInvite()
+        Task { @MainActor [weak self] in
+            guard let self else { return }
+            do {
+                let svc = try await self.ensureServiceReady()
+                try await svc.api.joinInvite(code: normalized)
+            } catch {
+                self.recordFailure(error)
+            }
+        }
+    }
+
+    // MARK: - Service Friend Offers & Game Center Native Invites
+
+    public func offerServiceFriend(key: String, alias: String, timeControl: TimeControl) {
+        guard session == nil else {
+            notice = "busy"
+            return
+        }
+        if case .searching = state { cancelSearch() }
+        cancelServiceInvite()
+        withdrawFriendOffer()
+
+        self.timeControl = timeControl
+        openPool = false
+        invitee = alias
+        offeredFriendKey = key
+        state = .searching(timeControl)
+        status = L.t("online.inviting", "Inviting %@…", alias)
+
+        offerWaitTask = Task { @MainActor [weak self] in
+            guard let self else { return }
+            do {
+                let svc = try await self.ensureServiceReady()
+                try await svc.api.offerGame(to: key, minutes: timeControl.minutes)
+                try? await Task.sleep(for: .seconds(Self.offerTimeoutSeconds))
+                guard !Task.isCancelled else { return }
+                if self.session == nil, self.offeredFriendKey == key {
+                    self.gaveUp(on: alias)
+                }
+            } catch {
+                guard !Task.isCancelled else { return }
+                if case .searching = self.state, self.offeredFriendKey == key {
+                    self.offeredFriendKey = nil
+                    self.invitee = nil
+                    self.state = .ready
+                }
+                self.recordFailure(error)
+            }
+        }
+    }
+
+    private func withdrawFriendOffer() {
+        offerWaitTask?.cancel()
+        offerWaitTask = nil
+        if let key = offeredFriendKey {
+            offeredFriendKey = nil
+            Task { await service?.cancelOffer(to: key) }
+        }
+    }
+
+    private func recordFailure(_ error: Error) {
+        if let onlineError = error as? OnlineError {
+            switch onlineError.code {
+            case "no-invite", "unknown", "invite-unknown":
+                notice = "unknown"
+            case "own-code":
+                notice = "own-code"
+            case "in-match", "opponent-busy", "busy":
+                notice = "busy"
+            default:
+                notice = "offline"
+            }
+            status = L.t("online.offline", "The server cannot be reached. Check the connection and try again.")
+        } else {
+            notice = "offline"
+            status = L.t("online.offline", "The server cannot be reached. Check the connection and try again.")
+        }
+    }
+
+    // MARK: - Service Event Stream Handling
+
+    public func handleServiceEvent(_ event: OnlineEvent) {
+        switch event {
+        case .matched(let info):
+            guard let svc = service else { return }
+            offerWaitTask?.cancel()
+            offerWaitTask = nil
+            offeredFriendKey = nil
+            invitee = nil
+            activeInviteCode = nil
+            serviceMatch?.shutdown()
+
+            let myAccount = svc.account ?? localPlayerID
+            let myAlias = svc.alias.isEmpty ? localName : svc.alias
+            if !myAlias.isEmpty {
+                localName = myAlias
+            }
+            let driver = OnlineMatchDriver(info: info, account: myAccount, alias: myAlias, api: svc.api)
+            serviceMatch = driver
+            session = driver.session
+            timeControl = driver.session.timeControl
+            openPool = info.open
+            state = .connected
+            status = L.t("online.connected", "Connected.")
+            if !info.open {
+                onInviteAccepted?()
+            }
+            driver.begin()
+
+        case .packet, .peer, .matchEnded:
+            serviceMatch?.handle(event)
+
+        case .result(let res):
+            serviceMatch?.handle(event)
+            onServerResult?(res, serviceMatch?.session)
+
+        case .seekEnded:
+            if case .searching = state, offeredFriendKey == nil {
+                state = .ready
+                status = L.t("online.noOpponentFound", "No opponent was found.")
+            }
+
+        case .inviteDeclined(let from):
+            if offeredFriendKey == from {
+                let alias = invitee ?? L.t("online.opponent", "Opponent")
+                offerWaitTask?.cancel()
+                offerWaitTask = nil
+                offeredFriendKey = nil
+                invitee = nil
+                state = .ready
+                status = L.t("online.inviteDeclined", "%@ cannot play right now.", alias)
+            }
+
+        case .friendsChanged, .invited:
+            break
+        }
+    }
+
+    // MARK: - Game Center Native Invitations (`GKInvite` / `GKMatch`)
+
     #if canImport(GameKit)
-    /// What Game Center hands back from a search, an invitation sent or one
-    /// accepted: a match to begin, or the reason there is none.
-    private var found: (GKMatch?, Error?) -> Void {
+    private var found: @Sendable (GKMatch?, Error?) -> Void {
         { [weak self] match, error in
-            // GKMatch is not Sendable, and the callback lands off the main
-            // actor. The box carries it across without the compiler having to
-            // take Game Center's word for its thread safety.
             let carried = match.map { UncheckedBox($0) }
             let message = error?.localizedDescription
             Task { @MainActor in
@@ -224,7 +451,7 @@ public final class GameCenterMatchmaker: NSObject {
                 }
                 guard let carried else {
                     self.state = .ready
-                    self.status = "No opponent was found."
+                    self.status = L.t("online.noOpponentFound", "No opponent was found.")
                     return
                 }
                 self.begin(carried.value)
@@ -232,13 +459,10 @@ public final class GameCenterMatchmaker: NSObject {
         }
     }
 
-    /// Invite one player, by their Game Center identity — somebody off the
-    /// rank list, or a recent opponent. Game Center delivers it as a
-    /// notification on their devices; accepting it puts both straight into a
-    /// match on this clock, with no search and no link.
     public func invite(_ player: GKPlayer, timeControl: TimeControl) {
         guard isAuthenticated, session == nil else { return }
         if case .searching = state { cancelSearch() }
+        cancelServiceInvite()
         self.timeControl = timeControl
         if let lookup = ratingLookup { (localRating, localGames, localDeviation) = lookup(timeControl) }
         openPool = false
@@ -246,7 +470,6 @@ public final class GameCenterMatchmaker: NSObject {
         request.minPlayers = 2
         request.maxPlayers = 2
         request.recipients = [player]
-        // The clock travels with the invitation, as its pool.
         request.playerGroup = timeControl.playerGroup
         request.inviteMessage = L.t("online.inviteNote", "A game of chess, %@ each.", timeControl.label)
         request.recipientResponseHandler = { [weak self] player, response in
@@ -264,20 +487,22 @@ public final class GameCenterMatchmaker: NSObject {
         GKMatchmaker.shared().findMatch(for: request, withCompletionHandler: found)
     }
 
-    /// Invite somebody off one of the lists.
     func invite(_ player: BoardPlayer, on control: TimeControl, from boards: OnlineBoards) {
-        guard let gkPlayer = boards.player(player.id) else {
-            status = L.t("online.inviteUnavailable", "%@ cannot be invited from here right now.", player.alias)
+        if boards.friendState(of: player) == .friend, let key = player.key {
+            offerServiceFriend(key: key, alias: player.alias, timeControl: control)
             return
         }
-        invite(gkPlayer, timeControl: control)
+        if let gkPlayer = boards.player(player.id) ?? player.key.flatMap({ boards.player($0) }) {
+            invite(gkPlayer, timeControl: control)
+            return
+        }
+        status = L.t("online.inviteUnavailable", "%@ cannot be invited from here right now.", player.alias)
     }
 
-    /// An invitation this player accepted — from Game Center's notification,
-    /// wherever in the app they were, or with the app not running at all.
     fileprivate func accept(_ invite: GKInvite) {
         guard session == nil else { return }
         if case .searching = state { cancelSearch() }
+        cancelServiceInvite()
         let control = TimeControl.fromPlayerGroup(invite.playerGroup) ?? .five
         timeControl = control
         if let lookup = ratingLookup { (localRating, localGames, localDeviation) = lookup(control) }
@@ -289,16 +514,10 @@ public final class GameCenterMatchmaker: NSObject {
     }
     #endif
 
-    /// The instant the clocks are read at.
-    ///
-    /// Kept here rather than in the screen that shows the board, because the
-    /// clock is now drawn in the chrome at the top of the window as well, and
-    /// two tickers reading two slightly different instants would show two
-    /// slightly different times.
+    // MARK: - Clocks, Cancel & Leave
+
     public private(set) var now = Date()
 
-    /// Drive the clocks. Both sides of a debug loopback match need ticking;
-    /// over a real network the opponent's device does its own.
     public func tick(now: Date) {
         self.now = now
         session?.tick(now: now)
@@ -307,17 +526,10 @@ public final class GameCenterMatchmaker: NSObject {
 #endif
     }
 
-    /// The clock of the game being searched for, invited to, or played.
     public var currentTimeControl: TimeControl {
-        #if canImport(GameKit)
-        return session?.timeControl ?? timeControl
-        #else
-        return session?.timeControl ?? .five
-        #endif
+        session?.timeControl ?? timeControl
     }
 
-    /// Nobody answered a game offered to somebody in particular: the search
-    /// stops, and says so.
     public func gaveUp(on name: String) {
         guard case .searching = state else { return }
         cancelSearch()
@@ -326,59 +538,74 @@ public final class GameCenterMatchmaker: NSObject {
 
     public func cancelSearch() {
         #if canImport(GameKit)
-        // Takes back an invitation that is out as well as a search.
         GKMatchmaker.shared().cancel()
         #endif
+        let wasOfferedFriend = offeredFriendKey != nil
+        withdrawFriendOffer()
+        cancelServiceInvite()
+        if !wasOfferedFriend {
+            Task { try? await service?.api.cancelSeek() }
+        }
         invitee = nil
         guard isAuthenticated else { return }
-        state = .ready
-        status = "Search cancelled."
+        if session == nil {
+            state = .ready
+            status = L.t("online.searchCancelled", "Search cancelled.")
+        }
     }
 
     public func leaveMatch() {
-        // Said before going, so the other side can stop waiting on an answer
-        // to a rematch at once, rather than after the reconnect grace.
-        session?.leave()
-        #if canImport(GameKit)
-        disconnectWork?.cancel()
-        disconnectWork = nil
-        connectWork?.cancel()
-        connectWork = nil
-        // A moment for the goodbye to leave before the link does.
-        let leaving = match.map { UncheckedBox($0) }
-        match = nil
-        Task { @MainActor in
-            try? await Task.sleep(for: .milliseconds(400))
-            leaving?.value.disconnect()
+        if let current = serviceMatch {
+            let matchID = current.info.id
+            current.shutdown()
+            serviceMatch = nil
+            session = nil
+            Task { try? await service?.api.leave(match: matchID) }
+        } else {
+            session?.leave()
+            #if canImport(GameKit)
+            disconnectWork?.cancel()
+            disconnectWork = nil
+            connectWork?.cancel()
+            connectWork = nil
+            let leaving = match.map { UncheckedBox($0) }
+            match = nil
+            Task { @MainActor in
+                try? await Task.sleep(for: .milliseconds(400))
+                leaving?.value.disconnect()
+            }
+            #endif
+            session = nil
         }
-        #endif
-        session = nil
 #if DEBUG
         loopback = nil
 #endif
         if isAuthenticated {
             state = .ready
-            status = "Signed in as \(localName)."
+            status = L.t("online.signedInAs", "Signed in as %@.", localName)
+        }
+    }
+
+    public func resetAfterAccountDeletion() {
+        serviceMatch?.shutdown()
+        serviceMatch = nil
+        activeInviteCode = nil
+        withdrawFriendOffer()
+        session = nil
+        if isAuthenticated {
+            state = .ready
         }
     }
 
 #if DEBUG
-    /// Whether the match is the debug loopback one, which has nobody in Game
-    /// Center at the other end.
     public var isLoopback: Bool { loopback != nil && session === loopback?.mine }
 
-    /// A match against a second session in this process, wired to the first.
-    ///
-    /// Game Center cannot be signed into on a simulator, so without this the
-    /// clocks, the player rows and the result overlay could only be looked at
-    /// on two real devices with two Apple IDs. It plays a random legal move for
-    /// the opponent — it is a way to see the screen work, not an opponent.
     public func startLoopbackMatch(timeControl: TimeControl, rating: Int, games: Int) {
         let harness = LoopbackMatch(timeControl: timeControl, rating: rating, games: games)
         loopback = harness
         session = harness.mine
         state = .connected
-        status = "Local test game (debug build only)."
+        status = L.t("online.localTestGame", "Local test game")
         harness.begin()
     }
 
@@ -387,16 +614,10 @@ public final class GameCenterMatchmaker: NSObject {
         set { _loopback = newValue }
     }
 
-    /// The other side of a loopback match offers a draw.
-    ///
-    /// For the screenshot scene only. There is no other way to see the offer:
-    /// Game Center does not sign in on a simulator, so the only real one takes
-    /// two devices, two Apple IDs and a draw offered at the right moment.
     public func offerDrawFromLoopback() {
         loopback?.theirs.offerDraw()
     }
 
-    /// The other side of a loopback match resigns and asks for another game.
     public func resignAndAskForRematchFromLoopback() {
         loopback?.theirs.resign()
         loopback?.theirs.offerRematch()
@@ -408,38 +629,23 @@ public final class GameCenterMatchmaker: NSObject {
         self.match = match
         match.delegate = self
         state = .connected
-        status = "Connecting…"
+        status = L.t("online.connecting", "Connecting…")
 
         connectWork?.cancel()
         connectWork = Task { @MainActor [weak self] in
             try? await Task.sleep(for: .seconds(Self.connectGrace))
             guard !Task.isCancelled, let self, self.session == nil else { return }
             self.leaveMatch()
-            self.status = "Paired, but the connection could not be made."
+            self.status = L.t("online.pairedNoConnection", "Paired, but the connection could not be made.")
         }
         startSessionIfConnected()
     }
 
-    /// Being handed a match is not the same as being connected to it.
-    ///
-    /// `findMatch` returns as soon as Game Center has paired two players, and
-    /// `GKMatch.players` is filled in there and then — but the direct
-    /// connection between the devices is still being made, and
-    /// `expectedPlayerCount` is what says whether it has been. The session used
-    /// to be built and begun on the spot, so the host's opening packets went
-    /// out over a link that did not exist yet and were simply lost. Both sides
-    /// then sat on "Connecting…".
-    ///
-    /// Called from both places the answer can change: when the match arrives
-    /// already connected, and when the delegate says a player has connected.
     private func startSessionIfConnected() {
         guard let match, session == nil, match.expectedPlayerCount == 0 else { return }
         connectWork?.cancel()
         connectWork = nil
 
-        // The host is settled by sorting the two player IDs, so both devices
-        // reach the same answer without asking each other. It decides colours;
-        // it has no other authority, because both sides run the rules.
         let remoteID = match.players.first?.gamePlayerID ?? ""
         let isHost = localPlayerID < remoteID
 
@@ -453,7 +659,7 @@ public final class GameCenterMatchmaker: NSObject {
         )
         self.session = session
         state = .connected
-        status = "Connected."
+        status = L.t("online.connected", "Connected.")
         session.begin()
     }
     #endif
@@ -463,16 +669,12 @@ public final class GameCenterMatchmaker: NSObject {
 extension GameCenterMatchmaker: MatchTransport {
     nonisolated public func send(_ data: Data) {
         Task { @MainActor in
-            // Reliable: a chess move is not a position update that a later one
-            // replaces. Losing one stops the game dead.
             try? self.match?.send(data, to: self.match?.players ?? [], dataMode: .reliable)
         }
     }
 }
 
 extension GameCenterMatchmaker: @preconcurrency GKLocalPlayerListener {
-    /// Accepted in Game Center's notification — the app may have been opened
-    /// by it, in which case this arrives as soon as the player is signed in.
     public func player(_ player: GKPlayer, didAccept invite: GKInvite) {
         let carried = UncheckedBox(invite)
         Task { @MainActor in self.accept(carried.value) }
@@ -492,25 +694,22 @@ extension GameCenterMatchmaker: @preconcurrency GKMatchDelegate {
             guard self.match === match else { return }
             switch state {
             case .disconnected:
-                // After a game there is nothing to come back to: they left.
                 if let session = self.session, case .finished = session.phase {
                     session.opponentDisconnected()
                     return
                 }
-                self.status = "\(player.alias) disconnected — waiting for them to come back…"
+                self.status = L.t("online.opponentAway", "%@ has lost the connection — waiting for them to come back.", player.alias)
                 self.disconnectWork?.cancel()
                 self.disconnectWork = Task { @MainActor [weak self] in
                     try? await Task.sleep(for: .seconds(Self.reconnectGrace))
                     guard !Task.isCancelled, let self else { return }
-                    self.status = "\(player.alias) did not come back."
+                    self.status = L.t("online.opponentDidNotReturn", "%@ did not come back.", player.alias)
                     self.session?.opponentDisconnected()
                 }
             case .connected:
                 self.disconnectWork?.cancel()
                 self.disconnectWork = nil
-                self.status = "Connected."
-                // The link is up. If this is the first player to arrive, it is
-                // also the moment the session can be started.
+                self.status = L.t("online.connected", "Connected.")
                 self.startSessionIfConnected()
             default:
                 break
@@ -532,8 +731,6 @@ extension GameCenterMatchmaker: MatchTransport {
 #endif
 
 #if canImport(UIKit)
-/// Puts Game Center's own sign-in screen on screen. It hands back a UIKit
-/// controller and there is no SwiftUI equivalent to present instead.
 struct HostedController: UIViewControllerRepresentable {
     let controller: UIViewController
 
@@ -542,9 +739,7 @@ struct HostedController: UIViewControllerRepresentable {
 }
 #endif
 
-
 #if DEBUG
-/// Two sessions in one process, each one's packets handed to the other.
 @MainActor
 final class LoopbackMatch {
     let mine: MatchSession
@@ -554,8 +749,6 @@ final class LoopbackMatch {
         weak var peer: MatchSession?
         func send(_ data: Data) {
             let peer = self.peer
-            // Through a hop, so a packet never lands inside the send that
-            // produced it — over a network it never would.
             Task { @MainActor in peer?.receive(data) }
         }
     }

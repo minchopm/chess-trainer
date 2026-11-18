@@ -101,6 +101,7 @@ struct SettingsScreen: View {
     @Environment(\.dismiss) private var dismiss
     @State private var volumeBeforeMute = 0.7
     @State private var showsAbout = false
+    @State private var confirmsDeleteOnline = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -118,7 +119,9 @@ struct SettingsScreen: View {
                     }
                     section(L.t("settings.coordinates", "Coordinates")) { CoordinatesSwitch() }
                     section(L.t("settings.training", "Training")) { SummarySwitch() }
-                    section(L.t("settings.online", "Online play")) { OnlineSwitch() }
+                    section(L.t("settings.online", "Online play")) {
+                        OnlineSwitch { confirmsDeleteOnline = true }
+                    }
                     section(L.t("settings.font", "Application font")) { TypefaceChoice() }
                     // Support, asked for once and plainly, next to About —
                     // where somebody who likes the app goes looking for who
@@ -141,6 +144,22 @@ struct SettingsScreen: View {
             .background(Theatre.ink.ignoresSafeArea())
         }
         .appCover(isPresented: $showsAbout) { AboutScreen() }
+        .overlay {
+            if confirmsDeleteOnline {
+                BrassConfirmationOverlay(
+                    title: L.t("online.deleteAccount", "Delete online account"),
+                    message: L.t("online.deleteAccountNote", "Removes your nickname, ratings and friends from the game service. It cannot be undone."),
+                    confirmTitle: L.t("online.delete", "Delete"),
+                    cancelTitle: L.t("common.cancel", "Cancel"),
+                    onConfirm: {
+                        confirmsDeleteOnline = false
+                        Task { await app.deleteOnlineAccount() }
+                    },
+                    onCancel: { confirmsDeleteOnline = false }
+                )
+            }
+        }
+        .animation(.easeOut(duration: 0.2), value: confirmsDeleteOnline)
     }
 
     private func section<Content: View>(
@@ -622,9 +641,10 @@ private struct SummarySwitch: View {
     }
 }
 
-/// Whether other players see this one as online. See `Appearance.showsOnline`.
+/// Whether other players see this one as online, plus online account deletion.
 private struct OnlineSwitch: View {
     @Environment(AppModel.self) private var app
+    let onRequestDeleteAccount: () -> Void
 
     var body: some View {
         Card {
@@ -639,6 +659,15 @@ private struct OnlineSwitch: View {
                 .appFont(.footnote)
                 .foregroundStyle(Theatre.ivoryDim)
                 .fixedSize(horizontal: false, vertical: true)
+
+            if app.service.isSignedIn {
+                Divider().overlay(Theatre.ruleSoft).padding(.vertical, 2)
+                Button(role: .destructive, action: onRequestDeleteAccount) {
+                    Text(L.t("online.deleteAccount", "Delete online account"))
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(PillButtonStyle(emphasis: .danger, usesBodySize: true))
+            }
         }
     }
 }

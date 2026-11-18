@@ -1,14 +1,9 @@
 import ChessTraining
 import SwiftUI
 
-/// The people to play online, three ways, each a screen of its own from the
-/// lobby: the rank list for a clock, everybody who plays, and this player's
-/// friends — a friend is a player too, and is in both. Each list is read a
-/// page at a time as it is scrolled, drawn only as far as it is on screen,
-/// and searched by nickname; each row has an invitation a tap away, and a
-/// friend request another.
+/// Rank list, online players, and friends backed by the Brass Pawn online service.
 struct PeopleScreen: View {
-    enum Kind: String, Identifiable {
+    enum Kind: String, CaseIterable, Identifiable {
         case ranks, players, friends
         var id: String { rawValue }
 
@@ -23,22 +18,35 @@ struct PeopleScreen: View {
 
     @Environment(AppModel.self) private var app
     @Environment(\.dismiss) private var dismiss
-    let kind: Kind
+    @State var kind: Kind
     @State var clock: TimeControl
+    @State private var rankScope: OnlineBoards.Scope = .top
     @State private var query = ""
-    /// Rows whose friend request, answer or removal is on its way.
+    @State private var searchResults: [BoardPlayer]?
     @State private var busy: Set<String> = []
-    /// Invite a player to a game on a clock. The screen goes, and the lobby
-    /// shows the invitation going out.
     let onInvite: (BoardPlayer, TimeControl) -> Void
+
+    init(kind: Kind, clock: TimeControl, onInvite: @escaping (BoardPlayer, TimeControl) -> Void) {
+        _kind = State(initialValue: kind)
+        _clock = State(initialValue: clock)
+        self.onInvite = onInvite
+    }
 
     private var boards: OnlineBoards { app.boards }
 
     var body: some View {
         VStack(spacing: 0) {
-            BrassNavigationHeader(title: kind.title, subtitle: L.t("online.gameCenter", "Game Center")) { dismiss() }
+            BrassNavigationHeader(title: kind.title) { dismiss() }
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 12) {
+                    BrassSegmentedPicker(
+                        L.t("common.mode", "Mode"),
+                        selection: $kind,
+                        options: Array(Kind.allCases)
+                    ) { tab in
+                        Text(tab.title)
+                    }
+
                     Card {
                         Text(L.t("online.clock", "Clock")).appFont(.caption).textCase(.uppercase)
                             .foregroundStyle(Theatre.ivoryDim)
@@ -54,7 +62,7 @@ struct PeopleScreen: View {
                     if !boards.hasLoaded && boards.isLoading {
                         HStack(spacing: 9) {
                             BrassActivityIndicator(size: 15)
-                            Text(L.t("online.loadingPlayers", "Reading the lists from Game Center…"))
+                            Text(L.t("online.loadingLists", "Reading the lists…"))
                                 .appFont(.footnote).foregroundStyle(Theatre.ivoryDim)
                         }
                         .frame(maxWidth: .infinity)
@@ -76,7 +84,7 @@ struct PeopleScreen: View {
                         .padding(.horizontal, 4)
                         .padding(.top, 6)
 
-                    Text(L.t("online.playersNote4", "Nicknames and ratings are Game Center's, as each player lets them be shown. Online now means the app is on their screen this minute, for those who show it; active means seen in the last seven days."))
+                    Text(L.t("online.servicePlayersNote", "Nicknames and ratings are kept by Brass Pawn's own game service, the same for iPhone, iPad, Mac and Android. Online now means the app is on their screen."))
                         .appFont(.caption2)
                         .foregroundStyle(Theatre.ivoryFaint)
                         .fixedSize(horizontal: false, vertical: true)
@@ -88,65 +96,97 @@ struct PeopleScreen: View {
                 .frame(maxWidth: .infinity)
             }
             .refreshable {
-                await boards.refresh()
+                await boards.refresh(using: app.service)
+                await boards.loadScope(rankScope, on: clock, using: app.service)
                 app.heard(await boards.refreshFriends(using: app.service))
             }
         }
         .background(Theatre.ink.ignoresSafeArea())
-        .task { if !boards.hasLoaded { await boards.refresh() } }
-        // The friends, for every list: each row says whether its player is
-        // one. Game Center asks about its own friends when these are opened.
-        .task { app.heard(await boards.refreshFriends(using: app.service, askingGameCenter: kind == .friends)) }
-        // Who is on screen now: asked on arrival and every minute after,
-        // for as long as this is open.
+        .task {
+            if !boards.hasLoaded {
+                await boards.refresh(using: app.service)
+            }
+        }
+        .task(id: "\(clock.minutes)-\(rankScope.rawValue)") {
+            await boards.loadScope(rankScope, on: clock, using: app.service)
+            await boards.refreshLooking(using: app.service)
+        }
+        .task(id: kind == .friends) {
+            app.heard(await boards.refreshFriends(using: app.service, askingGameCenter: kind == .friends))
+        }
+        .task(id: "\(query)-\(clock.minutes)") {
+            let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !trimmed.isEmpty else {
+                searchResults = nil
+                return
+            }
+            try? await Task.sleep(for: .milliseconds(250))
+            guard !Task.isCancelled else { return }
+            searchResults = await boards.search(query: trimmed, on: clock, using: app.service)
+        }
         .task {
             while !Task.isCancelled {
                 await boards.refreshPresence(using: app.service)
                 try? await Task.sleep(for: .seconds(60))
             }
         }
-        .task(id: clock) { await boards.refreshLooking() }
     }
 
     // MARK: - Searching
 
+    private var hasQuery: Bool {
+        !query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
     private func matches(_ player: BoardPlayer) -> Bool {
-        let wanted = query.trimmingCharacters(in: .whitespaces)
+        let wanted = query.trimmingCharacters(in: .whitespacesAndNewlines)
         return wanted.isEmpty || player.alias.localizedStandardContains(wanted)
     }
 
-    /// Game Center cannot look a nickname up, so a search reads the lists:
-    /// what has been read is searched as it is typed, and this reads the rest.
-    @ViewBuilder
-    private func searchFurther(_ clocks: [TimeControl]) -> some View {
-        let unread = clocks.map { (boards.totals[$0] ?? 0) - (boards.ranks[$0]?.count ?? 0) }.reduce(0, +)
-        if !query.isEmpty, clocks.contains(where: { boards.hasMore(on: $0) }) {
-            Button {
-                Task { for control in clocks { await boards.loadEverything(on: control) } }
-            } label: {
-                Text(L.t("online.searchAll", "Search %lld more players", unread))
-                    .frame(maxWidth: .infinity)
-            }
-            .buttonStyle(PillButtonStyle(emphasis: .ghost, usesBodySize: true))
+    private func mergedSearch(with local: [BoardPlayer]) -> [BoardPlayer] {
+        var seen = Set<String>()
+        var combined: [BoardPlayer] = []
+        for p in local where seen.insert(p.key ?? p.id).inserted {
+            combined.append(p)
         }
+        for p in (searchResults ?? []) where seen.insert(p.key ?? p.id).inserted {
+            combined.append(p)
+        }
+        return combined
     }
 
-    // MARK: - The rank list
+    // MARK: - Rank List
 
     @ViewBuilder
     private var ranks: some View {
-        let entries = (boards.ranks[clock] ?? []).filter(matches)
-        if query.isEmpty, let me = boards.mine[clock], let rank = me.rank {
+        BrassSegmentedPicker(
+            L.t("online.rankList", "Rank list"),
+            selection: $rankScope,
+            options: Array(OnlineBoards.Scope.allCases)
+        ) { scope in
+            Text(scope.title)
+        }
+
+        let baseEntries = boards.entries(for: clock, scope: rankScope).filter(matches)
+        let entries = hasQuery ? mergedSearch(with: baseEntries) : baseEntries
+
+        if !hasQuery {
             Card {
                 HStack(alignment: .firstTextBaseline) {
                     VStack(alignment: .leading, spacing: 3) {
                         Text(L.t("online.yourPlace", "Your place")).appFont(.caption).textCase(.uppercase)
                             .foregroundStyle(Theatre.ivoryDim)
-                        Text(L.t("online.placeOf", "%1$lld of %2$lld", rank, boards.totals[clock] ?? entries.count))
-                            .appFont(size: 22, weight: .semibold).monospacedDigit()
+                        if let me = boards.myEntry(for: clock, scope: rankScope), let rank = me.rank {
+                            Text(L.t("online.placeOf", "%1$lld of %2$lld", rank, max(rank, boards.total(for: clock, scope: rankScope))))
+                                .appFont(size: 22, weight: .semibold).monospacedDigit()
+                        } else {
+                            Text(L.t("online.rankEmptyMe", "Play a rated game on this clock to get a place."))
+                                .appFont(.footnote)
+                                .foregroundStyle(Theatre.ivoryDim)
+                        }
                     }
                     Spacer()
-                    if let rating = me.rating {
+                    if let me = boards.myEntry(for: clock, scope: rankScope), let rating = me.rating {
                         Text(verbatim: "\(rating)")
                             .appFont(size: 22, weight: .semibold).monospacedDigit()
                             .foregroundStyle(Theatre.brassHot)
@@ -154,44 +194,41 @@ struct PeopleScreen: View {
                 }
             }
         }
+
         if entries.isEmpty {
-            empty(query.isEmpty
-                  ? L.t("online.nobodyRanked", "Nobody has a rating on this clock yet. The first game played on it starts the list.")
-                  : L.t("online.noMatch", "Nobody by that nickname among the players read so far."))
+            empty(hasQuery
+                  ? L.t("online.noMatch", "Nobody by that nickname among the players read so far.")
+                  : L.t("online.nobodyRanked", "Nobody has a rating on this clock yet. The first game played on it starts the list."))
         } else {
-            rows(entries, showsRank: true) {
-                if query.isEmpty { Task { await boards.loadMore(on: clock) } }
-            }
+            rows(entries, showsRank: !hasQuery)
         }
-        searchFurther([clock])
     }
 
-    // MARK: - Everybody, and the friends
+    // MARK: - Players & Friends
 
     @ViewBuilder
     private var players: some View {
-        let online = boards.onlineNow().filter(matches)
-        let active = boards.active().filter(matches)
-        let inactive = boards.inactive().filter(matches)
-        if online.isEmpty && active.isEmpty && inactive.isEmpty {
-            empty(query.isEmpty
-                  ? L.t("online.nobodyYet", "Nobody else has played online yet. Invite somebody with a link from the lobby.")
-                  : L.t("online.noMatch", "Nobody by that nickname among the players read so far."))
-        }
-        section(L.t("online.presence.online", "Online now"), online)
-        section(L.t("online.activeThisWeek", "Active this week"), active)
-        section(L.t("online.notSeenThisWeek", "Not seen this week"), inactive) {
-            // The end of everybody read so far: read the next page of every clock.
-            if query.isEmpty {
-                Task { for control in TimeControl.allCases { await boards.loadMore(on: control) } }
+        if hasQuery {
+            let localMatches = (boards.onlineNow() + boards.active() + boards.inactive()).filter(matches)
+            let found = mergedSearch(with: localMatches)
+            if found.isEmpty {
+                empty(L.t("online.noMatch", "Nobody by that nickname among the players read so far."))
+            } else {
+                rows(found, showsRank: false)
             }
+        } else {
+            let online = boards.onlineNow()
+            let active = boards.active()
+            let inactive = boards.inactive()
+            if online.isEmpty && active.isEmpty && inactive.isEmpty {
+                empty(L.t("online.nobodyYet", "Nobody else has played online yet. Invite somebody with a link from the lobby."))
+            }
+            section(L.t("online.presence.online", "Online now"), online)
+            section(L.t("online.activeThisWeek", "Active this week"), active)
+            section(L.t("online.notSeenThisWeek", "Not seen this week"), inactive)
         }
-        searchFurther(Array(TimeControl.allCases))
     }
 
-    /// Requests to answer first, then the friends — those online now at the
-    /// top — the requests still out, and Game Center's friends who play, a
-    /// request away.
     @ViewBuilder
     private var friends: some View {
         let all = boards.friends.filter(matches)
@@ -200,8 +237,8 @@ struct PeopleScreen: View {
         let incoming = boards.incoming.filter(matches)
         let outgoing = boards.outgoing.filter(matches)
         let gameCenter = boards.gameCenterFriends.filter(matches)
-        if all.isEmpty && incoming.isEmpty {
-            empty(query.isEmpty
+        if all.isEmpty && incoming.isEmpty && outgoing.isEmpty && gameCenter.isEmpty {
+            empty(!hasQuery
                   ? L.t("online.noFriendsYet", "No friends yet.")
                   : L.t("online.noMatch", "Nobody by that nickname among the players read so far."))
         }
@@ -213,18 +250,16 @@ struct PeopleScreen: View {
     }
 
     @ViewBuilder
-    private func section(_ title: String, _ list: [BoardPlayer], atEnd: (() -> Void)? = nil) -> some View {
+    private func section(_ title: String, _ list: [BoardPlayer]) -> some View {
         if !list.isEmpty {
             Slug(text: title + " · \(list.count)")
                 .padding(.horizontal, 4)
                 .padding(.top, 6)
-            rows(list, showsRank: false, atEnd: atEnd)
+            rows(list, showsRank: false)
         }
     }
 
-    /// The rows, drawn only as they come on screen; the last one's arrival is
-    /// the moment to read the next page.
-    private func rows(_ list: [BoardPlayer], showsRank: Bool, atEnd: (() -> Void)? = nil) -> some View {
+    private func rows(_ list: [BoardPlayer], showsRank: Bool) -> some View {
         Panel(padding: 6) {
             LazyVStack(spacing: 0) {
                 ForEach(list) { player in
@@ -232,12 +267,13 @@ struct PeopleScreen: View {
                               friendship: friendship(player), busy: busy.contains(player.id))
                         .contextMenu {
                             if boards.friendState(of: player) == .friend {
-                                Button(role: .destructive) { change(player) { await boards.unfriend(player, using: app.service) } } label: {
+                                Button(role: .destructive) {
+                                    change(player) { await boards.unfriend(player, using: app.service) }
+                                } label: {
                                     Label(L.t("online.removeFriend", "Remove friend"), systemImage: "person.badge.minus")
                                 }
                             }
                         }
-                        .onAppear { if player.id == list.last?.id { atEnd?() } }
                     if player.id != list.last?.id { Rule() }
                 }
             }
@@ -245,7 +281,6 @@ struct PeopleScreen: View {
     }
 
     private func invite(_ player: BoardPlayer) -> (() -> Void)? {
-        // Nobody in the middle of a game is asked to leave it.
         if case .playing = boards.status(of: player) { return nil }
         guard !player.isLocal, app.matchmaker.session == nil, boards.canInvite(player),
               boards.friendState(of: player) != .askedBy else { return nil }
@@ -255,9 +290,6 @@ struct PeopleScreen: View {
         }
     }
 
-    /// What the row offers about being friends: a request, one sent that can
-    /// be taken back, or one to answer. Nothing for a friend — the badge by
-    /// the name says so, and the row's menu removes them.
     private func friendship(_ player: BoardPlayer) -> PlayerRow.Friendship? {
         guard !player.isLocal, player.key != nil else { return nil }
         let befriend = { change(player) { await boards.befriend(player, using: app.service) } }
@@ -270,7 +302,6 @@ struct PeopleScreen: View {
         }
     }
 
-    /// One change to the friends, with the row busy until the service has it.
     private func change(_ player: BoardPlayer, _ work: @escaping () async -> Void) {
         guard !busy.contains(player.id) else { return }
         busy.insert(player.id)
@@ -289,16 +320,11 @@ struct PeopleScreen: View {
     }
 }
 
-/// One player: their picture or initial, nickname, when they were last seen,
-/// their rating, and the invitation.
+/// One player row: avatar, nickname, status/last-seen, rating, friend actions, and invite button.
 struct PlayerRow: View {
-    /// The row's part in being friends.
     enum Friendship {
-        /// Ask to be friends.
         case ask(() -> Void)
-        /// Asked, and waiting: a tap takes it back.
         case sent(takeBack: () -> Void)
-        /// They asked: yes or no.
         case answer(accept: () -> Void, decline: () -> Void)
     }
 
@@ -307,7 +333,6 @@ struct PlayerRow: View {
     let showsRank: Bool
     let invite: (() -> Void)?
     var friendship: Friendship? = nil
-    /// A change to the friendship on its way.
     var busy = false
 
     var body: some View {
@@ -324,7 +349,7 @@ struct PlayerRow: View {
                 HStack(spacing: 5) {
                     Text(verbatim: player.alias)
                         .appFont(.subheadline, weight: .semibold)
-                        .foregroundStyle(Theatre.ivory)
+                        .foregroundStyle(player.isLocal ? Theatre.brassHot : Theatre.ivory)
                         .lineLimit(1)
                     if app.boards.friendState(of: player) == .friend {
                         BrassIcon("person.2.fill", size: 11)
@@ -358,9 +383,6 @@ struct PlayerRow: View {
                 friendButtons(friendship)
             }
             if let invite {
-                // A paper plane rather than the word: "Invite" in capitals is
-                // twice as wide in German or Russian, and the row is a phone's
-                // width with a nickname and a rating in it already.
                 Button(action: invite) {
                     Image(systemName: "paperplane.fill")
                         .font(.system(size: 14, weight: .semibold))
@@ -419,9 +441,6 @@ struct PlayerRow: View {
         }
     }
 
-    /// "5 minutes ago", "yesterday", "3 weeks ago" — in the reader's language.
-    /// Green for somebody on screen now, amber for somebody in a game, grey
-    /// for everybody else — how long ago they were seen is written beside it.
     private var dot: Color {
         switch app.boards.status(of: player) {
         case .looking, .online: Theatre.good
@@ -430,8 +449,6 @@ struct PlayerRow: View {
         }
     }
 
-    /// Nothing for somebody known only by the nickname they gave — a request,
-    /// a Game Center friend — who has not been seen on any list.
     private var seen: String? {
         guard player.lastSeen > .distantPast else {
             return app.boards.recent.contains { $0.id == player.id } ? L.t("online.playedRecently", "Played recently") : nil
@@ -443,7 +460,6 @@ struct PlayerRow: View {
     }
 }
 
-/// "3 players are looking for a 5 min game right now", when anybody is.
 struct LookingNow: View {
     let count: Int?
     let control: TimeControl
@@ -460,7 +476,6 @@ struct LookingNow: View {
     }
 }
 
-/// A small square plate with one symbol on it, for a row's actions.
 private struct SquareButton: View {
     let symbol: String
     let label: String

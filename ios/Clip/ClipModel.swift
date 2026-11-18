@@ -169,6 +169,10 @@ final class ClipModel {
             Task { await loadStory(target.id, at: target.ply) }
             return
         }
+        if let code = Invitation.inviteCode(in: url) {
+            SharedContainer.store(inviteCode: code)
+            return
+        }
         guard let invitation = Invitation(url: url) else { return }
         self.invitation = invitation
         SharedContainer.store(invitation)

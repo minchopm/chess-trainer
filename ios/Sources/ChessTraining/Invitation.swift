@@ -92,6 +92,45 @@ public extension Invitation {
         else { return nil }
         self = invitation
     }
+
+    /// Extract a 6-character service invitation code from a link such as
+    /// `https://brasspawn.com/play?i=K7QM2X` or `brasspawn://play?i=K7QM2X`.
+    static func inviteCode(in url: URL) -> String? {
+        let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        let scheme = url.scheme?.lowercased()
+        let host = url.host()?.lowercased()
+        var rawCode: String?
+
+        switch (scheme, host) {
+        case ("https", "brasspawn.com"), ("https", "www.brasspawn.com"),
+             ("http", "brasspawn.com"), ("http", "www.brasspawn.com"):
+            let parts = url.pathComponents
+            guard parts == ["/", "play"] || parts == ["/", "play", "/"] || url.path == "/play" else { return nil }
+            rawCode = components?.queryItems?.first(where: { $0.name == "i" })?.value
+        case ("brasspawn", "play"):
+            if let queryCode = components?.queryItems?.first(where: { $0.name == "i" })?.value {
+                rawCode = queryCode
+            } else if let pathCode = url.pathComponents.dropFirst().first {
+                rawCode = pathCode
+            }
+        case ("https", "appclip.apple.com"):
+            rawCode = components?.queryItems?.first(where: { $0.name == "i" })?.value
+        default:
+            return nil
+        }
+
+        return normalizedInviteCode(rawCode)
+    }
+
+    /// Normalize and validate a 6-character service invitation code.
+    static func normalizedInviteCode(_ text: String?) -> String? {
+        guard let trimmed = text?.trimmingCharacters(in: .whitespacesAndNewlines).uppercased(),
+              trimmed.count == 6,
+              trimmed.utf8.allSatisfy({ ($0 >= UInt8(ascii: "A") && $0 <= UInt8(ascii: "Z"))
+                  || ($0 >= UInt8(ascii: "0") && $0 <= UInt8(ascii: "9")) })
+        else { return nil }
+        return trimmed
+    }
 }
 
 /// The one thing the App Clip leaves behind for the app to find.
@@ -177,5 +216,28 @@ public enum SharedContainer {
         else { return nil }
         try? FileManager.default.removeItem(at: url)
         return invitation
+    }
+
+    private static var pendingInviteCode: URL? {
+        directory?.appending(path: "pending-invite-code.txt")
+    }
+
+    /// Store a 6-character service invitation code so the online lobby can join
+    /// it once signed in.
+    public static func store(inviteCode: String) {
+        guard let code = Invitation.normalizedInviteCode(inviteCode),
+              let url = pendingInviteCode
+        else { return }
+        try? Data(code.utf8).write(to: url, options: .atomic)
+    }
+
+    /// Take a stored 6-character service invitation code once.
+    public static func takeInviteCode() -> String? {
+        guard let url = pendingInviteCode,
+              let data = try? Data(contentsOf: url),
+              let text = String(data: data, encoding: .utf8)
+        else { return nil }
+        try? FileManager.default.removeItem(at: url)
+        return Invitation.normalizedInviteCode(text)
     }
 }

@@ -200,6 +200,8 @@ targets:
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
         ITSAppUsesNonExemptEncryption: false
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
         # Which shelf the Mac App Store puts it on. Required there and only
         # there: on iOS the category is a field in App Store Connect and the
         # bundle says nothing, so this was missing until a Mac archive refused
@@ -352,6 +354,8 @@ targets:
           - CormorantGaramond.ttf
         UIUserInterfaceStyle: Dark
         ITSAppUsesNonExemptEncryption: false
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.arte-soft.brasspawn.Clip

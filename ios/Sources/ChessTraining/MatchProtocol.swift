@@ -186,10 +186,12 @@ public struct MatchResult: Equatable, Sendable {
 /// against whoever the search turns up. So a game two people arranged, a
 /// rematch, and a second game in a day against the same opponent are played
 /// just the same, and scored as a friendly.
-public enum UnratedReason: String, Sendable {
+public enum UnratedReason: String, Codable, Sendable {
     case invitation, rematch, sameOpponentToday
     /// Fewer than two moves: nobody played a game.
     case aborted
+    /// The two devices did not agree about the clock, or the result could not be recorded.
+    case void
 
     public var text: String {
         switch self {
@@ -197,6 +199,7 @@ public enum UnratedReason: String, Sendable {
         case .rematch: L.t("online.unrated.rematch", "Not rated: a rematch is a friendly game.")
         case .sameOpponentToday: L.t("online.unrated.again", "Not rated: only one game a day against the same opponent counts.")
         case .aborted: L.t("online.unrated.aborted", "Not rated: the game ended before both sides had moved.")
+        case .void: L.t("online.unrated.void", "Not rated: the two devices did not agree about the clock.")
         }
     }
 }
