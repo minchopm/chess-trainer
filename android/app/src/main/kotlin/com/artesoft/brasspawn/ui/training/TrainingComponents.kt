@@ -84,7 +84,7 @@ fun TrainingLayout(
     BoxWithConstraints(modifier.fillMaxSize()) {
         val isWide = maxWidth > maxHeight && maxWidth >= 600.dp
         if (isWide) {
-            val side = minOf(maxHeight - 68.dp, (maxWidth - 340.dp).coerceAtLeast(240.dp), 560.dp)
+            val side = minOf(maxHeight - 92.dp, (maxWidth - 340.dp).coerceAtLeast(240.dp), 556.dp)
             Row(
                 Modifier.fillMaxSize().padding(bottom = 12.dp),
                 horizontalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterHorizontally),
@@ -106,7 +106,7 @@ fun TrainingLayout(
                 }
             }
         } else {
-            val boardWidth = minOf(maxWidth, 520.dp, (maxHeight - 236.dp).coerceAtLeast(220.dp))
+            val boardWidth = minOf(maxWidth, 520.dp, (maxHeight - 362.dp).coerceAtLeast(220.dp))
             Column(
                 Modifier.fillMaxSize().padding(bottom = 10.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -215,7 +215,7 @@ fun RatingDeltaRow(before: Int, after: Int) {
     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         Label(t("progress.rating", "Rating"), size = 9, color = Theatre.ivoryFaint)
         BasicText(
-            "$before → $after ($sign${abs(delta)})",
+            "\u2066$before → $after ($sign${abs(delta)})\u2069",
             style = LocalFaces.current.figures(13, tone),
         )
     }

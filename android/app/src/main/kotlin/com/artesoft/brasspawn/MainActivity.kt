@@ -14,10 +14,19 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.unit.LayoutDirection
+import com.artesoft.brasspawn.data.Settings
 import com.artesoft.brasspawn.data.Strings
 import com.artesoft.brasspawn.data.TrainingStore
+import com.artesoft.brasspawn.ui.AboutScreen
 import com.artesoft.brasspawn.ui.BrassPawnTheme
 import com.artesoft.brasspawn.ui.Destination
 import com.artesoft.brasspawn.ui.MenuScreen
@@ -26,7 +35,8 @@ import com.artesoft.brasspawn.ui.OnlineScreen
 import com.artesoft.brasspawn.ui.PendingInvitation
 import com.artesoft.brasspawn.ui.PlayScreen
 import com.artesoft.brasspawn.ui.SettingsScreen
-import com.artesoft.brasspawn.ui.AboutScreen
+import com.artesoft.brasspawn.ui.StorefrontScene
+import com.artesoft.brasspawn.ui.StorefrontSceneScreen
 import com.artesoft.brasspawn.ui.Theatre
 import com.artesoft.brasspawn.ui.training.EndgameScreen
 import com.artesoft.brasspawn.ui.training.PositionalScreen
@@ -35,6 +45,9 @@ import com.artesoft.brasspawn.ui.training.TacticsScreen
 
 class MainActivity : ComponentActivity() {
     private val navigator = Navigator()
+    private var storefrontScene by mutableStateOf<StorefrontScene?>(null)
+    private var storefrontLocale by mutableStateOf<String?>(null)
+    private var storefrontRevision by mutableIntStateOf(0)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,9 +62,19 @@ class MainActivity : ComponentActivity() {
         )
         handle(intent)
         setContent {
-            BrassPawnTheme {
-                Box(Modifier.fillMaxSize().background(Theatre.ink).windowInsetsPadding(WindowInsets.safeDrawing)) {
-                    Root(navigator)
+            key(storefrontRevision, storefrontScene, storefrontLocale) {
+                val direction = if (Strings.isRightToLeft) LayoutDirection.Rtl else LayoutDirection.Ltr
+                CompositionLocalProvider(LocalLayoutDirection provides direction) {
+                    BrassPawnTheme {
+                        Box(Modifier.fillMaxSize().background(Theatre.ink).windowInsetsPadding(WindowInsets.safeDrawing)) {
+                            val activeScene = if (BuildConfig.INTERNAL_TOOLS) storefrontScene else null
+                            if (activeScene != null) {
+                                StorefrontSceneScreen(activeScene, navigator)
+                            } else {
+                                Root(navigator)
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -65,8 +88,9 @@ class MainActivity : ComponentActivity() {
 
     /**
      * An invitation link — https://brasspawn.com/play?i=CODE — goes to the
-     * lobby with its code. Debug builds can also be started on a screen:
-     * `--es screen play`.
+     * lobby with its code. Debug builds can also be started on a screen
+     * (`--es screen play`) or a localized storefront scene
+     * (`--es storefront_scene 02-playMistake --es storefront_locale ar-SA`).
      */
     private fun handle(intent: Intent?) {
         intent?.data?.takeIf { it.host == "brasspawn.com" }?.getQueryParameter("i")?.let { code ->
@@ -77,7 +101,27 @@ class MainActivity : ComponentActivity() {
             return
         }
         if (!BuildConfig.INTERNAL_TOOLS) return
+
+        val explicitLocale = intent?.getStringExtra("storefront_locale")?.takeIf { it.isNotBlank() }
+        val explicitScene = StorefrontScene.parse(intent?.getStringExtra("storefront_scene"))
+        if (explicitLocale != null || explicitScene != null) {
+            if (explicitLocale != null) {
+                Strings.loadExplicit(this, explicitLocale)
+                storefrontLocale = explicitLocale
+            }
+            if (explicitScene != null) {
+                Settings.shared(this).apply {
+                    chooseDarkSet("black")
+                    chooseCoordinates(true)
+                }
+                storefrontScene = explicitScene
+            }
+            storefrontRevision += 1
+            return
+        }
+
         val screen = intent?.getStringExtra("screen") ?: return
+        storefrontScene = null
         val destination = when {
             screen.equals("endgame", ignoreCase = true) -> Destination.ENDGAMES
             else -> Destination.entries.firstOrNull { it.name.equals(screen, ignoreCase = true) }

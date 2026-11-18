@@ -1,0 +1,2132 @@
+{
+  "ar": {
+    "01-menu": [
+      "كل نقلة تلعبها،",
+      "تُقرأ لك."
+    ],
+    "02-playMistake": [
+      "لا يكتفي بإخبارك",
+      "أنك خسرت."
+    ],
+    "03-tactics": [
+      "جِد الضربة الحاسمة.",
+      "وتعلّم الفكرة."
+    ],
+    "04-online": [
+      "خصم حقيقي،",
+      "على الساعة."
+    ],
+    "05-positional": [
+      "اقرأ الموقف",
+      "قبل أن تلعب."
+    ],
+    "06-playCoached": [
+      "وحين تصيب،",
+      "يقولها لك."
+    ],
+    "07-playSetup": [
+      "خمسة من كل شيء،",
+      "مجانًا."
+    ]
+  },
+  "ar-SA": {
+    "01-menu": [
+      "كل نقلة تلعبها،",
+      "تُقرأ لك."
+    ],
+    "02-playMistake": [
+      "لا يكتفي بإخبارك",
+      "أنك خسرت."
+    ],
+    "03-tactics": [
+      "جِد الضربة الحاسمة.",
+      "وتعلّم الفكرة."
+    ],
+    "04-online": [
+      "خصم حقيقي،",
+      "على الساعة."
+    ],
+    "05-positional": [
+      "اقرأ الموقف",
+      "قبل أن تلعب."
+    ],
+    "06-playCoached": [
+      "وحين تصيب،",
+      "يقولها لك."
+    ],
+    "07-playSetup": [
+      "خمسة من كل شيء،",
+      "مجانًا."
+    ]
+  },
+  "bg": {
+    "01-menu": [
+      "Всеки ваш ход,",
+      "разказан обратно."
+    ],
+    "02-playMistake": [
+      "Не казва просто,",
+      "че сте загубили."
+    ],
+    "03-tactics": [
+      "Намери решаващия удар.",
+      "Запомни мотива."
+    ],
+    "04-online": [
+      "Истински противник,",
+      "с часовник."
+    ],
+    "05-positional": [
+      "Разчети позицията,",
+      "преди да играеш."
+    ],
+    "06-playCoached": [
+      "А когато уцелите хода,",
+      "го казва."
+    ],
+    "07-playSetup": [
+      "По пет от всичко,",
+      "безплатно."
+    ]
+  },
+  "bn": {
+    "01-menu": [
+      "আপনার প্রতিটি চাল,",
+      "ব্যাখ্যাসহ।"
+    ],
+    "02-playMistake": [
+      "শুধু হেরেছেন বলেই",
+      "থেমে থাকে না।"
+    ],
+    "03-tactics": [
+      "জয়সূচক চাল খুঁজুন।",
+      "কৌশলটি চিনে নিন।"
+    ],
+    "04-online": [
+      "আসল প্রতিপক্ষ,",
+      "ঘড়ির সাথে।"
+    ],
+    "05-positional": [
+      "চাল দেওয়ার আগে",
+      "পজিশন বুঝে নিন।"
+    ],
+    "06-playCoached": [
+      "আর সঠিক চাল দিলে,",
+      "তাও জানিয়ে দেয়।"
+    ],
+    "07-playSetup": [
+      "প্রতিটি বিষয়ে পাঁচটি,",
+      "বিনামূল্যে।"
+    ]
+  },
+  "bn-BD": {
+    "01-menu": [
+      "আপনার প্রতিটি চাল,",
+      "ব্যাখ্যাসহ।"
+    ],
+    "02-playMistake": [
+      "শুধু হেরেছেন বলেই",
+      "থেমে থাকে না।"
+    ],
+    "03-tactics": [
+      "জয়সূচক চাল খুঁজুন।",
+      "কৌশলটি চিনে নিন।"
+    ],
+    "04-online": [
+      "আসল প্রতিপক্ষ,",
+      "ঘড়ির সাথে।"
+    ],
+    "05-positional": [
+      "চাল দেওয়ার আগে",
+      "পজিশন বুঝে নিন।"
+    ],
+    "06-playCoached": [
+      "আর সঠিক চাল দিলে,",
+      "তাও জানিয়ে দেয়।"
+    ],
+    "07-playSetup": [
+      "প্রতিটি বিষয়ে পাঁচটি,",
+      "বিনামূল্যে।"
+    ]
+  },
+  "ca": {
+    "01-menu": [
+      "Cada jugada que fas,",
+      "explicada."
+    ],
+    "02-playMistake": [
+      "No et diu només",
+      "que has perdut."
+    ],
+    "03-tactics": [
+      "Troba el cop guanyador.",
+      "Aprèn el motiu."
+    ],
+    "04-online": [
+      "Un rival de debò,",
+      "amb rellotge."
+    ],
+    "05-positional": [
+      "Llegeix la posició",
+      "abans de moure."
+    ],
+    "06-playCoached": [
+      "I quan l’encertes,",
+      "t’ho diu."
+    ],
+    "07-playSetup": [
+      "Cinc de cada,",
+      "de franc."
+    ]
+  },
+  "cs": {
+    "01-menu": [
+      "Každý tvůj tah,",
+      "přečtený nahlas."
+    ],
+    "02-playMistake": [
+      "Neřekne ti jen,",
+      "že jsi prohrál."
+    ],
+    "03-tactics": [
+      "Najdi rozhodující úder.",
+      "Poznej motiv."
+    ],
+    "04-online": [
+      "Skutečný soupeř,",
+      "na hodinách."
+    ],
+    "05-positional": [
+      "Přečti pozici,",
+      "než potáhneš."
+    ],
+    "06-playCoached": [
+      "A když se trefíš,",
+      "řekne to."
+    ],
+    "07-playSetup": [
+      "Pět od všeho,",
+      "zdarma."
+    ]
+  },
+  "da": {
+    "01-menu": [
+      "Hvert træk du gør,",
+      "læst tilbage til dig."
+    ],
+    "02-playMistake": [
+      "Den siger ikke bare,",
+      "at du tabte."
+    ],
+    "03-tactics": [
+      "Find det afgørende stød.",
+      "Lær motivet."
+    ],
+    "04-online": [
+      "En rigtig modstander,",
+      "på uret."
+    ],
+    "05-positional": [
+      "Læs stillingen,",
+      "før du trækker."
+    ],
+    "06-playCoached": [
+      "Og når du rammer rigtigt,",
+      "siger den det."
+    ],
+    "07-playSetup": [
+      "Fem af hver slags,",
+      "gratis."
+    ]
+  },
+  "de": {
+    "01-menu": [
+      "Jeder Zug, den du machst,",
+      "dir vorgelesen."
+    ],
+    "02-playMistake": [
+      "Es sagt nicht nur,",
+      "dass du verloren hast."
+    ],
+    "03-tactics": [
+      "Finde den Gewinnzug.",
+      "Erkenne das Motiv."
+    ],
+    "04-online": [
+      "Ein echter Gegner,",
+      "mit laufender Uhr."
+    ],
+    "05-positional": [
+      "Lies die Stellung,",
+      "bevor du ziehst."
+    ],
+    "06-playCoached": [
+      "Und wenn du richtig liegst,",
+      "sagt es das."
+    ],
+    "07-playSetup": [
+      "Fünf von allem,",
+      "kostenlos."
+    ]
+  },
+  "de-DE": {
+    "01-menu": [
+      "Jeder Zug, den du machst,",
+      "dir vorgelesen."
+    ],
+    "02-playMistake": [
+      "Es sagt nicht nur,",
+      "dass du verloren hast."
+    ],
+    "03-tactics": [
+      "Finde den Gewinnzug.",
+      "Erkenne das Motiv."
+    ],
+    "04-online": [
+      "Ein echter Gegner,",
+      "mit laufender Uhr."
+    ],
+    "05-positional": [
+      "Lies die Stellung,",
+      "bevor du ziehst."
+    ],
+    "06-playCoached": [
+      "Und wenn du richtig liegst,",
+      "sagt es das."
+    ],
+    "07-playSetup": [
+      "Fünf von allem,",
+      "kostenlos."
+    ]
+  },
+  "el": {
+    "01-menu": [
+      "Κάθε κίνηση που παίζεις,",
+      "διαβασμένη πίσω σου."
+    ],
+    "02-playMistake": [
+      "Δεν λέει απλώς",
+      "ότι έχασες."
+    ],
+    "03-tactics": [
+      "Βρες το καθοριστικό χτύπημα.",
+      "Μάθε το μοτίβο."
+    ],
+    "04-online": [
+      "Αληθινός αντίπαλος,",
+      "με χρονόμετρο."
+    ],
+    "05-positional": [
+      "Διάβασε τη θέση",
+      "πριν παίξεις."
+    ],
+    "06-playCoached": [
+      "Κι όταν το βρίσκεις,",
+      "στο λέει."
+    ],
+    "07-playSetup": [
+      "Πέντε από το καθένα,",
+      "δωρεάν."
+    ]
+  },
+  "en": {
+    "01-menu": [
+      "Every move you play,",
+      "read back to you."
+    ],
+    "02-playMistake": [
+      "It does not just say",
+      "you lost."
+    ],
+    "03-tactics": [
+      "Find the winning blow.",
+      "Learn the motif."
+    ],
+    "04-online": [
+      "A real opponent,",
+      "on the clock."
+    ],
+    "05-positional": [
+      "Read the position",
+      "before you move."
+    ],
+    "06-playCoached": [
+      "And when you get it right,",
+      "it says so."
+    ],
+    "07-playSetup": [
+      "Five of everything,",
+      "free."
+    ]
+  },
+  "en-AU": {
+    "01-menu": [
+      "Every move you play,",
+      "read back to you."
+    ],
+    "02-playMistake": [
+      "It does not just say",
+      "you lost."
+    ],
+    "03-tactics": [
+      "Find the winning blow.",
+      "Learn the motif."
+    ],
+    "04-online": [
+      "A real opponent,",
+      "on the clock."
+    ],
+    "05-positional": [
+      "Read the position",
+      "before you move."
+    ],
+    "06-playCoached": [
+      "And when you get it right,",
+      "it says so."
+    ],
+    "07-playSetup": [
+      "Five of everything,",
+      "free."
+    ]
+  },
+  "en-CA": {
+    "01-menu": [
+      "Every move you play,",
+      "read back to you."
+    ],
+    "02-playMistake": [
+      "It does not just say",
+      "you lost."
+    ],
+    "03-tactics": [
+      "Find the winning blow.",
+      "Learn the motif."
+    ],
+    "04-online": [
+      "A real opponent,",
+      "on the clock."
+    ],
+    "05-positional": [
+      "Read the position",
+      "before you move."
+    ],
+    "06-playCoached": [
+      "And when you get it right,",
+      "it says so."
+    ],
+    "07-playSetup": [
+      "Five of everything,",
+      "free."
+    ]
+  },
+  "en-GB": {
+    "01-menu": [
+      "Every move you play,",
+      "read back to you."
+    ],
+    "02-playMistake": [
+      "It does not just say",
+      "you lost."
+    ],
+    "03-tactics": [
+      "Find the winning blow.",
+      "Learn the motif."
+    ],
+    "04-online": [
+      "A real opponent,",
+      "on the clock."
+    ],
+    "05-positional": [
+      "Read the position",
+      "before you move."
+    ],
+    "06-playCoached": [
+      "And when you get it right,",
+      "it says so."
+    ],
+    "07-playSetup": [
+      "Five of everything,",
+      "free."
+    ]
+  },
+  "en-US": {
+    "01-menu": [
+      "Every move you play,",
+      "read back to you."
+    ],
+    "02-playMistake": [
+      "It does not just say",
+      "you lost."
+    ],
+    "03-tactics": [
+      "Find the winning blow.",
+      "Learn the motif."
+    ],
+    "04-online": [
+      "A real opponent,",
+      "on the clock."
+    ],
+    "05-positional": [
+      "Read the position",
+      "before you move."
+    ],
+    "06-playCoached": [
+      "And when you get it right,",
+      "it says so."
+    ],
+    "07-playSetup": [
+      "Five of everything,",
+      "free."
+    ]
+  },
+  "es": {
+    "01-menu": [
+      "Cada jugada que haces,",
+      "leída en voz alta."
+    ],
+    "02-playMistake": [
+      "No solo te dice",
+      "que perdiste."
+    ],
+    "03-tactics": [
+      "Encuentra el golpe ganador.",
+      "Aprende el motivo."
+    ],
+    "04-online": [
+      "Un rival real,",
+      "con reloj."
+    ],
+    "05-positional": [
+      "Lee la posición",
+      "antes de mover."
+    ],
+    "06-playCoached": [
+      "Y cuando aciertas,",
+      "te lo dice."
+    ],
+    "07-playSetup": [
+      "Cinco de cada,",
+      "gratis."
+    ]
+  },
+  "es-ES": {
+    "01-menu": [
+      "Cada jugada que haces,",
+      "leída en voz alta."
+    ],
+    "02-playMistake": [
+      "No solo te dice",
+      "que perdiste."
+    ],
+    "03-tactics": [
+      "Encuentra el golpe ganador.",
+      "Aprende el motivo."
+    ],
+    "04-online": [
+      "Un rival real,",
+      "con reloj."
+    ],
+    "05-positional": [
+      "Lee la posición",
+      "antes de mover."
+    ],
+    "06-playCoached": [
+      "Y cuando aciertas,",
+      "te lo dice."
+    ],
+    "07-playSetup": [
+      "Cinco de cada,",
+      "gratis."
+    ]
+  },
+  "es-MX": {
+    "01-menu": [
+      "Cada jugada que haces,",
+      "explicada al instante."
+    ],
+    "02-playMistake": [
+      "No solo te dice",
+      "que perdiste."
+    ],
+    "03-tactics": [
+      "Encuentra el golpe ganador.",
+      "Aprende el tema."
+    ],
+    "04-online": [
+      "Un rival real,",
+      "contra el reloj."
+    ],
+    "05-positional": [
+      "Lee la posición",
+      "antes de jugar."
+    ],
+    "06-playCoached": [
+      "Y cuando aciertas,",
+      "te lo dice."
+    ],
+    "07-playSetup": [
+      "Cinco de cada uno,",
+      "gratis."
+    ]
+  },
+  "fi": {
+    "01-menu": [
+      "Jokainen siirtosi,",
+      "luettuna ääneen."
+    ],
+    "02-playMistake": [
+      "Se ei vain kerro,",
+      "että hävisit."
+    ],
+    "03-tactics": [
+      "Löydä ratkaiseva isku.",
+      "Opi teema."
+    ],
+    "04-online": [
+      "Oikea vastustaja,",
+      "kellon kanssa."
+    ],
+    "05-positional": [
+      "Lue asema",
+      "ennen kuin siirrät."
+    ],
+    "06-playCoached": [
+      "Ja kun osut oikeaan,",
+      "se sanoo sen."
+    ],
+    "07-playSetup": [
+      "Viisi kutakin,",
+      "ilmaiseksi."
+    ]
+  },
+  "fr": {
+    "01-menu": [
+      "Chaque coup que vous jouez,",
+      "commenté."
+    ],
+    "02-playMistake": [
+      "Il ne dit pas seulement",
+      "que vous avez perdu."
+    ],
+    "03-tactics": [
+      "Trouvez le coup décisif.",
+      "Retenez le motif."
+    ],
+    "04-online": [
+      "Un vrai adversaire,",
+      "à la pendule."
+    ],
+    "05-positional": [
+      "Lisez la position",
+      "avant de jouer."
+    ],
+    "06-playCoached": [
+      "Et quand vous voyez juste,",
+      "il le dit."
+    ],
+    "07-playSetup": [
+      "Cinq de chaque,",
+      "gratuitement."
+    ]
+  },
+  "fr-CA": {
+    "01-menu": [
+      "Chaque coup que vous jouez,",
+      "commenté."
+    ],
+    "02-playMistake": [
+      "Il ne dit pas seulement",
+      "que vous avez perdu."
+    ],
+    "03-tactics": [
+      "Trouvez le coup décisif.",
+      "Retenez le motif."
+    ],
+    "04-online": [
+      "Un vrai adversaire,",
+      "à la pendule."
+    ],
+    "05-positional": [
+      "Lisez la position",
+      "avant de jouer."
+    ],
+    "06-playCoached": [
+      "Et quand vous voyez juste,",
+      "il le dit."
+    ],
+    "07-playSetup": [
+      "Cinq de chaque,",
+      "gratuitement."
+    ]
+  },
+  "fr-FR": {
+    "01-menu": [
+      "Chaque coup que vous jouez,",
+      "commenté."
+    ],
+    "02-playMistake": [
+      "Il ne dit pas seulement",
+      "que vous avez perdu."
+    ],
+    "03-tactics": [
+      "Trouvez le coup décisif.",
+      "Retenez le motif."
+    ],
+    "04-online": [
+      "Un vrai adversaire,",
+      "à la pendule."
+    ],
+    "05-positional": [
+      "Lisez la position",
+      "avant de jouer."
+    ],
+    "06-playCoached": [
+      "Et quand vous voyez juste,",
+      "il le dit."
+    ],
+    "07-playSetup": [
+      "Cinq de chaque,",
+      "gratuitement."
+    ]
+  },
+  "gu": {
+    "01-menu": [
+      "તમારી દરેક ચાલ,",
+      "સમજૂતી સાથે."
+    ],
+    "02-playMistake": [
+      "તમે હાર્યા એટલું જ",
+      "કહીને અટકતું નથી."
+    ],
+    "03-tactics": [
+      "નિર્ણાયક ચાલ શોધો.",
+      "યુક્તિ ઓળખો."
+    ],
+    "04-online": [
+      "સાચો હરીફ,",
+      "ઘડિયાળ સાથે."
+    ],
+    "05-positional": [
+      "ચાલ રમતા પહેલાં",
+      "સ્થિતિ સમજો."
+    ],
+    "06-playCoached": [
+      "અને સાચી ચાલ રમો ત્યારે,",
+      "તે કહે પણ છે."
+    ],
+    "07-playSetup": [
+      "દરેકમાંથી પાંચ,",
+      "મફત."
+    ]
+  },
+  "gu-IN": {
+    "01-menu": [
+      "તમારી દરેક ચાલ,",
+      "સમજૂતી સાથે."
+    ],
+    "02-playMistake": [
+      "તમે હાર્યા એટલું જ",
+      "કહીને અટકતું નથી."
+    ],
+    "03-tactics": [
+      "નિર્ણાયક ચાલ શોધો.",
+      "યુક્તિ ઓળખો."
+    ],
+    "04-online": [
+      "સાચો હરીફ,",
+      "ઘડિયાળ સાથે."
+    ],
+    "05-positional": [
+      "ચાલ રમતા પહેલાં",
+      "સ્થિતિ સમજો."
+    ],
+    "06-playCoached": [
+      "અને સાચી ચાલ રમો ત્યારે,",
+      "તે કહે પણ છે."
+    ],
+    "07-playSetup": [
+      "દરેકમાંથી પાંચ,",
+      "મફત."
+    ]
+  },
+  "he": {
+    "01-menu": [
+      "כל מהלך שאתה משחק,",
+      "מוסבר לך."
+    ],
+    "02-playMistake": [
+      "הוא לא רק אומר",
+      "שהפסדת."
+    ],
+    "03-tactics": [
+      "מצא את המכה המכרעת.",
+      "למד את המוטיב."
+    ],
+    "04-online": [
+      "יריב אמיתי,",
+      "על השעון."
+    ],
+    "05-positional": [
+      "קרא את העמדה",
+      "לפני שתשחק."
+    ],
+    "06-playCoached": [
+      "וכשאתה קולע,",
+      "הוא אומר."
+    ],
+    "07-playSetup": [
+      "חמישה מכל דבר,",
+      "בחינם."
+    ]
+  },
+  "hi": {
+    "01-menu": [
+      "आपकी हर चाल,",
+      "समझाकर।"
+    ],
+    "02-playMistake": [
+      "यह सिर्फ़ यह नहीं बताता",
+      "कि आप हारे।"
+    ],
+    "03-tactics": [
+      "निर्णायक वार खोजें।",
+      "पैटर्न पहचानें।"
+    ],
+    "04-online": [
+      "असली प्रतिद्वंद्वी,",
+      "घड़ी के साथ।"
+    ],
+    "05-positional": [
+      "चाल चलने से पहले",
+      "स्थिति को परखें।"
+    ],
+    "06-playCoached": [
+      "और जब सही चलें,",
+      "यह कहता है।"
+    ],
+    "07-playSetup": [
+      "हर चीज़ के पाँच,",
+      "मुफ़्त।"
+    ]
+  },
+  "hr": {
+    "01-menu": [
+      "Svaki tvoj potez,",
+      "objašnjen."
+    ],
+    "02-playMistake": [
+      "Ne kaže samo",
+      "da si izgubio."
+    ],
+    "03-tactics": [
+      "Pronađi odlučujući udar.",
+      "Upamti motiv."
+    ],
+    "04-online": [
+      "Pravi protivnik,",
+      "uz sat."
+    ],
+    "05-positional": [
+      "Pročitaj poziciju",
+      "prije poteza."
+    ],
+    "06-playCoached": [
+      "A kad pogodiš,",
+      "i to kaže."
+    ],
+    "07-playSetup": [
+      "Po pet od svega,",
+      "besplatno."
+    ]
+  },
+  "hu": {
+    "01-menu": [
+      "Minden lépésed,",
+      "visszaolvasva."
+    ],
+    "02-playMistake": [
+      "Nem csak annyit mond,",
+      "hogy vesztettél."
+    ],
+    "03-tactics": [
+      "Találd meg a döntő csapást.",
+      "Ismerd fel a motívumot."
+    ],
+    "04-online": [
+      "Valódi ellenfél,",
+      "óra mellett."
+    ],
+    "05-positional": [
+      "Olvasd az állást,",
+      "mielőtt lépsz."
+    ],
+    "06-playCoached": [
+      "És ha eltaláltad,",
+      "meg is mondja."
+    ],
+    "07-playSetup": [
+      "Mindenből öt,",
+      "ingyen."
+    ]
+  },
+  "id": {
+    "01-menu": [
+      "Setiap langkah Anda,",
+      "dibacakan kembali."
+    ],
+    "02-playMistake": [
+      "Bukan cuma memberi tahu",
+      "bahwa Anda kalah."
+    ],
+    "03-tactics": [
+      "Temukan pukulan penentu.",
+      "Kenali motifnya."
+    ],
+    "04-online": [
+      "Lawan sungguhan,",
+      "dengan jam catur."
+    ],
+    "05-positional": [
+      "Baca posisinya",
+      "sebelum melangkah."
+    ],
+    "06-playCoached": [
+      "Dan saat Anda benar,",
+      "ia mengatakannya."
+    ],
+    "07-playSetup": [
+      "Lima dari tiap jenis,",
+      "gratis."
+    ]
+  },
+  "it": {
+    "01-menu": [
+      "Ogni mossa che giochi,",
+      "spiegata."
+    ],
+    "02-playMistake": [
+      "Non ti dice soltanto",
+      "che hai perso."
+    ],
+    "03-tactics": [
+      "Trova il colpo vincente.",
+      "Impara il tema."
+    ],
+    "04-online": [
+      "Un avversario vero,",
+      "con l’orologio."
+    ],
+    "05-positional": [
+      "Leggi la posizione",
+      "prima di muovere."
+    ],
+    "06-playCoached": [
+      "E quando ci prendi,",
+      "te lo dice."
+    ],
+    "07-playSetup": [
+      "Cinque di tutto,",
+      "gratis."
+    ]
+  },
+  "ja": {
+    "01-menu": [
+      "あなたの一手を、",
+      "読み解いて返す。"
+    ],
+    "02-playMistake": [
+      "負けたと告げるだけでは",
+      "終わらない。"
+    ],
+    "03-tactics": [
+      "決め手を見つけ、",
+      "手筋を身につける。"
+    ],
+    "04-online": [
+      "生身の相手と、",
+      "時計を叩いて指す。"
+    ],
+    "05-positional": [
+      "指す前に、",
+      "局面を読む。"
+    ],
+    "06-playCoached": [
+      "正解したときは、",
+      "そう言ってくれる。"
+    ],
+    "07-playSetup": [
+      "どれも五回まで、",
+      "無料。"
+    ]
+  },
+  "kk": {
+    "01-menu": [
+      "Әрбір жүрісіңіз,",
+      "талдап беріледі."
+    ],
+    "02-playMistake": [
+      "Ұтылғаныңызды айтумен",
+      "шектелмейді."
+    ],
+    "03-tactics": [
+      "Шешуші соққыны табыңыз.",
+      "Тәсілді меңгеріңіз."
+    ],
+    "04-online": [
+      "Нағыз қарсылас,",
+      "сағатпен."
+    ],
+    "05-positional": [
+      "Жүріс жасамас бұрын",
+      "позицияны оқыңыз."
+    ],
+    "06-playCoached": [
+      "Дәл тапқан кезіңізде,",
+      "оны да айтады."
+    ],
+    "07-playSetup": [
+      "Әрқайсысынан бесеу,",
+      "тегін."
+    ]
+  },
+  "kn": {
+    "01-menu": [
+      "ನೀವು ಆಡುವ ಪ್ರತಿ ನಡೆ,",
+      "ವಿವರಿಸಿ ಹೇಳಲಾಗುತ್ತದೆ."
+    ],
+    "02-playMistake": [
+      "ನೀವು ಸೋತಿರಿ ಎಂದಷ್ಟೇ",
+      "ಹೇಳಿ ಸುಮ್ಮನಾಗುವುದಿಲ್ಲ."
+    ],
+    "03-tactics": [
+      "ನಿರ್ಣಾಯಕ ಪೆಟ್ಟನ್ನು ಹುಡುಕಿ.",
+      "ತಂತ್ರವನ್ನು ಕಲಿಯಿರಿ."
+    ],
+    "04-online": [
+      "ನಿಜವಾದ ಎದುರಾಳಿ,",
+      "ಗಡಿಯಾರದೊಂದಿಗೆ."
+    ],
+    "05-positional": [
+      "ನಡೆ ಆಡುವ ಮೊದಲು",
+      "ಸ್ಥಿತಿಯನ್ನು ಓದಿ."
+    ],
+    "06-playCoached": [
+      "ಸರಿಯಾದ ನಡೆ ಆಡಿದಾಗ,",
+      "ಅದನ್ನೂ ಹೇಳುತ್ತದೆ."
+    ],
+    "07-playSetup": [
+      "ಪ್ರತಿಯೊಂದರಲ್ಲೂ ಐದು,",
+      "ಉಚಿತ."
+    ]
+  },
+  "kn-IN": {
+    "01-menu": [
+      "ನೀವು ಆಡುವ ಪ್ರತಿ ನಡೆ,",
+      "ವಿವರಿಸಿ ಹೇಳಲಾಗುತ್ತದೆ."
+    ],
+    "02-playMistake": [
+      "ನೀವು ಸೋತಿರಿ ಎಂದಷ್ಟೇ",
+      "ಹೇಳಿ ಸುಮ್ಮನಾಗುವುದಿಲ್ಲ."
+    ],
+    "03-tactics": [
+      "ನಿರ್ಣಾಯಕ ಪೆಟ್ಟನ್ನು ಹುಡುಕಿ.",
+      "ತಂತ್ರವನ್ನು ಕಲಿಯಿರಿ."
+    ],
+    "04-online": [
+      "ನಿಜವಾದ ಎದುರಾಳಿ,",
+      "ಗಡಿಯಾರದೊಂದಿಗೆ."
+    ],
+    "05-positional": [
+      "ನಡೆ ಆಡುವ ಮೊದಲು",
+      "ಸ್ಥಿತಿಯನ್ನು ಓದಿ."
+    ],
+    "06-playCoached": [
+      "ಸರಿಯಾದ ನಡೆ ಆಡಿದಾಗ,",
+      "ಅದನ್ನೂ ಹೇಳುತ್ತದೆ."
+    ],
+    "07-playSetup": [
+      "ಪ್ರತಿಯೊಂದರಲ್ಲೂ ಐದು,",
+      "ಉಚಿತ."
+    ]
+  },
+  "ko": {
+    "01-menu": [
+      "당신이 둔 모든 수를,",
+      "다시 읽어 줍니다."
+    ],
+    "02-playMistake": [
+      "졌다고만",
+      "말하지 않습니다."
+    ],
+    "03-tactics": [
+      "결정타를 찾고,",
+      "전술 주제를 익히세요."
+    ],
+    "04-online": [
+      "실제 상대와,",
+      "시계를 두고."
+    ],
+    "05-positional": [
+      "수를 두기 전에",
+      "형세를 읽으세요."
+    ],
+    "06-playCoached": [
+      "잘 두었을 때도,",
+      "그렇게 말합니다."
+    ],
+    "07-playSetup": [
+      "종류마다 다섯 번,",
+      "무료."
+    ]
+  },
+  "ml": {
+    "01-menu": [
+      "നിങ്ങളുടെ ഓരോ നീക്കവും,",
+      "വിശദീകരിച്ചു തരുന്നു."
+    ],
+    "02-playMistake": [
+      "തോറ്റു എന്നു മാത്രം",
+      "പറഞ്ഞു നിർത്തില്ല."
+    ],
+    "03-tactics": [
+      "നിർണായക നീക്കം കണ്ടെത്തൂ.",
+      "ആശയം പഠിച്ചെടുക്കൂ."
+    ],
+    "04-online": [
+      "യഥാർത്ഥ എതിരാളി,",
+      "ക്ലോക്കിനൊപ്പം."
+    ],
+    "05-positional": [
+      "കരുനീക്കും മുൻപ്",
+      "നില വിലയിരുത്തൂ."
+    ],
+    "06-playCoached": [
+      "ശരിയായി കളിക്കുമ്പോൾ,",
+      "അതും പറയുന്നു."
+    ],
+    "07-playSetup": [
+      "എല്ലാറ്റിലും അഞ്ചെണ്ണം,",
+      "സൗജന്യം."
+    ]
+  },
+  "ml-IN": {
+    "01-menu": [
+      "നിങ്ങളുടെ ഓരോ നീക്കവും,",
+      "വിശദീകരിച്ചു തരുന്നു."
+    ],
+    "02-playMistake": [
+      "തോറ്റു എന്നു മാത്രം",
+      "പറഞ്ഞു നിർത്തില്ല."
+    ],
+    "03-tactics": [
+      "നിർണായക നീക്കം കണ്ടെത്തൂ.",
+      "ആശയം പഠിച്ചെടുക്കൂ."
+    ],
+    "04-online": [
+      "യഥാർത്ഥ എതിരാളി,",
+      "ക്ലോക്കിനൊപ്പം."
+    ],
+    "05-positional": [
+      "കരുനീക്കും മുൻപ്",
+      "നില വിലയിരുത്തൂ."
+    ],
+    "06-playCoached": [
+      "ശരിയായി കളിക്കുമ്പോൾ,",
+      "അതും പറയുന്നു."
+    ],
+    "07-playSetup": [
+      "എല്ലാറ്റിലും അഞ്ചെണ്ണം,",
+      "സൗജന്യം."
+    ]
+  },
+  "mr": {
+    "01-menu": [
+      "तुमची प्रत्येक चाल,",
+      "समजावून सांगितली जाते."
+    ],
+    "02-playMistake": [
+      "तुम्ही हरलात एवढेच",
+      "सांगून थांबत नाही."
+    ],
+    "03-tactics": [
+      "निर्णायक प्रहार शोधा.",
+      "युक्ती लक्षात ठेवा."
+    ],
+    "04-online": [
+      "खरा प्रतिस्पर्धी,",
+      "घड्याळावर."
+    ],
+    "05-positional": [
+      "चाल खेळण्यापूर्वी",
+      "स्थिती वाचा."
+    ],
+    "06-playCoached": [
+      "आणि अचूक चाल खेळल्यावर,",
+      "तसे सांगतेही."
+    ],
+    "07-playSetup": [
+      "प्रत्येक प्रकारातले पाच,",
+      "मोफत."
+    ]
+  },
+  "mr-IN": {
+    "01-menu": [
+      "तुमची प्रत्येक चाल,",
+      "समजावून सांगितली जाते."
+    ],
+    "02-playMistake": [
+      "तुम्ही हरलात एवढेच",
+      "सांगून थांबत नाही."
+    ],
+    "03-tactics": [
+      "निर्णायक प्रहार शोधा.",
+      "युक्ती लक्षात ठेवा."
+    ],
+    "04-online": [
+      "खरा प्रतिस्पर्धी,",
+      "घड्याळावर."
+    ],
+    "05-positional": [
+      "चाल खेळण्यापूर्वी",
+      "स्थिती वाचा."
+    ],
+    "06-playCoached": [
+      "आणि अचूक चाल खेळल्यावर,",
+      "तसे सांगतेही."
+    ],
+    "07-playSetup": [
+      "प्रत्येक प्रकारातले पाच,",
+      "मोफत."
+    ]
+  },
+  "ms": {
+    "01-menu": [
+      "Setiap langkah anda,",
+      "dibaca semula."
+    ],
+    "02-playMistake": [
+      "Bukan sekadar memberitahu",
+      "yang anda kalah."
+    ],
+    "03-tactics": [
+      "Cari pukulan penentu.",
+      "Kenali motifnya."
+    ],
+    "04-online": [
+      "Lawan sebenar,",
+      "mengikut jam."
+    ],
+    "05-positional": [
+      "Baca kedudukan",
+      "sebelum melangkah."
+    ],
+    "06-playCoached": [
+      "Dan apabila anda betul,",
+      "ia mengatakannya."
+    ],
+    "07-playSetup": [
+      "Lima setiap satu,",
+      "percuma."
+    ]
+  },
+  "nb": {
+    "01-menu": [
+      "Hvert trekk du gjør,",
+      "lest tilbake."
+    ],
+    "02-playMistake": [
+      "Den sier ikke bare",
+      "at du tapte."
+    ],
+    "03-tactics": [
+      "Finn det avgjørende støtet.",
+      "Lær motivet."
+    ],
+    "04-online": [
+      "En ekte motstander,",
+      "på klokken."
+    ],
+    "05-positional": [
+      "Les stillingen",
+      "før du trekker."
+    ],
+    "06-playCoached": [
+      "Og når du treffer,",
+      "sier den det."
+    ],
+    "07-playSetup": [
+      "Fem av hvert slag,",
+      "gratis."
+    ]
+  },
+  "nl": {
+    "01-menu": [
+      "Elke zet die je doet,",
+      "teruggelezen."
+    ],
+    "02-playMistake": [
+      "Het zegt niet alleen",
+      "dat je verloor."
+    ],
+    "03-tactics": [
+      "Vind de beslissende klap.",
+      "Herken het motief."
+    ],
+    "04-online": [
+      "Een echte tegenstander,",
+      "op de klok."
+    ],
+    "05-positional": [
+      "Lees de stelling",
+      "voordat je zet."
+    ],
+    "06-playCoached": [
+      "En als je het goed ziet,",
+      "zegt het dat."
+    ],
+    "07-playSetup": [
+      "Vijf van alles,",
+      "gratis."
+    ]
+  },
+  "nl-NL": {
+    "01-menu": [
+      "Elke zet die je doet,",
+      "teruggelezen."
+    ],
+    "02-playMistake": [
+      "Het zegt niet alleen",
+      "dat je verloor."
+    ],
+    "03-tactics": [
+      "Vind de beslissende klap.",
+      "Herken het motief."
+    ],
+    "04-online": [
+      "Een echte tegenstander,",
+      "op de klok."
+    ],
+    "05-positional": [
+      "Lees de stelling",
+      "voordat je zet."
+    ],
+    "06-playCoached": [
+      "En als je het goed ziet,",
+      "zegt het dat."
+    ],
+    "07-playSetup": [
+      "Vijf van alles,",
+      "gratis."
+    ]
+  },
+  "no": {
+    "01-menu": [
+      "Hvert trekk du gjør,",
+      "lest tilbake."
+    ],
+    "02-playMistake": [
+      "Den sier ikke bare",
+      "at du tapte."
+    ],
+    "03-tactics": [
+      "Finn det avgjørende støtet.",
+      "Lær motivet."
+    ],
+    "04-online": [
+      "En ekte motstander,",
+      "på klokken."
+    ],
+    "05-positional": [
+      "Les stillingen",
+      "før du trekker."
+    ],
+    "06-playCoached": [
+      "Og når du treffer,",
+      "sier den det."
+    ],
+    "07-playSetup": [
+      "Fem av hvert slag,",
+      "gratis."
+    ]
+  },
+  "or": {
+    "01-menu": [
+      "ଆପଣଙ୍କ ପ୍ରତିଟି ଚାଲ୍,",
+      "ବୁଝାଇ ଦିଆଯାଏ।"
+    ],
+    "02-playMistake": [
+      "କେବଳ ହାରିଗଲେ ବୋଲି",
+      "କହି ଅଟକିଯାଏ ନାହିଁ।"
+    ],
+    "03-tactics": [
+      "ନିର୍ଣ୍ଣାୟକ ଚାଲ୍ ଖୋଜନ୍ତୁ।",
+      "କୌଶଳଟି ଶିଖନ୍ତୁ।"
+    ],
+    "04-online": [
+      "ପ୍ରକୃତ ପ୍ରତିଦ୍ୱନ୍ଦ୍ୱୀ,",
+      "ଘଣ୍ଟା ସହିତ।"
+    ],
+    "05-positional": [
+      "ଚାଲ୍ ଦେବା ପୂର୍ବରୁ",
+      "ସ୍ଥିତିକୁ ପଢ଼ନ୍ତୁ।"
+    ],
+    "06-playCoached": [
+      "ଆଉ ଠିକ୍ ଚାଲ୍ ଦେଲେ,",
+      "ତାହା ମଧ୍ୟ କହେ।"
+    ],
+    "07-playSetup": [
+      "ପ୍ରତ୍ୟେକରୁ ପାଞ୍ଚଟି,",
+      "ମାଗଣା।"
+    ]
+  },
+  "or-IN": {
+    "01-menu": [
+      "ଆପଣଙ୍କ ପ୍ରତିଟି ଚାଲ୍,",
+      "ବୁଝାଇ ଦିଆଯାଏ।"
+    ],
+    "02-playMistake": [
+      "କେବଳ ହାରିଗଲେ ବୋଲି",
+      "କହି ଅଟକିଯାଏ ନାହିଁ।"
+    ],
+    "03-tactics": [
+      "ନିର୍ଣ୍ଣାୟକ ଚାଲ୍ ଖୋଜନ୍ତୁ।",
+      "କୌଶଳଟି ଶିଖନ୍ତୁ।"
+    ],
+    "04-online": [
+      "ପ୍ରକୃତ ପ୍ରତିଦ୍ୱନ୍ଦ୍ୱୀ,",
+      "ଘଣ୍ଟା ସହିତ।"
+    ],
+    "05-positional": [
+      "ଚାଲ୍ ଦେବା ପୂର୍ବରୁ",
+      "ସ୍ଥିତିକୁ ପଢ଼ନ୍ତୁ।"
+    ],
+    "06-playCoached": [
+      "ଆଉ ଠିକ୍ ଚାଲ୍ ଦେଲେ,",
+      "ତାହା ମଧ୍ୟ କହେ।"
+    ],
+    "07-playSetup": [
+      "ପ୍ରତ୍ୟେକରୁ ପାଞ୍ଚଟି,",
+      "ମାଗଣା।"
+    ]
+  },
+  "pa": {
+    "01-menu": [
+      "ਤੁਹਾਡੀ ਹਰ ਚਾਲ,",
+      "ਸਮਝਾ ਕੇ।"
+    ],
+    "02-playMistake": [
+      "ਇਹ ਸਿਰਫ਼ ਇਹ ਨਹੀਂ ਕਹਿੰਦਾ",
+      "ਕਿ ਤੁਸੀਂ ਹਾਰ ਗਏ।"
+    ],
+    "03-tactics": [
+      "ਫ਼ੈਸਲਾਕੁੰਨ ਵਾਰ ਲੱਭੋ।",
+      "ਦਾਅ ਸਿੱਖੋ।"
+    ],
+    "04-online": [
+      "ਅਸਲੀ ਵਿਰੋਧੀ,",
+      "ਘੜੀ ਦੇ ਨਾਲ।"
+    ],
+    "05-positional": [
+      "ਚਾਲ ਚੱਲਣ ਤੋਂ ਪਹਿਲਾਂ",
+      "ਸਥਿਤੀ ਨੂੰ ਸਮਝੋ।"
+    ],
+    "06-playCoached": [
+      "ਅਤੇ ਜਦੋਂ ਸਹੀ ਚੱਲੋ,",
+      "ਤਾਂ ਦੱਸਦਾ ਵੀ ਹੈ।"
+    ],
+    "07-playSetup": [
+      "ਹਰ ਚੀਜ਼ ਦੇ ਪੰਜ,",
+      "ਮੁਫ਼ਤ।"
+    ]
+  },
+  "pa-IN": {
+    "01-menu": [
+      "ਤੁਹਾਡੀ ਹਰ ਚਾਲ,",
+      "ਸਮਝਾ ਕੇ।"
+    ],
+    "02-playMistake": [
+      "ਇਹ ਸਿਰਫ਼ ਇਹ ਨਹੀਂ ਕਹਿੰਦਾ",
+      "ਕਿ ਤੁਸੀਂ ਹਾਰ ਗਏ।"
+    ],
+    "03-tactics": [
+      "ਫ਼ੈਸਲਾਕੁੰਨ ਵਾਰ ਲੱਭੋ।",
+      "ਦਾਅ ਸਿੱਖੋ।"
+    ],
+    "04-online": [
+      "ਅਸਲੀ ਵਿਰੋਧੀ,",
+      "ਘੜੀ ਦੇ ਨਾਲ।"
+    ],
+    "05-positional": [
+      "ਚਾਲ ਚੱਲਣ ਤੋਂ ਪਹਿਲਾਂ",
+      "ਸਥਿਤੀ ਨੂੰ ਸਮਝੋ।"
+    ],
+    "06-playCoached": [
+      "ਅਤੇ ਜਦੋਂ ਸਹੀ ਚੱਲੋ,",
+      "ਤਾਂ ਦੱਸਦਾ ਵੀ ਹੈ।"
+    ],
+    "07-playSetup": [
+      "ਹਰ ਚੀਜ਼ ਦੇ ਪੰਜ,",
+      "ਮੁਫ਼ਤ।"
+    ]
+  },
+  "pl": {
+    "01-menu": [
+      "Każdy twój ruch,",
+      "odczytany."
+    ],
+    "02-playMistake": [
+      "Nie mówi tylko,",
+      "że przegrałeś."
+    ],
+    "03-tactics": [
+      "Znajdź decydujące uderzenie.",
+      "Poznaj motyw."
+    ],
+    "04-online": [
+      "Prawdziwy przeciwnik,",
+      "z zegarem."
+    ],
+    "05-positional": [
+      "Odczytaj pozycję,",
+      "zanim zagrasz."
+    ],
+    "06-playCoached": [
+      "A gdy trafisz,",
+      "też to powie."
+    ],
+    "07-playSetup": [
+      "Po pięć z każdego,",
+      "za darmo."
+    ]
+  },
+  "pt": {
+    "01-menu": [
+      "Cada lance que você faz,",
+      "explicado."
+    ],
+    "02-playMistake": [
+      "Não diz apenas",
+      "que você perdeu."
+    ],
+    "03-tactics": [
+      "Encontre o golpe decisivo.",
+      "Aprenda o tema."
+    ],
+    "04-online": [
+      "Um adversário real,",
+      "no relógio."
+    ],
+    "05-positional": [
+      "Leia a posição",
+      "antes de jogar."
+    ],
+    "06-playCoached": [
+      "E quando você acerta,",
+      "ele diz."
+    ],
+    "07-playSetup": [
+      "Cinco de cada,",
+      "de graça."
+    ]
+  },
+  "pt-BR": {
+    "01-menu": [
+      "Cada lance que você faz,",
+      "explicado."
+    ],
+    "02-playMistake": [
+      "Não diz apenas",
+      "que você perdeu."
+    ],
+    "03-tactics": [
+      "Encontre o golpe decisivo.",
+      "Aprenda o tema."
+    ],
+    "04-online": [
+      "Um adversário real,",
+      "no relógio."
+    ],
+    "05-positional": [
+      "Leia a posição",
+      "antes de jogar."
+    ],
+    "06-playCoached": [
+      "E quando você acerta,",
+      "ele diz."
+    ],
+    "07-playSetup": [
+      "Cinco de cada,",
+      "de graça."
+    ]
+  },
+  "pt-PT": {
+    "01-menu": [
+      "Cada lance que joga,",
+      "explicado."
+    ],
+    "02-playMistake": [
+      "Não lhe diz apenas",
+      "que perdeu."
+    ],
+    "03-tactics": [
+      "Encontre o golpe decisivo.",
+      "Aprenda o tema."
+    ],
+    "04-online": [
+      "Um adversário real,",
+      "ao relógio."
+    ],
+    "05-positional": [
+      "Leia a posição",
+      "antes de jogar."
+    ],
+    "06-playCoached": [
+      "E quando acerta,",
+      "também o diz."
+    ],
+    "07-playSetup": [
+      "Cinco de cada,",
+      "gratuitos."
+    ]
+  },
+  "ro": {
+    "01-menu": [
+      "Fiecare mutare a ta,",
+      "explicată."
+    ],
+    "02-playMistake": [
+      "Nu-ți spune doar",
+      "că ai pierdut."
+    ],
+    "03-tactics": [
+      "Găsește lovitura decisivă.",
+      "Reține tema."
+    ],
+    "04-online": [
+      "Un adversar real,",
+      "pe ceas."
+    ],
+    "05-positional": [
+      "Citește poziția",
+      "înainte să muți."
+    ],
+    "06-playCoached": [
+      "Iar când nimerești,",
+      "ți-o spune."
+    ],
+    "07-playSetup": [
+      "Câte cinci din fiecare,",
+      "gratuit."
+    ]
+  },
+  "ru": {
+    "01-menu": [
+      "Каждый ваш ход —",
+      "разобранный."
+    ],
+    "02-playMistake": [
+      "Он не просто говорит,",
+      "что вы проиграли."
+    ],
+    "03-tactics": [
+      "Найдите решающий удар.",
+      "Запомните мотив."
+    ],
+    "04-online": [
+      "Живой соперник,",
+      "под часы."
+    ],
+    "05-positional": [
+      "Оцените позицию",
+      "прежде чем ходить."
+    ],
+    "06-playCoached": [
+      "А когда вы правы,",
+      "он это говорит."
+    ],
+    "07-playSetup": [
+      "По пять каждого,",
+      "бесплатно."
+    ]
+  },
+  "sk": {
+    "01-menu": [
+      "Každý tvoj ťah,",
+      "vysvetlený."
+    ],
+    "02-playMistake": [
+      "Nepovie ti len,",
+      "že si prehral."
+    ],
+    "03-tactics": [
+      "Nájdi rozhodujúci úder.",
+      "Spoznaj motív."
+    ],
+    "04-online": [
+      "Skutočný súper,",
+      "na hodinách."
+    ],
+    "05-positional": [
+      "Prečítaj pozíciu",
+      "skôr, než potiahneš."
+    ],
+    "06-playCoached": [
+      "A keď trafíš správne,",
+      "povie to."
+    ],
+    "07-playSetup": [
+      "Päť z každého,",
+      "zadarmo."
+    ]
+  },
+  "sl": {
+    "01-menu": [
+      "Vsaka tvoja poteza,",
+      "razložena."
+    ],
+    "02-playMistake": [
+      "Ne pove le,",
+      "da si izgubil."
+    ],
+    "03-tactics": [
+      "Najdi odločilni udarec.",
+      "Spoznaj motiv."
+    ],
+    "04-online": [
+      "Pravi nasprotnik,",
+      "ob uri."
+    ],
+    "05-positional": [
+      "Preberi pozicijo,",
+      "preden povlečeš."
+    ],
+    "06-playCoached": [
+      "In ko zadeneš,",
+      "to tudi pove."
+    ],
+    "07-playSetup": [
+      "Pet od vsega,",
+      "brezplačno."
+    ]
+  },
+  "sl-SI": {
+    "01-menu": [
+      "Vsaka tvoja poteza,",
+      "razložena."
+    ],
+    "02-playMistake": [
+      "Ne pove le,",
+      "da si izgubil."
+    ],
+    "03-tactics": [
+      "Najdi odločilni udarec.",
+      "Spoznaj motiv."
+    ],
+    "04-online": [
+      "Pravi nasprotnik,",
+      "ob uri."
+    ],
+    "05-positional": [
+      "Preberi pozicijo,",
+      "preden povlečeš."
+    ],
+    "06-playCoached": [
+      "In ko zadeneš,",
+      "to tudi pove."
+    ],
+    "07-playSetup": [
+      "Pet od vsega,",
+      "brezplačno."
+    ]
+  },
+  "sv": {
+    "01-menu": [
+      "Varje drag du gör,",
+      "uppläst."
+    ],
+    "02-playMistake": [
+      "Den säger inte bara",
+      "att du förlorade."
+    ],
+    "03-tactics": [
+      "Hitta det avgörande slaget.",
+      "Lär dig motivet."
+    ],
+    "04-online": [
+      "En riktig motståndare,",
+      "med klocka."
+    ],
+    "05-positional": [
+      "Läs ställningen",
+      "innan du drar."
+    ],
+    "06-playCoached": [
+      "Och när du träffar rätt,",
+      "säger den det."
+    ],
+    "07-playSetup": [
+      "Fem av varje,",
+      "gratis."
+    ]
+  },
+  "ta": {
+    "01-menu": [
+      "உங்கள் ஒவ்வொரு நகர்வும்,",
+      "விளக்கத்துடன்."
+    ],
+    "02-playMistake": [
+      "தோற்றீர்கள் என்று மட்டும்",
+      "சொல்லி நிறுத்தாது."
+    ],
+    "03-tactics": [
+      "வெற்றி நகர்வைக் கண்டறியுங்கள்.",
+      "உத்தியைக் கற்றுக்கொள்ளுங்கள்."
+    ],
+    "04-online": [
+      "உண்மையான எதிராளி,",
+      "கடிகாரத்துடன்."
+    ],
+    "05-positional": [
+      "நகர்த்தும் முன்பு",
+      "நிலையை எடைபோடுங்கள்."
+    ],
+    "06-playCoached": [
+      "சரியாக நகர்த்தும்போது,",
+      "அதையும் சொல்லும்."
+    ],
+    "07-playSetup": [
+      "ஒவ்வொன்றிலும் ஐந்து,",
+      "இலவசம்."
+    ]
+  },
+  "ta-IN": {
+    "01-menu": [
+      "உங்கள் ஒவ்வொரு நகர்வும்,",
+      "விளக்கத்துடன்."
+    ],
+    "02-playMistake": [
+      "தோற்றீர்கள் என்று மட்டும்",
+      "சொல்லி நிறுத்தாது."
+    ],
+    "03-tactics": [
+      "வெற்றி நகர்வைக் கண்டறியுங்கள்.",
+      "உத்தியைக் கற்றுக்கொள்ளுங்கள்."
+    ],
+    "04-online": [
+      "உண்மையான எதிராளி,",
+      "கடிகாரத்துடன்."
+    ],
+    "05-positional": [
+      "நகர்த்தும் முன்பு",
+      "நிலையை எடைபோடுங்கள்."
+    ],
+    "06-playCoached": [
+      "சரியாக நகர்த்தும்போது,",
+      "அதையும் சொல்லும்."
+    ],
+    "07-playSetup": [
+      "ஒவ்வொன்றிலும் ஐந்து,",
+      "இலவசம்."
+    ]
+  },
+  "te": {
+    "01-menu": [
+      "మీరు ఆడే ప్రతి ఎత్తు,",
+      "వివరించి చెబుతుంది."
+    ],
+    "02-playMistake": [
+      "ఓడిపోయారని మాత్రమే",
+      "చెప్పి ఆగిపోదు."
+    ],
+    "03-tactics": [
+      "నిర్ణయాత్మక దెబ్బను కనుగొనండి.",
+      "వ్యూహాన్ని నేర్చుకోండి."
+    ],
+    "04-online": [
+      "నిజమైన ప్రత్యర్థి,",
+      "గడియారంతో."
+    ],
+    "05-positional": [
+      "ఎత్తు వేసే ముందే",
+      "స్థితిని చదవండి."
+    ],
+    "06-playCoached": [
+      "సరైన ఎత్తు వేసినప్పుడు,",
+      "అదీ చెబుతుంది."
+    ],
+    "07-playSetup": [
+      "ప్రతిదానిలో ఐదు,",
+      "ఉచితం."
+    ]
+  },
+  "te-IN": {
+    "01-menu": [
+      "మీరు ఆడే ప్రతి ఎత్తు,",
+      "వివరించి చెబుతుంది."
+    ],
+    "02-playMistake": [
+      "ఓడిపోయారని మాత్రమే",
+      "చెప్పి ఆగిపోదు."
+    ],
+    "03-tactics": [
+      "నిర్ణయాత్మక దెబ్బను కనుగొనండి.",
+      "వ్యూహాన్ని నేర్చుకోండి."
+    ],
+    "04-online": [
+      "నిజమైన ప్రత్యర్థి,",
+      "గడియారంతో."
+    ],
+    "05-positional": [
+      "ఎత్తు వేసే ముందే",
+      "స్థితిని చదవండి."
+    ],
+    "06-playCoached": [
+      "సరైన ఎత్తు వేసినప్పుడు,",
+      "అదీ చెబుతుంది."
+    ],
+    "07-playSetup": [
+      "ప్రతిదానిలో ఐదు,",
+      "ఉచితం."
+    ]
+  },
+  "th": {
+    "01-menu": [
+      "ทุกตาที่คุณเดิน",
+      "อธิบายกลับให้ฟัง"
+    ],
+    "02-playMistake": [
+      "ไม่ได้บอกแค่ว่า",
+      "คุณแพ้"
+    ],
+    "03-tactics": [
+      "หาแต้มเผด็จศึก",
+      "จำรูปแบบกลยุทธ์"
+    ],
+    "04-online": [
+      "คู่แข่งตัวจริง",
+      "เดินแข่งกับเวลา"
+    ],
+    "05-positional": [
+      "อ่านรูปหมาก",
+      "ก่อนตัดสินใจเดิน"
+    ],
+    "06-playCoached": [
+      "และเมื่อคุณเดินถูก",
+      "มันก็บอก"
+    ],
+    "07-playSetup": [
+      "อย่างละห้าครั้ง",
+      "ฟรี"
+    ]
+  },
+  "tr": {
+    "01-menu": [
+      "Yaptığın her hamle,",
+      "sana okunuyor."
+    ],
+    "02-playMistake": [
+      "Sadece kaybettiğini",
+      "söylemiyor."
+    ],
+    "03-tactics": [
+      "Kazandıran darbeyi bul.",
+      "Motifi öğren."
+    ],
+    "04-online": [
+      "Gerçek bir rakip,",
+      "saate karşı."
+    ],
+    "05-positional": [
+      "Hamle yapmadan önce",
+      "konumu oku."
+    ],
+    "06-playCoached": [
+      "Doğru bulduğunda da,",
+      "söylüyor."
+    ],
+    "07-playSetup": [
+      "Her birinden beş,",
+      "ücretsiz."
+    ]
+  },
+  "uk": {
+    "01-menu": [
+      "Кожен ваш хід —",
+      "розібраний."
+    ],
+    "02-playMistake": [
+      "Він не просто каже,",
+      "що ви програли."
+    ],
+    "03-tactics": [
+      "Знайдіть вирішальний удар.",
+      "Запам’ятайте мотив."
+    ],
+    "04-online": [
+      "Живий суперник,",
+      "із годинником."
+    ],
+    "05-positional": [
+      "Оцініть позицію",
+      "перш ніж ходити."
+    ],
+    "06-playCoached": [
+      "А коли ви праві,",
+      "він це скаже."
+    ],
+    "07-playSetup": [
+      "По п’ять усього,",
+      "безкоштовно."
+    ]
+  },
+  "ur": {
+    "01-menu": [
+      "آپ کی ہر چال،",
+      "وضاحت کے ساتھ۔"
+    ],
+    "02-playMistake": [
+      "یہ صرف یہ نہیں بتاتا",
+      "کہ آپ ہار گئے۔"
+    ],
+    "03-tactics": [
+      "فیصلہ کن ضرب تلاش کریں۔",
+      "انداز سیکھیں۔"
+    ],
+    "04-online": [
+      "حقیقی حریف،",
+      "گھڑی کے ساتھ۔"
+    ],
+    "05-positional": [
+      "چال چلنے سے پہلے",
+      "پوزیشن کو پڑھیں۔"
+    ],
+    "06-playCoached": [
+      "اور جب آپ درست چلیں،",
+      "تو یہ بتاتا بھی ہے۔"
+    ],
+    "07-playSetup": [
+      "ہر چیز میں سے پانچ،",
+      "مفت۔"
+    ]
+  },
+  "ur-PK": {
+    "01-menu": [
+      "آپ کی ہر چال،",
+      "وضاحت کے ساتھ۔"
+    ],
+    "02-playMistake": [
+      "یہ صرف یہ نہیں بتاتا",
+      "کہ آپ ہار گئے۔"
+    ],
+    "03-tactics": [
+      "فیصلہ کن ضرب تلاش کریں۔",
+      "انداز سیکھیں۔"
+    ],
+    "04-online": [
+      "حقیقی حریف،",
+      "گھڑی کے ساتھ۔"
+    ],
+    "05-positional": [
+      "چال چلنے سے پہلے",
+      "پوزیشن کو پڑھیں۔"
+    ],
+    "06-playCoached": [
+      "اور جب آپ درست چلیں،",
+      "تو یہ بتاتا بھی ہے۔"
+    ],
+    "07-playSetup": [
+      "ہر چیز میں سے پانچ،",
+      "مفت۔"
+    ]
+  },
+  "vi": {
+    "01-menu": [
+      "Mỗi nước bạn đi,",
+      "được đọc lại."
+    ],
+    "02-playMistake": [
+      "Không chỉ nói",
+      "rằng bạn đã thua."
+    ],
+    "03-tactics": [
+      "Tìm đòn quyết định.",
+      "Nhớ rõ đòn phối hợp."
+    ],
+    "04-online": [
+      "Đối thủ thật,",
+      "trên đồng hồ."
+    ],
+    "05-positional": [
+      "Đọc thế cờ",
+      "trước khi đi quân."
+    ],
+    "06-playCoached": [
+      "Và khi bạn đi đúng,",
+      "nó cũng nói."
+    ],
+    "07-playSetup": [
+      "Mỗi loại năm lần,",
+      "miễn phí."
+    ]
+  },
+  "zh-Hans": {
+    "01-menu": [
+      "你走的每一步，",
+      "都讲给你听。"
+    ],
+    "02-playMistake": [
+      "不只是告诉你",
+      "输了。"
+    ],
+    "03-tactics": [
+      "找出制胜一击，",
+      "记住战术主题。"
+    ],
+    "04-online": [
+      "真实对手，",
+      "读秒对弈。"
+    ],
+    "05-positional": [
+      "落子之前，",
+      "先读懂局面。"
+    ],
+    "06-playCoached": [
+      "走对了的时候，",
+      "它也会说。"
+    ],
+    "07-playSetup": [
+      "每样五次，",
+      "免费。"
+    ]
+  },
+  "zh-Hant": {
+    "01-menu": [
+      "你走的每一步，",
+      "都講給你聽。"
+    ],
+    "02-playMistake": [
+      "不只是告訴你",
+      "輸了。"
+    ],
+    "03-tactics": [
+      "找出制勝一擊，",
+      "記住戰術主題。"
+    ],
+    "04-online": [
+      "真實對手，",
+      "讀秒對弈。"
+    ],
+    "05-positional": [
+      "落子之前，",
+      "先讀懂局面。"
+    ],
+    "06-playCoached": [
+      "走對了的時候，",
+      "它也會說。"
+    ],
+    "07-playSetup": [
+      "每樣五次，",
+      "免費。"
+    ]
+  }
+}

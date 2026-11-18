@@ -29,8 +29,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.scale
+import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
@@ -133,6 +142,7 @@ fun ChipButton(
 /** The round button at the top of every screen but the first. */
 @Composable
 fun BackButton(description: String, onClick: () -> Unit) {
+    val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
     Box(
         Modifier
             .size(44.dp)
@@ -142,7 +152,74 @@ fun BackButton(description: String, onClick: () -> Unit) {
             .clickable(role = Role.Button, onClick = onClick)
             .semantics { contentDescription = description },
         contentAlignment = Alignment.Center,
-    ) { BrassIcon("chevron.left", 18.dp) }
+    ) { BrassIcon("chevron.left", 18.dp, if (rtl) Modifier.scale(scaleX = -1f, scaleY = 1f) else Modifier) }
+}
+
+/**
+ * Shared board + cards + footer layout used by Play and Online screens:
+ * stacked with a pinned footer in portrait, and a balanced two-column layout on
+ * landscape tablets so neither the board nor the action bar ever clips.
+ */
+@Composable
+fun BoardScreenLayout(
+    modifier: Modifier = Modifier,
+    board: @Composable (Dp) -> Unit,
+    panel: @Composable ColumnScope.() -> Unit,
+    controls: (@Composable () -> Unit)? = null,
+) {
+    BoxWithConstraints(modifier.fillMaxSize()) {
+        val isWide = maxWidth > maxHeight && maxWidth >= 600.dp
+        if (isWide) {
+            val side = minOf(maxHeight - 96.dp, (maxWidth - 360.dp).coerceAtLeast(240.dp), 556.dp)
+            Row(
+                Modifier.fillMaxSize().padding(bottom = 12.dp),
+                horizontalArrangement = Arrangement.spacedBy(20.dp, Alignment.CenterHorizontally),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Box(Modifier.width(side)) {
+                    board(side)
+                }
+                Column(
+                    Modifier.widthIn(max = 500.dp).weight(1f, fill = false).fillMaxHeight(),
+                    verticalArrangement = Arrangement.spacedBy(10.dp),
+                ) {
+                    Column(
+                        Modifier.weight(1f).fillMaxWidth().verticalScroll(rememberScrollState()),
+                        verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterVertically),
+                        content = panel,
+                    )
+                    if (controls != null) controls()
+                }
+            }
+        } else {
+            val reserve = if (controls != null) 368.dp else 280.dp
+            val boardWidth = minOf(maxWidth, 520.dp, (maxHeight - reserve).coerceAtLeast(220.dp))
+            Column(
+                Modifier.fillMaxSize().padding(bottom = 10.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                Box(Modifier.width(boardWidth)) {
+                    board(boardWidth)
+                }
+                Spacer(Modifier.height(10.dp))
+                Column(
+                    Modifier
+                        .widthIn(max = 560.dp)
+                        .weight(1f)
+                        .fillMaxWidth()
+                        .verticalScroll(rememberScrollState()),
+                    verticalArrangement = Arrangement.spacedBy(10.dp),
+                    content = panel,
+                )
+                if (controls != null) {
+                    Spacer(Modifier.height(10.dp))
+                    Box(Modifier.widthIn(max = 560.dp).fillMaxWidth()) {
+                        controls()
+                    }
+                }
+            }
+        }
+    }
 }
 
 /** One of a row of choices: the chosen one is lit. */

@@ -53,36 +53,35 @@ fun PlayScreen(navigator: Navigator) {
     }
 
     Screen(title = t("progress.play", "Play"), onBack = navigator::back) {
-        Column(
-            Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(bottom = 14.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            Column(Modifier.widthIn(max = 560.dp)) {
-                PlayerBar(
-                    name = if (model.level.elo == null) engine?.name ?: "Stockfish" else model.level.name,
-                    rating = model.level.elo, color = if (model.side == PieceColor.WHITE) PieceColor.BLACK else PieceColor.WHITE,
-                )
-                Spacer(Modifier.height(8.dp))
-                Row(Modifier.fillMaxWidth().height(androidx.compose.foundation.layout.IntrinsicSize.Min)) {
-                    EvaluationBar(model.evaluation?.winProbability, playerIsWhite = model.side == PieceColor.WHITE)
-                    Spacer(Modifier.width(6.dp))
-                    ChessBoard(
-                        position = model.position,
-                        orientation = model.side,
-                        legalMoves = model.legalMoves,
-                        lastMove = model.lastMove,
-                        arrows = model.arrows,
-                        showCoordinates = settings.coordinates,
-                        darkSet = settings.darkSet,
-                        modifier = Modifier.weight(1f),
-                        onMove = { move -> engine?.let { ready -> scope.launch { model.play(move, ready) } } },
+        val ready = engine
+        BoardScreenLayout(
+            board = {
+                Column {
+                    PlayerBar(
+                        name = if (model.level.elo == null) engine?.name ?: "Stockfish" else model.level.name,
+                        rating = model.level.elo, color = if (model.side == PieceColor.WHITE) PieceColor.BLACK else PieceColor.WHITE,
                     )
+                    Spacer(Modifier.height(8.dp))
+                    Row(Modifier.fillMaxWidth().height(androidx.compose.foundation.layout.IntrinsicSize.Min)) {
+                        EvaluationBar(model.evaluation?.winProbability, playerIsWhite = model.side == PieceColor.WHITE)
+                        Spacer(Modifier.width(6.dp))
+                        ChessBoard(
+                            position = model.position,
+                            orientation = model.side,
+                            legalMoves = model.legalMoves,
+                            lastMove = model.lastMove,
+                            arrows = model.arrows,
+                            showCoordinates = settings.coordinates,
+                            darkSet = settings.darkSet,
+                            modifier = Modifier.weight(1f),
+                            onMove = { move -> engine?.let { r -> scope.launch { model.play(move, r) } } },
+                        )
+                    }
+                    Spacer(Modifier.height(8.dp))
+                    PlayerBar(name = t("play.you", "You"), rating = null, color = model.side)
                 }
-                Spacer(Modifier.height(8.dp))
-                PlayerBar(name = t("play.you", "You"), rating = null, color = model.side)
-                Spacer(Modifier.height(12.dp))
-
-                val ready = engine
+            },
+            panel = {
                 when {
                     engineFailed -> Panel(Modifier.fillMaxWidth()) {
                         Body(t("engine.failed", "The engine could not be started."), color = Theatre.bad)
@@ -100,7 +99,6 @@ fun PlayScreen(navigator: Navigator) {
                             )
                         }
                         model.summary?.let { summary ->
-                            Spacer(Modifier.height(12.dp))
                             Panel(Modifier.fillMaxWidth()) {
                                 BasicText(
                                     when (summary.result) {
@@ -120,7 +118,6 @@ fun PlayScreen(navigator: Navigator) {
                             }
                         }
                         model.latestReview?.takeIf { model.coachingEnabled }?.let { review ->
-                            Spacer(Modifier.height(12.dp))
                             Panel(Modifier.fillMaxWidth()) {
                                 Label(t("play.coach", "Coach"))
                                 Spacer(Modifier.height(6.dp))
@@ -147,23 +144,25 @@ fun PlayScreen(navigator: Navigator) {
                             }
                         }
                         if (model.moves.isNotEmpty()) {
-                            Spacer(Modifier.height(12.dp))
                             Panel(Modifier.fillMaxWidth()) {
                                 Label(t("play.moves", "Moves"))
                                 Spacer(Modifier.height(6.dp))
                                 Body(moveText(model.moves.map { it.san }), style = LocalFaces.current.figures(13, Theatre.ivoryDim))
                             }
                         }
-                        Spacer(Modifier.height(12.dp))
-                        ActionBar {
-                            ActionButton(t("play.takeback", "Takeback"), "arrow.uturn.backward", enabled = model.moves.size >= 2 && !model.isThinking) { model.takeBack() }
-                            ActionButton(t("play.hint", "Hint"), "lightbulb", enabled = !model.isThinking && !model.isOver) { scope.launch { model.hint(ready) } }
-                            ActionButton(t("play.newGame", "New game"), "plus.circle", primary = true) { scope.launch { model.start(ready) } }
-                        }
                     }
                 }
-            }
-        }
+            },
+            controls = if (ready != null && model.hasStarted) {
+                {
+                    ActionBar {
+                        ActionButton(t("play.takeback", "Takeback"), "arrow.uturn.backward", enabled = model.moves.size >= 2 && !model.isThinking) { model.takeBack() }
+                        ActionButton(t("play.hint", "Hint"), "lightbulb", enabled = !model.isThinking && !model.isOver) { scope.launch { model.hint(ready) } }
+                        ActionButton(t("play.newGame", "New game"), "plus.circle", primary = true) { scope.launch { model.start(ready) } }
+                    }
+                }
+            } else null,
+        )
     }
 }
 
@@ -195,7 +194,7 @@ private fun Stat(title: String, value: String) {
 }
 
 @Composable
-private fun SetupPanel(model: PlayModel, onStart: () -> Unit) {
+internal fun SetupPanel(model: PlayModel, onStart: () -> Unit) {
     Panel(Modifier.fillMaxWidth()) {
         BasicText(t("play.newGame", "New game"), style = LocalFaces.current.display(24))
         Spacer(Modifier.height(4.dp))

@@ -280,33 +280,32 @@ private fun GameView(model: OnlineModel, game: OnlineModel.Game, onBack: () -> U
     Screen(title = null, onBack = onBack, trailing = {
         Label(if (session.unratedByMatch == null) t("online.android.rated", "Rated game") else t("online.android.friendly", "Friendly game"), color = Theatre.brass)
     }) {
-        Column(
-            Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(bottom = 14.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            Column(Modifier.widthIn(max = 560.dp)) {
-                PlayerBar(
-                    name = opponentName, rating = session.opponent?.rating ?: game.info.opponent.record.rating,
-                    color = session.myColor.opponent, clock = session.clock.remaining(session.opponentClockKey),
-                    running = phase == MatchSession.Phase.Playing && !session.isMyTurn,
-                )
-                Spacer(Modifier.height(8.dp))
-                ChessBoard(
-                    position = session.position,
-                    orientation = session.myColor,
-                    legalMoves = if (session.isMyTurn) session.position.legalMoves() else emptyList(),
-                    lastMove = session.lastMove?.let { it.from to it.to },
-                    modifier = Modifier.fillMaxWidth(),
-                    onMove = { move -> session.play(move.from, move.to, move.promotion) },
-                )
-                Spacer(Modifier.height(8.dp))
-                PlayerBar(
-                    name = model.alias, rating = model.record(session.timeControl).rating,
-                    color = session.myColor, clock = session.clock.remaining(session.myClockKey),
-                    running = phase == MatchSession.Phase.Playing && session.isMyTurn,
-                )
-                Spacer(Modifier.height(12.dp))
-
+        BoardScreenLayout(
+            board = {
+                Column {
+                    PlayerBar(
+                        name = opponentName, rating = session.opponent?.rating ?: game.info.opponent.record.rating,
+                        color = session.myColor.opponent, clock = session.clock.remaining(session.opponentClockKey),
+                        running = phase == MatchSession.Phase.Playing && !session.isMyTurn,
+                    )
+                    Spacer(Modifier.height(8.dp))
+                    ChessBoard(
+                        position = session.position,
+                        orientation = session.myColor,
+                        legalMoves = if (session.isMyTurn) session.position.legalMoves() else emptyList(),
+                        lastMove = session.lastMove?.let { it.from to it.to },
+                        modifier = Modifier.fillMaxWidth(),
+                        onMove = { move -> session.play(move.from, move.to, move.promotion) },
+                    )
+                    Spacer(Modifier.height(8.dp))
+                    PlayerBar(
+                        name = model.alias, rating = model.record(session.timeControl).rating,
+                        color = session.myColor, clock = session.clock.remaining(session.myClockKey),
+                        running = phase == MatchSession.Phase.Playing && session.isMyTurn,
+                    )
+                }
+            },
+            panel = {
                 Panel(Modifier.fillMaxWidth()) {
                     when (phase) {
                         MatchSession.Phase.Waiting -> Body(t("online.joining", "Joining %@…", opponentName), color = Theatre.ivoryDim)
@@ -342,31 +341,32 @@ private fun GameView(model: OnlineModel, game: OnlineModel.Game, onBack: () -> U
                 }
 
                 if (session.moves.isNotEmpty()) {
-                    Spacer(Modifier.height(12.dp))
                     Panel(Modifier.fillMaxWidth()) {
                         Label(t("online.moves", "Moves"))
                         Spacer(Modifier.height(6.dp))
                         Body(moveText(session.moves), size = 14, style = LocalFaces.current.figures(13, Theatre.ivoryDim))
                     }
                 }
-                Spacer(Modifier.height(12.dp))
-
-                when (phase) {
-                    MatchSession.Phase.Playing -> ActionBar {
+            },
+            controls = when (phase) {
+                MatchSession.Phase.Playing -> ({
+                    ActionBar {
                         ActionButton(t("online.resign", "Resign"), "flag.fill") { resigning = true }
                         ActionButton(t("online.offerDraw", "Offer draw"), "equal.circle", enabled = !session.drawOfferSent && !session.drawOffered) { session.offerDraw() }
                     }
-                    is MatchSession.Phase.Finished -> ActionBar {
+                })
+                is MatchSession.Phase.Finished -> ({
+                    ActionBar {
                         ActionButton(
                             t("online.playAgain", "Play again"), "arrow.clockwise", primary = true,
                             enabled = !session.opponentLeft && !game.closed && !session.rematchOfferSent,
                         ) { session.offerRematch() }
                         ActionButton(t("online.backToTheLobby", "Back to the lobby"), "chevron.left") { model.leaveGame() }
                     }
-                    else -> Unit
-                }
-            }
-        }
+                })
+                else -> null
+            },
+        )
     }
 
     if (resigning) {
@@ -472,10 +472,10 @@ fun PlayerBar(name: String, rating: Int?, color: PieceColor, clock: Double? = nu
     }
 }
 
-/** "1. e4 e5 2. Nf3 …" from a list of SAN moves. */
-fun moveText(moves: List<String>): String = buildString {
+/** "1. e4 e5 2. Nf3 …" from a list of SAN moves, wrapped in an LTR isolate so RTL locales do not reorder "1.". */
+fun moveText(moves: List<String>): String = "\u2066" + buildString {
     moves.forEachIndexed { index, san ->
         if (index % 2 == 0) append(index / 2 + 1).append(". ")
         append(san).append(' ')
     }
-}.trimEnd()
+}.trimEnd() + "\u2069"

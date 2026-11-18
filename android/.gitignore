@@ -14,3 +14,6 @@ local.properties
 
 # Local emulator QA screenshots
 shots/
+
+# Google Play store listing assets
+play-listing/

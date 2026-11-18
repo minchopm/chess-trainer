@@ -163,6 +163,10 @@ fun ChessBoard(
         }
     }
 
+    // The chessboard itself is never mirrored in right-to-left locales: a1 is always at the bottom-left for White.
+    androidx.compose.runtime.CompositionLocalProvider(
+        androidx.compose.ui.platform.LocalLayoutDirection provides androidx.compose.ui.unit.LayoutDirection.Ltr,
+    ) {
     Box(
         modifier
             .aspectRatio(1f)
@@ -316,6 +320,7 @@ fun ChessBoard(
                 }
             }
         }
+    }
     }
 }
 

@@ -6,10 +6,12 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -43,58 +45,126 @@ import com.artesoft.brasspawn.data.t
 @Composable
 fun MenuScreen(navigator: Navigator) {
     val faces = LocalFaces.current
-    Box(Modifier.fillMaxSize().background(Theatre.ink)) {
-        rememberArt("art/pawn.png")?.let { art ->
-            Image(
-                art, contentDescription = null, contentScale = ContentScale.Crop,
-                modifier = Modifier.fillMaxWidth().aspectRatio(0.92f).align(Alignment.TopCenter).padding(top = 96.dp),
-            )
-        }
-        // The photograph fades into the ground above and below, so the type sits on black.
-        Box(
-            Modifier.fillMaxSize().background(
-                Brush.verticalGradient(
-                    0f to Theatre.ink, 0.16f to Theatre.ink.copy(alpha = 0.55f), 0.34f to Color.Transparent,
-                    0.5f to Theatre.ink.copy(alpha = 0.35f), 0.64f to Theatre.ink,
+    BoxWithConstraints(Modifier.fillMaxSize().background(Theatre.ink)) {
+        val isWide = maxWidth > maxHeight && maxWidth >= 600.dp
+        if (isWide) {
+            val artSize = minOf(maxHeight * 0.90f, maxWidth * 0.48f, 620.dp)
+            Box(Modifier.fillMaxSize()) {
+                Row(
+                    Modifier.fillMaxSize().padding(horizontal = 32.dp, vertical = 18.dp),
+                    horizontalArrangement = Arrangement.spacedBy(32.dp, Alignment.CenterHorizontally),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Box(Modifier.size(artSize), contentAlignment = Alignment.Center) {
+                        rememberArt("art/pawn.png")?.let { art ->
+                            Image(
+                                art, contentDescription = null, contentScale = ContentScale.Crop,
+                                modifier = Modifier.fillMaxSize().clip(RoundedCornerShape(20.dp)),
+                            )
+                        }
+                        Box(
+                            Modifier.fillMaxSize().background(
+                                Brush.verticalGradient(
+                                    0f to Theatre.ink.copy(alpha = 0.72f),
+                                    0.18f to Color.Transparent,
+                                    0.80f to Color.Transparent,
+                                    1f to Theatre.ink.copy(alpha = 0.82f),
+                                )
+                            )
+                        )
+                        Box(
+                            Modifier.fillMaxSize().background(
+                                Brush.horizontalGradient(
+                                    0f to Theatre.ink.copy(alpha = 0.72f),
+                                    0.18f to Color.Transparent,
+                                    0.82f to Color.Transparent,
+                                    1f to Theatre.ink.copy(alpha = 0.78f),
+                                )
+                            )
+                        )
+                    }
+                    Column(
+                        Modifier.widthIn(max = 480.dp).weight(1f, fill = false).fillMaxHeight(),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+                        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
+                            SettingsGearButton { navigator.open(Destination.SETTINGS) }
+                        }
+                        Spacer(Modifier.weight(1f))
+                        BasicText(t("menu.title", "Brass Pawn"), style = faces.display(52, FontWeight.Medium).copy(textAlign = TextAlign.Center))
+                        Spacer(Modifier.height(6.dp))
+                        BasicText(
+                            t("menu.slug", "Play · Train · Watch").uppercase(),
+                            style = faces.label(12, Theatre.brass).copy(letterSpacing = 4.sp, textAlign = TextAlign.Center),
+                        )
+                        Spacer(Modifier.height(28.dp))
+                        MenuButtonsGrid(navigator)
+                        Spacer(Modifier.weight(1f))
+                    }
+                }
+            }
+        } else {
+            rememberArt("art/pawn.png")?.let { art ->
+                Image(
+                    art, contentDescription = null, contentScale = ContentScale.Crop,
+                    modifier = Modifier.fillMaxWidth().aspectRatio(0.92f).align(Alignment.TopCenter).padding(top = 96.dp),
+                )
+            }
+            // The photograph fades into the ground above and below, so the type sits on black.
+            Box(
+                Modifier.fillMaxSize().background(
+                    Brush.verticalGradient(
+                        0f to Theatre.ink, 0.16f to Theatre.ink.copy(alpha = 0.55f), 0.34f to Color.Transparent,
+                        0.5f to Theatre.ink.copy(alpha = 0.35f), 0.64f to Theatre.ink,
+                    )
                 )
             )
-        )
-        Column(
-            Modifier.fillMaxSize().padding(horizontal = 18.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            Row(Modifier.fillMaxWidth().padding(top = 8.dp), horizontalArrangement = Arrangement.End) {
-                Box(
-                    Modifier
-                        .size(44.dp).clip(CircleShape).background(Theatre.ink3.copy(alpha = 0.8f))
-                        .border(1.dp, Theatre.rule, CircleShape)
-                        .clickable(role = Role.Button) { navigator.open(Destination.SETTINGS) }
-                        .semantics { contentDescription = t("settings.settings", "Settings") },
-                    contentAlignment = Alignment.Center,
-                ) { BrassIcon("gearshape", 22.dp) }
+            Column(
+                Modifier.fillMaxSize().padding(horizontal = 18.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                Row(Modifier.fillMaxWidth().padding(top = 8.dp), horizontalArrangement = Arrangement.End) {
+                    SettingsGearButton { navigator.open(Destination.SETTINGS) }
+                }
+                BasicText(t("menu.title", "Brass Pawn"), style = faces.display(46, FontWeight.Medium).copy(textAlign = TextAlign.Center))
+                Spacer(Modifier.height(6.dp))
+                BasicText(
+                    t("menu.slug", "Play · Train · Watch").uppercase(),
+                    style = faces.label(11, Theatre.brass).copy(letterSpacing = 4.sp, textAlign = TextAlign.Center),
+                )
+                Spacer(Modifier.weight(1f))
+                MenuButtonsGrid(navigator)
+                Spacer(Modifier.height(18.dp))
             }
-            BasicText(t("menu.title", "Brass Pawn"), style = faces.display(46, FontWeight.Medium).copy(textAlign = TextAlign.Center))
-            Spacer(Modifier.height(6.dp))
-            BasicText(
-                t("menu.slug", "Play · Train · Watch").uppercase(),
-                style = faces.label(11, Theatre.brass).copy(letterSpacing = 4.sp, textAlign = TextAlign.Center),
-            )
-            Spacer(Modifier.weight(1f))
+        }
+    }
+}
 
-            Column(Modifier.widthIn(max = 520.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                PlayButton { navigator.open(Destination.PLAY) }
-                Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                    MenuTile(t("online.playOnline", "Play online"), "bolt.horizontal.circle", Modifier.weight(1f)) { navigator.open(Destination.ONLINE) }
-                    MenuTile(t("progress.tactics", "Tactics"), "target", Modifier.weight(1f)) { navigator.open(Destination.TACTICS) }
-                    MenuTile(t("progress.positional", "Positional"), "square.grid.3x3.middle.filled", Modifier.weight(1f)) { navigator.open(Destination.POSITIONAL) }
-                }
-                Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                    MenuTile(t("progress.endgames", "Endgames"), "flag.checkered", Modifier.weight(1f)) { navigator.open(Destination.ENDGAMES) }
-                    MenuTile(t("progress.progress", "Progress"), "chart.line.uptrend.xyaxis", Modifier.weight(1f)) { navigator.open(Destination.PROGRESS) }
-                    MenuTile(t("about.about", "About"), "doc.text", Modifier.weight(1f)) { navigator.open(Destination.ABOUT) }
-                }
-            }
-            Spacer(Modifier.height(18.dp))
+@Composable
+private fun SettingsGearButton(onClick: () -> Unit) {
+    Box(
+        Modifier
+            .size(44.dp).clip(CircleShape).background(Theatre.ink3.copy(alpha = 0.8f))
+            .border(1.dp, Theatre.rule, CircleShape)
+            .clickable(role = Role.Button, onClick = onClick)
+            .semantics { contentDescription = t("settings.settings", "Settings") },
+        contentAlignment = Alignment.Center,
+    ) { BrassIcon("gearshape", 22.dp) }
+}
+
+@Composable
+private fun MenuButtonsGrid(navigator: Navigator) {
+    Column(Modifier.widthIn(max = 520.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        PlayButton { navigator.open(Destination.PLAY) }
+        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            MenuTile(t("online.playOnline", "Play online"), "bolt.horizontal.circle", Modifier.weight(1f)) { navigator.open(Destination.ONLINE) }
+            MenuTile(t("progress.tactics", "Tactics"), "target", Modifier.weight(1f)) { navigator.open(Destination.TACTICS) }
+            MenuTile(t("progress.positional", "Positional"), "square.grid.3x3.middle.filled", Modifier.weight(1f)) { navigator.open(Destination.POSITIONAL) }
+        }
+        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            MenuTile(t("progress.endgames", "Endgames"), "flag.checkered", Modifier.weight(1f)) { navigator.open(Destination.ENDGAMES) }
+            MenuTile(t("progress.progress", "Progress"), "chart.line.uptrend.xyaxis", Modifier.weight(1f)) { navigator.open(Destination.PROGRESS) }
+            MenuTile(t("about.about", "About"), "doc.text", Modifier.weight(1f)) { navigator.open(Destination.ABOUT) }
         }
     }
 }
